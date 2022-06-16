@@ -1,0 +1,158 @@
+// Typography
+// -----------------------------------------------------------------------------
+
+
+
+// Headings
+
+h1 {
+	margin-top:$surf-margin-md;
+	margin-bottom:$surf-margin-sm;
+}
+h2 {
+	margin-top:$surf-margin-md;
+	margin-bottom:12px;
+	font-size: 31px;
+	
+	@include breakpoint(md) {
+		font-size: $font-size-h1;
+	}
+}
+h3, h4 {
+	margin-top:$surf-margin-md;
+	margin-bottom:12px;
+	line-height: 27px;
+}
+h5 {
+	margin-top:$surf-margin-md;
+	margin-bottom:0;
+	line-height: $line-height-base;
+}
+h6 {
+	margin-top:0;
+	margin-bottom:0;
+	line-height: $line-height-base;
+}
+
+.page-header {
+	margin-top:$surf-margin-xl;
+	margin-bottom:$surf-margin-xs;
+	border-bottom: none;
+	padding:0;
+	
+}
+
+
+
+
+// Running Text
+
+p {
+	margin-bottom: 12px;
+}
+
+.main-content {
+	ul, 
+	ol {
+		padding-left:20px;
+		margin-top:0;
+		margin-bottom:12px;
+		li {margin-bottom: 0;}
+	}	
+	h3 + ol, h3 + ul, h4 + ol, h4 + ul {
+		margin-top:-12px;
+	}
+}
+
+
+// Fields
+
+.field.overview {
+	font-size: $font-size-h3;
+	line-height: 27px;
+	letter-spacing: 0.025em;
+	margin-bottom: $surf-margin-md;
+}
+
+.overview-text .field.overview {
+	font-size: inherit;
+	margin-bottom: inherit;
+}
+
+.field.call-to-action-reference {
+	margin-top:-10px;
+	margin-bottom:$surf-margin-md;
+	a {
+		display: inline-block;	
+		margin-bottom: $surf-margin-xxs;
+		text-align: center;
+		padding: $surf-margin-xxs $surf-margin-md;
+		background:$surf-green-link;
+		color:$surf-white;
+		border: 1px solid $surf-green-dark-solid;
+		font-weight: 700;
+		&:hover {
+			background-color:$surf-green-overview;
+		}
+	}
+}
+
+// Views
+
+.content-type {
+	text-transform: capitalize;
+	font-size: $font-size-small;
+	font-weight: 700;
+	color:$surf-black;
+	margin-bottom: $surf-margin-xs;
+}
+
+
+// Links
+
+.action-link {
+	margin-top:$surf-margin-sm;
+	
+	a {
+		border-bottom:1px solid;
+		padding-bottom: 2px;
+	}
+}
+a.body-action-link {
+	border-bottom:1px solid;
+	padding-bottom: 2px;
+}
+
+.action-toggle {
+	@extend .transition;
+	border-bottom:1px solid $surf-green-link;
+	padding-bottom: 2px;
+	cursor: pointer;
+	display: inline;
+	color:$surf-green-link;
+	&:hover {color:$surf-green-overview;}
+}
+
+
+
+// Paragraph-specific Type Styles
+
+.paragraph {
+	
+}
+
+.teaser-text {
+	h2, h3 {margin-top:0;}
+}
+
+
+// Views
+
+// Label overrides from Matt
+
+.label {
+	padding: .2em 1.5em .3em;
+	font-size: 100%;
+	color: #555656;
+}
+

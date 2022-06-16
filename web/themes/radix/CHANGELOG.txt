@@ -1,0 +1,76 @@
+Radix 8.x-3.2, 2018-02-26
+-------------------
+- Issue #2938145 Click sort on Views is unsupported.
+- Issue #2938771 Dropbutton doesn't work as expected.
+- Issue #2870921 Remove deprecated radix_preprocess_views_view_table.
+
+Radix 8.x-3.1, 2017-02-01
+---------------------------------------
+- Remove unused menu template files.
+- Fixed drop-downs not showing in main navigation.
+- Add contextual links back to system-menu-block.
+- Allow kits to be created from any branch.
+- Add support for Yarn package manager.
+- Update npm dependencies.
+- Update bower dependencies.
+- Add bootstrap styles to Radix base theme.
+
+Radix 8.x-3.0, 2016-12-22
+---------------------------------------
+- No changes
+
+Radix 8.x-3.0-beta1, 2016-11-28
+---------------------------------------
+- Issue #2824400 by Laubi, arshadcn: Radix is spamming notice messages.
+- Remove comment.inc file.
+- Update the list of files to make replacement on drush.
+
+Radix 8.x-3.0-alpha4, 2016-06-15
+---------------------------------------
+- Restore previous field.html.twig and add a field-no-wrapper.html.twig template
+- Clean up radix template files
+- Rename default files in the default kit
+- Move scss and js directories under assets
+- Issue #2711987 by jday: Minor issues in _mixins.scss calls
+- Remove compass from style.scss
+- Rename breakpoints.yml file when creating a subtheme
+
+Radix 8.x-3.0-alpha3, 2016-05-14
+---------------------------------------
+- Add breakpoints file to default kit
+- Updates for multiple templates: views, html, feed-icon, field and block
+- Update template for views and nodes
+- Update template for block
+- Remove theme_views_mini_pager
+- Remove bootstrapcdn js
+- Update block template
+- Remove seven/global-styling library
+- Issue #2699605: Undefined index: id in radix_preprocess_block()
+- Remove gulp-compass from default kit
+
+Radix 8.x-3.0-alpha2, 2016-05-14
+---------------------------------------
+- Fix template for checkboxes and radios
+- Update template for form-element
+- Add template for page-title
+- Add radix scss partial to main theme
+- Remove unused radix_theme hook
+- Remove system.admin.css
+- Add template for local action
+- Move radix scss partials out of the default/subtheme kit
+
+Radix 8.x-3.0-alpha1, 2016-02-08
+---------------------------------------
+- Remove id from main nav template
+- Update region template
+- Update main page template
+- Update branding block template
+- Use site-logo and site-name classes instead of ids
+- Remove stylesheets and add regions and libraries to info file
+- Update template of search form
+- Update z-index of navbar
+- Remove alter hooks from .theme file
+- Update default logos
+- Update default template for blocks
+- Remove bower_components under gitignore
+- Fix info and libraries files for latest version

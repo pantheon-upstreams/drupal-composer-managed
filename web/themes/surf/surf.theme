@@ -1,0 +1,48 @@
+<?php
+/**
+ * @file
+ * Theme functions
+ */
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+
+
+
+function surf_preprocess_html(&$variables){
+	
+	// Add body class depending on usage of sidebar region
+	
+	$region_name = render($variables['page']['sidebar']);
+    if (!empty($region_name)) {
+        $variables['attributes']['class'][] = 'sidebar-active';
+    }
+    else {
+        $variables['attributes']['class'][] = 'sidebar-inactive';
+    }
+ }
+
+
+function surf_form_alter(&$form, &$form_state, $form_id) {
+	
+  // Add placeholder text to the search block form
+  if ($form_id == 'search_block_form') {
+    // HTML5 placeholder attribute
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search');   
+    //$form['actions']['submit']['#value'] = t('Go');
+    $form['actions']['submit']['#value'] = html_entity_decode('&#xf002;');
+    $form['actions']['submit']['#attributes']['class'][] = 'search-button';
+
+  }
+  
+}
+
+
+
+
+
+

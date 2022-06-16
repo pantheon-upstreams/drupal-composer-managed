@@ -1,0 +1,351 @@
+// Page Layout
+// -----------------------------------------------------------------------------
+
+
+
+// Body
+
+body {
+	padding-top:100px;
+	@include breakpoint(xs) {padding-top:50px;}
+}
+
+
+// Containers
+
+.container-fluid {
+	@include breakpoint(sm) {
+		padding-left:30px;
+		padding-right:30px;
+	}
+	@include breakpoint(lg) {
+		padding-left:40px;
+		padding-right:40px;
+	}
+}
+
+
+
+// Content
+
+.main-content {
+	@include make-row();
+}
+.content {
+	@include make-sm-column-offset(2);
+	@include make-sm-column(8);
+	@include make-md-column-offset(3);
+	@include make-md-column(6);
+	@include make-lg-column(6);
+	margin-bottom:$surf-margin-xl;
+}
+.sidebar-active .content {
+	@include make-sm-column-offset(0);
+	@include make-sm-column(9);
+	@include make-md-column-offset(0);
+	@include make-md-column(6);
+	@include make-lg-column(6);
+}
+
+.page--feature,
+.page--portal,
+.page--homepage,
+.page--experiment {
+	.content {
+		@include make-sm-column(12);
+		@include make-sm-column-offset(0);
+		@include make-md-column-offset(0);
+		@include make-lg-column(12);
+		margin-bottom:0;
+	}
+}
+
+
+
+
+
+
+
+// Sidebar 
+
+.sidebar-active .sidebar {
+	@include make-sm-column(3);
+	@include make-lg-column(3);
+	margin-top:$surf-margin-xl;
+	
+	// accommodate menus that might run into featured images
+	@include breakpoint(md) {
+		.block {
+			margin-right:15%;
+		}
+	}
+}
+
+
+
+// Content Listing
+
+.content-listing {
+	@include make-row();
+	margin-bottom:$surf-margin-xl;
+	
+	> .block {
+		@include make-sm-column(12);
+		@include make-md-column-offset(3);
+		@include make-md-column(9);
+		@include make-lg-column(9);
+	}
+		
+	.block__title {
+		border-bottom:1px solid $surf-green-rule;
+		padding-bottom: $surf-margin-xs;
+	}
+	.views-element-container + .views-element-container {margin-top:$surf-margin-lg;}
+}
+
+// Related 
+
+.related-content {
+	//@include make-row();
+}
+
+// Eyebrow 
+
+.eyebrow {
+	background:$surf-green-dark-solid;
+	font-size: $font-size-small;
+	color:#fff;
+	font-weight: bold;
+	//padding: 5px 0;
+	
+	.block {margin:5px 0;}
+	
+	ul {margin-bottom: 0;}
+	
+	@include breakpoint(xs) {
+		.block + .block {margin-top:0;}
+	}
+	@include breakpoint(sm) {	
+		.block--surf-local-tasks {float:right;}
+		.block--views-block--eyebrow-child,
+		.block--views-block--eyebrow-post {float:left;}
+	}
+}
+
+
+// Green Header
+
+.green-header {
+	background:$surf-green-overview;
+	color:#fff;
+	padding: $surf-margin-md 0 $surf-margin-xl+15 0;
+	
+	h1 {
+		margin:0;
+		color:$surf-white;
+	}
+	.field.overview {
+		margin:0;
+		margin-top:17px;
+	}
+}
+
+.page--event,
+.page--educator-resource {
+	.green-header {
+		background:$surf-green-link;
+		margin-bottom: $surf-margin-xl;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// Basic Responsive Image Styles
+
+img {
+	width:100%;
+	height:auto;
+}
+
+// Running Text Inline Image Styles
+
+.field.body {
+	img {
+		width:inherit;
+		max-width: 100%;
+		height: auto;
+		
+		margin-bottom: $surf-margin-sm;
+	}
+}
+
+
+
+
+// Featured Image Styles
+
+.page--article,
+.page--event,
+.page--page,
+.page--educator-resource {
+
+	.main-content .paragraph-featured-image {
+		margin-bottom: $surf-margin-md;
+		font-size: $font-size-small;
+		
+		.image-credit {font-style:italic;}
+		
+		.image {
+			margin-bottom:$surf-margin-xs;
+			
+			@include breakpoint(md) {
+				margin-left:-10%;
+				margin-right:-10%;
+			}
+		}
+	}
+}
+
+
+
+// Video & SVG Embed Styles
+
+.video-embed,
+.svg-embed {
+	margin:$surf-margin-md 0;
+	
+	@include breakpoint(md) {
+		margin-left:-10%;
+		margin-right:-10%;
+	}
+}
+
+
+
+
+
+
+
+// Table Styles
+
+.contract-schedule {margin-bottom: 60px;}
+
+
+
+
+
+// Mobile Hero Reconfiguration 
+
+main {
+	
+	@include breakpoint(xs) {
+		display: flex;
+	    flex-direction: column;
+	    
+	    > .eyebrow {order:1;}
+	    > .block--views-block--hero-image-block {order: 2; }
+	    > .green-header {order: 3; }
+	    > .container-fluid {order:4;}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Footer Styles
+
+footer#footer {	
+	background:$surf-gray-text;
+	color:$surf-gray-rule;
+	padding-top:$surf-margin-md;
+	padding-bottom:$surf-margin-sm;
+	margin:0;
+	
+	a {
+		color:$surf-green-footer-nav;
+		&:hover {color: $surf-green-light-nav;}
+	}
+	
+	.sanford-logo {
+		a {
+			display: block;
+			text-indent: -9999px;
+			background:url('/themes/surf/assets/images/SURF_Gray_horizontal.svg') no-repeat;
+			height:39px;
+			width:300px;
+			background-size:100%;
+			margin-top:5px;
+		}
+	}
+
+	.footer-top {
+		@include make-row();
+		margin-bottom: $surf-margin-lg;
+		
+		@include breakpoint(sm) {
+			margin-bottom: $surf-margin-xl + $surf-margin-xl;
+		}
+	}
+	.footer-bottom {
+		@include make-row();
+		font-size: $font-size-small;
+	}
+	.block-content--footer-bottom {				
+		padding-top: $surf-margin-sm;
+		
+		@include breakpoint(sm) {
+			border-top:1px solid $surf-green-light-nav;
+		}
+		
+		.body {
+			@include make-row();
+		}
+	}
+	.copyright,
+	.footer-logo,
+	.footer-copyright,
+	.sdsta,
+	.footer-nav {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+	}
+	.footer-resources,
+	.footer-updates{
+		@include make-sm-column(3);
+		@include make-lg-column(3);
+	}
+	
+	h4 {
+		font-size: $font-size-base;
+		color:$surf-white;
+		margin:0;
+		line-height: 30px;
+	}
+	.menu {
+		list-style: none;
+		padding:0;
+		margin-bottom: $surf-margin-sm;
+		li {line-height: 30px;}
+	}
+		
+}
+
+
+
+
+
