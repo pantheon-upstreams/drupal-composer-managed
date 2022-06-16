@@ -20,7 +20,39 @@
         "drupal/core-recommended": "^9.2",
         "pantheon-systems/drupal-integrations": "^9",
         "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12"
+        "drush/drush": "^11 || ^12",
+        "drupal/address": "~1.0",
+        "drupal/admin_toolbar": "~3.0",
+        "drupal/backup_migrate": "~5.0",
+        "drupal/console": "^1.0.2",
+        "drupal/content_access": "~1.0",
+        "drupal/ctools": "~3.0",
+        "drupal/date_range_formatter": "^4.0",
+        "drupal/entity_reference_revisions": "~1.0",
+        "drupal/entityqueue": "~1.0",
+        "drupal/field_group": "~3.0",
+        "drupal/field_tools": "~1.0",
+        "drupal/filefield_paths": "~1.0",
+        "drupal/google_analytics": "~3.0",
+        "drupal/honeypot": "~2.0",
+        "drupal/imce": "~2.0",
+        "drupal/inline_entity_form": "~1.0",
+        "drupal/insert_view": "~2.0",
+        "drupal/maxlength": "~1.0",
+        "drupal/menu_block": "~1.0",
+        "drupal/metatag": "~1.0",
+        "drupal/paragraphs": "~1.0",
+        "drupal/pathauto": "~1.0",
+        "drupal/redirect": "~1.0",
+        "drupal/scheduler": "~1.0",
+        "drupal/simple_block": "~1.0",
+        "drupal/smart_date": "^3.4",
+        "drupal/token": "~1.0",
+        "drupal/twig_field_value": "~2.0",
+        "drupal/views_infinite_scroll": "~1.0",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2"
@@ -28,7 +60,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "drupal-scaffold": {
@@ -87,7 +119,8 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/console-extend-plugin": true
         }
     }
 }
