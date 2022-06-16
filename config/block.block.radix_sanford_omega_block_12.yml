@@ -1,0 +1,32 @@
+uuid: 688ff71f-7f17-43ed-b8e9-c68775c85d37
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b008dc8c-ed4e-4904-b45c-687e6e3c252b'
+  module:
+    - block_content
+    - system
+  theme:
+    - radix
+id: radix_sanford_omega_block_12
+theme: radix
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:b008dc8c-ed4e-4904-b45c-687e6e3c252b'
+settings:
+  id: 'block_content:b008dc8c-ed4e-4904-b45c-687e6e3c252b'
+  label: 'Neutrino Day links'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: |-
+      /neutrinoday
+      /neutrinoday/*

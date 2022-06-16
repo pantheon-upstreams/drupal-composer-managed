@@ -1,0 +1,6 @@
+uuid: c8f8465c-56af-43ea-a601-1a2cc35966fd
+langcode: en
+status: true
+dependencies: {  }
+id: schedule_item
+label: 'Schedule Item'

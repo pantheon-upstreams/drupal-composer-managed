@@ -1,0 +1,32 @@
+uuid: 356440ea-94dd-4dae-bb3b-091fb708e7a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.subnav
+  module:
+    - node
+    - views
+  theme:
+    - surf
+id: views_block__subnav_sdsta
+theme: surf
+region: sidebar
+weight: -32
+provider: null
+plugin: 'views_block:subnav-sdsta'
+settings:
+  id: 'views_block:subnav-sdsta'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      sdsta_board_meeting: sdsta_board_meeting

@@ -1,0 +1,41 @@
+uuid: f3a94e66-94ea-43ca-aea7-31f0d3ecd0e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.job_posting.body
+    - field.field.node.job_posting.field_call_to_action_reference
+    - field.field.node.job_posting.field_closing_date_day
+    - field.field.node.job_posting.field_featured_related
+    - field.field.node.job_posting.field_more_information
+    - field.field.node.job_posting.field_more_information_label
+    - field.field.node.job_posting.field_overview
+    - node.type.job_posting
+  module:
+    - text
+    - user
+id: node.job_posting.teaser
+targetEntityType: node
+bundle: job_posting
+mode: teaser
+content:
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_call_to_action_reference: true
+  field_closing_date_day: true
+  field_featured_related: true
+  field_more_information: true
+  field_more_information_label: true

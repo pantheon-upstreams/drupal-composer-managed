@@ -1,0 +1,39 @@
+uuid: 9dc1d1cf-9157-47dd-8e40-7e9b398beccd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_document_directory
+field_name: field_document_directory
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: contracts
+      label: Contracts
+    -
+      value: communication
+      label: Communication
+    -
+      value: education
+      label: Education
+    -
+      value: media
+      label: Media
+    -
+      value: safety
+      label: Safety
+    -
+      value: science
+      label: Science
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

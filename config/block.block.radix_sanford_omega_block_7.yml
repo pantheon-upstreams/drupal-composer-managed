@@ -1,0 +1,30 @@
+uuid: 2294909b-78e1-49b3-8f79-12a3915f6bf9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5eacbe0c-5548-4908-b424-6c6fa6e4f9d5'
+  module:
+    - block_content
+    - system
+  theme:
+    - radix
+id: radix_sanford_omega_block_7
+theme: radix
+region: content
+weight: -4
+provider: null
+plugin: 'block_content:5eacbe0c-5548-4908-b424-6c6fa6e4f9d5'
+settings:
+  id: 'block_content:5eacbe0c-5548-4908-b424-6c6fa6e4f9d5'
+  label: 'Sign up for our teacher mailing list'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /education/educators

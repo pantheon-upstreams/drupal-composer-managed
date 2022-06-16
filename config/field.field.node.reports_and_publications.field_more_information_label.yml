@@ -1,0 +1,19 @@
+uuid: c448a643-2dec-4374-9a4d-7d0743c7fa76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_information_label
+    - node.type.reports_and_publications
+id: node.reports_and_publications.field_more_information_label
+field_name: field_more_information_label
+entity_type: node
+bundle: reports_and_publications
+label: 'More Information: Alternative Label'
+description: 'If you want this "More Information" section to use a custom heading/label, enter it here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

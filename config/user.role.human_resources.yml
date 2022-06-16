@@ -1,0 +1,53 @@
+uuid: 7ca3d0d0-9824-44be-b023-6c7d87ad5443
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.editor_s_set
+    - node.type.employee_
+    - node.type.job_posting
+  module:
+    - comment
+    - contact
+    - contextual
+    - filter
+    - media
+    - node
+    - paragraphs
+    - scheduler
+    - system
+    - toolbar
+id: human_resources
+label: 'Human Resources'
+weight: -3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'create employee_ content'
+  - 'create job_posting content'
+  - 'delete any employee_ content'
+  - 'delete any job_posting content'
+  - 'delete job_posting revisions'
+  - 'delete own employee_ content'
+  - 'delete own job_posting content'
+  - 'edit any employee_ content'
+  - 'edit any job_posting content'
+  - 'edit own comments'
+  - 'edit own employee_ content'
+  - 'edit own job_posting content'
+  - 'post comments'
+  - 'revert job_posting revisions'
+  - 'schedule publishing of nodes'
+  - 'use text format editor_s_set'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

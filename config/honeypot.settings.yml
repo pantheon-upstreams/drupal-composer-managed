@@ -1,0 +1,44 @@
+_core:
+  default_config_hash: jEhrePho9bAz_8-E-zPMXvlx4knpphzUdaiQJX-xc8Q
+protect_all_forms: false
+unprotected_forms:
+  - user_login_form
+  - search_form
+  - search_block_form
+  - views_exposed_form
+  - honeypot_settings_form
+log: false
+element_name: url
+time_limit: 5
+expire: 300
+form_settings:
+  user_register_form: true
+  user_pass: true
+  contact_message_feedback_form: true
+  contact_message_personal_form: true
+  contact_message_website_feedback_form: true
+  node_article_form: false
+  node_board_member_profile_form: false
+  node_contracts_form: false
+  node_deep_thoughts_newsletter_form: false
+  node_document_form: false
+  node_educator_resource_form: false
+  node_ehs_manual_page_form: false
+  node_employee__form: false
+  node_event_form: false
+  node_experiment_form: false
+  node_facility_form: false
+  node_feature_form: false
+  node_frequently_asked_question_form: false
+  node_headline_form: false
+  node_homepage_form: false
+  node_job_posting_form: false
+  node_jotform_form: false
+  node_meeting_minutes_form: false
+  node_page_form: false
+  node_portal_form: false
+  node_press_release_form: false
+  node_reports_and_publications_form: false
+  node_sdsta_board_meeting_form: false
+  node_surf_newsletter_form: false
+  comment_comment_form: false

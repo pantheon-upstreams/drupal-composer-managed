@@ -1,0 +1,22 @@
+uuid: 156d1ee9-0297-4bec-af1b-ea2ea9cc18ef
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - surf
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: surf_system_powered_by
+theme: surf
+region: navbar_branding
+weight: -32
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: ''
+  label_display: '0'
+  provider: system
+visibility: {  }

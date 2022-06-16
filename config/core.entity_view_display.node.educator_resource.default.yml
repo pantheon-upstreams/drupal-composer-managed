@@ -1,0 +1,55 @@
+uuid: 135f501f-7a48-43eb-881b-52fd9b696567
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.educator_resource.body
+    - field.field.node.educator_resource.field_call_to_action_reference
+    - field.field.node.educator_resource.field_grade_level
+    - field.field.node.educator_resource.field_more_information
+    - field.field.node.educator_resource.field_more_information_label
+    - field.field.node.educator_resource.field_overview
+    - field.field.node.educator_resource.field_paragraph_featured_image
+    - field.field.node.educator_resource.field_resource_type
+    - field.field.node.educator_resource.field_time_required
+    - field.field.node.educator_resource.field_topic
+    - node.type.educator_resource
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.educator_resource.default
+targetEntityType: node
+bundle: educator_resource
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph_featured_image:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_call_to_action_reference: true
+  field_grade_level: true
+  field_more_information: true
+  field_more_information_label: true
+  field_overview: true
+  field_resource_type: true
+  field_time_required: true
+  field_topic: true

@@ -1,0 +1,11 @@
+uuid: 6044ce57-c42d-49a4-aaf9-cd0fc342d7f4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Frequently asked question'
+type: frequently_asked_question
+description: 'Use this content type to add a frequently asked question.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

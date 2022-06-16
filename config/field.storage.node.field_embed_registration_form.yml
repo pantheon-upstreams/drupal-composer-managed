@@ -1,0 +1,20 @@
+uuid: aad2ffbe-1a09-4590-94f1-2dc566ebed34
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_embed_registration_form
+field_name: field_embed_registration_form
+entity_type: node
+type: text
+settings:
+  max_length: 2000
+module: text
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

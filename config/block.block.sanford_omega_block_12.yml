@@ -1,0 +1,32 @@
+uuid: b7bdedce-d3fb-4e0a-80ef-d3e6d48725f8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b008dc8c-ed4e-4904-b45c-687e6e3c252b'
+  module:
+    - block_content
+    - system
+  theme:
+    - bartik
+id: sanford_omega_block_12
+theme: bartik
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:b008dc8c-ed4e-4904-b45c-687e6e3c252b'
+settings:
+  id: 'block_content:b008dc8c-ed4e-4904-b45c-687e6e3c252b'
+  label: 'Neutrino Day links'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: |-
+      /neutrinoday
+      /neutrinoday/*

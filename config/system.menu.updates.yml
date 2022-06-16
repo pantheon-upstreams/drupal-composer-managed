@@ -1,0 +1,8 @@
+uuid: f34e4796-6f33-42c4-a896-f1c97dc92a2c
+langcode: en
+status: true
+dependencies: {  }
+id: updates
+label: Updates
+description: 'Used to collect links to social media resources'
+locked: false

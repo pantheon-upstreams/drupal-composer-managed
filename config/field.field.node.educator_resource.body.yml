@@ -1,0 +1,23 @@
+uuid: 5c839a13-19fb-4a64-b549-91d7490014a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.educator_resource
+  module:
+    - text
+id: node.educator_resource.body
+field_name: body
+entity_type: node
+bundle: educator_resource
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

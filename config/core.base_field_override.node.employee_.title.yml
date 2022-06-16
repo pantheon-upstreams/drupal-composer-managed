@@ -1,0 +1,18 @@
+uuid: 3f4aea3e-1b01-489c-8aa2-95c6394082ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.employee_
+id: node.employee_.title
+field_name: title
+entity_type: node
+bundle: employee_
+label: 'Full Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

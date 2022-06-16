@@ -1,0 +1,38 @@
+uuid: 453ad6a4-d723-4963-9595-f111f97a2d2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.jotform.body
+    - field.field.node.jotform.field_button_title
+    - field.field.node.jotform.field_embed_registration_form
+    - node.type.jotform
+  module:
+    - text
+    - user
+id: node.jotform.default
+targetEntityType: node
+bundle: jotform
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_embed_registration_form:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_button_title: true

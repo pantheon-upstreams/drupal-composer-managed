@@ -1,0 +1,30 @@
+uuid: 15de446e-6ac9-46c5-b1d1-e3a412353e7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__events_workshops
+theme: surf
+region: listing
+weight: 0
+provider: null
+plugin: 'views_block:events-workshops'
+settings:
+  id: 'views_block:events-workshops'
+  label: 'Upcoming Events'
+  label_display: visible
+  provider: views
+  views_label: 'Upcoming Events'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /node/185

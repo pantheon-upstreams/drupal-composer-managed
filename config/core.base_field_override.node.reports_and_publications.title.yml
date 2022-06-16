@@ -1,0 +1,18 @@
+uuid: b0939841-943f-49be-b911-333dc3e2f3e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.reports_and_publications
+id: node.reports_and_publications.title
+field_name: title
+entity_type: node
+bundle: reports_and_publications
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

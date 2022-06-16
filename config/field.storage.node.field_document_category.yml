@@ -1,0 +1,27 @@
+uuid: 4d66783f-a3d9-485d-b5eb-f74bdfd544d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_document_category
+field_name: field_document_category
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: document
+      label: Document
+    -
+      value: media
+      label: 'Media Download'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

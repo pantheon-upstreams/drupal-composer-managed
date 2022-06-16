@@ -1,0 +1,21 @@
+uuid: 125f12fe-cb12-4602-83f3-0799a5e13235
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publisher
+    - node.type.headline
+  module:
+    - text
+id: node.headline.field_publisher
+field_name: field_publisher
+entity_type: node
+bundle: headline
+label: Publisher
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

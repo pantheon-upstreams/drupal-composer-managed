@@ -1,0 +1,21 @@
+uuid: 07c783e0-bf20-4cdc-ac68-ed801d11c370
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.employee_
+  module:
+    - text
+id: node.employee_.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: employee_
+label: 'First name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

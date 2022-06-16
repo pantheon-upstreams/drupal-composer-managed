@@ -1,0 +1,24 @@
+uuid: a3075c74-32a0-4ac4-a753-6e3177eb1829
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags:
+  description: '[node:summary]'
+  title: '[node:title] | [site:name]'
+  canonical_url: '[node:url]'
+  og_image: '[node:field_paragraph_featured_image:entity:field_image:entity:url]'
+  og_type: '[node:content-type:name]'
+  og_site_name: 'Sanford Underground Research Facility'
+  og_title: '[current-page:title]'
+  og_description: '[node:summary]'
+  og_url: '[current-page:url]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_site: '@SanfordLab'
+  twitter_cards_page_url: '[current-page:url]'
+  twitter_cards_type: summary_large_image
+  twitter_cards_image: '[node:field_paragraph_featured_image:entity:field_image:full_teaser]'
+  twitter_cards_title: '[current-page:title]'

@@ -1,0 +1,25 @@
+uuid: a6322a12-5aa4-4a4e-9ab7-235acd27993b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ism_rev_
+    - node.type.ehs_manual_page
+id: node.ehs_manual_page.field_ism_rev_
+field_name: field_ism_rev_
+entity_type: node
+bundle: ehs_manual_page
+label: Revision
+description: 'ISM Revision Number'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: 999
+  prefix: 'Rev. 0'
+  suffix: ''
+field_type: integer

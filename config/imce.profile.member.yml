@@ -1,0 +1,23 @@
+uuid: 2326f35c-5e2b-422e-a988-2309da61d5bc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8J9aFZdUzbHV6w1y727kflHq31ev3U3wy7U-zSWDkeE
+id: member
+label: 'Member profile'
+description: 'Configuration for site members'
+conf:
+  extensions: 'jpg png gif svg'
+  maxsize: !!float 32
+  quota: !!float 60
+  maxwidth: 1024
+  maxheight: 1024
+  replace: 0
+  folders:
+    -
+      path: 'users/user[user:uid]'
+      permissions:
+        browse_files: true
+        upload_files: true
+        delete_files: true

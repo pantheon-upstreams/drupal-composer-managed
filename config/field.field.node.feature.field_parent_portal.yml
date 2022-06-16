@@ -1,0 +1,27 @@
+uuid: d1940405-9c5b-43c8-80df-c2f6a7a2b6db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_portal
+    - node.type.feature
+id: node.feature.field_parent_portal
+field_name: field_parent_portal
+entity_type: node
+bundle: feature
+label: 'Parent Feature'
+description: 'If applicable, enter a parent feature here. (e.g., "Science and Discovery")'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      feature: feature
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

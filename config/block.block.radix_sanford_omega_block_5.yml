@@ -1,0 +1,25 @@
+uuid: 737442d6-9946-4554-a726-ff1d3366e834
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f30fa183-921e-4809-a85b-c8b709fe2f82'
+  module:
+    - block_content
+  theme:
+    - radix
+id: radix_sanford_omega_block_5
+theme: radix
+region: content
+weight: 2
+provider: null
+plugin: 'block_content:f30fa183-921e-4809-a85b-c8b709fe2f82'
+settings:
+  id: 'block_content:f30fa183-921e-4809-a85b-c8b709fe2f82'
+  label: ''
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

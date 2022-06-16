@@ -1,0 +1,39 @@
+uuid: 443bd751-61f3-4166-a0a2-df7f87a3a51f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block
+    - node
+  theme:
+    - surf
+id: footer_4
+theme: surf
+region: sidebar
+weight: -30
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: 'Footer: Jobs'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 2
+  expand_all_items: false
+  parent: 'footer:menu_link_content:58069d6d-14d3-4d0b-807f-45b7b654c630'
+  suggestion: footer
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      job_posting: job_posting

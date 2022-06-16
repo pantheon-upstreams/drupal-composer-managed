@@ -1,0 +1,29 @@
+uuid: c7c44a48-c88a-4b01-85ae-b0defa18453c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_manual_category
+    - node.type.ehs_manual_page
+    - taxonomy.vocabulary.ehs_manual
+id: node.ehs_manual_page.field_manual_category
+field_name: field_manual_category
+entity_type: node
+bundle: ehs_manual_page
+label: 'EHS Manual category'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    tid: '100'
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ehs_manual: ehs_manual
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

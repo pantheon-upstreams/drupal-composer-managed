@@ -1,0 +1,20 @@
+uuid: c3ea2f0a-99d4-409a-9aae-97fcbea9ddcc
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_republished
+field_name: field_republished
+entity_type: node
+type: text
+settings:
+  max_length: 60
+module: text
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

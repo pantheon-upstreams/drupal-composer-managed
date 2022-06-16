@@ -1,0 +1,32 @@
+uuid: 22506bf7-0a7c-4afc-b39b-3c5dfed59949
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_portal
+    - node.type.facility
+    - node.type.portal
+  content:
+    - 'node:portal:4a093ece-a51b-450e-9866-663e88108dc2'
+id: node.facility.field_parent_portal
+field_name: field_parent_portal
+entity_type: node
+bundle: facility
+label: 'Parent Portal'
+description: 'If this page is part of a portal, reference the parent landing page here.'
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 4a093ece-a51b-450e-9866-663e88108dc2
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      portal: portal
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: 27377ea7-7d95-4c04-8f2d-9ca9be407b2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.page
+  module:
+    - file
+id: node.page.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: page
+label: 'DEPRECATED: Attachments'
+description: 'Any existing attachments should be added as "Document/Media Download" content and associated using the More Information field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+field_type: file

@@ -1,0 +1,30 @@
+uuid: 6a11d6da-63eb-40ba-88c0-2a48b9ccde04
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.esh_manual
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__esh_manual_toc
+theme: surf
+region: listing
+weight: -26
+provider: null
+plugin: 'views_block:esh_manual-toc'
+settings:
+  id: 'views_block:esh_manual-toc'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /esh

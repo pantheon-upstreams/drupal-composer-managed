@@ -1,0 +1,18 @@
+uuid: f86eade1-976a-4a37-9e4f-12daa37dd865
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.surf_newsletter
+id: node.surf_newsletter.title
+field_name: title
+entity_type: node
+bundle: surf_newsletter
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,40 @@
+uuid: 799ade78-b884-4376-a8e5-dfeb7b239460
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.centered_image_text.field_image_centered
+    - field.field.paragraph.centered_image_text.field_running_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.centered_image_text
+  module:
+    - image
+    - imce
+    - text
+id: paragraph.centered_image_text.default
+targetEntityType: paragraph
+bundle: centered_image_text
+mode: default
+content:
+  field_image_centered:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings:
+      imce:
+        enabled: true
+  field_running_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

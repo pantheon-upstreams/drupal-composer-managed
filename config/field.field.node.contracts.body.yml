@@ -1,0 +1,23 @@
+uuid: 2b4761ae-74f4-4a34-9815-82c68c71c071
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.contracts
+  module:
+    - text
+id: node.contracts.body
+field_name: body
+entity_type: node
+bundle: contracts
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

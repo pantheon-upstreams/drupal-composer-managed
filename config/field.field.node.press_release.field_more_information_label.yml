@@ -1,0 +1,19 @@
+uuid: bdcc29a3-aa7f-41f4-aa29-375e8bf8caca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_information_label
+    - node.type.press_release
+id: node.press_release.field_more_information_label
+field_name: field_more_information_label
+entity_type: node
+bundle: press_release
+label: 'More Information: Alternative Label'
+description: 'If you want this "More Information" section to use a custom heading/label, enter it here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

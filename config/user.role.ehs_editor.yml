@@ -1,0 +1,61 @@
+uuid: b04bb469-8ade-4bb4-afb2-33997fde857e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.editor_s_set
+    - filter.format.full_html
+    - node.type.ehs_manual_page
+    - node.type.event
+  module:
+    - comment
+    - contact
+    - content_access
+    - contextual
+    - filter
+    - node
+    - scheduler
+    - search
+    - system
+    - toolbar
+id: ehs_editor
+label: 'EHS editor'
+weight: -10
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer nodes'
+  - 'change own username'
+  - 'create ehs_manual_page content'
+  - 'create event content'
+  - 'delete any ehs_manual_page content'
+  - 'delete ehs_manual_page revisions'
+  - 'delete own ehs_manual_page content'
+  - 'delete own event content'
+  - 'edit any ehs_manual_page content'
+  - 'edit any event content'
+  - 'edit own comments'
+  - 'edit own ehs_manual_page content'
+  - 'edit own event content'
+  - 'grant content access'
+  - 'grant own content access'
+  - 'post comments'
+  - 'revert ehs_manual_page revisions'
+  - 'schedule publishing of nodes'
+  - 'search content'
+  - 'use advanced search'
+  - 'use text format basic_html'
+  - 'use text format editor_s_set'
+  - 'use text format full_html'
+  - 'view all revisions'
+  - 'view ehs_manual_page revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

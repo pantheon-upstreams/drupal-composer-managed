@@ -1,0 +1,8 @@
+uuid: 63694622-7661-42d0-8104-fe1862267a3f
+langcode: en
+status: true
+dependencies: {  }
+name: Events
+vid: events
+description: 'Terms to categorize an event'
+weight: -5

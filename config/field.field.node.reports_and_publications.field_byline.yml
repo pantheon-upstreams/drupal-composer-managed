@@ -1,0 +1,21 @@
+uuid: 456df07a-acc5-4475-8266-1b822602b24a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_byline
+    - node.type.reports_and_publications
+  module:
+    - text
+id: node.reports_and_publications.field_byline
+field_name: field_byline
+entity_type: node
+bundle: reports_and_publications
+label: Author(s)
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

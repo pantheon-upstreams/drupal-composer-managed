@@ -1,0 +1,20 @@
+uuid: 05642c6e-9b86-4118-aa2d-65851cba19a7
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - surf
+id: surf_user_login
+theme: surf
+region: navbar_branding
+weight: -25
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  label_display: '0'
+  provider: user
+visibility: {  }

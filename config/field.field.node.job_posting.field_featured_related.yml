@@ -1,0 +1,38 @@
+uuid: 759bf3ab-2280-4261-8aca-cca846c3d03b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_related
+    - node.type.article
+    - node.type.event
+    - node.type.experiment
+    - node.type.facility
+    - node.type.feature
+    - node.type.job_posting
+    - node.type.portal
+id: node.job_posting.field_featured_related
+field_name: field_featured_related
+entity_type: node
+bundle: job_posting
+label: 'Featured Related Content'
+description: 'If applicable, associate additional site content for prominent display at the bottom of the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      event: event
+      experiment: experiment
+      facility: facility
+      feature: feature
+      portal: portal
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

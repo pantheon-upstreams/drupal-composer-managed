@@ -1,0 +1,33 @@
+uuid: 78726cc7-dc8f-4d5e-b710-239e634f9841
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.experiment_content
+  module:
+    - node
+    - views
+  theme:
+    - surf
+id: views_block__experiment_content_listing
+theme: surf
+region: listing
+weight: -18
+provider: null
+plugin: 'views_block:experiment_content-listing'
+settings:
+  id: 'views_block:experiment_content-listing'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      experiment: experiment
+      facility: facility

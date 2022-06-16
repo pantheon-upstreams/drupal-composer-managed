@@ -1,0 +1,32 @@
+uuid: d06325ff-b66b-418f-b2e8-c263a8a25878
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.file.image.field_caption
+    - field.field.file.image.field_credit
+  module:
+    - file
+    - text
+id: file.image.default
+targetEntityType: file
+bundle: image
+mode: default
+content:
+  field_caption:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_credit:
+    type: text_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

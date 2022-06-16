@@ -1,0 +1,21 @@
+uuid: 54145257-0257-4fd7-9bde-319341ebd5b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.facility
+  module:
+    - text
+id: node.facility.field_overview
+field_name: field_overview
+entity_type: node
+bundle: facility
+label: Overview
+description: 'Enter a brief (125 character) description of the content. This will also be used when this content is teased throughout the site.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

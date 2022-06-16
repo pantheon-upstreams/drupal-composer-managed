@@ -1,0 +1,27 @@
+uuid: 1851a4b7-f832-40cd-a283-86f322b2e9cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - surf
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: surf_messages
+theme: surf
+region: content
+weight: -38
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /press-release/sanford-lab-science-director-speak-first-ever-nobel-day-lead

@@ -1,0 +1,8 @@
+uuid: dddaedcd-cd1d-48b1-a756-554cfb0bf78d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Learning link categories'
+vid: e_and_o_link_categories
+description: 'Education and Outreach link category '
+weight: -8

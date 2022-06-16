@@ -1,0 +1,59 @@
+uuid: e7d3d293-3e72-49ce-b7a2-9e71a56d0e7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_image
+    - field.field.node.press_release.body
+    - field.field.node.press_release.field_more_information
+    - field.field.node.press_release.field_more_information_label
+    - field.field.node.press_release.field_overview
+    - field.field.node.press_release.field_paragraph_featured_image
+    - field.field.node.press_release.field_press_contact
+    - field.field.node.press_release.field_published_on
+    - field.field.node.press_release.field_url
+    - node.type.press_release
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.press_release.teaser_image
+targetEntityType: node
+bundle: press_release
+mode: teaser_image
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 125
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph_featured_image:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_with_image
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_more_information: true
+  field_more_information_label: true
+  field_press_contact: true
+  field_published_on: true
+  field_url: true

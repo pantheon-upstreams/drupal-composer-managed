@@ -1,0 +1,53 @@
+uuid: 62060df6-1545-4bb0-9d90-4eb2cd534665
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.featured_link.field_description
+    - field.field.node.featured_link.field_external_link
+    - field.field.node.featured_link.field_overview
+    - field.field.node.featured_link.field_paragraph_featured_image
+    - field.field.node.featured_link.field_published_date
+    - node.type.featured_link
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+    - user
+id: node.featured_link.default
+targetEntityType: node
+bundle: featured_link
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraph_featured_image:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_overview: true
+  field_published_date: true
+  links: true

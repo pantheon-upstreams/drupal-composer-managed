@@ -1,0 +1,21 @@
+uuid: 085a86e0-d368-420f-8504-76e7d9a2702c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_running_text
+    - paragraphs.paragraphs_type.centered_image_text
+  module:
+    - text
+id: paragraph.centered_image_text.field_running_text
+field_name: field_running_text
+entity_type: paragraph
+bundle: centered_image_text
+label: 'Running Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

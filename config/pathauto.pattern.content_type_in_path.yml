@@ -1,0 +1,35 @@
+uuid: 382ac2a5-cb02-4cbb-82ee-8758e8a87580
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content_type_in_path
+label: 'Content Type in Path'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria:
+  2753733f-3d69-43b7-a859-e281e2da80ef:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2753733f-3d69-43b7-a859-e281e2da80ef
+    context_mapping:
+      node: node
+    bundles:
+      jotform: jotform
+      article: article
+      contracts: contracts
+      educator_resource: educator_resource
+      employee_: employee_
+      event: event
+      experiment: experiment
+      facility: facility
+      feature: feature
+      headline: headline
+      job_posting: job_posting
+      meeting_minutes: meeting_minutes
+      press_release: press_release
+      reports_and_publications: reports_and_publications
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,8 @@
+uuid: dec45f6b-a0fa-4bef-9a32-4c2323f71148
+langcode: en
+status: true
+dependencies: {  }
+name: 'ESH Manual'
+vid: ehs_manual
+description: 'Terms to organize the ESH Manual'
+weight: 0

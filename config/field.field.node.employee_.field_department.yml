@@ -1,0 +1,27 @@
+uuid: 566ae072-67a0-4b4f-a95f-65a20497c935
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department
+    - node.type.employee_
+    - taxonomy.vocabulary.department
+id: node.employee_.field_department
+field_name: field_department
+entity_type: node
+bundle: employee_
+label: Department
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department: department
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

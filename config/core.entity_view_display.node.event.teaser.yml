@@ -1,0 +1,60 @@
+uuid: 2b282c2b-6ae3-4097-a1e8-7d121ddefb8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_call_to_action_reference
+    - field.field.node.event.field_contact_person_s_
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_featured_related
+    - field.field.node.event.field_location
+    - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_map_link
+    - field.field.node.event.field_location_note
+    - field.field.node.event.field_location_website
+    - field.field.node.event.field_more_information
+    - field.field.node.event.field_more_information_label
+    - field.field.node.event.field_overview
+    - field.field.node.event.field_paragraph_featured_image
+    - field.field.node.event.field_time_and_date
+    - node.type.event
+  module:
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 125
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_call_to_action_reference: true
+  field_contact_person_s_: true
+  field_event_category: true
+  field_featured_related: true
+  field_location: true
+  field_location_address: true
+  field_location_map_link: true
+  field_location_note: true
+  field_location_website: true
+  field_more_information: true
+  field_more_information_label: true
+  field_paragraph_featured_image: true
+  field_time_and_date: true
+  links: true

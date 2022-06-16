@@ -1,0 +1,46 @@
+uuid: 8181a3e8-6883-48b7-976b-81ae042f4315
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.ehs_manual_page
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: true
+    retroactive_update: false
+    active_updating: false
+id: node.ehs_manual_page.field_document
+field_name: field_document
+entity_type: node
+bundle: ehs_manual_page
+label: 'Download Chapter as PDF'
+description: 'You can upload a file here for users to download the PDF version of this chapter.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: 50MB
+  description_field: true
+field_type: file

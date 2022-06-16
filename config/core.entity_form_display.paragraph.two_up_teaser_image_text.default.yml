@@ -1,0 +1,97 @@
+uuid: f3d749d4-8c0c-4824-a809-42c9c13c3ca1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.two_up_teaser_image_text.field_content_left
+    - field.field.paragraph.two_up_teaser_image_text.field_content_right
+    - field.field.paragraph.two_up_teaser_image_text.field_heading_left
+    - field.field.paragraph.two_up_teaser_image_text.field_heading_right
+    - field.field.paragraph.two_up_teaser_image_text.field_image_left
+    - field.field.paragraph.two_up_teaser_image_text.field_image_right
+    - field.field.paragraph.two_up_teaser_image_text.field_link_left
+    - field.field.paragraph.two_up_teaser_image_text.field_link_right
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.two_up_teaser_image_text
+  module:
+    - image
+    - imce
+    - link
+    - text
+id: paragraph.two_up_teaser_image_text.default
+targetEntityType: paragraph
+bundle: two_up_teaser_image_text
+mode: default
+content:
+  field_content_left:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_content_right:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading_left:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading_right:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_left:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings:
+      imce:
+        enabled: true
+  field_image_right:
+    type: image_image
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings:
+      imce:
+        enabled: true
+  field_link_left:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_right:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

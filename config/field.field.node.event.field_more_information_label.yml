@@ -1,0 +1,19 @@
+uuid: ca5761c3-8aa6-4d49-adea-2ae659f6b3a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_information_label
+    - node.type.event
+id: node.event.field_more_information_label
+field_name: field_more_information_label
+entity_type: node
+bundle: event
+label: 'More Information: Alternative Label'
+description: 'If you want this "More Information" section to use a custom heading/label, enter it here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

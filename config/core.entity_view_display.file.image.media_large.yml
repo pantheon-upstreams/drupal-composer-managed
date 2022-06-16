@@ -1,0 +1,31 @@
+uuid: 05b20e3a-757e-4bc2-86d7-28fea036daba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.file.media_large
+    - field.field.file.image.field_caption
+    - field.field.file.image.field_credit
+  module:
+    - file
+    - text
+id: file.image.media_large
+targetEntityType: file
+bundle: image
+mode: media_large
+content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_credit:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

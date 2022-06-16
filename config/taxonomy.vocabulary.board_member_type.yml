@@ -1,0 +1,8 @@
+uuid: 5adc4c0d-467c-42ee-a006-4b41bf0e329f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Profile type'
+vid: board_member_type
+description: 'These are terms to distignuish one board from another.'
+weight: 0

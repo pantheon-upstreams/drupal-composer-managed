@@ -1,0 +1,14 @@
+uuid: ad6f3506-29e0-4390-931b-581a616b682c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.science
+  module:
+    - user
+id: user_remove_role_action.science
+label: 'Remove the Science role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: science

@@ -1,0 +1,21 @@
+uuid: d900c406-492e-4954-806a-2c6ad831d6cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date_range
+    - node.type.event
+  module:
+    - datetime_range
+id: node.event.field_event_date_range
+field_name: field_event_date_range
+entity_type: node
+bundle: event
+label: 'Event Date Range'
+description: 'These fields are optional. Use only if you want to display a Start date and an End date for this event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

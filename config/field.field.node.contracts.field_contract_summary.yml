@@ -1,0 +1,21 @@
+uuid: ebc75d02-eeb6-4e92-95aa-6a157f2d6d03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contract_summary
+    - node.type.contracts
+  module:
+    - text
+id: node.contracts.field_contract_summary
+field_name: field_contract_summary
+entity_type: node
+bundle: contracts
+label: 'Contract Summary'
+description: 'Enter a brief summary of the contract here. A link to the full body content will be presented below.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

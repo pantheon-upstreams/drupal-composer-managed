@@ -1,0 +1,21 @@
+uuid: cbbe9298-b5e1-49f0-9968-1e6034fa1af4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_title
+    - node.type.employee_
+  module:
+    - text
+id: node.employee_.field_job_title
+field_name: field_job_title
+entity_type: node
+bundle: employee_
+label: 'Job title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

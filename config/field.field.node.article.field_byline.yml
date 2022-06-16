@@ -1,0 +1,24 @@
+uuid: 0b9de81f-ec93-45d1-b104-359b1dd3bc32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_byline
+    - node.type.article
+  module:
+    - text
+id: node.article.field_byline
+field_name: field_byline
+entity_type: node
+bundle: article
+label: By
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Constance Walter'
+    format: plain
+default_value_callback: ''
+settings: {  }
+field_type: text

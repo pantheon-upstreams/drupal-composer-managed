@@ -1,0 +1,27 @@
+uuid: 8100e072-a229-4a88-b880-7051cf0c843e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachment
+    - node.type.ehs_manual_page
+  module:
+    - file
+id: node.ehs_manual_page.field_attachment
+field_name: field_attachment
+entity_type: node
+bundle: ehs_manual_page
+label: Attachments
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: docs/ehs
+  file_extensions: pdf
+  max_filesize: '1 MB'
+  description_field: true
+field_type: file

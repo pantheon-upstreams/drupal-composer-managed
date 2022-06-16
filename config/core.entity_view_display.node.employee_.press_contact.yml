@@ -1,0 +1,81 @@
+uuid: 9f663417-3088-4d38-8cc3-d73e95b5da5e
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.press_contact
+    - field.field.node.employee_.field_cell_phone
+    - field.field.node.employee_.field_department
+    - field.field.node.employee_.field_email
+    - field.field.node.employee_.field_first_name
+    - field.field.node.employee_.field_job_title
+    - field.field.node.employee_.field_last_name
+    - field.field.node.employee_.field_office_phone
+    - field.field.node.employee_.field_user
+    - node.type.employee_
+  module:
+    - text
+    - user
+id: node.employee_.press_contact
+targetEntityType: node
+bundle: employee_
+mode: press_contact
+content:
+  field_cell_phone:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_department:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_first_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_job_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_last_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_office_phone:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_user:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_email: true

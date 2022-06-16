@@ -1,0 +1,24 @@
+uuid: 5b5710c9-df09-41db-b2dc-afc16fc350a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_image
+  module:
+    - views
+  theme:
+    - surf
+id: views_block__hero_image_block
+theme: surf
+region: hero
+weight: -38
+provider: null
+plugin: 'views_block:hero_image-block'
+settings:
+  id: 'views_block:hero_image-block'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

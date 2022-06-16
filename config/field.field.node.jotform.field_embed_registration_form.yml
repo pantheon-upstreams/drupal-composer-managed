@@ -1,0 +1,21 @@
+uuid: 83162ccc-1efa-45c9-9173-3950df0f5204
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_embed_registration_form
+    - node.type.jotform
+  module:
+    - text
+id: node.jotform.field_embed_registration_form
+field_name: field_embed_registration_form
+entity_type: node
+bundle: jotform
+label: 'Embed Registration form'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

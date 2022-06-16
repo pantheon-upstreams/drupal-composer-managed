@@ -1,0 +1,70 @@
+uuid: c5429d01-7fd2-4da9-be04-073e874b93bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sdsta_board_meeting.body
+    - field.field.node.sdsta_board_meeting.field_external_link
+    - field.field.node.sdsta_board_meeting.field_location
+    - field.field.node.sdsta_board_meeting.field_meeting_date
+    - field.field.node.sdsta_board_meeting.field_min
+    - node.type.sdsta_board_meeting
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.sdsta_board_meeting.default
+targetEntityType: node
+bundle: sdsta_board_meeting
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_external_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: nofollow
+      target: _blank
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_location:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_meeting_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_min:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden: {  }

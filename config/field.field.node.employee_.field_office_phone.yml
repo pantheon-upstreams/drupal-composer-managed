@@ -1,0 +1,21 @@
+uuid: dd4810a1-eb32-4b9d-a928-61187e0a4fb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_office_phone
+    - node.type.employee_
+  module:
+    - text
+id: node.employee_.field_office_phone
+field_name: field_office_phone
+entity_type: node
+bundle: employee_
+label: 'Office Phone'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,30 @@
+uuid: 01f610aa-2fbd-4231-b3b1-214772b2a579
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: Feature
+type: feature
+description: 'Content for prominent display throughout the primary areas of the site. Includes Science Topics and Impacts.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

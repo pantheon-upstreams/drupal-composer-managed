@@ -1,0 +1,21 @@
+uuid: 5c8738e0-cce8-4990-b377-c49936de9e16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_milestone_date
+    - paragraphs.paragraphs_type.schedule_item
+  module:
+    - datetime
+id: paragraph.schedule_item.field_milestone_date
+field_name: field_milestone_date
+entity_type: paragraph
+bundle: schedule_item
+label: 'Milestone Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,18 @@
+uuid: e9abca6b-e803-46e3-9baf-21f14ae32ece
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contracts
+id: node.contracts.title
+field_name: title
+entity_type: node
+bundle: contracts
+label: 'Contract title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

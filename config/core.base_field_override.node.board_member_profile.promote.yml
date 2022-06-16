@@ -1,0 +1,22 @@
+uuid: 1df46b63-63fc-4658-810d-73c491aba431
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.board_member_profile
+id: node.board_member_profile.promote
+field_name: promote
+entity_type: node
+bundle: board_member_profile
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

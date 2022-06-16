@@ -1,0 +1,30 @@
+uuid: fa7d05a9-87ea-48cc-87df-e95207892475
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.portal_parent
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__portal_parent_jobs
+theme: surf
+region: sidebar
+weight: -36
+provider: null
+plugin: 'views_block:portal_parent-jobs'
+settings:
+  id: 'views_block:portal_parent-jobs'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/job-and-internship-opportunities\r\n/job-and-internship-opportunities/*\r\n/job-posting/*"

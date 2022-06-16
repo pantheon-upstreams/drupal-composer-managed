@@ -1,0 +1,48 @@
+uuid: 046657fb-53b4-4a95-971a-e75df11635ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.facility.body
+    - field.field.node.facility.field_experiment
+    - field.field.node.facility.field_featured_related
+    - field.field.node.facility.field_hero_image
+    - field.field.node.facility.field_more_information
+    - field.field.node.facility.field_more_information_label
+    - field.field.node.facility.field_overview
+    - field.field.node.facility.field_parent_portal
+    - node.type.facility
+  module:
+    - text
+    - user
+id: node.facility.default
+targetEntityType: node
+bundle: facility
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_experiment: true
+  field_featured_related: true
+  field_hero_image: true
+  field_more_information: true
+  field_more_information_label: true
+  field_parent_portal: true

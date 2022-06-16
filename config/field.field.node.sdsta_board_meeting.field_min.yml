@@ -1,0 +1,27 @@
+uuid: bd2dd942-5919-458e-91f0-c693a098da26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_min
+    - node.type.meeting_minutes
+    - node.type.sdsta_board_meeting
+id: node.sdsta_board_meeting.field_min
+field_name: field_min
+entity_type: node
+bundle: sdsta_board_meeting
+label: 'Minutes reference'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      meeting_minutes: meeting_minutes
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

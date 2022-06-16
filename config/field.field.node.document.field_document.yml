@@ -1,0 +1,46 @@
+uuid: e2b269f8-3c51-4dd3-b0a9-549d34dfb646
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.document
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: 'documents/[node:field_document_directory:value]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.document.field_document
+field_name: field_document
+entity_type: node
+bundle: document
+label: 'File Upload'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: documents
+  file_extensions: 'txt pdf doc docx xls xlsx rtf jpg png jpeg gif eps mp4 mov wav'
+  max_filesize: 60MB
+  description_field: false
+field_type: file

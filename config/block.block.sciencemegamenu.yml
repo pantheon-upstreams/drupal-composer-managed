@@ -1,0 +1,22 @@
+uuid: 789e0b4c-dc90-434f-a8f2-efe9d75bad66
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.mega_menu_science
+  module:
+    - simple_block
+  theme:
+    - surf
+id: sciencemegamenu
+theme: surf
+region: mega_menu
+weight: -35
+provider: null
+plugin: 'simple_block:mega_menu_science'
+settings:
+  id: 'simple_block:mega_menu_science'
+  label: 'Science Mega Menu'
+  label_display: '0'
+  provider: simple_block
+visibility: {  }

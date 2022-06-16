@@ -1,0 +1,35 @@
+uuid: 291fe375-438d-4f5f-a10e-17bdfc3397a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_person_s_
+    - node.type.contracts
+    - node.type.employee_
+  content:
+    - 'node:employee_:67d1359e-3379-4755-969d-68ae55c8ac7e'
+    - 'node:employee_:9a20bee2-e52c-4aa9-95f4-a5e4853cf075'
+id: node.contracts.field_contact_person_s_
+field_name: field_contact_person_s_
+entity_type: node
+bundle: contracts
+label: Contacts
+description: 'Associate any relevant contacts here.'
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 67d1359e-3379-4755-969d-68ae55c8ac7e
+  -
+    target_uuid: 9a20bee2-e52c-4aa9-95f4-a5e4853cf075
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      employee_: employee_
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

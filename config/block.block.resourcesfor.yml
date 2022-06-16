@@ -1,0 +1,31 @@
+uuid: 63fd43e7-1a34-4215-a786-d047fda6ecc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.resources-for
+  module:
+    - menu_block
+  theme:
+    - surf
+id: resourcesfor
+theme: surf
+region: resources
+weight: 0
+provider: null
+plugin: 'menu_block:resources-for'
+settings:
+  id: 'menu_block:resources-for'
+  label: 'Resources for...'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'resources-for:'
+  suggestion: resources_for
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: e2ba4af9-fc03-462b-8dbc-8bdefe35e77f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ism_document_number
+    - node.type.ehs_manual_page
+id: node.ehs_manual_page.field_ism_document_number
+field_name: field_ism_document_number
+entity_type: node
+bundle: ehs_manual_page
+label: 'IMS-Doc. #'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

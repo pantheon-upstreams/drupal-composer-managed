@@ -1,0 +1,23 @@
+uuid: ea16786d-ef1f-4fa6-bbb7-92c7de42ef75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.meeting_minutes
+  module:
+    - text
+id: node.meeting_minutes.body
+field_name: body
+entity_type: node
+bundle: meeting_minutes
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

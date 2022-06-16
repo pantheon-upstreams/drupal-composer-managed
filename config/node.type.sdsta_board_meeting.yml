@@ -1,0 +1,11 @@
+uuid: 1371cdcb-d4a6-4e8a-9594-2e78f6f8ffef
+langcode: en
+status: true
+dependencies: {  }
+name: 'SDSTA Board meeting'
+type: sdsta_board_meeting
+description: 'Use this content type to add a board meeting.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,45 @@
+uuid: 51450334-1fa1-4b28-946e-8e1e67e9c2b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full_teaser
+    - field.field.node.feature.field_call_to_action_reference
+    - field.field.node.feature.field_feature_content
+    - field.field.node.feature.field_featured_related
+    - field.field.node.feature.field_hero_image
+    - field.field.node.feature.field_overview
+    - field.field.node.feature.field_parent_portal
+    - image.style.full_teaser
+    - node.type.feature
+  module:
+    - image
+    - text
+    - user
+id: node.feature.full_teaser
+targetEntityType: node
+bundle: feature
+mode: full_teaser
+content:
+  field_hero_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: full_teaser
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_call_to_action_reference: true
+  field_feature_content: true
+  field_featured_related: true
+  field_parent_portal: true
+  links: true

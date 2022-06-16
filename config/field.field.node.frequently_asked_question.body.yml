@@ -1,0 +1,23 @@
+uuid: 2839b558-83e0-4bc8-aa23-86ca666af6f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.frequently_asked_question
+  module:
+    - text
+id: node.frequently_asked_question.body
+field_name: body
+entity_type: node
+bundle: frequently_asked_question
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

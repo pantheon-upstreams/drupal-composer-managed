@@ -1,0 +1,29 @@
+uuid: 6a2993e8-7694-45f6-84e1-3060868a0e6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Document/Media Download'
+type: document
+description: 'Used to upload documents/downloads for association with other content-types.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

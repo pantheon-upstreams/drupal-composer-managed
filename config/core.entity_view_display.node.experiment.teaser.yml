@@ -1,0 +1,39 @@
+uuid: 37d8223b-8936-4d45-b611-7c15d5bb2368
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.experiment.body
+    - field.field.node.experiment.field_experiment
+    - field.field.node.experiment.field_feature_content
+    - field.field.node.experiment.field_featured_related
+    - field.field.node.experiment.field_hero_image
+    - field.field.node.experiment.field_more_information
+    - field.field.node.experiment.field_overview
+    - field.field.node.experiment.field_url
+    - node.type.experiment
+  module:
+    - text
+    - user
+id: node.experiment.teaser
+targetEntityType: node
+bundle: experiment
+mode: teaser
+content:
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_experiment: true
+  field_feature_content: true
+  field_featured_related: true
+  field_hero_image: true
+  field_more_information: true
+  field_url: true
+  links: true

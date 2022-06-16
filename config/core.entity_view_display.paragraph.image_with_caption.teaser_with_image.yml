@@ -1,0 +1,32 @@
+uuid: 22e19cf0-82e6-4089-b07e-b34f74488742
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teaser_with_image
+    - field.field.paragraph.image_with_caption.field_image
+    - field.field.paragraph.image_with_caption.field_image_caption
+    - field.field.paragraph.image_with_caption.field_image_credit
+    - image.style.featured_image
+    - paragraphs.paragraphs_type.image_with_caption
+  module:
+    - image
+id: paragraph.image_with_caption.teaser_with_image
+targetEntityType: paragraph
+bundle: image_with_caption
+mode: teaser_with_image
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: featured_image
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_image_caption: true
+  field_image_credit: true
+  uid: true

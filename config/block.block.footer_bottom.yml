@@ -1,0 +1,25 @@
+uuid: 948d95da-3267-4c44-9b14-e4a8851791c2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0d750383-e9aa-40ec-8d83-9c4560b81219'
+  module:
+    - block_content
+  theme:
+    - surf
+id: footer_bottom
+theme: surf
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'block_content:0d750383-e9aa-40ec-8d83-9c4560b81219'
+settings:
+  id: 'block_content:0d750383-e9aa-40ec-8d83-9c4560b81219'
+  label: 'Footer Bottom'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

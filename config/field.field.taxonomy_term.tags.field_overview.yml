@@ -1,0 +1,21 @@
+uuid: a68b0746-a451-4c59-a1d4-3201f33a4508
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_overview
+    - taxonomy.vocabulary.tags
+  module:
+    - text
+id: taxonomy_term.tags.field_overview
+field_name: field_overview
+entity_type: taxonomy_term
+bundle: tags
+label: Overview
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

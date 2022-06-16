@@ -1,0 +1,21 @@
+uuid: 32572c60-9c7a-4246-bc86-25f035438894
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - seven
+id: seven_search_form
+theme: seven
+region: header
+weight: -3
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: ''
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

@@ -1,0 +1,10 @@
+uuid: d58ec4d6-99c3-41e6-aee1-10b4800542e5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lO5ziR5dVI1PpEeHZsSOfQ-Y7NWihSDKW8-MMf6uoms
+name: 'Experiments and Facilities'
+vid: tags
+description: ''
+weight: -4

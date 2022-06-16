@@ -1,0 +1,18 @@
+uuid: 02ad099b-8105-479e-8289-e33331d3255a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.deep_thoughts_newsletter
+id: node.deep_thoughts_newsletter.title
+field_name: title
+entity_type: node
+bundle: deep_thoughts_newsletter
+label: Issue
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

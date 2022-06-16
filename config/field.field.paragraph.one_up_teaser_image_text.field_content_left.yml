@@ -1,0 +1,21 @@
+uuid: 12b848c7-8cfc-44bf-97f7-14a54fba6bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_left
+    - paragraphs.paragraphs_type.one_up_teaser_image_text
+  module:
+    - text
+id: paragraph.one_up_teaser_image_text.field_content_left
+field_name: field_content_left
+entity_type: paragraph
+bundle: one_up_teaser_image_text
+label: Content
+description: 'This field is only intended for a small amount of text-based content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

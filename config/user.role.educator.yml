@@ -1,0 +1,63 @@
+uuid: a928a640-89af-4dbf-8f2e-54258df7703e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.editor_s_set
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.plain
+    - node.type.educator_resource
+    - node.type.event
+    - node.type.jotform
+    - node.type.page
+  module:
+    - comment
+    - contact
+    - content_access
+    - contextual
+    - filter
+    - media
+    - node
+    - scheduler
+    - system
+    - toolbar
+id: educator
+label: Educator
+weight: -4
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer media'
+  - 'administer nodes'
+  - 'create educator_resource content'
+  - 'create event content'
+  - 'create jotform content'
+  - 'create page content'
+  - 'delete any event content'
+  - 'delete own event content'
+  - 'edit any educator_resource content'
+  - 'edit any event content'
+  - 'edit any jotform content'
+  - 'edit own comments'
+  - 'edit own educator_resource content'
+  - 'edit own event content'
+  - 'edit own jotform content'
+  - 'edit own page content'
+  - 'grant own content access'
+  - 'post comments'
+  - 'revert educator_resource revisions'
+  - 'schedule publishing of nodes'
+  - 'use text format editor_s_set'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'use text format plain'
+  - 'view educator_resource revisions'
+  - 'view own unpublished content'
+  - 'view scheduled content'
+  - 'view the administration theme'

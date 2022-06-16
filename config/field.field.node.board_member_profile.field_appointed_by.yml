@@ -1,0 +1,21 @@
+uuid: f3175d3d-eee1-4a2d-974e-6e82fd7d2f79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appointed_by
+    - node.type.board_member_profile
+  module:
+    - text
+id: node.board_member_profile.field_appointed_by
+field_name: field_appointed_by
+entity_type: node
+bundle: board_member_profile
+label: 'Appointed by'
+description: 'Name of the Governor who appointed this member.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,32 @@
+uuid: 5773e307-802e-4cda-b940-4bf64b0f5a97
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.meeting_minutes.body
+    - field.field.node.meeting_minutes.field_official
+    - node.type.meeting_minutes
+  module:
+    - text
+    - user
+id: node.meeting_minutes.teaser
+targetEntityType: node
+bundle: meeting_minutes
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_official: true

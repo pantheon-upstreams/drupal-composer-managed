@@ -1,0 +1,39 @@
+uuid: 81a3d7f9-378c-4baf-bc1a-6f52eb6745fa
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.title
+    - field.field.node.headline.field_byline
+    - field.field.node.headline.field_highlighted
+    - field.field.node.headline.field_published_on
+    - field.field.node.headline.field_publisher
+    - field.field.node.headline.field_republished
+    - field.field.node.headline.field_url
+    - node.type.headline
+  module:
+    - user
+id: node.headline.title
+targetEntityType: node
+bundle: headline
+mode: title
+content:
+  field_highlighted:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_byline: true
+  field_published_on: true
+  field_publisher: true
+  field_republished: true
+  field_url: true

@@ -1,0 +1,28 @@
+uuid: 9ec811a8-99b3-449f-aea1-f2da588156bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_press_contact
+    - node.type.employee_
+    - node.type.press_release
+id: node.press_release.field_press_contact
+field_name: field_press_contact
+entity_type: node
+bundle: press_release
+label: 'DEPRECATED: Press Contact'
+description: 'Use the More Information field instead.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      employee_: employee_
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

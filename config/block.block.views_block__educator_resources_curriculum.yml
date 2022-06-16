@@ -1,0 +1,30 @@
+uuid: 04822b0a-70f1-4cf9-83a8-101c94f0aca0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.educator_resources
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__educator_resources_curriculum
+theme: surf
+region: listing
+weight: -20
+provider: null
+plugin: 'views_block:educator_resources-curriculum'
+settings:
+  id: 'views_block:educator_resources-curriculum'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /node/2478

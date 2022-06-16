@@ -1,0 +1,6 @@
+uuid: ad39fec4-cfda-48b4-8618-a5a04c214e0d
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_lead_teaser
+label: 'Homepage Lead Teaser'

@@ -1,0 +1,21 @@
+uuid: 9da2b6e9-83fd-4312-a8a9-370d16ed8607
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_left
+    - paragraphs.paragraphs_type.two_up_figures
+  module:
+    - text
+id: paragraph.two_up_figures.field_content_left
+field_name: field_content_left
+entity_type: paragraph
+bundle: two_up_figures
+label: 'Content: Left'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

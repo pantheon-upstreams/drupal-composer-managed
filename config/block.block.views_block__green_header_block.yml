@@ -1,0 +1,34 @@
+uuid: 23fcc42d-def5-4549-b92a-39240bb89174
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.green_header
+  module:
+    - node
+    - views
+  theme:
+    - surf
+id: views_block__green_header_block
+theme: surf
+region: green
+weight: -34
+provider: null
+plugin: 'views_block:green_header-block'
+settings:
+  id: 'views_block:green_header-block'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      experiment: experiment
+      feature: feature
+      portal: portal

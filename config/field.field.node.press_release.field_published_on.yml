@@ -1,0 +1,21 @@
+uuid: 5147c7b4-3a8c-4fe2-b288-8fd8b9ca07a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_published_on
+    - node.type.press_release
+  module:
+    - datetime
+id: node.press_release.field_published_on
+field_name: field_published_on
+entity_type: node
+bundle: press_release
+label: 'For Release'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

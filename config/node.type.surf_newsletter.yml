@@ -1,0 +1,11 @@
+uuid: 0deddc81-a3a9-4e60-a1f1-00df35895f93
+langcode: en
+status: true
+dependencies: {  }
+name: 'SURF Monthy newsletter'
+type: surf_newsletter
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

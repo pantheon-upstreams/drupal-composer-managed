@@ -1,0 +1,30 @@
+uuid: 6594ca10-2b9a-4d96-9ffb-1895f98648b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.newsletters
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__newsletters_deep
+theme: surf
+region: listing
+weight: -14
+provider: null
+plugin: 'views_block:newsletters-deep'
+settings:
+  id: 'views_block:newsletters-deep'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /node/3838

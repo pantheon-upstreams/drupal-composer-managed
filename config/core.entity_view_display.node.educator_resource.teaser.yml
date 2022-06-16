@@ -1,0 +1,43 @@
+uuid: 247fa0fe-1c99-4eee-aec4-e81f692df479
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.educator_resource.body
+    - field.field.node.educator_resource.field_call_to_action_reference
+    - field.field.node.educator_resource.field_grade_level
+    - field.field.node.educator_resource.field_more_information
+    - field.field.node.educator_resource.field_more_information_label
+    - field.field.node.educator_resource.field_overview
+    - field.field.node.educator_resource.field_paragraph_featured_image
+    - field.field.node.educator_resource.field_resource_type
+    - field.field.node.educator_resource.field_time_required
+    - field.field.node.educator_resource.field_topic
+    - node.type.educator_resource
+  module:
+    - text
+    - user
+id: node.educator_resource.teaser
+targetEntityType: node
+bundle: educator_resource
+mode: teaser
+content:
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_call_to_action_reference: true
+  field_grade_level: true
+  field_more_information: true
+  field_more_information_label: true
+  field_paragraph_featured_image: true
+  field_resource_type: true
+  field_time_required: true
+  field_topic: true
+  links: true

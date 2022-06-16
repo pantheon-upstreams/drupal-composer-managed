@@ -1,0 +1,31 @@
+uuid: a5a32bb7-5a10-4aa2-bd78-8d38ddbb720b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.updates
+  module:
+    - menu_block
+  theme:
+    - surf
+id: updates
+theme: surf
+region: updates
+weight: 0
+provider: null
+plugin: 'menu_block:updates'
+settings:
+  id: 'menu_block:updates'
+  label: Updates
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'updates:'
+  suggestion: updates
+visibility: {  }

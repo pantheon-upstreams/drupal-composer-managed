@@ -1,0 +1,30 @@
+uuid: 8412adef-4a71-474e-9ffb-231dc92d5732
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__related_block
+theme: surf
+region: related
+weight: 0
+provider: null
+plugin: 'views_block:related-block'
+settings:
+  id: 'views_block:related-block'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

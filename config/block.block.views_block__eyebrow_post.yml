@@ -1,0 +1,24 @@
+uuid: 5cb4c062-34c5-4ed2-9d3e-21487c32435e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.eyebrow
+  module:
+    - views
+  theme:
+    - surf
+id: views_block__eyebrow_post
+theme: surf
+region: eyebrow
+weight: -35
+provider: null
+plugin: 'views_block:eyebrow-post'
+settings:
+  id: 'views_block:eyebrow-post'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

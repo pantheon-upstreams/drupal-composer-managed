@@ -1,0 +1,9 @@
+uuid: 3c218b2d-c23f-4931-9302-ff599e711442
+langcode: en
+status: true
+dependencies: {  }
+id: daily_backups
+label: 'Daily Backups'
+type: Directory
+config:
+  directory: 'private://backup_migrate/daily_backups'

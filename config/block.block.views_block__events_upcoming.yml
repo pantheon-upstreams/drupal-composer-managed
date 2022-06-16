@@ -1,0 +1,30 @@
+uuid: 5da24bdb-85f6-478a-ba9a-054a66e61034
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__events_upcoming
+theme: surf
+region: listing
+weight: -25
+provider: null
+plugin: 'views_block:events-upcoming'
+settings:
+  id: 'views_block:events-upcoming'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /node/2910

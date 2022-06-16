@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+langcode: en
+uuid: 52ca27b6-27fa-4c10-91a8-5ab90b9d564b
+name: 'Sanford Underground Research Facility'
+mail: communication@sanfordlab.org
+slogan: 'America''s Underground Science Laboratory'
+page:
+  403: ''
+  404: ''
+  front: /node/2969
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

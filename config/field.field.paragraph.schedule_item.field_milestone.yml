@@ -1,0 +1,19 @@
+uuid: 00673293-d39f-42e4-90e8-6da5c7a7fdcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_milestone
+    - paragraphs.paragraphs_type.schedule_item
+id: paragraph.schedule_item.field_milestone
+field_name: field_milestone
+entity_type: paragraph
+bundle: schedule_item
+label: Milestone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

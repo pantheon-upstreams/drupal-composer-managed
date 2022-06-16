@@ -1,0 +1,21 @@
+uuid: 6edb3725-5caf-4878-816a-6cf8131a1118
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_left
+    - paragraphs.paragraphs_type.homepage_lead_teaser
+  module:
+    - text
+id: paragraph.homepage_lead_teaser.field_content_left
+field_name: field_content_left
+entity_type: paragraph
+bundle: homepage_lead_teaser
+label: Content
+description: 'This field is only intended for a small amount of text-based content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

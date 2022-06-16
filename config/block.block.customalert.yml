@@ -1,0 +1,31 @@
+uuid: 60d8ad9a-5405-4ffe-87d0-173d1dbacdb0
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:aaf62219-7672-4ac0-b3f8-755e2e64fc2d'
+  module:
+    - block_content
+    - system
+  theme:
+    - surf
+id: customalert
+theme: surf
+region: content
+weight: -39
+provider: null
+plugin: 'block_content:aaf62219-7672-4ac0-b3f8-755e2e64fc2d'
+settings:
+  id: 'block_content:aaf62219-7672-4ac0-b3f8-755e2e64fc2d'
+  label: 'Custom Alert'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: /covid-19

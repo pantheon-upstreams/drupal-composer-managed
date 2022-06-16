@@ -1,0 +1,42 @@
+uuid: e88849dd-3abf-4b83-87f7-713eec8336ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_reference
+    - node.type.article
+    - node.type.document
+    - node.type.event
+    - node.type.experiment
+    - node.type.facility
+    - node.type.feature
+    - node.type.page
+    - node.type.portal
+    - paragraphs.paragraphs_type.entity_references_text
+id: paragraph.entity_references_text.field_content_reference
+field_name: field_content_reference
+entity_type: paragraph
+bundle: entity_references_text
+label: 'Content References'
+description: 'Ideally, these should be added in pairs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      document: document
+      event: event
+      experiment: experiment
+      facility: facility
+      feature: feature
+      portal: portal
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

@@ -1,0 +1,30 @@
+uuid: d11b5e0c-d882-4486-88de-ba11e5e5b784
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.surf_foundation_faq
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__surf_foundation_faq_block_2
+theme: surf
+region: content
+weight: -24
+provider: null
+plugin: 'views_block:surf_foundation_faq-block_2'
+settings:
+  id: 'views_block:surf_foundation_faq-block_2'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /surf-foundation/surf-foundation-faqs

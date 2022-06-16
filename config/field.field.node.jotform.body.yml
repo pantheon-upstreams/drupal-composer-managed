@@ -1,0 +1,23 @@
+uuid: 0ca39bc8-9a14-4575-95b0-6389c3729ec6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.jotform
+  module:
+    - text
+id: node.jotform.body
+field_name: body
+entity_type: node
+bundle: jotform
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

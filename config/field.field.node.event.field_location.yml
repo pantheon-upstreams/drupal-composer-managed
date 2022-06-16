@@ -1,0 +1,21 @@
+uuid: 40d8abd6-f85c-488a-96f8-c10798ab5f57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.event
+  module:
+    - text
+id: node.event.field_location
+field_name: field_location
+entity_type: node
+bundle: event
+label: Location
+description: 'Top level overview of the event location (e.g., Building name, room number)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

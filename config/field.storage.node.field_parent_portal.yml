@@ -1,0 +1,19 @@
+uuid: 6853595b-0ceb-470a-97b8-b7f087a43259
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_parent_portal
+field_name: field_parent_portal
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

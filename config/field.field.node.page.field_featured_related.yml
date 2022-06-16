@@ -1,0 +1,41 @@
+uuid: 6b1a8486-f8e0-4750-9fb3-ea3c2e940573
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_related
+    - node.type.article
+    - node.type.event
+    - node.type.experiment
+    - node.type.facility
+    - node.type.feature
+    - node.type.page
+    - node.type.portal
+    - node.type.press_release
+id: node.page.field_featured_related
+field_name: field_featured_related
+entity_type: node
+bundle: page
+label: 'Featured Related Content'
+description: 'If applicable, associate additional site content for prominent display at the bottom of the page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      event: event
+      experiment: experiment
+      facility: facility
+      feature: feature
+      portal: portal
+      press_release: press_release
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

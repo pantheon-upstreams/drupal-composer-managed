@@ -1,0 +1,21 @@
+uuid: 85995ee3-54f6-467d-9df3-7ae378de1c16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_directory
+    - node.type.document
+  module:
+    - options
+id: node.document.field_document_directory
+field_name: field_document_directory
+entity_type: node
+bundle: document
+label: 'Document Upload Directory'
+description: 'Select the most applicable directory for this file upload.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

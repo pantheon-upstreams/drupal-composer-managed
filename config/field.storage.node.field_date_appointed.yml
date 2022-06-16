@@ -1,0 +1,20 @@
+uuid: cb310adf-8efd-4309-bb13-7db1d1828aa9
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_date_appointed
+field_name: field_date_appointed
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

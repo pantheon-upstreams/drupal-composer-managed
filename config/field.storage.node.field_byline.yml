@@ -1,0 +1,20 @@
+uuid: 0392379e-7b20-439a-add4-5085244fd51b
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_byline
+field_name: field_byline
+entity_type: node
+type: text
+settings:
+  max_length: 75
+module: text
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

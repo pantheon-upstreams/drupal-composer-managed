@@ -1,0 +1,28 @@
+uuid: 16ac2b88-e2c6-4528-9d31-e9b5ede630b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_highlighted
+    - node.type.article
+    - taxonomy.vocabulary.important_displays
+id: node.article.field_highlighted
+field_name: field_highlighted
+entity_type: node
+bundle: article
+label: Highlighted
+description: 'IS THIS RELEVANT???'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      important_displays: important_displays
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

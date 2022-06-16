@@ -1,0 +1,10 @@
+uuid: 9969cc9c-2290-405c-818d-6c391891d428
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.read_more
+label: read_more
+targetEntityType: node
+cache: true

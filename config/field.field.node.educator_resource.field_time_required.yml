@@ -1,0 +1,19 @@
+uuid: ef68ba7e-934e-4041-8702-7355a29be1cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_required
+    - node.type.educator_resource
+id: node.educator_resource.field_time_required
+field_name: field_time_required
+entity_type: node
+bundle: educator_resource
+label: 'Time Required'
+description: 'If applicable, include an estimate for the time required to complete. (e.g., ~2 Hours)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

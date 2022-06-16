@@ -1,0 +1,14 @@
+uuid: e565e079-edd9-4532-ac40-c00b72db28a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.ehs_editor
+  module:
+    - user
+id: user_remove_role_action.ehs_editor
+label: 'Remove the EHS editor role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: ehs_editor

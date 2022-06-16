@@ -1,0 +1,12 @@
+uuid: 9e1a744d-a464-4092-bc13-7c1d710f503f
+langcode: en
+status: true
+dependencies: {  }
+id: send_e_mail_to_developer
+label: 'Send e-mail to Developer'
+type: system
+plugin: action_send_email_action
+configuration:
+  recipient: mkapust@sanfordlab.org
+  subject: '[user:field-first-name] [user:field_last_name] request a new sanfordlab.org account'
+  message: "A new user, [user:name], is requesting access to sanfordlab.org. \r\nPlease visit: http://sanfordlab.org/admin/people\r\n"

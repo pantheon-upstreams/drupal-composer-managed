@@ -1,0 +1,21 @@
+uuid: 58c8c329-cabf-4c7d-a75c-9727d6818b44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.sdsta_board_meeting
+  module:
+    - text
+id: node.sdsta_board_meeting.field_location
+field_name: field_location
+entity_type: node
+bundle: sdsta_board_meeting
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,22 @@
+uuid: 4dd5971d-ccde-43ac-a534-124862d9e49c
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.mega_menu_education
+  module:
+    - simple_block
+  theme:
+    - surf
+id: educationmegamenu
+theme: surf
+region: mega_menu
+weight: -37
+provider: null
+plugin: 'simple_block:mega_menu_education'
+settings:
+  id: 'simple_block:mega_menu_education'
+  label: 'Education Mega Menu'
+  label_display: '0'
+  provider: simple_block
+visibility: {  }

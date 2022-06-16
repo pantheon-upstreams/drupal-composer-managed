@@ -1,0 +1,67 @@
+uuid: 8191e930-0060-47db-a399-348eb7b27016
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.ds_code
+    - filter.format.editor_s_set
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.plain
+    - node.type.page
+  module:
+    - block
+    - comment
+    - contact
+    - content_access
+    - contextual
+    - filter
+    - node
+    - path
+    - quickedit
+    - scheduler
+    - search
+    - system
+    - taxonomy
+    - toolbar
+id: moderator
+label: Moderator
+weight: -5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer blocks'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'bypass node access'
+  - 'change own username'
+  - 'create url aliases'
+  - 'delete any page content'
+  - 'delete own page content'
+  - 'edit any page content'
+  - 'edit own comments'
+  - 'edit own page content'
+  - 'grant content access'
+  - 'post comments'
+  - 'schedule publishing of nodes'
+  - 'search content'
+  - 'use advanced search'
+  - 'use text format ds_code'
+  - 'use text format editor_s_set'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'use text format plain'
+  - 'view own unpublished content'
+  - 'view the administration theme'

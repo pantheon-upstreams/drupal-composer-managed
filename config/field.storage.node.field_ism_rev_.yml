@@ -1,0 +1,20 @@
+uuid: 928a9320-e45c-4d2b-90f7-5017ec5d60cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ism_rev_
+field_name: field_ism_rev_
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

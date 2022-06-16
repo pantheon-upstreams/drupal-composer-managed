@@ -1,0 +1,57 @@
+uuid: e03fef9b-1818-41cf-b716-6d03f83cd436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portrait
+    - node.type.board_member_profile
+  module:
+    - filefield_paths
+    - image
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: pictures/profiles/sdsta/board
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.board_member_profile.field_portrait
+field_name: field_portrait
+entity_type: node
+bundle: board_member_profile
+label: 'Portrait photo'
+description: 'Upload a small photo of this board member.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: pictures/profiles/sdsta/board
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '1 MB'
+  max_resolution: ''
+  min_resolution: 125x160
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

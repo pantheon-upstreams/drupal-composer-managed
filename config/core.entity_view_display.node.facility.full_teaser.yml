@@ -1,0 +1,50 @@
+uuid: d3a06e1b-9338-472c-8367-f4cc5cb1d168
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full_teaser
+    - field.field.node.facility.body
+    - field.field.node.facility.field_experiment
+    - field.field.node.facility.field_featured_related
+    - field.field.node.facility.field_hero_image
+    - field.field.node.facility.field_more_information
+    - field.field.node.facility.field_more_information_label
+    - field.field.node.facility.field_overview
+    - field.field.node.facility.field_parent_portal
+    - image.style.full_teaser
+    - node.type.facility
+  module:
+    - image
+    - text
+    - user
+id: node.facility.full_teaser
+targetEntityType: node
+bundle: facility
+mode: full_teaser
+content:
+  field_hero_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: full_teaser
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_experiment: true
+  field_feature_content: true
+  field_featured_related: true
+  field_more_information: true
+  field_more_information_label: true
+  field_parent_portal: true
+  links: true

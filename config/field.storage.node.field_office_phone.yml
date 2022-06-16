@@ -1,0 +1,20 @@
+uuid: 2f5a03d5-d6a1-4de0-92f4-27d57e3de220
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_office_phone
+field_name: field_office_phone
+entity_type: node
+type: text
+settings:
+  max_length: 20
+module: text
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 8495d8f9-dd46-462b-800c-bb90269d0122
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.board_member_profile
+id: node.board_member_profile.title
+field_name: title
+entity_type: node
+bundle: board_member_profile
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

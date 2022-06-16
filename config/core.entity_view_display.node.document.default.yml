@@ -1,0 +1,45 @@
+uuid: bc9c0eac-3adc-4ea1-8202-70cebcc9e3e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.document.field_document
+    - field.field.node.document.field_document_category
+    - field.field.node.document.field_document_directory
+    - field.field.node.document.field_overview
+    - node.type.document
+  module:
+    - file
+    - options
+    - text
+    - user
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  field_document:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_document_category:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_overview:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_document_directory: true
+  links: true

@@ -1,0 +1,30 @@
+uuid: 94dc8f62-4a6f-4b74-9bab-80834f1ccbbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.educator_resources
+  module:
+    - system
+    - views
+  theme:
+    - surf
+id: views_block__educator_resources_programs
+theme: surf
+region: listing
+weight: -21
+provider: null
+plugin: 'views_block:educator_resources-programs'
+settings:
+  id: 'views_block:educator_resources-programs'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /node/2476

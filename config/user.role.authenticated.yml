@@ -1,0 +1,31 @@
+uuid: 99d9693b-f862-4da3-bb1f-bc602cd7c47f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.filtered_html
+  module:
+    - comment
+    - contact
+    - filter
+    - media
+    - search
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'authenticated user'
+weight: -8
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access user contact forms'
+  - 'change own username'
+  - 'search content'
+  - 'use advanced search'
+  - 'use text format basic_html'
+  - 'use text format filtered_html'
+  - 'view media'

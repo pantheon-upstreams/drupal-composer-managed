@@ -1,0 +1,12 @@
+uuid: 0e093c4b-fff5-4bc2-a881-13ae25335223
+langcode: en
+status: true
+dependencies: {  }
+id: website_feedback
+label: 'Website feedback'
+recipients:
+  - mkapust@sanfordlab.org
+reply: ''
+weight: 0
+message: null
+redirect: null

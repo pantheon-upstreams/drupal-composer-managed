@@ -1,0 +1,21 @@
+uuid: a345c458-1a90-4eef-93ab-b2aac5bd8f30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.article
+  module:
+    - text
+id: node.article.field_overview
+field_name: field_overview
+entity_type: node
+bundle: article
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

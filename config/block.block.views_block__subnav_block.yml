@@ -1,0 +1,25 @@
+uuid: 03a13c7e-2d2a-4933-860c-11131ac72f0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.subnav
+  module:
+    - views
+  theme:
+    - surf
+id: views_block__subnav_block
+theme: surf
+region: sidebar
+weight: -34
+provider: null
+plugin: 'views_block:subnav-block'
+settings:
+  id: 'views_block:subnav-block'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }
