@@ -95,3 +95,7 @@
 
 # Ignore .env files as they are personal
 #/.env
+
+# Ignore databases.
+*.sql
+*.sql.gz
