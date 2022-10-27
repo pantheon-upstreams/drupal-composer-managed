@@ -1,0 +1,21 @@
+name: surf
+recipe: drupal9
+config:
+  webroot: web
+services:
+  database:
+    portforward: 60657
+  appserver:
+    type: php
+    config:
+      php: .lando/php.ini
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "https://surf.lndo.site"
+        PHP_IDE_CONFIG: "serverName=appserver"
+        XDEBUG_SESSION_START: LANDO
+        PANTHEON_ENVIRONMENT: lando
+tooling:
+  drush:
+    service: appserver
+    cmd: drush --root=/app/web
