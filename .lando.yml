@@ -1,12 +1,13 @@
 name: surf
 recipe: drupal9
 config:
+  composer_version: '2'
   webroot: web
+  php: 8.1
 services:
   database:
     portforward: 60657
   appserver:
-    type: php
     config:
       php: .lando/php.ini
     overrides:
