@@ -25,6 +25,11 @@ include __DIR__ . "/settings.pantheon.php";
  */
 // $settings['skip_permissions_hardening'] = TRUE;
 
+$lando_settings = __DIR__ . "/settings.lando.php";
+if (file_exists($lando_settings)) {
+  include $lando_settings;
+}
+
 /**
  * If there is a local settings file, then include it
  */
