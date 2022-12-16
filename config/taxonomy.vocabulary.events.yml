@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Events
 vid: events
-description: 'Terms to categorize an event'
+description: '[legacy] Terms to categorize an event'
 weight: 0

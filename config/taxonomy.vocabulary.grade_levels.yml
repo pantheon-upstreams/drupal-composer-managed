@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Grade levels'
 vid: grade_levels
-description: 'student grade levels'
+description: '[legacy] student grade levels'
 weight: -4

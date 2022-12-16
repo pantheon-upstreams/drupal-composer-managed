@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Reports and publications'
 vid: important_displays
-description: ''
+description: '[legacy]'
 weight: 2

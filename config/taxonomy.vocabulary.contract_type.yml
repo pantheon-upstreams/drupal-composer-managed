@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Contract type'
 vid: contract_type
-description: 'terms for the type of contract'
+description: '[legacy] terms for the type of contract'
 weight: -2

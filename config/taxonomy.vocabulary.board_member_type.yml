@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Profile type'
 vid: board_member_type
-description: 'These are terms to distignuish one board from another.'
+description: '[legacy] These are terms to distignuish one board from another.'
 weight: 7

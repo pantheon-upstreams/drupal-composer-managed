@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Activity Topic'
 vid: activity_topic
-description: 'Terms to organize education activities'
+description: '[legacy] Terms to organize education activities'
 weight: -5

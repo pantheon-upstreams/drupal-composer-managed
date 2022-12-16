@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Learning link categories'
 vid: e_and_o_link_categories
-description: 'Education and Outreach link category '
+description: '[legacy] Education and Outreach link category '
 weight: -3

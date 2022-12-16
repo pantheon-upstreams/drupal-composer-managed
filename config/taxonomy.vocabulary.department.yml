@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Departments
 vid: department
-description: 'Lab department listing'
+description: '[legacy] Lab department listing'
 weight: -1

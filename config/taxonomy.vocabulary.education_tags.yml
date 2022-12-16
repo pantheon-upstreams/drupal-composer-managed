@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Education Tags'
 vid: education_tags
-description: 'Tags for education and outreach'
+description: '[legacy] Tags for education and outreach'
 weight: 5

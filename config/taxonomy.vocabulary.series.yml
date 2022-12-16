@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Series
 vid: series
-description: 'Use if you want to group articles as part of a series'
+description: '[legacy] Use if you want to group articles as part of a series'
 weight: 4

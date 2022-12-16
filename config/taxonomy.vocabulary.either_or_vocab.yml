@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Status
 vid: either_or_vocab
-description: ''
+description: '[legacy]'
 weight: 9

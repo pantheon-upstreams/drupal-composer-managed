@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'ESH Manual'
 vid: ehs_manual
-description: 'Terms to organize the ESH Manual'
+description: '[legacy] Terms to organize the ESH Manual'
 weight: 6
