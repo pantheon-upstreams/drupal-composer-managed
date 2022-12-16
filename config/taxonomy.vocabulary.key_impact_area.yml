@@ -1,0 +1,8 @@
+uuid: f7eed9b4-7502-4404-902f-58b36e32cc8b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Key Impact Area'
+vid: key_impact_area
+description: ''
+weight: -8

@@ -5,4 +5,4 @@ dependencies: {  }
 name: Events
 vid: events
 description: 'Terms to categorize an event'
-weight: -5
+weight: 0

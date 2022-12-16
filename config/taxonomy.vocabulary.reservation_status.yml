@@ -1,0 +1,8 @@
+uuid: ddd3110f-1d46-4a9e-b66c-acdf671d6699
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reservation Status'
+vid: reservation_status
+description: ''
+weight: -6

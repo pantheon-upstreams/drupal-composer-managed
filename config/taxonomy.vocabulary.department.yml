@@ -5,4 +5,4 @@ dependencies: {  }
 name: Departments
 vid: department
 description: 'Lab department listing'
-weight: -6
+weight: -1

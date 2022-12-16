@@ -1,0 +1,8 @@
+uuid: a64e381a-44ff-4f53-bf39-51e57dbe033a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Outreach Opportunity'
+vid: eo_opportunity
+description: ''
+weight: -10

@@ -7,4 +7,4 @@ _core:
 name: 'Experiments and Facilities'
 vid: tags
 description: ''
-weight: -4
+weight: 1

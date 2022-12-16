@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Learning link categories'
 vid: e_and_o_link_categories
 description: 'Education and Outreach link category '
-weight: -8
+weight: -3

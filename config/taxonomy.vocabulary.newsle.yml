@@ -5,4 +5,4 @@ dependencies: {  }
 name: Newsletters
 vid: newsle
 description: 'SURF newsletters'
-weight: -2
+weight: 3
