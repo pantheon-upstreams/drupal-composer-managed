@@ -352,12 +352,12 @@ display:
           type: date_range_without_time
           settings:
             timezone_override: ''
-            single: 'F j, Y'
-            single_all_day: 'F j, Y'
             one_day: 'F j, Y'
             one_month: 'F j - {j}, Y'
             several_months: 'F j - {F} {j}, Y'
             several_years: 'F j, Y - {F} {j}, {Y}'
+            single: 'F j, Y'
+            single_all_day: 'F j, Y'
           group_column: value
           group_columns: {  }
           group_rows: true

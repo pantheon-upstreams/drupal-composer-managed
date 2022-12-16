@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
+    - node
   theme:
     - surf
 _core:
@@ -11,7 +11,7 @@ _core:
 id: surf_page_title
 theme: surf
 region: content
-weight: -35
+weight: -36
 provider: null
 plugin: page_title_block
 settings:

@@ -5,14 +5,14 @@ dependencies:
   config:
     - views.view.portal_parent
   module:
-    - ctools
+    - node
     - views
   theme:
     - surf
 id: views_block__portal_parent_sidebar
 theme: surf
 region: sidebar
-weight: -37
+weight: -41
 provider: null
 plugin: 'views_block:portal_parent-sidebar'
 settings:

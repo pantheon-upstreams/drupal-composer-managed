@@ -11,7 +11,7 @@ dependencies:
 id: views_block__eyebrow_post
 theme: surf
 region: eyebrow
-weight: -35
+weight: -39
 provider: null
 plugin: 'views_block:eyebrow-post'
 settings:

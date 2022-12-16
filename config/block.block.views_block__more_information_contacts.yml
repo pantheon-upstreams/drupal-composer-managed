@@ -12,7 +12,7 @@ dependencies:
 id: views_block__more_information_contacts
 theme: surf
 region: content
-weight: -28
+weight: -29
 provider: null
 plugin: 'views_block:more_information-contacts'
 settings:

@@ -12,7 +12,7 @@ dependencies:
 id: eshmanualtoclink
 theme: surf
 region: sidebar
-weight: -35
+weight: -39
 provider: null
 plugin: 'block_content:4854025e-6ab8-4752-bdf1-deae33edd3bd'
 settings:

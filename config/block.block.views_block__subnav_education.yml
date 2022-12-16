@@ -12,7 +12,7 @@ dependencies:
 id: views_block__subnav_education
 theme: surf
 region: sidebar
-weight: -31
+weight: -35
 provider: null
 plugin: 'views_block:subnav-education'
 settings:

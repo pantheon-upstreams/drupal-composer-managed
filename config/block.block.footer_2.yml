@@ -5,14 +5,14 @@ dependencies:
   config:
     - system.menu.footer
   module:
-    - ctools
     - menu_block
+    - node
   theme:
     - surf
 id: footer_2
 theme: surf
 region: sidebar
-weight: -29
+weight: -33
 provider: null
 plugin: 'menu_block:footer'
 settings:

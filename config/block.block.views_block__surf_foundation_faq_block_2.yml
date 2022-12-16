@@ -12,7 +12,7 @@ dependencies:
 id: views_block__surf_foundation_faq_block_2
 theme: surf
 region: content
-weight: -24
+weight: -25
 provider: null
 plugin: 'views_block:surf_foundation_faq-block_2'
 settings:

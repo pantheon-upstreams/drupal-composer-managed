@@ -12,7 +12,7 @@ dependencies:
 id: views_block__article_details_job
 theme: surf
 region: content
-weight: -33
+weight: -34
 provider: null
 plugin: 'views_block:article_details-job'
 settings:

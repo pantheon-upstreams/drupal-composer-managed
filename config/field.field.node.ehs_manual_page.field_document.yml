@@ -30,7 +30,7 @@ id: node.ehs_manual_page.field_document
 field_name: field_document
 entity_type: node
 bundle: ehs_manual_page
-label: 'Download Chapter as PDF'
+label: 'Download Standard as PDF'
 description: 'You can upload a file here for users to download the PDF version of this chapter.'
 required: false
 translatable: true

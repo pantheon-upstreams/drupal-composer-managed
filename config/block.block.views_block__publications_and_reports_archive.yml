@@ -12,7 +12,7 @@ dependencies:
 id: views_block__publications_and_reports_archive
 theme: surf
 region: content
-weight: -26
+weight: -27
 provider: null
 plugin: 'views_block:publications_and_reports-archive'
 settings:

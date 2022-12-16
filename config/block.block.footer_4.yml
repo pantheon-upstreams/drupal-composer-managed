@@ -12,7 +12,7 @@ dependencies:
 id: footer_4
 theme: surf
 region: sidebar
-weight: -30
+weight: -34
 provider: null
 plugin: 'menu_block:footer'
 settings:

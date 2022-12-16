@@ -12,7 +12,7 @@ dependencies:
 id: views_block__board_members_block_2
 theme: surf
 region: content
-weight: -27
+weight: -28
 provider: null
 plugin: 'views_block:board_members-block_2'
 settings:
