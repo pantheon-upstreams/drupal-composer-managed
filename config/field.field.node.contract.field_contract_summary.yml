@@ -1,0 +1,21 @@
+uuid: 9e33bdd6-53b0-4b90-bdb5-fd2ea3da9b4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contract_summary
+    - node.type.contract
+  module:
+    - text
+id: node.contract.field_contract_summary
+field_name: field_contract_summary
+entity_type: node
+bundle: contract
+label: 'Contract Summary'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

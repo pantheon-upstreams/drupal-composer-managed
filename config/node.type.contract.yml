@@ -1,4 +1,4 @@
-uuid: 1dd51260-035b-4097-9e9a-5bb2cb82452f
+uuid: ae1d8960-7eb5-4b2e-baa0-d06e1bb2e655
 langcode: en
 status: true
 dependencies:
@@ -22,8 +22,8 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: false
-name: '[legacy] Contract'
-type: contracts
+name: Contract
+type: contract
 description: 'Use this content type to add contracts, RFPs, RFQs, etc.'
 help: ''
 new_revision: false

@@ -1,0 +1,21 @@
+uuid: b38aa804-023e-439c-83d6-5db38cac4612
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.contract
+  module:
+    - text
+id: node.contract.field_overview
+field_name: field_overview
+entity_type: node
+bundle: contract
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
