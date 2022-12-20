@@ -1,0 +1,28 @@
+uuid: 76f402f2-f384-4d41-8104-1f39dfc436bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.body
+    - node.type.person
+  module:
+    - text
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
