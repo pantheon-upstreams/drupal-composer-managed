@@ -20,7 +20,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Educator Resource'
+name: '[migrate] Educator Resource'
 type: educator_resource
 description: 'Used to collect content for inclusion in the Resources for Educators portal'
 help: ''

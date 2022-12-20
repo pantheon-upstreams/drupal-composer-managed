@@ -21,7 +21,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: Facility
+name: '[delete] Facility'
 type: facility
 description: 'Used to describe specific facilities at SURF'
 help: ''

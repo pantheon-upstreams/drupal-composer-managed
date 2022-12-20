@@ -20,7 +20,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: Contact
+name: '[migrate] Contact'
 type: employee_
 description: 'Use contacts to add information about employees. This information will be used by the site''s employee directory.'
 help: ''

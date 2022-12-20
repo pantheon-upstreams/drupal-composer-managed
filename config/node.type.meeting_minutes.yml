@@ -2,7 +2,7 @@ uuid: 72229572-ce25-4fcc-b626-e220180e55fd
 langcode: en
 status: true
 dependencies: {  }
-name: 'Meeting minutes'
+name: '[delete] Meeting minutes'
 type: meeting_minutes
 description: ''
 help: ''

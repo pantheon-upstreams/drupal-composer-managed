@@ -20,7 +20,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'In the News'
+name: '[delete] In the News'
 type: headline
 description: 'Use this content type to add an "in the news" entry. Headlines are links and information to external news sites and sources.'
 help: ''

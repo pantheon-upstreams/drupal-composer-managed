@@ -20,7 +20,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Board member profile'
+name: '[migrate] Board member profile'
 type: board_member_profile
 description: 'Use this content type to add a board member profile.'
 help: 'This content type is only used to add SDSTA board member profiles to the SDSTA section of the web site.'

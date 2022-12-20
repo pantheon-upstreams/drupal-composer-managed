@@ -20,7 +20,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Document/Media Download'
+name: '[migrate] Document/Media Download'
 type: document
 description: 'Used to upload documents/downloads for association with other content-types.'
 help: ''

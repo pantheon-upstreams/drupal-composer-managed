@@ -22,7 +22,7 @@ third_party_settings:
     unpublish_enable: true
     unpublish_required: false
     unpublish_revision: false
-name: '[legacy] Contract'
+name: '[migrate] Contract'
 type: contracts
 description: 'Use this content type to add contracts, RFPs, RFQs, etc.'
 help: ''
