@@ -1,0 +1,67 @@
+uuid: 9cf72d8e-9ebf-4872-969b-95dbbb3625ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_p_contract_schedules
+    - node.type.contract
+    - paragraphs.paragraphs_type.schedule_item
+  module:
+    - entity_reference_revisions
+id: node.contract.field_p_contract_schedules
+field_name: field_p_contract_schedules
+entity_type: node
+bundle: contract
+label: 'Contract Schedules'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      schedule_item: schedule_item
+    negate: 0
+    target_bundles_drag_drop:
+      centered_image_text:
+        weight: 14
+        enabled: false
+      entity_references_image_text:
+        weight: 15
+        enabled: false
+      entity_references_text:
+        weight: 16
+        enabled: false
+      full_teaser:
+        weight: 17
+        enabled: false
+      homepage_lead_teaser:
+        weight: 18
+        enabled: false
+      homepage_teaser:
+        weight: 19
+        enabled: false
+      image_with_caption:
+        weight: 20
+        enabled: false
+      one_up_teaser_image_text:
+        weight: 21
+        enabled: false
+      running_text:
+        weight: 22
+        enabled: false
+      schedule_item:
+        weight: 23
+        enabled: true
+      two_up_figures:
+        weight: 24
+        enabled: false
+      two_up_teaser_image_text:
+        weight: 25
+        enabled: false
+      two_up_teaser_text:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

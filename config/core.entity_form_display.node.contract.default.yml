@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.contract.field_contract_summary
     - field.field.node.contract.field_links
     - field.field.node.contract.field_overview
+    - field.field.node.contract.field_p_contract_schedules
     - field.field.node.contract.field_ref_contacts
     - field.field.node.contract.field_ref_contract_type
     - field.field.node.contract.field_ref_documents
@@ -16,6 +17,7 @@ dependencies:
     - link
     - maxlength
     - media_library
+    - paragraphs
     - path
     - scheduler
     - text
@@ -56,7 +58,8 @@ third_party_settings:
         description: ''
         required_fields: true
     group_schedule:
-      children: {  }
+      children:
+        - field_p_contract_schedules
       label: Schedule
       region: content
       parent_name: group_tabs
@@ -138,7 +141,7 @@ content:
         maxlength_js_truncate_html: false
   field_links:
     type: link_default
-    weight: 28
+    weight: 29
     region: content
     settings:
       placeholder_url: ''
@@ -151,6 +154,18 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_p_contract_schedules:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
   field_ref_contacts:
     type: entity_reference_autocomplete
