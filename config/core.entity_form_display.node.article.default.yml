@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.comment
     - field.field.node.article.field_byline
     - field.field.node.article.field_department
     - field.field.node.article.field_featured_related
@@ -261,5 +260,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  comment: true
+hidden: {  }
