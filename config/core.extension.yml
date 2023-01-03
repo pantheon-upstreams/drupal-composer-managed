@@ -15,6 +15,7 @@ module:
   ckeditor: 0
   color: 0
   comment: 0
+  conditional_fields: 0
   config: 0
   contact: 0
   content_access: 0
@@ -59,6 +60,7 @@ module:
   migrate_tools: 0
   mysql: 0
   node: 0
+  optional_end_date: 0
   options: 0
   page_cache: 0
   path: 0
@@ -72,6 +74,7 @@ module:
   search: 0
   shortcut: 0
   simple_block: 0
+  smart_date: 0
   structure_sync: 0
   surf_migrate: 0
   system: 0
