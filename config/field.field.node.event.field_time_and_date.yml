@@ -11,7 +11,7 @@ id: node.event.field_time_and_date
 field_name: field_time_and_date
 entity_type: node
 bundle: event
-label: 'Time and Date'
+label: '[delete] Time and Date'
 description: 'TIME AND DATE field is required. This date is used to organize lists on the site. Use the EVENT DATE RANGE field below if you end a start and end date and time. '
 required: true
 translatable: true

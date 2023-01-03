@@ -10,7 +10,7 @@ id: node.event.field_call_to_action_reference
 field_name: field_call_to_action_reference
 entity_type: node
 bundle: event
-label: 'Call to Action: Reference'
+label: '[delete] Call to Action: Reference'
 description: ''
 required: false
 translatable: false
@@ -23,6 +23,7 @@ settings:
       jotform: jotform
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: page
 field_type: entity_reference

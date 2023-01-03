@@ -11,7 +11,7 @@ id: node.event.field_location
 field_name: field_location
 entity_type: node
 bundle: event
-label: Location
+label: '[delete] Location'
 description: 'Top level overview of the event location (e.g., Building name, room number)'
 required: false
 translatable: true

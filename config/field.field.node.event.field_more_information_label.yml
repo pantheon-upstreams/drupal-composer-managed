@@ -9,7 +9,7 @@ id: node.event.field_more_information_label
 field_name: field_more_information_label
 entity_type: node
 bundle: event
-label: 'More Information: Alternative Label'
+label: '[delete] More Information: Alternative Label'
 description: 'If you want this "More Information" section to use a custom heading/label, enter it here.'
 required: false
 translatable: false

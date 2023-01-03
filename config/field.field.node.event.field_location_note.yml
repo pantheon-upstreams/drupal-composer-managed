@@ -11,7 +11,7 @@ id: node.event.field_location_note
 field_name: field_location_note
 entity_type: node
 bundle: event
-label: 'Location: Note'
+label: '[delete] Location: Note'
 description: 'If applicable, include a note to provide more context for the location. (e.g., parking instructions).'
 required: false
 translatable: false

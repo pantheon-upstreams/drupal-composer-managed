@@ -7,8 +7,11 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_call_to_action_reference
     - field.field.node.event.field_contact_person_s_
+    - field.field.node.event.field_dates
     - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_date_range
     - field.field.node.event.field_featured_related
+    - field.field.node.event.field_image_primary
     - field.field.node.event.field_location
     - field.field.node.event.field_location_address
     - field.field.node.event.field_location_map_link
@@ -18,6 +21,8 @@ dependencies:
     - field.field.node.event.field_more_information_label
     - field.field.node.event.field_overview
     - field.field.node.event.field_paragraph_featured_image
+    - field.field.node.event.field_registration_period
+    - field.field.node.event.field_registration_required
     - field.field.node.event.field_time_and_date
     - node.type.event
   module:
@@ -66,8 +71,11 @@ content:
 hidden:
   field_call_to_action_reference: true
   field_contact_person_s_: true
+  field_dates: true
   field_event_category: true
+  field_event_date_range: true
   field_featured_related: true
+  field_image_primary: true
   field_location: true
   field_location_address: true
   field_location_map_link: true
@@ -75,4 +83,6 @@ hidden:
   field_location_website: true
   field_more_information: true
   field_more_information_label: true
+  field_registration_period: true
+  field_registration_required: true
   links: true

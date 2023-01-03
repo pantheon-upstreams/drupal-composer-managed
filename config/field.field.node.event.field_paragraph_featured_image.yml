@@ -12,7 +12,7 @@ id: node.event.field_paragraph_featured_image
 field_name: field_paragraph_featured_image
 entity_type: node
 bundle: event
-label: 'Featured Image'
+label: '[delete] Featured Image'
 description: ''
 required: false
 translatable: false
@@ -23,6 +23,7 @@ settings:
   handler_settings:
     target_bundles:
       image_with_caption: image_with_caption
+    negate: 0
     target_bundles_drag_drop:
       centered_image_text:
         weight: 14

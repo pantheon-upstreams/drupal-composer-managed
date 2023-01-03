@@ -11,7 +11,7 @@ id: node.event.field_event_date_range
 field_name: field_event_date_range
 entity_type: node
 bundle: event
-label: 'Event Date Range'
+label: '[delete] Event Date Range'
 description: 'These fields are optional. Use only if you want to display a Start date and an End date for this event.'
 required: false
 translatable: false

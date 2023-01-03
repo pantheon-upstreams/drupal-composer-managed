@@ -11,7 +11,7 @@ id: node.event.field_location_map_link
 field_name: field_location_map_link
 entity_type: node
 bundle: event
-label: 'Location: Map Link'
+label: '[delete] Location: Map Link'
 description: 'If you wish to include a google maps link for this location, enter it here.'
 required: false
 translatable: false

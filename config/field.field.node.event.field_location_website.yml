@@ -11,7 +11,7 @@ id: node.event.field_location_website
 field_name: field_location_website
 entity_type: node
 bundle: event
-label: 'Location: Website'
+label: '[delete] Location: Website'
 description: 'If applicable, include a URL for more information regarding this location.'
 required: false
 translatable: false

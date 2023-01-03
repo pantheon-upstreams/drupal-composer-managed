@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_call_to_action_reference
     - field.field.node.event.field_contact_person_s_
+    - field.field.node.event.field_dates
     - field.field.node.event.field_event_category
     - field.field.node.event.field_event_date_range
     - field.field.node.event.field_featured_related
+    - field.field.node.event.field_image_primary
     - field.field.node.event.field_location
     - field.field.node.event.field_location_address
     - field.field.node.event.field_location_map_link
@@ -18,9 +20,12 @@ dependencies:
     - field.field.node.event.field_more_information_label
     - field.field.node.event.field_overview
     - field.field.node.event.field_paragraph_featured_image
+    - field.field.node.event.field_registration_period
+    - field.field.node.event.field_registration_required
     - field.field.node.event.field_time_and_date
     - node.type.event
   module:
+    - datetime_range
     - entity_reference_revisions
     - text
     - user
@@ -36,6 +41,25 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_dates:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image_primary:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_paragraph_featured_image:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -44,6 +68,26 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_registration_period:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_registration_required:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }

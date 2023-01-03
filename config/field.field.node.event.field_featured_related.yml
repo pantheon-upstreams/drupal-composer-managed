@@ -16,7 +16,7 @@ id: node.event.field_featured_related
 field_name: field_featured_related
 entity_type: node
 bundle: event
-label: 'Featured Related Content'
+label: '[delete] Featured Related Content'
 description: 'If applicable, associate additional site content for prominent display at the bottom of the page.'
 required: false
 translatable: false
@@ -29,13 +29,14 @@ settings:
       article: article
       page: page
       event: event
-      experiment: experiment
-      facility: facility
       feature: feature
       portal: portal
       press_release: press_release
+      facility: facility
+      experiment: experiment
     sort:
       field: _none
+      direction: ASC
     auto_create: false
     auto_create_bundle: article
 field_type: entity_reference

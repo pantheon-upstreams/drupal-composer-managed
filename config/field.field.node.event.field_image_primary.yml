@@ -1,26 +1,26 @@
-uuid: c2d57060-2628-47cb-baf7-96dc7438e23a
+uuid: 2de16c4d-c66a-468f-9db7-eeff367b31b0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_category
+    - field.storage.node.field_image_primary
+    - media.type.image
     - node.type.event
-    - taxonomy.vocabulary.events
-id: node.event.field_event_category
-field_name: field_event_category
+id: node.event.field_image_primary
+field_name: field_image_primary
 entity_type: node
 bundle: event
-label: '[delete] Event Category'
+label: 'Primary image'
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:media'
   handler_settings:
     target_bundles:
-      events: events
+      image: image
     sort:
       field: _none
       direction: ASC
