@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
     - field.field.node.page.field_attachment
+    - field.field.node.page.field_content
     - field.field.node.page.field_featured_related
     - field.field.node.page.field_more_information
     - field.field.node.page.field_more_information_label
@@ -40,6 +41,7 @@ content:
     region: content
 hidden:
   field_attachment: true
+  field_content: true
   field_featured_related: true
   field_more_information: true
   field_more_information_label: true

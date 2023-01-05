@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_attachment
+    - field.field.node.page.field_content
     - field.field.node.page.field_featured_related
     - field.field.node.page.field_more_information
     - field.field.node.page.field_more_information_label
@@ -16,6 +17,7 @@ dependencies:
     - field_group
     - file
     - inline_entity_form
+    - layout_paragraphs
     - maxlength
     - paragraphs
     - path
@@ -142,6 +144,16 @@ content:
     region: content
     settings:
       progress_indicator: throbber
+    third_party_settings: {  }
+  field_content:
+    type: layout_paragraphs
+    weight: 122
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
+      empty_message: ''
     third_party_settings: {  }
   field_featured_related:
     type: entity_reference_autocomplete

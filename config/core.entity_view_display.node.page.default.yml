@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_attachment
+    - field.field.node.page.field_content
     - field.field.node.page.field_featured_related
     - field.field.node.page.field_more_information
     - field.field.node.page.field_more_information_label
@@ -15,6 +16,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - file
+    - layout_paragraphs
     - text
     - user
 _core:
@@ -38,6 +40,15 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_overview:
     type: text_default
