@@ -44,12 +44,24 @@ module:
   imce: 0
   inline_entity_form: 0
   insert_view: 0
+  layout_discovery: 0
+  layout_paragraphs: 0
   link: 0
   maxlength: 0
   media: 0
   media_library: 0
   menu_block: 0
   menu_ui: 0
+  mercury_editor: 0
+  mercury_editor_components: 0
+  mercury_editor_dialog: 0
+  mercury_editor_edit_tray: 0
+  mercury_editor_iframe: 0
+  mercury_editor_inline_editor: 0
+  mercury_editor_layouts: 0
+  mercury_editor_skip_form: 0
+  mercury_editor_style_options: 0
+  mercury_editor_tabs: 0
   metatag: 0
   metatag_facebook: 0
   metatag_open_graph: 0
@@ -76,6 +88,7 @@ module:
   simple_block: 0
   smart_date: 0
   structure_sync: 0
+  style_options: 0
   surf_migrate: 0
   system: 0
   taxonomy: 0
