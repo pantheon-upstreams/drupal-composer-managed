@@ -4,17 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_author
     - field.field.node.article.field_byline
+    - field.field.node.article.field_date_published
     - field.field.node.article.field_department
     - field.field.node.article.field_featured_related
     - field.field.node.article.field_highlighted
     - field.field.node.article.field_overview
+    - field.field.node.article.field_p_content
     - field.field.node.article.field_paragraph_featured_image
+    - field.field.node.article.field_publisher
     - field.field.node.article.field_tags
     - node.type.article
   module:
+    - datetime
     - field_group
-    - maxlength
     - paragraphs
     - path
     - scheduler
@@ -135,6 +139,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_author:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_byline:
     type: text_textfield
     weight: 3
@@ -142,6 +154,12 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_date_published:
+    type: datetime_default
+    weight: 124
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_department:
     type: options_select
@@ -176,6 +194,24 @@ content:
       maxlength:
         maxlength_js: 125
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  field_p_content:
+    type: paragraphs
+    weight: 122
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_paragraph_featured_image:
     type: entity_reference_paragraphs
     weight: 4
@@ -186,6 +222,14 @@ content:
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
+    third_party_settings: {  }
+  field_publisher:
+    type: text_textfield
+    weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_tags:
     type: options_select

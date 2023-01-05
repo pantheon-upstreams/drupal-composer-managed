@@ -13,7 +13,7 @@ id: node.article.body
 field_name: body
 entity_type: node
 bundle: article
-label: Body
+label: '[deprecate] Body'
 description: ''
 required: false
 translatable: true

@@ -1,24 +1,21 @@
-uuid: 0b9de81f-ec93-45d1-b104-359b1dd3bc32
+uuid: 0356ccae-4579-4314-9acb-6f2dc73f85de
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_byline
+    - field.storage.node.field_publisher
     - node.type.article
   module:
     - text
-id: node.article.field_byline
-field_name: field_byline
+id: node.article.field_publisher
+field_name: field_publisher
 entity_type: node
 bundle: article
-label: '[deprecate] By'
+label: Publisher
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    value: 'Constance Walter'
-    format: plain
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: text

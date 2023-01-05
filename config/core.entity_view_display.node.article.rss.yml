@@ -5,12 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
+    - field.field.node.article.field_author
     - field.field.node.article.field_byline
+    - field.field.node.article.field_date_published
     - field.field.node.article.field_department
     - field.field.node.article.field_featured_related
     - field.field.node.article.field_highlighted
     - field.field.node.article.field_overview
+    - field.field.node.article.field_p_content
     - field.field.node.article.field_paragraph_featured_image
+    - field.field.node.article.field_publisher
     - field.field.node.article.field_tags
     - node.type.article
   module:
@@ -29,10 +33,14 @@ content:
     region: content
 hidden:
   body: true
+  field_author: true
   field_byline: true
+  field_date_published: true
   field_department: true
   field_featured_related: true
   field_highlighted: true
   field_overview: true
+  field_p_content: true
   field_paragraph_featured_image: true
+  field_publisher: true
   field_tags: true

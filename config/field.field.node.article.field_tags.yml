@@ -12,7 +12,7 @@ id: node.article.field_tags
 field_name: field_tags
 entity_type: node
 bundle: article
-label: Experiment/Facility
+label: '[delete] Experiment/Facility'
 description: ''
 required: false
 translatable: true
@@ -25,6 +25,7 @@ settings:
       tags: tags
     sort:
       field: _none
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

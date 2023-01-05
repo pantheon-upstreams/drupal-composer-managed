@@ -10,8 +10,8 @@ id: node.article.field_highlighted
 field_name: field_highlighted
 entity_type: node
 bundle: article
-label: Highlighted
-description: 'IS THIS RELEVANT???'
+label: '[delete] Highlighted'
+description: ''
 required: false
 translatable: true
 default_value: {  }
@@ -23,6 +23,7 @@ settings:
       important_displays: important_displays
     sort:
       field: _none
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

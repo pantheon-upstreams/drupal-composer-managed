@@ -1,18 +1,17 @@
-uuid: 5c8a0686-c49b-4a80-b97e-3ebadeca802a
+uuid: c351fc88-7db1-4172-b72e-02b9e5d2b0c9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraph_featured_image
+    - field.storage.node.field_p_content
     - node.type.article
-    - paragraphs.paragraphs_type.image_with_caption
   module:
     - entity_reference_revisions
-id: node.article.field_paragraph_featured_image
-field_name: field_paragraph_featured_image
+id: node.article.field_p_content
+field_name: field_p_content
 entity_type: node
 bundle: article
-label: '[deprecate] Featured Image'
+label: Content
 description: ''
 required: false
 translatable: false
@@ -21,8 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles:
-      image_with_caption: image_with_caption
+    target_bundles: null
     negate: 0
     target_bundles_drag_drop:
       centered_image_text:
@@ -45,7 +43,7 @@ settings:
         enabled: false
       image_with_caption:
         weight: 20
-        enabled: true
+        enabled: false
       one_up_teaser_image_text:
         weight: 21
         enabled: false
