@@ -68,6 +68,7 @@ module:
   metatag_twitter_cards: 0
   migrate: 0
   migrate_drupal: 0
+  migrate_drupal_d8: 0
   migrate_plus: 0
   migrate_tools: 0
   mysql: 0
