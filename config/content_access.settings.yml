@@ -1,2 +1,1 @@
-content_access_node_type:
-  educator_resource: 'a:2:{s:4:"view";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:8:"educator";}s:8:"view_own";a:3:{i:0;s:9:"anonymous";i:1;s:13:"authenticated";i:2;s:8:"educator";}}'
+content_access_node_type: {  }

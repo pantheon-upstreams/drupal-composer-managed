@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_more_information
-    - node.type.document
-    - node.type.employee_
     - node.type.page
 id: node.page.field_more_information
 field_name: field_more_information
@@ -20,11 +18,9 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      document: document
-      employee_: employee_
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: document
+    auto_create_bundle: null
 field_type: entity_reference

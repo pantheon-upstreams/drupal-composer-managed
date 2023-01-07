@@ -5,13 +5,8 @@ dependencies:
   config:
     - field.storage.paragraph.field_content_reference
     - node.type.article
-    - node.type.document
     - node.type.event
-    - node.type.experiment
-    - node.type.facility
-    - node.type.feature
     - node.type.page
-    - node.type.portal
     - paragraphs.paragraphs_type.entity_references_text
 id: paragraph.entity_references_text.field_content_reference
 field_name: field_content_reference
@@ -29,12 +24,7 @@ settings:
     target_bundles:
       article: article
       page: page
-      document: document
       event: event
-      experiment: experiment
-      facility: facility
-      feature: feature
-      portal: portal
     sort:
       field: _none
     auto_create: false

@@ -4,8 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_ref_contacts
-    - node.type.contract
-    - node.type.employee_
+    - node.type.person
 id: node.contract.field_ref_contacts
 field_name: field_ref_contacts
 entity_type: node
@@ -20,7 +19,7 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      employee_: employee_
+      person: person
     sort:
       field: _none
       direction: ASC

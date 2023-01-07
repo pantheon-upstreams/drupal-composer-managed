@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
-    - node.type.contracts
-    - node.type.document
     - node.type.event
   module:
     - comment
@@ -39,33 +37,19 @@ permissions:
   - 'administer nodes'
   - 'bypass node access'
   - 'change own username'
-  - 'create contracts content'
-  - 'create document content'
   - 'create event content'
-  - 'delete any contracts content'
-  - 'delete contracts revisions'
-  - 'delete document revisions'
-  - 'delete own contracts content'
-  - 'delete own document content'
-  - 'edit any contracts content'
   - 'edit any event content'
   - 'edit own comments'
-  - 'edit own contracts content'
-  - 'edit own document content'
   - 'edit own event content'
   - 'grant content access'
   - 'grant own content access'
   - 'notify of path changes'
   - 'post comments'
-  - 'revert contracts revisions'
-  - 'revert document revisions'
   - 'schedule publishing of nodes'
   - 'search content'
   - 'use advanced search'
   - 'use text format basic_html'
   - 'view all revisions'
-  - 'view contracts revisions'
-  - 'view document revisions'
   - 'view media'
   - 'view own unpublished content'
   - 'view scheduled content'

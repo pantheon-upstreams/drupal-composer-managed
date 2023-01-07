@@ -6,10 +6,6 @@ dependencies:
     - field.storage.paragraph.field_full_teaser
     - node.type.article
     - node.type.event
-    - node.type.experiment
-    - node.type.facility
-    - node.type.feature
-    - node.type.portal
     - paragraphs.paragraphs_type.full_teaser
 id: paragraph.full_teaser.field_full_teaser
 field_name: field_full_teaser
@@ -27,10 +23,6 @@ settings:
     target_bundles:
       article: article
       event: event
-      experiment: experiment
-      facility: facility
-      feature: feature
-      portal: portal
     sort:
       field: _none
     auto_create: false

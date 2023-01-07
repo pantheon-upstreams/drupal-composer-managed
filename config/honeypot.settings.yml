@@ -18,27 +18,9 @@ form_settings:
   contact_message_personal_form: true
   contact_message_website_feedback_form: true
   node_article_form: false
-  node_board_member_profile_form: false
-  node_contracts_form: false
-  node_deep_thoughts_newsletter_form: false
-  node_document_form: false
-  node_educator_resource_form: false
-  node_ehs_manual_page_form: false
-  node_employee__form: false
+  node_contract_form: false
   node_event_form: false
-  node_experiment_form: false
-  node_facility_form: false
-  node_feature_form: false
-  node_frequently_asked_question_form: false
-  node_headline_form: false
-  node_homepage_form: false
   node_job_posting_form: false
-  node_jotform_form: false
-  node_meeting_minutes_form: false
   node_page_form: false
-  node_portal_form: false
   node_press_release_form: false
-  node_reports_and_publications_form: false
-  node_sdsta_board_meeting_form: false
-  node_surf_newsletter_form: false
   comment_comment_form: false

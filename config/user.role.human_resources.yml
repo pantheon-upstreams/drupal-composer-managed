@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - filter.format.editor_s_set
-    - node.type.employee_
     - node.type.job_posting
   module:
     - comment
@@ -30,17 +29,12 @@ permissions:
   - 'access user profiles'
   - 'administer nodes'
   - 'bypass node access'
-  - 'create employee_ content'
   - 'create job_posting content'
-  - 'delete any employee_ content'
   - 'delete any job_posting content'
   - 'delete job_posting revisions'
-  - 'delete own employee_ content'
   - 'delete own job_posting content'
-  - 'edit any employee_ content'
   - 'edit any job_posting content'
   - 'edit own comments'
-  - 'edit own employee_ content'
   - 'edit own job_posting content'
   - 'post comments'
   - 'revert job_posting revisions'

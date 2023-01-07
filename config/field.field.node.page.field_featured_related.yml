@@ -6,11 +6,7 @@ dependencies:
     - field.storage.node.field_featured_related
     - node.type.article
     - node.type.event
-    - node.type.experiment
-    - node.type.facility
-    - node.type.feature
     - node.type.page
-    - node.type.portal
     - node.type.press_release
 id: node.page.field_featured_related
 field_name: field_featured_related
@@ -29,10 +25,6 @@ settings:
       article: article
       page: page
       event: event
-      experiment: experiment
-      facility: facility
-      feature: feature
-      portal: portal
       press_release: press_release
     sort:
       field: _none

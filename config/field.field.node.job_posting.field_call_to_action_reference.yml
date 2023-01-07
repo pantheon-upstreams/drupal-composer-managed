@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_call_to_action_reference
     - node.type.job_posting
-    - node.type.jotform
 id: node.job_posting.field_call_to_action_reference
 field_name: field_call_to_action_reference
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      jotform: jotform
+    target_bundles: {  }
     sort:
       field: _none
     auto_create: true

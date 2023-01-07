@@ -6,11 +6,7 @@ dependencies:
     - field.storage.paragraph.field_content_reference
     - node.type.article
     - node.type.event
-    - node.type.experiment
-    - node.type.facility
-    - node.type.feature
     - node.type.page
-    - node.type.portal
     - paragraphs.paragraphs_type.entity_references_image_text
 id: paragraph.entity_references_image_text.field_content_reference
 field_name: field_content_reference
@@ -29,10 +25,6 @@ settings:
       article: article
       page: page
       event: event
-      experiment: experiment
-      facility: facility
-      feature: feature
-      portal: portal
     sort:
       field: _none
       direction: ASC

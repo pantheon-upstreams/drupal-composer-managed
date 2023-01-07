@@ -6,11 +6,7 @@ dependencies:
     - field.storage.node.field_featured_related
     - node.type.article
     - node.type.event
-    - node.type.experiment
-    - node.type.facility
-    - node.type.feature
     - node.type.job_posting
-    - node.type.portal
 id: node.job_posting.field_featured_related
 field_name: field_featured_related
 entity_type: node
@@ -27,10 +23,6 @@ settings:
     target_bundles:
       article: article
       event: event
-      experiment: experiment
-      facility: facility
-      feature: feature
-      portal: portal
     sort:
       field: _none
     auto_create: false
