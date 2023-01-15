@@ -4,58 +4,18 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.front
-    - field.field.node.article.body
     - field.field.node.article.field_author
-    - field.field.node.article.field_byline
     - field.field.node.article.field_date_published
-    - field.field.node.article.field_department
-    - field.field.node.article.field_featured_related
-    - field.field.node.article.field_highlighted
-    - field.field.node.article.field_overview
     - field.field.node.article.field_p_content
-    - field.field.node.article.field_paragraph_featured_image
     - field.field.node.article.field_publisher
-    - field.field.node.article.field_tags
     - node.type.article
   module:
-    - text
     - user
 id: node.article.front
 targetEntityType: node
 bundle: article
 mode: front
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_department:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_highlighted:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_tags:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -63,10 +23,6 @@ content:
     region: content
 hidden:
   field_author: true
-  field_byline: true
   field_date_published: true
-  field_featured_related: true
-  field_overview: true
   field_p_content: true
-  field_paragraph_featured_image: true
   field_publisher: true

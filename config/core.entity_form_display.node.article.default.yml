@@ -3,18 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
     - field.field.node.article.field_author
-    - field.field.node.article.field_byline
     - field.field.node.article.field_date_published
-    - field.field.node.article.field_department
-    - field.field.node.article.field_featured_related
-    - field.field.node.article.field_highlighted
-    - field.field.node.article.field_overview
     - field.field.node.article.field_p_content
-    - field.field.node.article.field_paragraph_featured_image
     - field.field.node.article.field_publisher
-    - field.field.node.article.field_tags
     - node.type.article
   module:
     - datetime
@@ -123,16 +115,6 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 6
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
@@ -147,53 +129,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_byline:
-    type: text_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_date_published:
     type: datetime_default
     weight: 124
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_department:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_featured_related:
-    type: entity_reference_autocomplete
-    weight: 26
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_highlighted:
-    type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_overview:
-    type: text_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 125
-      placeholder: ''
-    third_party_settings:
-      maxlength:
-        maxlength_js: 125
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   field_p_content:
     type: paragraphs
     weight: 122
@@ -212,17 +153,6 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_paragraph_featured_image:
-    type: entity_reference_paragraphs
-    weight: 4
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-    third_party_settings: {  }
   field_publisher:
     type: text_textfield
     weight: 125
@@ -230,12 +160,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_tags:
-    type: options_select
-    weight: 8
-    region: content
-    settings: {  }
     third_party_settings: {  }
   path:
     type: path
