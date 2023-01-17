@@ -1,6 +1,6 @@
 uuid: 6b62550f-edfa-4bc4-a0dd-51c81b79c327
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.account
@@ -13,7 +13,7 @@ _core:
 id: surf_account_menu
 theme: surf
 region: navbar_branding
-weight: -26
+weight: -11
 provider: null
 plugin: 'system_menu_block:account'
 settings:

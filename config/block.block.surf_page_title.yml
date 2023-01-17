@@ -2,8 +2,6 @@ uuid: ea3ef939-a8a0-4fe4-b06e-819dba907764
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
   theme:
     - surf
 _core:
@@ -11,7 +9,7 @@ _core:
 id: surf_page_title
 theme: surf
 region: content
-weight: -36
+weight: -11
 provider: null
 plugin: page_title_block
 settings:
@@ -19,16 +17,4 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      educator_resource: educator_resource
-      event: event
-      experiment: experiment
-      feature: feature
-      homepage: homepage
-      portal: portal
+visibility: {  }

@@ -11,7 +11,7 @@ _core:
 id: surf_help
 theme: surf
 region: content
-weight: -38
+weight: -6
 provider: null
 plugin: help_block
 settings:

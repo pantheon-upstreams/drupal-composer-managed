@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: surf_messages
 theme: surf
-region: content
-weight: -40
+region: navbar_branding
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:
@@ -19,9 +19,4 @@ settings:
   label: 'Status messages'
   label_display: '0'
   provider: system
-visibility:
-  request_path:
-    id: request_path
-    negate: false
-    context_mapping: {  }
-    pages: /press-release/sanford-lab-science-director-speak-first-ever-nobel-day-lead
+visibility: {  }

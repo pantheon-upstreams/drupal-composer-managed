@@ -2,16 +2,14 @@ uuid: ffa441dc-bb02-4e02-9173-bc69f8db25e9
 langcode: en
 status: true
 dependencies:
-  module:
-    - user
   theme:
     - surf
 _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: surf_local_tasks
 theme: surf
-region: eyebrow
-weight: -41
+region: content
+weight: -10
 provider: null
 plugin: local_tasks_block
 settings:
@@ -21,11 +19,4 @@ settings:
   provider: core
   primary: true
   secondary: true
-visibility:
-  user_role:
-    id: user_role
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    roles:
-      authenticated: authenticated
+visibility: {  }

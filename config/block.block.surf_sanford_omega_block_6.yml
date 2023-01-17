@@ -1,6 +1,6 @@
 uuid: bc2c93c7-14bb-4e64-bf92-1f939633d0ac
 langcode: en
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:basic:df529ceb-4311-410d-9862-7006fde0f850'
@@ -11,8 +11,8 @@ dependencies:
     - surf
 id: surf_sanford_omega_block_6
 theme: surf
-region: navbar_branding
-weight: -37
+region: content
+weight: -9
 provider: null
 plugin: 'block_content:df529ceb-4311-410d-9862-7006fde0f850'
 settings:
@@ -27,5 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    context_mapping: {  }
-    pages: /node/2537
+    pages: '<front>'

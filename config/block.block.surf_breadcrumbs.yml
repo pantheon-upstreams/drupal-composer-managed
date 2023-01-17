@@ -1,6 +1,6 @@
 uuid: e577bb43-3410-4f5d-bb0d-b6ae1ae616a7
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -11,7 +11,7 @@ _core:
 id: surf_breadcrumbs
 theme: surf
 region: navbar_branding
-weight: -36
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:

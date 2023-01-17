@@ -1,6 +1,6 @@
 uuid: fa0bac05-d1f8-4f4f-b309-2e490942781e
 langcode: en
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:basic:9f82ef00-6654-4a30-8373-621c98107de6'
@@ -11,8 +11,8 @@ dependencies:
     - surf
 id: surf_sanford_omega_block_10
 theme: surf
-region: navbar_branding
-weight: -31
+region: content
+weight: -5
 provider: null
 plugin: 'block_content:9f82ef00-6654-4a30-8373-621c98107de6'
 settings:

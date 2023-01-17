@@ -1,6 +1,6 @@
 uuid: 68b7bdb2-3629-48c0-9f1d-84c02adbc011
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.tools
@@ -13,7 +13,7 @@ _core:
 id: surf_tools
 theme: surf
 region: navbar_branding
-weight: -27
+weight: -11
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
