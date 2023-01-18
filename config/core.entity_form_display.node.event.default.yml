@@ -5,9 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_call_to_action_reference
-    - field.field.node.event.field_contact_person_s_
     - field.field.node.event.field_dates
-    - field.field.node.event.field_event_category
     - field.field.node.event.field_event_date_range
     - field.field.node.event.field_featured_related
     - field.field.node.event.field_image_primary
@@ -206,16 +204,6 @@ content:
       collapsed: false
       revision: false
     third_party_settings: {  }
-  field_contact_person_s_:
-    type: entity_reference_autocomplete
-    weight: 36
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_dates:
     type: smartdate_default
     weight: 3
@@ -231,12 +219,6 @@ content:
         custom
       show_extra: false
       hide_date: true
-    third_party_settings: {  }
-  field_event_category:
-    type: options_buttons
-    weight: 3
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_event_date_range:
     type: daterange_default
