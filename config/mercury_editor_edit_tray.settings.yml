@@ -1,3 +1,4 @@
 _core:
   default_config_hash: o2pZGTtvNG8ZtFnTQIjxu6P5xe9ka2hFaht9BnkewzY
-content_types: {  }
+content_types:
+  experiment_research: '1'

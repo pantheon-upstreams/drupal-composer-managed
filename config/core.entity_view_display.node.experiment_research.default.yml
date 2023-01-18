@@ -3,22 +3,72 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.experiment_research.body
+    - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_media_primary
+    - field.field.node.experiment_research.field_p_content
+    - field.field.node.experiment_research.field_ref_audiences
+    - field.field.node.experiment_research.field_ref_research_areas
+    - field.field.node.experiment_research.field_teaser_text
     - node.type.experiment_research
   module:
-    - text
+    - layout_paragraphs
+    - options
     - user
 id: node.experiment_research.default
 targetEntityType: node
 bundle: experiment_research
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
+  field_experiment_research_type:
+    type: list_default
+    label: above
     settings: {  }
     third_party_settings: {  }
+    weight: 103
+    region: content
+  field_media_primary:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 101
+    region: content
+  field_p_content:
+    type: layout_paragraphs_builder
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
+      empty_message: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

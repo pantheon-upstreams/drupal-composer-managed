@@ -4,27 +4,29 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.experiment_research.body
+    - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_media_primary
+    - field.field.node.experiment_research.field_p_content
+    - field.field.node.experiment_research.field_ref_audiences
+    - field.field.node.experiment_research.field_ref_research_areas
+    - field.field.node.experiment_research.field_teaser_text
     - node.type.experiment_research
   module:
-    - text
     - user
 id: node.experiment_research.teaser
 targetEntityType: node
 bundle: experiment_research
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_experiment_research_type: true
+  field_media_primary: true
+  field_p_content: true
+  field_ref_audiences: true
+  field_ref_research_areas: true
+  field_teaser_text: true
