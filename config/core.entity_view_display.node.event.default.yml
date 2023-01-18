@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.event.field_event_date_range
     - field.field.node.event.field_featured_related
     - field.field.node.event.field_image_primary
-    - field.field.node.event.field_location
     - field.field.node.event.field_location_address
     - field.field.node.event.field_location_map_link
     - field.field.node.event.field_location_note
@@ -100,7 +99,6 @@ hidden:
   field_event_category: true
   field_event_date_range: true
   field_featured_related: true
-  field_location: true
   field_location_address: true
   field_location_map_link: true
   field_location_note: true

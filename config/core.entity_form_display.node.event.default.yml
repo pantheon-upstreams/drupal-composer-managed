@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.event.field_event_date_range
     - field.field.node.event.field_featured_related
     - field.field.node.event.field_image_primary
-    - field.field.node.event.field_location
     - field.field.node.event.field_location_address
     - field.field.node.event.field_location_map_link
     - field.field.node.event.field_location_note
@@ -261,14 +260,6 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
-  field_location:
-    type: text_textfield
-    weight: 4
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_location_address:
     type: address_default

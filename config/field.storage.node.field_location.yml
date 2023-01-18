@@ -1,20 +1,21 @@
-uuid: ee57921e-e7b9-4d27-bb1e-0b14ffd45922
-langcode: und
+uuid: fc988d81-7b73-47b3-88a9-16a1fe0fd73c
+langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
 id: node.field_location
 field_name: field_location
 entity_type: node
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
-translatable: false
+translatable: true
 indexes: {  }
 persist_with_no_fields: false
 custom_storage: false
