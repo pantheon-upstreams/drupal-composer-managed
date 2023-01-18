@@ -4,11 +4,64 @@ status: true
 dependencies:
   config:
     - field.field.node.person.body
+    - field.field.node.person.field_appointed_by
+    - field.field.node.person.field_board_type
+    - field.field.node.person.field_date_appointed
+    - field.field.node.person.field_email
+    - field.field.node.person.field_job_title
+    - field.field.node.person.field_location
+    - field.field.node.person.field_media_primary
+    - field.field.node.person.field_name
+    - field.field.node.person.field_phone_mobile
+    - field.field.node.person.field_phone_office
+    - field.field.node.person.field_ref_department
     - node.type.person
   module:
+    - datetime
+    - field_group
+    - media_library
+    - name
     - path
     - scheduler
+    - telephone
     - text
+third_party_settings:
+  field_group:
+    group_contact_info:
+      children:
+        - field_phone_mobile
+        - field_phone_office
+        - field_email
+      label: 'Contact info'
+      region: content
+      parent_name: ''
+      weight: 14
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_board_t:
+      children:
+        - field_location
+        - field_date_appointed
+        - field_appointed_by
+        - field_board_type
+      label: 'Board details'
+      region: content
+      parent_name: ''
+      weight: 15
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 id: node.person.default
 targetEntityType: node
 bundle: person
@@ -16,7 +69,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 11
     region: content
     settings:
       rows: 9
@@ -26,46 +79,152 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_appointed_by:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_board_type:
+    type: options_select
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_appointed:
+    type: datetime_default
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 14
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_job_title:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_location:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_primary:
+    type: media_library_widget
+    weight: 12
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_name:
+    type: name_default
+    weight: 1
+    region: content
+    settings:
+      override_field_settings: false
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+    third_party_settings: {  }
+  field_phone_mobile:
+    type: telephone_default
+    weight: 12
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_phone_office:
+    type: telephone_default
+    weight: 13
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_department:
+    type: entity_reference_autocomplete
+    weight: 31
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -73,7 +232,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -83,12 +242,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

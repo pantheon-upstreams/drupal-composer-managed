@@ -1,0 +1,21 @@
+uuid: a6e50fdd-75a2-407e-b6f1-afec10b646f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_type
+    - node.type.person
+  module:
+    - options
+id: node.person.field_board_type
+field_name: field_board_type
+entity_type: node
+bundle: person
+label: 'Board type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

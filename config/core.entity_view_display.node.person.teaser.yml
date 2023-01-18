@@ -5,6 +5,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.person.body
+    - field.field.node.person.field_appointed_by
+    - field.field.node.person.field_board_type
+    - field.field.node.person.field_date_appointed
+    - field.field.node.person.field_email
+    - field.field.node.person.field_job_title
+    - field.field.node.person.field_location
+    - field.field.node.person.field_media_primary
+    - field.field.node.person.field_name
+    - field.field.node.person.field_phone_mobile
+    - field.field.node.person.field_phone_office
+    - field.field.node.person.field_ref_department
     - node.type.person
   module:
     - text
@@ -27,4 +38,15 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_appointed_by: true
+  field_board_type: true
+  field_date_appointed: true
+  field_email: true
+  field_job_title: true
+  field_location: true
+  field_media_primary: true
+  field_name: true
+  field_phone_mobile: true
+  field_phone_office: true
+  field_ref_department: true

@@ -4,8 +4,22 @@ status: true
 dependencies:
   config:
     - field.field.node.person.body
+    - field.field.node.person.field_appointed_by
+    - field.field.node.person.field_board_type
+    - field.field.node.person.field_date_appointed
+    - field.field.node.person.field_email
+    - field.field.node.person.field_job_title
+    - field.field.node.person.field_location
+    - field.field.node.person.field_media_primary
+    - field.field.node.person.field_name
+    - field.field.node.person.field_phone_mobile
+    - field.field.node.person.field_phone_office
+    - field.field.node.person.field_ref_department
     - node.type.person
   module:
+    - datetime
+    - name
+    - options
     - text
     - user
 id: node.person.default
@@ -19,6 +33,99 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_appointed_by:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_board_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_date_appointed:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_job_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_name:
+    type: name_default
+    label: above
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_phone_mobile:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_phone_office:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_ref_department:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
     region: content
   links:
     settings: {  }

@@ -1,18 +1,17 @@
-uuid: 2111369c-fe40-440f-b048-691abae04e7f
+uuid: fddfd70a-dbde-4ef7-9627-f61a0fa50d71
 langcode: en
 status: true
 dependencies:
   module:
+    - datetime
     - node
-id: node.field_job_title
-field_name: field_job_title
+id: node.field_date_appointed
+field_name: field_date_appointed
 entity_type: node
-type: string
+type: datetime
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
-module: core
+  datetime_type: date
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

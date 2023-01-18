@@ -1,0 +1,19 @@
+uuid: 355d505a-78cf-4838-8ca1-554cae14a1ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appointed_by
+    - node.type.person
+id: node.person.field_appointed_by
+field_name: field_appointed_by
+entity_type: node
+bundle: person
+label: 'Appointed by'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

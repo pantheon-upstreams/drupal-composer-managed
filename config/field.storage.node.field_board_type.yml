@@ -1,0 +1,30 @@
+uuid: cbfa840e-e4f5-4f8f-83a0-f7867f7201a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_board_type
+field_name: field_board_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: sdsta
+      label: SDSTA
+    -
+      value: surf_foundation
+      label: 'SURF Foundation'
+    -
+      value: cultural_advisory_committee
+      label: 'Cultural Advisory Committee'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
