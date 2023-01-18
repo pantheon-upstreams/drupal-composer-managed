@@ -4,27 +4,29 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.esh_standard.body
+    - field.field.node.esh_standard.field_ism_document_number
+    - field.field.node.esh_standard.field_ism_rev_number
+    - field.field.node.esh_standard.field_media_primary
+    - field.field.node.esh_standard.field_p_content
+    - field.field.node.esh_standard.field_ref_audiences
+    - field.field.node.esh_standard.field_ref_esh_categories
     - node.type.esh_standard
   module:
-    - text
     - user
 id: node.esh_standard.teaser
 targetEntityType: node
 bundle: esh_standard
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_ism_document_number: true
+  field_ism_rev_number: true
+  field_media_primary: true
+  field_p_content: true
+  field_ref_audiences: true
+  field_ref_esh_categories: true

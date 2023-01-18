@@ -1,0 +1,19 @@
+uuid: 406148eb-c7d8-444d-9da0-a58cf02212a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ism_document_number
+    - node.type.esh_standard
+id: node.esh_standard.field_ism_document_number
+field_name: field_ism_document_number
+entity_type: node
+bundle: esh_standard
+label: 'ISM Document number'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

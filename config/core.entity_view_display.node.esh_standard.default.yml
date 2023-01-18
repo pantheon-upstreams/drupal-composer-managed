@@ -3,22 +3,70 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.esh_standard.body
+    - field.field.node.esh_standard.field_ism_document_number
+    - field.field.node.esh_standard.field_ism_rev_number
+    - field.field.node.esh_standard.field_media_primary
+    - field.field.node.esh_standard.field_p_content
+    - field.field.node.esh_standard.field_ref_audiences
+    - field.field.node.esh_standard.field_ref_esh_categories
     - node.type.esh_standard
   module:
-    - text
+    - entity_reference_revisions
     - user
 id: node.esh_standard.default
 targetEntityType: node
 bundle: esh_standard
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_ism_document_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_ism_rev_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_media_primary:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_p_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_ref_esh_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }

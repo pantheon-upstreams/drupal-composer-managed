@@ -1,0 +1,29 @@
+uuid: db75d770-a45c-4f70-b026-6072cba8ff55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_esh_categories
+    - node.type.esh_standard
+    - taxonomy.vocabulary.esh_standard_category
+id: node.esh_standard.field_ref_esh_categories
+field_name: field_ref_esh_categories
+entity_type: node
+bundle: esh_standard
+label: 'ESH Standard categories'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      esh_standard_category: esh_standard_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
