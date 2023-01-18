@@ -62,7 +62,9 @@
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/webform": "^6.1",
         "atendesigngroup/mercury_editor": "dev-restructure",
-        "drupal/migrate_drupal_d8": "^1.0"
+        "drupal/migrate_drupal_d8": "^1.0",
+        "drupal/name": "^1.0@RC",
+        "drupal/auto_entitylabel": "^3.0"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",
