@@ -1,17 +1,17 @@
-uuid: 45e5570d-5e85-432a-a6ac-154a5e8ac5eb
+uuid: 26baf594-a794-4b75-8227-dc33f7f5d3a3
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime_range
     - node
-id: node.field_event_date_range
-field_name: field_event_date_range
+    - webform
+id: node.field_ref_registration_form
+field_name: field_ref_registration_form
 entity_type: node
-type: daterange
+type: webform
 settings:
-  datetime_type: datetime
-module: datetime_range
+  target_type: webform
+module: webform
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,29 @@
+uuid: a66ceb37-2b06-482d-9fac-186bae8704ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_attendees
+    - node.type.event
+id: node.event.field_ref_attendees
+field_name: field_ref_attendees
+entity_type: node
+bundle: event
+label: Attendees
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference

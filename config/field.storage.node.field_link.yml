@@ -1,12 +1,12 @@
-uuid: 350e2104-b5f6-4e77-825f-e5562793ceda
+uuid: ed1a05a2-3af1-4093-826d-ac6d7e9f5349
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - node
-id: node.field_location_website
-field_name: field_location_website
+id: node.field_link
+field_name: field_link
 entity_type: node
 type: link
 settings: {  }

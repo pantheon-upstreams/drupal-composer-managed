@@ -11,7 +11,7 @@ id: node.event.field_overview
 field_name: field_overview
 entity_type: node
 bundle: event
-label: '[delete] Overview'
+label: Overview
 description: ''
 required: false
 translatable: true

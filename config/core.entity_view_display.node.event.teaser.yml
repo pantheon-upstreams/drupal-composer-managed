@@ -5,22 +5,22 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
-    - field.field.node.event.field_call_to_action_reference
+    - field.field.node.event.field_capacity
     - field.field.node.event.field_dates
-    - field.field.node.event.field_event_date_range
-    - field.field.node.event.field_featured_related
-    - field.field.node.event.field_image_primary
+    - field.field.node.event.field_link
     - field.field.node.event.field_location_address
-    - field.field.node.event.field_location_map_link
-    - field.field.node.event.field_location_note
-    - field.field.node.event.field_location_website
-    - field.field.node.event.field_more_information
-    - field.field.node.event.field_more_information_label
+    - field.field.node.event.field_media_primary
     - field.field.node.event.field_overview
-    - field.field.node.event.field_paragraph_featured_image
+    - field.field.node.event.field_ref_attendees
+    - field.field.node.event.field_ref_audiences
+    - field.field.node.event.field_ref_eo_opportunities
+    - field.field.node.event.field_ref_event_types
+    - field.field.node.event.field_ref_key_impact_areas
+    - field.field.node.event.field_ref_registration_form
+    - field.field.node.event.field_ref_related_content
+    - field.field.node.event.field_ref_research_areas
     - field.field.node.event.field_registration_period
     - field.field.node.event.field_registration_required
-    - field.field.node.event.field_time_and_date
     - node.type.event
   module:
     - text
@@ -46,19 +46,19 @@ content:
     weight: 0
     region: content
 hidden:
-  field_call_to_action_reference: true
+  field_capacity: true
   field_dates: true
-  field_event_date_range: true
-  field_featured_related: true
-  field_image_primary: true
+  field_link: true
   field_location_address: true
-  field_location_map_link: true
-  field_location_note: true
-  field_location_website: true
-  field_more_information: true
-  field_more_information_label: true
-  field_paragraph_featured_image: true
+  field_media_primary: true
+  field_ref_attendees: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_event_types: true
+  field_ref_key_impact_areas: true
+  field_ref_registration_form: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
   field_registration_period: true
   field_registration_required: true
-  field_time_and_date: true
   links: true

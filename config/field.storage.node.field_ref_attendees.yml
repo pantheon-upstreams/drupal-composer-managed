@@ -1,19 +1,19 @@
-uuid: 641d6da8-ed56-4acd-9bf9-863047e7da91
+uuid: 9efa03b6-7d34-4b7d-adf3-01183ee991c5
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - text
-id: node.field_location_note
-field_name: field_location_note
+    - user
+id: node.field_ref_attendees
+field_name: field_ref_attendees
 entity_type: node
-type: text
+type: entity_reference
 settings:
-  max_length: 255
-module: text
+  target_type: user
+module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

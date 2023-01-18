@@ -4,28 +4,29 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_call_to_action_reference
+    - field.field.node.event.field_capacity
     - field.field.node.event.field_dates
-    - field.field.node.event.field_event_date_range
-    - field.field.node.event.field_featured_related
-    - field.field.node.event.field_image_primary
+    - field.field.node.event.field_link
     - field.field.node.event.field_location_address
-    - field.field.node.event.field_location_map_link
-    - field.field.node.event.field_location_note
-    - field.field.node.event.field_location_website
-    - field.field.node.event.field_more_information
-    - field.field.node.event.field_more_information_label
+    - field.field.node.event.field_media_primary
     - field.field.node.event.field_overview
-    - field.field.node.event.field_paragraph_featured_image
+    - field.field.node.event.field_ref_attendees
+    - field.field.node.event.field_ref_audiences
+    - field.field.node.event.field_ref_eo_opportunities
+    - field.field.node.event.field_ref_event_types
+    - field.field.node.event.field_ref_key_impact_areas
+    - field.field.node.event.field_ref_registration_form
+    - field.field.node.event.field_ref_related_content
+    - field.field.node.event.field_ref_research_areas
     - field.field.node.event.field_registration_period
     - field.field.node.event.field_registration_required
-    - field.field.node.event.field_time_and_date
     - node.type.event
   module:
     - datetime_range
-    - entity_reference_revisions
+    - link
     - text
     - user
+    - webform
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -38,6 +39,15 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_capacity:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
   field_dates:
     type: daterange_default
     label: above
@@ -48,23 +58,89 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_image_primary:
-    type: entity_reference_entity_view
+  field_link:
+    type: link
     label: above
     settings:
-      view_mode: default
-      link: false
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 8
     region: content
-  field_paragraph_featured_image:
-    type: entity_reference_revisions_entity_view
-    label: hidden
+  field_media_primary:
+    type: entity_reference_label
+    label: above
     settings:
-      view_mode: default
-      link: ''
+      link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 7
+    region: content
+  field_ref_attendees:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_ref_event_types:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_ref_key_impact_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_ref_registration_form:
+    type: webform_entity_reference_entity_view
+    label: above
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_ref_related_content:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_registration_period:
     type: daterange_default
@@ -92,14 +168,5 @@ content:
     weight: 2
     region: content
 hidden:
-  field_call_to_action_reference: true
-  field_event_date_range: true
-  field_featured_related: true
   field_location_address: true
-  field_location_map_link: true
-  field_location_note: true
-  field_location_website: true
-  field_more_information: true
-  field_more_information_label: true
   field_overview: true
-  field_time_and_date: true
