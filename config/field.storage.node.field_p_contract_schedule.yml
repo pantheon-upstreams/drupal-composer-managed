@@ -1,4 +1,4 @@
-uuid: 3bc79d6c-a1c3-482f-9f07-d9b5b1231bc3
+uuid: 1267df47-da18-47c1-805c-7dcfdab6b716
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_p_contract_schedules
-field_name: field_p_contract_schedules
+id: node.field_p_contract_schedule
+field_name: field_p_contract_schedule
 entity_type: node
 type: entity_reference_revisions
 settings:

@@ -11,7 +11,7 @@ id: node.contract.field_links
 field_name: field_links
 entity_type: node
 bundle: contract
-label: Links
+label: 'Related links'
 description: ''
 required: false
 translatable: false

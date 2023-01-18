@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.contract.field_contract_summary
     - field.field.node.contract.field_links
     - field.field.node.contract.field_overview
-    - field.field.node.contract.field_p_contract_schedules
+    - field.field.node.contract.field_p_contract_schedule
     - field.field.node.contract.field_ref_contacts
     - field.field.node.contract.field_ref_contract_type
     - field.field.node.contract.field_ref_documents
@@ -55,14 +55,14 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
-  field_p_contract_schedules:
+  field_p_contract_schedule:
     type: entity_reference_revisions_entity_view
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 108
+    weight: 109
     region: content
   field_ref_contacts:
     type: entity_reference_label

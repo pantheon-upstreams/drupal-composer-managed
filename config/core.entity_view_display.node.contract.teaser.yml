@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.contract.field_contract_summary
     - field.field.node.contract.field_links
     - field.field.node.contract.field_overview
-    - field.field.node.contract.field_p_contract_schedules
+    - field.field.node.contract.field_p_contract_schedule
     - field.field.node.contract.field_ref_contacts
     - field.field.node.contract.field_ref_contract_type
     - field.field.node.contract.field_ref_documents
@@ -38,7 +38,7 @@ hidden:
   field_contract_summary: true
   field_links: true
   field_overview: true
-  field_p_contract_schedules: true
+  field_p_contract_schedule: true
   field_ref_contacts: true
   field_ref_contract_type: true
   field_ref_documents: true
