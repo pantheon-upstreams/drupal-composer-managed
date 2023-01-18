@@ -1,0 +1,20 @@
+uuid: 66144524-583a-4bb7-8050-db4e9128a079
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_ref_key_impact_areas
+field_name: field_ref_key_impact_areas
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
