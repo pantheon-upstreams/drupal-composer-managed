@@ -1,8 +1,0 @@
-uuid: 9d96dc7f-ee27-484a-9086-7a850eee9ac0
-langcode: en
-status: true
-dependencies: {  }
-name: Newsletters
-vid: newsle
-description: '[legacy] SURF newsletters'
-weight: 3

@@ -1,8 +1,0 @@
-uuid: acb71c4a-3e56-44da-9c4a-cdd3478e85af
-langcode: en
-status: true
-dependencies: {  }
-name: 'Reports and publications'
-vid: important_displays
-description: '[legacy]'
-weight: 2

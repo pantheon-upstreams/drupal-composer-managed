@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Research Area'
 vid: research_area
 description: ''
-weight: -7
+weight: -4

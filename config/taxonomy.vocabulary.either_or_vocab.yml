@@ -1,8 +1,0 @@
-uuid: 30cce363-99c6-4c60-bef3-5efe8e4acd5f
-langcode: en
-status: true
-dependencies: {  }
-name: Status
-vid: either_or_vocab
-description: '[legacy]'
-weight: 9

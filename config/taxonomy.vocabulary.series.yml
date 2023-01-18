@@ -1,8 +1,0 @@
-uuid: 41006a23-3321-4046-a3d8-7bc2ab26b496
-langcode: en
-status: true
-dependencies: {  }
-name: Series
-vid: series
-description: '[legacy] Use if you want to group articles as part of a series'
-weight: 4

@@ -1,8 +1,0 @@
-uuid: 24cdcab7-582a-42fe-8106-b1047297d677
-langcode: en
-status: true
-dependencies: {  }
-name: Slider
-vid: slider
-description: '[legacy]'
-weight: 8

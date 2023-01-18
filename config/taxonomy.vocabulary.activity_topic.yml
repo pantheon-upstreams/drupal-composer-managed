@@ -1,8 +1,0 @@
-uuid: 1b5c35c1-af2f-4f28-90ca-7fb850e80665
-langcode: en
-status: true
-dependencies: {  }
-name: 'Activity Topic'
-vid: activity_topic
-description: '[legacy] Terms to organize education activities'
-weight: -5

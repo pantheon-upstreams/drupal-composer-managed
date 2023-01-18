@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Contract Type'
 vid: contract_type
 description: 'Used for the contract content type'
-weight: -2
+weight: -10

@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Event Outreach Opportunity'
 vid: eo_opportunity
 description: ''
-weight: -10
+weight: -8

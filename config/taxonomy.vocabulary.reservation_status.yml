@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Reservation Status'
 vid: reservation_status
 description: ''
-weight: -6
+weight: -3
