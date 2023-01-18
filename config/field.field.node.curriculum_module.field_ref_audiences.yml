@@ -1,0 +1,29 @@
+uuid: 05cc2523-4f53-495e-b644-c2845aeb2a27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_audiences
+    - node.type.curriculum_module
+    - taxonomy.vocabulary.audience
+id: node.curriculum_module.field_ref_audiences
+field_name: field_ref_audiences
+entity_type: node
+bundle: curriculum_module
+label: Audiences
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
