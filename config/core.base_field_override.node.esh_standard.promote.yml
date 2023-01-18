@@ -1,0 +1,22 @@
+uuid: bc97b7f0-d197-4070-b7f5-09e20a18bc6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.esh_standard
+id: node.esh_standard.promote
+field_name: promote
+entity_type: node
+bundle: esh_standard
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

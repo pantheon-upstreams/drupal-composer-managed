@@ -1,0 +1,23 @@
+uuid: 4e74c815-92c8-4148-85bb-56a729d8555c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.landing
+  module:
+    - text
+id: node.landing.body
+field_name: body
+entity_type: node
+bundle: landing
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

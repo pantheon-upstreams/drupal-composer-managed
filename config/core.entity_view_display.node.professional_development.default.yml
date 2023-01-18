@@ -1,0 +1,28 @@
+uuid: 61ad407d-7d1e-4071-977a-3332f959202b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.professional_development.body
+    - node.type.professional_development
+  module:
+    - text
+    - user
+id: node.professional_development.default
+targetEntityType: node
+bundle: professional_development
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

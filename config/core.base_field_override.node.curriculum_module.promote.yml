@@ -1,0 +1,22 @@
+uuid: 50bbdf31-2f49-4483-96fd-4d1ac619c8ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.curriculum_module
+id: node.curriculum_module.promote
+field_name: promote
+entity_type: node
+bundle: curriculum_module
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

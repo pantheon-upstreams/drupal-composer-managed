@@ -1,0 +1,30 @@
+uuid: be5da3a7-e696-4e52-8e60-de068129b9dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.report_publication.body
+    - node.type.report_publication
+  module:
+    - text
+    - user
+id: node.report_publication.teaser
+targetEntityType: node
+bundle: report_publication
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

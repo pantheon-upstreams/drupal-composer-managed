@@ -1,0 +1,28 @@
+uuid: a80db492-ec03-44ba-a31c-5f8b6bb8cf8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.curriculum_module.body
+    - node.type.curriculum_module
+  module:
+    - text
+    - user
+id: node.curriculum_module.default
+targetEntityType: node
+bundle: curriculum_module
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: d01043eb-59c8-459f-9c71-8374c0fc8474
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.curriculum_module
+  module:
+    - text
+id: node.curriculum_module.body
+field_name: body
+entity_type: node
+bundle: curriculum_module
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

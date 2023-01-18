@@ -1,0 +1,28 @@
+uuid: 4ddcd8df-afe2-4cd9-9f94-6e91a13c9700
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.report_publication.body
+    - node.type.report_publication
+  module:
+    - text
+    - user
+id: node.report_publication.default
+targetEntityType: node
+bundle: report_publication
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

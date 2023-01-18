@@ -1,0 +1,28 @@
+uuid: 13c3d4a2-e93d-494f-aaa7-03aec09fc131
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.school_presentation.body
+    - node.type.school_presentation
+  module:
+    - text
+    - user
+id: node.school_presentation.default
+targetEntityType: node
+bundle: school_presentation
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

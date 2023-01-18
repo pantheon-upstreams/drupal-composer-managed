@@ -1,0 +1,28 @@
+uuid: 9c3274b4-e896-4150-8aab-1bfc0d94848d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.esh_standard.body
+    - node.type.esh_standard
+  module:
+    - text
+    - user
+id: node.esh_standard.default
+targetEntityType: node
+bundle: esh_standard
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

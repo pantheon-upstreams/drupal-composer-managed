@@ -1,4 +1,4 @@
-uuid: 4e072a16-68ea-4ca5-9c6a-5b653ad939ff
+uuid: 81312c83-53a1-4d91-bcd9-5c40fbb1028a
 langcode: en
 status: true
 dependencies:
@@ -25,11 +25,9 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-_core:
-  default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
-name: 'Basic page'
-type: page
-description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
+name: 'Landing Page'
+type: landing
+description: ''
 help: ''
 new_revision: false
 preview_mode: 1
