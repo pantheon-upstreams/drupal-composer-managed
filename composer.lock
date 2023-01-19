@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45ffb0d6c1afeef9d9f9d0be9f979cfe",
+    "content-hash": "5b9976caf49de44b45ab6166d9afc078",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2672,6 +2672,127 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/filefield_paths"
             }
+        },
+        {
+            "name": "drupal/gin",
+            "version": "3.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gin.git",
+                "reference": "8.x-3.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gin-8.x-3.0-rc1.zip",
+                "reference": "8.x-3.0-rc1",
+                "shasum": "d9a9ed97a5f8741e6edf48ef03721b3a278ef167"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9 || ^10",
+                "drupal/gin_toolbar": "^1.0@beta"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.0-rc1",
+                    "datestamp": "1669708679",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "scripts": {
+                "phpcs": [
+                    "phpcs -s --runtime-set ignore_warnings_on_exit 1 --runtime-set ignore_errors_on_exit 0 'web/modules/custom'"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sascha Eggenberger (saschaeggi)",
+                    "homepage": "https://www.drupal.org/u/saschaeggi",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "For a better Admin and Content Editor Experience.",
+            "homepage": "https://www.drupal.org/project/gin",
+            "support": {
+                "source": "https://git.drupalcode.org/project/gin",
+                "issues": "https://www.drupal.org/project/issues/gin"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/sponsors/saschaeggi"
+                },
+                {
+                    "type": "other",
+                    "url": "https://paypal.me/saschaeggi"
+                }
+            ]
+        },
+        {
+            "name": "drupal/gin_toolbar",
+            "version": "1.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gin_toolbar.git",
+                "reference": "8.x-1.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gin_toolbar-8.x-1.0-rc1.zip",
+                "reference": "8.x-1.0-rc1",
+                "shasum": "90516f6aa22f4f60f1853bdceb757940f411ec7e"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-rc1",
+                    "datestamp": "1669666957",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sascha Eggenberger (saschaeggi)",
+                    "homepage": "https://www.drupal.org/u/saschaeggi",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Gin Toolbar for Frontend use",
+            "homepage": "https://www.drupal.org/project/gin_toolbar",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/gin_toolbar",
+                "issues": "https://www.drupal.org/project/issues/gin_toolbar"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/sponsors/saschaeggi"
+                },
+                {
+                    "type": "other",
+                    "url": "https://paypal.me/saschaeggi"
+                }
+            ]
         },
         {
             "name": "drupal/google_analytics",
@@ -13343,7 +13464,8 @@
         "drupal/apitools": 15,
         "drupal/conditional_fields": 15,
         "atendesigngroup/mercury_editor": 20,
-        "drupal/name": 5
+        "drupal/name": 5,
+        "drupal/gin": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
