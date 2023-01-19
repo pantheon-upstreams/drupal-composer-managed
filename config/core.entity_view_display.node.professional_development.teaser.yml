@@ -4,27 +4,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.professional_development.body
+    - field.field.node.professional_development.field_p_content
+    - field.field.node.professional_development.field_ref_audiences
+    - field.field.node.professional_development.field_ref_eo_opportunities
+    - field.field.node.professional_development.field_ref_related_content
     - node.type.professional_development
   module:
-    - text
     - user
 id: node.professional_development.teaser
 targetEntityType: node
 bundle: professional_development
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    weight: 101
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_p_content: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_related_content: true

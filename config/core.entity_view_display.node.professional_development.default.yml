@@ -3,22 +3,51 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.professional_development.body
+    - field.field.node.professional_development.field_p_content
+    - field.field.node.professional_development.field_ref_audiences
+    - field.field.node.professional_development.field_ref_eo_opportunities
+    - field.field.node.professional_development.field_ref_related_content
     - node.type.professional_development
   module:
-    - text
+    - entity_reference_revisions
     - user
 id: node.professional_development.default
 targetEntityType: node
 bundle: professional_development
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_p_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 101
+    weight: 102
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_ref_related_content:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }
