@@ -3,32 +3,76 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.school_presentation.body
+    - field.field.node.school_presentation.field_p_content
+    - field.field.node.school_presentation.field_ref_audiences
+    - field.field.node.school_presentation.field_ref_eo_opportunities
+    - field.field.node.school_presentation.field_ref_grade_levels
+    - field.field.node.school_presentation.field_ref_research_areas
     - node.type.school_presentation
   module:
+    - entity_reference_revisions
     - path
     - scheduler
-    - text
 id: node.school_presentation.default
 targetEntityType: node
 bundle: school_presentation
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 121
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_p_content:
+    type: entity_reference_revisions_autocomplete
+    weight: 121
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_audiences:
+    type: entity_reference_autocomplete
+    weight: 123
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_eo_opportunities:
+    type: entity_reference_autocomplete
+    weight: 122
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_grade_levels:
+    type: entity_reference_autocomplete
+    weight: 124
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_research_areas:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

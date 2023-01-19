@@ -1,0 +1,29 @@
+uuid: c7dcb7c1-3485-4d8b-9b61-94aa2f57e282
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_grade_levels
+    - node.type.school_presentation
+    - taxonomy.vocabulary.grade_level
+id: node.school_presentation.field_ref_grade_levels
+field_name: field_ref_grade_levels
+entity_type: node
+bundle: school_presentation
+label: 'Grade levels'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      grade_level: grade_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -3,22 +3,60 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.school_presentation.body
+    - field.field.node.school_presentation.field_p_content
+    - field.field.node.school_presentation.field_ref_audiences
+    - field.field.node.school_presentation.field_ref_eo_opportunities
+    - field.field.node.school_presentation.field_ref_grade_levels
+    - field.field.node.school_presentation.field_ref_research_areas
     - node.type.school_presentation
   module:
-    - text
+    - entity_reference_revisions
     - user
 id: node.school_presentation.default
 targetEntityType: node
 bundle: school_presentation
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_p_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_ref_grade_levels:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
     region: content
   links:
     settings: {  }

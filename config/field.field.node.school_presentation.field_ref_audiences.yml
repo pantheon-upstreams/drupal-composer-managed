@@ -1,0 +1,29 @@
+uuid: 8ae6f0b8-c264-4a01-a90d-9b06a95d3100
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_audiences
+    - node.type.school_presentation
+    - taxonomy.vocabulary.audience
+id: node.school_presentation.field_ref_audiences
+field_name: field_ref_audiences
+entity_type: node
+bundle: school_presentation
+label: Audiences
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
