@@ -1,23 +1,23 @@
-uuid: e60accec-8efd-44fa-abb7-817a474918ab
+uuid: cb453649-1821-4842-84c3-e5ee6422a3b9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
+    - field.storage.node.field_link
     - node.type.job_posting
   module:
-    - text
-id: node.job_posting.body
-field_name: body
+    - link
+id: node.job_posting.field_link
+field_name: field_link
 entity_type: node
 bundle: job_posting
-label: Description
+label: 'Apply link'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
-  required_summary: false
-field_type: text_with_summary
+  title: 1
+  link_type: 17
+field_type: link

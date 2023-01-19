@@ -4,98 +4,23 @@ status: true
 dependencies:
   config:
     - field.field.node.job_posting.body
-    - field.field.node.job_posting.field_call_to_action_reference
-    - field.field.node.job_posting.field_closing_date_day
-    - field.field.node.job_posting.field_featured_related
-    - field.field.node.job_posting.field_more_information
-    - field.field.node.job_posting.field_more_information_label
+    - field.field.node.job_posting.field_date_application_due
+    - field.field.node.job_posting.field_equipment
+    - field.field.node.job_posting.field_link
+    - field.field.node.job_posting.field_media
     - field.field.node.job_posting.field_overview
+    - field.field.node.job_posting.field_ref_audiences
+    - field.field.node.job_posting.field_ref_department
+    - field.field.node.job_posting.field_ref_job_type
     - node.type.job_posting
   module:
     - datetime
-    - field_group
-    - inline_entity_form
+    - link
     - maxlength
+    - media_library
     - path
     - scheduler
     - text
-third_party_settings:
-  field_group:
-    group_related:
-      children:
-        - field_featured_related
-      label: Related
-      region: content
-      parent_name: group_tabs
-      weight: 23
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_more_info:
-      children:
-        - field_more_information
-        - field_more_information_label
-      label: 'More Info'
-      region: content
-      parent_name: group_tabs
-      weight: 22
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_overview:
-      children:
-        - title
-        - field_overview
-        - field_closing_date_day
-        - field_call_to_action_reference
-      label: Overview
-      region: content
-      parent_name: group_tabs
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: open
-        description: ''
-        required_fields: true
-    group_tabs:
-      children:
-        - group_overview
-        - group_content
-        - group_more_info
-        - group_related
-      label: Tabs
-      region: content
-      parent_name: ''
-      weight: 0
-      format_type: tabs
-      format_settings:
-        classes: ''
-        id: ''
-        direction: horizontal
-    group_content:
-      children:
-        - body
-      label: Content
-      region: content
-      parent_name: group_tabs
-      weight: 21
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
 id: node.job_posting.default
 targetEntityType: node
 bundle: job_posting
@@ -103,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -113,63 +38,41 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_call_to_action_reference:
-    type: inline_entity_form_complex
-    weight: 4
-    region: content
-    settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Jotform
-      label_plural: Jotforms
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-    third_party_settings: {  }
-  field_closing_date_day:
+  field_date_application_due:
     type: datetime_default
-    weight: -3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_featured_related:
-    type: entity_reference_autocomplete
     weight: 26
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-  field_more_information:
-    type: inline_entity_form_complex
-    weight: 11
+  field_equipment:
+    type: boolean_checkbox
+    weight: 3
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
+      display_label: true
     third_party_settings: {  }
-  field_more_information_label:
-    type: string_textfield
-    weight: 13
+  field_link:
+    type: link_default
+    weight: 18
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 16
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: -4
+    weight: 1
     region: content
     settings:
       size: 125
@@ -178,47 +81,69 @@ content:
       maxlength:
         maxlength_js: 200
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  field_ref_audiences:
+    type: entity_reference_autocomplete
+    weight: 19
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_department:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_job_type:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 121
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -226,7 +151,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -236,12 +161,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 8
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

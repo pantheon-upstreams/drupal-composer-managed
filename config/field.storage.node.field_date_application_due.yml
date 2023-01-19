@@ -1,12 +1,12 @@
-uuid: df16aa5a-106b-4821-bd6b-2431e70e05c3
+uuid: 5ebb722a-d395-4c7b-9ede-331e539e6a44
 langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - node
-id: node.field_closing_date_day
-field_name: field_closing_date_day
+id: node.field_date_application_due
+field_name: field_date_application_due
 entity_type: node
 type: datetime
 settings:

@@ -1,0 +1,23 @@
+id: surf_taxonomy_department
+label: "SURF Taxonomy term -> Department"
+migration_group: surf
+migration_tags:
+  - taxonomy
+source:
+  plugin: d8_entity
+  entity_type: taxonomy_term
+  include_translations: false
+  bundle: 'department'
+  key: migrate
+process:
+  id: id
+  vid:
+    plugin: default_value
+    default_value: 'department'
+  name: name
+  changed: changed
+  description: description
+destination:
+  plugin: 'entity_complete:taxonomy_term'
+  translations: true
+  default_bundle: department

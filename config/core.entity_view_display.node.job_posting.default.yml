@@ -4,14 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.job_posting.body
-    - field.field.node.job_posting.field_call_to_action_reference
-    - field.field.node.job_posting.field_closing_date_day
-    - field.field.node.job_posting.field_featured_related
-    - field.field.node.job_posting.field_more_information
-    - field.field.node.job_posting.field_more_information_label
+    - field.field.node.job_posting.field_date_application_due
+    - field.field.node.job_posting.field_equipment
+    - field.field.node.job_posting.field_link
+    - field.field.node.job_posting.field_media
     - field.field.node.job_posting.field_overview
+    - field.field.node.job_posting.field_ref_audiences
+    - field.field.node.job_posting.field_ref_department
+    - field.field.node.job_posting.field_ref_job_type
     - node.type.job_posting
   module:
+    - datetime
+    - link
     - text
     - user
 id: node.job_posting.default
@@ -26,13 +30,68 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_call_to_action_reference:
+  field_date_application_due:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_equipment:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_media:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 3
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_ref_department:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_ref_job_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   links:
     settings: {  }
@@ -40,8 +99,4 @@ content:
     weight: 2
     region: content
 hidden:
-  field_closing_date_day: true
-  field_featured_related: true
-  field_more_information: true
-  field_more_information_label: true
   field_overview: true
