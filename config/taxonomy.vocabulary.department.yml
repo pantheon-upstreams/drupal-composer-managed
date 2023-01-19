@@ -2,7 +2,7 @@ uuid: 65570ed2-307e-4245-840e-77b62e659a73
 langcode: en
 status: true
 dependencies: {  }
-name: Departments
+name: Department
 vid: department
-description: '[legacy] Lab department listing'
+description: 'Lab department listing'
 weight: -1
