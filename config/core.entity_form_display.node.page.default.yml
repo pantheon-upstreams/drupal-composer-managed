@@ -3,118 +3,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
-    - field.field.node.page.field_attachment
-    - field.field.node.page.field_content
-    - field.field.node.page.field_featured_related
-    - field.field.node.page.field_more_information
-    - field.field.node.page.field_more_information_label
+    - field.field.node.page.field_media_primary
     - field.field.node.page.field_overview
-    - field.field.node.page.field_paragraph_featured_image
-    - field.field.node.page.field_parent_portal
+    - field.field.node.page.field_p_content
+    - field.field.node.page.field_ref_audiences
+    - field.field.node.page.field_ref_eo_opportunities
+    - field.field.node.page.field_ref_key_impact_areas
+    - field.field.node.page.field_ref_research_areas
+    - field.field.node.page.field_teaser_text
     - node.type.page
   module:
-    - field_group
-    - file
-    - inline_entity_form
-    - layout_paragraphs
     - maxlength
-    - paragraphs
+    - media_library
     - path
     - scheduler
     - text
-third_party_settings:
-  field_group:
-    group_tabs:
-      children:
-        - group_overview
-        - group_featured_image
-        - group_content
-        - group_more_info
-        - group_related
-      label: Tabs
-      region: content
-      parent_name: ''
-      weight: 0
-      format_type: tabs
-      format_settings:
-        classes: ''
-        id: ''
-        direction: horizontal
-    group_overview:
-      children:
-        - title
-        - field_overview
-        - field_parent_portal
-      label: Overview
-      region: content
-      parent_name: group_tabs
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: open
-        description: ''
-        required_fields: true
-    group_content:
-      children:
-        - body
-      label: Content
-      region: content
-      parent_name: group_tabs
-      weight: 22
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_more_info:
-      children:
-        - field_more_information
-        - field_more_information_label
-        - field_attachment
-      label: 'More Info'
-      region: content
-      parent_name: group_tabs
-      weight: 23
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_related:
-      children:
-        - field_featured_related
-      label: Related
-      region: content
-      parent_name: group_tabs
-      weight: 24
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_featured_image:
-      children:
-        - field_paragraph_featured_image
-      label: 'Featured Image'
-      region: content
-      parent_name: group_tabs
-      weight: 21
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
 _core:
   default_config_hash: KSvzyFhdLuxniTsunUnUfpfMmod2l57GibtVjL8ymHM
 id: node.page.default
@@ -122,73 +25,22 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 3
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_attachment:
-    type: file_generic
-    weight: 13
+  field_media_primary:
+    type: media_library_widget
+    weight: 3
     region: content
     settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-  field_content:
-    type: layout_paragraphs
-    weight: 122
-    region: content
-    settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
-    third_party_settings: {  }
-  field_featured_related:
-    type: entity_reference_autocomplete
-    weight: 26
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_more_information:
-    type: inline_entity_form_complex
-    weight: 11
-    region: content
-    settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-    third_party_settings: {  }
-  field_more_information_label:
-    type: string_textfield
-    weight: 12
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 125
@@ -197,25 +49,52 @@ content:
       maxlength:
         maxlength_js: 200
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-  field_paragraph_featured_image:
-    type: entity_reference_paragraphs
-    weight: 4
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-    third_party_settings: {  }
-  field_parent_portal:
+  field_ref_audiences:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_eo_opportunities:
+    type: entity_reference_autocomplete
+    weight: 13
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_key_impact_areas:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_research_areas:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teaser_text:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   path:
@@ -239,7 +118,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 121
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -253,7 +132,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
@@ -276,8 +155,9 @@ content:
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_p_content: true

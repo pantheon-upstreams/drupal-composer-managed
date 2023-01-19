@@ -1,0 +1,19 @@
+uuid: eee79803-afdf-47d9-b8ac-50a42a33bcd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.page
+id: node.page.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: page
+label: 'Teaser text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
