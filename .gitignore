@@ -99,3 +99,12 @@
 # Ignore databases.
 *.sql
 *.sql.gz
+
+
+# OS generated files #
+######################
+.DS_Store*
+
+
+# Support modified local lando files
+.lando.local.yml

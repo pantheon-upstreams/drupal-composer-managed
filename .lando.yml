@@ -20,7 +20,7 @@ services:
 tooling:
   drush:
     service: appserver
-    cmd: drush --root=/web
+    cmd: drush --root=/app/web
   xdebug-on:
     service: appserver
     description: Enable xdebug
