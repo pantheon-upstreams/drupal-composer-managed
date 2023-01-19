@@ -1,0 +1,29 @@
+uuid: 353e91b4-1a21-4cfe-abd4-3b2309958a83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_news_categories
+    - node.type.press_release
+    - taxonomy.vocabulary.news_category
+id: node.press_release.field_ref_news_categories
+field_name: field_ref_news_categories
+entity_type: node
+bundle: press_release
+label: Categories
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_category: news_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

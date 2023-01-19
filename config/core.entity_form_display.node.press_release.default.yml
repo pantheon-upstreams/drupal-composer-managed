@@ -3,144 +3,65 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.press_release.body
-    - field.field.node.press_release.field_more_information
-    - field.field.node.press_release.field_more_information_label
+    - field.field.node.press_release.field_author
+    - field.field.node.press_release.field_date_published
+    - field.field.node.press_release.field_media
+    - field.field.node.press_release.field_media_primary
     - field.field.node.press_release.field_overview
-    - field.field.node.press_release.field_paragraph_featured_image
-    - field.field.node.press_release.field_press_contact
-    - field.field.node.press_release.field_published_on
-    - field.field.node.press_release.field_url
+    - field.field.node.press_release.field_p_content
+    - field.field.node.press_release.field_ref_contacts
+    - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_teaser_text
     - node.type.press_release
   module:
     - datetime
-    - field_group
-    - link
     - maxlength
-    - paragraphs
+    - media_library
     - path
     - scheduler
     - text
-third_party_settings:
-  field_group:
-    group_more_info:
-      children:
-        - field_more_information
-        - field_more_information_label
-        - field_press_contact
-        - field_url
-      label: 'More Info'
-      region: content
-      parent_name: group_tabs
-      weight: 23
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_tabs:
-      children:
-        - group_overview
-        - group_featured_image
-        - group_content
-        - group_more_info
-      label: Tabs
-      region: content
-      parent_name: ''
-      weight: 0
-      format_type: tabs
-      format_settings:
-        classes: ''
-        id: ''
-        direction: horizontal
-    group_overview:
-      children:
-        - title
-        - field_overview
-        - field_published_on
-      label: Overview
-      region: content
-      parent_name: group_tabs
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: open
-        description: ''
-        required_fields: true
-    group_content:
-      children:
-        - body
-      label: Content
-      region: content
-      parent_name: group_tabs
-      weight: 22
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_featured_image:
-      children:
-        - field_paragraph_featured_image
-      label: 'Featured Image'
-      region: content
-      parent_name: group_tabs
-      weight: 21
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
 id: node.press_release.default
 targetEntityType: node
 bundle: press_release
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 5
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_more_information:
-    type: entity_reference_autocomplete
-    weight: 11
+  field_author:
+    type: string_textfield
+    weight: 17
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_more_information_label:
-    type: string_textfield
-    weight: 12
+  field_date_published:
+    type: datetime_default
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 5
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      media_types: {  }
+    third_party_settings: {  }
+  field_media_primary:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 125
@@ -149,20 +70,9 @@ content:
       maxlength:
         maxlength_js: 200
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-  field_paragraph_featured_image:
-    type: entity_reference_paragraphs
-    weight: 4
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-    third_party_settings: {  }
-  field_press_contact:
+  field_ref_contacts:
     type: entity_reference_autocomplete
-    weight: 13
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -170,61 +80,65 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_published_on:
-    type: datetime_default
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_url:
-    type: link_default
-    weight: 14
+  field_ref_news_categories:
+    type: entity_reference_autocomplete
+    weight: 2
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_teaser_text:
+    type: string_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 10
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 121
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 11
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
@@ -242,13 +156,14 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 14
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_p_content: true

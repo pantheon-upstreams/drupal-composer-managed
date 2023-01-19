@@ -3,17 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.press_release.body
-    - field.field.node.press_release.field_more_information
-    - field.field.node.press_release.field_more_information_label
+    - field.field.node.press_release.field_author
+    - field.field.node.press_release.field_date_published
+    - field.field.node.press_release.field_media
+    - field.field.node.press_release.field_media_primary
     - field.field.node.press_release.field_overview
-    - field.field.node.press_release.field_paragraph_featured_image
-    - field.field.node.press_release.field_press_contact
-    - field.field.node.press_release.field_published_on
-    - field.field.node.press_release.field_url
+    - field.field.node.press_release.field_p_content
+    - field.field.node.press_release.field_ref_contacts
+    - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_teaser_text
     - node.type.press_release
   module:
-    - entity_reference_revisions
+    - datetime
+    - layout_paragraphs
     - text
     - user
 id: node.press_release.default
@@ -21,31 +23,83 @@ targetEntityType: node
 bundle: press_release
 mode: default
 content:
-  body:
+  field_author:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_date_published:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
-  field_paragraph_featured_image:
-    type: entity_reference_revisions_entity_view
+  field_p_content:
+    type: layout_paragraphs_builder
     label: hidden
     settings:
       view_mode: default
       link: ''
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
+      empty_message: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_ref_contacts:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
     third_party_settings: {  }
     weight: 1
     region: content
-  links:
+  field_ref_news_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 8
     region: content
 hidden:
-  field_more_information: true
-  field_more_information_label: true
-  field_overview: true
-  field_press_contact: true
-  field_published_on: true
-  field_url: true
+  links: true
