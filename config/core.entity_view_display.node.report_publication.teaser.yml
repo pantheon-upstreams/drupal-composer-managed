@@ -5,6 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.report_publication.body
+    - field.field.node.report_publication.field_authors
+    - field.field.node.report_publication.field_date_published
+    - field.field.node.report_publication.field_link
+    - field.field.node.report_publication.field_ref_publication_type
     - node.type.report_publication
   module:
     - text
@@ -27,4 +31,8 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_authors: true
+  field_date_published: true
+  field_link: true
+  field_ref_publication_type: true

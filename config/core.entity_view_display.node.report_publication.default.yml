@@ -4,8 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.report_publication.body
+    - field.field.node.report_publication.field_authors
+    - field.field.node.report_publication.field_date_published
+    - field.field.node.report_publication.field_link
+    - field.field.node.report_publication.field_ref_publication_type
     - node.type.report_publication
   module:
+    - datetime
+    - link
     - text
     - user
 id: node.report_publication.default
@@ -19,6 +25,43 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_authors:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_date_published:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_ref_publication_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
     region: content
   links:
     settings: {  }

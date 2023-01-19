@@ -1,0 +1,8 @@
+uuid: 5a9d425f-0b24-4ef0-bffb-e0868087b93a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Publication Type'
+vid: publication_type
+description: 'Categorizes "Report Publication" content type'
+weight: 0
