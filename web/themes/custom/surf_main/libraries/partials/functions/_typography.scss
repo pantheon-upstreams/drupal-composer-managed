@@ -1,0 +1,15 @@
+//
+// Functions for typography
+//
+
+// Return value from $lh (line-heights) map
+@function lh($size) {
+  @if map-has-key($lh, $size) {
+    @return map-get($lh, $size);
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$lh}`. "
+    + "Please make sure it is defined in `$lh` map.";
+  }
+}

@@ -1,0 +1,349 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function surf_main_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Attach search_form library.
+  $form['#attached']['library'][] = 'surf_main/search_form';
+
+  // Add search-form component classes.
+  $form['#attributes']['class'] = ['search-form'];
+  $form['keys']['#attributes']['class'][] = 'search-form__input';
+  $form['actions']['#attributes']['class'][] = 'search-form__actions';
+  $form['actions']['submit']['#attributes']['class'][] = 'search-form__button';
+  $form['#theme_wrappers']['form'] = [
+    '#attributes' => [
+      'class' => ['search-form'],
+    ],
+  ];
+}
+
+/**
+ * Add a prefix to a path for use with array_walk().
+ */
+function surf_main_get_absolute_path(&$value, $key, $prefix) {
+  $value = $prefix . $value;
+}
+
+/**
+ * Implements hook_preprocess_page() for PAGE document templates.
+ */
+function surf_main_preprocess_page(&$variables) {
+  // Get the svg + png logo paths.
+  $logos = [
+    'logo_svg' => 'logo.svg',
+    'logo_png' => 'logo.png',
+  ];
+  surf_main_add_logo($logos, $variables);
+  // Get site name and slogan.
+  surf_main_add_site_info($variables);
+}
+
+/**
+ * Adds the paths to the svg and png versions of the logo(s).
+ *
+ * @param array $logos
+ *   Array of logo files to be added into our theme templates. Array key will
+ *   be used as the template variable. Array value is the path to the logo file
+ *   relative to the theme.
+ * @param array $variables
+ *   Preprocess variables to attach logo data to.
+ */
+function surf_main_add_logo(array $logos, array &$variables) {
+  $path_to_theme = \Drupal::service('theme.manager')->getActiveTheme()->getPath();
+
+  foreach ($logos as $name => $file) {
+    if (file_exists($path_to_theme . "/" . $file)) {
+      $variables[$name] = '/' . $path_to_theme . '/' . $file;
+    }
+  }
+}
+
+/**
+ * Adds site information from config.
+ */
+function surf_main_add_site_info(&$variables) {
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+  $variables['site_slogan'] = $config->get('slogan');
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_main_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $content = $variables['elements']['content'];
+
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
+    $suggestions[] = 'block__block_content__' . $content['#block_content']->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_main_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $request = \Drupal::request();
+  $request_attributes = $request->attributes;
+
+  if ($request_attributes->has('node')
+    && $request_attributes->get('_route') === 'entity.node.canonical') {
+    $node = $request_attributes->get('node');
+    $content_type = $node->bundle();
+
+    $suggestions[] = 'page__' . $content_type;
+  }
+}
+
+/**
+ * Implements theme_theme_suggestions_input_alter().
+ */
+function surf_main_theme_suggestions_input_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  // Add Twig template suggestion based on data attributes. To use this, in a
+  // `hook_form_alter()` add an element to the `#attributes` array for
+  // `data-twit-suggestion`. `button` elements have a template already made.
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = "input__{$element['#type']}__{$element['#attributes']['data-twig-suggestion']}";
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function surf_main_preprocess_form_element(&$variables) {
+  if (in_array($variables['element']['#type'] ?? FALSE, ['checkbox', 'radio'], TRUE)) {
+    $variables['attributes']['class'][] = 'form-type-boolean';
+  }
+
+  if (!empty($variables['description']['attributes'])) {
+    $variables['description']['attributes']->addClass('form-item__description');
+  }
+
+  if ($variables['disabled']) {
+    $variables['label']['#attributes']['class'][] = 'is-disabled';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_form_element_label(&$variables) {
+  $variables['attributes']['class'][] = 'form-item__label';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_input(&$variables) {
+  if (
+    !empty($variables['element']['#title_display']) &&
+    $variables['element']['#title_display'] === 'attribute' &&
+    !empty((string) $variables['element']['#title'])
+  ) {
+    $variables['attributes']['title'] = (string) $variables['element']['#title'];
+  }
+
+  $type_api = $variables['element']['#type'];
+  $type_html = $variables['attributes']['type'];
+  $text_types_html = [
+    'text',
+    'email',
+    'tel',
+    'number',
+    'search',
+    'password',
+    'date',
+    'time',
+    'file',
+    'color',
+    'datetime-local',
+    'url',
+    'month',
+    'week',
+  ];
+
+  if (in_array($type_html, $text_types_html, TRUE)) {
+    $variables['attributes']['class'][] = 'form-element';
+    $variables['attributes']['class'][] = Html::getClass('form-element--type-' . $type_html);
+    $variables['attributes']['class'][] = Html::getClass('form-element--api-' . $type_api);
+
+    if (!empty($variables['element']['#autocomplete_route_name'])) {
+      $variables['autocomplete_message'] = t('Loading…');
+    }
+  }
+
+  if (in_array($type_html, ['checkbox', 'radio'], TRUE)) {
+    $variables['attributes']['class'][] = 'form-boolean';
+    $variables['attributes']['class'][] = Html::getClass('form-boolean--type-' . $type_html);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_textarea(&$variables) {
+  $variables['attributes']['class'][] = 'form-element';
+  $variables['attributes']['class'][] = 'form-element--type-textarea';
+  $variables['attributes']['class'][] = 'form-element--api-textarea';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_select(&$variables) {
+  $variables['attributes']['class'][] = 'form-element';
+  $variables['attributes']['class'][] = $variables['element']['#multiple'] ?
+    'form-element--type-select-multiple' :
+    'form-element--type-select';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_checkboxes(&$variables) {
+  $variables['attributes']['class'][] = 'form-boolean-group';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_radios(&$variables) {
+  $variables['attributes']['class'][] = 'form-boolean-group';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_main_preprocess_field(&$variables) {
+  $rich_field_types = ['text_with_summary', 'text', 'text_long'];
+
+  if (in_array($variables['field_type'], $rich_field_types, TRUE)) {
+    $variables['attributes']['class'][] = 'text-content';
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function surf_main_preprocess_menu(&$variables) {
+  $menu_name = $variables['menu_name'];
+  $attributes = &$variables['attributes'];
+
+  // Add base classes to our menu.
+  $attributes['class'][] = 'menu';
+  $attributes['class'][] = "menu--{$menu_name}";
+
+  surf_main_prepare_menu_items($variables['items']);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_main_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $suggestions[] = 'taxonomy_term__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * @Todo remove after these are resolved:
+ * https://www.drupal.org/project/drupal/issues/2270883
+ * https://www.drupal.org/project/drupal/issues/2766379
+ */
+function surf_main_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $view_mode = $variables['elements']['#view_mode'] ?? '';
+  if ($view_mode) {
+    $suggestions[] = 'user__' . $view_mode;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_main_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $id = $variables['view']->id();
+  $display = $variables['view']->current_display;
+  $suggestions[] = 'views_view--' . $id;
+  $suggestions[] = 'views_view--' . $id . '--' . $display;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_main_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  $id = $variables['view']->id();
+  $display = $variables['view']->current_display;
+  $suggestions[] = 'views_view_unformatted--' . $id;
+  $suggestions[] = 'views_view_unformatted--' . $id . '--' . $display;
+}
+
+/**
+ * Helper function to standarize gaps in the menu markup.
+ *
+ * @param array $items
+ *   The array of menu items.
+ */
+function surf_main_prepare_menu_items(&$items) {
+  foreach ($items as &$item) {
+    // Set classes on our links.
+    $link_attributes = $item['url']->getOption('attributes') ?? [];
+    if (isset($link_attributes['class']) && is_string($link_attributes['class'])) {
+      $link_attributes['class'] = explode(' ', $link_attributes['class']);
+    }
+    $link_attributes['class'][] = 'menu__link';
+    $item['url']->setOption('attributes', $link_attributes);
+
+    // Set classes for the link wrapper.
+    $item_classes = ['menu__item'];
+
+    if ($item['is_expanded'] ?? FALSE) {
+      $item_classes[] = 'menu__item--expanded';
+    }
+
+    if ($item['is_collapsed'] ?? FALSE) {
+      $item_classes[] = 'menu__item--collapsed';
+    }
+
+    if ($item['is_active_trail'] ?? FALSE) {
+      $item_classes[] = 'menu__item--active-trail';
+    }
+
+    $item['attributes']->addClass($item_classes);
+
+    if (!empty($item['below'])) {
+      surf_main_prepare_menu_items($item['below']);
+    }
+  }
+}
+
+/**
+ * Builds the render array for the provided block.
+ *
+ * @param string $id
+ *   The ID of the block to render.
+ *
+ * @return null|array
+ *   A render array for the block or NULL if the block does not exist.
+ */
+function surf_main_view_block($id) {
+  if ($block = Block::load($id)) {
+    return \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+  }
+  return NULL;
+}

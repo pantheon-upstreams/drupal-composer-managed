@@ -1,0 +1,96 @@
+
+// The following custom property naming conventions are inspired by
+// "Naming Tokens in Design Systems" by Nathan Curtis
+// https://medium.com/eightshapes-llc/naming-tokens-in-design-systems-9e86c7444676
+// These default values are intended to be mofified and extended to suite the needs
+// of an individula project.
+:root {
+  /*
+    Font: Families
+  */
+  --font-family-mono: monospace;
+  --font-family-sans: sans-serif;
+  --font-family-serif: serif;
+  --font-family-body: var(--font-family-serif);
+  --font-family-heading: var(--font-family-sans);
+  --font-family-interface: var(--font-family-sans);
+
+  /*
+    Font: Sizes
+
+    By default, all font-size declarations will be converted to rems
+    via postCSS. Declerations for other properties will maintain their px units.
+  */
+  --font-size-body: 16px;
+  --font-size-body-small: 14px;
+  --font-size-body-large: 18px;
+  --font-size-body-huge: 20px;
+  --font-size-body-macro: 24px;
+  --font-size-description: 14px;
+  --font-size-heading-small: 16px;
+  --font-size-heading: 18px;
+  --font-size-heading-large: 20px;
+  --font-size-heading-huge: 22px;
+  --font-size-heading-macro: 48px;
+  --font-size-label: 14px;
+  --font-size-title-tiny: 16px;
+  --font-size-title-tiny-tight: 16px;
+  --font-size-title-small: 18px;
+  --font-size-title-larger: 24px;
+  --font-size-title: 24px;
+  --font-size-title-large: 27px;
+  --font-size-title-huge: 30px;
+  --font-size-title-macro: 33px;
+
+  /*
+    Font: Line-height;
+  */
+  --font-line-height-loose: 1.5;
+  --font-line-height: 1.3125;
+  --font-line-height-tight: 1.125;
+
+  /*
+    Font: Weight
+  */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-book: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+@media (width >= 600px) {
+  :root {
+    --font-size-body: 18px;
+    --font-size-body-small: 16px;
+    --font-size-body: 18px;
+    --font-size-body-large: 20px;
+    --font-size-body-huge: 24px;
+    --font-size-body-macro: 36px;
+    --font-size-heading-small: 18px;
+    --font-size-heading: 20px;
+    --font-size-heading-large: 24px;
+    --font-size-heading-huge: 32px;
+    --font-size-heading-macro: 72px;
+    --font-size-title-tiny: 20px;
+    --font-size-title-small: 24px;
+    --font-size-title-large: 40px;
+    --font-size-title-huge: 48px;
+  }
+}
+
+@media (width >= 768px) {
+  :root {
+    --font-size-title-macro: 60px;
+    --font-size-title-huge: 54px;
+  }
+}
+
+@media (width >= 992px) {
+  :root {
+    --font-size-title: 36px;
+    --font-size-title-macro: 60px;
+  }
+}

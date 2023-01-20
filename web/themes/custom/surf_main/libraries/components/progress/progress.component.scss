@@ -1,0 +1,21 @@
+//
+// @file
+// Progress Bar Styles
+//
+
+@import '../../partials/_partials';
+
+.progress {
+}
+
+.progress__track {
+  height: 16px;
+}
+
+.progress__bar {
+  height: 14px;
+}
+
+.progress__description {
+  color: $clr-text;
+}

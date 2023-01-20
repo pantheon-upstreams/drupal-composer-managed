@@ -1,0 +1,27 @@
+{% import '@prototype-components/component.twig' as component %}
+{{ attach_library('prototype/card') }}
+<article {{ component.attributes('card', modifiers, attr) }}>
+
+  {% if image %}
+  <figure class="card__image">
+    {{ image }}
+  </figure>
+  {% endif %}
+
+  <div class="card__content">
+
+    <header class="card__header">
+      <h3 class="card__title">{{ title }}</h3>
+      {% if subTitle %}<h4 class="card__subtitle">{{ subTitle }}</h4>{% endif %}
+    </header>
+
+    {% if body %}<div class="card__body">{{ body }}</div>{% endif %}
+
+    {% if link %}
+    <footer class="card__footer">
+      <a href="{{ link }}">{{ 'More'|t }}</a>
+    </footer>
+    {% endif %}
+
+  </div>
+</article>

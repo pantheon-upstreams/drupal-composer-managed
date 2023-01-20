@@ -1,0 +1,17 @@
+{% macro bg_image(selector, uri, styles) %}
+<style type="text/css">
+{% for style, query in styles %}
+  {% if query == "none" %}
+  {{selector}} {
+    background-image: url("{{uri|image_style(style)}}");
+  }
+  {% else %}
+    @media ({{query}}) {
+      {{selector}} {
+        background-image: url("{{uri|image_style(style)}}");
+      }
+    }
+  {% endif %}
+{% endfor %}
+</style>
+{% endmacro %}

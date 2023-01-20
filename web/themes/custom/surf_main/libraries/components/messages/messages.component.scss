@@ -1,0 +1,82 @@
+@import '../../partials/_partials';
+
+// Individual messages
+.messages {
+  align-items: stretch;
+  border-radius: var(--size-radius, 0);
+  display: flex;
+  justify-content: stretch;
+
+  &:not(:last-child) {
+    margin-bottom: 2em;
+  }
+}
+
+.messages__content {
+  font-size: var(--font-size-small);
+  padding: 1em;
+
+  ul {
+    margin: 0;
+    padding-left: 3em;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.messages__icon {
+  align-items: center;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  width: 3em;
+
+  > .icon {
+    height: 1em;
+    width: 1em;
+  }
+
+  svg {
+    height: 1em;
+    width: 1em;
+  }
+}
+
+.messages--full-screen {
+  align-items: center;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  margin: 0 !important;
+  padding: 4em;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 6;
+
+  .messages__icon {
+    background: transparent;
+    height: 3em;
+    width: 3em;
+
+    > .icon {
+      height: 3em;
+      width: 3em;
+    }
+
+    svg {
+      height: 3em;
+      width: 3em;
+    }
+  }
+
+  .messages__content {
+    font-size: 2.5em;
+    line-height: 1;
+  }
+}

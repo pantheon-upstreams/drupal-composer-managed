@@ -1,0 +1,148 @@
+@import '../../partials/_partials';
+
+.js-prevent-scroll {
+  @include bp-max(small) {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.c-site-header {
+  background-color: var(--color-background, #fff);
+  position: relative;
+  z-index: 2;
+}
+
+.c-site-header__inner {
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  @include bp-max(medium) {
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(#000, 0.5);
+  }
+}
+
+.c-site-header__logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: var(--space-inset-y, 12px) var(--space-inset-x, 0);
+  padding: 0;
+  width: var(--size-width, 160px);
+  z-index: 1;
+
+  @include bp-min(large) {
+    width: 180px;
+    margin: 24px 0;
+  }
+
+  a,
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.c-site-header__site-navigation {
+  position: fixed;
+
+  @include bp-max(medium) {
+    background-color: $gray-80;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all $duration * 1.5 ease-in-out;
+  }
+
+  @include bp-min(large) {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: nowrap row;
+    position: relative;
+  }
+}
+
+.c-site-header__utilities {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 22px;
+  width: 126px;
+
+  @include bp-min(large) {
+    width: 90px;
+  }
+}
+
+// Nav Trigger
+.nav-trigger {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+label[for='nav-trigger'] {
+  cursor: pointer;
+  height: 30px;
+  margin: auto;
+  position: absolute;
+  right: 30px; //span(1);
+  top: 18px;
+  width: 30px;
+  z-index: 2;
+
+  @include bp-min(medium) {
+    top: 1rem;
+  }
+
+  @include bp-min(large) {
+    display: none;
+  }
+}
+
+.nav-trigger__icon--expand {
+  opacity: 1;
+  position: absolute;
+  transform: rotate(0) scale(1);
+  transition: all $duration ease-in-out;
+}
+
+.nav-trigger__icon--collapse {
+  opacity: 0;
+  position: absolute;
+  transform: rotate(-90deg) scale(0);
+  transition: all $duration ease-in-out;
+}
+
+@include bp-max(medium) {
+  .nav-trigger:checked {
+    ~ .c-site-header__site-navigation {
+      opacity: 1;
+      overflow-y: auto;
+      transform: translateY(0);
+    }
+
+    ~ label {
+      .nav-trigger__icon--collapse {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+      }
+
+      .nav-trigger__icon--expand {
+        opacity: 0;
+        transform: rotate(90deg) scale(0);
+      }
+    }
+  }
+}

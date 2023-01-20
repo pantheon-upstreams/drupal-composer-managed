@@ -1,0 +1,278 @@
+/** API
+Animation
+- transition-speed (F, S)
+- transition-ease
+
+Logo
+- width
+- inset
+
+Menu Button
+- icon size
+- Inset
+- transition speed
+- background color
+- button (fill) color
+- border
+- size
+- width
+
+Button
+- font-size
+- color-text (H, F, A, D)
+- color-background (H, F, A, D)
+- color-border (H, F, A, D)
+- color-glow
+- color-shadow
+- size-icon
+- size-border
+- size-radius
+- space-inset
+
+Label
+- font-family
+- font-weight
+- font-size
+- color-text (D, E)
+- space-gap
+
+Input
+- font-family
+- font-weight
+- font-size
+- color-text (D, E)
+- space-gap
+- space-inset
+- size-radius
+- size-icon
+
+Form-Item
+- space-gap
+
+**/
+
+:root {
+  /**
+    Boolean inputs such as checkboxs and radios
+    as well as select options when styling is available.
+  **/
+  --options-space-gap-y: .75em;
+  --options-space-gap-x: .25em;
+
+  --option-line-height: var(--font-line-height-tight, 1.2);
+  --option-font-size: 16px;
+  --option-font-weight: 400;
+  --option-space-gap-x: .75em;
+  --option-space-gap-y: .25em;
+  --option-input-size: .75em;
+}
+
+form > * + * {
+  margin-top: var(--space-gap-y);
+}
+
+label,
+legend {
+  display: block;
+  margin-bottom: 0;
+  font-family: var(--label-font-family, var(--font-family-interface));
+  font-size: var(--label-font-size, 16px);
+  font-weight: var(--label-font-weight, var(--font-weight-bold));
+}
+
+input,
+textarea {
+  background-color: var(--input-color-background, #fff);
+  border-color: var(--input-color-border, var(--color-border));
+  border-width: var(--input-size-border, var(--size-border, 1px));
+  border-style: var(--input-style-border, solid);
+  border-radius: var(--input-size-radius, 0);
+  font-family: var(--input-font-family, var(--font-family-interface));
+  font-size: var(--input-font-size, var(--font-size-body-small));
+  max-width: 100%;
+  padding: var(--input-space-inset-y, var(--input-space-inset, 6px)) var(--input-space-inset-y, var(--input-space-inset, 12px));
+}
+
+textarea {
+  display: block;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="number"] {
+  height: auto;
+}
+
+input[type="file"] {
+  height: inherit;
+}
+
+input[type="submit"],
+button {
+  text-transform: uppercase;
+}
+
+select {
+  appearance: none;
+  background-color: var(--input-color-background, #fff);
+  border-radius: var(--input-size-radius, 0);
+  color: var(--input-color-text, --color-text-interface);
+  font-family: var(--input-font-family, var(--font-family-interface));
+  font-size: var(--input-font-size, var(--font-size-body-small));
+  padding: var(--input-space-inset-y, var(--input-space-inset, 6px)) var(--input-space-inset-y, var(--input-space-inset, 12px));
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+
+// Remove default IE arrow
+select::-ms-expand { display: none; }
+
+// Form Item Wrapper
+.form-item {
+  > * + * {
+    margin-top: var(--space-gap-y-minimal);
+  }
+}
+
+.form-item + .form-item {
+  margin-top: var(--space-gap-y);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  height: var(--option-input-size, auto);
+  width: var(--option-input-size, auto);
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label,
+.option {
+  display: inline-block;
+  font-size: var(--option-font-size);
+  font-weight: var(--option-font-weight);
+  line-height: var(--option-line-height);
+}
+
+.form-type-boolean + .form-type-boolean {
+  margin-top: var(--options-space-gap-y);
+}
+
+.form-type-boolean {
+  padding-left: calc(var(--option-space-gap-x) + var(--option-input-size));
+  font-size: var(--option-font-size);
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline-block;
+    font-size: inherit;
+    left: calc((var(--option-space-gap-x) + var(--option-input-size)) * -1);
+    margin-right: calc((var(--option-input-size)) * -1);
+    position: relative;
+
+    & + label {
+      font-size: inherit;
+    }
+  }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-columns: var(--option-input-size) auto;
+    column-gap: var(--option-space-gap-x);
+    padding-left: 0;
+
+    > * {
+      grid-column: 2;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      grid-column: 1;
+      left: auto;
+      margin: calc((1em - var(--option-input-size)) / var(--option-line-height)) 0 0;
+      position: static;
+
+      & + * {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.description {
+  font-size: var(--font-size-description);
+  font-family: var(--font-family-interface);
+}
+
+.filter-wrapper {
+  margin-top: 0;
+}
+
+.filter-guidelines,
+.filter-help {
+  font-size: var(--font-size-description);
+  font-family: var(--font-family-interface);
+}
+
+.filter-guidelines ul {
+  margin-top: 0;
+}
+
+/** Password **/
+.form-item-password-confirm {
+  width: var(--size-form-narrow);
+  max-width: 100%;
+}
+
+.password-strength__meter {
+  background-color: var(--color-feedback-background);
+}
+
+.password-strength__indicator {
+  &.is-fair {
+    background-color: var(--color-feedback-fair);
+  }
+  &.is-strong {
+    background-color: var(--color-feedback-strong);
+  }
+  &.is-good {
+    background-color: var(--color-feedback-good);
+  }
+  &.is-weak {
+    background-color: var(--color-feedback-weak);
+  }
+}
+
+.password-confirm,
+.password-strength__title {
+  font-size: var(--font-size-description);
+  font-family: var(--font-family-interface);
+}
+
+.password-strength__text {
+  font-weight: var(--font-weight-bold);
+}
+
+.password-confirm > span {
+  font-weight: var(--font-weight-bold);
+
+  &.error {
+    color: var(--color-feedback-error);
+  }
+
+  &.ok {
+    color: var(--color-feedback-good);
+  }
+}
+
+.password-suggestions {
+  font-size: var(--font-size-description);
+  font-family: var(--font-family-interface);
+  font-weight: var(--font-weight-bold);
+
+  > ul {
+    font-weight: var(--font-weight-regular);
+  }
+}

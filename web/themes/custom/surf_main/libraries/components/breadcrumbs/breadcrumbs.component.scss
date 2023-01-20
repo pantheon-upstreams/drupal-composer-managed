@@ -1,0 +1,27 @@
+//
+// @file
+// Cart Component Styles
+//
+
+@import '../../partials/_partials';
+
+.breadcrumb {
+}
+
+.breadcrumb__list {
+  @include list--reset;
+  @include list--inline;
+}
+
+.breadcrumb__item {
+}
+
+.breadcrumb__text {
+}
+
+.breadcrumb__link {
+}
+
+.breadcrumb__separator {
+  color: var(--border-color);
+}

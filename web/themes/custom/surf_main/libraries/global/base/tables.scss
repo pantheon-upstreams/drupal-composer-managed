@@ -1,0 +1,61 @@
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 72px;
+  border-spacing: 0;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: var(--font-family-interface);
+  font-size: var(--font-size-body-small);
+}
+
+h1 + table,
+h2 + table,
+h3 + table,
+h4 + table,
+h5 + table,
+table:not(:first-child) {
+  margin-top: 24px;
+}
+
+thead {
+  & th {
+    vertical-align: bottom;
+  }
+
+  & th,
+  & td {
+    border-bottom: 1px solid var(--table-color-border);
+  }
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--color-text-heading);
+  font-weight: var(--font-weight-bold);
+}
+
+// Remove top border from thead by default
+caption + thead tr:first-child th,
+caption + thead tr:first-child td,
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+// Account for multiple tbody instances
+tbody + tbody {
+  border-top: 2px solid var(--color-border);
+}
+
+tr.odd { background-color: var(--table-color-background-row-odd); }
+tr.even { background-color: var(--table-color-background-row-even); }

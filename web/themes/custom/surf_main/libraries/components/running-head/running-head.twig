@@ -1,0 +1,4 @@
+{% import '@prototype-components/component.twig' as component %}
+
+<p {{ component.attributes('running-head', modifiers, attr) }}>{{text}}</p>
+<div class="running-head__rule" {% if color %}style="background-color: {{color}}"{% endif %}></div>

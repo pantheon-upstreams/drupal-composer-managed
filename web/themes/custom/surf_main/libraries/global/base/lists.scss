@@ -1,0 +1,76 @@
+
+/*
+  Lists
+*/
+@import '../../partials/_partials';
+
+ul:not([class]),
+ol:not([class]) {
+  list-style: none;
+  margin-left: 0;
+  padding-left: var(--space-indent);
+
+  > li:before {
+    position: absolute;
+  }
+
+  ul {
+    margin-top: 12px;
+
+    li:before {
+      content: "\25E6";
+    }
+  }
+}
+
+ul:not([class]) {
+  > li:before {
+    content: "\2022";
+    font-weight: var(--font-weight-bold);
+    margin-left: calc(var(--space-indent) * -1);
+  }
+}
+
+ol:not([class]) {
+  counter-reset: number;
+
+  > li:before {
+    content: counters(number, ".") ".";
+    counter-increment: number;
+    margin-left: calc((var(--space-indent) * -1) + 1ch);
+    text-align: right;
+    transform: translateX(-100%);
+  }
+
+  // Second Level
+  ol {
+    margin-top: 6px;
+    padding-left: 30px;
+
+    > li {
+      padding-left: 0;
+      text-indent: -30px;
+
+      &:before {
+        display: inline;
+        margin-right: .5em;
+        position: static;
+      }
+    }
+  }
+}
+
+/*
+  Definition Lists
+*/
+dl {
+  margin-bottom: 18px;
+}
+
+dt {
+  font-weight: var(--font-weight-bold);
+}
+
+dd {
+  margin-left: 30px;
+}

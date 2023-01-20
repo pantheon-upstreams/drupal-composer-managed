@@ -1,0 +1,18 @@
+//
+// @file
+// Search form styles
+//
+
+.search-form {
+  align-items: stretch;
+  display: flex;
+
+  .form-item {
+    margin: 0;
+  }
+}
+
+.search-form__input {
+  margin: 0;
+  height: 100%;
+}

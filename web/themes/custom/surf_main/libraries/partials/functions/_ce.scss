@@ -1,0 +1,16 @@
+//
+// @file
+// Calc em Function
+//
+
+@function calc-em($target, $container) {
+  @return ($target / $container) * 1em;
+}
+
+@function ce($target, $container) {
+  @return calc-em($target, $container);
+}
+
+@function em($target, $container) {
+  @return calc-em($target, $container);
+}

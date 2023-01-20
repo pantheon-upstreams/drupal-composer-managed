@@ -1,0 +1,52 @@
+<div class="layout-container">
+  {% block site_alert %}
+  <div class="l-constrained">
+    {{ page.site_alert }}
+  </div>
+  {% endblock %}{# /site_alert #}
+
+  {% block site_header %}
+  {%
+    include '@prototype-components/site-header/site-header.html.twig' with {
+      header: page.header
+    }
+  %}
+  {% endblock %}{# /site_header #}
+
+  {{ page.primary_menu }}
+
+  {{ page.secondary_menu }}
+
+  {% block breadcrumb %}
+  <div class="l-constrained">
+    {{ page.breadcrumb }}
+  </div>
+  {% endblock %}{# /breadcrumb #}
+
+  {{ page.highlighted }}
+
+  {{ page.help }}
+
+  {% block main %}
+  <main>
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+    {% block content %}
+    <div class="l-constrained">
+      {{ page.content }}
+    </div>
+    {% endblock %}{# /content #}
+
+  </main>
+  {% endblock %}{# /main #}
+
+  {% block site_footer %}
+  {%
+    include '@prototype-components/site-footer/site-footer.html.twig' with {
+      footer: page.footer
+    } only
+  %}
+  {% endblock %}{# /site_footer #}
+  <a href="#top">{{'Back to Top'|t}}</a>
+
+</div>{# /.layout-container #}

@@ -1,0 +1,106 @@
+@import '../../partials/_partials';
+
+.teaser {
+  @include bp-min(medium) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.teaser__image {
+  align-self: flex-start;
+  flex: none;
+  margin-bottom: 20px;
+
+  @include bp-min(medium) {
+    margin-right: 30px;
+    width: calc(2/6 * 100%);
+  }
+
+  @include bp-min(large) {
+    margin-right: 40px;
+  }
+}
+
+.teaser__content {
+  max-width: 100%;
+}
+
+.teaser__image + .teaser__content {
+  flex: initial;
+
+  @include bp-min(large) {
+    width: calc(4/7 * 100%);
+  }
+}
+
+.teaser__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-line-height-normal);
+
+  &:not(:last-child) {
+    margin-bottom: .5em;
+  }
+}
+
+.teaser__meta {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: .5em;
+
+  > :not(:last-child) {
+    margin-right: 1.5em;
+  }
+}
+
+.teaser__type {
+  font-size: var(--font-size-tiny);
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-gap);
+  }
+}
+
+.teaser__subtitle {
+  font-size: var(--font-size-tiny);
+  font-weight: var(--font-line-height-normal);
+}
+
+.teaser__description {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-line-height-loose);
+}
+
+.teaser__dateline {
+  font-size: var(--font-size-small);
+  white-space: nowrap;
+}
+
+.teaser__author {
+  font-size: var(--font-size-small);
+
+  &:not(:last-child) {
+    margin-bottom: .5em;
+  }
+}
+
+.teaser__more-link {
+  &:not(:first-child) {
+    margin-top: var(--space-gap);
+  }
+}
+
+.teaser__tags {
+  font-size: var(--font-size-small);
+  margin-top: 1em;
+}
+
+//
+// Modifiers
+//
+.teaser--no-image {
+  .teaser__content {
+    width: 100%; // IE11 fix for content spilling outside the bounds of the teaser.
+  }
+}

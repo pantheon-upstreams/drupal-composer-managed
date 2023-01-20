@@ -1,0 +1,31 @@
+@import '../../partials/_partials';
+
+.section-title {
+  > span {
+    display: block;
+  }
+
+  > small {
+    font-size: var(--font-size-tiny);
+    display: block;
+    margin-top: .5em;
+  }
+}
+
+.section-title--primary {
+
+}
+
+.section-title--ruled {
+  border-bottom: solid 1px var(--border-color);
+  margin-bottom: var(--space-gap);
+  padding-bottom: var(--space-gap-y);
+}
+
+.section-title--secondary {
+
+}
+
+.section-title--tertiary {
+
+}

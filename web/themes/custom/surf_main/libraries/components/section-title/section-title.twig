@@ -1,0 +1,10 @@
+{% import '@components/component.twig' as component %}
+{% import '@prototype-components/icons/icon.twig' as icon %}
+{{ attach_library('prototype/section-title') }}
+
+<{{tag|default('h2')}} {{ component.attributes('section-title', modifiers, attr) }}>
+  {% if href %} <a href="{{href}}" class="section-title__link">{% endif %}
+  {% if title %}<span>{{ title }}</span>{% endif %}
+  {% if href %}&nbsp;{{icon.inline('arrow')}}</a>{% endif %}
+  {% if subtext %}<small>{{ subtext }}</small>{% endif %}
+</{{tag|default('h2')}}>

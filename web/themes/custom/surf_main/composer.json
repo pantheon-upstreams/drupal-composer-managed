@@ -1,0 +1,21 @@
+{
+    "name": "drupal/prototype",
+    "description": "Aten Prototype Theme",
+    "type": "drupal-theme",
+    "authors": [
+        {
+            "name": "John Ferris",
+            "email": "john@atendesigngroup.com"
+        },
+        {
+            "name": "James Nettik",
+            "email": "james@atendesigngroup.com"
+        }
+    ],
+    "require": {
+          "drupal/components": "^2.0",
+          "drupal/core": "^8 || ^9",
+          "drupal/twig_field_value": "^2.0",
+          "drupal/twig_tweak": "^3.0"
+    }
+}

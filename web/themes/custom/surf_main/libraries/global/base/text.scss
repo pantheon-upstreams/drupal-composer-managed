@@ -1,0 +1,89 @@
+@custom-selector :--heading h1, h2, h3, h4, h5;
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 0;
+  color: var(--color-text-heading);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+
+  > a {
+    text-decoration: none;
+  }
+
+  + p {
+    margin-top: 12px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--font-size-title-huge);
+}
+
+h2 {
+  margin-top: 48px;
+  font-size: var(--font-size-heading-huge);
+}
+
+h3 {
+  margin-top: 48px;
+  font-size: var(--font-size-heading-huge);
+  font-weight: var(--font-weight-regular);
+}
+
+h4 {
+  margin-top: 48px;
+  font-size: var(--font-size-heading-large);
+  font-weight: var(--font-weight-regular);
+}
+
+h5 {
+  margin-top: 48px;
+  font-size: var(--font-size-heading-small);
+}
+
+h6 {
+  margin-top: 48px;
+  font-size: var(--font-size-heading-small);
+  font-style: italic;
+}
+
+// Rule
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+//
+// Links
+//
+a {
+  color: var(--color-link);
+
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+  }
+}
+
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+//
+// Copy
+//
+p {
+  margin: 15px 0;
+}
+
+blockquote {
+  margin: 15px 0;
+  text-indent: -0.4em;
+  font-style: italic;
+}

@@ -1,0 +1,16 @@
+//
+// @file
+// Nav mixins
+//
+// These styles deal with navigation / menu patterns
+//
+
+@mixin nav($item-selector: li) {
+  margin: 0 0 1rem;
+  padding: 0;
+
+  > #{$item-selector} {
+    display: block;
+    list-style: none;
+  }
+}

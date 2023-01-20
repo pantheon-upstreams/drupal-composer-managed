@@ -65,7 +65,8 @@
         "drupal/migrate_drupal_d8": "^1.0",
         "drupal/name": "^1.0@RC",
         "drupal/auto_entitylabel": "^3.0",
-        "drupal/gin": "^3.0@RC"
+        "drupal/gin": "^3.0@RC",
+        "drupal/prototype": "^4.0@alpha"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",

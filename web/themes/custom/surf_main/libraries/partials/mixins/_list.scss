@@ -1,0 +1,136 @@
+//
+// @file
+// List mixins.
+// ----------------------------------------------------------------------------
+
+//
+// Base
+//
+@mixin list--reset {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+//
+// Bullets
+//
+@mixin list--bullets($item-selector: li) {
+  @include list--reset;
+
+  > #{$item-selector}:before {
+    content: "\2022";
+    font-weight: var(--font-weight-bold);
+  }
+
+  ul {
+    margin-top: 6px;
+    padding-left: var(--space-indent);
+  }
+}
+
+//
+// Numbered
+//
+@mixin list--numbered($item-selector: li) {
+  @include list--reset;
+  counter-reset: number;
+
+  > #{$item-selector}:before {
+    content: counters(number, ".") ".";
+    counter-increment: number;
+  }
+
+  // Second Level
+  ol {
+    margin-top: 6px;
+    padding-left: 30px;
+
+    > #{$item-selector} {
+      padding-left: 0;
+      text-indent: -30px;
+
+      &:before {
+        display: inline;
+        margin-right: .5em;
+        position: static;
+      }
+    }
+  }
+}
+
+//
+// No bullets
+//
+@mixin list--no-bullets($item-selector: li) {
+  margin: 0;
+  padding: 0;
+
+  > #{$item-selector} {
+    list-style: none;
+  }
+}
+
+//
+// Inline
+//
+@mixin list--inline($item-selector: li) {
+  > #{$item-selector} {
+    display: inline-block;
+  }
+}
+
+//
+// Ruled List
+//
+@mixin list--ruled (
+  $spacing: 2em,
+  $style: "inner",
+  $border-color: var(--border-color),
+  $border-size: 1px,
+  $border-style: solid,
+  $item-selector: li
+) {
+  @include list--no-bullets;
+
+  @if ($style == inner or $style == above) {
+    > #{$item-selector} {
+      border-top: $border-size $border-style $border-color;
+      margin-top: $spacing;
+      padding-top: $spacing;
+    }
+
+    @if ($style == inner) {
+      > #{$item-selector}:first-child {
+        border-top: 0;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+    @else {
+      > #{$item-selector}:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @if ($style == outer or $style == below) {
+    > #{$item-selector} {
+      border-bottom: $border-size $border-style $border-color;
+      margin-bottom: $spacing;
+      padding-bottom: $spacing;
+    }
+
+    @if ($style == outer) {
+      > #{$item-selector}:first-child {
+        border-top: $border-size $border-style $border-color;
+        padding-top: $spacing;
+      }
+    }
+    @else {
+      > #{$item-selector}:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

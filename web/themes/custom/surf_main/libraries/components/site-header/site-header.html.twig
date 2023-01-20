@@ -1,0 +1,27 @@
+{{ attach_library('surf_main/site-header') }}
+<header class="c-site-header" role="banner">
+  <div class="c-site-header__inner l-constrained">
+    <div class="c-site-header__logo">
+      {%
+        include '@prototype-components/logo/logo.twig' with {
+        svg_source: logo_svg,
+        bitmap_source: logo_png,
+        alt: site_name ~ ' logo'
+        } only
+      %}
+    </div>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger js-mobile-nav-trigger" value="expanded" />
+    <label for="nav-trigger">
+      <svg class="nav-trigger__icon nav-trigger__icon--expand" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path d="M0 0h30v4H0zM0 20h30v4H0zM0 10h30v4H0z"/></svg>
+      <svg class="nav-trigger__icon nav-trigger__icon--collapse" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 357 357"><path d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/></svg>
+    </label>
+    <div class="c-site-header__site-navigation">
+      <div class="c-site-header__menu-main">
+        {{ header.menu }}
+      </div>
+      <div class="c-site-header__utilities">
+        {{ header.utilities }}
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+{% import '@prototype-components/component.twig' as component %}
+{{ attach_library('prototype/progress') }}
+
+<div data-drupal-progress {{ component.attributes('progress', modifiers, attr) }}>
+  {% if label %}
+    <div class="progress__label">{{ label }}</div>
+  {% endif %}
+  <div class="progress__track"><div class="progress__bar" style="width: {{ percent }}%"></div></div>
+  <div class="progress__percentage">{{ percent }}%</div>
+  <div class="progress__description">{{ message }}</div>
+</div>

@@ -1,0 +1,32 @@
+//
+// @file
+// Link styles.
+//
+// These styles deal with icons and hover effects.
+//
+
+@mixin link--icon($width: 30px, $height: $width, $display: block ) {
+  display: $display;
+  width: $width;
+  height: $height;
+  background-position: center;
+  text-indent: $width * 2;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin link--social {
+  @include link--icon(24px, 30px);
+}
+
+@mixin link--arrow($width: .825em, $height: $width * .75) {
+  &:after {
+    @include pseudo-box($width, $height);
+    content: ">";
+    display: inline-block;
+    background-size: 100%;
+    background-position: center;
+    margin-left: .25em;
+    vertical-align: .0625em;
+  }
+}

@@ -1,0 +1,34 @@
+{{ attach_library('prototype/messages') }}
+{% import '@prototype-components/icons/icon.twig' as icon %}
+
+{% block messages %}
+{% for type, messages in message_list %}
+  {%
+    set classes = [
+      'messages',
+      'messages--' ~ type,
+    ]
+  %}
+  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+    <div class="messages__icon">
+      {{ icon.inline(type) }}
+    </div>
+    <div class="messages__content" {{ type == 'error' ? 'role="alert"' }}>
+      {% if status_headings[type] %}
+        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+      {% endif %}
+      {% if messages|length > 1 %}
+        <ul class="messages__list">
+          {% for message in messages %}
+            <li class="messages__item">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        {{ messages|first }}
+      {% endif %}
+    </div>
+  </div>
+  {# Remove type specific classes. #}
+  {% set attributes = attributes.removeClass(classes) %}
+{% endfor %}
+{% endblock messages %}

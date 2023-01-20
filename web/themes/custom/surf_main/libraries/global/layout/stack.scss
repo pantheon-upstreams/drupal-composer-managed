@@ -1,0 +1,69 @@
+/*
+ * @file
+ * Stack layout component styles.
+ * See https://every-layout.dev/layouts/stack/ for more information
+ */
+[class*="l-stack"] > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+[class*="l-stack"] > * + * {
+  margin-top: var(--space-gap-y);
+}
+
+.l-stack--ruled > * + * {
+  padding-top: var(--space-gap-y);
+  border-top: var(--size-border, 1px) var(--style-border, solid) var(--color-border);
+}
+
+.l-stack--none > * + * {
+  margin-top: 0;
+}
+
+.l-stack--minimal > * + * {
+  margin-top: 12px;
+}
+
+.l-stack--tight > * + * {
+  margin-top: 15px;
+}
+
+.l-stack--compact > * + * {
+  margin-top: 30px;
+}
+
+.l-stack--normal > * + * {
+  margin-top: 48px;
+}
+
+.l-stack--loose > * + * {
+  margin-top: 60px;
+}
+
+.l-stack--sparse > * + * {
+  margin-top: 90px;
+}
+
+/**
+ No margin following contextual links
+ */
+[class*="l-stack"] > .contextual {
+  margin-top: 0;
+}
+
+[class*="l-stack"] > .contextual:first-child + * {
+  margin-top: 0;
+}
+
+/**
+  Allows aligning splitting elements to align some to the bottom,
+  This can be acheived by giving a child element margin-top: auto.
+  We don't enable this on every stack because child elements can
+  not be floated inside a flexed container.
+ */
+.l-stack--split {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

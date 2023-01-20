@@ -1,0 +1,45 @@
+//
+// @file
+// Basic HTML tag styles
+//
+// This file outputs to global.css, the primary stylesheet for the theme
+//
+
+@import '../../partials/_partials';
+
+// Make everything border-box
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  line-height: var(--font-line-height-loose);
+}
+
+:first-child {
+  margin-top: 0;
+}
+
+:last-child {
+  margin-bottom: 0;
+}
+
+.skip-link {
+  display: block;
+  padding: 0.25em;
+  text-align: center;
+  color: var(--link-color-text-reverse);
+  background-color: var(--color-background-reverse);
+
+  &:hover,
+  &:focus {
+    color: var(--link-color-text-reverse-hover);
+  }
+}

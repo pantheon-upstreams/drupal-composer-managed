@@ -1,0 +1,31 @@
+name: SURF Main
+type: theme
+description: A dynamic theme powered by Prototype & Mercury Editor with a powerful display.
+package: prototype
+core_version_requirement: ^9
+'base theme': stable
+# starterkit: true
+regions:
+  site_alert: Alert
+  header: Header
+  primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar_first: 'First Sidebar'
+  sidebar_second: 'Second Sidebar'
+  footer: Footer
+  breadcrumb: Breadcrumb
+libraries:
+  - surf_main/global
+components:
+  namespaces:
+    prototype-components:
+      - libraries/components
+    prototype-icons:
+      - images/icons
+# version: 4.0.0-alpha2
+project: prototype
+datestamp: 1673374025
+generator: 'prototype:4.0.0-alpha2'

@@ -1,0 +1,51 @@
+//
+// @file
+// Color variables.
+//
+// SEE https://yeun.github.io/open-color/
+//
+
+// Grayscale
+$gray-00:            #130f13;
+$gray-10:            #261f26;
+$gray-20:            #363136;
+$gray-30:            #504b50;
+$gray-40:            #777277;
+$gray-50:            #9d999d;
+$gray-60:            #c3c1c3;
+$gray-70:            #e1e0e1;
+$gray-80:            #f0eff0;
+$gray-90:            #f7f6f7;
+
+// Red
+$red-50:             #c00;
+
+// Green
+$green-30:           #417505;
+$green-50:           #7ed321;
+
+// Blue
+$blue-40:            #00659b;
+$blue-50:            #0098ce;
+
+// Yellow
+$yellow-50:          #fdc400;
+$yellow-90:          #f9e8ac;
+
+//
+// Semantic colors
+//
+
+$clr-neutral:        $gray-50;           // Default nuetral color
+$clr-text:           $gray-20;           // Default body copy color
+$clr-link:           $blue-50;             // Default link color
+$clr-heading:        $gray-20;           // Default accent color
+$clr-accent:         $yellow-50;            // Default accent color
+$clr-border:         $gray-60;              // Default border and required color
+$clr-status:         $green-50;              // Default status color
+$clr-warning:        $yellow-50;              // Default warning color
+$clr-error:          $red-50;              // Default error and required color
+$clr-table-border:   var(--border-color);       // Default table border color
+$clr-table-header:   $gray-70;
+$clr-table-odd:      #fff;           // Default table odd row color
+$clr-table-even:     $gray-90;            // Default table even row color

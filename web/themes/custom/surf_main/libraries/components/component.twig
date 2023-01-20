@@ -1,0 +1,22 @@
+{% macro attributes(base, modifiers, attr) %}
+  {% set base = base|default('') %}
+  {% set modifiers = modifiers|default([]) %}
+
+  {% set attrs = create_attribute() %}
+
+  {% if attr %}
+    {% for property, value in attr  %}
+      {% set attrs = attrs.setAttribute(property, value) %}
+    {% endfor %}
+  {% endif %}
+
+  {% set attrs = attrs.addClass(base) %}
+
+  {% if modifiers %}
+    {% for modifier in modifiers  %}
+      {% set attrs = attrs.addClass(base ~ '--' ~ modifier) %}
+    {% endfor %}
+  {% endif %}
+
+{{ attrs }}
+{% endmacro %}

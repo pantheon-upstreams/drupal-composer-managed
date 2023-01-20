@@ -1,0 +1,12 @@
+//
+// @file
+// Calc Percentage Function
+//
+
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+
+@function cp($target, $container) {
+  @return calc-percent($target, $container);
+}

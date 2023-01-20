@@ -1,0 +1,9 @@
+{% import '@prototype-components/component.twig' as component %}
+{{ attach_library('prototype/more-link') }}
+{% set attr = attr|default({})|merge({href: url})%}
+{% if back %}
+{% set modifiers = modifiers|default([])|merge(['back']) %}
+<a {{component.attributes('more-link', modifiers, attr)}}><span class="more-link__arrow">←</span>&nbsp;{{ text }}</a>
+{% else %}
+<a {{component.attributes('more-link', modifiers, attr)}}>{{ text }}&nbsp;<span class="more-link__arrow">→</span></a>
+{% endif %}

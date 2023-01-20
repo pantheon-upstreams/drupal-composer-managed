@@ -1,0 +1,82 @@
+normalize:
+  version: 4.0.x
+  css:
+    base:
+      build/libraries/global/base/normalize.css: {  }
+global:
+  version: 4.0.x
+  css:
+    base:
+      dist/css/global/settings/color.css: {  }
+      dist/css/global/settings/font.css: {  }
+      dist/css/global/settings/size.css: {  }
+      dist/css/global/settings/space.css: {  }
+      dist/css/global/base/document.css: {  }
+      dist/css/global/base/forms.css: {  }
+      dist/css/global/base/lists.css: {  }
+      dist/css/global/base/media.css: {  }
+      dist/css/global/base/tables.css: {  }
+      dist/css/global/base/text.css: {  }
+    layout:
+      dist/css/global/layout/align.css: {  }
+      dist/css/global/layout/cluster.css: {  }
+      dist/css/global/layout/constrained.css: {  }
+      dist/css/global/layout/grid.css: {  }
+      dist/css/global/layout/stack.css: {  }
+    theme:
+      dist/css/global/theme/reverse.css: {  }
+      dist/css/global/utilities.css: {  }
+  dependencies:
+    - surf_main/normalize
+card:
+  css:
+    component:
+      dist/css/components/card/card.component.css: {  }
+breadcrumbs:
+  css:
+    component:
+      dist/css/components/breadcrumbs/breadcrumbs.component.css: {  }
+messages:
+  css:
+    component:
+      dist/css/components/messages/messages.component.css: {  }
+      dist/css/components/messages/messages.theme.css: {  }
+more-link:
+  css:
+    component:
+      dist/css/components/more-link/more-link.component.css: {  }
+pager:
+  css:
+    component:
+      dist/css/components/pager/pager.component.css: {  }
+progress:
+  css:
+    component:
+      dist/css/components/progress/progress.component.css: {  }
+search_form:
+  version: 4.0.x
+  css:
+    theme:
+      dist/css/components/search-form/search-form.css: {  }
+section-title:
+  css:
+    component:
+      dist/css/components/section-title/section-title.component.css: {  }
+site-footer:
+  css:
+    component:
+      dist/css/components/site-footer/site-footer.component.css: {  }
+site-header:
+  css:
+    component:
+      dist/css/components/site-header/site-header.component.css: {  }
+  js:
+    dist/css/components/site-header/site-header.js: {  }
+tabs:
+  css:
+    component:
+      dist/css/components/tabs/tabs.component.css: {  }
+teaser:
+  css:
+    component:
+      dist/css/components/teaser/teaser.component.css: {  }

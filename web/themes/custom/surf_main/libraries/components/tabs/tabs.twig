@@ -1,0 +1,10 @@
+{% import '@prototype-components/component.twig' as component %}
+{{ attach_library('prototype/tabs') }}
+
+{% macro tabs__item(link, attributes) %}
+  <li{{ attributes.addClass('tabs__item') }}>{{ link }}</li>
+{% endmacro %}
+
+<ul {{ component.attributes('tabs', modifiers, attr) }}>
+  {{ content }}
+</ul>

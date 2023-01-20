@@ -1,0 +1,3 @@
+{% import '@prototype-components/component.twig' as component %}
+{{ attach_library('prototype/page-title') }}
+<h1 {{ component.attributes('page-title', modifiers, attr) }}>{{text}}</h1>

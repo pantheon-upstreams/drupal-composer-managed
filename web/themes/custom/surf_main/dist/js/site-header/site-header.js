@@ -1,0 +1,1 @@
+!function(){var n;(n=jQuery)(document).ready(function(){n(".js-mobile-nav-trigger").on("change",function(e){n("body")[e.target.checked?"addClass":"removeClass"]("js-prevent-scroll")})})}();

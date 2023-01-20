@@ -1,0 +1,36 @@
+{
+  "name": "prototype",
+  "version": "4.0.0",
+  "description": "Collection of build tools for Prototype projects",
+  "author": "Aten Design Group",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
+    "browser-sync": "^2.27.9",
+    "cssnano": "^5.1.7",
+    "exports-loader": "^3.1.0",
+    "glob": "^8.0.3",
+    "gulp": "^4.0.2",
+    "gulp-ignore": "^3.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "path": "^0.12.7",
+    "postcss-preset-env": "^7.8.3",
+    "sass": "^1.50.0",
+    "webpack": "^5.75.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "postcss-inline-svg": "^5.0.0"
+  }
+}
