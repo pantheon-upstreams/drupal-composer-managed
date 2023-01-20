@@ -1,4 +1,4 @@
-uuid: 9de25b99-6989-49fc-a077-ad430233a3cf
+uuid: 8422e30a-6941-42e3-b5cb-7466bbe3ab1a
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - surf_main
 _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
-id: bartik_account_menu
-theme: bartik
-region: secondary_menu
+id: surf_main_account_menu
+theme: surf_main
+region: header
 weight: -11
 provider: null
 plugin: 'system_menu_block:account'

@@ -1,4 +1,4 @@
-uuid: 1435c6d5-478b-4117-a4d1-1b9209b0e52d
+uuid: 4e79a9ef-e225-49fe-be1e-f9eabeb644f3
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - block_content
   theme:
-    - bartik
-id: sanford_omega_block_5
-theme: bartik
+    - surf_main
+id: surf_main_sanford_omega_block_5
+theme: surf_main
 region: content
 weight: 2
 provider: null

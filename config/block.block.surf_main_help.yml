@@ -1,17 +1,17 @@
-uuid: 0d67db9b-f765-4c0a-954e-309ad908f658
+uuid: 59e322bc-e591-4d2d-836d-9928685f6913
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - seven
+    - surf_main
 _core:
-  default_config_hash: NU5A_49mwLHfs5xFzMFrZ850w9pgUolxMS9NNF3vv4c
-id: seven_help
-theme: seven
-region: help
-weight: 0
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: surf_main_help
+theme: surf_main
+region: content
+weight: -6
 provider: null
 plugin: help_block
 settings:

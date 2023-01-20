@@ -1,16 +1,16 @@
-uuid: 89e8a747-02f2-4395-801f-749b9db589f0
+uuid: eef931da-57fe-40b0-9020-82f606994cda
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - surf_main
 _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
-id: bartik_messages
-theme: bartik
-region: highlighted
+id: surf_main_messages
+theme: surf_main
+region: header
 weight: 0
 provider: null
 plugin: system_messages_block

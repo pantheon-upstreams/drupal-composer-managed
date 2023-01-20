@@ -1,15 +1,15 @@
-uuid: 9b799f31-b16c-4f59-837c-fa9d5f75044a
+uuid: 8164986d-3760-4b3a-b4d4-e59b7fd23930
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - surf_main
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: sanford_omega_system_main
-theme: bartik
+id: surf_main_sanford_omega_system_main
+theme: surf_main
 region: content
 weight: -8
 provider: null

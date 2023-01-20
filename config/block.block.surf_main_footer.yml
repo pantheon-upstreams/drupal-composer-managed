@@ -1,4 +1,4 @@
-uuid: ad573c8b-7e3d-48be-ae12-93bea7f80231
+uuid: 8f27248c-2bb0-42ea-a032-a2262c365d5e
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - surf_main
 _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
-id: bartik_footer
-theme: bartik
-region: footer_fifth
+id: surf_main_footer
+theme: surf_main
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

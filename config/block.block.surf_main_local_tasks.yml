@@ -1,13 +1,13 @@
-uuid: cf0a4dd7-0971-4193-971a-7d60e6827ed2
+uuid: 22d05b81-11f1-46c3-8c6d-41caeaba167f
 langcode: en
 status: true
 dependencies:
   theme:
-    - bartik
+    - surf_main
 _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
-id: bartik_local_tasks
-theme: bartik
+id: surf_main_local_tasks
+theme: surf_main
 region: content
 weight: -10
 provider: null

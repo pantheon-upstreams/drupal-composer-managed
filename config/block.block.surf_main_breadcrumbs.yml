@@ -1,16 +1,16 @@
-uuid: d6c21598-0f9a-4935-b892-0d5c2e7b5204
+uuid: 9c0bcf00-ebff-45b2-99c5-64242b1d6d50
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - seven
+    - surf_main
 _core:
-  default_config_hash: WWu2OQswgCztl9OeXjD1stexIEMZsSgPMYIdC-JHx9c
-id: seven_breadcrumbs
-theme: seven
-region: breadcrumb
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: surf_main_breadcrumbs
+theme: surf_main
+region: header
 weight: 0
 provider: null
 plugin: system_breadcrumb_block

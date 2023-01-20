@@ -1,15 +1,15 @@
-uuid: 8c6449e1-a978-4948-a999-357dde4ec5dd
+uuid: 25127924-024e-472e-b192-e10768c49098
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - surf_main
 _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
-id: bartik_branding
-theme: bartik
+id: surf_main_branding
+theme: surf_main
 region: header
 weight: 0
 provider: null

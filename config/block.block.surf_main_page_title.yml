@@ -1,15 +1,15 @@
-uuid: 9a6c987c-7aef-4081-ab25-ee5c9ad7afeb
+uuid: e654bd5a-14de-488e-bf60-8f0e56668438
 langcode: en
 status: true
 dependencies:
   theme:
-    - seven
+    - surf_main
 _core:
-  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
-id: seven_page_title
-theme: seven
-region: header
-weight: -7
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: surf_main_page_title
+theme: surf_main
+region: content
+weight: -11
 provider: null
 plugin: page_title_block
 settings:
