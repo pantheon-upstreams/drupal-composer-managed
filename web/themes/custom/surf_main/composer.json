@@ -1,15 +1,15 @@
 {
-    "name": "drupal/prototype",
-    "description": "Aten Prototype Theme",
+    "name": "drupal/surf_main",
+    "description": "Built on Aten's Prototype Theme",
     "type": "drupal-theme",
     "authors": [
         {
-            "name": "John Ferris",
-            "email": "john@atendesigngroup.com"
+            "name": "Jennifer Dust",
+            "email": "jennifer@atendesigngroup.com"
         },
         {
-            "name": "James Nettik",
-            "email": "james@atendesigngroup.com"
+            "name": "Brent Robins",
+            "email": "brent@atendesigngroup.com"
         }
     ],
     "require": {

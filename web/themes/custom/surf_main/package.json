@@ -1,7 +1,7 @@
 {
-  "name": "prototype",
+  "name": "surf_main",
   "version": "4.0.0",
-  "description": "Collection of build tools for Prototype projects",
+  "description": "Collection of build tools for SURF projects",
   "author": "Aten Design Group",
   "main": "gulpfile.js",
   "devDependencies": {
