@@ -3,7 +3,7 @@ type: theme
 description: A dynamic theme powered by Prototype & Mercury Editor with a powerful display.
 package: prototype
 core_version_requirement: ^9
-"base theme": stable
+base theme: stable
 # starterkit: true
 
 regions:
@@ -19,7 +19,7 @@ regions:
   footer_bottom: Footer Bottom
 
 libraries:
-  - surf_main/fonts
+  # - surf_main/fonts
   - surf_main/global
 
 components:
