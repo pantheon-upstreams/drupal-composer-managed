@@ -34,11 +34,17 @@
   justify-content: center;
   margin: var(--space-inset-y, 12px) var(--space-inset-x, 0);
   padding: 0;
-  width: var(--size-width, 160px);
+  width: var(--size-width, 200px);
   z-index: 1;
 
+
+  @include bp-min(medium) {
+    width: 260px;
+    margin: 18px 0;
+  }
+
   @include bp-min(large) {
-    width: 180px;
+    width: 320px;
     margin: 24px 0;
   }
 
