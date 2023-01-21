@@ -1,52 +1,61 @@
 <div class="layout-container">
-  {% block site_alert %}
-  <div class="l-constrained">
-    {{ page.site_alert }}
-  </div>
-  {% endblock %}{# /site_alert #}
+	{% block site_alert %}
+		<div class="l-constrained">
+			{{ page.site_alert }}
+		</div>
+	{% endblock %}
+	{# /site_alert #}
 
-  {% block site_header %}
-  {%
+	{% block site_header %}
+		{%
     include '@prototype-components/site-header/site-header.html.twig' with {
-      header: page.header
+      header_utility: page.header_utility,
+      header_primary: page.header_primary,
     }
   %}
-  {% endblock %}{# /site_header #}
+	{% endblock %}
+	{# /site_header #}
 
-  {{ page.primary_menu }}
+	{% block breadcrumb %}
+		<div class="l-constrained">
+			{{ page.breadcrumb }}
+		</div>
+	{% endblock %}
+	{# /breadcrumb #}
 
-  {{ page.secondary_menu }}
+	{{ page.highlighted }}
 
-  {% block breadcrumb %}
-  <div class="l-constrained">
-    {{ page.breadcrumb }}
-  </div>
-  {% endblock %}{# /breadcrumb #}
+	{{ page.help }}
 
-  {{ page.highlighted }}
+	{% block main %}
+		<main>
+			<a id="main-content" tabindex="-1"></a>
+			{# link is in html.html.twig #}
 
-  {{ page.help }}
+			{% block content %}
+				<div class="l-constrained">
+					{{ page.content }}
+				</div>
+			{% endblock %}
+			{# /content #}
 
-  {% block main %}
-  <main>
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+			{% block sidebar_right %}
+				{{ page.sidebar_right }}
+			{% endblock %}
+			{# /sidebar_right #}
 
-    {% block content %}
-    <div class="l-constrained">
-      {{ page.content }}
-    </div>
-    {% endblock %}{# /content #}
+		</main>
+	{% endblock %}
+	{# /main #}
 
-  </main>
-  {% endblock %}{# /main #}
-
-  {% block site_footer %}
-  {%
+	{% block site_footer %}
+		{%
     include '@prototype-components/site-footer/site-footer.html.twig' with {
-      footer: page.footer
+      footer_top: page.footer_top,
+      footer_bottom: page.footer_bottom
     } only
   %}
-  {% endblock %}{# /site_footer #}
-  <a href="#top">{{'Back to Top'|t}}</a>
-
-</div>{# /.layout-container #}
+	{% endblock %}
+	{# /site_footer #}
+</div>
+{# /.layout-container #}

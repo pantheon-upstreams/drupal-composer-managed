@@ -12,7 +12,8 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function surf_main_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function surf_main_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
   // Attach search_form library.
   $form['#attached']['library'][] = 'surf_main/search_form';
 
@@ -31,14 +32,16 @@ function surf_main_form_search_block_form_alter(&$form, FormStateInterface $form
 /**
  * Add a prefix to a path for use with array_walk().
  */
-function surf_main_get_absolute_path(&$value, $key, $prefix) {
+function surf_main_get_absolute_path(&$value, $key, $prefix)
+{
   $value = $prefix . $value;
 }
 
 /**
  * Implements hook_preprocess_page() for PAGE document templates.
  */
-function surf_main_preprocess_page(&$variables) {
+function surf_main_preprocess_page(&$variables)
+{
   // Get the svg + png logo paths.
   $logos = [
     'logo_svg' => 'logo.svg',
@@ -59,7 +62,8 @@ function surf_main_preprocess_page(&$variables) {
  * @param array $variables
  *   Preprocess variables to attach logo data to.
  */
-function surf_main_add_logo(array $logos, array &$variables) {
+function surf_main_add_logo(array $logos, array &$variables)
+{
   $path_to_theme = \Drupal::service('theme.manager')->getActiveTheme()->getPath();
 
   foreach ($logos as $name => $file) {
@@ -72,7 +76,8 @@ function surf_main_add_logo(array $logos, array &$variables) {
 /**
  * Adds site information from config.
  */
-function surf_main_add_site_info(&$variables) {
+function surf_main_add_site_info(&$variables)
+{
   $config = \Drupal::config('system.site');
   $variables['site_name'] = $config->get('name');
   $variables['site_slogan'] = $config->get('slogan');
@@ -81,7 +86,8 @@ function surf_main_add_site_info(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function surf_main_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function surf_main_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
   $content = $variables['elements']['content'];
 
   if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
@@ -92,12 +98,15 @@ function surf_main_theme_suggestions_block_alter(array &$suggestions, array $var
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function surf_main_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function surf_main_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
   $request = \Drupal::request();
   $request_attributes = $request->attributes;
 
-  if ($request_attributes->has('node')
-    && $request_attributes->get('_route') === 'entity.node.canonical') {
+  if (
+    $request_attributes->has('node')
+    && $request_attributes->get('_route') === 'entity.node.canonical'
+  ) {
     $node = $request_attributes->get('node');
     $content_type = $node->bundle();
 
@@ -108,7 +117,8 @@ function surf_main_theme_suggestions_page_alter(array &$suggestions, array $vari
 /**
  * Implements theme_theme_suggestions_input_alter().
  */
-function surf_main_theme_suggestions_input_alter(&$suggestions, array $variables) {
+function surf_main_theme_suggestions_input_alter(&$suggestions, array $variables)
+{
   $element = $variables['element'];
 
   // Add Twig template suggestion based on data attributes. To use this, in a
@@ -123,7 +133,8 @@ function surf_main_theme_suggestions_input_alter(&$suggestions, array $variables
 /**
  * Implements hook_preprocess_form_element().
  */
-function surf_main_preprocess_form_element(&$variables) {
+function surf_main_preprocess_form_element(&$variables)
+{
   if (in_array($variables['element']['#type'] ?? FALSE, ['checkbox', 'radio'], TRUE)) {
     $variables['attributes']['class'][] = 'form-type-boolean';
   }
@@ -140,14 +151,16 @@ function surf_main_preprocess_form_element(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_form_element_label(&$variables) {
+function surf_main_preprocess_form_element_label(&$variables)
+{
   $variables['attributes']['class'][] = 'form-item__label';
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_input(&$variables) {
+function surf_main_preprocess_input(&$variables)
+{
   if (
     !empty($variables['element']['#title_display']) &&
     $variables['element']['#title_display'] === 'attribute' &&
@@ -194,7 +207,8 @@ function surf_main_preprocess_input(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_textarea(&$variables) {
+function surf_main_preprocess_textarea(&$variables)
+{
   $variables['attributes']['class'][] = 'form-element';
   $variables['attributes']['class'][] = 'form-element--type-textarea';
   $variables['attributes']['class'][] = 'form-element--api-textarea';
@@ -203,7 +217,8 @@ function surf_main_preprocess_textarea(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_select(&$variables) {
+function surf_main_preprocess_select(&$variables)
+{
   $variables['attributes']['class'][] = 'form-element';
   $variables['attributes']['class'][] = $variables['element']['#multiple'] ?
     'form-element--type-select-multiple' :
@@ -213,21 +228,24 @@ function surf_main_preprocess_select(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_checkboxes(&$variables) {
+function surf_main_preprocess_checkboxes(&$variables)
+{
   $variables['attributes']['class'][] = 'form-boolean-group';
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_radios(&$variables) {
+function surf_main_preprocess_radios(&$variables)
+{
   $variables['attributes']['class'][] = 'form-boolean-group';
 }
 
 /**
  * Implements hook_preprocess_HOOK().
  */
-function surf_main_preprocess_field(&$variables) {
+function surf_main_preprocess_field(&$variables)
+{
   $rich_field_types = ['text_with_summary', 'text', 'text_long'];
 
   if (in_array($variables['field_type'], $rich_field_types, TRUE)) {
@@ -238,7 +256,8 @@ function surf_main_preprocess_field(&$variables) {
 /**
  * Implements hook_preprocess_menu().
  */
-function surf_main_preprocess_menu(&$variables) {
+function surf_main_preprocess_menu(&$variables)
+{
   $menu_name = $variables['menu_name'];
   $attributes = &$variables['attributes'];
 
@@ -252,7 +271,8 @@ function surf_main_preprocess_menu(&$variables) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function surf_main_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+function surf_main_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables)
+{
   $view_mode = $variables['elements']['#view_mode'];
   $suggestions[] = 'taxonomy_term__' . $view_mode;
 }
@@ -264,7 +284,8 @@ function surf_main_theme_suggestions_taxonomy_term_alter(array &$suggestions, ar
  * https://www.drupal.org/project/drupal/issues/2270883
  * https://www.drupal.org/project/drupal/issues/2766379
  */
-function surf_main_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+function surf_main_theme_suggestions_user_alter(array &$suggestions, array $variables)
+{
   $view_mode = $variables['elements']['#view_mode'] ?? '';
   if ($view_mode) {
     $suggestions[] = 'user__' . $view_mode;
@@ -274,7 +295,8 @@ function surf_main_theme_suggestions_user_alter(array &$suggestions, array $vari
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function surf_main_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+function surf_main_theme_suggestions_views_view_alter(array &$suggestions, array $variables)
+{
   $id = $variables['view']->id();
   $display = $variables['view']->current_display;
   $suggestions[] = 'views_view--' . $id;
@@ -284,7 +306,8 @@ function surf_main_theme_suggestions_views_view_alter(array &$suggestions, array
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function surf_main_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+function surf_main_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables)
+{
   $id = $variables['view']->id();
   $display = $variables['view']->current_display;
   $suggestions[] = 'views_view_unformatted--' . $id;
@@ -297,7 +320,8 @@ function surf_main_theme_suggestions_views_view_unformatted_alter(array &$sugges
  * @param array $items
  *   The array of menu items.
  */
-function surf_main_prepare_menu_items(&$items) {
+function surf_main_prepare_menu_items(&$items)
+{
   foreach ($items as &$item) {
     // Set classes on our links.
     $link_attributes = $item['url']->getOption('attributes') ?? [];
@@ -339,7 +363,8 @@ function surf_main_prepare_menu_items(&$items) {
  * @return null|array
  *   A render array for the block or NULL if the block does not exist.
  */
-function surf_main_view_block($id) {
+function surf_main_view_block($id)
+{
   if ($block = Block::load($id)) {
     return \Drupal::entityTypeManager()
       ->getViewBuilder('block')

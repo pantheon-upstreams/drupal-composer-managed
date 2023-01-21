@@ -1,4 +1,14 @@
 {{ attach_library('surf_main/site-footer') }}
 <footer role="contentinfo" class="c-site-footer">
-  {{ footer }}
+	<div class="footer__top">
+  <h2>Discovery at great depths</h2>
+		{{ footer_top }}
+	</div>
+
+	<div class="footer__bottom">
+		{{ footer_bottom }}
+		<a href="#top" id="back-to-top">
+			{{ 'To Top'|t }}
+		</a>
+	</div>
 </footer>

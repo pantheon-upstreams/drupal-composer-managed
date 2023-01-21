@@ -3,29 +3,33 @@ type: theme
 description: A dynamic theme powered by Prototype & Mercury Editor with a powerful display.
 package: prototype
 core_version_requirement: ^9
-'base theme': stable
+"base theme": stable
 # starterkit: true
+
 regions:
   site_alert: Alert
-  header: Header
-  primary_menu: 'Primary Menu'
-  secondary_menu: 'Secondary Menu'
+  header_utility: Header Utility
+  header_primary: Header Primary
+  breadcrumb: Breadcrumb
   highlighted: Highlighted
   help: Help
   content: Content
-  sidebar_first: 'First Sidebar'
-  sidebar_second: 'Second Sidebar'
-  footer: Footer
-  breadcrumb: Breadcrumb
+  sidebar_right: Right Sidebar
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom
+
 libraries:
+  - surf_main/fonts
   - surf_main/global
+
 components:
   namespaces:
     prototype-components:
       - libraries/components
     prototype-icons:
       - images/icons
-# version: 4.0.0-alpha2
+
+version: "4.0.0-alpha2"
 project: prototype
 datestamp: 1673374025
-generator: 'prototype:4.0.0-alpha2'
+generator: "prototype:4.0.0-alpha2"
