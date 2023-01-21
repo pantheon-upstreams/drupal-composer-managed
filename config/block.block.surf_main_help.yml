@@ -10,8 +10,8 @@ _core:
   default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
 id: surf_main_help
 theme: surf_main
-region: content
-weight: -6
+region: help
+weight: -8
 provider: null
 plugin: help_block
 settings:

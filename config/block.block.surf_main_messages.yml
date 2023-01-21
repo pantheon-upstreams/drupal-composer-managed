@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: surf_main_messages
 theme: surf_main
-region: header
-weight: 0
+region: site_alert
+weight: -9
 provider: null
 plugin: system_messages_block
 settings:

@@ -11,7 +11,7 @@ _core:
 id: surf_main_sanford_omega_system_main
 theme: surf_main
 region: content
-weight: -8
+weight: -7
 provider: null
 plugin: system_main_block
 settings:

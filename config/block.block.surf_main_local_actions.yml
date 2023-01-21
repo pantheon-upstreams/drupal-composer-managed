@@ -8,8 +8,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: surf_main_local_actions
 theme: surf_main
-region: content
-weight: -1
+region: highlighted
+weight: -8
 provider: null
 plugin: local_actions_block
 settings:

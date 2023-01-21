@@ -9,7 +9,7 @@ _core:
 id: surf_main_page_title
 theme: surf_main
 region: content
-weight: -11
+weight: -8
 provider: null
 plugin: page_title_block
 settings:

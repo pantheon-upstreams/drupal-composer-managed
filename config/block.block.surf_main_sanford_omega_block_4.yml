@@ -10,8 +10,8 @@ dependencies:
     - surf_main
 id: surf_main_sanford_omega_block_4
 theme: surf_main
-region: content
-weight: 0
+region: footer_bottom
+weight: -8
 provider: null
 plugin: 'block_content:aa01d907-befd-4f20-b2bc-0d231bf81d81'
 settings:

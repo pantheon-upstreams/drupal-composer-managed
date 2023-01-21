@@ -8,8 +8,8 @@ _core:
   default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: surf_main_local_tasks
 theme: surf_main
-region: content
-weight: -10
+region: highlighted
+weight: -7
 provider: null
 plugin: local_tasks_block
 settings:

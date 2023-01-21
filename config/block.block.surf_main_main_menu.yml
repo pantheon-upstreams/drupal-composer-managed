@@ -12,8 +12,8 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: surf_main_main_menu
 theme: surf_main
-region: header
-weight: 0
+region: header_primary
+weight: -9
 provider: null
 plugin: 'system_menu_block:main'
 settings:
