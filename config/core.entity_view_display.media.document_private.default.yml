@@ -1,0 +1,27 @@
+uuid: 490f190c-2592-4241-a995-7c0f6e98b79c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.document_private.field_private_file
+    - media.type.document_private
+  module:
+    - file
+id: media.document_private.default
+targetEntityType: media
+bundle: document_private
+mode: default
+content:
+  field_private_file:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

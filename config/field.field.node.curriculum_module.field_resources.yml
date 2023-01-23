@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_resources
-    - media.type.document
+    - media.type.document_private
     - node.type.curriculum_module
 id: node.curriculum_module.field_resources
 field_name: field_resources
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      document: document
+      document_private: document_private
     sort:
       field: _none
       direction: ASC
