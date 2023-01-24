@@ -1,0 +1,4 @@
+services:
+  logger.channel.surf_migrate:
+    parent: logger.channel_base
+    arguments: ['surf_migrate']
