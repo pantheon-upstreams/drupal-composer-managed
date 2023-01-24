@@ -1,0 +1,21 @@
+id: surf_paragraph_schedule_item
+label: "SURF Paragraph -> Schedule item"
+migration_group: surf
+migration_tags:
+  - paragraph
+source:
+  plugin: d8_entity
+  entity_type: paragraph
+  include_translations: false
+  bundle: 'schedule_item'
+  key: migrate
+process:
+  id: id
+  revision_id: revision_id
+  field_milestone: field_milestone
+  field_milestone_date: field_milestone_date
+  uid: uid
+destination:
+  plugin: 'entity_complete:paragraph'
+  translations: true
+  default_bundle: schedule_item
