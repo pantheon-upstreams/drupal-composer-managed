@@ -1,0 +1,7 @@
+name: SURF Curriculum
+type: module
+description: User curriculum reservations
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies:
+  - entity:entity
