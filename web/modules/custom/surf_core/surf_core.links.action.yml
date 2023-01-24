@@ -1,0 +1,11 @@
+user_request.type_add:
+  title: 'Add user request type'
+  route_name: entity.user_request_type.add_form
+  appears_on:
+    - entity.user_request_type.collection
+
+user_request.add_page:
+  title: 'Add user request'
+  route_name: entity.user_request.add_page
+  appears_on:
+    - entity.user_request.collection

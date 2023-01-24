@@ -1,0 +1,4 @@
+administer user request types:
+  title: 'Administer user request types'
+  description: 'Maintain the types of user request entity.'
+  restrict access: true

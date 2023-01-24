@@ -1,0 +1,7 @@
+name: SURF Core
+description: Core entities and hooks for the SURF main site
+type: module
+package: Custom
+core_version_requirement: ^9 || ^10
+dependencies: 
+  - entity:entity

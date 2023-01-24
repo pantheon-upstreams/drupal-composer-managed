@@ -1,0 +1,5 @@
+entity.user_request_type.collection:
+  title: 'User Request types'
+  description: 'Manage and CRUD actions on User Request type.'
+  parent: system.admin_structure
+  route_name: entity.user_request_type.collection
