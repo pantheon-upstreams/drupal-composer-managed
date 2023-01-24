@@ -1,0 +1,4 @@
+entity.curriculum_reservation.settings:
+  title: 'Settings'
+  route_name: entity.curriculum_reservation.settings
+  base_route: entity.curriculum_reservation.settings

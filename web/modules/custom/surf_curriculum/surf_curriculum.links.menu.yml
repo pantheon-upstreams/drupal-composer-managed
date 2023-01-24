@@ -1,0 +1,10 @@
+entity.curriculum_reservation.settings:
+  title: 'Curriculum reservation'
+  description: 'Configure a curriculum reservation entity type.'
+  route_name:  entity.curriculum_reservation.settings
+  parent: system.admin_structure
+entity.curriculum_reservation.collection:
+  title: 'Curriculum reservations'
+  description: 'List of curriculum reservations.'
+  route_name: entity.curriculum_reservation.collection
+  parent: system.admin_content

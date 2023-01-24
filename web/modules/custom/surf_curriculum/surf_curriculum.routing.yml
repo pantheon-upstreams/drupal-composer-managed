@@ -1,0 +1,7 @@
+entity.curriculum_reservation.settings:
+  path: 'admin/structure/curriculum-reservation'
+  defaults:
+    _form: '\Drupal\surf_curriculum\Form\CurriculumReservationSettingsForm'
+    _title: 'Curriculum reservation'
+  requirements:
+    _permission: 'administer curriculum reservation'
