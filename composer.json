@@ -80,6 +80,7 @@
         "drupal/search_api_block": "^1.1",
         "drupal/state_machine": "^1.6",
         "drupal/views_filters_summary": "^2.0@alpha",
+        "drupal/webform_content_creator": "^3",
         "drupal/menu_item_extras": "^2.19",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/cl_server": "^1.0@RC",
@@ -134,6 +135,9 @@
           },
           "drupal/entity": {
             "Add an overridden add page with destination support": "https://git.drupalcode.org/project/entity/-/merge_requests/8.diff"
+          },
+          "drupal/webform_content_creator": {
+            "Optional parameter is provided before required parameter in FieldMappingInterface::mapEntityField()": "https://www.drupal.org/files/issues/2022-02-17/3264998-2.patch"
           }
         }
     },
