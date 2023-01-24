@@ -1,0 +1,30 @@
+id: surf_media_from_paragraph
+label: "SURF Media -> Image - From paragraph"
+migration_group: surf
+migration_tags:
+  - media
+source:
+  plugin: d8_entity
+  entity_type: paragraph
+  include_translations: false
+  bundle: 'image_with_caption'
+  key: migrate
+process:
+  field_media_image/0/target_id:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_file_image
+      source: field_image/0/target_id
+    -
+      plugin: skip_on_empty
+      method: row
+  uid: uid
+  field_media_image/0/alt: field_image/0/alt
+destination:
+  plugin: 'entity:media'
+  translations: true
+  default_bundle: image
+migration_dependencies:
+  required:
+    - surf_file_image
