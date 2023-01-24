@@ -1,0 +1,10 @@
+uuid: 0d6b2965-8cd9-4de7-a456-16f76a9b18d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.resources
+label: Resources
+targetEntityType: node
+cache: true
