@@ -34,3 +34,7 @@ process:
 destination:
   plugin: entity:node
   default_bundle: 'contract'
+migration_dependencies:
+  required:
+    - surf_node_person
+    - surf_paragraph_schedule_item
