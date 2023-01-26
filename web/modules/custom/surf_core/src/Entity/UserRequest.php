@@ -16,28 +16,18 @@ use Drupal\user\EntityOwnerTrait;
  * @ContentEntityType(
  *   id = "user_request",
  *   label = @Translation("User Request"),
- *   label_collection = @Translation("User Requests"),
  *   label_singular = @Translation("user request"),
  *   label_plural = @Translation("user requests"),
+ *   label_collection = @Translation("User Requests"),
+ *   bundle_label = @Translation("User Request type"),
  *   label_count = @PluralTranslation(
  *     singular = "@count user requests",
  *     plural = "@count user requests",
  *   ),
- *   bundle_label = @Translation("User Request type"),
- *   handlers = {
- *     "list_builder" = "Drupal\surf_core\UserRequestListBuilder",
- *     "views_data" = "Drupal\views\EntityViewsData",
- *     "form" = {
- *       "add" = "Drupal\surf_core\Form\UserRequestForm",
- *       "edit" = "Drupal\surf_core\Form\UserRequestForm",
- *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
- *     }
- *   },
  *   base_table = "user_request",
  *   admin_permission = "administer user request types",
+ *   bundle_entity_type = "user_request_type",
+ *   field_ui_base_route = "entity.user_request_type.edit_form",
  *   entity_keys = {
  *     "id" = "id",
  *     "bundle" = "bundle",
@@ -45,16 +35,35 @@ use Drupal\user\EntityOwnerTrait;
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
+ *   handlers = {
+ *     "list_builder" = "Drupal\surf_core\UserRequestListBuilder",
+ *     "views_data" = "Drupal\surf_core\EntityViewsData",
+ *     "form" = {
+ *       "add" = "Drupal\surf_core\Form\UserRequestForm",
+ *       "edit" = "Drupal\surf_core\Form\UserRequestForm",
+ *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
+ *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm"
+ *     },
+ *     "route_provider" = {
+ *       "html" = "Drupal\entity\Routing\AdminHtmlRouteProvider",
+ *     },
+ *     "local_action_provider" = {
+ *       "collection" = "\Drupal\entity\Menu\EntityCollectionLocalActionProvider",
+ *     },
+ *     "local_task_provider" = {
+ *       "default" = "\Drupal\entity\Menu\DefaultEntityLocalTaskProvider",
+ *     },
+ *     "access" = "Drupal\entity\UncacheableEntityAccessControlHandler",
+ *     "permission_provider" = "Drupal\entity\UncacheableEntityPermissionProvider",
+ *   },
  *   links = {
- *     "collection" = "/admin/content/user-request",
  *     "add-form" = "/user-request/add/{user_request_type}",
  *     "add-page" = "/user-request/add",
  *     "canonical" = "/user-request/{user_request}",
  *     "edit-form" = "/user-request/{user_request}/edit",
  *     "delete-form" = "/user-request/{user_request}/delete",
- *   },
- *   bundle_entity_type = "user_request_type",
- *   field_ui_base_route = "entity.user_request_type.edit_form",
+ *     "delete-multiple-form" = "/user-request/delete"
+ *   }
  * )
  */
 class UserRequest extends ContentEntityBase implements UserRequestInterface {

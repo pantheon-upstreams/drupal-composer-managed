@@ -3,3 +3,9 @@ entity.user_request_type.collection:
   description: 'Manage and CRUD actions on User Request type.'
   parent: system.admin_structure
   route_name: entity.user_request_type.collection
+
+entity.user_request.collection_view:
+  title: 'User requests'
+  route_name: view.user_requests.admin_content
+  description: 'Manage user requests'
+  parent: system.admin_content
