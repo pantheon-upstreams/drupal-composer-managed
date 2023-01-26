@@ -1,0 +1,21 @@
+uuid: 4617ab27-c05e-4db9-bd3f-6e2e4ed7771d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_date
+    - surf_registration.user_request_type.visit
+  module:
+    - datetime
+id: user_request.visit.field_date
+field_name: field_date
+entity_type: user_request
+bundle: visit
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

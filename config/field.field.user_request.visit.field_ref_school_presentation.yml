@@ -1,0 +1,29 @@
+uuid: 94272960-7086-42d4-bf6e-7ce02103ef96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_ref_school_presentation
+    - node.type.school_presentation
+    - surf_registration.user_request_type.visit
+id: user_request.visit.field_ref_school_presentation
+field_name: field_ref_school_presentation
+entity_type: user_request
+bundle: visit
+label: 'School presentation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      school_presentation: school_presentation
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

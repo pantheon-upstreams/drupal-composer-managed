@@ -1,0 +1,23 @@
+uuid: c3fdc6dd-d991-4886-b0e1-55346694962e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_number_students
+    - surf_registration.user_request_type.visit
+id: user_request.visit.field_number_students
+field_name: field_number_students
+entity_type: user_request
+bundle: visit
+label: 'Number of students'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

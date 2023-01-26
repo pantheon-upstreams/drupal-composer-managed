@@ -1,0 +1,21 @@
+uuid: 8b0e4d28-93e0-432b-b3f0-151137169652
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_visit_type
+    - surf_registration.user_request_type.visit
+  module:
+    - options
+id: user_request.visit.field_visit_type
+field_name: field_visit_type
+entity_type: user_request
+bundle: visit
+label: 'Request type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

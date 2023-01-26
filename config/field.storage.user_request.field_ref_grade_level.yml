@@ -1,0 +1,20 @@
+uuid: fccdb995-89a4-4aef-bd54-b6934fa07256
+langcode: en
+status: true
+dependencies:
+  module:
+    - surf_core
+    - taxonomy
+id: user_request.field_ref_grade_level
+field_name: field_ref_grade_level
+entity_type: user_request
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
