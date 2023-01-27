@@ -38,6 +38,7 @@ global:
       dist/css/global/settings/font.css: {}
       dist/css/global/settings/size.css: {}
       dist/css/global/settings/space.css: {}
+      dist/css/global/base/buttons.css: {}
       dist/css/global/base/document.css: {}
       dist/css/global/base/forms.css: {}
       dist/css/global/base/lists.css: {}

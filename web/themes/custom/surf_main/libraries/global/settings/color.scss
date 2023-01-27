@@ -13,7 +13,7 @@
   --color-surf--cloud: #f2f2f2;
   --color-surf--blue: #2976d9;
   --color-surf--forest: #00492c;
-  --color-surf--green: #008535;
+  --color-surf--kelly-green: #008535;
   --color-surf--sage: #bcebbc;
   --color-surf--gold: #ffbe34;
   --color-surf--coral: #f26438;
@@ -26,15 +26,15 @@
   //
   // Semantic colors
   //
-  --color-border: #c3c1c3;
-  --color-text: #363136;
-  --color-text-heading: #363136;
-  --color-text-input: #363136;
+  --color-border: var(--color-surf--black);
+  --color-text: var(--color-surf--black);
+  --color-text-heading: var(--color-surf--black);
+  --color-text-input: var(--color-surf--black);
 
-  --color-link: #00659b;
-  --color-link-hover: #00659b;
-  --color-link-active: #00659b;
-  --color-link-visited: #00659b;
+  --color-link: var(--color-surf--forest);
+  --color-link-hover: var(--color-surf--black);
+  --color-link-active: var(--color-surf--black);
+  --color-link-visited: var(--color-surf--black);
 
   // Callouts
   --color-accent: #d6336c;

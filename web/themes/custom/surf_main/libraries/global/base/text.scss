@@ -49,19 +49,18 @@ h4 {
 
 h5 {
   margin-top: 48px;
-  font-size: var(--font-size-heading-small);
+  @extend .font-surf--heading-five;
 }
 
 h6 {
   margin-top: 48px;
-  font-size: var(--font-size-heading-small);
-  font-style: italic;
+  @extend .font-surf--heading-six;
 }
 
 // Rule
 hr {
   border: 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 2px solid var(--color-surf--black);
 }
 
 //
@@ -101,8 +100,8 @@ li:not([class]) {
   @extend .font-surf--body-medium;
 }
 
-blockquote {
-  // margin: 15px 0;
-  // text-indent: -0.4em;
-  // font-style: italic;
-}
+// blockquote {
+// margin: 15px 0;
+// text-indent: -0.4em;
+// font-style: italic;
+// }

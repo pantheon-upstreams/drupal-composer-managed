@@ -35,29 +35,39 @@
     line-height: var(--font-line-height-heading-one-alt);
   }
   .font-surf--heading-two {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-regular);
     font-family: var(--font-family-heading);
     font-size: var(--font-size-heading-two);
     line-height: var(--font-line-height-heading-two);
   }
   .font-surf--heading-two-alt {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-regular);
     font-family: var(--font-family-heading);
     font-size: var(--font-size-heading-two);
     letter-spacing: 0.02em;
     line-height: var(--font-line-height-heading-two-alt);
   }
   .font-surf--heading-three {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-regular);
     font-family: var(--font-family-heading);
     font-size: var(--font-size-heading-three);
     line-height: var(--font-line-height-heading-three);
   }
   .font-surf--heading-four {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-regular);
     font-family: var(--font-family-heading);
     font-size: var(--font-size-heading-four);
     line-height: var(--font-line-height-heading-four);
+  }
+  .font-surf--heading-five {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-five);
+  }
+  .font-surf--heading-six {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-heading-six);
   }
 
   // SURF Main - Body Fonts
@@ -176,6 +186,8 @@
     --font-size-heading-two-alt: 32px;
     --font-size-heading-three: 36px;
     --font-size-heading-four: 28px;
+    --font-size-heading-five: 24px;
+    --font-size-heading-six: 20px;
 
     // SURF Main - Body Sizes
     --font-size-body-jumbo: 24px;
@@ -227,6 +239,8 @@
     --font-size-heading-two-alt: 40px;
     --font-size-heading-three: 44px;
     --font-size-heading-four: 32px;
+    --font-size-heading-five: 28px;
+    --font-size-heading-six: 24px;
 
     // SURF Main - Body Sizes
     --font-size-body-jumbo: 40px;
@@ -247,6 +261,10 @@
     --font-size-heading-one-alt: 52px;
     --font-size-heading-two: 64px;
     --font-size-heading-two-alt: 40px;
+    --font-size-heading-three: 52px;
+    --font-size-heading-four: 48px;
+    --font-size-heading-five: 36px;
+    --font-size-heading-six: 32px;
   }
 }
 // Large Desktop
@@ -255,6 +273,10 @@
     // SURF Main - Heading Sizes
     --font-size-heading-one: 176px;
     --font-size-heading-two: 96px;
+    --font-size-heading-three: 76px;
+    --font-size-heading-four: 52px;
+    --font-size-heading-five: 48px;
+    --font-size-heading-six: 44px;
   }
 }
 // large - 1620px
