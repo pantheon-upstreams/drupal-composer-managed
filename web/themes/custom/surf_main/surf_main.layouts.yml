@@ -1,6 +1,6 @@
 default:
   label: Default
-  category: prototype
+  category: surf_main
   template: templates/layouts/default
   regions:
     content:

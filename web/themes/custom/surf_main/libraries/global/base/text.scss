@@ -1,10 +1,18 @@
+@import "../../partials/_partials";
+@import "../settings/font.scss";
+
 @custom-selector :--heading h1, h2, h3, h4, h5;
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0;
   color: var(--color-text-heading);
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
+  // font-weight: var(--font-weight-bold);
 
   > a {
     text-decoration: none;
@@ -21,24 +29,22 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   margin: 0;
-  font-size: var(--font-size-title-huge);
+  @extend .font-surf--heading-one;
 }
 
 h2 {
   margin-top: 48px;
-  font-size: var(--font-size-heading-huge);
+  @extend .font-surf--heading-two;
 }
 
 h3 {
   margin-top: 48px;
-  font-size: var(--font-size-heading-huge);
-  font-weight: var(--font-weight-regular);
+  @extend .font-surf--heading-three;
 }
 
 h4 {
   margin-top: 48px;
-  font-size: var(--font-size-heading-large);
-  font-weight: var(--font-weight-regular);
+  @extend .font-surf--heading-four;
 }
 
 h5 {
@@ -63,10 +69,21 @@ hr {
 //
 a {
   color: var(--color-link);
-
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     color: var(--color-link-hover);
+  }
+}
+
+p:not([class]) > a:not([class]),
+li:not([class]) > a:not([class]) {
+  text-decoration: underline;
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-link-hover);
+    text-decoration: none;
   }
 }
 
@@ -78,12 +95,14 @@ b {
 //
 // Copy
 //
-p {
+p:not([class]),
+li:not([class]) {
   margin: 15px 0;
+  @extend .font-surf--body-medium;
 }
 
 blockquote {
-  margin: 15px 0;
-  text-indent: -0.4em;
-  font-style: italic;
+  // margin: 15px 0;
+  // text-indent: -0.4em;
+  // font-style: italic;
 }

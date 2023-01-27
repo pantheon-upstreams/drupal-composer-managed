@@ -19,14 +19,14 @@ regions:
   footer_bottom: Footer Bottom
 
 libraries:
-  # - surf_main/fonts
+  - surf_main/fonts
   - surf_main/global
 
 components:
   namespaces:
-    prototype-components:
+    surf_main-components:
       - libraries/components
-    prototype-icons:
+    surf_main-icons:
       - images/icons
 
 version: "4.0.0-alpha2"

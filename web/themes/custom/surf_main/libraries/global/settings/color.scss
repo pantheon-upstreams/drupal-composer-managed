@@ -6,6 +6,18 @@
 //
 
 :root {
+  // SURF Main Branding Colors
+  --color-surf--black: #222222;
+  --color-surf--dark-grey: #494949;
+  --color-surf--grey: #6d6d6d;
+  --color-surf--cloud: #f2f2f2;
+  --color-surf--blue: #2976d9;
+  --color-surf--forest: #00492c;
+  --color-surf--green: #008535;
+  --color-surf--sage: #bcebbc;
+  --color-surf--gold: #ffbe34;
+  --color-surf--coral: #f26438;
+
   // Color: Background
   --color-background: transparent;
   --color-background-interface-inactive: var(--color-gray-95);
@@ -15,23 +27,23 @@
   // Semantic colors
   //
   --color-border: #c3c1c3;
-  --color-text:#363136;
-  --color-text-heading:#363136;
-  --color-text-input:#363136;
+  --color-text: #363136;
+  --color-text-heading: #363136;
+  --color-text-input: #363136;
 
-  --color-link:#00659b;
-  --color-link-hover:#00659b;
-  --color-link-active:#00659b;
-  --color-link-visited:#00659b;
+  --color-link: #00659b;
+  --color-link-hover: #00659b;
+  --color-link-active: #00659b;
+  --color-link-visited: #00659b;
 
   // Callouts
-  --color-accent:#d6336c;
+  --color-accent: #d6336c;
   --color-required: #c00;
 
   // Feedback
-  --color-feedback-status:#417505;
-  --color-feedback-success:#417505;
-  --color-feedback-warning:#fdc400;
+  --color-feedback-status: #417505;
+  --color-feedback-success: #417505;
+  --color-feedback-warning: #fdc400;
   --color-feedback-error: #c00;
   --color-feedback-weak: #c00;
   --color-feedback-fair: #fdc400;

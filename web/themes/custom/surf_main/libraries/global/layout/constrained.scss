@@ -1,3 +1,5 @@
+@import "../../partials/_partials";
+
 [class*="l-constrained"] {
   margin-left: auto;
   margin-right: auto;
@@ -11,15 +13,15 @@
 }
 
 .l-constrained {
-  width: 1440px;
-}
-
-.l-constrained--narrow {
   width: 1380px;
 }
 
+.l-constrained--narrow {
+  width: 780px;
+}
+
 .l-constrained--wide {
-  width: 1500px;
+  width: 1920px;
 }
 
 .l-constrained--full {

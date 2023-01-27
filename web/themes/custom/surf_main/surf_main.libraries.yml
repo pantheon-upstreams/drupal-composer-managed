@@ -1,82 +1,161 @@
+####
+# SURF Main - Libraries
+# - 01 - Fonts
+# - 02 - Global
+# - 03 - Nodes
+# - 04 - Blocks
+# - 05 - Media
+# - 06 - Paragraphs
+# - 07 - Components
+# - 08 - Views
+# - 09 - Misc
+####
+
+#------------------------------------#
+# 01 - Fonts
+#------------------------------------#
+
+fonts:
+  css:
+    base:
+      "//use.typekit.net/wjp3vgo.css": { type: external, minified: true }
+
+#------------------------------------#
+# 02 - Global
+#------------------------------------#
+
 normalize:
   version: 4.0.x
   css:
     base:
-      build/libraries/global/base/normalize.css: {  }
+      build/libraries/global/base/normalize.css: {}
+
 global:
   version: 4.0.x
   css:
     base:
-      dist/css/global/settings/color.css: {  }
-      dist/css/global/settings/font.css: {  }
-      dist/css/global/settings/size.css: {  }
-      dist/css/global/settings/space.css: {  }
-      dist/css/global/base/document.css: {  }
-      dist/css/global/base/forms.css: {  }
-      dist/css/global/base/lists.css: {  }
-      dist/css/global/base/media.css: {  }
-      dist/css/global/base/tables.css: {  }
-      dist/css/global/base/text.css: {  }
+      dist/css/global/settings/color.css: {}
+      dist/css/global/settings/font.css: {}
+      dist/css/global/settings/size.css: {}
+      dist/css/global/settings/space.css: {}
+      dist/css/global/base/document.css: {}
+      dist/css/global/base/forms.css: {}
+      dist/css/global/base/lists.css: {}
+      dist/css/global/base/media.css: {}
+      dist/css/global/base/tables.css: {}
+      dist/css/global/base/text.css: {}
     layout:
-      dist/css/global/layout/align.css: {  }
-      dist/css/global/layout/cluster.css: {  }
-      dist/css/global/layout/constrained.css: {  }
-      dist/css/global/layout/grid.css: {  }
-      dist/css/global/layout/stack.css: {  }
+      dist/css/global/layout/align.css: {}
+      dist/css/global/layout/cluster.css: {}
+      dist/css/global/layout/constrained.css: {}
+      dist/css/global/layout/grid.css: {}
+      dist/css/global/layout/stack.css: {}
     theme:
-      dist/css/global/theme/reverse.css: {  }
-      dist/css/global/utilities.css: {  }
+      dist/css/global/theme/reverse.css: {}
+      dist/css/global/utilities.css: {}
   dependencies:
     - surf_main/normalize
+
+#------------------------------------#
+# 03 - Nodes
+#------------------------------------#
+
+#------------------------------------#
+# 04 - Blocks
+#------------------------------------#
+
+#------------------------------------#
+# 05 - Media
+#------------------------------------#
+
+#------------------------------------#
+# 06 - Paragraphs
+#------------------------------------#
+
+#------------------------------------#
+# 07 - Components
+#------------------------------------#
+
+# Card
 card:
   css:
     component:
-      dist/css/components/card/card.component.css: {  }
+      dist/css/components/card/card.component.css: {}
+
+# Breadcrumbs
 breadcrumbs:
   css:
     component:
-      dist/css/components/breadcrumbs/breadcrumbs.component.css: {  }
+      dist/css/components/breadcrumbs/breadcrumbs.component.css: {}
+
+# Messages
 messages:
   css:
     component:
-      dist/css/components/messages/messages.component.css: {  }
-      dist/css/components/messages/messages.theme.css: {  }
+      dist/css/components/messages/messages.component.css: {}
+      dist/css/components/messages/messages.theme.css: {}
+
+# More Link
 more-link:
   css:
     component:
-      dist/css/components/more-link/more-link.component.css: {  }
+      dist/css/components/more-link/more-link.component.css: {}
+
+# Pager
 pager:
   css:
     component:
-      dist/css/components/pager/pager.component.css: {  }
+      dist/css/components/pager/pager.component.css: {}
+
+# Progress Bar
 progress:
   css:
     component:
-      dist/css/components/progress/progress.component.css: {  }
+      dist/css/components/progress/progress.component.css: {}
+
+# Search form
 search_form:
   version: 4.0.x
   css:
     theme:
-      dist/css/components/search-form/search-form.css: {  }
+      dist/css/components/search-form/search-form.css: {}
+
+# Section Title
 section-title:
   css:
     component:
-      dist/css/components/section-title/section-title.component.css: {  }
+      dist/css/components/section-title/section-title.component.css: {}
+
+# Site: Footer
 site-footer:
   css:
     component:
-      dist/css/components/site-footer/site-footer.component.css: {  }
+      dist/css/components/site-footer/site-footer.component.css: {}
+
+# Site: Header
 site-header:
   css:
     component:
-      dist/css/components/site-header/site-header.component.css: {  }
+      dist/css/components/site-header/site-header.component.css: {}
   js:
-    dist/css/components/site-header/site-header.js: {  }
+    dist/css/components/site-header/site-header.js: {}
+
+# Tabs
 tabs:
   css:
     component:
-      dist/css/components/tabs/tabs.component.css: {  }
+      dist/css/components/tabs/tabs.component.css: {}
+
+# Teaser
 teaser:
   css:
     component:
-      dist/css/components/teaser/teaser.component.css: {  }
+      dist/css/components/teaser/teaser.component.css: {}
+#------------------------------------#
+# 08 - Views
+#------------------------------------#
+
+#------------------------------------#
+# 09 - Misc
+#------------------------------------#
+
