@@ -8,7 +8,7 @@
 
 	{% block site_header %}
 		{%
-    include '@prototype-components/site-header/site-header.html.twig' with {
+    include '@surf_main-components/site-header/site-header.html.twig' with {
       header_utility: page.header_utility,
       header_primary: page.header_primary,
     }
@@ -50,7 +50,7 @@
 
 	{% block site_footer %}
 		{%
-    include '@prototype-components/site-footer/site-footer.html.twig' with {
+    include '@surf_main-components/site-footer/site-footer.html.twig' with {
       footer_top: page.footer_top,
       footer_bottom: page.footer_bottom
     } only

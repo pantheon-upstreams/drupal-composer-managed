@@ -1,5 +1,5 @@
-{% import '@prototype-components/component.twig' as component %}
-{{ attach_library('prototype/pager') }}
+{% import '@surf_main-components/component.twig' as component %}
+{{ attach_library('surf_main/pager') }}
 
 {% if items %}
   <nav role="navigation" aria-labelledby="pagination-heading" {{ component.attributes('pager', modifiers, attr) }}>

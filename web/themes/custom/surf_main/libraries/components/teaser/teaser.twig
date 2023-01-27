@@ -1,6 +1,6 @@
-{% import '@prototype-components/component.twig' as component %}
-{% import '@prototype-components/icons/icon.twig' as icon %}
-{{ attach_library('prototype/teaser') }}
+{% import '@surf_main-components/component.twig' as component %}
+{% import '@surf_main-components/icons/icon.twig' as icon %}
+{{ attach_library('surf_main/teaser') }}
 
 {% set modifiers = modifiers|default([])|merge([ image ? 'has-image' : 'no-image' ]) %}
 
@@ -46,7 +46,7 @@
     {% endif %}
     {% if more_link %}
     <div class="teaser__more-link">
-      {% include '@prototype-components/more-link/more-link.twig' with more_link only %}
+      {% include '@surf_main-components/more-link/more-link.twig' with more_link only %}
     </div>
     {% endif %}
   </div>

@@ -1,5 +1,5 @@
-{% import '@prototype-components/component.twig' as component %}
-{{ attach_library('prototype/more-link') }}
+{% import '@surf_main-components/component.twig' as component %}
+{{ attach_library('surf_main/more-link') }}
 {% set attr = attr|default({})|merge({href: url})%}
 {% if back %}
 {% set modifiers = modifiers|default([])|merge(['back']) %}

@@ -1,5 +1,5 @@
-{% import '@prototype-components/component.twig' as component %}
-{{ attach_library('prototype/tabs') }}
+{% import '@surf_main-components/component.twig' as component %}
+{{ attach_library('surf_main/tabs') }}
 
 {% macro tabs__item(link, attributes) %}
   <li{{ attributes.addClass('tabs__item') }}>{{ link }}</li>
