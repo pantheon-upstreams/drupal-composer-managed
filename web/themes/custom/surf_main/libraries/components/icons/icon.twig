@@ -1,9 +1,9 @@
 {% macro sprite(icon, width, height) %}
-<svg viewBox="0 0 {{width|default(100)}} {{height ? height : width|default(100)}}" class="icon icon--{{icon}}">
-    <use xlink:href="#{{icon}}"></use>
-</svg>
+	<svg viewbox="0 0 {{width|default(100)}} {{height ? height : width|default(100)}}" class="icon icon--{{icon}}">
+		<use xlink:href="#{{icon}}"></use>
+	</svg>
 {% endmacro %}
 
 {% macro inline(icon) %}
-<div class="icon icon--{{icon}}">{{ source('@prototype-icons/' ~ icon ~ '.svg') }}</div>
+	<div class="icon icon--{{icon}}">{{ source('@surf_main-icons/' ~ icon ~ '.svg') }}</div>
 {% endmacro %}
