@@ -1,0 +1,352 @@
+<article{{attributes.addClass(['article'])}}>
+	{# article__header l-constrained #}
+	<header class="">
+		{{ title_prefix }}
+		{% include '@surf_main-components/page-title/page-title.twig' with {
+    text: label
+    } only %}
+		{{ title_suffix }}
+	</header>
+	{# l--1-col l-constrained #}
+	<div class="">
+		<div class="l__primary">
+			{% if content %}
+				{{ content }}
+			{% endif %}
+			<h2>Component Library</h2>
+			{# Add Components here 👇🏻 #}
+
+			<!-- Page Heading / Hero -->
+
+
+			<!-- Media (photo w and w/o caption, 3rd party video) -->
+
+
+			{# End of Components 👆🏻 #}
+			<hr/>
+
+			{# Start of HTML Kitchen Sink #}
+
+				<div>
+					<h3>
+				Examples of Buttons & Links
+				</h3>
+					<p>
+						<a href="#" class="green-button"> Green Button</a>
+				</p>
+				<p>
+					<a href="#" class="gradient-button">Gradient Button</a>
+				</p>
+				<p>
+					<a href="#" class="underline-green-button">Underline Green Button</a>
+				</p>
+
+				<p>
+					<a href="#" class="kelly-green-button">Light Green Button</a>
+				</p>
+				<p>
+					<a href="#" class="black-button">Black Button</a>
+				</p>
+				<div style="background:black; padding: 1rem; width: fit-content;">
+					<p>
+						<a href="#" class="underline-white-button">Underline White Button</a>
+					</p>
+					<p>
+						<a href="#" class="white-green-button">White Green Button</a>
+					</p>
+				</div>
+
+				<p>
+					Example of a
+					<a href="#">standard link</a>
+				</p>
+			</div>
+			<hr/>
+			<div>
+				<h3>Example of headings:</h3>
+
+				<h1>h1 Kitchen Sink Heading</h1>
+				<h2>h2 Kitchen Sink
+					<strong>Heading</strong>
+				</h2>
+				<h3>h3 Kitchen Sink
+					<strong>Heading</strong>
+				</h3>
+				<h4>h4 Kitchen Sink
+					<strong>Heading</strong>
+				</h4>
+				<h5>h5 Kitchen Sink
+					<strong>Heading</strong>
+				</h5>
+				<h6>h6 Kitchen Sink
+					<strong>Heading</strong>
+				</h6>
+
+			</div>
+			<hr/>
+			<div>
+				<h3>Example of headings and paragraphs:</h3>
+
+				<h1>h1 HTML5 Kitchen Sink</h1>
+				<p>This paragraph is nested inside an article. It contains many different, sometimes useful,
+					<a href="#">HTML5
+												tags</a>. Of course there are classics like
+					<em>emphasis</em>,
+					<strong>strong</strong>, and small but there
+												are many others as well. Hover the following text for abbreviation tag: abbr. Similarly, you can use acronym
+												tag like this: ftw. You can define deleted text which often gets replaced with inserted text.</p>
+
+				<h2>h2 Back in my quaint
+					<a href='#'>garden</a>
+				</h2>
+				<p>Et officia dolore dolor eiusmod. Aute culpa
+					<a href="#">voluptate mollit</a>
+					veniam dolore ex. Esse aliquip
+										et do aliqua nostrud dolore qui eiusmod eu quis eiusmod consectetur duis ipsum. Exercitation duis id ut
+										tempor. Officia aliqua aute consectetur aliquip do id pariatur. Culpa eu
+					<a href="#">ullamco</a>
+					officia anim
+										veniam laboris deserunt non qui laborum mollit. Nisi dolore ex sunt veniam veniam aliqua aliqua Lorem. Nostrud
+										reprehenderit in sint sint aute do magna aliqua tempor.</p>
+
+				<h3>h3 Jaunty
+					<a href='#'>zinnias</a>
+					vie with flaunting phlox</h3>
+				<p>Minim ea anim ipsum sit non. Aute ex do sunt incididunt magna cupidatat. Labore veniam
+					<a href="#">cupidatat</a>
+					ut qui incididunt ipsum id aliqua mollit
+					<a href="#">velit id ad</a>. Dolor eiusmod
+												velit sit. Pariatur minim dolore duis aliquip do cillum minim amet qui veniam excepteur exercitation sunt
+												velit. Ea est tempor sunt cupidatat ex occaecat ad laborum mollit elit nisi mollit cupidatat. Non adipisicing
+												commodo laborum exercitation Lorem eiusmod magna mollit aute.</p>
+
+				<h4>h4 Five or six big jet planes zoomed quickly by the new tower.</h4>
+				<p>Duis id sunt eu irure sint amet reprehenderit. Aute amet sint quis occaecat Lorem nostrud nulla aute irure
+										aliqua. Commodo dolore quis irure elit commodo. Enim sit Lorem mollit. Anim ea enim velit
+					<a href="#">cillum commodo</a>
+					occaecat nostrud sit cillum ea. Ex nulla enim ipsum. Ipsum eu cillum et quis ullamco.</p>
+
+				<h5>h5 Expect skilled signwriters to use many jazzy, quaint old alphabets effectively.</h5>
+				<p>Incididunt
+					<a href="#">reprehenderit</a>
+					fugiat reprehenderit voluptate esse dolor esse anim sunt aliqua
+										consequat. Tempor consequat quis eu do incididunt pariatur exercitation sit aliqua duis. Eu tempor sint Lorem
+										tempor labore ut consectetur proident. In quis duis ex commodo. Cupidatat sit esse sit et in laboris amet. Ut
+										nisi sint adipisicing est ullamco excepteur labore.</p>
+
+				<h6>h6 Pack my box with five dozen liquor jugs.</h6>
+				<p>Sunt ut laborum incididunt elit non proident pariatur non id. Sunt amet aliquip officia aliquip consequat do
+										labore occaecat elit cupidatat voluptate est. Eu cupidatat proident duis mollit sit
+					<a href="#">labore duis duis</a>
+					duis qui. Nostrud velit nulla fugiat elit excepteur velit pariatur nisi sint. Consectetur magna
+										Lorem commodo dolor nulla sunt amet dolor amet. Non ad est cillum deserunt tempor nulla ex commodo cupidatat
+										esse incididunt exercitation cillum ex. Sint fugiat veniam esse cupidatat ex consequat consectetur consectetur
+										magna duis non. Elit duis velit ipsum magna nostrud in sit occaecat.</p>
+			</div>
+			<hr/>
+			{# Blockquote #}
+			<div>
+				<h3>Example of an blockquote with a cite:</h3>
+				<figure>
+					<blockquote>
+						<p>Words can be like
+							<a href="#">X-rays</a>, if you use them properly—they'll go through anything. You read
+																and you're
+																pierced.</p>
+					</blockquote>
+					<figcaption>—Aldous Huxley,
+						<cite>Brave New World</cite>
+					</figcaption>
+				</figure>
+			</div>
+			<hr/>
+			{# Image with a caption #}
+			<div>
+				<h3>Example of an image with a caption:</h3>
+				<figure>
+					<img src="https://placehold.jp/150x150.png" alt="Example">
+					<figcaption>Fig1. A picture of Bill Murray from
+						<a href="https://www.fillmurray.com/">fillmurray.com</a>
+					</figcaption>
+				</figure>
+			</div>
+			<hr/>
+			{# Unordered List #}
+			<h3>Example of an unordered list:</h3>
+			<div>
+				<ul>
+					<li>Unordered List item one
+						<ul>
+							<li>Nested list item
+								<ul>
+									<li>Level 3, item one</li>
+									<li>Level 3, item two</li>
+									<li>Level 3, item three</li>
+									<li>Level 3, item four</li>
+								</ul>
+							</li>
+							<li>List item two</li>
+							<li>List item three</li>
+							<li>List item four</li>
+						</ul>
+					</li>
+					<li>List item two</li>
+					<li>List item three</li>
+					<li>List item four</li>
+				</ul>
+			</div>
+			<hr/>
+			{# Order List #}
+			<h3>Example of an ordered list:</h3>
+			<ol>
+				<li>List item one
+					<ol>
+						<li>List item one
+							<ol>
+								<li>List item one</li>
+								<li>List item two</li>
+								<li>List item three</li>
+								<li>List item four</li>
+							</ol>
+						</li>
+						<li>List item two</li>
+						<li>List item three</li>
+						<li>List item four</li>
+					</ol>
+				</li>
+				<li>List item two</li>
+				<li>List item three</li>
+				<li>List item four</li>
+			</ol>
+			<hr/>
+			{# Form #}
+			<div>
+				<h3>Example of a form:</h3>
+				<form>
+					<p>
+						<label for="example-input-email">Email address</label>
+						<input type="email" id="example-input-email" placeholder="Enter email">
+					</p>
+					<p>
+						<label for="example-input-password1">Number</label>
+						<input type="number" id="example-input-number" placeholder="Number">
+					</p>
+					<p>
+						<label for="example-input-password">Password</label>
+						<input type="password" id="example-input-password" placeholder="Password">
+					</p>
+					<p>
+						<label for="example-input-search">Search</label>
+						<input type="search" id="example-input-serach" placeholder="Search ..">
+					</p>
+					<p>
+						<label for="example-input-tel">Telephone number</label>
+						<input type="tel" id="example-input-tel" placeholder="Telephone number">
+					</p>
+
+					<p>
+						<label for="example-input-text">Text</label>
+						<input type="text" id="example-input-text" placeholder="Enter some text here">
+					</p>
+					<p>
+						<label for="example-input-url">Url</label>
+						<input type="url" id="example-input-url" placeholder="Enter a url here">
+					</p>
+					<p>
+						<label for="example-input-color">Color</label>
+						<input type="color" id="example-inupt-color" placeholder="#fff">
+					</p>
+					<p>
+						<label for="example-input-date">Date</label>
+						<input type="date" id="example-input-date" placeholder="date">
+					</p>
+					<p>
+						<label for="example-input-date-time">Date / Time</label>
+						<input type="datetime" id="example-input-date-time" placeholder="date / time">
+					</p>
+					<p>
+						<label for="example-input-date-time-local">Date / Time local</label>
+						<input type="datetime-local" id="example-input-date-time-local" placeholder="date / time local">
+					</p>
+					<p>
+						<label for="example-input-month">Month</label>
+						<input type="month" id="example-input-month" placeholder="Month">
+					</p>
+					<p>
+						<label for="example-input-week">Week</label>
+						<input type="week" id="example-input-week" placeholder="Week">
+					</p>
+					<p>
+						<label for="example-input-time">Time</label>
+						<input type="time" id="example-input-time" placeholder="Time">
+					</p>
+					<p>
+						<label for="example-select1">Example select</label>
+						<select id="example-select1">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</p>
+					<p>
+						<label for="example-select2">Example multiple select</label>
+						<select multiple id="example-select2">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</p>
+					<p>
+						<label for="example-textarea">Example textarea</label>
+						<textarea id="example-textarea" rows="3"></textarea>
+					</p>
+					<p>
+						<label for="example-input-file">File input</label>
+						<input type="file" id="example-input-file">
+					</p>
+					<fieldset>
+						<legend>I am legend</legend>
+						<div>
+							<label>
+								<input type="radio" name="options-radios" id="optionsR-radios1" value="option1" checked>
+								Option one is this and that&mdash;be sure to include why it's great
+							</label>
+						</div>
+
+						<div>
+							<label>
+								<input type="radio" name="options-radios" id="options-radios2" value="option2">
+								Option two can be something else and selecting it will deselect option one
+							</label>
+						</div>
+						<div>
+							<label>
+								<input type="radio" name="optionsRadios" id="options-radios3" value="option3" disabled>
+								Option three is disabled
+							</label>
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend>I am also legend</legend>
+						<input type="checkbox">
+						Check me out
+						<input type="checkbox">
+						Or check me out
+					</fieldset>
+					<p>
+						<button type="button" name="button">Button</button>
+						<input type="button" name="input" value="Input Button">
+						<input type="submit" name="submit" value="Submit Button">
+						<input type="reset" name="reset" value="Reset Button">
+					</p>
+				</form>
+			</div>
+			{# End of HTML Kitchen Sink #}
+		</div>
+	</div>
+</article>
