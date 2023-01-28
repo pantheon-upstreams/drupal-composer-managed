@@ -9,3 +9,10 @@ https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utilit
 .u-mw-1500 {
   max-width: 1500px;
 }
+
+// Smooth scrolling IF user doesn't have a preference due to motion sensitivities
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

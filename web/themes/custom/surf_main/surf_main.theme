@@ -30,6 +30,14 @@ function surf_main_form_search_block_form_alter(&$form, FormStateInterface $form
 }
 
 /**
+ * Implements hook_preprocess().
+ */
+function surf_main_preprocess(array &$variables, $hook)
+{
+  $variables['base_path'] = base_path();
+}
+
+/**
  * Add a prefix to a path for use with array_walk().
  */
 function surf_main_get_absolute_path(&$value, $key, $prefix)
