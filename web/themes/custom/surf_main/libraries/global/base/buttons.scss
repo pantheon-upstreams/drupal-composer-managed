@@ -22,7 +22,7 @@ a.green-button {
     color: #fff;
     background-color: var(--color-surf--kelly-green);
     text-decoration-line: underline;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -67,7 +67,7 @@ a.gradient-button {
     color: #fff;
     background: var(--color-surf--forest);
     text-decoration-line: underline;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -92,7 +92,7 @@ a.underline-green-button {
   display: inline-flex;
   align-items: center;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  border-bottom: solid 4px var(--color-surf--forest);
+  border-bottom: solid 2px var(--color-surf--forest);
 
   &:hover,
   &:focus,
@@ -123,7 +123,7 @@ a.underline-white-button {
   display: inline-flex;
   align-items: center;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  border-bottom: solid 4px #fff;
+  border-bottom: solid 2px #fff;
 
   &:hover,
   &:focus,
@@ -163,7 +163,7 @@ a.kelly-green-button {
     color: #fff;
     background-color: var(--color-surf--forest);
     text-decoration-line: underline;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -196,7 +196,7 @@ a.black-button {
     color: #fff;
     background-color: var(--color-surf--grey);
     text-decoration-line: underline;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -229,7 +229,7 @@ a.white-green-button {
     color: var(--color-surf--black);
     background-color: #fff;
     text-decoration-line: underline;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
