@@ -19,7 +19,7 @@ dependencies:
     - toolbar
 id: ehs_editor
 label: 'EHS editor'
-weight: -10
+weight: -2
 is_admin: null
 permissions:
   - 'access administration pages'

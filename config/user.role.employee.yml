@@ -6,7 +6,7 @@ dependencies:
     - node
 id: employee
 label: Employee
-weight: -7
+weight: -8
 is_admin: null
 permissions:
   - 'view own unpublished content'

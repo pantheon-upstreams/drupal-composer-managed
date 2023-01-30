@@ -20,7 +20,7 @@ dependencies:
     - toolbar
 id: science
 label: Science
-weight: -1
+weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'

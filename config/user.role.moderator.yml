@@ -24,7 +24,7 @@ dependencies:
     - toolbar
 id: moderator
 label: Moderator
-weight: -5
+weight: -4
 is_admin: null
 permissions:
   - 'access administration pages'

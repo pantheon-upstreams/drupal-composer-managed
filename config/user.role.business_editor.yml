@@ -20,7 +20,7 @@ dependencies:
     - toolbar
 id: business_editor
 label: 'Business editor'
-weight: -2
+weight: -3
 is_admin: null
 permissions:
   - 'access administration pages'
