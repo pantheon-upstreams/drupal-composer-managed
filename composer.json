@@ -73,6 +73,7 @@
         "drupal/name": "^1.0@RC",
         "drupal/auto_entitylabel": "^3.0",
         "drupal/gin": "^3.0@RC",
+        "drupal/mailsystem": "^4.4",
         "drupal/prototype": "^4.0@alpha",
         "drupal/search_api": "^1.28",
         "drupal/search_api_solr": "^4.2",

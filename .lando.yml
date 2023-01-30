@@ -8,6 +8,10 @@ config:
 services:
   database:
     portforward: 60657
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
   appserver:
     config:
       php: .lando/php.ini
