@@ -69,3 +69,15 @@ function surf_core_user_predelete(UserInterface $account) {
   $user_requests = $storage->loadMultiple($user_request_ids);
   $storage->delete($user_requests);
 }
+
+/**
+ * Alter the information provided in \Drupal\webform\Annotation\WebformHandler.
+ *
+ * @param array $handlers
+ *   The array of webform handlers, keyed on the machine-readable handler name.
+ */
+function surf_core_webform_handler_info_alter(array &$handlers) {
+  if (isset($handlers['user_registration'])) {
+    $handlers['user_registration']['class'] =  \Drupal\surf_core\Plugin\WebformHandler\UserRegistrationWebformHandler::class;
+  }
+}
