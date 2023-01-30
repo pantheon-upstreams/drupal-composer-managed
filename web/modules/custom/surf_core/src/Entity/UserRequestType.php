@@ -46,10 +46,13 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "id",
  *     "label",
  *     "uuid",
+ *     "workflow_id"
  *   }
  * )
  */
 class UserRequestType extends ConfigEntityBundleBase {
+
+  const WORKFLOW_GROUP_ID = 'user_request';
 
   /**
    * The machine name of this user request type.
@@ -64,5 +67,35 @@ class UserRequestType extends ConfigEntityBundleBase {
    * @var string
    */
   protected $label;
+
+  /**
+   * The workflow state machine name.
+   *
+   * @var string
+   */
+  protected $workflow_id;
+
+  public function getWorkflowId() {
+    return $this->get('workflow_id');
+  }
+
+  public function setWorkflowId($workflow_id) {
+    $this->set('workflow_id', $workflow_id);
+  }
+
+  public function getAvailableWorkflows() {
+    $workflow_manager = \Drupal::service('plugin.manager.workflow');
+    $definitions = $workflow_manager->getDefinitions();
+    if (!defined(static::class . '::WORKFLOW_GROUP_ID')) {
+      return $definitions;
+    }
+    return array_filter($workflow_manager->getDefinitions(), function($definition) {
+      return isset($definition['group']) && $definition['group'] == static::WORKFLOW_GROUP_ID;
+    });
+  }
+
+  public function getAvailableWorkflowOptionList() {
+    return array_map(function($definition) { return $definition['label']; }, $this->getAvailableWorkflows());
+  }
 
 }

@@ -7,6 +7,7 @@ use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\surf_core\EntityWorkflowStateTrait;
 use Drupal\surf_core\UserRequestInterface;
 use Drupal\user\EntityOwnerTrait;
 
@@ -70,6 +71,7 @@ class UserRequest extends ContentEntityBase implements UserRequestInterface {
 
   use EntityChangedTrait;
   use EntityOwnerTrait;
+  use EntityWorkflowStateTrait;
 
   /**
    * {@inheritdoc}
@@ -88,6 +90,7 @@ class UserRequest extends ContentEntityBase implements UserRequestInterface {
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
 
     $fields = parent::baseFieldDefinitions($entity_type);
+    $fields += static::workflowStateFieldDefinitions($entity_type);
 
     $fields['uid'] = BaseFieldDefinition::create('entity_reference')
       ->setLabel(t('Author'))

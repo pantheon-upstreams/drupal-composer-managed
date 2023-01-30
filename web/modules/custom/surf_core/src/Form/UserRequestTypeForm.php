@@ -42,8 +42,21 @@ class UserRequestTypeForm extends BundleEntityFormBase {
       '#description' => $this->t('A unique machine-readable name for this user request type. It must only contain lowercase letters, numbers, and underscores.'),
     ];
 
+    $workflow_id = $entity_type->getWorkflowId();
+
+    $form['workflow_id'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Workflow'),
+      '#description' => $this->t('The workflow plugin to use for the @entity_label state field.', [
+        '@entity_label' => $entity_type->label()
+      ]),
+      '#options' => $entity_type->getAvailableWorkflowOptionList(),
+      '#default_value' => $workflow_id,
+    ];
+
     return $this->protectBundleIdElement($form);
   }
+
 
   /**
    * {@inheritdoc}

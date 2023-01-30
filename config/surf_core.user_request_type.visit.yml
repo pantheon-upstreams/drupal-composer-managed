@@ -4,3 +4,4 @@ status: true
 dependencies: {  }
 id: visit
 label: Visit
+workflow_id: default
