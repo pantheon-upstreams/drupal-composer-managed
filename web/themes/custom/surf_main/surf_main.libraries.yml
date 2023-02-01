@@ -28,7 +28,7 @@ normalize:
   version: 4.0.x
   css:
     base:
-      build/libraries/global/base/normalize.css: {}
+      dist/css/global/base/normalize.css: {}
 
 global:
   version: 4.0.x
