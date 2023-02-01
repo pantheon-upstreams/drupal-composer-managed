@@ -1,8 +1,0 @@
-uuid: 2de1c784-72f2-49a9-a55c-2e5d0474b24f
-langcode: en
-status: true
-dependencies: {  }
-id: resources-for
-label: 'Resources for'
-description: 'Access to portals from footer'
-locked: false
