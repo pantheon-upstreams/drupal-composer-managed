@@ -1,6 +1,6 @@
 {{ attach_library('surf_main/site-footer') }}
 {% import '@surf_main-components/icons/icon.twig' as icon %}
-<footer class="site-footer__wrapper l-constrained--wide">
+<footer role="contentinfo" class="site-footer__wrapper l-constrained--wide">
 	<div class="footer-top__wrapper">
 		<div class="footer-top l-constrained">
 			<h2 class="footer-title">Discovery at great depths</h2>
@@ -135,7 +135,6 @@
 				</ul>
 			</nav>
 			<a href="#top" class="back-to-top" aria-label="Scroll back to top">
-				<span class="visually-hidden focusable">Scroll back to top</span>
 				{{icon.inline('ui-icon-angle-up')}}
 			</a>
 		</div>
