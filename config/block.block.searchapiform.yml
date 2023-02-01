@@ -1,0 +1,27 @@
+uuid: 3df68141-70b7-4d51-b250-7a595b35ad89
+langcode: en
+status: true
+dependencies:
+  module:
+    - mercury_editor_edit_tray
+    - search_api_block
+  theme:
+    - surf_main
+id: searchapiform
+theme: surf_main
+region: header_utility
+weight: -6
+provider: null
+plugin: search_api_form_block
+settings:
+  id: search_api_form_block
+  label: 'Search API form'
+  label_display: '0'
+  provider: search_api_block
+  action_url: /search
+  input_name: text
+visibility:
+  is_mercury_editor_edit_tray:
+    id: is_mercury_editor_edit_tray
+    enabled: 0
+    negate: false

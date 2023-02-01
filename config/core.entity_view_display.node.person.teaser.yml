@@ -50,3 +50,5 @@ hidden:
   field_phone_mobile: true
   field_phone_office: true
   field_ref_department: true
+  langcode: true
+  search_api_excerpt: true

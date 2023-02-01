@@ -32,4 +32,5 @@ content:
     region: content
 hidden:
   created: true
+  search_api_excerpt: true
   uid: true

@@ -1,0 +1,36 @@
+uuid: e08dbf1d-356a-4529-baee-dcaa6648ab4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility-nav
+  module:
+    - menu_block
+    - mercury_editor_edit_tray
+  theme:
+    - surf_main
+id: utilitynav
+theme: surf_main
+region: header_utility
+weight: -7
+provider: null
+plugin: 'menu_block:utility-nav'
+settings:
+  id: 'menu_block:utility-nav'
+  label: 'Utility Nav'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'utility-nav:'
+  suggestion: utility_nav
+visibility:
+  is_mercury_editor_edit_tray:
+    id: is_mercury_editor_edit_tray
+    enabled: 0
+    negate: false

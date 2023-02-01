@@ -36,3 +36,5 @@ hidden:
   field_date_published: true
   field_link: true
   field_ref_publication_type: true
+  langcode: true
+  search_api_excerpt: true

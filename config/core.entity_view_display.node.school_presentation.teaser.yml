@@ -28,3 +28,5 @@ hidden:
   field_ref_eo_opportunities: true
   field_ref_grade_levels: true
   field_ref_research_areas: true
+  langcode: true
+  search_api_excerpt: true

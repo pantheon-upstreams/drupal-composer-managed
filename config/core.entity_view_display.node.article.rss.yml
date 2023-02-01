@@ -42,3 +42,5 @@ hidden:
   field_ref_key_impact_areas: true
   field_ref_related_content: true
   field_ref_research_areas: true
+  langcode: true
+  search_api_excerpt: true

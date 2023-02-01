@@ -42,3 +42,5 @@ hidden:
   field_ref_contacts: true
   field_ref_contract_type: true
   field_ref_documents: true
+  langcode: true
+  search_api_excerpt: true

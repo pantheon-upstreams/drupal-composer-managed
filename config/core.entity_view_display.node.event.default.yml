@@ -170,3 +170,5 @@ content:
 hidden:
   field_location_address: true
   field_overview: true
+  langcode: true
+  search_api_excerpt: true

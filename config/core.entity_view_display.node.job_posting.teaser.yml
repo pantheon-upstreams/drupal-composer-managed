@@ -43,3 +43,5 @@ hidden:
   field_ref_audiences: true
   field_ref_department: true
   field_ref_job_type: true
+  langcode: true
+  search_api_excerpt: true

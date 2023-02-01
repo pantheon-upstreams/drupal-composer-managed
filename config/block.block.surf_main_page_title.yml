@@ -2,6 +2,9 @@ uuid: e654bd5a-14de-488e-bf60-8f0e56668438
 langcode: en
 status: true
 dependencies:
+  module:
+    - mercury_editor_edit_tray
+    - system
   theme:
     - surf_main
 _core:
@@ -17,4 +20,12 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  is_mercury_editor_edit_tray:
+    id: is_mercury_editor_edit_tray
+    enabled: 0
+    negate: false
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

@@ -16,7 +16,6 @@ dependencies:
     - filter
     - node
     - scheduler
-    - search
     - system
     - toolbar
 id: science
@@ -45,8 +44,6 @@ permissions:
   - 'grant own content access'
   - 'post comments'
   - 'schedule publishing of nodes'
-  - 'search content'
-  - 'use advanced search'
   - 'use text format editor_s_set'
   - 'use text format filtered_html'
   - 'use text format full_html'

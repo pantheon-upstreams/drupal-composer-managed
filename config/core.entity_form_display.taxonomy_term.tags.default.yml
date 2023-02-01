@@ -47,6 +47,13 @@ content:
       maxlength:
         maxlength_js: 125
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -63,5 +70,12 @@ content:
     weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

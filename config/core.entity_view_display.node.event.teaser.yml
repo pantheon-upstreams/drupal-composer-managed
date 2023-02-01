@@ -61,4 +61,6 @@ hidden:
   field_ref_research_areas: true
   field_registration_period: true
   field_registration_required: true
+  langcode: true
   links: true
+  search_api_excerpt: true

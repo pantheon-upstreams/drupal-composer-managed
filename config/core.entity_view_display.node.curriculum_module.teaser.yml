@@ -46,3 +46,5 @@ hidden:
   field_ref_standards: true
   field_resources: true
   field_time_required: true
+  langcode: true
+  search_api_excerpt: true

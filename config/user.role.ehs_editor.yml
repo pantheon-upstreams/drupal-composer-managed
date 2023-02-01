@@ -15,7 +15,6 @@ dependencies:
     - filter
     - node
     - scheduler
-    - search
     - system
     - toolbar
 id: ehs_editor
@@ -42,8 +41,6 @@ permissions:
   - 'grant own content access'
   - 'post comments'
   - 'schedule publishing of nodes'
-  - 'search content'
-  - 'use advanced search'
   - 'use text format basic_html'
   - 'use text format editor_s_set'
   - 'use text format full_html'

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: utility-nav
 label: 'Utility Nav'
-description: 'Useful links at the top of the page'
+description: 'Display additional useful links at the top of the page.'
 locked: false

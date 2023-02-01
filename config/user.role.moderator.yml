@@ -18,9 +18,7 @@ dependencies:
     - filter
     - node
     - path
-    - quickedit
     - scheduler
-    - search
     - system
     - taxonomy
     - toolbar
@@ -34,7 +32,6 @@ permissions:
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
-  - 'access in-place editing'
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'access user contact forms'
@@ -56,8 +53,6 @@ permissions:
   - 'grant content access'
   - 'post comments'
   - 'schedule publishing of nodes'
-  - 'search content'
-  - 'use advanced search'
   - 'use text format ds_code'
   - 'use text format editor_s_set'
   - 'use text format filtered_html'
