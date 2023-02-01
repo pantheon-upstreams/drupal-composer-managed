@@ -16,6 +16,17 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 include __DIR__ . "/settings.pantheon.php";
 
+
+/**
+ * Configuration for local solr search
+ */
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] === 'lando') {
+  $config['search_api.index.content_index']['server'] = 'local';
+  $config['search_api.server.pantheon_solr8']['status'] = false;
+} else {
+  $config['search_api.server.local']['status'] = false;
+}
+
 /**
  * Skipping permissions hardening will make scaffolding
  * work better, but will also raise a warning when you
