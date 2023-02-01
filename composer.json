@@ -71,7 +71,8 @@
         "drupal/search_api_solr": "^4.2",
         "drupal/search_api_pantheon": "^8.1",
         "drupal/search_api_block": "^1.1",
-        "drupal/views_filters_summary": "^2.0@alpha"
+        "drupal/views_filters_summary": "^2.0@alpha",
+        "drupal/better_exposed_filters": "^6.0"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",
