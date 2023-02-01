@@ -1,4 +1,4 @@
-@import '../../partials/_partials';
+@import "../../partials/_partials";
 
 .js-prevent-scroll {
   @include bp-max(small) {
@@ -36,7 +36,6 @@
   padding: 0;
   width: var(--size-width, 200px);
   z-index: 1;
-
 
   @include bp-min(medium) {
     width: 260px;
@@ -94,11 +93,14 @@
 
 // Nav Trigger
 .nav-trigger {
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
+  display: none;
+  @include bp-max(medium) {
+    align-items: center;
+    display: inline-flex;
+  }
 }
 
-label[for='nav-trigger'] {
+label[for="nav-trigger"] {
   cursor: pointer;
   height: 30px;
   margin: auto;
@@ -117,16 +119,26 @@ label[for='nav-trigger'] {
   }
 }
 
+.nav-trigger span.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  position: relative;
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .nav-trigger__icon--expand {
   opacity: 1;
-  position: absolute;
   transform: rotate(0) scale(1);
   transition: all $duration ease-in-out;
 }
 
 .nav-trigger__icon--collapse {
   opacity: 0;
-  position: absolute;
   transform: rotate(-90deg) scale(0);
   transition: all $duration ease-in-out;
 }
