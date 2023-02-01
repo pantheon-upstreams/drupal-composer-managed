@@ -8,14 +8,25 @@
 
   // Footer Top section
   .footer-top__wrapper {
-    margin: 0 auto;
+    padding: 32px 15px;
+    width: 100%;
 
     // Tablet
-    @include bp-max(medium) {
-      padding: 32px 15px;
+    @include bp-min(medium) {
+      background-image: url("../../../../images/textures/footer-particles.svg");
+      background-repeat: no-repeat;
+      background-size: 324px;
+      background-position: right bottom;
+      padding: 60px 40px;
       margin: 0;
       width: 100%;
       max-width: 100%;
+    }
+
+    // Desktop
+    @media (width >= 1620px) {
+      margin: 0 auto;
+      padding: 88px 120px;
     }
 
     .footer-title {
@@ -34,12 +45,29 @@
   }
 
   .footer-top {
+    margin: 0;
+    max-width: 100%;
+
+    @include bp-min(medium) {
+      margin: 0 auto;
+    }
+
+    // Large Desktop
+    @media (width >= 1620px) {
+      align-items: center;
+      padding: 0;
+    }
+  }
+
+  .footer-lists {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 20px;
 
     // Tablet
     @include bp-min(medium) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
     }
 
     // Desktop
@@ -50,6 +78,16 @@
     .footer-label {
       @extend .font-surf--label-peewee;
       color: #fff;
+
+      // Tablet
+      @include bp-min(medium) {
+        margin-bottom: 12px;
+      }
+
+      // Desktop
+      @media (width >= 1620px) {
+        margin-bottom: 36px;
+      }
     }
 
     .social__wrapper {
@@ -64,16 +102,30 @@
         grid-column: initial;
         grid-row: initial;
       }
+
+      .newsletter__wrapper {
+        margin: 36px 0;
+
+        a.gradient-button {
+          // Tablet
+          @include bp-min(medium) {
+            font-size: 22px;
+          }
+        }
+      }
+
       ul.social-list {
         @include list--no-bullets;
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
+        gap: 28px;
+
+        // Tablet
+        @include bp-min(medium) {
+          gap: 32px;
+        }
 
         li {
-          &:not(:first-child) {
-            margin-left: 32px;
-          }
-
           a .icon {
             height: 32px;
             width: 32px;
@@ -90,10 +142,18 @@
     }
 
     .contact__wrapper {
-      p {
+      .footer-label {
+        @include bp-max(medium) {
+          margin-bottom: 4px;
+        }
+      }
+
+      address {
         @extend .font-surf--body-large;
         color: #fff;
+        font-style: inherit;
       }
+
       ul.contact-list {
         @include list--no-bullets;
         display: flex;
@@ -101,20 +161,33 @@
 
         li {
           width: fit-content;
-          a {
-            @extend .font-surf--body-large;
-            color: #fff;
-            text-decoration: none;
+          &:not(:last-child) {
+            margin-bottom: 4px;
 
-            &:hover {
-              text-decoration: underline;
+            // Tablet
+            @include bp-min(medium) {
+              margin-bottom: 12px;
             }
           }
+        }
+      }
+      a {
+        @extend .font-surf--body-large;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
 
     .info__wrapper {
+      .footer-label {
+        @include bp-max(medium) {
+          margin-bottom: 8px;
+        }
+      }
       ul.info-list {
         @include list--no-bullets;
         display: flex;
@@ -122,6 +195,14 @@
 
         li {
           width: fit-content;
+          &:not(:last-child) {
+            margin-bottom: 8px;
+
+            // Tablet
+            @include bp-min(medium) {
+              margin-bottom: 12px;
+            }
+          }
           a {
             @extend .font-surf--body-large;
             color: #fff;
@@ -164,7 +245,7 @@
     padding: 32px 0 0 0;
 
     @include bp-min(medium) {
-      padding: 0 0 32px 0;
+      padding: 0;
       margin: 0 auto;
     }
 
@@ -172,13 +253,12 @@
     @media (width >= 1620px) {
       align-items: center;
       flex-direction: row;
-      padding: 0;
       gap: 32px;
     }
   }
 
   // Utility Nav spacing
-  #block-footer-utility {
+  .footer-utility {
     padding: 8px 15px 20px 15px;
 
     @include bp-min(medium) {
@@ -187,7 +267,7 @@
   }
 
   // Utility Nav link styles
-  ul.menu--footer-utility-nav {
+  ul.footer-utility-nav {
     @include list--no-bullets;
     display: flex;
     flex-direction: column;
@@ -200,6 +280,7 @@
     }
 
     li {
+      margin: 0;
       position: relative;
 
       &:not(:first-child) {

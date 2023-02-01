@@ -15,8 +15,7 @@ regions:
   help: Help
   content: Content
   sidebar_right: Right Sidebar
-  footer_top: Footer Top
-  footer_bottom: Footer Bottom
+  footer: Footer
 
 libraries:
   - surf_main/fonts
