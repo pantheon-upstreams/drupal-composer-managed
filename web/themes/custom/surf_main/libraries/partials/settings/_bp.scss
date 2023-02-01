@@ -3,16 +3,15 @@
  * - 01 - Mapping
  */
 
-
 /*------------------------------------*\
   01 - Mapping
 \*------------------------------------*/
 
 $grid-breakpoints: (
-  xsmall:   0,
-  small:    576px,
-  medium:   768px,
-  large:    992px,
-  xlarge:   1200px,
-  xxlarge:  1400px,
+  xsmall: 0,
+  small: 576px,
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1620px,
 );

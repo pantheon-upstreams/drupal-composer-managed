@@ -6,6 +6,10 @@
   max-width: 100%;
   width: 100%;
 
+  .visually-hidden {
+    color: #fff;
+  }
+
   // Footer Top section
   .footer-top__wrapper {
     padding: 32px 15px;
@@ -24,7 +28,7 @@
     }
 
     // Desktop
-    @media (width >= 1620px) {
+    @include bp-min(xxlarge) {
       margin: 0 auto;
       padding: 88px 120px;
     }
@@ -53,7 +57,7 @@
     }
 
     // Large Desktop
-    @media (width >= 1620px) {
+    @include bp-min(xxlarge) {
       align-items: center;
       padding: 0;
     }
@@ -71,7 +75,7 @@
     }
 
     // Desktop
-    @media (width >= 1620px) {
+    @include bp-min(xxlarge) {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -85,7 +89,7 @@
       }
 
       // Desktop
-      @media (width >= 1620px) {
+      @include bp-min(xxlarge) {
         margin-bottom: 36px;
       }
     }
@@ -98,7 +102,7 @@
       }
 
       // Desktop
-      @media (width >= 1620px) {
+      @include bp-min(xxlarge) {
         grid-column: initial;
         grid-row: initial;
       }
@@ -229,7 +233,7 @@
     }
 
     // Desktop
-    @media (width >= 1620px) {
+    @include bp-min(xxlarge) {
       display: flex;
       flex-flow: row;
       padding: 32px 120px;
@@ -250,7 +254,7 @@
     }
 
     // Large Desktop
-    @media (width >= 1620px) {
+    @include bp-min(xxlarge) {
       align-items: center;
       flex-direction: row;
       gap: 32px;
@@ -275,7 +279,7 @@
     padding: 0px;
 
     // Large Desktop
-    @media (width >= 1024px) {
+   @include bp-min(large) {
       flex-direction: row;
     }
 
@@ -290,12 +294,12 @@
           margin-top: 12px;
         }
 
-        @media (width >= 1024px) {
+       @include bp-min(large) {
           margin-top: 0;
         }
       }
 
-      @media (width >= 1024px) {
+     @include bp-min(large) {
         &:first-child {
           padding-right: 16px;
         }
@@ -378,7 +382,7 @@
     }
 
     // Small Desktop
-    @media (width >= 1024px) {
+   @include bp-min(large) {
       width: 60px;
     }
   }

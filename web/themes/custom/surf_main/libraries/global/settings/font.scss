@@ -3,6 +3,9 @@
 // https://medium.com/eightshapes-llc/naming-tokens-in-design-systems-9e86c7444676
 // These default values are intended to be mofified and extended to suite the needs
 // of an individual project.
+
+@import "../../partials/_partials";
+
 :root {
   /*
     Font: Families
@@ -174,63 +177,58 @@
   --font-letter-spacing-normal: 0;
   --font-letter-spacing-wide: 0.09375em; //1.5px
   --font-letter-spacing-wider: 0.125em; //2px;
-}
 
-// Mobile & Base Sizing
-@media (width >= 0) {
-  :root {
-    // SURF Main - Heading Sizes
-    --font-size-heading-one: 72px;
-    --font-size-heading-one-alt: 24px;
-    --font-size-heading-two: 40px;
-    --font-size-heading-two-alt: 32px;
-    --font-size-heading-three: 36px;
-    --font-size-heading-four: 28px;
-    --font-size-heading-five: 24px;
-    --font-size-heading-six: 20px;
+  // SURF Main - Heading Sizes
+  --font-size-heading-one: 72px;
+  --font-size-heading-one-alt: 24px;
+  --font-size-heading-two: 40px;
+  --font-size-heading-two-alt: 32px;
+  --font-size-heading-three: 36px;
+  --font-size-heading-four: 28px;
+  --font-size-heading-five: 24px;
+  --font-size-heading-six: 20px;
 
-    // SURF Main - Body Sizes
-    --font-size-body-jumbo: 18px;
-    --font-size-body-x-large: 18px;
-    --font-size-body-large: 16px;
-    --font-size-body-medium: 16px;
-    --font-size-body-small: 16px;
-    --font-size-body-x-small: 14px;
+  // SURF Main - Body Sizes
+  --font-size-body-jumbo: 18px;
+  --font-size-body-x-large: 18px;
+  --font-size-body-large: 16px;
+  --font-size-body-medium: 16px;
+  --font-size-body-small: 16px;
+  --font-size-body-x-small: 14px;
 
-    // SURF Main - Label Sizes
-    --font-size-label-x-large: 22px;
-    --font-size-label-large: 22px;
-    --font-size-label-medium: 22px;
-    --font-size-label-small: 20px;
-    --font-size-label-peewee: 16px;
+  // SURF Main - Label Sizes
+  --font-size-label-x-large: 22px;
+  --font-size-label-large: 22px;
+  --font-size-label-medium: 22px;
+  --font-size-label-small: 20px;
+  --font-size-label-peewee: 16px;
 
-    // SURF Main - Heading Line Height
-    --font-line-height-heading-one: 90%;
-    --font-line-height-heading-one-alt: 112%;
-    --font-line-height-heading-two: 100%;
-    --font-line-height-heading-two-alt: 100%;
-    --font-line-height-heading-three: 100%;
-    --font-line-height-heading-four: 100%;
+  // SURF Main - Heading Line Height
+  --font-line-height-heading-one: 90%;
+  --font-line-height-heading-one-alt: 112%;
+  --font-line-height-heading-two: 100%;
+  --font-line-height-heading-two-alt: 100%;
+  --font-line-height-heading-three: 100%;
+  --font-line-height-heading-four: 100%;
 
-    // SURF Main - Body Line Height
-    --font-line-height-body-jumbo: 130%;
-    --font-line-height-body-x-large: 130%;
-    --font-line-height-body-large: 140%;
-    --font-line-height-body-medium: 144%;
-    --font-line-height-body-small: 148%;
-    --font-line-height-body-x-small: 148%;
+  // SURF Main - Body Line Height
+  --font-line-height-body-jumbo: 130%;
+  --font-line-height-body-x-large: 130%;
+  --font-line-height-body-large: 140%;
+  --font-line-height-body-medium: 144%;
+  --font-line-height-body-small: 148%;
+  --font-line-height-body-x-small: 148%;
 
-    // SURF Main - Label Line Height
-    --font-line-height-label-x-large: 132%;
-    --font-line-height-label-large: 130%;
-    --font-line-height-label-medium: 140%;
-    --font-line-height-label-small: 140%;
-    --font-line-height-label-peewee: 140%;
-  }
+  // SURF Main - Label Line Height
+  --font-line-height-label-x-large: 132%;
+  --font-line-height-label-large: 130%;
+  --font-line-height-label-medium: 140%;
+  --font-line-height-label-small: 140%;
+  --font-line-height-label-peewee: 140%;
 }
 
 // Tablet
-@media (width >= 768px) {
+@include bp-min(medium) {
   :root {
     // SURF Main - Heading Sizes
     --font-size-heading-one: 100px;
@@ -254,7 +252,7 @@
   }
 }
 // Small Desktop
-@media (width >= 1024px) {
+@include bp-min(large) {
   :root {
     // SURF Main - Heading Sizes
     --font-size-heading-one: 132px;
@@ -268,7 +266,7 @@
   }
 }
 // Large Desktop
-@media (width >= 1620px) {
+@include bp-min(xxlarge) {
   :root {
     // SURF Main - Heading Sizes
     --font-size-heading-one: 176px;
