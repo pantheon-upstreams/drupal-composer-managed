@@ -14,6 +14,10 @@
         },
         {
             "type": "vcs",
+            "url": "git@git.drupal.org:sandbox/asherry-3335446.git"
+        },
+        {
+            "type": "vcs",
             "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git"
         }
     ],
@@ -28,9 +32,12 @@
         "drupal/address": "~1.0",
         "drupal/admin_toolbar": "~3.0",
         "drupal/backup_migrate": "~5.0",
+        "drupal/better_exposed_filters": "^6.0",
         "drupal/content_access": "~1.0",
         "drupal/ctools": "~3.0",
         "drupal/date_range_formatter": "^4.0",
+        "drupal/download_request": "1.0.x-dev",
+        "drupal/entity": "^1.4",
         "drupal/entity_reference_revisions": "~1.0",
         "drupal/entityqueue": "~1.0",
         "drupal/field_group": "~3.0",
@@ -71,8 +78,8 @@
         "drupal/search_api_solr": "^4.2",
         "drupal/search_api_pantheon": "^8.1",
         "drupal/search_api_block": "^1.1",
-        "drupal/views_filters_summary": "^2.0@alpha",
-        "drupal/better_exposed_filters": "^6.0"
+        "drupal/state_machine": "^1.6",
+        "drupal/views_filters_summary": "^2.0@alpha"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",
