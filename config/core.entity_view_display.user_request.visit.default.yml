@@ -127,4 +127,5 @@ content:
     weight: 15
     region: content
 hidden:
+  search_api_excerpt: true
   state: true

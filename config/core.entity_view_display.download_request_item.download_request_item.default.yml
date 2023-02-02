@@ -22,3 +22,4 @@ content:
 hidden:
   download_item: true
   langcode: true
+  search_api_excerpt: true
