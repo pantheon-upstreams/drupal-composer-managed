@@ -1,0 +1,15 @@
+uuid: baf4209e-7697-428e-ac8b-6edcd1a0e791
+langcode: en
+status: true
+dependencies:
+  module:
+    - apitools
+_core:
+  default_config_hash: 9SAzUwW0jm8cIzrDPRneSirNu4AXhdjUbK7UhHOTseo
+id: download_request_item_reset_action
+label: Reset
+type: download_request_item
+plugin: apitools_workflow_state_update
+configuration:
+  state_id: submitted
+  field_name: state

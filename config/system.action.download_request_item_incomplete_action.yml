@@ -1,0 +1,15 @@
+uuid: 2e5e9534-3155-47c1-88ff-fbec05e97d9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - apitools
+_core:
+  default_config_hash: L0vPEZ2gcuFcezz0VnWjcrKf9kPgQykphUeP9Ts5rc8
+id: download_request_item_incomplete_action
+label: 'Information required'
+type: download_request_item
+plugin: apitools_workflow_state_update
+configuration:
+  state_id: pending_information
+  field_name: state
