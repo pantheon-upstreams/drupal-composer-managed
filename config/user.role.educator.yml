@@ -12,7 +12,6 @@ dependencies:
   module:
     - comment
     - contact
-    - content_access
     - contextual
     - filter
     - media
@@ -41,7 +40,6 @@ permissions:
   - 'edit own comments'
   - 'edit own event content'
   - 'edit own page content'
-  - 'grant own content access'
   - 'post comments'
   - 'schedule publishing of nodes'
   - 'use text format editor_s_set'

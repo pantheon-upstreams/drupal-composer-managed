@@ -10,7 +10,6 @@ dependencies:
   module:
     - comment
     - contact
-    - content_access
     - contextual
     - filter
     - node
@@ -37,8 +36,6 @@ permissions:
   - 'edit any event content'
   - 'edit own comments'
   - 'edit own event content'
-  - 'grant content access'
-  - 'grant own content access'
   - 'post comments'
   - 'schedule publishing of nodes'
   - 'use text format basic_html'

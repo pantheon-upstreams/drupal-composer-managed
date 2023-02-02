@@ -8,7 +8,6 @@ dependencies:
   module:
     - comment
     - contact
-    - content_access
     - contextual
     - filter
     - media
@@ -40,8 +39,6 @@ permissions:
   - 'edit any event content'
   - 'edit own comments'
   - 'edit own event content'
-  - 'grant content access'
-  - 'grant own content access'
   - 'notify of path changes'
   - 'post comments'
   - 'schedule publishing of nodes'

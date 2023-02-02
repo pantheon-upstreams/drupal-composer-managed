@@ -24,7 +24,6 @@ module:
   conditional_fields: 0
   config: 0
   contact: 0
-  content_access: 0
   contextual: 0
   ctools: 0
   date_range_formatter: 0

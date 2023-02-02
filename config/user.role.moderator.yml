@@ -13,7 +13,6 @@ dependencies:
     - block
     - comment
     - contact
-    - content_access
     - contextual
     - filter
     - node
@@ -50,7 +49,6 @@ permissions:
   - 'edit any page content'
   - 'edit own comments'
   - 'edit own page content'
-  - 'grant content access'
   - 'post comments'
   - 'schedule publishing of nodes'
   - 'use text format ds_code'
