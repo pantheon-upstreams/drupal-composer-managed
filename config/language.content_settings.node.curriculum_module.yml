@@ -1,0 +1,11 @@
+uuid: 642a23e3-6471-4f9e-82b9-df0f99e7a738
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.curriculum_module
+id: node.curriculum_module
+target_entity_type_id: node
+target_bundle: curriculum_module
+default_langcode: site_default
+language_alterable: false

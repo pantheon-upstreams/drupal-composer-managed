@@ -1,0 +1,11 @@
+uuid: 65427c70-26ac-4fe9-99d1-0b3fa4c5204b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.report_publication
+id: node.report_publication
+target_entity_type_id: node
+target_bundle: report_publication
+default_langcode: site_default
+language_alterable: false

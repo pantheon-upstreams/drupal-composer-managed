@@ -1,0 +1,11 @@
+uuid: c2062f8b-e5df-425c-943a-206a542d6b3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.job_posting
+id: node.job_posting
+target_entity_type_id: node
+target_bundle: job_posting
+default_langcode: site_default
+language_alterable: false

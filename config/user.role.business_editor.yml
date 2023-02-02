@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - node.type.article
     - node.type.event
   module:
     - comment
@@ -36,7 +37,11 @@ permissions:
   - 'bypass node access'
   - 'change own username'
   - 'create event content'
+  - 'delete any article content'
+  - 'delete own article content'
+  - 'edit any article content'
   - 'edit any event content'
+  - 'edit own article content'
   - 'edit own comments'
   - 'edit own event content'
   - 'notify of path changes'

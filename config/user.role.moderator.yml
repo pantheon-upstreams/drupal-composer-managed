@@ -8,6 +8,7 @@ dependencies:
     - filter.format.filtered_html
     - filter.format.full_html
     - filter.format.plain
+    - node.type.article
     - node.type.page
   module:
     - block
@@ -44,9 +45,13 @@ permissions:
   - 'bypass node access'
   - 'change own username'
   - 'create url aliases'
+  - 'delete any article content'
   - 'delete any page content'
+  - 'delete own article content'
   - 'delete own page content'
+  - 'edit any article content'
   - 'edit any page content'
+  - 'edit own article content'
   - 'edit own comments'
   - 'edit own page content'
   - 'post comments'

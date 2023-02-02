@@ -1,0 +1,11 @@
+uuid: 90c3433e-abe6-4504-a9b5-eceebe777da9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.esh_standard
+id: node.esh_standard
+target_entity_type_id: node
+target_bundle: esh_standard
+default_langcode: site_default
+language_alterable: false
