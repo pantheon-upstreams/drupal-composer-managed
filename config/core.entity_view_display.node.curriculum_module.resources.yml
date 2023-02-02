@@ -41,4 +41,5 @@ hidden:
   field_ref_research_areas: true
   field_ref_standards: true
   field_time_required: true
+  langcode: true
   links: true

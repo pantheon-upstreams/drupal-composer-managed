@@ -21,3 +21,4 @@ content:
     region: content
 hidden:
   download_item: true
+  langcode: true
