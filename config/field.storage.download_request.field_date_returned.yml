@@ -1,0 +1,20 @@
+uuid: f967baf8-254a-4d23-be58-c24c4ced12d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - download_request
+id: download_request.field_date_returned
+field_name: field_date_returned
+entity_type: download_request
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

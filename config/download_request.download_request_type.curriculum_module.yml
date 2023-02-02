@@ -1,0 +1,8 @@
+uuid: 6fa89dd6-6962-48b9-a35f-0d56fe0c00d8
+langcode: en
+status: true
+dependencies: {  }
+id: curriculum_module
+label: 'Curriculum module'
+workflow_id: default
+access_field_workflow_state: approved

@@ -125,6 +125,11 @@
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "patches": {
+          "drupal/entity": {
+            "Add an overridden add page with destination support": "https://git.drupalcode.org/project/entity/-/merge_requests/8.diff"
+          }
         }
     },
     "autoload": {

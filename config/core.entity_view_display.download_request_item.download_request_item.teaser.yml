@@ -1,0 +1,30 @@
+uuid: 3ec75930-3bfe-4a50-9d94-daac4fd6d576
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.download_request_item.teaser
+  module:
+    - download_request
+    - layout_builder
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: download_request_item.download_request_item.teaser
+targetEntityType: download_request_item
+bundle: download_request_item
+mode: teaser
+content:
+  state:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  download_item: true
+  langcode: true
+  search_api_excerpt: true

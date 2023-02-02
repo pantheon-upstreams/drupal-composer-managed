@@ -30,8 +30,10 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  download_request: 0
   dynamic_page_cache: 0
   editor: 0
+  entity: 0
   entity_reference_revisions: 0
   entityqueue: 0
   field: 0
@@ -103,6 +105,7 @@ module:
   shortcut: 0
   simple_block: 0
   smart_date: 0
+  state_machine: 0
   structure_sync: 0
   style_options: 0
   surf_migrate: 0

@@ -1,0 +1,21 @@
+uuid: 9b4c557a-91f5-4d42-b85f-c30ff6b601f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - download_request.download_request_type.curriculum_module
+    - field.storage.download_request.field_date_range
+  module:
+    - datetime_range
+id: download_request.curriculum_module.field_date_range
+field_name: field_date_range
+entity_type: download_request
+bundle: curriculum_module
+label: 'Date range'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

@@ -1,0 +1,20 @@
+uuid: 35ef47b2-1056-47df-9599-a4adfe201b8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - download_request
+    - node
+id: download_item.field_curriculum_module
+field_name: field_curriculum_module
+entity_type: download_item
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
