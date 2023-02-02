@@ -1,0 +1,14 @@
+uuid: 0237d49f-d441-4821-aeac-3e7e44dd09e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.visit_coordinator
+  module:
+    - user
+id: user_remove_role_action.visit_coordinator
+label: 'Remove the Visit coordinator role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: visit_coordinator

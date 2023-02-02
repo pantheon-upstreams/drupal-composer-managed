@@ -1,0 +1,9 @@
+uuid: c747195b-11ef-4bda-b65f-0a003bd64702
+langcode: en
+status: true
+dependencies: {  }
+id: visit_coordinator
+label: 'Visit coordinator'
+weight: 0
+is_admin: null
+permissions: {  }
