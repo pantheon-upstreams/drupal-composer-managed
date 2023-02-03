@@ -139,7 +139,7 @@ site-header:
     component:
       dist/css/components/site-header/site-header.component.css: {}
   js:
-    dist/css/components/site-header/site-header.js: {}
+    dist/js/site-header/site-header.js: {}
 
 # Tabs
 tabs:
