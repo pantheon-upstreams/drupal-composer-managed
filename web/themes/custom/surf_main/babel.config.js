@@ -24,9 +24,9 @@ module.exports = function(api) {
   const presets = [
     [
       "@babel/preset-env", {
-        "corejs": 3, // https://babeljs.io/docs/en/babel-preset-env#corejs
+        "corejs": 3.8, // https://babeljs.io/docs/en/babel-preset-env#corejs
         "shippedProposals": true, // https://babeljs.io/docs/en/babel-preset-env#shippedproposals
-        "useBuiltIns": "usage", // https://babeljs.io/docs/en/babel-preset-env#usebuiltins-usage
+        "useBuiltIns": "entry", // https://babeljs.io/docs/en/babel-preset-env#usebuiltins-usage
       }
     ]
   ]
