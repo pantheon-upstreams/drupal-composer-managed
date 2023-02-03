@@ -79,7 +79,8 @@
         "drupal/search_api_pantheon": "^8.1",
         "drupal/search_api_block": "^1.1",
         "drupal/state_machine": "^1.6",
-        "drupal/views_filters_summary": "^2.0@alpha"
+        "drupal/views_filters_summary": "^2.0@alpha",
+        "drupal/menu_item_extras": "^2.19"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",
