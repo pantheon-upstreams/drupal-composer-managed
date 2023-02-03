@@ -2,7 +2,7 @@
 {{ attach_library('surf_main/pager') }}
 
 {% if items %}
-	<nav role="navigation" aria-label="Pagination" {{ component.attributes('pager', modifiers, attr) }}>
+	<nav role="navigation" aria-label={{"Pagination"|t|striptags}} {{ component.attributes('pager', modifiers, attr) }}>
 		<ol class="pager__items js-pager__items">
 			{% if items.first %}
 				{# Print first item if we are not on the first page. #}
