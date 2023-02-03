@@ -5,6 +5,7 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - mercury_editor_edit_tray
     - system
   theme:
     - surf_main
@@ -22,6 +23,10 @@ settings:
   label_display: '0'
   provider: system
   level: 1
-  depth: 1
-  expand_all_items: false
-visibility: {  }
+  depth: 2
+  expand_all_items: true
+visibility:
+  is_mercury_editor_edit_tray:
+    id: is_mercury_editor_edit_tray
+    enabled: 0
+    negate: false
