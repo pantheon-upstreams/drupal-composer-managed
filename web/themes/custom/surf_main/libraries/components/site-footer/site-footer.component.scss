@@ -66,7 +66,7 @@
   .footer-lists {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 32px;
 
     // Tablet
     @include bp-min(medium) {
@@ -108,8 +108,12 @@
       }
 
       .newsletter__wrapper {
-        margin: 36px 0;
+        margin: 24px 0;
 
+        // Tablet
+        @include bp-min(medium) {
+          margin: 36px 0;
+        }
         a.gradient-button {
           // Tablet
           @include bp-min(medium) {
@@ -135,10 +139,14 @@
             width: 32px;
 
             svg path {
+              transition-duration: 0.3s;
+              transition-timing-function: linear;
               fill: #fff;
             }
           }
           a:hover .icon svg path {
+            transition-duration: 0.3s;
+            transition-timing-function: linear;
             fill: var(--color-surf--gold);
           }
         }
@@ -279,7 +287,7 @@
     padding: 0px;
 
     // Large Desktop
-   @include bp-min(large) {
+    @include bp-min(large) {
       flex-direction: row;
     }
 
@@ -294,12 +302,12 @@
           margin-top: 12px;
         }
 
-       @include bp-min(large) {
+        @include bp-min(large) {
           margin-top: 0;
         }
       }
 
-     @include bp-min(large) {
+      @include bp-min(large) {
         &:first-child {
           padding-right: 16px;
         }
@@ -345,11 +353,15 @@
     width: 100%;
 
     &:hover img {
+      transition-duration: 0.3s;
+      transition-timing-function: linear;
       opacity: 0.5;
     }
 
     img {
       width: 100%;
+      transition-duration: 0.3s;
+      transition-timing-function: linear;
     }
 
     // Tablet
@@ -367,7 +379,7 @@
     flex-direction: row;
     justify-content: center;
     padding: 6px 16px;
-    height: 40px;
+    height: 60px;
     width: 100%;
 
     &:hover {
@@ -375,14 +387,15 @@
     }
 
     .icon--ui-icon-angle-up {
-      height: 100%;
+      display: inherit;
       svg path {
         stroke: #fff;
       }
     }
 
     // Small Desktop
-   @include bp-min(large) {
+    @include bp-min(large) {
+      height: 40px;
       width: 60px;
     }
   }
