@@ -1,0 +1,90 @@
+uuid: 28305003-2f6d-46b9-9867-e84e4dc8cc12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user_request.event_registration.field_email
+    - field.field.user_request.event_registration.field_name
+    - field.field.user_request.event_registration.field_number_requested
+    - field.field.user_request.event_registration.field_ref_event
+    - field.field.user_request.event_registration.field_webform_submission_id
+    - surf_registration.user_request_type.event_registration
+  module:
+    - name
+id: user_request.event_registration.default
+targetEntityType: user_request
+bundle: event_registration
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 23
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_name:
+    type: name_default
+    weight: 21
+    region: content
+    settings:
+      override_field_settings: false
+      labels:
+        title: Title
+        given: Given
+        middle: 'Middle name(s)'
+        family: Family
+        generational: Generational
+        credentials: Credentials
+      widget_layout: stacked
+      show_component_required_marker: false
+      credentials_inline: false
+      size:
+        title: 6
+        given: 20
+        middle: 20
+        family: 20
+        generational: 5
+        credentials: 35
+      title_display:
+        title: description
+        given: description
+        middle: description
+        family: description
+        generational: description
+        credentials: description
+    third_party_settings: {  }
+  field_number_requested:
+    type: number
+    weight: 24
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_event:
+    type: entity_reference_autocomplete
+    weight: 22
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_webform_submission_id:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  state: true

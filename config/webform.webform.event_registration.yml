@@ -16,6 +16,9 @@ elements: |-
   ref_event:
     '#type': entity_autocomplete
     '#title': Event
+    '#prepopulate': true
+    '#access_create_roles':
+      - administrator
     '#target_type': node
     '#selection_handler': 'default:node'
     '#selection_settings':

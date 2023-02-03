@@ -1,0 +1,23 @@
+uuid: c049c060-ea6b-436a-8ea8-52bcde327005
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_number_requested
+    - surf_registration.user_request_type.event_registration
+id: user_request.event_registration.field_number_requested
+field_name: field_number_requested
+entity_type: user_request
+bundle: event_registration
+label: 'Number requested'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

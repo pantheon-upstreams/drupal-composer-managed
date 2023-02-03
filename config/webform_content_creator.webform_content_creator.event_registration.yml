@@ -1,0 +1,54 @@
+uuid: 0ed1df15-2b80-4fa7-8fa8-2ed5d0b1fc9a
+langcode: en
+status: true
+dependencies: {  }
+id: event_registration
+title: 'Event registration'
+webform: event_registration
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+sync_content: true
+sync_content_delete: false
+sync_content_node_field: null
+elements:
+  field_email:
+    type: false
+    mapping: email_mapping
+    webform_field: email
+    custom_check: 0
+    custom_value: ''
+  field_name:
+    type: false
+    mapping: name_mapping
+    webform_field: name
+    custom_check: 0
+    custom_value: ''
+  field_number_requested:
+    type: false
+    mapping: numeric_mapping
+    webform_field: number_requested
+    custom_check: 0
+    custom_value: ''
+  field_ref_event:
+    type: false
+    mapping: entity_reference_mapping
+    webform_field: ref_event
+    custom_check: 0
+    custom_value: ''
+  field_webform_submission_id:
+    type: true
+    mapping: text_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
+  uid:
+    type: true
+    mapping: default_mapping
+    webform_field: uid
+    custom_check: 0
+    custom_value: ''
+sync_content_field: field_webform_submission_id
+target_entity_type: user_request
+target_bundle: event_registration
