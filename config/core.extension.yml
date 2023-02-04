@@ -56,6 +56,7 @@ module:
   jquery_ui_touch_punch: 0
   key: 0
   language: 0
+  layout_builder: 0
   layout_discovery: 0
   layout_paragraphs: 0
   link: 0
@@ -91,6 +92,8 @@ module:
   optional_end_date: 0
   options: 0
   page_cache: 0
+  page_manager: 0
+  page_manager_ui: 0
   path: 0
   path_alias: 0
   pathauto: 0
@@ -111,6 +114,7 @@ module:
   style_options: 0
   surf_core: 0
   surf_curriculum: 0
+  surf_dashboard: 0
   surf_migrate: 0
   system: 0
   taxonomy: 0

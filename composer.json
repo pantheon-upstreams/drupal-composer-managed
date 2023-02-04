@@ -75,6 +75,7 @@
         "drupal/gin": "^3.0@RC",
         "drupal/mailsystem": "^4.4",
         "drupal/prototype": "^4.0@alpha",
+        "drupal/page_manager": "^4.0@RC",
         "drupal/search_api": "^1.28",
         "drupal/search_api_solr": "^4.2",
         "drupal/search_api_pantheon": "^8.1",
