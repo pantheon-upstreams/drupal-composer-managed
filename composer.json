@@ -43,7 +43,7 @@
         "drupal/field_group": "~3.0",
         "drupal/field_tools": "~1.0",
         "drupal/filefield_paths": "~1.0",
-        "drupal/google_analytics": "~3.0",
+        "drupal/google_analytics": "^4.0",
         "drupal/honeypot": "~2.0",
         "drupal/imce": "~2.0",
         "drupal/inline_entity_form": "~1.0",
