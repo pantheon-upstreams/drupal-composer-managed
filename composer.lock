@@ -4604,27 +4604,27 @@
         },
         {
             "name": "drupal/search_api_block",
-            "version": "1.1.0",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/search_api_block.git",
-                "reference": "1.1.0"
+                "reference": "1.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api_block-1.1.0.zip",
-                "reference": "1.1.0",
-                "shasum": "7cc584e356bcc1e55c3c9146e4efa98a8eebaecc"
+                "url": "https://ftp.drupal.org/files/projects/search_api_block-1.1.4.zip",
+                "reference": "1.1.4",
+                "shasum": "41ac1e86ecf3be9192dd8500774f5264228e48e8"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^8.8 || ^9 || ^10",
                 "drupal/search_api": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.1.0",
-                    "datestamp": "1663786609",
+                    "version": "1.1.4",
+                    "datestamp": "1675469022",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
