@@ -139,13 +139,13 @@
             width: 32px;
 
             svg path {
-              transition-duration: 0.3s;
+              transition-duration: 0.25s;
               transition-timing-function: linear;
               fill: #fff;
             }
           }
           a:hover .icon svg path {
-            transition-duration: 0.3s;
+            transition-duration: 0.25s;
             transition-timing-function: linear;
             fill: var(--color-surf--gold);
           }
@@ -353,14 +353,14 @@
     width: 100%;
 
     &:hover img {
-      transition-duration: 0.3s;
+      transition-duration: 0.25s;
       transition-timing-function: linear;
       opacity: 0.5;
     }
 
     img {
       width: 100%;
-      transition-duration: 0.3s;
+      transition-duration: 0.25s;
       transition-timing-function: linear;
     }
 
@@ -381,9 +381,13 @@
     padding: 6px 16px;
     height: 60px;
     width: 100%;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
 
     &:hover {
       background: var(--color-surf--dark-grey);
+      transition-duration: 0.25s;
+      transition-timing-function: linear;
     }
 
     .icon--ui-icon-angle-up {
