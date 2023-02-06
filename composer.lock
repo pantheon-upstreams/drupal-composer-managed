@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0cf9c0880eb5841b336ff0c9b3f6fe7",
+    "content-hash": "95aa4ba6f3924651eb5d54c4527ebff3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -72,7 +72,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/atendesigngroup/mercury_editor/get/ea22b927894ec56e90a239e56fc9de5761bb9744.zip",
+                "url": "https://bitbucket.org/atendesigngroup/mercury_editor/get/71fc3ce78d0e078d7fee14a83174b10588182e1d.zip",
                 "reference": "ea22b927894ec56e90a239e56fc9de5761bb9744",
                 "shasum": ""
             },
