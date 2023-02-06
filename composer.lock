@@ -2510,8 +2510,8 @@
             "version": "1.0.x-dev",
             "source": {
                 "type": "git",
-                "url": "git@git.drupal.org:sandbox/asherry-3335446.git",
-                "reference": "35b00851191aa47c98098422076f64ebac8d4a2f"
+                "url": "https://git.drupalcode.org/sandbox/asherry-3335446.git",
+                "reference": "b1f7743b48d4f00ba03240a9c8ea9e450caf98bf"
             },
             "require": {
                 "drupal/entity": "^1.4",
