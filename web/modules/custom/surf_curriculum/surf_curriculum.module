@@ -22,3 +22,27 @@ function surf_curriculum_entity_bundle_info_alter(array &$bundles): void {
     $bundles['node']['curriculum_module']['class'] = \Drupal\surf_curriculum\Entity\Node\CurriculumModule::class;
   }
 }
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function surf_curriculum_entity_extra_field_info() {
+  $extra = [];
+  $extra['node']['curriculum_module']['display']['webform_link'] = [
+    'label' => t('Webform link'),
+    'description' => t('Link to webform with prepopulated node'),
+    'visible' => TRUE,
+    'weight' => 25,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function surf_curriculum_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('webform_link') && $entity->bundle() === 'curriculum_module') {
+    $build['webform_link'] = $entity->getWebformLink()->toRenderable();
+  }
+}

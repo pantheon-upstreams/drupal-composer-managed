@@ -1,0 +1,7 @@
+views.field.surf_curriculum_webform_link:
+  type: views.field.field
+  label: 'Webform link'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
