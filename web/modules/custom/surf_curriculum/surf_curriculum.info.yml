@@ -5,3 +5,5 @@ package: Custom
 core_version_requirement: ^9 || ^10
 dependencies:
   - entity:entity
+  - download_request:download_request
+  - surf_dashboard:surf_dashboard
