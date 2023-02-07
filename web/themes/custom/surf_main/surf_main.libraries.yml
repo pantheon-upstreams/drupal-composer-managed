@@ -115,8 +115,7 @@ progress:
       dist/css/components/progress/progress.component.css: {}
 
 # Search form
-search_form:
-  version: 4.0.x
+search-form:
   css:
     theme:
       dist/css/components/search-form/search-form.css: {}

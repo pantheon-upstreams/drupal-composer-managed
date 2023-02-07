@@ -1,7 +1,9 @@
 @import "../../partials/_partials";
 
+// Lock screen & add transparency overlay
 .js-prevent-scroll {
-  @include bp-max(small) {
+  @include bp-max(xlarge) {
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     height: 100%;
     overflow: hidden;
@@ -16,33 +18,59 @@
 }
 
 .c-site-header__inner {
-  background-color: var(--color-background);
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-between;
+  width: 100%;
 
-  @include bp-max(medium) {
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(#000, 0.5);
+  @include bp-min(large) {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
   }
 }
 
+.c-site-header__site-navigation {
+  @include bp-max(large) {
+    background-color: $gray-80;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 375px;
+    top: 70px;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: translate3d(375px, 0, 0);
+    transition: all $duration * 1.5 ease-in-out;
+    position: fixed;
+  }
+
+  @include bp-min(medium) {
+    grid-area: 1 / 2;
+  }
+
+  @include bp-min(xlarge) {
+    grid-area: span 2;
+  }
+}
+
+/**** START - Main Logo ****/
 .c-site-header__logo {
   align-items: center;
   display: flex;
   justify-content: center;
   margin: var(--space-inset-y, 12px) var(--space-inset-x, 0);
   padding: 0;
-  width: var(--size-width, 200px);
+  width: var(--size-width, 194px);
   z-index: 1;
 
   @include bp-min(medium) {
+    grid-row-start: initial;
     width: 260px;
     margin: 18px 0;
   }
 
   @include bp-min(large) {
+    grid-row-start: 2;
     width: 320px;
     margin: 24px 0;
   }
@@ -53,50 +81,109 @@
     width: 100%;
   }
 }
+/**** END - Main Logo ****/
 
-.c-site-header__site-navigation {
+/**** START - Main Navigation ****/
+.c-site-header__menu-main {
   position: fixed;
 
-  @include bp-max(medium) {
+  @include bp-between(large, xlarge) {
     background-color: $gray-80;
     border-top: 1px solid var(--border-color);
     width: 100%;
+    max-width: 375px;
     top: 60px;
     bottom: 0;
-    left: 0;
     right: 0;
-    z-index: -1;
+    z-index: 2;
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translate3d(375px, 0, 0);
     transition: all $duration * 1.5 ease-in-out;
+    position: fixed;
   }
 
-  @include bp-min(large) {
+  // Display on desktop screens >1024px
+  @include bp-min(xlarge) {
     align-items: flex-end;
     display: flex;
+    justify-content: flex-end;
     flex-flow: nowrap row;
     position: relative;
+    grid-row-start: 2;
+  }
+
+  ul.menu--main[data-depth="0"] {
+    @include list--no-bullets;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    @include bp-max(xlarge) {
+      flex-flow: column;
+    }
+  }
+  // Temporary for styles
+  ul.menu--main[data-depth="1"] {
+    display: none;
+
+    &.open {
+      @include list--no-bullets;
+      display: block;
+    }
+  }
+
+  .main-menu__utilities {
+    display: none;
+    @include bp-max(large) {
+      display: block;
+
+      ul {
+        @include list--no-bullets;
+      }
+    }
   }
 }
+/**** END - Main Navigation ****/
 
+/**** START - Utility Navigation ****/
 .c-site-header__utilities {
   display: flex;
-  flex-direction: column;
+  flex-flow: row;
   justify-content: flex-end;
-  margin-bottom: 22px;
-  width: 126px;
+  margin-bottom: 20px;
+
+  .menu--utility-nav {
+    display: none;
+
+    @include bp-min(large) {
+      @include list--no-bullets;
+      display: flex;
+      flex-flow: row;
+      margin: 0;
+      padding: 0;
+    }
+  }
 
   @include bp-min(large) {
-    width: 90px;
+    flex-flow: row;
+    grid-area: span 1/2;
   }
 }
 
-// Nav Trigger
+/**** END - Utility Navigation ****/
+
+/**** START - Mobile Navigation Button ****/
 .nav-trigger {
   display: none;
-  @include bp-max(medium) {
+  @include bp-max(xlarge) {
+    grid-column-start: 2;
     align-items: center;
     display: inline-flex;
+    max-width: 100px;
+  }
+
+  @include bp-max(small) {
+    max-width: 84px;
   }
 }
 
@@ -112,10 +199,6 @@ label[for="nav-trigger"] {
 
   @include bp-min(medium) {
     top: 1rem;
-  }
-
-  @include bp-min(large) {
-    display: none;
   }
 }
 
@@ -142,25 +225,38 @@ label[for="nav-trigger"] {
   transform: rotate(-90deg) scale(0);
   transition: all $duration ease-in-out;
 }
+.nav-trigger[aria-expanded="true"] {
+  .nav-trigger__icon--collapse {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
 
-@include bp-max(medium) {
-  .nav-trigger:checked {
+  .nav-trigger__icon--expand {
+    opacity: 0;
+    transform: rotate(90deg) scale(0);
+  }
+}
+
+// On small screens control display for both main menu & utility
+@include bp-max(large) {
+  .nav-trigger[aria-expanded="true"] {
     ~ .c-site-header__site-navigation {
       opacity: 1;
       overflow-y: auto;
-      transform: translateY(0);
-    }
-
-    ~ label {
-      .nav-trigger__icon--collapse {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-      }
-
-      .nav-trigger__icon--expand {
-        opacity: 0;
-        transform: rotate(90deg) scale(0);
-      }
+      transform: translate3d(0, 0, 0);
     }
   }
 }
+
+// On medium screens control display for only main menu
+@include bp-between(large, xlarge) {
+  .nav-trigger[aria-expanded="true"] {
+    ~ .c-site-header__site-navigation .c-site-header__menu-main {
+      opacity: 1;
+      overflow-y: auto;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+/**** END - Mobile Navigation Button ****/

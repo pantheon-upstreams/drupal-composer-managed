@@ -1,1 +1,1 @@
-.search-form{align-items:stretch;display:flex}.search-form .form-item{margin:0}.search-form__input{height:100%;margin:0}
+.search-form form{display:flex;flex-flow:row nowrap}.search-form form .form-actions,.search-form form .form-item,.search-form form .form-item input{margin:0}

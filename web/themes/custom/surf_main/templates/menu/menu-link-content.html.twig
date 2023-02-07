@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a menu link entity entity.
+ *
+ * Available variables:
+ * - menu_link_content: Menu link entity.
+ * - show_item_link: Indicator for menu item link.
+ *
+ * @see template_preprocess_menu_link_content()
+ *
+ * @ingroup themeable
+ */
+#}
+{% import _self as menu %}
+
+{{ menu.build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) }}
+
+{% macro build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) %}
+
+	{% if content %}
+		{{ content }}
+	{% endif %}
+
+{% endmacro %}

@@ -18,6 +18,8 @@
  *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
+
+{# This file is used by the main menu to display additional text #}
 {% import _self as menus %}
 
 {#
@@ -33,12 +35,16 @@
 			{% for item in items %}
 				{% if item.below %}
 					<li {{ item.attributes.addClass(classes) }}>
-						{{ link(item.title, item.url) }}
-						{{ menus.menu_links(item.below, attributes, menu_depth + 1, modifier) }}
+						{{ link(item.title, item.url, attributes.setAttribute('aria-haspopup', 'true'))}}
+						{{ menus.menu_links(item.below, attributes.removeAttribute('aria-haspopup'), menu_depth + 1, modifier) }}
 					</li>
 				{% else %}
 					<li {{ item.attributes.addClass(classes) }}>
 						{{ link(item.title, item.url) }}
+						{% set rendered_content = item.content|without('')|render %}
+						{% if rendered_content %}
+							{{ rendered_content }}
+						{% endif %}
 					</li>
 				{% endif %}
 			{% endfor %}

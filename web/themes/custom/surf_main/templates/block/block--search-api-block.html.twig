@@ -34,7 +34,7 @@
 #}
 {{ attach_library('surf_main/search-form') }}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
+<nav role="navigation" class="search-form" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
 	{% if not configuration.label_display %}
 		{# Label. If not displayed, we still provide it for screen readers. #}
 		{% set title_attributes = title_attributes.addClass('visually-hidden') %}

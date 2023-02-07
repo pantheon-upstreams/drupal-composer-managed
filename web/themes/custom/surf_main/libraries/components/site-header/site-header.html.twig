@@ -10,21 +10,20 @@
         } only
       %}
 		</div>
-		<button id="nav-trigger" class="nav-trigger js-mobile-nav-trigger" aria-expanded="false" aria-controls="mainMenuControl">
+		<button id="nav-trigger" class="nav-trigger js-mobile-nav-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="mainMenuControl">
 			<span class="icon">
-
 				<svg class="nav-trigger__icon nav-trigger__icon--expand" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#00492C" fill-rule="evenodd" d="M2.571 5.333c0-.946.655-1.714 1.463-1.714h15.931c.808 0 1.464.768 1.464 1.714 0 .947-.655 1.715-1.463 1.715H4.033c-.808 0-1.463-.768-1.463-1.715Zm0 6.667c0-.947.655-1.715 1.463-1.715h15.931c.808 0 1.464.768 1.464 1.715 0 .947-.655 1.714-1.463 1.714H4.033c-.808 0-1.463-.768-1.463-1.714Zm1.463 4.952c-.808 0-1.463.767-1.463 1.714s.655 1.714 1.463 1.714h15.931c.808 0 1.464-.767 1.464-1.714s-.655-1.714-1.463-1.714H4.033Z" clip-rule="evenodd"/></svg>
-
 				<svg class="nav-trigger__icon nav-trigger__icon--collapse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#00492C" fill-rule="evenodd" d="M8.285 5.861a1.714 1.714 0 1 0-2.424 2.424L9.576 12 5.86 15.715a1.714 1.714 0 1 0 2.424 2.424L12 14.424l3.715 3.715a1.714 1.714 0 1 0 2.424-2.424L14.424 12l3.715-3.715a1.714 1.714 0 1 0-2.424-2.424L12 9.576 8.285 5.86Z" clip-rule="evenodd"/></svg>
 			</span>
 			<span class="label">Menu</span>
 		</button>
-		<div class="c-site-header__site-navigation">
+		<div class="c-site-header__site-navigation" id="mainMenuControl">
 			<div class="c-site-header__utilities">
 				{{ header_utility }}
 			</div>
 			<div class="c-site-header__menu-main">
 				{{ header_primary }}
+				<nav aria-label="Utility Navigation" role="navigation" class="main-menu__utilities">{{ drupal_menu('utility-nav') }}</nav>
 			</div>
 		</div>
 	</div>
