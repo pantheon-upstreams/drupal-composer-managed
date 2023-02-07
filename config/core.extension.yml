@@ -58,6 +58,7 @@ module:
   media: 0
   media_library: 0
   menu_block: 0
+  menu_item_extras: 0
   menu_ui: 0
   mercury_editor: 0
   mercury_editor_components: 0
