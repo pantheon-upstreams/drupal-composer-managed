@@ -1,1 +1,24 @@
 <?php
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function surf_curriculum_download_request_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() !== 'curriculum_module') {
+    return;
+  }
+  if ($entity->get('field_ref_curriculum_module')->target_id && !$entity->get('request_items')->target_id) {
+    $node = $entity->get('field_ref_curriculum_module')->entity;
+    $request_item = $node->createDownloadRequestItem();
+    $request_item->save();
+    $entity->get('request_items')->appendItem($request_item);
+  }
+}
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function surf_curriculum_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['curriculum_module'])) {
+    $bundles['node']['curriculum_module']['class'] = \Drupal\surf_curriculum\Entity\Node\CurriculumModule::class;
+  }
+}
