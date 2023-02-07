@@ -8,6 +8,7 @@ dependencies:
   module:
     - cl_server
     - contact
+    - download_request
     - filter
     - media
     - system
@@ -25,4 +26,7 @@ permissions:
   - 'use cl server'
   - 'use text format basic_html'
   - 'use text format filtered_html'
+  - 'view curriculum_module_resources download_item'
+  - 'view download_item'
   - 'view media'
+  - 'view own curriculum_module download_request'
