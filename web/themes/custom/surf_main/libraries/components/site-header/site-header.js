@@ -230,6 +230,20 @@
             flag = true;
             break;
 
+          case "Left":
+          case "Right":
+          case "ArrowLeft":
+          case "ArrowRight":
+            if (this.isOpen()) {
+              this.closePopup();
+              this.buttonNode.focus();
+            } else {
+              // Find the next element and set it as the focus
+              this.buttonNode.next().focus();
+              flag = false;
+              break;
+            }
+
           case "Home":
           case "PageUp":
             this.setFocusToFirstMenuitem();
@@ -287,48 +301,189 @@
       new MenuButtonLinks(menuButtons[i]);
     }
 
-    // Mobile Navigation trigger function
-    $("#nav-trigger").on("click", (e) => {
-      // Attach overlay to body
-      $("body").toggleClass("js-prevent-scroll");
-      $("#nav-trigger").toggleClass("checked");
+    // Utility Menu Links
+    const utilityItems = document.querySelectorAll(".menu--utility-nav > li");
 
-      if ($("#nav-trigger").hasClass("checked")) {
-        $("#nav-trigger").attr("aria-expanded", "true");
-        if ($(window).width() > 1024) {
-          var utilityItems = document.querySelectorAll(
-            ".menu--utility-nav > li > a"
-          );
+    // Search Form Inputs
+    const searchInput = document.querySelectorAll(".search-form input");
 
-          var searchInput = document.querySelectorAll(".search-form input");
-          hideIndex(utilityItems);
+    // const menuButtons = document.querySelectorAll(
+    //   ".c-site-header__menu-main ul > li > button"
+    // );
 
-          hideIndex(searchInput);
-        }
-      } else {
-        $("#nav-trigger").attr("aria-expanded", "false");
+    // document
+    //   .getElementById("nav-trigger")
+    //   .addEventListener("keydown", mobileButtonKeydown);
 
-        var utilityItems = document.querySelectorAll(
-          ".menu--utility-nav > li > a"
-        );
-        var searchInput = document.querySelectorAll(".search-form input");
+    // Initialize main menu buttons
+    const mobileNav = document.getElementById("nav-trigger");
+    const mobileOpen = mobileNav.getAttribute("aria-expanded");
 
-        displayIndex(utilityItems);
-        displayIndex(searchInput);
+    // When ESC Key is pressed close ALL open menus
+    $(document).on("keydown", function (event) {
+      // Mobile 📱
+      if (event.key === "Escape" && mobileOpen) {
+        console.log("here?");
+        menuButtons.each(function name() {
+          $(this).attr("aria-expanded", "false");
+          var buttons = menuButtons.querySelector("button");
+          var menus = menuButtons.querySelector("ul.menu[data-depth='1']");
+        });
+
+        mobileNav.attr("aria-expanded", "false");
+        mobileNav.removeClass("checked");
+        mobileNav.focus();
+        $("body").removeClass("js-prevent-scroll");
+
+        // Desktop 🖥️
+      } else if (event.key === "Escape" && !mobileOpen) {
+        $($allNavListItems).each(function name() {
+          $(this).removeClass("active");
+          $(this).find("button").attr("aria-expanded", "false");
+        });
       }
-
-      function hideIndex(items) {
-        for (let i = 0; i < items.length; i++) {
-          var menuitem = items[i];
-          menuitem.tabIndex = -1;
-        }
-      }
-      function displayIndex(items) {
-        for (let i = 0; i < items.length; i++) {
-          var menuitem = items[i];
-          menuitem.removeAttribute("tabindex");
-        }
-      }
+      return;
     });
+
+    class MobileMenu {
+      constructor(domControl, domNode) {
+        console.log(domControl, domNode);
+        this.domNode = domNode;
+        this.buttonNode = domControl;
+
+        // this.menuNode = this.domNode.querySelectorAll("a");
+        this.menuitemNodes = [];
+        this.firstMenuitem = false;
+        this.lastMenuitem = false;
+
+        this.buttonNode.addEventListener(
+          "keydown",
+          this.onButtonKeydown.bind(this)
+        );
+        // this.buttonNode.addEventListener(
+        //   "click",
+        //   this.onButtonClick.bind(this)
+        // );
+      }
+
+      isOpen() {
+        return this.buttonNode.getAttribute("aria-expanded") === "true";
+      }
+
+      // Popup menu methods
+      openMenu() {
+        $("body").toggleClass("js-prevent-scroll");
+        this.buttonNode.setAttribute("aria-expanded", "true");
+        this.buttonNode.classList.add("checked");
+      }
+
+      closeMenu() {
+        if (this.isOpen()) {
+          this.buttonNode.setAttribute("aria-expanded", "false");
+          this.buttonNode.classList.remove("checked");
+          $("body").toggleClass("js-prevent-scroll");
+        }
+      }
+      onButtonKeydown(event) {
+        var key = event.key,
+          flag = false;
+        console.log(key);
+
+        switch (key) {
+          case " ":
+          case "Enter":
+            if (this.isOpen()) {
+              this.closeMenu();
+              this.buttonNode.focus();
+            } else {
+              this.openMenu();
+              // this.setFocusToFirstMenuitem();
+              flag = true;
+              break;
+            }
+
+          // case "Down":
+          // case "ArrowDown":
+          //   this.setFocusToFirstMenuitem();
+          //   flag = true;
+          //   break;
+
+          case "Esc":
+          case "Escape":
+            this.closeMenu();
+            this.buttonNode.focus();
+            flag = true;
+            break;
+
+          // case "Up":
+          // case "ArrowUp":
+          //   this.setFocusToLastMenuitem();
+          //   flag = true;
+          //   break;
+
+          case "Tab":
+            // Allow tabs to pass through
+            flag = false;
+            break;
+
+          default:
+            break;
+        }
+
+        if (flag) {
+          event.stopPropagation();
+          event.preventDefault();
+        }
+      }
+    }
+
+    new MobileMenu(mobileNav, utilityItems);
+
+    // function mobileButtonKeydown(element) {
+    //   console.log(element);
+    // }
+    // // Mobile Navigation trigger function
+    // $("#nav-trigger").on("click", (e) => {
+    //   // Attach overlay to body
+    //   $("body").toggleClass("js-prevent-scroll");
+    //   $("#nav-trigger").toggleClass("checked");
+
+    //   if ($("#nav-trigger").hasClass("checked")) {
+    //     $("#nav-trigger").attr("aria-expanded", "true");
+
+    //     //If mobile menu is open and utlity nav is not inside wrapper
+    //     if ($(window).width() > 1024) {
+    //       hideIndex(utilityItems);
+    //       hideIndex(searchInput);
+    //     }
+    //   } else {
+    //     $("#nav-trigger").attr("aria-expanded", "false");
+    //     displayIndex(utilityItems);
+    //     displayIndex(searchInput);
+    //   }
+
+    //   // Add negative index when mobile menu is open on small desktop
+    //   function hideIndex(items) {
+    //     for (let i = 0; i < items.length; i++) {
+    //       var menuitem = items[i];
+    //       menuitem.tabIndex = -1;
+    //     }
+    //   }
+    //   // Remove added tabindex
+    //   function displayIndex(items) {
+    //     for (let i = 0; i < items.length; i++) {
+    //       var menuitem = items[i];
+    //       menuitem.removeAttribute("tabindex");
+    //     }
+    //   }
+    // });
   });
+
+  // // Copy the Secondary nav for mobile 📱
+  // $('#block-submenu .menu--sub-menu[data-depth="0"]').clone().prependTo("#block-vertafore-main-menu");
+
+  // // Prepend `Solutions for` to each top level item in the Secondary Nav just in the mobile nav
+  // $( "#block-vertafore-main-menu .menu--sub-menu[data-depth='0'] > li > button.menu__link " ).each(function() {
+  //   $(this).text('Solutions for ' + $( this ).text());
+  // });
 })(jQuery);
