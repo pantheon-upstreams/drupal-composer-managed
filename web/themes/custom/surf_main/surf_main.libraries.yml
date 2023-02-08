@@ -139,6 +139,9 @@ site-header:
       dist/css/components/site-header/site-header.component.css: {}
   js:
     dist/js/site-header/site-header.js: {}
+    dist/js/site-header-aria/site-header-aria.js: {}
+  dependencies:
+    - core/jquery
 
 # Tabs
 tabs:
