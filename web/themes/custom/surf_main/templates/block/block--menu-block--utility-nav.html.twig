@@ -32,10 +32,9 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{{ attach_library('surf_main/search-form') }}
-
-{% block content %}
-	<div class="search-form">
+{% set heading_id = attributes.id |clean_id %}
+<nav role="navigation" aria-label="Utility" {{ attributes|without('role', 'aria-labelledby') }}>
+	{% block content %}
 		{{ content }}
-	</div>
-{% endblock %}
+	{% endblock %}
+</nav>
