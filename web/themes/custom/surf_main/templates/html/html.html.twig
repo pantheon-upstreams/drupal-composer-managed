@@ -32,27 +32,24 @@
   ]
 %}
 <!DOCTYPE html>
-<html{{ html_attributes }}>
-  <head>
-    <head-placeholder token="{{ placeholder_token|raw }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token|raw }}">
-    <js-placeholder token="{{ placeholder_token|raw }}">
-    {# TYPEKIT settings here if used
-      <script src="https://use.typekit.net/ylx8qov.js"></script>
-      <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    #}
-    <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');</script>
-  </head>
-  <body{{ attributes.addClass(body_classes) }}>
-    <a id="top"></a>
-
-    <a href="#main-content" class="visually-hidden focusable skip-link">
-      {{ 'Skip to main content'|t }}
-    </a>
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-  </body>
+<html{{html_attributes}}>
+	<head>
+		<head-placeholder token="{{ placeholder_token|raw }}">
+		<title>{{ head_title|safe_join(' | ') }}</title>
+		<css-placeholder token="{{ placeholder_token|raw }}">
+		<js-placeholder token="{{ placeholder_token|raw }}">
+		<script>
+			window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>');
+		</script>
+	</head>
+	<body{{attributes.addClass(body_classes)}}>
+		<a id="top"></a>
+		<a href="#main-content" class="visually-hidden focusable skip-link">
+			{{ 'Skip to main content'|t }}
+		</a>
+		{{ page_top }}
+		{{ page }}
+		{{ page_bottom }}
+		<js-bottom-placeholder token="{{ placeholder_token|raw }}">
+	</body>
 </html>

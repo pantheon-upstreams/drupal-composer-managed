@@ -162,12 +162,15 @@
     display: none;
 
     @include bp-min(large) {
-      @include list--no-bullets;
-      display: flex;
-      flex-flow: row;
-      margin: 0;
-      padding: 0;
+      display: block;
     }
+  }
+  .menu--utility-nav {
+    @include list--no-bullets;
+    display: flex;
+    flex-flow: row;
+    margin: 0;
+    padding: 0;
   }
 
   @include bp-min(large) {

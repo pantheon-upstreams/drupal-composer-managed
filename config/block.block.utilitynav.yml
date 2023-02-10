@@ -17,7 +17,7 @@ provider: null
 plugin: 'menu_block:utility-nav'
 settings:
   id: 'menu_block:utility-nav'
-  label: 'Utility Nav'
+  label: Utility
   label_display: '0'
   provider: menu_block
   follow: false

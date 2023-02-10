@@ -33,7 +33,7 @@
  */
 #}
 {% set heading_id = attributes.id |clean_id %}
-<nav role="navigation" aria-label="Main" {{ attributes|without('role', 'aria-labelledby') }}>
+<nav role="navigation" aria-label="Main" tabindex="-1" {{ attributes|without('role', 'aria-labelledby') }}>
 	{% block content %}
 		{{ content }}
 	{% endblock %}
