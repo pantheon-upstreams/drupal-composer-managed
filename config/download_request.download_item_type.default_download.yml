@@ -1,9 +1,0 @@
-uuid: 5b0632a7-6de8-443b-9fe3-d97c2ace4af0
-langcode: en
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: aZFQijiq9ACZejX0kQw0a1pnuUQNsdC3xL3Q725G-M0
-id: default_download
-label: 'Default Download'
-access_field: null
