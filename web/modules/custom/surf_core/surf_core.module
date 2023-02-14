@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Implements hook_cache_flush().
+ */
+function surf_core_cache_flush() {
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  // @see https://www.drupal.org/project/drupal/issues/3129179
+  // This could also be moved to a hook after a field is deleted.
+  if (method_exists(\Drupal\Core\Entity\EntityFieldManager::class, 'rebuildBundleFieldMap')) {
+    $entity_field_manager->rebuildBundleFieldMap();
+  }
+}
 
 /**
  * Alter the information provided in \Drupal\webform\Annotation\WebformHandler.

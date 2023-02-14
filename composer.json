@@ -138,6 +138,9 @@
           "drupal/apitools": {
             "Workflow state action fixes": "https://git.drupalcode.org/project/apitools/-/merge_requests/3.diff"
           },
+          "drupal/core": {
+            "Provide some way to rebuild the persistent bundle field map": "https://git.drupalcode.org/project/drupal/-/merge_requests/1434.diff"
+          },
           "drupal/entity": {
             "Add an overridden add page with destination support": "https://git.drupalcode.org/project/entity/-/merge_requests/8.diff"
           },
