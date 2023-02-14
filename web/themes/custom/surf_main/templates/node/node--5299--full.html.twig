@@ -346,6 +346,46 @@
 					</p>
 				</form>
 			</div>
+
+			<div class="l-stack">
+				<h3>Callouts</h3>
+				{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: 'This is a callout component. It\'s a great way to highlight important information.',
+					linkText: 'Click Me',
+					linkUrl: 'http://example.com',
+					background_style: 'color',
+					color: 'cloud',
+				} %}
+				{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: 'This is a callout component. It\'s a great way to highlight important information.',
+					linkText: 'Click Me',
+					linkUrl: 'http://example.com',
+					background_style: 'color',
+					color: 'forest'
+				} %}
+				{% embed "callout" with {
+					heading: 'It\'s a Callout!',
+					body: 'This is a callout component. It\'s a great way to highlight important information.',
+					linkText: 'Click Me',
+					linkUrl: 'http://example.com',
+					background_style: 'color',
+					color: 'kelly'
+				} %}
+					{% block callout__link %}
+						<div class="c-callout__link">
+						{% include "link-button" with {
+							text: linkText,
+							href: linkHref,
+							style: 'solid',
+							color: 'white',
+							iconType: 'arrow',
+						} %}
+						</div>
+				{% endblock %}
+				{% endembed %}
+			</div>
 			{# End of HTML Kitchen Sink #}
 		</div>
 	</div>

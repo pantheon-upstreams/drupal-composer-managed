@@ -1,0 +1,16 @@
+title: Surf Main/Figure
+args:
+  media: '<img src="https://placekitten.com/660/410" alt="Catface" />'
+  caption: ''
+stories:
+  - name: Image
+    args:
+      media: |
+        {{ include('image', { src: 'https://placekitten.com/660/410', alt: 'Catface' }) }}
+  - name: Gif
+    args:
+      media: '<img src="https://media.giphy.com/media/cKbMXu9fqogixauQMl/giphy.gif" alt="Stanford University mascot dancing." />'
+  - name: Image w/ Caption
+    args:
+      caption: |
+        <p><strong>Example caption.</strong> Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non.</p>

@@ -53,6 +53,7 @@ global:
       dist/css/global/layout/stack.css: {}
     theme:
       dist/css/global/theme/reverse.css: {}
+      dist/css/global/theme/themes.css: {}
       dist/css/global/utilities.css: {}
   dependencies:
     - surf_main/normalize
@@ -142,6 +143,7 @@ site-header:
     dist/js/site-header-aria/site-header-aria.js: {}
   dependencies:
     - core/jquery
+    - core/once
 
 # Tabs
 tabs:
@@ -161,4 +163,3 @@ teaser:
 #------------------------------------#
 # 09 - Misc
 #------------------------------------#
-

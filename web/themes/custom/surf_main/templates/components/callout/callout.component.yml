@@ -1,0 +1,56 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: callout
+name: Callout
+status: READY
+componentType: molecule
+description: Used for highlighting information.
+libraryDependencies:
+  - core/jquery.once
+schemas:
+  props:
+    type: object
+    required:
+      - text
+    properties:
+      heading:
+        type: string
+        title: Heading
+        description: The callout heading
+        examples:
+          - Donate
+          - Purchase a limited edition print
+      body:
+        title: Body
+        type: string
+        examples:
+          - "Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue."
+      link_text:
+        title: Link Text
+        type: string
+        examples:
+          - Click me!
+      link_url:
+        title: Link Url
+        type: string
+        examples:
+          - 'https://www.example.org'
+      image:
+        title: Media Image
+        description: Callout image as a fully formed <img> or <picture> tag.
+        type: string
+        examples:
+          - '<img src="https://placekitten.com/660/410" alt="Catface" />'
+      background_style:
+        type: string
+        title: Style
+        enum:
+          - None
+          - Color
+      color:
+        type: string
+        title: Icon Type
+        enum:
+          - Cloud
+          - Forest
+          - Kelly
+          - White

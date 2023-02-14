@@ -1,0 +1,43 @@
+{# Prepare presentational attributes #}
+{% if image is not empty %}
+  {% set clAttributes = clAttributes.addClass('has-image') %}
+{% endif %}
+
+{# Markup for the component #}
+<div {{ clAttributes.addClass('c-callout') }}>
+  {% if image %}
+    <div class="c-callout__image">
+    {{ image|check_markup('plain') }}
+    </div>
+  {% endif %}
+  <div class="c-callout__content l-stack--tight {{ background_style is not empty ? 't-pane u-padding' }} {{ color is not empty ? 't-' ~ color }}">
+    {% if heading %}
+      {% block callout__heading %}
+      <div class="c-callout__heading">
+        <h3>{{ heading }}</h3>
+      </div>
+      {% endblock %}
+    {% endif %}
+
+    {% if body %}
+      {% block callout_body %}
+      <div class="c-callout__body">
+        {{ body|check_markup('plain') }}
+      </div>
+      {% endblock %}
+    {% endif %}
+
+    {% if link_text %}
+      {% block callout__link %}
+        <div class="c-callout__link">
+        {% include "link-button" with {
+          text: link_text,
+          href: link_url,
+          button_style: 'solid',
+          color: color in (['forest', 'kelly']) ? 'white' : 'forest',
+        } %}
+        </div>
+      {% endblock %}
+    {% endif %}
+  </div>
+</div>

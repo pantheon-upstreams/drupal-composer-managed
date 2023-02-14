@@ -1,0 +1,60 @@
+title: Surf Main/Link Button
+argTypes:
+  button_style:
+    options:
+      - solid
+      - gradient
+      - underline
+    control: radio
+  color:
+    options:
+      - cloud
+      - forest
+      - kelly
+      - white
+    control: radio
+  icon_type:
+    options:
+      - arrow
+    control: select
+stories:
+  - name: White
+    args:
+      text: Button
+      url: https://www.example.org
+      button_style: solid
+      color: white
+  - name: Forest
+    args:
+      text: Button
+      url: https://www.example.org
+      button_style: solid
+      color: forest
+  - name: Kelly
+    args:
+      text: Button
+      url: https://www.example.org
+      button_style: solid
+      color: kelly
+  - name: Black
+    args:
+      text: Button
+      url: https://www.example.org
+      button_style: solid
+      color: black
+  - name: Underline
+    args:
+      text: Button
+      url: https://www.example.org
+      button_style: underline
+  - name: Gradient
+    args:
+      text: Button
+      url: https://www.example.org
+      button_style: gradient
+      color: forest
+  - name: w/ Arrow
+    args:
+      text: See More
+      url: https://www.example.org
+      icon_type: Arrow

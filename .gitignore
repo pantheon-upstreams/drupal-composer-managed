@@ -94,12 +94,14 @@
 #/.idea/
 
 # Ignore .env files as they are personal
-#/.env
+.env
 
 # Ignore databases.
 *.sql
 *.sql.gz
 
+# Ignore node_modules directory.
+node_modules
 
 # OS generated files #
 ######################

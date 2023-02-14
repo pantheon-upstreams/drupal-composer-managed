@@ -1,0 +1,12 @@
+<figure {{ clAttributes }}>
+  {% block media %}
+    {{ media }}
+  {% endblock %}
+  {% block caption %}
+    {% if caption %}
+    <figcaption>
+      {{caption}}
+    </figcaption>
+    {% endif %}
+  {% endblock %}
+</figure>

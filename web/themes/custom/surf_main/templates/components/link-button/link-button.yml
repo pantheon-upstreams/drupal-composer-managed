@@ -1,0 +1,23 @@
+title: CL Components/Examples/Button
+argTypes:
+  icon_type:
+    defaultValue: power
+    options:
+      Power: power
+      Like: like
+      External: external
+    control: radio
+stories:
+  - name: 1. Default
+    args:
+      text: Default Button
+  - name: 2. Primary
+    args:
+      text: Primary Button
+    parameters:
+      options:
+        variant: primary
+  - name: 3. Like
+    args:
+      text: Like
+      icon_type: like

@@ -1,0 +1,14 @@
+title: Surf Main/Image
+args:
+  src: https://placekitten.com/400/400
+  alt: CatFace
+stories:
+  - name: "1:1"
+    args:
+      src: https://placekitten.com/400/400
+  - name: "4:3"
+    args:
+      src: https://placekitten.com/400/300
+  - name: "16:9"
+    args:
+      src: https://placekitten.com/800/450

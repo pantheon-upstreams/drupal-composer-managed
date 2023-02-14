@@ -15,6 +15,8 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  cl_components: 0
+  cl_generator: 0
   comment: 0
   components: 0
   conditional_fields: 0
@@ -96,6 +98,7 @@ module:
   search_api_block: 0
   search_api_pantheon: 0
   search_api_solr: 0
+  serialization: 0
   shortcut: 0
   simple_block: 0
   smart_date: 0

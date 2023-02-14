@@ -1,0 +1,54 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: link-button
+name: Button
+status: READY
+componentType: atom
+description: JavaScript enhanced button that tracks the number of times a user clicked it.
+schemas:
+  props:
+    type: object
+    required:
+      - text
+    properties:
+      text:
+        type: string
+        title: Text
+        description: The text for the button
+        examples:
+          - Press
+          - Submit now
+      url:
+        type: string
+        title: Url
+        description: The path to link to
+        examples:
+          - "https://example.com"
+      button_style:
+        type: string
+        title: Button Style
+        enum:
+          - Solid
+          - Gradient
+          - Underline
+      case:
+        type: string
+        title: Text Case
+        enum:
+          - Inherit
+          - Upper
+          - Lower
+          - Title
+      color:
+        type: string
+        title: Icon Type
+        enum:
+          - Inherit
+          - Reversed
+          - Forest
+          - Kelly
+          - White
+      icon_type:
+        type: string
+        title: Icon Type
+        enum:
+          - arrow

@@ -81,7 +81,9 @@
         "drupal/state_machine": "^1.6",
         "drupal/views_filters_summary": "^2.0@alpha",
         "drupal/menu_item_extras": "^2.19",
-        "drupal/gin_toolbar": "^1.0@RC"
+        "drupal/gin_toolbar": "^1.0@RC",
+        "drupal/cl_server": "^1.0@RC",
+        "drupal/cl_generator": "^1.0@RC"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",
