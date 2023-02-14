@@ -114,6 +114,9 @@ main {
 .c-site-header__menu-main {
   position: fixed;
   width: fill-available;
+  // Accounting for build tool issue
+  width: -webkit-fill-available;
+  width: -moz-available;
 
   @include bp-between(large, xlarge) {
     background: linear-gradient(
@@ -200,6 +203,9 @@ main {
         text-align: left;
         transition: all $duration * 0.5 ease-in-out;
         width: fill-available;
+        // Accounting for build tool issue
+        width: -webkit-fill-available;
+        width: -moz-available;
       }
 
       &.expanded {
