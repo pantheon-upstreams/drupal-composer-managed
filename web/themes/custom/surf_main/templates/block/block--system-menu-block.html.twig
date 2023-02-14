@@ -32,7 +32,8 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{% set heading_id = attributes.id |clean_id %}
+
+{% set heading_id = attributes.id|default(plugin_id)|clean_id %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
 	{% if not configuration.label_display %}
 		{# Label. If not displayed, we still provide it for screen readers. #}
