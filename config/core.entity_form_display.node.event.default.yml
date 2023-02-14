@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.event.field_ref_eo_opportunities
     - field.field.node.event.field_ref_event_types
     - field.field.node.event.field_ref_key_impact_areas
-    - field.field.node.event.field_ref_registration_form
     - field.field.node.event.field_ref_related_content
     - field.field.node.event.field_ref_research_areas
     - field.field.node.event.field_registration_period
@@ -32,7 +31,6 @@ dependencies:
     - scheduler
     - smart_date
     - text
-    - webform
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -158,14 +156,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_ref_registration_form:
-    type: webform_entity_reference_select
-    weight: 127
-    region: content
-    settings:
-      default_data: true
-      webforms: {  }
     third_party_settings: {  }
   field_ref_related_content:
     type: entity_reference_autocomplete
