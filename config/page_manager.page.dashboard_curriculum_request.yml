@@ -1,0 +1,17 @@
+uuid: b242c3b7-7548-4580-8c5a-e9ef0ac98520
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_curriculum_request
+label: 'Dashboard curriculum request'
+description: ''
+use_admin_theme: false
+path: '/user/{user}/dashboard/curriculum-request'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    label: User
+    type: 'entity:user'
+    optional: false

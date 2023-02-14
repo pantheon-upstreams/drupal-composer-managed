@@ -1,0 +1,45 @@
+uuid: 31becf43-a502-4927-8191-5216d4349869
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_curriculum_request
+    - webform.webform.curriculum_reservation
+  module:
+    - layout_discovery
+    - webform
+id: dashboard_curriculum_request-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 4c99f443-43de-4255-9270-f4801c669ef0
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        b3b7d863-aeb2-46f2-9ab7-e6e7c4677c56:
+          uuid: b3b7d863-aeb2-46f2-9ab7-e6e7c4677c56
+          region: content
+          configuration:
+            id: webform_block
+            label: Webform
+            label_display: visible
+            provider: webform
+            context_mapping: {  }
+            webform_id: curriculum_reservation
+            default_data: ''
+            redirect: false
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: dashboard_curriculum_request
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
