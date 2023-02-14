@@ -1,0 +1,73 @@
+uuid: 8a402331-ebd4-467a-ac70-76f3844ba459
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_visits
+    - system.menu.dashboard
+  module:
+    - layout_discovery
+    - menu_block
+    - system
+id: dashboard_visits-layout_builder-0
+label: 'Layout builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 9b8b9a3e-cccd-4a09-a9eb-9a18f36c2568
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Header
+        context_mapping: {  }
+      components:
+        d4b031bc-10c1-444e-bbfe-d775a4712093:
+          uuid: d4b031bc-10c1-444e-bbfe-d775a4712093
+          region: content
+          configuration:
+            id: system_breadcrumb_block
+            label: Breadcrumbs
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Main content'
+        context_mapping: {  }
+      components:
+        16faa289-99ec-4442-8acd-1020b21931e9:
+          uuid: 16faa289-99ec-4442-8acd-1020b21931e9
+          region: content
+          configuration:
+            id: 'menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: menu_block
+            context_mapping: {  }
+            follow: false
+            follow_parent: child
+            label_link: false
+            label_type: block
+            level: 1
+            depth: 0
+            expand_all_items: false
+            parent: 'dashboard:'
+            suggestion: dashboard
+          weight: 1
+          additional: {  }
+      third_party_settings: {  }
+  title_type: manual
+  manual_title: 'Field Trips & Presentations'
+  title_from_block: ''
+page: dashboard_visits
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
