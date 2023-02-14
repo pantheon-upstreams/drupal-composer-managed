@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for SURF Dashboard module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_dashboard_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $variables['dashboard_url'] = '';
+  if ($user = \Drupal::routeMatch()->getParameter('user')) {
+    $variables['dashboard_url'] = '/user/' . $user->id() . '/dashboard/curriculum-units/' . $node->id();
+  }
+}
