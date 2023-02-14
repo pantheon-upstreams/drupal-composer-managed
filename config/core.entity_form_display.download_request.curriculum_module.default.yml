@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - download_request.download_request_type.curriculum_module
-    - field.field.download_request.curriculum_module.field_date_range
     - field.field.download_request.curriculum_module.field_date_returned
     - field.field.download_request.curriculum_module.field_date_shipped
+    - field.field.download_request.curriculum_module.field_dates
     - field.field.download_request.curriculum_module.field_ref_curriculum_module
     - field.field.download_request.curriculum_module.field_webform_submission_id
   module:
@@ -18,44 +18,34 @@ targetEntityType: download_request
 bundle: curriculum_module
 mode: default
 content:
-  field_date_range:
-    type: daterange_default
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_date_returned:
-    type: datetime_default
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_date_shipped:
     type: datetime_default
     weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_ref_curriculum_module:
-    type: entity_reference_autocomplete
-    weight: 5
+  field_date_shipped:
+    type: datetime_default
+    weight: 2
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
+    third_party_settings: {  }
+  field_dates:
+    type: daterange_default
+    weight: 4
+    region: content
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   request_items:
     type: inline_entity_form_complex
-    weight: 1
+    weight: 0
     region: content
     settings:
       form_mode: default
@@ -72,5 +62,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_ref_curriculum_module: true
   field_webform_submission_id: true
   user: true

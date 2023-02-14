@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - download_request.download_request_type.curriculum_module
-    - field.field.download_request.curriculum_module.field_date_range
     - field.field.download_request.curriculum_module.field_date_returned
     - field.field.download_request.curriculum_module.field_date_shipped
+    - field.field.download_request.curriculum_module.field_dates
     - field.field.download_request.curriculum_module.field_ref_curriculum_module
     - field.field.download_request.curriculum_module.field_webform_submission_id
   module:
@@ -17,16 +17,6 @@ targetEntityType: download_request
 bundle: curriculum_module
 mode: default
 content:
-  field_date_range:
-    type: daterange_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_date_returned:
     type: datetime_default
     label: above
@@ -45,13 +35,23 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_dates:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_ref_curriculum_module:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_webform_submission_id:
     type: number_integer
@@ -60,7 +60,7 @@ content:
       thousand_separator: ''
       prefix_suffix: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   request_items:
     type: entity_reference_entity_view

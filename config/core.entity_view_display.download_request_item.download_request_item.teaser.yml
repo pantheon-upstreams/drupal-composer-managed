@@ -17,14 +17,22 @@ targetEntityType: download_request_item
 bundle: download_request_item
 mode: teaser
 content:
+  download_item:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   state:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
-  download_item: true
   langcode: true
   search_api_excerpt: true

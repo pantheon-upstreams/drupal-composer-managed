@@ -11,7 +11,7 @@ field_name: field_ref_curriculum_module
 entity_type: download_request
 bundle: curriculum_module
 label: 'Curriculum module'
-description: ''
+description: 'Used to auto-populate the request items. Do not edit this directly.'
 required: false
 translatable: false
 default_value: {  }

@@ -1,9 +1,9 @@
-uuid: 98086924-d5ae-4c05-bcb2-ca2462af6758
+uuid: 2d7cb3c0-c48c-452f-9e5b-0f015b0f4f03
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.resources
+    - core.entity_view_mode.node.teaser_dashboard
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_ref_audiences
@@ -16,30 +16,43 @@ dependencies:
     - field.field.node.curriculum_module.field_time_required
     - node.type.curriculum_module
   module:
+    - layout_builder
+    - text
     - user
-id: node.curriculum_module.resources
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.curriculum_module.teaser_dashboard
 targetEntityType: node
 bundle: curriculum_module
-mode: resources
+mode: teaser_dashboard
 content:
-  field_resources:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: media_library
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  body: true
-  field_media: true
   field_ref_audiences: true
   field_ref_eo_opportunities: true
   field_ref_grade_level: true
   field_ref_related_content: true
   field_ref_research_areas: true
   field_ref_standards: true
+  field_resources: true
   field_time_required: true
   langcode: true
   links: true

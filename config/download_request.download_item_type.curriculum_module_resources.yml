@@ -4,4 +4,4 @@ status: true
 dependencies: {  }
 id: curriculum_module_resources
 label: 'Curriculum module resources'
-access_field: field_curriculum_module
+access_field: id
