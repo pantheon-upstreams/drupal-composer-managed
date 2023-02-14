@@ -1,3 +1,5 @@
+@import "../../partials/_partials";
+
 :root {
   /* Space between items (margin or gap). */
   --space-gap: 2em;
@@ -8,7 +10,7 @@
   --space-gap-x-tight: var(--space-gap-tight);
   --space-gap-y-tight: var(--space-gap-tight);
 
-  --space-gap-minimal: .25em;
+  --space-gap-minimal: 0.25em;
   --space-gap-x-minimal: var(--space-gap-minimal);
   --space-gap-y-minimal: var(--space-gap-minimal);
 
@@ -16,30 +18,29 @@
   --space-indent: 1em;
 
   /* Space between and the edge of their containers (padding). */
-  --space-inset: 20px;
+  --space-inset: 15px;
   --space-inset-x: var(--space-inset);
   --space-inset-y: var(--space-inset);
-  --space-inset-min: 20px;
-
+  --space-inset-min: 15px;
 }
 
-@media (width >= 600px) {
+@include bp-min(medium) {
   :root {
-    --space-gap: 30px;
-    --space-inset: 30px;
+    --space-gap: 40px;
+    --space-inset: 40px;
   }
 }
 
-@media (width >= 768px) {
+@include bp-min(large) {
   :root {
-    --space-gap: 42px;
-    --space-inset: 42px;
+    --space-gap: 80px;
+    --space-inset: 80px;
   }
 }
 
-@media (width >= 992px) {
+@include bp-min(xlarge) {
   :root {
-    --space-gap: 60px;
-    --space-inset: 60px;
+    --space-gap: 120px;
+    --space-inset: 120px;
   }
 }

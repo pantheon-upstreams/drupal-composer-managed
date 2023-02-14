@@ -1,13 +1,22 @@
 @import "../../partials/_partials";
 
-// Lock screen & add transparency overlay
+// Attach transition for when menu leaves
+main {
+  transition: all $duration * 0.25 ease-in-out;
+}
+
+// Lock screen
 .js-prevent-scroll {
   @include bp-max(xlarge) {
-    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     height: 100%;
     overflow: hidden;
     width: 100%;
+    // Apply transparency overlay to main content
+    main {
+      background: rgba(0, 0, 0, 0.3);
+      transition: all $duration * 0.25 ease-in-out;
+    }
   }
 }
 
@@ -17,19 +26,25 @@
   z-index: 2;
 }
 
+// Wrapper for site header
 .c-site-header__inner {
   display: flex;
   justify-content: space-between;
 
   @include bp-min(large) {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: 1fr 1fr / 1fr 2fr;
   }
 }
 
+// Wrapper for all navigation: Utility & Main Menu
 .c-site-header__site-navigation {
   @include bp-max(large) {
-    background-color: $gray-80;
+    background: linear-gradient(
+      180deg,
+      var(--color-surf--kelly-green) 0%,
+      var(--color-surf--forest) 100%
+    );
     border-top: 1px solid var(--border-color);
     width: 100%;
     max-width: 375px;
@@ -41,6 +56,18 @@
     transform: translate3d(375px, 0, 0);
     transition: all $duration * 1.5 ease-in-out;
     position: fixed;
+
+    // For logged in users offset top
+    .user-logged-in & {
+      top: 90px;
+    }
+  }
+
+  @include bp-between(medium, large) {
+    // For logged in users offset top
+    .user-logged-in & {
+      top: 107px;
+    }
   }
 
   @include bp-min(medium) {
@@ -57,7 +84,8 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: var(--space-inset-y, 12px) var(--space-inset-x, 0);
+  margin: var(--space-inset-y, 12px) var(--space-inset-x, 0)
+    var(--space-inset-y, 12px) 0;
   padding: 0;
   width: var(--size-width, 194px);
   z-index: 1;
@@ -85,20 +113,31 @@
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
   position: fixed;
+  width: fill-available;
 
   @include bp-between(large, xlarge) {
-    background-color: $gray-80;
+    background: linear-gradient(
+      180deg,
+      var(--color-surf--kelly-green) 0%,
+      var(--color-surf--forest) 100%
+    );
     border-top: 1px solid var(--border-color);
     width: 100%;
     max-width: 375px;
-    top: 60px;
+    top: 175px;
     bottom: 0;
     right: 0;
     z-index: 2;
     opacity: 0;
     transform: translate3d(375px, 0, 0);
     transition: all $duration * 1.5 ease-in-out;
+    transition-delay: 0.12ms;
     position: fixed;
+
+    // For logged in users offset top
+    .user-logged-in & {
+      top: 213px;
+    }
   }
 
   // Display on desktop screens >1024px
@@ -111,31 +150,143 @@
     grid-row-start: 2;
   }
 
+  // Top level menu wrapper, main menu list element
   ul.menu--main[data-depth="0"] {
     @include list--no-bullets;
     display: flex;
     margin: 0;
     padding: 0;
 
-    // Hide duplicated links on desktop
+    // Hide duplicated links screens larger than small desktop
     @include bp-min(large) {
       .utility__link {
         display: none;
       }
     }
 
+    // Increase spacing at top of list to account for search bar being moved
+    @include bp-between(large, xlarge) {
+      > li.menu__item:first-child {
+        padding-top: 24px;
+      }
+    }
+    // Mobile styles for when only main nav is in wrapper
     @include bp-max(xlarge) {
       flex-flow: column;
+
+      > .menu__item {
+        padding: 12px 15px;
+      }
+    }
+
+    // On larger desktop screens
+    @include bp-min(xlarge) {
+      > li.menu__item:not(:first-child) {
+        margin-left: 64px;
+      }
     }
   }
-  // Temporary for styles
-  ul.menu--main[data-depth="1"] {
-    display: none;
 
-    &.open {
-      @include list--no-bullets;
-      display: block;
+  // Main menu top level item base styles (Buttons & Links share)
+  ul.menu--main[data-depth="0"] > .menu__item {
+    // Do not display green background unless parent is open
+    &.menu__item--expanded {
+      transition: all $duration * 1.5 ease-in-out;
+      // Add buttons toggle icons
+      > button {
+        background-image: url("../../../../images/icons/ui-icon-add--white.svg");
+        background-repeat: no-repeat;
+        background-position: top right;
+        text-align: left;
+        transition: all $duration * 0.5 ease-in-out;
+        width: fill-available;
+      }
+
+      &.expanded {
+        background-color: var(--color-surf--forest);
+        transition: all $duration * 1.5 ease-in-out;
+
+        // When open, adjust button icon
+        > button {
+          background-image: url("../../../../images/icons/ui-icon-minus--white.svg");
+          transition: all $duration * 0.5 ease-in-out;
+        }
+      }
     }
+
+    // Account for user login icon
+    .menu__link.menu__login {
+      background-image: url("../../../../images/icons/ui-icon-user--white.svg");
+      background-repeat: no-repeat;
+      background-position: top left;
+      display: inline-block;
+      text-indent: 34px;
+    }
+
+    // Base styles for top level buttons & links
+    > .menu__link,
+    > button {
+      // Mobile styles
+      @include bp-max(xlarge) {
+        color: #fff;
+        font-size: 22px;
+        letter-spacing: 1.8px;
+        line-height: 140%;
+      }
+
+      @include bp-min(xlarge) {
+        color: var(--color-surf--forest);
+        font-size: 28px;
+        letter-spacing: 1.5px;
+        line-height: 130%;
+      }
+
+      background-color: transparent;
+      border: none;
+      font-family: var(--font-family-condensed);
+      font-weight: var(--font-weight-bold);
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  // Secondary level menu wrapper styles
+  ul.menu--main[data-depth="1"] {
+    @include list--no-bullets;
+    display: block;
+
+    .menu__item {
+      padding: 12px 0;
+    }
+
+    @include bp-max(xlarge) {
+      // Hide on mobile menu screens
+      .menu__item .main-menu__description {
+        display: none;
+      }
+
+      .menu__link {
+        color: #fff;
+        font-family: var(--font-family-sans);
+        font-size: 18px;
+        font-weight: var(--font-weight-bold);
+        line-height: 144%;
+        margin-top: 12px;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // @include bp-min(xlarge){
+
+    // }
   }
 
   .main-menu__utilities {
@@ -187,28 +338,27 @@
   @include bp-max(xlarge) {
     grid-column-start: 2;
     align-items: center;
+    background: transparent;
+    border: none;
     display: inline-flex;
+    height: 36px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
     max-width: 100px;
-  }
-
-  @include bp-max(small) {
-    max-width: 84px;
+    padding: 0;
   }
 }
 
-label[for="nav-trigger"] {
+.nav-trigger span.label {
+  color: var(--color-surf--forest);
   cursor: pointer;
-  height: 30px;
-  margin: auto;
-  position: absolute;
-  right: 30px; //span(1);
-  top: 18px;
-  width: 30px;
-  z-index: 2;
-
-  @include bp-min(medium) {
-    top: 1rem;
-  }
+  font-size: 22px;
+  font-weight: var(--font-weight-bold);
+  line-height: 140%;
+  letter-spacing: 1.8px;
+  margin-left: 6px;
+  text-transform: uppercase;
 }
 
 .nav-trigger span.icon {
@@ -223,6 +373,7 @@ label[for="nav-trigger"] {
   }
 }
 
+// Controls for when menu open
 .nav-trigger__icon--expand {
   opacity: 1;
   transform: rotate(0) scale(1);
@@ -253,6 +404,7 @@ label[for="nav-trigger"] {
       opacity: 1;
       overflow-y: auto;
       transform: translate3d(0, 0, 0);
+      transition-delay: 0.12ms;
     }
   }
 }
@@ -264,6 +416,7 @@ label[for="nav-trigger"] {
       opacity: 1;
       overflow-y: auto;
       transform: translate3d(0, 0, 0);
+      transition-delay: 0.12ms;
     }
   }
 }

@@ -24,14 +24,14 @@
     // Add negative index when mobile menu is open on small desktop
     function hideIndex(items) {
       for (let i = 0; i < items.length; i++) {
-        var menuitem = items[i];
+        let menuitem = items[i];
         menuitem.tabIndex = -1;
       }
     }
     // Remove added tabindex
     function displayIndex(items) {
       for (let i = 0; i < items.length; i++) {
-        var menuitem = items[i];
+        let menuitem = items[i];
         menuitem.removeAttribute("tabindex");
       }
     }
@@ -39,7 +39,7 @@
     // Display or hide coppied utility menu items
     function toggleUtility(items, display) {
       for (let i = 0; i < items.length; i++) {
-        var menulink = $(items[i]).find(".menu__link");
+        let menulink = $(items[i]).find(".menu__link");
         if (display) {
           $(menulink).attr("data-visible", true);
         } else {
@@ -51,7 +51,7 @@
     // Mobile Navigation trigger function
     function mobileMenu(event, key) {
       // Store window width
-      var windowSize = $(window).width();
+      let windowSize = $(window).width();
 
       // Open Menu
       if ($(mobileNavButton).attr("aria-expanded") === "false") {
@@ -127,8 +127,8 @@
 
     // Attach delayed listener for screen resize to adjust menu strucutres
     window.addEventListener("resize", function () {
-      var delayReload;
-      var resizedWindow = $(window).width();
+      let delayReload;
+      let resizedWindow = $(window).width();
       clearTimeout(delayReload);
       delayReload = setTimeout(reportWindowSize(resizedWindow), 200);
     });
@@ -144,10 +144,10 @@
         this.firstMenuitem = false;
         this.lastMenuitem = false;
 
-        var nodes = domNode.querySelectorAll(".menu__link");
+        let nodes = domNode.querySelectorAll(".menu__link");
 
-        for (var i = 0; i < nodes.length; i++) {
-          var menuitem = nodes[i];
+        for (let i = 0; i < nodes.length; i++) {
+          let menuitem = nodes[i];
 
           this.menuitemNodes.push(menuitem);
 
@@ -180,7 +180,7 @@
       }
 
       setFocusToPreviousMenuitem(currentMenuitem) {
-        var newMenuitem, index;
+        let newMenuitem, index;
 
         if (currentMenuitem === this.firstMenuitem) {
           newMenuitem = this.lastMenuitem;
@@ -195,7 +195,7 @@
       }
 
       setFocusToNextMenuitem(currentMenuitem) {
-        var newMenuitem, index;
+        let newMenuitem, index;
 
         if (currentMenuitem === this.lastMenuitem) {
           newMenuitem = this.firstMenuitem;
@@ -209,7 +209,7 @@
       }
 
       onMenuitemKeydown(event) {
-        var target = event.currentTarget,
+        let target = event.currentTarget,
           key = event.key;
 
         if (event.ctrlKey || event.altKey || event.metaKey) {
@@ -220,12 +220,12 @@
           case "Left":
           case "ArrowLeft":
             // Find the prevous element and set it as the focus
-            var prev = $(target).parent().prev();
+            let prev = $(target).parent().prev();
             if ($(prev).find(".menu__link").length > 0) {
               //Move to previous element
               $(prev).find(".menu__link").focus();
             } else {
-              var prev = $(
+              let prev = $(
                 "ul.menu--main[data-depth='0'] > .menu__item > .menu__link"
               );
               // Navigate to last list element
@@ -236,12 +236,12 @@
           case "Right":
           case "ArrowRight":
             // Find the next element and set it as the focus
-            var next = $(target).parent().next();
+            let next = $(target).parent().next();
             if ($(next).find(".menu__link").length > 0) {
               //Move to next element
               $(next).find(".menu__link").focus();
             } else {
-              var next = $(
+              let next = $(
                 "ul.menu--main[data-depth='0'] > .menu__item > .menu__link"
               );
               // Wrap to first element in list
@@ -297,10 +297,10 @@
         this.firstMenuitem = false;
         this.lastMenuitem = false;
 
-        var nodes = domNode.querySelectorAll("a.menu__link");
+        let nodes = domNode.querySelectorAll("a.menu__link");
 
-        for (var i = 0; i < nodes.length; i++) {
-          var menuitem = nodes[i];
+        for (let i = 0; i < nodes.length; i++) {
+          let menuitem = nodes[i];
           this.menuitemNodes.push(menuitem);
 
           menuitem.addEventListener(
@@ -327,6 +327,10 @@
       // Popup menu methods
       openPopup() {
         this.menuNode.classList.add("open");
+        $(this.menuNode).slideDown();
+        // Attach open to parent menu for styles
+        const parentMenu = $(this.menuNode).first().parent()[0];
+        parentMenu.classList.add("expanded");
         this.buttonNode.setAttribute("aria-expanded", "true");
       }
 
@@ -334,6 +338,10 @@
         if (this.isOpen()) {
           this.buttonNode.setAttribute("aria-expanded", "false");
           this.menuNode.classList.remove("open");
+          $(this.menuNode).slideUp();
+          // Attach open to parent menu for styles
+          const parentMenu = $(this.menuNode).first().parent()[0];
+          parentMenu.classList.remove("expanded");
         }
       }
 
@@ -351,7 +359,7 @@
       }
 
       onButtonKeydown(event) {
-        var key = event.key,
+        let key = event.key,
           flag = false;
         switch (key) {
           case " ":
@@ -397,13 +405,13 @@
           case "Left":
           case "ArrowLeft":
             // Find prevous element and set it as the focus
-            var prev = $(this.buttonNode).parent().prev();
+            let prev = $(this.buttonNode).parent().prev();
             if ($(prev).find(".menu__link").length > 0) {
               //Move to previous element
               $(prev).find(".menu__link").focus();
             } else {
               // We need to account for hidden menu items that could be in the list
-              var prev = $(
+              let prev = $(
                 "ul.menu--main[data-depth='0'] > .menu__item:not(:hidden) > .menu__link"
               );
               // Navigate to last list element
@@ -414,14 +422,14 @@
           case "Right":
           case "ArrowRight":
             // Find next element and set it as the focus
-            var next = $(this.buttonNode).parent().next();
+            let next = $(this.buttonNode).parent().next();
             if (
               $(next).find(".menu__link:not([data-visible=false])").length > 0
             ) {
               //Move to next element
               $(next).find(".menu__link").focus();
             } else {
-              var next = $(
+              let next = $(
                 "ul.menu--main[data-depth='0'] > .menu__item > .menu__link"
               );
               // Wrap to first element in list
@@ -457,7 +465,7 @@
       }
 
       onMenuitemKeydown(event) {
-        var target = event.currentTarget,
+        let target = event.currentTarget,
           key = event.key,
           flag = false;
 
@@ -493,7 +501,7 @@
             }
 
             // Find the top level button prevous element and set it as the focus
-            var prev = $(target)
+            let prev = $(target)
               .closest(".menu__item.menu__item--expanded")
               .prev();
             if (
@@ -502,7 +510,7 @@
               //Move to previous element
               $(prev).find(".menu__link:not([data-visible=false])").focus();
             } else {
-              var prev = $(
+              let prev = $(
                 "ul.menu--main[data-depth='0'] > .menu__item > .menu__link:not([data-visible=false])"
               );
               // Navigate to last list element
@@ -517,7 +525,7 @@
               this.closePopup();
             }
             // Find the top level button next element and set it as the focus
-            var next = $(target)
+            let next = $(target)
               .closest(".menu__item.menu__item--expanded")
               .next();
 
@@ -527,7 +535,7 @@
               //Move to next element
               $(next).find(".menu__link:not([data-visible=false])").focus();
             } else {
-              var next = $(
+              let next = $(
                 "ul.menu--main[data-depth='0'] > .menu__item > .menu__link:not([data-visible=false])"
               );
               // Wrap to first element in list
@@ -550,7 +558,7 @@
           case "Tab":
             // Did the user shift + tab?
             if (event.shiftKey) {
-              var first = $(target).parent().is(":first-child");
+              let first = $(target).parent().is(":first-child");
               if (this.isOpen() && !first) {
                 // Allow event to pass
               } else {
@@ -560,7 +568,7 @@
             }
 
             // Check if this is the last item in a list
-            var last = $(target).parent().is(":last-child");
+            let last = $(target).parent().is(":last-child");
             if (this.isOpen() && !last) {
               // Allow event to pass
             } else {
@@ -628,7 +636,7 @@
     \*------------------------------------*/
 
     function initalizeMenus() {
-      var windowSize = $(window).width();
+      let windowSize = $(window).width();
 
       if (windowSize >= 1200) {
         // Hide cloned menu on largest screens
@@ -647,6 +655,8 @@
       for (let i = 0; i < mainMenuItems.length; i++) {
         if (mainMenuItems[i].querySelector("button")) {
           new MenuButtons(mainMenuItems[i]);
+          // Initialize submenus as hidden
+          $(mainMenuItems[i]).find("ul").attr("style", "display:none");
         } else {
           new MenuLinks(mainMenuItems[i]);
         }
