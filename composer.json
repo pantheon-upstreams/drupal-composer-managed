@@ -96,7 +96,8 @@
         "drupal/core-dev": "^9",
         "drupal/devel": "^5.1",
         "drupal/devel_entity_updates": "^4.1",
-        "weitzman/drupal-test-traits": "^2.0"
+        "weitzman/drupal-test-traits": "^2.0",
+        "drupal/upgrade_status": "^3.18"
     },
     "conflict": {
             "drupal/drupal": "*"
