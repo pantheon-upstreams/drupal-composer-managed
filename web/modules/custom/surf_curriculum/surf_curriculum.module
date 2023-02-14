@@ -42,9 +42,9 @@ function surf_curriculum_entity_bundle_info_alter(array &$bundles): void {
  */
 function surf_curriculum_entity_extra_field_info() {
   $extra = [];
-  $extra['node']['curriculum_module']['display']['webform_link'] = [
-    'label' => t('Webform link'),
-    'description' => t('Link to webform with prepopulated node'),
+  $extra['node']['curriculum_module']['display']['reservation_links'] = [
+    'label' => t('Link to reserve or view on dashboard'),
+    'description' => t('Link to webform with prepopulated nid or view reservation on dashboard.'),
     'visible' => TRUE,
     'weight' => 25,
   ];
@@ -56,7 +56,7 @@ function surf_curriculum_entity_extra_field_info() {
  * Implements hook_ENTITY_TYPE_view().
  */
 function surf_curriculum_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
-  if ($display->getComponent('webform_link') && $entity->bundle() === 'curriculum_module') {
-    $build['webform_link'] = $entity->getWebformLink()->toRenderable();
+  if ($display->getComponent('reservation_links') && $entity->bundle() === 'curriculum_module') {
+    $build['reservation_links'] = $entity->getUserReservationLinks(\Drupal::currentUser());
   }
 }
