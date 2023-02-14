@@ -5,6 +5,8 @@ dependencies:
   module:
     - menu_ui
     - scheduler
+    - surf_core
+    - surf_dashboard
 third_party_settings:
   menu_ui:
     available_menus: {  }
@@ -22,6 +24,13 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
+  surf_core:
+    webform_link:
+      text: 'Register for this event'
+  surf_dashboard:
+    request_link:
+      text_dashboard: 'View on my dashboard'
+      text_webform: 'Register for this event'
 name: Event
 type: event
 description: 'Use the <strong>Event</strong> type to add an event to the calendar.'

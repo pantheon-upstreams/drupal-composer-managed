@@ -47,4 +47,5 @@ hidden:
   field_resources: true
   field_time_required: true
   langcode: true
+  reservation_links: true
   search_api_excerpt: true

@@ -5,6 +5,9 @@
  * Primary module hooks for SURF Dashboard module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\NodeType;
+
 /**
  * Implements hook_preprocess_HOOK().
  */
@@ -14,4 +17,52 @@ function surf_dashboard_preprocess_node(&$variables) {
   if ($user = \Drupal::routeMatch()->getParameter('user')) {
     $variables['dashboard_url'] = '/user/' . $user->id() . '/dashboard/curriculum-units/' . $node->id();
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function surf_dashboard_form_node_type_form_alter(&$form, FormStateInterface $form_state) {
+  // TODO: This is an interdependency, split this up and move this to surf_registration and surf_curriculum.
+  /** @var \Drupal\node\Entity\NodeType $node_type */
+  $entity = $form_state->getFormObject()->getEntity();
+  if (!in_array($entity->id(), ['curriculum_module', 'event'])) {
+    return;
+  }
+  if (!$node_type = NodeType::load($entity->id())) {
+    return;
+  }
+
+  $form['request_link'] = [
+    '#type' => 'details',
+    '#title' => t('Request link'),
+    '#description' => t('The user will see a link to request/reserve this node with the node id pre-populated. If the user already has an active request they will see a link to view on their dashboard.'),
+    '#group' => 'additional_settings',
+    '#weight' => 35,
+    '#tree' => TRUE,
+  ];
+
+  $request_link_settings = $node_type->getThirdPartySetting('surf_dashboard', 'request_link');
+  $form['request_link']['text_webform'] = [
+    '#type' => 'textfield',
+    '#title' => t('Webform link text'),
+    '#default_value' => $request_link_settings['text_webform'] ?? '',
+  ];
+
+  $form['request_link']['text_dashboard'] = [
+    '#type' => 'textfield',
+    '#title' => t('Dashboard link text'),
+    '#default_value' => $request_link_settings['text_dashboard'] ?? '',
+  ];
+
+  $form['actions']['submit']['#submit'][] = 'surf_dashboard_form_node_type_form_submit';
+}
+
+function surf_dashboard_form_node_type_form_submit(&$form, FormStateInterface $form_state) {
+  $bundle = $form['type']['#default_value'];
+  $node_type = NodeType::load($bundle);
+  $third_party_data = $form_state->getValue('request_link');
+  ksort($third_party_data);
+  $node_type->setThirdPartySetting('surf_dashboard', 'request_link', $third_party_data);
+  $node_type->save();
 }

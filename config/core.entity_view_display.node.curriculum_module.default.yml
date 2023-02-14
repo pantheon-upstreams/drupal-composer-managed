@@ -108,6 +108,11 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
+  reservation_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
 hidden:
   langcode: true
   search_api_excerpt: true

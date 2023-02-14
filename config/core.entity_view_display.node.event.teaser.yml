@@ -44,6 +44,11 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  registration_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
 hidden:
   field_capacity: true
   field_dates: true

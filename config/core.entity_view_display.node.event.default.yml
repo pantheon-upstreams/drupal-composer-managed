@@ -157,6 +157,11 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  registration_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
 hidden:
   field_location_address: true
   field_overview: true
