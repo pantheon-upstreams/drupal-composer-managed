@@ -7,6 +7,20 @@ function surf_curriculum_download_request_presave(\Drupal\Core\Entity\EntityInte
   if ($entity->bundle() !== 'curriculum_module') {
     return;
   }
+  if ($entity->field_dates->isEmpty() && !$entity->get('field_webform_submission_id')->isEmpty()) {
+    $submission = \Drupal\webform\Entity\WebformSubmission::load($entity->field_webform_submission_id->value);
+    $data = $submission->getData();
+    if ($entity->field_dates->isEmpty()) {
+      $value = [];
+      if (!empty($data['date_start'])) {
+        $value['value'] = $data['date_start'];
+      }
+      if (!empty($data['date_end'])) {
+        $value['end_value'] = $data['date_end'];
+      }
+      $entity->field_dates->setValue($value);
+    }
+  }
   if ($entity->get('field_ref_curriculum_module')->target_id && !$entity->get('request_items')->target_id) {
     $node = $entity->get('field_ref_curriculum_module')->entity;
     $request_item = $node->createDownloadRequestItem();
