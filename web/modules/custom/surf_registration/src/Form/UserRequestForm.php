@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core\Form;
+namespace Drupal\surf_registration\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
@@ -27,12 +27,12 @@ class UserRequestForm extends ContentEntityForm {
     switch ($result) {
       case SAVED_NEW:
         $this->messenger()->addStatus($this->t('New user request %label has been created.', $message_arguments));
-        $this->logger('surf_core')->notice('Created new user request %label', $logger_arguments);
+        $this->logger('surf_registration')->notice('Created new user request %label', $logger_arguments);
         break;
 
       case SAVED_UPDATED:
         $this->messenger()->addStatus($this->t('The user request %label has been updated.', $message_arguments));
-        $this->logger('surf_core')->notice('Updated user request %label.', $logger_arguments);
+        $this->logger('surf_registration')->notice('Updated user request %label.', $logger_arguments);
         break;
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core;
+namespace Drupal\surf_registration;
 
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityInterface;
@@ -78,7 +78,7 @@ class UserRequestListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /** @var \Drupal\surf_core\UserRequestInterface $entity */
+    /** @var \Drupal\surf_registration\UserRequestInterface $entity */
     $row['id'] = $entity->toLink();
     $row['uid']['data'] = [
       '#theme' => 'username',

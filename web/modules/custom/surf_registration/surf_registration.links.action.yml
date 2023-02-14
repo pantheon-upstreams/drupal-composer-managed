@@ -4,7 +4,7 @@ user_request.type_add:
   appears_on:
     - entity.user_request_type.collection
 
-surf_core.user_request.add:
+surf_registration.user_request.add:
   title: 'Add user request'
   route_name: entity.user_request.add_page
   appears_on:

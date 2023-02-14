@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function surf_registration_theme() {
+  return [
+    'user_request' => [
+      'render element' => 'elements',
+      'file' => 'user_request.theme.inc'
+    ],
+  ];
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function surf_registration_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_reassign':
+      // Anonymize user requests.
+      $storage = \Drupal::entityTypeManager()->getStorage('user_request');
+      $user_request_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->execute();
+      foreach ($storage->loadMultiple($user_request_ids) as $user_request) {
+        $user_request->setOwnerId(0);
+        $user_request->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function surf_registration_user_predelete(UserInterface $account) {
+  // Delete user requests.
+  $storage = \Drupal::entityTypeManager()->getStorage('user_request');
+  $user_request_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->execute();
+  $user_requests = $storage->loadMultiple($user_request_ids);
+  $storage->delete($user_requests);
+}

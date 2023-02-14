@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core\Entity;
+namespace Drupal\surf_registration\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
@@ -8,7 +8,7 @@ use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\surf_core\EntityWorkflowStateTrait;
-use Drupal\surf_core\UserRequestInterface;
+use Drupal\surf_registration\UserRequestInterface;
 use Drupal\user\EntityOwnerTrait;
 
 /**
@@ -31,17 +31,17 @@ use Drupal\user\EntityOwnerTrait;
  *   field_ui_base_route = "entity.user_request_type.edit_form",
  *   entity_keys = {
  *     "id" = "id",
- *     "bundle" = "bundle",
+ *     "bundle" = "type",
  *     "label" = "id",
  *     "uuid" = "uuid",
  *     "owner" = "uid",
  *   },
  *   handlers = {
- *     "list_builder" = "Drupal\surf_core\UserRequestListBuilder",
- *     "views_data" = "Drupal\surf_core\EntityViewsData",
+ *     "list_builder" = "Drupal\surf_registration\UserRequestListBuilder",
+ *     "views_data" = "Drupal\surf_core\Entity\EntityViewsData",
  *     "form" = {
- *       "add" = "Drupal\surf_core\Form\UserRequestForm",
- *       "edit" = "Drupal\surf_core\Form\UserRequestForm",
+ *       "add" = "Drupal\surf_registration\Form\UserRequestForm",
+ *       "edit" = "Drupal\surf_registration\Form\UserRequestForm",
  *       "delete" = "Drupal\Core\Entity\ContentEntityDeleteForm",
  *       "delete-multiple-confirm" = "Drupal\Core\Entity\Form\DeleteMultipleForm"
  *     },

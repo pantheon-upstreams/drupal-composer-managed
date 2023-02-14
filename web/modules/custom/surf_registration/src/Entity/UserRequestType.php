@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core\Entity;
+namespace Drupal\surf_registration\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 
@@ -19,11 +19,11 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   ),
  *   handlers = {
  *     "form" = {
- *       "add" = "Drupal\surf_core\Form\UserRequestTypeForm",
- *       "edit" = "Drupal\surf_core\Form\UserRequestTypeForm",
+ *       "add" = "Drupal\surf_registration\Form\UserRequestTypeForm",
+ *       "edit" = "Drupal\surf_registration\Form\UserRequestTypeForm",
  *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
  *     },
- *     "list_builder" = "Drupal\surf_core\UserRequestTypeListBuilder",
+ *     "list_builder" = "Drupal\surf_registration\UserRequestTypeListBuilder",
  *     "route_provider" = {
  *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
  *     }

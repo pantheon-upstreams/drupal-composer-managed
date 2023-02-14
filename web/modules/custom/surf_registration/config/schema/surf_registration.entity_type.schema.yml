@@ -1,4 +1,4 @@
-surf_core.user_request_type.*:
+surf_registration.user_request_type.*:
   type: config_entity
   label: 'User Request type config'
   mapping:

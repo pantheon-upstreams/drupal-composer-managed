@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core;
+namespace Drupal\surf_registration;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;

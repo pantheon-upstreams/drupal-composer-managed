@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core\Form;
+namespace Drupal\surf_registration\Form;
 
 use Drupal\Core\Entity\BundleEntityFormBase;
 use Drupal\Core\Entity\EntityTypeInterface;
@@ -36,7 +36,7 @@ class UserRequestTypeForm extends BundleEntityFormBase {
       '#default_value' => $entity_type->id(),
       '#maxlength' => EntityTypeInterface::BUNDLE_MAX_LENGTH,
       '#machine_name' => [
-        'exists' => ['Drupal\surf_core\Entity\UserRequestType', 'load'],
+        'exists' => ['Drupal\surf_registration\Entity\UserRequestType', 'load'],
         'source' => ['label'],
       ],
       '#description' => $this->t('A unique machine-readable name for this user request type. It must only contain lowercase letters, numbers, and underscores.'),

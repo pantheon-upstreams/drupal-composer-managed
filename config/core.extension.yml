@@ -116,6 +116,7 @@ module:
   surf_curriculum: 0
   surf_dashboard: 0
   surf_migrate: 0
+  surf_registration: 0
   system: 0
   taxonomy: 0
   telephone: 0

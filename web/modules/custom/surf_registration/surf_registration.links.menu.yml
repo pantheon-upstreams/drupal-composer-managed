@@ -9,3 +9,4 @@ entity.user_request.collection_view:
   route_name: view.user_requests.admin_content
   description: 'Manage user requests'
   parent: system.admin_content
+  weight: 20

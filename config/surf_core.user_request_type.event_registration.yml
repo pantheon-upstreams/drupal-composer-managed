@@ -1,7 +1,0 @@
-uuid: d6808049-46d6-402b-ab8e-af226a0ddc51
-langcode: en
-status: true
-dependencies: {  }
-id: event_registration
-label: 'Event registration'
-workflow_id: user_request_default

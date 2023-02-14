@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core;
+namespace Drupal\surf_core\Entity;
 
 use Drupal\entity\EntityViewsData as ContribEntityViewsData;
 

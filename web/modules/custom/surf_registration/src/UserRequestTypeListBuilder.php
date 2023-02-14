@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\surf_core;
+namespace Drupal\surf_registration;
 
 use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
 use Drupal\Core\Entity\EntityInterface;
@@ -9,7 +9,7 @@ use Drupal\Core\Url;
 /**
  * Defines a class to build a listing of user request type entities.
  *
- * @see \Drupal\surf_core\Entity\UserRequestType
+ * @see \Drupal\surf_registration\Entity\UserRequestType
  */
 class UserRequestTypeListBuilder extends ConfigEntityListBuilder {
 
