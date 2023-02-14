@@ -1,0 +1,33 @@
+surf_dashboard.curriculum_units:
+  title: My curriculum units
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_curriculum_units
+    variant_id: 'layout_builder-0'
+surf_dashboard.curriculum_request:
+  title: Request curriculum
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_curriculum_request
+    variant_id: 'layout_builder-0'
+surf_dashboard.visits:
+  title: 'My field trips & presentations'
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_visits
+    variant_id: 'layout_builder-0'
+surf_dashboard.events:
+  title: My events
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_events
+    variant_id: 'layout_builder-0'
+surf_dashboard.my_account:
+  title: My account
+  menu_name: dashboard
+  route_name: user.page
+  weight: 20
