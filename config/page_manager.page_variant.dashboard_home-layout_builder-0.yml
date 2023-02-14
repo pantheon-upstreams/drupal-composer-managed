@@ -1,0 +1,54 @@
+uuid: 3c1924e2-5e48-4704-8520-21dfe7607e96
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_home
+    - system.menu.dashboard
+  module:
+    - layout_discovery
+    - menu_block
+id: dashboard_home-layout_builder-0
+label: 'Layout builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 09df4b40-380d-4b90-9250-17d86ce83dc5
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        7648f517-a4e5-44f8-8b1c-8f61b145c7fa:
+          uuid: 7648f517-a4e5-44f8-8b1c-8f61b145c7fa
+          region: content
+          configuration:
+            id: 'menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: menu_block
+            context_mapping: {  }
+            follow: false
+            follow_parent: child
+            label_link: false
+            label_type: block
+            level: 1
+            depth: 0
+            expand_all_items: false
+            parent: 'dashboard:'
+            suggestion: dashboard
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+  title_type: manual
+  manual_title: 'My Dashboard'
+  title_from_block: ''
+page: dashboard_home
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

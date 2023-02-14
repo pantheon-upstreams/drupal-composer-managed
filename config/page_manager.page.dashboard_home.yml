@@ -1,0 +1,17 @@
+uuid: def3f23c-7c94-4494-b23d-e21f587a6485
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_home
+label: 'My Dashboard'
+description: ''
+use_admin_theme: false
+path: '/user/{user}/dashboard'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    label: 'Dashboard user'
+    type: 'entity:user'
+    optional: false
