@@ -12,7 +12,6 @@ dependencies:
     - node.type.page
   module:
     - block
-    - comment
     - contact
     - contextual
     - filter
@@ -28,7 +27,6 @@ weight: -4
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access comments'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
@@ -37,7 +35,6 @@ permissions:
   - 'access user contact forms'
   - 'access user profiles'
   - 'administer blocks'
-  - 'administer comments'
   - 'administer contact forms'
   - 'administer menu'
   - 'administer nodes'
@@ -52,9 +49,7 @@ permissions:
   - 'edit any article content'
   - 'edit any page content'
   - 'edit own article content'
-  - 'edit own comments'
   - 'edit own page content'
-  - 'post comments'
   - 'schedule publishing of nodes'
   - 'use text format ds_code'
   - 'use text format editor_s_set'

@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
   module:
     - cl_server
-    - comment
     - contact
     - filter
     - media
@@ -18,7 +17,6 @@ label: 'anonymous user'
 weight: -10
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
   - 'access user contact forms'

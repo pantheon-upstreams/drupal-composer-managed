@@ -8,7 +8,6 @@ dependencies:
     - filter.format.full_html
     - node.type.event
   module:
-    - comment
     - contact
     - contextual
     - filter
@@ -22,7 +21,6 @@ weight: -2
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access comments'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
@@ -34,9 +32,7 @@ permissions:
   - 'create event content'
   - 'delete own event content'
   - 'edit any event content'
-  - 'edit own comments'
   - 'edit own event content'
-  - 'post comments'
   - 'schedule publishing of nodes'
   - 'use text format basic_html'
   - 'use text format editor_s_set'

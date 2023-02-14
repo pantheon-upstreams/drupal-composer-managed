@@ -7,7 +7,6 @@ dependencies:
     - node.type.article
     - node.type.job_posting
   module:
-    - comment
     - contact
     - contextual
     - filter
@@ -39,9 +38,7 @@ permissions:
   - 'edit any article content'
   - 'edit any job_posting content'
   - 'edit own article content'
-  - 'edit own comments'
   - 'edit own job_posting content'
-  - 'post comments'
   - 'revert job_posting revisions'
   - 'schedule publishing of nodes'
   - 'use text format editor_s_set'

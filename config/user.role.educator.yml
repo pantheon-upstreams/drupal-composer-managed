@@ -10,7 +10,6 @@ dependencies:
     - node.type.event
     - node.type.page
   module:
-    - comment
     - contact
     - contextual
     - filter
@@ -37,10 +36,8 @@ permissions:
   - 'delete any event content'
   - 'delete own event content'
   - 'edit any event content'
-  - 'edit own comments'
   - 'edit own event content'
   - 'edit own page content'
-  - 'post comments'
   - 'schedule publishing of nodes'
   - 'use text format editor_s_set'
   - 'use text format filtered_html'
