@@ -1,0 +1,73 @@
+uuid: 2714efc8-84e4-4056-9558-eaa267e2b7da
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_events
+    - system.menu.dashboard
+  module:
+    - ctools
+    - layout_discovery
+    - menu_block
+    - surf_registration
+id: dashboard_events-layout_builder-1
+label: Details
+weight: -10
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: eeae4dd8-cbf0-47f8-9e15-61f1d315fe1a
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Main content'
+        context_mapping: {  }
+      components:
+        a2fbd6b9-151d-40e1-8ffc-cd616bc1cc95:
+          uuid: a2fbd6b9-151d-40e1-8ffc-cd616bc1cc95
+          region: content
+          configuration:
+            id: 'menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: menu_block
+            context_mapping: {  }
+            follow: false
+            follow_parent: child
+            label_link: false
+            label_type: block
+            level: 1
+            depth: 0
+            expand_all_items: false
+            parent: 'dashboard:'
+            suggestion: dashboard
+          weight: 1
+          additional: {  }
+        914b4ec9-8ba2-4448-aeef-2dd8fc54b05a:
+          uuid: 914b4ec9-8ba2-4448-aeef-2dd8fc54b05a
+          region: content
+          configuration:
+            id: 'entity_view:user_request'
+            label: 'Entity view (User Request)'
+            label_display: '0'
+            provider: ctools
+            view_mode: default
+            context_mapping:
+              entity: user_request
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: dashboard_events
+selection_criteria:
+  -
+    id: 'entity_bundle:user_request'
+    negate: false
+    context_mapping:
+      user_request: user_request
+    bundles:
+      event_registration: event_registration
+selection_logic: and
+static_context: {  }
