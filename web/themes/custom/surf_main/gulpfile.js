@@ -7,7 +7,6 @@
  * - 05 - Exports
  */
 
-
 /*------------------------------------*\
   01 - Requirements
   Although Gulp inherently does not require any other libraries in order to
@@ -16,20 +15,19 @@
 \*------------------------------------*/
 
 const browserSync = require("browser-sync").create();
-const cssnano = require('cssnano');
-const gulp = require('gulp');
-const ignore = require('gulp-ignore');
-const named = require('vinyl-named');
-const path = require('path');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass')(require('sass'));
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
-const webpack = require('webpack-stream');
-const webpackCompiler = require('webpack');
-const webpackConfig = require('./webpack.config');
+const gulp = require("gulp");
+const ignore = require("gulp-ignore");
+const named = require("vinyl-named");
+const path = require("path");
+const plumber = require("gulp-plumber");
+const postcss = require("gulp-postcss");
+const rename = require("gulp-rename");
+const sass = require("gulp-sass")(require("sass"));
+const sourcemaps = require("gulp-sourcemaps");
+const uglify = require("gulp-uglify");
+const webpack = require("webpack-stream");
+const webpackCompiler = require("webpack");
+const webpackConfig = require("./webpack.config");
 
 /*------------------------------------*\
   02 - Paths
@@ -57,12 +55,9 @@ const paths = {
     },
     scripts: {
       src: `./templates/components/**/src/*.js`,
-    }
-  }
+    },
+  },
 };
-
-
-
 
 /*------------------------------------*\
   03 -  Styles
@@ -74,55 +69,57 @@ const paths = {
   that depend on them get recompiled
 \*------------------------------------*/
 
-gulp.task('styles', function () {
-  return gulp.src(paths.styles.src)
+gulp.task("styles", function () {
+  return gulp
+    .src(paths.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({ includePaths: ["./libraries/partials"] }))
     .on("error", sass.logError)
     .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 });
 
-gulp.task('stylesBuild', function () {
-  return gulp.src(paths.styles.src)
-    .pipe(sass())
+gulp.task("stylesBuild", function () {
+  return gulp
+    .src(paths.styles.src)
+    .pipe(sass({ includePaths: ["./libraries/partials"] }))
     .on("error", sass.logError)
-    .pipe(postcss([
-      cssnano(), // Minifies all CSS
-    ]))
-    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(postcss([]))
+    .pipe(gulp.dest(paths.styles.dest));
 });
 
-gulp.task('componentStyles', function () {
-  return gulp.src(paths.component.styles.src, { base: './' })
+gulp.task("componentStyles", function () {
+  return gulp
+    .src(paths.component.styles.src, { base: "./" })
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass({ includePaths: ["./libraries/partials"] }))
     .on("error", sass.logError)
     .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
     .pipe(sourcemaps.write())
-    .pipe(rename((path) => {
-      path.dirname = path.dirname.replace('src', 'css');
-    }))
-    .pipe(gulp.dest('./'))
-    .pipe(browserSync.stream())
+    .pipe(
+      rename((path) => {
+        path.dirname = path.dirname.replace("src", "css");
+      })
+    )
+    .pipe(gulp.dest("./"))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('componentStylesBuild', function () {
-  return gulp.src(paths.component.styles.src, { base: './' })
-    .pipe(sass())
+gulp.task("componentStylesBuild", function () {
+  return gulp
+    .src(paths.component.styles.src, { base: "./" })
+    .pipe(sass({ includePaths: ["./libraries/partials"] }))
     .on("error", sass.logError)
-    .pipe(postcss([
-      cssnano(), // Minifies all CSS
-    ]))
-    .pipe(rename((path) => {
-      path.dirname = path.dirname.replace('src', 'css');
-    }))
-    .pipe(gulp.dest('./'))
+    .pipe(postcss())
+    .pipe(
+      rename((path) => {
+        path.dirname = path.dirname.replace("src", "css");
+      })
+    )
+    .pipe(gulp.dest("./"));
 });
-
-
 
 /*------------------------------------*\
   04 - Scripts
@@ -136,98 +133,114 @@ gulp.task('componentStylesBuild', function () {
 \*------------------------------------*/
 
 const scriptsTask = function (cb) {
-  gulp.src(paths.scripts.src, {
-    base: './',
-    since: gulp.lastRun(scriptsTask),
-  })
+  gulp
+    .src(paths.scripts.src, {
+      base: "./",
+      since: gulp.lastRun(scriptsTask),
+    })
     // This is necessary to ensure Webpack treats each file as a separate entry point,
     // rather than bundling them all together in main.js.
-    .pipe(named((file) => {
-      return path.relative('./', file.path).slice(0, -3);
-    }))
+    .pipe(
+      named((file) => {
+        return path.relative("./", file.path).slice(0, -3);
+      })
+    )
     .pipe(plumber())
     .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(rename((path) => {
-      // @TODO: Update this and the library definitions so the
-      // folder is not named after the file.
-      path.dirname = path.basename
-        // We have to strip the .js extension from the basename when .map files are passed through.
-        .replace('.js', '');
-    }))
+    .pipe(
+      rename((path) => {
+        // @TODO: Update this and the library definitions so the
+        // folder is not named after the file.
+        path.dirname = path.basename
+          // We have to strip the .js extension from the basename when .map files are passed through.
+          .replace(".js", "");
+      })
+    )
     .pipe(gulp.dest(paths.scripts.dest));
 
   cb();
-}
-gulp.task('scripts', scriptsTask);
+};
+gulp.task("scripts", scriptsTask);
 
 const scriptsBuildTask = function (cb) {
-  gulp.src(paths.scripts.src, {
-    base: './',
-    since: gulp.lastRun(scriptsBuildTask),
-  })
+  gulp
+    .src(paths.scripts.src, {
+      base: "./",
+      since: gulp.lastRun(scriptsBuildTask),
+    })
     // This is necessary to ensure Webpack treats each file as a separate entry point,
     // rather than bundling them all together in main.js.
-    .pipe(named((file) => {
-      return path.relative('./', file.path).slice(0, -3);
-    }))
+    .pipe(
+      named((file) => {
+        return path.relative("./", file.path).slice(0, -3);
+      })
+    )
     .pipe(plumber())
     .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(ignore.exclude([ "**/*.map" ]))
+    .pipe(ignore.exclude(["**/*.map"]))
     .pipe(uglify())
-    .pipe(rename((path) => {
-      // @TODO: Update this and the library definitions so the
-      // folder is not named after the file.
-      path.dirname = path.basename;
-    }))
-    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(
+      rename((path) => {
+        // @TODO: Update this and the library definitions so the
+        // folder is not named after the file.
+        path.dirname = path.basename;
+      })
+    )
+    .pipe(gulp.dest(paths.scripts.dest));
 
   cb();
-}
-gulp.task('scriptsBuild', scriptsBuildTask);
+};
+gulp.task("scriptsBuild", scriptsBuildTask);
 
-const componentScriptsTask = function(cb) {
-  gulp.src(paths.component.scripts.src, {
-    base: './',
-    since: gulp.lastRun(componentScriptsTask)
-  })
-    .pipe(named((file) => {
-      return path.relative('./', file.path).slice(0, -3);
-    }))
+const componentScriptsTask = function (cb) {
+  gulp
+    .src(paths.component.scripts.src, {
+      base: "./",
+      since: gulp.lastRun(componentScriptsTask),
+    })
+    .pipe(
+      named((file) => {
+        return path.relative("./", file.path).slice(0, -3);
+      })
+    )
     .pipe(plumber())
     .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(rename((path) => {
-
-      path.dirname = path.dirname.replace('src', 'js');
-    }))
-    .pipe(gulp.dest('./'))
+    .pipe(
+      rename((path) => {
+        path.dirname = path.dirname.replace("src", "js");
+      })
+    )
+    .pipe(gulp.dest("./"));
 
   cb();
-}
-gulp.task('componentScripts', componentScriptsTask);
+};
+gulp.task("componentScripts", componentScriptsTask);
 
-const componenetSriptsBuildTask = function(cb) {
-  gulp.src(paths.component.scripts.src, {
-    base: './',
-    since: gulp.lastRun(componenetSriptsBuildTask)
-  })
-    .pipe(named((file) => {
-      return path.relative('./', file.path).slice(0, -3);
-    }))
+const componenetSriptsBuildTask = function (cb) {
+  gulp
+    .src(paths.component.scripts.src, {
+      base: "./",
+      since: gulp.lastRun(componenetSriptsBuildTask),
+    })
+    .pipe(
+      named((file) => {
+        return path.relative("./", file.path).slice(0, -3);
+      })
+    )
     .pipe(plumber())
     .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(ignore.exclude([ "**/*.map" ]))
+    .pipe(ignore.exclude(["**/*.map"]))
     .pipe(uglify())
-    .pipe(rename((path) => {
-      path.dirname = path.dirname.replace('src', 'js');
-    }))
-    .pipe(gulp.dest('./'))
+    .pipe(
+      rename((path) => {
+        path.dirname = path.dirname.replace("src", "js");
+      })
+    )
+    .pipe(gulp.dest("./"));
 
   cb();
-}
-gulp.task('componentScriptsBuild', componenetSriptsBuildTask);
-
-
-
+};
+gulp.task("componentScriptsBuild", componenetSriptsBuildTask);
 
 /*------------------------------------*\
   05 - Exports
@@ -240,23 +253,23 @@ gulp.task('componentScriptsBuild', componenetSriptsBuildTask);
 \*------------------------------------*/
 
 exports.watch = () => {
-  console.log('You are currently in development watch mode.');
+  console.log("You are currently in development watch mode.");
   browserSync.init({
-    proxy: process.env.BS_PROXY || 'http://surf.lndo.site',
-    browser: process.env.BS_BROWSER || 'google chrome',
+    proxy: process.env.BS_PROXY || "http://surf.lndo.site",
+    browser: process.env.BS_BROWSER || "google chrome",
   });
-  gulp.watch(paths.styles.src, gulp.series('styles'));
-  gulp.watch(paths.scripts.src, gulp.series('scripts'));
-  gulp.watch(paths.component.styles.src, gulp.series('componentStyles'));
-  gulp.watch(paths.component.scripts.src, gulp.series('componentScripts'));
+  gulp.watch(paths.styles.src, gulp.series("styles"));
+  gulp.watch(paths.scripts.src, gulp.series("scripts"));
+  gulp.watch(paths.component.styles.src, gulp.series("componentStyles"));
+  gulp.watch(paths.component.scripts.src, gulp.series("componentScripts"));
 };
 
 exports.build = (done) => {
-  console.log('You are building for production.');
+  console.log("You are building for production.");
   gulp.parallel(
-    'stylesBuild',
-    'scriptsBuild',
-    'componentStylesBuild',
-    'componentScriptsBuild'
+    "stylesBuild",
+    "scriptsBuild",
+    "componentStylesBuild",
+    "componentScriptsBuild"
   )(done);
 };

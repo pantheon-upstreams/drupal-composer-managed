@@ -1,1 +1,44 @@
-[class*=l-cluster]>*{align-items:center;display:flex;flex-wrap:wrap;justify-content:flex-start;margin:calc(var(--space-gap-y)/2*-1) calc(var(--space-gap-x)/2*-1)}[class*=l-cluster]>*>*{margin:calc(var(--space-gap-y)/2) calc(var(--space-gap-x)/2)}.l-cluster--start>*{justify-content:flex-start}.l-cluster--center>*{justify-content:center}.l-cluster--end>*{justify-content:flex-end}.l-cluster--no-wrap>*{flex-wrap:nowrap}.l-cluster__rule{color:var(--color-border)}
+/*
+ * @file
+ * Cluster layout component styles.
+ * See https://every-layout.dev/layouts/cluster/ for more information
+ */
+[class*=l-cluster] {
+  /* overflow: hidden; */
+}
+
+[class*=l-cluster] > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--space-gap-y) / 2 * -1) calc(var(--space-gap-x) / 2 * -1);
+}
+
+[class*=l-cluster] > * > * {
+  margin: calc(var(--space-gap-y) / 2) calc(var(--space-gap-x) / 2);
+}
+
+.l-cluster--start > * {
+  justify-content: flex-start;
+}
+
+.l-cluster--center > * {
+  justify-content: center;
+}
+
+.l-cluster--end > * {
+  justify-content: flex-end;
+}
+
+.l-cluster--end > * {
+  justify-content: flex-end;
+}
+
+.l-cluster--no-wrap > * {
+  flex-wrap: nowrap;
+}
+
+.l-cluster__rule {
+  color: var(--color-border);
+}

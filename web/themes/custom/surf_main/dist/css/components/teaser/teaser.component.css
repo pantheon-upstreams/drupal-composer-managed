@@ -1,1 +1,170 @@
-@media (min-width:768px){.teaser{display:flex;justify-content:space-between}}.teaser__image{align-self:flex-start;flex:none;margin-bottom:20px}@media (min-width:768px){.teaser__image{margin-right:30px;width:33.3333333333%}}@media (min-width:1024px){.teaser__image{margin-right:40px}}.teaser__content{max-width:100%}.teaser__image+.teaser__content{flex:initial}@media (min-width:1024px){.teaser__image+.teaser__content{width:57.1428571429%}}.teaser__title{font-size:var(--font-size-large);font-weight:var(--font-line-height-normal)}.teaser__title:not(:last-child){margin-bottom:.5em}.teaser__meta{align-items:baseline;display:flex;flex-wrap:wrap;margin-bottom:.5em}.teaser__meta>:not(:last-child){margin-right:1.5em}.teaser__type{font-size:var(--font-size-tiny)}.teaser__type:not(:last-child){margin-bottom:var(--space-gap)}.teaser__subtitle{font-size:var(--font-size-tiny);font-weight:var(--font-line-height-normal)}.teaser__description{font-size:var(--font-size-small);font-weight:var(--font-line-height-loose)}.teaser__dateline{white-space:nowrap}.teaser__author,.teaser__dateline{font-size:var(--font-size-small)}.teaser__author:not(:last-child){margin-bottom:.5em}.teaser__more-link:not(:first-child){margin-top:var(--space-gap)}.teaser__tags{font-size:var(--font-size-small);margin-top:1em}.teaser--no-image .teaser__content{width:100%}
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+@media (min-width: 768px) {
+  .teaser {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.teaser__image {
+  align-self: flex-start;
+  flex: none;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .teaser__image {
+    margin-right: 30px;
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 1024px) {
+  .teaser__image {
+    margin-right: 40px;
+  }
+}
+
+.teaser__content {
+  max-width: 100%;
+}
+
+.teaser__image + .teaser__content {
+  flex: initial;
+}
+@media (min-width: 1024px) {
+  .teaser__image + .teaser__content {
+    width: 57.1428571429%;
+  }
+}
+
+.teaser__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-line-height-normal);
+}
+.teaser__title:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.teaser__meta {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+.teaser__meta > :not(:last-child) {
+  margin-right: 1.5em;
+}
+
+.teaser__type {
+  font-size: var(--font-size-tiny);
+}
+.teaser__type:not(:last-child) {
+  margin-bottom: var(--space-gap);
+}
+
+.teaser__subtitle {
+  font-size: var(--font-size-tiny);
+  font-weight: var(--font-line-height-normal);
+}
+
+.teaser__description {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-line-height-loose);
+}
+
+.teaser__dateline {
+  font-size: var(--font-size-small);
+  white-space: nowrap;
+}
+
+.teaser__author {
+  font-size: var(--font-size-small);
+}
+.teaser__author:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.teaser__more-link:not(:first-child) {
+  margin-top: var(--space-gap);
+}
+
+.teaser__tags {
+  font-size: var(--font-size-small);
+  margin-top: 1em;
+}
+
+.teaser--no-image .teaser__content {
+  width: 100%;
+}

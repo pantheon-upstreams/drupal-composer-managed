@@ -1,1 +1,141 @@
-@charset "UTF-8";ol:not([class]),ul:not([class]){list-style:none;margin-left:0;padding-left:var(--space-indent)}ol:not([class])>li:before,ul:not([class])>li:before{position:absolute}ol:not([class]) ul,ul:not([class]) ul{margin-top:12px}ol:not([class]) ul li:before,ul:not([class]) ul li:before{content:"◦"}ul:not([class])>li:before{content:"•";font-weight:var(--font-weight-bold);margin-left:calc(var(--space-indent)*-1)}ol:not([class]){counter-reset:number}ol:not([class])>li:before{content:counters(number,".") ".";counter-increment:number;margin-left:calc(var(--space-indent)*-1 + 1ch);text-align:right;transform:translateX(-100%)}ol:not([class]) ol{margin-top:6px;padding-left:30px}ol:not([class]) ol>li{padding-left:0;text-indent:-30px}ol:not([class]) ol>li:before{display:inline;margin-right:.5em;position:static}dl{margin-bottom:18px}dt{font-weight:var(--font-weight-bold)}dd{margin-left:30px}
+@charset "UTF-8";
+/*
+  Lists
+*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+ul:not([class]),
+ol:not([class]) {
+  list-style: none;
+  margin-left: 0;
+  padding-left: var(--space-indent);
+}
+ul:not([class]) > li:before,
+ol:not([class]) > li:before {
+  position: absolute;
+}
+ul:not([class]) ul,
+ol:not([class]) ul {
+  margin-top: 12px;
+}
+ul:not([class]) ul li:before,
+ol:not([class]) ul li:before {
+  content: "◦";
+}
+
+ul:not([class]) > li:before {
+  content: "•";
+  font-weight: var(--font-weight-bold);
+  margin-left: calc(var(--space-indent) * -1);
+}
+
+ol:not([class]) {
+  counter-reset: number;
+}
+ol:not([class]) > li:before {
+  content: counters(number, ".") ".";
+  counter-increment: number;
+  margin-left: calc(var(--space-indent) * -1 + 1ch);
+  text-align: right;
+  transform: translateX(-100%);
+}
+ol:not([class]) ol {
+  margin-top: 6px;
+  padding-left: 30px;
+}
+ol:not([class]) ol > li {
+  padding-left: 0;
+  text-indent: -30px;
+}
+ol:not([class]) ol > li:before {
+  display: inline;
+  margin-right: 0.5em;
+  position: static;
+}
+
+/*
+  Definition Lists
+*/
+dl {
+  margin-bottom: 18px;
+}
+
+dt {
+  font-weight: var(--font-weight-bold);
+}
+
+dd {
+  margin-left: 30px;
+}

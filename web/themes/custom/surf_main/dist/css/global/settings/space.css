@@ -1,1 +1,112 @@
-:root{--space-gap:2em;--space-gap-x:var(--space-gap);--space-gap-y:var(--space-gap);--space-gap-tight:1em;--space-gap-x-tight:var(--space-gap-tight);--space-gap-y-tight:var(--space-gap-tight);--space-gap-minimal:0.25em;--space-gap-x-minimal:var(--space-gap-minimal);--space-gap-y-minimal:var(--space-gap-minimal);--space-indent:1em;--space-inset:15px;--space-inset-x:var(--space-inset);--space-inset-y:var(--space-inset);--space-inset-min:15px}@media (min-width:768px){:root{--space-gap:40px;--space-inset:40px}}@media (min-width:1024px){:root{--space-gap:80px;--space-inset:80px}}@media (min-width:1200px){:root{--space-gap:120px;--space-inset:120px}}
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+:root {
+  /* Space between items (margin or gap). */
+  --space-gap: 2em;
+  --space-gap-x: var(--space-gap);
+  --space-gap-y: var(--space-gap);
+  --space-gap-tight: 1em;
+  --space-gap-x-tight: var(--space-gap-tight);
+  --space-gap-y-tight: var(--space-gap-tight);
+  --space-gap-minimal: 0.25em;
+  --space-gap-x-minimal: var(--space-gap-minimal);
+  --space-gap-y-minimal: var(--space-gap-minimal);
+  /* Amount of indentation on list items. */
+  --space-indent: 1em;
+  /* Space between and the edge of their containers (padding). */
+  --space-inset: 15px;
+  --space-inset-x: var(--space-inset);
+  --space-inset-y: var(--space-inset);
+  --space-inset-min: 15px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --space-gap: 40px;
+    --space-inset: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --space-gap: 80px;
+    --space-inset: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --space-gap: 120px;
+    --space-inset: 120px;
+  }
+}

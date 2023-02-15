@@ -1,1 +1,15 @@
-img{height:auto;max-width:100%}figure{margin:0}figure img{display:block}figcaption{margin:1em 0}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+figure img {
+  display: block;
+}
+
+figcaption {
+  margin: 1em 0;
+}
