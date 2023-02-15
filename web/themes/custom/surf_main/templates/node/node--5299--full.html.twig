@@ -2,7 +2,7 @@
 	{# article__header l-constrained #}
 	<header class="">
 		{{ title_prefix }}
-		{% include '@surf_main-components/page-title/page-title.twig' with {
+		{% include 'page-title' with {
     text: label
     } only %}
 		{{ title_suffix }}

@@ -97,23 +97,11 @@ messages:
       dist/css/components/messages/messages.component.css: {}
       dist/css/components/messages/messages.theme.css: {}
 
-# More Link
-more-link:
-  css:
-    component:
-      dist/css/components/more-link/more-link.component.css: {}
-
 # Pager
 pager:
   css:
     component:
       dist/css/components/pager/pager.component.css: {}
-
-# Progress Bar
-progress:
-  css:
-    component:
-      dist/css/components/progress/progress.component.css: {}
 
 # Search form
 search-form:

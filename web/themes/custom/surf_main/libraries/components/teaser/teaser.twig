@@ -44,10 +44,5 @@
     {% if tags %}
     <div class="teaser__tags">{{ tags }}</div>
     {% endif %}
-    {% if more_link %}
-    <div class="teaser__more-link">
-      {% include '@surf_main-components/more-link/more-link.twig' with more_link only %}
-    </div>
-    {% endif %}
   </div>
 </{{tag|default('article')}}>
