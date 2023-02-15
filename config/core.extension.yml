@@ -17,6 +17,7 @@ module:
   ckeditor: 0
   cl_components: 0
   cl_generator: 0
+  cl_server: 0
   comment: 0
   components: 0
   conditional_fields: 0
