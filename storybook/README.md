@@ -41,6 +41,16 @@ You will also need to disable the component registry cache in Drupal so changes 
 $settings['cache']['bins']['component_registry'] = 'cache.backend.null';
 ```
 
+And disable JS and CSS aggregation in `settings.local.php`:
+
+```php
+/**
+ * Disable CSS and JS aggregation.
+ */
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+```
+
 Now you need to grant permissions to the CL Server endpoint for anonymous users. This is required so Storybook can access the endpoint. To do this, visit `/admin/people/permissions` and check `Use the CL Server endpoint` permission to the `Anonymous User` role. *Do not* check this permission in production or on publicly accessible environments as it has security implications. We will need to revisit this if we want the stories to be publicly accessible or available on a public environment.
 
 Now change to the `/storybook` directory in the root of the project and run:
