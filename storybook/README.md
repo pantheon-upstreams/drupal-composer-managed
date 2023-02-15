@@ -59,7 +59,7 @@ Now change to the `/storybook` directory in the root of the project and run:
 npm install
 ```
 
-Storybook is configured to fetch components form 'http://surf.lndo.site'. If you are using a different domain, you will need to set the `STORYBOOK_SERVER_URL` environment variable. To do so, cop `storybook/.env.example` to `storybook/.env` file and update the `STORYBOOK_SERVER_URL` to match your environment.
+Storybook is configured to fetch components form 'https://surf.lndo.site'. If you are using a different domain, you will need to set the `STORYBOOK_SERVER_URL` environment variable. To do so, cop `storybook/.env.example` to `storybook/.env` file and update the `STORYBOOK_SERVER_URL` to match your environment.
 
 ## Running Storybook
 To run Storybook, change to the `/storybook` directory in the root of the project and run:
