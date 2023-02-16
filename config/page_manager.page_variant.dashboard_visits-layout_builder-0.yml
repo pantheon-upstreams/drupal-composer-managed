@@ -3,12 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.basic
     - page_manager.page.dashboard_visits
     - system.menu.dashboard
+    - views.view.user_visits
   module:
+    - layout_builder
     - layout_discovery
     - menu_block
-    - system
+    - views
 id: dashboard_visits-layout_builder-0
 label: 'Layout builder'
 weight: 0
@@ -24,18 +27,7 @@ variant_settings:
       layout_settings:
         label: Header
         context_mapping: {  }
-      components:
-        d4b031bc-10c1-444e-bbfe-d775a4712093:
-          uuid: d4b031bc-10c1-444e-bbfe-d775a4712093
-          region: content
-          configuration:
-            id: system_breadcrumb_block
-            label: Breadcrumbs
-            label_display: '0'
-            provider: system
-            context_mapping: {  }
-          weight: 0
-          additional: {  }
+      components: {  }
       third_party_settings: {  }
     -
       layout_id: layout_onecol
@@ -61,7 +53,34 @@ variant_settings:
             expand_all_items: false
             parent: 'dashboard:'
             suggestion: dashboard
+          weight: 3
+          additional: {  }
+        da091f77-a2fc-4c04-b429-8285f1145347:
+          uuid: da091f77-a2fc-4c04-b429-8285f1145347
+          region: content
+          configuration:
+            id: 'views_block:user_visits-dashboard_visits'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
           weight: 1
+          additional: {  }
+        ba5ce28d-eea5-4eca-8a85-fa2ed8a6357b:
+          uuid: ba5ce28d-eea5-4eca-8a85-fa2ed8a6357b
+          region: content
+          configuration:
+            id: 'inline_block:basic'
+            label: 'Request info'
+            label_display: '0'
+            provider: layout_builder
+            view_mode: full
+            context_mapping: {  }
+            block_revision_id: 13
+            block_serialized: null
+          weight: 2
           additional: {  }
       third_party_settings: {  }
   title_type: manual
