@@ -30,25 +30,12 @@ schemas:
           - Solid
           - Gradient
           - Underline
-      case:
-        type: string
+      uppercase:
+        type: boolean
         title: Text Case
-        enum:
-          - Inherit
-          - Upper
-          - Lower
-          - Title
-      color:
-        type: string
-        title: Icon Type
-        enum:
-          - Inherit
-          - Reversed
-          - Forest
-          - Kelly
-          - White
       icon_type:
         type: string
         title: Icon Type
+        defaultValue: false
         enum:
           - arrow

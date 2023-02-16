@@ -1,16 +1,18 @@
-
 {# Prepare presentational attributes #}
+{% if uppercase is not empty %}
+	{% set clAttributes = clAttributes.addClass('link-button--uppercase') %}
+{% endif %}
 {% if button_style is not empty %}
-  {% set clAttributes = clAttributes.addClass('c-link-button--' ~ button_style) %}
+	{% set clAttributes = clAttributes.addClass('link-button--' ~ button_style) %}
 {% endif %}
 {% if color is not empty %}
-  {% set clAttributes = clAttributes.addClass('t-' ~ color) %}
+	{% set clAttributes = clAttributes.addClass('t-' ~ color) %}
 {% endif %}
-<a {{ clAttributes.addClass('c-link-button').setAttribute('href', url) }}>
-  {{ text }}
-  {% if icon_type %}
-    <span class="c-link-button__icon">
-      {{ source(clMeta.path ~ '/img/' ~ icon_type ~ '.svg') }}
-    </span>
-  {% endif %}
+<a {{ clAttributes.addClass('link-button').setAttribute('href', url) }}>
+	{{ text }}
+	{% if icon_type %}
+		<span class="link-button__icon">
+			{{ source(clMeta.path ~ '/img/' ~ icon_type ~ '.svg') }}
+		</span>
+	{% endif %}
 </a>

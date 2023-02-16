@@ -2,57 +2,90 @@ title: Surf Main/Link Button
 argTypes:
   button_style:
     options:
+      # Solid is a placeholder option, it does not impact styles
       - solid
       - gradient
       - underline
     control: radio
   color:
     options:
-      - cloud
+      - black
       - forest
+      - gradient
       - kelly
       - white
+      - underline-green
+      - underline-white
     control: radio
+  uppercase:
+    control: boolean
+    default: true
   icon_type:
     options:
-      - arrow
+      - false
+      - Arrow
     control: select
 stories:
-  - name: White
-    args:
-      text: Button
-      url: https://www.example.org
-      button_style: solid
-      color: white
-  - name: Forest
-    args:
-      text: Button
-      url: https://www.example.org
-      button_style: solid
-      color: forest
-  - name: Kelly
-    args:
-      text: Button
-      url: https://www.example.org
-      button_style: solid
-      color: kelly
   - name: Black
     args:
-      text: Button
+      text: Black Button
       url: https://www.example.org
       button_style: solid
       color: black
-  - name: Underline
+      uppercase: true
+      icon_type: false
+  - name: Forest
     args:
-      text: Button
+      text: Forest Button
       url: https://www.example.org
-      button_style: underline
+      button_style: solid
+      color: forest
+      uppercase: true
+      icon_type: false
   - name: Gradient
     args:
-      text: Button
+      text: Gradient Button
       url: https://www.example.org
       button_style: gradient
-      color: forest
+      color: gradient
+      uppercase: true
+      icon_type: false
+  - name: Underline Green
+    args:
+      text: Underline Green Button
+      url: https://www.example.org
+      button_style: underline
+      color: underline-green
+      uppercase: true
+      icon_type: false
+  - name: Kelly
+    args:
+      text: Kelly Button
+      url: https://www.example.org
+      button_style: solid
+      color: kelly
+      uppercase: true
+      icon_type: false
+  - name: White
+    args:
+      text: White Green Button
+      url: https://www.example.org
+      button_style: solid
+      color: white
+      uppercase: true
+  - name: Underline White
+    args:
+      text: Underline White Button
+      url: https://www.example.org
+      button_style: underline
+      color: underline-white
+      uppercase: true
+      icon_type: false
   - name: w/ Arrow
     args:
+      text: Button with Arrow Example
+      url: https://www.example.org
+      button_style: underline
+      color: underline-green
+      uppercase: false
       icon_type: Arrow

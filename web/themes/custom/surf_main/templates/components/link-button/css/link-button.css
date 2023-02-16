@@ -1,59 +1,156 @@
-.c-link-button {
-  --space-inset-x: .82em;
-  --space-inset-y: .36em;
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+.link-button {
+  --space-inset-x: 0.75rem;
+  --space-inset-y: 0.375rem;
   color: var(--color-link);
+  background-color: var(--color-background);
   display: -webkit-inline-box;
   display: inline-flex;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-family: var(--font-family-condensed);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
   padding: var(--space-inset-y) var(--space-inset-x);
   text-decoration: none;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  text-transform: none;
+  text-transform: initial;
+  letter-spacing: 1.8px;
+  line-height: 140%;
+  position: relative;
   -webkit-box-align: center;
           align-items: center;
-  position: relative;
+  -webkit-transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.c-link-button--solid,
-.c-link-button--gradient {
-  background-color: var(--color-background);
-}
-
-.c-link-button--solid:hover,
-.c-link-button--solid:focus,
-.c-link-button--gradient:hover,
-.c-link-button--gradient:focus {
+.link-button:hover, .link-button:focus, .link-button:active {
+  color: var(--color-link-hover);
   background-color: var(--color-background-hover);
-  color: var(--color-link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  -webkit-transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (min-width: 1024px) {
+  .link-button {
+    --space-inset-x: 1.125rem;
+    --space-inset-y: 0.5rem;
+    padding: var(--space-inset-y) var(--space-inset-x);
+    font-size: 1.375rem;
+    line-height: 140%;
+  }
 }
 
-.c-link-button--gradient {
-  background-image: -webkit-gradient(linear, left top, right top, from(transparent), to(var(--color-background-hover)));
-  background-image: -o-linear-gradient(left, transparent, var(--color-background-hover));
-  background-image: linear-gradient(90deg, transparent, var(--color-background-hover));
-  background-size: 200% 100%;
+.link-button--uppercase {
+  text-transform: uppercase;
 }
 
-.c-link-button--underline:after {
+.link-button--gradient {
+  z-index: 1;
+}
+.link-button--gradient::before {
   content: "";
   position: absolute;
-  top: auto;
-  right: var(--space-inset-x);
-  bottom: 0;
-  left: var(--space-inset-x);
-  display: block;
-  background-color: var(--color-link);
-  height: 0.125em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#00492c));
+  background: -o-linear-gradient(left, transparent, #00492c);
+  background: linear-gradient(90deg, transparent, #00492c);
+  z-index: -1;
 }
 
-.c-link-button--underline:hover:after,
-.c-link-button--underline:focus:after {
-  background-color: var(--color-link-hover);
+.link-button--underline {
+  padding: 0 0 8px 0;
+  border-bottom: solid 2px var(--color-link-hover);
+}
+@media (min-width: 1024px) {
+  .link-button--underline {
+    padding: 8px 5px 8px 0;
+  }
 }
 
-.c-link-button__icon {
+.link-button--underline:hover,
+.link-button--underline:focus {
+  border-bottom-color: transparent;
+  text-decoration: none;
+}
+
+.link-button__icon {
   display: -webkit-inline-box;
   display: inline-flex;
   -webkit-box-pack: center;
