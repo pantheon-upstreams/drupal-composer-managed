@@ -55,6 +55,4 @@ stories:
       color: forest
   - name: w/ Arrow
     args:
-      text: See More
-      url: https://www.example.org
       icon_type: Arrow

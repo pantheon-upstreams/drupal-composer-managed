@@ -4,11 +4,11 @@
 
 .t-white {
   --color-background: #fff;
-  --color-background-hover: #F2F2F2;
+  --color-background-hover: #f2f2f2;
   --color-body: #222222;
   --color-heading: #222222;
-  --color-link: #00492C;
-  --color-link-hover: #00492C;
+  --color-link: #00492c;
+  --color-link-hover: #222222;
 }
 
 .t-black {
@@ -16,33 +16,55 @@
   --color-background-hover: #494949;
   --color-body: #fff;
   --color-heading: #fff;
-  --color-link: #F2F2F2;
+  --color-link: #f2f2f2;
   --color-link-hover: #fff;
 }
 
 .t-cloud {
-  --color-background: #F2F2F2;
-  --color-background-hover: #F6F6F6;
+  --color-background: #f2f2f2;
+  --color-background-hover: #f6f6f6;
   --color-body: #222222;
   --color-heading: #222222;
-  --color-link: #00492C;
-  --color-link-hover: #00492C;
+  --color-link: #00492c;
+  --color-link-hover: #00492c;
 }
 
 .t-kelly {
   --color-background: #008535;
-  --color-background-hover: #00492C;
+  --color-background-hover: #00492c;
   --color-body: #fff;
   --color-heading: #fff;
   --color-link: #fff;
-  --color-link-hover: #BCEBBC;
+  --color-link-hover: #fff;
 }
 
 .t-forest {
-  --color-background: #00492C;
+  --color-background: #00492c;
   --color-background-hover: #008535;
   --color-body: #fff;
   --color-heading: #fff;
   --color-link: #fff;
-  --color-link-hover: #BCEBBC;
+  --color-link-hover: #fff;
+}
+
+.t-gradient {
+  --color-background: #008535;
+  --color-background-hover: #00492c;
+  --color-link: #fff;
+  --color-link-hover: #fff;
+}
+
+// Underline buttons have transparent backgroundds
+.t-underline-green {
+  --color-background: transparent;
+  --color-background-hover: transparent;
+  --color-link: #00492c;
+  --color-link-hover: #008535;
+}
+
+.t-underline-white {
+  --color-background: transparent;
+  --color-background-hover: transparent;
+  --color-link: #fff;
+  --color-link-hover: #fff;
 }

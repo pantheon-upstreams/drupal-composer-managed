@@ -1,6 +1,7 @@
 @import "../../partials/_partials";
 
-a.green-button {
+// Button styles for non-component buttons
+a.forest-button {
   color: #fff;
   background-color: var(--color-surf--forest);
   font-family: var(--font-family-condensed);
@@ -26,7 +27,7 @@ a.green-button {
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 18px;
     font-size: 22px;
     line-height: 140%;
@@ -71,7 +72,7 @@ a.gradient-button {
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 18px;
     font-size: 22px;
     line-height: 140%;
@@ -102,7 +103,7 @@ a.underline-green-button {
     transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom-color: transparent;
   }
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 5px 8px 0;
     font-size: 22px;
     line-height: 140%;
@@ -134,7 +135,7 @@ a.underline-white-button {
     border-bottom-color: transparent;
   }
 
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 5px 8px 0;
     font-size: 22px;
     line-height: 140%;
@@ -167,7 +168,7 @@ a.kelly-green-button {
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 18px;
     font-size: 22px;
     line-height: 140%;
@@ -200,7 +201,7 @@ a.black-button {
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 18px;
     font-size: 22px;
     line-height: 140%;
@@ -233,7 +234,7 @@ a.white-green-button {
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  @media (width >= 1024px) {
+  @include bp-min(large) {
     padding: 8px 18px;
     font-size: 22px;
     line-height: 140%;

@@ -72,7 +72,7 @@
 /*------------------------------------*\
   01 - Breakpoints
 \*------------------------------------*/
-a.green-button {
+a.forest-button {
   color: #fff;
   background-color: var(--color-surf--forest);
   font-family: var(--font-family-condensed);
@@ -88,15 +88,15 @@ a.green-button {
   align-items: center;
   transition: all 500ms ease;
 }
-a.green-button:hover, a.green-button:focus, a.green-button:active {
+a.forest-button:hover, a.forest-button:focus, a.forest-button:active {
   color: #fff;
   background-color: var(--color-surf--kelly-green);
   text-decoration-line: underline;
   text-decoration-thickness: 2px;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (width >= 1024px) {
-  a.green-button {
+@media (min-width: 1024px) {
+  a.forest-button {
     padding: 8px 18px;
     font-size: 22px;
     line-height: 140%;
@@ -137,7 +137,7 @@ a.gradient-button:hover, a.gradient-button:focus, a.gradient-button:active {
   text-decoration-thickness: 2px;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   a.gradient-button {
     padding: 8px 18px;
     font-size: 22px;
@@ -167,7 +167,7 @@ a.underline-green-button:hover, a.underline-green-button:focus, a.underline-gree
   transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom-color: transparent;
 }
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   a.underline-green-button {
     padding: 8px 5px 8px 0;
     font-size: 22px;
@@ -197,7 +197,7 @@ a.underline-white-button:hover, a.underline-white-button:focus, a.underline-whit
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom-color: transparent;
 }
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   a.underline-white-button {
     padding: 8px 5px 8px 0;
     font-size: 22px;
@@ -228,7 +228,7 @@ a.kelly-green-button:hover, a.kelly-green-button:focus, a.kelly-green-button:act
   text-decoration-thickness: 2px;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   a.kelly-green-button {
     padding: 8px 18px;
     font-size: 22px;
@@ -259,7 +259,7 @@ a.black-button:hover, a.black-button:focus, a.black-button:active {
   text-decoration-thickness: 2px;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   a.black-button {
     padding: 8px 18px;
     font-size: 22px;
@@ -290,7 +290,7 @@ a.white-green-button:hover, a.white-green-button:focus, a.white-green-button:act
   text-decoration-thickness: 2px;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (width >= 1024px) {
+@media (min-width: 1024px) {
   a.white-green-button {
     padding: 8px 18px;
     font-size: 22px;
