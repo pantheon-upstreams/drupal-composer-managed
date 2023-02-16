@@ -1,0 +1,72 @@
+uuid: 3290ca2d-f600-4a2e-8e3e-ff3f801b160a
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_curriculum_units
+    - system.menu.dashboard
+  module:
+    - ctools
+    - layout_discovery
+    - menu_block
+id: dashboard_curriculum_units-layout_builder-1
+label: Details
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 1a5e87ee-a024-4e1e-b671-cce8e45d36df
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Header
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Main content'
+        context_mapping: {  }
+      components:
+        6f0d8838-2b59-4cdc-a564-13056642f2b5:
+          uuid: 6f0d8838-2b59-4cdc-a564-13056642f2b5
+          region: content
+          configuration:
+            id: 'menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: menu_block
+            context_mapping: {  }
+            follow: false
+            follow_parent: child
+            label_link: false
+            label_type: block
+            level: 1
+            depth: 0
+            expand_all_items: false
+            parent: 'dashboard:'
+            suggestion: dashboard
+          weight: 1
+          additional: {  }
+        798dd14d-9d6b-400f-9424-22069658041b:
+          uuid: 798dd14d-9d6b-400f-9424-22069658041b
+          region: content
+          configuration:
+            id: 'entity_view:download_request'
+            label: 'Entity view (Download request)'
+            label_display: '0'
+            provider: ctools
+            view_mode: default
+            context_mapping:
+              entity: download_request
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: dashboard_curriculum_units
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
