@@ -26,6 +26,10 @@ class Event extends Node {
     return 'event_registration';
   }
 
+  protected function getReferenceFieldName() {
+    return 'ref_event';
+  }
+
   private function checkRequirements() {
     return $this->hasField('field_registration_required')
       && $this->hasField('field_registration_period')

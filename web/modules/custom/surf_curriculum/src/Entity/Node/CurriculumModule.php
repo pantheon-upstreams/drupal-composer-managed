@@ -23,7 +23,11 @@ class CurriculumModule extends Node {
   }
 
   protected function getWebformId() {
-    return 'curriculum_module';
+    return 'curriculum_reservation';
+  }
+
+  protected function getReferenceFieldName() {
+    return 'ref_curriculum_module';
   }
 
   /**

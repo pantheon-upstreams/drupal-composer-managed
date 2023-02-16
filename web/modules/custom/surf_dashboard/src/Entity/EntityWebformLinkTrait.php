@@ -14,10 +14,13 @@ trait EntityWebformLinkTrait {
 
   abstract protected function getWebformId();
 
+  abstract protected function getReferenceFieldName();
+
   public function getWebformUrl($destination = NULL) {
+    $ref_field_name = $this->getReferenceFieldName();
     return Url::fromRoute('entity.webform.canonical', [
-      'webform' => 'event_registration',
-      'ref_event' => $this->id(),
+      'webform' => $this->getWebformId(),
+      $ref_field_name => $this->id(),
       'destination' => $destination ?? $this->getRedirectDestination()->get(),
     ]);
   }
