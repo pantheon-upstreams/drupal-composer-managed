@@ -1,15 +1,15 @@
 title: Surf Main/Figure
 args:
   media: '<img src="https://placekitten.com/660/410" alt="Catface" />'
-  caption: ''
+  caption: ""
 stories:
   - name: Image
     args:
       media: |
-        {{ include('image', { src: 'https://placekitten.com/660/410', alt: 'Catface' }) }}
+        {{ include('image', { src: 'https://placekitten.com/g/660/410', alt: 'Catface' }) }}
   - name: Gif
     args:
-      media: '<img src="https://media.giphy.com/media/cKbMXu9fqogixauQMl/giphy.gif" alt="Stanford University mascot dancing." />'
+      media: '<img src="https://media.tenor.com/JY2fRmOGB1UAAAAM/cheer-happy.gif" alt="Happy cat cheering." />'
   - name: Image w/ Caption
     args:
       caption: |

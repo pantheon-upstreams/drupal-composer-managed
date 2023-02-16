@@ -40,5 +40,5 @@ stories:
       color: kelly
   - name: w/ Image
     args:
-      image: '<img src="https://placekitten.com/660/410" alt="Catface" />'
+      image: '<img src="https://placekitten.com/g/660/410" alt="Catface" />'
       color: cloud
