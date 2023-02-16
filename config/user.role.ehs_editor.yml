@@ -13,6 +13,7 @@ dependencies:
     - filter
     - node
     - scheduler
+    - surf_registration
     - system
     - toolbar
 id: ehs_editor
@@ -39,4 +40,5 @@ permissions:
   - 'use text format full_html'
   - 'view all revisions'
   - 'view own unpublished content'
+  - 'view own user_request'
   - 'view the administration theme'

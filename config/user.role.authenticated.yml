@@ -11,6 +11,7 @@ dependencies:
     - download_request
     - filter
     - media
+    - surf_registration
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -30,3 +31,4 @@ permissions:
   - 'view download_item'
   - 'view media'
   - 'view own curriculum_module download_request'
+  - 'view own user_request'

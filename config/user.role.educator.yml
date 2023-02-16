@@ -16,6 +16,7 @@ dependencies:
     - media
     - node
     - scheduler
+    - surf_registration
     - system
     - toolbar
 id: educator
@@ -44,5 +45,6 @@ permissions:
   - 'use text format full_html'
   - 'use text format plain'
   - 'view own unpublished content'
+  - 'view own user_request'
   - 'view scheduled content'
   - 'view the administration theme'
