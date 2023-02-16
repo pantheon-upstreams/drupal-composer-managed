@@ -6,6 +6,7 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\Entity\Node;
+use Drupal\surf_dashboard\Entity\EntityUserDashboardInterface;
 use Drupal\surf_dashboard\Entity\EntityWebformLinkTrait;
 use Drupal\surf_dashboard\Entity\EntityUserDashboardTrait;
 use Drupal\surf_registration\Entity\UserRequest;
@@ -13,7 +14,7 @@ use Drupal\surf_registration\Entity\UserRequest;
 /**
  * A bundle class for node entities.
  */
-class Event extends Node {
+class Event extends Node implements EntityUserDashboardInterface {
 
   use EntityUserDashboardTrait;
   use EntityWebformLinkTrait;
@@ -28,6 +29,10 @@ class Event extends Node {
 
   protected function getReferenceFieldName() {
     return 'ref_event';
+  }
+
+  public function getDashboardRelationEntity(AccountInterface $user) {
+    return $this->getActiveUserRequest($user);
   }
 
   private function checkRequirements() {

@@ -7,13 +7,14 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\download_request\Entity\DownloadItem;
 use Drupal\download_request\Entity\DownloadRequestItem;
 use Drupal\node\Entity\Node;
+use Drupal\surf_dashboard\Entity\EntityUserDashboardInterface;
 use Drupal\surf_dashboard\Entity\EntityWebformLinkTrait;
 use Drupal\surf_dashboard\Entity\EntityUserDashboardTrait;
 
 /**
  * A bundle class for node entities.
  */
-class CurriculumModule extends Node {
+class CurriculumModule extends Node implements EntityUserDashboardInterface {
 
   use EntityUserDashboardTrait;
   use EntityWebformLinkTrait;
@@ -28,6 +29,10 @@ class CurriculumModule extends Node {
 
   protected function getReferenceFieldName() {
     return 'ref_curriculum_module';
+  }
+
+  public function getDashboardRelationEntity(AccountInterface $user) {
+    return $this->getActiveDownloadRequest($user);
   }
 
   /**
