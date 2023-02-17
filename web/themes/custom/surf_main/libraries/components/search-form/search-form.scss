@@ -1,22 +1,155 @@
 //
-// @file
-// Search form styles
+// Global search bar styles
 //
+@import "../../partials/_partials";
 
-.search-form {
-  form {
-    display: flex;
-    flex-flow: row nowrap;
+// Mobile styles from screens < 1024px
+@include bp-max(large) {
+  .header-search-form {
+    margin: 24px 15px;
+    width: 100%;
 
-    .form-actions {
-      margin: 0;
-    }
+    form {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      border: 1px solid #fff;
+      gap: 6px;
 
-    .form-item {
-      margin: 0;
+      height: 55px;
+      padding: 12px;
+      width: 100%;
 
-      input {
+      // Increase border when focusing
+      &:focus,
+      &:focus-within {
+        border: 2px solid #fff;
+      }
+
+      // Search button
+      .form-actions {
         margin: 0;
+
+        .form-submit {
+          --size: 28px;
+          background-color: transparent;
+          background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          border: none;
+          height: var(--size);
+          padding: 0;
+          position: relative;
+          text-indent: var(--size);
+          width: var(--size);
+        }
+      }
+
+      // Search input field
+      .form-item {
+        margin: 0;
+        width: 100%;
+
+        input {
+          background: transparent;
+          border: 0;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+
+          color: #fff;
+          font-family: var(--font-family-sans);
+          font-weight: var(--font-weight-regular);
+          font-size: 18px;
+          line-height: 144%;
+
+          // Only show when focused
+          &::-webkit-input-placeholder {
+            color: #fff;
+            font-style: italic;
+          }
+
+          // Hide search clear button
+          &::-webkit-search-cancel-button {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop styles from screens >= 1024px
+@include bp-min(large) {
+  .header-search-form {
+    margin: 24px 15px;
+    width: 100%;
+
+    form {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      border: 1px solid #fff;
+      gap: 6px;
+
+      height: 55px;
+      padding: 12px;
+      width: 100%;
+
+      // Increase border when focusing
+      &:focus,
+      &:focus-within {
+        border: 2px solid #fff;
+      }
+
+      // Search button
+      .form-actions {
+        margin: 0;
+
+        .form-submit {
+          --size: 28px;
+          background-color: transparent;
+          background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          border: none;
+          height: var(--size);
+          padding: 0;
+          position: relative;
+          text-indent: var(--size);
+          width: var(--size);
+        }
+      }
+
+      // Search input field
+      .form-item {
+        margin: 0;
+        width: 100%;
+
+        input {
+          background: transparent;
+          border: 0;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+
+          color: #fff;
+          font-family: var(--font-family-sans);
+          font-weight: var(--font-weight-regular);
+          font-size: 18px;
+          line-height: 144%;
+
+          // Only show when focused
+          &::-webkit-input-placeholder {
+            color: #fff;
+            font-style: italic;
+          }
+
+          // Hide search clear button
+          &::-webkit-search-cancel-button {
+            display: none;
+          }
+        }
       }
     }
   }

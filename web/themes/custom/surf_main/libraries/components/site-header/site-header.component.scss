@@ -21,11 +21,33 @@ main::before {
       position: fixed; /* Sit on top of the page content */
       width: 100%; /* Full width (cover the whole page) */
       height: 100%; /* Full height (cover the whole page) */
-      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       z-index: 2;
+    }
+  }
+
+  // Offset top of overlay to header is visible
+  @include bp-max(large) {
+    main::before {
+      top: 70px;
+    }
+
+    // For logged in users offset top
+    &.user-logged-in main::before {
+      top: 90px;
+    }
+  }
+
+  @include bp-between(large, xlarge) {
+    main::before {
+      top: 245px;
+    }
+
+    // For logged in users offset top
+    .user-logged-in & main::before {
+      top: 325px;
     }
   }
 }
@@ -80,6 +102,13 @@ main::before {
     }
   }
 
+  @include bp-between(large, xlarge) {
+    // For logged in users offset top
+    .user-logged-in & {
+      top: 325px;
+    }
+  }
+
   @include bp-min(medium) {
     grid-area: 1 / 2;
   }
@@ -100,6 +129,10 @@ main::before {
   width: var(--size-width, 194px);
   z-index: 3;
 
+  @include bp-max(medium) {
+    margin: 18px 0;
+  }
+
   @include bp-min(medium) {
     grid-row-start: initial;
     width: 260px;
@@ -115,6 +148,7 @@ main::before {
   a,
   img {
     display: block;
+    min-height: 30px;
     width: 100%;
   }
 }
@@ -134,7 +168,7 @@ main::before {
     border-top: 1px solid var(--border-color);
     width: 100%;
     max-width: 375px;
-    top: 175px;
+    top: 245px;
     bottom: 0;
     right: 0;
     z-index: 3;
@@ -314,10 +348,15 @@ main::before {
 
 /**** START - Utility Navigation ****/
 .c-site-header__utilities {
+  background-color: var(--color-surf--forest);
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
   margin-bottom: 20px;
+
+  @include bp-max(large) {
+    margin: 0;
+  }
 
   #block-utilitynav {
     display: none;

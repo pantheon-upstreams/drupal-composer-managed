@@ -20,6 +20,7 @@
   --tab-border-color: var(--color-border);
 
   display: flex;
+  flex-flow: row wrap;
   margin: 0 0 1rem;
   padding: 0;
   border-bottom: 1px solid var(--color-border); // Give the tabs something to sit on

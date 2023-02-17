@@ -1,13 +1,190 @@
-.search-form form {
-  display: flex;
-  flex-flow: row nowrap;
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+@media (max-width: 1023.98px) {
+  .header-search-form {
+    margin: 24px 15px;
+    width: 100%;
+  }
+  .header-search-form form {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border: 1px solid #fff;
+    gap: 6px;
+    height: 55px;
+    padding: 12px;
+    width: 100%;
+  }
+  .header-search-form form:focus, .header-search-form form:focus-within {
+    border: 2px solid #fff;
+  }
+  .header-search-form form .form-actions {
+    margin: 0;
+  }
+  .header-search-form form .form-actions .form-submit {
+    --size: 28px;
+    background-color: transparent;
+    background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    height: var(--size);
+    padding: 0;
+    position: relative;
+    text-indent: var(--size);
+    width: var(--size);
+  }
+  .header-search-form form .form-item {
+    margin: 0;
+    width: 100%;
+  }
+  .header-search-form form .form-item input {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #fff;
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-regular);
+    font-size: 18px;
+    line-height: 144%;
+  }
+  .header-search-form form .form-item input::-webkit-input-placeholder {
+    color: #fff;
+    font-style: italic;
+  }
+  .header-search-form form .form-item input::-webkit-search-cancel-button {
+    display: none;
+  }
 }
-.search-form form .form-actions {
-  margin: 0;
-}
-.search-form form .form-item {
-  margin: 0;
-}
-.search-form form .form-item input {
-  margin: 0;
+@media (min-width: 1024px) {
+  .header-search-form {
+    margin: 24px 15px;
+    width: 100%;
+  }
+  .header-search-form form {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border: 1px solid #fff;
+    gap: 6px;
+    height: 55px;
+    padding: 12px;
+    width: 100%;
+  }
+  .header-search-form form:focus, .header-search-form form:focus-within {
+    border: 2px solid #fff;
+  }
+  .header-search-form form .form-actions {
+    margin: 0;
+  }
+  .header-search-form form .form-actions .form-submit {
+    --size: 28px;
+    background-color: transparent;
+    background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    height: var(--size);
+    padding: 0;
+    position: relative;
+    text-indent: var(--size);
+    width: var(--size);
+  }
+  .header-search-form form .form-item {
+    margin: 0;
+    width: 100%;
+  }
+  .header-search-form form .form-item input {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: #fff;
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-regular);
+    font-size: 18px;
+    line-height: 144%;
+  }
+  .header-search-form form .form-item input::-webkit-input-placeholder {
+    color: #fff;
+    font-style: italic;
+  }
+  .header-search-form form .form-item input::-webkit-search-cancel-button {
+    display: none;
+  }
 }
