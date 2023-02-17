@@ -25,6 +25,12 @@ elements:
     webform_field: created
     custom_check: 0
     custom_value: ''
+  field_change_request:
+    type: false
+    mapping: default_mapping
+    webform_field: change_request
+    custom_check: 0
+    custom_value: ''
   field_date:
     type: false
     mapping: datetime_mapping

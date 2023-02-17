@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user_request.visit.field_change_request
     - field.field.user_request.visit.field_date
     - field.field.user_request.visit.field_email
     - field.field.user_request.visit.field_name
@@ -32,6 +33,16 @@ content:
       timezone: ''
     third_party_settings: {  }
     weight: 20
+    region: content
+  field_change_request:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 34
     region: content
   field_date:
     type: datetime_default

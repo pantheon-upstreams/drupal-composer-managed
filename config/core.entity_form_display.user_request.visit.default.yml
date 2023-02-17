@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user_request.visit.field_change_request
     - field.field.user_request.visit.field_date
     - field.field.user_request.visit.field_email
     - field.field.user_request.visit.field_name
@@ -27,6 +28,13 @@ content:
     weight: 0
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_change_request:
+    type: boolean_checkbox
+    weight: 28
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_date:
     type: datetime_default

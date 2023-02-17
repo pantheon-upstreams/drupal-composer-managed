@@ -13,14 +13,9 @@ title: 'Field trip / Presentation'
 description: ''
 category: ''
 elements: |-
-  date:
-    '#type': datetime
-    '#title': Date
-    '#date_date_format': ''
-    '#date_time_format': ''
-  email:
-    '#type': email
-    '#title': Email
+  change_request:
+    '#type': checkbox
+    '#title': 'Request to change or cancel my current reservation'
   name:
     '#type': webform_name
     '#title': Name
@@ -28,6 +23,15 @@ elements: |-
     '#middle__access': false
     '#suffix__access': false
     '#degree__access': false
+  email:
+    '#type': email
+    '#title': Email
+  school_district:
+    '#type': textfield
+    '#title': 'School district'
+  number_students:
+    '#type': number
+    '#title': 'Number of students'
   ref_grade_level:
     '#type': entity_autocomplete
     '#title': 'Grade level'
@@ -38,21 +42,17 @@ elements: |-
         grade_level: grade_level
       auto_create: false
       auto_create_bundle: grade_level
-  notes:
-    '#type': textarea
-    '#title': Notes
-  number_students:
-    '#type': number
-    '#title': 'Number of students'
   request_type:
     '#type': select
     '#title': 'Request type'
     '#options':
       field_trip: 'Field trip'
       school_presentation: 'School presentation'
-  school_district:
-    '#type': textfield
-    '#title': 'School district'
+  date:
+    '#type': datetime
+    '#title': 'Preferred Dates & Times'
+    '#date_date_format': ''
+    '#date_time_format': ''
   ref_school_presentation:
     '#type': entity_autocomplete
     '#title': 'School presentation'
@@ -61,6 +61,9 @@ elements: |-
     '#selection_settings':
       target_bundles:
         school_presentation: school_presentation
+  notes:
+    '#type': textarea
+    '#title': Notes
 css: ''
 javascript: ''
 settings:
