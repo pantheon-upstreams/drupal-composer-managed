@@ -17,15 +17,17 @@
 	{# /site_header #}
 
 	{% block breadcrumb %}
-		<div class="l-constrained">
-			{{ page.breadcrumb }}
-		</div>
+		{{ page.breadcrumb }}
 	{% endblock %}
 	{# /breadcrumb #}
 
-	{{ page.highlighted }}
+	{% block highlighted %}
+		{{ page.highlighted }}
+	{% endblock %}
 
-	{{ page.help }}
+	{% block help %}
+		{{ page.help }}
+	{% endblock %}
 
 	{% block main %}
 		<main>
