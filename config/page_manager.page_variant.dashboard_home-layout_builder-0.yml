@@ -8,6 +8,7 @@ dependencies:
   module:
     - layout_discovery
     - menu_block
+    - notification_message
 id: dashboard_home-layout_builder-0
 label: 'Layout builder'
 weight: 0
@@ -21,7 +22,14 @@ variant_settings:
     -
       layout_id: layout_onecol
       layout_settings:
-        label: ''
+        label: Header
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Main content'
         context_mapping: {  }
       components:
         7648f517-a4e5-44f8-8b1c-8f61b145c7fa:
@@ -42,7 +50,22 @@ variant_settings:
             expand_all_items: false
             parent: 'dashboard:'
             suggestion: dashboard
-          weight: 0
+          weight: 4
+          additional: {  }
+        b74cbead-24a8-4644-86fb-a662f0d9209f:
+          uuid: b74cbead-24a8-4644-86fb-a662f0d9209f
+          region: content
+          configuration:
+            id: notification_message
+            label: Announcements
+            label_display: visible
+            provider: notification_message
+            context_mapping: {  }
+            notification_message:
+              type:
+                dashboard_announcement: dashboard_announcement
+              display_mode: default
+          weight: 5
           additional: {  }
       third_party_settings: {  }
   title_type: manual
