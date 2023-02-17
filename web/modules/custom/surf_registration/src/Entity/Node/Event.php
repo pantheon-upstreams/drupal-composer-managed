@@ -3,7 +3,7 @@
 namespace Drupal\surf_registration\Entity\Node;
 
 use Drupal\Core\Cache\CacheableMetadata;
-use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\surf_core\DrupalDateTime;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\Entity\Node;
 use Drupal\surf_dashboard\Entity\EntityUserDashboardInterface;
@@ -75,11 +75,7 @@ class Event extends Node implements EntityUserDashboardInterface {
     $date_start = $this->field_registration_period->start_date;
     $date_end = $this->field_registration_period->end_date;
     $date_end->add(new \DateInterval('P1D'));
-    $a = $date_start->diff($now);
-    $b = $date_end->diff($now);
-    $now_is_after_start_date = $a->invert === 0;
-    $now_is_before_end_date = $b->invert === 1;
-    return $now_is_after_start_date && $now_is_before_end_date;
+    $now->isAfterDate($date_start) && $now->isBeforeDate($date_end);
   }
 
   public function getActiveUserRequest(AccountInterface $user) {
