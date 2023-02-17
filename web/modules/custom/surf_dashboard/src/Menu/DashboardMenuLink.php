@@ -49,11 +49,13 @@ class DashboardMenuLink extends MenuLinkDefault {
     return $this->routeMatch->getParameter('user');
   }
 
-
   public function getRouteParameters() {
     $parameters = parent::getRouteParameters();
     if ($user = $this->getUserRouteParameter()) {
       $parameters['user'] = $user->id();
+    }
+    else {
+      $parameters['user'] = \Drupal::service('current_user')->id();
     }
     return $parameters;
   }
