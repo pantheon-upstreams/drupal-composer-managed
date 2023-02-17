@@ -89,6 +89,7 @@ module:
   mysql: 0
   name: 0
   node: 0
+  notification_message: 0
   optional_end_date: 0
   options: 0
   page_cache: 0
