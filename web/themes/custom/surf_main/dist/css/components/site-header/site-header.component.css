@@ -72,8 +72,8 @@
 /*------------------------------------*\
   01 - Breakpoints
 \*------------------------------------*/
-main {
-  transition: all 0.05s ease-in-out;
+main::before {
+  display: none;
 }
 
 @media (max-width: 1199.98px) {
@@ -83,16 +83,26 @@ main {
     overflow: hidden;
     width: 100%;
   }
-  .js-prevent-scroll main {
+  .js-prevent-scroll main::before {
+    display: block;
+    content: "";
     background: rgba(0, 0, 0, 0.3);
     transition: all 0.05s ease-in-out;
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
   }
 }
 
 .c-site-header {
   background-color: var(--color-background, #fff);
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .c-site-header__inner {
@@ -115,7 +125,7 @@ main {
     top: 70px;
     bottom: 0;
     right: 0;
-    z-index: -1;
+    z-index: 3;
     opacity: 0;
     transform: translate3d(375px, 0, 0);
     transition: all 0.3s ease-in-out;
@@ -149,7 +159,7 @@ main {
   margin: var(--space-inset-y, 12px) var(--space-inset-x, 0) var(--space-inset-y, 12px) 0;
   padding: 0;
   width: var(--size-width, 194px);
-  z-index: 1;
+  z-index: 3;
 }
 @media (min-width: 768px) {
   .c-site-header__logo {
@@ -175,9 +185,7 @@ main {
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
   position: fixed;
-  width: fill-available;
-  width: -webkit-fill-available;
-  width: -moz-available;
+  width: 100%;
 }
 @media (min-width: 1024px) and (max-width: 1199.98px) {
   .c-site-header__menu-main {
@@ -188,7 +196,7 @@ main {
     top: 175px;
     bottom: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     opacity: 0;
     transform: translate3d(375px, 0, 0);
     transition: all 0.3s ease-in-out;
@@ -251,9 +259,7 @@ main {
   background-position: top right;
   text-align: left;
   transition: all 0.1s ease-in-out;
-  width: fill-available;
-  width: -webkit-fill-available;
-  width: -moz-available;
+  width: 100%;
 }
 .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded.expanded {
   background-color: var(--color-surf--forest);

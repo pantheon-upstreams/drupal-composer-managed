@@ -1,8 +1,8 @@
 @import "../../partials/_partials";
 
-// Attach transition for when menu leaves
-main {
-  transition: all $duration * 0.25 ease-in-out;
+// Remove transparency
+main::before {
+  display: none;
 }
 
 // Lock screen
@@ -13,9 +13,19 @@ main {
     overflow: hidden;
     width: 100%;
     // Apply transparency overlay to main content
-    main {
+    main::before {
+      display: block;
+      content: "";
       background: rgba(0, 0, 0, 0.3);
       transition: all $duration * 0.25 ease-in-out;
+      position: fixed; /* Sit on top of the page content */
+      width: 100%; /* Full width (cover the whole page) */
+      height: 100%; /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
     }
   }
 }
@@ -23,7 +33,7 @@ main {
 .c-site-header {
   background-color: var(--color-background, #fff);
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 // Wrapper for site header
@@ -51,7 +61,7 @@ main {
     top: 70px;
     bottom: 0;
     right: 0;
-    z-index: -1;
+    z-index: 3;
     opacity: 0;
     transform: translate3d(375px, 0, 0);
     transition: all $duration * 1.5 ease-in-out;
@@ -88,7 +98,7 @@ main {
     var(--space-inset-y, 12px) 0;
   padding: 0;
   width: var(--size-width, 194px);
-  z-index: 1;
+  z-index: 3;
 
   @include bp-min(medium) {
     grid-row-start: initial;
@@ -113,10 +123,7 @@ main {
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
   position: fixed;
-  width: fill-available;
-  // Accounting for build tool issue
-  width: -webkit-fill-available;
-  width: -moz-available;
+  width: 100%;
 
   @include bp-between(large, xlarge) {
     background: linear-gradient(
@@ -130,7 +137,7 @@ main {
     top: 175px;
     bottom: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     opacity: 0;
     transform: translate3d(375px, 0, 0);
     transition: all $duration * 1.5 ease-in-out;
@@ -202,10 +209,7 @@ main {
         background-position: top right;
         text-align: left;
         transition: all $duration * 0.5 ease-in-out;
-        width: fill-available;
-        // Accounting for build tool issue
-        width: -webkit-fill-available;
-        width: -moz-available;
+        width: 100%;
       }
 
       &.expanded {

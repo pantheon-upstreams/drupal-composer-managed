@@ -48,16 +48,45 @@
       }
     }
 
+    // Close menu
+    function closeMobile(key) {
+      // Get window width
+      let windowSize = $(window).width();
+
+      // Close Menu
+      $("body").removeClass("js-prevent-scroll");
+      $(mobileNavButton).removeClass("checked");
+      $(mobileNavButton).attr("aria-expanded", "false");
+
+      if (windowSize >= 1024 && windowSize < 1200) {
+        displayIndex(utilityItems);
+        displayIndex(searchInput);
+        hideIndex($(mainMenuItems).find(".menu__link"));
+      } else if (windowSize <= 1023) {
+        // When menu is closed, hide from focus
+        hideIndex(utilityItems);
+        hideIndex(mobileNav);
+        hideIndex(searchInput);
+      }
+
+      // It was escape key, set focus
+      if (key == "Esc" || key == "Escape") {
+        $(mobileNavButton).focus();
+      }
+    }
+
     // Mobile Navigation trigger function
-    function mobileMenu(event, key) {
+    // This function mainly handles opening the menu & controlling menu access
+    // The close function has been broken out into a seperate function
+    function mobileMenuNavigationControl(event) {
       // Store window width
       let windowSize = $(window).width();
 
       // Open Menu
       if ($(mobileNavButton).attr("aria-expanded") === "false") {
         // Toggle overlay & checked classes
-        $("body").toggleClass("js-prevent-scroll");
-        $(mobileNavButton).toggleClass("checked");
+        $("body").addClass("js-prevent-scroll");
+        $(mobileNavButton).addClass("checked");
         // Open menu
         $(mobileNavButton).attr("aria-expanded", "true");
 
@@ -79,33 +108,16 @@
           toggleUtility(clonedMenu, true);
         }
       } else {
-        // Close Menu
-        $("body").toggleClass("js-prevent-scroll");
-        $(mobileNavButton).toggleClass("checked");
-        $(mobileNavButton).attr("aria-expanded", "false");
-
-        if (windowSize >= 1024 && windowSize < 1200) {
-          displayIndex(utilityItems);
-          displayIndex(searchInput);
-          hideIndex($(mainMenuItems).find(".menu__link"));
-        } else if (windowSize <= 1023) {
-          // When menu is closed, hide from focus
-          hideIndex(utilityItems);
-          hideIndex(mobileNav);
-          hideIndex(searchInput);
-        }
-      }
-
-      // It was escape key, set focus
-      if ((key = "Esc" || key == "Escape")) {
-        $(mobileNavButton).focus();
+        closeMobile();
       }
 
       event.stopPropagation();
+      event.preventDefault();
     }
 
     // If user shrinks screen, run mobile setup
-    function reportWindowSize(windowSize) {
+    // This determines which menus need to be avaliable
+    function windowAdjustMenus(windowSize) {
       // What menus should be visible based on screen size
       if (windowSize >= 1200) {
         displayIndex($(mainMenuItems).find(".menu__link"));
@@ -130,7 +142,51 @@
       let delayReload;
       let resizedWindow = $(window).width();
       clearTimeout(delayReload);
-      delayReload = setTimeout(reportWindowSize(resizedWindow), 200);
+      delayReload = setTimeout(windowAdjustMenus(resizedWindow), 200);
+    });
+
+    // If a user clicks outside the menu, close menu
+    // Stop events from continuning to information behind overlay
+    $(window).on("click", function (e) {
+      // Get window width
+      let windowSize = $(window).width();
+      let mainMenu;
+
+      // Due to the strucuture of the split menu, we need to set different targets
+      if (windowSize >= 1024 && windowSize < 1200) {
+        mainMenu = $("#block-surf-main-main-menu");
+      } else if (windowSize <= 1023) {
+        mainMenu = $("#mainMenuControl");
+      } else {
+        // We are on desktop, default to large menu
+        mainMenu = $("#block-surf-main-main-menu");
+      }
+
+      // Is this the main menu?
+      if (
+        !mainMenu[0].contains(e.target) &&
+        mainMenu.parent()[0] !== e.target
+      ) {
+        // Close Menu
+        $("body").removeClass("js-prevent-scroll");
+        $(mobileNavButton).removeClass("checked");
+        $(mobileNavButton).attr("aria-expanded", "false");
+
+        if (windowSize >= 1024 && windowSize < 1200) {
+          displayIndex(utilityItems);
+          displayIndex(searchInput);
+          hideIndex($(mainMenuItems).find(".menu__link"));
+        } else if (windowSize <= 1023) {
+          // When menu is closed, hide from focus
+          hideIndex(utilityItems);
+          hideIndex(mobileNav);
+          hideIndex(searchInput);
+        }
+      }
+
+      // Stop event from traveling through to other components on the screen
+      e.stopPropagation();
+      e.preventDefault();
     });
 
     /*------------------------------------*\
@@ -250,17 +306,28 @@
             break;
 
           case "Tab":
-            // Check if this is the last item in a list
-            if ($(target).parent().is(":last-child")) {
-              // Call mobile menu toggle function
-              mobileMenu(event, key);
+            // Did the user shift + tab?
+            if (event.shiftKey) {
+              let first = $(target).parent().is(":first-child");
+              if (!first) {
+                // Allow event to pass
+              } else {
+                this.closePopup();
+              }
+              break;
+            } else {
+              // Check if this is the last item in a list
+              if ($(target).parent().is(":last-child")) {
+                // Close menu
+                closeMobile();
+              }
             }
             break;
 
           case "Esc":
           case "Escape":
             // Close mobile menu
-            mobileMenu(event, key);
+            closeMobile("Esc");
             break;
 
           default:
@@ -392,7 +459,7 @@
               flag = true;
             }
             // Close mobile menu;
-            mobileMenu(event, key);
+            closeMobile("Esc");
             break;
 
           case "Up":
@@ -437,11 +504,6 @@
             }
             break;
 
-          case "Tab":
-            //@todo Account for users tabbing out of menu on small desktop and close mobile menu
-
-            break;
-
           default:
             break;
         }
@@ -476,9 +538,13 @@
         switch (key) {
           case "Esc":
           case "Escape":
-            this.closePopup();
-            this.buttonNode.focus();
-            flag = true;
+            if (this.isOpen) {
+              this.closePopup();
+              this.buttonNode.focus();
+              flag = true;
+            } else {
+              closeMobile("Esc");
+            }
             break;
 
           case "Up":
@@ -565,14 +631,22 @@
                 this.closePopup();
               }
               break;
-            }
-
-            // Check if this is the last item in a list
-            let last = $(target).parent().is(":last-child");
-            if (this.isOpen() && !last) {
-              // Allow event to pass
             } else {
-              this.closePopup();
+              // Check if this is the last item in a list
+              let last = $(target).parent().is(":last-child");
+
+              // Find last visible element within top level parent menu
+              let lastVisible = $(
+                ".menu--main[data-depth='0'] > .menu__item > .menu__link:not([data-visible=false]):last"
+              );
+              // If the event is open, or is not the last in the list allow event to pass
+              if (this.isOpen() && !last) {
+                // If this is the last visible component at the top level menu, close entire menu
+              } else if (target == lastVisible[0]) {
+                closeMobile();
+              } else {
+                this.closePopup();
+              }
             }
             break;
 
@@ -663,8 +737,8 @@
       }
     }
 
-    // Attach mobile menu button listener
-    mobileNavButton.on("click", mobileMenu);
+    // Attach mobile menu button listener controls
+    mobileNavButton.on("click", mobileMenuNavigationControl);
 
     // Configure menus on load
     initalizeMenus();
