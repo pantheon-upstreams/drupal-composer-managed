@@ -1,6 +1,6 @@
 uuid: b242c3b7-7548-4580-8c5a-e9ef0ac98520
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: dashboard_curriculum_request
 label: 'Dashboard curriculum request'
