@@ -5,6 +5,7 @@ namespace Drupal\surf_curriculum\Entity\Node;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\download_request\Entity\DownloadItem;
+use Drupal\download_request\Entity\DownloadRequest;
 use Drupal\download_request\Entity\DownloadRequestItem;
 use Drupal\node\Entity\Node;
 use Drupal\surf_dashboard\Entity\EntityUserDashboardInterface;
@@ -45,25 +46,21 @@ class CurriculumModule extends Node implements EntityUserDashboardInterface {
   }
 
   public function getActiveDownloadRequest(AccountInterface $user) {
-    if (!$download_request_item = $this->getActiveDownloadRequestItem($user)) {
-      return FALSE;
-    }
-    return $download_request_item->getParentEntity();
-  }
-
-  public function getActiveDownloadRequestItem(AccountInterface $user) {
-    $query = $this->entityTypeManager()->getStorage('download_request_item')->getQuery();
+    $query = $this->entityTypeManager()->getStorage('download_request')->getQuery();
+    $current_date = \Drupal::service('date.formatter')->format(\Drupal::time()->getCurrentTime(), 'custom', 'Y-m-d');
     $query->accessCheck(FALSE)
-      ->condition('state', 'returned', '!=')
-      ->condition('download_item.entity.type', 'curriculum_module_resources')
-      ->condition('download_item.entity.field_curriculum_module.target_id', $this->id());
+      // this might need to be modified
+      //->condition('request_items.entity.state', 'returned', '!=')
+      ->condition('field_dates.end_value', $current_date, '>=')
+      ->condition('request_items.entity.download_item.entity.type', 'curriculum_module_resources')
+      ->condition('request_items.entity.download_item.entity.field_curriculum_module.target_id', $this->id());
 
     $result = $query->execute();
     if (empty($result)) {
       return FALSE;
     }
-    $download_request_item_id = reset($result);
-    return DownloadRequestItem::load($download_request_item_id);
+    $download_request_id = reset($result);
+    return DownloadRequest::load($download_request_id);
   }
 
   public function getUserReservationLinks(AccountInterface $user) {
