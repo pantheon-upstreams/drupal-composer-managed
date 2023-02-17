@@ -5,6 +5,7 @@
  * Primary module hooks for SURF Dashboard module.
  */
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\node\Entity\NodeType;
@@ -137,6 +138,25 @@ function surf_dashboard_form_node_type_form_alter(&$form, FormStateInterface $fo
   ];
 
   $form['actions']['submit']['#submit'][] = 'surf_dashboard_form_node_type_form_submit';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function surf_dashboard_page_variant_access(\Drupal\page_manager\PageVariantInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  $page_id = $entity->getPage()->id();
+  if (strpos($page_id, 'dashboard_') !== 0) {
+    return AccessResult::neutral();
+  }
+  if ($account->hasPermission($entity->getEntityType()->getAdminPermission())) {
+    return AccessResult::neutral();
+  }
+  $contexts = $entity->getContexts();
+  if (empty($contexts['user'])) {
+    return AccessResult::forbidden();
+  }
+  $user = $contexts['user']->getContextData()->getValue();
+  return AccessResult::forbiddenIf(!$user->access('update', $account));
 }
 
 function surf_dashboard_form_node_type_form_submit(&$form, FormStateInterface $form_state) {
