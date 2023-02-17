@@ -11,21 +11,15 @@ mode: default
 content:
   download_item:
     type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  state:
+    type: options_select
     weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 0
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
-  state:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

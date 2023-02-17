@@ -7,7 +7,6 @@ dependencies:
   module:
     - download_request
     - layout_builder
-    - options
 third_party_settings:
   layout_builder:
     enabled: false
@@ -26,9 +25,7 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  state:
-    type: list_default
-    label: hidden
+  status_description:
     settings: {  }
     third_party_settings: {  }
     weight: 1
@@ -36,3 +33,4 @@ content:
 hidden:
   langcode: true
   search_api_excerpt: true
+  state: true
