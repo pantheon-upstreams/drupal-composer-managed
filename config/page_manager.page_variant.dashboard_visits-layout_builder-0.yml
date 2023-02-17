@@ -7,11 +7,13 @@ dependencies:
     - page_manager.page.dashboard_visits
     - system.menu.dashboard
     - views.view.user_visits
+    - webform.webform.visit
   module:
     - layout_builder
     - layout_discovery
     - menu_block
     - views
+    - webform
 id: dashboard_visits-layout_builder-0
 label: 'Layout builder'
 weight: 0
@@ -53,7 +55,7 @@ variant_settings:
             expand_all_items: false
             parent: 'dashboard:'
             suggestion: dashboard
-          weight: 3
+          weight: 4
           additional: {  }
         da091f77-a2fc-4c04-b429-8285f1145347:
           uuid: da091f77-a2fc-4c04-b429-8285f1145347
@@ -81,6 +83,20 @@ variant_settings:
             block_revision_id: 13
             block_serialized: null
           weight: 2
+          additional: {  }
+        90c6c67b-6535-4fcd-b3c9-2dd4d656ef28:
+          uuid: 90c6c67b-6535-4fcd-b3c9-2dd4d656ef28
+          region: content
+          configuration:
+            id: webform_block
+            label: 'Submit or change a request'
+            label_display: visible
+            provider: webform
+            context_mapping: {  }
+            webform_id: visit
+            default_data: ''
+            redirect: false
+          weight: 3
           additional: {  }
       third_party_settings: {  }
   title_type: manual
