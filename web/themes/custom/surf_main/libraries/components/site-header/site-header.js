@@ -148,45 +148,48 @@
     // If a user clicks outside the menu, close menu
     // Stop events from continuning to information behind overlay
     $(window).on("click", function (e) {
-      // Get window width
-      let windowSize = $(window).width();
-      let mainMenu;
+      // Is the menu actually open?
+      if ($("body").hasClass("js-prevent-scroll")) {
+        // Get window width
+        let windowSize = $(window).width();
+        let mainMenu;
 
-      // Due to the strucuture of the split menu, we need to set different targets
-      if (windowSize >= 1024 && windowSize < 1200) {
-        mainMenu = $("#block-surf-main-main-menu");
-      } else if (windowSize <= 1023) {
-        mainMenu = $("#mainMenuControl");
-      } else {
-        // We are on desktop, default to large menu
-        mainMenu = $("#block-surf-main-main-menu");
-      }
-
-      // Is this the main menu?
-      if (
-        !mainMenu[0].contains(e.target) &&
-        mainMenu.parent()[0] !== e.target
-      ) {
-        // Close Menu
-        $("body").removeClass("js-prevent-scroll");
-        $(mobileNavButton).removeClass("checked");
-        $(mobileNavButton).attr("aria-expanded", "false");
-
+        // Due to the strucuture of the split menu, we need to set different targets
         if (windowSize >= 1024 && windowSize < 1200) {
-          displayIndex(utilityItems);
-          displayIndex(searchInput);
-          hideIndex($(mainMenuItems).find(".menu__link"));
+          mainMenu = $("#block-surf-main-main-menu");
         } else if (windowSize <= 1023) {
-          // When menu is closed, hide from focus
-          hideIndex(utilityItems);
-          hideIndex(mobileNav);
-          hideIndex(searchInput);
+          mainMenu = $("#mainMenuControl");
+        } else {
+          // We are on desktop, default to large menu
+          mainMenu = $("#block-surf-main-main-menu");
         }
-      }
 
-      // Stop event from traveling through to other components on the screen
-      e.stopPropagation();
-      e.preventDefault();
+        // Is this the main menu?
+        if (
+          !mainMenu[0].contains(e.target) &&
+          mainMenu.parent()[0] !== e.target
+        ) {
+          // Close Menu
+          $("body").removeClass("js-prevent-scroll");
+          $(mobileNavButton).removeClass("checked");
+          $(mobileNavButton).attr("aria-expanded", "false");
+
+          if (windowSize >= 1024 && windowSize < 1200) {
+            displayIndex(utilityItems);
+            displayIndex(searchInput);
+            hideIndex($(mainMenuItems).find(".menu__link"));
+          } else if (windowSize <= 1023) {
+            // When menu is closed, hide from focus
+            hideIndex(utilityItems);
+            hideIndex(mobileNav);
+            hideIndex(searchInput);
+          }
+        }
+
+        // Stop event from traveling through to other components on the screen
+        e.stopPropagation();
+        e.preventDefault();
+      }
     });
 
     /*------------------------------------*\
