@@ -1,0 +1,10 @@
+{{ 'My Reservation'|t }}
+<h5>{{ content.field_school_district|field_value }} {{ content.field_ref_grade_level|field_value }} {{ content.field_visit_type|field_value }}</h5>
+<h6>{{ content.field_date|field_value }}</h6>
+  
+
+<div class="user-request-field-state">
+  <label>{{ 'Status'|t }}</label>
+  {{ content.state }}
+</div>
+{{ content|without('field_school_district', 'field_ref_grade_level', 'field_visit_type', 'state', 'field_date') }}
