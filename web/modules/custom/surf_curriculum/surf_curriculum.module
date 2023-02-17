@@ -42,6 +42,12 @@ function surf_curriculum_entity_bundle_info_alter(array &$bundles): void {
  */
 function surf_curriculum_entity_extra_field_info() {
   $extra = [];
+  $extra['download_request_item']['download_request_item']['display']['status_description'] = [
+    'label' => t('Status with date info'),
+    'description' => t('The status of the item with additional info based on the value of the status'),
+    'visible' => TRUE,
+    'weight' => 15,
+  ];
   $extra['node']['curriculum_module']['display']['reservation_links'] = [
     'label' => t('Link to reserve or view on dashboard'),
     'description' => t('Link to webform with prepopulated nid or view reservation on dashboard.'),
@@ -50,6 +56,41 @@ function surf_curriculum_entity_extra_field_info() {
   ];
 
   return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function surf_curriculum_download_request_item_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('status_description')) {
+    $download_request = $entity->getParentEntity();
+
+    $state_item = $entity->get('state')->first();
+    $state_id = $state_item->getId();
+    $state_label = $state_item->getLabel();
+
+    $status_description = '@label';
+    $status_date = NULL;
+
+    if ($state_id == 'delivered') {
+      $status_description = '@label. Return by @date';
+      $status_date = $download_request->field_date_returned->date;
+    }
+    if ($state_id == 'returned') {
+      $status_date = $download_request->field_dates->end_date;
+      $current_date = new \Drupal\surf_core\DrupalDateTime();
+      $text = $current_date->isAfterDate($status_date) ? 'Expired' : 'Expires';
+      $status_description = $text . ' @date';
+    }
+
+    $build['status_description'] = [
+      '#type' => 'item',
+      '#markup' => t($status_description, [
+        '@label' => $state_label,
+        '@date' => $status_date ? $status_date->format('F j, Y') : '',
+      ])
+    ];
+  }
 }
 
 /**
