@@ -18,8 +18,14 @@ settings:
   label: 'Search API form'
   label_display: '0'
   provider: search_api_block
+  context_mapping: {  }
   action_url: /search
   input_name: text
+  input_placeholder: 'Search the site...'
+  submit_value: ''
+  pass_get_params: 0
+  input_label: ''
+  input_label_visibility: invisible
 visibility:
   is_mercury_editor_edit_tray:
     id: is_mercury_editor_edit_tray
