@@ -143,13 +143,16 @@
             "Provide some way to rebuild the persistent bundle field map": "https://git.drupalcode.org/project/drupal/-/merge_requests/1434.diff"
           },
           "drupal/ctools": {
-            "issue": "https://www.drupal.org/files/issues/2021-05-24/ctools-layout_builder_context-3029323-12.patch"
+            "Cannot use Entity View block in Layout Builder when there is no context": "https://www.drupal.org/files/issues/2021-05-24/ctools-layout_builder_context-3029323-12.patch"
           },
           "drupal/entity": {
             "Add an overridden add page with destination support": "https://git.drupalcode.org/project/entity/-/merge_requests/8.diff"
           },
+          "drupal/notification_message": {
+            "Block filtering by current timezone and not UTC": "https://www.drupal.org/files/issues/2023-02-17/3342687_0.patch"
+          },
           "drupal/page_manager": {
-          "issue": "https://www.drupal.org/files/issues/2022-11-24/3323572-catch-context-exeptions-2.diff"
+            "\"Assigned contexts were not satisfied: user\" due to PageAccessCheck->access": "https://www.drupal.org/files/issues/2022-11-24/3323572-catch-context-exeptions-2.diff"
           },
           "drupal/webform_content_creator": {
             "Optional parameter is provided before required parameter in FieldMappingInterface::mapEntityField()": "https://www.drupal.org/files/issues/2022-02-17/3264998-2.patch"
