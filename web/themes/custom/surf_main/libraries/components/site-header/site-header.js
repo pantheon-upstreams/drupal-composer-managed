@@ -184,11 +184,11 @@
             hideIndex(mobileNav);
             hideIndex(searchInput);
           }
-        }
 
-        // Stop event from traveling through to other components on the screen
-        e.stopPropagation();
-        e.preventDefault();
+          // Stop event from traveling through to other components on the screen
+          e.stopPropagation();
+          e.preventDefault();
+        }
       }
     });
 
