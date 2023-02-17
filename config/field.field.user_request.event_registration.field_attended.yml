@@ -1,0 +1,23 @@
+uuid: 41a4e5c8-b6bb-46c3-9cf6-2b2568dcc6ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_attended
+    - surf_registration.user_request_type.event_registration
+id: user_request.event_registration.field_attended
+field_name: field_attended
+entity_type: user_request
+bundle: event_registration
+label: Attended
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Attended
+  off_label: 'Not attended'
+field_type: boolean

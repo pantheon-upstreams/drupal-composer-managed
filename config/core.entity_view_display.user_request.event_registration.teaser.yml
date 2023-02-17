@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user_request.teaser
+    - field.field.user_request.event_registration.field_attended
     - field.field.user_request.event_registration.field_email
     - field.field.user_request.event_registration.field_name
     - field.field.user_request.event_registration.field_number_requested
@@ -65,6 +66,7 @@ content:
     region: content
 hidden:
   created: true
+  field_attended: true
   field_email: true
   field_webform_submission_id: true
   search_api_excerpt: true

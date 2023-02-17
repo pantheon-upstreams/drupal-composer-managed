@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user_request.event_registration.field_attended
     - field.field.user_request.event_registration.field_email
     - field.field.user_request.event_registration.field_name
     - field.field.user_request.event_registration.field_number_requested
@@ -21,6 +22,13 @@ content:
     weight: 20
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_attended:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_email:
     type: email_default
