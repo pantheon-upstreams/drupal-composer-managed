@@ -39,10 +39,10 @@ class DashboardMenuLink extends MenuLinkDefault {
     if (empty($route_name)) {
       return 0;
     }
-    if (!$this->getUserRouteParameter()) {
+    if (count($this->routeProvider->getRoutesByNames([$route_name])) !== 1) {
       return 0;
     }
-    return (count($this->routeProvider->getRoutesByNames([$route_name])) === 1);
+    return parent::isEnabled();
   }
 
   private function getUserRouteParameter() {
