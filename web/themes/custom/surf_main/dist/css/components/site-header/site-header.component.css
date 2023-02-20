@@ -312,6 +312,9 @@ main::before {
   transition: all 0.1s ease-in-out;
   width: 100%;
 }
+.c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded > button:hover {
+  cursor: pointer;
+}
 @media (max-width: 1199.98px) {
   .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded.expanded {
     background: rgba(0, 0, 0, 0.25);
@@ -323,14 +326,13 @@ main::before {
   }
 }
 @media (min-width: 1200px) {
-  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded.expanded button.menu__link[aria-expanded=true],
-  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded.expanded button:hover {
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded > button.menu__link[aria-expanded=true],
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded > button.menu__link:hover {
     color: var(--color-surf--black);
-    cursor: pointer;
     line-height: 130%;
     text-decoration-line: underline;
   }
-  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded.expanded > button[aria-expanded=true] ~ ul.menu--main[data-depth="1"] {
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item.menu__item--expanded > button[aria-expanded=true] ~ ul.menu--main[data-depth="1"] {
     opacity: 1;
     visibility: visible;
     -webkit-transition: visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -366,6 +368,10 @@ main::before {
     letter-spacing: 1.8px;
     line-height: 140%;
   }
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > .menu__link:hover,
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > button:hover {
+    cursor: pointer;
+  }
 }
 @media (min-width: 1200px) {
   .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > .menu__link,
@@ -382,6 +388,9 @@ main::before {
   .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > button {
     font-size: 28px;
   }
+}
+.c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > a.menu__link:hover {
+  text-decoration: underline;
 }
 .c-site-header__menu-main ul.menu--main[data-depth="1"] {
   margin: 0;

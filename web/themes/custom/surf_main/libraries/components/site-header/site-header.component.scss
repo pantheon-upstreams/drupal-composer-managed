@@ -267,6 +267,10 @@ main::before {
         text-align: left;
         transition: all $duration * 0.5 ease-in-out;
         width: 100%;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       &.expanded {
@@ -280,23 +284,22 @@ main::before {
             transition: all $duration * 0.5 ease-in-out;
           }
         }
+      }
 
-        // On larger desktop control visual toggle
-        @include bp-min(xlarge) {
-          // Button styles when opened on desktop
-          button.menu__link[aria-expanded="true"],
-          button:hover {
-            color: var(--color-surf--black);
-            cursor: pointer;
-            line-height: 130%;
-            text-decoration-line: underline;
-          }
+      // On larger desktop control visual toggle
+      @include bp-min(xlarge) {
+        // Button styles when opened on desktop
+        > button.menu__link[aria-expanded="true"],
+        > button.menu__link:hover {
+          color: var(--color-surf--black);
+          line-height: 130%;
+          text-decoration-line: underline;
+        }
 
-          > button[aria-expanded="true"] ~ ul.menu--main[data-depth="1"] {
-            opacity: 1;
-            visibility: visible;
-            @include animate---visibility-opacity-transform-on;
-          }
+        > button[aria-expanded="true"] ~ ul.menu--main[data-depth="1"] {
+          opacity: 1;
+          visibility: visible;
+          @include animate---visibility-opacity-transform-on;
         }
       }
     }
@@ -319,6 +322,10 @@ main::before {
         font-size: 22px;
         letter-spacing: 1.8px;
         line-height: 140%;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       @include bp-min(xlarge) {
@@ -342,6 +349,11 @@ main::before {
       padding: 0;
       text-decoration: none;
       text-transform: uppercase;
+    }
+
+    // Add underline for links
+    > a.menu__link:hover {
+      text-decoration: underline;
     }
   }
 
