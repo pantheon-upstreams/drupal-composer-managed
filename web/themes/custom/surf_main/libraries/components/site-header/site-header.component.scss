@@ -1,5 +1,7 @@
 @import "../../partials/_partials";
 
+/**** START - Main tansparency, menu wrappers & placement ****/
+
 // Remove transparency
 main::before {
   display: none;
@@ -31,23 +33,23 @@ main::before {
   // Offset top of overlay to header is visible
   @include bp-max(large) {
     main::before {
-      top: 70px;
+      top: 66px;
     }
 
     // For logged in users offset top
     &.user-logged-in main::before {
-      top: 90px;
+      top: 105px;
     }
   }
 
   @include bp-between(large, xlarge) {
     main::before {
-      top: 245px;
+      top: 175px;
     }
 
     // For logged in users offset top
-    .user-logged-in & main::before {
-      top: 325px;
+    &.user-logged-in main::before {
+      top: 250px;
     }
   }
 }
@@ -65,7 +67,11 @@ main::before {
 
   @include bp-min(large) {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 2fr;
+    grid-template: 70px 1fr / 1fr 2fr;
+  }
+
+  @include bp-between(large, xlarge) {
+    max-width: calc(100% - 80px);
   }
 }
 
@@ -80,57 +86,63 @@ main::before {
     border-top: 1px solid var(--border-color);
     width: 100%;
     max-width: 375px;
-    top: 70px;
+    top: 66px;
     bottom: 0;
     right: 0;
     z-index: 3;
-    opacity: 0;
-    transform: translate3d(375px, 0, 0);
-    transition: all $duration * 1.5 ease-in-out;
     position: fixed;
 
     // For logged in users offset top
     .user-logged-in & {
-      top: 90px;
+      top: 105px;
     }
   }
 
-  @include bp-between(medium, large) {
-    // For logged in users offset top
-    .user-logged-in & {
-      top: 107px;
-    }
-  }
-
-  @include bp-between(large, xlarge) {
-    // For logged in users offset top
-    .user-logged-in & {
-      top: 325px;
-    }
-  }
-
+  // Utility moves out of mobile menu, adjust placement
   @include bp-min(medium) {
     grid-area: 1 / 2;
+    grid-column: span 2;
   }
 
+  @include bp-min(large) {
+    top: 175px;
+
+    // For logged in users offset top
+    .user-logged-in & {
+      top: 250px;
+    }
+
+    &::before {
+      background: linear-gradient(90deg, #008535 0%, #00492c 50%);
+      content: "";
+      left: 0;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: -1;
+    }
+  }
+
+  // Align both main & utility navs
   @include bp-min(xlarge) {
     grid-area: span 2;
   }
 }
+
+/**** END - Main tansparency, menu wrappers & placement ****/
 
 /**** START - Main Logo ****/
 .c-site-header__logo {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin: var(--space-inset-y, 12px) var(--space-inset-x, 0)
-    var(--space-inset-y, 12px) 0;
   padding: 0;
   width: var(--size-width, 194px);
   z-index: 3;
 
   @include bp-max(medium) {
-    margin: 18px 0;
+    margin: 18px 20px 18px 0;
   }
 
   @include bp-min(medium) {
@@ -141,8 +153,13 @@ main::before {
 
   @include bp-min(large) {
     grid-row-start: 2;
+    width: 280px;
+    margin: 40px 0;
+  }
+
+  // Additional breakpoint for better spacing throughout sizes
+  @media (min-width: 1440px) {
     width: 320px;
-    margin: 24px 0;
   }
 
   a,
@@ -168,19 +185,15 @@ main::before {
     border-top: 1px solid var(--border-color);
     width: 100%;
     max-width: 375px;
-    top: 245px;
+    top: 175px;
     bottom: 0;
     right: 0;
     z-index: 3;
-    opacity: 0;
-    transform: translate3d(375px, 0, 0);
-    transition: all $duration * 1.5 ease-in-out;
-    transition-delay: 0.12ms;
     position: fixed;
 
     // For logged in users offset top
     .user-logged-in & {
-      top: 213px;
+      top: 250px;
     }
   }
 
@@ -225,9 +238,18 @@ main::before {
 
     // On larger desktop screens
     @include bp-min(xlarge) {
-      > li.menu__item:not(:first-child) {
-        margin-left: 64px;
-      }
+      gap: 22px;
+      margin: 40px 0;
+    }
+
+    // Additional breakpoint for better sizing
+    @media (min-width: 1440px) {
+      gap: 40px;
+    }
+
+    // On largest desktop screens
+    @include bp-min(xxlarge) {
+      gap: 64px;
     }
   }
 
@@ -235,6 +257,7 @@ main::before {
   ul.menu--main[data-depth="0"] > .menu__item {
     // Do not display green background unless parent is open
     &.menu__item--expanded {
+      position: relative;
       transition: all $duration * 1.5 ease-in-out;
       // Add buttons toggle icons
       > button {
@@ -247,13 +270,33 @@ main::before {
       }
 
       &.expanded {
-        background-color: var(--color-surf--forest);
-        transition: all $duration * 1.5 ease-in-out;
+        @include bp-max(xlarge) {
+          background: rgba(0, 0, 0, 0.25);
+          transition: all $duration * 1.5 ease-in-out;
 
-        // When open, adjust button icon
-        > button {
-          background-image: url("../../../../images/icons/ui-icon-minus--white.svg");
-          transition: all $duration * 0.5 ease-in-out;
+          // When open, adjust button icon
+          > button {
+            background-image: url("../../../../images/icons/ui-icon-minus--white.svg");
+            transition: all $duration * 0.5 ease-in-out;
+          }
+        }
+
+        // On larger desktop control visual toggle
+        @include bp-min(xlarge) {
+          // Button styles when opened on desktop
+          button.menu__link[aria-expanded="true"],
+          button:hover {
+            color: var(--color-surf--black);
+            cursor: pointer;
+            line-height: 130%;
+            text-decoration-line: underline;
+          }
+
+          > button[aria-expanded="true"] ~ ul.menu--main[data-depth="1"] {
+            opacity: 1;
+            visibility: visible;
+            @include animate---visibility-opacity-transform-on;
+          }
         }
       }
     }
@@ -280,9 +323,15 @@ main::before {
 
       @include bp-min(xlarge) {
         color: var(--color-surf--forest);
-        font-size: 28px;
+        font-size: 24px;
         letter-spacing: 1.5px;
         line-height: 130%;
+        white-space: nowrap;
+      }
+
+      // Additional breakpoint for better sizing
+      @media (min-width: 1440px) {
+        font-size: 28px;
       }
 
       background-color: transparent;
@@ -301,11 +350,11 @@ main::before {
     @include list--no-bullets;
     display: block;
 
-    .menu__item {
-      padding: 12px 0;
-    }
-
     @include bp-max(xlarge) {
+      .menu__item {
+        padding: 12px 0;
+      }
+
       // Hide on mobile menu screens
       .menu__item .main-menu__description {
         display: none;
@@ -328,18 +377,123 @@ main::before {
       }
     }
 
-    // @include bp-min(xlarge){
+    @include bp-min(xlarge) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 32px;
+      gap: 0 20px;
+      margin-top: 20px;
+      position: absolute;
+      width: 740px;
+      background: rgb(255, 255, 255);
+      box-shadow: rgb(0 0 0 / 25%) 4px 4px 24px;
+      transform: translateX(-38%);
+      opacity: 0;
+      visibility: hidden;
+      @include animate---visibility-opacity-transform-off;
 
-    // }
+      // Attach particle background to menu
+      background-image: url("../../../../images/textures/menu-particles.svg");
+      background-repeat: no-repeat;
+
+      .menu__item {
+        background: linear-gradient(
+          180deg,
+          #ffffff 25.52%,
+          rgba(255, 255, 255, 0.5) 100%
+        );
+        padding: 0;
+
+        // All beyond the first 2 elements
+        &:nth-child(n + 3) {
+          padding-top: 24px;
+        }
+      }
+
+      .menu__link {
+        font-family: var(--font-family-body);
+        font-size: 18px;
+        letter-spacing: inherit;
+        line-height: 144%;
+        text-decoration: none;
+        text-transform: capitalize;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+      .main-menu__description {
+        font-family: var(--font-family-body);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 148%;
+        margin-top: 2px;
+      }
+
+      // Only first item should cover full left side
+      .menu__item:first-child {
+        grid-area: 1/1/8/1;
+      }
+
+      // First link should always be emphasized
+      // If there are exactly 2 links, dislay both as emphasized links
+      .menu__item:first-child,
+      .menu__item:nth-last-child(-n + 2):first-child ~ .menu__item {
+        padding: 32px;
+
+        .menu__link {
+          font-family: var(--font-family-condensed);
+          font-weight: var(--font-weight-bold);
+          font-size: 28px;
+          line-height: 130%;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+        }
+        .main-menu__description {
+          font-family: var(--font-family-body);
+          font-weight: 400;
+          font-size: 16px;
+          letter-spacing: initial;
+          line-height: 148%;
+          text-transform: none;
+          margin-top: 2px;
+
+          // Accent arrow
+          background-image: url("../../../../images/icons/ui-icon-arrow-right--green.svg");
+          background-repeat: no-repeat;
+          background-position: left bottom;
+          padding-bottom: 40px;
+        }
+
+        &:hover,
+        &:focus-within {
+          .main-menu__description {
+            background-image: url("../../../../images/icons/ui-icon-arrow-right--black.svg");
+          }
+        }
+      }
+    }
   }
 
-  .main-menu__utilities {
-    display: none;
-    @include bp-max(large) {
-      display: block;
+  // Address last top menu buttons from breaking width on screens > 1200px
+  ul.menu--main[data-depth="0"] > li.menu__item--expanded {
+    @include bp-min(xlarge) {
+      // Stop last two menus from cutting off screen
+      &:nth-of-type(4),
+      &:nth-of-type(5) {
+        ul.menu--main[data-depth="1"] {
+          right: 0px;
+          transform: translateX(0px);
+        }
+      }
+    }
 
-      ul {
-        @include list--no-bullets;
+    // Revert 2nd to last element to center
+    @include bp-min(xxlarge) {
+      &:nth-of-type(4) > ul.menu--main[data-depth="1"] {
+        right: unset;
+        transform: translateX(-38%);
       }
     }
   }
@@ -348,16 +502,12 @@ main::before {
 
 /**** START - Utility Navigation ****/
 .c-site-header__utilities {
-  background-color: var(--color-surf--forest);
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin: 0;
 
-  @include bp-max(large) {
-    margin: 0;
-  }
-
+  // Only display utility nav on screens larger than 1024px
   #block-utilitynav {
     display: none;
 
@@ -365,17 +515,47 @@ main::before {
       display: block;
     }
   }
-  .menu--utility-nav {
+
+  // Menu element styles
+  ul.menu--utility-nav[data-depth="0"] {
     @include list--no-bullets;
     display: flex;
     flex-flow: row;
     margin: 0;
     padding: 0;
-  }
 
-  @include bp-min(large) {
-    flex-flow: row;
-    grid-area: span 1/2;
+    .menu__item {
+      padding: 20px 36px 20px 0;
+    }
+
+    @include bp-min(large) {
+      .menu__link {
+        color: #fff;
+        font-family: var(--font-family-condensed);
+        font-size: 22px;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 1.8px;
+        line-height: 144%;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:focus,
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+
+      // Account for user login icon
+      .menu__link.menu__login {
+        background-image: url("../../../../images/icons/ui-icon-user--white.svg");
+        background-repeat: no-repeat;
+        background-position: top right;
+        display: inline-block;
+        padding-right: 34px;
+      }
+    }
   }
 }
 
@@ -448,24 +628,42 @@ main::before {
 
 // On small screens control display for both main menu & utility
 @include bp-max(large) {
+  .nav-trigger[aria-expanded="false"] {
+    ~ .c-site-header__site-navigation {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(375px, 0, 0);
+      @include animate---visibility-opacity-transform-off;
+    }
+  }
   .nav-trigger[aria-expanded="true"] {
     ~ .c-site-header__site-navigation {
       opacity: 1;
+      visibility: visible;
       overflow-y: auto;
       transform: translate3d(0, 0, 0);
-      transition-delay: 0.12ms;
+      @include animate---visibility-opacity-transform-on;
     }
   }
 }
 
 // On medium screens control display for only main menu
 @include bp-between(large, xlarge) {
+  .nav-trigger[aria-expanded="false"] {
+    ~ .c-site-header__site-navigation .c-site-header__menu-main {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(375px, 0, 0);
+      @include animate---visibility-opacity-transform-off;
+    }
+  }
   .nav-trigger[aria-expanded="true"] {
     ~ .c-site-header__site-navigation .c-site-header__menu-main {
       opacity: 1;
+      visibility: visible;
       overflow-y: auto;
       transform: translate3d(0, 0, 0);
-      transition-delay: 0.12ms;
+      @include animate---visibility-opacity-transform-on;
     }
   }
 }

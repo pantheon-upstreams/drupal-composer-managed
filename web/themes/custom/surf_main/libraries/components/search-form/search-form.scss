@@ -69,6 +69,13 @@
             font-style: italic;
           }
 
+          // Firefox specific
+          &::placeholder {
+            color: #fff;
+            font-style: italic;
+            opacity: 1;
+          }
+
           // Hide search clear button
           &::-webkit-search-cancel-button {
             display: none;
@@ -82,25 +89,17 @@
 // Desktop styles from screens >= 1024px
 @include bp-min(large) {
   .header-search-form {
-    margin: 24px 15px;
-    width: 100%;
+    margin: 0;
+    width: fit-content;
 
     form {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      border: 1px solid #fff;
       gap: 6px;
-
       height: 55px;
       padding: 12px;
       width: 100%;
-
-      // Increase border when focusing
-      &:focus,
-      &:focus-within {
-        border: 2px solid #fff;
-      }
 
       // Search button
       .form-actions {
@@ -143,6 +142,13 @@
           &::-webkit-input-placeholder {
             color: #fff;
             font-style: italic;
+          }
+
+          // Firefox specific
+          &::placeholder {
+            color: #fff;
+            font-style: italic;
+            opacity: 1;
           }
 
           // Hide search clear button

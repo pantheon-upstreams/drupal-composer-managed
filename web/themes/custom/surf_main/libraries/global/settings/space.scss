@@ -31,14 +31,14 @@
   }
 }
 
-@include bp-min(large) {
+@include bp-min(xlarge) {
   :root {
     --space-gap: 80px;
     --space-inset: 80px;
   }
 }
 
-@include bp-min(xlarge) {
+@include bp-min(xxlarge) {
   :root {
     --space-gap: 120px;
     --space-inset: 120px;

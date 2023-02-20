@@ -98,13 +98,13 @@
     --space-inset: 40px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   :root {
     --space-gap: 80px;
     --space-inset: 80px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1620px) {
   :root {
     --space-gap: 120px;
     --space-inset: 120px;

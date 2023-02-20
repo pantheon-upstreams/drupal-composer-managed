@@ -48,10 +48,29 @@
       }
     }
 
-    // Close menu
-    function closeMobile(key) {
+    // Determine which menu container we should being working with
+    function menuContainer() {
       // Get window width
       let windowSize = $(window).width();
+      let mainMenu;
+
+      // Due to the strucuture of the split menu, we need to set different targets
+      if (windowSize >= 1024 && windowSize < 1200) {
+        mainMenu = $("#block-surf-main-main-menu");
+      } else if (windowSize <= 1023) {
+        mainMenu = $("#mainMenuControl");
+      } else {
+        // We are on desktop, default to large menu
+        mainMenu = $("#block-surf-main-main-menu");
+      }
+
+      return mainMenu, windowSize;
+    }
+
+    // Close menu
+    function closeMobile(key) {
+      let mainMenu,
+        windowSize = menuContainer();
 
       // Close Menu
       $("body").removeClass("js-prevent-scroll");
@@ -79,11 +98,11 @@
     // This function mainly handles opening the menu & controlling menu access
     // The close function has been broken out into a seperate function
     function mobileMenuNavigationControl(event) {
-      // Store window width
-      let windowSize = $(window).width();
-
       // Open Menu
       if ($(mobileNavButton).attr("aria-expanded") === "false") {
+        // Store window width
+        let windowSize = $(window).width();
+
         // Toggle overlay & checked classes
         $("body").addClass("js-prevent-scroll");
         $(mobileNavButton).addClass("checked");

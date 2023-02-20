@@ -1,0 +1,197 @@
+//
+// @file
+// Animations Mixin
+//
+
+$duration-on: 0.3s;
+$duration-off: 0.35s;
+$duration-fast: 0.25s;
+$duration-superfast: 0.15s;
+
+$easing-on: cubic-bezier(0.4, 0, 0.2, 1);
+$easing-off: cubic-bezier(0.4, 0, 0.2, 1);
+
+@mixin animate---all-on {
+  -webkit-transition: $duration-on $easing-on;
+  -o-transition: $duration-on $easing-on;
+  transition: $duration-on $easing-on;
+}
+@mixin animate---all-off {
+  -webkit-transition: all $duration-off $easing-off;
+  -o-transition: all $duration-off $easing-off;
+  transition: all $duration-off $easing-off;
+}
+
+@mixin animate---rotate-scale-on {
+  -webkit-transition: rotate $duration-on $easing-on,
+    scale $duration-on $easing-on;
+  -o-transition: rotate $duration-on $easing-on, scale $duration-on $easing-on;
+  transition: rotate $duration-on $easing-on, scale $duration-on $easing-on;
+}
+@mixin animate---rotate-scale-off {
+  -webkit-transition: rotate $duration-off $easing-off,
+    scale $duration-off $easing-off;
+  -o-transition: rotate $duration-off $easing-off,
+    scale $duration-off $easing-off;
+  transition: rotate $duration-off $easing-off, scale $duration-off $easing-off;
+}
+
+@mixin animate---visibility-opacity-transform-on {
+  -webkit-transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, -webkit-transform $duration-on $easing-on;
+  transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, -webkit-transform $duration-on $easing-on;
+  -o-transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, transform $duration-on $easing-on;
+  transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, transform $duration-on $easing-on;
+  transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, transform $duration-on $easing-on,
+    -webkit-transform $duration-on $easing-on;
+}
+
+@mixin animate---visibility-opacity-transform-off {
+  -webkit-transition: visibility $duration-fast $easing-off,
+    opacity $duration-fast $easing-off,
+    -webkit-transform $duration-fast $easing-off;
+  transition: visibility $duration-fast $easing-off,
+    opacity $duration-fast $easing-off,
+    -webkit-transform $duration-fast $easing-off;
+  -o-transition: visibility $duration-fast $easing-off,
+    opacity $duration-fast $easing-off, transform $duration-fast $easing-off;
+  transition: visibility $duration-fast $easing-off,
+    opacity $duration-fast $easing-off, transform $duration-fast $easing-off;
+  transition: visibility $duration-fast $easing-off,
+    opacity $duration-fast $easing-off, transform $duration-fast $easing-off,
+    -webkit-transform $duration-fast $easing-off;
+}
+
+@mixin animate---color-text-decoration-on {
+  -webkit-transition: color $duration-on $easing-on,
+    -webkit-text-decoration-color $duration-on $easing-on,
+    -webkit-text-decoration $duration-on $easing-on;
+  transition: color $duration-on $easing-on,
+    -webkit-text-decoration-color $duration-on $easing-on,
+    -webkit-text-decoration $duration-on $easing-on;
+  -o-transition: color $duration-on $easing-on,
+    text-decoration-color $duration-on $easing-on,
+    text-decoration $duration-on $easing-on;
+  transition: color $duration-on $easing-on,
+    text-decoration-color $duration-on $easing-on,
+    text-decoration $duration-on $easing-on;
+  transition: color $duration-on $easing-on,
+    text-decoration-color $duration-on $easing-on,
+    text-decoration $duration-on $easing-on,
+    -webkit-text-decoration-color $duration-on $easing-on,
+    -webkit-text-decoration $duration-on $easing-on;
+}
+@mixin animate---color-text-decoration-off {
+  -webkit-transition: color $duration-off $easing-off,
+    -webkit-text-decoration-color $duration-off $easing-off,
+    -webkit-text-decoration $duration-off $easing-off;
+  transition: color $duration-off $easing-off,
+    -webkit-text-decoration-color $duration-off $easing-off,
+    -webkit-text-decoration $duration-off $easing-off;
+  -o-transition: color $duration-off $easing-off,
+    text-decoration-color $duration-off $easing-off,
+    text-decoration $duration-off $easing-off;
+  transition: color $duration-off $easing-off,
+    text-decoration-color $duration-off $easing-off,
+    text-decoration $duration-off $easing-off;
+  transition: color $duration-off $easing-off,
+    text-decoration-color $duration-off $easing-off,
+    text-decoration $duration-off $easing-off,
+    -webkit-text-decoration-color $duration-off $easing-off,
+    -webkit-text-decoration $duration-off $easing-off;
+}
+
+@mixin animate---color-text-decoration-border-on {
+  -webkit-transition: color $duration-on $easing-on,
+    border-color $duration-on $easing-on,
+    -webkit-text-decoration $duration-on $easing-on,
+    -webkit-text-decoration-color $duration-on $easing-on;
+  transition: color $duration-on $easing-on,
+    border-color $duration-on $easing-on,
+    -webkit-text-decoration $duration-on $easing-on,
+    -webkit-text-decoration-color $duration-on $easing-on;
+  -o-transition: text-decoration $duration-on $easing-on,
+    text-decoration-color $duration-on $easing-on, color $duration-on $easing-on,
+    border-color $duration-on $easing-on;
+  transition: text-decoration $duration-on $easing-on,
+    text-decoration-color $duration-on $easing-on, color $duration-on $easing-on,
+    border-color $duration-on $easing-on;
+  transition: text-decoration $duration-on $easing-on,
+    text-decoration-color $duration-on $easing-on, color $duration-on $easing-on,
+    border-color $duration-on $easing-on,
+    -webkit-text-decoration $duration-on $easing-on,
+    -webkit-text-decoration-color $duration-on $easing-on;
+}
+@mixin animate---color-text-decoration-border-off {
+  -webkit-transition: color $duration-off $easing-off,
+    border-color $duration-off $easing-off,
+    -webkit-text-decoration $duration-off $easing-off,
+    -webkit-text-decoration-color $duration-off $easing-off;
+  transition: color $duration-off $easing-off,
+    border-color $duration-off $easing-off,
+    -webkit-text-decoration $duration-off $easing-off,
+    -webkit-text-decoration-color $duration-off $easing-off;
+  -o-transition: text-decoration $duration-off $easing-off,
+    text-decoration-color $duration-off $easing-off,
+    color $duration-off $easing-off, border-color $duration-off $easing-off;
+  transition: text-decoration $duration-off $easing-off,
+    text-decoration-color $duration-off $easing-off,
+    color $duration-off $easing-off, border-color $duration-off $easing-off;
+  transition: text-decoration $duration-off $easing-off,
+    text-decoration-color $duration-off $easing-off,
+    color $duration-off $easing-off, border-color $duration-off $easing-off,
+    -webkit-text-decoration $duration-off $easing-off,
+    -webkit-text-decoration-color $duration-off $easing-off;
+}
+
+@mixin animate---transform-on {
+  -webkit-transition: -webkit-transform $duration-on $easing-on;
+  transition: -webkit-transform $duration-on $easing-on;
+  -o-transition: transform $duration-on $easing-on;
+  transition: transform $duration-on $easing-on;
+  transition: transform $duration-on $easing-on,
+    -webkit-transform $duration-on $easing-on;
+}
+@mixin animate---transform-off {
+  -webkit-transition: -webkit-transform $duration-off $easing-off;
+  transition: -webkit-transform $duration-off $easing-off;
+  -o-transition: transform $duration-off $easing-off;
+  transition: transform $duration-off $easing-off;
+  transition: transform $duration-off $easing-off,
+    -webkit-transform $duration-off $easing-off;
+}
+
+@mixin animate---visibility-opacity-margin-on {
+  -webkit-transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, margin-top $duration-on $easing-on;
+  -o-transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, margin-top $duration-on $easing-on;
+  transition: visibility $duration-on $easing-on,
+    opacity $duration-on $easing-on, margin-top $duration-on $easing-on;
+}
+@mixin animate---visibility-opacity-margin-off {
+  -webkit-transition: visibility $duration-superfast$easing-off,
+    opacity $duration-superfast$easing-off,
+    margin-top $duration-superfast$easing-off;
+  -o-transition: visibility $duration-superfast$easing-off,
+    opacity $duration-superfast$easing-off,
+    margin-top $duration-superfast$easing-off;
+  transition: visibility $duration-superfast$easing-off,
+    opacity $duration-superfast$easing-off,
+    margin-top $duration-superfast$easing-off;
+}
+
+@mixin animate---color-on {
+  -webkit-transition: color $duration-on $easing-on;
+  -o-transition: color $duration-on $easing-on;
+  transition: color $duration-on $easing-on;
+}
+@mixin animate---color-off {
+  -webkit-transition: color $duration-off $easing-off;
+  -o-transition: color $duration-off $easing-off;
+  transition: color $duration-off $easing-off;
+}
