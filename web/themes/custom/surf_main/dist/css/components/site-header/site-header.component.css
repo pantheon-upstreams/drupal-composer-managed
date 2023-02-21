@@ -489,6 +489,7 @@ main::before {
     line-height: 130%;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .c-site-header__menu-main ul.menu--main[data-depth="1"] .menu__item:first-child .main-menu__description,
   .c-site-header__menu-main ul.menu--main[data-depth="1"] .menu__item:nth-last-child(-n+2):first-child ~ .menu__item .main-menu__description {

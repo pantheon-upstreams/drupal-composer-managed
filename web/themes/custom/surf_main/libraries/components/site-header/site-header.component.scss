@@ -468,6 +468,7 @@ main::before {
           line-height: 130%;
           letter-spacing: 1.5px;
           text-transform: uppercase;
+          white-space: nowrap;
         }
         .main-menu__description {
           font-family: var(--font-family-body);
