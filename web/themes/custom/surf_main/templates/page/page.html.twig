@@ -50,16 +50,17 @@
 			</main>
 		{% endblock %}
 		{# /main #}
+	</div>
 
-		{% block site_footer %}
-			{%
+	{% block site_footer %}
+		{%
 			include '@surf_main-components/site-footer/site-footer.html.twig' with {
 				footer_top: page.footer_top,
 				footer_bottom: page.footer_bottom
 			} only
   	%}
-		{% endblock %}
-		{# /site_footer #}
-	</div>
+	{% endblock %}
+	{# /site_footer #}
+
 </div>
 {# /.layout-container #}
