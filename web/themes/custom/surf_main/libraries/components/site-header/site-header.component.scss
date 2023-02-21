@@ -578,9 +578,9 @@ main::before {
       .menu__link.menu__login {
         background-image: url("../../../../images/icons/ui-icon-user--white.svg");
         background-repeat: no-repeat;
-        background-position: top right;
-        display: inline-block;
-        padding-right: 34px;
+        background-position: right;
+        background-size: 20px;
+        padding-right: 24px;
       }
     }
   }
