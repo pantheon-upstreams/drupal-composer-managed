@@ -89,73 +89,154 @@
 // Desktop styles from screens >= 1024px
 @include bp-min(large) {
   .header-search-form {
-    margin: 0;
-    width: fit-content;
+    background: var(--color-surf--forest);
+    height: 70px;
+    width: auto;
+    position: relative;
 
     form {
-      display: flex;
-      flex-flow: row nowrap;
       align-items: center;
-      gap: 6px;
-      height: 55px;
-      padding: 12px;
-      width: 100%;
+      display: inline-flex;
+      flex-flow: row nowrap;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 120px;
+      transition: width 1s cubic-bezier(0.1, 0.1, 0.1, 1);
+    }
 
-      // Search button
-      .form-actions {
-        margin: 0;
+    // On hover, add underline on button before, this displays as if it is above
+    // the input but it actually isn't
+    &:hover .form-actions:before {
+      text-decoration: underline;
+    }
 
-        .form-submit {
-          --size: 28px;
-          background-color: transparent;
-          background-image: url(../../../../images/icons/ui-icon-search--white.svg);
-          background-repeat: no-repeat;
-          background-position: center;
-          border: none;
-          height: var(--size);
-          padding: 0;
-          position: relative;
-          text-indent: var(--size);
-          width: var(--size);
-        }
+    .form-item {
+      input {
+        color: #fff;
+        font-family: var(--font-family-sans);
+        font-weight: var(--font-weight-regular);
+        font-size: 18px;
+        line-height: 144%;
       }
 
-      // Search input field
-      .form-item {
-        margin: 0;
+      label {
+        color: #fff;
+      }
+
+      input.form-search {
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid #fff;
+        padding: 0.25em 2em 0.25em 0.5em;
+        flex-grow: 1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        outline: 0;
+        z-index: 2;
         width: 100%;
+        // Assign pointer as this "appears" as the search button
+        cursor: pointer;
 
-        input {
-          background: transparent;
-          border: 0;
-          margin: 0;
-          padding: 0;
-          width: 100%;
+        // Attach search icon at end of input
+        background-color: transparent;
+        background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+        background-repeat: no-repeat;
+        background-position: right center;
 
+        // Only show when focused
+        &::-webkit-input-placeholder {
           color: #fff;
-          font-family: var(--font-family-sans);
-          font-weight: var(--font-weight-regular);
-          font-size: 18px;
-          line-height: 144%;
-
-          // Only show when focused
-          &::-webkit-input-placeholder {
-            color: #fff;
-            font-style: italic;
-          }
-
-          // Firefox specific
-          &::placeholder {
-            color: #fff;
-            font-style: italic;
-            opacity: 1;
-          }
-
-          // Hide search clear button
-          &::-webkit-search-cancel-button {
-            display: none;
-          }
+          font-style: italic;
         }
+
+        // Firefox specific
+        &::placeholder {
+          color: #fff;
+          font-style: italic;
+          opacity: 1;
+        }
+
+        // Hide search clear button
+        &::-webkit-search-cancel-button {
+          display: none;
+        }
+      }
+    }
+
+    // Submit button
+    .form-actions {
+      align-items: center;
+      color: #fff;
+      display: inline-flex;
+      font-family: var(--font-family-condensed);
+      font-weight: 700;
+      font-size: 22px;
+      height: 100%;
+      letter-spacing: 1.8px;
+      line-height: 140%;
+      margin: 0;
+      text-transform: uppercase;
+
+      &::before {
+        align-items: center;
+        content: "Search";
+        display: -webkit-inline-box;
+        display: inline-flex;
+        width: fit-content;
+      }
+
+      input.form-submit {
+        --size: 31px;
+        background-color: transparent;
+        background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: none;
+        color: #fff;
+        height: var(--size);
+        margin-left: 6px;
+        padding: 0;
+        position: relative;
+        text-indent: var(--size);
+        width: var(--size);
+      }
+    }
+  }
+
+  // When user interacts with Search field, animate "openning" elements
+  .header-search-form #search-api-form:focus-within {
+    width: 300px;
+
+    input.form-search {
+      opacity: 1;
+      z-index: initial;
+      cursor: initial;
+      height: 31px;
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    // Hide search pseudo text
+    .form-actions:before {
+      display: none;
+    }
+
+    // Align button to appear with input overlay
+    input.form-submit {
+      background: none;
+      border: 0;
+      position: absolute;
+      right: 0;
+
+      // Display hover state through overlay
+      &:hover {
+        cursor: pointer;
       }
     }
   }

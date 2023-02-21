@@ -137,60 +137,124 @@
 }
 @media (min-width: 1024px) {
   .header-search-form {
-    margin: 0;
-    width: fit-content;
+    background: var(--color-surf--forest);
+    height: 70px;
+    width: auto;
+    position: relative;
   }
   .header-search-form form {
-    display: flex;
-    flex-flow: row nowrap;
     align-items: center;
-    gap: 6px;
-    height: 55px;
-    padding: 12px;
-    width: 100%;
-  }
-  .header-search-form form .form-actions {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    height: 100%;
+    overflow: hidden;
     margin: 0;
-  }
-  .header-search-form form .form-actions .form-submit {
-    --size: 28px;
-    background-color: transparent;
-    background-image: url(../../../../images/icons/ui-icon-search--white.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    height: var(--size);
     padding: 0;
     position: relative;
-    text-indent: var(--size);
-    width: var(--size);
+    width: 120px;
+    transition: width 1s cubic-bezier(0.1, 0.1, 0.1, 1);
   }
-  .header-search-form form .form-item {
-    margin: 0;
-    width: 100%;
+  .header-search-form:hover .form-actions:before {
+    text-decoration: underline;
   }
-  .header-search-form form .form-item input {
-    background: transparent;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  .header-search-form .form-item input {
     color: #fff;
     font-family: var(--font-family-sans);
     font-weight: var(--font-weight-regular);
     font-size: 18px;
     line-height: 144%;
   }
-  .header-search-form form .form-item input::-webkit-input-placeholder {
+  .header-search-form .form-item label {
+    color: #fff;
+  }
+  .header-search-form .form-item input.form-search {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    padding: 0.25em 2em 0.25em 0.5em;
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    outline: 0;
+    z-index: 2;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+  .header-search-form .form-item input.form-search::-webkit-input-placeholder {
     color: #fff;
     font-style: italic;
   }
-  .header-search-form form .form-item input::placeholder {
+  .header-search-form .form-item input.form-search::placeholder {
     color: #fff;
     font-style: italic;
     opacity: 1;
   }
-  .header-search-form form .form-item input::-webkit-search-cancel-button {
+  .header-search-form .form-item input.form-search::-webkit-search-cancel-button {
     display: none;
+  }
+  .header-search-form .form-actions {
+    align-items: center;
+    color: #fff;
+    display: inline-flex;
+    font-family: var(--font-family-condensed);
+    font-weight: 700;
+    font-size: 22px;
+    height: 100%;
+    letter-spacing: 1.8px;
+    line-height: 140%;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .header-search-form .form-actions::before {
+    align-items: center;
+    content: "Search";
+    display: -webkit-inline-box;
+    display: inline-flex;
+    width: fit-content;
+  }
+  .header-search-form .form-actions input.form-submit {
+    --size: 31px;
+    background-color: transparent;
+    background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    color: #fff;
+    height: var(--size);
+    margin-left: 6px;
+    padding: 0;
+    position: relative;
+    text-indent: var(--size);
+    width: var(--size);
+  }
+  .header-search-form #search-api-form:focus-within {
+    width: 300px;
+  }
+  .header-search-form #search-api-form:focus-within input.form-search {
+    opacity: 1;
+    z-index: initial;
+    cursor: initial;
+    height: 31px;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .header-search-form #search-api-form:focus-within .form-actions:before {
+    display: none;
+  }
+  .header-search-form #search-api-form:focus-within input.form-submit {
+    background: none;
+    border: 0;
+    position: absolute;
+    right: 0;
+  }
+  .header-search-form #search-api-form:focus-within input.form-submit:hover {
+    cursor: pointer;
   }
 }

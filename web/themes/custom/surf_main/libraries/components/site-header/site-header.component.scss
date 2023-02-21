@@ -120,13 +120,15 @@ main::before {
       position: absolute;
       top: 0;
       width: 100vw;
-      z-index: -1;
+      z-index: 0;
     }
   }
 
   // Align both main & utility navs
   @include bp-min(xlarge) {
-    grid-area: span 2;
+    background: var(--color-surf--forest);
+    // grid-area: span 2;
+    top: unset;
   }
 }
 
@@ -200,9 +202,10 @@ main::before {
   // Display on desktop screens >1024px
   @include bp-min(xlarge) {
     align-items: flex-end;
+    background: #fff;
     display: flex;
     justify-content: flex-end;
-    flex-flow: nowrap row;
+    flex-flow: row;
     position: relative;
     grid-row-start: 2;
   }
@@ -239,7 +242,7 @@ main::before {
     // On larger desktop screens
     @include bp-min(xlarge) {
       gap: 22px;
-      margin: 40px 0;
+      margin: 42px 0;
     }
 
     // Additional breakpoint for better sizing
@@ -334,6 +337,10 @@ main::before {
         letter-spacing: 1.5px;
         line-height: 130%;
         white-space: nowrap;
+
+        span {
+          white-space: initial;
+        }
       }
 
       // Additional breakpoint for better sizing
@@ -518,6 +525,8 @@ main::before {
   flex-flow: row;
   justify-content: flex-end;
   margin: 0;
+  position: relative;
+  z-index: 1;
 
   // Only display utility nav on screens larger than 1024px
   #block-utilitynav {
@@ -525,6 +534,7 @@ main::before {
 
     @include bp-min(large) {
       display: block;
+      height: 100%;
     }
   }
 
@@ -537,7 +547,7 @@ main::before {
     padding: 0;
 
     .menu__item {
-      padding: 20px 36px 20px 0;
+      padding: 19px 36px 19px 0;
     }
 
     @include bp-min(large) {
@@ -551,6 +561,10 @@ main::before {
         text-decoration: none;
         text-transform: uppercase;
         white-space: nowrap;
+
+        span {
+          white-space: initial;
+        }
 
         &:focus,
         &:hover {

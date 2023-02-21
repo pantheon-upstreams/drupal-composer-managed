@@ -174,12 +174,13 @@ main::before {
     position: absolute;
     top: 0;
     width: 100vw;
-    z-index: -1;
+    z-index: 0;
   }
 }
 @media (min-width: 1200px) {
   .c-site-header__site-navigation {
-    grid-area: span 2;
+    background: var(--color-surf--forest);
+    top: unset;
   }
 }
 
@@ -249,9 +250,10 @@ main::before {
 @media (min-width: 1200px) {
   .c-site-header__menu-main {
     align-items: flex-end;
+    background: #fff;
     display: flex;
     justify-content: flex-end;
-    flex-flow: nowrap row;
+    flex-flow: row;
     position: relative;
     grid-row-start: 2;
   }
@@ -287,7 +289,7 @@ main::before {
 @media (min-width: 1200px) {
   .c-site-header__menu-main ul.menu--main[data-depth="0"] {
     gap: 22px;
-    margin: 40px 0;
+    margin: 42px 0;
   }
 }
 @media (min-width: 1440px) {
@@ -381,6 +383,10 @@ main::before {
     letter-spacing: 1.5px;
     line-height: 130%;
     white-space: nowrap;
+  }
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > .menu__link span,
+  .c-site-header__menu-main ul.menu--main[data-depth="0"] > .menu__item > button span {
+    white-space: initial;
   }
 }
 @media (min-width: 1440px) {
@@ -524,6 +530,8 @@ main::before {
   flex-flow: row;
   justify-content: flex-end;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 .c-site-header__utilities #block-utilitynav {
   display: none;
@@ -531,6 +539,7 @@ main::before {
 @media (min-width: 1024px) {
   .c-site-header__utilities #block-utilitynav {
     display: block;
+    height: 100%;
   }
 }
 .c-site-header__utilities ul.menu--utility-nav[data-depth="0"] {
@@ -545,7 +554,7 @@ main::before {
   list-style: none;
 }
 .c-site-header__utilities ul.menu--utility-nav[data-depth="0"] .menu__item {
-  padding: 20px 36px 20px 0;
+  padding: 19px 36px 19px 0;
 }
 @media (min-width: 1024px) {
   .c-site-header__utilities ul.menu--utility-nav[data-depth="0"] .menu__link {
@@ -558,6 +567,9 @@ main::before {
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+  .c-site-header__utilities ul.menu--utility-nav[data-depth="0"] .menu__link span {
+    white-space: initial;
   }
   .c-site-header__utilities ul.menu--utility-nav[data-depth="0"] .menu__link:focus, .c-site-header__utilities ul.menu--utility-nav[data-depth="0"] .menu__link:hover {
     cursor: pointer;
