@@ -60,9 +60,10 @@ body {
       #008535 69.79%,
       #2976d9 93.75%
     );
-    background-size: 100% 600%;
+    background-size: 100%;
+    // background-size: 100% 600%;
     background-position: 0% 100%;
-    animation: bg-animation 10s infinite linear alternate;
+    // animation: bg-animation 10s infinite linear alternate;
     display: none;
     z-index: 2;
     // Large Desktop
@@ -77,11 +78,11 @@ body {
   }
 }
 
-@keyframes bg-animation {
-  from {
-    background-position: 0% 100%;
-  }
-  to {
-    background-position: 100% 0%;
-  }
-}
+// @keyframes bg-animation {
+//   from {
+//     background-position: 0% 100%;
+//   }
+//   to {
+//     background-position: 100% 0%;
+//   }
+// }
