@@ -609,6 +609,7 @@ main::before {
 .nav-trigger span.label {
   color: var(--color-surf--forest);
   cursor: pointer;
+  font-family: var(--font-family-condensed);
   font-size: 22px;
   font-weight: var(--font-weight-bold);
   line-height: 140%;
