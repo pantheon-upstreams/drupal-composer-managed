@@ -7,27 +7,7 @@
 
 use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Form\FormStateInterface;
 
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function surf_main_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id)
-{
-  // Attach search_form library.
-  $form['#attached']['library'][] = 'surf_main/search_form';
-
-  // Add search-form component classes.
-  $form['#attributes']['class'] = ['search-form'];
-  $form['keys']['#attributes']['class'][] = 'search-form__input';
-  $form['actions']['#attributes']['class'][] = 'search-form__actions';
-  $form['actions']['submit']['#attributes']['class'][] = 'search-form__button';
-  $form['#theme_wrappers']['form'] = [
-    '#attributes' => [
-      'class' => ['search-form'],
-    ],
-  ];
-}
 
 /**
  * Implements hook_preprocess().

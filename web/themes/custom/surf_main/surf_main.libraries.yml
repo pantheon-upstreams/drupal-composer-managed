@@ -108,6 +108,10 @@ search-form:
   css:
     theme:
       dist/css/components/search-form/search-form.css: {}
+  js:
+    dist/js/search-form/search-form.js: {}
+  dependencies:
+    - core/jquery
 
 # Section Title
 section-title:
