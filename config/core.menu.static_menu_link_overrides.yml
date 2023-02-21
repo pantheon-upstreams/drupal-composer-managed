@@ -13,3 +13,27 @@ definitions:
     weight: -45
     expanded: false
     enabled: false
+  surf_dashboard__curriculum_units:
+    weight: -50
+    menu_name: dashboard
+    parent: ''
+    expanded: false
+    enabled: true
+  surf_dashboard__events:
+    weight: -47
+    menu_name: dashboard
+    parent: ''
+    expanded: false
+    enabled: true
+  surf_dashboard__visits:
+    weight: -48
+    menu_name: dashboard
+    parent: ''
+    expanded: false
+    enabled: true
+  surf_dashboard__my_account:
+    weight: -46
+    menu_name: dashboard
+    parent: ''
+    expanded: false
+    enabled: true
