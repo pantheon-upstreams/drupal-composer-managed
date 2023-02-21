@@ -29,35 +29,37 @@
 		{{ page.help }}
 	{% endblock %}
 
-	{% block main %}
-		<main>
-			<a id="main-content" tabindex="-1"></a>
-			{# link is in html.html.twig #}
+	<div class="page-content-and-footer__wrapper">
+		{% block main %}
+			<main>
+				<a id="main-content" tabindex="-1"></a>
+				{# link is in html.html.twig #}
 
-			{% block content %}
-				<div class="l-constrained">
-					{{ page.content }}
-				</div>
-			{% endblock %}
-			{# /content #}
+				{% block content %}
+					<div class="l-constrained">
+						{{ page.content }}
+					</div>
+				{% endblock %}
+				{# /content #}
 
-			{% block sidebar_right %}
-				{{ page.sidebar_right }}
-			{% endblock %}
-			{# /sidebar_right #}
+				{% block sidebar_right %}
+					{{ page.sidebar_right }}
+				{% endblock %}
+				{# /sidebar_right #}
 
-		</main>
-	{% endblock %}
-	{# /main #}
+			</main>
+		{% endblock %}
+		{# /main #}
 
-	{% block site_footer %}
-		{%
-    include '@surf_main-components/site-footer/site-footer.html.twig' with {
-      footer_top: page.footer_top,
-      footer_bottom: page.footer_bottom
-    } only
-  %}
-	{% endblock %}
-	{# /site_footer #}
+		{% block site_footer %}
+			{%
+			include '@surf_main-components/site-footer/site-footer.html.twig' with {
+				footer_top: page.footer_top,
+				footer_bottom: page.footer_bottom
+			} only
+  	%}
+		{% endblock %}
+		{# /site_footer #}
+	</div>
 </div>
 {# /.layout-container #}

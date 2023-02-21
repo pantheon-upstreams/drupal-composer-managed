@@ -106,3 +106,38 @@ body {
 .skip-link:hover, .skip-link:focus {
   color: var(--link-color-text-reverse-hover);
 }
+
+.page-content-and-footer__wrapper {
+  position: relative;
+}
+.page-content-and-footer__wrapper:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1.25rem;
+  background: linear-gradient(180deg, #f26438 6.25%, #ffc956 33.85%, #008535 54.69%, #008535 69.79%, #2976d9 93.75%);
+  background-size: 100% 600%;
+  background-position: 0% 100%;
+  animation: bg-animation 10s infinite linear alternate;
+  display: none;
+  z-index: 2;
+}
+@media (min-width: 1200px) {
+  .page-content-and-footer__wrapper:before {
+    display: block;
+  }
+}
+@media (max-width: 1023.98px) {
+  .page-content-and-footer__wrapper .l-constrained--wide {
+    width: 100%;
+  }
+}
+
+@keyframes bg-animation {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 100% 0%;
+  }
+}
