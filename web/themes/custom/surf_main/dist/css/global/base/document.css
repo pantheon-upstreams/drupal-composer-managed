@@ -96,15 +96,17 @@ body {
   margin-bottom: 0;
 }
 
-.skip-link {
+.skip-link.visually-hidden.focusable {
+  background-color: #fff;
+  color: var(--color-surf--black);
   display: block;
+  margin: 1em;
   padding: 0.25em;
-  text-align: center;
-  color: var(--link-color-text-reverse);
-  background-color: var(--color-background-reverse);
-}
-.skip-link:hover, .skip-link:focus {
-  color: var(--link-color-text-reverse-hover);
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: fit-content !important;
+  z-index: 99;
 }
 
 .page-content-and-footer__wrapper {
