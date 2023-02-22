@@ -16,6 +16,14 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 include __DIR__ . "/settings.pantheon.php";
 
+if (
+  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
+  (($_ENV['PANTHEON_ENVIRONMENT'] == 'test') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'components'))
+) {
+  /* Disable CSS and JS aggregation for storybook sake. */
+  $config['system.performance']['css']['preprocess'] = FALSE;
+  $config['system.performance']['js']['preprocess'] = FALSE;
+}
 
 /**
  * Configuration for local solr search
