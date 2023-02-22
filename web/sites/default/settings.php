@@ -18,7 +18,7 @@ include __DIR__ . "/settings.pantheon.php";
 
 if (
   isset($_ENV['PANTHEON_ENVIRONMENT']) &&
-  (($_ENV['PANTHEON_ENVIRONMENT'] == 'test') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'components'))
+  (($_ENV['PANTHEON_ENVIRONMENT'] == 'dev') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'components'))
 ) {
   /* Disable CSS and JS aggregation for storybook sake. */
   $config['system.performance']['css']['preprocess'] = FALSE;
