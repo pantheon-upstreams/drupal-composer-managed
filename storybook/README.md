@@ -77,6 +77,8 @@ This instance of Storybook can be deployed to Pantheon alongside the rest of the
 npm run build-storybook
 ```
 
+Once this is built, you will need to commit the changes to the `web/storybook` directory and push them to Pantheon. Storybook will be available at [https://dev-surf-main.pantheonsite.io/storybook](https://dev-surf-main.pantheonsite.io/storybook).
+
 <blockquote>
   <p><strong>Note:</strong> This command will build the static Storybook files in the <code>/web/storybook/</code> directory and include a hardcoded domain reference to https://dev-surf-main.pantheonsite.io/. Because of this, the static build of storybook will only work when deployed to the Pantheon dev environment. We can make this more dynamic once a CI process is implemented. See the `build-storybook` command defined in `package.json`</p>
 </blockquote>
