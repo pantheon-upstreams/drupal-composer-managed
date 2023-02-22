@@ -110,3 +110,4 @@ node_modules
 
 # Support modified local lando files
 .lando.local.yml
+.ddev

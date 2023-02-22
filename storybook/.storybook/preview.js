@@ -1,3 +1,4 @@
+// Docs: https://storybook.js.org/docs/react/essentials/viewport
 const customViewports = {
   small: {
     name: 'small',
