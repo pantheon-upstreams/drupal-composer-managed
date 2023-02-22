@@ -15,6 +15,7 @@ module.exports = {
         docs: false,
       }
     },
+    '@storybook/addon-a11y',
     '@lullabot/storybook-drupal-addon',
   ],
   "framework": "@storybook/server",
