@@ -75,7 +75,7 @@ class Event extends Node implements EntityUserDashboardInterface {
     $date_start = $this->field_registration_period->start_date;
     $date_end = $this->field_registration_period->end_date;
     $date_end->add(new \DateInterval('P1D'));
-    $now->isAfterDate($date_start) && $now->isBeforeDate($date_end);
+    return $now->isAfterDate($date_start) && $now->isBeforeDate($date_end);
   }
 
   public function getActiveUserRequest(AccountInterface $user) {
