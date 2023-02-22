@@ -3,35 +3,35 @@ const customViewports = {
     name: 'small',
     styles: {
       width: '576px',
-      height: '963px',
+      height: '100%',
     },
   },
   medium: {
     name: 'medium',
     styles: {
       width: '768px',
-      height: '963px',
+      height: '100%',
     },
   },
   large: {
     name: 'large',
     styles: {
       width: '1024px',
-      height: '963px',
+      height: '100%',
     },
   },
   xlarge: {
     name: 'xlarge',
     styles: {
       width: '1200px',
-      height: '963px',
+      height: '100%',
     },
   },
   xxlarge: {
     name: 'xxlarge',
     styles: {
       width: '1620px',
-      height: '963px',
+      height: '100%',
     },
   },
 };
