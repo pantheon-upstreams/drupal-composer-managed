@@ -59,6 +59,5 @@ class FileFieldFile extends ContentEntity {
     list($entity_type, $field_name) = explode(':', $field);
     $query->leftJoin($entity_type . '__' . $field_name, $field_name, "{$field_name}.{$field_name}_target_id = b.fid");
     $condition->isNotNull("{$field_name}.{$field_name}_target_id");
-    $debug = 'true';
   }
 }

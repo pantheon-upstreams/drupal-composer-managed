@@ -7,7 +7,7 @@ source:
   scheme: public
   parent_entity_type: 'node'
   file_fields:
-    - field_document
+    - node:field_document
 process:
   fid: fid
   filename: filename
