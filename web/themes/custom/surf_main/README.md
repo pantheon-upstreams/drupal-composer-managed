@@ -44,7 +44,7 @@ npm run build
 ```
 
 ## Components
-This site has the [Component Library (CL) Components](https://drupal.org/project/cl_components) module installed which facilitates the development of self-contained composable components. These components are stored in individual folders inside the `templates/components` folder.
+This site has the [Component Library (CL) Components](https://drupal.org/project/cl_components) module installed which facilitates the development of self-contained composable components. These components are stored in individual folders inside the `templates/components` folder. Watch this [screencast](https://drive.google.com/file/d/1-h6eX8g6bg7Dm_2GmswLUPIV9qcKRqP3/view?usp=share_link) for an overview of how components are defined and rendered.
 
 <blockquote>
 <p><strong>Note:</strong>

@@ -7,7 +7,7 @@ This site is integrated with [Storybook](https://storybook.js.org/), a tool for 
 
 
 ## Setup
-First ensure [CL Server](https://drupal.org/project/cl_server) is installed in your Drupal environment.
+First ensure [CL Server](https://drupal.org/project/cl_server) is installed in your Drupal environment. Watch this [screencast](https://drive.google.com/file/d/1fCP8DELUeraEU-LM3zHZFWCtOsDfDzIz/view?usp=share_link) for a quick overview of how storybook is structured.
 
 ```bash
 drush en cl_server
@@ -69,6 +69,21 @@ npm run storybook
 ```
 
 The browser should open to `http://localhost:6006` and you should see the Storybook UI. If you don't see the UI, you can manually navigate to `http://localhost:6006` in your browser.
+
+## Deploying Storybook
+This instance of Storybook can be deployed to Pantheon alongside the rest of the Drupal site. To deploy Storybook, run the following commands from this `/storybook` directory:
+
+```bash
+npm run build-storybook
+```
+
+<blockquote>
+  <p><strong>Note:</strong> This command will build the static Storybook files in the <code>/web/storybook/</code> directory and include a hardcoded domain reference to https://dev-surf-main.pantheonsite.io/. Because of this, the static build of storybook will only work when deployed to the Pantheon dev environment. We can make this more dynamic once a CI process is implemented. See the `build-storybook` command defined in `package.json`</p>
+</blockquote>
+
+<blockquote>
+  <p><strong>Note:</strong> You must have CSS and JS aggregation disabled in the Drupal site with CL Server installed for storybook to work. Because of this, Storybook should not be enabled on a production site. There is configuration in `settings.php` to disable aggregation on the dev environment on Pantheon.</p>
+</blockquote>
 
 ## Defining Stories
 See `web/themes/custom/surf_main/README.md` for more information on defining stories for a components.
