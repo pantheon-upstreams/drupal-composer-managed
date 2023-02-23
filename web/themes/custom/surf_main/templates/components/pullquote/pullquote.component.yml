@@ -1,0 +1,24 @@
+"$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
+machineName: "pullquote"
+name: "Pullquote"
+componentType: "molecule"
+status: "WIP"
+description: A Pullquote Component
+schemas:
+  props:
+    type: object
+    required:
+      - quote
+    properties:
+      quote:
+        type: string
+        title: Quote
+        description: The quote paragraph
+        examples:
+          - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      credit:
+        type: string
+        title: Quote Credit
+        description: "The optional second quote credit."
+        examples:
+          - "Example Quote Credit"

@@ -1,0 +1,41 @@
+@import "_partials";
+@import "../../libraries/global/settings/font.scss";
+
+.c-pullquote {
+  margin: 0 0 rem(40px) 0;
+  background: rebeccapurple;
+  @extend .font-surf--heading-two;
+}
+
+.c-pullquote__content {
+  position: relative;
+  // color: var(--color-surf-nd--purple);
+  &:before {
+    content: "\201C";
+    display: inline-block;
+  }
+  &:after {
+    content: "\201D";
+    display: inline-block;
+  }
+  p {
+    display: inline;
+    // @extend .font-surf-nd--heading-four;
+    // color: var(--color-surf-nd--purple);
+  }
+}
+
+.c-pullquote__footer {
+  margin: rem(12px) 0 0 0;
+  cite {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-label-small);
+    line-height: var(--font-line-height-label-small);
+    color: var(--color-surf-nd--darker-purple);
+    font-style: normal;
+    letter-spacing: 0.2em;
+  }
+}
