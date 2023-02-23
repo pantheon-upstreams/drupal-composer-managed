@@ -95,8 +95,8 @@ b {
 //
 // Copy
 //
-p:not([class]),
-li:not([class]) {
+p,
+li {
   margin: 15px 0;
   @extend .font-surf--body-medium;
 }

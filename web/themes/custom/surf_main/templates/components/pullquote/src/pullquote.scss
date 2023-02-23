@@ -1,41 +1,36 @@
 @import "_partials";
-// @import "../../libraries/global/settings/font.scss";
+@import "settings/font";
 
 .c-pullquote {
-  margin: 0 0 rem(40px) 0;
-  background: rebeccapurple;
-  @extend .font-surf--heading-two;
+  // Style: fullwidth
+  &.fullwidth .c-pullquote__content p {
+    color: transparent;
+    background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
+    background-clip: text;
+  }
+  // Style: centered
+  &.centered {
+    border-top: solid 2px var(--color-surf--cloud);
+    border-bottom: solid 2px var(--color-surf--cloud);
+    padding: 32px 0;
+  }
 }
 
-.c-pullquote__content {
-  position: relative;
-  // color: var(--color-surf-nd--purple);
-  &:before {
-    content: "\201C";
-    display: inline-block;
-  }
-  &:after {
-    content: "\201D";
-    display: inline-block;
-  }
-  p {
-    display: inline;
-    // @extend .font-surf-nd--heading-four;
-    // color: var(--color-surf-nd--purple);
-  }
+.c-pullquote__content p {
+  @extend .font-surf--heading-one;
+  color: var(--color-surf--black);
 }
 
 .c-pullquote__footer {
-  margin: rem(12px) 0 0 0;
+  margin: rem(20px) 0 0 0;
   cite {
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: var(--font-weight-regular);
-    font-family: var(--font-family-sans);
-    font-size: var(--font-size-label-small);
-    line-height: var(--font-line-height-label-small);
-    color: var(--color-surf-nd--darker-purple);
-    font-style: normal;
-    letter-spacing: 0.2em;
+    @extend .font-surf--label-peewee;
+    align-items: baseline;
+    color: var(--color-surf--grey);
+    display: flex;
+    &::before {
+      content: "\2014";
+      margin: 0 7px 0 0;
+    }
   }
 }

@@ -113,6 +113,7 @@
 
   // SURF Main - Label Fonts
   .font-surf--label-x-large {
+    font-style: normal;
     text-transform: uppercase;
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-label-large);
@@ -121,6 +122,7 @@
     line-height: var(--font-line-height-label-large);
   }
   .font-surf--label-large {
+    font-style: normal;
     text-transform: uppercase;
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-condensed);
@@ -129,6 +131,7 @@
     line-height: var(--font-line-height-label-large);
   }
   .font-surf--label-medium {
+    font-style: normal;
     text-transform: uppercase;
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-label-medium);
@@ -137,6 +140,7 @@
     line-height: var(--font-line-height-label-medium);
   }
   .font-surf--label-small {
+    font-style: normal;
     text-transform: uppercase;
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-label-small);
@@ -145,6 +149,7 @@
     line-height: var(--font-line-height-label-small);
   }
   .font-surf--label-peewee {
+    font-style: normal;
     text-transform: uppercase;
     font-family: var(--font-family-condensed);
     font-size: var(--font-size-label-peewee);
