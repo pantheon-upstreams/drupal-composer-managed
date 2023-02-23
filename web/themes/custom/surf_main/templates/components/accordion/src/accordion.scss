@@ -7,7 +7,6 @@
 // }
 
 @import "_partials";
-@import "settings/font";
 
 .c-accordion {
   margin: 0 0 rem(20px) 0;
@@ -115,7 +114,7 @@
   // transition: all 1s ease-in-out;
   transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
   p {
-    // @extend .font-surf-nd--body-medium;
+    // @include .surf-font-nd--body-medium;
   }
   p:first-child {
     margin-top: 0;

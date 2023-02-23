@@ -1,5 +1,4 @@
-@import "../../partials/_partials";
-@import "../../global/settings/font.scss";
+@import "_partials";
 
 .site-footer__wrapper {
   background-color: var(--color-surf--black);
@@ -34,7 +33,7 @@
     }
 
     .footer-title {
-      @extend .font-surf--heading-two;
+      @include surf-font-heading-two;
       color: #fff;
       font-weight: var(--font-weight-medium);
       letter-spacing: 0.015em;
@@ -80,7 +79,7 @@
     }
 
     .footer-label {
-      @extend .font-surf--label-peewee;
+      @include surf-font-label-peewee;
       color: #fff;
 
       // Tablet
@@ -161,7 +160,7 @@
       }
 
       address {
-        @extend .font-surf--body-large;
+        @include surf-font-body-large;
         color: #fff;
         font-style: inherit;
       }
@@ -184,7 +183,7 @@
         }
       }
       a {
-        @extend .font-surf--body-large;
+        @include surf-font-body-large;
         color: #fff;
         text-decoration: none;
 
@@ -216,7 +215,7 @@
             }
           }
           a {
-            @extend .font-surf--body-large;
+            @include surf-font-body-large;
             color: #fff;
             text-decoration: none;
 

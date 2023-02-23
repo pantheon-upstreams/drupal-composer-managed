@@ -1,5 +1,4 @@
 @import "_partials";
-@import "settings/font";
 
 .c-pullquote {
   // Style: fullwidth
@@ -17,14 +16,14 @@
 }
 
 .c-pullquote__content p {
-  @extend .font-surf--heading-one;
+  @include surf-font-heading-one;
   color: var(--color-surf--black);
 }
 
 .c-pullquote__footer {
   margin: rem(20px) 0 0 0;
   cite {
-    @extend .font-surf--label-peewee;
+    @include surf-font-label-peewee;
     align-items: baseline;
     color: var(--color-surf--grey);
     display: flex;

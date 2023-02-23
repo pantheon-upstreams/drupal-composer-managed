@@ -94,10 +94,7 @@ gulp.task("componentStyles", function () {
   return gulp
     .src(paths.component.styles.src, { base: "./" })
     .pipe(sourcemaps.init())
-    // .pipe(sass({ includePaths: ["./libraries/partials"] }))
-    .pipe(
-      sass({ includePaths: ["./libraries/partials", "./libraries/global"] })
-    )
+    .pipe(sass({ includePaths: ["./libraries/partials"] }))
     .on("error", sass.logError)
     .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
     .pipe(sourcemaps.write())
