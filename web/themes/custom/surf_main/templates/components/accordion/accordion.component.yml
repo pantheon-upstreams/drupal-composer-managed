@@ -13,10 +13,10 @@ schemas:
         title: "Items"
         description:
           "Accordion items"
-          -
-            title:
-              title: Title
-              type: string
-            content:
-              title: Content
-              type: string
+          # -
+          #   title:
+          #     title: Title
+          #     type: string
+          #   content:
+          #     title: Content
+          #     type: string
