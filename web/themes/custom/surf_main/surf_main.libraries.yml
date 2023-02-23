@@ -137,12 +137,6 @@ site-header:
     - core/jquery
     - core/once
 
-# Tabs
-tabs:
-  css:
-    component:
-      dist/css/components/tabs/tabs.component.css: {}
-
 # Teaser
 teaser:
   css:
