@@ -16,6 +16,9 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 include __DIR__ . "/settings.pantheon.php";
 
+/**
+ * Environment specific settings to enable Storybook and CL Server integration.
+ */
 if (
   isset($_ENV['PANTHEON_ENVIRONMENT']) &&
   (($_ENV['PANTHEON_ENVIRONMENT'] == 'dev') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'components'))
@@ -23,6 +26,9 @@ if (
   /* Disable CSS and JS aggregation for storybook sake. */
   $config['system.performance']['css']['preprocess'] = FALSE;
   $config['system.performance']['js']['preprocess'] = FALSE;
+
+  /* Enable anonymous access to CL Server */
+  $config['user.role.anonymous']['permissions'][] = 'use cl server';
 }
 
 /**

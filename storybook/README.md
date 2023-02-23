@@ -41,7 +41,10 @@ You will also need to disable the component registry cache in Drupal so changes 
 $settings['cache']['bins']['component_registry'] = 'cache.backend.null';
 ```
 
-And disable JS and CSS aggregation in `settings.local.php`:
+You will need to disable JS and CSS aggregation in the environment that is serving stories. Storybook is unable to read aggregated JS and CSS files. You will also need to and grant anonymous
+users permission to access CL Server. Otherwise Storybook will not be able to fetch the rendered HTML of the components. **Note:** Do not grant access in production environments.
+
+Add these lines to your `settings.local.php`.
 
 ```php
 /**
@@ -49,9 +52,10 @@ And disable JS and CSS aggregation in `settings.local.php`:
  */
 $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
-```
 
-Now you need to grant permissions to the CL Server endpoint for anonymous users. This is required so Storybook can access the endpoint. To do this, visit `/admin/people/permissions` and check `Use the CL Server endpoint` permission to the `Anonymous User` role. *Do not* check this permission in production or on publicly accessible environments as it has security implications. We will need to revisit this if we want the stories to be publicly accessible or available on a public environment.
+/* Enable anonymous access to CL Server */
+$config['user.role.anonymous']['permissions'][] = 'use cl server';
+```
 
 Now change to the `/storybook` directory in the root of the project and run:
 
@@ -71,7 +75,7 @@ npm run storybook
 The browser should open to `http://localhost:6006` and you should see the Storybook UI. If you don't see the UI, you can manually navigate to `http://localhost:6006` in your browser.
 
 ## Deploying Storybook
-This instance of Storybook can be deployed to Pantheon alongside the rest of the Drupal site. To deploy Storybook, run the following commands from this `/storybook` directory:
+This instance of Storybook can be deployed to Pantheon alongside the rest of the Drupal site. To deploy Storybook, run the following commands from this `/storybook` directory: Watch this [screencast](https://drive.google.com/file/d/1unhCfUVEhYAUcWd0J-395pCFTRU1pWUA/view?usp=share_link) for overview of how to deploy Storybook.
 
 ```bash
 npm run build-storybook
@@ -91,3 +95,6 @@ Once this is built, you will need to commit the changes to the `web/storybook` d
 See `web/themes/custom/surf_main/README.md` for more information on defining stories for a components.
 
 For examples, take a look at existing stories defined in `web/themes/custom/surf_main/templates/components` and `web/modules/contrib/cl_components/cl_components_examples`.
+
+## Accessibility Testing
+Storybook has a built-in accessibility testing tool, based on Axe, that can be used to test components for accessibility issues. Watch this [screencast](https://drive.google.com/file/d/1VsiJSno2MDLZuXSpGxh3PliCvtTB99Lt/view?usp=share_link) for an overview of how to use the accessibility testing tool.
