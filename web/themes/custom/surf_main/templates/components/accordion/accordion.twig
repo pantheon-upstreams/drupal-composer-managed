@@ -1,0 +1,25 @@
+<section {{ clAttributes.addClass(['c-accordion', style]) }}>
+
+  {% block accordion_block %}
+  {% for key, accordion_item in items %}
+
+  <h3 class="title">
+    <button type="button" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" class="accordion-trigger"
+      aria-controls="sect-{{key}}" id="accordionid-{{key}}">
+      <span class="accordion-title__wrapper">
+        <span class="accordion-icon"></span>
+        <span class="accordion-title">{{accordion_item.title}}</span>
+      </span>
+    </button>
+  </h3>
+
+  <div id="sect-{{key}}" role="region" aria-labelledby="accordionid-{{key}}" class="accordion-panel" {% if loop.first
+    %}{% else %}hidden="true" {% endif %}>
+    <div class="inner">
+      {{accordion_item.content|check_markup('plain')}}
+    </div>
+  </div>
+
+  {% endfor %}
+  {% endblock %}
+</section>
