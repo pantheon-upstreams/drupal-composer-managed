@@ -10,112 +10,99 @@
 @import "settings/font";
 
 .c-accordion {
-  margin: 0 0 rem(20px) 0;
+  margin: 0;
   padding: 0;
 }
-.c-accordion h3:not(:first-child) {
-  margin: rem(4px) 0 0 0;
+
+.c-accordion .c-title {
+  @extend .font-surf--body-medium;
+  margin: 0;
 }
 
-.accordion-trigger {
-  background: var(--color-surf-nd--ghost-white);
-  color: var(--color-surf-nd--purple);
+.c-accordion-trigger {
+  background: none;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: rem(14px);
-  line-height: 157%;
-  font-weight: var(--font-weight-bold);
   margin: 0;
-  padding: rem(12px) rem(38px) rem(12px) rem(23px);
+  padding: rem(20px) rem(12px);
   position: relative;
   text-align: left;
   width: 100%;
-  border-radius: rem(100px);
+  border-radius: 0;
   cursor: pointer;
-  // Tablet
-  @include bp-min(medium) {
-    font-size: rem(22px);
-    line-height: 159%;
-  }
 }
 
-.accordion-trigger:focus,
-.accordion-trigger:hover {
-  background: var(--color-surf-nd--lavender);
+.c-accordion-trigger:focus,
+.c-accordion-trigger:hover {
   text-decoration: underline;
-  color: var(--color-surf-nd--dark-purple);
+  color: var(--color-surf--dark-grey);
 }
 
-.c-accordion button {
+.c-accordion .c-accordion-trigger {
   border-style: none;
+  border-bottom: solid 1px var(--color-surf--grey);
 }
 
-.c-accordion .accordion-title__wrapper {
+.c-accordion .c-accordion-title__wrapper {
   display: flex;
   align-items: center;
 }
 
-.c-accordion .accordion-title {
+.c-accordion .c-accordion-title-text {
   flex: 1;
-  width: 100%;
+  font-weight: var(--font-weight-bold);
   text-transform: none;
+  width: 100%;
 }
 
-.c-accordion .accordion-icon {
+.c-accordion .c-accordion-icon {
   background-image: inline-svg(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path fill="#7828C8" fill-rule="evenodd" d="M9.429 2.194a1.429 1.429 0 0 0-2.858 0v4.378H2.193a1.429 1.429 0 0 0 0 2.857h4.378v4.378a1.429 1.429 0 1 0 2.858 0V9.429h4.377a1.429 1.429 0 0 0 0-2.857H9.43V2.194Z" clip-rule="evenodd"/></svg>'
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
   );
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 
-  width: rem(14.47px);
-  height: rem(14.47px);
+  width: rem(28px);
+  height: rem(28px);
   display: inline-block;
   margin: 0 rem(12px) 0 0;
   flex: none;
   // Tablet
   @include bp-min(medium) {
-    width: rem(20.26px);
-    height: rem(20.26px);
+    width: rem(28px);
+    height: rem(28px);
   }
 }
 
-.c-accordion .accordion-trigger:focus .accordion-icon,
-.c-accordion .accordion-trigger:hover .accordion-icon {
+.c-accordion .c-accordion-trigger:focus .c-accordion-icon,
+.c-accordion .c-accordion-trigger:hover .c-accordion-icon {
   background-image: inline-svg(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path fill="#190063" fill-rule="evenodd" d="M9.429 2.194a1.429 1.429 0 0 0-2.858 0v4.378H2.193a1.429 1.429 0 0 0 0 2.857h4.378v4.378a1.429 1.429 0 1 0 2.858 0V9.429h4.377a1.429 1.429 0 0 0 0-2.857H9.43V2.194Z" clip-rule="evenodd"/></svg>'
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
   );
 }
 
-.c-accordion .accordion-trigger[aria-expanded="true"] {
-  color: var(--color-surf-nd--dark-purple);
-}
-
-.c-accordion .accordion-trigger[aria-expanded="true"] .accordion-icon {
+.c-accordion .c-accordion-trigger[aria-expanded="true"] .c-accordion-icon {
   background-image: inline-svg(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="4" fill="none"><path fill="#7828C8" fill-rule="evenodd" d="M.016 2c0-.789.64-1.428 1.428-1.428h11.112a1.429 1.429 0 0 1 0 2.857H1.444C.655 3.429.016 2.789.016 2Z" clip-rule="evenodd"/></svg>'
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
   );
   background-size: contain;
   background-repeat: no-repeat;
-  width: rem(13.97px);
-  height: rem(2.86px);
+  width: rem(28px);
+  height: rem(28px);
   // Tablet
   @include bp-min(medium) {
-    width: rem(20.26px);
-    height: rem(20.26px);
+    width: rem(28px);
+    height: rem(28px);
   }
 }
 
-.c-accordion .accordion-panel {
+.c-accordion .c-accordion-panel {
   max-height: 100vh;
-  // margin: 0;
-  // padding: rem(20px);
-  // transition: all 1s ease-in-out;
-  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: max-height 350ms cubic-bezier(0.4, 0, 0.2, 1);
   p {
-    // @extend .font-surf-nd--body-medium;
+    @extend .font-surf--body-medium;
   }
   p:first-child {
     margin-top: 0;
@@ -126,16 +113,19 @@
   // Tablet
   @include bp-min(medium) {
     .inner {
-      margin: rem(40px);
+      margin: rem(48px);
     }
   }
 }
 
-.c-accordion .accordion-panel[hidden] {
-  // margin: 0;
+.c-accordion-panel {
+  border-bottom: solid 1px var(--color-surf--grey);
+}
+
+.c-accordion .c-accordion-panel[hidden] {
+  border: none;
   display: block;
   max-height: 0;
   overflow: hidden;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  // transition: all 1s ease-in-out;
+  transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

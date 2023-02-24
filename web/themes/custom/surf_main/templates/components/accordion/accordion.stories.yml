@@ -5,5 +5,7 @@ args:
       content: "<p>Blandit nulla turpis proin pellentesque quis. Dolor ac vitae augue egestas ipsum at. Duis lectus nec sed id. Velit habitasse egestas suspendisse ac turpis aliquam arcu. Diam commodo luctus amet eget.</p>"
     - title: "Accordion title two"
       content: "<p>Blandit nulla turpis proin pellentesque quis. Dolor ac vitae augue egestas ipsum at. Duis lectus nec sed id. Velit habitasse egestas suspendisse ac turpis aliquam arcu. Diam commodo luctus amet eget.</p>"
+    - title: "Accordion title three"
+      content: "<p>Blandit nulla turpis proin pellentesque quis. Dolor ac vitae augue egestas ipsum at. Duis lectus nec sed id. Velit habitasse egestas suspendisse ac turpis aliquam arcu. Diam commodo luctus amet eget.</p>"
 stories:
   - name: Default

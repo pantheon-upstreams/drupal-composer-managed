@@ -8,7 +8,7 @@ schemas:
   props:
     type: object
     properties:
-      "items":
+      items:
         type: "array"
         title: "Items"
         description:
