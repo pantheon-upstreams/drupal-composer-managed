@@ -5,15 +5,6 @@
   <nav role="navigation" aria-labelledby="pagination-heading" {{ component.attributes('pager', modifiers, attr) }}>
     <h4 id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</h4>
     <ul class="pager__items js-pager__items">
-      {# Print first item if we are not on the first page. #}
-      {# {% if items.first %}
-        <li class="pager__item pager__item--first">
-          <a href="{{ items.first.href }}" class="pager__link" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title').addClass('pager__link') }}>
-            <span class="visually-hidden">{{ 'First page'|t }}</span>
-            <span aria-hidden="true">{{ items.first.text|default('« First'|t) }}</span>
-          </a>
-        </li>
-      {% endif %} #}
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
         <li class="pager__item pager__item--previous">
@@ -31,16 +22,16 @@
       {% for key, item in items.pages %}
         <li class="pager__item{{ current == key ? ' is-active' : '' }}">
           {% if current == key %}
-            {% set title = 'Current page'|t %}
+            <span class="visually-hidden">
+                {{ current == key ? 'Current page'|t : 'Page'|t }}
+              </span>
+            {{- key -}}
           {% else %}
             {% set title = 'Go to page @key'|t({'@key': key}) %}
+            <a href="{{ item.href }}" class="pager__link" title="{{ title }}"{{ item.attributes|without('href', 'title').addClass('pager__link') }} {{ current == key ? 'aria-current="page"' }}>
+              {{- key -}}
+            </a>
           {% endif %}
-          <a href="{{ item.href }}" class="pager__link" title="{{ title }}"{{ item.attributes|without('href', 'title').addClass('pager__link') }} {{ current == key ? 'aria-current="page"' }}>
-            <span class="visually-hidden">
-              {{ current == key ? 'Current page'|t : 'Page'|t }}
-            </span>
-            {{- key -}}
-          </a>
         </li>
       {% endfor %}
       {# Add an ellipsis if there are further next pages. #}
@@ -56,15 +47,6 @@
           </a>
         </li>
       {% endif %}
-      {# Print last item if we are not on the last page. #}
-      {# {% if items.last %}
-        <li class="pager__item pager__item--last">
-          <a href="{{ items.last.href }}" class="pager__link" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
-            <span class="visually-hidden">{{ 'Last page'|t }}</span>
-            <span aria-hidden="true">{{ items.last.text|default('Last »'|t) }}</span>
-          </a>
-        </li>
-      {% endif %} #}
     </ul>
   </nav>
 {% endif %}

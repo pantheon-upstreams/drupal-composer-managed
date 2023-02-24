@@ -39,6 +39,12 @@
       }
     }
     &.is-active {
+      color: var(--color-surf--white);
+      background-color: var(--color-surf--black);
+      padding: 0 rem(7px);
+      font-family: var(--font-family-sans);
+      font-weight: var(--font-weight-bold);
+      text-decoration: none;
       a {
         color: var(--color-surf--white);
         background-color: var(--color-surf--black);
