@@ -1,39 +1,69 @@
 //
 // @file
-// Progress Bar Styles
+// Pager Styles
 //
 
-@import '../../partials/_partials';
+@import "../../partials/_partials";
 
 .pager {
+  background: #fff;
 }
 
 .pager__items {
-  margin: 0;
-  text-align: center;
-}
-
-.pager__item {
-  display: inline-block;
-  margin: 0 .25rem;
-
-  &.is-active a {
-    color: $clr-text;
+  display: flex;
+  flex-direction: row;
+  margin: rem(24px) 0 0 0;
+  padding: 0 20px;
+  @include bp-min(medium) {
+    margin: rem(40px) 0 0 0;
+    padding: 0 rem(40px);
   }
-}
-
-.pager__link {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
+  @include bp-min(large) {
+    margin: rem(48px) 0 0 0;
+    padding: 0 rem(48px);
   }
-}
-
-.pager__item--next {
-
-}
-
-.pager__item--last {
-
+  @include bp-min(xlarge) {
+    margin: rem(60px) 0 0 0;
+    padding: 0 rem(120px);
+  }
+  li.pager__item {
+    display: block;
+    color: var(--color-surf--black);
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-bold);
+    font-size: rem(14px);
+    line-height: 1;
+    @include bp-min(medium) {
+      font-size: rem(22px);
+      line-height: 1;
+    }
+    &:not(:last-child) {
+      margin-right: rem(20px);
+      @include bp-min(medium) {
+        margin-right: rem(28px);
+      }
+    }
+    a.pager__link {
+      color: var(--color-surf--forest);
+      font-family: var(--font-family-sans);
+      font-weight: var(--font-weight-bold);
+      text-decoration: none;
+      font-size: rem(14px);
+      line-height: 1;
+      @include bp-min(medium) {
+        font-size: rem(22px);
+        line-height: 1;
+      }
+      &:hover,
+      &:active {
+        text-decoration: underline;
+        color: var(--color-surf--black);
+      }
+    }
+    &.is-active {
+      a {
+        color: var(--color-surf--black);
+      }
+    }
+  }
 }
