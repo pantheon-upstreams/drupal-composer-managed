@@ -5,17 +5,25 @@
 .t-white {
   --color-background: #fff;
   --color-background-hover: #f2f2f2;
-  --color-body: #222222;
-  --color-heading: #222222;
+  --color-border: var(--color-surf--black);
+  --color-border-muted: var(--color-surf--cloud);
+  --color-text: var(--color-surf--black);
+  --color-text-heading: var(--color-surf--black);
+  --color-text-heading-muted: #707070;
+  --color-text-muted: var(--color-surf--grey);
   --color-link: #00492c;
   --color-link-hover: #222222;
 }
 
 .t-black {
+  --color-border: #fff;
+  --color-border-muted: var(--color-surf--cloud);
   --color-background: #222222;
   --color-background-hover: #494949;
-  --color-body: #fff;
-  --color-heading: #fff;
+  --color-text: #fff;
+  --color-text-heading: #fff;
+  --color-text-heading-muted: #e7e7e7;
+  --color-text-muted: var(--color-surf--cloud);
   --color-link: #f2f2f2;
   --color-link-hover: #fff;
 }
@@ -23,8 +31,12 @@
 .t-cloud {
   --color-background: #f2f2f2;
   --color-background-hover: #f6f6f6;
-  --color-body: #222222;
-  --color-heading: #222222;
+  --color-border: var(--color-surf--black);
+  --color-border-muted: var(--color-surf--grey);
+  --color-text: #222222;
+  --color-text-muted: var(--color-surf--grey);
+  --color-text-heading: #222222;
+  --color-text-heading-muted: #707070;
   --color-link: #00492c;
   --color-link-hover: #00492c;
 }
@@ -32,8 +44,12 @@
 .t-kelly {
   --color-background: #008535;
   --color-background-hover: #00492c;
-  --color-body: #fff;
-  --color-heading: #fff;
+  --color-border: #fff;
+  --color-border-muted: var(--color-surf--cloud);
+  --color-text: #fff;
+  --color-text-muted: var(--color-surf--cloud);
+  --color-text-heading: #fff;
+  --color-text-heading-muted: #e7e7e7;
   --color-link: #fff;
   --color-link-hover: #fff;
 }
@@ -41,8 +57,12 @@
 .t-forest {
   --color-background: #00492c;
   --color-background-hover: #008535;
-  --color-body: #fff;
-  --color-heading: #fff;
+  --color-border: #fff;
+  --color-border-muted: var(--color-surf--cloud);
+  --color-text: #fff;
+  --color-text-muted: var(--color-surf--cloud);
+  --color-text-heading: #fff;
+  --color-text-heading-muted: #e7e7e7;
   --color-link: #fff;
   --color-link-hover: #fff;
 }
@@ -50,6 +70,12 @@
 .t-gradient {
   --color-background: #008535;
   --color-background-hover: #00492c;
+  --color-border: #fff;
+  --color-border-muted: var(--color-surf--cloud);
+  --color-text: #fff;
+  --color-text-muted: var(--color-surf--cloud);
+  --color-text-heading: #fff;
+  --color-text-heading-muted: #e7e7e7;
   --color-link: #fff;
   --color-link-hover: #fff;
 }

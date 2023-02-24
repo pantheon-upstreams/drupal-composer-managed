@@ -27,8 +27,12 @@
   // Semantic colors
   //
   --color-border: var(--color-surf--black);
+  --color-border-muted: var(--color-surf--cloud);
+
   --color-text: var(--color-surf--black);
+  --color-text-muted: var(--color-surf--grey);
   --color-text-heading: var(--color-surf--black);
+  --color-text-heading-muted: #707070;
   --color-text-input: var(--color-surf--black);
 
   --color-link: var(--color-surf--forest);

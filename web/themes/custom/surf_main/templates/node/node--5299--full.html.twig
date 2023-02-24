@@ -26,12 +26,26 @@
 					credit: 'Optional second line for quote credit.',
 					style:'fullwidth'
 				} %}
+				<div class="t-pane t-forest u-padding">
+					{% include "pullquote" with {
+						quote: '<p>Extremely large emphasized text example. Lorem ipsum dolor sit amet.</p>',
+						credit: 'Optional second line for quote credit.',
+						style:'fullwidth'
+					} %}
+				</div>
 				<h3>Pullquote Centered</h3>
 				{% include "pullquote" with {
 					quote: '<p>“Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.”</p>',
 					credit: 'Albert Enstein',
 					style:'centered'
 				} %}
+				<div class="t-pane t-forest u-padding">
+					{% include "pullquote" with {
+						quote: '<p>“Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.”</p>',
+						credit: 'Albert Enstein',
+						style:'centered'
+					} %}
+				</div
 			</div>
 
 

@@ -73,25 +73,12 @@
 /*------------------------------------*\
   01 - Breakpoints
 \*------------------------------------*/
-.c-pullquote.fullwidth .c-pullquote__content p {
-  color: transparent;
-  background: -o-linear-gradient(357.18deg, #707070 0.11%, #000000 95.94%);
-  background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-.c-pullquote.centered {
-  border-top: solid 2px var(--color-surf--cloud);
-  border-bottom: solid 2px var(--color-surf--cloud);
-  padding: 32px 0;
-}
-
 .c-pullquote__content p {
   font-weight: var(--font-weight-medium);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-heading-one);
   line-height: var(--font-line-height-heading-one);
-  color: var(--color-surf--black);
+  color: var(--color-text-heading);
 }
 
 .c-pullquote__footer {
@@ -107,11 +94,25 @@
   line-height: var(--font-line-height-label-peewee);
   -webkit-box-align: baseline;
           align-items: baseline;
-  color: var(--color-surf--grey);
+  color: var(--color-text-muted);
   display: -webkit-box;
   display: flex;
 }
 .c-pullquote__footer cite::before {
   content: "—";
   margin: 0 7px 0 0;
+}
+
+.c-pullquote--fullwidth .c-pullquote__content p {
+  color: transparent;
+  background: -o-linear-gradient(357.18deg, var(--color-text-heading-muted) 0.11%, var(--color-text-heading) 95.94%);
+  background: linear-gradient(92.82deg, var(--color-text-heading-muted) 0.11%, var(--color-text-heading) 95.94%);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+.c-pullquote--centered {
+  border-top: solid 2px var(--color-border-muted);
+  border-bottom: solid 2px var(--color-border-muted);
+  padding: 32px 0;
 }

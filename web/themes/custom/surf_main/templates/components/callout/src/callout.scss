@@ -6,9 +6,9 @@
   --space-inset-x: 40px;
   --space-inset-y: 40px;
   background-color: var(--background-color, transparent);
-  color: var(--color-body);
+  color: var(--color-text);
 }
 
 .c-callout__heading * {
-  color: var(--color-heading);
+  color: var(--color-text-heading);
 }
