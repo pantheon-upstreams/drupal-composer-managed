@@ -21,7 +21,18 @@
 			<!-- Accordion -->
 			<h3>Accordion</h3>
 			<p>Coming soon...</p>
-
+			{% include "accordion" with {
+				items: [
+					{
+						title: 'Accordion One',
+						content: '<p>Hi one!</p>',
+					},
+					{
+						title: 'Accordion Two',
+						content: '<p>Hi two!</p>',
+					}
+				]
+			} %}
 			<!-- Pullquote -->
 			<div class="l-stack">
 				<h3>Pullquote Fullwidth</h3>
