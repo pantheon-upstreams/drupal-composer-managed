@@ -1,5 +1,4 @@
 @import "../../partials/_partials";
-@import "../settings/font.scss";
 
 @custom-selector :--heading h1, h2, h3, h4, h5;
 
@@ -29,32 +28,32 @@ h6 {
 
 h1 {
   margin: 0;
-  @extend .font-surf--heading-one;
+  @include surf-font-heading-one;
 }
 
 h2 {
   margin-top: 48px;
-  @extend .font-surf--heading-two;
+  @include surf-font-heading-two;
 }
 
 h3 {
   margin-top: 48px;
-  @extend .font-surf--heading-three;
+  @include surf-font-heading-three;
 }
 
 h4 {
   margin-top: 48px;
-  @extend .font-surf--heading-four;
+  @include surf-font-heading-four;
 }
 
 h5 {
   margin-top: 48px;
-  @extend .font-surf--heading-five;
+  @include surf-font-heading-five;
 }
 
 h6 {
   margin-top: 48px;
-  @extend .font-surf--heading-six;
+  @include surf-font-heading-six;
 }
 
 // Rule
@@ -98,7 +97,7 @@ b {
 p,
 li {
   margin: 15px 0;
-  @extend .font-surf--body-medium;
+  @include surf-font-body-medium;
 }
 
 // blockquote {

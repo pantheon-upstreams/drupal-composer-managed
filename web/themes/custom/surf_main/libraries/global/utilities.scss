@@ -5,6 +5,7 @@ prefixed with `u-`.
 For more information about utility classes, visit
 https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utility-namespaces-u-
 */
+@import '_partials';
 
 .u-padding {
   padding: var(--space-inset-y) var(--space-inset-x);
@@ -39,4 +40,89 @@ https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utilit
   html {
     scroll-behavior: smooth;
   }
+}
+
+
+/*
+  SURF Main Fonts
+*/
+
+// SURF Main - Heading Fonts
+.surf-u-font-heading-one {
+  @include surf-font-heading-one;
+}
+
+.surf-u-font-heading-one-alt {
+  @include surf-font-heading-one-alt;
+}
+
+.surf-u-font-heading-two {
+  @include surf-font-heading-two;
+}
+
+.surf-u-font-heading-two-alt {
+  @include surf-font-heading-two-alt;
+}
+
+.surf-u-font-heading-three {
+  @include surf-font-heading-three;
+}
+
+.surf-u-font-heading-four {
+  @include surf-font-heading-four;
+}
+
+.surf-u-font-heading-five {
+  @include surf-font-heading-five;
+}
+
+.surf-u-font-heading-six {
+  @include surf-font-heading-six;
+}
+
+
+// SURF Main - Body Fonts
+.surf-u-font-body-jumbo {
+  @include surf-font-body-jumbo;
+}
+
+.surf-u-font-body-x-large {
+  @include surf-font-body-x-large;
+}
+
+.surf-u-font-body-large {
+  @include surf-font-body-large;
+}
+
+.surf-u-font-body-medium {
+  @include surf-font-body-medium;
+}
+
+.surf-u-font-body-small {
+  @include surf-font-body-small;
+}
+
+.surf-u-font-body-x-small {
+  @include surf-font-body-x-small;
+}
+
+// SURF Main - Label Fonts
+.surf-u-font-label-x-large {
+  @include surf-font-label-x-large;
+}
+
+.surf-u-font-label-large {
+  @include surf-font-label-large;
+}
+
+.surf-u-font-label-medium {
+  @include surf-font-label-medium;
+}
+
+.surf-u-font-label-small {
+  @include surf-font-label-small;
+}
+
+.surf-u-font-label-peewee {
+  @include surf-font-label-peewee;
 }

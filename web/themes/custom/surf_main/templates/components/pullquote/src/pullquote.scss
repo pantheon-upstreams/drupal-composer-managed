@@ -1,36 +1,41 @@
 @import "_partials";
-@import "settings/font";
-
-.c-pullquote {
-  // Style: fullwidth
-  &.fullwidth .c-pullquote__content p {
-    color: transparent;
-    background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
-    background-clip: text;
-  }
-  // Style: centered
-  &.centered {
-    border-top: solid 2px var(--color-surf--cloud);
-    border-bottom: solid 2px var(--color-surf--cloud);
-    padding: 32px 0;
-  }
-}
 
 .c-pullquote__content p {
-  @extend .font-surf--heading-one;
-  color: var(--color-surf--black);
+  @include surf-font-heading-one;
+  color: var(--color-text-heading);
 }
 
 .c-pullquote__footer {
   margin: rem(20px) 0 0 0;
+
   cite {
-    @extend .font-surf--label-peewee;
+    @include surf-font-label-peewee;
     align-items: baseline;
-    color: var(--color-surf--grey);
+    color: var(--color-text-muted);
     display: flex;
     &::before {
       content: "\2014";
       margin: 0 7px 0 0;
     }
   }
+}
+
+// Style: fullwidth
+.c-pullquote--fullwidth {
+  .c-pullquote__content p {
+    color: transparent;
+    background: linear-gradient(
+      92.82deg,
+      var(--color-text-heading-muted) 0.11%,
+      var(--color-text-heading) 95.94%
+    );
+    background-clip: text;
+  }
+}
+
+// Style: centered
+.c-pullquote--centered {
+  border-top: solid 2px var(--color-border-muted);
+  border-bottom: solid 2px var(--color-border-muted);
+  padding: 32px 0;
 }

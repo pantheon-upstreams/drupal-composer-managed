@@ -1,21 +1,7 @@
-// .cl-component--accordion {
-//   /* Add your styles here */
-// }
-
-// .cl-component--accordion[data-cl-component-variant=""] {
-//   /* Add your styles for the  variant here */
-// }
-
 @import "_partials";
-@import "settings/font";
-
-.c-accordion {
-  margin: 0;
-  padding: 0;
-}
 
 .c-accordion .c-title {
-  @extend .font-surf--body-medium;
+  @include surf-font-body-medium;
   margin: 0;
 }
 
@@ -102,7 +88,7 @@
   max-height: 100vh;
   transition: max-height 350ms cubic-bezier(0.4, 0, 0.2, 1);
   p {
-    @extend .font-surf--body-medium;
+    @include surf-font-body-medium;
   }
   p:first-child {
     margin-top: 0;
