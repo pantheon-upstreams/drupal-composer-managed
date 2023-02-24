@@ -49,7 +49,7 @@ main::before {
 
     // For logged in users offset top
     &.user-logged-in main::before {
-      top: 250px;
+      top: 225px;
     }
   }
 }
@@ -58,6 +58,19 @@ main::before {
   background-color: var(--color-background, #fff);
   position: relative;
   z-index: 3;
+
+  @include bp-min(large) {
+    &::before {
+      background: linear-gradient(90deg, #008535 0%, #00492c 50%);
+      content: "";
+      left: 0;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      z-index: 0;
+    }
+  }
 }
 
 // Wrapper for site header
@@ -77,6 +90,7 @@ main::before {
 
 // Wrapper for all navigation: Utility & Main Menu
 .c-site-header__site-navigation {
+  position: relative;
   @include bp-max(large) {
     background: linear-gradient(
       180deg,
@@ -102,33 +116,6 @@ main::before {
   @include bp-min(medium) {
     grid-area: 1 / 2;
     grid-column: span 2;
-  }
-
-  @include bp-min(large) {
-    top: 175px;
-
-    // For logged in users offset top
-    .user-logged-in & {
-      top: 250px;
-    }
-
-    &::before {
-      background: linear-gradient(90deg, #008535 0%, #00492c 50%);
-      content: "";
-      left: 0;
-      height: 70px;
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      z-index: 0;
-    }
-  }
-
-  // Align both main & utility navs
-  @include bp-min(xlarge) {
-    background: var(--color-surf--forest);
-    // grid-area: span 2;
-    top: unset;
   }
 }
 
@@ -195,14 +182,13 @@ main::before {
 
     // For logged in users offset top
     .user-logged-in & {
-      top: 250px;
+      top: 225px;
     }
   }
 
   // Display on desktop screens >1024px
   @include bp-min(xlarge) {
     align-items: flex-end;
-    background: #fff;
     display: flex;
     justify-content: flex-end;
     flex-flow: row;
@@ -241,6 +227,7 @@ main::before {
 
     // On larger desktop screens
     @include bp-min(xlarge) {
+      align-items: center;
       gap: 22px;
       margin: 42px 0;
     }
@@ -258,21 +245,28 @@ main::before {
 
   // Main menu top level item base styles (Buttons & Links share)
   ul.menu--main[data-depth="0"] > .menu__item {
+    margin: 0;
+
     // Do not display green background unless parent is open
     &.menu__item--expanded {
       position: relative;
       transition: all $duration * 1.5 ease-in-out;
       // Add buttons toggle icons
       > button {
-        background-image: url("../../../../images/icons/ui-icon-add--white.svg");
-        background-repeat: no-repeat;
-        background-position: top right;
-        text-align: left;
-        transition: all $duration * 0.5 ease-in-out;
+        background-color: #fff;
         width: 100%;
 
         &:hover {
           cursor: pointer;
+        }
+
+        @include bp-max(xlarge) {
+          background-color: transparent;
+          background-image: url("../../../../images/icons/ui-icon-add--white.svg");
+          background-repeat: no-repeat;
+          background-position: top right;
+          text-align: left;
+          transition: all $duration * 0.5 ease-in-out;
         }
       }
 
@@ -371,6 +365,7 @@ main::before {
 
     @include bp-max(xlarge) {
       .menu__item {
+        margin: 0;
         padding: 12px 0;
       }
 
@@ -421,6 +416,7 @@ main::before {
           #ffffff 25.52%,
           rgba(255, 255, 255, 0.5) 100%
         );
+        margin: 0;
         padding: 0;
 
         // All beyond the first 2 elements
@@ -535,7 +531,6 @@ main::before {
 
     @include bp-min(large) {
       display: block;
-      height: 100%;
     }
   }
 
@@ -548,6 +543,7 @@ main::before {
     padding: 0;
 
     .menu__item {
+      margin: 0;
       padding: 19px 36px 19px 0;
     }
 

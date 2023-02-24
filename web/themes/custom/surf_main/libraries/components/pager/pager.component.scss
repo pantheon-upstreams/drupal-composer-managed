@@ -27,6 +27,7 @@
     padding: 0 rem(120px);
   }
   li.pager__item {
+    @include surf-font-body-small;
     display: block;
     color: var(--color-surf--black);
     font-family: var(--font-family-sans);
