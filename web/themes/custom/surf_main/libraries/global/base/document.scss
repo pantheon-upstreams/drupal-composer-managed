@@ -24,15 +24,7 @@ body {
   margin: 0;
 }
 
-:first-child {
-  margin-top: 0;
-}
-
-:last-child {
-  margin-bottom: 0;
-}
-
-.skip-link.visually-hidden.focusable{
+.skip-link.visually-hidden.focusable {
   background-color: #fff;
   color: var(--color-surf--black);
   display: block;
