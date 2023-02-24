@@ -1,11 +1,13 @@
 @import "_partials";
 
-.c-accordion .c-title {
+.c-accordion__title {
   @include surf-font-body-medium;
   margin: 0;
 }
 
-.c-accordion-trigger {
+.c-accordion__trigger {
+  border-style: none;
+  border-bottom: solid 1px var(--color-surf--grey);
   background: none;
   display: flex;
   align-items: center;
@@ -17,76 +19,64 @@
   width: 100%;
   border-radius: 0;
   cursor: pointer;
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: var(--color-surf--dark-grey);
+    .c-accordion__icon {
+      background-image: inline-svg(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
+      );
+    }
+  }
+  &[aria-expanded="true"] .c-accordion__icon {
+    background-image: inline-svg(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: rem(28px);
+    height: rem(28px);
+  }
 }
 
-.c-accordion-trigger:focus,
-.c-accordion-trigger:hover {
-  text-decoration: underline;
-  color: var(--color-surf--dark-grey);
-}
-
-.c-accordion .c-accordion-trigger {
-  border-style: none;
-  border-bottom: solid 1px var(--color-surf--grey);
-}
-
-.c-accordion .c-accordion-title__wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.c-accordion .c-accordion-title-text {
-  flex: 1;
-  font-weight: var(--font-weight-bold);
-  text-transform: none;
-  width: 100%;
-}
-
-.c-accordion .c-accordion-icon {
+.c-accordion__icon {
   background-image: inline-svg(
     '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
   );
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-
   width: rem(28px);
   height: rem(28px);
   display: inline-block;
   margin: 0 rem(12px) 0 0;
   flex: none;
-  // Tablet
-  @include bp-min(medium) {
-    width: rem(28px);
-    height: rem(28px);
-  }
 }
 
-.c-accordion .c-accordion-trigger:focus .c-accordion-icon,
-.c-accordion .c-accordion-trigger:hover .c-accordion-icon {
-  background-image: inline-svg(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
-  );
+.c-accordion__title-wrapper {
+  display: flex;
+  align-items: center;
 }
 
-.c-accordion .c-accordion-trigger[aria-expanded="true"] .c-accordion-icon {
-  background-image: inline-svg(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
-  );
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: rem(28px);
-  height: rem(28px);
-  // Tablet
-  @include bp-min(medium) {
-    width: rem(28px);
-    height: rem(28px);
-  }
+.c-accordion__title-text {
+  flex: 1;
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+  width: 100%;
 }
 
-.c-accordion .c-accordion-panel {
+.c-accordion__panel {
+  border-bottom: solid 1px var(--color-surf--grey);
   max-height: 100vh;
   transition: max-height 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  &[hidden] {
+    border: none;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
   p {
     @include surf-font-body-medium;
   }
@@ -96,22 +86,10 @@
   p:last-child {
     margin-bottom: 0;
   }
-  // Tablet
+}
+
+.c-accordion__panel-inner-wrapper {
   @include bp-min(medium) {
-    .inner {
-      margin: rem(48px);
-    }
+    padding: rem(48px);
   }
-}
-
-.c-accordion-panel {
-  border-bottom: solid 1px var(--color-surf--grey);
-}
-
-.c-accordion .c-accordion-panel[hidden] {
-  border: none;
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

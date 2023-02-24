@@ -10,11 +10,11 @@ var __webpack_exports__ = {};
           $(this).click(function () {
             if ($(this).attr('aria-expanded') === 'true') {
               $(this).attr('aria-expanded', 'false');
-              $(this).parent().next('.accordion-panel').attr('hidden', 'true');
+              $(this).parent().next('.c-accordion__panel').attr('hidden', 'true');
               $(this).removeAttr('hidden');
             } else {
               $(this).attr('aria-expanded', 'true');
-              $(this).parent().next('.accordion-panel').removeAttr('hidden');
+              $(this).parent().next('.c-accordion__panel').removeAttr('hidden');
             }
           });
         });
