@@ -19,20 +19,26 @@
 			<!-- Page Heading / Hero -->
 
 			<!-- Accordion -->
-			<h3>Accordion</h3>
-			<p>Coming soon...</p>
-			{% include "accordion" with {
-				items: [
-					{
-						title: 'Accordion One',
-						content: '<p>Hi one!</p>',
-					},
-					{
-						title: 'Accordion Two',
-						content: '<p>Hi two!</p>',
-					}
-				]
-			} %}
+			<div class="l-stack">
+				<h3>Accordion</h3>
+				{% include "accordion" with {
+					items: [
+						{
+							title: 'Accordion One',
+							content: '<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>',
+						},
+						{
+							title: 'Accordion Two',
+							content: '<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>',
+						},
+						{
+							title: 'Accordion Three',
+							content: '<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>',
+						}
+					]
+				} %}
+			</div>
+
 			<!-- Pullquote -->
 			<div class="l-stack">
 				<h3>Pullquote Fullwidth</h3>
