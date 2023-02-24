@@ -5,65 +5,52 @@
 
 @import "../../partials/_partials";
 
-.pager {
-  background: #fff;
-}
-
 .pager__items {
   display: flex;
   flex-direction: row;
-  margin: rem(24px) 0 0 0;
-  padding: 0 20px;
-  @include bp-min(medium) {
-    margin: rem(40px) 0 0 0;
-    padding: 0 rem(40px);
-  }
-  @include bp-min(large) {
-    margin: rem(48px) 0 0 0;
-    padding: 0 rem(48px);
-  }
-  @include bp-min(xlarge) {
-    margin: rem(60px) 0 0 0;
-    padding: 0 rem(120px);
-  }
+  padding: 0;
+  margin: rem(48px) 0 0 0;
   li.pager__item {
     @include surf-font-body-small;
     display: block;
     color: var(--color-surf--black);
     font-family: var(--font-family-sans);
     font-weight: var(--font-weight-bold);
-    font-size: rem(14px);
-    line-height: 1;
-    @include bp-min(medium) {
-      font-size: rem(22px);
-      line-height: 1;
-    }
     &:not(:last-child) {
-      margin-right: rem(20px);
+      margin-right: rem(2px);
       @include bp-min(medium) {
-        margin-right: rem(28px);
+        margin-right: rem(4px);
       }
     }
     a.pager__link {
+      @include surf-font-body-small;
       color: var(--color-surf--forest);
+      background-color: var(--color-surf--white);
+      padding: 0 rem(7px);
       font-family: var(--font-family-sans);
       font-weight: var(--font-weight-bold);
       text-decoration: none;
-      font-size: rem(14px);
-      line-height: 1;
-      @include bp-min(medium) {
-        font-size: rem(22px);
-        line-height: 1;
-      }
+      transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
       &:hover,
       &:active {
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
         text-decoration: underline;
         color: var(--color-surf--black);
       }
     }
     &.is-active {
       a {
-        color: var(--color-surf--black);
+        color: var(--color-surf--white);
+        background-color: var(--color-surf--black);
+        &:hover {
+          color: var(--color-surf--white);
+        }
+      }
+    }
+    &.pager__item--previous,
+    &.pager__item--next {
+      a {
+        padding: 0;
       }
     }
   }
