@@ -137,7 +137,7 @@ input[type="file"] {
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-button {
+button:not([class]) {
   @include surf-font-label-medium;
   color: var(--color-surf--white);
   cursor: pointer;

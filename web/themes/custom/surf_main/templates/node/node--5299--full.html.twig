@@ -18,6 +18,24 @@
 
 			<!-- Page Heading / Hero -->
 
+			<!-- Video -->
+
+			<div class="l-stack">
+				<h3>Video: Youtube Example</h3>
+				{% include "video" with {
+					title: 'YouTube Example',
+					video: 'https://www.youtube.com/embed/0RWs6uxR9yg?feature=oembed',
+					credit:'In exercitation in tempor ea enim elit id consequat.'
+				} %}
+
+				<h3>Video: Vimeo Example</h3>
+				{% include "video" with {
+					title: 'Vimeo Example',
+					video: 'https://player.vimeo.com/video/728948316',
+					credit: 'Nostrud in excepteur cupidatat eu consequat consequat proident ut occaecat reprehenderit do do ipsum. Fugiat incididunt culpa exercitation sit ad nisi laborum esse deserunt dolor in laborum.'
+				} %}
+			</div>
+
 			<!-- Accordion -->
 			<div class="l-stack">
 				<h3>Accordion</h3>

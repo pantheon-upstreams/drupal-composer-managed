@@ -1,0 +1,16 @@
+title: Surf Main/Video
+args:
+  title: "Vimeo Example"
+  video: https://player.vimeo.com/video/728948316
+  caption: "In exercitation in tempor ea enim elit id consequat."
+stories:
+  - name: "Youtube"
+    args:
+      title: "YouTube Example"
+      video: https://www.youtube.com/embed/0RWs6uxR9yg?feature=oembed
+      caption: "In exercitation in tempor ea enim elit id consequat."
+  - name: "Vimeo"
+    args:
+      title: "Vimeo Example"
+      video: https://player.vimeo.com/video/728948316
+      caption: "Nostrud in excepteur cupidatat eu consequat consequat proident ut occaecat reprehenderit do do ipsum. Fugiat incididunt culpa exercitation sit ad nisi laborum esse deserunt dolor in laborum."
