@@ -1,0 +1,8 @@
+title: Surf Main/Banner
+args:
+  heading: Questions? Contact Us!
+  body: "<p>Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  link_text: "Underline Button with Arrow Component"
+  link_url: "https://github.com"
+stories:
+  - name: Default

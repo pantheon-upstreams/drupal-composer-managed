@@ -18,6 +18,17 @@
 
 			<!-- Page Heading / Hero -->
 
+			<!-- Banner -->
+			<div class="l-stack">
+				<h3>Banner Component</h3>
+				{% include "banner" with {
+					heading: 'Questions? Contact Us!',
+					body:'<p>Our education experts & staff are here to help connect you with the right resources & opportunities.</p>',
+					link_text: 'Underline Button with Arrow Component',
+					link_url: 'https://github.com'
+				} %}
+				</div>
+
 			<!-- Image -->
 			<div class="l-stack">
 				<h3>Image: with caption</h3>
@@ -26,7 +37,6 @@
 					image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
 					caption:'<p>In exercitation in tempor ea enim elit id consequat.</p>'
 				} %}
-
 				</div>
 
 			<!-- Video -->

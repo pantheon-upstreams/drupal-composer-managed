@@ -9,6 +9,7 @@ schemas:
     type: object
     required:
       - image
+      - alt
     properties:
       alt:
         type: "string"
