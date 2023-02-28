@@ -11,7 +11,7 @@
   {% block caption_block %}
     {% if caption %}
     <figcaption class="c-video__caption">
-      {{caption}}
+      {{caption|check_markup('plain')}}
     </figcaption>
     {% endif %}
   {% endblock %}

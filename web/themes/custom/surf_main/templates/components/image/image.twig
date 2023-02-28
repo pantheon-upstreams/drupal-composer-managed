@@ -1,1 +1,19 @@
-<img {{ clAttributes.setAttribute('src', src).setAttribute('alt', alt) }} />
+<figure {{ clAttributes.addClass('c-image') }}>
+
+  {% block image_block %}
+    {% if image %}
+      <div class="c-image__image-wrapper">
+        <img src="{{ image }}" alt="{{ alt }}" />
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block caption_block %}
+    {% if caption %}
+    <figcaption class="c-image__caption">
+      {{caption|check_markup('plain')}}
+    </figcaption>
+    {% endif %}
+  {% endblock %}
+
+</figure>

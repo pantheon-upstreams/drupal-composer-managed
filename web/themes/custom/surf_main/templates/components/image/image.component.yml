@@ -1,22 +1,30 @@
 "$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
 machineName: "image"
 name: "Image"
-componentType: "atom"
+componentType: "molecule"
 status: "WIP"
 description: "A simple image component"
 schemas:
   props:
     type: object
+    required:
+      - image
     properties:
-      "src":
+      alt:
         type: "string"
-        title: "Source"
-        description: "The url applied to the src attribute"
+        title: "Image Alt Text"
+        description: "The alt text for the video."
         examples:
-          - "https://placekitten.com/660/410"
-      "alt":
+          - "Ea irure adipisicing"
+      image:
         type: "string"
-        title: "Alternative Text"
-        description: "cat face"
+        title: "image URL"
+        description: "The url for the image"
         examples:
-          - "cat face"
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      caption:
+        type: "string"
+        title: "Caption Text"
+        description: "The caption text for video."
+        examples:
+          - "<p>In exercitation in tempor ea enim elit id consequat.</p>"

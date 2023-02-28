@@ -1,14 +1,30 @@
-title: Surf Main/Image Dimensions
+title: Surf Main/Image
 args:
-  src: https://placekitten.com/400/400
-  alt: CatFace
+  alt: "In exercitation in tempor ea enim elit id consequat"
+  image: /themes/custom/surf_main/images/examples/large.jpg
+  caption: "<p>Example caption paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
 stories:
+  - name: "Default"
+    args:
+      alt: "In exercitation in tempor ea enim elit id consequat"
+      image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg
+      caption: "<p>Example caption paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "Without Caption"
+    args:
+      alt: "In exercitation in tempor ea enim elit id consequat"
+      image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg
   - name: "1:1"
     args:
-      src: https://placekitten.com/400/400
+      alt: "In exercitation in tempor ea enim elit id consequat"
+      image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/1-1.jpg
+      caption: "<p>Example caption paragraph. Interdum risus tortor turpis gravida sed.</p>"
   - name: "4:3"
     args:
-      src: https://placekitten.com/400/300
-  - name: "16:9"
+      alt: "In exercitation in tempor ea enim elit id consequat"
+      image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/4-3.jpg
+      caption: "<p>Example caption paragraph. Non irure veniam commodo occaecat dolor qui.</p>"
+  - name: "16-9"
     args:
-      src: https://placekitten.com/800/450
+      alt: "In exercitation in tempor ea enim elit id consequat"
+      image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/16-9.jpg
+      caption: "<p>Example caption paragraph. Labore sint nostrud incididunt amet id anim.</p>"
