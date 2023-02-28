@@ -18,6 +18,17 @@
 
 			<!-- Page Heading / Hero -->
 
+			<!-- Image -->
+			<div class="l-stack">
+				<h3>Image: with caption</h3>
+				{% include "image" with {
+					alt: 'Image Example with caption',
+					image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					caption:'<p>In exercitation in tempor ea enim elit id consequat.</p>'
+				} %}
+
+				</div>
+
 			<!-- Video -->
 
 			<div class="l-stack">
@@ -25,14 +36,14 @@
 				{% include "video" with {
 					title: 'YouTube Example',
 					video: 'https://www.youtube.com/embed/0RWs6uxR9yg?feature=oembed',
-					credit:'<p>In exercitation in tempor ea enim elit id consequat.</p>'
+					caption:'<p>In exercitation in tempor ea enim elit id consequat.</p>'
 				} %}
 
 				<h3>Video: Vimeo Example</h3>
 				{% include "video" with {
 					title: 'Vimeo Example',
 					video: 'https://player.vimeo.com/video/728948316',
-					credit: '<p>Nostrud in excepteur cupidatat eu consequat consequat proident ut occaecat reprehenderit do do ipsum. Fugiat incididunt culpa exercitation sit ad nisi laborum esse deserunt dolor in laborum.</p>'
+					caption: '<p>Nostrud in excepteur cupidatat eu consequat consequat proident ut occaecat reprehenderit do do ipsum. Fugiat incididunt culpa exercitation sit ad nisi laborum esse deserunt dolor in laborum.</p>'
 				} %}
 			</div>
 

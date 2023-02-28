@@ -4,7 +4,7 @@
   @include surf-font-body-x-small;
   color: var(--color-surf--dark-grey);
   margin: rem(8px) 0 0 0;
-  å & > p {
+  & > p {
     @include surf-font-body-x-small;
     color: var(--color-surf--dark-grey);
     margin: 0 0 rem(12px) 0;

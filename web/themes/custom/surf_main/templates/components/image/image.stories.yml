@@ -23,7 +23,7 @@ stories:
       alt: "In exercitation in tempor ea enim elit id consequat"
       image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/4-3.jpg
       caption: "<p>Example caption paragraph. Non irure veniam commodo occaecat dolor qui.</p>"
-  - name: "16-9"
+  - name: "16:9"
     args:
       alt: "In exercitation in tempor ea enim elit id consequat"
       image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/16-9.jpg
