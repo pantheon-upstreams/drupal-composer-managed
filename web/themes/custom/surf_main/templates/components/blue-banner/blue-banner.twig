@@ -1,14 +1,14 @@
-<section {{ clAttributes.addClass('c-banner') }}>
+<section {{ clAttributes.addClass('c-blue-banner') }}>
 
   {% if heading %}
   {% block banner_heading_block %}
-  <h2 class="c-banner__title">{{heading}}</h2>
+  <h2 class="c-blue-banner__title">{{heading}}</h2>
   {% endblock %}
   {% endif %}
 
   {% if body %}
   {% block banner_body_block %}
-  <div class="c-banner__body">
+  <div class="c-blue-banner__body">
     {{ body|check_markup('plain') }}
   </div>
   {% endblock %}
@@ -16,16 +16,22 @@
 
   {% if link_text and link_url %}
   {% block callout__link %}
-  <div class="c-banner__link">
+  <div class="c-blue-banner__link">
     {% include "link-button" with {
     text: link_text,
     url: link_url,
-    button_style: 'underline',
-    color: 'underline-white',
-    icon_type: "arrow"
+    color: 'white',
+    uppercase: true,
     } %}
   </div>
   {% endblock %}
   {% endif %}
 
 </section>
+
+{# {% include "link-button" with {
+						text: "White Green Button Component",
+						url: "apple.com",
+						color: 'white',
+						uppercase: true,
+					} %} #}

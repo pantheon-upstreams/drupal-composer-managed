@@ -1,7 +1,7 @@
 @import "_partials";
 
-.c-banner {
-  background: linear-gradient(98.64deg, #00492c 41.67%, #008535 100%);
+.c-blue-banner {
+  background: linear-gradient(108.38deg, #0050b8 0%, #2976d9 82.91%);
   padding: rem(32px) rem(15px);
   position: relative;
   overflow: hidden;
@@ -15,44 +15,32 @@
   @include bp-min(xlarge) {
     padding: rem(80px);
   }
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: rem(324px);
-    width: rem(324px);
-    background-image: url(../banner-green-corner-particles.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: block;
-    z-index: -1;
-  }
   &:after {
     content: "";
     display: none;
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: rem(220px);
-    background-image: url(../banner-illustration.png);
+    right: -112px;
+    bottom: -52px;
+    width: rem(344px);
+    height: rem(405px);
+    background-image: url(../blue-banner-circles.svg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
-    @include bp-min(medium) {
+    @include bp-min(large) {
       display: block;
     }
   }
 }
 
-.c-banner__title {
+.c-blue-banner__title {
+  @include surf-font-heading-one;
   color: var(--color-surf--white);
   margin: 0;
 }
 
-.c-banner__body {
-  margin: rem(32px) 0 0 0;
+.c-blue-banner__body {
+  margin: rem(20px) 0 0 0;
   & > p {
     color: var(--color-surf--white);
     @include surf-font-body-x-large;
@@ -67,6 +55,6 @@
   }
 }
 
-.c-banner__link {
-  margin: rem(32px) 0 0 0;
+.c-blue-banner__link {
+  margin: rem(34px) 0 0 0;
 }

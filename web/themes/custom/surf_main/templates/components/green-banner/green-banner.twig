@@ -1,0 +1,31 @@
+<section {{ clAttributes.addClass('c-green-banner') }}>
+
+  {% if heading %}
+  {% block banner_heading_block %}
+  <h2 class="c-green-banner__title">{{heading}}</h2>
+  {% endblock %}
+  {% endif %}
+
+  {% if body %}
+  {% block banner_body_block %}
+  <div class="c-green-banner__body">
+    {{ body|check_markup('plain') }}
+  </div>
+  {% endblock %}
+  {% endif %}
+
+  {% if link_text and link_url %}
+  {% block callout__link %}
+  <div class="c-green-banner__link">
+    {% include "link-button" with {
+    text: link_text,
+    url: link_url,
+    button_style: 'underline',
+    color: 'underline-white',
+    icon_type: "arrow"
+    } %}
+  </div>
+  {% endblock %}
+  {% endif %}
+
+</section>
