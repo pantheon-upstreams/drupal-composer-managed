@@ -14,7 +14,7 @@ schemas:
       alt:
         type: "string"
         title: "Image Alt Text"
-        description: "The alt text for the video."
+        description: "The alt text for the image."
         examples:
           - "Ea irure adipisicing"
       image:

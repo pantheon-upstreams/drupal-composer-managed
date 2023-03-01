@@ -1,7 +1,7 @@
 title: Surf Main/Image
 args:
   alt: "In exercitation in tempor ea enim elit id consequat"
-  image: /themes/custom/surf_main/images/examples/large.jpg
+  image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg
   caption: "<p>Example caption paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
 stories:
   - name: "Default"

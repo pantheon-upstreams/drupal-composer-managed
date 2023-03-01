@@ -33,6 +33,18 @@
   }
 }
 
+.c-blue-banner__images-wrapper {
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
+  gap: rem(32px);
+  margin: 0 0 rem(20px) 0;
+  @include bp-min(medium) {
+  }
+  @include bp-min(large) {
+    margin: 0 0 rem(66px) 0;
+  }
+}
+
 .c-blue-banner__title {
   @include surf-font-heading-one;
   color: var(--color-surf--white);

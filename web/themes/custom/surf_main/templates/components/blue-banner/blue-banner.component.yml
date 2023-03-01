@@ -8,6 +8,30 @@ schemas:
   props:
     type: object
     properties:
+      primary_image:
+        type: "string"
+        title: "Primary Image URL"
+        description: "The url for the primary image"
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      primary_image_alt:
+        type: "string"
+        title: "Primary image Alt Text"
+        description: "The primary alt text for the image."
+        examples:
+          - "Ea irure adipisicing"
+      secondary_image:
+        type: "string"
+        title: "Secondary Image URL"
+        description: "The url for the secondary image"
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      secondary_image_alt:
+        type: "string"
+        title: "Secondary image Alt Text"
+        description: "The secondary alt text for the image."
+        examples:
+          - "Ea irure adipisicing"
       heading:
         type: string
         title: Heading

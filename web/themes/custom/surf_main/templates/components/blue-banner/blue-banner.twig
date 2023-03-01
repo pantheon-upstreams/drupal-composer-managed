@@ -1,5 +1,25 @@
 <section {{ clAttributes.addClass('c-blue-banner') }}>
 
+  <div class="c-blue-banner__images-wrapper">
+
+    {% if primary_image %}
+    {% block primary_image_block %}
+        <div class="c-blue-banner__primary-image-wrapper">
+          <img src="{{ primary_image }}" alt="{{ primary_image_alt }}" />
+        </div>
+    {% endblock %}
+    {% endif %}
+
+    {% if secondary_image %}
+    {% block secondary_image_block %}
+        <div class="c-blue-banner__secondary-image-wrapper">
+          <img src="{{ secondary_image }}" alt="{{ secondary_image_alt }}" />
+        </div>
+    {% endblock %}
+    {% endif %}
+
+  </div>
+
   {% if heading %}
   {% block banner_heading_block %}
   <h2 class="c-blue-banner__title">{{heading}}</h2>
