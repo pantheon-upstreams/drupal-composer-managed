@@ -1,0 +1,56 @@
+<section {{ clAttributes.addClass('c-person') }}>
+
+  {% if image_url %}
+  {% block primary_image_block %}
+      <div class="c-person__image">
+        <img src="{{ image_url }}" alt="{{ image_alt }}" />
+      </div>
+  {% endblock %}
+
+  {% else %}
+    <div class="c-person__initials">{{ initals }}</div>
+  {% endif %}
+
+  <div class="c-person__content-wrapper">
+
+    {% if full_name %}
+    {% block full_name_block %}
+    <h2 class="c-person__full-name">{{full_name}}</h2>
+    {% endblock %}
+    {% endif %}
+
+    {% if title %}
+    {% block title_block %}
+    <p class="c-person__title">{{title}}</p>
+    {% endblock %}
+    {% endif %}
+
+
+    <ol class="c-person__details">
+      {% if phone %}
+        {% block phone_block %}
+        <li class="c-person__phone">
+          <a href="tel:{{ phone}}">{{ phone }}</a>
+        </li>
+        {% endblock %}
+      {% endif %}
+
+      {% if contact_url %}
+        {% block contact_url_block %}
+        <li class="c-person__contact">
+          <a href="{{ contact_url}}">{{ 'Contact'|t }}</a>
+        </li>
+        {% endblock %}
+      {% endif %}
+
+      {% if bio_url %}
+        {% block bio_url_block %}
+        <li class="c-person__bio">
+          <a href="{{ bio_url }}">{{ 'View Bio'|t }}</a>
+        </li>
+        {% endblock %}
+      {% endif %}
+    </ol>
+
+  </div>
+</section>

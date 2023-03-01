@@ -18,7 +18,22 @@
 
 			<!-- Page Heading / Hero -->
 
-			<!-- Banner -->
+			<!-- Blue Banner -->
+			<div class="l-stack">
+				<h3>Blue Banner Component</h3>
+				{% include "blue-banner" with {
+					primary_image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/blue-banner/blue-banner01.jpg',
+					primary_image_alt: 'Primary Image Example',
+					secondary_image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/blue-banner/blue-banner02.jpg',
+					secondary_image_alt: 'Secondary Image Example',
+					heading: "Questions? Contact Us!",
+					body: "<p>Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>",
+					link_text: "Underline Button with Arrow Component",
+					link_url: "https://github.com",
+				} %}
+				</div>
+
+			<!-- Green Banner -->
 			<div class="l-stack">
 				<h3>Green Banner Component</h3>
 				{% include "green-banner" with {
