@@ -1,15 +1,20 @@
-<section {{ clAttributes.addClass('c-person') }}>
+{% set has_image_class = 'no-image' %}
+{% if image_url|render is not empty %}
+{% set has_image_class = 'has-image' %}
+{% endif %}
 
-  {% if image_url %}
+<section {{ clAttributes.addClass('c-person', has_image_class) }}>
+
   {% block primary_image_block %}
-      <div class="c-person__image">
-        <img src="{{ image_url }}" alt="{{ image_alt }}" />
-      </div>
-  {% endblock %}
-
+  {% if image_url %}
+    <div class="c-person__image">
+      <img src="{{ image_url }}" alt="{{ image_alt }}" />
+    </div>
   {% else %}
-    <div class="c-person__initials">{{ initals }}</div>
+    <div class="c-person__initials">{{ initials }}</div>
   {% endif %}
+
+  {% endblock %}
 
   <div class="c-person__content-wrapper">
 
@@ -28,27 +33,27 @@
 
     <ol class="c-person__details">
       {% if phone %}
-        {% block phone_block %}
-        <li class="c-person__phone">
-          <a href="tel:{{ phone}}">{{ phone }}</a>
-        </li>
-        {% endblock %}
+      {% block phone_block %}
+      <li class="c-person__phone">
+        <a href="tel:{{ phone}}">{{ phone }}</a>
+      </li>
+      {% endblock %}
       {% endif %}
 
       {% if contact_url %}
-        {% block contact_url_block %}
-        <li class="c-person__contact">
-          <a href="{{ contact_url}}">{{ 'Contact'|t }}</a>
-        </li>
-        {% endblock %}
+      {% block contact_url_block %}
+      <li class="c-person__contact">
+        <a href="{{ contact_url}}">{{ 'Contact'|t }}</a>
+      </li>
+      {% endblock %}
       {% endif %}
 
       {% if bio_url %}
-        {% block bio_url_block %}
-        <li class="c-person__bio">
-          <a href="{{ bio_url }}">{{ 'View Bio'|t }}</a>
-        </li>
-        {% endblock %}
+      {% block bio_url_block %}
+      <li class="c-person__bio">
+        <a href="{{ bio_url }}">{{ 'View Bio'|t }}</a>
+      </li>
+      {% endblock %}
       {% endif %}
     </ol>
 

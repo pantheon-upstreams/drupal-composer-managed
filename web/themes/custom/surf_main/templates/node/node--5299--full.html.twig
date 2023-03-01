@@ -20,6 +20,31 @@
 
 			<!-- Blue Banner -->
 			<div class="l-stack">
+				<h3>Person Component: with an image</h3>
+				{% include "person" with {
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/person/person.jpg',
+					image_alt: 'Dr. Paul Schwering',
+					full_name: 'Dr. Paul Schwering',
+					initials: 'PS',
+					title: 'Geophysicist',
+					phone: '(605) 722-8650',
+					contact_url: 'https://github.com',
+					bio_url: 'https://github.com',
+				} %}
+
+				<h3>Person Component: without an image</h3>
+				{% include "person" with {
+					full_name: 'Dr. Paul Schwering',
+					initials: 'PS',
+					title: 'Geophysicist',
+					phone: '(605) 722-8650',
+					contact_url: 'https://github.com',
+					bio_url: 'https://github.com',
+				} %}
+				</div>
+
+			<!-- Blue Banner -->
+			<div class="l-stack">
 				<h3>Blue Banner Component</h3>
 				{% include "blue-banner" with {
 					primary_image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/blue-banner/blue-banner01.jpg',

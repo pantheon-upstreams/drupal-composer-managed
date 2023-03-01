@@ -2,4 +2,95 @@
 
 .c-person {
   background: var(--color-surf--cloud);
+  display: grid;
+  grid-template-columns: rem(80px) 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: rem(182px) 1fr;
+  }
+  &.no-image {
+    grid-template-columns: rem(100px) 1fr;
+    @include bp-min(medium) {
+      grid-template-columns: rem(182px) 1fr;
+    }
+  }
+}
+
+.c-person__image {
+  position: relative;
+  @include bp-min(medium) {
+    height: 100%;
+  }
+  img {
+    display: block;
+    @include bp-min(medium) {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.c-person__initials {
+  color: #cfcfcf;
+  font-family: var(--font-family-serif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-size: rem(60px);
+  line-height: 94%;
+  height: rem(100px);
+  font-weight: var(--font-weight-medium);
+  @include bp-min(medium) {
+    font-size: rem(120px);
+    height: 100%;
+  }
+}
+
+.c-person__content-wrapper {
+  margin: rem(20px) rem(20px) rem(23px) rem(28px);
+  @include bp-min(medium) {
+    margin: rem(37.5px) rem(20px) rem(37.5px) rem(28px);
+  }
+}
+
+.c-person__details {
+  margin: 0;
+  padding: 0;
+  & > li {
+    display: block;
+    margin: 0 0 rem(8px) 0;
+    a {
+      @include surf-font-body-x-small;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.c-person__full-name {
+  @include surf-font-body-large;
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 rem(4px) 0;
+}
+
+.c-person__title {
+  @include surf-font-body-x-small;
+  font-style: italic;
+  margin: 0 0 rem(8px) 0;
+}
+
+.c-person__bio a {
+  padding: 0 rem(24px) 0 0;
+  background-image: inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M.645 6.5h14.71M9.934 11.919l5.42-5.42-5.42-5.419"/></svg>'
+  );
+  background-repeat: no-repeat;
+  background-position: center right;
 }
