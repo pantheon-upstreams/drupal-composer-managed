@@ -2,18 +2,18 @@
 
 .c-blue-banner {
   background: linear-gradient(108.38deg, #0050b8 0%, #2976d9 82.91%);
-  padding: rem(32px) rem(15px);
+  padding: 0 rem(15px) rem(32px) rem(15px);
   position: relative;
   overflow: hidden;
   z-index: 1;
   @include bp-min(medium) {
-    padding: rem(60px) rem(40px);
+    padding: 0 rem(40px) rem(60px) rem(40px);
   }
   @include bp-min(large) {
-    padding: rem(80px) rem(40px);
+    padding: 0 rem(40px) rem(80px) rem(40px);
   }
   @include bp-min(xlarge) {
-    padding: rem(80px);
+    padding: 0 rem(80px) rem(80px) rem(80px);
   }
   &:after {
     content: "";
@@ -31,17 +31,85 @@
       display: block;
     }
   }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-surf--white);
+    z-index: 0;
+    height: rem(23px);
+    @include bp-min(medium) {
+      height: rem(42px);
+    }
+    @include bp-min(large) {
+      height: rem(35px);
+    }
+    @include bp-min(xxlarge) {
+      height: rem(196px);
+    }
+  }
 }
 
 .c-blue-banner__images-wrapper {
   display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-columns: 1fr;
   gap: rem(32px);
   margin: 0 0 rem(20px) 0;
+  z-index: 1;
   @include bp-min(medium) {
+    grid-template-columns: 0.6fr 0.4fr;
   }
   @include bp-min(large) {
     margin: 0 0 rem(66px) 0;
+  }
+  @include bp-min(xxlarge) {
+    margin: 0 0 rem(84px) 0;
+  }
+  img {
+    // position: absolute;
+    // left: -10000%;
+    // right: -10000%;
+    // top: -10000%;
+    // bottom: -10000%;
+    // margin: auto auto;
+    // min-width: 1000%;
+    // min-height: 1000%;
+    // transform: scale(0.1);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.c-blue-banner__primary-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: rem(228px);
+  @include bp-min(medium) {
+    height: rem(263px);
+  }
+  @include bp-min(large) {
+    height: rem(369px);
+  }
+  @include bp-min(xxlarge) {
+    height: rem(512px);
+  }
+}
+.c-blue-banner__secondary-image-wrapper {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  @include bp-min(medium) {
+    height: rem(263px);
+    display: block;
+  }
+  @include bp-min(large) {
+    height: rem(369px);
+  }
+  @include bp-min(xxlarge) {
+    height: rem(512px);
   }
 }
 
