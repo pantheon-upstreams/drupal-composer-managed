@@ -7,6 +7,12 @@ description: A Blue Banner component
 schemas:
   props:
     type: object
+    required:
+      - primary_image
+      - primary_image_alt
+      - secondary_image
+      - secondary_image_alt
+      - heading
     properties:
       primary_image:
         type: "string"
