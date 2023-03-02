@@ -1,0 +1,61 @@
+
+<article {{ clAttributes.addClass('c-teaser'|addModifiers(style)) }}>
+
+  {# Image & Tag #}
+  <div class="c-teaser__image-wrapper">
+
+    {% if image %}
+    {% include "image" with {
+      image: image,
+      alt: alt
+    } %}
+    {% endif %}
+
+    {# Tag #}
+    {% if tag %}
+      {% block tag_block %}
+      <p class="c-teaser__tag">
+        {{tag}}
+      </p>
+      {% endblock %}
+    {% endif %}
+
+  </div>
+
+  {# Pre Title #}
+  {% if pretitle %}
+    {% block pretitle_block %}
+    <p class="c-teaser__pretitle">
+      {{pretitle}}
+    </p>
+    {% endblock %}
+  {% endif %}
+
+  {# Title #}
+  {% if title %}
+    {% block title_block %}
+    <h3 class="c-teaser__title">
+      {{title}}
+    </h3>
+    {% endblock %}
+  {% endif %}
+
+  {# Body #}
+  {% if body %}
+    {% block body_block %}
+    <div class="c-teaser__body">
+      {{body|check_markup('plain') }}
+    </div>
+    {% endblock %}
+  {% endif %}
+
+  {# Date #}
+  {% if date %}
+    {% block date_block %}
+    <div class="c-teaser__date">
+      {{date}}
+    </div>
+    {% endblock %}
+  {% endif %}
+
+</article>

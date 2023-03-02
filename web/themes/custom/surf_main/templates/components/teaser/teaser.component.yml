@@ -1,0 +1,55 @@
+"$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
+machineName: "teaser"
+name: "Teaser"
+componentType: "molecule"
+status: "WIP"
+description: "A Teaser component"
+schemas:
+  props:
+    type: object
+    required:
+      - image
+      - alt
+      - title
+    properties:
+      alt:
+        type: "string"
+        title: "Image Alt Text"
+        description: "The alt text for the image."
+        examples:
+          - "Ea irure adipisicing"
+      image:
+        type: "string"
+        title: "image URL"
+        description: "The url for the image"
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      title:
+        type: "string"
+        title: "Title"
+        examples:
+          - "LUX exhibit opens at the Sanford Lab Homestake Visitor Center"
+      tag:
+        type: "string"
+        title: "Tag"
+        examples:
+          - "Article"
+      pretitle:
+        type: "string"
+        title: "Pre Title"
+        examples:
+          - "LUX"
+      date:
+        type: "string"
+        title: "date"
+        examples:
+          - "August 18, 2022"
+      body:
+        title: Body
+        type: string
+        examples:
+          - "<p>When LUX completed its 300-live-day run in May of 2016, the world learned LUX was even more sensitive than previously determined.</p>"
+      feature:
+        type: boolean
+        title: Feature
+        defaultValue: false

@@ -1,0 +1,16 @@
+title: Surf Main/Teaser
+argTypes:
+  feature:
+    control: boolean
+    default: false
+stories:
+  - name: News
+    args:
+      title: Enhancing the search
+      tag: Article
+      # body:
+      # pretitle:
+      date: August 18, 2022
+      feature: false
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      alt: Atl text example
