@@ -11,19 +11,19 @@ argTypes:
     description: The link target attribute
     control: select
     options:
-      None: ''
-      Blank: '_blank'
+      None: ""
+      Blank: "_blank"
   background_style:
     control: select
     description: The background style
     options:
-      None: ''
+      None: ""
       Color: color
   color:
     control: radio
     description: The callout heading
     options:
-      None: ''
+      None: ""
       Cloud: cloud
       Forest: forest
       Kelly: kelly

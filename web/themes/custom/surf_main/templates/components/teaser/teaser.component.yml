@@ -11,6 +11,7 @@ schemas:
       - image
       - alt
       - title
+      - url
     properties:
       alt:
         type: "string"
@@ -29,11 +30,21 @@ schemas:
         title: "Title"
         examples:
           - "LUX exhibit opens at the Sanford Lab Homestake Visitor Center"
-      tag:
+      url:
         type: "string"
-        title: "Tag"
+        title: "Teaser URL"
+        examples:
+          - "https://github.com"
+      category:
+        type: "string"
+        title: "Category"
         examples:
           - "Article"
+      category_url:
+        type: "string"
+        title: "Category URL"
+        examples:
+          - "https://github.com"
       pretitle:
         type: "string"
         title: "Pre Title"
@@ -53,3 +64,44 @@ schemas:
         type: boolean
         title: Feature
         defaultValue: false
+      icon:
+        type: string
+        title: Category icon
+        enum:
+          - video
+
+      tags:
+        type: array
+        title: Tags
+        tags:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              examples:
+                - "Tag one"
+                - "Tag two"
+            url:
+              type: string
+              title: Tag URL
+              examples:
+                - https://github.com
+                - https://github.com
+      # items:
+      #   type: object
+      #   properties:
+      #     title:
+      #       type: string
+      #       title: Title
+      #       description: Accordion title
+      #       examples:
+      #         - "Accordion one"
+      #         - "Accordion two"
+      #     content:
+      #       type: string
+      #       title: Title
+      #       description: Accordion content
+      #       examples:
+      #         - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      #         - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"

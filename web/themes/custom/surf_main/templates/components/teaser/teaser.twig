@@ -1,61 +1,77 @@
+{% set titleClass = 'no_pretitle' %}
+{% if pretitle %}
+  {% set titleClass = 'pretitle' %}
+{% endif %}
 
-<article {{ clAttributes.addClass('c-teaser'|addModifiers(style)) }}>
+<article {{ clAttributes.addClass('c-teaser'|addModifiers([icon, titleClass])) }}>
 
-  {# Image & Tag #}
+  {# Image & Category #}
   <div class="c-teaser__image-wrapper">
 
     {% if image %}
     {% include "image" with {
-      image: image,
-      alt: alt
+    image: image,
+    alt: alt
     } %}
     {% endif %}
 
-    {# Tag #}
-    {% if tag %}
-      {% block tag_block %}
-      <p class="c-teaser__tag">
-        {{tag}}
-      </p>
-      {% endblock %}
+    {# Category #}
+    {% if category %}
+    {% block category_block %}
+    <p class="c-teaser__category">
+      <a href="{{category_url}}">{{category}}</a>
+    </p>
+    {% endblock %}
     {% endif %}
 
   </div>
 
   {# Pre Title #}
   {% if pretitle %}
-    {% block pretitle_block %}
-    <p class="c-teaser__pretitle">
-      {{pretitle}}
-    </p>
-    {% endblock %}
+  {% block pretitle_block %}
+  <p class="c-teaser__pretitle">
+    {{pretitle}}
+  </p>
+  {% endblock %}
   {% endif %}
 
   {# Title #}
   {% if title %}
-    {% block title_block %}
-    <h3 class="c-teaser__title">
-      {{title}}
-    </h3>
-    {% endblock %}
+  {% block title_block %}
+  <h3 class="c-teaser__title">
+    <a href="{{url}}">{{title}}</a>
+  </h3>
+  {% endblock %}
   {% endif %}
 
   {# Body #}
   {% if body %}
-    {% block body_block %}
-    <div class="c-teaser__body">
-      {{body|check_markup('plain') }}
-    </div>
-    {% endblock %}
+  {% block body_block %}
+  <div class="c-teaser__body">
+    {{body|check_markup('plain') }}
+  </div>
+  {% endblock %}
   {% endif %}
 
   {# Date #}
   {% if date %}
-    {% block date_block %}
-    <div class="c-teaser__date">
-      {{date}}
-    </div>
-    {% endblock %}
+  {% block date_block %}
+  <div class="c-teaser__date">
+    {{date}}
+  </div>
+  {% endblock %}
   {% endif %}
 
+  {# Tags #}
+  {% if tags %}
+  <ul class="c-teaser__tags">
+    {% block tags_block %}
+
+    {% for key, tag in tags %}
+    <li class="c-teaser__tag"><a href="{{tag.title}}">{{tag.title}}</a></li>
+    {% endfor %}
+    {% endblock %}
+  </ul>
+
+  {% endif %}
 </article>
