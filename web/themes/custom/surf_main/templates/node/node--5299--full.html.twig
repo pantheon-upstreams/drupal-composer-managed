@@ -18,7 +18,39 @@
 
 			<!-- Page Heading / Hero -->
 
-			<!-- Blue Banner -->
+			<!-- Header -->
+			<div class="l-stack">
+				<h3>Header Component: Black text</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+				} %}
+								<h3>Header Component: Black text with green particles</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+					header_particle_style: 'green-particles',
+				} %}
+
+				<h3>Header Component: Black text with Light Gray particles</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+					header_particle_style: 'light-gray-particles',
+				} %}
+
+				<h3>Header Component: Black text with White particles</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+					header_particle_style: 'white-particles',
+				} %}
+
+
+
+				</div>
+
+			<!-- Person Banner -->
 			<div class="l-stack">
 				<h3>Person Component: with an image</h3>
 				{% include "person" with {
