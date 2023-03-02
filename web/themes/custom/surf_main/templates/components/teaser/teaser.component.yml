@@ -69,7 +69,12 @@ schemas:
         title: Category icon
         enum:
           - video
-
+      layout:
+        type: string
+        title: Layout
+        enum:
+          - stacked
+          - side-by-side
       tags:
         type: array
         title: Tags

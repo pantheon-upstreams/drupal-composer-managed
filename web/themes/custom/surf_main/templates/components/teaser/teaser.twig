@@ -3,7 +3,7 @@
   {% set titleClass = 'pretitle' %}
 {% endif %}
 
-<article {{ clAttributes.addClass('c-teaser'|addModifiers([icon, titleClass])) }}>
+<article {{ clAttributes.addClass('c-teaser'|addModifiers([layout, icon, titleClass])) }}>
 
   {# Image & Category #}
   <div class="c-teaser__image-wrapper">
@@ -34,6 +34,8 @@
   </p>
   {% endblock %}
   {% endif %}
+
+  <div class="c-teaser__content-wrapper">
 
   {# Title #}
   {% if title %}
@@ -66,12 +68,13 @@
   {% if tags %}
   <ul class="c-teaser__tags">
     {% block tags_block %}
-
     {% for key, tag in tags %}
     <li class="c-teaser__tag"><a href="{{tag.title}}">{{tag.title}}</a></li>
     {% endfor %}
     {% endblock %}
   </ul>
-
   {% endif %}
+
+  </div>
+
 </article>

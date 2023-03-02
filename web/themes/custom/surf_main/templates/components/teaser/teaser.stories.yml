@@ -1,5 +1,12 @@
 title: Surf Main/Teaser
 argTypes:
+  layout:
+    control: select
+    description: Teaser Layout
+    options:
+      Stacked: stacked
+      SideBySide: side-by-side
+    defaultValue: stacked
   feature:
     control: boolean
     default: false
