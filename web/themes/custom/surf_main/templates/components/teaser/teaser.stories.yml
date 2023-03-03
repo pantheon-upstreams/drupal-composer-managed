@@ -4,10 +4,11 @@ argTypes:
     control: select
     description: Teaser Layout
     options:
+      Mixed: mixed
+      SidebySide: side-by-side
       Stacked: stacked
-      SideBySide: side-by-side
       Featured: featured
-    defaultValue: stacked
+    defaultValue: mixed
   icon:
     control: select
     description: The category icon
@@ -68,7 +69,7 @@ stories:
       title: Argon Transfer Challenge
       url: https://github.com
       body: "<p>How do you transfer 70,000 tons of argon nearly one mile underground to the DUNE detectors? Learn about phase changes in matter and design an engineering solution to this enormous problem.</p>"
-      # image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
       alt: Atl text example
       tags:
         - title: Middle School
@@ -85,3 +86,27 @@ stories:
           url: https://github.com
         - title: MS-PS3-5
           url: https://github.co
+  - name: Event
+    args:
+      layout: side-by-side
+      title: SURF Community Trunk-or-Treat
+      url: https://github.com
+      category: Public
+      category_url: https://github.com
+      body: "<p>Pulvinar congue vestibulum quam ac nulla aliquam senectus turpis imperdiet morbi consectetur.</p>"
+      # pretitle: Pre Title
+      date: August 18, 2022
+      time: 4:00pm - 6:00pm
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      alt: Atl text example
+
+  - name: Experiments
+    args:
+      layout: stacked
+      title: The world's most sensitive dark matter detector
+      url: https://github.com
+      body: "<p>LZ is 100x more sensitive to finding signals from dark matter particles than its predecessor, the Large Underground Xenon experiment (LUX)..</p>"
+      pretitle: LUX-ZEPLIN
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      alt: Atl text example
+      date: "2015–Present"

@@ -18,14 +18,31 @@
 
 			<!-- Page Heading / Hero -->
 
+			<!-- Teaser -->
+			<div class="l-stack  u-padding">
+				<h3>Teaser: News</h3>
+				{% include "teaser" with {
+					layout: 'stacked',
+					title: 'Enhancing the search',
+					url: 'https://github.com',
+					category: 'Article',
+					category_url: 'https://github.com',
+					body: "<p>Est id non nulla veniam occaecat amet anim ea enim. Nulla do cillum nisi dolore exercitation aliqua sunt ad in est in amet eu magna sit. Ea magna voluptate veniam minim sunt incididunt irure culpa anim irure pariatur.</p>",
+					date: 'August 18, 2022',
+					image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg",
+					alt: 'Atl text example',
+				} %}
+				</div>
+
 			<!-- Header -->
-			<div class="l-stack">
+			<div class="l-stack  u-padding">
 				<h3>Header Component: Black text</h3>
 				{% include "header" with {
 					heading: 'Header Title',
 					header_text_style: 'black-text',
 				} %}
-								<h3>Header Component: Black text with green particles</h3>
+
+				<h3>Header Component: Black text with green particles</h3>
 				{% include "header" with {
 					heading: 'Header Title',
 					header_text_style: 'black-text',
@@ -45,13 +62,10 @@
 					header_text_style: 'black-text',
 					header_particle_style: 'white-particles',
 				} %}
-
-
-
 				</div>
 
 			<!-- Person Banner -->
-			<div class="l-stack">
+			<div class="l-stack u-padding">
 				<h3>Person Component: with an image</h3>
 				{% include "person" with {
 					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/person/person.jpg',
@@ -76,7 +90,7 @@
 				</div>
 
 			<!-- Blue Banner -->
-			<div class="l-stack">
+			<div class="l-stack  u-padding">
 				<h3>Blue Banner Component</h3>
 				{% include "blue-banner" with {
 					primary_image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/blue-banner/blue-banner01.jpg',
@@ -91,7 +105,7 @@
 				</div>
 
 			<!-- Green Banner -->
-			<div class="l-stack">
+			<div class="l-stack  u-padding">
 				<h3>Green Banner Component</h3>
 				{% include "green-banner" with {
 					heading: 'Questions? Contact Us!',
@@ -102,7 +116,7 @@
 				</div>
 
 			<!-- Image -->
-			<div class="l-stack">
+			<div class="l-stack  u-padding">
 				<h3>Image: with caption</h3>
 				{% include "image" with {
 					alt: 'Image Example with caption',
@@ -111,9 +125,10 @@
 				} %}
 				</div>
 
+
 			<!-- Video -->
 
-			<div class="l-stack">
+			<div class="l-stack  u-padding">
 				<h3>Video: Youtube Example</h3>
 				{% include "video" with {
 					title: 'YouTube Example',
@@ -130,7 +145,7 @@
 			</div>
 
 			<!-- Accordion -->
-			<div class="l-stack">
+			<div class="l-stack  u-padding">
 				<h3>Accordion</h3>
 				{% include "accordion" with {
 					items: [
@@ -169,7 +184,7 @@
 
 
 			<!-- Callouts & Factoids -->
-				<div class="l-stack"> <h3>Callouts</h3>
+				<div class="l-stack  u-padding"> <h3>Callouts</h3>
 				{% include "callout" with {
 					heading: 'It\'s a Callout!',
 					body: 'This is a callout component. It\'s a great way to highlight important information.',

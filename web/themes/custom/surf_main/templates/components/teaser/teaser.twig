@@ -3,30 +3,20 @@
   {% set titleClass = 'pretitle' %}
 {% endif %}
 
-{% set imageURL = image %}
-{% if image is empty %}
-  {% if layout == 'curriculum' %}
-    {% set imageURL = '/themes/custom/surf_main/templates/components/teaser/curriculum-placeholder.png' %}
-  {% else %}
-    {% set imageURL = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
-  {% endif %}
-{% endif %}
-
-
 <article {{ clAttributes.addClass('c-teaser'|addModifiers([layout, icon, titleClass])) }}>
 
   {# Image & Category #}
   <div class="c-teaser__image-wrapper">
 
-    {% if imageURL %}
+    {% if image %}
     {% include "image" with {
-    image: imageURL,
+    image: image,
     alt: alt
     } %}
     {% endif %}
 
     {# Category #}
-    {% if category and layout != 'featured' %}
+    {% if category and layout != 'featured' and layout != 'side-by-side' %}
     {% block category_block %}
     <p class="c-teaser__category">
       <a href="{{category_url}}">{{category}}</a>
@@ -74,14 +64,39 @@
     {% endblock %}
     {% endif %}
 
-    {# Date #}
-    {% if date %}
-    {% block date_block %}
-    <div class="c-teaser__date">
-      {{date}}
+    <div class="c-teaser__meta-wrapper">
+
+      {# Category (if side-by-side) #}
+      {% if category and layout == 'side-by-side' %}
+      {% block category_side_by_side_block %}
+      <p class="c-teaser__side-by-side-category">
+        <a href="{{category_url}}">{{category}}</a>
+      </p>
+      {% endblock %}
+      {% endif %}
+
+      <div class="c-teaser__date-time-wrapper">
+        {# Date #}
+        {% if date %}
+        {% block date_block %}
+        <p class="c-teaser__date">
+          {{date}}
+        </p>
+        {% endblock %}
+        {% endif %}
+
+        {# Time #}
+        {% if time %}
+        {% block time_block %}
+        <p class="c-teaser__time">
+          {{time}}
+        </p>
+        {% endblock %}
+        {% endif %}
+      </div>
+
     </div>
-    {% endblock %}
-    {% endif %}
+
 
     {# Tags #}
     {% if tags %}

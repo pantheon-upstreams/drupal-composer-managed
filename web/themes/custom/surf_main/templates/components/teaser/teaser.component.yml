@@ -13,8 +13,6 @@ schemas:
       - title
       - url
       - layout
-      - category
-      - category_url
     properties:
       alt:
         type: "string"
@@ -55,9 +53,14 @@ schemas:
           - "LUX"
       date:
         type: "string"
-        title: "date"
+        title: "Date"
         examples:
           - "August 18, 2022"
+      time:
+        type: "string"
+        title: "Time"
+        examples:
+          - "4:00pm - 6:00pm"
       body:
         title: Body
         type: string
@@ -72,8 +75,9 @@ schemas:
         type: string
         title: Layout
         enum:
-          - stacked
+          - mixed
           - side-by-side
+          - stacked
           - featured
       tags:
         type: array
