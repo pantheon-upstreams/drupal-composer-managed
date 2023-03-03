@@ -27,24 +27,19 @@
     text-decoration: underline;
     color: var(--color-surf--dark-grey);
     .c-accordion__icon {
-      background-image: inline-svg(
-        '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
-      );
+      background-color: $green-50;
     }
   }
   &[aria-expanded="true"] .c-accordion__icon {
-    background-image: inline-svg(
+    mask-image: inline-svg(
       '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
     );
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: rem(28px);
-    height: rem(28px);
   }
 }
 
 .c-accordion__icon {
-  background-image: inline-svg(
+  background-color: $green-30;
+  mask-image: inline-svg(
     '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
   );
   background-size: contain;
