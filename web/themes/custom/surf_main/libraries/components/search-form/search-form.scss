@@ -9,7 +9,7 @@
     margin: 24px 15px;
     width: 100%;
 
-    form {
+    #search-api-form {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -50,7 +50,7 @@
         margin: 0;
         width: 100%;
 
-        input {
+        input.form-search {
           background: transparent;
           border: 0;
           margin: 0;
@@ -62,6 +62,12 @@
           font-weight: var(--font-weight-regular);
           font-size: 18px;
           line-height: 144%;
+
+          &:focus {
+            box-shadow: none;
+            outline: auto;
+            outline-offset: 6px;
+          }
 
           // Only show when focused
           &::-webkit-input-placeholder {
@@ -113,100 +119,103 @@
       text-decoration: underline;
     }
 
-    .form-item {
-      input {
-        color: #fff;
-        font-family: var(--font-family-sans);
-        font-weight: var(--font-weight-regular);
-        font-size: 18px;
-        line-height: 144%;
-      }
-
-      label {
-        color: #fff;
-      }
-
-      input.form-search {
-        background: transparent;
-        border: 0;
-        border-bottom: 2px solid #fff;
-        padding: 0.25em 1.25em 0.25em 0.5em;
-        flex-grow: 1;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        margin: 0;
-        opacity: 0;
-        outline: 0;
-        z-index: 2;
-        width: 100%;
-        // Assign pointer as this "appears" as the search button
-        cursor: pointer;
-
-        // Attach search icon at end of input
-        background-color: transparent;
-        background-image: url(../../../../images/icons/ui-icon-search--white.svg);
-        background-repeat: no-repeat;
-        background-position: right center;
-        background-size: 20px;
-
-        // Only show when focused
-        &::-webkit-input-placeholder {
+    #search-api-form {
+      .form-item {
+        input {
           color: #fff;
-          font-style: italic;
+          font-family: var(--font-family-sans);
+          font-weight: var(--font-weight-regular);
+          font-size: 18px;
+          line-height: 144%;
         }
 
-        // Firefox specific
-        &::placeholder {
+        label {
           color: #fff;
-          font-style: italic;
-          opacity: 1;
         }
 
-        // Hide search clear button
-        &::-webkit-search-cancel-button {
-          display: none;
+        input.form-search {
+          background: transparent;
+          border: 0;
+          border-bottom: 2px solid #fff;
+          padding: 0.25em 1.25em 0.25em 0.5em;
+          flex-grow: 1;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: 0;
+          opacity: 0;
+          outline: 0;
+          transition: none;
+          z-index: 2;
+          width: 100%;
+          // Assign pointer as this "appears" as the search button
+          cursor: pointer;
+
+          // Attach search icon at end of input
+          background-color: transparent;
+          background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+          background-repeat: no-repeat;
+          background-position: right center;
+          background-size: 20px;
+
+          // Only show when focused
+          &::-webkit-input-placeholder {
+            color: #fff;
+            font-style: italic;
+          }
+
+          // Firefox specific
+          &::placeholder {
+            color: #fff;
+            font-style: italic;
+            opacity: 1;
+          }
+
+          // Hide search clear button
+          &::-webkit-search-cancel-button {
+            display: none;
+          }
         }
       }
-    }
 
-    // Submit button
-    .form-actions {
-      align-items: center;
-      color: #fff;
-      display: inline-flex;
-      font-family: var(--font-family-condensed);
-      font-weight: 700;
-      font-size: 22px;
-      height: 100%;
-      letter-spacing: 1.8px;
-      line-height: 140%;
-      margin: 0;
-      text-transform: uppercase;
-
-      &::before {
+      // Submit button
+      .form-actions {
         align-items: center;
-        content: "Search";
-        display: -webkit-inline-box;
-        display: inline-flex;
-        width: fit-content;
-      }
-
-      input.form-submit {
-        --size: 31px;
-        background-color: transparent;
-        background-image: url(../../../../images/icons/ui-icon-search--white.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 20px;
-        border: none;
         color: #fff;
-        height: var(--size);
-        padding: 0;
-        position: relative;
-        text-indent: var(--size);
-        width: var(--size);
+        display: inline-flex;
+        font-family: var(--font-family-condensed);
+        font-weight: 700;
+        font-size: 22px;
+        height: 100%;
+        letter-spacing: 1.8px;
+        line-height: 140%;
+        margin: 0;
+        text-transform: uppercase;
+
+        &::before {
+          align-items: center;
+          content: "Search";
+          display: -webkit-inline-box;
+          display: inline-flex;
+          width: fit-content;
+        }
+
+        input.form-submit {
+          --size: 31px;
+          background-color: transparent;
+          background-image: url(../../../../images/icons/ui-icon-search--white.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 20px;
+          border: none;
+          color: #fff;
+          height: var(--size);
+          padding: 0;
+          position: relative;
+          text-indent: var(--size);
+          width: var(--size);
+        }
       }
     }
   }
@@ -216,11 +225,13 @@
     width: 300px;
 
     input.form-search {
+      box-shadow: none;
       opacity: 1;
       z-index: initial;
       cursor: initial;
       height: 31px;
       margin-top: 16px;
+      transition: none;
       width: 100%;
     }
 
