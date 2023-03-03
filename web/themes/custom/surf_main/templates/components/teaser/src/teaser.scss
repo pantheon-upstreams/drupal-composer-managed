@@ -3,38 +3,141 @@
 .c-teaser {
   &.c-teaser--side-by-side {
   }
-  &.c-teaser--video {
-    .c-teaser__category {
-      padding-left: rem(24px);
-      background-image: inline-svg(
-        '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" fill="none"><path fill="#494949" d="M.062.938 10.562 7l-10.5 6.062V.938Z"/></svg>'
-      );
-      background-repeat: no-repeat;
-      background-position: center left rem(8px);
-    }
-  }
+
+  // Stacked Layout (default)
   display: flex;
   flex-direction: column;
   @include bp-min(medium) {
     flex-direction: row;
     .c-teaser__image-wrapper {
-      max-width: rem(208px);
+      // max-width: rem(208px);
     }
     .c-teaser__content-wrapper {
-      margin: rem(20px) 0 0 rem(32px);
+      margin: 0 0 0 rem(32px);
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
     }
   }
   @include bp-min(large) {
-    flex-direction: column;
     .c-teaser__image-wrapper {
-      max-width: rem(293px);
+      // max-width: rem(293px);
     }
   }
   @include bp-min(xxlarge) {
-    flex-direction: row;
-    max-width: rem(280px);
+    flex-direction: column;
+    display: block;
+    .c-teaser__image-wrapper {
+      // max-width: rem(280px);
+    }
     .c-teaser__content-wrapper {
       margin: 0;
+    }
+  }
+
+  // Side by Side Layout
+
+  // Featured Layout
+  &.c-teaser--featured {
+    position: relative;
+    flex-direction: column;
+    @include bp-min(medium) {
+      flex-direction: column;
+    }
+    @include bp-min(large) {
+      flex-direction: column;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 73, 44, 0) 0%,
+          #00492c 100%
+        );
+        z-index: 0;
+      }
+    }
+    @include bp-min(xxlarge) {
+      flex-direction: column;
+    }
+    .c-teaser__image-wrapper {
+      margin: 0;
+    }
+    .c-teaser__content-wrapper {
+      z-index: 1;
+      color: var(--color-surf--white);
+      background: var(--color-surf--forest);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: rem(40px) rem(15px);
+      margin: 0;
+      @include bp-min(medium) {
+        padding: rem(40px);
+        margin: 0;
+      }
+      @include bp-min(large) {
+        background: none;
+        padding: 0 rem(40px) rem(40px) rem(40px);
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      @include bp-min(xxlarge) {
+        padding: 0 rem(60px) rem(60px) rem(60px);
+        margin: 0;
+      }
+      .c-teaser__featured-category {
+        order: 1;
+      }
+      .c-teaser__date {
+        order: 2;
+        color: var(--color-surf--white);
+        margin: rem(2px) 0 0 0;
+      }
+      .c-teaser__pretitle {
+        flex: none;
+        width: 100%;
+      }
+      .c-teaser__title {
+        order: 3;
+        flex: none;
+        width: 100%;
+        margin-top: rem(12px);
+        @include bp-min(medium) {
+          margin-top: rem(20px);
+        }
+        a {
+          color: var(--color-surf--white);
+          @include bp-min(large) {
+            font-size: 40px;
+            line-height: 130%;
+          }
+        }
+      }
+      .c-teaser__body {
+        order: 4;
+        flex: none;
+        width: 100%;
+        @include bp-min(large) {
+          font-size: 24px;
+          line-height: 144%;
+        }
+        p {
+          @include bp-min(large) {
+            font-size: 24px;
+            line-height: 144%;
+          }
+        }
+      }
     }
   }
 }
@@ -43,11 +146,26 @@
   position: relative;
   margin: 0 0 rem(20px) 0;
   height: 100%;
-  @include bp-min(medium) {
+  @include bp-min(xxlarge) {
     margin: 0 0 rem(28px) 0;
+  }
+  img {
+    display: block;
+    width: 100%;
   }
 }
 
+// Featured Category
+.c-teaser__featured-category {
+  @include surf-font-label-peewee;
+  background-color: var(--color-surf--white);
+  color: var(--color-surf--black);
+  padding: rem(2px) rem(8px);
+  display: inline-block;
+  margin: 0 rem(20px) 0 0;
+}
+
+// Category
 .c-teaser__category {
   @include surf-font-label-peewee;
   background-color: var(--color-surf--white);
@@ -59,13 +177,30 @@
   display: inline-block;
   margin: 0;
   a {
+    color: var(--color-surf--black);
     text-decoration: none;
+    transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
+      color: var(--color-surf--black);
       text-decoration: underline;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
 }
 
+// Video Icon
+.c-teaser.c-teaser--video {
+  .c-teaser__category {
+    padding-left: rem(24px);
+    background-image: inline-svg(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" fill="none"><path fill="#494949" d="M.062.938 10.562 7l-10.5 6.062V.938Z"/></svg>'
+    );
+    background-repeat: no-repeat;
+    background-position: center left rem(8px);
+  }
+}
+
+// Pre Title
 .c-teaser__pretitle {
   @include surf-font-body-large;
   color: var(--color-surf--forest);
@@ -74,6 +209,7 @@
   margin: 0 0 rem(8px) 0;
 }
 
+// Title
 .c-teaser__title {
   @include surf-font-body-medium;
   color: var(--color-surf--forest);
@@ -83,31 +219,56 @@
     @include surf-font-body-large;
   }
   a {
+    transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
       text-decoration: underline;
     }
   }
 }
 
+// Title (styled with an existing Pre Title)
 .c-teaser.c-teaser--pretitle .c-teaser__title {
   @include surf-font-body-jumbo;
 }
 
+// Body
 .c-teaser__body {
+  margin: 0 0 rem(12px) 0;
   p {
     margin: 0;
   }
 }
 
+// Date
 .c-teaser__date {
   @include surf-font-label-peewee;
   color: var(--color-surf--grey);
 }
 
+// Tags
 .c-teaser__tags {
-  margin: 0;
+  margin: rem(8px) 0 0 0;
   padding: 0;
-  .c-teaser__tag {
+  display: flex;
+  flex-wrap: wrap;
+  & > .c-teaser__tag {
+    @include surf-font-body-x-small;
     display: inline-block;
+    margin: rem(6px) rem(18px) 0 0;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      @include surf-font-body-x-small;
+      color: var(--color-surf--forest);
+      font-weight: var(--font-weight-regular);
+      transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        color: var(--color-surf--black);
+        text-decoration: none;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
   }
 }

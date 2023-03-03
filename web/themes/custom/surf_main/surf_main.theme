@@ -8,7 +8,6 @@
 use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
 
-
 /**
  * Implements hook_preprocess().
  */
@@ -360,3 +359,4 @@ function surf_main_view_block($id)
   }
   return NULL;
 }
+

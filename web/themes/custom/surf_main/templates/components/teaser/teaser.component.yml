@@ -12,6 +12,9 @@ schemas:
       - alt
       - title
       - url
+      - layout
+      - category
+      - category_url
     properties:
       alt:
         type: "string"
@@ -60,10 +63,6 @@ schemas:
         type: string
         examples:
           - "<p>When LUX completed its 300-live-day run in May of 2016, the world learned LUX was even more sensitive than previously determined.</p>"
-      feature:
-        type: boolean
-        title: Feature
-        defaultValue: false
       icon:
         type: string
         title: Category icon
@@ -75,6 +74,7 @@ schemas:
         enum:
           - stacked
           - side-by-side
+          - featured
       tags:
         type: array
         title: Tags
@@ -93,20 +93,3 @@ schemas:
               examples:
                 - https://github.com
                 - https://github.com
-      # items:
-      #   type: object
-      #   properties:
-      #     title:
-      #       type: string
-      #       title: Title
-      #       description: Accordion title
-      #       examples:
-      #         - "Accordion one"
-      #         - "Accordion two"
-      #     content:
-      #       type: string
-      #       title: Title
-      #       description: Accordion content
-      #       examples:
-      #         - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
-      #         - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"

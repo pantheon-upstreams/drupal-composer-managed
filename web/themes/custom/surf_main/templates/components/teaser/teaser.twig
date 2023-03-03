@@ -3,20 +3,30 @@
   {% set titleClass = 'pretitle' %}
 {% endif %}
 
+{% set imageURL = image %}
+{% if image is empty %}
+  {% if layout == 'curriculum' %}
+    {% set imageURL = '/themes/custom/surf_main/templates/components/teaser/curriculum-placeholder.png' %}
+  {% else %}
+    {% set imageURL = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+  {% endif %}
+{% endif %}
+
+
 <article {{ clAttributes.addClass('c-teaser'|addModifiers([layout, icon, titleClass])) }}>
 
   {# Image & Category #}
   <div class="c-teaser__image-wrapper">
 
-    {% if image %}
+    {% if imageURL %}
     {% include "image" with {
-    image: image,
+    image: imageURL,
     alt: alt
     } %}
     {% endif %}
 
     {# Category #}
-    {% if category %}
+    {% if category and layout != 'featured' %}
     {% block category_block %}
     <p class="c-teaser__category">
       <a href="{{category_url}}">{{category}}</a>
@@ -26,54 +36,63 @@
 
   </div>
 
-  {# Pre Title #}
-  {% if pretitle %}
-  {% block pretitle_block %}
-  <p class="c-teaser__pretitle">
-    {{pretitle}}
-  </p>
-  {% endblock %}
-  {% endif %}
+
 
   <div class="c-teaser__content-wrapper">
 
-  {# Title #}
-  {% if title %}
-  {% block title_block %}
-  <h3 class="c-teaser__title">
-    <a href="{{url}}">{{title}}</a>
-  </h3>
-  {% endblock %}
-  {% endif %}
+    {# Category #}
+    {% if layout == 'featured' %}
+    <p class="c-teaser__featured-category">
+      {{ 'Featured'|t }}
+    </p>
+    {% endif %}
 
-  {# Body #}
-  {% if body %}
-  {% block body_block %}
-  <div class="c-teaser__body">
-    {{body|check_markup('plain') }}
-  </div>
-  {% endblock %}
-  {% endif %}
-
-  {# Date #}
-  {% if date %}
-  {% block date_block %}
-  <div class="c-teaser__date">
-    {{date}}
-  </div>
-  {% endblock %}
-  {% endif %}
-
-  {# Tags #}
-  {% if tags %}
-  <ul class="c-teaser__tags">
-    {% block tags_block %}
-    {% for key, tag in tags %}
-    <li class="c-teaser__tag"><a href="{{tag.title}}">{{tag.title}}</a></li>
-    {% endfor %}
+    {# Pre Title #}
+    {% if pretitle %}
+    {% block pretitle_block %}
+    <p class="c-teaser__pretitle">
+      {{pretitle}}
+    </p>
     {% endblock %}
-  </ul>
-  {% endif %}
+    {% endif %}
+
+    {# Title #}
+    {% if title %}
+    {% block title_block %}
+    <h3 class="c-teaser__title">
+      <a href="{{url}}">{{title}}</a>
+    </h3>
+    {% endblock %}
+    {% endif %}
+
+    {# Body #}
+    {% if body %}
+    {% block body_block %}
+    <div class="c-teaser__body">
+      {{body|check_markup('plain') }}
+    </div>
+    {% endblock %}
+    {% endif %}
+
+    {# Date #}
+    {% if date %}
+    {% block date_block %}
+    <div class="c-teaser__date">
+      {{date}}
+    </div>
+    {% endblock %}
+    {% endif %}
+
+    {# Tags #}
+    {% if tags %}
+    <ul class="c-teaser__tags">
+      {% block tags_block %}
+      {% for key, tag in tags %}
+      <li class="c-teaser__tag"><a href="{{tag.title}}">{{tag.title}}</a></li>
+      {% endfor %}
+      {% endblock %}
+    </ul>
+    {% endif %}
 
   </div>
 
