@@ -32,13 +32,13 @@
   }
   &[aria-expanded="true"] .c-accordion__icon {
     mask-image: inline-svg(
-      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#008535" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
+      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M6.223 14h15.555"/></svg>'
     );
   }
 }
 
 .c-accordion__icon {
-  background-color: $green-30;
+  background-color: var(--color-surf--forest);
   mask-image: inline-svg(
     '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
   );
