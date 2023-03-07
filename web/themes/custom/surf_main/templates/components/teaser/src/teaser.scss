@@ -159,8 +159,8 @@
     }
   }
 
-  // Featured Layout
-  &.c-teaser--featured {
+  // Super Layout
+  &.c-teaser--super {
     position: relative;
     flex-direction: column;
     @include bp-min(medium) {

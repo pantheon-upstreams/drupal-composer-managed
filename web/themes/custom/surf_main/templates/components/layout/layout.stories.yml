@@ -54,3 +54,28 @@ stories:
       secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
       tertiary: "<p>Tertiary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
       quaternary: "<p>Quaternary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+
+  - name: "7. Callout - Two Columns [1:1]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-halves
+      primary: true
+      primary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'cloud', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+      secondary: true
+      secondary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'cloud', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+
+  - name: "8. Callout - Three Columns [1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: threecolumn-thirds
+      primary: true
+      primary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'cloud', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+      secondary: true
+      secondary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'forest', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+      tertiary: true
+      tertiary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'kelly', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}

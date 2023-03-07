@@ -8,16 +8,6 @@ schemas:
   props:
     type: object
     properties:
-      header:
-        title: Body Section
-        type: string
-        examples:
-          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
-      footer:
-        title: Footer Section
-        type: string
-        examples:
-          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
       primary:
         title: Primary Column
         type: string

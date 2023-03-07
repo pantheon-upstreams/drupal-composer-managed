@@ -8,12 +8,17 @@ schemas:
   props:
     type: object
     required:
-      - image
-      - alt
       - title
       - url
       - layout
     properties:
+      layout:
+        type: string
+        title: Layout
+        enum:
+          - side-by-side
+          - stacked
+          - super
       alt:
         type: "string"
         title: "Image Alt Text"
@@ -71,14 +76,6 @@ schemas:
         title: Category icon
         enum:
           - video
-      layout:
-        type: string
-        title: Layout
-        enum:
-          - mixed
-          - side-by-side
-          - stacked
-          - featured
       tags:
         type: array
         title: Tags
@@ -97,3 +94,6 @@ schemas:
               examples:
                 - https://github.com
                 - https://github.com
+# column-stack
+# column-simple-stack
+# list-stack

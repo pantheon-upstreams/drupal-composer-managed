@@ -4,11 +4,11 @@ argTypes:
     control: select
     description: Teaser Layout
     options:
-      Mixed: mixed
-      SidebySide: side-by-side
-      Stacked: stacked
-      Featured: featured
-    defaultValue: mixed
+      ColumnStack: column-stack
+      ColumnSimpleStack: column-simple-stack
+      ListStack: list-stack
+      Super: super
+    defaultValue: column-stack
   icon:
     control: select
     description: The category icon
@@ -18,7 +18,7 @@ argTypes:
 stories:
   - name: News
     args:
-      layout: stacked
+      layout: column-stack
       title: Enhancing the search
       url: https://github.com
       category: Article
@@ -28,9 +28,9 @@ stories:
       date: August 18, 2022
       image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
       alt: Atl text example
-  - name: Featured
+  - name: Super Teaser
     args:
-      layout: featured
+      layout: super
       title: Excavation of huge caverns for DUNE particle detector is underway
       url: https://github.com
       category: Featured
@@ -42,7 +42,7 @@ stories:
       alt: Atl text example
   - name: News (Video)
     args:
-      layout: stacked
+      layout: column-stack
       title: Enhancing the search
       url: https://github.com
       category: Video
@@ -55,7 +55,7 @@ stories:
       alt: Atl text example
   - name: Press Release
     args:
-      layout: stacked
+      layout: column-stack
       title: Enhancing the search
       url: https://github.com
       category: Press Release
@@ -65,7 +65,7 @@ stories:
       alt: Atl text example
   - name: Curriculum Module
     args:
-      layout: curriculum
+      layout: column-stack
       title: Argon Transfer Challenge
       url: https://github.com
       body: "<p>How do you transfer 70,000 tons of argon nearly one mile underground to the DUNE detectors? Learn about phase changes in matter and design an engineering solution to this enormous problem.</p>"
@@ -88,7 +88,7 @@ stories:
           url: https://github.co
   - name: Event
     args:
-      layout: side-by-side
+      layout: column-stack
       title: SURF Community Trunk-or-Treat
       url: https://github.com
       category: Public
@@ -101,7 +101,7 @@ stories:
       alt: Atl text example
   - name: Experiments
     args:
-      layout: stacked
+      layout: column-stack
       title: The world's most sensitive dark matter detector
       url: https://github.com
       body: "<p>LZ is 100x more sensitive to finding signals from dark matter particles than its predecessor, the Large Underground Xenon experiment (LUX)..</p>"
