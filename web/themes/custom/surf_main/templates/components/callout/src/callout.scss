@@ -2,16 +2,6 @@
 
 .c-callout {
   background-color: var(--color-surf--white);
-  padding: rem(20px);
-  @include bp-min(medium) {
-    padding: rem(28px);
-  }
-  @include bp-min(large) {
-    padding: rem(32px);
-  }
-  @include bp-min(xxlarge) {
-    padding: rem(40px);
-  }
   &.c-callout--cloud {
     background-color: var(--color-surf--cloud);
   }
@@ -23,9 +13,32 @@
     background-color: var(--color-surf--kelly-green);
     color: var(--color-surf--white);
   }
-  &.has-image {
-    padding: 0;
+  &.c-callout--icon {
     .c-callout__content-wrapper {
+      padding: 0;
+      @include bp-min(medium) {
+        padding: 0;
+      }
+      @include bp-min(large) {
+        padding: 0;
+      }
+      @include bp-min(xxlarge) {
+        padding: 0;
+      }
+    }
+    .c-callout__image {
+      margin: 0 0 rem(30px) 0;
+    }
+  }
+  .c-callout__content-wrapper {
+    padding: rem(20px);
+    @include bp-min(medium) {
+      padding: rem(28px);
+    }
+    @include bp-min(large) {
+      padding: rem(32px);
+    }
+    @include bp-min(xxlarge) {
       padding: rem(40px);
     }
   }
@@ -38,5 +51,40 @@
 }
 
 // Two Column Overrides
-
-// Three Column Overrides
+.l--layout-twocolumn-halves,
+.c-layout--twocolumn-halves,
+.l--layout-twocolumn-onethird-twothirds,
+.c-layout--twocolumn-onethird-twothirds,
+.l--layout-twocolumn-twothirds-onethird,
+.c-layout--twocolumn-twothirds-onethird {
+  .c-callout__image {
+  }
+  .c-callout__title {
+    @include surf-font-body-large;
+    color: inherit;
+    font-weight: var(--font-weight-bold);
+  }
+  .c-callout__body {
+    @include surf-font-body-medium;
+  }
+  .c-callout__link {
+  }
+}
+// Three and Four Column Overrides
+.l--layout-threecolumn-thirds,
+.c-layout--threecolumn-thirds,
+.l--layout-fourcolumns-forths,
+.c-layout--fourcolumns-forths {
+  .c-callout__image {
+  }
+  .c-callout__title {
+    @include surf-font-body-large;
+    color: inherit;
+    font-weight: var(--font-weight-bold);
+  }
+  .c-callout__body {
+    @include surf-font-body-medium;
+  }
+  .c-callout__link {
+  }
+}

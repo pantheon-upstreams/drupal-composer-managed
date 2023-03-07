@@ -1,5 +1,5 @@
 {# Prepare presentational attributes #}
-{% if image_url is not empty %}
+{% if image_url is not empty and theme != 'icon' %}
   {% set clAttributes = clAttributes.addClass('has-image') %}
 {% endif %}
 
