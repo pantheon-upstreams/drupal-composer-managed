@@ -44,8 +44,12 @@ schemas:
           - "Ea irure adipisicing"
       theme:
         type: string
-        title: Theme Color
+        title: Theme
         enum:
           - cloud
           - forest
           - kelly
+          - icon
+      arrow:
+        type: boolean
+        title: Arrow Icon

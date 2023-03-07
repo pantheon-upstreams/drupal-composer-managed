@@ -9,6 +9,8 @@
   {% set button_bg_color = 'forest' %}
 {% elseif theme == 'cloud' %}
   {% set button_bg_color = 'forest' %}
+{% elseif theme == 'icon' %}
+  {% set button_bg_color = 'forest' %}
 {% elseif theme == 'kelly' %}
   {% set button_bg_color = 'white' %}
 {% elseif theme == 'forest' %}
@@ -48,13 +50,24 @@
     {% if link_text and link_url %}
     {% block callout_link %}
     <div class="c-callout__link">
-      {% include "link-button" with {
-      text: link_text,
-      url: link_url,
-      button_style: 'solid',
-      color: button_bg_color,
-      button_type_size: 'medium'
-      } %}
+      {% if arrow %}
+        {% include "link-button" with {
+        text: link_text,
+        url: link_url,
+        button_style: 'solid',
+        color: button_bg_color,
+        button_type_size: 'medium',
+        icon_type: 'arrow'
+        } %}
+      {% else %}
+        {% include "link-button" with {
+        text: link_text,
+        url: link_url,
+        button_style: 'solid',
+        color: button_bg_color,
+        button_type_size: 'medium'
+        } %}
+      {% endif %}
     </div>
     {% endblock %}
     {% endif %}

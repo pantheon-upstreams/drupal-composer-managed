@@ -13,6 +13,10 @@ argTypes:
       Cloud: cloud
       Forest: forest
       Kelly: kelly
+      Icon: icon
+  arrow:
+    control: boolean
+    default: false
 stories:
   - name: Cloud
     args:
@@ -28,3 +32,9 @@ stories:
       theme: cloud
       image_url: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
       image_alt: "Ea irure adipisicing"
+  - name: Icon Callout (factoid)
+    args:
+      theme: icon
+      image_url: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg"
+      image_alt: "Ea irure adipisicing"
+      arrow: true
