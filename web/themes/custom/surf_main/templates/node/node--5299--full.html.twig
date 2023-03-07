@@ -21,7 +21,9 @@
 
 
 						<!-- Callouts & Factoids -->
-				<div class="l-stack  u-padding"> <h3>Callouts</h3>
+				<div class="l-stack  u-padding">
+
+				<h3>Callouts</h3>
 				{% include "callout" with {
 					heading: 'It\'s a Callout!',
 					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
@@ -41,7 +43,7 @@
 					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
 					link_text: 'Click Me',
 					link_url: 'http://example.com',
-					theme: 'forest',
+					theme: 'kelly',
 				} %}
 
 				{% include "callout" with {
@@ -54,11 +56,96 @@
 					image_alt: 'Ea irure adipisicing'
 				} %}
 
+					</div>
+
+<h3>Callouts: Two Column Layout</h3>
+  <div class="l-width--medium layout l--layout-twocolumn-halves">
+    <div class="l--inner-wrapper">
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+					{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+          	{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+	<h3>Callouts: Three Column Layout</h3>
+  <div class="l-width--medium layout l--layout-threecolumn-thirds">
+    <div class="l--inner-wrapper">
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+					{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+          {% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+				 <!-- Column Two -->
+        <div class="l__region l__tertiary">
+          {% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
 
-
-			</div>
 
 			<!-- Teaser -->
 			<div class="l-stack  u-padding">
@@ -229,7 +316,8 @@
 			<hr/>
 
 			{# Layout Examples #}
-<h3>Layouts: Thirds column layout</h3>
+
+<h3>Layouts: Thirds Column layout</h3>
 
   <div class="l-width--medium layout l--layout-threecolumn-thirds l-constrained">
     <div class="l--inner-wrapper">
