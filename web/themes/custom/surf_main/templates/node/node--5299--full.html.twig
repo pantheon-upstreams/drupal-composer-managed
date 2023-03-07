@@ -18,6 +18,48 @@
 
 			<!-- Page Heading / Hero -->
 
+
+
+						<!-- Callouts & Factoids -->
+				<div class="l-stack  u-padding"> <h3>Callouts</h3>
+				{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+				} %}
+				{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'forest',
+				} %}
+				{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'forest',
+				} %}
+
+				{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+
+
+
+
+
+			</div>
+
 			<!-- Teaser -->
 			<div class="l-stack  u-padding">
 				<h3>Teaser: News</h3>
@@ -183,47 +225,60 @@
 			</div>
 
 
-			<!-- Callouts & Factoids -->
-				<div class="l-stack  u-padding"> <h3>Callouts</h3>
-				{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: 'This is a callout component. It\'s a great way to highlight important information.',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					background_style: 'color',
-					color: 'cloud',
-				} %}
-				{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: 'This is a callout component. It\'s a great way to highlight important information.',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					background_style: 'color',
-					color: 'forest'
-				} %}
-				{% embed "callout" with {
-					heading: 'It\'s a Callout!',
-					body: 'This is a callout component. It\'s a great way to highlight important information.',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					background_style: 'color',
-					color: 'kelly'
-				} %}
-					{% block callout__link %}
-						<div class="c-callout__link">
-							{% include "link-button" with {
-							text: link_text,
-							href: link_url,
-							color: 'white',
-							iconType: 'arrow',
-						} %}
-						</div>
-					{% endblock %}
-				{% endembed %}
-			</div>
-
 			{# End of Components 👆🏻 #}
 			<hr/>
+
+			{# Layout Examples #}
+<h3>Layouts: Thirds column layout</h3>
+
+  <div class="l-width--medium layout l--layout-threecolumn-thirds l-constrained">
+    <div class="l--inner-wrapper">
+
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+              <p>col one</p>
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+              <p>col two</p>
+        </div>
+
+        <!-- Column Three -->
+        <div class="l__region l__tertiary">
+              <p>col three</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<h3>Layouts: 50/50 column layout</h3>
+
+  <div class="l-width--medium layout l--layout-twocolumn-halves l-constrained">
+    <div class="l--inner-wrapper">
+
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+              <p>col one</p>
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+              <p>col two</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 
 			{# Start of HTML Kitchen Sink #}
 

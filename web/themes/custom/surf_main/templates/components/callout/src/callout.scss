@@ -1,14 +1,42 @@
-.c-callout img {
-  display: block;
+@import "_partials";
+
+.c-callout {
+  background-color: var(--color-surf--white);
+  padding: rem(20px);
+  @include bp-min(medium) {
+    padding: rem(28px);
+  }
+  @include bp-min(large) {
+    padding: rem(32px);
+  }
+  @include bp-min(xxlarge) {
+    padding: rem(40px);
+  }
+  &.c-callout--cloud {
+    background-color: var(--color-surf--cloud);
+  }
+  &.c-callout--forest {
+    background-color: var(--color-surf--forest);
+    color: var(--color-surf--white);
+  }
+  &.c-callout--kelly {
+    background-color: var(--color-surf--kelly-green);
+    color: var(--color-surf--white);
+  }
+  &.has-image {
+    padding: 0;
+    .c-callout__content-wrapper {
+      padding: rem(40px);
+    }
+  }
 }
 
-.c-callout__content {
-  --space-inset-x: 40px;
-  --space-inset-y: 40px;
-  background-color: var(--background-color, transparent);
-  color: var(--color-text);
+.c-callout__title {
+  @include surf-font-body-x-large;
+  color: inherit;
+  font-weight: var(--font-weight-bold);
 }
 
-.c-callout__heading * {
-  color: var(--color-text-heading);
-}
+// Two Column Overrides
+
+// Three Column Overrides

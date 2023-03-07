@@ -1,0 +1,56 @@
+title: Surf Main/Layout
+argTypes:
+  layout_width:
+    options:
+      - normal
+      - narrow
+      - full
+    control: select
+  layout_columns:
+    options:
+      - onecolumn
+      - twocolumn-halves
+      - twocolumn-onethird-twothirds
+      - twocolumn-twothirds-onethird
+      - threecolumn-thirds
+      - fourcolumns-forths
+    control: select
+stories:
+  - name: "1. One Column [1]"
+    args:
+      layout_width: normal
+      layout_columns: onecolumn
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "2. Two Columns [1:1]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-halves
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "3. Two Column [1:2]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-onethird-twothirds
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "4. Two Column [2:1]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-twothirds-onethird
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "5. Three Column [1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: threecolumn-thirds
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      tertiary: "<p>Tertiary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "6. Four Column [1:1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: fourcolumns-forths
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      tertiary: "<p>Tertiary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      quaternary: "<p>Quaternary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"

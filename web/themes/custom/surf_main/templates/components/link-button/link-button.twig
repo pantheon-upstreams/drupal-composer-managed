@@ -8,7 +8,8 @@
 {% if color is not empty %}
 	{% set clAttributes = clAttributes.addClass('t-' ~ color) %}
 {% endif %}
-<a {{ clAttributes.addClass('link-button').setAttribute('href', url) }}>
+
+<a {{ clAttributes.addClass('c-link-button'|addModifiers([layout, icon, button_type_size])).setAttribute('href', url) }}>
 	{{ text }}
 	{% if icon_type %}
 		<span class="link-button__icon">
@@ -16,3 +17,4 @@
 		</span>
 	{% endif %}
 </a>
+{# cl-component cl-component--link-button cl-component--atom cl-component--ready link-button--uppercase link-button--solid t-black c-link-button c-link-button-- #}

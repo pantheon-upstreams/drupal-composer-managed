@@ -3,42 +3,28 @@ args:
   heading: Join us at The Conference
   link_text: Register
   link_url: https://www.example.org
-  background_style: color
-  body: |
-    <p><strong>Example paragraph.</strong> Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>
+  body: "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
 argTypes:
-  link_target:
-    description: The link target attribute
+  theme:
     control: select
-    options:
-      None: ""
-      Blank: "_blank"
-  background_style:
-    control: select
-    description: The background style
-    options:
-      None: ""
-      Color: color
-  color:
-    control: radio
-    description: The callout heading
+    description: Background style
     options:
       None: ""
       Cloud: cloud
       Forest: forest
       Kelly: kelly
-      White: white
 stories:
   - name: Cloud
     args:
-      color: cloud
+      theme: cloud
   - name: Forest
     args:
-      color: forest
+      theme: forest
   - name: Kelly
     args:
-      color: kelly
-  - name: w/ Image
+      theme: kelly
+  - name: Cloud w/ Image
     args:
-      image: '<img src="https://placekitten.com/g/660/410" alt="Catface" />'
-      color: cloud
+      theme: cloud
+      image_url: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      image_alt: "Ea irure adipisicing"

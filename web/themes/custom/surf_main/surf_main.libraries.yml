@@ -51,6 +51,7 @@ global:
       dist/css/global/layout/constrained.css: {}
       dist/css/global/layout/grid.css: {}
       dist/css/global/layout/stack.css: {}
+      dist/css/global/layout/me-layouts.css: {}
     theme:
       dist/css/global/theme/reverse.css: {}
       dist/css/global/theme/themes.css: {}

@@ -1,0 +1,64 @@
+
+<section {{ clAttributes.addClass('c-layout'|addModifiers([layout_width, layout_columns, 'l-constrained'])) }}>
+  <div class="c-layout--inner-wrapper">
+
+    {# HEADER SECTION #}
+    {% if header %}
+      {% block header_block %}
+        <div class="c-layout--region c-layout--header">
+        {{ header|check_markup('plain') }}
+        </div>
+      {% endblock %}
+    {% endif %}
+
+    <div class="c-layout--main">
+
+      {# PRIMARY COLUMN #}
+      {% if primary %}
+        {% block primary_block %}
+          <div class="c-layout--region c-layout--primary">
+          {{ primary|check_markup('plain') }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
+      {# SECONDARY COLUMN #}
+      {% if secondary %}
+        {% block secondary_block %}
+          <div class="c-layout--region c-layout--secondary">
+          {{ secondary|check_markup('plain') }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
+      {# TERTIARY COLUMN #}
+      {% if tertiary %}
+        {% block tertiary_block %}
+          <div class="c-layout--region c-layout--tertiary">
+          {{ tertiary|check_markup('plain') }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
+      {# QUATERNARY COLUMN #}
+      {% if quaternary %}
+        {% block quaternary_block %}
+          <div class="c-layout--region c-layout--quaternary">
+          {{ quaternary|check_markup('plain') }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
+    </div>
+
+    {# FOOTER SECTION #}
+    {% if footer %}
+      {% block footer_block %}
+        <div class="c-layout--region c-layout--footer">
+        {{ footer|check_markup('plain') }}
+        </div>
+      {% endblock %}
+    {% endif %}
+
+  </div>
+</section>

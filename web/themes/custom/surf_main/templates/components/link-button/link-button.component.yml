@@ -30,6 +30,12 @@ schemas:
           - Solid
           - Gradient
           - Underline
+      button_type_size:
+        type: string
+        title: Button Typography Style
+        enum:
+          - small
+          - medium
       uppercase:
         type: boolean
         title: Text Case

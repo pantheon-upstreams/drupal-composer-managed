@@ -2,11 +2,10 @@ title: Surf Main/Link Button
 argTypes:
   button_style:
     options:
-      # Solid is a placeholder option, it does not impact styles
       - solid
       - gradient
       - underline
-    control: radio
+    control: select
   color:
     options:
       - black
@@ -16,7 +15,7 @@ argTypes:
       - white
       - underline-green
       - underline-white
-    control: radio
+    control: select
   uppercase:
     control: boolean
     default: true
@@ -25,6 +24,12 @@ argTypes:
       - false
       - Arrow
     control: select
+  button_type_size:
+    options:
+      - large
+      - medium
+    control: select
+    default: large
 stories:
   - name: Black
     args:
@@ -34,6 +39,7 @@ stories:
       color: black
       uppercase: true
       icon_type: false
+      button_type_size: large
   - name: Forest
     args:
       text: Forest Button
@@ -42,6 +48,7 @@ stories:
       color: forest
       uppercase: true
       icon_type: false
+      button_type_size: large
   - name: Gradient
     args:
       text: Gradient Button
@@ -50,6 +57,7 @@ stories:
       color: gradient
       uppercase: true
       icon_type: false
+      button_type_size: large
   - name: Underline Green
     args:
       text: Underline Green Button
@@ -58,6 +66,7 @@ stories:
       color: underline-green
       uppercase: true
       icon_type: false
+      button_type_size: large
   - name: Kelly
     args:
       text: Kelly Button
@@ -66,6 +75,7 @@ stories:
       color: kelly
       uppercase: true
       icon_type: false
+      button_type_size: large
   - name: White
     args:
       text: White Green Button
@@ -73,6 +83,7 @@ stories:
       button_style: solid
       color: white
       uppercase: true
+      button_type_size: large
   - name: Underline White
     args:
       text: Underline White Button
@@ -81,6 +92,7 @@ stories:
       color: underline-white
       uppercase: true
       icon_type: false
+      button_type_size: large
   - name: w/ Arrow
     args:
       text: Button with Arrow Example
@@ -89,3 +101,4 @@ stories:
       color: underline-green
       uppercase: false
       icon_type: Arrow
+      button_type_size: large

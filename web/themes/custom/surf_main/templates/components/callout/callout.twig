@@ -1,43 +1,64 @@
 {# Prepare presentational attributes #}
-{% if image is not empty %}
+{% if image_url is not empty %}
   {% set clAttributes = clAttributes.addClass('has-image') %}
 {% endif %}
 
+{# Button / Theme logic #}
+{% set button_bg_color = 'forest' %}
+{% if theme == 'white' %}
+  {% set button_bg_color = 'forest' %}
+{% elseif theme == 'cloud' %}
+  {% set button_bg_color = 'forest' %}
+{% elseif theme == 'kelly' %}
+  {% set button_bg_color = 'white' %}
+{% elseif theme == 'forest' %}
+  {% set button_bg_color = 'white' %}
+{% endif %}
+
 {# Markup for the component #}
-<div {{ clAttributes.addClass('c-callout') }}>
-  {% if image %}
+<article {{ clAttributes.addClass('c-callout'|addModifiers(theme)) }}>
+
+  {% if image_url and image_alt %}
     <div class="c-callout__image">
-    {{ image|check_markup('plain') }}
+    {% block image_block %}
+    {% include "image" with {
+    image: image_url,
+    alt: image_alt
+    } %}
+    {% endblock %}
     </div>
   {% endif %}
-  <div class="c-callout__content l-stack--tight {{ background_style is not empty ? 't-pane u-padding' }} {{ color is not empty ? 't-' ~ color }}">
+
+  <div class="c-callout__content-wrapper">
+
     {% if heading %}
-      {% block callout__heading %}
-      <div class="c-callout__heading">
-        <h3>{{ heading }}</h3>
-      </div>
+      {% block banner_heading_block %}
+        <h2 class="c-callout__title">{{heading}}</h2>
       {% endblock %}
     {% endif %}
 
     {% if body %}
-      {% block callout_body %}
-      <div class="c-callout__body">
+      {% block banner_body_block %}
+        <div class="c-callout__body">
         {{ body|check_markup('plain') }}
-      </div>
-      {% endblock %}
-    {% endif %}
-
-    {% if link_text %}
-      {% block callout__link %}
-        <div class="c-callout__link">
-        {% include "link-button" with {
-          text: link_text,
-          url: link_url,
-          button_style: 'solid',
-          color: color in (['forest', 'kelly']) ? 'white' : 'forest',
-        } %}
         </div>
       {% endblock %}
     {% endif %}
+
+    {% if link_text and link_url %}
+    {% block callout_link %}
+    <div class="c-callout__link">
+      {% include "link-button" with {
+      text: link_text,
+      url: link_url,
+      button_style: 'solid',
+      color: button_bg_color,
+      button_type_size: 'medium'
+      } %}
+    </div>
+    {% endblock %}
+    {% endif %}
+
   </div>
-</div>
+
+</article>
