@@ -27,6 +27,9 @@
       }
     }
     .c-callout__image {
+      img {
+        width: auto;
+      }
       margin: 0 0 rem(30px) 0;
     }
   }
