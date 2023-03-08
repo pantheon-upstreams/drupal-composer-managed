@@ -197,8 +197,6 @@
   </div>
 
 
-
-
 			<!-- Teaser -->
 			<div class="l-stack  u-padding">
 				<h3>Teaser: News</h3>
@@ -214,6 +212,39 @@
 					alt: 'Atl text example',
 				} %}
 				</div>
+
+				{# Teaser: Stack #}
+	<h3>Teasers (column stack): Two Column Layout</h3>
+  <div class="l-width--medium layout l--layout-twocolumn-halves">
+    <div class="l--inner-wrapper">
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+					{% include "teaser" with {
+					layout: 'column-stack', title: 'Researchers record successful startup of LUX-ZEPLIN dark matter detector at Sanford Underground Research Facility', url: 'https://github.com', category: 'Press Release', category_url: 'https://github.com', date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/news-placeholder.png',  alt: 'Atl text example'
+				} %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+          {% include "teaser" with {
+					layout: 'column-stack', title: 'Stratton family members visit Stratton Station', url: 'https://github.com', category: 'Video', category_url: 'https://github.com', date: 'August 17, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example', icon: 'video'
+				} %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
 
 			<!-- Header -->
 			<div class="l-stack  u-padding">
