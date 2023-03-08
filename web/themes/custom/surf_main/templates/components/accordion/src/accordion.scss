@@ -27,7 +27,7 @@
     text-decoration: underline;
     color: var(--color-surf--dark-grey);
     .c-accordion__icon {
-      background-color: $green-50;
+      background-color: var(--color-surf--kelly-green);
     }
   }
   &[aria-expanded="true"] .c-accordion__icon {

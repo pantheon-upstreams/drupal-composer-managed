@@ -16,7 +16,7 @@
     {% endif %}
 
     {# Category #}
-    {% if category and layout != 'featured' and layout != 'side-by-side' %}
+    {% if category and layout != 'super' %}
     {% block category_block %}
     <p class="c-teaser__category">
       <a href="{{category_url}}">{{category}}</a>
@@ -30,12 +30,7 @@
 
   <div class="c-teaser__content-wrapper">
 
-    {# Category #}
-    {% if layout == 'featured' %}
-    <p class="c-teaser__featured-category">
-      {{ 'Featured'|t }}
-    </p>
-    {% endif %}
+
 
     {# Pre Title #}
     {% if pretitle %}
@@ -67,13 +62,19 @@
     <div class="c-teaser__meta-wrapper">
 
       {# Category (if side-by-side) #}
-      {% if category and layout == 'side-by-side' %}
+      {# {% if category and layout == 'side-by-side' %}
       {% block category_side_by_side_block %}
       <p class="c-teaser__side-by-side-category">
         <a href="{{category_url}}">{{category}}</a>
       </p>
       {% endblock %}
-      {% endif %}
+      {% endif %} #}
+       {# Category #}
+        {% if layout == 'super' %}
+        <p class="c-teaser__featured-category">
+          <a href="{{category_url}}">{{category}}</a>
+        </p>
+        {% endif %}
 
       <div class="c-teaser__date-time-wrapper">
         {# Date #}

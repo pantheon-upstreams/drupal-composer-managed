@@ -44,6 +44,11 @@
   }
 }
 
+.c-callout__image {
+  img {
+    width: 100%;
+  }
+}
 .c-callout__title {
   @include surf-font-body-x-large;
   color: inherit;
