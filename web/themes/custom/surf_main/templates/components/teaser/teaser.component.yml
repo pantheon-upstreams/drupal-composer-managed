@@ -16,8 +16,9 @@ schemas:
         type: string
         title: Layout
         enum:
-          - side-by-side
-          - stacked
+          - column-stack
+          - column-simple-stack
+          - list-stack
           - super
       alt:
         type: "string"
@@ -94,6 +95,3 @@ schemas:
               examples:
                 - https://github.com
                 - https://github.com
-# column-stack
-# column-simple-stack
-# list-stack

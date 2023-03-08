@@ -24,7 +24,6 @@ stories:
       category: Article
       category_url: https://github.com
       body: "<p>Est id non nulla veniam occaecat amet anim ea enim. Nulla do cillum nisi dolore exercitation aliqua sunt ad in est in amet eu magna sit. Ea magna voluptate veniam minim sunt incididunt irure culpa anim irure pariatur.</p>"
-      # pretitle: Pre Title
       date: August 18, 2022
       image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
       alt: Atl text example
@@ -36,7 +35,6 @@ stories:
       category: Featured
       category_url: https://github.com
       body: "<p>To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be extracted.</p>"
-      # pretitle: Pre Title
       date: August 18, 2022
       image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
       alt: Atl text example

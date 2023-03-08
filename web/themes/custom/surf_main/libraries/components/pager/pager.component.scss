@@ -8,19 +8,22 @@
 .pager__items {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 0;
-  margin: rem(48px) 0 0 0;
+  margin: rem(48px) 0;
   li.pager__item {
     @include surf-font-body-small;
     display: block;
     color: var(--color-surf--black);
     font-family: var(--font-family-sans);
     font-weight: var(--font-weight-bold);
+    margin: 0;
+    // @include bp-min(medium) {
+    //   margin-right: rem(10px);
+    // }
+
     &:not(:last-child) {
-      margin-right: rem(2px);
-      @include bp-min(medium) {
-        margin-right: rem(4px);
-      }
+      margin-right: rem(9px);
     }
     a.pager__link {
       @include surf-font-body-small;
@@ -38,19 +41,18 @@
         color: var(--color-surf--black);
       }
     }
-    &.is-active {
+    &.pager__item--ellipsis {
+      padding: 0 rem(7px);
+    }
+    &.is-active a {
       color: var(--color-surf--white);
       background-color: var(--color-surf--black);
       padding: 0 rem(7px);
       font-family: var(--font-family-sans);
       font-weight: var(--font-weight-bold);
       text-decoration: none;
-      a {
+      &:hover {
         color: var(--color-surf--white);
-        background-color: var(--color-surf--black);
-        &:hover {
-          color: var(--color-surf--white);
-        }
       }
     }
     &.pager__item--previous,

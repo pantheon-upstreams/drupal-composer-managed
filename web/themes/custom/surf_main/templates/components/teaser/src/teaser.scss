@@ -30,7 +30,7 @@
 // Image Wrapper
 .c-teaser__image-wrapper {
   position: relative;
-  height: 100%;
+  // height: 100%;
   img {
     display: block;
     width: 100%;
@@ -176,8 +176,7 @@
   // Image Wrapper
   .c-teaser__image-wrapper {
     position: relative;
-    margin: 0 0 rem(28px) 0;
-    height: 100%;
+    margin: 0 0 rem(20px) 0;
     @include bp-min(xxlarge) {
     }
     img {
@@ -253,6 +252,27 @@
   }
 }
 
+// Two Column Overrides
+.l--layout-twocolumn-halves,
+.c-layout--twocolumn-halves,
+.l--layout-twocolumn-onethird-twothirds,
+.c-layout--twocolumn-onethird-twothirds,
+.l--layout-twocolumn-twothirds-onethird,
+.c-layout--twocolumn-twothirds-onethird {
+}
+
+// Three and Four Column Overrides
+.l--layout-threecolumn-thirds,
+.c-layout--threecolumn-thirds,
+.l--layout-fourcolumns-forths,
+.c-layout--fourcolumns-forths {
+  .c-teaser__image-wrapper {
+    @include bp-min(xxlarge) {
+      margin: 0 0 rem(20px) 0;
+    }
+  }
+}
+
 // Video Icon
 .c-teaser.c-teaser--video {
   .c-teaser__category {
@@ -262,5 +282,34 @@
     );
     background-repeat: no-repeat;
     background-position: center left rem(8px);
+  }
+}
+
+// Tags
+.c-teaser__tags {
+  margin: rem(12px) 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  & > .c-teaser__tag {
+    @include surf-font-body-x-small;
+    display: inline-block;
+    margin: rem(6px) rem(18px) 0 0;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      @include surf-font-body-x-small;
+      padding: rem(2px) rem(4px);
+      color: var(--color-surf--forest);
+      font-weight: var(--font-weight-regular);
+      transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        background: var(--color-surf--cloud);
+        color: var(--color-surf--black);
+        text-decoration: none;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
   }
 }

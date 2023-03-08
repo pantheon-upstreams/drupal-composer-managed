@@ -2,7 +2,7 @@
 {{ attach_library('surf_main/pager') }}
 
 {% if items %}
-  <nav role="navigation" aria-labelledby="pagination-heading" {{ component.attributes('pager', modifiers, attr) }}>
+  <nav role="navigation" aria-label="pager" {{ component.attributes('pager', modifiers, attr) }}>
     <h4 id="pagination-heading" class="visually-hidden">{{ 'Pagination'|t }}</h4>
     <ul class="pager__items js-pager__items">
       {# Print previous item if we are not on the first page. #}
@@ -22,16 +22,16 @@
       {% for key, item in items.pages %}
         <li class="pager__item{{ current == key ? ' is-active' : '' }}">
           {% if current == key %}
-            <span class="visually-hidden">
-                {{ current == key ? 'Current page'|t : 'Page'|t }}
-              </span>
-            {{- key -}}
+            {% set title = 'Current page'|t %}
           {% else %}
             {% set title = 'Go to page @key'|t({'@key': key}) %}
-            <a href="{{ item.href }}" class="pager__link" title="{{ title }}"{{ item.attributes|without('href', 'title').addClass('pager__link') }} {{ current == key ? 'aria-current="page"' }}>
-              {{- key -}}
-            </a>
           {% endif %}
+          <a href="{{ item.href }}" class="pager__link" title="{{ title }}"{{ item.attributes|without('href', 'title').addClass('pager__link') }} {{ current == key ? 'aria-current="page"' }}>
+            <span class="visually-hidden">
+              {{ current == key ? 'Current page'|t : 'Page'|t }}
+            </span>
+            {{- key -}}
+          </a>
         </li>
       {% endfor %}
       {# Add an ellipsis if there are further next pages. #}
