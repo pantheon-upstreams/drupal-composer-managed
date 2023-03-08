@@ -54,6 +54,9 @@
       font-family: var(--font-family-sans);
       font-weight: var(--font-weight-bold);
       text-decoration: none;
+      @supports (-moz-appearance: none) {
+        padding: rem(5px) rem(7px) rem(2px) rem(7px);
+      }
       &:hover {
         color: var(--color-surf--white);
       }
