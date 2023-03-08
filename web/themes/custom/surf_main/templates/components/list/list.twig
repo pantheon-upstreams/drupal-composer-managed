@@ -1,0 +1,49 @@
+<section {{ clAttributes.addClass('c-list'|addModifiers([items|length ~ '-columns'])).addClass('l-constrained') }}>
+  <div class="c-list--inner-wrapper">
+    {{dump(_context.items)}}
+
+    <div class="c-list--main">
+
+    {% if items %}
+    <ul class="c-list__items">
+      {% for key, item in items %}
+      {% block items_block %}
+      {{dump(item)}}
+      <li class="c-teaser__tag">
+        {{item|check_markup('plain') }}
+      </li>
+      {% endblock %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+      {# PRIMARY COLUMN #}
+      {# {% if primary %}
+      <div class="c-layout--region c-layout--primary">
+        {% block primary_block %}
+        {{ secondary|check_markup('plain') }}
+        {% endblock %}
+      </div>
+      {% endif %} #}
+
+      {# SECONDARY COLUMN #}
+      {# {% if secondary %}
+      {% block secondary_block %}
+      <div class="c-layout--region c-layout--secondary">
+        {{ secondary|check_markup('plain') }}
+      </div>
+      {% endblock %}
+      {% endif %} #}
+
+      {# TERTIARY COLUMN #}
+      {# {% if tertiary %}
+      {% block tertiary_block %}
+      <div class="c-layout--region c-layout--tertiary">
+        {{ tertiary|check_markup('plain') }}
+      </div>
+        {% endblock %}
+        {% endif %} #}
+
+    </div>
+  </div>
+</section>
