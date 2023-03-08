@@ -5,8 +5,8 @@ dependencies: {  }
 _core:
   default_config_hash: gPHBSiM5Ce4RUhHhKh8rX4OXzuwAVIMzP6snExzSuUo
 id: global
-help: null
 label: Global
+help: null
 description: 'The <em>global</em> should be used to show notification messages throughout the site.'
 allow_condition: true
 condition_datatype: {  }

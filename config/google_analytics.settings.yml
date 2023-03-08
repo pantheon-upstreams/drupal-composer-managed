@@ -1,7 +1,6 @@
 _core:
   default_config_hash: 5YkLBJiAXgH9BDLkDIb1ozqfCXWwvZggf4XfcXgfjzc
 account: UA-36316493-1
-premium: false
 domain_mode: 1
 cross_domains: ''
 visibility:
@@ -35,3 +34,4 @@ codesnippet:
 translation_set: false
 cache: false
 debug: false
+premium: false
