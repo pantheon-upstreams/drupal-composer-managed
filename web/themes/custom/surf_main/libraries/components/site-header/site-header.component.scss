@@ -105,6 +105,8 @@ main::before {
     right: 0;
     z-index: 3;
     position: fixed;
+    // Account for iphone issue
+    overflow-x: hidden;
 
     // For logged in users offset top
     .user-logged-in & {
@@ -163,8 +165,6 @@ main::before {
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
   // Allow overflow for mobile menu
-  // Odd issue on iPhone 13 mini - hide x overflow
-  overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
 
