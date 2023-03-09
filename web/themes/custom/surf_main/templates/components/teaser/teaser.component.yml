@@ -52,17 +52,20 @@ schemas:
         title: "Category URL"
         examples:
           - "https://github.com"
-      pretitle:
-        type: "string"
-        title: "Pre Title"
-        examples:
-          - "LUX"
-      date:
+      category_color:
+        type: string
+        title: Category Color
+        enum:
+          - forest
+          - cloud
+          - kelly
+          - gold
+      teaser_date:
         type: "string"
         title: "Date"
         examples:
           - "August 18, 2022"
-      time:
+      teaser_time:
         type: "string"
         title: "Time"
         examples:

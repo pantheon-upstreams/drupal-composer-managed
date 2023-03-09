@@ -16,17 +16,6 @@ argTypes:
       None: ""
       video: Video
 stories:
-  - name: News
-    args:
-      layout: column-stack
-      title: Enhancing the search
-      url: https://github.com
-      category: Article
-      category_url: https://github.com
-      body: "<p>Est id non nulla veniam occaecat amet anim ea enim. Nulla do cillum nisi dolore exercitation aliqua sunt ad in est in amet eu magna sit. Ea magna voluptate veniam minim sunt incididunt irure culpa anim irure pariatur.</p>"
-      date: August 18, 2022
-      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
-      alt: Atl text example
   - name: Super Teaser
     args:
       layout: super
@@ -35,6 +24,41 @@ stories:
       category: Featured
       category_url: https://github.com
       body: "<p>To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be extracted.</p>"
-      date: August 18, 2022
+      teaser_date: August 18, 2022
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      alt: Atl text example
+  - name: Column Stack
+    args:
+      layout: column-stack
+      title: Enhancing the search
+      url: https://github.com
+      category: Article
+      category_url: https://github.com
+      body: "<p>Est id non nulla veniam occaecat amet anim ea enim. Nulla do cillum nisi dolore exercitation aliqua sunt ad in est in amet eu magna sit. Ea magna voluptate veniam minim sunt incididunt irure culpa anim irure pariatur.</p>"
+      teaser_date: August 18, 2022
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      alt: Atl text example
+  - name: Simple Column Stack
+    args:
+      layout: column-simple-stack
+      title: Davis Experiment
+      url: https://github.com
+      category: Nuclear Astrophysics
+      category_url: https://github.com
+      body: "<p>Est id non nulla veniam occaecat amet anim ea enim. Nulla do cillum nisi dolore exercitation aliqua sunt ad in est in amet eu magna sit. Ea magna voluptate veniam minim sunt incididunt irure culpa anim irure pariatur.</p>"
+      teaser_date: August 18, 2022
+      image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
+      alt: Atl text example
+  - name: List Stack
+    args:
+      layout: list-stack
+      title: "Deep Talk: The Beauty of the Lakota Language"
+      url: https://github.com
+      category: Public
+      category_url: https://github.com
+      category_color: "forest"
+      body: "<p>Purus mattis sed egestas egestas amet, scelerisque aliquet feugiat sed arcu amet.</p>"
+      teaser_date: August 18, 2022
+      teaser_time: "10:00 AM–6:00 PM MT"
       image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg"
       alt: Atl text example
