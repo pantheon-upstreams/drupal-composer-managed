@@ -460,7 +460,7 @@
               break;
             } else {
               this.openPopup();
-              super.setFocusToFirstMenuitem();
+              // super.setFocusToFirstMenuitem();
               flag = true;
               break;
             }
@@ -468,7 +468,7 @@
           case "Down":
           case "ArrowDown":
             this.openPopup();
-            super.setFocusToFirstMenuitem();
+            // super.setFocusToFirstMenuitem();
             flag = true;
             break;
 
@@ -719,7 +719,7 @@
     const utilityItems = $(".menu--utility-nav .menu__link");
 
     // Search Form Inputs
-    const searchInput = $(".search-form input");
+    const searchInput = $(".header-search-form input");
 
     // Initialize mobile menu button & nav
     const mobileNavButton = $("#nav-trigger");

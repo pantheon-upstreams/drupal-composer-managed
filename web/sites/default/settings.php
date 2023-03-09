@@ -28,7 +28,7 @@ if (
   $config['system.performance']['js']['preprocess'] = FALSE;
 
   /* Enable anonymous access to CL Server */
-  $config['user.role.anonymous']['permissions'][] = 'use cl server';
+  #$config['user.role.anonymous']['permissions'][] = 'use cl server';
 }
 
 /**

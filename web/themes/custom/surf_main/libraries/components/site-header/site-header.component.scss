@@ -105,6 +105,8 @@ main::before {
     right: 0;
     z-index: 3;
     position: fixed;
+    // Account for iphone issue
+    overflow-x: hidden;
 
     // For logged in users offset top
     .user-logged-in & {
@@ -162,8 +164,13 @@ main::before {
 
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
-  position: fixed;
+  // Allow overflow for mobile menu
+  overflow-y: auto;
   width: 100%;
+
+  @include bp-min(large) {
+    overflow: visible;
+  }
 
   @include bp-between(large, xlarge) {
     background: linear-gradient(
@@ -480,12 +487,15 @@ main::before {
           background-repeat: no-repeat;
           background-position: left bottom;
           padding-bottom: 40px;
+          transition: all $duration * 2.5 ease-in-out;
         }
 
         &:hover,
         &:focus-within {
           .main-menu__description {
             background-image: url("../../../../images/icons/ui-icon-arrow-right--black.svg");
+            background-position: 20% bottom;
+            transition: all $duration * 2.5 ease-in-out;
           }
         }
       }
