@@ -162,8 +162,13 @@ main::before {
 
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
-  position: fixed;
+  // Allow overflow for mobile menu
+  overflow-y: auto;
   width: 100%;
+
+  @include bp-min(large) {
+    overflow: visible;
+  }
 
   @include bp-between(large, xlarge) {
     background: linear-gradient(
