@@ -460,7 +460,7 @@
               break;
             } else {
               this.openPopup();
-              super.setFocusToFirstMenuitem();
+              // super.setFocusToFirstMenuitem();
               flag = true;
               break;
             }
@@ -468,7 +468,7 @@
           case "Down":
           case "ArrowDown":
             this.openPopup();
-            super.setFocusToFirstMenuitem();
+            // super.setFocusToFirstMenuitem();
             flag = true;
             break;
 
