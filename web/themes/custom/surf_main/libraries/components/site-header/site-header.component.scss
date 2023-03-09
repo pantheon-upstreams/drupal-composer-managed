@@ -163,6 +163,8 @@ main::before {
 /**** START - Main Navigation ****/
 .c-site-header__menu-main {
   // Allow overflow for mobile menu
+  // Odd issue on iPhone 13 mini - hide x overflow
+  overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
 
