@@ -3,6 +3,9 @@
 .c-pullquote__content p {
   @include surf-font-heading-one;
   color: var(--color-text-heading);
+  @include bp-max(medium) {
+    font-size: rem(40px);
+  }
 }
 
 .c-pullquote__footer {
@@ -30,6 +33,9 @@
       var(--color-text-heading) 95.94%
     );
     background-clip: text;
+    @include bp-max(medium) {
+      font-size: rem(40px);
+    }
   }
 }
 
