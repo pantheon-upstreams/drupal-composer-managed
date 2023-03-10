@@ -487,15 +487,12 @@ main::before {
           background-repeat: no-repeat;
           background-position: left bottom;
           padding-bottom: 40px;
-          transition: all $duration * 2.5 ease-in-out;
         }
 
         &:hover,
         &:focus-within {
           .main-menu__description {
             background-image: url("../../../../images/icons/ui-icon-arrow-right--black.svg");
-            background-position: 20% bottom;
-            transition: all $duration * 2.5 ease-in-out;
           }
         }
       }
