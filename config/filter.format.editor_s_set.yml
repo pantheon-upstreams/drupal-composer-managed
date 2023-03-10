@@ -6,7 +6,7 @@ dependencies:
     - editor
 name: 'Editor''s set'
 format: editor_s_set
-weight: -7
+weight: -6
 filters:
   filter_autop:
     id: filter_autop

@@ -59,7 +59,7 @@ h6 {
 // Rule
 hr {
   border: 0;
-  border-bottom: 2px solid var(--color-surf--black);
+  border-bottom: 2px solid var(--color-surf--grey);
 }
 
 //
@@ -105,3 +105,49 @@ li {
 // text-indent: -0.4em;
 // font-style: italic;
 // }
+
+// Rich Text Styles
+.field--name-field-text {
+  p.intro {
+    @include surf-font-body-large;
+  }
+
+  p a {
+    color: var(--color-surf--forest);
+    font-weight: var(--font-weight-bold);
+  }
+  table {
+    border-collapse: collapse;
+    border: none;
+  }
+  thead th {
+    @include surf-font-body-large;
+    border: none;
+    color: var(--color-surf--black);
+    font-weight: var(--font-weight-bold);
+    padding: rem(12px) rem(20px);
+  }
+  thead td {
+    border: none;
+  }
+  tr {
+    border-top: rem(1px) solid var(--color-surf--grey);
+  }
+  tbody > tr:first-child {
+    border-top: rem(1px) solid var(--color-surf--grey);
+  }
+  tbody > tr:last-child {
+    border-bottom: rem(1px) solid var(--color-surf--grey);
+  }
+  tr:first-child {
+    border-top: none;
+  }
+  td {
+    border: none !important;
+    padding: rem(12px) rem(20px);
+  }
+  tbody td {
+    color: var(--color-surf--black);
+    @include surf-font-body-medium;
+  }
+}

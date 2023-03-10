@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Plain
 format: plain
-weight: -10
+weight: -8
 filters: {  }

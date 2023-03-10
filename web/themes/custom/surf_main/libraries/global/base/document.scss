@@ -15,6 +15,7 @@
 html {
   font-size: 100%;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   font-size: var(--font-size-body-medium);
   line-height: var(--font-line-height-body-medium);
   margin: 0;
+  overflow-x: hidden;
 }
 
 .skip-link.visually-hidden.focusable {
