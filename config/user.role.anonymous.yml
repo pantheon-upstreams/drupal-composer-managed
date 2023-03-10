@@ -5,18 +5,19 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
-    - cl_server
+    - contact
     - filter
     - media
+    - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
-label: 'anonymous user'
+label: "anonymous user"
 weight: -10
 is_admin: false
 permissions:
-  - 'use cl server'
-  - 'use cl server'
-  - 'use cl server'
-  - 'use text format basic_html'
-  - 'view media'
+  - "access content"
+  - "access site-wide contact form"
+  - "access user contact forms"
+  - "use text format basic_html"
+  - "view media"

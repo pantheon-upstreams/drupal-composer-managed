@@ -113,10 +113,11 @@
 .c-blue-banner__body {
   margin: rem(20px) 0 0 0;
   & > p {
-    color: var(--color-surf--white);
     @include surf-font-body-x-large;
+    color: var(--color-surf--white);
     font-weight: var(--font-weight-bold);
     margin-top: 0;
+    text-transform: uppercase;
     &:last-child {
       margin-bottom: 0;
     }
