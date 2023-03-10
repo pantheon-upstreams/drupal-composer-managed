@@ -2,10 +2,12 @@
 
 .c-accordion__title {
   @include surf-font-body-medium;
+  color: var(--color-surf--dark-black);
   margin: 0;
 }
 
 .c-accordion__trigger {
+  color: var(--color-surf--dark-black);
   border-style: none;
   border-bottom: solid 1px var(--color-surf--grey);
   background: none;
