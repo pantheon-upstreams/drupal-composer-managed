@@ -1,591 +1,27 @@
 <article{{attributes.addClass(['article'])}}>
 	{# article__header l-constrained #}
-	<header class="">
+	{# <header class="">
 		{{ title_prefix }}
 		{% include 'page-title' with {
     text: label
     } only %}
 		{{ title_suffix }}
-	</header>
+	</header> #}
 	{# l--1-col l-constrained #}
 	<div class="">
 		<div class="l__primary">
 			{% if content %}
 				{{ content }}
 			{% endif %}
-			<h2>Component Library</h2>
-			{# Add Components here 👇🏻 #}
 
-			<!-- Page Heading / Hero -->
+			{# SRRM-89: Rich Text Paragraph #}
+			{% include '@surf_main/examples/rich-text.html.twig' %}
 
+			{# SRRM-95: Rich Text Paragraph #}
+			{% include '@surf_main/examples/teaser.html.twig' %}
 
-	{# Teaser: Super  #}
-	<div class="l-stack  u-padding">
-		<hr />
-		<h3>News Teasers (super): One Column Layout</h3>
-	</div>
-
-		<div class="c-layout c-layout--layout-onecolumn">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'super', title: 'Excavation of huge caverns for DUNE particle detector is underway', body: '<p>To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be extracted.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-		{# Teaser: Stack  #}
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>News Teasers (column stack): One Column Layout</h3>
-		</div>
-		<div class="c-layout c-layout--layout-onecolumn">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-stack', title: 'Excavation of huge caverns for DUNE particle detector is underway', body: '<p>To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be extracted.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>News Teasers (column stack): Two Column Layout</h3>
-		</div>
-		<div class="c-layout c-layout--layout-twocolumn-halves">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-stack', title: 'Interning a mile beneath the surface, 2022 summer interns share their experiences', body: '<p>Students in a variety of fields get real-world experience during 10-week summer internships at SURF.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- Column Two -->
-					<div class="c-layout--region c-layout--secondary">
-						{% include "teaser" with {
-						layout: 'column-stack', title: 'Researchers create 3D seismic array at SURF', body: '<p>The 3D DAS experiment is studying digital acoustic sensing techniques with a novel, three-dimensional seismic array at SURF.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>News Teasers (column stack): Three Column Layout</h3>
-		</div>
-		<div class="c-layout c-layout--layout-threecolumn-thirds">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-stack', title: 'Researchers record successful startup of LUX-ZEPLIN dark matter detector at Sanford Underground Research Facility', url: 'https://github.com', category: 'Press Release', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/news-placeholder.png', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- Column Two -->
-					<div class="c-layout--region c-layout--secondary">
-						{% include "teaser" with {
-						layout: 'column-stack', title: 'Stratton family members visit Stratton Station', url: 'https://github.com', category: 'Video', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example', icon: 'video'
-					} %}
-					</div>
-
-					<!-- Column Three -->
-					<div class="c-layout--region c-layout--tertiary">
-						{% include "teaser" with {
-						layout: 'column-stack', title: 'Davis-Bahcall Scholars reflect on 2022 program', url: 'https://github.com', category: 'Deep Talk', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example', icon: 'video'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		{# Curriculum teasers #}
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>Curriculum teasers (column simple stack): Three Column Layout</h3>
-		</div>
-		<div class="c-layout c-layout--layout-threecolumn-thirds">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'Ghost Particles', body: '<p>What is a neutrino and why is it so difficult to detect? During this unit, make the conceptual leap from the macroscopic to the microscopic by exploring extremely small objects.</p>', url: 'https://github.com', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/curriculum-placeholder.png', alt: 'Atl text example', tags: [
-						{
-							title: 'Upper Elementary',
-							url: 'https://github.com',
-						},
-						{
-							title: 'Content Area',
-							url: 'https://github.com',
-						},
-						{
-							title: 'View Standards (5)',
-							url: 'https://github.com',
-						},
-					]
-					} %}
-					</div>
-
-					<!-- Column Two -->
-					<div class="c-layout--region c-layout--secondary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'Argon Transfer Challenge', body: '<p>How do you transfer 70,000 tons of argon nearly one mile underground to the DUNE detectors? Learn about phase changes in matter and design an engineering solution to this ‘enormous’ problem.</p>', url: 'https://github.com', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example', tags: [
-						{
-							title: 'Middle School',
-							url: 'https://github.com',
-						},
-						{
-							title: 'Content Area',
-							url: 'https://github.com',
-						},
-						{
-							title: 'Hide Standards',
-							url: 'https://github.com',
-						},
-						{
-							title: 'MS-PS1-1',
-							url: 'https://github.com',
-						},
-						{
-							title: 'MS-PS3-2',
-							url: 'https://github.com',
-						},
-						{
-							title: 'MS-PS1-3',
-							url: 'https://github.com',
-						},
-					]
-					} %}
-					</div>
-
-					<!-- Column Three -->
-					<div class="c-layout--region c-layout--tertiary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'May the Force Be With You', body: '<p>What do magnets and electromagnets have to do with particle accelerators and neutrino beams? How are magnetism, electricity, and movement related? Use the force to find out.</p>', url: 'https://github.com', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example', tags: [
-						{
-							title: 'Upper Elementary',
-							url: 'https://github.com',
-						},
-						{
-							title: 'Content Area',
-							url: 'https://github.com',
-						},
-						{
-							title: 'View Standards (5)',
-							url: 'https://github.com',
-						},
-					]
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-
-		{# Experiments teasers #}
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>Experiments teasers (column simple stack): Two Column Layout</h3>
-		</div>
-
-		<div class="c-layout c-layout--layout-twocolumn-halves simple">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'LUX-ZEPLIN', body: '<p>LZ is 100x more sensitive to finding signals from dark matter particles than its predecessor, the Large Underground Xenon experiment (LUX).</p>', url: 'https://github.com', category: 'Nuclear Astrophysics', category_url: 'https://github.com', teaser_date: '2012–Present', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- Column Two -->
-					<div class="c-layout--region c-layout--secondary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'Deep Underground Neutrino Experiment', body: '<p>The Long-Baseline Neutrino Facility (LBNF) will host the Deep Underground Neutrino Experiment to study the property of the neutrino.</p>', url: 'https://github.com', category: 'Nuclear Astrophysics', category_url: 'https://github.com', teaser_date: '2017–Present', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>Experiments teasers (column simple stack): Three Column Layout</h3>
-		</div>
-
-		<div class="c-layout c-layout--layout-threecolumn-thirds simple">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'LUX-ZEPLIN', body: '<p>LZ is 100x more sensitive to finding signals from dark matter particles than its predecessor, the Large Underground Xenon experiment (LUX).</p>', url: 'https://github.com', teaser_date: '2012–Present', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- Column Two -->
-					<div class="c-layout--region c-layout--secondary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'Deep Underground Neutrino Experiment', body: '<p>The Long-Baseline Neutrino Facility (LBNF) will host the Deep Underground Neutrino Experiment to study the property of the neutrino.</p>', url: 'https://github.com', teaser_date: '2017–Present', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- Column Three -->
-					<div class="c-layout--region c-layout--tertiary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'Deep Underground Neutrino Experiment', body: '<p>The Long-Baseline Neutrino Facility (LBNF) will host the Deep Underground Neutrino Experiment to study the property of the neutrino.</p>', url: 'https://github.com', teaser_date: '2017–Present', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>Experiments Teasers (column simple stack): Three Column Layout</h3>
-		</div>
-		<div class="c-layout c-layout--layout-threecolumn-thirds simple">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- Column One -->
-					<div class="c-layout--region c-layout--primary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'BHSU Underground Campus', body: '<p>An underground campus used by experiments across the globe and managed by local university faculty and students.</p>', url: 'https://github.com', teaser_date: '2010–Present', category: 'Nuclear Astrophysics', category_url: 'https://github.com'
-					} %}
-					</div>
-
-					<!-- Column Two -->
-					<div class="c-layout--region c-layout--secondary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'CASPAR', body: '<p>CASPAR is a low-energy particle accelerator that allows researchers to study processes that take place inside collapsing stars.</p>', url: 'https://github.com', teaser_date: '2009–Present', category: 'Nuclear Astrophysics', category_url: 'https://github.com',
-					} %}
-					</div>
-
-					<!-- Column Three -->
-					<div class="c-layout--region c-layout--tertiary">
-						{% include "teaser" with {
-						layout: 'column-simple-stack', title: 'Davis Experiment', body: '<p>In 1969, a chemist by the name of Ray Davis began an experiment to detect neutrinos coming from the sun. In 2002 he would be awarded a share of the Nobel Prize for his work.</p>', url: 'https://github.com', teaser_date: '1969-1972', category: 'Nuclear Astrophysics', category_url: 'https://github.com',
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-
-		{# Teaser: List Stack  #}
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>Events Teasers (list stack): One Column Layout</h3>
-		</div>
-
-		<div class="c-layout c-layout--layout-onecolumn list">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- item one -->
-					<div class="c-layout--list-item">
-						{% include "teaser" with {
-						layout: 'list-stack', title: 'Deep Talk: The Beauty of the Lakota Language', body: '<p>Purus mattis sed egestas egestas amet, scelerisque aliquet feugiat sed arcu amet.</p>', url: 'https://github.com', category: 'Public', category_url: 'https://github.com', category_color: 'forest', teaser_date: 'October 28, 2022', teaser_time: '10:00 AM–6:00 PM MT', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- item two -->
-					<div class="c-layout--list-item">
-						{% include "teaser" with {
-						layout: 'list-stack', title: 'General Safety Basic Training', body: '<p>Condimentum ultricies libero, gravida pellentesque feugiat scelerisque fermentum scelerisque at mi id.</p>', url: 'https://github.com', category: 'Training', category_url: 'https://github.com', category_color: 'cloud', teaser_date: 'November 10,2022–November 12,2022', teaser_time: '10:00 AM–12:00 PM MT', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- item three -->
-					<div class="c-layout--list-item">
-						{% include "teaser" with {
-						layout: 'list-stack', title: 'General Safety Basic Training', body: '<p>Condimentum ultricies libero, gravida pellentesque feugiat scelerisque fermentum scelerisque at mi id.</p>', url: 'https://github.com', category: 'Professional Development', category_url: 'https://github.com', category_color: 'gold', teaser_date: 'November 10,2022–November 12,2022', teaser_time: '10:00 AM–12:00 PM MT', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- item four -->
-					<div class="c-layout--list-item">
-						{% include "teaser" with {
-						layout: 'list-stack', title: 'General Safety Basic Training', body: '<p>Condimentum ultricies libero, gravida pellentesque feugiat scelerisque fermentum scelerisque at mi id.</p>', url: 'https://github.com', category: 'Professional Development', category_url: 'https://github.com', category_color: 'gold', teaser_date: 'November 10,2022–November 12,2022', teaser_time: '10:00 AM–12:00 PM MT', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="l-stack  u-padding">
-		<hr />
-		<h3>Search Teasers (list stack): One Column Layout</h3>
-		</div>
-
-		<div class="c-layout c-layout--layout-onecolumn list">
-			<div class="c-layout--inner-wrapper">
-				<!-- Content -->
-				<div class="c-layout--main">
-
-					<!-- item one -->
-					<div class="c-layout--list-item">
-						{% include "teaser" with {
-						layout: 'list-stack', title: 'Search result title', body: '<p>Justo, aliquam consectetur enim integer fames rutrum praesent pretium mi adipiscing venenatis aliquet tempor ridiculus et ipsum tortor semper iaculis velit vel sit.</p>', url: 'https://github.com', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt: 'Atl text example'
-					} %}
-					</div>
-
-					<!-- item two -->
-					<div class="c-layout--list-item">
-						{% include "teaser" with {
-						layout: 'list-stack', title: 'Tellus aliquam scelerisque nulla', body: '<p>Nunc, suspendisse vitae vitae nec eu dolor suspendisse purus mollis lacus, sem in varius ut mollis in odio nunc auctor consectetur nulla dui enim.</p>', url: 'https://github.com'
-					} %}
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-						<!-- Callouts & Factoids -->
-				<div class="l-stack  u-padding">
-
-				<h3>Callouts</h3>
-				{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-				} %}
-				{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'forest',
-				} %}
-				{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'kelly',
-				} %}
-
-				{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
-					image_alt: 'Ea irure adipisicing'
-				} %}
-
-					</div>
-
-<h3>Callouts: Two Column Layout</h3>
-  <div class="l-width--medium layout l--layout-twocolumn-halves">
-    <div class="l--inner-wrapper">
-      <!-- Content -->
-      <div class="l__main">
-
-        <!-- Column One -->
-        <div class="l__region l__primary">
-					{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
-					image_alt: 'Ea irure adipisicing'
-				} %}
-        </div>
-
-        <!-- Column Two -->
-        <div class="l__region l__secondary">
-          	{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
-					image_alt: 'Ea irure adipisicing'
-				} %}
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-	<h3>Callouts: Three Column Layout</h3>
-  <div class="l-width--medium layout l--layout-threecolumn-thirds">
-    <div class="l--inner-wrapper">
-      <!-- Content -->
-      <div class="l__main">
-
-        <!-- Column One -->
-        <div class="l__region l__primary">
-					{% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
-					image_alt: 'Ea irure adipisicing'
-				} %}
-        </div>
-
-        <!-- Column Two -->
-        <div class="l__region l__secondary">
-          {% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
-					image_alt: 'Ea irure adipisicing'
-				} %}
-        </div>
-
-				 <!-- Column Three -->
-        <div class="l__region l__tertiary">
-          {% include "callout" with {
-					heading: 'It\'s a Callout!',
-					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
-					link_text: 'Click Me',
-					link_url: 'http://example.com',
-					theme: 'cloud',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
-					image_alt: 'Ea irure adipisicing'
-				} %}
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-		<h3>Icon Callouts (factoids): Three Column Layout</h3>
-  <div class="l-width--medium layout l--layout-threecolumn-thirds">
-    <div class="l--inner-wrapper">
-      <!-- Content -->
-      <div class="l__main">
-
-        <!-- Column One -->
-        <div class="l__region l__primary">
-					{% include "callout" with {
-					heading: '2,000 scientists',
-					body: '<p>Egestas urna enim, est felis vestibulum morbi dictum enim condimentum sit phasellus integer lorem at nec aliquam.</p>',
-					link_text: 'Button',
-					link_url: 'http://example.com',
-					theme: 'icon',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg',
-					image_alt: 'Ea irure adipisicing',
-					arrow: true
-				} %}
-        </div>
-
-        <!-- Column Two -->
-        <div class="l__region l__secondary">
-          {% include "callout" with {
-					heading: 'Nobel Prize Awarded 1950',
-					body: '<p>Egestas urna enim, est felis vestibulum morbi dictum enim condimentum sit phasellus integer lorem at nec aliquam.</p>',
-					link_text: 'Button',
-					link_url: 'http://example.com',
-					theme: 'icon',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg',
-					image_alt: 'Ea irure adipisicing',
-					arrow: true
-				} %}
-        </div>
-
-				 <!-- Column Two -->
-        <div class="l__region l__tertiary">
-          {% include "callout" with {
-					heading: '360 miles of tunels',
-					body: '<p>Thanks to 360° video technology we can take ANY classroom on a virtual tour of the Sanford Underground Research Facility!</p>',
-					link_text: 'Button',
-					link_url: 'http://example.com',
-					theme: 'icon',
-					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg',
-					image_alt: 'Ea irure adipisicing',
-					arrow: true
-				} %}
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
-			<!-- Teaser -->
-			{# <div class="l-stack  u-padding">
-				<h3>Teaser: News</h3>
-				{% include "teaser" with {
-					layout: 'stacked',
-					title: 'Enhancing the search',
-					url: 'https://github.com',
-					category: 'Article',
-					category_url: 'https://github.com',
-					body: "<p>Est id non nulla veniam occaecat amet anim ea enim. Nulla do cillum nisi dolore exercitation aliqua sunt ad in est in amet eu magna sit. Ea magna voluptate veniam minim sunt incididunt irure culpa anim irure pariatur.</p>",
-					teaser_date: 'August 18, 2022',
-					image: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg",
-					alt: 'Atl text example',
-				} %}
-				</div> #}
-
-
-
-
+			{# SRRM-86: Callout Paragraph #}
+			{% include '@surf_main/examples/callout.html.twig' %}
 
 
 
@@ -620,7 +56,7 @@
 				</div>
 
 			<!-- Person Banner -->
-			<div class="l-stack u-padding">
+			<div class="l-stack u-padding" id="215">
 				<h3>Person Component: with an image</h3>
 				{% include "person" with {
 					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/person/person.jpg',
@@ -645,7 +81,7 @@
 				</div>
 
 			<!-- Blue Banner -->
-			<div class="l-stack  u-padding">
+			<div class="l-stack  u-padding" id="242">
 				<h3>Blue Banner Component</h3>
 				{% include "blue-banner" with {
 					primary_image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/blue-banner/blue-banner01.jpg',
@@ -660,7 +96,7 @@
 				</div>
 
 			<!-- Green Banner -->
-			<div class="l-stack  u-padding">
+			<div class="l-stack  u-padding" id="211">
 				<h3>Green Banner Component</h3>
 				{% include "green-banner" with {
 					heading: 'Questions? Contact Us!',
@@ -671,7 +107,7 @@
 				</div>
 
 			<!-- Image -->
-			<div class="l-stack  u-padding">
+			<div class="l-stack  u-padding" id="82a">
 				<h3>Image: with caption</h3>
 				{% include "image" with {
 					alt: 'Image Example with caption',
@@ -683,7 +119,7 @@
 
 			<!-- Video -->
 
-			<div class="l-stack  u-padding">
+			<div class="l-stack  u-padding" id="82b">
 				<h3>Video: Youtube Example</h3>
 				{% include "video" with {
 					title: 'YouTube Example',
@@ -700,7 +136,7 @@
 			</div>
 
 			<!-- Accordion -->
-			<div class="l-stack  u-padding">
+			<div class="l-stack  u-padding" id="209">
 				<h3>Accordion</h3>
 				{% include "accordion" with {
 					items: [
@@ -721,7 +157,7 @@
 			</div>
 
 			<!-- Pullquote -->
-			<div class="l-stack u-padding">
+			<div class="l-stack u-padding" id="230">
 				<h3>Pullquote Fullwidth</h3>
 				{% include "pullquote" with {
 					quote: '<p>Extremely large emphasized text example. Lorem ipsum dolor sit amet.</p>',
@@ -897,169 +333,8 @@
 					</p>
 				</div>
 
-				<p>
-					Example of a
-					<a href="#">standard link</a>
-				</p>
 			</div>
-			<hr/>
-			<div>
-				<h3>Example of headings:</h3>
 
-				<h1>h1 Kitchen Sink Heading</h1>
-				<h2>h2 Kitchen Sink
-					<strong>Heading</strong>
-				</h2>
-				<h3>h3 Kitchen Sink
-					<strong>Heading</strong>
-				</h3>
-				<h4>h4 Kitchen Sink
-					<strong>Heading</strong>
-				</h4>
-				<h5>h5 Kitchen Sink
-					<strong>Heading</strong>
-				</h5>
-				<h6>h6 Kitchen Sink
-					<strong>Heading</strong>
-				</h6>
-
-			</div>
-			<hr/>
-			<div>
-				<h3>Example of headings and paragraphs:</h3>
-
-				<h1>h1 HTML5 Kitchen Sink</h1>
-				<p>This paragraph is nested inside an article. It contains many different, sometimes useful,
-					<a href="#">HTML5
-												tags</a>. Of course there are classics like
-					<em>emphasis</em>,
-					<strong>strong</strong>, and small but there
-												are many others as well. Hover the following text for abbreviation tag: abbr. Similarly, you can use acronym
-												tag like this: ftw. You can define deleted text which often gets replaced with inserted text.</p>
-
-				<h2>h2 Back in my quaint
-					<a href='#'>garden</a>
-				</h2>
-				<p>Et officia dolore dolor eiusmod. Aute culpa
-					<a href="#">voluptate mollit</a>
-					veniam dolore ex. Esse aliquip
-										et do aliqua nostrud dolore qui eiusmod eu quis eiusmod consectetur duis ipsum. Exercitation duis id ut
-										tempor. Officia aliqua aute consectetur aliquip do id pariatur. Culpa eu
-					<a href="#">ullamco</a>
-					officia anim
-										veniam laboris deserunt non qui laborum mollit. Nisi dolore ex sunt veniam veniam aliqua aliqua Lorem. Nostrud
-										reprehenderit in sint sint aute do magna aliqua tempor.</p>
-
-				<h3>h3 Jaunty
-					<a href='#'>zinnias</a>
-					vie with flaunting phlox</h3>
-				<p>Minim ea anim ipsum sit non. Aute ex do sunt incididunt magna cupidatat. Labore veniam
-					<a href="#">cupidatat</a>
-					ut qui incididunt ipsum id aliqua mollit
-					<a href="#">velit id ad</a>. Dolor eiusmod
-												velit sit. Pariatur minim dolore duis aliquip do cillum minim amet qui veniam excepteur exercitation sunt
-												velit. Ea est tempor sunt cupidatat ex occaecat ad laborum mollit elit nisi mollit cupidatat. Non adipisicing
-												commodo laborum exercitation Lorem eiusmod magna mollit aute.</p>
-
-				<h4>h4 Five or six big jet planes zoomed quickly by the new tower.</h4>
-				<p>Duis id sunt eu irure sint amet reprehenderit. Aute amet sint quis occaecat Lorem nostrud nulla aute irure
-										aliqua. Commodo dolore quis irure elit commodo. Enim sit Lorem mollit. Anim ea enim velit
-					<a href="#">cillum commodo</a>
-					occaecat nostrud sit cillum ea. Ex nulla enim ipsum. Ipsum eu cillum et quis ullamco.</p>
-
-				<h5>h5 Expect skilled signwriters to use many jazzy, quaint old alphabets effectively.</h5>
-				<p>Incididunt
-					<a href="#">reprehenderit</a>
-					fugiat reprehenderit voluptate esse dolor esse anim sunt aliqua
-										consequat. Tempor consequat quis eu do incididunt pariatur exercitation sit aliqua duis. Eu tempor sint Lorem
-										tempor labore ut consectetur proident. In quis duis ex commodo. Cupidatat sit esse sit et in laboris amet. Ut
-										nisi sint adipisicing est ullamco excepteur labore.</p>
-
-				<h6>h6 Pack my box with five dozen liquor jugs.</h6>
-				<p>Sunt ut laborum incididunt elit non proident pariatur non id. Sunt amet aliquip officia aliquip consequat do
-										labore occaecat elit cupidatat voluptate est. Eu cupidatat proident duis mollit sit
-					<a href="#">labore duis duis</a>
-					duis qui. Nostrud velit nulla fugiat elit excepteur velit pariatur nisi sint. Consectetur magna
-										Lorem commodo dolor nulla sunt amet dolor amet. Non ad est cillum deserunt tempor nulla ex commodo cupidatat
-										esse incididunt exercitation cillum ex. Sint fugiat veniam esse cupidatat ex consequat consectetur consectetur
-										magna duis non. Elit duis velit ipsum magna nostrud in sit occaecat.</p>
-			</div>
-			<hr/>
-			{# Blockquote #}
-			<div>
-				<h3>Example of an blockquote with a cite:</h3>
-				<figure>
-					<blockquote>
-						<p>Words can be like
-							<a href="#">X-rays</a>, if you use them properly—they'll go through anything. You read
-																and you're
-																pierced.</p>
-					</blockquote>
-					<figcaption>—Aldous Huxley,
-						<cite>Brave New World</cite>
-					</figcaption>
-				</figure>
-			</div>
-			<hr/>
-			{# Image with a caption #}
-			<div>
-				<h3>Example of an image with a caption:</h3>
-				<figure>
-					<img src="https://placehold.jp/150x150.png" alt="Example">
-					<figcaption>Fig1. A picture of Bill Murray from
-						<a href="https://www.fillmurray.com/">fillmurray.com</a>
-					</figcaption>
-				</figure>
-			</div>
-			<hr/>
-			{# Unordered List #}
-			<h3>Example of an unordered list:</h3>
-			<div>
-				<ul>
-					<li>Unordered List item one
-						<ul>
-							<li>Nested list item
-								<ul>
-									<li>Level 3, item one</li>
-									<li>Level 3, item two</li>
-									<li>Level 3, item three</li>
-									<li>Level 3, item four</li>
-								</ul>
-							</li>
-							<li>List item two</li>
-							<li>List item three</li>
-							<li>List item four</li>
-						</ul>
-					</li>
-					<li>List item two</li>
-					<li>List item three</li>
-					<li>List item four</li>
-				</ul>
-			</div>
-			<hr/>
-			{# Order List #}
-			<h3>Example of an ordered list:</h3>
-			<ol>
-				<li>List item one
-					<ol>
-						<li>List item one
-							<ol>
-								<li>List item one</li>
-								<li>List item two</li>
-								<li>List item three</li>
-								<li>List item four</li>
-							</ol>
-						</li>
-						<li>List item two</li>
-						<li>List item three</li>
-						<li>List item four</li>
-					</ol>
-				</li>
-				<li>List item two</li>
-				<li>List item three</li>
-				<li>List item four</li>
-			</ol>
-			<hr/>
 			{# Form #}
 			<div>
 				<h3>Example of a form:</h3>

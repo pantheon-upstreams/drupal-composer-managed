@@ -1,0 +1,181 @@
+{# Callout Paragraph #}
+
+<div class="" id="86">
+  <header class="cl-component cl-component--header c-header c-header--black-text l-stack  u-padding">
+    <hr>
+    <h2>Callout Paragraph Examples</h2>
+  </header>
+
+    {% include "callout" with {
+    heading: 'It\'s a Callout!',
+    body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+    link_text: 'Click Me',
+    link_url: 'http://example.com',
+    theme: 'cloud',
+    } %}
+
+    {% include "callout" with {
+    heading: 'It\'s a Callout!',
+    body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+    link_text: 'Click Me',
+    link_url: 'http://example.com',
+    theme: 'forest',
+    } %}
+
+    {% include "callout" with {
+    heading: 'It\'s a Callout!',
+    body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+    link_text: 'Click Me',
+    link_url: 'http://example.com',
+    theme: 'kelly',
+    } %}
+
+    {% include "callout" with {
+    heading: 'It\'s a Callout!',
+    body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+    link_text: 'Click Me',
+    link_url: 'http://example.com',
+    theme: 'cloud',
+    image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+    image_alt: 'Ea irure adipisicing'
+    } %}
+
+  <h3>Callouts: Two Column Layout</h3>
+  <div class="l-width--medium layout l--layout-twocolumn-halves">
+    <div class="l--inner-wrapper">
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+					{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+          	{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+	<h3>Callouts: Three Column Layout</h3>
+  <div class="l-width--medium layout l--layout-threecolumn-thirds">
+    <div class="l--inner-wrapper">
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+					{% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+          {% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+				 <!-- Column Three -->
+        <div class="l__region l__tertiary">
+          {% include "callout" with {
+					heading: 'It\'s a Callout!',
+					body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',
+					link_text: 'Click Me',
+					link_url: 'http://example.com',
+					theme: 'cloud',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',
+					image_alt: 'Ea irure adipisicing'
+				} %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+		<h3>Icon Callouts (factoids): Three Column Layout</h3>
+  <div class="l-width--medium layout l--layout-threecolumn-thirds">
+    <div class="l--inner-wrapper">
+      <!-- Content -->
+      <div class="l__main">
+
+        <!-- Column One -->
+        <div class="l__region l__primary">
+					{% include "callout" with {
+					heading: '2,000 scientists',
+					body: '<p>Egestas urna enim, est felis vestibulum morbi dictum enim condimentum sit phasellus integer lorem at nec aliquam.</p>',
+					link_text: 'Button',
+					link_url: 'http://example.com',
+					theme: 'icon',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg',
+					image_alt: 'Ea irure adipisicing',
+					arrow: true
+				} %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="l__region l__secondary">
+          {% include "callout" with {
+					heading: 'Nobel Prize Awarded 1950',
+					body: '<p>Egestas urna enim, est felis vestibulum morbi dictum enim condimentum sit phasellus integer lorem at nec aliquam.</p>',
+					link_text: 'Button',
+					link_url: 'http://example.com',
+					theme: 'icon',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg',
+					image_alt: 'Ea irure adipisicing',
+					arrow: true
+				} %}
+        </div>
+
+				 <!-- Column Two -->
+        <div class="l__region l__tertiary">
+          {% include "callout" with {
+					heading: '360 miles of tunels',
+					body: '<p>Thanks to 360° video technology we can take ANY classroom on a virtual tour of the Sanford Underground Research Facility!</p>',
+					link_text: 'Button',
+					link_url: 'http://example.com',
+					theme: 'icon',
+					image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg',
+					image_alt: 'Ea irure adipisicing',
+					arrow: true
+				} %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

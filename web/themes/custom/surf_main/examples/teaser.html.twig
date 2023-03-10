@@ -1,0 +1,477 @@
+{# Teaser Paragraph Component #}
+
+<div class="" id="95">
+  <header class="cl-component cl-component--header c-header c-header--black-text l-stack  u-padding">
+    <hr>
+    <h2>Teaser Paragraph Component Examples</h2>
+  </header>
+
+
+
+  {# Teaser: Super #}
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>News Teasers (super): One Column Layout</h3>
+  </div>
+
+  <div class="c-layout c-layout--layout-onecolumn">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'super', title: 'Excavation of huge caverns for DUNE particle detector is underway', body: '<p>To
+            date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be
+            extracted.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com',
+          teaser_date: 'August 18, 2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  {# Teaser: Stack #}
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>News Teasers (column stack): One Column Layout</h3>
+  </div>
+  <div class="c-layout c-layout--layout-onecolumn">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-stack', title: 'Excavation of huge caverns for DUNE particle detector is underway', body: '<p>
+            To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be
+            extracted.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com',
+          teaser_date: 'August 18, 2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>News Teasers (column stack): Two Column Layout</h3>
+  </div>
+  <div class="c-layout c-layout--layout-twocolumn-halves">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-stack', title: 'Interning a mile beneath the surface, 2022 summer interns share their
+          experiences', body: '<p>Students in a variety of fields get real-world experience during 10-week summer
+            internships at SURF.</p>', url: 'https://github.com', category: 'Featured', category_url:
+          'https://github.com', teaser_date: 'August 18, 2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="c-layout--region c-layout--secondary">
+          {% include "teaser" with {
+          layout: 'column-stack', title: 'Researchers create 3D seismic array at SURF', body: '<p>The 3D DAS experiment
+            is studying digital acoustic sensing techniques with a novel, three-dimensional seismic array at SURF.</p>',
+          url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', teaser_date: 'August 18,
+          2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>News Teasers (column stack): Three Column Layout</h3>
+  </div>
+  <div class="c-layout c-layout--layout-threecolumn-thirds">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-stack', title: 'Researchers record successful startup of LUX-ZEPLIN dark matter detector at
+          Sanford Underground Research Facility', url: 'https://github.com', category: 'Press Release', category_url:
+          'https://github.com', teaser_date: 'August 18, 2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/news-placeholder.png',
+          alt: 'Atl text example'
+          } %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="c-layout--region c-layout--secondary">
+          {% include "teaser" with {
+          layout: 'column-stack', title: 'Stratton family members visit Stratton Station', url: 'https://github.com',
+          category: 'Video', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example', icon: 'video'
+          } %}
+        </div>
+
+        <!-- Column Three -->
+        <div class="c-layout--region c-layout--tertiary">
+          {% include "teaser" with {
+          layout: 'column-stack', title: 'Davis-Bahcall Scholars reflect on 2022 program', url: 'https://github.com',
+          category: 'Deep Talk', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example', icon: 'video'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {# Curriculum teasers #}
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>Curriculum teasers (column simple stack): Three Column Layout</h3>
+  </div>
+  <div class="c-layout c-layout--layout-threecolumn-thirds">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'Ghost Particles', body: '<p>What is a neutrino and why is it so
+            difficult to detect? During this unit, make the conceptual leap from the macroscopic to the microscopic by
+            exploring extremely small objects.</p>', url: 'https://github.com', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/curriculum-placeholder.png',
+          alt: 'Atl text example', tags: [
+          {
+          title: 'Upper Elementary',
+          url: 'https://github.com',
+          },
+          {
+          title: 'Content Area',
+          url: 'https://github.com',
+          },
+          {
+          title: 'View Standards (5)',
+          url: 'https://github.com',
+          },
+          ]
+          } %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="c-layout--region c-layout--secondary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'Argon Transfer Challenge', body: '<p>How do you transfer 70,000 tons of
+            argon nearly one mile underground to the DUNE detectors? Learn about phase changes in matter and design an
+            engineering solution to this ‘enormous’ problem.</p>', url: 'https://github.com', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example', tags: [
+          {
+          title: 'Middle School',
+          url: 'https://github.com',
+          },
+          {
+          title: 'Content Area',
+          url: 'https://github.com',
+          },
+          {
+          title: 'Hide Standards',
+          url: 'https://github.com',
+          },
+          {
+          title: 'MS-PS1-1',
+          url: 'https://github.com',
+          },
+          {
+          title: 'MS-PS3-2',
+          url: 'https://github.com',
+          },
+          {
+          title: 'MS-PS1-3',
+          url: 'https://github.com',
+          },
+          ]
+          } %}
+        </div>
+
+        <!-- Column Three -->
+        <div class="c-layout--region c-layout--tertiary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'May the Force Be With You', body: '<p>What do magnets and
+            electromagnets have to do with particle accelerators and neutrino beams? How are magnetism, electricity, and
+            movement related? Use the force to find out.</p>', url: 'https://github.com', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example', tags: [
+          {
+          title: 'Upper Elementary',
+          url: 'https://github.com',
+          },
+          {
+          title: 'Content Area',
+          url: 'https://github.com',
+          },
+          {
+          title: 'View Standards (5)',
+          url: 'https://github.com',
+          },
+          ]
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  {# Experiments teasers #}
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>Experiments teasers (column simple stack): Two Column Layout</h3>
+  </div>
+
+  <div class="c-layout c-layout--layout-twocolumn-halves simple">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'LUX-ZEPLIN', body: '<p>LZ is 100x more sensitive to finding signals
+            from dark matter particles than its predecessor, the Large Underground Xenon experiment (LUX).</p>', url:
+          'https://github.com', category: 'Nuclear Astrophysics', category_url: 'https://github.com', teaser_date:
+          '2012–Present', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="c-layout--region c-layout--secondary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'Deep Underground Neutrino Experiment', body: '<p>The Long-Baseline
+            Neutrino Facility (LBNF) will host the Deep Underground Neutrino Experiment to study the property of the
+            neutrino.</p>', url: 'https://github.com', category: 'Nuclear Astrophysics', category_url:
+          'https://github.com', teaser_date: '2017–Present', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>Experiments teasers (column simple stack): Three Column Layout</h3>
+  </div>
+
+  <div class="c-layout c-layout--layout-threecolumn-thirds simple">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'LUX-ZEPLIN', body: '<p>LZ is 100x more sensitive to finding signals
+            from dark matter particles than its predecessor, the Large Underground Xenon experiment (LUX).</p>', url:
+          'https://github.com', teaser_date: '2012–Present', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="c-layout--region c-layout--secondary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'Deep Underground Neutrino Experiment', body: '<p>The Long-Baseline
+            Neutrino Facility (LBNF) will host the Deep Underground Neutrino Experiment to study the property of the
+            neutrino.</p>', url: 'https://github.com', teaser_date: '2017–Present', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- Column Three -->
+        <div class="c-layout--region c-layout--tertiary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'Deep Underground Neutrino Experiment', body: '<p>The Long-Baseline
+            Neutrino Facility (LBNF) will host the Deep Underground Neutrino Experiment to study the property of the
+            neutrino.</p>', url: 'https://github.com', teaser_date: '2017–Present', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>Experiments Teasers (column simple stack): Three Column Layout</h3>
+  </div>
+  <div class="c-layout c-layout--layout-threecolumn-thirds simple">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- Column One -->
+        <div class="c-layout--region c-layout--primary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'BHSU Underground Campus', body: '<p>An underground campus used by
+            experiments across the globe and managed by local university faculty and students.</p>', url:
+          'https://github.com', teaser_date: '2010–Present', category: 'Nuclear Astrophysics', category_url:
+          'https://github.com'
+          } %}
+        </div>
+
+        <!-- Column Two -->
+        <div class="c-layout--region c-layout--secondary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'CASPAR', body: '<p>CASPAR is a low-energy particle accelerator that
+            allows researchers to study processes that take place inside collapsing stars.</p>', url:
+          'https://github.com', teaser_date: '2009–Present', category: 'Nuclear Astrophysics', category_url:
+          'https://github.com',
+          } %}
+        </div>
+
+        <!-- Column Three -->
+        <div class="c-layout--region c-layout--tertiary">
+          {% include "teaser" with {
+          layout: 'column-simple-stack', title: 'Davis Experiment', body: '<p>In 1969, a chemist by the name of Ray
+            Davis began an experiment to detect neutrinos coming from the sun. In 2002 he would be awarded a share of
+            the Nobel Prize for his work.</p>', url: 'https://github.com', teaser_date: '1969-1972', category: 'Nuclear
+          Astrophysics', category_url: 'https://github.com',
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  {# Teaser: List Stack #}
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>Events Teasers (list stack): One Column Layout</h3>
+  </div>
+
+  <div class="c-layout c-layout--layout-onecolumn list">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- item one -->
+        <div class="c-layout--list-item">
+          {% include "teaser" with {
+          layout: 'list-stack', title: 'Deep Talk: The Beauty of the Lakota Language', body: '<p>Purus mattis sed
+            egestas egestas amet, scelerisque aliquet feugiat sed arcu amet.</p>', url: 'https://github.com', category:
+          'Public', category_url: 'https://github.com', category_color: 'forest', teaser_date: 'October 28, 2022',
+          teaser_time: '10:00 AM–6:00 PM MT', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- item two -->
+        <div class="c-layout--list-item">
+          {% include "teaser" with {
+          layout: 'list-stack', title: 'General Safety Basic Training', body: '<p>Condimentum ultricies libero, gravida
+            pellentesque feugiat scelerisque fermentum scelerisque at mi id.</p>', url: 'https://github.com', category:
+          'Training', category_url: 'https://github.com', category_color: 'cloud', teaser_date: 'November
+          10,2022–November 12,2022', teaser_time: '10:00 AM–12:00 PM MT', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- item three -->
+        <div class="c-layout--list-item">
+          {% include "teaser" with {
+          layout: 'list-stack', title: 'General Safety Basic Training', body: '<p>Condimentum ultricies libero, gravida
+            pellentesque feugiat scelerisque fermentum scelerisque at mi id.</p>', url: 'https://github.com', category:
+          'Professional Development', category_url: 'https://github.com', category_color: 'gold', teaser_date: 'November
+          10,2022–November 12,2022', teaser_time: '10:00 AM–12:00 PM MT', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- item four -->
+        <div class="c-layout--list-item">
+          {% include "teaser" with {
+          layout: 'list-stack', title: 'General Safety Basic Training', body: '<p>Condimentum ultricies libero, gravida
+            pellentesque feugiat scelerisque fermentum scelerisque at mi id.</p>', url: 'https://github.com', category:
+          'Professional Development', category_url: 'https://github.com', category_color: 'gold', teaser_date: 'November
+          10,2022–November 12,2022', teaser_time: '10:00 AM–12:00 PM MT', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="l-stack  u-padding">
+    <hr />
+    <h3>Search Teasers (list stack): One Column Layout</h3>
+  </div>
+
+  <div class="c-layout c-layout--layout-onecolumn list">
+    <div class="c-layout--inner-wrapper">
+      <!-- Content -->
+      <div class="c-layout--main">
+
+        <!-- item one -->
+        <div class="c-layout--list-item">
+          {% include "teaser" with {
+          layout: 'list-stack', title: 'Search result title', body: '<p>Justo, aliquam consectetur enim integer fames
+            rutrum praesent pretium mi adipiscing venenatis aliquet tempor ridiculus et ipsum tortor semper iaculis
+            velit vel sit.</p>', url: 'https://github.com', image:
+          'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+          'Atl text example'
+          } %}
+        </div>
+
+        <!-- item two -->
+        <div class="c-layout--list-item">
+          {% include "teaser" with {
+          layout: 'list-stack', title: 'Tellus aliquam scelerisque nulla', body: '<p>Nunc, suspendisse vitae vitae nec
+            eu dolor suspendisse purus mollis lacus, sem in varius ut mollis in odio nunc auctor consectetur nulla dui
+            enim.</p>', url: 'https://github.com'
+          } %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
