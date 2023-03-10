@@ -2,7 +2,20 @@
   background-color: var(--color-background);
 }
 
-.t-white {
+.t-white-black {
+  --color-background: #fff;
+  --color-background-hover: #f2f2f2;
+  --color-border: var(--color-surf--black);
+  --color-border-muted: var(--color-surf--cloud);
+  --color-text: var(--color-surf--black);
+  --color-text-heading: var(--color-surf--black);
+  --color-text-heading-muted: #707070;
+  --color-text-muted: var(--color-surf--grey);
+  --color-link: var(--color-surf--black);
+  --color-link-hover: var(--color-surf--black);
+}
+
+.t-white-forest {
   --color-background: #fff;
   --color-background-hover: #f2f2f2;
   --color-border: var(--color-surf--black);
