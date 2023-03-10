@@ -1,13 +1,12 @@
-
 /*
   Lists
 */
-@import '../../partials/_partials';
+@import "../../partials/_partials";
 
 ul:not([class]),
 ol:not([class]) {
   list-style: none;
-  margin-left: 0;
+  margin-left: rem(4px);
   padding-left: var(--space-indent);
 
   > li:before {
@@ -53,7 +52,7 @@ ol:not([class]) {
 
       &:before {
         display: inline;
-        margin-right: .5em;
+        margin-right: 0.5em;
         position: static;
       }
     }

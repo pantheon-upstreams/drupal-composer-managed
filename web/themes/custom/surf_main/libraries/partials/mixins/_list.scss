@@ -52,7 +52,7 @@
 
       &:before {
         display: inline;
-        margin-right: .5em;
+        margin-right: 0.5em;
         position: static;
       }
     }
@@ -83,7 +83,7 @@
 //
 // Ruled List
 //
-@mixin list--ruled (
+@mixin list--ruled(
   $spacing: 2em,
   $style: "inner",
   $border-color: var(--border-color),
@@ -106,8 +106,7 @@
         margin-top: 0;
         padding-top: 0;
       }
-    }
-    @else {
+    } @else {
       > #{$item-selector}:first-child {
         margin-top: 0;
       }
@@ -126,8 +125,7 @@
         border-top: $border-size $border-style $border-color;
         padding-top: $spacing;
       }
-    }
-    @else {
+    } @else {
       > #{$item-selector}:last-child {
         margin-bottom: 0;
       }

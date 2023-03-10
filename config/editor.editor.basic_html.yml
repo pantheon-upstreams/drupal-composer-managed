@@ -41,12 +41,15 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
+            - Styles
         -
           name: Tools
           items:
             - Source
             - RemoveFormat
-  plugins: {  }
+  plugins:
+    stylescombo:
+      styles: "p.intro-paragraph|Intro paragraph\r\np.large-paragraph|Large paragraph\r\na.white-green-button|White bg and Forest text Solid button\r\na.white-black-button|White bg and Black text Solid button\r\na.forest-button|Forest bg and white text Solid button\r\na.kelly-green-button|Kelly bg and white text Solid button\r\na.gradient-button|Gradient bg and white text Solid button\r\na.black-button|Black bg and white text Solid button\r\na.underline-white-button|White Underline Button\r\na.underline-green-button|Forest Underline Button\r\n"
 image_upload:
   status: true
   scheme: public

@@ -5,7 +5,7 @@ prefixed with `u-`.
 For more information about utility classes, visit
 https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utility-namespaces-u-
 */
-@import '_partials';
+@import "_partials";
 
 .u-padding {
   padding: var(--space-inset-y) var(--space-inset-x);
@@ -42,6 +42,22 @@ https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utilit
   }
 }
 
+// Background Colors
+.bg-kelly {
+  background-color: var(--color-surf--kelly);
+}
+
+.bg-forest {
+  background-color: var(--color-surf--forest);
+}
+
+.bg-cloud {
+  background-color: var(--color-surf--cloud);
+}
+
+.bg-black {
+  background-color: var(--color-surf--black);
+}
 
 /*
   SURF Main Fonts
@@ -79,7 +95,6 @@ https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/#utilit
 .surf-u-font-heading-six {
   @include surf-font-heading-six;
 }
-
 
 // SURF Main - Body Fonts
 .surf-u-font-body-jumbo {

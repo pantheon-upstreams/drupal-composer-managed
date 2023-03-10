@@ -16,7 +16,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <img src alt data-entity-type data-entity-uuid data-align data-caption width height> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <iframe>'
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <br> <img src alt data-entity-type data-entity-uuid data-align data-caption width height> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <iframe> <p class="intro-paragraph large-paragraph"> <a href hreflang class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button">'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -43,3 +43,10 @@ filters:
     status: true
     weight: 11
     settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72

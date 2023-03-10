@@ -63,3 +63,50 @@ tr.odd {
 tr.even {
   background-color: var(--table-color-background-row-even);
 }
+
+//  Responsive Table
+
+.table-wrapper {
+  display: -ms-grid;
+  display: grid;
+  overflow-x: auto;
+  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0)),
+    linear-gradient(-90deg, white 0%, rgba(255, 255, 255, 0)) 100% 0,
+    radial-gradient(
+      farthest-side at 0% 50%,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(
+        farthest-side at 100% 50%,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      )
+      100% 0%;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: 100px 100%, 100px 100%, 14px 100%, 14px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.table-wrapper table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  caption-side: bottom;
+  text-align: left;
+  border: none;
+  vertical-align: top;
+  min-width: 100%;
+  margin: 0;
+}

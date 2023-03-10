@@ -1,6 +1,10 @@
 @import "../../partials/_partials";
 
-// Button styles for non-component buttons
+/*
+  Button styles for non-component buttons
+*/
+
+// Forest bg and white text Solid button
 a.forest-button {
   color: #fff;
   background-color: var(--color-surf--forest);
@@ -34,6 +38,41 @@ a.forest-button {
   }
 }
 
+// Kelly bg and white text Solid button
+a.kelly-green-button {
+  color: #fff;
+  background-color: var(--color-surf--kelly-green);
+  font-family: var(--font-family-condensed);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  font-size: 16px;
+  letter-spacing: 1.8px;
+  line-height: 140%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: var(--color-surf--forest);
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @include bp-min(large) {
+    padding: 8px 18px;
+    font-size: 22px;
+    line-height: 140%;
+  }
+}
+
+// Gradient bg and white text Solid button
 a.gradient-button {
   color: #fff;
   background: var(--color-surf--kelly-green);
@@ -79,6 +118,7 @@ a.gradient-button {
   }
 }
 
+// Forest Underline Button
 a.underline-green-button {
   color: var(--color-surf--forest);
   font-family: var(--font-family-condensed);
@@ -110,6 +150,7 @@ a.underline-green-button {
   }
 }
 
+// White Underline Button
 a.underline-white-button {
   color: #fff;
   font-family: var(--font-family-condensed);
@@ -142,39 +183,7 @@ a.underline-white-button {
   }
 }
 
-a.kelly-green-button {
-  color: #fff;
-  background-color: var(--color-surf--kelly-green);
-  font-family: var(--font-family-condensed);
-  font-weight: var(--font-weight-bold);
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
-  line-height: 140%;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: #fff;
-    background-color: var(--color-surf--forest);
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
-  }
-}
-
+// Black bg and white text Solid button
 a.black-button {
   color: #fff;
   background-color: var(--color-surf--black);
@@ -208,8 +217,43 @@ a.black-button {
   }
 }
 
+// White bg and Forest text Solid button
 a.white-green-button {
   color: var(--color-surf--forest);
+  background-color: #fff;
+  font-family: var(--font-family-condensed);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  font-size: 16px;
+  letter-spacing: 1.8px;
+  line-height: 140%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: all 500ms ease;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-surf--black);
+    background-color: #fff;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @include bp-min(large) {
+    padding: 8px 18px;
+    font-size: 22px;
+    line-height: 140%;
+  }
+}
+
+// White bg and Black text Solid button
+a.white-black-button {
+  color: var(--color-surf--black);
   background-color: #fff;
   font-family: var(--font-family-condensed);
   font-weight: var(--font-weight-bold);

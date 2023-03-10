@@ -100,22 +100,53 @@ li {
   @include surf-font-body-medium;
 }
 
-// blockquote {
-// margin: 15px 0;
-// text-indent: -0.4em;
-// font-style: italic;
-// }
+blockquote:not([class]) {
+  margin: rem(32px) 0;
+  p {
+    @include surf-font-heading-two;
+  }
+  & > p:first-child {
+    margin-top: 0;
+  }
+  & > p:last-child {
+    margin-bottom: 0;
+  }
+}
 
 // Rich Text Styles
 .field--name-field-text {
-  p.intro {
+  @include clearfix;
+  p.intro-paragraph {
+    @include surf-font-body-x-large;
+  }
+  p.large-paragraph {
     @include surf-font-body-large;
   }
 
-  p a {
+  p a:not([class]) {
     color: var(--color-surf--forest);
     font-weight: var(--font-weight-bold);
+    &:hover {
+      color: var(--color-surf--forest);
+    }
   }
+
+  // Images
+  img[data-align="right"] {
+    @include bp-min(medium) {
+      float: right;
+      margin: 0 0 rem(10px) rem(10px);
+    }
+  }
+  img[data-align="center"] {
+    @include bp-min(medium) {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  // Table
+
   table {
     border-collapse: collapse;
     border: none;
