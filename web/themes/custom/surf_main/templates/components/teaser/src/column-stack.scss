@@ -234,7 +234,16 @@
 
     // Title
     .c-teaser__title {
-      @include surf-font-body-x-large;
+      @include surf-font-body-medium;
+      @include bp-min(medium) {
+        @include surf-font-body-large;
+      }
+      @include bp-min(large) {
+        @include surf-font-body-large;
+      }
+      @include bp-min(xxlarge) {
+        @include surf-font-body-large;
+      }
       font-weight: var(--font-weight-bold);
     }
   }
