@@ -11,7 +11,7 @@ argTypes:
       - black
       - forest
       - gradient
-      - kelly
+      - kelly-green
       - white
       - underline-green
       - underline-white
@@ -72,7 +72,7 @@ stories:
       text: Kelly Button
       url: https://www.example.org
       button_style: solid
-      color: kelly
+      color: kelly-green
       uppercase: true
       icon_type: false
       button_type_size: large
