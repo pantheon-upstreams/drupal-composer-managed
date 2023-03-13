@@ -1,0 +1,123 @@
+@import "../../partials/_partials";
+
+.person-full.teaser--has-media .l__primary {
+  width: 100%;
+  display: grid;
+  column-gap: rem(32px);
+  padding: 0 0 rem(25px) 0;
+  @include bp-min(medium) {
+    grid-template-areas:
+      "title title"
+      "job media"
+      "contact media"
+      "body media";
+    grid-template-columns: 1fr rem(208px);
+    padding: 0 0 rem(68px) 0;
+  }
+  @include bp-min(large) {
+    grid-template-columns: 1fr rem(293px);
+    padding: 0 0 rem(72px) 0;
+  }
+  @include bp-min(xxlarge) {
+    column-gap: rem(180px);
+    grid-template-areas:
+      "title media"
+      "job media"
+      "contact media"
+      "body media";
+    grid-template-columns: 1fr rem(302px);
+    padding: 0 0 rem(90px) 0;
+  }
+}
+
+.person-full.teaser--no-media {
+  .l-constrained {
+    width: 100%;
+    max-width: 100%;
+  }
+  .l__primary {
+    padding: 0 0 rem(34px) 0;
+    @include bp-min(medium) {
+      padding: 0 0 rem(70px) 0;
+    }
+    @include bp-min(large) {
+      padding: 0 0 rem(98px) 0;
+      max-width: rem(619px);
+      width: 100%;
+      margin: 0 auto;
+    }
+    @include bp-min(xxlarge) {
+      padding: 0 0 rem(86px) 0;
+      max-width: rem(780px);
+    }
+  }
+}
+
+.person-content__photo-wrapper {
+  padding: 0 0 rem(32px) 0;
+  img {
+    width: 100%;
+  }
+  @include bp-min(medium) {
+    margin: 0;
+    grid-area: media;
+  }
+}
+
+.person-content__title {
+  @include surf-font-heading-one;
+  margin: 0 0 rem(32px) 0;
+  @include bp-min(medium) {
+    grid-area: title;
+  }
+}
+
+.person-content__job-title {
+  @include surf-font-body-x-large;
+  margin: 0 0 rem(32px) 0;
+  @include bp-min(medium) {
+    grid-area: job;
+  }
+}
+
+.person-content__contact-wrapper {
+  @include surf-font-body-x-large;
+  margin: 0 0 rem(32px) 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include bp-min(medium) {
+    grid-area: contact;
+    @include surf-font-body-large;
+  }
+  li {
+    display: block;
+    margin: 0;
+    a {
+      @include surf-font-body-x-large;
+      color: var(--color-surf--grey);
+      &:hover {
+        text-decoration: none;
+      }
+      @include bp-min(medium) {
+        @include surf-font-body-large;
+      }
+    }
+    &:first-child {
+      margin: 0 rem(32px) 0 0;
+    }
+  }
+}
+
+.person-content__wrapper {
+  & > .text-content > p:first-child {
+    margin-top: 0;
+  }
+  & > .text-content > p:last-child {
+    margin-bottom: 0;
+  }
+  @include bp-min(medium) {
+    grid-area: body;
+  }
+}

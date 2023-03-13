@@ -63,6 +63,12 @@ global:
 # 03 - Nodes
 #------------------------------------#
 
+# Person
+person:
+  css:
+    component:
+      dist/css/components/person/full.component.css: {}
+
 #------------------------------------#
 # 04 - Blocks
 #------------------------------------#

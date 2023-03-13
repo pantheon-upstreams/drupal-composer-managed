@@ -1,0 +1,72 @@
+{% import '@surf_main-components/component.twig' as component %}
+{{ attach_library('surf_main/person') }}
+
+{% set modifiers = modifiers|default([])|merge([ media|render|striptags|trim ? 'has-media' : 'no-media' ]) %}
+
+{% set modifiers = modifiers|default([])|merge([ style ]) %}
+<{{tag|default('article')}} {{ component.attributes('teaser', modifiers, attr) }}>
+{# <article{{ component.attributes([style], modifiers, attr) }}> #}
+
+	<div class="l--1-col l-constrained">
+		<div class="l__primary">
+
+    {% if media %}
+    <div class="person-content__photo-wrapper">
+      {{ media }}
+    </div>
+    {% endif %}
+
+
+      {# Title / Full Name #}
+      <h1 class="person-content__title">
+        {{ title }}
+      </h1>
+
+      {# Job Title #}
+      {% if job_title %}
+      <h2 class="person-content__job-title">
+        {{ job_title }}
+      </h2>
+      {% endif %}
+
+
+      {% if phone or email %}
+      <ul class="person-content__contact-wrapper">
+
+        {# Phone: office #}
+        {% if phone %}
+        <li class="person-content__phone-office">
+
+          <a href="tel:{{ phone }}">{{ phone }}</a>
+        </li>
+        {% endif %}
+
+        {# Email #}
+        {% if email %}
+        <li class="person-content__email">
+          <a href="mailto:{{ email }}">{{ 'Contact'|t }}</a>
+        </li>
+        {% endif %}
+
+      </ul>
+      {% endif %}
+
+
+
+    {# Body #}
+    {% if body %}
+    <div class="person-content__wrapper">
+      {{ body }}
+    </div>
+    {% endif %}
+
+
+
+
+			{# {% if content %}
+				{{ content }}
+			{% endif %} #}
+		</div>
+	</div>
+{# </article> #}
+</{{tag|default('article')}}>

@@ -20,6 +20,7 @@ dependencies:
     - datetime
     - name
     - options
+    - telephone
     - text
     - user
 id: node.person.default
@@ -36,7 +37,7 @@ content:
     region: content
   field_appointed_by:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -44,14 +45,14 @@ content:
     region: content
   field_board_type:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 105
     region: content
   field_date_appointed:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
@@ -60,14 +61,14 @@ content:
     region: content
   field_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 106
     region: content
   field_job_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -75,7 +76,7 @@ content:
     region: content
   field_location:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -83,7 +84,7 @@ content:
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -92,7 +93,7 @@ content:
     region: content
   field_name:
     type: name_default
-    label: above
+    label: hidden
     settings:
       format: default
       markup: none
@@ -106,22 +107,24 @@ content:
     weight: 107
     region: content
   field_phone_mobile:
-    type: basic_string
-    label: above
-    settings: {  }
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 103
     region: content
   field_phone_office:
-    type: basic_string
-    label: above
-    settings: {  }
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
     third_party_settings: {  }
     weight: 104
     region: content
   field_ref_department:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }

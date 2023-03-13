@@ -1,0 +1,9 @@
+{% include '@surf_main-components/person/full.html.twig' with {
+  title: label,
+  job_title: content.field_job_title|render|striptags|trim,
+  media: content.field_media_primary,
+  phone: content.field_phone_office|render|striptags|trim,
+  email: content.field_email|render|striptags|trim,
+  body: content.body,
+  attr: attributes.addClass([classes, 'person-full'])
+} only %}
