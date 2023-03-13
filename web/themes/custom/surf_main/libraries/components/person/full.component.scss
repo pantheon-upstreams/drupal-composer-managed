@@ -1,32 +1,38 @@
 @import "../../partials/_partials";
 
-.person-full.teaser--has-media .l__primary {
-  width: 100%;
-  display: grid;
-  column-gap: rem(32px);
-  padding: 0 0 rem(25px) 0;
-  @include bp-min(medium) {
-    grid-template-areas:
-      "title title"
-      "job media"
-      "contact media"
-      "body media";
-    grid-template-columns: 1fr rem(208px);
-    padding: 0 0 rem(68px) 0;
+.person-full.teaser--has-media {
+  .l-constrained {
+    width: 100%;
+    max-width: 100%;
   }
-  @include bp-min(large) {
-    grid-template-columns: 1fr rem(293px);
-    padding: 0 0 rem(72px) 0;
-  }
-  @include bp-min(xxlarge) {
-    column-gap: rem(180px);
-    grid-template-areas:
-      "title media"
-      "job media"
-      "contact media"
-      "body media";
-    grid-template-columns: 1fr rem(302px);
-    padding: 0 0 rem(90px) 0;
+  .l__primary {
+    width: 100%;
+    display: grid;
+    column-gap: rem(32px);
+    padding: 0 0 rem(25px) 0;
+    @include bp-min(medium) {
+      grid-template-areas:
+        "title title"
+        "job media"
+        "contact media"
+        "body media";
+      grid-template-columns: 1fr rem(208px);
+      padding: 0 0 rem(68px) 0;
+    }
+    @include bp-min(large) {
+      grid-template-columns: 1fr rem(293px);
+      padding: 0 0 rem(72px) 0;
+    }
+    @include bp-min(xxlarge) {
+      column-gap: rem(180px);
+      grid-template-areas:
+        "title media"
+        "job media"
+        "contact media"
+        "body media";
+      grid-template-columns: 1fr rem(302px);
+      padding: 0 0 rem(90px) 0;
+    }
   }
 }
 
@@ -55,10 +61,12 @@
 
 .person-content__photo-wrapper {
   padding: 0 0 rem(32px) 0;
+  order: 1;
   img {
     width: 100%;
   }
   @include bp-min(medium) {
+    order: unset;
     margin: 0;
     grid-area: media;
   }
@@ -67,7 +75,9 @@
 .person-content__title {
   @include surf-font-heading-one;
   margin: 0 0 rem(32px) 0;
+  order: 2;
   @include bp-min(medium) {
+    order: unset;
     grid-area: title;
   }
 }
@@ -75,12 +85,15 @@
 .person-content__job-title {
   @include surf-font-body-x-large;
   margin: 0 0 rem(32px) 0;
+  order: 4;
   @include bp-min(medium) {
+    order: unset;
     grid-area: job;
   }
 }
 
 .person-content__contact-wrapper {
+  order: 3;
   @include surf-font-body-x-large;
   margin: 0 0 rem(32px) 0;
   padding: 0;
@@ -88,6 +101,7 @@
   flex-wrap: wrap;
   align-items: center;
   @include bp-min(medium) {
+    order: unset;
     grid-area: contact;
     @include surf-font-body-large;
   }
@@ -111,6 +125,7 @@
 }
 
 .person-content__wrapper {
+  order: 5;
   & > .text-content > p:first-child {
     margin-top: 0;
   }
@@ -118,6 +133,7 @@
     margin-bottom: 0;
   }
   @include bp-min(medium) {
+    order: unset;
     grid-area: body;
   }
 }
