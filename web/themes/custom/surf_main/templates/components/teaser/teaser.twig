@@ -22,7 +22,7 @@
     {% endif %}
 
     {# Category #}
-    {% if category == 'column-stack' %}
+    {% if category and layout == 'column-stack' %}
     {% block category_block %}
     <p class="c-teaser__category">
       <a href="{{category_url}}">{{category}}</a>
