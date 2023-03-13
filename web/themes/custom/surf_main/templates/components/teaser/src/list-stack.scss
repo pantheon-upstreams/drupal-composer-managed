@@ -57,10 +57,10 @@
       @include surf-font-body-large;
     }
     @include bp-min(large) {
-      @include surf-font-body-large;
+      @include surf-font-body-x-large;
     }
     @include bp-min(xxlarge) {
-      @include surf-font-body-jumbo;
+      @include surf-font-body-x-large;
     }
     a {
       transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
