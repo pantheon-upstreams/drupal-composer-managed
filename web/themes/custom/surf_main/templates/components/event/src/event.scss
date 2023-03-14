@@ -133,7 +133,7 @@
     margin: 0 0 rem(60px) 0;
     max-height: rem(370px);
   }
-  @include bp-min(large) {
+  @include bp-min(xxlarge) {
     margin: 0;
     max-height: rem(370px);
   }
