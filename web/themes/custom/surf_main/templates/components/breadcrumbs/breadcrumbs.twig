@@ -1,0 +1,15 @@
+<nav aria-label="Breadcrumb" {{ clAttributes.addClass('c-breadcrumb'|addModifiers(style)) }}>
+  {% block breadcrumbs_block %}
+  <ol class="c-breadcrumb__list">
+    {% for item in items %}
+    <li class="c-breadcrumb__item">
+      {% if item.url %}
+      <a href="{{item.url}}">{{item.title}}</a>
+      {% else %}
+      {{item.title}}
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% endblock %}
+</nav>

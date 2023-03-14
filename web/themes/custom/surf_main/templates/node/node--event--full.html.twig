@@ -4,10 +4,27 @@
     - [ ] Add image style to the `image_url`
     - [ ] Replace `dates` with dynamic formatted values using `content.field_date`
     - [ ] Replace `times` with dynamic formatted values using `content.field_date`
+    - [ ] Replace the `breadcrumbs` with the dynamic array
   #}
 
+{% set breadcrumbs = [
+    {
+      title: 'Accordion One',
+      url: '/',
+    },
+    {
+      title: 'Events',
+      url: '/event',
+    },
+    {
+      title: 'Current Page',
+      url: null,
+    }
+  ]
+%}
 
 {% include "event" with {
+  breadcrumbs: breadcrumbs,
   title: label,
   overview: content.field_overview|render|striptags|trim,
   dates: 'June 10-June 12, 2023',

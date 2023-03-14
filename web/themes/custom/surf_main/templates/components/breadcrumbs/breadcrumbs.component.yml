@@ -1,0 +1,27 @@
+---
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: breadcrumbs
+name: Breadcrumbs
+status: WIP
+componentType: molecule
+description: Breadcrumbs component
+schemas:
+  props:
+    type: object
+    properties:
+      items:
+        type: array
+        title: Items
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              examples:
+                - "Home"
+            url:
+              type: string
+              title: Title
+              examples:
+                - "/"

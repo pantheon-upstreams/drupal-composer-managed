@@ -5,32 +5,40 @@
 {% endif %}
 
 <article {{ clAttributes.addClass('c-event'|addModifiers(style)) }}>
-  {# Breadcumbs #}
-  <header class="event-header__wrapper">
+
+  <header class="c-event-header__wrapper">
+
+    {# Breadcumbs #}
+    {% if breadcrumbs %}
+      	 {% include "breadcrumbs" with {
+					items: breadcrumbs
+				} %}
+    {% endif %}
+
     {# Title #}
-    <h1 class="event-title">{{title}}</h1>
+    <h1 class="c-event-title">{{title}}</h1>
 
     {# Dates and Link #}
     {% if dates or link_url %}
-    <ul class="event-details__wrapper">
+    <ul class="c-event-details__wrapper">
 
-      <div class="event-datetime__wrapper">
+      <div class="c-event-datetime__wrapper">
 
         {# Dates #}
         {% if dates %}
-        <li class="event-dates">{{dates}}</li>
+        <li class="c-event-dates">{{dates}}</li>
         {% endif %}
 
         {# Times #}
         {% if times %}
-        <li class="event-times">{{times}}</li>
+        <li class="c-event-times">{{times}}</li>
         {% endif %}
 
       </div>
 
       {# Link #}
       {% if link_url %}
-      <li class="event-link">
+      <li class="c-event-link">
         <a href="{{link_url}}" class="forest-button">
           {% if link_text %}{{ link_text }}{% else %}Visit Website{% endif %}
         </a>
@@ -43,25 +51,25 @@
 
   <hr class="left-hook-divider">
 
-  <div class="event-content__wrapper">
+  <div class="c-event-content__wrapper">
 
     {% if image_url %}
-    <div class="event-image__wrapper">
+    <div class="c-event-image__wrapper">
       <img src="{{image_url}}" alt="{{image_alt}}">
     </div>
     {% endif %}
 
-    <div class="event-content__inner-wrapper">
+    <div class="c-event-content__inner-wrapper">
     {# Overview #}
     {% if overview %}
-    <h2 class="event-overview">
+    <h2 class="c-event-overview">
       {{ overview }}
     </h2>
     {% endif %}
 
     {# Body #}
     {% if body %}
-    <div class="event-body__wrapper">
+    <div class="c-event-body__wrapper">
       {{ body }}
     </div>
     {% endif %}

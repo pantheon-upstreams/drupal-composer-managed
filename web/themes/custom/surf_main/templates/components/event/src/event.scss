@@ -1,13 +1,10 @@
 @import "_partials";
 
-.c-event {
-}
-
-.event-title {
+.c-event-title {
   margin: 0 0 rem(32px) 0;
 }
 
-.event-header__wrapper {
+.c-event-header__wrapper {
   margin-bottom: rem(32px);
   @include bp-min(medium) {
     margin-bottom: rem(40px);
@@ -20,7 +17,7 @@
   }
 }
 
-.event-details__wrapper {
+.c-event-details__wrapper {
   margin: 0;
   padding: 0;
   display: flex;
@@ -36,7 +33,7 @@
   }
 }
 
-.event-details__wrapper li.event-dates {
+.c-event-details__wrapper li.c-event-dates {
   @include surf-font-body-x-large;
   font-weight: var(--font-weight-bold);
   @include bp-min(medium) {
@@ -45,14 +42,14 @@
   }
 }
 
-.event-datetime__wrapper {
+.c-event-datetime__wrapper {
   @include bp-min(medium) {
     display: flex;
     align-items: center;
   }
 }
 
-.event-details__wrapper li.event-times {
+.c-event-details__wrapper li.c-event-times {
   @include surf-font-body-x-large;
   font-weight: var(--font-weight-bold);
   margin: rem(12px) 0 0 0;
@@ -63,7 +60,7 @@
   }
 }
 
-.c-event.c-event--dateTimeSeparator li.event-dates {
+.c-event.c-event--dateTimeSeparator li.c-event-dates {
   @include bp-min(medium) {
     margin: 0 rem(24px) 0 0;
     padding: 0 rem(26px) 0 0;
@@ -83,7 +80,7 @@
   }
 }
 
-.event-details__wrapper li.event-link {
+.c-event-details__wrapper li.c-event-link {
   margin: rem(12px) 0 0 0;
   @include bp-min(medium) {
     margin: rem(32px) 0 0 0;
@@ -93,7 +90,7 @@
   }
 }
 
-.event-link .forest-button {
+.c-event-link .forest-button {
   text-transform: unset;
 }
 
@@ -107,7 +104,7 @@
   }
 }
 
-.event-overview {
+.c-event-overview {
   @include surf-font-heading-two;
   margin: 0 0 rem(32px) 0;
   @include bp-min(medium) {
@@ -122,7 +119,7 @@
   }
 }
 
-.event-image__wrapper {
+.c-event-image__wrapper {
   margin: 0 0 rem(32px) 0;
 
   @include bp-min(medium) {
@@ -149,7 +146,7 @@
   }
 }
 
-.event-content__wrapper {
+.c-event-content__wrapper {
   padding: 0 0 rem(25px) 0;
   @include bp-min(medium) {
     padding: 0 0 rem(76px) 0;
@@ -160,7 +157,7 @@
   @include bp-min(xxlarge) {
     display: flex;
     padding: 0 0 rem(143px) 0;
-    .event-image__wrapper {
+    .c-event-image__wrapper {
       order: 2;
       flex: none;
       margin: 0 0 0 rem(60px);
@@ -168,7 +165,7 @@
   }
 }
 
-.event-body__wrapper {
+.c-event-body__wrapper {
   & > .text-content > p:first-child {
     margin-top: 0;
   }
