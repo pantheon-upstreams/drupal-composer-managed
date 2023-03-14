@@ -1,0 +1,182 @@
+@import "_partials";
+
+.c-event {
+}
+
+.event-title {
+  margin: 0 0 rem(32px) 0;
+}
+
+.event-header__wrapper {
+  margin-bottom: rem(32px);
+  @include bp-min(medium) {
+    margin-bottom: rem(40px);
+  }
+  @include bp-min(large) {
+    margin-bottom: rem(60px);
+    background-image: url("../img/event-illustration.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+}
+
+.event-details__wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include bp-min(large) {
+    align-items: center;
+    flex-direction: row;
+  }
+  li {
+    display: block;
+    margin: 0;
+  }
+}
+
+.event-details__wrapper li.event-dates {
+  @include surf-font-body-x-large;
+  font-weight: var(--font-weight-bold);
+  @include bp-min(medium) {
+    @include surf-font-body-large;
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.event-datetime__wrapper {
+  @include bp-min(medium) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.event-details__wrapper li.event-times {
+  @include surf-font-body-x-large;
+  font-weight: var(--font-weight-bold);
+  margin: rem(12px) 0 0 0;
+  @include bp-min(medium) {
+    margin: 0;
+    @include surf-font-body-large;
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.c-event.c-event--dateTimeSeparator li.event-dates {
+  @include bp-min(medium) {
+    margin: 0 rem(24px) 0 0;
+    padding: 0 rem(26px) 0 0;
+    position: relative;
+    &:after {
+      content: "";
+      @include surf-font-body-large;
+      font-weight: var(--font-weight-bold);
+      background: var(--color-surf--black);
+      height: rem(22px);
+      width: rem(2px);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.event-details__wrapper li.event-link {
+  margin: rem(12px) 0 0 0;
+  @include bp-min(medium) {
+    margin: rem(32px) 0 0 0;
+  }
+  @include bp-min(large) {
+    margin: 0 0 0 rem(24px);
+  }
+}
+
+.event-link .forest-button {
+  text-transform: unset;
+}
+
+.c-event hr.left-hook-divider {
+  margin-bottom: rem(64px);
+  @include bp-min(medium) {
+    margin-bottom: rem(72px);
+  }
+  @include bp-min(large) {
+    margin-bottom: rem(92px);
+  }
+}
+
+.event-overview {
+  @include surf-font-heading-two;
+  margin: 0 0 rem(32px) 0;
+  @include bp-min(medium) {
+    margin: 0 0 rem(40px) 0;
+    font-size: rem(64px);
+    line-height: rem(64px);
+  }
+  @include bp-min(large) {
+    margin: 0 0 rem(28px) 0;
+  }
+  @include bp-min(xxlarge) {
+  }
+}
+
+.event-image__wrapper {
+  margin: 0 0 rem(32px) 0;
+
+  @include bp-min(medium) {
+    margin: 0 0 rem(40px) 0;
+    max-height: rem(226px);
+  }
+  @include bp-min(large) {
+    margin: 0 0 rem(60px) 0;
+    max-height: rem(370px);
+  }
+  @include bp-min(large) {
+    margin: 0;
+    max-height: rem(370px);
+  }
+  img {
+    display: block;
+    max-height: rem(236px);
+    @include bp-min(medium) {
+      max-height: rem(226px);
+    }
+    @include bp-min(large) {
+      max-height: rem(370px);
+    }
+  }
+}
+
+.event-content__wrapper {
+  padding: 0 0 rem(25px) 0;
+  @include bp-min(medium) {
+    padding: 0 0 rem(76px) 0;
+  }
+  @include bp-min(large) {
+    padding: 0 0 rem(67px) 0;
+  }
+  @include bp-min(xxlarge) {
+    display: flex;
+    padding: 0 0 rem(143px) 0;
+    .event-image__wrapper {
+      order: 2;
+      flex: none;
+      margin: 0 0 0 rem(60px);
+    }
+  }
+}
+
+.event-body__wrapper {
+  & > .text-content > p:first-child {
+    margin-top: 0;
+  }
+  & > .text-content > p:last-child {
+    margin-bottom: 0;
+  }
+  @include bp-min(medium) {
+    order: unset;
+    grid-area: body;
+  }
+}

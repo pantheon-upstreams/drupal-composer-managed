@@ -1,0 +1,73 @@
+
+{% set style = 'no_dateTimeSeparator' %}
+ {% if dates and times %}
+  {% set style = 'dateTimeSeparator' %}
+{% endif %}
+
+<article {{ clAttributes.addClass('c-event'|addModifiers(style)) }}>
+  {# Breadcumbs #}
+  <header class="event-header__wrapper">
+    {# Title #}
+    <h1 class="event-title">{{title}}</h1>
+
+    {# Dates and Link #}
+    {% if dates or link_url %}
+    <ul class="event-details__wrapper">
+
+      <div class="event-datetime__wrapper">
+
+        {# Dates #}
+        {% if dates %}
+        <li class="event-dates">{{dates}}</li>
+        {% endif %}
+
+        {# Times #}
+        {% if times %}
+        <li class="event-times">{{times}}</li>
+        {% endif %}
+
+      </div>
+
+      {# Link #}
+      {% if link_url %}
+      <li class="event-link">
+        <a href="{{link_url}}" class="forest-button">
+          {% if link_text %}{{ link_text }}{% else %}Visit Website{% endif %}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+    {% endif %}
+
+  </header>
+
+  <hr class="left-hook-divider">
+
+  <div class="event-content__wrapper">
+
+    {% if image_url %}
+    <div class="event-image__wrapper">
+      <img src="{{image_url}}" alt="{{image_alt}}">
+    </div>
+    {% endif %}
+
+    <div class="event-content__inner-wrapper">
+    {# Overview #}
+    {% if overview %}
+    <h2 class="event-overview">
+      {{ overview }}
+    </h2>
+    {% endif %}
+
+    {# Body #}
+    {% if body %}
+    <div class="event-body__wrapper">
+      {{ body }}
+    </div>
+    {% endif %}
+    </div>
+
+  </div>
+
+
+</article>

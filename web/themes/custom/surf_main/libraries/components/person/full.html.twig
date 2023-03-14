@@ -5,7 +5,7 @@
 
 {% set modifiers = modifiers|default([])|merge([ style ]) %}
 <{{tag|default('article')}} {{ component.attributes('teaser', modifiers, attr) }}>
-{# <article{{ component.attributes([style], modifiers, attr) }}> #}
+
 
 	<div class="l--1-col l-constrained">
 		<div class="l__primary">
@@ -51,8 +51,6 @@
       </ul>
       {% endif %}
 
-
-
     {# Body #}
     {% if body %}
     <div class="person-content__wrapper">
@@ -60,13 +58,6 @@
     </div>
     {% endif %}
 
-
-
-
-			{# {% if content %}
-				{{ content }}
-			{% endif %} #}
 		</div>
 	</div>
-{# </article> #}
 </{{tag|default('article')}}>

@@ -74,6 +74,21 @@ body {
   }
 }
 
+hr.left-hook-divider {
+  border: 0;
+  border-bottom: 2px solid var(--color-surf--grey);
+  position: relative;
+  overflow: visible;
+  margin-bottom: rem(32px);
+  &::before {
+    content: "";
+    position: absolute;
+    height: rem(32px);
+    width: rem(2px);
+    background: var(--color-surf--grey);
+  }
+}
+
 // @keyframes bg-animation {
 //   from {
 //     background-position: 0% 100%;
