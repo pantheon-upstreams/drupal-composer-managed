@@ -1,5 +1,5 @@
 $schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: event
+machineName: event-page
 name: Event
 status: WIP
 componentType: molecule

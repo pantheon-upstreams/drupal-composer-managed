@@ -1,11 +1,18 @@
-@import "../../partials/_partials";
+@import "_partials";
 
-.person-full.teaser--has-media {
+.c-person-page.c-person-page--has-media {
   .l-constrained {
     width: 100%;
     max-width: 100%;
   }
   .l__primary {
+    width: 100%;
+    padding-top: rem(32px);
+    @include bp-min(medium) {
+      padding-top: rem(60px);
+    }
+  }
+  .c-person-page--grid {
     width: 100%;
     display: grid;
     column-gap: rem(32px);
@@ -36,7 +43,7 @@
   }
 }
 
-.person-full.teaser--no-media {
+.c-person-page.teaser--no-media {
   .l-constrained {
     width: 100%;
     max-width: 100%;
@@ -75,6 +82,7 @@
 
 .person-content__title {
   @include surf-font-heading-one;
+  text-transform: uppercase;
   margin: 0 0 rem(32px) 0;
   order: 2;
   @include bp-min(medium) {

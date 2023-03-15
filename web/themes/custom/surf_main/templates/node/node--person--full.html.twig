@@ -1,9 +1,40 @@
-{% include '@surf_main-components/person/full.html.twig' with {
+  {#
+    TODO:
+    - [ ] Replace the `breadcrumbs` with the dynamic array
+  #}
+
+{% set breadcrumbs = [
+    {
+      title: 'Home',
+      url: '/',
+      current: false,
+    },
+    {
+      title: 'Education',
+      url: '/education',
+      current: false,
+    },
+    {
+      title: 'Our Team',
+      url: '/team',
+      current: false,
+    },
+    {
+      title: label,
+      url: url,
+      current: true,
+    }
+  ]
+%}
+
+{% include "person-page" with {
+  breadcrumbs: breadcrumbs,
   title: label,
   job_title: content.field_job_title|render|striptags|trim,
-  media: content.field_media_primary,
+  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
+  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
   phone: content.field_phone_office|render|striptags|trim,
   email: content.field_email|render|striptags|trim,
   body: content.body,
   attr: attributes.addClass([classes, 'person-full'])
-} only %}
+} %}
