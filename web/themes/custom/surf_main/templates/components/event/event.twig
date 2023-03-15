@@ -6,23 +6,25 @@
 
 <article {{ clAttributes.addClass('c-event'|addModifiers(style)) }}>
 
-  <header class="c-event-header__wrapper">
+  <header class="c-event__header-wrapper">
 
     {# Breadcumbs #}
-    {% if breadcrumbs %}
-      	 {% include "breadcrumbs" with {
-					items: breadcrumbs
-				} %}
-    {% endif %}
+    <nav class="c-event__breadcrumb" aria-label="Breadcrumb">
+    <ol class="c-event__breadcrumb-list">
+      <li class="c-event__breadcrumb-item" aria-current="page">
+          <a href="/events" class="c-event__breadcrumb_--link">{{ 'Events'|t }}</a>
+      </li>
+    </ol>
+  </nav>
 
     {# Title #}
     <h1 class="c-event-title">{{title}}</h1>
 
     {# Dates and Link #}
     {% if dates or link_url %}
-    <ul class="c-event-details__wrapper">
+    <ul class="c-event__details-wrapper">
 
-      <div class="c-event-datetime__wrapper">
+      <div class="c-event__datetime-wrapper">
 
         {# Dates #}
         {% if dates %}
@@ -38,7 +40,7 @@
 
       {# Link #}
       {% if link_url %}
-      <li class="c-event-link">
+      <li class="c-event__link">
         <a href="{{link_url}}" class="forest-button">
           {% if link_text %}{{ link_text }}{% else %}Visit Website{% endif %}
         </a>
@@ -51,10 +53,10 @@
 
   <hr class="left-hook-divider">
 
-  <div class="c-event-content__wrapper">
+  <div class="c-event__content-wrapper">
 
     {% if image_url %}
-    <div class="c-event-image__wrapper">
+    <div class="c-event__image-wrapper">
       <img src="{{image_url}}" alt="{{image_alt}}">
     </div>
     {% endif %}
@@ -62,14 +64,14 @@
     <div class="c-event-content__inner-wrapper">
     {# Overview #}
     {% if overview %}
-    <h2 class="c-event-overview">
+    <h2 class="c-event__overview">
       {{ overview }}
     </h2>
     {% endif %}
 
     {# Body #}
     {% if body %}
-    <div class="c-event-body__wrapper">
+    <div class="c-event__body-wrapper">
       {{ body }}
     </div>
     {% endif %}

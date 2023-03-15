@@ -3,9 +3,12 @@ args:
   items:
     - title: "Home"
       url: "/"
+      current: false
     - title: "Events"
       url: "/events"
+      current: false
     - title: "Event example title"
-      url: ""
+      url: "/event/test"
+      current: true
 stories:
   - name: Default

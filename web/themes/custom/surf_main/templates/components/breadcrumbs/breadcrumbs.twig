@@ -2,13 +2,15 @@
   {% block breadcrumbs_block %}
   <ol class="c-breadcrumb__list">
     {% for item in items %}
-    <li class="c-breadcrumb__item">
-      {% if item.url %}
-      <a href="{{item.url}}">{{item.title}}</a>
+      {% if item.current == true %}
+        <li class="c-breadcrumb__item" aria-current="page">
+          <a href="{{item.url}}">{{item.title}}</a>
+        </li>
       {% else %}
-      {{item.title}}
+        <li class="c-breadcrumb__item">
+          <a href="{{item.url}}">{{item.title}}</a>
+        </li>
       {% endif %}
-    </li>
     {% endfor %}
   </ol>
   {% endblock %}

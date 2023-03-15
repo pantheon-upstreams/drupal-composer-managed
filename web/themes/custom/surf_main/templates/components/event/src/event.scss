@@ -4,12 +4,34 @@
   margin: 0 0 rem(32px) 0;
 }
 
-.c-event-header__wrapper {
+.c-event__breadcrumb-list {
+  margin: 0 0 rem(32px) 0;
+  padding: 0;
+  display: flex;
+}
+
+.c-event__breadcrumb-item {
+  margin: 0;
+  display: inline-block;
+}
+
+.c-event__breadcrumb-link {
+  @include surf-font-label-peewee;
+  color: var(--color-surf--forest);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-event__header-wrapper {
   margin-bottom: rem(32px);
   @include bp-min(medium) {
     margin-bottom: rem(40px);
   }
   @include bp-min(large) {
+    padding-top: rem(50px);
     margin-bottom: rem(60px);
     background-image: url("../img/event-illustration.png");
     background-position: top right;
@@ -17,7 +39,7 @@
   }
 }
 
-.c-event-details__wrapper {
+.c-event__details-wrapper {
   margin: 0;
   padding: 0;
   display: flex;
@@ -33,7 +55,7 @@
   }
 }
 
-.c-event-details__wrapper li.c-event-dates {
+.c-event__details-wrapper li.c-event-dates {
   @include surf-font-body-x-large;
   font-weight: var(--font-weight-bold);
   @include bp-min(medium) {
@@ -42,14 +64,14 @@
   }
 }
 
-.c-event-datetime__wrapper {
+.c-event__datetime-wrapper {
   @include bp-min(medium) {
     display: flex;
     align-items: center;
   }
 }
 
-.c-event-details__wrapper li.c-event-times {
+.c-event__details-wrapper li.c-event-times {
   @include surf-font-body-x-large;
   font-weight: var(--font-weight-bold);
   margin: rem(12px) 0 0 0;
@@ -80,7 +102,7 @@
   }
 }
 
-.c-event-details__wrapper li.c-event-link {
+.c-event__details-wrapper li.c-event__link {
   margin: rem(12px) 0 0 0;
   @include bp-min(medium) {
     margin: rem(32px) 0 0 0;
@@ -90,7 +112,7 @@
   }
 }
 
-.c-event-link .forest-button {
+.c-event__link .forest-button {
   text-transform: unset;
 }
 
@@ -104,7 +126,7 @@
   }
 }
 
-.c-event-overview {
+.c-event__overview {
   @include surf-font-heading-two;
   margin: 0 0 rem(32px) 0;
   @include bp-min(medium) {
@@ -119,7 +141,7 @@
   }
 }
 
-.c-event-image__wrapper {
+.c-event__image-wrapper {
   margin: 0 0 rem(32px) 0;
 
   @include bp-min(medium) {
@@ -146,7 +168,7 @@
   }
 }
 
-.c-event-content__wrapper {
+.c-event__content-wrapper {
   padding: 0 0 rem(25px) 0;
   @include bp-min(medium) {
     padding: 0 0 rem(76px) 0;
@@ -157,7 +179,7 @@
   @include bp-min(xxlarge) {
     display: flex;
     padding: 0 0 rem(143px) 0;
-    .c-event-image__wrapper {
+    .c-event__image-wrapper {
       order: 2;
       flex: none;
       margin: 0 0 0 rem(60px);
@@ -165,7 +187,7 @@
   }
 }
 
-.c-event-body__wrapper {
+.c-event__body-wrapper {
   & > .text-content > p:first-child {
     margin-top: 0;
   }

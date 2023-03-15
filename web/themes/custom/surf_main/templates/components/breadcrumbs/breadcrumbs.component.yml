@@ -25,3 +25,8 @@ schemas:
               title: Title
               examples:
                 - "/"
+            current:
+              type: boolean
+              title: Current page
+              examples:
+                - false

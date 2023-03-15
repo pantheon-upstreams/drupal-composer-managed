@@ -28,11 +28,19 @@ nav.c-breadcrumb li {
       text-decoration: none;
     }
   }
+  &[aria-current="page"] a {
+    @include surf-font-body-x-small;
+    color: var(--color-surf--grey);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 nav.c-breadcrumb li + li::before {
   display: inline-block;
-  margin: 0 rem(8px);
+  margin: 0 rem(12px) 0 rem(13px);
   border-right: rem(1px) solid currentcolor;
   height: rem(14px);
   content: "";
