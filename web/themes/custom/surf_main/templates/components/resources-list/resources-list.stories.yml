@@ -1,0 +1,36 @@
+title: Surf Main/Resource List
+args:
+  heading: Resources Block Heading
+  items:
+    - title: "Accordion title one"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Accordion title two"
+      url: "/"
+      icon: "link"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Accordion title one"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Accordion title two"
+      url: "/"
+      icon: "link"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Accordion title one"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Accordion title two"
+      url: "/"
+      icon: "link"
+      size: "5 MB"
+      type: "pdf"
+stories:
+  - name: Default

@@ -1,0 +1,24 @@
+{# Markup for the component #}
+<article {{ clAttributes.addClass('c-resources-list') }}>
+
+  {% if heading %}
+    {% block heading_block %}
+    <h3 class="c-resources-list__heading">{{ heading }}</h3>
+    {% endblock heading_block %}
+  {% endif %}
+
+  {% block items_block %}
+
+  <ul class="c-resources-list__items">
+  {% for resource_item in items %}
+    <li class="c-resources-list__item {{resource_item.icon}}">
+      <a class="c-resources-list__link" href="{{resource_item.url}}">{{resource_item.title}}</a>
+      <span class="c-resources-list__size">{{resource_item.size}}</span>
+      <span class="c-resources-list__type">{{resource_item.type}}</span>
+    </li>
+  {% endfor %}
+  </ul>
+
+  {% endblock items_block %}
+
+</article>
