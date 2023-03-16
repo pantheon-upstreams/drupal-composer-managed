@@ -5,7 +5,7 @@
 
       $('.c-accordion', context).each(function (index, item) {
         const $this = $(this);
-        let $buttons = $this.find('button[aria-expanded]');
+        const $buttons = $this.find('button[aria-expanded]');
 
         $buttons.each(function(index, item){
           $(this).click(function () {

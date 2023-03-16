@@ -13,15 +13,18 @@
 }
 
 .l-constrained {
-  width: 1380px;
+  max-width: 1380px;
+  // width: 100%;
 }
 
 .l-constrained--narrow {
-  width: 780px;
+  max-width: 780px;
+  // width: 100%;
 }
 
 .l-constrained--wide {
-  width: 1620px;
+  max-width: 1620px;
+  // width: 100%;
 }
 
 .l-constrained--full {

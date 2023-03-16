@@ -93,6 +93,7 @@
 
 .person-content__job-title {
   @include surf-font-body-x-large;
+  color: var(--color-surf--dark-grey);
   margin: 0 0 rem(32px) 0;
   order: 4;
   @include bp-min(medium) {

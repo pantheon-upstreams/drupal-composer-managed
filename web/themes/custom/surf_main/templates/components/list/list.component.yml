@@ -8,6 +8,13 @@ schemas:
   props:
     type: object
     properties:
+      style:
+        type: string
+        title: Style
+        enum:
+          - default-column
+          - simple-column
+          - vertical-list
       items:
         type: array
         title: Items

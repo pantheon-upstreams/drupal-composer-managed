@@ -1,6 +1,5 @@
-<section {{ clAttributes.addClass('c-list'|addModifiers([items|length ~ '-columns'])).addClass('l-constrained') }}>
+<section {{ clAttributes.addClass('c-list'|addModifiers([items|length ~ '-columns', style])).addClass('l-constrained') }}>
   <div class="c-list--inner-wrapper">
-    {{dump(_context.items)}}
 
     <div class="c-list--main">
 
@@ -8,9 +7,9 @@
     <ul class="c-list__items">
       {% for key, item in items %}
       {% block items_block %}
-      {{dump(item)}}
-      <li class="c-teaser__tag">
-        {{item|check_markup('plain') }}
+
+      <li class="c-list__item">
+        {{item.content|check_markup('plain')}}
       </li>
       {% endblock %}
       {% endfor %}

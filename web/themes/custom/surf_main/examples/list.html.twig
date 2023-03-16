@@ -1,0 +1,114 @@
+{# Callout Paragraph #}
+
+<div class="" id="86">
+  <header class="cl-component cl-component--header c-header c-header--black-text l-stack  u-padding">
+    <hr>
+    <h2>List Paragraph Examples</h2>
+  </header>
+
+  <h2>Person List example</h2>
+
+  {{ include('list', {style: 'default-column', items: [
+  {content: include('person', {
+  image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/person/person.jpg',
+  image_alt: 'Dr. Paul Schwering',
+  full_name: 'Dr. Paul Schwering',
+  initials: 'PS',
+  title: 'Geophysicist',
+  phone: '(605) 722-8650',
+  contact_url: 'https://github.com',
+  bio_url: 'https://github.com',
+  })},{content: include('person', {
+  image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/person/person.jpg',
+  image_alt: 'Dr. Paul Schwering',
+  full_name: 'Dr. Paul Schwering',
+  initials: 'PS',
+  title: 'Geophysicist',
+  phone: '(605) 722-8650',
+  contact_url: 'https://github.com',
+  bio_url: 'https://github.com',
+  })}]})}}
+
+
+  <h2>Teaser (column stack) List (2 colummn) example</h2>
+
+  {{ include('list', {style: 'default-column', items: [
+  {content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Interning a mile beneath the surface, 2022 summer interns share their
+  experiences', body: '<p>Students in a variety of fields get real-world experience during 10-week summer
+    internships at SURF.</p>', url: 'https://github.com', category: 'Featured', category_url:
+  'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+  'Atl text example'
+  }
+  )},{content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Researchers create 3D seismic array at SURF', body: '<p>The 3D DAS experiment
+    is studying digital acoustic sensing techniques with a novel, three-dimensional seismic array at SURF.</p>',
+  url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', teaser_date: 'August 18,
+  2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+  'Atl text example'
+  }
+  )}]})}}
+
+    <h2>Teaser (column stack) List (3 colummn) example</h2>
+
+  {{ include('list',{style: 'simple-column', items: [
+  {content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Researchers record successful startup of LUX-ZEPLIN dark matter detector at
+  Sanford Underground Research Facility', url: 'https://github.com', category: 'Press Release', category_url:
+  'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/news-placeholder.png',
+  alt: 'Atl text example'
+  }
+  )},{content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Stratton family members visit Stratton Station', url: 'https://github.com',
+  category: 'Video', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+  'Atl text example', icon: 'video'
+  }
+  )},{content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Davis-Bahcall Scholars reflect on 2022 program', url: 'https://github.com',
+  category: 'Deep Talk', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+  'Atl text example', icon: 'video'
+  }
+  )}
+  ]})}}
+
+      <h2>Teaser (column stack) List (3 colummn) example</h2>
+
+  {{ include('list',{style: 'default-column', items: [
+  {content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Researchers record successful startup of LUX-ZEPLIN dark matter detector at
+  Sanford Underground Research Facility', url: 'https://github.com', category: 'Press Release', category_url:
+  'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/news-placeholder.png',
+  alt: 'Atl text example'
+  }
+  )},{content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Stratton family members visit Stratton Station', url: 'https://github.com',
+  category: 'Video', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+  'Atl text example', icon: 'video'
+  }
+  )},{content: include('teaser',
+  {
+  layout: 'column-stack', title: 'Davis-Bahcall Scholars reflect on 2022 program', url: 'https://github.com',
+  category: 'Deep Talk', category_url: 'https://github.com', teaser_date: 'August 18, 2022', image:
+  'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg', alt:
+  'Atl text example', icon: 'video'
+  }
+  )}
+  ]})}}
+
+
+
+</div>
