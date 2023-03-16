@@ -1,6 +1,5 @@
 <section {{ clAttributes.addClass('c-list'|addModifiers([items|length ~ '-columns', style])).addClass('l-constrained') }}>
   <div class="c-list--inner-wrapper">
-
     <div class="c-list--main">
 
     {% if items %}
@@ -15,33 +14,6 @@
       {% endfor %}
     </ul>
     {% endif %}
-
-      {# PRIMARY COLUMN #}
-      {# {% if primary %}
-      <div class="c-layout--region c-layout--primary">
-        {% block primary_block %}
-        {{ secondary|check_markup('plain') }}
-        {% endblock %}
-      </div>
-      {% endif %} #}
-
-      {# SECONDARY COLUMN #}
-      {# {% if secondary %}
-      {% block secondary_block %}
-      <div class="c-layout--region c-layout--secondary">
-        {{ secondary|check_markup('plain') }}
-      </div>
-      {% endblock %}
-      {% endif %} #}
-
-      {# TERTIARY COLUMN #}
-      {# {% if tertiary %}
-      {% block tertiary_block %}
-      <div class="c-layout--region c-layout--tertiary">
-        {{ tertiary|check_markup('plain') }}
-      </div>
-        {% endblock %}
-        {% endif %} #}
 
     </div>
   </div>

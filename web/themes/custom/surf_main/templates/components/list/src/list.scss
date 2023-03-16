@@ -1,156 +1,5 @@
 @import "_partials";
 
-// .c-layout {
-//   & > .c-layout--inner-wrapper {
-//     z-index: 1;
-//     position: relative;
-//   }
-
-//   // One Column [1]
-//   &.c-layout--onecolumn {
-//     .c-list__items{
-//       display: grid;
-//       row-gap: rem(32px);
-//       @include bp-min(medium) {
-//         column-gap: rem(20px);
-//         grid-template-columns: 1fr;
-//       }
-//       @include bp-min(large) {
-//         column-gap: rem(40px);
-//       }
-//       @include bp-min(xlarge) {
-//         column-gap: rem(60px);
-//       }
-//     }
-//   }
-
-//   // Two Column [1:1]
-//   &.c-layout--twocolumn-halves {
-//     .c-list__items{
-//       display: grid;
-//       row-gap: rem(32px);
-//       @include bp-min(medium) {
-//         column-gap: rem(20px);
-//         grid-template-columns: 0.5fr 0.5fr;
-//       }
-//       @include bp-min(large) {
-//         column-gap: rem(40px);
-//       }
-//       @include bp-min(xlarge) {
-//         column-gap: rem(60px);
-//       }
-//     }
-//   }
-
-//   // Two Column [1:2]
-//   &.c-layout--twocolumn-onethird-twothirds {
-//     .c-list__items{
-//       display: grid;
-//       row-gap: rem(32px);
-//       @include bp-min(medium) {
-//         column-gap: rem(20px);
-//         grid-template-columns: 0.4fr 0.6fr;
-//       }
-//       @include bp-min(large) {
-//         column-gap: rem(40px);
-//       }
-//       @include bp-min(xlarge) {
-//         column-gap: rem(60px);
-//       }
-//     }
-//   }
-
-//   // Two Column [2:1]
-//   &.c-layout--twocolumn-twothirds-onethird {
-//     .c-list__items{
-//       display: grid;
-//       @include bp-min(medium) {
-//         column-gap: rem(20px);
-//         grid-template-columns: 0.6fr 0.4fr;
-//       }
-//       @include bp-min(large) {
-//         column-gap: rem(40px);
-//       }
-//       @include bp-min(xlarge) {
-//         column-gap: rem(60px);
-//       }
-//     }
-//   }
-
-//   // Three Column [1:1:1]
-//   &.c-layout--threecolumn-thirds {
-//     .c-list__items{
-//       display: grid;
-//       row-gap: rem(32px);
-//       @include bp-min(medium) {
-//         column-gap: rem(20px);
-//         grid-template-columns: 0.33fr 0.33fr 0.33fr;
-//       }
-//       @include bp-min(large) {
-//         column-gap: rem(40px);
-//       }
-//       @include bp-min(xlarge) {
-//         column-gap: rem(60px);
-//       }
-//     }
-//   }
-
-//   // Four Column [1:1:1:1]
-//   &.c-layout--fourcolumns-forths {
-//     .c-list__items{
-//       display: grid;
-//       row-gap: rem(32px);
-//       @include bp-min(medium) {
-//         column-gap: rem(20px);
-//         grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
-//       }
-//       @include bp-min(large) {
-//         column-gap: rem(40px);
-//       }
-//       @include bp-min(xlarge) {
-//         column-gap: rem(60px);
-//       }
-//     }
-//   }
-
-//   // Styles (widths)
-//   &.c-layout--width--full {
-//     width: 100% !important;
-//     max-width: 100% !important;
-//     & > .c-layout--inner-wrapper {
-//       width: 100%;
-//       @include bp-min(xlarge) {
-//         margin-left: rem(20px);
-//         width: calc(100% - rem(20px));
-//       }
-//     }
-//   }
-
-//   &.c-layout--width--medium {
-//     @include bp-min(medium) {
-//       column-gap: rem(20px);
-//       grid-template-columns: 0.5fr 0.5fr;
-//     }
-//     @include bp-min(large) {
-//       column-gap: rem(40px);
-//     }
-//     @include bp-min(xlarge) {
-//       column-gap: rem(60px);
-//     }
-//     & > .c-layout--inner-wrapper {
-//       max-width: rem(1380px);
-//     }
-//   }
-
-//   &.c-layout--width--narrow {
-//     & > .c-layout--inner-wrapper {
-//       max-width: rem(780px);
-//       margin-left: auto;
-//       margin-right: auto;
-//     }
-//   }
-// }
-
 .c-list {
   & > .c-list--inner-wrapper {
     z-index: 1;
@@ -161,12 +10,14 @@
     }
     .c-list__item {
       display: block;
+      margin: 0;
     }
   }
 
   // One Column [1]
   &.c-list--1-columns {
-    .c-list__items {
+    &.c-list--default-column .c-list__items,
+    &.c-list--simple-column .c-list__items {
       display: grid;
       row-gap: rem(32px);
       @include bp-min(medium) {
@@ -183,7 +34,8 @@
   }
   // Two Column [1:1]
   &.c-list--2-columns {
-    .c-list__items {
+    &.c-list--default-column .c-list__items,
+    &.c-list--simple-column .c-list__items {
       display: grid;
       row-gap: rem(32px);
       @include bp-min(medium) {
@@ -229,6 +81,32 @@
         grid-template-columns: 0.33fr 0.33fr 0.33fr;
         gap: rem(60px);
       }
+    }
+  }
+
+  &.c-list--vertical-list .c-list__items {
+    display: grid;
+    // gap: rem(32px);
+    grid-template-columns: 1fr;
+    @include bp-min(medium) {
+      display: grid;
+      // gap: rem(32px);
+    }
+    @include bp-min(large) {
+      // gap: rem(40px);
+    }
+    @include bp-min(xxlarge) {
+      // gap: rem(60px);
+    }
+    & > .c-list__item {
+      border-top: solid rem(2px) var(--color-surf--grey);
+      padding: rem(32 px) 0;
+      @include bp-min(large) {
+        padding: rem(40px) 0;
+      }
+    }
+    & > .c-list__item:last-child {
+      border-bottom: solid rem(2px) var(--color-surf--grey);
     }
   }
 }
