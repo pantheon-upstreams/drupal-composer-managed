@@ -171,6 +171,7 @@
         flex-direction: column;
 
         li {
+          margin-top: 0;
           width: fit-content;
           &:not(:last-child) {
             margin-bottom: 4px;
@@ -205,6 +206,7 @@
         flex-direction: column;
 
         li {
+          margin-top: 0;
           width: fit-content;
           &:not(:last-child) {
             margin-bottom: 8px;
