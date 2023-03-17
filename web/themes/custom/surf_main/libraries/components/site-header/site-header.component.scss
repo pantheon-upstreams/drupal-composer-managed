@@ -373,7 +373,7 @@ main::before {
     @include bp-max(xlarge) {
       .menu__item {
         margin: 0;
-        padding: 12px 0;
+        padding-top: 12px;
       }
 
       // Hide on mobile menu screens
@@ -451,6 +451,7 @@ main::before {
         font-size: 14px;
         line-height: 148%;
         margin-top: 2px;
+        margin-bottom: 0;
       }
 
       // Only first item should cover full left side
