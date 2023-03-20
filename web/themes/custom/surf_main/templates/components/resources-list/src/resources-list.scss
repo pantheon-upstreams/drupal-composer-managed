@@ -69,22 +69,27 @@
 .c-resources-list__size {
   @include surf-font-body-x-small;
   text-transform: uppercase;
-  margin: 0 rem(8px) 0 0;
-  padding: 0 rem(9px) 0 0;
-  position: relative;
-  &:after {
-    content: "";
-    font-weight: var(--font-weight-regular);
-    background: var(--color-surf--black);
-    height: rem(12px);
-    width: rem(1px);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
 .c-resources-list__type {
   @include surf-font-body-x-small;
   text-transform: uppercase;
+}
+
+.c-resources-list__details-wrapper.both {
+  .c-resources-list__size {
+    margin: 0 rem(8px) 0 0;
+    padding: 0 rem(10px) 0 0;
+    position: relative;
+    &:after {
+      content: "";
+      font-weight: var(--font-weight-regular);
+      background: var(--color-surf--black);
+      height: rem(12px);
+      width: rem(1px);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
