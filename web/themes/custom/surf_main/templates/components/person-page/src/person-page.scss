@@ -67,12 +67,14 @@
 }
 
 .person-content__photo-wrapper {
+  max-width: rem(300px);
   padding: 0 0 rem(32px) 0;
   order: 1;
   img {
     width: 100%;
   }
   @include bp-min(medium) {
+    max-width: unset;
     padding: 0;
     order: unset;
     margin: 0;
@@ -88,6 +90,9 @@
   @include bp-min(medium) {
     order: unset;
     grid-area: title;
+  }
+  @include bp-min(xxlarge) {
+    font-size: rem(132px);
   }
 }
 
