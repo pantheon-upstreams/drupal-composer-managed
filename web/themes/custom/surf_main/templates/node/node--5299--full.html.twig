@@ -30,35 +30,9 @@
 			{% include '@surf_main/examples/callout.html.twig' %}
 
 
-			<!-- Header -->
-			<div class="l-stack  u-padding">
-				<h3>Header Component: Black text</h3>
-				{% include "header" with {
-					heading: 'Header Title',
-					header_text_style: 'black-text',
-				} %}
+			{# SRRM-86: Header Paragraph #}
+			{% include '@surf_main/examples/header.html.twig' %}
 
-				<h3>Header Component: Black text with green particles</h3>
-				{% include "header" with {
-					heading: 'Header Title',
-					header_text_style: 'black-text',
-					header_particle_style: 'green-particles',
-				} %}
-
-				<h3>Header Component: Black text with Light Gray particles</h3>
-				{% include "header" with {
-					heading: 'Header Title',
-					header_text_style: 'black-text',
-					header_particle_style: 'light-gray-particles',
-				} %}
-
-				<h3>Header Component: Black text with White particles</h3>
-				{% include "header" with {
-					heading: 'Header Title',
-					header_text_style: 'black-text',
-					header_particle_style: 'white-particles',
-				} %}
-				</div>
 
 			<!-- Person Banner -->
 			<div class="l-stack u-padding" id="215">

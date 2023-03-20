@@ -1,0 +1,37 @@
+{# Callout Paragraph #}
+
+<div class="" id="228">
+  <header class="cl-component cl-component--header c-header c-header--black-text l-stack u-padding">
+    <hr>
+    <h2>Header Component Examples</h2>
+  </header>
+
+    				<h3>Header Component: Black text</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+				} %}
+
+				<h3>Header Component: Black text with green particles</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+					header_particle_style: 'green-particles',
+				} %}
+
+				<h3>Header Component: Black text with Light Gray particles</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+					header_particle_style: 'light-gray-particles',
+				} %}
+
+				<h3>Header Component: Black text with White particles</h3>
+				{% include "header" with {
+					heading: 'Header Title',
+					header_text_style: 'black-text',
+					header_particle_style: 'white-particles',
+				} %}
+
+
+</div>
