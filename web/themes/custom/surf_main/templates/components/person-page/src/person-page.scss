@@ -116,7 +116,6 @@
     margin: 0;
     a {
       @include surf-font-body-x-large;
-      color: var(--color-surf--grey);
       &:hover {
         text-decoration: none;
       }
