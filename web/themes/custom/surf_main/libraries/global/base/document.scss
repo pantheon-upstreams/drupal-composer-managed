@@ -72,6 +72,18 @@ body {
       width: 100%;
     }
   }
+  & > main > div {
+    padding-bottom: rem(35px);
+    @include bp-min(medium) {
+      padding-bottom: rem(70px);
+    }
+    @include bp-min(large) {
+      padding-bottom: rem(98px);
+    }
+    @include bp-min(xxlarge) {
+      padding-bottom: rem(120px);
+    }
+  }
 }
 
 hr.left-hook-divider {
