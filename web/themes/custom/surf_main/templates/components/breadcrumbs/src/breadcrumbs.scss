@@ -27,13 +27,12 @@ nav.c-breadcrumb li {
     &:hover {
       text-decoration: none;
     }
-  }
-  &[aria-current="page"] a {
-    @include surf-font-body-x-small;
-    color: var(--color-surf--grey);
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
+    &[aria-current="page"] {
+      color: var(--color-surf--grey);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
