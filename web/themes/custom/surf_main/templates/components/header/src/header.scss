@@ -3,6 +3,10 @@
 .c-header {
   h2 {
     @include surf-font-heading-one;
+    @include bp-max(medium) {
+      font-size: rem(48px);
+      line-height: 90%;
+    }
   }
 }
 
@@ -17,7 +21,7 @@
 // Green Particles
 .c-header--green-particles {
   h2 {
-    background: url(../green.svg) no-repeat center left;
+    background: url(../green.svg) no-repeat bottom left;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
@@ -32,7 +36,7 @@
 // Light Particles
 .c-header--light-gray-particles {
   h2 {
-    background: url(../light-gray.svg) no-repeat center left;
+    background: url(../light-gray.svg) no-repeat bottom left;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
@@ -47,7 +51,7 @@
 // White Particles
 .c-header--white-particles {
   h2 {
-    background: url(../white-70.svg) no-repeat center left;
+    background: url(../white-70.svg) no-repeat bottom left;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
