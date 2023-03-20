@@ -2,6 +2,21 @@
 
 .c-event-title {
   margin: 0 0 rem(32px) 0;
+  @include surf-font-heading-one;
+  font-size: rem(48px);
+  line-height: 94%;
+  @include bp-min(large) {
+    font-size: rem(100px);
+    line-height: 94%;
+  }
+  @include bp-min(large) {
+    font-size: rem(132px);
+    line-height: 94%;
+  }
+  @include bp-min(xxlarge) {
+    font-size: rem(132px);
+    line-height: 94%;
+  }
 }
 
 .c-event__breadcrumb-list {
@@ -33,9 +48,18 @@
   @include bp-min(large) {
     padding-top: rem(50px);
     margin-bottom: rem(60px);
+  }
+  &:after {
+    content: "";
+    display: block;
     background-image: url("../img/event-illustration.png");
     background-position: top right;
     background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    width: rem(333px);
+    height: rem(222px);
+    top: 0;
   }
 }
 
@@ -114,6 +138,10 @@
 
 .c-event__link .forest-button {
   text-transform: unset;
+  @include surf-font-body-large;
+  font-family: var(--font-family-sans);
+  letter-spacing: 0;
+  font-weight: var(--font-weight-bold);
 }
 
 .c-event hr.left-hook-divider {
@@ -136,8 +164,7 @@
   }
   @include bp-min(large) {
     margin: 0 0 rem(28px) 0;
-  }
-  @include bp-min(xxlarge) {
+    max-width: rem(780px);
   }
 }
 
@@ -197,5 +224,8 @@
   @include bp-min(medium) {
     order: unset;
     grid-area: body;
+  }
+  @include bp-min(large) {
+    max-width: rem(780px);
   }
 }

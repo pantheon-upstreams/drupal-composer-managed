@@ -100,7 +100,7 @@
     }
     & > .c-list__item {
       border-top: solid rem(2px) var(--color-surf--grey);
-      padding: rem(32 px) 0;
+      padding: rem(32px) 0;
       @include bp-min(large) {
         padding: rem(40px) 0;
       }
