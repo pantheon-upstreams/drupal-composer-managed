@@ -20,7 +20,6 @@ dependencies:
     - datetime
     - name
     - options
-    - telephone
     - text
     - user
 id: node.person.default
@@ -107,18 +106,18 @@ content:
     weight: 107
     region: content
   field_phone_mobile:
-    type: telephone_link
+    type: string
     label: hidden
     settings:
-      title: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 103
     region: content
   field_phone_office:
-    type: telephone_link
+    type: string
     label: hidden
     settings:
-      title: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 104
     region: content

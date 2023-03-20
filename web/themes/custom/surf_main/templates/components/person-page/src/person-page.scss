@@ -43,7 +43,7 @@
   }
 }
 
-.c-person-page.teaser--no-media {
+.c-person-page.c-person-page--no-media {
   .l-constrained {
     width: 100%;
     max-width: 100%;
@@ -97,6 +97,7 @@
 }
 
 .person-content__job-title {
+  max-width: rem(900px);
   @include surf-font-body-x-large;
   color: var(--color-surf--dark-grey);
   margin: 0 0 rem(32px) 0;
@@ -140,6 +141,7 @@
 }
 
 .person-content__wrapper {
+  max-width: rem(900px);
   order: 5;
   & > .text-content > p:first-child {
     margin-top: 0;
