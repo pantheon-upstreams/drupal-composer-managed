@@ -52,12 +52,18 @@
   color: var(--color-surf--forest);
   font-weight: var(--font-weight-regular);
   text-decoration: none;
-  display: block;
-  width: 100%;
+  display: inline-block;
+  // width: 100%;
   flex: none;
   &:hover {
     text-decoration: underline;
   }
+}
+
+.c-resources-list__details-wrapper {
+  display: block;
+  flex: none;
+  width: 100%;
 }
 
 .c-resources-list__size {

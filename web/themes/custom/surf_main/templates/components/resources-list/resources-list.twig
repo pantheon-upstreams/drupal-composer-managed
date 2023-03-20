@@ -13,8 +13,14 @@
   {% for resource_item in items %}
     <li class="c-resources-list__item {{resource_item.icon}}">
       <a class="c-resources-list__link" href="{{resource_item.url}}">{{resource_item.title}}</a>
-      <span class="c-resources-list__size">{{resource_item.size}}</span>
-      <span class="c-resources-list__type">{{resource_item.type}}</span>
+
+      {% if resource_item.size and resource_item.type %}
+      <span class="c-resources-list__details-wrapper">
+        {% if resource_item.size %}<span class="c-resources-list__size">{{resource_item.size}}</span>{% endif %}
+        {% if resource_item.type %}<span class="c-resources-list__type">{{resource_item.type}}</span>{% endif %}
+      </span>
+      {% endif %}
+
     </li>
   {% endfor %}
   </ul>
