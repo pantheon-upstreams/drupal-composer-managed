@@ -63,7 +63,36 @@ schemas:
               examples:
                 - "/"
                 - "/"
-
+      downloads:
+        type: array
+        title: Downloads
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              examples:
+                - "Download A"
+                - "Category B"
+            url:
+              type: string
+              title: URL
+              examples:
+                - "/"
+                - "/"
+            size:
+              type: string
+              title: File Size
+              examples:
+                - "5 MB"
+                - "250 KB"
+            icon:
+              type: string
+              title: Icon
+              examples:
+                - "file"
+                - "link"
       # times:
       #   type: string
       #   title: Times

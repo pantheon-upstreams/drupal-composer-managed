@@ -2,24 +2,28 @@
 
   <header class="c-press-release__header-wrapper">
 
-    {# Breadcumbs #}
-    <nav class="c-press-release__breadcrumb" aria-label="Breadcrumb">
-    <ol class="c-press-release__breadcrumb-list">
-      <li class="c-press-release__breadcrumb-item">
-          <a href="/events" class="c-press-release__breadcrumb-link" aria-current="page">{{ 'Press Releases'|t }}</a>
-      </li>
-    </ol>
-  </nav>
+    <div class="c-press-release__breadcrumbs-date-wrapper">
+      {# Breadcrumbs #}
+      <nav class="c-press-release__breadcrumb" aria-label="Breadcrumb">
+        <ol class="c-press-release__breadcrumb-list">
+          <li class="c-press-release__breadcrumb-item">
+            <a href="/events" class="c-press-release__breadcrumb-link" aria-current="page">{{ 'Press Releases'|t }}</a>
+          </li>
+        </ol>
+      </nav>
 
-    {# Date #}
-    {% if date %}
-    <div class="c-press-release__date">
-      {{date}}
+      {# Date #}
+      {% if date %}
+      <div class="c-press-release__date">
+        {{date}}
+      </div>
+      {% endif %}
+
     </div>
-    {% endif %}
 
     {# Title #}
-    <h1 class="c-press-release-title">{{title}}</h1>
+    <h1 class="c-press-release__title">{{title}}</h1>
+  </header>
 
     {# Primary Media #}
     {% if image_url %}
@@ -28,58 +32,75 @@
     </div>
     {% endif %}
 
-    {# Overview #}
-    {% if overview %}
-    <div class="c-press-release__overview">
-      {{ overview }}
+    <div class="c-press-release__content-wrapper">
+
+      {# Overview #}
+      {% if overview %}
+      <div class="c-press-release__overview">
+        {{ overview }}
+      </div>
+      {% endif %}
+
+      {# Body #}
+      {% if body %}
+      <h2 class="c-press-release__body">
+        {{ body }}
+      </h2>
+      {% endif %}
+
     </div>
-    {% endif %}
 
-    {# Body #}
-    {% if body %}
-    <h2 class="c-press-release__body">
-      {{ body }}
-    </h2>
-    {% endif %}
+    <div class="c-press-release__bottom-wrapper">
 
-    {# Author #}
-    {% if author %}
-    <p class="c-press-release__author">
-      by {{ author }}
-    </p>
-    {% endif %}
+      {# Author #}
+      {% if author %}
+      <p class="c-press-release__author">
+        by {{ author }}
+      </p>
+      {% endif %}
 
-    {# Categories #}
-    {% if categories %}
+      {# Categories #}
+      {% if categories %}
 
-    <ul class="c-press-release__categories">
-      {% for item in categories['#items'] %}
+      <ul class="c-press-release__categories">
+        {% for item in categories['#items'] %}
         <li class="c-press-release__categories-item">
-          <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
+          <a
+            href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
           {# {{dump(item.entity)}}
           {{dump(item.entity.url.value)}} #}
         </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {# Press contact(s) #}
+
+      {# Media Download(s) #}
 
 
-  </header>
+    </div>
 
-{# <dd class="keywords">
-  Topics:&nbsp;{%- for item in content.field_ct_category['#items'] -%}
+
+
+
+  {# <dd class="keywords">
+    Topics:&nbsp;{%- for item in content.field_ct_category['#items'] -%}
     {%- if loop.first -%}
-      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{- item.entity.name.value -}}</a>
+    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{-
+      item.entity.name.value -}}</a>
     {%- elseif loop.last -%}
-      and&nbsp;<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{- item.entity.name.value -}}</a>
+    and&nbsp;<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{-
+      item.entity.name.value -}}</a>
     {%- else -%}
-      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{- ', ' ~ item.entity.name.value -}}</a>&nbsp;
+    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{- ', ' ~
+      item.entity.name.value -}}</a>&nbsp;
     {%- endif -%}
-  {%- endfor -%}
-</dd> #}
+    {%- endfor -%}
+  </dd> #}
 
   {#
-    0 => "field_overview"
+  0 => "field_overview"
   1 => "_layout_builder"
   2 => "field_ref_contacts"
   3 => "field_media"
@@ -90,6 +111,6 @@
   8 => "field_ref_news_categories"
   9 => "field_teaser_text"
 
-   #}
+  #}
 
 </article>

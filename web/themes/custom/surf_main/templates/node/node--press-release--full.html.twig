@@ -1,4 +1,4 @@
-<pre>{{ dump(content.field_media) }}</pre>
+{# <pre>{{ dump(content.field_media) }}</pre> #}
 
 
   {#
@@ -23,14 +23,15 @@
    #}
 
 {% include "press-release-page" with {
-  title: label,
-  date: field_date_published|field_value,
+  title: label|field_value,
+  date: content.field_date_published.value|date('F d, Y'),
   overview: content.field_overview|field_value,
   body: content.field_p_content,
   image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
   image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
   author: content.field_author|field_value,
   categories: content.field_ref_news_categories,
+  downloads: content.field_media,
 } %}
 {#
   dates: 'June 10-June 12, 2023',
