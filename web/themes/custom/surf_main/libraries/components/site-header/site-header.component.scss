@@ -239,14 +239,14 @@ main::before {
       margin: 42px 0;
     }
 
-    // Additional breakpoint for better sizing
-    @media (min-width: 1440px) {
-      gap: 40px;
-    }
-
     // On largest desktop screens
     @include bp-min(xxlarge) {
-      gap: 64px;
+      gap: 38px;
+    }
+
+    // Additional breakpoint for better sizing
+    @include bp-min(xxxlarge) {
+      gap: 60px;
     }
   }
 
