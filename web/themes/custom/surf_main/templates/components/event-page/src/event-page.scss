@@ -50,16 +50,19 @@
     margin-bottom: rem(60px);
   }
   &:after {
-    content: "";
-    display: block;
-    background-image: url("../img/event-illustration.png");
-    background-position: top right;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    width: rem(333px);
-    height: rem(222px);
-    top: 0;
+    @include bp-min(large) {
+      content: "";
+      display: block;
+      background-image: url("../img/event-illustration.png");
+      background-position: top right;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 0;
+      width: rem(333px);
+      height: rem(222px);
+      background-size: cover;
+      top: 0;
+    }
   }
 }
 
