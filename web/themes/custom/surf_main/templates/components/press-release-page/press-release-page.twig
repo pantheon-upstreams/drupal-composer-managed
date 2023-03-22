@@ -25,92 +25,149 @@
     <h1 class="c-press-release__title">{{title}}</h1>
   </header>
 
-    {# Primary Media #}
-    {% if image_url %}
-    <div class="c-press-release__image-wrapper">
-      <img src="{{image_url}}" alt="{{image_alt}}">
+  {# Primary Media #}
+  {% if image_url %}
+  <div class="c-press-release__image-wrapper">
+    <img src="{{image_url}}" alt="{{image_alt}}">
+  </div>
+  {% endif %}
+
+  <div class="c-press-release__content-wrapper">
+
+    {# Overview #}
+    {% if overview %}
+    <div class="c-press-release__overview">
+      {{ overview }}
     </div>
     {% endif %}
 
-    <div class="c-press-release__content-wrapper">
+    {# Body #}
+    {% if body %}
+    <div class="c-press-release__body">
+      {{ body }}
+    </div>
+    {% endif %}
 
-      {# Overview #}
-      {% if overview %}
-      <div class="c-press-release__overview">
-        {{ overview }}
+  </div>
+
+
+  <div class="c-press-release__bottom-wrapper">
+
+    {# Author #}
+    {% if author %}
+    <p class="c-press-release__author">
+      by {{ author }}
+    </p>
+    {% endif %}
+
+    {# Categories #}
+    {% if categories %}
+    <ul class="c-press-release__categories">
+      {% for item in categories['#items'] %}
+      <li class="c-press-release__categories-item">
+        <a
+          href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
+        {# {{dump(item.entity)}}
+        {{dump(item.entity.url.value)}} #}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Press contact(s) #}
+    {% if contacts %}
+    <h3 class="c-press-release__contacts-title">Press Contact</h3>
+    <ul class="c-press-release__contacts">
+      {% for item in contacts %}
+      <li class="c-press-release__contacts-item">
+        {% include "person" with {
+        image_url: item.image_url,
+        image_alt: item.image_alt,
+        full_name: item.name,
+        initials: 'PS',
+        title: item.title,
+        phone: item.phone,
+        contact_url: item.contact_url,
+        bio_url: item.url,
+        } %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Media Download(s) #}
+    {% if downloads %}
+    {% include "resources-list" with {
+    heading: 'Media Downloads',
+    items: downloads
+    } %}
+    {% endif %}
+
+  </div>
+
+  <hr class="left-hook-divider" />
+
+  {# Press Resources #}
+  {# FIXME: these callout component blocks need to be updated with dynamic content  #}
+  <div class="c-press-release__press-resources-wrapper">
+    <h2 class="c-press-release__press-resources-title">Press Resources</h2>
+
+    <section class="c-layout c-layout--layout-threecolumn-thirds">
+      <div class="c-layout--inner-wrapper">
+
+          <ul class="c-layout--main">
+
+            <li class="c-layout--region c-layout--primary">
+
+              {% include "callout" with {
+              heading: 'Subscribe to updates',
+              body: '<p>Morbi quis viverra leo scelerisque dui orci tellus turpis pulvinar non mus commodo nulla rutrum
+                tincidunt viverra malesuada dolor libero.</p>',
+              link_text: 'Subscribe',
+              link_url: '/',
+              theme: 'forest',
+              image_url: '',
+              image_alt: '',
+              } %}
+
+            </li>
+
+            <li class="c-layout--region c-layout--secondary">
+
+              {% include "callout" with {
+              heading: 'SURF Press Kit',
+              body: '<p>This Press Kit outlines basic information, including how to refer to SURF and its partners, how
+                to access digital resources, a list of helpful acronyms and links to more information.</p>',
+              link_text: 'View Press Kit',
+              link_url: '/',
+              theme: 'forest',
+              image_url: '',
+              image_alt: '',
+              } %}
+
+            </li>
+
+            <li class="c-layout--region c-layout--tertiary">
+
+              {% include "callout" with {
+              heading: 'Communications & Office Directory',
+              body: '<p>The Communications Office serves as the link between SURF and local and worldwide communities.
+                Please direct your general inquiries, requests for interviews and photo requests to our team.</p>',
+              link_text: 'Contact Communications',
+              link_url: '/',
+              theme: 'forest',
+              image_url: '',
+              image_alt: '',
+              } %}
+
+
+            </li>
+          </ul>
+
+
       </div>
-      {% endif %}
+    </section>
 
-      {# Body #}
-      {% if body %}
-      <h2 class="c-press-release__body">
-        {{ body }}
-      </h2>
-      {% endif %}
-
-    </div>
-
-    <div class="c-press-release__bottom-wrapper">
-
-      {# Author #}
-      {% if author %}
-      <p class="c-press-release__author">
-        by {{ author }}
-      </p>
-      {% endif %}
-
-      {# Categories #}
-      {% if categories %}
-
-      <ul class="c-press-release__categories">
-        {% for item in categories['#items'] %}
-        <li class="c-press-release__categories-item">
-          <a
-            href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
-          {# {{dump(item.entity)}}
-          {{dump(item.entity.url.value)}} #}
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-
-      {# Press contact(s) #}
-
-      {# Media Download(s) #}
-
-
-    </div>
-
-
-
-
-  {# <dd class="keywords">
-    Topics:&nbsp;{%- for item in content.field_ct_category['#items'] -%}
-    {%- if loop.first -%}
-    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{-
-      item.entity.name.value -}}</a>
-    {%- elseif loop.last -%}
-    and&nbsp;<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{-
-      item.entity.name.value -}}</a>
-    {%- else -%}
-    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{- ', ' ~
-      item.entity.name.value -}}</a>&nbsp;
-    {%- endif -%}
-    {%- endfor -%}
-  </dd> #}
-
-  {#
-  0 => "field_overview"
-  1 => "_layout_builder"
-  2 => "field_ref_contacts"
-  3 => "field_media"
-  4 => "field_date_published"
-  5 => "field_media_primary"
-  6 => "field_p_content"
-  7 => "field_author"
-  8 => "field_ref_news_categories"
-  9 => "field_teaser_text"
-
-  #}
+  </div>
 
 </article>

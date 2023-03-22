@@ -1,5 +1,4 @@
-{# <pre>{{ dump(content.field_media) }}</pre> #}
-
+{# <pre>{{ dump(content.field_ref_contacts.value) }}</pre> #}
 
   {#
     TODO:
@@ -8,19 +7,40 @@
     - [ ] Replace `times` with dynamic formatted values using `content.field_date`
   #}
 
-  {#
-    0 => "field_overview"
-  1 => "_layout_builder"
-  2 => "|field_value,"
-  3 => "field_media"
-  4 => "field_date_published"
-  5 => "field_media_primary"
-  6 => "field_p_content"
-  7 => "field_author"
-  8 => "field_ref_news_categories"
-  9 => "field_teaser_text"
 
-   #}
+{% set contacts = [] %}
+{% if content.field_ref_contacts['#items']|length > 0 %}
+  {% for i, value in content.field_ref_contacts['#items'] %}
+    {% if value.entity %}
+      {% set contacts = contacts|merge([{
+        name: value.entity.title.value,
+        title: value.entity.field_job_title.0.value,
+        email: value.entity.field_email.0.value,
+        phone: value.entity.field_phone_office.0.value,
+        image_url: file_url(value.entity.field_media_primary.0.entity.field_media_image.entity.fileuri),
+        image_alt: value.entity.field_media_primary.0.entity.field_media_image.alt,
+        }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% set downloads = [] %}
+{% if content.field_media['#items']|length > 0 %}
+  {% for i, value in content.field_media['#items'] %}
+    {% if value.entity %}
+
+      {% set type =  value.entity.field_media_document.0.entity.filemime.value|replace({'application/': ''})  %}
+      {% set downloads = downloads|merge([{
+        title: value.entity.field_media_document.0.entity.filename.value,
+        url: file_url(value.entity.field_media_document.0.entity.uri.value),
+        icon: 'file',
+        size: value.entity.field_media_document.0.entity.filesize.value|format_size,
+        type: type,
+        }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 
 {% include "press-release-page" with {
   title: label|field_value,
@@ -31,15 +51,6 @@
   image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
   author: content.field_author|field_value,
   categories: content.field_ref_news_categories,
-  downloads: content.field_media,
+  downloads: downloads,
+  contacts: contacts,
 } %}
-{#
-  dates: 'June 10-June 12, 2023',
-  times: '10:00 AM-6:00 PM',
-  link_url: content.field_link.0["#url"],
-  link_text: content.field_link.0["#title"],
-  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
-  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
-  body: content.body,
-
- #}

@@ -110,14 +110,22 @@
   }
 }
 
-// FIXME: Remove me laster when the list component is setup
-
 .c-layout {
   & > .c-layout--inner-wrapper {
     z-index: 1;
     position: relative;
   }
-
+  .c-layout--main {
+    margin: 0;
+    padding: 0;
+  }
+  .c-layout--region {
+    display: block;
+    margin: 0;
+    & > * {
+      height: 100%;
+    }
+  }
   // One Column [1]
   &.c-layout--layout-onecolumn {
     .c-layout--main {
