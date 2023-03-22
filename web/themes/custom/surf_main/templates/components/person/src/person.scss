@@ -4,13 +4,13 @@
   background: var(--color-surf--cloud);
   display: grid;
   grid-template-columns: rem(80px) 1fr;
-  @include bp-min(medium) {
+  @include bp-min(large) {
     grid-template-columns: rem(182px) 1fr;
     min-height: rem(230px);
   }
   &.no-image {
     grid-template-columns: rem(100px) 1fr;
-    @include bp-min(medium) {
+    @include bp-min(large) {
       grid-template-columns: rem(182px) 1fr;
     }
   }
@@ -18,12 +18,12 @@
 
 .c-person__image {
   position: relative;
-  @include bp-min(medium) {
+  @include bp-min(large) {
     height: 100%;
   }
   img {
     display: block;
-    @include bp-min(medium) {
+    @include bp-min(large) {
       position: absolute;
       height: 100%;
       width: 100%;
@@ -45,7 +45,7 @@
   line-height: 94%;
   height: rem(100px);
   font-weight: var(--font-weight-medium);
-  @include bp-min(medium) {
+  @include bp-min(large) {
     font-size: rem(120px);
     height: 100%;
   }
@@ -53,7 +53,7 @@
 
 .c-person__content-wrapper {
   margin: rem(20px) rem(20px) rem(23px) rem(28px);
-  @include bp-min(medium) {
+  @include bp-min(large) {
     margin: rem(37.5px) rem(20px) rem(37.5px) rem(28px);
   }
 }
