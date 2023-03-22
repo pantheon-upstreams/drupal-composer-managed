@@ -128,7 +128,7 @@
         gap: 28px;
 
         // Tablet
-        @include bp-min(medium) {
+        @include bp-min(xxxlarge) {
           gap: 32px;
         }
 
@@ -402,6 +402,7 @@
     @include bp-min(large) {
       height: 40px;
       width: 60px;
+      margin: 0 0 0 auto;
     }
   }
 }
