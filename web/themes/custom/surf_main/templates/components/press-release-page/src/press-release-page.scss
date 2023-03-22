@@ -131,6 +131,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
+  max-width: rem(510px);
   li {
     display: block;
     margin: 0;
@@ -138,7 +139,10 @@
 }
 
 .c-press-release__press-resources-wrapper {
-  margin: rem(80px) 0 0 0;
+  margin: rem(60px) 0 0 0;
+  @include bp-min(medium) {
+    margin: rem(80px) 0 0 0;
+  }
 }
 
 .c-press-release__press-resources-title {

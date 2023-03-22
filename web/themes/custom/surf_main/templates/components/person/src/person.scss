@@ -6,6 +6,7 @@
   grid-template-columns: rem(80px) 1fr;
   @include bp-min(medium) {
     grid-template-columns: rem(182px) 1fr;
+    min-height: rem(230px);
   }
   &.no-image {
     grid-template-columns: rem(100px) 1fr;
@@ -27,6 +28,7 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+      min-height: rem(230px);
     }
   }
 }

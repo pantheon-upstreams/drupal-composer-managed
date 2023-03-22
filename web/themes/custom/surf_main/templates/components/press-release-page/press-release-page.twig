@@ -84,11 +84,11 @@
         image_url: item.image_url,
         image_alt: item.image_alt,
         full_name: item.name,
-        initials: 'PS',
+        initials: initials,
         title: item.title,
         phone: item.phone,
         contact_url: item.contact_url,
-        bio_url: item.url,
+        bio_url: item.bio_url,
         } %}
       </li>
       {% endfor %}
@@ -108,7 +108,7 @@
   <hr class="left-hook-divider" />
 
   {# Press Resources #}
-  {# FIXME: these callout component blocks need to be updated with dynamic content  #}
+  {# TODO: these callout component blocks need to be updated with dynamic content  #}
   <div class="c-press-release__press-resources-wrapper">
     <h2 class="c-press-release__press-resources-title">Press Resources</h2>
 
@@ -164,10 +164,8 @@
             </li>
           </ul>
 
-
       </div>
     </section>
-
   </div>
 
 </article>
