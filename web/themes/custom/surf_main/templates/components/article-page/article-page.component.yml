@@ -1,0 +1,136 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: article-page
+name: Article
+status: WIP
+componentType: molecule
+description: A Article / News detail page component
+schemas:
+  props:
+    type: object
+    properties:
+      title:
+        type: string
+        title: Title
+        examples:
+          - Neutrino Day 2023
+      date:
+        type: string
+        title: Date
+        examples:
+          - "August 18, 2022"
+      image_url:
+        type: string
+        title: Image URL
+        description: The url for the image
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      image_alt:
+        type: string
+        title: Image Alt Text
+        description: The primary alt text for the image.
+        examples:
+          - "Ea irure adipisicing"
+      overview:
+        title: Overview
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      body:
+        title: Body
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      author:
+        type: string
+        title: Author
+        examples:
+          - Johanna Jones
+      categories:
+        type: array
+        title: Categories
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              examples:
+                - "Category A"
+                - "Category B"
+            url:
+              type: string
+              title: URL
+              examples:
+                - "/"
+                - "/"
+      downloads:
+        type: array
+        title: Downloads
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              examples:
+                - "Download A"
+                - "Category B"
+            url:
+              type: string
+              title: URL
+              examples:
+                - "/"
+                - "/"
+            size:
+              type: string
+              title: File Size
+              examples:
+                - "5 MB"
+                - "250 KB"
+            icon:
+              type: string
+              title: Icon
+              examples:
+                - "file"
+                - "link"
+      contacts:
+        type: array
+        title: Press Contacts
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              title: Name
+              examples:
+                - "Constance Walker"
+            title:
+              type: string
+              title: Professional Title
+              examples:
+                - "Communications Director"
+            phone:
+              type: string
+              title: Phone
+              examples:
+                - "(605) 722-8650"
+            email:
+              type: string
+              title: Email
+              examples:
+                - "constance@test.com"
+            url:
+              type: string
+              title: URL
+              examples:
+                - "/"
+            image_url:
+              type: string
+              title: Image
+              examples:
+                - "/image.jpg"
+            image_alt:
+              type: string
+              title: Image
+              examples:
+                - "Image alt text"

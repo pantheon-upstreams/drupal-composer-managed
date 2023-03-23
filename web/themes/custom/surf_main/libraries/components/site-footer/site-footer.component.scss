@@ -254,8 +254,9 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    max-width: 100%;
+    // max-width: 100%;
     padding: 32px 0 0 0;
+    width: 100%;
 
     @include bp-min(medium) {
       padding: 0;
@@ -402,6 +403,9 @@
     @include bp-min(large) {
       height: 40px;
       width: 60px;
+      margin: 0;
+    }
+    @include bp-min(xlarge) {
       margin: 0 0 0 auto;
     }
   }

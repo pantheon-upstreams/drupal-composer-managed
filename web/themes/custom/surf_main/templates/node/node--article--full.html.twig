@@ -1,0 +1,90 @@
+  {#
+    TODO:
+    - [ ] Update the hard-coded contact_url
+  #}
+
+{# <pre>{{dump(content)}}</pre> #}
+
+{# {% set contacts = [] %}
+{% if content.field_ref_contacts['#items']|length > 0 %}
+  {% for i, value in content.field_ref_contacts['#items'] %}
+  {% set initials = value.entity.field_name.0.given|slice(0, 1) ~ value.entity.field_name.0.family|slice(0, 1) %}
+    {% if value.entity %}
+      {% set contacts = contacts|merge([{
+        name: value.entity.title.value,
+        title: value.entity.field_job_title.0.value,
+        email: value.entity.field_email.0.value,
+        phone: value.entity.field_phone_office.0.value,
+        image_url: file_url(value.entity.field_media_primary.0.entity.field_media_image.entity.fileuri),
+        image_alt: value.entity.field_media_primary.0.entity.field_media_image.alt,
+        contact_url: '/contact',
+        bio_url: value.entity|entity_url,
+        initials: initials,
+        }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %} #}
+
+{# {% set downloads = [] %}
+{% if content.field_media['#items']|length > 0 %}
+  {% for i, value in content.field_media['#items'] %}
+    {% if value.entity %}
+
+      {% set type =  value.entity.field_media_document.0.entity.filemime.value|replace({'application/': ''})  %}
+      {% set downloads = downloads|merge([{
+        title: value.entity.field_media_document.0.entity.filename.value,
+        url: file_url(value.entity.field_media_document.0.entity.uri.value),
+        icon: 'file',
+        size: value.entity.field_media_document.0.entity.filesize.value|format_size,
+        type: type,
+        }]) %}
+    {% endif %}
+  {% endfor %}
+{% endif %} #}
+
+
+
+{#
+
+^ array:11 [▼
+  "_layout_builder" => array:1 [▶]
+  "field_p_content" => array:18 [▶]
+  "field_date_published" => array:18 [▶]
+  "field_media_primary" => array:18 [▶]
+
+
+  "field_publisher" => array:18 [▶]
+  "field_ref_related_content" => array:19 [▶]
+  "field_ref_audiences" => array:20 [▶]
+  "field_highlight" => array:18 [▶]
+  "field_ref_key_impact_areas" => array:19 [▶]
+  "field_ref_eo_opportunities" => array:19 [▶]
+  "field_ref_research_areas" => array:19 [▶]
+]
+ #}
+
+{# <pre>{{dump(content.field_ref_key_impact_areas)}}</pre> #}
+{# <pre>{{dump(content.field_ref_eo_opportunities)}}</pre> #}
+{# <pre>{{dump(content.field_ref_eo_opportunities)}}</pre>  #}
+
+{% include "article-page" with {
+  title: label|field_value,
+  date: content.field_date_published.value|date('F d, Y'),
+  body: content.field_p_content,
+
+  overview: content.field_highlight|field_value,
+  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
+  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
+  categories: content.field_ref_research_areas,
+  related: content.field_ref_related_content,
+} %}
+
+
+{#
+
+  overview: content.field_overview|field_value,
+  author: content.field_author|field_value,
+  downloads: downloads,
+  contacts: contacts,
+Publisher
+Highlight #}

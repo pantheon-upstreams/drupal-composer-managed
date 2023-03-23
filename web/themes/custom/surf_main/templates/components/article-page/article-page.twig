@@ -1,0 +1,186 @@
+<article {{ clAttributes.addClass('c-article'|addModifiers(style)) }}>
+
+  {# Primary Media #}
+  {% if image_url %}
+  <div class="c-article__image-wrapper">
+    <img src="{{image_url}}" alt="{{image_alt}}">
+  </div>
+  {% endif %}
+  <header class="c-article__header-wrapper">
+
+    <div class="c-article__breadcrumbs-date-wrapper">
+      {# Breadcrumbs #}
+      <nav class="c-article__breadcrumb" aria-label="Breadcrumb">
+        <ol class="c-article__breadcrumb-list">
+          <li class="c-article__breadcrumb-item">
+            <a href="/news" class="c-article__breadcrumb-link" aria-current="page">{{ 'News'|t }}</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    {# Title #}
+    <h1 class="c-article__title">{{title}}</h1>
+  </header>
+
+
+
+  <div class="c-article__content-wrapper">
+
+    {# Overview #}
+    {% if overview %}
+    <div class="c-article__overview">
+     <p>{{ overview }}</p>
+    </div>
+    {% endif %}
+
+    {# Body #}
+    {% if body %}
+    <div class="c-article__body">
+      {{ body }}
+    </div>
+    {% endif %}
+
+  </div>
+
+
+  <div class="c-article__bottom-wrapper">
+
+      {# Date #}
+      {% if date %}
+      <div class="c-article__date">
+        {{date}}
+      </div>
+      {% endif %}
+
+
+    {# Author #}
+    {% if author %}
+    <p class="c-article__author">
+      by {{ author }}
+    </p>
+    {% endif %}
+
+    {# Categories #}
+    {% if categories %}
+    <ul class="c-article__categories">
+      {% for item in categories['#items'] %}
+      <li class="c-article__categories-item">
+        <a
+          href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
+        {# {{dump(item.entity)}}
+        {{dump(item.entity.url.value)}} #}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Press contact(s) #}
+    {% if contacts %}
+    <h3 class="c-article__contacts-title">Press Contact</h3>
+    <ul class="c-article__contacts">
+      {% for item in contacts %}
+      <li class="c-article__contacts-item">
+        {% include "person" with {
+        image_url: item.image_url,
+        image_alt: item.image_alt,
+        full_name: item.name,
+        initials: initials,
+        title: item.title,
+        phone: item.phone,
+        contact_url: item.contact_url,
+        bio_url: item.bio_url,
+        } %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Media Download(s) #}
+    {% if downloads %}
+    {% include "resources-list" with {
+    heading: 'Media Downloads',
+    items: downloads
+    } %}
+    {% endif %}
+
+  </div>
+
+  <hr class="left-hook-divider" />
+
+  {# Press Resources #}
+  {# TODO: these callout component blocks need to be updated with dynamic content  #}
+  <div class="c-article__press-resources-wrapper">
+    <h2 class="c-article__press-resources-title">RELATED NEWS</h2>
+
+
+    {% if related %}
+    {# {{dump(related)}} #}
+
+    <ul class="c-article__related-list">
+      {% for item in related['#items']  %}
+      <li class="c-article__related-item">
+        {# {{item}} #}
+        {# {{dump(item)}} #}
+        {{ drupal_entity('node', item.target_id, 'teaser') }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {# <section class="c-layout c-layout--layout-threecolumn-thirds">
+      <div class="c-layout--inner-wrapper">
+
+          <ul class="c-layout--main">
+
+            <li class="c-layout--region c-layout--primary">
+
+              {% include "callout" with {
+              heading: 'Subscribe to updates',
+              body: '<p>Morbi quis viverra leo scelerisque dui orci tellus turpis pulvinar non mus commodo nulla rutrum
+                tincidunt viverra malesuada dolor libero.</p>',
+              link_text: 'Subscribe',
+              link_url: '/',
+              theme: 'forest',
+              image_url: '',
+              image_alt: '',
+              } %}
+
+            </li>
+
+            <li class="c-layout--region c-layout--secondary">
+
+              {% include "callout" with {
+              heading: 'SURF Press Kit',
+              body: '<p>This Press Kit outlines basic information, including how to refer to SURF and its partners, how
+                to access digital resources, a list of helpful acronyms and links to more information.</p>',
+              link_text: 'View Press Kit',
+              link_url: '/',
+              theme: 'forest',
+              image_url: '',
+              image_alt: '',
+              } %}
+
+            </li>
+
+            <li class="c-layout--region c-layout--tertiary">
+
+              {% include "callout" with {
+              heading: 'Communications & Office Directory',
+              body: '<p>The Communications Office serves as the link between SURF and local and worldwide communities.
+                Please direct your general inquiries, requests for interviews and photo requests to our team.</p>',
+              link_text: 'Contact Communications',
+              link_url: '/',
+              theme: 'forest',
+              image_url: '',
+              image_alt: '',
+              } %}
+
+
+            </li>
+          </ul>
+
+      </div>
+    </section> #}
+  </div>
+
+</article>
