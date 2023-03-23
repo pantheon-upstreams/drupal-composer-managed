@@ -68,8 +68,10 @@
     &:first-child {
       margin-top: 0;
     }
-    &:last-child {
-      margin-bottom: rem(28px);
+    @include bp-min(medium) {
+      &:last-child {
+        margin-bottom: rem(28px);
+      }
     }
   }
 }
