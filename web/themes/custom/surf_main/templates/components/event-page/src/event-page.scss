@@ -63,6 +63,10 @@
       background-size: cover;
       top: 0;
     }
+    @include bp-min(xlarge) {
+      width: rem(450px);
+      height: rem(300px);
+    }
   }
 }
 
