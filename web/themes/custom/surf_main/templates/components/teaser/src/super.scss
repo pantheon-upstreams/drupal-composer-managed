@@ -4,6 +4,7 @@
   --- Super Layout ----
 */
 .c-teaser.c-teaser--super {
+  background: var(--color-surf--forest);
   position: relative;
   flex-direction: column;
   @include bp-min(medium) {
@@ -54,7 +55,7 @@
       margin: 0;
     }
     @include bp-min(large) {
-      background: none;
+      // background: none;
       padding: 0 rem(40px) rem(40px) rem(40px);
       margin: 0;
       position: absolute;
