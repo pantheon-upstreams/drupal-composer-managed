@@ -3,57 +3,49 @@
     - [ ] Update the hard-coded contact_url
   #}
 
-<pre>{{dump(content)}}</pre>
+{# <pre>{{dump(content)}}</pre> #}
 
-{#
-Publisher: field_publisher
-Key impact areas: field_ref_key_impact_areas
-EO Opportunities: field_ref_eo_opportunities
-Audiences: field_ref_audiences
-#}
 
 {% set related = [] %}
 {% if content.field_ref_related_content['#items']|length > 0 %}
   {% for i, value in content.field_ref_related_content['#items'] %}
-
     {% if value.entity %}
-    {# <pre>{{dump(value.entity.field_media_primary.0.entity)}}</pre> #}
 
-    {% set icon = '' %}
+      {% set icon = '' %}
 
-    {# set the category / entity type #}
-    {% set category = value.entity.type.value.0.target_id %}
+      {# set the category / entity type #}
+      {% set category = value.entity.type.value.0.target_id %}
 
-    {# set the teaser date with fallback #}
-    {% set teaser_date = value.entity.field_date_published.value ? value.entity.field_date_published.value|date('F d, Y') : value.entity.changed.value|date('F d, Y') %}
+      {# set the teaser date with fallback #}
+      {% set teaser_date = value.entity.field_date_published.value ? value.entity.field_date_published.value|date('F d, Y') : value.entity.changed.value|date('F d, Y') %}
 
-    {# set default for image and alt values #}
-    {% set alt = value.entity.title.value %}
-    {% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
-
-    {# set image #}
-
-    {# check if image #}
-    {% if value.entity.field_media_primary.0.entity.field_media_image %}
+      {# set default for image and alt values #}
+      {% set alt = value.entity.title.value %}
+      {% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
 
       {# set image #}
-      {% set image = value.entity.field_media_primary.0.entity.field_media_image.entity.fileuri|image_style('full_teaser') %}
 
-      {# set alt to use the image's alt text #}
-      {% set alt = value.entity.field_media_primary.0.entity.field_media_image.alt %}
+      {# check if image #}
+      {% if value.entity.field_media_primary.0.entity.field_media_image %}
 
-    {# check if video #}
-    {% elseif value.entity.field_media_primary.0.entity.field_media_oembed_video %}
+        {# set image #}
+        {% set image = value.entity.field_media_primary.0.entity.field_media_image.entity.fileuri|image_style('full_teaser') %}
 
-      {# set category to video #}
-      {% set category = 'video' %}
-      {# set icon #}
-      {% set icon = 'video' %}
+        {# set alt to use the image's alt text #}
+        {% set alt = value.entity.field_media_primary.0.entity.field_media_image.alt %}
 
-      {# set image #}
-      {% set image = value.entity.field_media_primary.0.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+      {# check if video #}
+      {% elseif value.entity.field_media_primary.0.entity.field_media_oembed_video %}
 
-    {% endif %}
+        {# set category to video #}
+        {% set category = 'video' %}
+        {# set icon #}
+        {% set icon = 'video' %}
+
+        {# set image #}
+        {% set image = value.entity.field_media_primary.0.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+
+      {% endif %}
 
       {% set related = related|merge([
         {content: include('teaser',
@@ -73,20 +65,39 @@ Audiences: field_ref_audiences
 
         ])
       %}
+
     {% endif %}
   {% endfor %}
 {% endif %}
 
+{% set date = content.field_date_published.value|date('F d, Y') %}
+
+{% set video_url = content.field_media_primary['#items'].entity.field_media_oembed_video.value|replace({'https://vimeo.com/': ''}) %}
+
+{% set image_alt = content.field_media_primary['#items'].entity.field_media_image.alt %}
+
+{% set image_url = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri) %}
+
+
+{% set image_width = content.field_media_primary['#items'].entity.field_media_image.width %}
+{% set image_height = content.field_media_primary['#items'].entity.field_media_image.height %}
+
+{% set style = 'horizontal' %}
+{% if image_width < image_height %}
+  {% set style = 'vertical' %}
+{% endif %}
 
 
 {% include "article-page" with {
   title: label|field_value,
-  date: content.field_date_published.value|date('F d, Y'),
+  date: date,
   author: content.field_author|field_value,
   body: content.field_p_content,
   overview: content.field_highlight|field_value,
-  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
-  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
+  image_url: image_url,
+  image_alt: image_alt,
+  video_url: video_url,
   categories: content.field_ref_research_areas,
   related: related,
+  style: style
 } %}

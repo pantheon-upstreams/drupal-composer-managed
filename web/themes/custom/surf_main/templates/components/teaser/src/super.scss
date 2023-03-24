@@ -55,7 +55,7 @@
       margin: 0;
     }
     @include bp-min(large) {
-      // background: none;
+      background: none;
       padding: 0 rem(40px) rem(40px) rem(40px);
       margin: 0;
       position: absolute;

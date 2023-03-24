@@ -30,7 +30,7 @@
       row-gap: rem(32px);
       @include bp-min(medium) {
         column-gap: rem(20px);
-        grid-template-columns: 0.33fr 0.33fr 0.33fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
       @include bp-min(large) {
         column-gap: rem(40px);
@@ -208,7 +208,7 @@
         gap: rem(40px);
       }
       @include bp-min(xxlarge) {
-        grid-template-columns: 0.33fr 0.33fr 0.33fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(60px);
       }
     }
@@ -222,7 +222,7 @@
         grid-template-columns: 0.5fr 0.5fr;
       }
       @include bp-min(xxlarge) {
-        grid-template-columns: 0.33fr 0.33fr 0.33fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(60px);
       }
     }

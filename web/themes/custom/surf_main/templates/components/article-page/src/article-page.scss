@@ -55,6 +55,25 @@
   }
 }
 
+.c-article__video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: rem(1143px);
+  margin: 0 auto;
+}
+
+.c-article__video-wrapper iframe,
+.c-article__video-wrapper object,
+.c-article__video-wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .c-article__content-wrapper {
   max-width: rem(780px);
   margin: 0 auto rem(28px) auto;
