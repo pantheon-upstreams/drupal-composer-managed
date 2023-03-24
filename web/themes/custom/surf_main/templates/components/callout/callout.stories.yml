@@ -38,3 +38,23 @@ stories:
       image_url: "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/icon-cosmic-rays.svg"
       image_alt: "Ea irure adipisicing"
       arrow: true
+  - name: News Page Subscribe example cta
+    args:
+      theme: simple-icon-cta
+      image_url: ""
+      image_alt: ""
+      arrow: true
+      heading: ""
+      body: "<p>Stay up-to-date on our latest news and upcoming events.</p>"
+      link_text: "Subscribe to Deep Thoughts"
+      icon: "subscribe"
+  - name: News Page Vimeo example cta
+    args:
+      theme: simple-icon-cta
+      image_url: ""
+      image_alt: ""
+      arrow: true
+      heading: ""
+      body: "<p>Watch our lectures on physics, algorithmic art, local history, botany and more!</p>"
+      link_text: "Watch Deep Talks on Vimeo"
+      icon: "video"

@@ -50,6 +50,14 @@ schemas:
           - forest
           - kelly
           - icon
+          - simple-icon-cta
       arrow:
         type: boolean
         title: Arrow Icon
+      icon:
+        type: string
+        title: Icon
+        description: The icon
+        examples:
+          - subscribe
+          - video

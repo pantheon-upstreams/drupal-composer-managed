@@ -50,7 +50,17 @@
     {% if link_text and link_url %}
     {% block callout_link %}
     <div class="c-callout__link">
-      {% if arrow %}
+      {% if theme == 'simple-icon-cta' %}
+      {% include "link-button" with {
+        text: link_text,
+        url: link_url,
+        button_style: 'underline',
+        color: 'underline-green',
+        button_type_size: 'medium',
+        icon_type: icon ? icon : 'arrow',
+        uppercase: true
+        } %}
+      {% elseif arrow %}
         {% include "link-button" with {
         text: link_text,
         url: link_url,

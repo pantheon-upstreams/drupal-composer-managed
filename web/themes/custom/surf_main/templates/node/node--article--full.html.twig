@@ -88,6 +88,28 @@
 {% endif %}
 
 
+{% set callouts = [
+      {content:  include("callout", {
+        heading: '',
+        body: '<p>Stay up-to-date on our latest news and upcoming events.</p>',
+        link_text: 'Subscribe to Deep Thoughts',
+        link_url: '/',
+        theme: 'simple-icon-cta',
+        arrow: true,
+        icon: 'subscribe',
+    })},
+     {content:  include("callout", {
+      heading: '',
+      body: '<p>Watch our lectures on physics, algorithmic art, local history, botany and more!</p>',
+      link_text: 'Watch Deep Talks on Vimeo',
+      link_url: '/',
+      theme: 'simple-icon-cta',
+      arrow: true,
+      icon: 'video'
+      })}
+    ]%}
+
+
 {% include "article-page" with {
   title: label|field_value,
   date: date,
@@ -99,5 +121,6 @@
   video_url: video_url,
   categories: content.field_ref_research_areas,
   related: related,
-  style: style
+  callouts: callouts,
+  style: style,
 } %}

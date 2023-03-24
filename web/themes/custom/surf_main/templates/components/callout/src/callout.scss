@@ -45,6 +45,25 @@
       padding: rem(40px);
     }
   }
+  &.c-callout--simple-icon-cta {
+    background-color: var(--color-surf--cloud);
+    .c-callout__content-wrapper {
+      padding: rem(20px);
+      @include bp-min(medium) {
+        padding: rem(40px);
+      }
+    }
+    .c-callout__body p {
+      margin-top: 0;
+      @include surf-font-body-small;
+      @include bp-min(medium) {
+        @include surf-font-body-medium;
+      }
+      @include bp-min(large) {
+        @include surf-font-body-large;
+      }
+    }
+  }
 }
 
 .c-callout__image {
@@ -75,8 +94,6 @@
   .c-callout__body {
     @include surf-font-body-medium;
   }
-  .c-callout__link {
-  }
 }
 // Three and Four Column Overrides
 .l--layout-threecolumn-thirds,
@@ -92,7 +109,5 @@
   }
   .c-callout__body {
     @include surf-font-body-medium;
-  }
-  .c-callout__link {
   }
 }

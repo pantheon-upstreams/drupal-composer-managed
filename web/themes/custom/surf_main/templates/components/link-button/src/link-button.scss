@@ -82,5 +82,22 @@
   align-items: center;
   margin-left: calc(var(--space-inset-x) / 2);
 }
+.link-button__icon-left {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: rem(6px);
+}
 
-// @include surf-font-label-medium;
+.c-link-button.link-button--underline {
+  &.c-link-button--subscribe,
+  &.c-link-button--video {
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom-color: var(--color-surf-forest);
+    @include surf-font-label-peewee;
+    .link-button__icon {
+      margin-left: rem(6px);
+    }
+  }
+}

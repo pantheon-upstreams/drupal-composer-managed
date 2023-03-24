@@ -10,10 +10,15 @@
 {% endif %}
 
 <a {{ clAttributes.addClass('c-link-button'|addModifiers([layout, icon, button_type_size])).setAttribute('href', url) }}>
-	{{ text }}
-	{% if icon_type %}
-		<span class="link-button__icon">
+	{% if icon_type != 'arrow' %}
+		<span class="link-button__icon-left">
 			{{ source(clMeta.path ~ '/img/' ~ icon_type ~ '.svg') }}
+		</span>
+	{% endif %}
+	{{ text }}
+	{% if icon_type == 'arrow' or arrow %}
+		<span class="link-button__icon">
+			{{ source(clMeta.path ~ '/img/arrow.svg') }}
 		</span>
 	{% endif %}
 </a>
