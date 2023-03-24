@@ -9,7 +9,7 @@ id: node.article.field_highlight
 field_name: field_highlight
 entity_type: node
 bundle: article
-label: Highlight
+label: Overview
 description: ''
 required: false
 translatable: false

@@ -84,7 +84,7 @@
   }
 
   // Video Icon
-  .c-teaser.c-teaser--video {
+  &.c-teaser--video {
     .c-teaser__category {
       padding-left: rem(24px);
       background-image: inline-svg(

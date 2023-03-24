@@ -15,8 +15,11 @@ dependencies:
     - field.field.node.article.field_ref_key_impact_areas
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
+    - image.style.full_teaser
     - node.type.article
   module:
+    - datetime
+    - media
     - user
 _core:
   default_config_hash: U8ghxJXn8JE2p6Q2wLpPWAxpz4r_8crL1LxtapSrHAE
@@ -24,12 +27,30 @@ id: node.article.teaser
 targetEntityType: node
 bundle: article
 mode: teaser
-content: {  }
+content:
+  field_date_published:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_primary:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: full_teaser
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_author: true
-  field_date_published: true
   field_highlight: true
-  field_media_primary: true
   field_p_content: true
   field_publisher: true
   field_ref_audiences: true

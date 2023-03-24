@@ -19,6 +19,7 @@ dependencies:
     - datetime
     - field_group
     - layout_paragraphs
+    - media_library
     - path
     - scheduler
     - text
@@ -43,7 +44,6 @@ third_party_settings:
     group_overview:
       children:
         - title
-        - field_contract_summary
         - field_date_published
         - field_author
         - field_publisher
@@ -60,8 +60,7 @@ third_party_settings:
         description: ''
         required_fields: true
     group_featured_image:
-      children:
-        - field_image_primary
+      children: {  }
       label: 'Featured Image'
       region: content
       parent_name: group_tabs
@@ -153,14 +152,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_media_primary:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 30
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_p_content:
     type: layout_paragraphs

@@ -114,19 +114,21 @@
     <h2 class="c-article__press-resources-title">RELATED NEWS</h2>
 
 
-    {% if related %}
-    {# {{dump(related)}} #}
-
+    {# {% if related %}
     <ul class="c-article__related-list">
       {% for item in related['#items']  %}
       <li class="c-article__related-item">
-        {# {{item}} #}
-        {# {{dump(item)}} #}
         {{ drupal_entity('node', item.target_id, 'teaser') }}
       </li>
       {% endfor %}
     </ul>
-    {% endif %}
+    {% endif %} #}
+
+    {{ include('list', {style: 'default-column', items: related })}}
+
+
+
+
     {# <section class="c-layout c-layout--layout-threecolumn-thirds">
       <div class="c-layout--inner-wrapper">
 

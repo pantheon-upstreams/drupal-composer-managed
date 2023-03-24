@@ -27,6 +27,14 @@ targetEntityType: node
 bundle: article
 mode: default
 content:
+  field_author:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_date_published:
     type: datetime_default
     label: hidden
@@ -34,14 +42,14 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_highlight:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_media_primary:
     type: entity_reference_label
@@ -49,7 +57,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 8
     region: content
   field_p_content:
     type: layout_paragraphs
@@ -58,14 +66,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_publisher:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_ref_audiences:
     type: entity_reference_label
@@ -73,7 +81,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 4
     region: content
   field_ref_eo_opportunities:
     type: entity_reference_label
@@ -81,7 +89,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 9
+    weight: 7
     region: content
   field_ref_key_impact_areas:
     type: entity_reference_label
@@ -89,7 +97,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 8
+    weight: 6
     region: content
   field_ref_related_content:
     type: entity_reference_entity_view
@@ -98,7 +106,7 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_ref_research_areas:
     type: entity_reference_label
@@ -106,10 +114,9 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 9
     region: content
 hidden:
-  field_author: true
   langcode: true
   links: true
   search_api_excerpt: true

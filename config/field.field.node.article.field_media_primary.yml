@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_media_primary
     - media.type.image
+    - media.type.remote_video
     - node.type.article
 id: node.article.field_media_primary
 field_name: field_media_primary
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      remote_video: remote_video
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference
