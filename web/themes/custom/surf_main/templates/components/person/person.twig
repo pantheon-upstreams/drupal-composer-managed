@@ -51,7 +51,7 @@
       {% if bio_url %}
       {% block bio_url_block %}
       <li class="c-person__bio">
-        <a href="{{ bio_url }}">{{ 'View Bio'|t }}</a>
+        <a href="{{ bio_url }}" aria-label="{{ 'Contact '|t ~ full_name}}">{{ 'View Bio'|t }}</a>
       </li>
       {% endblock %}
       {% endif %}
