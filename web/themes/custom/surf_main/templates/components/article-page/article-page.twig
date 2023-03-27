@@ -14,11 +14,10 @@
   </div>
   {% endif %}
 
+  {# Content #}
+  <div class="c-article__content-wrapper">
 
-
-
-  <header class="c-article__header-wrapper">
-
+    <header class="c-article__header-wrapper">
     <div class="c-article__breadcrumbs-date-wrapper">
       {# Breadcrumbs #}
       <nav class="c-article__breadcrumb" aria-label="Breadcrumb">
@@ -29,14 +28,9 @@
         </ol>
       </nav>
     </div>
-
     {# Title #}
     <h1 class="c-article__title">{{title}}</h1>
   </header>
-
-
-
-  <div class="c-article__content-wrapper">
 
     {# Overview #}
     {% if overview %}
@@ -73,7 +67,7 @@
     {% endif %}
 
     {# Categories #}
-    {% if categories %}
+    {% if categories['#items'] %}
     <ul class="c-article__categories">
       {% for item in categories['#items'] %}
       <li class="c-article__categories-item">
@@ -117,7 +111,9 @@
 
   </div>
 
-{{ include('list', {style: 'default-column', items: callouts })}}
+  <div class="c-article__callout-wrapper">
+    {{ include('list', {style: 'default-column', items: callouts })}}
+  </div>
 
   {% if related %}
   <hr class="left-hook-divider" />

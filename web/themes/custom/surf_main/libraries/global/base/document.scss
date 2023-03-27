@@ -87,8 +87,9 @@ body {
 }
 
 hr.left-hook-divider {
+  width: 100%;
   border: 0;
-  border-bottom: 2px solid var(--color-surf--grey);
+  border-bottom: rem(2px) solid var(--color-surf--grey);
   position: relative;
   overflow: visible;
   margin-bottom: rem(32px);

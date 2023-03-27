@@ -62,7 +62,6 @@
             icon: icon,
           }
           )}
-
         ])
       %}
 
@@ -82,32 +81,42 @@
 {% set image_width = content.field_media_primary['#items'].entity.field_media_image.width %}
 {% set image_height = content.field_media_primary['#items'].entity.field_media_image.height %}
 
-{% set style = 'horizontal' %}
+{% set style = 'no-media' %}
 {% if image_width < image_height %}
   {% set style = 'vertical' %}
+{% elseif image_width >= image_height %}
+  {% set style = 'horizontal' %}
+{% elseif video_url %}
+  {% set style = 'video' %}
 {% endif %}
 
 
-{% set callouts = [
-      {content:  include("callout", {
-        heading: '',
-        body: '<p>Stay up-to-date on our latest news and upcoming events.</p>',
-        link_text: 'Subscribe to Deep Thoughts',
-        link_url: '/',
-        theme: 'simple-icon-cta',
-        arrow: true,
-        icon: 'subscribe',
+{% set callouts =
+  [
+    {content:  include("callout", {
+      heading: '',
+      body: '<p>Stay up-to-date on our latest news and upcoming events.</p>',
+      link_text: 'Subscribe to Deep Thoughts',
+      link_url: '/',
+      theme: 'simple-icon-cta',
+      arrow: true,
+      icon: 'subscribe',
+      image_url: '',
+      image_alt: '',
     })},
-     {content:  include("callout", {
+    {content:  include("callout", {
       heading: '',
       body: '<p>Watch our lectures on physics, algorithmic art, local history, botany and more!</p>',
       link_text: 'Watch Deep Talks on Vimeo',
       link_url: '/',
       theme: 'simple-icon-cta',
       arrow: true,
-      icon: 'video'
+      icon: 'video',
+      image_url: '',
+      image_alt: '',
       })}
-    ]%}
+  ]
+%}
 
 
 {% include "article-page" with {

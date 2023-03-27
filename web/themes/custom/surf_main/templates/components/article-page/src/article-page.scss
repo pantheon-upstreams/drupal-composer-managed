@@ -167,3 +167,121 @@
 .c-article__press-resources-title {
   margin: 0 0 rem(40px) 0;
 }
+
+// Horizontal Image
+.c-article.c-article--horizontal {
+  .left-hook-divider {
+    margin-top: rem(32px);
+    @include bp-min(medium) {
+      margin-top: rem(60px);
+    }
+    @include bp-min(xlarge) {
+      margin-top: rem(120px);
+    }
+  }
+}
+
+// Vertical Image
+.c-article.c-article--vertical {
+  @include bp-min(large) {
+    display: grid;
+    column-gap: rem(80px);
+    grid-template-areas:
+      "content image"
+      "content bottom"
+      "content list"
+      "divider divider"
+      "related related";
+    grid-template-columns: 1fr rem(420px);
+  }
+  @include bp-min(xlarge) {
+    column-gap: rem(180px);
+    grid-template-columns: 1fr rem(630px);
+  }
+
+  .c-article__image-wrapper {
+    grid-area: image;
+    margin: 0 auto rem(40px) auto;
+    @include bp-min(large) {
+      margin: 0 0 rem(40px) 0;
+    }
+    img {
+      max-height: rem(360px);
+      object-fit: contain;
+      @include bp-min(large) {
+        max-height: unset;
+        object-fit: unset;
+      }
+    }
+  }
+
+  .c-article__content-wrapper {
+    grid-area: content;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .c-article__bottom-wrapper {
+    grid-area: bottom;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: rem(26px);
+  }
+
+  .c-article__callout-wrapper {
+    grid-area: list;
+    .cl-component--list {
+      max-width: 100%;
+      width: 100%;
+      .c-list__items {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .c-article__press-resources-wrapper {
+    grid-area: related;
+  }
+
+  .left-hook-divider {
+    grid-area: divider;
+    margin-top: rem(32px);
+    @include bp-min(medium) {
+      margin-top: rem(58px);
+    }
+    @include bp-min(xlarge) {
+      margin-top: rem(105px);
+    }
+  }
+}
+
+// Video
+.c-article.c-article--video {
+  .left-hook-divider {
+    margin-top: rem(32px);
+    @include bp-min(medium) {
+      margin-top: rem(48px);
+    }
+    @include bp-min(xlarge) {
+      margin-top: rem(67px);
+    }
+  }
+}
+
+// No Media
+.c-article.c-article--no-media {
+  .c-article__content-wrapper {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .left-hook-divider {
+    margin-top: rem(32px);
+    @include bp-min(medium) {
+      margin-top: rem(48px);
+    }
+    @include bp-min(xlarge) {
+      margin-top: rem(100px);
+    }
+  }
+}
