@@ -43,7 +43,7 @@
       {% if contact_url %}
       {% block contact_url_block %}
       <li class="c-person__contact">
-        <a href="{{ contact_url}}">{{ 'Contact'|t }}</a>
+        <a href="{{ contact_url}}" aria-label="{{ 'Contact '|t ~ full_name}}">{{ 'Contact'|t }}</a>
       </li>
       {% endblock %}
       {% endif %}
@@ -51,7 +51,7 @@
       {% if bio_url %}
       {% block bio_url_block %}
       <li class="c-person__bio">
-        <a href="{{ bio_url }}" aria-label="{{ 'Contact '|t ~ full_name}}">{{ 'View Bio'|t }}</a>
+        <a href="{{ bio_url }}">{{ 'View Bio'|t }}</a>
       </li>
       {% endblock %}
       {% endif %}
