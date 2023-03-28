@@ -196,7 +196,6 @@
 
   .c-article__inner-wrapper {
     @include bp-min(xlarge) {
-      margin-top: rem(120px);
       // GRID
       display: grid;
       column-gap: rem(140px);
