@@ -13,6 +13,11 @@ stories:
     args:
       alt: "In exercitation in tempor ea enim elit id consequat"
       image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg
+  - name: "With Credit"
+    args:
+      alt: "In exercitation in tempor ea enim elit id consequat"
+      image: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg
+      credit: "Example image credit"
   - name: "1:1"
     args:
       alt: "In exercitation in tempor ea enim elit id consequat"

@@ -4,6 +4,7 @@
     {% if image %}
       <div class="c-image__image-wrapper">
         <img src="{{ image }}" alt="{{ alt }}" />
+        {% if credit %}<div class="c-image__image-credit">{{credit}}</div>{% endif %}
       </div>
     {% endif %}
   {% endblock %}

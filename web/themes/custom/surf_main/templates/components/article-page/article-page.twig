@@ -3,7 +3,11 @@
   {# Primary Media (image) #}
   {% if image_url %}
   <div class="c-article__image-wrapper">
-    <img src="{{image_url}}" alt="{{image_alt}}">
+      {% include "image" with {
+      image: image_url,
+      alt: image_alt,
+      credit: image_credit
+      } %}
   </div>
   {% endif %}
 

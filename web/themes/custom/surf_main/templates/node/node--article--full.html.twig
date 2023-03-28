@@ -1,6 +1,8 @@
   {#
     TODO:
     - [ ] Update the hard-coded contact_url
+    - [ ] Update the hard-coded image credit
+    - [ ] Update the hard-coded callout blocks
   #}
 
 {# <pre>{{dump(content)}}</pre> #}
@@ -120,6 +122,8 @@
   ]
 %}
 
+{% set image_credit = 'Image credit can go here.' %}
+
 
 {% include "article-page" with {
   title: label|field_value,
@@ -129,6 +133,7 @@
   overview: content.field_highlight|field_value,
   image_url: image_url,
   image_alt: image_alt,
+  image_credit: image_credit,
   video_url: video_url,
   categories: content.field_ref_research_areas,
   related: related,

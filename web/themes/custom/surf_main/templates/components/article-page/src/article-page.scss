@@ -440,4 +440,26 @@
       margin-top: rem(100px);
     }
   }
+  .c-article__bottom-wrapper {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: rem(32px);
+    @include bp-min(medium) {
+      margin-bottom: rem(60px);
+    }
+  }
+  .c-article__date,
+  .c-article__author,
+  .c-article__categories {
+    max-width: rem(780px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .c-article__categories {
+    margin-bottom: rem(22px);
+    @include bp-min(medium) {
+      margin-bottom: rem(44px);
+    }
+  }
 }

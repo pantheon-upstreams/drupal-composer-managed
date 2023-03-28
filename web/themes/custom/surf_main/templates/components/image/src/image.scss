@@ -1,5 +1,12 @@
 @import "_partials";
 
+.c-image__image-wrapper {
+  position: relative;
+  img {
+    width: 100%;
+  }
+}
+
 .c-image__caption {
   @include surf-font-body-x-small;
   color: var(--color-surf--dark-grey);
@@ -12,4 +19,15 @@
       margin: 0;
     }
   }
+}
+.c-image__image-credit {
+  @include surf-font-body-x-small;
+  color: var(--color-surf--white);
+  background: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  padding: rem(4px) rem(8px);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 0 0 rem(40px);
 }
