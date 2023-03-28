@@ -82,12 +82,14 @@
 {% set image_height = content.field_media_primary['#items'].entity.field_media_image.height %}
 
 {% set style = 'no-media' %}
-{% if image_width < image_height %}
+{% if video_url %}
+  {% set style = 'video' %}
+{% elseif image_url|trim is empty %}
+  {% set style = 'no-media' %}
+{% elseif image_width < image_height %}
   {% set style = 'vertical' %}
 {% elseif image_width >= image_height %}
   {% set style = 'horizontal' %}
-{% elseif video_url %}
-  {% set style = 'video' %}
 {% endif %}
 
 

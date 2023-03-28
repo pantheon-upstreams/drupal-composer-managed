@@ -41,6 +41,9 @@
       @include bp-min(medium) {
         column-gap: rem(32px);
         grid-template-columns: 0.5fr 0.5fr;
+        & > .c-list__item > * {
+          height: 100%;
+        }
       }
       @include bp-min(large) {
         column-gap: rem(40px);
@@ -65,6 +68,9 @@
       @include bp-min(xxlarge) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(60px);
+        & > .c-list__item > * {
+          height: 100%;
+        }
       }
     }
     &.c-list--simple-column .c-list__items {
@@ -72,6 +78,9 @@
         display: grid;
         gap: rem(32px);
         grid-template-columns: 0.5fr 0.5fr;
+        & > .c-list__item > * {
+          height: 100%;
+        }
       }
       @include bp-min(large) {
         gap: rem(40px);

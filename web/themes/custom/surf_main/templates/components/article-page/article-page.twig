@@ -1,5 +1,5 @@
-<article {{ clAttributes.addClass('c-article'|addModifiers(style)) }}>
-
+<article {{ clAttributes.addClass('c-article'|addModifiers(style), 'l-constrained') }}>
+  <div class="c-article__inner-wrapper">
   {# Primary Media (image) #}
   {% if image_url %}
   <div class="c-article__image-wrapper">
@@ -46,6 +46,7 @@
     </div>
     {% endif %}
 
+    <hr class="left-hook-divider top" />
   </div>
 
 
@@ -116,7 +117,7 @@
   </div>
 
   {% if related %}
-  <hr class="left-hook-divider" />
+  <hr class="left-hook-divider bottom" />
   {# Press Resources #}
   <div class="c-article__press-resources-wrapper">
     <h2 class="c-article__press-resources-title">RELATED NEWS</h2>
@@ -124,4 +125,5 @@
   </div>
   {% endif %}
 
+  </div>
 </article>

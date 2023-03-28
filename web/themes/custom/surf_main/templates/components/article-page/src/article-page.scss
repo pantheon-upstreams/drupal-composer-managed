@@ -77,8 +77,6 @@
 .c-article__content-wrapper {
   max-width: rem(780px);
   margin: 0 auto rem(28px) auto;
-  padding: 0 0 rem(28px) 0;
-  border-bottom: solid rem(2px) var(--color-surf--grey);
 }
 
 .c-article__overview {
@@ -102,6 +100,11 @@
       margin-bottom: 0;
     }
   }
+}
+
+.left-hook-divider.top {
+  margin: 0 0 rem(56px) 0;
+  display: none;
 }
 
 .c-article__bottom-wrapper {
@@ -166,11 +169,129 @@
 
 .c-article__press-resources-title {
   margin: 0 0 rem(40px) 0;
+  @include surf-font-heading-two;
+  @include bp-min(medium) {
+    @include surf-font-heading-two;
+  }
 }
 
 // Horizontal Image
 .c-article.c-article--horizontal {
-  .left-hook-divider {
+  @include bp-max(xlarge) {
+    max-width: unset;
+    margin: 0;
+    width: unset;
+    .c-article__content-wrapper,
+    .c-article__bottom-wrapper,
+    .c-article__callout-wrapper,
+    .left-hook-divider.bottom,
+    .c-article__press-resources-wrapper {
+      grid-area: content;
+      max-width: 1380px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(100vw - var(--space-inset-x) * 2);
+    }
+  }
+
+  .c-article__inner-wrapper {
+    @include bp-min(xlarge) {
+      margin-top: rem(120px);
+      // GRID
+      display: grid;
+      column-gap: rem(140px);
+      grid-template-areas:
+        "image image"
+        "content bottom"
+        "content list"
+        "divider divider"
+        "related related";
+      grid-template-columns: 1fr rem(420px);
+    }
+  }
+  .c-article__image-wrapper {
+    grid-area: image;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 0 rem(32px) 0;
+    @include bp-min(medium) {
+      margin: 0 0 rem(40px) 0;
+    }
+    @include bp-min(large) {
+      margin: 0 0 rem(60px) 0;
+    }
+    @include bp-min(xlarge) {
+      max-width: 1380px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(100vw - var(--space-inset-x) * 2);
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .c-article__content-wrapper {
+    grid-area: content;
+    @include bp-min(xlarge) {
+      background: var(--color-surf--white);
+      padding: rem(40px) rem(40px) 0 0;
+      margin: -150px 0 0 0;
+      max-width: unset;
+    }
+  }
+  .c-article__header-wrapper {
+    @include bp-max(xlarge) {
+      max-width: rem(700px);
+      margin: 0 0 rem(28px) 0;
+    }
+    @include bp-min(xlarge) {
+      max-width: unset;
+      margin: 0 0 rem(28px) 0;
+    }
+  }
+
+  .c-article__overview,
+  .c-article__body {
+    @include bp-max(xlarge) {
+      max-width: rem(700px);
+      margin: 0 0 rem(28px) 0;
+    }
+  }
+  .left-hook-divider.top {
+    @include bp-max(xlarge) {
+      display: block;
+    }
+  }
+  .c-article__bottom-wrapper {
+    margin-bottom: rem(20px);
+    @include bp-min(medium) {
+      margin-bottom: rem(47px);
+    }
+    @include bp-min(xlarge) {
+      grid-area: bottom;
+      max-width: unset;
+      margin: 0;
+    }
+  }
+  .c-article__categories {
+    @include bp-max(xlarge) {
+      max-width: rem(700px);
+    }
+  }
+  .c-article__callout-wrapper {
+    @include bp-min(xlarge) {
+      grid-area: list;
+      .cl-component--list {
+        max-width: 100%;
+        width: 100%;
+        .c-list__items {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+  .left-hook-divider.bottom {
+    grid-area: divider;
     margin-top: rem(32px);
     @include bp-min(medium) {
       margin-top: rem(60px);
@@ -179,10 +300,13 @@
       margin-top: rem(120px);
     }
   }
+  .c-article__press-resources-wrapper {
+    grid-area: related;
+  }
 }
 
 // Vertical Image
-.c-article.c-article--vertical {
+.c-article.c-article--vertical .c-article__inner-wrapper {
   @include bp-min(large) {
     display: grid;
     column-gap: rem(80px);
@@ -244,7 +368,7 @@
     grid-area: related;
   }
 
-  .left-hook-divider {
+  .left-hook-divider.bottom {
     grid-area: divider;
     margin-top: rem(32px);
     @include bp-min(medium) {
@@ -257,8 +381,8 @@
 }
 
 // Video
-.c-article.c-article--video {
-  .left-hook-divider {
+.c-article.c-article--video .c-article__inner-wrapper {
+  .left-hook-divider.bottom {
     margin-top: rem(32px);
     @include bp-min(medium) {
       margin-top: rem(48px);
@@ -270,12 +394,8 @@
 }
 
 // No Media
-.c-article.c-article--no-media {
-  .c-article__content-wrapper {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  .left-hook-divider {
+.c-article.c-article--no-media .c-article__inner-wrapper {
+  .left-hook-divider.bottom {
     margin-top: rem(32px);
     @include bp-min(medium) {
       margin-top: rem(48px);
