@@ -110,11 +110,14 @@
     } %}
     {% endif %}
 
+    {# Callouts #}
+    <div class="c-article__callout-wrapper">
+    {{ include('list', {style: 'default-column', items: callouts })}}
+    </div>
+
   </div>
 
-  <div class="c-article__callout-wrapper">
-    {{ include('list', {style: 'default-column', items: callouts })}}
-  </div>
+
 
   {% if related %}
   <hr class="left-hook-divider bottom" />
