@@ -6,12 +6,19 @@
     - [ ] Replace `times` with dynamic formatted values using `content.field_date`
   #}
 
+{% set link_url = '' %}
+{% if content.field_link.0["#url"].external %}
+  {% set link_url = content.field_link.0["#url"].uri %}
+{% else %}
+  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+{% endif %}
+
 {% include "event-page" with {
   title: label,
   overview: content.field_overview|render|striptags|trim,
   dates: 'June 10-June 12, 2023',
   times: '10:00 AM-6:00 PM',
-  link_url: content.field_link.0["#url"],
+  link_url: link_url,
   link_text: content.field_link.0["#title"],
   image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
   image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,

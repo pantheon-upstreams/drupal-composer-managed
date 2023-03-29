@@ -8,43 +8,57 @@ schemas:
   props:
     type: object
     properties:
+    properties:
       title:
         type: string
         title: Title
         examples:
-          - Neutrino Day 2023
+          - "$25,000 grant increases South Dakota educator access to SURF professional development"
       date:
         type: string
         title: Date
         examples:
-          - "August 18, 2022"
+          - "MARCH 29, 2023"
+      author:
+        type: string
+        title: Author
+        examples:
+          - "Johanna Jones"
+      body:
+        type: string
+        title: Body
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      overview:
+        type: string
+        title: Overview
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
       image_url:
         type: string
         title: Image URL
-        description: The url for the image
         examples:
           - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
       image_alt:
         type: string
         title: Image Alt Text
-        description: The primary alt text for the image.
         examples:
           - "Ea irure adipisicing"
-      overview:
-        title: Overview
+      image_credit:
         type: string
+        title: Image Credit
         examples:
-          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
-      body:
-        title: Body
+          - "Image credit goes here"
+      video_url:
         type: string
+        title: Video URL
         examples:
-          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
-      author:
+          - https://vimeo.com/713332865
+      video_title:
         type: string
-        title: Author
+        title: Video Title
         examples:
-          - Johanna Jones
+          - $25,000 grant increases South Dakota educator access to SURF professional development Video
       categories:
         type: array
         title: Categories
@@ -63,74 +77,63 @@ schemas:
               examples:
                 - "/"
                 - "/"
-      downloads:
+      related:
         type: array
-        title: Downloads
+        title: Related
         items:
           type: object
           properties:
+            layout:
+              type: string
+              title: Layout
+              examples:
+                - "column-stack"
             title:
               type: string
               title: Title
               examples:
-                - "Download A"
-                - "Category B"
+                - "Title example"
             url:
               type: string
               title: URL
               examples:
                 - "/"
                 - "/"
-            size:
+            category:
               type: string
-              title: File Size
+              title: Category
               examples:
-                - "5 MB"
-                - "250 KB"
+                - "Category example"
+            category_url:
+              type: string
+              title: Category URL
+              examples:
+                - "/"
+            teaser_date:
+              type: string
+              title: Teaser Date
+              examples:
+                - "JANUARY 17, 2023"
+            image:
+              type: string
+              title: Image URL
+              examples:
+                - "/image.jpg"
+            alt:
+              type: string
+              title: Alt Image
+              examples:
+                - "/"
             icon:
               type: string
               title: Icon
               examples:
-                - "file"
-                - "link"
-      contacts:
-        type: array
-        title: Press Contacts
-        items:
-          type: object
-          properties:
-            name:
-              type: string
-              title: Name
-              examples:
-                - "Constance Walker"
-            title:
-              type: string
-              title: Professional Title
-              examples:
-                - "Communications Director"
-            phone:
-              type: string
-              title: Phone
-              examples:
-                - "(605) 722-8650"
-            email:
-              type: string
-              title: Email
-              examples:
-                - "constance@test.com"
-            url:
-              type: string
-              title: URL
-              examples:
-                - "/"
-            image_url:
-              type: string
-              title: Image
-              examples:
-                - "/image.jpg"
-            image_alt:
-              type: string
-              title: Image
-              examples:
-                - "Image alt text"
+                - "video"
+      style:
+        type: string
+        title: Style
+        enum:
+          - no-media
+          - video
+          - vertical
+          - horizontal
