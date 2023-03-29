@@ -4,6 +4,8 @@ name: "Video"
 componentType: "molecule"
 status: "WIP"
 description: "A simple video component"
+libraryDependencies:
+  - core/jquery.once
 schemas:
   props:
     type: object

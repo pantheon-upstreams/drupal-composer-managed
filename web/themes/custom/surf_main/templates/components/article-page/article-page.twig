@@ -14,7 +14,10 @@
   {# Primary Media (video) #}
   {% if video_url %}
   <div class="c-article__video-wrapper">
-    <iframe src="https://player.vimeo.com/video/{{video_url}}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      {% include "video" with {
+          title: video_title,
+          video: "https://player.vimeo.com/video/" ~ video_url,
+      } %}
   </div>
   {% endif %}
 
@@ -78,8 +81,6 @@
       <li class="c-article__categories-item">
         <a
           href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
-        {# {{dump(item.entity)}}
-        {{dump(item.entity.url.value)}} #}
       </li>
       {% endfor %}
     </ul>
