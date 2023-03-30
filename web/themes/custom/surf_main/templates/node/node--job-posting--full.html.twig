@@ -64,8 +64,9 @@
 %}
 
 {# Handle internal and external links/urls #}
+{% if content.field_link.0 is empty %}
 {% set link_url = '' %}
-{% if content.field_link.0["#url"].external %}
+{% elseif content.field_link.0["#url"].external %}
   {% set link_url = content.field_link.0["#url"].uri %}
 {% else %}
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
