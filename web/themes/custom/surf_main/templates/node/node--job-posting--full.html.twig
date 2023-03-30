@@ -4,8 +4,7 @@
     - [ ] Update the hard-coded callouts
   #}
 
-{# <pre>{{dump(content)}}</pre> #}
-
+{# Temporary hard-coded: Breadcumbs #}
 {% set breadcrumbs = [
     {
       title: 'Home',
@@ -25,6 +24,7 @@
   ]
 %}
 
+{# Temporary hard-coded: Bottom of the page callouts/blocks #}
 {% set callouts =
   [
     {content:  include("callout", {
@@ -63,31 +63,7 @@
   ]
 %}
 
-  {#
- - [x]  "body" => array:18 [▶]
-  "links" => array:2 [▶]
-  "field_media" => array:2 [▶]
-  "field_ref_department" => array:2 [▶]
-  "field_equipment" => array:18 [▶]
-  "field_link" => array:2 [▶]
-  "field_ref_job_type" => array:2 [▶]
-  "field_ref_audiences" => array:2 [▶]
- - [x]  "field_date_application_due" => array:2 [▶]
-  - [x]  field_overview
- #}
-
-
-{#
-- [x] position title
-job type
-- [x] application due date
-equipment (boolean)
-Department
-- [x] Apply link (url & title)
-- [x] Overview
-Description
- #}
-
+{# Handle internal and external links/urls #}
 {% set link_url = '' %}
 {% if content.field_link.0["#url"].external %}
   {% set link_url = content.field_link.0["#url"].uri %}

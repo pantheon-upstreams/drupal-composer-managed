@@ -9,17 +9,10 @@
           items: breadcrumbs
         } %}
       {% endif %}
-
-
-
     </div>
 
     {# Title #}
     <h1 class="c-job-posting__title">{{title}}</h1>
-  </header>
-
-
-  <div class="c-job-posting__content-wrapper">
 
     {# Overview #}
     {% if overview %}
@@ -28,17 +21,21 @@
     </div>
     {% endif %}
 
-     {% if link_text and link_url %}
-    <div class="c-blue-banner__link">
-      {% include "link-button" with {
-      text: link_text,
-      url: link_url,
-      color: 'forest',
-      button_style: 'solid',
-      uppercase: true,
-      } %}
-    </div>
-    {% endif %}
+    {% if link_text and link_url and date %}
+    <div class="c-job-posting__link-date-wrapper">
+
+      {# Apply Button/Link #}
+      {% if link_text and link_url %}
+      <div class="c-job-posting__link">
+        {% include "link-button" with {
+        text: link_text,
+        url: link_url,
+        color: 'forest',
+        button_style: 'solid',
+        uppercase: true,
+        } %}
+      </div>
+      {% endif %}
 
       {# Date #}
       {% if date %}
@@ -47,6 +44,12 @@
       </div>
       {% endif %}
 
+    </div>
+    {% endif %}
+  </header>
+
+
+  <div class="c-job-posting__content-wrapper">
     {# Body #}
     {% if body %}
     <div class="c-job-posting__body">
@@ -56,60 +59,6 @@
 
   </div>
 
-
-  <div class="c-job-posting__bottom-wrapper">
-
-    {# Author #}
-    {% if author %}
-    <p class="c-job-posting__author">
-      by {{ author }}
-    </p>
-    {% endif %}
-
-    {# Categories #}
-    {% if categories %}
-    <ul class="c-job-posting__categories">
-      {% for item in categories['#items'] %}
-      <li class="c-job-posting__categories-item">
-        <a
-          href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
-        {# {{dump(item.entity)}}
-        {{dump(item.entity.url.value)}} #}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-
-    {# Press contact(s) #}
-    {% if contacts %}
-    <h3 class="c-job-posting__contacts-title">Press Contact</h3>
-    <ul class="c-job-posting__contacts">
-      {% for item in contacts %}
-      <li class="c-job-posting__contacts-item">
-        {% include "person" with {
-        image_url: item.image_url,
-        image_alt: item.image_alt,
-        full_name: item.name,
-        initials: initials,
-        title: item.title,
-        phone: item.phone,
-        contact_url: item.contact_url,
-        bio_url: item.bio_url,
-        } %}
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-
-    {# Media Download(s) #}
-    {% if downloads %}
-    {% include "resources-list" with {
-    heading: 'Media Downloads',
-    items: downloads
-    } %}
-    {% endif %}
-
-  </div>
 
   <hr class="left-hook-divider" />
 
