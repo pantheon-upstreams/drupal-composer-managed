@@ -62,6 +62,18 @@
       @include bp-min(large) {
         @include surf-font-body-large;
       }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .c-callout__link {
+      margin-top: rem(10px);
+      @include bp-min(large) {
+        margin-top: rem(28px);
+      }
+      .cl-component--link-button {
+        padding-top: 0;
+      }
     }
   }
 }

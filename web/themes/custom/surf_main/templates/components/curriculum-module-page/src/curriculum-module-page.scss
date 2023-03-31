@@ -25,7 +25,7 @@
     margin-bottom: rem(40px);
   }
   @include bp-min(large) {
-    padding-top: rem(50px);
+    // padding-top: rem(50px);
     margin-bottom: rem(60px);
   }
   &:after {
