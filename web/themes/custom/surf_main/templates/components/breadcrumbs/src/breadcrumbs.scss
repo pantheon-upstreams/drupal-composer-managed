@@ -4,7 +4,8 @@ nav.c-breadcrumb {
   display: none;
   @include bp-min(large) {
     display: block;
-    margin: 0 0 rem(32px) 0;
+    padding-top: rem(32px);
+    margin: 0 0 rem(40px) 0;
   }
 }
 

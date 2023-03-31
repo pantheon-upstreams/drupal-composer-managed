@@ -8,13 +8,14 @@
 a.forest-button {
   color: #fff;
   background-color: var(--color-surf--forest);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  padding: rem(6px) rem(12px);
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -27,14 +28,14 @@ a.forest-button {
     color: #fff;
     background-color: var(--color-surf--kelly-green);
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: rem(2px);
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
+    padding: rem(8px) rem(18px);
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
 
@@ -42,13 +43,14 @@ a.forest-button {
 a.kelly-green-button {
   color: #fff;
   background-color: var(--color-surf--kelly-green);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  padding: rem(6px) rem(12px);
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -61,14 +63,14 @@ a.kelly-green-button {
     color: #fff;
     background-color: var(--color-surf--forest);
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: rem(2px);
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
+    padding: rem(8px) rem(18px);
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
 
@@ -76,13 +78,14 @@ a.kelly-green-button {
 a.gradient-button {
   color: #fff;
   background: var(--color-surf--kelly-green);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  padding: rem(6px) rem(12px);
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -107,26 +110,26 @@ a.gradient-button {
     color: #fff;
     background: var(--color-surf--forest);
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: rem(2px);
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
+    padding: rem(8px) rem(18px);
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
 
 // Forest Underline Button
 a.underline-green-button {
   color: var(--color-surf--forest);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
   padding: 0 0 8px 0;
-  font-size: 16px;
+  font-size: rem(16px);
   letter-spacing: 1.8px;
   line-height: 140%;
   position: relative;
@@ -145,7 +148,7 @@ a.underline-green-button {
   }
   @include bp-min(large) {
     padding: 8px 5px 8px 0;
-    font-size: 22px;
+    font-size: rem(22px);
     line-height: 140%;
   }
 }
@@ -153,13 +156,14 @@ a.underline-green-button {
 // White Underline Button
 a.underline-white-button {
   color: #fff;
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
   padding: 0 0 8px 0;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -178,8 +182,8 @@ a.underline-white-button {
 
   @include bp-min(large) {
     padding: 8px 5px 8px 0;
-    font-size: 22px;
-    line-height: 140%;
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
 
@@ -187,13 +191,14 @@ a.underline-white-button {
 a.black-button {
   color: #fff;
   background-color: var(--color-surf--black);
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  padding: rem(6px) rem(12px);
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -206,14 +211,14 @@ a.black-button {
     color: #fff;
     background-color: var(--color-surf--grey);
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: rem(2px);
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
+    padding: rem(8px) rem(18px);
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
 
@@ -221,13 +226,14 @@ a.black-button {
 a.white-green-button {
   color: var(--color-surf--forest);
   background-color: #fff;
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  padding: rem(6px) rem(12px);
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -240,14 +246,14 @@ a.white-green-button {
     color: var(--color-surf--black);
     background-color: #fff;
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: rem(2px);
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
+    padding: rem(8px) rem(18px);
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
 
@@ -255,13 +261,14 @@ a.white-green-button {
 a.white-black-button {
   color: var(--color-surf--black);
   background-color: #fff;
-  font-family: var(--font-family-condensed);
+  font-family: var(--font-family-sans);
   font-weight: var(--font-weight-bold);
   text-decoration: none;
   // text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 16px;
-  letter-spacing: 1.8px;
+  padding: rem(6px) rem(12px);
+  font-size: rem(16px);
+  // letter-spacing: rem(1.5px);
+  letter-spacing: 0;
   line-height: 140%;
   position: relative;
   display: inline-flex;
@@ -274,13 +281,13 @@ a.white-black-button {
     color: var(--color-surf--black);
     background-color: #fff;
     text-decoration-line: underline;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: rem(2px);
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @include bp-min(large) {
-    padding: 8px 18px;
-    font-size: 22px;
-    line-height: 140%;
+    padding: rem(8px) rem(18px);
+    font-size: rem(22px);
+    // letter-spacing: rem(1.8px);
   }
 }
