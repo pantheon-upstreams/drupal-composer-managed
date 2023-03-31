@@ -319,11 +319,13 @@
       "content bottom"
       "divider divider"
       "related related";
-    grid-template-columns: 1fr rem(420px);
+    // grid-template-columns: 1fr rem(420px);
+    grid-template-columns: 2fr 1fr;
   }
   @include bp-min(xlarge) {
     column-gap: rem(180px);
-    grid-template-columns: 1fr rem(630px);
+    // grid-template-columns: 1fr rem(630px);
+    grid-template-columns: 2fr 1fr;
   }
 
   .c-article__image-wrapper {

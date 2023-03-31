@@ -119,3 +119,19 @@
     }
   }
 }
+
+// Annoying Overrides
+.c-article--vertical {
+  .c-list.c-list--2-columns.c-list--default-column .c-list__items {
+    grid-template-columns: 1fr;
+    @include bp-min(medium) {
+      grid-template-columns: 1fr;
+    }
+    @include bp-min(medium) {
+      grid-template-columns: 0.5fr 0.5fr;
+    }
+    @include bp-min(xlarge) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
