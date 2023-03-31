@@ -15,6 +15,13 @@
     {# Title #}
     <h1 class="c-curriculum-module__title">{{title}}</h1>
 
+     {# Overview #}
+    {% if overview %}
+    <div class="c-curriculum-module__overview">
+      {{ overview }}
+    </div>
+    {% endif %}
+
     {# Meta Data #}
     <div class="c-curriculum-module__meta-data">
 
@@ -66,22 +73,33 @@
 
   <div class="c-curriculum-module__content-wrapper">
 
+    {# Primary Media (image) #}
     {% if image_url %}
     <div class="c-curriculum-module__image-wrapper">
-      <img src="{{image_url}}" alt="{{image_alt}}">
+        {% include "image" with {
+        image: image_url,
+        alt: image_alt,
+        credit: image_credit
+        } %}
+    </div>
+    {% endif %}
+
+    {# Primary Media (video) #}
+    {% if video_url %}
+    <div class="c-curriculum-module__video-wrapper">
+        {% include "video" with {
+            title: video_title,
+            video: "https://player.vimeo.com/video/" ~ video_url,
+        } %}
     </div>
     {% endif %}
 
     <div class="c-curriculum-module-content__inner-wrapper">
-    {# Overview #}
-    {% if overview %}
-    <div class="c-curriculum-module__overview">
-      {{ overview }}
-    </div>
-    {% endif %}
+
 
     {# Body #}
     {% if body %}
+    <h3>Overview</h3>
     <div class="c-curriculum-module__body-wrapper">
       {{ body }}
     </div>

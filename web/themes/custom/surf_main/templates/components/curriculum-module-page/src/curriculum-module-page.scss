@@ -113,7 +113,7 @@
     padding: 0 0 rem(67px) 0;
   }
   @include bp-min(xxlarge) {
-    display: flex;
+    // display: flex;
     padding: 0 0 rem(143px) 0;
     .c-curriculum-module__image-wrapper {
       order: 2;
