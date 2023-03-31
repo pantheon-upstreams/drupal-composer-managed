@@ -227,6 +227,10 @@
   }
   .c-article__content-wrapper {
     grid-area: content;
+    @include bp-min(large) {
+      margin: 0 auto;
+      max-width: rem(780px);
+    }
     @include bp-min(xlarge) {
       background: var(--color-surf--white);
       padding: rem(40px) rem(40px) 0 0;
