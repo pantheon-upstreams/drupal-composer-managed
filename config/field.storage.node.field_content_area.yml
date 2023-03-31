@@ -1,12 +1,12 @@
-uuid: a36fbeb4-c4dd-4e40-b108-e8d1052a948c
+uuid: b967f429-798a-4b24-b793-42a20e574cc2
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_ref_grade_level
-field_name: field_ref_grade_level
+id: node.field_content_area
+field_name: field_content_area
 entity_type: node
 type: entity_reference
 settings:

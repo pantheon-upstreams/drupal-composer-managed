@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_media
     - media.type.image
-    - media.type.video
+    - media.type.remote_video
     - node.type.curriculum_module
 id: node.curriculum_module.field_media
 field_name: field_media
@@ -22,7 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      video: video
+      remote_video: remote_video
     sort:
       field: _none
       direction: ASC

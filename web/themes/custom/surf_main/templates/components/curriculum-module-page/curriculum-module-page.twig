@@ -1,0 +1,113 @@
+<article {{ clAttributes.addClass('c-curriculum-module'|addModifiers(style), 'l-constrained') }}>
+
+  <header class="c-curriculum-module__header-wrapper">
+
+    {% if breadcrumbs %}
+    <div class="c-curriculum-module__breadcrumbs-date-wrapper">
+      {# Breadcumbs #}
+        {% include "breadcrumbs" with {
+          items: breadcrumbs
+        } %}
+    </div>
+    {% endif %}
+
+
+    {# Title #}
+    <h1 class="c-curriculum-module__title">{{title}}</h1>
+
+    {# Meta Data #}
+    <div class="c-curriculum-module__meta-data">
+
+      {% if grade_levels['#items'] %}
+      <h2 class="c-curriculum-module__meta-data-title">Grade Level</h2>
+      <ul class="c-curriculum-module__grade-levels">
+        {% for item in grade_levels['#items'] %}
+        <li class="c-curriculum-modulee__grade-levels-item">
+          <a
+            href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if content_areas['#items'] %}
+      <h2 class="c-curriculum-module__meta-data-title">Content Areas</h2>
+      <ul class="c-curriculum-module__content-areas">
+        {% for item in content_areas['#items'] %}
+        <li class="c-curriculum-modulee__content-areas-item">
+          <a
+            href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if time_required %}
+      <h2 class="c-curriculum-module__meta-data-title">Time Required</h2>
+       <ul class="c-curriculum-module__time-required">
+        <li class="c-curriculum-modulee__time-required-item">{{time_required}}</li>
+       </ul>
+      {% endif %}
+
+    </div>
+
+
+    {# Link #}
+      {% if link_url %}
+      <p class="c-curriculum-module__link">
+        <a href="{{link_url}}" class="forest-button">
+          {% if link_text %}{{ link_text }}{% else %}Visit Website{% endif %}
+        </a>
+      </p>
+      {% endif %}
+
+  </header>
+
+
+  <div class="c-curriculum-module__content-wrapper">
+
+    {% if image_url %}
+    <div class="c-curriculum-module__image-wrapper">
+      <img src="{{image_url}}" alt="{{image_alt}}">
+    </div>
+    {% endif %}
+
+    <div class="c-curriculum-module-content__inner-wrapper">
+    {# Overview #}
+    {% if overview %}
+    <div class="c-curriculum-module__overview">
+      {{ overview }}
+    </div>
+    {% endif %}
+
+    {# Body #}
+    {% if body %}
+    <div class="c-curriculum-module__body-wrapper">
+      {{ body }}
+    </div>
+    {% endif %}
+    </div>
+
+  </div>
+
+  {% if related %}
+  <hr class="left-hook-divider bottom" />
+  {# Press Resources #}
+  <div class="c-curriculum-module__related-wrapper">
+    <h2 class="c-curriculum-module__related-title">More Middle School Curriculum</h2>
+    {{ include('list', {style: 'default-column', items: related })}}
+  </div>
+  {% endif %}
+
+  <div class="c-curriculum-module__bottom-wrapper">
+  {% include "green-banner" with {
+    heading: bottom_block.heading,
+    body: bottom_block.body,
+    link_text: bottom_block.link_text,
+    link_url: bottom_block.link_url,
+  } %}
+  </div>
+
+
+
+</article>

@@ -1,0 +1,155 @@
+@import "_partials";
+
+.c-curriculum-module__title {
+  margin: 0 0 rem(32px) 0;
+  @include surf-font-heading-one;
+  font-size: rem(48px);
+  line-height: 94%;
+  @include bp-min(large) {
+    font-size: rem(100px);
+    line-height: 94%;
+  }
+  @include bp-min(large) {
+    font-size: rem(132px);
+    line-height: 94%;
+  }
+  @include bp-min(xxlarge) {
+    font-size: rem(132px);
+    line-height: 94%;
+  }
+}
+
+.c-curriculum-module__header-wrapper {
+  margin-bottom: rem(32px);
+  @include bp-min(medium) {
+    margin-bottom: rem(40px);
+  }
+  @include bp-min(large) {
+    padding-top: rem(50px);
+    margin-bottom: rem(60px);
+  }
+  &:after {
+    @include bp-min(large) {
+      content: "";
+      display: block;
+      background-image: url("../img/curriculum-module.png");
+      background-position: top right;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 0;
+      width: rem(333px);
+      height: rem(222px);
+      background-size: cover;
+      top: 0;
+    }
+    @include bp-min(xlarge) {
+      width: rem(450px);
+      height: rem(300px);
+    }
+  }
+}
+
+.c-curriculum-module__details-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  @include bp-min(large) {
+    align-items: center;
+    flex-direction: row;
+  }
+  li {
+    display: block;
+    margin: 0;
+  }
+}
+
+.c-curriculum-module__overview {
+  p {
+    @include surf-font-body-large;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: rem(28px);
+    }
+  }
+}
+
+.c-curriculum-module__image-wrapper {
+  margin: 0 0 rem(32px) 0;
+
+  @include bp-min(medium) {
+    margin: 0 0 rem(40px) 0;
+    max-height: rem(226px);
+  }
+  @include bp-min(large) {
+    margin: 0 0 rem(60px) 0;
+    max-height: rem(370px);
+  }
+  @include bp-min(xxlarge) {
+    margin: 0;
+    max-height: rem(370px);
+  }
+  img {
+    display: block;
+    max-height: rem(236px);
+    @include bp-min(medium) {
+      max-height: rem(226px);
+    }
+    @include bp-min(large) {
+      max-height: rem(370px);
+    }
+  }
+}
+
+.c-curriculum-module__content-wrapper {
+  padding: 0 0 rem(25px) 0;
+  @include bp-min(medium) {
+    padding: 0 0 rem(76px) 0;
+  }
+  @include bp-min(large) {
+    padding: 0 0 rem(67px) 0;
+  }
+  @include bp-min(xxlarge) {
+    display: flex;
+    padding: 0 0 rem(143px) 0;
+    .c-curriculum-module__image-wrapper {
+      order: 2;
+      flex: none;
+      margin: 0 0 0 rem(60px);
+    }
+  }
+}
+
+.c-curriculum-module__body-wrapper {
+  & > .text-content > p:first-child {
+    margin-top: 0;
+  }
+  & > .text-content > p:last-child {
+    margin-bottom: 0;
+  }
+  @include bp-min(medium) {
+    order: unset;
+    grid-area: body;
+  }
+  @include bp-min(large) {
+    max-width: rem(780px);
+  }
+}
+
+.c-curriculum-module__related-wrapper {
+  margin: rem(60px) 0 0 0;
+  @include bp-min(medium) {
+    margin: rem(80px) 0 0 0;
+  }
+}
+
+.c-curriculum-module__related-title {
+  margin: 0 0 rem(40px) 0;
+  @include surf-font-heading-two;
+  @include bp-min(medium) {
+    @include surf-font-heading-two;
+  }
+}
