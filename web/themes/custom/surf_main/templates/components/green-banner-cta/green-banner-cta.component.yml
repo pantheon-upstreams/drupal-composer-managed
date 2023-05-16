@@ -1,9 +1,9 @@
 $schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: green-banner
-name: Green Banner
+machineName: green-banner-cta
+name: Green Banner CTA
 status: WIP
 componentType: molecule
-description: A Green Banner component
+description: A Green Banner CTA component
 schemas:
   props:
     type: object

@@ -1,6 +1,6 @@
 @import "_partials";
 
-.c-green-banner {
+.green-banner-cta {
   background: linear-gradient(98.64deg, #00492c 41.67%, #008535 100%);
   padding: rem(32px) rem(15px);
   position: relative;
@@ -46,13 +46,13 @@
   }
 }
 
-.c-green-banner__title {
+.green-banner-cta__title {
   color: var(--color-surf--white);
   margin: 0;
   text-transform: uppercase;
 }
 
-.c-green-banner__body {
+.green-banner-cta__body {
   margin: rem(32px) 0 0 0;
   & > p {
     color: var(--color-surf--white);
@@ -68,6 +68,6 @@
   }
 }
 
-.c-green-banner__link {
+.green-banner-cta__link {
   margin: rem(32px) 0 0 0;
 }

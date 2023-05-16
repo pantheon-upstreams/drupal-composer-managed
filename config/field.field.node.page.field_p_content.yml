@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_p_content
     - node.type.page
+    - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.section
   module:
@@ -23,6 +24,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      green_banner_cta: green_banner_cta
       pullquote: pullquote
       section: section
     negate: 0
@@ -45,6 +47,9 @@ settings:
       gallery:
         weight: 25
         enabled: false
+      green_banner_cta:
+        weight: 28
+        enabled: true
       homepage_lead_teaser:
         weight: 26
         enabled: false
