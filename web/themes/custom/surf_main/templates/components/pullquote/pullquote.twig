@@ -1,9 +1,10 @@
 
-<blockquote {{ clAttributes.addClass('c-pullquote'|addModifiers(style)) }}>
+{# <blockquote {{ clAttributes.addClass('c-pullquote'|addModifiers(style)) }}> #}
+<blockquote {{ attributes.addClass(['c-pullquote', style]).merge(clAttributes) }}>
 
   {% if quote %}
     <div class="c-pullquote__content">
-      {{quote|check_markup('plain') }}
+      <p>{{quote|check_markup('plain') }}</p>
     </div>
   {% endif %}
 

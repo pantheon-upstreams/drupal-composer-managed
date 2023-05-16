@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - simple_text
+      - plain
 id: paragraph.pullquote.field_text
 field_name: field_text
 entity_type: paragraph

@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_p_content
     - node.type.page
     - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
 id: node.page.field_p_content
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       pullquote: pullquote
+      section: section
     negate: 0
     target_bundles_drag_drop:
       card:
@@ -69,7 +71,7 @@ settings:
         enabled: false
       section:
         weight: 33
-        enabled: false
+        enabled: true
       text:
         weight: 34
         enabled: false

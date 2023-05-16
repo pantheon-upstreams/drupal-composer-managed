@@ -8,8 +8,13 @@ id: section
 label: Section
 icon_uuid: null
 icon_default: null
-description: null
+description: ''
 behavior_plugins:
   layout_paragraphs:
     enabled: true
-    available_layouts: {  }
+    available_layouts:
+      layout_onecolumn: 'One Column [1]'
+      layout_twocolumn_halves: 'Two Column [1:1]'
+      layout_twocolumn_onethird_twothirds: 'Two Column [1:2]'
+      layout_twocolumn_twothirds_onethird: 'Two Column [2:1]'
+      layout_threecolumn_thirds: 'Three Column [1:1:1]'
