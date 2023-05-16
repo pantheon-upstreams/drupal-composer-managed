@@ -11,54 +11,54 @@
 }
 
 // Text
-.c-header--black-text h2 {
+.c-header.black-text h2 {
   color: var(--color-surf--black);
 }
-.c-header--white-text h2 {
+.c-header.white-text h2 {
   color: var(--color-surf--white);
 }
 
 // Green Particles
-.c-header--green-particles {
+.c-header.green-particles {
   h2 {
     background: url(../green.svg) no-repeat bottom left;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  &.c-header--black-text h2 {
+  &.black-text h2 {
     background-color: var(--color-surf--black);
   }
-  &.c-header--white-text h2 {
+  &.white-text h2 {
     background-color: var(--color-surf--white);
   }
 }
 
 // Light Particles
-.c-header--light-gray-particles {
+.c-header.light-gray-particles {
   h2 {
     background: url(../light-gray.svg) no-repeat bottom left;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  &.c-header--black-text h2 {
+  &.black-text h2 {
     background-color: var(--color-surf--black);
   }
-  &.c-header--white-text h2 {
+  &.white-text h2 {
     background-color: var(--color-surf--white);
   }
 }
 
 // White Particles
-.c-header--white-particles {
+.c-header.white-particles {
   h2 {
     background: url(../white-70.svg) no-repeat bottom left;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  &.c-header--black-text h2 {
+  &.black-text h2 {
     background-color: var(--color-surf--black);
   }
-  &.c-header--white-text h2 {
+  &.white-text h2 {
     background-color: var(--color-surf--white);
   }
 }

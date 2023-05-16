@@ -1,0 +1,6 @@
+{% include 'header' with {
+  heading: content.field_title|field_value,
+  header_particle_style: content.field_header_particle_style.0["#markup"],
+  header_text_style: content.field_header_text_style.0["#markup"],
+  attributes,
+} only %}

@@ -1,5 +1,5 @@
-<header {{ clAttributes.addClass('c-header'|addModifiers([header_text_style, header_particle_style])) }}>
-  {% block heading_block %}
+<section {{ attributes.addClass(['c-header', header_text_style, header_particle_style]).merge(clAttributes) }}>
+  {% if heading %}
     <h2>{{heading}}</h2>
-  {% endblock %}
+  {% endif %}
 </header>

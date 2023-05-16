@@ -1,0 +1,30 @@
+uuid: a4fbb746-84e7-4ded-be3a-8ed5df001b27
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_header_particle_style
+field_name: field_header_particle_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: green-particles
+      label: 'Green particles'
+    -
+      value: light-gray-particles
+      label: 'Light Gray particles'
+    -
+      value: white-particles
+      label: 'White particles'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
