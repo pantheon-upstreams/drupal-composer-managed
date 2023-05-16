@@ -30,7 +30,7 @@
       var(--color-text-heading-muted) 0.11%,
       var(--color-text-heading) 95.94%
     );
-    // background-clip: text;
+    background-clip: text;
     font-size: rem(40px);
     line-height: 100%;
     letter-spacing: 0.015em;
@@ -64,4 +64,3 @@
     }
   }
 }
-
