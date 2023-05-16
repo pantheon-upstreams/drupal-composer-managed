@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - filter.format.editor_s_set
     - filter.format.full_html
+    - filter.format.simple_text
     - node.type.event
   module:
     - contact
@@ -38,6 +39,7 @@ permissions:
   - 'use text format basic_html'
   - 'use text format editor_s_set'
   - 'use text format full_html'
+  - 'use text format simple_text'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view own user_request'

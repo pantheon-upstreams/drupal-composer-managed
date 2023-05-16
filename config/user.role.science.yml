@@ -6,6 +6,7 @@ dependencies:
     - filter.format.editor_s_set
     - filter.format.filtered_html
     - filter.format.full_html
+    - filter.format.simple_text
     - node.type.article
     - node.type.event
   module:
@@ -40,5 +41,6 @@ permissions:
   - 'use text format editor_s_set'
   - 'use text format filtered_html'
   - 'use text format full_html'
+  - 'use text format simple_text'
   - 'view own unpublished content'
   - 'view the administration theme'

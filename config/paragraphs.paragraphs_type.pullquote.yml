@@ -1,0 +1,10 @@
+uuid: f80fac08-980b-40a1-99dd-5929626a0a8c
+langcode: en
+status: true
+dependencies: {  }
+id: pullquote
+label: Pullquote
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -7,6 +7,7 @@ dependencies:
     - filter.format.filtered_html
     - filter.format.full_html
     - filter.format.plain
+    - filter.format.simple_text
     - node.type.event
     - node.type.page
   module:
@@ -44,6 +45,7 @@ permissions:
   - 'use text format filtered_html'
   - 'use text format full_html'
   - 'use text format plain'
+  - 'use text format simple_text'
   - 'view own unpublished content'
   - 'view own user_request'
   - 'view scheduled content'

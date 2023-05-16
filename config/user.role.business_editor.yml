@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.simple_text
     - node.type.article
     - node.type.event
   module:
@@ -44,6 +45,7 @@ permissions:
   - 'notify of path changes'
   - 'schedule publishing of nodes'
   - 'use text format basic_html'
+  - 'use text format simple_text'
   - 'view all revisions'
   - 'view media'
   - 'view own unpublished content'

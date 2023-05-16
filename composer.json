@@ -88,7 +88,8 @@
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/cl_server": "^1.0@RC",
         "drupal/cl_generator": "^1.0@RC",
-        "drupal/notification_message": "^1.0@RC"
+        "drupal/notification_message": "^1.0@RC",
+        "drupal/allowed_formats": "^2.0"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",

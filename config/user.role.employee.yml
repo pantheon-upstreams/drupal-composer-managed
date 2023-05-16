@@ -2,11 +2,15 @@ uuid: 821585a2-d6b9-4389-ad0c-193f5d07c7d7
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.simple_text
   module:
+    - filter
     - node
 id: employee
 label: Employee
 weight: -8
 is_admin: null
 permissions:
+  - 'use text format simple_text'
   - 'view own unpublished content'

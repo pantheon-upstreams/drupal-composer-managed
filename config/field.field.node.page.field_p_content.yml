@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_p_content
     - node.type.page
+    - paragraphs.paragraphs_type.pullquote
   module:
     - entity_reference_revisions
 id: node.page.field_p_content
@@ -20,7 +21,8 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      pullquote: pullquote
     negate: 0
     target_bundles_drag_drop:
       card:
@@ -56,6 +58,9 @@ settings:
       one_up_teaser_image_text:
         weight: 30
         enabled: false
+      pullquote:
+        weight: 32
+        enabled: true
       running_text:
         weight: 31
         enabled: false
