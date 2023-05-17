@@ -29,7 +29,7 @@
   {% if body %}
   {% block banner_body_block %}
   <div class="c-blue-banner__body">
-    {{ body|check_markup('plain') }}
+    <p>{{ body }}</p>
   </div>
   {% endblock %}
   {% endif %}

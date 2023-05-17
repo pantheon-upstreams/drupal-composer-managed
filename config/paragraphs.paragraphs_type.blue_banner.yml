@@ -1,0 +1,10 @@
+uuid: 18fdd4e2-a2de-421c-b74c-a52f55ae9503
+langcode: en
+status: true
+dependencies: {  }
+id: blue_banner
+label: 'Blue Banner'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
