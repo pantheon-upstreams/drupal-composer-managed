@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.section
   module:
@@ -29,6 +30,7 @@ settings:
       header: header
       pullquote: pullquote
       section: section
+      person: person
     negate: 0
     target_bundles_drag_drop:
       card:
@@ -70,6 +72,9 @@ settings:
       one_up_teaser_image_text:
         weight: 30
         enabled: false
+      person:
+        weight: 37
+        enabled: true
       pullquote:
         weight: 32
         enabled: true

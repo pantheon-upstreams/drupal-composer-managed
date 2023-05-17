@@ -1,0 +1,25 @@
+uuid: bb6202bd-21d8-47be-8071-d675979eee21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.person.field_person
+    - paragraphs.paragraphs_type.person
+  module:
+    - entity_reference_revisions
+id: paragraph.person.default
+targetEntityType: paragraph
+bundle: person
+mode: default
+content:
+  field_person:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

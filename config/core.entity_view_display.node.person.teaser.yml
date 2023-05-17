@@ -18,37 +18,79 @@ dependencies:
     - field.field.node.person.field_ref_department
     - node.type.person
   module:
-    - text
+    - name
     - user
 id: node.person.teaser
 targetEntityType: node
 bundle: person
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 600
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 3
+    region: content
+  field_job_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_name:
+    type: name_default
+    label: above
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_phone_mobile:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_phone_office:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  body: true
   field_appointed_by: true
   field_board_type: true
   field_date_appointed: true
-  field_email: true
-  field_job_title: true
   field_location: true
-  field_media_primary: true
-  field_name: true
-  field_phone_mobile: true
-  field_phone_office: true
   field_ref_department: true
   langcode: true
   search_api_excerpt: true
