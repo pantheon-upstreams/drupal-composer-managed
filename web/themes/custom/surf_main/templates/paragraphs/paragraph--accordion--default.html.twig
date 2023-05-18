@@ -1,0 +1,12 @@
+{% set items = [] %}
+{% for item in paragraph.field_accordion_items %}
+{% set items = items|merge([{
+  title: item.entity.field_title.value,
+  content: item.entity.field_text.value
+  }]) %}
+{% endfor %}
+
+{% include "accordion" with {
+  items,
+  attributes
+} %}

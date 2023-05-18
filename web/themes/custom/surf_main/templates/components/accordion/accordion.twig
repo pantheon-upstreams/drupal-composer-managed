@@ -1,4 +1,4 @@
-<section {{ clAttributes.addClass('c-accordion') }}>
+<section {{ attributes.addClass('c-accordion').merge(clAttributes) }}>
 
   {% block accordion_block %}
   {% for key, accordion_item in items %}
