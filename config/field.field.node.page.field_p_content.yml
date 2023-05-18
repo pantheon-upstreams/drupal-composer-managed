@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.blue_banner
     - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.section
@@ -33,6 +34,7 @@ settings:
       pullquote: pullquote
       section: section
       person: person
+      media: media
     negate: 0
     target_bundles_drag_drop:
       blue_banner:
@@ -74,6 +76,9 @@ settings:
       image_with_caption:
         weight: 29
         enabled: false
+      media:
+        weight: 39
+        enabled: true
       one_up_teaser_image_text:
         weight: 30
         enabled: false
