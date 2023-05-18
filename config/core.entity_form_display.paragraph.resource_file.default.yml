@@ -1,0 +1,24 @@
+uuid: ffa72937-c3f1-4ed8-93a6-f4405f01b201
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_file.field_file
+    - paragraphs.paragraphs_type.resource_file
+  module:
+    - file
+id: paragraph.resource_file.default
+targetEntityType: paragraph
+bundle: resource_file
+mode: default
+content:
+  field_file:
+    type: file_generic
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
