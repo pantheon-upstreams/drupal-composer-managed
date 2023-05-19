@@ -1,21 +1,20 @@
-uuid: 78ee14e6-892b-4c7c-94ea-78e7afea371c
+uuid: 251ed33a-7663-46cd-82e9-a4edd184d3cd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_resource
-    - paragraphs.paragraphs_type.resource_file
-    - paragraphs.paragraphs_type.resource_link
-    - paragraphs.paragraphs_type.resources_list
+    - field.storage.paragraph.field_media_items
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.media_gallery
   module:
     - entity_reference_revisions
-id: paragraph.resources_list.field_resource
-field_name: field_resource
+id: paragraph.media_gallery.field_media_items
+field_name: field_media_items
 entity_type: paragraph
-bundle: resources_list
-label: Resource
+bundle: media_gallery
+label: Media
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,101 +22,100 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      resource_file: resource_file
-      resource_link: resource_link
+      media: media
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 31
-        enabled: false
-      accordion_item:
         weight: 32
         enabled: false
-      blue_banner:
+      accordion_item:
         weight: 33
         enabled: false
-      card:
+      blue_banner:
         weight: 34
         enabled: false
-      centered_image_text:
+      card:
         weight: 35
         enabled: false
-      entity_references_image_text:
+      centered_image_text:
         weight: 36
         enabled: false
-      entity_references_text:
+      entity_references_image_text:
         weight: 37
         enabled: false
-      full_teaser:
+      entity_references_text:
         weight: 38
         enabled: false
-      gallery:
+      full_teaser:
         weight: 39
         enabled: false
-      green_banner_cta:
+      gallery:
         weight: 40
         enabled: false
-      header:
+      green_banner_cta:
         weight: 41
         enabled: false
-      homepage_lead_teaser:
+      header:
         weight: 42
         enabled: false
-      homepage_teaser:
+      homepage_lead_teaser:
         weight: 43
         enabled: false
-      image:
+      homepage_teaser:
         weight: 44
         enabled: false
-      image_with_caption:
+      image:
         weight: 45
         enabled: false
-      media:
+      image_with_caption:
         weight: 46
         enabled: false
+      media:
+        weight: 47
+        enabled: true
       media_gallery:
         weight: 48
         enabled: false
       one_up_teaser_image_text:
-        weight: 47
-        enabled: false
-      person:
-        weight: 48
-        enabled: false
-      pullquote:
         weight: 49
         enabled: false
-      resource_file:
-        weight: 51
-        enabled: true
-      resource_link:
-        weight: 52
-        enabled: true
-      resources_list:
+      person:
         weight: 50
         enabled: false
-      running_text:
+      pullquote:
+        weight: 51
+        enabled: false
+      resource_file:
         weight: 53
         enabled: false
-      schedule_item:
+      resource_link:
         weight: 54
         enabled: false
-      section:
+      resources_list:
+        weight: 52
+        enabled: false
+      running_text:
         weight: 55
         enabled: false
-      text:
+      schedule_item:
         weight: 56
         enabled: false
-      two_up_figures:
+      section:
         weight: 57
         enabled: false
-      two_up_teaser_image_text:
+      text:
         weight: 58
         enabled: false
-      two_up_teaser_text:
+      two_up_figures:
         weight: 59
         enabled: false
-      video:
+      two_up_teaser_image_text:
         weight: 60
+        enabled: false
+      two_up_teaser_text:
+        weight: 61
+        enabled: false
+      video:
+        weight: 62
         enabled: false
 field_type: entity_reference_revisions

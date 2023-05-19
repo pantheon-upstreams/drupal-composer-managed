@@ -1,0 +1,25 @@
+
+{# <pre>{{dump(gallery_items)}}</pre> #}
+ {# {% for gallery_item in gallery_items %} #}
+
+  {# {{ drupal_entity('paragraph', gallery_item["#paragraph"].id, default) }} #}
+   {# <pre>{{dump(gallery_item["#paragraph"])}}</pre>
+   {{gallery_item["#paragraph"]}} #}
+       {# {% endfor %} #}
+<section {{ attributes.addClass(['c-media-gallery', 'slider__wrapper']).merge(clAttributes) }}>
+  <div class="splide splide__presentation" aria-label="Media gallery."
+    aria-roledescription="carousel">
+    <div class="splide__track">
+
+      <ul class="image-feature__list splide__list">
+        {% for gallery_item in gallery_items %}
+        <li class="image-features-block__slide splide__slide" aria-label="">
+
+              {{ drupal_entity('paragraph', gallery_item.id, 'default') }}
+
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

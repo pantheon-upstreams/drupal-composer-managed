@@ -10,6 +10,8 @@
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
     "browser-sync": "^2.27.9",
+    "core-js": "^3.30.1",
+    "cssnano": "^5.1.7",
     "exports-loader": "^3.1.0",
     "glob": "^8.0.3",
     "gulp": "^4.0.2",
@@ -32,6 +34,7 @@
     "build": "gulp build"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "postcss-inline-svg": "^5.0.0",
     "vinyl-named": "^1.1.0"
   }

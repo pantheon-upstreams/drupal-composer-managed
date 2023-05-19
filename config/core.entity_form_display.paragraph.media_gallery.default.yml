@@ -1,0 +1,36 @@
+uuid: a18ca717-7ddc-4e8c-a56b-6525ea787be7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_gallery.field_media_items
+    - paragraphs.paragraphs_type.media_gallery
+  module:
+    - paragraphs
+id: paragraph.media_gallery.default
+targetEntityType: paragraph
+bundle: media_gallery
+mode: default
+content:
+  field_media_items:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

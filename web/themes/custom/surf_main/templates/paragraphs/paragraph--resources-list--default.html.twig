@@ -1,0 +1,14 @@
+{# <pre>{{dump(content.field_resource)}}</pre> #}
+
+{% set items = [] %}
+{% for item in paragraph.field_resource %}
+  {# <pre>{{dump(item.value)}}</pre> #}
+  {{ drupal_entity('paragraph', item.value.target_id, 'default') }}
+{% endfor %}
+
+
+{# {% include 'resource-list' with {
+  title: content.field_title|field_value,
+  items: "",
+  attributes,
+} only %} #}

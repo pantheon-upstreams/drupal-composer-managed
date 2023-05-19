@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
@@ -40,6 +41,7 @@ settings:
       text: text
       person: person
       media: media
+      media_gallery: media_gallery
       resources_list: resources_list
     negate: 0
     target_bundles_drag_drop:
@@ -90,6 +92,9 @@ settings:
         enabled: false
       media:
         weight: 39
+        enabled: true
+      media_gallery:
+        weight: 48
         enabled: true
       one_up_teaser_image_text:
         weight: 30
