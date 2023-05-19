@@ -34,7 +34,6 @@ settings:
         -
           name: Media
           items:
-            - Blockquote
             - Table
             - DrupalImage
         -
