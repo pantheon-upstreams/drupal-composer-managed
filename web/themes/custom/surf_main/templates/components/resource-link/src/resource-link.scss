@@ -33,35 +33,3 @@
     text-decoration: underline;
   }
 }
-
-.c-resources-link__meta-wrapper {
-  padding: 0 0 0 rem(30px);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-weight: var(--font-weight-regular);
-  font-size: rem(16px);
-  line-height: 148%;
-  color: var(--color-surf--black);
-}
-
-.c-resources-link__size {
-  margin: 0 rem(8px) 0 0;
-  padding: 0 rem(10px) 0 0;
-  position: relative;
-  &:after {
-    content: "";
-    font-weight: var(--font-weight-regular);
-    background: var(--color-surf--black);
-    height: rem(12px);
-    width: rem(1px);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-.c-resources-link__mimetype {
-  text-transform: uppercase;
-}
