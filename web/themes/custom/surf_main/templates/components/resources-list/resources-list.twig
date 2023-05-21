@@ -1,17 +1,20 @@
 {# Markup for the component #}
-<article {{ clAttributes.addClass('c-resources-list') }}>
+<article {{ attributes.addClass('c-resources-list').merge(clAttributes) }}>
 
   {% if heading %}
-    {% block heading_block %}
     <h2 class="c-resources-list__heading">{{ heading }}</h2>
-    {% endblock heading_block %}
   {% endif %}
 
   {% block items_block %}
 
   <ul class="c-resources-list__items">
-  {% for resource_item in items %}
-    <li class="c-resources-list__item {{resource_item.icon}}">
+  {% for item in items %}
+    <li class="c-resources-list__item">
+     {{ drupal_entity('paragraph', item.id, 'default') }}
+     </li>
+   {% endfor %}
+
+    {# <li class="c-resources-list__item {{resource_item.icon}}">
       <a class="c-resources-list__link" href="{{resource_item.url}}">{{resource_item.title}}</a>
 
       {% if resource_item.size and resource_item.type %}
@@ -27,7 +30,7 @@
       {% endif %}
 
     </li>
-  {% endfor %}
+  {% endfor %} #}
   </ul>
 
   {% endblock items_block %}

@@ -1,0 +1,15 @@
+{# Handle internal and external links #}
+{% set link_url = null %}
+
+{% if content.field_link.0["#url"].external %}
+  {% set link_url = content.field_link.0["#url"].uri %}
+{% elseif content.field_link.0["#url"].external == false %}
+  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+{% endif %}
+
+
+{% include 'resource-link' with {
+  link_title: content.field_link.0["#title"],
+  link_url,
+  attributes,
+} only %}
