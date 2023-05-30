@@ -54,24 +54,21 @@ import Splide from "@splidejs/splide";
         }, 500);
       });
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.intersectionRatio > 0.1) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+      // const observer = new IntersectionObserver(entries => {
+      //   entries.forEach(entry => {
+      //     if (entry.intersectionRatio > 0.1) {
+      //       entry.target.classList.add('visible');
+      //       observer.unobserve(entry.target);
+      //     }
+      //   });
+      // }, { threshold: 0.1 });
 
-
-      classesToObserve.forEach(className => {
-        const elements = document.querySelectorAll(className);
-        elements.forEach(element => {
-          observer.observe(element);
-        });
-      });
-
-
+      // classesToObserve.forEach(className => {
+      //   const elements = document.querySelectorAll(className);
+      //   elements.forEach(element => {
+      //     observer.observe(element);
+      //   });
+      // });
 
     }
   }
