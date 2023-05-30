@@ -1,6 +1,16 @@
 <section {{ attributes.addClass(['c-media-gallery', 'slider__wrapper']).merge(clAttributes) }}>
   <div class="splide splide__presentation" aria-label="Media gallery."
     aria-roledescription="carousel">
+
+    <div class="splide__arrows">
+		<button class="splide__arrow splide__arrow--prev">
+			<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none"><path stroke="#222" stroke-width="1.5" d="M48.387 30H11.613M25.161 43.548 11.613 30 25.16 16.452"/></svg>
+		</button>
+		<button class="splide__arrow splide__arrow--next">
+			<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none"><path stroke="#222" stroke-width="1.5" d="M11.613 30h36.774M34.839 43.548 48.387 30 34.84 16.452"/></svg>
+		</button>
+  </div>
+
     <div class="splide__track">
       <ul class="image-feature__list splide__list">
         {% for gallery_item in gallery_items %}

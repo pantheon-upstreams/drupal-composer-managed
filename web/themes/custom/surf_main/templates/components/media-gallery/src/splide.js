@@ -1,6 +1,6 @@
 import Splide from "@splidejs/splide";
 ((Drupal, once) => {
-  Drupal.behaviors.surf_institute_splide = {
+  Drupal.behaviors.surf_main_splide = {
     attach(context, _settings) {
 
       const classesToObserve = ['.c-media-gallery', '.splide__arrow--prev', '.splide__arrow--next'];
@@ -16,7 +16,7 @@ import Splide from "@splidejs/splide";
           keyboard: true,
           perPage: 1,
           mediaQuery: 'min',
-          arrowPath: 'm22.81 9.286-3.03 3.03 5.432 5.434H6.143v4.286h19.069l-5.432 5.432 3.03 3.03 10.607-10.605z',
+          // arrowPath: 'M.613 15h36.774M23.839 28.548 37.387 15 23.84 1.452',
           // fixedHeight: 210,
           breakpoints: {
             0: {

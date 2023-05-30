@@ -1,8 +1,8 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
-/******/ 	var __webpack_modules__ = ({
-
-/***/ 4:
+/******/ 	var __webpack_modules__ = ([
+/* 0 */,
+/* 1 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -3763,8 +3763,7 @@ var SplideRenderer = /*#__PURE__*/function () {
 
 
 /***/ })
-
-/******/ 	});
+/******/ 	]);
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
@@ -3824,10 +3823,10 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _splidejs_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 (function (Drupal, once) {
-  Drupal.behaviors.surf_institute_splide = {
+  Drupal.behaviors.surf_main_splide = {
     attach: function attach(context, _settings) {
       var classesToObserve = ['.c-media-gallery', '.splide__arrow--prev', '.splide__arrow--next'];
       once('splide', '.splide', context).forEach(function (splideElement) {
@@ -3841,7 +3840,7 @@ __webpack_require__.r(__webpack_exports__);
           keyboard: true,
           perPage: 1,
           mediaQuery: 'min',
-          arrowPath: 'm22.81 9.286-3.03 3.03 5.432 5.434H6.143v4.286h19.069l-5.432 5.432 3.03 3.03 10.607-10.605z',
+          // arrowPath: 'M.613 15h36.774M23.839 28.548 37.387 15 23.84 1.452',
           // fixedHeight: 210,
           breakpoints: {
             0: {
