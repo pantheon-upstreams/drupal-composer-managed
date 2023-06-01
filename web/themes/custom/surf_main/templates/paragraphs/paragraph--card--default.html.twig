@@ -1,0 +1,19 @@
+{# Handle internal and external links #}
+{% set link_url = null %}
+
+{% if content.field_link.0["#url"].external %}
+  {% set link_url = content.field_link.0["#url"].uri %}
+{% elseif content.field_link.0["#url"].external == false %}
+  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+{% endif %}
+
+{% include 'callout' with {
+  heading: content.field_title|field_value,
+  body: content.field_text.0["#text"],
+  link_text: content.field_link.0["#title"],
+  link_url,
+  image_url: file_url(content.field_media['#items'].entity.field_media_image.entity.fileuri),
+  image_alt: content.field_media['#items'].entity.field_media_image.alt,
+  theme: content.field_theme.0["#markup"],
+  attributes,
+} only %}
