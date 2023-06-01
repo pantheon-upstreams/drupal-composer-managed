@@ -8,10 +8,9 @@
   set classes = [
     'layout',
     'l--' ~ layout.id|clean_class,
-
+		'l-constrained',
   ]
 %}
-{# 'l-constrained', #}
 {% if content %}
 	<div{{attributes.addClass(classes)}}>
 		<div class="l--inner-wrapper">

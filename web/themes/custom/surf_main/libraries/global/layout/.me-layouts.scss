@@ -228,28 +228,3 @@
     }
   }
 }
-
-.l-new-constrained {
-  width: 100%;
-  @include bp-min(xlarge) {
-    margin-left: rem(20px);
-    width: calc(100% - rem(20px));
-  }
-}
-
-.l--bottom-spacing {
-  margin-bottom: rem(32px);
-  @include bp-min(medium) {
-    margin-bottom: rem(48px);
-  }
-  @include bp-min(large) {
-    margin-bottom: rem(60px);
-  }
-  @include bp-min(xlarge) {
-    margin-bottom: rem(80px);
-  }
-}
-
-.field--name-field-p-content > .field__item:last-child .cl-component {
-  margin-bottom: 0 !important;
-}

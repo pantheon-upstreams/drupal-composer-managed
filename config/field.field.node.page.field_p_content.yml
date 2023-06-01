@@ -11,7 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.media_gallery
-    - paragraphs.paragraphs_type.person
+    - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section
@@ -39,10 +39,10 @@ settings:
       pullquote: pullquote
       section: section
       text: text
-      person: person
       media: media
       media_gallery: media_gallery
       resources_list: resources_list
+      persons_list: persons_list
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -101,6 +101,9 @@ settings:
         enabled: false
       person:
         weight: 37
+        enabled: false
+      persons_list:
+        weight: 52
         enabled: true
       pullquote:
         weight: 32

@@ -1,4 +1,5 @@
-<section {{ attributes.addClass('green-banner-cta').merge(clAttributes) }}>
+{# <div class="l-constrained--xlarge l--bottom-spacing cl-component"> #}
+<section {{ attributes.addClass(['green-banner-cta', 'l-constrained--xlarge']).merge(clAttributes) }}>
   {% if heading %}
   {% block banner_heading_block %}
   <h2 class="green-banner-cta__title">{{heading}}</h2>

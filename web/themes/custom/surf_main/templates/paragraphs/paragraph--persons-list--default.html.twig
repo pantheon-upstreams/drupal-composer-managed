@@ -1,0 +1,11 @@
+{% set items = [] %}
+{% for item in paragraph.field_persons %}
+{% set items = items|merge([{
+  id: item.value.target_id
+  }]) %}
+{% endfor %}
+
+{% include 'persons-list' with {
+  items,
+  attributes,
+} only %}

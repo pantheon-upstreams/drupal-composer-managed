@@ -1,4 +1,4 @@
-<blockquote {{ attributes.addClass(['c-pullquote', style]).merge(clAttributes) }}>
+<blockquote {{ attributes.addClass(['c-pullquote', style, style == 'fullwidth' ? 'l-constrained--xlarge' : 'l-constrained--medium']).merge(clAttributes) }}>
 
   {% if quote %}
     <div class="c-pullquote__content">

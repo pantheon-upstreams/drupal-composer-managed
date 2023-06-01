@@ -17,17 +17,22 @@
   // width: 100%;
 }
 
-.l-constrained--narrow {
+.l-constrained--small {
   max-width: 780px;
-  // width: 100%;
 }
 
-.l-constrained--wide {
-  // max-width: 1620px;
-  max-width: 1400px;
-  // width: 100%;
+.l-constrained--medium {
+  max-width: 1080px;
+}
+
+.l-constrained--large {
+  max-width: 1136px;
+}
+
+.l-constrained--xlarge {
+  max-width: 1380px;
 }
 
 .l-constrained--full {
-  width: 100%;
+  max-width: 100%;
 }

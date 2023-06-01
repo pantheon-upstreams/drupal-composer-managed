@@ -1,0 +1,6 @@
+name: Surf Main Site Style Options
+description: Provides custom style options for the Surf main website.
+type: module
+core_version_requirement: ^9 || ^10
+dependencies:
+  - style_options:style_options
