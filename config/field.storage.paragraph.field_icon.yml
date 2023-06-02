@@ -34,7 +34,7 @@ settings:
       label: Document
     -
       value: globe
-      label: Group
+      label: Globe
     -
       value: group
       label: Group
