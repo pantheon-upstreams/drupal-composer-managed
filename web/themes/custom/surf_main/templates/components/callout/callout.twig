@@ -62,7 +62,7 @@
         icon_type: icon ? icon : 'arrow',
         uppercase: true
         } %}
-      {% elseif arrow %}
+      {% elseif arrow or theme == 'icon' %}
         {% include "link-button" with {
         text: link_text,
         url: link_url,
