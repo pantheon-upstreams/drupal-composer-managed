@@ -1,0 +1,25 @@
+
+{% set widthClass = 'l-constrained--medium' %}
+{% if items|length >= 3 %}
+  {% set widthClass = 'l-constrained--xlarge' %}
+{% elseif items|length < 3 %}
+  {% set widthClass = 'l-constrained--medium' %}
+{% endif %}
+
+<article {{ attributes.addClass(['c-callout-list', widthClass,
+'l--bottom-spacing']).merge(clAttributes) }}>
+
+  {% block items_block %}
+
+  <ul class="c-callout-list__items">
+  {% for item in items %}
+    <li class="c-callout-list__item">
+     {{ drupal_entity('paragraph', item.id, 'default') }}
+     </li>
+   {% endfor %}
+
+  </ul>
+
+  {% endblock items_block %}
+
+</article>

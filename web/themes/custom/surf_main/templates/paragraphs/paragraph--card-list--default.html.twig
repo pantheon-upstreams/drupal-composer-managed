@@ -1,0 +1,12 @@
+{% set items = [] %}
+{% for item in paragraph.field_cards %}
+{% set items = items|merge([{
+  id: item.value.target_id
+  }]) %}
+{% endfor %}
+
+{% include 'callout-list' with {
+  items,
+  length: items|length,
+  attributes,
+} only %}
