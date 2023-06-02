@@ -20,15 +20,17 @@
 {# Markup for the component #}
 <article {{ clAttributes.addClass('c-callout'|addModifiers(theme)) }}>
 
-  {% if image_url and image_alt %}
+  {% if image_url and image_alt and theme != 'icon' %}
     <div class="c-callout__image">
-    {% block image_block %}
     {% include "image" with {
     image: image_url,
     alt: image_alt
     } %}
-    {% endblock %}
     </div>
+  {% endif %}
+
+  {% if image is empty and theme == 'icon' %}
+      <div{{ attributes.addClass(['c-callout__icon', icon]) }}></div>
   {% endif %}
 
   <div class="c-callout__content-wrapper">

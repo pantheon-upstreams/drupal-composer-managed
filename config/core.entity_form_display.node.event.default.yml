@@ -22,7 +22,6 @@ dependencies:
     - node.type.event
   module:
     - address
-    - conditional_fields
     - datetime_range
     - link
     - maxlength
@@ -182,40 +181,7 @@ content:
     weight: 123
     region: content
     settings: {  }
-    third_party_settings:
-      conditional_fields:
-        bfb5dc90-e6dd-4bac-a378-c77453beda18:
-          entity_type: node
-          bundle: event
-          dependee: field_registration_required
-          settings:
-            state: required
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
-        f29bc9f4-f25b-4f50-b1d2-e8bbd407fe7a:
-          entity_type: node
-          bundle: event
-          dependee: field_registration_required
-          settings:
-            state: visible
-            condition: checked
-            grouping: AND
-            values_set: 1
-            value: ''
-            values: {  }
-            value_form:
-              value: false
-            effect: show
-            effect_options: {  }
-            selector: ''
+    third_party_settings: {  }
   field_registration_required:
     type: boolean_checkbox
     weight: 122

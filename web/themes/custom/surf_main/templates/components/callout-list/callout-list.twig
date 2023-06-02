@@ -1,13 +1,13 @@
 
 {% set widthClass = 'l-constrained--medium' %}
-{% if items|length >= 3 %}
+{% if length >= 3 %}
   {% set widthClass = 'l-constrained--xlarge' %}
-{% elseif items|length < 3 %}
+{% elseif length < 3 %}
   {% set widthClass = 'l-constrained--medium' %}
 {% endif %}
 
 <article {{ attributes.addClass(['c-callout-list', widthClass,
-'l--bottom-spacing']).merge(clAttributes) }}>
+'l--bottom-spacing', 'c-callout-list__length-' ~ length]).merge(clAttributes) }}>
 
   {% block items_block %}
 

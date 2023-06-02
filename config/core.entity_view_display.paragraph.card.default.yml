@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card.field_icon
     - field.field.paragraph.card.field_link
     - field.field.paragraph.card.field_media
     - field.field.paragraph.card.field_text
@@ -18,6 +19,13 @@ targetEntityType: paragraph
 bundle: card
 mode: default
 content:
+  field_icon:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_link:
     type: link
     label: hidden

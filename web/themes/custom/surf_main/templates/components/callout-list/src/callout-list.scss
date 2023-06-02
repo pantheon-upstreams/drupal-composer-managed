@@ -5,19 +5,34 @@
   padding: 0;
   display: grid;
   row-gap: rem(32px);
-  @include bp-min(medium) {
-    column-gap: rem(20px);
-    grid-template-columns: 0.5fr 0.5fr;
-  }
-  @include bp-min(large) {
-    column-gap: rem(40px);
-  }
-  @include bp-min(xlarge) {
-    column-gap: rem(60px);
-  }
   .c-callout-list__item {
     display: block;
     margin: 0;
     padding: 0;
+  }
+}
+
+.c-callout-list:not(.c-callout-list__length-1) {
+  .c-callout-list__items {
+    @include bp-min(medium) {
+      column-gap: rem(20px);
+      grid-template-columns: 0.5fr 0.5fr;
+    }
+    @include bp-min(large) {
+      column-gap: rem(40px);
+    }
+    @include bp-min(xlarge) {
+      column-gap: rem(60px);
+    }
+  }
+  &.c-callout-list__length-3 {
+    .c-callout-list__items {
+      @include bp-min(medium) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include bp-min(large) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 }

@@ -21,7 +21,6 @@ module:
   cl_generator: 0
   cl_server: 0
   components: 0
-  conditional_fields: 0
   config: 0
   contact: 0
   contextual: 0

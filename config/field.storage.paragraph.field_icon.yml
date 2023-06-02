@@ -1,0 +1,96 @@
+uuid: d9988076-63fb-4bb9-934c-389a4fae07b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_icon
+field_name: field_icon
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: nobel-prize
+      label: 'Nobel Prize'
+    -
+      value: bar-chart
+      label: 'Bar Chart'
+    -
+      value: burst
+      label: Burst
+    -
+      value: cell
+      label: Cell
+    -
+      value: comment
+      label: Comment
+    -
+      value: costmic-rays
+      label: 'Cosmic Rays'
+    -
+      value: document
+      label: Document
+    -
+      value: globe
+      label: Group
+    -
+      value: group
+      label: Group
+    -
+      value: flashlight
+      label: Flashlight
+    -
+      value: folder
+      label: Folder
+    -
+      value: hardhat
+      label: Hardhat
+    -
+      value: hexagon
+      label: Hexagon
+    -
+      value: ladder
+      label: Ladder
+    -
+      value: lightbulb
+      label: Lightbulb
+    -
+      value: magnifying-glass
+      label: 'Magnifying Glass'
+    -
+      value: particles
+      label: Particles
+    -
+      value: person
+      label: Person
+    -
+      value: shovel
+      label: Shovel
+    -
+      value: starburst
+      label: Starburst
+    -
+      value: teacher
+      label: Teacher
+    -
+      value: tunnels
+      label: Tunnels
+    -
+      value: heart
+      label: Heart
+    -
+      value: computer
+      label: Computer
+    -
+      value: calendar
+      label: Calendar
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
