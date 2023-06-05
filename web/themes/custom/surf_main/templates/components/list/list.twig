@@ -1,4 +1,4 @@
-<section {{ clAttributes.addClass('c-list'|addModifiers([items|length ~ '-columns', style])).addClass('l-constrained') }}>
+<section {{ clAttributes.addClass('c-list').addClass(['c-list--' ~ items|length ~ '-columns', style, 'l-constrained', 'c-list--default-column']) }}>
   <div class="c-list--inner-wrapper">
     <div class="c-list--main">
 

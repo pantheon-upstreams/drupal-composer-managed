@@ -87,7 +87,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-left: calc(var(--space-inset-x) / 2);
+  margin-left: rem(10px);
 }
 .link-button__icon-left {
   display: inline-flex;
