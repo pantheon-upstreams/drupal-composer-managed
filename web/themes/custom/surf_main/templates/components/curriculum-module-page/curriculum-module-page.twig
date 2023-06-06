@@ -148,23 +148,24 @@
 
 
   {# Back Link  #}
-    <span class="l-constrained--xlarge">
+    <div class="l-constrained--xlarge">
     <p class="c-curriculum-module__link-back">
     {# FIXME: this might not be the correct link #}
-      <a href="/curriculum" class="forest-button">
+      <a href="{{category_url}}" class="forest-button">
            <span class="link-button__icon-left">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" fill="none"><path stroke="currentColor" stroke-width="1.5" d="M25.807 16.479H6.194M13.42 23.704l-7.226-7.226 7.226-7.225"/></svg>
 		    </span>
         Back to All Curriculum</a>
     </p>
+    </div>
 
 
-  {% include "green-banner-cta" with {
+  {# {% include "green-banner-cta" with {
     heading: bottom_block.heading,
     body: bottom_block.body,
     link_text: bottom_block.link_text,
     link_url: bottom_block.link_url,
-  } %}
+  } %} #}
   </div>
 
 

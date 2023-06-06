@@ -330,13 +330,21 @@
   margin: 0 0 rem(60px) 0;
 }
 
-.c-curriculum-module__bottom-wrapper {
-  & > .cl-component--green-banner-cta {
-    margin-bottom: 0;
-    @include bp-max(medium) {
-      max-width: 100%;
-      width: 100%;
-    }
+// .c-curriculum-module__bottom-wrapper {
+//   & > .cl-component--green-banner-cta {
+//     margin-bottom: 0;
+//     @include bp-max(medium) {
+//       max-width: 100%;
+//       width: 100%;
+//     }
+//   }
+// }
+
+body.page-node-type-curriculum-module .cl-component--green-banner-cta {
+  margin-bottom: 0;
+  @include bp-max(medium) {
+    max-width: 100%;
+    width: 100%;
   }
 }
 

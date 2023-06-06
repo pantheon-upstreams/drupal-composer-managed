@@ -64,9 +64,9 @@
       }
       @include bp-min(large) {
         gap: rem(40px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
       @include bp-min(xxlarge) {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: rem(60px);
         & > .c-list__item > * {
           height: 100%;

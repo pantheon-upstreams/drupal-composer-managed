@@ -23,8 +23,8 @@ settings:
 visibility:
   is_mercury_editor_edit_tray:
     id: is_mercury_editor_edit_tray
-    enabled: 0
     negate: false
+    enabled: 0
   request_path:
     id: request_path
     negate: false

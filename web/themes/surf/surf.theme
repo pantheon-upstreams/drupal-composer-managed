@@ -14,9 +14,9 @@ foreach (glob($includes_path) as $filename) {
 
 
 function surf_preprocess_html(&$variables){
-	
+
 	// Add body class depending on usage of sidebar region
-	
+
 	$region_name = render($variables['page']['sidebar']);
     if (!empty($region_name)) {
         $variables['attributes']['class'][] = 'sidebar-active';
@@ -28,17 +28,17 @@ function surf_preprocess_html(&$variables){
 
 
 function surf_form_alter(&$form, &$form_state, $form_id) {
-	
+
   // Add placeholder text to the search block form
   if ($form_id == 'search_block_form') {
     // HTML5 placeholder attribute
-    $form['search_block_form']['#attributes']['placeholder'] = t('Search');   
+    $form['search_block_form']['#attributes']['placeholder'] = t('Search');
     //$form['actions']['submit']['#value'] = t('Go');
     $form['actions']['submit']['#value'] = html_entity_decode('&#xf002;');
     $form['actions']['submit']['#attributes']['class'][] = 'search-button';
 
   }
-  
+
 }
 
 
