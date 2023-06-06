@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_link
     - field.field.node.page.field_media_primary
     - field.field.node.page.field_overview
     - field.field.node.page.field_p_content
@@ -31,6 +32,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_link: true
   field_media_primary: true
   field_p_content: true
   field_ref_audiences: true

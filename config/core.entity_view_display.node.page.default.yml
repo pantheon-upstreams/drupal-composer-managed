@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.page.field_link
     - field.field.node.page.field_media_primary
     - field.field.node.page.field_overview
     - field.field.node.page.field_p_content
@@ -14,7 +15,7 @@ dependencies:
     - node.type.page
   module:
     - layout_paragraphs
-    - text
+    - link
     - user
 _core:
   default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
@@ -23,74 +24,49 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  field_media_primary:
-    type: entity_reference_label
+  field_link:
+    type: link_separate
     label: above
     settings:
-      link: true
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 3
     region: content
-  field_overview:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_p_content:
-    type: layout_paragraphs_builder
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
       link: ''
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 1
-      empty_message: ''
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_ref_eo_opportunities:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_ref_key_impact_areas:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_ref_research_areas:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
+    weight: 0
     region: content
   field_teaser_text:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
+  field_overview: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_research_areas: true
   langcode: true
   links: true
   search_api_excerpt: true

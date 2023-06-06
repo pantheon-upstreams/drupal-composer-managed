@@ -1,0 +1,42 @@
+<article {{ attributes.addClass('c-basic-page').merge(clAttributes) }}>
+
+  {# Image #}
+  {% if image_url %}
+  <div class="c-basic-page__image-wrapper">
+    <img src="{{ image_url }}" alt="{{image_alt}}">
+  </div>
+  {% endif %}
+
+
+  {# Title #}
+  {% if title %}
+  <div class="c-basic-page__title-wrapper">
+    {{ title }}
+  </div>
+  {% endif %}
+
+  {# intro #}
+  {% if intro %}
+  <div class="c-basic-page__intro-wrapper">
+    {{ intro }}
+  </div>
+  {% endif %}
+
+  {# Link #}
+  {% if link_url %}
+  <div class="c-basic-page__link-wrapper">
+    <a href="{{ link_url }}" class="c-basic-page__link">{{ link_text }}</a>
+  </div>
+  {% endif %}
+
+
+
+  {# Body #}
+  {# {% if body %} #}
+  <div class="c-basic-page__body-wrapper">
+    {{ body }}
+  </div>
+  {# {% endif %} #}
+  </div>
+
+</article>
