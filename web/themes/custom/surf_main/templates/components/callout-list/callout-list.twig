@@ -1,8 +1,8 @@
 
-{% set widthClass = 'l-constrained--medium' %}
+{% set widthClass = 'l-constrained--small' %}
 {% if length >= 3 %}
   {% set widthClass = 'l-constrained--xlarge' %}
-{% elseif length < 3 %}
+{% elseif length == 2 %}
   {% set widthClass = 'l-constrained--medium' %}
 {% endif %}
 

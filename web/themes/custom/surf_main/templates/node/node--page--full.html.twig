@@ -28,7 +28,7 @@
 
 {# set image and alt#}
  {% if content.field_media_primary.0 %}
-	{% set image = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('featured_image') %}
+	{% set image = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('hero') %}
 	{# set alt to use the image's alt text #}
 	{% set alt = content.field_media_primary.0["#media"].thumbnail.alt %}
 {% endif %}
@@ -41,6 +41,7 @@
 {% else %}
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
+
 
 {% include "basic-page" with {
   breadcrumbs: breadcrumbs,
