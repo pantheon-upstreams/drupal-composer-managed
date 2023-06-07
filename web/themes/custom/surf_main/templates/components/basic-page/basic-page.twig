@@ -7,27 +7,39 @@
   </div>
   {% endif %}
 
+  <div class="c-basic-page__header-wrapper l-constrained--xlarge">
 
-  {# Title #}
-  {% if title %}
-  <div class="c-basic-page__title-wrapper">
-    {{ title }}
-  </div>
-  {% endif %}
+    {# Breadcrumbs #}
+    {% if breadcrumbs %}
+    <div class="c-basic-page__breadcrumbs-wrapper">
+      {# Breadcumbs #}
+        {% include "breadcrumbs" with {
+          items: breadcrumbs
+        } %}
+    </div>
+    {% endif %}
 
-  {# intro #}
-  {% if intro %}
-  <div class="c-basic-page__intro-wrapper">
-    {{ intro }}
-  </div>
-  {% endif %}
+    {# Title #}
+    {% if title %}
+    <h1 class="c-basic-page__title">
+      {{ title }}
+    </h1>
+    {% endif %}
 
-  {# Link #}
-  {% if link_url %}
-  <div class="c-basic-page__link-wrapper">
-    <a href="{{ link_url }}" class="c-basic-page__link">{{ link_text }}</a>
+    {# intro #}
+    {% if intro %}
+    <p class="c-basic-page__intro">
+      {{ intro }}
+    </p>
+    {% endif %}
+
+    {# Link #}
+    {% if link_url %}
+    <div class="c-basic-page__link-wrapper">
+      <a href="{{ link_url }}" class="forest-button">{{ link_text }}</a>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 
 
 
