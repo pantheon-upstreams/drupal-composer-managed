@@ -142,34 +142,34 @@
 }
 
 // One Column Overrides
-.l--layout-onecolumn,
-.c-layout--layout-onecolumn {
-  .c-teaser.c-teaser--column-stack {
-    flex-direction: column;
-    @include bp-min(medium) {
-      flex-direction: row;
-    }
+// .l--layout-onecolumn,
+// .c-layout--layout-onecolumn {
+//   .c-teaser.c-teaser--column-stack {
+//     flex-direction: column;
+//     @include bp-min(medium) {
+//       // flex-direction: row;
+//     }
 
-    // Image Wrapper
-    .c-teaser__image-wrapper {
-      @include bp-min(medium) {
-        margin: 0;
-        width: 50%;
-        flex: none;
-      }
-    }
+//     // Image Wrapper
+//     .c-teaser__image-wrapper {
+//       @include bp-min(medium) {
+//         margin: 0;
+//         width: 50%;
+//         flex: none;
+//       }
+//     }
 
-    // Content Wrapper
-    .c-teaser__content-wrapper {
-      @include bp-min(medium) {
-        margin: 0 0 0 rem(32px);
-      }
-      @include bp-min(xxlarge) {
-        margin: 0 0 0 rem(60px);
-      }
-    }
-  }
-}
+//     // Content Wrapper
+//     .c-teaser__content-wrapper {
+//       @include bp-min(medium) {
+//         margin: 0 0 0 rem(32px);
+//       }
+//       @include bp-min(xxlarge) {
+//         margin: 0 0 0 rem(60px);
+//       }
+//     }
+//   }
+// }
 
 // Two Column Overrides
 .l--layout-twocolumn-halves,
@@ -189,7 +189,7 @@
   .c-teaser.c-teaser--column-stack {
     flex-direction: column;
     @include bp-min(medium) {
-      flex-direction: row;
+      // flex-direction: row;
     }
     @include bp-min(xxlarge) {
       flex-direction: column;

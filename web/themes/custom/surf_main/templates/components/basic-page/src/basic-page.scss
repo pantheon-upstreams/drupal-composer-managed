@@ -53,22 +53,3 @@
   @include surf-font-body-large;
   margin: 0 0 rem(32px) 0;
 }
-
-.c-basic-page__view-wrapper {
-  margin-top: rem(32px);
-  @include bp-min(medium) {
-    margin-top: rem(60px);
-  }
-  @include bp-min(large) {
-    margin-top: rem(80px);
-  }
-  hr.left-hook-divider {
-    margin-bottom: rem(32px);
-    @include bp-min(medium) {
-      margin-bottom: rem(60px);
-    }
-    @include bp-min(large) {
-      margin-bottom: rem(68px);
-    }
-  }
-}

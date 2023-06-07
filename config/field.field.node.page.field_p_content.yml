@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -45,6 +46,7 @@ settings:
       media_gallery: media_gallery
       resources_list: resources_list
       persons_list: persons_list
+      teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -130,6 +132,9 @@ settings:
         enabled: false
       section:
         weight: 33
+        enabled: true
+      teaser_list:
+        weight: 63
         enabled: true
       text:
         weight: 34

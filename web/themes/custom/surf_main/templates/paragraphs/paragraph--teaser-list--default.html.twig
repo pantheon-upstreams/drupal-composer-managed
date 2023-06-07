@@ -1,0 +1,12 @@
+{# <pre>{{dump( content)}}</pre> #}
+
+<article{{ attributes.addClass(['c-basic-page', 'l-teaser-grid__wrapper', 'l-constrained--xlarge'])}}>
+
+
+  <hr class="left-hook-divider">
+
+  <h2 class="l-teaser-grid__title">{{content.field_title|field_value}}</h2>
+
+  {{content.field_teasers|field_value}}
+
+</article>

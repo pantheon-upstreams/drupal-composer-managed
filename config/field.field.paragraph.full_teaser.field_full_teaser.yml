@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_full_teaser
     - node.type.article
     - node.type.event
+    - node.type.press_release
     - paragraphs.paragraphs_type.full_teaser
 id: paragraph.full_teaser.field_full_teaser
 field_name: field_full_teaser
@@ -13,7 +14,7 @@ entity_type: paragraph
 bundle: full_teaser
 label: 'Full Teaser'
 description: 'Select related content for prominent display. Related content must have a "Featured Image" in place to properly leverage this display.'
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,8 +24,10 @@ settings:
     target_bundles:
       article: article
       event: event
+      press_release: press_release
     sort:
       field: _none
+      direction: ASC
     auto_create: false
     auto_create_bundle: article
 field_type: entity_reference

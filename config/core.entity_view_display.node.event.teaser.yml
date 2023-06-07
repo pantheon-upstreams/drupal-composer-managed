@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.event.field_registration_required
     - node.type.event
   module:
+    - datetime_range
     - text
     - user
 id: node.event.teaser
@@ -37,6 +38,24 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_dates:
+    type: daterange_plain
+    label: hidden
+    settings:
+      timezone_override: America/Denver
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_overview:
     type: text_default
     label: hidden
@@ -47,14 +66,12 @@ content:
   registration_links:
     settings: {  }
     third_party_settings: {  }
-    weight: 25
+    weight: 4
     region: content
 hidden:
   field_capacity: true
-  field_dates: true
   field_link: true
   field_location_address: true
-  field_media_primary: true
   field_ref_attendees: true
   field_ref_audiences: true
   field_ref_eo_opportunities: true

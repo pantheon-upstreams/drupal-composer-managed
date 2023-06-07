@@ -1,0 +1,10 @@
+uuid: 4ac1cdee-477b-47ab-8dbd-f1e71557aacd
+langcode: en
+status: true
+dependencies: {  }
+id: teaser_list
+label: 'Teaser List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

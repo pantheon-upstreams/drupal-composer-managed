@@ -1,19 +1,15 @@
-{# <pre>{{ dump(content|keys) }}</pre> #}
-  {#
-    TODO:
-    - [ ] Add image style to the `image_url`
-    - [ ] Replace `dates` with dynamic formatted values using `content.field_date`
-    - [ ] Replace `times` with dynamic formatted values using `content.field_date`
-  #}
+{# <pre>{{dump(content)}}</pre> #}
 
-{# Handle internal and external links/urls #}
-{% if content.field_link.0 is empty %}
-{% set link_url = '' %}
-{% elseif content.field_link.0["#url"].external %}
-  {% set link_url = content.field_link.0["#url"].uri %}
-{% else %}
-  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+{#
+  TODO: replace/update the hardcoded `category_url`
+#}
+
+{% set image_url = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+{% if content.field_media_primary|render %}
+  {% set image_url = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri|image_style('teaser')) %}
 {% endif %}
+
+{# <pre>{{dump( content)}}</pre> #}
 
 {# Dates no set #}
 {% if content.field_dates.0.start_date is empty and content.field_dates.0.end_date is empty %}
@@ -37,15 +33,19 @@
   {% set times = content.field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_dates.0.end_date["#text"]|date('g:i A') %}
 {% endif %}
 
+{% if dates and times %}
+  {% set dates = dates ~ ' ' ~ times %}
+{% endif %}
 
-{% include "event-page" with {
+
+ {% include "teaser" with {
+  layout: 'column-stack',
   title: label,
-  overview: content.field_overview|render|striptags|trim,
-  dates,
-  times,
-  link_url: link_url,
-  link_text: content.field_link.0["#title"],
-  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
-  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
-  body: content.body,
-} %}
+  body: '',
+  url: url,
+  category: 'Events',
+  category_url: '/events',
+  teaser_date: dates,
+  image: image_url,
+  alt: content.field_media_primary['#items'].entity.field_media_image.alt,
+  } %}

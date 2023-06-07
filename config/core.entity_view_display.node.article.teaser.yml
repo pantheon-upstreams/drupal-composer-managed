@@ -15,11 +15,9 @@ dependencies:
     - field.field.node.article.field_ref_key_impact_areas
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
-    - image.style.teaser
     - node.type.article
   module:
     - datetime
-    - media
     - user
 _core:
   default_config_hash: U8ghxJXn8JE2p6Q2wLpPWAxpz4r_8crL1LxtapSrHAE
@@ -38,13 +36,11 @@ content:
     weight: 1
     region: content
   field_media_primary:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      image_link: ''
-      image_style: teaser
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

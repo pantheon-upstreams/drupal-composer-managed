@@ -47,11 +47,10 @@ content:
     weight: 9
     region: content
   field_dates:
-    type: daterange_default
+    type: daterange_plain
     label: hidden
     settings:
-      timezone_override: ''
-      format_type: medium
+      timezone_override: America/Denver
       separator: '-'
     third_party_settings: {  }
     weight: 2
