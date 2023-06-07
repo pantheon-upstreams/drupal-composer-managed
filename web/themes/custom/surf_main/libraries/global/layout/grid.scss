@@ -2,6 +2,7 @@
  * @file
  * Provides grid styles for view plugin.
  */
+@import "../../partials/_partials";
 
 .l-grid .l__inner > * + * {
   margin-top: var(--space-gap-y);
@@ -80,5 +81,44 @@
   .l-grid .l__inner {
     --space-gap-x: 75px;
     --space-gap-y: 75px;
+  }
+}
+
+// Teaser Grid
+.l-teaser-grid {
+  ul.item-list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    .item-row {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.l-teaser-grid:not(.l-teaser-grid__length-1) {
+  ul.item-list {
+    @include bp-min(medium) {
+      column-gap: rem(20px);
+      grid-template-columns: 0.5fr 0.5fr;
+    }
+    @include bp-min(large) {
+      column-gap: rem(40px);
+    }
+    @include bp-min(xlarge) {
+      column-gap: rem(60px);
+    }
+  }
+  &.l-teaser-grid__length-3 {
+    ul.item-list {
+      @include bp-min(medium) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include bp-min(large) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 }

@@ -6,8 +6,10 @@
 
 {% set image_url = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
 {% if content.field_media_primary|render %}
-  {% set image_url = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri) %}
+  {% set image_url = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri|image_style('teaser')) %}
 {% endif %}
+
+
 
  {% include "teaser" with {
   layout: 'column-stack',

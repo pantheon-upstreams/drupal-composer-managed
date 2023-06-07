@@ -15,7 +15,7 @@ dependencies:
     - field.field.node.article.field_ref_key_impact_areas
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
-    - image.style.full_teaser
+    - image.style.teaser
     - node.type.article
   module:
     - datetime
@@ -42,7 +42,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: full_teaser
+      image_style: teaser
       image_loading:
         attribute: lazy
     third_party_settings: {  }
