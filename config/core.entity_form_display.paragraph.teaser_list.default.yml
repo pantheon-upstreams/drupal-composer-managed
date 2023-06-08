@@ -15,7 +15,7 @@ mode: default
 content:
   field_teasers:
     type: paragraphs
-    weight: 1
+    weight: 2
     region: content
     settings:
       title: Teaser
@@ -34,7 +34,7 @@ content:
     third_party_settings: {  }
   field_title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60

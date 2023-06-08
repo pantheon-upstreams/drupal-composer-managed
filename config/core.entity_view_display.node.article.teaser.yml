@@ -35,6 +35,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_highlight:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_media_primary:
     type: entity_reference_entity_view
     label: hidden
@@ -46,7 +53,6 @@ content:
     region: content
 hidden:
   field_author: true
-  field_highlight: true
   field_p_content: true
   field_publisher: true
   field_ref_audiences: true

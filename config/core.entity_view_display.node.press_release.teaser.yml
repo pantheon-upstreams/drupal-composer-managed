@@ -23,9 +23,10 @@ bundle: press_release
 mode: teaser
 content:
   field_overview:
-    type: text_default
+    type: text_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 200
     third_party_settings: {  }
     weight: 0
     region: content

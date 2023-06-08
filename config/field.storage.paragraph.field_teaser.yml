@@ -1,0 +1,21 @@
+uuid: b5315266-b341-42d6-b01a-2156d218ec87
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: paragraph.field_teaser
+field_name: field_teaser
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: node
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

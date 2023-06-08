@@ -1,0 +1,10 @@
+uuid: 46cd0118-ba12-4669-9c5c-5a258a2fff1d
+langcode: en
+status: true
+dependencies: {  }
+id: featured_teaser
+label: 'Featured Teaser'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
