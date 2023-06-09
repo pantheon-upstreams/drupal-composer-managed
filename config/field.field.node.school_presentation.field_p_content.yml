@@ -10,8 +10,13 @@ dependencies:
     - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -36,7 +41,12 @@ settings:
       card_list: card_list
       green_banner_cta: green_banner_cta
       header: header
+      media: media
+      media_gallery: media_gallery
+      persons_list: persons_list
       pullquote: pullquote
+      resources_list: resources_list
+      teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -89,10 +99,10 @@ settings:
         enabled: false
       media:
         weight: 51
-        enabled: false
+        enabled: true
       media_gallery:
         weight: 52
-        enabled: false
+        enabled: true
       one_up_teaser_image_text:
         weight: 30
         enabled: false
@@ -101,7 +111,7 @@ settings:
         enabled: false
       persons_list:
         weight: 55
-        enabled: false
+        enabled: true
       pullquote:
         weight: 56
         enabled: true
@@ -113,7 +123,7 @@ settings:
         enabled: false
       resources_list:
         weight: 59
-        enabled: false
+        enabled: true
       running_text:
         weight: 31
         enabled: false
@@ -125,7 +135,7 @@ settings:
         enabled: true
       teaser_list:
         weight: 63
-        enabled: false
+        enabled: true
       text:
         weight: 34
         enabled: true
