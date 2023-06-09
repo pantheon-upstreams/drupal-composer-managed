@@ -1,0 +1,19 @@
+uuid: 98844da9-c267-45ce-9227-a5e2b34c2aaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.school_presentation
+id: node.school_presentation.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: school_presentation
+label: 'Teaser text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

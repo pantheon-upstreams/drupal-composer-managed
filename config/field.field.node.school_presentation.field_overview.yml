@@ -1,10 +1,10 @@
-uuid: c5bd9417-d7cd-4386-9b43-7d3875dc876e
+uuid: 5220a51d-a63f-4822-935b-d94141fb4a12
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_overview
-    - node.type.page
+    - node.type.school_presentation
   module:
     - allowed_formats
     - text
@@ -12,10 +12,10 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - plain_text
-id: node.page.field_overview
+id: node.school_presentation.field_overview
 field_name: field_overview
 entity_type: node
-bundle: page
+bundle: school_presentation
 label: Overview
 description: ''
 required: false
