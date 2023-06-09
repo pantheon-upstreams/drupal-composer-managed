@@ -18,9 +18,11 @@
 
 <article{{ attributes.addClass(['c-teaser-list', 'l-teaser-grid__wrapper', 'l-constrained--xlarge', 'l--bottom-spacing'])}}>
 
+  {% if content.field_title.value is not empty %}
   <hr class="left-hook-divider">
 
   <h2 class="l-teaser-grid__title">{{content.field_title|field_value}}</h2>
+  {% endif %}
 
 <section class="l-teaser-grid l-teaser-grid__length-{{length}}">
 
@@ -64,19 +66,32 @@
     {% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
     {% set alt = title %}
 
-    {% if item.entity.field_media_primary.entity.field_media_image.entity.fileuri is not empty %}
+    {% if item.entity.field_media_primary.entity.field_media_image.entity.fileuri is not empty and featured == true  %}
       {% set image = file_url(item.entity.field_media_primary.entity.field_media_image.entity.fileuri|image_style('full_teaser')) %}
       {% set alt = item.entity.field_media_primary.entity.field_media_image.alt %}
     {% endif %}
 
+    {% if item.entity.field_media_primary.entity.field_media_image.entity.fileuri is not empty and featured != true %}
+      {% set image = file_url(item.entity.field_media_primary.entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+      {% set alt = item.entity.field_media_primary.entity.field_media_image.alt %}
+    {% endif %}
+
     {# --- VIDEO --- #}
-    {% if item.entity.field_media_primary.entity.field_media_oembed_video is not empty %}
+    {% if item.entity.field_media_primary.entity.field_media_oembed_video is not empty and featured == true  %}
       {# set category to video #}
       {% set category = 'Video' %}
       {# set icon #}
       {% set icon = 'video' %}
       {# set image #}
       {% set image = item.entity.field_media_primary.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+    {% endif %}
+    {% if item.entity.field_media_primary.entity.field_media_oembed_video is not empty and featured != true %}
+      {# set category to video #}
+      {% set category = 'Video' %}
+      {# set icon #}
+      {% set icon = 'video' %}
+      {# set image #}
+      {% set image = item.entity.field_media_primary.entity.thumbnail.entity.uri.value|image_style('teaser') %}
     {% endif %}
 
 
