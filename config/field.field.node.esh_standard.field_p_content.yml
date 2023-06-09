@@ -15,6 +15,7 @@ dependencies:
     - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
@@ -33,6 +34,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      section: section
       text: text
       accordion: accordion
       blue_banner: blue_banner
@@ -130,7 +132,7 @@ settings:
         enabled: false
       section:
         weight: 33
-        enabled: false
+        enabled: true
       teaser_list:
         weight: 63
         enabled: true
