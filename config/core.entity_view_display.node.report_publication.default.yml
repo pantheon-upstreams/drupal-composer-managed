@@ -7,67 +7,64 @@ dependencies:
     - field.field.node.report_publication.field_authors
     - field.field.node.report_publication.field_date_published
     - field.field.node.report_publication.field_link
+    - field.field.node.report_publication.field_media_primary
+    - field.field.node.report_publication.field_overview
+    - field.field.node.report_publication.field_p_content
     - field.field.node.report_publication.field_ref_publication_type
+    - field.field.node.report_publication.field_teaser_text
     - node.type.report_publication
   module:
-    - datetime
+    - layout_paragraphs
     - link
-    - text
     - user
 id: node.report_publication.default
 targetEntityType: node
 bundle: report_publication
 mode: default
 content:
-  body:
-    type: text_default
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_text:
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_authors:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 106
-    region: content
-  field_date_published:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 105
-    region: content
-  field_link:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 103
-    region: content
-  field_ref_publication_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 104
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
+  body: true
+  field_authors: true
+  field_date_published: true
+  field_overview: true
+  field_ref_publication_type: true
   langcode: true
+  links: true
   search_api_excerpt: true
