@@ -24,16 +24,24 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
   field_link: true
-  field_media_primary: true
   field_p_content: true
   field_ref_audiences: true
   field_ref_eo_opportunities: true
