@@ -16,7 +16,6 @@ dependencies:
   module:
     - layout_paragraphs
     - link
-    - text
     - user
 id: node.school_presentation.default
 targetEntityType: node
@@ -44,13 +43,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_overview:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_p_content:
     type: layout_paragraphs
     label: hidden
@@ -68,6 +60,7 @@ content:
     weight: 1
     region: content
 hidden:
+  field_overview: true
   field_ref_audiences: true
   field_ref_eo_opportunities: true
   field_ref_grade_levels: true

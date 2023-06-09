@@ -24,7 +24,7 @@ mode: default
 content:
   field_link:
     type: link_separate
-    label: above
+    label: hidden
     settings:
       trim_length: null
       url_only: false
@@ -36,7 +36,7 @@ content:
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: true
@@ -45,7 +45,7 @@ content:
     region: content
   field_p_content:
     type: layout_paragraphs
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -54,7 +54,7 @@ content:
     region: content
   field_teaser_text:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
