@@ -8,7 +8,6 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.blue_banner
     - paragraphs.paragraphs_type.card_list
-    - paragraphs.paragraphs_type.featured_teaser
     - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
@@ -44,7 +43,6 @@ settings:
       text: text
       card_list: card_list
       media: media
-      featured_teaser: featured_teaser
       media_gallery: media_gallery
       resources_list: resources_list
       persons_list: persons_list

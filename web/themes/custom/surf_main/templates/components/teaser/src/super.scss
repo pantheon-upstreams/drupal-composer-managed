@@ -77,6 +77,18 @@
     margin: 0;
   }
 
+  // Video Icon
+  &.c-teaser--video {
+    .c-teaser__category {
+      padding-left: rem(24px);
+      background-image: inline-svg(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="14" fill="none"><path fill="#494949" d="M.062.938 10.562 7l-10.5 6.062V.938Z"/></svg>'
+      );
+      background-repeat: no-repeat;
+      background-position: center left rem(8px);
+    }
+  }
+
   // Title
   .c-teaser__title {
     order: 3;

@@ -4,21 +4,43 @@
   TODO: replace/update the hardcoded `category_url`
 #}
 
-{% set image_url = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
-{% if content.field_media_primary|render %}
-  {% set image_url = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+{# -- TITLE --- #}
+{% set title = label|field_value %}
+
+
+{# -- IMAGE --- #}
+{% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+{% set alt = title %}
+
+{% if content.field_media_primary['#items'].entity.field_media_image is not empty %}
+  {% set image = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+  {% set alt = content.field_media_primary['#items'].entity.field_media_image.alt %}
 {% endif %}
 
+{# --- VIDEO --- #}
+{% if content.field_media_primary['#items'].entity.field_media_oembed_video is not empty %}
+  {# set category to video #}
+  {% set category = 'Video' %}
+  {# set icon #}
+  {% set icon = 'video' %}
+  {# set image #}
+  {% set image = content.field_media_primary['#items'].entity.thumbnail.entity.uri.value|image_style('teaser') %}
+{% else %}
+  {% set category = 'Article' %}
+{% endif %}
 
+{# --- DATE --- #}
+{% set teaser_date = content.field_date_published.value|date('F d, Y') %}
 
  {% include "teaser" with {
   layout: 'column-stack',
-  title: label,
+  title,
   body: '',
-  url: url,
-  category: 'Article',
+  url,
+  category,
   category_url: '/news',
-  teaser_date: content.field_date_published.value|date('F d, Y'),
-  image: image_url,
-  alt: content.field_media_primary['#items'].entity.field_media_image.alt,
+  teaser_date,
+  image,
+  alt,
+  icon,
   } %}

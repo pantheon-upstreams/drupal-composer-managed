@@ -1,5 +1,5 @@
-{# <pre>{{dump(content.field_teaser.0["#node"])}}</pre> #}
-
+{# <pre>{{dump(content.field_teaser.0["#node"].field_media_primary.entity)}}</pre> #}
+{# field_media_oembed_video #}
 {# NODE URL #}
 {% set url = drupal_url('node/' ~ content.field_teaser.0["#node"].nid.value) %}
 
@@ -9,9 +9,9 @@
 {# -- CATEGORY URL --- #}
 {% if type == 'event' %}
   {% set category_url = '/events' %}
-{% elseif category_url == 'article' %}
+{% elseif type == 'article' %}
   {% set category_url = '/news' %}
-{% elseif category_url == 'press_release' %}
+{% elseif type == 'press_release' %}
   {% set category_url = '/press-releases' %}
 {% endif %}
 
@@ -23,8 +23,20 @@
 {% set alt = title %}
 
 {% if content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.entity.fileuri is not empty %}
-  {% set image = file_url(content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+  {% set image = file_url(content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.entity.fileuri|image_style('full_teaser')) %}
   {% set alt = content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.alt %}
+{% endif %}
+
+{# --- VIDEO --- #}
+{% if content.field_teaser.0["#node"].field_media_primary.entity.field_media_oembed_video %}
+  {# set category to video #}
+  {% set category = 'Featured Video' %}
+  {# set icon #}
+  {% set icon = 'video' %}
+  {# set image #}
+  {% set image = content.field_teaser.0["#node"].field_media_primary.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+{% else %}
+  {% set category = 'Featured' %}
 {% endif %}
 
 {# --- BODY --- #}
@@ -35,29 +47,26 @@
 
   {# Dates no set #}
   {% if content.field_teaser.0["#node"].field_dates.0.start_date is empty and content.field_teaser.0["#node"].field_dates.0.end_date is empty %}
-    {% set dates = null %}
+    {% set teaser_date = null %}
   {# Same Day #}
   {% elseif content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') == content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('F j, Y') %}
-    {% set dates = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') %}
+    {% set teaser_date = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') %}
   {# Multiple Days #}
   {% else %}
-    {% set dates = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date|date('F d, Y') %}
+    {% set teaser_date = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date|date('F d, Y') %}
   {% endif %}
 
   {# Dates no set #}
   {% if content.field_teaser.0["#node"].field_dates.0.start_date is empty and content.field_dates.0.end_date is empty %}
-    {% set times = null %}
+    {% set teaser_time = null %}
   {# All Day #}
   {% elseif (content.field_teaser.0["#node"].field_dates.0.start_date["#text"])|date('g:i A') == '12:00 AM' and (content.field_teaser.0["#node"].field_dates.0.end_date["#text"])|date('g:i A') == '11:59 PM'  %}
-    {% set times = null %}
+    {% set teaser_time = null %}
   {# Times to be set #}
   {% else %}
-    {% set times = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('g:i A') %}
+    {% set teaser_time = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('g:i A') %}
   {% endif %}
 
-  {% if dates and times %}
-    {% set teaser_date = dates ~ ' ' ~ times %}
-  {% endif %}
 
 {% else %}
   {% set teaser_date = content.field_teaser.0["#node"].field_date_published.value|date('F d, Y') %}
@@ -70,11 +79,13 @@
   title,
   body,
   url,
-  category: 'Featured',
+  category,
   category_url,
   teaser_date,
+  teaser_time,
   image,
   alt,
+  icon,
 } %}
 
 </article>

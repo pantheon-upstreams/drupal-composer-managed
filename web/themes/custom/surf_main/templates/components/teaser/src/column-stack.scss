@@ -99,7 +99,42 @@
   .c-teaser__date {
     @include surf-font-label-peewee;
     color: var(--color-surf--grey);
+    margin: 0;
+  }
+
+  .c-teaser__time {
+    @include surf-font-label-peewee;
+    color: var(--color-surf--grey);
+    margin: 0;
+
+    @include bp-min(medium) {
+      margin: 0 0 0 rem(16px);
+      padding: 0 0 0 rem(17px);
+      position: relative;
+      &:before {
+        content: "";
+        background: var(--color-surf--grey);
+        height: rem(12px);
+        width: rem(1px);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .c-teaser__date-time-wrapper {
     margin: rem(12px) 0 0 0;
+    display: flex;
+    flex-direction: column;
+    @include bp-min(medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @include bp-min(large) {
+      margin: rem(16px) 0 0 0;
+    }
   }
 
   // Tags

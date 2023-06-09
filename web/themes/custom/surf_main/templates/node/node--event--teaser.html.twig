@@ -11,32 +11,29 @@
 
 {# <pre>{{dump( content)}}</pre> #}
 
-{# Dates no set #}
-{% if content.field_dates.0.start_date is empty and content.field_dates.0.end_date is empty %}
-  {% set dates = null %}
-{# Same Day #}
-{% elseif content.field_dates.0.start_date["#text"]|date('F j, Y') == content.field_dates.0.end_date["#text"]|date('F j, Y') %}
-  {% set dates = content.field_dates.0.start_date["#text"]|date('F j, Y') %}
-{# Multiple Days #}
-{% else %}
-  {% set dates = content.field_dates.0.start_date["#text"]|date('F j') ~ '-' ~ content.field_dates.0.end_date["#text"]|date|date('F d, Y') %}
-{% endif %}
+  {# Dates no set #}
+  {% if content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') is empty and content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('F j, Y') is empty %}
+  <p>no date</p>
+    {% set teaser_date = null %}
+  {# Same Day #}
+  {% elseif content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') == content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('F j, Y') %}
 
-{# Dates no set #}
-{% if content.field_dates.0.start_date is empty and content.field_dates.0.end_date is empty %}
-  {% set times = null %}
-{# All Day #}
-{% elseif (content.field_dates.0.start_date["#text"])|date('g:i A') == '12:00 AM' and (content.field_dates.0.end_date["#text"])|date('g:i A') == '11:59 PM'  %}
-  {% set times = null %}
-{# Times to be set #}
-{% else %}
-  {% set times = content.field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_dates.0.end_date["#text"]|date('g:i A') %}
-{% endif %}
+    {% set teaser_date = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') %}
+  {# Multiple Days #}
+  {% else %}
+    {% set teaser_date = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date|date('F d, Y') %}
+  {% endif %}
 
-{% if dates and times %}
-  {% set dates = dates ~ ' ' ~ times %}
-{% endif %}
-
+  {# Dates no set #}
+  {% if content.field_teaser.0["#node"].field_dates.0.start_date is empty and content.field_dates.0.end_date is empty %}
+    {% set teaser_time = null %}
+  {# All Day #}
+  {% elseif (content.field_teaser.0["#node"].field_dates.0.start_date["#text"])|date('g:i A') == '12:00 AM' and (content.field_teaser.0["#node"].field_dates.0.end_date["#text"])|date('g:i A') == '11:59 PM'  %}
+    {% set teaser_time = null %}
+  {# Times to be set #}
+  {% else %}
+    {% set teaser_time = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('g:i A') %}
+  {% endif %}
 
  {% include "teaser" with {
   layout: 'column-stack',
@@ -45,7 +42,8 @@
   url: url,
   category: 'Events',
   category_url: '/events',
-  teaser_date: dates,
+  teaser_date,
+  teaser_time,
   image: image_url,
   alt: content.field_media_primary['#items'].entity.field_media_image.alt,
   } %}

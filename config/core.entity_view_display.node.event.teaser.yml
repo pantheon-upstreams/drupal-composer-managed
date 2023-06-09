@@ -42,7 +42,7 @@ content:
     type: daterange_plain
     label: hidden
     settings:
-      timezone_override: America/Denver
+      timezone_override: ''
       separator: '-'
     third_party_settings: {  }
     weight: 2

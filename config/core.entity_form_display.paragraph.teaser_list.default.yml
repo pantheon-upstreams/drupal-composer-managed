@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.teaser_list.field_featured
     - field.field.paragraph.teaser_list.field_teasers
     - field.field.paragraph.teaser_list.field_title
     - paragraphs.paragraphs_type.teaser_list
@@ -13,6 +14,13 @@ targetEntityType: paragraph
 bundle: teaser_list
 mode: default
 content:
+  field_featured:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_teasers:
     type: paragraphs
     weight: 2
