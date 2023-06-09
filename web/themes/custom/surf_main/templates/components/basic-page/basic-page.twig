@@ -1,4 +1,10 @@
-<article {{ attributes.addClass('c-basic-page').merge(clAttributes) }}>
+{% if image_url is empty %}
+  {% set has_image = 'has-no-image' %}
+{% else %}
+  {% set has_image = 'has-image' %}
+{% endif %}
+
+<article {{ attributes.addClass(['c-basic-page', has_image]).merge(clAttributes) }}>
 
   {# Image #}
   {% if image_url %}
