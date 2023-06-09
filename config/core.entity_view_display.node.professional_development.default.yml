@@ -13,9 +13,8 @@ dependencies:
     - field.field.node.professional_development.field_teaser_text
     - node.type.professional_development
   module:
-    - entity_reference_revisions
+    - layout_paragraphs
     - link
-    - text
     - user
 id: node.professional_development.default
 targetEntityType: node
@@ -23,77 +22,46 @@ bundle: professional_development
 mode: default
 content:
   field_link:
-    type: link
-    label: above
+    type: link_separate
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
-    weight: 106
+    weight: 3
     region: content
   field_media_primary:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 109
-    region: content
-  field_overview:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 107
+    weight: 2
     region: content
   field_p_content:
-    type: entity_reference_revisions_entity_view
-    label: above
+    type: layout_paragraphs
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
-    region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 105
-    region: content
-  field_ref_eo_opportunities:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 104
-    region: content
-  field_ref_related_content:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
+    weight: 0
     region: content
   field_teaser_text:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 108
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
+  field_overview: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_related_content: true
   langcode: true
+  links: true
   search_api_excerpt: true
