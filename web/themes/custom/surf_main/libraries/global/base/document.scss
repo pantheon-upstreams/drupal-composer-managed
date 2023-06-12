@@ -47,9 +47,6 @@ body {
   @include bp-min(medium) {
     margin-top: rem(60px);
   }
-  @include bp-min(large) {
-    margin-top: 0;
-  }
   &:before {
     content: "";
     position: absolute;
