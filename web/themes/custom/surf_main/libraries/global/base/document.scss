@@ -43,6 +43,13 @@ body {
 
 .page-content-and-footer__wrapper {
   position: relative;
+  margin-top: rem(32px);
+  @include bp-min(medium) {
+    margin-top: rem(60px);
+  }
+  @include bp-min(large) {
+    margin-top: 0;
+  }
   &:before {
     content: "";
     position: absolute;
