@@ -329,7 +329,7 @@
   @include bp-min(xlarge) {
     column-gap: rem(180px);
     // grid-template-columns: 1fr rem(630px);
-    grid-template-columns: 2fr 1fr;
+    // grid-template-columns: 2fr 1fr;
   }
 
   .c-article__image-wrapper {
@@ -377,6 +377,10 @@
       width: 100%;
       .c-list__items {
         grid-template-columns: 1fr;
+        @include bp-between(medium, large) {
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: rem(32px);
+        }
       }
     }
   }
