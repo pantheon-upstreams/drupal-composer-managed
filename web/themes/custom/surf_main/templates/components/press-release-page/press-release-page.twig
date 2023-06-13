@@ -65,10 +65,7 @@
     <ul class="c-press-release__categories">
       {% for item in categories['#items'] %}
       <li class="c-press-release__categories-item">
-        <a
-          href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
-        {# {{dump(item.entity)}}
-        {{dump(item.entity.url.value)}} #}
+        <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
       </li>
       {% endfor %}
     </ul>
@@ -97,10 +94,7 @@
 
     {# Media Download(s) #}
     {% if downloads %}
-    {% include "resources-list" with {
-    heading: 'Media Downloads',
-    items: downloads
-    } %}
+      {{downloads}}
     {% endif %}
 
   </div>

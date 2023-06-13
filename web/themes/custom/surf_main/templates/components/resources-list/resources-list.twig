@@ -5,6 +5,7 @@
     <h2 class="c-resources-list__heading">{{ heading }}</h2>
   {% endif %}
 
+  {% if items %}
   {% block items_block %}
 
   <ul class="c-resources-list__items">
@@ -16,4 +17,6 @@
 
   </ul>
   {% endblock items_block %}
+  {% endif %}
+
 </article>

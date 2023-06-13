@@ -6,12 +6,12 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.press_release.field_author
     - field.field.node.press_release.field_date_published
-    - field.field.node.press_release.field_media
     - field.field.node.press_release.field_media_primary
     - field.field.node.press_release.field_overview
     - field.field.node.press_release.field_p_content
     - field.field.node.press_release.field_ref_contacts
     - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_resource_list
     - field.field.node.press_release.field_teaser_text
     - node.type.press_release
   module:
@@ -38,11 +38,11 @@ content:
 hidden:
   field_author: true
   field_date_published: true
-  field_media: true
   field_media_primary: true
   field_p_content: true
   field_ref_contacts: true
   field_ref_news_categories: true
+  field_resource_list: true
   field_teaser_text: true
   langcode: true
   search_api_excerpt: true

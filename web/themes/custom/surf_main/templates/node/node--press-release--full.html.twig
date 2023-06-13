@@ -24,33 +24,19 @@
   {% endfor %}
 {% endif %}
 
-{% set downloads = [] %}
-{% if content.field_media['#items']|length > 0 %}
-  {% for i, value in content.field_media['#items'] %}
-    {% if value.entity %}
-
-      {% set type =  value.entity.field_media_document.0.entity.filemime.value|replace({'application/': ''})  %}
-      {% set downloads = downloads|merge([{
-        title: value.entity.field_media_document.0.entity.filename.value,
-        url: file_url(value.entity.field_media_document.0.entity.uri.value),
-        icon: 'file',
-        size: value.entity.field_media_document.0.entity.filesize.value|format_size,
-        type: type,
-        }]) %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-
 {% include "press-release-page" with {
   title: label|field_value,
-  date: content.field_date_published.value|date('F d, Y'),
   overview: content.field_overview|field_value,
   body: content.field_p_content,
-  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
-  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
   author: content.field_author|field_value,
   categories: content.field_ref_news_categories,
-  downloads: downloads,
+  downloads: content.field_resource_list,
   contacts: contacts,
+  date: content.field_date_published.value|date('F d, Y'),
+  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
+  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
 } %}
+
+{#
+
+ #}

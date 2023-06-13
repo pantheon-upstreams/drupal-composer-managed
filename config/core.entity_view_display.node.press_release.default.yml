@@ -5,16 +5,17 @@ dependencies:
   config:
     - field.field.node.press_release.field_author
     - field.field.node.press_release.field_date_published
-    - field.field.node.press_release.field_media
     - field.field.node.press_release.field_media_primary
     - field.field.node.press_release.field_overview
     - field.field.node.press_release.field_p_content
     - field.field.node.press_release.field_ref_contacts
     - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_resource_list
     - field.field.node.press_release.field_teaser_text
     - node.type.press_release
   module:
     - datetime
+    - entity_reference_revisions
     - layout_paragraphs
     - text
     - user
@@ -25,7 +26,7 @@ mode: default
 content:
   field_author:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -33,21 +34,12 @@ content:
     region: content
   field_date_published:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_media:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -88,15 +80,24 @@ content:
     region: content
   field_ref_news_categories:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     weight: 7
     region: content
+  field_resource_list:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_teaser_text:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 8

@@ -5,18 +5,19 @@ dependencies:
   config:
     - field.field.node.press_release.field_author
     - field.field.node.press_release.field_date_published
-    - field.field.node.press_release.field_media
     - field.field.node.press_release.field_media_primary
     - field.field.node.press_release.field_overview
     - field.field.node.press_release.field_p_content
     - field.field.node.press_release.field_ref_contacts
     - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_resource_list
     - field.field.node.press_release.field_teaser_text
     - node.type.press_release
   module:
     - datetime
     - maxlength
     - media_library
+    - paragraphs
     - path
     - scheduler
     - text
@@ -27,13 +28,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_author:
     type: string_textfield
-    weight: 17
+    weight: 19
     region: content
     settings:
       size: 60
@@ -41,20 +42,13 @@ content:
     third_party_settings: {  }
   field_date_published:
     type: datetime_default
-    weight: 16
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_media:
-    type: media_library_widget
-    weight: 5
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 4
+    weight: 5
     region: content
     settings:
       media_types: {  }
@@ -72,7 +66,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   field_ref_contacts:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -82,7 +76,7 @@ content:
     third_party_settings: {  }
   field_ref_news_categories:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -90,9 +84,28 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_resource_list:
+    type: paragraphs
+    weight: 7
+    region: content
+    settings:
+      title: Resource
+      title_plural: Resources
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: resources_list
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
   field_teaser_text:
     type: string_textarea
-    weight: 26
+    weight: 20
     region: content
     settings:
       rows: 5
@@ -107,38 +120,38 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 8
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 10
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 13
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 17
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 9
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -153,7 +166,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -163,12 +176,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
