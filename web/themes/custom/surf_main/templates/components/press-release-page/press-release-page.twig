@@ -103,7 +103,7 @@
 
   {# Press Resources #}
   {# TODO: these callout component blocks need to be updated with dynamic content  #}
-  <div class="c-press-release__press-resources-wrapper">
+  {# <div class="c-press-release__press-resources-wrapper">
     <h2 class="c-press-release__press-resources-title">Press Resources</h2>
 
     <section class="c-layout c-layout--layout-threecolumn-thirds">
@@ -160,6 +160,10 @@
 
       </div>
     </section>
+  </div> #}
+  <div class="c-press-release__press-resources-wrapper">
+    <h2 class="c-press-release__press-resources-title">Press Resources</h2>
+  {{ drupal_entity('block_content', 17) }}
   </div>
 
 </article>

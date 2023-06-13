@@ -7,7 +7,6 @@ dependencies:
     - field.storage.block_content.field_content
     - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.green_banner_cta
-    - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
 id: block_content.custom_block_content.field_content
@@ -26,7 +25,6 @@ settings:
     target_bundles:
       card_list: card_list
       green_banner_cta: green_banner_cta
-      section: section
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -112,7 +110,7 @@ settings:
         enabled: false
       section:
         weight: 61
-        enabled: true
+        enabled: false
       teaser_list:
         weight: 63
         enabled: false
