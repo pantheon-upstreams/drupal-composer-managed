@@ -54,6 +54,18 @@
       }
       .cl-component--link-button {
         padding-top: 0;
+        .link-button__icon {
+          right: 0;
+          position: relative;
+          transition: right 350ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        &:hover {
+          border-bottom-color: var(--color-surf--cloud);
+          .link-button__icon {
+            right: -5px;
+            transition: right 200ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
       }
     }
   }
