@@ -1,5 +1,4 @@
-<article {{ clAttributes.addClass('c-curriculum-module'|addModifiers(style)) }}>
-{#, 'l-constrained' #}
+<article {{ clAttributes.addClass('c-curriculum-module'|addModifiers(style), 'l-constrained') }}>
 
   <header class="c-curriculum-module__header-wrapper l-constrained--large">
 
@@ -159,15 +158,5 @@
     </p>
     </div>
 
-
-  {# {% include "green-banner-cta" with {
-    heading: bottom_block.heading,
-    body: bottom_block.body,
-    link_text: bottom_block.link_text,
-    link_url: bottom_block.link_url,
-  } %} #}
   </div>
-
-
-
 </article>
