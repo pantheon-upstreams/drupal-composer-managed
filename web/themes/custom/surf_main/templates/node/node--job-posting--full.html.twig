@@ -24,45 +24,6 @@
   ]
 %}
 
-{# Temporary hard-coded: Bottom of the page callouts/blocks #}
-{% set callouts =
-  [
-    {content:  include("callout", {
-      heading: 'Contract Opportunities',
-      body: '<p>Contract opportunities with the Sanford Underground Research Facility and South Dakota Science and Technology Authority.</p>',
-      link_text: 'Browse Contract Opportunities',
-      link_url: '/',
-      theme: 'cloud',
-      arrow: false,
-      icon: '',
-      image_url: '',
-      image_alt: '',
-    })},
-    {content:  include("callout", {
-      heading: 'Questions? Contact Us!',
-      body: '<p>Leo est nisi a pellentesque non, facilisis pellentesque sit nisl in faucibus.</p>',
-      link_text: 'Contact Us!',
-      link_url: '/',
-      theme: 'kelly',
-      arrow: false,
-      icon: '',
-      image_url: '',
-      image_alt: '',
-      })},
-      {content:  include("callout", {
-      heading: 'Inclusion, Diversity, Equity and Access',
-      body: '<p>Our statement and policies regarding diversity, inclusion and equity in the workplace.</p>',
-      link_text: 'DEI Statement',
-      link_url: '/',
-      theme: 'forest',
-      arrow: false,
-      icon: '',
-      image_url: '',
-      image_alt: '',
-      })}
-  ]
-%}
-
 {# Handle internal and external links/urls #}
 {% if content.field_link.0 is empty %}
 {% set link_url = '' %}
@@ -80,5 +41,4 @@
   body: content.body,
   link_url: link_url,
   link_text: content.field_link.0["#title"],
-  callouts: callouts,
 } %}

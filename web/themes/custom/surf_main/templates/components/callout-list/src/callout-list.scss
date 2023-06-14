@@ -36,3 +36,11 @@
     }
   }
 }
+
+.c-callout-list {
+  .c-callout {
+    @include bp-min(medium) {
+      height: 100%;
+    }
+  }
+}

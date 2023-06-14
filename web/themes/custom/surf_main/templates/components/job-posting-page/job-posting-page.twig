@@ -63,12 +63,11 @@
   <hr class="left-hook-divider" />
 
   {# CONNECT WITH US #}
-  {# TODO: these callout component blocks need to be updated with dynamic content  #}
   <div class="c-job-posting__callout-outer-wrapper">
     <h2 class="c-job-posting__callout-title">Connect with us</h2>
 
     <div class="c-article__callout-wrapper">
-    {{ include('list', {style: 'default-column', items: callouts })}}
+    {{ drupal_entity('block_content', 18) }}
     </div>
 
   </div>
