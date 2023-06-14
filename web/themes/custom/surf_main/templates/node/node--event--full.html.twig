@@ -1,10 +1,3 @@
-{# <pre>{{ dump(content|keys) }}</pre> #}
-  {#
-    TODO:
-    - [ ] Add image style to the `image_url`
-    - [ ] Replace `dates` with dynamic formatted values using `content.field_date`
-    - [ ] Replace `times` with dynamic formatted values using `content.field_date`
-  #}
 
 {# Handle internal and external links/urls #}
 {% if content.field_link.0 is empty %}
@@ -37,7 +30,13 @@
   {% set times = content.field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_dates.0.end_date["#text"]|date('g:i A') %}
 {% endif %}
 
+{# set image and alt#}
 
+ {% if content.field_media_primary.0 %}
+	{% set image = content.field_media_primary['#items'].entity.field_media_image.entity.uri.value|image_style('large_540w') %}
+	{# set alt to use the image's alt text #}
+	{% set alt = content.field_media_primary['#items'].entity.field_media_image.alt %}
+{% endif %}
 
 {% include "event-page" with {
   title: label,
@@ -46,7 +45,7 @@
   times,
   link_url: link_url,
   link_text: content.field_link.0["#title"],
-  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
-  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
+  image_url: image,
+  image_alt: alt,
   body: content.body,
 } %}
