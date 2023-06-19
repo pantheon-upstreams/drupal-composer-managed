@@ -1,5 +1,10 @@
 {# <pre>{{dump(content.field_featured.0["#markup"])}}</pre> #}
 
+{#
+TODO:
+ - [ ] the `category_url` URLs need to be reviewed to make sure it's the correct page
+ #}
+
   {# --- LENGTH --- #}
   {% set length = content.field_teasers.0["#paragraph"].field_full_teaser|length %}
 
@@ -50,6 +55,9 @@
   {% elseif type == 'press_release' %}
     {% set category_url = '/press-releases' %}
     {% set category = 'Press Release' %}
+  {% elseif type == 'experiment_research' %}
+    {% set category_url = '/areas-of-research' %}
+    {% set category = 'Experiment & Research' %}
   {% endif %}
   {% if featured %}
     {% set category = 'Featured' %}
@@ -136,6 +144,13 @@
    {% set teaser_time = null %}
   {% endif %}
 {% endif %}
+
+  {# --- BODY --- #}
+  {% if type == 'experiment_research' %}
+    {% set body = item.entity.field_overview[0].value %}
+  {% else %}
+    {% set body = null %}
+  {% endif %}
 
    <li class="item-row">
   {% include "teaser" with {

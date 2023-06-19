@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_full_teaser
     - node.type.article
     - node.type.event
+    - node.type.experiment_research
     - node.type.press_release
     - paragraphs.paragraphs_type.full_teaser
 id: paragraph.full_teaser.field_full_teaser
@@ -24,6 +25,7 @@ settings:
     target_bundles:
       article: article
       event: event
+      experiment_research: experiment_research
       press_release: press_release
     sort:
       field: _none

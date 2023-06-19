@@ -1,0 +1,8 @@
+uuid: cdcff6ed-b8dd-43b7-8307-2b17ae924b2a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Area of Science'
+vid: area_of_science
+description: ''
+weight: 0

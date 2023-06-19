@@ -1,10 +1,10 @@
-uuid: 7846c0fd-7c43-4c23-abe2-b993d376e2a6
+uuid: c876ca06-3979-42be-b94d-916c5e568a41
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_overview
-    - node.type.press_release
+    - node.type.experiment_research
   module:
     - allowed_formats
     - text
@@ -12,10 +12,10 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - plain_text
-id: node.press_release.field_overview
+id: node.experiment_research.field_overview
 field_name: field_overview
 entity_type: node
-bundle: press_release
+bundle: experiment_research
 label: Overview
 description: ''
 required: false

@@ -1,0 +1,47 @@
+
+  {#
+    TODO:
+    - [ ] Update the hard-coded breadcrumbs
+  #}
+
+{# Temporary hard-coded: Breadcumbs #}
+{% set breadcrumbs = [
+    {
+      title: 'Home',
+      url: '/',
+      current: false,
+    },
+    {
+      title: 'Areas of Research',
+      url: '/',
+      current: false,
+    },
+    {
+      title: label,
+      url: url,
+      current: true,
+    }
+  ]
+%}
+
+{# set image and alt#}
+ {% if content.field_media_primary.0 %}
+	{% set image = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('hero') %}
+	{# set alt to use the image's alt text #}
+	{% set alt = content.field_media_primary.0["#media"].thumbnail.alt %}
+{% endif %}
+
+
+{% include "experiment-research-page" with {
+  breadcrumbs: breadcrumbs,
+	title: label,
+	image_url: image,
+	image_alt: alt,
+	intro: content.field_teaser_text|field_value,
+  body: content.field_p_content,
+  key_facts: content.field_key_facts,
+  media_gallery: content.field_media_gallery,
+  key_experiments: content.field_key_experiments,
+} %}
+
+<div>

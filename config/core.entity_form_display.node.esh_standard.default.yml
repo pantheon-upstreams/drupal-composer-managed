@@ -25,7 +25,10 @@ third_party_settings:
   field_group:
     group_content:
       children:
+        - field_p_content
         - group_header
+        - group_main_content
+        - group_right_column_content
         - group_hi
       label: Content
       region: content
@@ -47,13 +50,13 @@ third_party_settings:
       label: Header
       region: content
       parent_name: group_content
-      weight: 20
+      weight: 1
       format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: open
+        formatter: closed
         description: ''
         required_fields: true
     group_hi:
@@ -66,7 +69,7 @@ third_party_settings:
       label: 'Hidden Content'
       region: content
       parent_name: group_content
-      weight: 22
+      weight: 4
       format_type: tab
       format_settings:
         classes: ''
@@ -88,7 +91,7 @@ content:
     third_party_settings: {  }
   field_ism_document_number:
     type: string_textfield
-    weight: 22
+    weight: 25
     region: content
     settings:
       size: 60
@@ -96,7 +99,7 @@ content:
     third_party_settings: {  }
   field_ism_rev_number:
     type: number
-    weight: 21
+    weight: 24
     region: content
     settings:
       placeholder: ''
@@ -118,7 +121,7 @@ content:
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 18
+    weight: 21
     region: content
     settings:
       size: 60
@@ -136,7 +139,7 @@ content:
     third_party_settings: {  }
   field_ref_audiences:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -146,7 +149,7 @@ content:
     third_party_settings: {  }
   field_ref_esh_categories:
     type: entity_reference_autocomplete
-    weight: 20
+    weight: 23
     region: content
     settings:
       match_operator: CONTAINS

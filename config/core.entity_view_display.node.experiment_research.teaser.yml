@@ -4,27 +4,53 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.experiment_research.field_area_of_science
     - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_key_experiments
+    - field.field.node.experiment_research.field_key_facts
+    - field.field.node.experiment_research.field_media_gallery
     - field.field.node.experiment_research.field_media_primary
+    - field.field.node.experiment_research.field_overview
     - field.field.node.experiment_research.field_p_content
     - field.field.node.experiment_research.field_ref_audiences
     - field.field.node.experiment_research.field_ref_research_areas
     - field.field.node.experiment_research.field_teaser_text
     - node.type.experiment_research
   module:
+    - entity_reference_revisions
+    - text
     - user
 id: node.experiment_research.teaser
 targetEntityType: node
 bundle: experiment_research
 mode: teaser
 content:
+  field_media_gallery:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
+  field_area_of_science: true
   field_experiment_research_type: true
+  field_key_experiments: true
+  field_key_facts: true
   field_media_primary: true
   field_p_content: true
   field_ref_audiences: true

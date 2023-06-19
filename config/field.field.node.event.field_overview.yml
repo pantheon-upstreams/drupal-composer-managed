@@ -6,7 +6,12 @@ dependencies:
     - field.storage.node.field_overview
     - node.type.event
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain
 id: node.event.field_overview
 field_name: field_overview
 entity_type: node
