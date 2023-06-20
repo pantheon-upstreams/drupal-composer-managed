@@ -9,14 +9,16 @@
   {% set image_url = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri) %}
 {% endif %}
 
+{% set teaser_date = content.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : node.created.value|date('F d, Y') %}
+
  {% include "teaser" with {
   layout: 'column-stack',
   title: label,
-  body: '',
+  body: null,
   url: url,
   category: 'Press Release',
   category_url: '/press-releases',
-  teaser_date: content.field_date_published.value|date('F d, Y'),
+  teaser_date,
   image: image_url,
   alt: content.field_media_primary['#items'].entity.field_media_image.alt,
   } %}

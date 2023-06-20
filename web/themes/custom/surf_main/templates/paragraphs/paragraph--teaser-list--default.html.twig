@@ -112,8 +112,7 @@ TODO:
   {# Same Day #}
   {% elseif item.entity.field_dates.entity.field_dates.0.value|date('F j, Y') == item.entity.field_dates.entity.field_dates.0.end_value|date('F j, Y') %}
     {% set teaser_date = item.entity.field_dates.entity.field_dates.0.value|date('F j, Y') %}
-  {# Multiple Days #}
-  {% else %}
+  {# Multiple Days #}  {% else %}
     {% set teaser_date = item.entity.field_dates.entity.field_dates.0.value|date('F j') ~ '-' ~ item.entity.field_dates.entity.field_dates.0.end_value|date|date('F d, Y') %}
   {% endif %}
 
@@ -139,15 +138,19 @@ TODO:
   {% endif %}
 
 {% else %}
-  {% if item.entity.field_date_published.value %}
+  {% set teaser_date = item.entity.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : item.entity.created.value|date('F d, Y') %}
+  {# {% if item.entity.field_date_published.value %}
    {% set teaser_date = item.entity.field_date_published.value|date('F j, Y') %}
    {% set teaser_time = null %}
-  {% endif %}
+  {% endif %} #}
 {% endif %}
 
   {# --- BODY --- #}
   {% if type == 'experiment_research' %}
     {% set body = item.entity.field_overview[0].value %}
+
+  {% elseif type == 'article' or type == 'press_release' %}
+    {% set body = item.entity.field_highlight[0].value %}
   {% else %}
     {% set body = null %}
   {% endif %}

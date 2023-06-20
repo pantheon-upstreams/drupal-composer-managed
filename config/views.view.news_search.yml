@@ -424,8 +424,8 @@ display:
           default_row_class: true
           uses_fields: false
           type: ul
-          wrapper_class: item-list__wrapper
-          class: item-list
+          wrapper_class: ''
+          class: 'item-list l-teaser-grid__length-3'
       row:
         type: 'entity:node'
         options:
@@ -452,7 +452,7 @@ display:
           empty: false
           filters: {  }
           show_labels: false
-          content: '<h2>@current_record_count of @total @result_label</h2>'
+          content: '<p>Showing @current_record_count of @total @result_label</p>'
           filters_summary_separator: ''
           filters_summary_prefix: 'for '
           filters_result_label:

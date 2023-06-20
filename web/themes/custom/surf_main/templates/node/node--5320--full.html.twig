@@ -9,8 +9,11 @@
 					header_particle_style: 'green-particles',
 			} %}
 		{# Top Featured Post (1) #}
+		{{ drupal_entity('block_content', 19) }}
 
 		{# Featured News Posts (2-3) #}
+		{{ drupal_entity('block_content', 20) }}
+
 
 		{# All News Search #}
 			<h2>ALL NEWS</h2>
@@ -18,6 +21,10 @@
 			<div>
 				{{ drupal_view('news_search', 'block_news_search') }}
 			</div>
+
+			{# Let's Dig Deeper (block) #}
+			{{ drupal_entity('block_content', 21) }}
+
 		</div>
 	</div>
 </article>

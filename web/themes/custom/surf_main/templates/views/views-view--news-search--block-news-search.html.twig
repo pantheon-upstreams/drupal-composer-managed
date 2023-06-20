@@ -33,6 +33,7 @@
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'l-constrained--xlarge', 'l--bottom-spacing',
   ]
 %}
 
@@ -54,13 +55,13 @@
   {% endif %}
 
 
-  <ul class="news--wrapper">
+  {# <ul class="news--wrapper"> #}
     {% if rows -%}
-      {{ rows }}
+    <div class="l-teaser-grid">  {{ rows }} </div>
     {% elseif empty -%}
       <div class="empty-results" aria-live="polite">{{ empty }}</div>
     {% endif %}
-  </ul>
+  {# </ul> #}
 
   {{ attachment_after }}
   {{ more }}

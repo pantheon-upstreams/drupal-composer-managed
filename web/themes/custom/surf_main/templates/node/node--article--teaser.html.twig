@@ -32,6 +32,9 @@
 {# --- DATE --- #}
 {% set teaser_date = content.field_date_published.0["#text"] %}
 
+{# set the teaser date with fallback #}
+{% set teaser_date = content.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : node.created.value|date('F d, Y') %}
+
 {# Teaser Text #}
 {% if content.field_highlight is not empty %}
   {% set body = content.field_highlight[0]["#context"].value %}
@@ -42,7 +45,7 @@
  {% include "teaser" with {
   layout: 'column-stack',
   title,
-  body,
+  body: null,
   url,
   category,
   category_url: '/news',

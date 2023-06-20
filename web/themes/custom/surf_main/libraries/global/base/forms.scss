@@ -70,7 +70,7 @@ Form-Item
 }
 
 form > * + * {
-  margin-top: var(--space-gap-y);
+  // margin-top: var(--space-gap-y);
 }
 
 label[for] {
@@ -258,7 +258,7 @@ select::-ms-expand {
 }
 
 .form-item + .form-item {
-  margin-top: var(--space-gap-y);
+  // margin-top: var(--space-gap-y);
 }
 
 // input[type="checkbox"],

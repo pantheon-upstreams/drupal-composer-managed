@@ -18,7 +18,7 @@
       {% set category = value.entity.type.value.0.target_id %}
 
       {# set the teaser date with fallback #}
-      {% set teaser_date = value.entity.field_date_published.value ? value.entity.field_date_published.value|date('F d, Y') : value.entity.changed.value|date('F d, Y') %}
+      {% set teaser_date = value.entity.field_date_published.value ? value.entity.field_date_published.value|date('F d, Y') : value.node.created.value|date('F d, Y')%}
 
       {# set default for image and alt values #}
       {% set alt = value.entity.title.value %}
@@ -70,7 +70,9 @@
   {% endfor %}
 {% endif %}
 
-{% set date = content.field_date_published.0["#text"] %}
+{% set date = content.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : node.created.value|date('F d, Y') %}
+
+
 
 {% set video_url = content.field_media_primary['#items'].entity.field_media_oembed_video.value|replace({'https://vimeo.com/': ''}) %}
 
