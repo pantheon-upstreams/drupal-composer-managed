@@ -1,0 +1,23 @@
+{# News (search) Landing Page #}
+<article{{attributes.addClass(['article'])}}>
+
+	<div class="l--1-col l-constrained">
+		<div class="l__primary">
+			{% include "header" with {
+					heading: 'NEWS',
+					header_text_style: 'black-text',
+					header_particle_style: 'green-particles',
+			} %}
+		{# Top Featured Post (1) #}
+
+		{# Featured News Posts (2-3) #}
+
+		{# All News Search #}
+			<h2>ALL NEWS</h2>
+			<hr class="left-hook-divider" />
+			<div>
+				{{ drupal_view('news_search', 'block_news_search') }}
+			</div>
+		</div>
+	</div>
+</article>
