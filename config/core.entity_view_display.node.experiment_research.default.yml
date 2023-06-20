@@ -3,32 +3,54 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.experiment_research.field_area_of_science
+    - field.field.node.experiment_research.field_dates
     - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_extra_content
     - field.field.node.experiment_research.field_key_experiments
     - field.field.node.experiment_research.field_key_facts
-    - field.field.node.experiment_research.field_media_gallery
+    - field.field.node.experiment_research.field_media
     - field.field.node.experiment_research.field_media_primary
     - field.field.node.experiment_research.field_overview
     - field.field.node.experiment_research.field_p_content
     - field.field.node.experiment_research.field_ref_audiences
-    - field.field.node.experiment_research.field_ref_research_areas
+    - field.field.node.experiment_research.field_research_area
     - field.field.node.experiment_research.field_teaser_text
     - node.type.experiment_research
   module:
+    - datetime_range
     - entity_reference_revisions
     - layout_paragraphs
+    - options
+    - text
     - user
 id: node.experiment_research.default
 targetEntityType: node
 bundle: experiment_research
 mode: default
 content:
-  field_area_of_science:
-    type: entity_reference_label
-    label: above
+  field_dates:
+    type: daterange_default
+    label: hidden
     settings:
-      link: true
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_experiment_research_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_extra_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 6
     region: content
@@ -39,7 +61,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_key_facts:
     type: entity_reference_revisions_entity_view
@@ -50,14 +72,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_media_gallery:
-    type: entity_reference_revisions_entity_view
+  field_media:
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: ''
+      link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -68,6 +90,13 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_p_content:
     type: layout_paragraphs
     label: hidden
@@ -77,6 +106,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_research_area:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
   field_teaser_text:
     type: basic_string
     label: hidden
@@ -85,10 +122,7 @@ content:
     weight: 1
     region: content
 hidden:
-  field_experiment_research_type: true
-  field_overview: true
   field_ref_audiences: true
-  field_ref_research_areas: true
   langcode: true
   links: true
   search_api_excerpt: true

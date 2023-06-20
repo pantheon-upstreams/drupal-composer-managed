@@ -10,8 +10,8 @@ field_name: field_teaser_text
 entity_type: node
 bundle: experiment_research
 label: 'Teaser text'
-description: ''
-required: true
+description: 'Only used for experiment teasers.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

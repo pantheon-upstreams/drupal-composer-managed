@@ -3,16 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.experiment_research.field_area_of_science
+    - field.field.node.experiment_research.field_dates
     - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_extra_content
     - field.field.node.experiment_research.field_key_experiments
     - field.field.node.experiment_research.field_key_facts
-    - field.field.node.experiment_research.field_media_gallery
+    - field.field.node.experiment_research.field_media
     - field.field.node.experiment_research.field_media_primary
     - field.field.node.experiment_research.field_overview
     - field.field.node.experiment_research.field_p_content
     - field.field.node.experiment_research.field_ref_audiences
-    - field.field.node.experiment_research.field_ref_research_areas
+    - field.field.node.experiment_research.field_research_area
     - field.field.node.experiment_research.field_teaser_text
     - node.type.experiment_research
   module:
@@ -22,17 +23,15 @@ dependencies:
     - paragraphs
     - path
     - scheduler
+    - smart_date
     - text
 third_party_settings:
   field_group:
     group_content:
       children:
-        - group_header
-        - group_right_column_content
-        - group_bottom_content
-        - group_hidden_content
-        - group_research_specific_fields
+        - group_experiment_research_fields
         - group_experiment_specific_fields
+        - group_research_specific_fields
       label: Content
       region: content
       parent_name: ''
@@ -44,43 +43,14 @@ third_party_settings:
         id: ''
         direction: horizontal
         width_breakpoint: 640
-    group_header:
-      children:
-        - title
-        - field_teaser_text
-        - field_media_primary
-      label: Header
-      region: content
-      parent_name: group_content
-      weight: 24
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: open
-        description: ''
-        required_fields: true
-    group_hidden_content:
+    group_research_specific_fields:
       children:
         - field_overview
-        - field_experiment_research_type
-        - field_ref_audiences
-      label: 'Hidden Content'
-      region: content
-      parent_name: group_content
-      weight: 27
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_bottom_content:
-      children: {  }
-      label: 'Bottom Content'
+        - field_media
+        - field_key_facts
+        - field_key_experiments
+        - field_extra_content
+      label: 'Research Specific Fields'
       region: content
       parent_name: group_content
       weight: 26
@@ -91,10 +61,12 @@ third_party_settings:
         id: ''
         formatter: closed
         description: ''
-        required_fields: true
-    group_right_column_content:
-      children: {  }
-      label: 'Right Column Content'
+        required_fields: false
+    group_experiment_specific_fields:
+      children:
+        - field_dates
+        - field_teaser_text
+      label: 'Experiment Specific Fields'
       region: content
       parent_name: group_content
       weight: 25
@@ -105,44 +77,17 @@ third_party_settings:
         id: ''
         formatter: closed
         description: ''
-        required_fields: true
-    group_research_specific_fields:
-      children:
-        - field_key_facts
-        - field_key_experiments
-        - field_ref_research_areas
-      label: 'Research Specific Fields'
-      region: content
-      parent_name: group_content
-      weight: 28
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: false
-    group_experiment_specific_fields:
-      children:
-        - field_media_gallery
-      label: 'Experiment Specific Fields'
-      region: content
-      parent_name: group_content
-      weight: 29
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
-        description: ''
         required_fields: false
     group_experiment_research_fields:
-      children: {  }
+      children:
+        - field_experiment_research_type
+        - field_research_area
+        - title
+        - field_media_primary
+        - field_ref_audiences
       label: 'Experiment & Research Fields'
-      region: hidden
-      parent_name: ''
+      region: content
+      parent_name: group_content
       weight: 20
       format_type: tab
       format_settings:
@@ -163,25 +108,37 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_area_of_science:
-    type: entity_reference_autocomplete
-    weight: 32
+  field_dates:
+    type: smartdate_only
+    weight: 31
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+      default_duration: '60'
+      separator: to
+      hide_date: 0
+      modal: false
+      show_extra: false
     third_party_settings: {  }
   field_experiment_research_type:
     type: options_buttons
-    weight: 29
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_extra_content:
+    type: layout_paragraphs
+    weight: 34
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
   field_key_experiments:
     type: paragraphs
-    weight: 11
+    weight: 33
     region: content
     settings:
       title: 'Key Experiments'
@@ -190,7 +147,7 @@ content:
       closed_mode: summary
       autocollapse: none
       closed_mode_threshold: 0
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
       default_paragraph_type: teaser_list
       features:
@@ -200,7 +157,7 @@ content:
     third_party_settings: {  }
   field_key_facts:
     type: paragraphs
-    weight: 10
+    weight: 32
     region: content
     settings:
       title: 'Key Facts'
@@ -214,38 +171,26 @@ content:
       default_paragraph_type: card_list
       features:
         add_above: '0'
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
-    third_party_settings: {  }
-  field_media_gallery:
-    type: paragraphs
-    weight: 14
-    region: content
-    settings:
-      title: 'Media Gallery'
-      title_plural: 'Media Gallery'
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: media_gallery
-      features:
-        add_above: '0'
         collapse_edit_all: '0'
         duplicate: '0'
     third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 31
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 3
+    weight: 29
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 28
+    weight: 29
     region: content
     settings:
       size: 60
@@ -271,19 +216,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_ref_research_areas:
-    type: entity_reference_autocomplete
-    weight: 12
+  field_research_area:
+    type: options_select
+    weight: 27
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_teaser_text:
     type: string_textarea
-    weight: 2
+    weight: 32
     region: content
     settings:
       rows: 5
@@ -317,7 +258,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 28
     region: content
     settings:
       size: 60

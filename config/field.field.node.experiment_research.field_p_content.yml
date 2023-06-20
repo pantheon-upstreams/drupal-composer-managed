@@ -5,6 +5,16 @@ dependencies:
   config:
     - field.storage.node.field_p_content
     - node.type.experiment_research
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.teaser_list
+    - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
 id: node.experiment_research.field_p_content
@@ -20,12 +30,34 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      section: section
+      text: text
+      accordion: accordion
+      card_list: card_list
+      header: header
+      media: media
+      media_gallery: media_gallery
+      pullquote: pullquote
+      resources_list: resources_list
+      teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:
+      accordion:
+        weight: 35
+        enabled: true
+      accordion_item:
+        weight: 36
+        enabled: false
+      blue_banner:
+        weight: 37
+        enabled: false
       card:
         weight: 20
         enabled: false
+      card_list:
+        weight: 39
+        enabled: true
       centered_image_text:
         weight: 21
         enabled: false
@@ -41,6 +73,12 @@ settings:
       gallery:
         weight: 25
         enabled: false
+      green_banner_cta:
+        weight: 45
+        enabled: false
+      header:
+        weight: 46
+        enabled: true
       homepage_lead_teaser:
         weight: 26
         enabled: false
@@ -53,9 +91,33 @@ settings:
       image_with_caption:
         weight: 29
         enabled: false
+      media:
+        weight: 51
+        enabled: true
+      media_gallery:
+        weight: 52
+        enabled: true
       one_up_teaser_image_text:
         weight: 30
         enabled: false
+      person:
+        weight: 54
+        enabled: false
+      persons_list:
+        weight: 55
+        enabled: false
+      pullquote:
+        weight: 56
+        enabled: true
+      resource_file:
+        weight: 58
+        enabled: false
+      resource_link:
+        weight: 59
+        enabled: false
+      resources_list:
+        weight: 57
+        enabled: true
       running_text:
         weight: 31
         enabled: false
@@ -64,10 +126,13 @@ settings:
         enabled: false
       section:
         weight: 33
-        enabled: false
+        enabled: true
+      teaser_list:
+        weight: 63
+        enabled: true
       text:
         weight: 34
-        enabled: false
+        enabled: true
       two_up_figures:
         weight: 35
         enabled: false

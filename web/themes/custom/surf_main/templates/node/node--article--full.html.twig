@@ -70,7 +70,7 @@
   {% endfor %}
 {% endif %}
 
-{% set date = content.field_date_published.value|date('F d, Y') %}
+{% set date = content.field_date_published.0["#text"] %}
 
 {% set video_url = content.field_media_primary['#items'].entity.field_media_oembed_video.value|replace({'https://vimeo.com/': ''}) %}
 

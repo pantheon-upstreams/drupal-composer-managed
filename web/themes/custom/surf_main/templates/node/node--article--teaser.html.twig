@@ -30,12 +30,19 @@
 {% endif %}
 
 {# --- DATE --- #}
-{% set teaser_date = content.field_date_published.value|date('F d, Y') %}
+{% set teaser_date = content.field_date_published.0["#text"] %}
+
+{# Teaser Text #}
+{% if content.field_highlight is not empty %}
+  {% set body = content.field_highlight[0]["#context"].value %}
+{% else %}
+  {% set body = null %}
+{% endif %}
 
  {% include "teaser" with {
   layout: 'column-stack',
   title,
-  body: '',
+  body,
   url,
   category,
   category_url: '/news',
