@@ -89,7 +89,8 @@
         "drupal/cl_generator": "^1.0@RC",
         "drupal/notification_message": "^1.0@RC",
         "drupal/allowed_formats": "^2.0",
-        "drupal/twig_tweak": "^3.2"
+        "drupal/twig_tweak": "^3.2",
+        "drupal/viewsreference": "^2.0@beta"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",

@@ -139,10 +139,6 @@ TODO:
 
 {% else %}
   {% set teaser_date = item.entity.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : item.entity.created.value|date('F d, Y') %}
-  {# {% if item.entity.field_date_published.value %}
-   {% set teaser_date = item.entity.field_date_published.value|date('F j, Y') %}
-   {% set teaser_time = null %}
-  {% endif %} #}
 {% endif %}
 
   {# --- BODY --- #}

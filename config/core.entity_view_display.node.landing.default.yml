@@ -3,28 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing.body
+    - field.field.node.landing.field_p_content
     - node.type.landing
   module:
-    - text
+    - layout_paragraphs
     - user
 id: node.landing.default
 targetEntityType: node
 bundle: landing
 mode: default
 content:
-  body:
-    type: text_default
+  field_p_content:
+    type: layout_paragraphs
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true

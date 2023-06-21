@@ -1,0 +1,5 @@
+{% include 'view' with {
+  title: content.field_title|field_value,
+  view: content.field_view,
+  attributes,
+} only %}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "081ad42716ab8c8738b33d6cef0202c0",
+    "content-hash": "0eea4c91ccdc9d795170f0788e6e3e40",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5821,6 +5821,69 @@
             "homepage": "https://www.drupal.org/project/views_infinite_scroll",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_infinite_scroll"
+            }
+        },
+        {
+            "name": "drupal/viewsreference",
+            "version": "2.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/viewsreference.git",
+                "reference": "8.x-2.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-2.0-beta4.zip",
+                "reference": "8.x-2.0-beta4",
+                "shasum": "913d6c77d73a9aa475b695a069ec5258569ddb07"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "conflict": {
+                "drupal/viewsreferennce": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0-beta4",
+                    "datestamp": "1664821610",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "jasonawant",
+                    "homepage": "https://www.drupal.org/user/589890"
+                },
+                {
+                    "name": "joekers",
+                    "homepage": "https://www.drupal.org/user/2229066"
+                },
+                {
+                    "name": "NewZeal",
+                    "homepage": "https://www.drupal.org/user/93571"
+                },
+                {
+                    "name": "seanB",
+                    "homepage": "https://www.drupal.org/user/545912"
+                }
+            ],
+            "description": "Views reference",
+            "homepage": "http://drupal.org/project/viewsreference",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/viewsreference",
+                "issues": "https://www.drupal.org/project/issues/viewsreference"
             }
         },
         {
@@ -16524,7 +16587,8 @@
         "drupal/gin_toolbar": 5,
         "drupal/cl_server": 5,
         "drupal/cl_generator": 5,
-        "drupal/notification_message": 5
+        "drupal/notification_message": 5,
+        "drupal/viewsreference": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
