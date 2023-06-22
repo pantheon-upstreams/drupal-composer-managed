@@ -20,6 +20,10 @@
 {# Markup for the component #}
 <article {{ clAttributes.addClass('c-callout'|addModifiers(theme)) }}>
 
+  {% if link_url is not empty and (link_text is empty or link_text == '/') and (image_url is not empty or theme == 'icon') %}
+  <a href="{{ link_url }}" class="c-callout__link-wrapper">
+  {% endif %}
+
   {% if image_url and image_alt and theme != 'icon' %}
     <div class="c-callout__image">
     {% include "image" with {
@@ -33,12 +37,16 @@
       <div{{ attributes.addClass(['c-callout__icon', icon]) }}></div>
   {% endif %}
 
+  {% if link_url is not empty and (link_text is empty or link_text == '/') and (image_url is not empty or theme == 'icon') %}</a>{% endif %}
+
   <div class="c-callout__content-wrapper">
 
     {% if heading %}
-      {% block banner_heading_block %}
-        <h3 class="c-callout__title">{{heading}}</h3>
-      {% endblock %}
+        {% if link_url is not empty and (link_text is empty or link_text == '/') %}
+          <h3 class="c-callout__title"><a href="{{ link_url }}" class="c-callout__title-link">{{heading}}</a></h3>
+        {% else %}
+          <h3 class="c-callout__title">{{heading}}</h3>
+        {% endif %}
     {% endif %}
 
     {% if body %}
@@ -49,7 +57,8 @@
       {% endblock %}
     {% endif %}
 
-    {% if link_text and link_url %}
+
+    {% if link_text is not empty and link_text != '/' and link_url is not empty %}
     {% block callout_link %}
     <div class="c-callout__link">
       {% if theme == 'simple-icon-cta' %}

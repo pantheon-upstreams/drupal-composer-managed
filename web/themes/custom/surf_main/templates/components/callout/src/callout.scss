@@ -14,7 +14,7 @@
     color: var(--color-surf--white);
   }
 
-  .c-callout__content-wrapper {
+  &:not(.c-callout--white) .c-callout__content-wrapper {
     padding: rem(20px);
     @include bp-min(medium) {
       padding: rem(28px);
@@ -26,6 +26,19 @@
       padding: rem(40px);
     }
   }
+  &.c-callout--white .c-callout__content-wrapper {
+    padding-top: rem(20px);
+    @include bp-min(medium) {
+      padding-top: rem(28px);
+    }
+    @include bp-min(large) {
+      padding-top: rem(32px);
+    }
+    @include bp-min(xxlarge) {
+      padding-top: rem(40px);
+    }
+  }
+
   &.c-callout--simple-icon-cta {
     background-color: var(--color-surf--cloud);
     .c-callout__content-wrapper {
@@ -185,6 +198,13 @@
   }
   &.tunnels {
     background-image: url(../../../../images/icons/tunnels/color.png);
+  }
+}
+
+.c-callout__title-link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 }
 

@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.header.field_header_particle_style
+    - field.field.paragraph.header.field_header_style
     - field.field.paragraph.header.field_header_text_style
+    - field.field.paragraph.header.field_horizontal_rule
     - field.field.paragraph.header.field_title
     - paragraphs.paragraphs_type.header
   module:
@@ -16,21 +18,38 @@ mode: default
 content:
   field_header_particle_style:
     type: list_key
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
+  field_header_style:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_header_text_style:
     type: list_key
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
+  field_horizontal_rule:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: 'false'
+      format_custom_true: 'true'
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

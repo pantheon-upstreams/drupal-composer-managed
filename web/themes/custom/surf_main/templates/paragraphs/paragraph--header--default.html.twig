@@ -1,7 +1,12 @@
+
+{% if content.field_horizontal_rule|field_value == true %}
+  {% set heading_hr = 'horizontal-rule' %}
+{% endif %}
+
 {% include 'header' with {
   heading: content.field_title|field_value,
-  header_particle_style: content.field_header_particle_style.0["#markup"],
-  header_text_style: content.field_header_text_style.0["#markup"],
+  heading_hr,
+  heading_style: content.field_header_style.0["#markup"],
   type,
   attributes,
 } only %}
