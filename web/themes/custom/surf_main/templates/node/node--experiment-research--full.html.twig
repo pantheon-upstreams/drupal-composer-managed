@@ -4,6 +4,50 @@
     - [ ] Update the hard-coded breadcrumbs
   #}
 
+
+{% set type = content.field_experiment_research_type.0["#markup"] %}
+
+{% if type == 'experiment' %}
+  {# Experiment ONLY fields #}
+
+  {% set intro = content.field_teaser_text|field_value %}
+
+  {# Start and end date set#}
+  {% if content.field_dates.0.end_date["#attributes"].datetime is not empty and content.field_dates.0.start_date["#attributes"].datetime is not empty %}
+    {% set dates = content.field_dates.0.start_date["#attributes"].datetime|date('Y') ~ ' - ' ~ content.field_dates.0.end_date["#attributes"].datetime|date('Y') %}
+  {# Same date and no end date #}
+  {% elseif content.field_dates.0["#attributes"].datetime is not empty %}
+   {% set dates = content.field_dates.0["#attributes"].datetime|date('Y') ~ ' - Present' %}
+  {% else %}
+    {# No dates set #}
+    {% set dates = null %}
+  {% endif %}
+
+{% else %}
+  {# Research Area ONLY fields #}
+
+  {% set intro = content.field_overview.0["#text"] %}
+
+  {% if content.field_media.0 %}
+    {% set icon_url = content.field_media.0["#media"].field_media_image.entity.uri.value|image_style('420x420') %}
+    {% set icon_alt = content.field_media.0["#media"].thumbnail.alt %}
+  {% endif %}
+  {% set key_facts = content.field_key_facts  %}
+  {% set key_experiments =  content.field_key_experiments %}
+  {% set research_area_id = content.field_research_area.0["#taxonomy_term"].tid.value %}
+  {% set research_area_name = content.field_research_area.0["#taxonomy_term"].name.value %}
+  {% set extra_content = content.field_extra_content %}
+{% endif %}
+
+  {# Parent Logic #}
+  {% if type == 'research_area' %}
+    {% set parent_name = 'Areas of Research' %}
+    {% set parent_url = '/areas-research' %}
+  {% else %}
+    {% set parent_name = 'Experiments' %}
+    {% set parent_url = '/experiments' %}
+  {% endif %}
+
 {# Temporary hard-coded: Breadcumbs #}
 {% set breadcrumbs = [
     {
@@ -12,8 +56,8 @@
       current: false,
     },
     {
-      title: 'Areas of Research',
-      url: '/',
+      title: parent_name,
+      url: parent_url,
       current: false,
     },
     {
@@ -26,26 +70,27 @@
 
 {# set image and alt#}
  {% if content.field_media_primary.0 %}
-	{% set image = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('hero') %}
-	{# set alt to use the image's alt text #}
-	{% set alt = content.field_media_primary.0["#media"].thumbnail.alt %}
+	{% set image_url = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('hero') %}
+	{% set image_alt = content.field_media_primary.0["#media"].thumbnail.alt %}
 {% endif %}
 
+{% set body = content.field_p_content %}
 
 {% include "experiment-research-page" with {
-  breadcrumbs: breadcrumbs,
+  breadcrumbs,
 	title: label,
-	image_url: image,
-	image_alt: alt,
-	intro: content.field_teaser_text|field_value,
-  body: content.field_p_content,
-  key_facts: content.field_key_facts,
-  media_gallery: content.field_media_gallery,
-  key_experiments: content.field_key_experiments,
+	image_url,
+	image_alt,
+  icon_url,
+  icon_alt,
+	intro,
+  body,
+  key_facts,
+  media_gallery,
+  key_experiments,
+  research_area_id,
+  research_area_name,
+  dates,
+  extra_content,
+  type,
 } %}
-
-<div>
-<div>
-<h1>News Block</h1>
-{{ drupal_view('news', 'news_feature_block') }}
-</div>

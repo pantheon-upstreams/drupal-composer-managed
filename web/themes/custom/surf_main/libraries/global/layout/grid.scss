@@ -134,6 +134,18 @@
 }
 
 .l-teaser-grid:not(.l-teaser-grid__length-1) {
+  &.l-teaser-grid__length-2 ul.item-list {
+    @include bp-min(xlarge) {
+      column-gap: rem(60px);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &.l-teaser-grid__length-3 ul.item-list {
+    @include bp-min(xlarge) {
+      column-gap: rem(60px);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
   ul.item-list {
     //   row-gap: rem(32px);
     //   column-gap: rem(20px);

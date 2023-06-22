@@ -30,6 +30,7 @@
  * @see template_preprocess_views_view()
  */
 #}
+
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
@@ -39,7 +40,6 @@
     'l-teaser-grid__length-' ~ view.result|length,
   ]
 %}
-
 <div{{attributes.addClass(classes)}}>
 
 	{{ title_prefix }}

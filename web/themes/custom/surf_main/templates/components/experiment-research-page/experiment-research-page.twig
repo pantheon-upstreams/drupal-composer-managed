@@ -25,6 +25,11 @@
     </div>
     {% endif %}
 
+    {# Experiment Date #}
+    {% if type == 'experiment' and dates is not empty %}
+      <p>{{ dates }}</p>
+    {% endif %}
+
     {# Title #}
     {% if title %}
     <h1 class="c-experiment-research-page__title">
@@ -32,44 +37,32 @@
     </h1>
     {% endif %}
 
-    {# intro #}
+    {# Intro #}
     {% if intro %}
     <p class="c-experiment-research-page__intro">
       {{ intro }}
     </p>
     {% endif %}
 
-    {# Link #}
-    {% if link_url %}
-    <div class="c-experiment-research-page__link-wrapper">
-      <a href="{{ link_url }}" class="forest-button">{{ link_text }}</a>
-    </div>
-    {% endif %}
   </div>
 
-
-
   {# Body #}
-  {# {% if body %} #}
+  {% if body %}
   <div class="c-experiment-research-page__body-wrapper">
     {{ body }}
   </div>
-  {# {% endif %} #}
-
-  {#
-Key Facts:
-content.field_key_facts
-
-Media Gallery:
-content.field_media_gallery
-
-Key Experiments:
-content.field_key_experiments
-#}
+  {% endif %}
 
   {# Key Facts #}
-  {% if key_facts %}
+  {% if key_facts.0 is not empty %}
   <div class="c-experiment-research-page__key-facts-wrapper l-constrained--xlarge">
+
+  {% if icon_url %}
+  <div class="c-experiment-research-page__icon-wrapper">
+    <img src="{{ icon_url }}" alt="{{icon_url ? icon_url : title}}">
+  </div>
+  {% endif %}
+
     <h2 class="c-experiment-research-page__key-facts-title">Key Facts</h2>
     <div class="c-experiment-research-page__key-facts">
       {{ key_facts }}
@@ -77,18 +70,17 @@ content.field_key_experiments
   </div>
   {% endif %}
 
-  {# Media Gallery #}
-  {% if media_gallery %}
-  <div class="c-experiment-research-page__media-gallery-wrapper l-constrained--xlarge">
-    <h2 class="c-experiment-research-page__media-gallery-title">Media Gallery</h2>
-    <div class="c-experiment-research-page__media-gallery">
-      {{ media_gallery }}
-    </div>
+
+  {# Extra Content #}
+  {% if extra_content and type == 'research_area' %}
+  <div class="c-experiment-research-page__extra-content-wrapper">
+    {{ extra_content }}
   </div>
   {% endif %}
 
+
   {# Key Experiments #}
-  {% if key_experiments %}
+  {% if key_experiments.0 is not empty  %}
   <div class="c-experiment-research-page__key-experiments-wrapper l-constrained--xlarge">
     <h2 class="c-experiment-research-page__key-experiments-title">Key Experiments</h2>
     <div class="c-experiment-research-page__key-experiments">
@@ -97,13 +89,21 @@ content.field_key_experiments
   </div>
   {% endif %}
 
-
-
-
   {# News #}
-  {# <div class="c-experiment-research-page__view-wrapper">
+  {% if type == 'research_area' %}
+    {% include "header" with {
+      heading: research_area_name ~ ' In the News',
+      header_style: 'black-text',
+      heading_hr: true
+    } %}
+    {{ drupal_view('research_news', 'block_research_area_in_the_news', research_area_id) }}
+  {% else %}
+    {% include "header" with {
+      heading: 'In the News',
+      header_style: 'black-text',
+      heading_hr: true
+    } %}
     {{ drupal_view('news', 'news_feature_block') }}
-  </div> #}
-
+  {% endif %}
 
 </article>

@@ -31,6 +31,7 @@ settings:
   preselect_views:
     areas_of_research: areas_of_research
     news_search: news_search
+    research_news: research_news
     admin_download_requests: 0
     block_content: 0
     content: 0
@@ -56,9 +57,9 @@ settings:
     watchdog: 0
     webform_submissions: 0
   enabled_settings:
-    limit: limit
+    pager: pager
     argument: argument
+    limit: limit
     offset: offset
     title: title
-    pager: pager
 field_type: viewsreference

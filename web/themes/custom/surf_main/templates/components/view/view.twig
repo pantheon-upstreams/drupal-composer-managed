@@ -2,11 +2,6 @@
 
 <article{{ attributes.addClass(['c-view', 'l-constrained--xlarge', 'l--bottom-spacing'])}}>
 
-  {% if title is not empty %}
-  <hr class="left-hook-divider">
-  <h1 class="c-view__title">{{title}}</h1>
-  {% endif %}
-
   {% if view is not empty %}
   <section class="c-view__view-wrapper">
     {{view}}

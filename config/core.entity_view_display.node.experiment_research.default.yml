@@ -46,7 +46,7 @@ content:
     weight: 7
     region: content
   field_extra_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
@@ -107,9 +107,10 @@ content:
     weight: 0
     region: content
   field_research_area:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
+      view_mode: default
       link: false
     third_party_settings: {  }
     weight: 9

@@ -3,9 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.header.field_header_particle_style
     - field.field.paragraph.header.field_header_style
-    - field.field.paragraph.header.field_header_text_style
     - field.field.paragraph.header.field_horizontal_rule
     - field.field.paragraph.header.field_title
     - paragraphs.paragraphs_type.header
@@ -14,21 +12,9 @@ targetEntityType: paragraph
 bundle: header
 mode: default
 content:
-  field_header_particle_style:
-    type: options_select
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_header_style:
     type: options_select
     weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_header_text_style:
-    type: options_select
-    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
