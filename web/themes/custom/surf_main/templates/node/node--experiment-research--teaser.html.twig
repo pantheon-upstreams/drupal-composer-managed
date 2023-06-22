@@ -21,10 +21,13 @@
 {# --- DATE --- #}
 {% set teaser_date = content.field_date_published.value|date('F d, Y') %}
 
+{# Body #}
+{% set body = content.field_overview.0["#text"] %}
+
  {% include "teaser" with {
   layout: 'column-stack',
   title,
-  body: content.field_teaser_text,
+  body,
   url,
   category,
   category_url: '/areas-of-research',

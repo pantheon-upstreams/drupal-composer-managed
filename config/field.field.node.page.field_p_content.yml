@@ -18,6 +18,7 @@ dependencies:
     - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
 id: node.page.field_p_content
@@ -47,6 +48,7 @@ settings:
       resources_list: resources_list
       persons_list: persons_list
       teaser_list: teaser_list
+      view: view
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -73,9 +75,6 @@ settings:
       entity_references_text:
         weight: 23
         enabled: false
-      featured_teaser:
-        weight: 44
-        enabled: true
       full_teaser:
         weight: 24
         enabled: false
@@ -154,4 +153,7 @@ settings:
       video:
         weight: 38
         enabled: false
+      view:
+        weight: 70
+        enabled: true
 field_type: entity_reference_revisions

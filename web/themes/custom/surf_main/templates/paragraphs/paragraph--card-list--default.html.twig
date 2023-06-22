@@ -5,8 +5,17 @@
   }]) %}
 {% endfor %}
 
+{% if items|length <= 1 %}
+  {% set length = 1 %}
+{% elseif items|length == 2 %}
+  {% set length = 2 %}
+{% elseif items|length >= 3 %}
+  {% set length = 3 %}
+{% endif %}
+
+
 {% include 'callout-list' with {
   items,
-  length: items|length,
+  length,
   attributes,
 } only %}
