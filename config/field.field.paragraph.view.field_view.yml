@@ -29,6 +29,7 @@ settings:
     feed: 0
     embed: 0
   preselect_views:
+    all_experiments: all_experiments
     areas_of_research: areas_of_research
     news_search: news_search
     research_news: research_news
@@ -57,9 +58,9 @@ settings:
     watchdog: 0
     webform_submissions: 0
   enabled_settings:
-    pager: pager
-    argument: argument
     limit: limit
+    argument: argument
     offset: offset
     title: title
+    pager: pager
 field_type: viewsreference

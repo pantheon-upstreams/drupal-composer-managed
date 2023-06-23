@@ -187,3 +187,26 @@
     }
   }
 }
+
+.l-teaser-view-grid {
+  ul.item-list {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: rem(32px);
+    grid-template-columns: repeat(1, 1fr);
+    @include bp-min(medium) {
+      gap: rem(48px);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include bp-min(large) {
+      gap: rem(60px);
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .item-row {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
