@@ -1,21 +1,20 @@
-uuid: de07acf8-b409-4d09-8971-93d4f82cf6d0
+uuid: 3058ad69-4470-47ea-bbfe-ad84b743909a
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - node.type.article
-    - node.type.press_release
-    - taxonomy.vocabulary.research_area
+    - node.type.curriculum_module
+    - taxonomy.vocabulary.content_area
+    - taxonomy.vocabulary.grade_level
   module:
     - better_exposed_filters
-    - datetime
     - node
     - taxonomy
     - user
     - views_filters_summary
-id: news_search
-label: 'News Search'
+id: browse_curriculum
+label: 'Browse Curriculum'
 module: views
 description: ''
 tag: ''
@@ -28,7 +27,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'All News Posts'
+      title: 'Browse Curriculum'
       fields:
         title:
           id: title
@@ -81,7 +80,7 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 9
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
@@ -121,6 +120,16 @@ display:
               secondary_label: 'Advanced options'
               secondary_open: false
               reset_button_always_show: false
+            sort:
+              plugin_id: default
+              advanced:
+                combine: false
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                collapsible: false
+                collapsible_label: 'Sort options'
+                is_secondary: false
             filter:
               title:
                 plugin_id: default
@@ -128,20 +137,20 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
-              field_ref_research_areas_target_id:
+              field_ref_grade_level_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|All Categories'
+                    filter_rewrite_values: '- Any -|All Grade Levels'
                   collapsible: false
                   is_secondary: false
-              type:
+              field_content_area_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: '- Any -|All Types'
+                    filter_rewrite_values: '- Any -|All Content Areas'
                   collapsible: false
                   is_secondary: false
       access:
@@ -166,34 +175,35 @@ display:
             format: full_html
           tokenize: false
       sorts:
-        field_date_published_value:
-          id: field_date_published_value
-          table: node__field_date_published
-          field: field_date_published_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
-        created:
-          id: created
+        title:
+          id: title
           table: node_field_data
-          field: created
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: created
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: Title
+            field_identifier: title
+          exposed: true
+        changed:
+          id: changed
+          table: node_field_revision
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: changed
           plugin_id: date
           order: DESC
           expose:
-            label: ''
-            field_identifier: ''
+            label: 'Date Updated'
+            field_identifier: changed
           exposed: false
           granularity: second
       arguments: {  }
@@ -209,6 +219,19 @@ display:
           group: 1
           expose:
             operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            curriculum_module: curriculum_module
+          group: 1
+          expose:
             operator_limit_selection: false
             operator_list: {  }
         title:
@@ -262,10 +285,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_ref_research_areas_target_id:
-          id: field_ref_research_areas_target_id
-          table: node__field_ref_research_areas
-          field: field_ref_research_areas_target_id
+        field_ref_grade_level_target_id:
+          id: field_ref_grade_level_target_id
+          table: node__field_ref_grade_level
+          field: field_ref_grade_level_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -275,14 +298,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_ref_research_areas_target_id_op
-            label: Categories
+            operator_id: field_ref_grade_level_target_id_op
+            label: 'Grade level'
             description: ''
             use_operator: false
-            operator: field_ref_research_areas_target_id_op
+            operator: field_ref_grade_level_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: research_areas
+            identifier: grade_level
             required: false
             remember: false
             multiple: false
@@ -312,36 +335,32 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: research_area
+          vid: grade_level
           type: select
           hierarchy: false
           limit: true
           error_message: true
-        type:
-          id: type
-          table: node_field_data
-          field: type
+        field_content_area_target_id:
+          id: field_content_area_target_id
+          table: node__field_content_area
+          field: field_content_area_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          operator: in
-          value:
-            article: article
-            press_release: press_release
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: type_op
-            label: Type
+            operator_id: field_content_area_target_id_op
+            label: 'Content Area'
             description: ''
             use_operator: false
-            operator: type_op
+            operator: field_content_area_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: type
+            identifier: ontent_area
             required: false
             remember: false
             multiple: false
@@ -357,49 +376,6 @@ display:
               ehs_editor: '0'
               administrator: '0'
               visit_coordinator: '0'
-            reduce: true
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        type_1:
-          id: type_1
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          operator: in
-          value:
-            article: article
-            press_release: press_release
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
             reduce: false
           is_grouped: false
           group_info:
@@ -413,6 +389,12 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          reduce_duplicates: false
+          vid: content_area
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -453,14 +435,14 @@ display:
           filters: {  }
           show_labels: false
           content: '<p>Showing @current_record_count of @total @result_label</p>'
-          filters_summary_separator: ''
+          filters_summary_separator: ', '
           filters_summary_prefix: 'for '
           filters_result_label:
-            plural: posts
-            singular: post
+            plural: results
+            singular: result
           show_remove_link: 0
           show_reset_link: 0
-          filters_reset_link_title: 'Clear Results'
+          filters_reset_link_title: Reset
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -470,20 +452,21 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_news_search:
-    id: block_news_search
-    display_title: 'All News Search Block'
+  block_browse_curriculum:
+    id: block_browse_curriculum
+    display_title: 'Browse Curriculum Block'
     display_plugin: block
     position: 1
     display_options:
       display_description: ''
       display_extenders: {  }
-      allow:
-        items_per_page: false
+      block_description: 'Browse Curriculum Block'
     cache_metadata:
       max-age: -1
       contexts:
@@ -491,6 +474,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
         - 'user.node_grants:view'
         - user.permissions

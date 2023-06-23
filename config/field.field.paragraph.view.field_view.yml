@@ -31,6 +31,7 @@ settings:
   preselect_views:
     all_experiments: all_experiments
     areas_of_research: areas_of_research
+    browse_curriculum: browse_curriculum
     news_search: news_search
     research_news: research_news
     admin_download_requests: 0

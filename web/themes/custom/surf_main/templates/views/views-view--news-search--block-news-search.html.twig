@@ -33,47 +33,46 @@
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'l-constrained--xlarge', 'l--bottom-spacing',
+    'news-search-block--view',
+    'l-constrained--xlarge',
+    'l-teaser-view-grid',
   ]
 %}
 
-<div{{ attributes.addClass(classes) }}>
+<div{{attributes.addClass(classes)}}>
 
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
+	{{ title_prefix }}
+	{{ title }}
+	{{ title_suffix }}
 
+	{{ exposed }}
+	{{ attachment_before }}
 
+	<div id="views-aria" aria-live="polite">
+		<p class="visually-hidden"></p>
+	</div>
 
-  {{ exposed }}
-  {{ attachment_before }}
+	{% if header %}
+		<header>
+			{{ header }}
+		</header>
+	{% endif %}
 
-    {% if header %}
-    <header aria-live="polite">
-      {{ header }}
-    </header>
-  {% endif %}
+	{% if rows -%}
+		{{ rows }}
+	{% elseif empty -%}
+		{{ empty }}
+	{% endif %}
+	{{ pager }}
 
+	{{ attachment_after }}
+	{{ more }}
 
-  {# <ul class="news--wrapper"> #}
-    {% if rows -%}
-    <div class="l-teaser-grid">  {{ rows }} </div>
-    {% elseif empty -%}
-      <div class="empty-results" aria-live="polite">{{ empty }}</div>
-    {% endif %}
-  {# </ul> #}
+	{% if footer %}
+		<footer>
+			{{ footer }}
+		</footer>
+	{% endif %}
 
-  {{ attachment_after }}
-  {{ more }}
-
-    <div class="news-view-footer--wrapper">
-    {{ pager }}
-
-    {% if footer %}
-      <footer>
-        {{ footer }}
-      </footer>
-    {% endif %}
-  </div>
-
+	{{ feed_icons }}
 </div>
