@@ -119,7 +119,7 @@
 
       {# Tags: Standards #}
       {% if standards %}
-        <li class="c-teaser__trigger">View Standard(s)</li>
+        <li class="c-teaser__trigger" data-standards-count="{{standards|length}}">View Standards ({{standards|length}})</li>
         {% for tag in standards %}
         <li class="c-teaser__tag standards">{{tag.title}}</li>
         {% endfor %}

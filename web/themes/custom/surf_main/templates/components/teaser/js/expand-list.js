@@ -6,6 +6,7 @@ console.log('expand-list.js');
     attach: function attach(context, _settings) {
       once('standards', '.c-teaser__tags', context).forEach(function (standardsElement) {
         var trigger = standardsElement.querySelector('.c-teaser__trigger');
+        var standardsCount = standardsElement.querySelector('.c-teaser__trigger').getAttribute('data-standards-count');
         var tags = standardsElement.querySelectorAll('.c-teaser__tag.standards');
 
         // Initially hide the tags
@@ -25,9 +26,9 @@ console.log('expand-list.js');
 
           // Change the trigger text based on the visibility state
           if (expanded) {
-            trigger.textContent = 'View Standard(s)';
+            trigger.textContent = 'View Standards' + ' (' + standardsCount + ')';
           } else {
-            trigger.textContent = 'Hide Standard(s)';
+            trigger.textContent = 'Hide Standards' + ' (' + standardsCount + ')';
           }
         });
       });

@@ -382,7 +382,7 @@ display:
           empty: false
           filters: {  }
           show_labels: false
-          content: '<p>Showing @current_record_count of @total @result_label</p>'
+          content: '<p>Showing @current_record_count of @total experiments</p>'
           filters_summary_separator: ', '
           filters_summary_prefix: 'for '
           filters_result_label:
