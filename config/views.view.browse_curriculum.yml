@@ -103,7 +103,7 @@ display:
           submit_button: Filter
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: Sort
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -123,8 +123,8 @@ display:
             sort:
               plugin_id: default
               advanced:
-                combine: false
-                combine_rewrite: ''
+                combine: true
+                combine_rewrite: "Post date Asc|Oldest first\r\nPost date Desc|Newest first\r\nTitle Asc|A -> Z\r\nTitle Desc|Z -> A"
                 reset: false
                 reset_label: ''
                 collapsible: false
@@ -202,9 +202,9 @@ display:
           plugin_id: date
           order: DESC
           expose:
-            label: 'Date Updated'
+            label: Changed
             field_identifier: changed
-          exposed: false
+          exposed: true
           granularity: second
       arguments: {  }
       filters:
@@ -360,7 +360,7 @@ display:
             operator: field_content_area_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ontent_area
+            identifier: content_area
             required: false
             remember: false
             multiple: false

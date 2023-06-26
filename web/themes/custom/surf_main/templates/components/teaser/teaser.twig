@@ -99,16 +99,34 @@
 
 
     {# Tags #}
-    {% if tags %}
+    {% if tags or grade_levels or content_areas or standards %}
     <ul class="c-teaser__tags">
-      {% block tags_block %}
-      {% for key, tag in tags %}
+
+      {# Tags #}
+      {% for key, tag in tags if tags %}
       <li class="c-teaser__tag"><a href="{{tag.title}}">{{tag.title}}</a></li>
       {% endfor %}
-      {% endblock %}
+
+      {# Tags: Grades #}
+      {% for tag in grade_levels if grade_levels %}
+      <li class="c-teaser__tag"><a href="curriculum-module?grade_level={{tag.id}}">{{tag.title}}</a></li>
+      {% endfor %}
+
+      {# Tags: Content Areas #}
+      {% for tag in content_areas if content_areas %}
+      <li class="c-teaser__tag"><a href="curriculum-module?content_area={{tag.id}}">{{tag.title}}</a></li>
+      {% endfor %}
+
+      {# Tags: Standards #}
+      {% if standards %}
+        <li class="c-teaser__trigger">View Standard(s)</li>
+        {% for tag in standards %}
+        <li class="c-teaser__tag standards">{{tag.title}}</li>
+        {% endfor %}
+      {% endif %}
+
     </ul>
     {% endif %}
 
   </div>
-
 </article>

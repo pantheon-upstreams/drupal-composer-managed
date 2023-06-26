@@ -7,6 +7,17 @@
 {# -- TITLE --- #}
 {% set title = label|field_value %}
 
+{# Type #}
+{% set type = content.field_experiment_research_type.0["#markup"] %}
+
+{# Category / Parent Logic #}
+{% if type == 'research_area' %}
+  {% set category = 'Areas of Research' %}
+  {% set category_url = '/areas-research' %}
+{% else %}
+  {% set category = 'Experiments' %}
+  {% set category_url = '/experiments' %}
+{% endif %}
 
 {# -- IMAGE --- #}
 {% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
@@ -34,4 +45,5 @@
   image,
   alt,
   icon,
+  type,
   } %}
