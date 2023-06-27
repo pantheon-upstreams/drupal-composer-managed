@@ -3,7 +3,7 @@ var __webpack_exports__ = {};
 (function ($) {
   Drupal.behaviors.customFieldVisibility = {
     attach: function attach(context, settings) {
-      console.log('👍🏻!!!');
+      console.log('👍🏻');
       // Replace 'select-field' with the ID or class of your select field.
       var selectField = $('#edit-field-cards-0-subform-field-theme', context).once('customFieldVisibility');
       console.log({
@@ -35,4 +35,4 @@ var __webpack_exports__ = {};
 })(jQuery);
 /******/ })()
 ;
-//# sourceMappingURL=custom_field_visibility.js.map
+//# sourceMappingURL=custom_field_visibility copy.js.map

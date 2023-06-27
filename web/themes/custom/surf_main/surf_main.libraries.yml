@@ -152,7 +152,18 @@ teaser:
 #------------------------------------#
 # 08 - Views
 #------------------------------------#
-
+# Site: Header
+collapsible-filter:
+  css:
+    component:
+      dist/css/components/collapsible-filter/collapsible-filter.component.css:
+        {}
+  js:
+    dist/js/collapsible-filter/collapsible-filter.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
 #------------------------------------#
 # 09 - Misc
 #------------------------------------#
+

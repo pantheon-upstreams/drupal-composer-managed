@@ -115,6 +115,15 @@ textarea {
     outline-color: transparent;
     outline-style: none;
   }
+  &.form-element--api-textfield {
+    background-image: inline-svg(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#222" stroke-linejoin="round" stroke-width="1.5" d="m15.288 14.755 8.8 8.8"/><circle cx="10.889" cy="10.355" r="6.222" stroke="#222" stroke-width="1.5" transform="rotate(45 10.889 10.355)"/></svg>'
+    );
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: left rem(12px) center;
+    padding-left: rem(46px);
+  }
 }
 
 textarea {
@@ -135,7 +144,6 @@ input[type="file"] {
 }
 
 input[type="button"],
-input[type="reset"],
 input[type="submit"],
 button:not([class]) {
   @include surf-font-label-medium;
@@ -153,10 +161,20 @@ button:not([class]) {
   }
 }
 
-input[type="reset"] {
+input[type="reset"],
+input[data-drupal-selector="edit-reset"] {
+  @include surf-font-label-medium;
+  color: var(--color-surf--white);
+  cursor: pointer;
   background: var(--color-surf--black);
+  border: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  padding: rem(8px) rem(18px);
+  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background: var(--color-surf--grey);
+    transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -395,5 +413,157 @@ input[type="radio"] + label,
 
   > ul {
     font-weight: var(--font-weight-regular);
+  }
+}
+
+form.views-exposed-form {
+  @include bp-min(medium) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .form-actions input[type="submit"] {
+    height: rem(50px);
+  }
+}
+
+.views-header {
+  margin: rem(20px) 0 0 0;
+  @include bp-min(medium) {
+    margin: rem(32px) 0 0 0;
+  }
+  p {
+    margin: 0;
+    @include surf-font-body-x-small;
+    color: var(--color-surf--black);
+    @include bp-min(medium) {
+    }
+  }
+}
+
+.item-list__wrapper {
+  margin: rem(32px) 0 0 0;
+  @include bp-min(medium) {
+    margin: rem(60px) 0 0 0;
+  }
+}
+
+.browse-curriculum-block--view {
+  .form-actions input[type="submit"] {
+    margin-right: rem(20px);
+  }
+  .form-item-title {
+    flex: none;
+    width: 100%;
+    margin-bottom: rem(32px);
+  }
+  .form-item-grade-level {
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-sort-bef-combine {
+    flex: none;
+    width: 100%;
+    margin: rem(32px) 0;
+  }
+  @include bp-min(medium) {
+    .form-item-grade-level {
+      margin: 0 rem(20px) 0 0;
+    }
+  }
+  @include bp-min(large) {
+    .form-item-sort-bef-combine {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px);
+    }
+  }
+}
+
+.all-experiments-block--view {
+  .form-actions input[type="submit"] {
+    margin-right: rem(20px);
+  }
+  .form-item-title {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-research-areas {
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-actions {
+    flex: none;
+    width: 100%;
+  }
+  @include bp-min(medium) {
+    .form-actions {
+      flex: initial;
+      width: auto;
+      margin: 0 0 0 rem(20px);
+    }
+    .form-item-research-areas {
+      margin: 0;
+    }
+  }
+  @include bp-min(large) {
+    .form-item-title {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
+  }
+}
+
+.news-search-block--view {
+  .form-actions input[type="submit"] {
+    margin-right: rem(20px);
+  }
+  .form-item-title {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-research-areas {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-type {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-actions {
+    flex: none;
+    width: 100%;
+  }
+  @include bp-min(medium) {
+    .form-actions {
+      flex: initial;
+      width: auto;
+      margin: 0 0 0 rem(20px);
+    }
+    .form-item-research-areas {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
+    .form-item-type {
+      flex: initial;
+      width: auto;
+      margin: 0;
+    }
+    .form-actions {
+      flex: none;
+      width: 100%;
+      margin: rem(32px) 0 0 0;
+    }
+  }
+  @include bp-min(large) {
+    .form-item-title {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
   }
 }

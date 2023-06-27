@@ -1,6 +1,5 @@
 /******/ (function() { // webpackBootstrap
 var __webpack_exports__ = {};
-console.log('expand-list.js');
 (function (Drupal, once) {
   Drupal.behaviors.surf_teaser_collapse = {
     attach: function attach(context, _settings) {

@@ -1,5 +1,4 @@
 
-console.log('expand-list.js');
 ((Drupal, once) => {
   Drupal.behaviors.surf_teaser_collapse = {
     attach(context, _settings) {

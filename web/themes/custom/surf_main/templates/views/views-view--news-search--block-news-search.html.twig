@@ -30,6 +30,8 @@
  * @see template_preprocess_views_view()
  */
 #}
+{{ attach_library('surf_main/collapsible-filter') }}
+
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
@@ -45,15 +47,24 @@
 	{{ title }}
 	{{ title_suffix }}
 
-	{{ exposed }}
-	{{ attachment_before }}
+	<div class="collapsible__container">
 
-	<div id="views-aria" aria-live="polite">
-		<p class="visually-hidden"></p>
+	<button type="button" aria-expanded="true" class="collapsible__trigger" aria-controls="collapsible__container-content">Filter Curriculum</button>
+
+  <div class="collapsible__container-content" aria-labelledby="collapsible__container-content">
+		{{ exposed }}
+  </div>
+
 	</div>
 
+	{{ attachment_before }}
+{#
+	<div id="views-aria" aria-live="polite">
+		<p class="visually-hidden"></p>
+	</div> #}
+
 	{% if header %}
-		<header>
+		<header class="views-header">
 			{{ header }}
 		</header>
 	{% endif %}
@@ -69,7 +80,7 @@
 	{{ more }}
 
 	{% if footer %}
-		<footer>
+		<footer class="views-footer">
 			{{ footer }}
 		</footer>
 	{% endif %}

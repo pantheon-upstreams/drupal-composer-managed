@@ -406,7 +406,7 @@ display:
           default_row_class: true
           uses_fields: false
           type: ul
-          wrapper_class: ''
+          wrapper_class: item-list__wrapper
           class: item-list
       row:
         type: 'entity:node'
