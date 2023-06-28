@@ -8,8 +8,9 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.blue_banner
     - paragraphs.paragraphs_type.card_list
-    - paragraphs.paragraphs_type.green_banner_cta
-    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.homepage_header
+    - paragraphs.paragraphs_type.homepage_hero
+    - paragraphs.paragraphs_type.homepage_teaser
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.persons_list
@@ -38,8 +39,9 @@ settings:
       accordion: accordion
       blue_banner: blue_banner
       card_list: card_list
-      green_banner_cta: green_banner_cta
-      header: header
+      homepage_header: homepage_header
+      homepage_teaser: homepage_teaser
+      homepage_hero: homepage_hero
       media: media
       media_gallery: media_gallery
       persons_list: persons_list
@@ -83,16 +85,19 @@ settings:
         enabled: false
       green_banner_cta:
         weight: 46
-        enabled: true
+        enabled: false
       header:
         weight: 47
-        enabled: true
-      homepage_lead_teaser:
-        weight: 48
         enabled: false
+      homepage_header:
+        weight: 49
+        enabled: true
+      homepage_hero:
+        weight: 50
+        enabled: true
       homepage_teaser:
         weight: 49
-        enabled: false
+        enabled: true
       image:
         weight: 50
         enabled: false

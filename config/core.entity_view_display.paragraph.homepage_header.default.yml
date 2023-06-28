@@ -1,0 +1,22 @@
+uuid: 0136b640-f152-439b-9920-22f3e7377ff1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_header.field_title
+    - paragraphs.paragraphs_type.homepage_header
+id: paragraph.homepage_header.default
+targetEntityType: paragraph
+bundle: homepage_header
+mode: default
+content:
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

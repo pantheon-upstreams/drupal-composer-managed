@@ -1,0 +1,26 @@
+uuid: bff696a8-a96c-45d6-b3e3-b9b2150fb68b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.homepage_hero
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: paragraph.homepage_hero.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: homepage_hero
+label: Content
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: 41c0e4ae-a5ae-4195-b387-cd7a460d3377
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_header.field_title
+    - paragraphs.paragraphs_type.homepage_header
+id: paragraph.homepage_header.default
+targetEntityType: paragraph
+bundle: homepage_header
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
