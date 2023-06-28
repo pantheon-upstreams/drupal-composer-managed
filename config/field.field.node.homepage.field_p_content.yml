@@ -1,10 +1,10 @@
-uuid: 9b671881-9c5e-4d6c-8273-7acb8a3cc302
+uuid: 96cbd07d-688d-4067-8bdd-3bdb1dbf7661
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_p_content
-    - node.type.landing
+    - node.type.homepage
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.blue_banner
     - paragraphs.paragraphs_type.card_list
@@ -21,10 +21,10 @@ dependencies:
     - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
-id: node.landing.field_p_content
+id: node.homepage.field_p_content
 field_name: field_p_content
 entity_type: node
-bundle: landing
+bundle: homepage
 label: Content
 description: ''
 required: false
@@ -118,13 +118,13 @@ settings:
         weight: 57
         enabled: true
       resource_file:
-        weight: 58
-        enabled: false
-      resource_link:
         weight: 59
         enabled: false
-      resources_list:
+      resource_link:
         weight: 60
+        enabled: false
+      resources_list:
+        weight: 58
         enabled: true
       running_text:
         weight: 61

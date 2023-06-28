@@ -1,0 +1,28 @@
+uuid: 23830e10-1bdf-4dc5-ab1b-5c25790a02d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.field_p_content
+    - node.type.homepage
+  module:
+    - layout_paragraphs
+    - user
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true
