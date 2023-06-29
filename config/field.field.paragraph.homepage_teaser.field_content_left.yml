@@ -6,14 +6,19 @@ dependencies:
     - field.storage.paragraph.field_content_left
     - paragraphs.paragraphs_type.homepage_teaser
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
 id: paragraph.homepage_teaser.field_content_left
 field_name: field_content_left
 entity_type: paragraph
 bundle: homepage_teaser
 label: Content
 description: 'This field is only intended for a small amount of text-based content.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

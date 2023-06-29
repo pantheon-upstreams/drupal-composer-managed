@@ -1,0 +1,19 @@
+@import "_partials";
+
+.c-homepage-teaser {
+  position: relative;
+
+  // TODO: remove this
+  border: solid 1px red;
+  &::before {
+    content: "homepage-teaser";
+    color: #fff;
+    background: red;
+    left: 0;
+    top: 0;
+    padding: rem(2px) rem(10px);
+    font-size: rem(10px);
+    position: absolute;
+    display: block;
+  }
+}

@@ -5,15 +5,13 @@ dependencies:
   config:
     - field.field.paragraph.homepage_teaser.field_content_left
     - field.field.paragraph.homepage_teaser.field_heading_left
-    - field.field.paragraph.homepage_teaser.field_image_right
     - field.field.paragraph.homepage_teaser.field_link_right
-    - image.style.thumbnail
+    - field.field.paragraph.homepage_teaser.field_media_right
     - paragraphs.paragraphs_type.homepage_teaser
   module:
-    - image
-    - imce
     - link
     - maxlength
+    - media_library
     - text
 id: paragraph.homepage_teaser.default
 targetEntityType: paragraph
@@ -41,16 +39,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_image_right:
-    type: image_image
-    weight: 0
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings:
-      imce:
-        enabled: true
   field_link_right:
     type: link_default
     weight: 3
@@ -58,6 +46,13 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_media_right:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
 hidden:
   created: true

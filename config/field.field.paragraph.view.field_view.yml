@@ -32,6 +32,7 @@ settings:
     all_experiments: all_experiments
     areas_of_research: areas_of_research
     browse_curriculum: browse_curriculum
+    news: news
     news_search: news_search
     research_news: research_news
     admin_download_requests: 0
@@ -43,7 +44,6 @@ settings:
     hero_image_term: 0
     media: 0
     media_library: 0
-    news: 0
     portal_parent: 0
     redirect: 0
     redirect_404: 0

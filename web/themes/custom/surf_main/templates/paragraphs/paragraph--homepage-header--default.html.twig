@@ -1,0 +1,8 @@
+{# <pre>{{dump(content)}}</pre> #}
+
+{% set heading = content.field_heading_left.0["#context"].value|raw %}
+
+{% include 'homepage-header' with {
+  heading,
+  attributes,
+} only %}

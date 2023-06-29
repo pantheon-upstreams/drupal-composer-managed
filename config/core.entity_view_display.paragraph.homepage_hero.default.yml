@@ -17,35 +17,36 @@ bundle: homepage_hero
 mode: default
 content:
   field_link:
-    type: link
-    label: above
+    type: link_separate
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_media:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 1
     region: content
-  field_text:
-    type: text_default
-    label: above
-    settings: {  }
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
     third_party_settings: {  }
     weight: 3
     region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

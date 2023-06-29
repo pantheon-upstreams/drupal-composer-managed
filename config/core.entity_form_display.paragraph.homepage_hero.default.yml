@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.homepage_hero
   module:
     - link
+    - media_library
     - text
 id: paragraph.homepage_hero.default
 targetEntityType: paragraph
@@ -25,14 +26,11 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_media:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 1
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_text:
     type: text_textarea
