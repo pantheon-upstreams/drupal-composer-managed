@@ -1,4 +1,6 @@
-{% set full_name = content.field_name.0["#markup"] %}
+
+
+{% set full_name = content.field_name.0["#markup"] ? content.field_name.0["#markup"] : node.title.value %}
 {% set name_array = full_name|split(' ') %}
 
 {% if name_array|length == 3 %}

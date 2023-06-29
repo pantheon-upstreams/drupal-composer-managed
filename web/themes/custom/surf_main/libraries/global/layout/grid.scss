@@ -207,6 +207,9 @@
       display: block;
       margin: 0;
       padding: 0;
+      .cl-component {
+        height: 100%;
+      }
     }
   }
 }
