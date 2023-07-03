@@ -567,3 +567,63 @@ form.views-exposed-form {
     }
   }
 }
+
+.press-releases-search-block--view {
+  .form-actions input[type="submit"] {
+    margin-right: rem(20px);
+  }
+  .form-item-title {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-research-areas {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-type {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-actions {
+    flex: none;
+    width: 100%;
+  }
+  @include bp-min(medium) {
+    margin-top: rem(80px);
+    .form-actions {
+      flex: initial;
+      width: auto;
+      margin: 0 0 0 rem(20px);
+    }
+    .form-item-research-areas {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
+    .form-item-type {
+      flex: initial;
+      width: auto;
+      margin: 0;
+    }
+    .form-actions {
+      flex: none;
+      width: 100%;
+      margin: rem(32px) 0 0 0;
+    }
+  }
+  @include bp-min(large) {
+    margin-top: rem(140px);
+    .form-actions {
+      flex: initial;
+      width: auto;
+    }
+    .form-item-title {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
+  }
+}
