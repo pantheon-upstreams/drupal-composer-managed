@@ -35,6 +35,7 @@ settings:
     news: news
     news_search: news_search
     our_team: our_team
+    press_releases_search: press_releases_search
     research_news: research_news
     admin_download_requests: 0
     block_content: 0
@@ -45,6 +46,7 @@ settings:
     hero_image_term: 0
     media: 0
     media_library: 0
+    my_curriculum: 0
     portal_parent: 0
     redirect: 0
     redirect_404: 0
@@ -60,9 +62,9 @@ settings:
     watchdog: 0
     webform_submissions: 0
   enabled_settings:
-    limit: limit
+    pager: pager
     argument: argument
+    limit: limit
     offset: offset
     title: title
-    pager: pager
 field_type: viewsreference
