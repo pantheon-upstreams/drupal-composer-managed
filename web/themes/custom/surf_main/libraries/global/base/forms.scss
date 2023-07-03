@@ -627,3 +627,61 @@ form.views-exposed-form {
     }
   }
 }
+
+.jobs-search-block--view {
+  .form-actions input[type="submit"] {
+    margin-right: rem(20px);
+  }
+  .form-item-title {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-department {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-item-type {
+    flex: none;
+    width: 100%;
+    margin: 0 0 rem(32px) 0;
+  }
+  .form-actions {
+    flex: none;
+    width: 100%;
+  }
+  @include bp-min(medium) {
+    .form-actions {
+      flex: initial;
+      width: auto;
+      margin: 0 0 0 rem(20px);
+    }
+    .form-item-department {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
+    .form-item-type {
+      flex: initial;
+      width: auto;
+      margin: 0;
+    }
+    .form-actions {
+      flex: none;
+      width: 100%;
+      margin: rem(32px) 0 0 0;
+    }
+  }
+  @include bp-min(large) {
+    .form-actions {
+      flex: initial;
+      width: auto;
+    }
+    .form-item-title {
+      flex: initial;
+      width: auto;
+      margin: 0 rem(20px) 0 0;
+    }
+  }
+}

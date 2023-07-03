@@ -188,4 +188,10 @@
       }
     }
   }
+  .c-teaser__pretitle {
+    @include surf-font-label-peewee;
+    color: var(--color-surf--black);
+    display: block;
+    margin: 0 0 rem(8px) 0;
+  }
 }
