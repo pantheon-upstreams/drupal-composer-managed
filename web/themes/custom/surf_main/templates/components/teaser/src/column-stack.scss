@@ -17,13 +17,16 @@
 
   // Image Wrapper
   .c-teaser__image-wrapper {
-    position: relative;
     margin: 0 0 rem(28px) 0;
-    @include bp-min(xxlarge) {
+    @include bp-min(medium) {
+      margin: 0;
     }
     img {
       display: block;
       width: 100%;
+    }
+    .c-teaser__image-inner-wrapper {
+      position: relative;
     }
   }
 

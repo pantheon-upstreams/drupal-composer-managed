@@ -13,23 +13,26 @@
   {# Image & Category #}
   {% if image %}
   <div class="c-teaser__image-wrapper">
+    <div class="c-teaser__image-inner-wrapper">
+      {# Image #}
 
-    {% if image %}
-    {% include "image" with {
-    image: image,
-    alt: alt
-    } %}
-    {% endif %}
+      {% if image %}
+      {% include "image" with {
+      image: image,
+      alt: alt
+      } %}
+      {% endif %}
 
-    {# Category #}
-    {% if category and layout == 'column-stack' %}
-    {% block category_block %}
-    <p class="c-teaser__category">
-      <a href="{{category_url}}">{{category}}</a>
-    </p>
-    {% endblock %}
-    {% endif %}
+      {# Category #}
+      {% if category and layout == 'column-stack' %}
+      {% block category_block %}
+      <p class="c-teaser__category">
+        <a href="{{category_url}}">{{category}}</a>
+      </p>
+      {% endblock %}
+      {% endif %}
 
+    </div>
   </div>
   {% endif %}
 
