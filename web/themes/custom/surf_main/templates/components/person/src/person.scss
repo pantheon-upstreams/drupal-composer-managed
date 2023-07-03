@@ -3,7 +3,7 @@
 .c-person {
   background: var(--color-surf--cloud);
   display: grid;
-  grid-template-columns: rem(80px) 1fr;
+  grid-template-columns: rem(100px) 1fr;
   @include bp-min(large) {
     grid-template-columns: rem(182px) 1fr;
     min-height: rem(230px);
