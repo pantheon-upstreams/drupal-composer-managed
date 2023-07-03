@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.job_posting.field_ref_job_type
     - node.type.job_posting
   module:
+    - datetime
     - text
     - user
 id: node.job_posting.teaser
@@ -22,6 +23,15 @@ targetEntityType: node
 bundle: job_posting
 mode: teaser
 content:
+  field_date_application_due:
+    type: datetime_custom
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y-m-d\TH:i:s'
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_overview:
     type: text_default
     label: hidden
@@ -29,14 +39,8 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   body: true
-  field_date_application_due: true
   field_equipment: true
   field_link: true
   field_media: true
@@ -44,4 +48,5 @@ hidden:
   field_ref_department: true
   field_ref_job_type: true
   langcode: true
+  links: true
   search_api_excerpt: true
