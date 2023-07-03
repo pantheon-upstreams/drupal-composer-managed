@@ -57,7 +57,7 @@
     {% if body %}
     {% block body_block %}
     <div class="c-teaser__body">
-      {{body|check_markup('plain') }}
+     <p>{{body|check_markup('plain') }}</p>
     </div>
     {% endblock %}
     {% endif %}
