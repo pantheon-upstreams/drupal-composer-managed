@@ -1,0 +1,34 @@
+uuid: e2eb4a46-538b-47ab-b451-d7e067c1bdad
+langcode: en
+status: true
+dependencies:
+  module:
+    - mercury_editor_edit_tray
+    - notification_message
+    - system
+  theme:
+    - surf_main
+id: notification_messages_dashboard
+theme: surf_main
+region: site_alert
+weight: -7
+provider: null
+plugin: notification_message
+settings:
+  id: notification_message
+  label: 'Notification messages (dashboard)'
+  label_display: '0'
+  provider: notification_message
+  notification_message:
+    type:
+      dashboard_announcement: dashboard_announcement
+    display_mode: default
+visibility:
+  is_mercury_editor_edit_tray:
+    id: is_mercury_editor_edit_tray
+    negate: false
+    enabled: 0
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*/dashboard/*'

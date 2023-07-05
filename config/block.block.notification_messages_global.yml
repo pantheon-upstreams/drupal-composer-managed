@@ -1,0 +1,29 @@
+uuid: 2022cc8e-69a8-4afa-a233-1cbd19e91670
+langcode: en
+status: true
+dependencies:
+  module:
+    - mercury_editor_edit_tray
+    - notification_message
+  theme:
+    - surf_main
+id: notification_messages_global
+theme: surf_main
+region: site_alert
+weight: -8
+provider: null
+plugin: notification_message
+settings:
+  id: notification_message
+  label: 'Notification messages (global)'
+  label_display: '0'
+  provider: notification_message
+  notification_message:
+    type:
+      global: global
+    display_mode: default
+visibility:
+  is_mercury_editor_edit_tray:
+    id: is_mercury_editor_edit_tray
+    negate: false
+    enabled: 0
