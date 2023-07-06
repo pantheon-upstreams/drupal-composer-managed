@@ -32,6 +32,7 @@ settings:
     all_experiments: all_experiments
     areas_of_research: areas_of_research
     browse_curriculum: browse_curriculum
+    events_search: events_search
     jobs_search: jobs_search
     news: news
     news_search: news_search
