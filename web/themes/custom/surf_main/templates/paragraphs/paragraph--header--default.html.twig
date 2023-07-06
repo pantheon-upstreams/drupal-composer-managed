@@ -1,5 +1,5 @@
-
-{% if content.field_horizontal_rule|field_value == true %}
+{# <pre>{{dump(content.field_horizontal_rule.0["#markup"])}}</pre> #}
+{% if content.field_horizontal_rule.0["#markup"] == "true" %}
   {% set heading_hr = 'horizontal-rule' %}
 {% endif %}
 
