@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_capacity
     - field.field.node.event.field_dates
+    - field.field.node.event.field_department
     - field.field.node.event.field_link
     - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_title
     - field.field.node.event.field_media_primary
     - field.field.node.event.field_overview
     - field.field.node.event.field_ref_attendees
@@ -37,7 +39,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 5
+    weight: 9
     region: content
     settings:
       rows: 9
@@ -47,20 +49,20 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_capacity:
     type: number
-    weight: 129
+    weight: 22
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_dates:
     type: smartdate_default
-    weight: 3
+    weight: 4
     region: content
     settings:
       modal: false
@@ -74,9 +76,19 @@ content:
       show_extra: false
       hide_date: true
     third_party_settings: {  }
+  field_department:
+    type: entity_reference_autocomplete
+    weight: 28
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 125
+    weight: 19
     region: content
     settings:
       placeholder_url: ''
@@ -84,13 +96,23 @@ content:
     third_party_settings: {  }
   field_location_address:
     type: address_default
-    weight: 5
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_location_title:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 124
+    weight: 18
     region: content
     settings:
       media_types: {  }
@@ -108,7 +130,7 @@ content:
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
   field_ref_attendees:
     type: entity_reference_autocomplete
-    weight: 128
+    weight: 21
     region: content
     settings:
       match_operator: CONTAINS
@@ -118,7 +140,7 @@ content:
     third_party_settings: {  }
   field_ref_audiences:
     type: entity_reference_autocomplete
-    weight: 131
+    weight: 24
     region: content
     settings:
       match_operator: CONTAINS
@@ -128,7 +150,7 @@ content:
     third_party_settings: {  }
   field_ref_eo_opportunities:
     type: entity_reference_autocomplete
-    weight: 130
+    weight: 23
     region: content
     settings:
       match_operator: CONTAINS
@@ -138,7 +160,7 @@ content:
     third_party_settings: {  }
   field_ref_event_types:
     type: entity_reference_autocomplete
-    weight: 134
+    weight: 27
     region: content
     settings:
       match_operator: CONTAINS
@@ -148,7 +170,7 @@ content:
     third_party_settings: {  }
   field_ref_key_impact_areas:
     type: entity_reference_autocomplete
-    weight: 133
+    weight: 26
     region: content
     settings:
       match_operator: CONTAINS
@@ -158,7 +180,7 @@ content:
     third_party_settings: {  }
   field_ref_related_content:
     type: entity_reference_autocomplete
-    weight: 126
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -168,7 +190,7 @@ content:
     third_party_settings: {  }
   field_ref_research_areas:
     type: entity_reference_autocomplete
-    weight: 132
+    weight: 25
     region: content
     settings:
       match_operator: CONTAINS
@@ -178,60 +200,60 @@ content:
     third_party_settings: {  }
   field_registration_period:
     type: daterange_default
-    weight: 123
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_registration_required:
     type: boolean_checkbox
-    weight: 122
+    weight: 16
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  publish_on:
-    type: datetime_timestamp_no_default
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 121
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
     type: boolean_checkbox
     weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
@@ -249,12 +271,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 9
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }

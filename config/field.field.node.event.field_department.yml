@@ -1,0 +1,29 @@
+uuid: 1eceaf64-aa8a-4928-b101-9f3c9d0379d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department
+    - node.type.event
+    - taxonomy.vocabulary.department
+id: node.event.field_department
+field_name: field_department
+entity_type: node
+bundle: event
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department: department
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

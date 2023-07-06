@@ -6,8 +6,10 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_capacity
     - field.field.node.event.field_dates
+    - field.field.node.event.field_department
     - field.field.node.event.field_link
     - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_title
     - field.field.node.event.field_media_primary
     - field.field.node.event.field_overview
     - field.field.node.event.field_ref_attendees
@@ -55,6 +57,14 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
   field_link:
     type: link_separate
     label: hidden
@@ -66,6 +76,14 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_location_title:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_media_primary:
     type: entity_reference_label

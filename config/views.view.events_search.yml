@@ -5,10 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.event
+    - taxonomy.vocabulary.department
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.location
   module:
     - better_exposed_filters
     - datetime
     - node
+    - taxonomy
     - user
     - views_filters_summary
 id: events_search
@@ -125,12 +129,28 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
-              field_ref_department_target_id:
+              field_department_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: '- Any -|All Departments'
+                  collapsible: false
+                  is_secondary: false
+              field_location_title_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All Locations'
+                  collapsible: false
+                  is_secondary: false
+              field_ref_event_types_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All Types'
                   collapsible: false
                   is_secondary: false
       access:
@@ -367,6 +387,171 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_department_target_id:
+          id: field_department_target_id
+          table: node__field_department
+          field: field_department_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_department_target_id_op
+            label: Department
+            description: ''
+            use_operator: false
+            operator: field_department_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: department
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: department
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_location_title_target_id:
+          id: field_location_title_target_id
+          table: node__field_location_title
+          field: field_location_title_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_location_title_target_id_op
+            label: Location
+            description: ''
+            use_operator: false
+            operator: field_location_title_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: location
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: location
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_ref_event_types_target_id:
+          id: field_ref_event_types_target_id
+          table: node__field_ref_event_types
+          field: field_ref_event_types_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_ref_event_types_target_id_op
+            label: 'Event Type'
+            description: ''
+            use_operator: false
+            operator: field_ref_event_types_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: event_type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_type
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -425,6 +610,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -445,6 +631,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
