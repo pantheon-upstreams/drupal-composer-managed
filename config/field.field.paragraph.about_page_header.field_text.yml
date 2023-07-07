@@ -1,0 +1,26 @@
+uuid: 25f2ec47-5396-4617-9ae5-44b2f778e30d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.about_page_header
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: paragraph.about_page_header.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: about_page_header
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
