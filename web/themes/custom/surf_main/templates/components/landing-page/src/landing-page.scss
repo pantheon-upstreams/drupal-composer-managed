@@ -2,32 +2,38 @@
 
 .c-landing-page {
   width: 100%;
-  @include bp-min(medium) {
-    background-image: url(../../../../images/illustrations/landing-page-header.png);
-    background-size: rem(460px);
-    background-repeat: no-repeat;
-    background-position: top right;
-  }
-  @include bp-min(large) {
-    background-size: rem(930px);
-    background-position: top right -270px;
-  }
-  @include bp-min(xlarge) {
-    background-size: rem(930px);
-    background-position: top right;
+
+  &.title_illustration {
+    @include bp-min(medium) {
+      background-image: url(../../../../images/illustrations/landing-page-header.png);
+      background-size: rem(460px);
+      background-repeat: no-repeat;
+      background-position: top right;
+      min-height: rem(160px);
+    }
+    @include bp-min(large) {
+      background-size: rem(930px);
+      background-position: top right -270px;
+      min-height: rem(320px);
+    }
+    @include bp-min(xlarge) {
+      background-size: rem(930px);
+      background-position: top right;
+      min-height: rem(320px);
+    }
+    .c-landing-page__title {
+      background: var(--color-surf--black)
+        url("/themes/custom/surf_main/templates/components/header/green.svg")
+        no-repeat bottom left;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: var(--color-surf--black);
+      margin-top: 0;
+      display: inline;
+    }
   }
 }
 
 .c-landing-page__header-wrapper {
-}
-
-.c-landing-page__title {
-  background: var(--color-surf--black)
-    url("/themes/custom/surf_main/templates/components/header/green.svg")
-    no-repeat bottom left;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: var(--color-surf--black);
-  margin-top: 0;
 }

@@ -687,6 +687,51 @@ form.views-exposed-form {
 }
 
 .events-search-block--view {
+  .item-list__wrapper {
+    margin: rem(64px) 0 0 0;
+    @include bp-min(medium) {
+      margin: rem(80px) 0 0 0;
+    }
+    @include bp-min(large) {
+      margin: rem(80px) 0 0 0;
+    }
+    .item-list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: rem(64px);
+      & > .item-row {
+        // padding-top: rem(32px);
+        position: relative;
+        &:before {
+          content: "";
+          background: var(--color-surf--grey);
+          height: rem(1px);
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: -32px;
+        }
+      }
+      @include bp-min(medium) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(80px);
+        .item-row {
+          &:before {
+            top: -40px;
+          }
+        }
+      }
+      @include bp-min(large) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(80px);
+        .item-row {
+          &:before {
+            top: -40px;
+          }
+        }
+      }
+    }
+  }
+
   .form-actions input[type="submit"] {
     margin-right: rem(20px);
   }
@@ -735,7 +780,6 @@ form.views-exposed-form {
       width: 100%;
       margin: rem(32px) 0 0 0;
     }
-
     .form-actions {
       flex: none;
       width: 100%;
@@ -752,7 +796,6 @@ form.views-exposed-form {
       width: auto;
       margin: 0 rem(20px) 0 0;
     }
-
     .form-item-event-type {
       flex: initial;
       width: auto;
