@@ -1,0 +1,20 @@
+{# <pre>{{dump(content)}}</pre> #}
+
+{% set heading = content.field_title.0["#context"].value %}
+{% set left = content.field_content_left.0["#context"].value %}
+{% set media_left_image_url = file_url(content.field_media_left.0["#media"].field_media_image.entity.fileuri | image_style('featured_image')) %}
+{% set media_left_image_alt = content.field_media_left.0["#media"].field_media_image.alt %}
+{% set right = content.field_content_right.0["#context"].value %}
+{% set media_right_image_url = file_url(content.field_media_right.0["#media"].field_media_image.entity.fileuri | image_style('featured_image')) %}
+{% set media_right_image_alt = content.field_media_right.0["#media"].field_media_image.alt %}
+
+{% include "about-secondary" with {
+  heading,
+  left,
+  media_left_image_url,
+  media_left_image_alt,
+  right,
+  media_right_image_url,
+  media_right_image_alt,
+  attributes,
+} only %}
