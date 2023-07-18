@@ -1,0 +1,52 @@
+.form-control {
+  &.image-button {
+    width: unset;
+  }
+
+  &.form-checkbox,
+  &.form-radio {
+    display: inline-block;
+    height: auto;
+    width: unset;
+  }
+}
+
+input {
+  &[type='search'] {
+    box-sizing: border-box;
+  }
+}
+
+.dropbutton-multiple {
+  .dropbutton {
+    .dropbutton-action {
+      > * {
+        border: 0;
+      }
+    }
+  }
+}
+
+.node-form {
+  @include media-breakpoint-up(lg) {
+    margin: 2 * $spacer;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+}
+
+.container-inline {
+  div,
+  label {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+td {
+  .form-item {
+    margin: 0;
+  }
+}

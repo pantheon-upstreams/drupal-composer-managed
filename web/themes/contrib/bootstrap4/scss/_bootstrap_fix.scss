@@ -1,0 +1,19 @@
+// Bootstrap fixes
+.table-dark {
+  th,
+  td,
+  thead th {
+    background-color: $table-dark-bg;
+  }
+}
+
+
+.alert-dismissible {
+  .close {
+    color: $black;
+  }
+}
+
+code {
+  overflow-y: auto;
+}

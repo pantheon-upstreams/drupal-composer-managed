@@ -1,0 +1,25 @@
+{
+  "name": "drupal/bootstrap4",
+  "description": "Master theme using Bootstrap 4: powerful front-end framework for faster and easier web development.",
+  "type": "drupal-theme",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/bootstrap4",
+  "minimum-stability": "dev",
+  "require": { },
+  "authors": [
+    {
+      "name": "Janna M (jannakha)",
+      "homepage": "https://www.drupal.org/u/jannakha",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Vladimir Roudakov (vladimiraus)",
+      "homepage": "https://www.drupal.org/u/vladimiraus",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bootstrap4"
+  }
+}

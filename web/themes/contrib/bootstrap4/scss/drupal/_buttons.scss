@@ -1,0 +1,44 @@
+a {
+  &.button {
+    @extend .btn;
+
+    &.button--danger {
+      @include button-variant($danger, $danger);
+    }
+
+    &.button-action {
+      @include button-variant($info, $info);
+    }
+  }
+}
+
+// todo - all div a should be updated in b4 theme for drupal
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    a {
+      color: color-yiq($value);
+
+      &:hover {
+        color: color-yiq($value);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    &:hover {
+      a {
+        color: color-yiq($value);
+      }
+    }
+
+    a {
+      &:hover {
+        color: color-yiq($value);
+        text-decoration: none;
+      }
+    }
+  }
+}

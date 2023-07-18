@@ -1,0 +1,65 @@
+.draggable {
+  .field-multiple-drag {
+    vertical-align: top !important;
+    width: 43px !important;
+    padding-left: .5rem !important;
+  }
+
+  a {
+    &.tabledrag-handle {
+      margin: 0;
+      padding-right: .5rem;
+
+      .handle {
+        display: inline-block;
+        background-position-x: 0;
+        padding: 0;
+        margin: 0;
+        height: 1.7rem;
+        width: 1rem;
+      }
+
+    }
+  }
+}
+
+button {
+  &.link {
+    @extend .btn;
+    @extend .btn-link;
+  }
+}
+
+#views-display-menu-tabs {
+  list-style-type: none;
+}
+
+.form-item-filters-status-removed {
+  float: left;
+}
+
+.ui-dialog-titlebar-close {
+  @extend .close;
+
+  &::after {
+    content: "x";
+    display: block;
+  }
+}
+
+.views-ui-display-tab-actions {
+  .btn-primary {
+    background-color: #fff;
+    color: $primary;
+  }
+}
+
+.views-ui-dialog {
+
+  .views-ui-rearrange-filter-form,
+  .views-ui-rearrange-form {
+    .form-type-checkbox {
+      display: inline;
+    }
+  }
+}

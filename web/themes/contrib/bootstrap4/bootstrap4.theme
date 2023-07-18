@@ -1,0 +1,536 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap4 theme file.
+ */
+
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-tasks templates.
+ *
+ * Use preprocess hook to set #attached to child elements
+ * because they will be processed by Twig and drupal_render will
+ * be invoked.
+ */
+function bootstrap4_preprocess_menu_local_tasks(&$variables) {
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#attached'] = [
+      'library' => [
+        'bootstrap4/drupal.nav-tabs',
+      ],
+    ];
+  }
+  elseif (!empty($variables['secondary'])) {
+    $variables['secondary']['#attached'] = [
+      'library' => [
+        'bootstrap4/drupal.nav-tabs',
+      ],
+    ];
+  }
+
+  foreach (Element::children($variables['primary']) as $key) {
+    $variables['primary'][$key]['#level'] = 'primary';
+  }
+  foreach (Element::children($variables['secondary']) as $key) {
+    $variables['secondary'][$key]['#level'] = 'secondary';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-task templates.
+ */
+function bootstrap4_preprocess_menu_local_task(&$variables) {
+  // Ensure is-active class is set when the tab is active. The generic active
+  // link handler applies stricter comparison rules than what is necessary for
+  // tabs.
+  if (isset($variables['is_active']) && $variables['is_active'] === TRUE) {
+    $variables['link']['#options']['attributes']['class'][] = 'active is-active';
+  }
+  else {
+    $variables['link']['#options']['attributes']['class'][] = 'nav-link';
+  }
+
+  if (isset($variables['element']['#level'])) {
+    $variables['level'] = $variables['element']['#level'];
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bootstrap4_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $themePath = '/' . \Drupal::theme()->getActiveTheme()->getPath() . '/style-guide';
+  if (file_exists(DRUPAL_ROOT . $themePath . '/index.html')) {
+    $form['styleguide'] = [
+      '#type' => 'details',
+      '#title' => t('Style guide'),
+      '#description' => t("Style guide demonstrates abilities of bootstrap framework. Open <a  target='_blank' href='@sglink'>style guide</a> in a new window.", [
+        '@sglink' => $themePath,
+      ]),
+      '#open' => TRUE,
+    ];
+  }
+
+  $options_theme = [
+    'none' => 'do not apply theme',
+    'light' => 'light (dark text/links against a light background)',
+    'dark' => 'dark (light/white text/links against a dark background)',
+  ];
+
+  $options_colour = [
+    'none' => 'do not apply colour',
+    'primary' => 'primary',
+    'secondary' => 'secondary',
+    'light' => 'light',
+    'dark' => 'dark',
+  ];
+
+  // Populating options for top container.
+  $options_top_container = [
+    'container' => 'fixed',
+    'container-fluid m-0 p-0' => 'fluid',
+  ];
+
+  // Populating extra options for top container.
+  foreach (explode("\n", theme_get_setting('b4_top_container_config') ?? '') as $line) {
+    $values = explode("|", trim($line) ?? '');
+    if (is_array($values) && (count($values) == 2)) {
+      $options_top_container += [trim($values[0]) => trim($values[1])];
+    }
+  }
+
+  $form['body_details'] = [
+    '#type' => 'details',
+    '#title' => t('Body options'),
+    '#description' => t("Combination of theme/background colour may affect background colour/text colour contrast. To fix any contrast issues, override corresponding variables in scss(refer to dist/boostrap/scss/_variables.scss)"),
+    '#open' => TRUE,
+  ];
+
+  $form['body_details']['b4_top_container'] = [
+    '#type' => 'select',
+    '#title' => t('Website container type'),
+    '#default_value' => theme_get_setting('b4_top_container'),
+    '#description' => t("Type of top level container: fluid (eg edge to edge) or fixed width"),
+    '#options' => $options_top_container,
+  ];
+
+  $form['body_details']['b4_top_container_config'] = [
+    '#type' => 'textarea',
+    '#title' => t('Website container type configuration'),
+    '#default_value' => theme_get_setting('b4_top_container_config'),
+    '#description' => t("Format: <classes|label> on each line, e.g. <br><pre>container|fixed<br />container-fluid m-0 p-0|fluid</pre>"),
+  ];
+
+  $form['body_details']['b4_body_schema'] = [
+    '#type' => 'select',
+    '#title' => t('Body theme:'),
+    '#default_value' => theme_get_setting('b4_body_schema'),
+    '#description' => t("Text colour theme of the body."),
+    '#options' => $options_theme,
+  ];
+
+  $form['body_details']['b4_body_bg_schema'] = [
+    '#type' => 'select',
+    '#title' => t('Body background:'),
+    '#default_value' => theme_get_setting('b4_body_bg_schema'),
+    '#description' => t("Background color of the body."),
+    '#options' => $options_colour,
+  ];
+
+  $form['nav_details'] = [
+    '#type' => 'details',
+    '#title' => t('Navbar options'),
+    '#description' => t("Combination of theme/background colour may affect background colour/text colour contrast. To fix any contrast issues, override \$navbar-light-*/\$navbar-dark-* variables (refer to dist/boostrap/scss/_variables.scss)"),
+    '#open' => TRUE,
+  ];
+
+  $form['nav_details']['b4_navbar_schema'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar theme:'),
+    '#default_value' => theme_get_setting('b4_navbar_schema'),
+    '#description' => t("Text colour theme of the navbar."),
+    '#options' => $options_theme,
+  ];
+
+  $form['nav_details']['b4_navbar_bg_schema'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar background:'),
+    '#default_value' => theme_get_setting('b4_navbar_bg_schema'),
+    '#description' => t("Background color of the navbar."),
+    '#options' => $options_colour,
+  ];
+
+  $form['footer_details'] = [
+    '#type' => 'details',
+    '#title' => t('Footer options'),
+    '#description' => t("Combination of theme/background colour may affect background colour/text colour contrast. To fix any contrast issues, override corresponding variables in scss (refer to dist/boostrap/scss/_variables.scss)"),
+    '#open' => TRUE,
+  ];
+
+  $form['footer_details']['b4_footer_schema'] = [
+    '#type' => 'select',
+    '#title' => t('Footer theme:'),
+    '#default_value' => theme_get_setting('b4_footer_schema'),
+    '#description' => t("Text colour theme of the footer."),
+    '#options' => $options_theme,
+  ];
+
+  $form['footer_details']['b4_footer_bg_schema'] = [
+    '#type' => 'select',
+    '#title' => t('Footer background:'),
+    '#default_value' => theme_get_setting('b4_footer_bg_schema'),
+    '#description' => t("Background color of the footer."),
+    '#options' => $options_colour,
+  ];
+
+  $form['subtheme'] = [
+    '#type' => 'details',
+    '#title' => t('Subtheme'),
+    '#description' => t("Create subtheme."),
+    '#open' => FALSE,
+  ];
+
+  $form['subtheme']['subtheme_folder'] = [
+    '#type' => 'textfield',
+    '#title' => t('Subtheme location'),
+    '#default_value' => 'themes/custom',
+    '#description' => t("Relative path to the webroot <em>%root</em>. No trailing slash.", [
+      '%root' => DRUPAL_ROOT,
+    ]),
+  ];
+
+  $form['subtheme']['subtheme_name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Subtheme name'),
+    '#default_value' => 'B4 subtheme',
+    '#description' => t("If name is empty, machine name will be used."),
+  ];
+
+  $form['subtheme']['subtheme_machine_name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Subtheme machine name'),
+    '#default_value' => 'b4subtheme',
+    '#description' => t("Use lowercase characters, numbers and underscores. Name must start with a letter."),
+  ];
+
+  $form['subtheme']['create'] = [
+    '#type' => 'submit',
+    '#name' => 'subtheme_create',
+    '#value' => t('Create'),
+    '#button_type' => 'danger',
+    '#attributes' => [
+      'class' => ['btn btn-danger'],
+    ],
+    '#submit' => ['bootstrap4_form_system_theme_settings_subtheme_submit'],
+    '#validate' => ['bootstrap4_form_system_theme_settings_subtheme_validate'],
+  ];
+}
+
+/**
+ * Validate callback to ensure filter order and allowed_html are compatible.
+ */
+function bootstrap4_form_system_theme_settings_subtheme_validate(array &$form, FormStateInterface $form_state) {
+
+  // Check for empty values.
+  if (!$form_state->getValue('subtheme_folder')) {
+    $form_state->setErrorByName('subtheme_folder', t('Subtheme folder is empty.'));
+  }
+  if (!$form_state->getValue('subtheme_machine_name')) {
+    $form_state->setErrorByName('subtheme_machine_name', t('Subtheme machine name is empty.'));
+  }
+  if (count($form_state->getErrors())) {
+    return;
+  }
+
+  // Check for path trailing slash.
+  if (strrev(trim($form_state->getValue('subtheme_folder')))[0] === '/') {
+    $form_state->setErrorByName('subtheme_folder', t('Subtheme folder should be without trailing slash.'));
+  }
+  // Check for name validity.
+  if (!$form_state->getValue('subtheme_machine_name')) {
+    $form_state->setErrorByName('subtheme_machine_name', t('Subtheme name format is incorrect.'));
+  }
+  if (count($form_state->getErrors())) {
+    return;
+  }
+
+  // Check for writable path.
+  $directory = DRUPAL_ROOT . '/' . $form_state->getValue('subtheme_folder');
+  if (\Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS) === FALSE) {
+    $form_state->setErrorByName('subtheme_folder', t('Subtheme cannot be created. Check permissions.'));
+  }
+  // Check for common theme names.
+  if (in_array($form_state->getValue('subtheme_machine_name'), [
+    'bootstrap', 'bootstrap4', 'bootstrap5', 'claro', 'bartik', 'seven', 'stable', 'stable9',
+  ])) {
+    $form_state->setErrorByName('subtheme_machine_name', t('Subtheme name should not match existing themes.'));
+  }
+  if (count($form_state->getErrors())) {
+    return;
+  }
+
+  // Check for writable path.
+  $themePath = $directory . '/' . $form_state->getValue('subtheme_machine_name');
+  if (file_exists($themePath)) {
+    $form_state->setErrorByName('subtheme_machine_name', t('Folder already exists.'));
+  }
+}
+
+/**
+ * Form submission handler for node_form().
+ *
+ * @see bootstrap4_form_system_theme_settings_alter()
+ */
+function bootstrap4_form_system_theme_settings_subtheme_submit($form, FormStateInterface $form_state) {
+  $fs = \Drupal::service('file_system');
+
+  // Create subtheme.
+  $themeMName = $form_state->getValue('subtheme_machine_name');
+  $themeName = $form_state->getValue('subtheme_name');
+  if (empty($themeName)) {
+    $themeName = $themeMName;
+  }
+
+  $subthemePathValue = $form_state->getValue('subtheme_folder');
+  $themePath = DRUPAL_ROOT . DIRECTORY_SEPARATOR . $subthemePathValue . DIRECTORY_SEPARATOR . $themeMName;
+  if (!is_dir($themePath)) {
+    // Copy CSS file replace empty one.
+    $subforders = ['css', 'style-guide'];
+    foreach ($subforders as $subforder) {
+      $directory = $themePath . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR;
+      $fs->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+
+      $files = $fs->scanDirectory(
+        \Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR, '/.*css/', [
+          'recurse' => FALSE,
+        ]);
+      foreach ($files as $file) {
+        //dump($file);
+        $fileName = $file->filename;
+        $fs->copy(
+          \Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR . $fileName,
+          $themePath . DIRECTORY_SEPARATOR . $subforder . DIRECTORY_SEPARATOR . $fileName, TRUE);
+      }
+    }
+
+    // Copy image files.
+    $files = [
+      'favicon.ico',
+      'logo.svg',
+      'screenshot.png',
+    ];
+    foreach ($files as $fileName) {
+      $fs->copy(\Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $fileName,
+        $themePath . DIRECTORY_SEPARATOR . $fileName, TRUE);
+    }
+
+    // Copy files and rename content (array of lines of copy existing).
+    $files = [
+      'bootstrap4.breakpoints.yml' => -1,
+      'bootstrap4.libraries.yml' => [
+        'global-styling:',
+        '  css:',
+        '    theme:',
+        '      css/style.css: {}',
+        '',
+      ],
+      'bootstrap4.theme' => [
+        '<?php',
+        '',
+        '/**',
+        ' * @file',
+        ' * ' . $themeName .' theme file.',
+        ' */',
+        '',
+      ],
+      'README.md' => [
+        '# ' . $themeName . ' theme',
+        '',
+        '[Bootstrap 4](https://www.drupal.org/project/bootstrap4) subtheme.',
+        '',
+        '## Development.',
+        '',
+        '### CSS compilation.',
+        '',
+        'Prerequisites: install [sass](https://sass-lang.com/install).',
+        '',
+        'To compile, run from subtheme directory: `sass scss/style.scss css/style.css`',
+        '',
+      ],
+    ];
+    foreach ($files as $fileName => $lines) {
+      // Get file content.
+      $content = str_replace('bootstrap4', $themeMName, file_get_contents(\Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . $fileName));
+      if (is_array($lines)) {
+        $content = implode(PHP_EOL, $lines);
+      }
+      file_put_contents($themePath . DIRECTORY_SEPARATOR . str_replace('bootstrap4', $themeMName, $fileName),
+        $content);
+    }
+
+    // Info yml file generation.
+    $infoYml = Yaml::decode(file_get_contents(\Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . 'bootstrap4.info.yml'));
+    $infoYml['name'] = $themeName;
+    $infoYml['description'] = $themeName . ' subtheme based on Bootstrap 4 theme.';
+    $infoYml['base theme'] = 'bootstrap4';
+    $infoYml['stylesheets-remove'] = [];
+    $infoYml['stylesheets-remove'][] = '@bootstrap4/css/style.css';
+    $infoYml['libraries'] = [];
+    $infoYml['libraries'][] = $themeMName . '/global-styling';
+
+    foreach (['ckeditor_stylesheets', 'version', 'project', 'datestamp'] as $value) {
+      if (isset($infoYml[$value])) {
+        unset($infoYml[$value]);
+      }
+    }
+
+    file_put_contents($themePath . DIRECTORY_SEPARATOR . $themeMName . '.info.yml',
+      Yaml::encode($infoYml));
+
+    // SCSS files generation.
+    $scssPath = $themePath . DIRECTORY_SEPARATOR . 'scss';
+    $b5ScssPath = \Drupal::service('extension.list.theme')->getPath('bootstrap4') . DIRECTORY_SEPARATOR . 'scss' . DIRECTORY_SEPARATOR;
+    $fs->prepareDirectory($scssPath, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+    $files = [
+      'style.scss' => [
+        "// Sub theme styling.",
+        "@import 'variables_theme';",
+        '',
+        "// Bootstrap overriden variables.",
+        "// @see https://getbootstrap.com/docs/4.6/getting-started/theming/#variable-defaults.",
+        "@import 'variables_bootstrap';",
+        '',
+        "// Include bootstrap.",
+        "@import '" .
+        str_repeat('../', count(explode(DIRECTORY_SEPARATOR, $subthemePathValue)) + 2) .
+        \Drupal::service('extension.list.theme')->getPath('bootstrap4') . "/scss/style';",
+        '',
+      ],
+      '_variables_theme.scss' => $b5ScssPath . '_variables_theme.scss',
+      '_variables_bootstrap.scss' => $b5ScssPath . '_variables_bootstrap.scss',
+    ];
+    foreach ($files as $fileName => $lines) {
+      // Get file content.
+      if (is_array($lines)) {
+        $content = implode(PHP_EOL, $lines);
+        file_put_contents($scssPath . DIRECTORY_SEPARATOR . $fileName, $content);
+      }
+      elseif (is_string($lines)) {
+        $fs->copy($lines, $scssPath . DIRECTORY_SEPARATOR . $fileName, TRUE);
+      }
+    }
+
+    \Drupal::messenger()->addStatus(t('Subtheme created at %subtheme', [
+      '%subtheme' => $themePath,
+    ]));
+  }
+  else {
+    \Drupal::messenger()->addError(t('Folder already exists at %subtheme', [
+      '%subtheme' => $themePath,
+    ]));
+  }
+
+}
+
+/**
+ * Implements theme_preprocess_page().
+ */
+function bootstrap4_preprocess_page(&$variables) {
+  // Pass variables to theme.
+  $variables['b4_top_container'] = theme_get_setting('b4_top_container');
+  // Navbar colour theme.
+  $variables['b4_navbar_schema'] = theme_get_setting('b4_navbar_schema');
+  $variables['b4_navbar_bg_schema'] = theme_get_setting('b4_navbar_bg_schema');
+  // Footer colour theme.
+  $variables['b4_footer_schema'] = theme_get_setting('b4_footer_schema');
+  $variables['b4_footer_bg_schema'] = theme_get_setting('b4_footer_bg_schema');
+
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function bootstrap4_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if (isset($_GET['styleguide'])) {
+    $suggestions[] = 'page__styleguide';
+  }
+}
+
+/**
+ * Implements theme_preprocess_textarea().
+ */
+function bootstrap4_preprocess_textarea(&$variables) {
+  $variables['attributes']['class'][] = 'form-control';
+}
+
+/**
+ * Implements theme_preprocess_datetime_form().
+ */
+function bootstrap4_preprocess_datetime_form(&$variables) {
+  $variables['attributes']['class'][] = 'form-inline';
+}
+
+/**
+ * Implements theme_preprocess_html().
+ */
+function bootstrap4_preprocess_html(&$variables) {
+  // Body colour theme.
+  $variables['b4_body_schema'] = theme_get_setting('b4_body_schema');
+  $variables['b4_body_bg_schema'] = theme_get_setting('b4_body_bg_schema');
+}
+
+/**
+ * Implements theme_preprocess_table().
+ */
+function bootstrap4_preprocess_table(&$variables) {
+  bootstrap4_covert_classes_string_to_array($variables);
+
+  $variables['attributes']['class'][] = 'table';
+  $variables['attributes']['class'][] = 'table-striped';
+  $variables['attributes']['class'][] = 'table-hover';
+}
+
+/**
+ * Implements theme_preprocess_views_ui_views_listing_table().
+ */
+function bootstrap4_preprocess_views_ui_views_listing_table(&$variables) {
+  bootstrap4_preprocess_table($variables);
+}
+
+/**
+ * Callback to mitigate when class is a string..
+ */
+function bootstrap4_covert_classes_string_to_array(&$variables) {
+  if (isset($variables['attributes']['class']) && is_string($variables['attributes']['class'])) {
+    $class = $variables['attributes']['class'];
+    $variables['attributes']['class'] = [];
+    $variables['attributes']['class'][] = $class;
+  }
+}
+
+/**
+ * Implements theme_preprocess_views_ui_display_tab_setting().
+ */
+function bootstrap4_preprocess_views_ui_display_tab_setting(&$variables) {
+  bootstrap4_covert_classes_string_to_array($variables);
+  $variables['attributes']['class'][] = 'my-1';
+}
+
+/**
+ * Implements theme_preprocess_views_ui_display_tab_bucket().
+ */
+function bootstrap4_preprocess_views_ui_display_tab_bucket(&$variables) {
+  bootstrap4_covert_classes_string_to_array($variables);
+  $variables['attributes']['class'][] = 'my-2';
+}
