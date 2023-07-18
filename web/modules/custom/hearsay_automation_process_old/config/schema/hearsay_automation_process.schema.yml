@@ -1,0 +1,10 @@
+hearsay_automation.API:
+  type: config_object
+  label: 'Hearsay Automation API Configuration'
+  mapping:
+    hearsay_automation:
+      type: string
+    hearsay_automation_post:
+      type: string
+    hearsay_automation_event:
+      type: string
