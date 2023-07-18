@@ -58,7 +58,8 @@ global:
       dist/css/global/utilities.css: {}
   dependencies:
     - surf_main/normalize
-
+  js:
+    node_modules/@splidejs/splide/dist/js/splide.min.js: {}
 #------------------------------------#
 # 03 - Nodes
 #------------------------------------#
@@ -166,4 +167,7 @@ collapsible-filter:
 #------------------------------------#
 # 09 - Misc
 #------------------------------------#
+
+# Splide
+# splide:
 
