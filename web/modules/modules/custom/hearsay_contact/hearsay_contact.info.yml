@@ -1,5 +1,0 @@
-name: Hearsay Contact Form
-description: This block provides Contact Form section on Home Page.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

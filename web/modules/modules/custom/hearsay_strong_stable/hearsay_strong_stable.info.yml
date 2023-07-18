@@ -1,5 +1,0 @@
-name: Hearsay Strong and Stable Block
-description: This block provides Strong and Stable section.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

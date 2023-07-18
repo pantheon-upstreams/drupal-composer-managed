@@ -1,9 +1,0 @@
-hearsay_config.settings_form:
-  path: '/admin/config/hearsayplatform/settings'
-  defaults:
-    _form: '\Drupal\hearsay_config\Form\HearsayPlatformSettingForm'
-    _title: 'Hearsay Platform Settings'
-  requirements:
-    _permission: 'administer site configuration'
-  options:
-    _admin_route: TRUE

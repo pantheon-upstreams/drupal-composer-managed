@@ -1,3 +1,0 @@
-services:
-  hearsay_preview.site_tools:
-    class: Drupal\hearsay_preview\Services\SiteTools

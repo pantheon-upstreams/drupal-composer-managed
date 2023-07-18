@@ -1,9 +1,0 @@
-services:
-  plugin.manager.imce.plugin:
-    class: Drupal\imce\ImcePluginManager
-    parent: default_plugin_manager
-  imce.route_subscriber:
-    class: Drupal\imce\Routing\ImceRouteSubscriber
-    arguments: ['@config.factory']
-    tags:
-      - { name: event_subscriber }

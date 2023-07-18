@@ -1,7 +1,0 @@
-advagg_bundler.settings:
-  path: '/admin/config/development/performance/advagg/bundler'
-  defaults:
-    _form: 'Drupal\advagg_bundler\Form\SettingsForm'
-    _title: 'AdvAgg: Bundler'
-  requirements:
-    _permission: 'administer site configuration'

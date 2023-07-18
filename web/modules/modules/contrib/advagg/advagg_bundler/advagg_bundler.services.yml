@@ -1,7 +1,0 @@
-services:
-  asset.js.collection_grouper:
-    class: Drupal\advagg_bundler\Asset\AdvaggJsCollectionGrouper
-    arguments: [ '@config.factory' ]
-  asset.css.collection_grouper:
-    class: Drupal\advagg_bundler\Asset\AdvaggCssCollectionGrouper
-    arguments: [ '@config.factory' ]

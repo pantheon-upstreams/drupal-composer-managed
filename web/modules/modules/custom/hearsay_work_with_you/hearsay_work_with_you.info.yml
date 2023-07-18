@@ -1,5 +1,0 @@
-name: Hearsay How We Work With You Block
-description: This block provides How We Work With You section on Home, About us and How we work with you page.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

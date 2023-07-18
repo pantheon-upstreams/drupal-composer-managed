@@ -1,7 +1,0 @@
-
-# Media library pane menu items definition
-entity.media_library_pane.collection:
-  title: 'Panes'
-  route_name: entity.media_library_pane.collection
-  description: 'List Media library panes'
-  parent: media_library.settings

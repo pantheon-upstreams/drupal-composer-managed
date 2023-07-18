@@ -1,6 +1,0 @@
-services:
-  layout_builder_blocks.render_block_component_subscriber:
-    class: Drupal\layout_builder_blocks\EventSubscriber\BlockComponentRenderArraySubscriber
-    arguments: ['@entity_type.manager', '@config.factory', '@plugin.manager.bootstrap_styles_group']
-    tags:
-    - { name: event_subscriber }

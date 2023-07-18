@@ -1,4 +1,0 @@
-services:
-  user_redirect.service:
-    class: Drupal\user_redirect\UserRedirect
-    arguments: ['@request_stack', '@config.factory', '@current_user']

@@ -1,5 +1,0 @@
-name: Hearsay Privacy Policy
-description: This block provides Privacy Policy Section.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

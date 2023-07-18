@@ -1,5 +1,0 @@
-name: 'Hearsay Configuration Form'
-type: module
-description: 'Create Hearsay Configuration Form'
-core_version_requirement: ^9 || ^10
-package: Hearsay

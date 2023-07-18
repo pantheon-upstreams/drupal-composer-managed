@@ -1,2 +1,0 @@
-permission_callbacks:
-  - \Drupal\simple_menu_permissions\SimpleMenuPermissionsPermissions::get

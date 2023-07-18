@@ -1,5 +1,0 @@
-name: Hearsay Library Products Media
-description: The module provides the functionality to create Library Products Media Type structure.
-type: module
-core_version_requirement: ^9 || ^10
-package: Hearsay Media

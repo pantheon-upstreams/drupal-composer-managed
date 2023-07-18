@@ -1,7 +1,0 @@
-googlemapjs:
-  header: true
-  js:
-    https://maps.googleapis.com/maps/api/js?key=AIzaSyCw0Nyz_Dchmjc9n7Q8ASnS9WurDTaTjQI: { type: external,   attributes: { defer: true, async: true, data-test: map-link }}
-  dependencies:
-    - core/jquery
-    - core/drupal

@@ -1,6 +1,0 @@
-ui:
-  version: VERSION
-  js:
-    js/media_library_extend.ui.js: {}
-  dependencies:
-    - media_library/ui

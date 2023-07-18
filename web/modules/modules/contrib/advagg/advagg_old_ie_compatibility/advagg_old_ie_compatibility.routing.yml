@@ -1,7 +1,0 @@
-advagg_old_ie_compatibility.settings:
-  path: '/admin/config/development/performance/advagg/old_ie_compatibility'
-  defaults:
-    _form: 'Drupal\advagg_old_ie_compatibility\Form\SettingsForm'
-    _title: 'AdvAgg: Old IE Compatibility'
-  requirements:
-    _permission: 'administer site configuration'

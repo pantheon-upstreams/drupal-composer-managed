@@ -1,5 +1,0 @@
-name: Hearsay Short Bio Block
-description: This block provides short bio section.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

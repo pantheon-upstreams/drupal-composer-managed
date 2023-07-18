@@ -1,9 +1,0 @@
-/**
- * @file
- * Contains targeted overrides that aren't present in Seven.
- */
-
-#layout-builder-modal a.tabledrag-handle .handle {
-  width: 30px;
-  height: 30px;
-}

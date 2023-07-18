@@ -1,4 +1,0 @@
-configure bootstrap styles:
-  title: 'Configure Bootstrap Styles'
-  description: 'Allows access to configuration for Bootstrap Styles.'
-  restrict access: true

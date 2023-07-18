@@ -1,5 +1,0 @@
-imce.profile_add:
-  route_name: imce.profile_add
-  title: 'Add configuration profile'
-  appears_on:
-    - imce.admin

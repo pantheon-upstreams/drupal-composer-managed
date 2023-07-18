@@ -1,7 +1,0 @@
-advagg_ext_minify.settings:
-  path: '/admin/config/development/performance/advagg/ext-minify'
-  defaults:
-    _form: 'Drupal\advagg_ext_minify\Form\SettingsForm'
-    _title: 'AdvAgg: External Minifiers'
-  requirements:
-    _permission: 'administer site configuration'

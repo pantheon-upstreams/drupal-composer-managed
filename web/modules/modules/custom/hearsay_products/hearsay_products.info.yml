@@ -1,5 +1,0 @@
-name: Hearsay Products
-description: This block provides Products Section.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

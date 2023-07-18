@@ -1,5 +1,0 @@
-name: 'Hearsay Trailing slash'
-description: 'This module add trailing slash in all URL including sitemap.xml'
-type: module
-package: Hearsay
-core_version_requirement: ^9 || ^10

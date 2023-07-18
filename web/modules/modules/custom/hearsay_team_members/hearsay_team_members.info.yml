@@ -1,5 +1,0 @@
-name: Hearsay Team Members Block
-description: This block provides Team Members section on About Page.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

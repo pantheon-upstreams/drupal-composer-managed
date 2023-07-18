@@ -1,5 +1,0 @@
-name: Hearsay Our Story Block
-description: This block provides Our Story section on Our Story Page.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

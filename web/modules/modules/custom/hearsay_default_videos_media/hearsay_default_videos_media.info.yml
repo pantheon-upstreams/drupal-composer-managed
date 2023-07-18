@@ -1,5 +1,0 @@
-name: Hearsay Default Videos Media
-description: The module provides the functionality to create Default Videos Media Type structure.
-type: module
-core_version_requirement: ^9 || ^10
-package: Hearsay Media

@@ -1,4 +1,0 @@
-# Content tab scripts.
-content_tab:
-  js:
-    js/content-tab-scripts.js: { }

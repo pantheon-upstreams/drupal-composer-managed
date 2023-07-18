@@ -1,4 +1,0 @@
-administer hearsay_preview configuration:
-  title: 'Administer hearsay_preview configuration'
-  description: 'Allow administration of preview configuration.'
-  restrict access: true

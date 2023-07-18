@@ -1,4 +1,0 @@
-services:
-  hearsay_automation_process_service.utility:
-    class: Drupal\hearsay_automation_process\HSUtilityService
-    arguments: []

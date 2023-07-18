@@ -1,8 +1,0 @@
-uuid: e52b83a8-2998-4f05-bb80-80a409c7c92c
-langcode: en
-status: true
-dependencies: {  }
-name: 'Base slugs'
-vid: base_slugs
-description: 'This taxonomy refers to the Slugs of the sites present in system.'
-weight: 0

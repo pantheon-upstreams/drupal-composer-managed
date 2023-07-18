@@ -1,5 +1,0 @@
-entity.section_library_template.collection:
-  title: Layout Builder Library
-  route_name: entity.section_library_template.collection
-  base_route: system.admin_content
-  weight: 11

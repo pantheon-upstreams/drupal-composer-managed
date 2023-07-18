@@ -1,9 +1,0 @@
-services:
-  asset.css.collection_grouper:
-    class: Drupal\advagg_old_ie_compatibility\Asset\AdvaggCssCollectionGrouper
-    arguments: [ '@config.factory' ]
-  advagg_old_ie_compatibility.css_subscriber:
-    class: Drupal\advagg_old_ie_compatibility\EventSubscriber\CssSubscriber
-    tags:
-      -
-        name: event_subscriber

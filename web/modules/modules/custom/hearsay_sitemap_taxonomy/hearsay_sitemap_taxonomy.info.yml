@@ -1,5 +1,0 @@
-name: Hearsay Sitemap Taxonomy
-description: This module creates the Sitemap Taxonomy structure.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay Taxonomy

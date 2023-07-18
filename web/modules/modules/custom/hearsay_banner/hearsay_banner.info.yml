@@ -1,5 +1,0 @@
-name: Hearsay Banner
-description: This block provides Hero Banner Section.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay

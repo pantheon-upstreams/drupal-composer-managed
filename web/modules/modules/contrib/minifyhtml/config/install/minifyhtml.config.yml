@@ -1,3 +1,0 @@
-strip_comments: true
-minify: false
-exclude_pages: '/admin*'

@@ -1,5 +1,0 @@
-name: Hearsay Solutions Detail Content Type
-description: The module provides the functionality to create Solutions Detail content type structure.
-type: module
-core_version_requirement: ^9 || ^10
-package: Hearsay Content

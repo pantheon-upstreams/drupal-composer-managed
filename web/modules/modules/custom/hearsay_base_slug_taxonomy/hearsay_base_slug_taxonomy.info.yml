@@ -1,5 +1,0 @@
-name: Hearsay Base Slug Taxonomy
-description: This module creates the Base Slug Taxonomy structure.
-type: module
-core_version_requirement: '^9 || ^10'
-package: Hearsay Taxonomy
