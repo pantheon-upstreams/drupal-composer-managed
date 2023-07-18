@@ -1,0 +1,19 @@
+uuid: fd3bf43d-992f-4e33-9eb5-0499ae0fb47a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blank
+    - node.type.simple_gmap_stress_test
+id: node.simple_gmap_stress_test.field_blank
+field_name: field_blank
+entity_type: node
+bundle: simple_gmap_stress_test
+label: blank
+description: 'A blank field - which tests populate to demonstrate the operation of the formatter''s setting form.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

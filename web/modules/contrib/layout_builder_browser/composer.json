@@ -1,0 +1,23 @@
+{
+  "name": "drupal/layout_builder_browser",
+  "description": "Enhances the layout builder block selection UX by adding.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "StryKaizer",
+      "homepage": "https://www.drupal.org/u/strykaizer",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/layout_builder_browser",
+    "source": "https://www.drupal.org/project/layout_builder_browser"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-8.x-1.x": "1.x-dev"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.section-library-filter {
+  box-sizing: border-box;
+}
+
+.section-library-links {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-library-links li {
+  display: flex;
+  padding: 0 0.5rem 1rem 0.5rem;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.section-library-links li a {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.section-library-links li a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+.section-library-links li a img {
+  width: 100%;
+}
+
+.section-library-link-img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.section-library-link-label {
+  padding-top: 1rem;
+  display: block;
+  text-align: center;
+}
+
+/* If #layout_builder_modal enabled */
+#layout-builder-modal .section-library-filter.form-search {
+  box-sizing: border-box;
+}
+
+#layout-builder-modal .section-library-links li {
+  width: 33.3333333333%;
+}
+
+/* links */
+.layout-builder__link--add-section-to-library {
+  padding-left: 1.6em;
+  /* LTR */
+  color: #686868;
+  border-bottom: none;
+  background: url(../images/icons/787878/save.svg) transparent center left/1.5em no-repeat;
+  /* LTR */
+}
+
+[dir="rtl"] .layout-builder__link--add-section-to-library {
+  padding-right: 1.6em;
+  padding-left: 0;
+  background-position-x: right;
+}
+
+.layout-builder__link--import-from-library {
+  padding-left: 1.3em;
+  /* LTR */
+  color: #686868;
+  border-bottom: none;
+  background: url(../images/icons/787878/import.svg) transparent center left/1em no-repeat;
+  /* LTR */
+}
+
+[dir="rtl"] .layout-builder__link--import-from-library {
+  padding-right: 1.3em;
+  padding-left: 0;
+  background-position-x: right;
+}
+
+.layout-builder__link--add-section-to-library,
+.layout-builder__link--import-from-library {
+  margin-left: 1rem;
+}
+
+.layout-builder__link--add-section-to-library:hover,
+.layout-builder__link--add-section-to-library:active,
+.layout-builder__link--add-section-to-library:focus,
+.layout-builder__link--import-from-library:hover,
+.layout-builder__link--import-from-library:active,
+.layout-builder__link--import-from-library:focus {
+  color: #000;
+  border-bottom-style: none;
+}
+
+.layout-builder__link--add-template-to-library {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #eee;
+  margin: 1rem 0;
+  background: #eee;
+}

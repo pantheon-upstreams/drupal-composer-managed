@@ -1,0 +1,16 @@
+advagg_validator.validator:
+  title: 'Advanced CSS/JS Aggregation Asset Validation'
+  route_name: advagg_validator.csslint
+  base_route: system.performance_settings
+advagg_validator.validator_csslint:
+  title: 'CSSLint'
+  route_name: advagg_validator.csslint
+  parent_id: advagg_validator.validator
+advagg_validator.validator_cssw3:
+  title: 'W3.org CSS Validator'
+  route_name: advagg_validator.cssw3
+  parent_id: advagg_validator.validator
+advagg_validator.validator_jshint:
+  title: 'JSHint'
+  route_name: advagg_validator.jshint
+  parent_id: advagg_validator.validator

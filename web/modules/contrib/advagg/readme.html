@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<h1 id="advanced-cssjs-aggregation-module">ADVANCED CSS/JS AGGREGATION MODULE</h1>
+<h2 id="contents">CONTENTS</h2>
+<ul>
+<li><a href="#core-features-benefits">Core Features &amp; Benefits</a></li>
+<li><a href="#submodule-overview">Submodule Overview</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#information">Information</a></li>
+<li><a href="#operations">Operations</a></li>
+<li><a href="#server-settings">Server Settings</a></li>
+<li><a href="#tips-tricks">Tips &amp; Tricks</a>
+<ul>
+<li><a href="#javascript-bookmarklet">JavaScript Bookmarklet</a></li>
+<li><a href="#how-to-get-a-high-pagespeed-score">How to get a high PageSpeed score</a></li>
+</ul></li>
+<li><a href="#cdn">AdvAgg CDN</a></li>
+<li><a href="#validator">AdvAgg CSS/JS Validator</a></li>
+<li><a href="#minify-external">AdvAgg External Minifier</a></li>
+<li><a href="#minify-css">AdvAgg Minify CSS</a></li>
+<li><a href="#minify-js">AdvAgg Minify JS</a></li>
+<li><a href="#modifier">AdvAgg Modifier</a></li>
+<li><a href="#ie-compatibility">AdvAgg Old IE Compatibility Enhancer</a></li>
+</ul>
+<h2 id="core-features-benefits">CORE FEATURES &amp; BENEFITS</h2>
+<ul>
+<li><p>AdvAgg for Drupal 8 has some significant differences from Drupal 7; instead of totally reworking asset handling, AdvAgg only applies some improvements. This is mostly because the core handling is much better. It is also better for compatibility with quite a few other modules such as http2_server_push.</p></li>
+<li><p>Url query string to turn off AdvAgg for that request. <code>?advagg=0</code> will turn off file optimization if the user has the &quot;bypass advanced aggregation&quot; permission. <code>?advagg=-1</code> will completely bypass all of Advanced CSS/JS Aggregations modules and submodules. <code>?advagg=1</code> will enable Advanced CSS/JS Aggregation if it is currently disabled.</p></li>
+<li><p>Button on the admin page for dropping a cookie that will turn off file optimization. Useful for theme development.</p></li>
+<li><p>Gzip support. All optimized files can be pre-compressed into a .gz file and served from the server. This is faster then gzipping the file on each request.</p></li>
+<li><p>Brotli support. All optimized files can be pre-compressed with the newer brotli compression algorithm; this often shows close to 30% improvements in file size vs gzip. Requires the brotli php extension is installed.</p></li>
+<li><p>With various submodules substantially improved front end performance through minification of assets and other techniques can be achieved. Read more below.</p></li>
+</ul>
+<h2 id="submodule-overview">SUBMODULE OVERVIEW</h2>
+<p>AdvAgg comes with quite a few submodules to do various tasks. Most are compatible with the vast majority of other mods but some may have conflicts. If so those are noted here and more details in the module's full write-ups.</p>
+<h4 id="advagg-cdn-advagg_cdn">AdvAgg Cdn (advagg_cdn)</h4>
+<p><em>This module may have conflicts, but only with other CDN type modules.</em></p>
+<p>Load CSS or JavaScript libraries from a public CDN; currently only supports jQuery and jQuery UI with either Google's or Microsoft's CDN.</p>
+<h4 id="advagg-cssjs-validator-advagg_validator">AdvAgg CSS/JS Validator (advagg_validator)</h4>
+<p>Validate CSS and or JS files in your site through a few different validators.</p>
+<h4 id="advagg-external-minifier-advagg_ext_minify">AdvAgg External Minifier (advagg_ext_minify)</h4>
+<p>Minify CSS or JS through an otherwise unsupported method, with a configurable command line.</p>
+<h4 id="advagg-minify-css-advagg_css_minify">AdvAgg Minify CSS (advagg_css_minify)</h4>
+<p>Minify the CSS files using a 3rd party minifier; currently supports YUI (included) or the Core minification algorithm.</p>
+<h4 id="advagg-minify-js-advagg_js_minify">AdvAgg Minify JS (advagg_js_minify)</h4>
+<p>Compress the compiled JavaScript files using a 3rd party minifier; built in support for a number of minifiers.</p>
+<h4 id="advagg-modifier-advagg_mod">AdvAgg Modifier (advagg_mod):</h4>
+<p><em>Depending on tweaks applied this module may cause compatibility issues with other modules.</em></p>
+<p>Includes additional tweaks that may not work for all sites such as: - Force preprocessing for all CSS/JS. - Add defer tag to all JS. - Defer CSS loading using <code>rel=preload</code> and JavaScript Polyfill. - Add async tag to all or only local JavaScript.</p>
+<h4 id="advagg-old-ie-compatibility-enhancer-advagg_old_ie_compatibility">AdvAgg Old IE Compatibility Enhancer (advagg_old_ie_compatibility)</h4>
+<p><em>This module may have conflicts with other modules if it is enabled.</em></p>
+<p>Includes additional functionality to improve Drupal compatibility with old versions of Internet Explorer (6-9).</p>
+<h2 id="configuration">CONFIGURATION</h2>
+<p>Settings page is located at: <code>admin/config/development/performance/advagg</code>.</p>
+<h3 id="global-options">Global Options</h3>
+<ul>
+<li><p><strong>Enable Advanced Aggregation:</strong> You can quickly temporarily disable all AdvAgg functionality by un-checking this. For testing purposes, see also <a href="#testing">Testing AdvAgg</a>. [Default: enabled]</p></li>
+<li><p><strong>Use DNS Prefetch for external CSS/JS:</strong> If enabled places prefetch tags near the top of your html to trigger DNS look-ups as soon as possible on load. [Default: disabled]</p></li>
+<li><p><strong>Server Config:</strong> Server configuration options for AdvAgg. Mostly only available on Apache server. For more details see <a href="#server-settings">Server Settings</a>.</p></li>
+<li><p><strong>Include Cache-Control: immutable in generated .htaccess files.</strong> <em>Apache only</em> include directives in .htaccess to send <a href="http://bitsup.blogspot.de/2016/05/cache-control-immutable.html">Cache-Control Immutable</a> headers for all optimized files. Only supported on Edge 15+ and Firefox 49+. In other browsers, they will have no effect, so can be safely enabled. [Default: enabled]</p></li>
+<li><p><strong>AdvAgg Cache Settings:</strong> Development will scan all files for a change on every page load. Normal is fine for all use cases. Aggressive should be fine in almost all use cases. [Default: Normal]</p></li>
+</ul>
+<h3 id="compression-options">Compression Options</h3>
+<ul>
+<li><p><strong>Gzip [CSS/JS] Assets:</strong> If enabled, AdvAgg will create gzip compressed version of every file that is generated. This will then be served if the users' browser supports it instead of the uncompressed file saving time and bandwidth. [Default: enabled]</p></li>
+<li><p><strong>Brotli Compress [CSS/JS] Assets:</strong> Only selectable if the non standard <a href="https://github.com/kjdev/php-ext-brotli">PHP brotli extension</a> is installed. If enabled, Advagg will create brotli compressed versions of every file that is generated. Moderately better compression ratios than Gzip, but lower server and browser support. [Default: disabled]</p></li>
+</ul>
+<h3 id="css-options">CSS Options</h3>
+<ul>
+<li><p><strong>Combine CSS files by using media queries:</strong> If enabled, AdvAgg will add a media query wrapper to any file that needs it so that aggregation is more efficient. [Default: disabled]</p></li>
+<li><p><strong>Fix improperly set type:</strong> If type is external but does not start with http, https, or // change it to be type file. If type is file but it starts with http, https, or // change type to be external. [Default: enabled]</p></li>
+</ul>
+<h3 id="js-options">JS Options</h3>
+<ul>
+<li><p><strong>Fix improperly set type:</strong> If type is external but does not start with http, https, or // change it to be type file. If type is file but it starts with http, https, or // change type to be external. [Default: enabled]</p></li>
+<li><p><strong>Do not change external to file if on same host:</strong> In rare cases, JS files may be on the same host but are actually still external such as served via a CDN. [Default: disabled]</p></li>
+</ul>
+<h3 id="cron-options">CRON Options</h3>
+<p>Unless you have a good understanding of what you are trying to do, probably better to leave these alone. For best performance, setting up an external cron task is better than relying on Drupal's built in &quot;poor man's cron&quot;.</p>
+<ul>
+<li><p><strong>Minimum amount of time between <code>advagg_cron()</code> runs:</strong> Set the minimum amount of time between <code>advagg_cron</code> runs. <code>advagg_cron</code> whenever you site cron runs, if less than the minimum time, will return before further processing. [Default: 1 day]</p></li>
+<li><p><strong>Delete aggregates modified more than a set time ago:</strong> Set how old to keep generated files for. Longer will have higher performance and with AdvAgg 8.x-3.x should have no negatives except for possibly wasted disk space from rarely used or changed files. [Default: 1 month]</p></li>
+</ul>
+<h3 id="obscure-options">Obscure Options</h3>
+<ul>
+<li><p><strong>Convert absolute paths to protocol relative paths:</strong> Only applies to external files, this will change any http:// or https:// based urls to use //. [Default: enabled]</p></li>
+<li><p><strong>Convert http:// to https://:</strong> Also only applies to external files and is mutually incompatible with <strong>Convert absolute paths to protocol relative paths</strong>. [Default: disabled]</p></li>
+<li><p><strong>Use &quot;Options +SymLinksIfOwnerMatch&quot;:</strong> On some rare hosting configurations the AdvAgg htaccess files need to use <code>Options +SymLinksIfOwnerMatch</code> instead of the more common <code>Options +FollowSymlinks</code>. [Default: disabled]</p></li>
+</ul>
+<h2 id="information">Information page</h2>
+<p>Located at <code>admin/config/development/performance/advagg/info</code>. This page provides debugging information. There are no configuration options here.</p>
+<ul>
+<li><p><strong>Hook Theme Info:</strong> Displays the <code>preprocess_html</code> order.</p></li>
+<li><p><strong>Core Asset Hooks Implemented by Modules:</strong> List modules implementing the various core asset hook functions. <em>Note:</em> if a module does not use these but is changing things with assets beyond adding/removing, there is a much greater chance that there may be conflicts with AdvAgg especially with some of the submodules.</p></li>
+<li><p><strong>Get information about an optimized file:</strong> Enter the name of an optimized file and get back an array of information about the file including its original name and location.</p></li>
+</ul>
+<h2 id="operations">Operations page</h2>
+<p>Located at <code>admin/config/development/performance/advagg/operations</code>. This is a collection of commands to control the cache and manage testing of this module. In general this page is useful when troubleshooting some aggregation issues.</p>
+<ul>
+<li><p><strong>Aggregation Bypass Cookie:</strong> Toggle The &quot;aggregation bypass cookie&quot; for the current browser. If enabled will disable AdvAgg for the user for the period of time specified. It acts almost the same as adding ?advagg=0 to every URL.</p></li>
+<li><p><strong>Cron Maintenance Tasks:</strong> Remove All Stale Files: Scan all files in the css/js optimized directories and remove old files. See also <code>Cron    Options</code> on the Configuration Page.</p></li>
+</ul>
+<h3 id="drastic-measures">Drastic Measures</h3>
+<ul>
+<li><p><strong>Clear All Caches:</strong> Remove all data stored in the advagg cache, and delete all optimized files.</p></li>
+<li><p><strong>Increment Global Counter</strong>: Force the creation of all new files with new names by incrementing a global counter.</p></li>
+</ul>
+<h2 id="developing-your-site-with-advanced-agreggates">Developing your site with Advanced Agreggates</h2>
+<p>With the new architecture, Advanced Agreggates is much more intelligent when in development. It will detect changed files, however, depending on settings it may not be instant. Also, repeatedly optimizing a file for every minor change when doing stylesheets or JavaScript isn't the most efficient option. So, what can you do? If just one site instance (questionable but budgets etc), you may want to just adjust the configuration to refresh caches a bit faster or disable AdvAgg temporarily while doing heavy development.</p>
+<p>That will work but, there are a few other methods that will work better for some work flows especially if doing config import and export.</p>
+<h3 id="temporarily-disabling-advagg">Temporarily Disabling AdvAgg</h3>
+<ol style="list-style-type: decimal">
+<li><p>Via a local.settings.php. Often developers will disable core asset aggregation ith config overrides or enable various core development features. You can do the same to disable AdvAgg. For example some users use the following lines:</p>
+<div class="sourceCode"><pre class="sourceCode php"><code class="sourceCode php"><span class="co">// Disable Core CSS and JS aggregation.</span>
+<span class="kw">$config</span><span class="ot">[</span><span class="st">&#39;system.performance&#39;</span><span class="ot">][</span><span class="st">&#39;css&#39;</span><span class="ot">][</span><span class="st">&#39;preprocess&#39;</span><span class="ot">]</span> = <span class="kw">FALSE</span><span class="ot">;</span>
+<span class="kw">$config</span><span class="ot">[</span><span class="st">&#39;system.performance&#39;</span><span class="ot">][</span><span class="st">&#39;js&#39;</span><span class="ot">][</span><span class="st">&#39;preprocess&#39;</span><span class="ot">]</span> = <span class="kw">FALSE</span><span class="ot">;</span>
+
+<span class="co">// Disable AdvAgg.</span>
+<span class="kw">$config</span><span class="ot">[</span><span class="st">&#39;advagg.settings&#39;</span><span class="ot">][</span><span class="st">&#39;enabled&#39;</span><span class="ot">]</span> = <span class="kw">FALSE</span><span class="ot">;</span></code></pre></div></li>
+<li><p>Via main config page, un-check <code>Enable Advanced Aggregates</code>. This will take effect right away for all users.</p></li>
+<li><p>Via the AdvAgg url parameter. Not as reliable depending on various system caches. To use, just append <code>?advagg=0</code> to your url.</p></li>
+<li><p>Using the browser cookie function from the Operations page. Similar to the url parameter this isn't as good as the first 2 options.</p></li>
+</ol>
+<h2 id="server-settings">SERVER SETTINGS</h2>
+<p>AdvAgg can adjust configuration to improve performance for Apache servers. It does that through .htaccess files. There are reasons not to use .htaccess, however for most sites those aren't an important issue as it is a performance fine tuning issue. However for non-apache servers, .htaccess files don't work and in the case of Nginx, there is no equivalent. Instead Nginx has all such configuration within the server/vhost definition.</p>
+<p>So if you're using Nginx read on for instructions on adding those to your vhost or server settings. All of the below snippets go within the <code>server { }</code> block in your config files.</p>
+<h3 id="cache-control-immutable">Cache Control Immutable</h3>
+<p>The <a href="http://bitsup.blogspot.de/2016/05/cache-control-immutable.html">immutable cache control</a> header is a fairly new header. Only Firefox &amp; Edge <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Browser_compatibility">currently support</a> it as of September 2017. Browsers that don't support it will ignore so it is safe to enable.</p>
+<p>To enable in nginx add the following to your server configuration:</p>
+<pre><code>   location ~ ^/sites/.*/files/(css|js)/optimized {
+     add_header Cache-Control &#39;public, max-age=31536000, immutable&#39;;
+   }</code></pre>
+<p>If you wanted this to also apply to agreggates as well as the individual AdvAgg optimized files, just removed the <code>optimized</code> from the location line.</p>
+<h3 id="serving-compressed-assets.">Serving Compressed Assets.</h3>
+<p>On Apache, AdvaAgg handles this pretty well. On other servers, it doesn't however, if you've already configured your server to serve compressed assets from Drupal core, likely it'll just work. On the other hand, many Nginx default configurations may not be setup to serve static compressed assets.</p>
+<h3 id="brotli">Brotli</h3>
+<p>At this point in time, serving Brotli assets will still require you to build your Nginx server from source, with the <a href="https://github.com/google/ngx_brotli">Nginx Brotli module</a> - doable but beyond the scope of this manual. Once you have that installed, configuring your vhost/server settings is very easy, just add the following:</p>
+<pre><code>   location ~ ^/sites/.*/files/(css|js) {
+     brotli_static on;
+   }</code></pre>
+<h3 id="gzip">Gzip</h3>
+<p>Serving Gzip assets also requires a seperate module to be enabled it is part of the main nginx code and there are distributions with it - for example on Ubuntu use <code>apt-get install nginx-extras</code> to install a prebuilt version, otherwise you can build your own custom version. See more details about the <a href="http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html">Nginx GZip Module</a> Configuring your server setting is equally easy and almost identical to the <a href="#brotli">Brotli</a> configuration:</p>
+<pre><code>   location ~ ^/sites/.*/files/(css|js) {
+     gzip_static on;
+   }</code></pre>
+<p>If you want to serve either Gzip or Brotli depending on the user's browser just use both declarations: vhost/server settings is very easy, just add the following:</p>
+<pre><code>   location ~ ^/sites/.*/files/(css|js) {
+     brotli_static on;
+     gzip_static on;
+   }</code></pre>
+<h2 id="tips-tricks">TIPS &amp; TRICKS</h2>
+<h3 id="javascript-bookmarklet">JavaScript Bookmarklet</h3>
+<p>You can use this JS code as a bookmarklet for toggling the AdvAgg URL parameter. See http://en.wikipedia.org/wiki/Bookmarklet for more details.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">    javascript<span class="op">:</span>(<span class="kw">function</span>()<span class="op">{</span>
+      <span class="kw">var</span> loc <span class="op">=</span> <span class="va">document</span>.<span class="va">location</span>.<span class="at">href</span><span class="op">,</span>
+          qs <span class="op">=</span> <span class="va">document</span>.<span class="va">location</span>.<span class="at">search</span><span class="op">,</span>
+          regex_off <span class="op">=</span> <span class="ss">/</span><span class="sc">\&amp;?</span><span class="ss">advagg=-1/</span><span class="op">,</span>
+          goto <span class="op">=</span> loc<span class="op">;</span>
+      <span class="cf">if</span>(<span class="va">qs</span>.<span class="at">match</span>(regex_off)) <span class="op">{</span>
+        goto <span class="op">=</span> <span class="va">loc</span>.<span class="at">replace</span>(regex_off<span class="op">,</span> <span class="st">&#39;&#39;</span>)<span class="op">;</span>
+      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span>
+        qs <span class="op">=</span> qs <span class="op">?</span> qs <span class="op">+</span> <span class="st">&#39;&amp;advagg=-1&#39;</span> : <span class="st">&#39;?advagg=-1&#39;</span><span class="op">;</span>
+        goto <span class="op">=</span> <span class="va">document</span>.<span class="va">location</span>.<span class="at">pathname</span> <span class="op">+</span> qs<span class="op">;</span>
+      <span class="op">}</span>
+      <span class="va">window</span>.<span class="at">location</span> <span class="op">=</span> goto<span class="op">;</span>
+    <span class="op">}</span>)()<span class="op">;</span></code></pre></div>
+<h3 id="how-to-get-a-high-pagespeed-score">HOW TO GET A HIGH PAGESPEED SCORE</h3>
+<p>Go to <code>admin/config/development/performance/advagg</code> - check &quot;Combine CSS files by using media queries&quot;</p>
+<p>Ensure AdvAgg Modifier is enabled and go to <code>admin/config/development/performance/advagg/mod</code> - Under &quot;Move JS to the footer&quot; Select &quot;All&quot; - set &quot;Enable preprocess on all JS/CSS&quot; - set &quot;Move JavaScript added by drupal_add_html_head() into drupal_add_js()&quot; - Enable every checkbox under &quot;Optimize JavaScript/CSS Ordering&quot;</p>
+<p>Ensure AdvAgg Minify JS is enabled and go to <code>admin/config/development/performance/advagg/js-minify</code> - Select JSMin if available; otherwise select JSMin+</p>
+<h1 id="cdn">ADVANCED AGGREGATES CDN</h1>
+<h2 id="overview">OVERVIEW</h2>
+<p><em>Note: This module may have conflicts, but only with other CDN type modules.</em></p>
+<p>Load CSS or JavaScript libraries from a public CDN; currently only supports jQuery and jQuery UI with either Google's or Microsoft's CDN. Note the theme for the jQuery UI CSS that Drupal core uses is not available from either CDN. There is a similar one, <code>smoothness</code>, available which has only very minor differences.</p>
+<h2 id="configuration">CONFIGURATION</h2>
+<p>Located at <code>admin/config/development/performance/advagg/cdn</code>.</p>
+<ul>
+<li><p><strong>CDN to use:</strong> Which CDN to use. [Default: Google]</p></li>
+<li><p><strong>Use Minified resources:</strong> Use the minified versions of the resource if possible. [Default: enabled]</p></li>
+</ul>
+<h3 id="jquery">jQuery</h3>
+<ul>
+<li><p><strong>Serve jQuery by CDN:</strong> Use the CDN jQuery instead of the local copy. [Default: enabled]</p></li>
+<li><p><strong>jQuery version:</strong> The version to use, defaults to the version included in Drupal 8. [Default: 2.1.4]</p></li>
+</ul>
+<h3 id="jquery-ui">jQuery UI</h3>
+<ul>
+<li><p><strong>Serve jQuery UI CSS by CDN:</strong> Use the CDN jQuery UI CSS instead of the local copy. _**Warning: this may change the appearance due to slight differences from the core theme. [Default: disabled]</p></li>
+<li><p><strong>jQuery UI theme:</strong> The theme to use; <code>Smoothness</code> is the most similar to the basic jQuery UI theme in Drupal 8. [Default: smoothness]</p></li>
+<li><p><strong>Serve jQuery UI JavaScript by CDN:</strong> Use the CDN jQuery UI JavaScript instead of the local copy. [Default: enabled]</p></li>
+<li><p><strong>jQuery UI version:</strong> The version to use, defaults to the version included in Drupal 8. [Default: 1.11.4]</p></li>
+</ul>
+<h1 id="validator">ADVANCED AGGREGATES CSS/JS VALIDATOR</h1>
+<h2 id="overview-1">OVERVIEW</h2>
+<p>Validate CSS and or JS files in your site through a few different validators.</p>
+<h2 id="csslint">CSSLint</h2>
+<p>Use the CSSLint JavaScript and the Drupal 8 core .csslintrc settings to lint the selected file(s) from your site.</p>
+<h2 id="w3.org-css-validator">W3.org CSS VALIDATOR</h2>
+<p><em>Warning: this has privacy implications. Specifically this sends your CSS to the W3 servers.</em></p>
+<p>Use the W3.org CSS Validator to lint the selected file(s) from your site.</p>
+<h2 id="jshint">JSHint</h2>
+<p>Use the JSHint JavaScript to lint the files on your site.</p>
+<h1 id="minify-external">ADVANCED AGGREGATES EXTERNAL MINIFIER</h1>
+<h2 id="overview-2">OVERVIEW</h2>
+<p><em>Warning: depending on permissions this presents a security risk due to using administrator configurable command line calls.</em></p>
+<p><em>Note: May conflict with AdvAgg Minify CSS and or AdvAgg Minify JS depending on configuration. Don't use 2 minifiers on one asset type.</em></p>
+<p>Minify CSS or JS through an otherwise unsupported method, with a configurable command line. This may not work on all servers depending on security settings.</p>
+<h2 id="configuration-1">CONFIGURATION</h2>
+<p>### CSS</p>
+<ul>
+<li><p><strong>Command to run:</strong> the shell command to run. The form provides some examples and lists the available variables. [Default: empty]</p></li>
+<li><p><strong>Enable external CSS minification:</strong> Whether to use the configured command. [Default: False]</p></li>
+</ul>
+<p>### JavaScript</p>
+<ul>
+<li><p><strong>Command to run:</strong> the shell command to run. The form provides some examples and lists the available variables. [Default: empty]</p></li>
+<li><p><strong>Enable external JavaScript minification:</strong> Whether to use the configured command. [Default: False]</p></li>
+</ul>
+<h1 id="minify-css">ADVANCED AGGREGATES MINIFY CSS</h1>
+<h2 id="overview-3">OVERVIEW</h2>
+<p>Minify CSS files using a 3rd party minifier; currently supports YUI (included) or the Core cleaning algorithm. YUI will lead to much smaller files sizes and is the recommended option - basically, if you aren't using it, you probably will get better performance without this sub-module enabled. The YUI Compressor included with Advanced Aggregates is slightly different from that found on GitHub (as of last check, one patch had not been applied to the GitHub version).</p>
+<h2 id="configuration-2">CONFIGURATION</h2>
+<p>Located at <code>admin/config/development/performance/advagg/css-minify</code></p>
+<ul>
+<li><p><strong>Minification: Select a minifier:</strong> Choose between <code>Disabled</code>, <code>Core</code> and <code>YUI</code>. [Default: YUI]</p></li>
+<li><p><strong>Add licensing Comments:</strong> If enable will include comment with path to the original file in every optimized file. Better follows the spirit of GPL but not required to conform. Will increase file size slightly. [Default: Enabled]</p></li>
+</ul>
+<h1 id="minify-js">ADVANCED AGGREGATES MINIFY JAVASCRIPT</h1>
+<h2 id="overview-4">OVERVIEW</h2>
+<p>Minify JavaScript files using a 3rd party minifier. AdvAgg includes a few and supports one faster compiled PHP extension. The options are:</p>
+<ul>
+<li><p><a href="https://crisp.tweakblogs.net/blog/6861/jsmin%2B-version-14.html">JSMin +</a>: No installation required. Usually the second best minification, however it is the slowest supported option.</p></li>
+<li><p><a href="https://github.com/tedious/JShrink">JShrink</a>: No installation required, JShrink is reliable and has fairly comparable minification to JSMin.</p></li>
+<li><p><a href="https://github.com/tchwork/jsqueeze">JSqueeze</a>: No installation required, JSqueeze provides the most effective minification and is the fallback if another minification method fails. It is still fairly slow.</p></li>
+<li><p><a href="https://github.com/sqmk/pecl-jsmin">JSMin</a>: The fast compiled C extension for PHP. Supports PHP 5.3+ and 7.x. Must be installed separately. Much faster than the other options but slightly less reliable although that is mostly mitigated within AdvAgg. See below for more details.</p></li>
+</ul>
+<h2 id="configuration-3">CONFIGURATION</h2>
+<p>Located at <code>admin/config/development/performance/advagg/css-minify</code></p>
+<ul>
+<li><p><strong>Minification: Select a minifier:</strong> Choose which minifier to user. [Default: Disabled]</p></li>
+<li><p><strong>Add licensing Comments:</strong> If enable will include comment with path to the original file in every optimized file. Better follows the spirit of GPL but not required to conform. Will increase file size slightly. [Default: Enabled]</p></li>
+</ul>
+<h2 id="jsmin-php-extension">JSMIN PHP EXTENSION</h2>
+<p>The AdvAgg Minify JavaScript module can take advantage of jsmin.c if it is available and selected as minifier. In that case, JavaScript parsing and minimizing will be done in C instead of PHP dramatically speeding up the process. The JsMin extension can be found at <a href="https://github.com/sqmk/pecl-jsmin">GitHub</a>. There are instructions on installing and compiling it there. Note that if you are using PHP 7.x you'll need to use the <code>feature/php7</code> branch rather than the <code>master</code> branch.</p>
+<h1 id="modifier">ADVANCED AGGREGATES MODIFIER</h1>
+<h2 id="overview-5">OVERVIEW</h2>
+<p><em>Depending on tweaks applied this module may cause compatibility issues with other modules.</em></p>
+<p>Includes additional tweaks that may not work for all sites such as: - Force preprocessing for all CSS/JS. - Add defer tag to all JS. - Defer CSS loading using <code>rel=preload</code> and JavaScript Polyfill. - Add async tag to all or only local JavaScript. Some of these may significantly increase performance depending on your individual site. However, they include possibly dangerous and minimally tested options so use care and read warnings on each option if there are any.</p>
+<h2 id="configuration-4">CONFIGURATION</h2>
+<p>Located at <code>admin/config/development/performance/advagg/mod</code>.</p>
+<h3 id="js">JS</h3>
+<ul>
+<li><p><strong>Enable preprocess on all JS:</strong> Enables optimization for all JavaScript files. <em>Warning:</em> this may not be compatible with all mod added files. In fact, it is incompatible with CKEditor JavaScript and specifically excludes it to prevent problems. [Default: Disabled]</p></li>
+<li><p><strong>Remove console logging from JS Files:</strong> Removes any calls to console.log() <em>Warning:</em> this is experimental. Will decrease file size and may improve performance. [Default: Disabled]</p></li>
+<li><p><strong>Optimize JavaScript Ordering:</strong> Re-order the JavaScript to improve aggregation. If you're not using aggregation, will have minimal effect.</p></li>
+<li><p><strong>Move all external scripts to the top of the execution order:</strong> Move external scripts to the be loaded first. [Default: Disabled]</p></li>
+<li><p><strong>Move all browser conditional JavaScript to the bottom of the group:</strong> As browser conditional scripts are usually the last needed, this often provides better front-end performance. [Default: Disabled]</p></li>
+<li><p><strong>Adjust JavaScript Location and Execution:</strong> Mostly safe but may cause serious issues depending on your specific site configuration. Due to changes in Drupal 8 these options are mostly irrelevant but may still have some small effect.</p></li>
+<li><p><strong>Deferred JavaScript Execution:</strong> Add the defer tag to all or only local scripts. [Default: Disabled]</p></li>
+<li><p><strong>Experimental settings:</strong></p>
+<ul>
+<li><p><strong>Asynchronous JavaScript Execution:</strong> Add the async tag to all JavaScript. <em>Warning:</em> this may cause issues! [Default: Disabled]</p></li>
+<li><p><strong>Group Async JavaScript:</strong> Group any Async Javascript together. May lead to better aggregates if only some of your scripts are being loaded asynchronously otherwise irrelevant. [Default: Disabled]</p></li>
+</ul></li>
+</ul>
+<h3 id="css">CSS</h3>
+<ul>
+<li><p><strong>Enable preprocess on all CSS:</strong> Enables optimization for all CSS files. <em>Warning:</em> this may not be compatible with all mod added files, although there are no known cases of it causing problems at this time. [Default: Disabled]</p></li>
+<li><p><strong>Optimize CSS Ordering:</strong> Re-order the CSS to improve aggregation. If you're not using aggregation, will have minimal effect.</p></li>
+<li><p><strong>Move all external CSS to the top of the execution order:</strong> Move external CSS to the be loaded first. [Default: Disabled]</p></li>
+<li><p><strong>Move all browser conditional CSS to the bottom of the group:</strong> As browser conditional CSS are usually applied last so this often provides better front-end performance. [Default: Disabled]</p></li>
+<li><p><strong>Adjust CSS Location and Execution:</strong> <em>Warning:</em> may cause serious issues depending on your specific site configuration. Unlikely to see any improvement if using HTTP 2 but may find some if using HTTP 1.x.</p></li>
+<li><p><strong>Deferred CSS Execution: Use JS to Load CSS:</strong> Attempt optimized CSS delivery using JavaScript. [Default: Disabled]</p></li>
+<li><p><strong>Use JS to load CSS in admin theme:</strong> Apply JS based CSS loading to the admin theme as well. [Default: Disabled]</p></li>
+<li><p><strong>How to include the JS loading code:</strong> Method of including the JS to load the CSS. [Default: Inline]</p></li>
+</ul>
+<h1 id="ie-compatibility">ADVANCED AGGREGATES OLD IE COMPATIBILITY ENHANCER</h1>
+<h2 id="overview-6">OVERVIEW</h2>
+<p><em>This module may have conflicts with other modules if it is enabled.</em></p>
+<p>Includes additional functionality to improve Drupal compatibility with old versions of Internet Explorer (6-9). No currently known compatibility issues however due to method required to override core on this it is easily possible that there are other modules that do conflict.</p>
+<p>This module prevents CSS aggregates from being produced with more than 4095 (or a configured value) selectors as <strong>old</strong> Internet Explorer versions do not handle more than 4095 selectors in an individual file.</p>
+<h2 id="configuration-5">CONFIGURATION</h2>
+<p>Located at <code>admin/config/development/performance/advagg/old_ie_compatibility</code>.</p>
+<ul>
+<li><p><strong>Prevent more than [number] CSS selectors in an aggregate CSS file:</strong> [Default: enabled]</p></li>
+<li><p><strong>Selector count limit:</strong> The maximum number of selectors to allow in an aggregate CSS file. [Default 4095]</p></li>
+</ul>
+</body>
+</html>

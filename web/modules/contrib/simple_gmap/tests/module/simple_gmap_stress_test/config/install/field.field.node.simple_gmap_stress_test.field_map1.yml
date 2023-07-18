@@ -1,0 +1,21 @@
+uuid: 74825356-64da-4f38-8ebd-3451e09cb2d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map1
+    - node.type.simple_gmap_stress_test
+id: node.simple_gmap_stress_test.field_map1
+field_name: field_map1
+entity_type: node
+bundle: simple_gmap_stress_test
+label: map1
+description: 'Expect to see a location in Paris.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Eiffel Tower'
+default_value_callback: ''
+settings: {  }
+field_type: string

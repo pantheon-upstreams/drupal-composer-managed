@@ -1,0 +1,18 @@
+{
+  "name": "media_library_theme_reset",
+  "version": "1.0.0",
+  "description": "Display the media library in an administrative theme",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass -r theme/seven/scss -o theme/seven/css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.drupal.org:project/media_library_theme_reset.git"
+  },
+  "author": "Mark Fullmer",
+  "license": "GPL2",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

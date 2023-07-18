@@ -1,0 +1,20 @@
+advagg_validator.validator:
+  title: 'AdvAgg: Asset Validation'
+  parent: system.performance_settings
+  route_name: advagg_validator.csslint
+  description: 'Asset Validation'
+advagg_validator.validator_csslint:
+  title: 'CSSLint'
+  route_name: advagg_validator.csslint
+  parent: advagg_validator.validator
+  description: 'Validate CSS with CSSLint'
+advagg_validator.validator_cssw3:
+  title: 'W3.org CSS Validator'
+  route_name: advagg_validator.cssw3
+  parent: advagg_validator.validator
+  description: 'Validate CSS with the W3.org css validator'
+advagg_validator.validator_jshint:
+  title: 'JSHint'
+  route_name: advagg_validator.jshint
+  parent: advagg_validator.validator
+  description: 'Validate JavaScript with JSHint'

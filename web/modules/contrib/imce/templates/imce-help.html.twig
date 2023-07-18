@@ -1,0 +1,16 @@
+<p>
+  {{ markup }}
+</p>
+
+{% if videos %}
+<h3>{{ 'Related Videos'|t }}:</h3>
+
+  {% for video in videos %}
+
+    <h4>{{ video.title }}</h4>
+    <iframe width="560" height="315" src="{{ video.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br/><br/>
+
+  {% endfor %}
+
+{% endif %}

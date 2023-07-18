@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Component\Serialization\Json;
+
+function layout_builder_browser_link_alter(&$variables) {
+
+  if(!\Drupal::config('layout_builder_browser.settings')->get('use_modal')) {
+    return;
+  }
+  /** @var Drupal\Core\Url $url */
+  $url = $variables['url'];
+
+  if (!$url->isRouted()) {
+    return;
+  }
+
+  $route_name = $url->getRouteName();
+
+  if (!in_array($route_name, [
+    'layout_builder.choose_block',
+    'layout_builder.add_block',
+  ])) {
+    return;
+  }
+
+  if (in_array('use-ajax', $variables['options']['attributes']['class'])) {
+    $data_dialog_options = Json::encode([
+      'width' => "80%",
+      'height' => "auto",
+      'target' => 'layout-builder-modal',
+      'autoResize' => TRUE,
+      'modal' => TRUE,
+    ]);
+    $variables['options']['attributes']['data-dialog-options'] = $data_dialog_options;
+    $variables['options']['attributes']['data-dialog-type'] = 'dialog';
+    unset($variables['options']['attributes']['data-dialog-renderer']);
+  }
+}
+

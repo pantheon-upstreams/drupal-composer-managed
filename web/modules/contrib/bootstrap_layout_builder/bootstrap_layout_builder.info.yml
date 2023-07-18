@@ -1,0 +1,13 @@
+name: 'Bootstrap Layout Builder'
+description: 'Add Bootstrap Grid support to Layout Builder module.'
+type: module
+core_version_requirement: ^9.3 || ^10
+configure: bootstrap_layout_builder.settings
+package: 'Layout Builder'
+dependencies:
+  - bootstrap_styles:bootstrap_styles
+
+# Information added by Drupal.org packaging script on 2023-01-17
+version: '2.1.1'
+project: 'bootstrap_layout_builder'
+datestamp: 1673978911

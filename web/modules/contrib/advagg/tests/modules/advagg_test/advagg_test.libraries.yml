@@ -1,0 +1,7 @@
+external:
+  js:
+    http://cdn.jsdelivr.net/jquery.actual/1.0.18/jquery.actual.min.js: {type: external}
+screen:
+  css:
+    component:
+      css/test.css: { media: screen }

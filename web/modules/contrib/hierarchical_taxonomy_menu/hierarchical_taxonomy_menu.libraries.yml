@@ -1,0 +1,11 @@
+hierarchical_taxonomy_menu:
+  version: VERSION
+  css:
+    theme:
+      css/hierarchical-taxonomy-menu.css: {}
+  js:
+    js/hierarchical-taxonomy-menu.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

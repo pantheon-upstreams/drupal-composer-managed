@@ -1,0 +1,4 @@
+advagg_ext_minify.settings:
+  title: 'External Minification'
+  route_name: advagg_ext_minify.settings
+  parent_id: advagg.settings

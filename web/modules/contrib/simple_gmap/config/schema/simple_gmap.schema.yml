@@ -1,0 +1,47 @@
+field.formatter.settings.simple_gmap:
+  type: mapping
+  label: 'Simple Google Map formatter settings'
+  mapping:
+    include_map:
+      type: boolean
+      label: 'Whether to include a dynamic map'
+    include_static_map:
+      type: boolean
+      label: 'Whether to include a static map'
+    include_link:
+      type: boolean
+      label: 'Whether to include a link to the Google Map'
+    include_text:
+      type: boolean
+      label: 'Whether to include text with the map'
+    iframe_height:
+      type: string
+      label: 'Height of embedded map'
+    iframe_width:
+      type: string
+      label: 'Width of embedded map'
+    iframe_title:
+      type: string
+      label: 'A title for describing the iframe for accessibility reasons'
+    static_scale:
+      type: integer
+      label: 'Whether to scale static map image for retina displays'
+    zoom_level:
+      type: integer
+      label: 'Zoom level'
+    information_bubble:
+      type: boolean
+      label: 'Whether to include an information bubble'
+    link_text:
+      type: label
+      label: 'The text for the link to the Google Map'
+    map_type:
+      type: string
+      label: 'Map type for embedded and linked maps'
+    langcode:
+      type: label
+      label: 'The language in which the map should be displayed'
+      translation context: 'Google Maps language code'
+    apikey:
+      type: string
+      label: 'A Google Maps API key, needed for static maps'

@@ -1,0 +1,76 @@
+imce.page:
+  path: '/imce/{scheme}'
+  defaults:
+    _controller: '\Drupal\imce\Controller\ImceController::page'
+    _title: 'File Manager'
+    scheme: null
+  requirements:
+    _custom_access: '\Drupal\imce\Controller\ImceController::checkAccess'
+
+imce.admin:
+  path: '/admin/config/media/imce'
+  defaults:
+    _controller: '\Drupal\imce\Controller\ImceController::adminOverview'
+    _title: 'Imce File Manager'
+  requirements:
+    _permission: 'administer imce'
+
+imce.help:
+  path: '/admin/imce/help'
+  defaults:
+    _controller: '\Drupal\imce\Controller\ImceHelpController::index'
+    _title: 'Help'
+  requirements:
+    _permission: 'administer imce'
+
+imce.admin_browser:
+  path: '/admin/imce/browser'
+  defaults:
+    _controller: '\Drupal\imce\Controller\ImceFrameController::page'
+    _title: 'IMCE File Browser'
+  requirements:
+    _permission: 'administer imce'
+
+imce.user_browser:
+  path: '/user/{user}/imce'
+  defaults:
+    _controller: '\Drupal\imce\Controller\ImceFrameController::page'
+    _title: 'IMCE File Browser'
+  requirements:
+    _custom_access: '\Drupal\imce\Controller\ImceFrameController::checkAccess'
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+imce.profile_add:
+  path: '/admin/config/media/imce/add-profile'
+  defaults:
+    _entity_form: 'imce_profile.add'
+    _title: 'Add configuration profile'
+  requirements:
+    _entity_create_access: 'imce_profile'
+
+entity.imce_profile.edit_form:
+  path: '/admin/config/media/imce/{imce_profile}'
+  defaults:
+    _entity_form: 'imce_profile.edit'
+    _title: 'Edit configuration profile'
+  requirements:
+    _entity_access: 'imce_profile.update'
+
+entity.imce_profile.delete_form:
+  path: '/admin/config/media/imce/{imce_profile}/delete'
+  defaults:
+    _entity_form: 'imce_profile.delete'
+    _title: 'Delete configuration profile'
+  requirements:
+    _entity_access: 'imce_profile.delete'
+
+entity.imce_profile.duplicate_form:
+  path: '/admin/config/media/imce/{imce_profile}/duplicate'
+  defaults:
+    _entity_form: 'imce_profile.duplicate'
+    _title: 'Duplicate configuration profile'
+  requirements:
+    _entity_create_access: 'imce_profile'

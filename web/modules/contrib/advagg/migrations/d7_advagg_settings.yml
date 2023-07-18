@@ -1,0 +1,33 @@
+id: d7_advagg_settings
+label: AdvAgg configuration
+migration_tags:
+  - Drupal 7
+  - Configuration
+source:
+  plugin: variable
+  variables:
+    - advagg_brotli
+    - advagg_cron_frequency
+    - advagg_enabled
+    - advagg_include_base_url
+    - advagg_js_fix_type
+    - advagg_convert_absolute_to_protocol_relative_path
+    - advagg_browser_dns_prefetch
+    - advagg_combine_css_media
+    - advagg_force_https
+    - advagg_css_fix_type
+  source_module: advagg
+process:
+  cron_frequency: advagg_cron_frequency
+  enabled: advagg_enabled
+  'js/brotli': advagg_brotli
+  'js/fix_type': advagg_js_fix_type
+  dns_prefetch: advagg_browser_dns_prefetch
+  'css/brotli': advagg_brotli
+  'css/combine_media': advagg_combine_css_media
+  'css/fix_type': advagg_css_fix_type
+  'path/convert/absolute_to_protocol_relative': advagg_convert_absolute_to_protocol_relative_path
+  'path/convert/force_https': advagg_force_https
+destination:
+  plugin: config
+  config_name: advagg.settings

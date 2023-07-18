@@ -1,0 +1,13 @@
+name: Advanced Page Expiration
+type: module
+description: 'Allows finer control of the Cache Control header.'
+core_version_requirement: ^8 || ^9
+# version: 8.x-1.0
+package: Performance and scalability
+
+configure: ape.admin
+
+# Information added by Drupal.org packaging script on 2021-01-22
+version: '8.x-1.5'
+project: 'ape'
+datestamp: 1611337706

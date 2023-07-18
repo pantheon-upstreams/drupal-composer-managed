@@ -1,0 +1,3 @@
+administer imce:
+  title: 'Administer Imce File Manager'
+  restrict access: true

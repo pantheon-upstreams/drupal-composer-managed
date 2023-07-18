@@ -1,0 +1,100 @@
+uuid: 56138ea6-7df8-445f-8fe9-44b86e65e71e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.simple_gmap_stress_test.field_blank
+    - field.field.node.simple_gmap_stress_test.field_map1
+    - field.field.node.simple_gmap_stress_test.field_map2
+    - field.field.node.simple_gmap_stress_test.field_xss
+    - node.type.simple_gmap_stress_test
+  module:
+    - simple_gmap
+    - user
+id: node.simple_gmap_stress_test.default
+targetEntityType: node
+bundle: simple_gmap_stress_test
+mode: default
+content:
+  field_blank:
+    weight: 104
+    label: above
+    settings:
+      include_map: true
+      include_static_map: false
+      include_link: false
+      include_text: false
+      iframe_height: '200'
+      iframe_width: '200'
+      static_scale: 1
+      zoom_level: 14
+      link_text: 'View larger map'
+      map_type: m
+      langcode: en
+      apikey: ''
+    third_party_settings: {  }
+    type: simple_gmap
+    region: content
+  field_map1:
+    weight: 101
+    label: above
+    settings:
+      include_map: true
+      include_static_map: true
+      apikey: 'Static maps will not work unless you put in a key'
+      iframe_width: '200'
+      iframe_height: '200'
+      static_scale: 1
+      link_text: 'use_address'
+      zoom_level: 14
+      map_type: m
+      langcode: en
+      include_link: true
+      include_text: true
+    third_party_settings: {  }
+    type: simple_gmap
+    region: content
+  field_map2:
+    weight: 102
+    label: above
+    settings:
+      include_map: true
+      include_static_map: true
+      apikey: 'Static maps will not work unless you put in a key'
+      iframe_width: '200'
+      iframe_height: '200'
+      static_scale: 1
+      link_text: 'View larger map'
+      zoom_level: 5
+      include_text: true
+      map_type: k
+      langcode: en
+      include_link: false
+    third_party_settings: {  }
+    type: simple_gmap
+    region: content
+  field_xss:
+    weight: 103
+    label: above
+    settings:
+      include_map: true
+      include_static_map: true
+      apikey: ''
+      iframe_width: '200'
+      iframe_height: '200'
+      static_scale: 1
+      include_link: true
+      link_text: 'View larger map'
+      zoom_level: 14
+      map_type: m
+      langcode: en
+      include_text: true
+    third_party_settings: {  }
+    type: simple_gmap
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

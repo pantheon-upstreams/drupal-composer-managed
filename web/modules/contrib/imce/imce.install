@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Manages installation and update of imce module.
+ */
+
+use Drupal\Core\StreamWrapper\StreamWrapperInterface;
+
+/**
+ * Implements hook_install().
+ */
+function imce_install() {
+  // Assign admin profile to administrators.
+  $admin_roles = \Drupal::entityQuery('user_role')
+    ->accessCheck(FALSE)
+    ->condition('is_admin', TRUE)
+    ->execute();
+  if ($admin_roles) {
+    $config = \Drupal::configFactory()->getEditable('imce.settings');
+    $roles_profiles = $config->get('roles_profiles') ?: [];
+    $wrappers = \Drupal::service('stream_wrapper_manager')->getWrappers(StreamWrapperInterface::WRITE_VISIBLE);
+    foreach ($wrappers as $scheme => $info) {
+      foreach ($admin_roles as $role) {
+        $roles_profiles[$role][$scheme] = 'admin';
+      }
+    }
+    $config->set('roles_profiles', $roles_profiles);
+    $config->save(TRUE);
+  }
+}
+
+/**
+ * Create image style for IMCE browser.
+ */
+function imce_update_8001() {
+  // Cancelled.
+}

@@ -1,0 +1,11 @@
+name: Advanced Page Expiration Testing
+type: module
+description: 'Adds endpoints and functionality for testing ape.'
+core_version_requirement: ^8 || ^9
+# version: 8.x-1.0
+package: Performance and scalability
+
+# Information added by Drupal.org packaging script on 2021-01-22
+version: '8.x-1.5'
+project: 'ape'
+datestamp: 1611337706

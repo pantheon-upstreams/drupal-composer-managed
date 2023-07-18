@@ -1,0 +1,39 @@
+ape.redirect.301:
+  path: '/ape_redirect_301'
+  defaults:
+    _title: 'ape redirect 301'
+    _controller: '\Drupal\ape_test\Controller\ApeTestController::redirect301'
+  requirements:
+    _access: 'TRUE'
+
+ape.redirect.302:
+  path: '/ape_redirect_302'
+  defaults:
+    _title: 'ape redirect 302'
+    _controller: '\Drupal\ape_test\Controller\ApeTestController::redirect302'
+  requirements:
+    _access: 'TRUE'
+
+ape.redirect.landing:
+  path: '/ape_redirect_landing'
+  defaults:
+    _title: 'ape redirect landing page'
+    _controller: '\Drupal\ape_test\Controller\ApeTestController::content'
+  requirements:
+    _access: 'TRUE'
+
+ape.alternative:
+  path: '/ape_alternative'
+  defaults:
+    _title: 'ape redirect landing page'
+    _controller: '\Drupal\ape_test\Controller\ApeTestController::content'
+  requirements:
+    _access: 'TRUE'
+
+ape.exclude:
+  path: '/ape_exclude'
+  defaults:
+    _title: 'ape redirect landing page'
+    _controller: '\Drupal\ape_test\Controller\ApeTestController::content'
+  requirements:
+    _access: 'TRUE'

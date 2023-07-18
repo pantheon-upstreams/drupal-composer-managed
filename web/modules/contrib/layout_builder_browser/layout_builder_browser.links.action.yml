@@ -1,0 +1,5 @@
+entity.layout_builder_browser_blockcat.add_form:
+  route_name: 'entity.layout_builder_browser_blockcat.add_form'
+  title: 'Add block category'
+  appears_on:
+    - entity.layout_builder_browser_blockcat.collection

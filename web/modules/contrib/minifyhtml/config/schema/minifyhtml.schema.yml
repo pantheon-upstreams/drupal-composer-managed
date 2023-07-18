@@ -1,0 +1,13 @@
+minifyhtml.config:
+  type: config_object
+  label: 'Minify HTML settings'
+  mapping:
+    strip_comments:
+      type: boolean
+      label: 'Strip comments from the source HTML'
+    minify:
+      type: boolean
+      label: 'Minified Source HTML'
+    exclude_pages:
+      type: string
+      label: 'Exclude From Pages'

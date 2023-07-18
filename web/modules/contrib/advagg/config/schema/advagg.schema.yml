@@ -1,0 +1,80 @@
+advagg.settings:
+  type: config_entity
+  label: Settings
+  mapping:
+    css:
+      type: mapping
+      label: 'CSS settings'
+      mapping:
+        brotli:
+          type: boolean
+          label: 'Compress css assets with brotli compression.'
+        combine_media:
+          type: boolean
+          label: 'Combine multiple media selectors per aggregate.'
+        fix_type:
+          type: boolean
+          label: 'Fix type of added asset files.'
+        preserve_external:
+          type: boolean
+          label: 'Do not change external to file if on same host for css.'
+    dns_prefetch:
+      type: boolean
+      label: 'Prefetch external domains for css/js'
+    path:
+      type: mapping
+      label: 'Path/Url settings'
+      mapping:
+        convert:
+          type: mapping
+          label: 'What conversions to apply.'
+          mapping:
+            absolute_to_protocol_relative:
+              type: boolean
+              label: 'Convert absolute path css/js src/url() to be protocol relative.'
+            absolute:
+              type: boolean
+              label: 'Convert relative paths to absolute.'
+            force_https:
+              type: boolean
+              label: 'Convert absolute path css/js src/url() to use https://'
+    cache_level:
+      type: integer
+      label: 'Level of caching for AdvAgg to use.'
+    cron_frequency:
+      type: integer
+      label: frequency to run the AdvAgg cron maintenance functions.
+    enabled:
+      type: boolean
+      label: 'Enable AdvAgg.'
+    global_counter:
+      type: integer
+      label: 'Counter to force new aggregates through caches etc.'
+    immutable:
+      type: boolean
+      label: 'Add the immutable tag to Apache cache control strings.'
+    js:
+      type: mapping
+      label: 'JavaScript specific settings.'
+      mapping:
+        brotli:
+          type: boolean
+          label: 'Compress css assets with brotli compression.'
+        fix_type:
+          type: boolean
+          label: 'Fix type of added asset files.'
+        preserve_external:
+          type: boolean
+          label: 'Do not change external to file if on same host for js.'
+    skip_enabled_preprocess_check:
+      type: boolean
+      label: 'Skip preprocess check on status page'
+    show_bypass_cookie_message:
+      type: boolean
+      label: 'Display a message when the bypass cookie is active.'
+    symlinks:
+      type: boolean
+      label: 'Use Options +FollowSymlinks to support some hosts.'
+    symlinksifownermatch:
+      type: boolean
+      label: 'Use options +SymLinksIfOwnerMatch to support some hosts.'

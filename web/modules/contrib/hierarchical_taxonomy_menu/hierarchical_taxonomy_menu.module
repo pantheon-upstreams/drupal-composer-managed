@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Contains hierarchical_taxonomy_menu.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hierarchical_taxonomy_menu_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.hierarchical_taxonomy_menu') {
+    $readme_file = file_exists(__DIR__ . '/README.md') ? __DIR__ . '/README.md' : __DIR__ . '/README.txt';
+    if (!file_exists($readme_file)) {
+      return NULL;
+    }
+    $text = file_get_contents($readme_file);
+    if ($text && !\Drupal::moduleHandler()->moduleExists('markdown')) {
+      return '<pre>' . $text . '</pre>';
+    }
+    else {
+      // Use the Markdown filter to render the README.
+      $filter_manager = \Drupal::service('plugin.manager.filter');
+      $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+      $config = ['settings' => $settings];
+      $filter = $filter_manager->createInstance('markdown', $config);
+      return $filter->process($text, 'en');
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hierarchical_taxonomy_menu_theme($existing, $type, $theme, $path) {
+  return [
+    'hierarchical_taxonomy_menu' => [
+      'variables' => [
+        'menu_tree' => [],
+        'route_tid' => NULL,
+        'vocabulary' => NULL,
+        'current_depth' => 0,
+        'max_depth' => 0,
+        'collapsible' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function hierarchical_taxonomy_menu_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'hierarchical_taxonomy_menu' &&
+    $variables['configuration']['label_display'] == 'visible' &&
+    $variables['configuration']['dynamic_block_title']
+  ) {
+    $term = \Drupal::routeMatch()
+      ->getParameter('taxonomy_term');
+
+    if (!$term) {
+      return NULL;
+    }
+
+    $langcode = \Drupal::languageManager()
+      ->getCurrentLanguage()
+      ->getId();
+
+    $translation_languages = $term->getTranslationLanguages();
+    if (isset($translation_languages[$langcode])) {
+      $term = $term->getTranslation($langcode);
+    }
+
+    $variables['label'] = $term->getName();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function hierarchical_taxonomy_menu_theme_suggestions_hierarchical_taxonomy_menu(array $variables) {
+  if (isset($variables['vocabulary'])) {
+    return ['hierarchical_taxonomy_menu__' . $variables['vocabulary']];
+  }
+}

@@ -1,0 +1,13 @@
+name: 'AdvAgg External Minification'
+description: 'Minify Javascript and/or CSS with a command line minifier.'
+package: 'Advanced CSS/JS Aggregation'
+core_version_requirement: ^9
+dependencies:
+  - advagg:advagg
+type: module
+configure: advagg_ext_minify.settings
+
+# Information added by Drupal.org packaging script on 2022-07-18
+version: '5.0.0'
+project: 'advagg'
+datestamp: 1658178952

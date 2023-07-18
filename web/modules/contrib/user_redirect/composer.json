@@ -1,0 +1,21 @@
+{
+    "name": "drupal/user_redirect",
+    "description": "This module helps user to redirect after login/logout.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/user_redirect",
+    "authors": [
+        {
+            "name": "Vipin Mittal",
+            "homepage": "https://www.drupal.org/u/vipinmittal18",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/user_redirect",
+        "source": "https://cgit.drupalcode.org/user_redirect"
+    },
+    "require": {
+        "drupal/core": "^9.2 || ^10.0"
+    },
+    "license": "GPL-2.0-or-later"
+}

@@ -1,0 +1,24 @@
+# Define the 'local' links for the module
+imce.settings:
+  route_name: imce.admin
+  title: IMCE Settings
+  base_route: imce.admin
+  weight: 2
+
+imce.help:
+  route_name: imce.help
+  title: IMCE Help
+  base_route: imce.admin
+  weight: 3
+
+imce.admin_browser:
+  route_name: imce.admin_browser
+  title: IMCE File Browser
+  base_route: imce.admin
+  weight: 4
+
+imce.imce_usertab:
+  base_route: entity.user.canonical
+  title: IMCE File Browser
+  route_name: imce.user_browser
+  weight: 4

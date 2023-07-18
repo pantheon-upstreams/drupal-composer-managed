@@ -1,0 +1,11 @@
+<a href="{{ url }}" {{ attributes }}>
+  {% if image %}
+    {{ image }}
+  {% endif %}
+  <span class="container">
+    <span class="layout-builder-browser-block-item-label">{{ label }}</span>
+    {% if description %}
+      <span class="layout-builder-browser-block-item-description">{{ description }}</span>
+    {% endif %}
+  </span>
+</a>

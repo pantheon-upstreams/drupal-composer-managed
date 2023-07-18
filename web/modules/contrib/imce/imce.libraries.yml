@@ -1,0 +1,97 @@
+drupal.imce:
+  version: VERSION
+  js:
+    js/imce.js: {}
+    js/imce.Item.js: {}
+    js/imce.File.js: {}
+    js/imce.Folder.js: {}
+    js/imce.Tbb.js: {}
+  css:
+    component:
+      css/imce.css: {}
+      css/imce.icons.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+drupal.imce.newfolder:
+  version: VERSION
+  js:
+    js/plugins/imce/imce.newfolder.js: {}
+  dependencies:
+    - imce/drupal.imce
+
+drupal.imce.upload:
+  version: VERSION
+  js:
+    js/plugins/imce/imce.upload.js: {}
+    js/plugins/imce/imce.UploadQueue.js: {}
+  dependencies:
+    - imce/drupal.imce
+
+drupal.imce.delete:
+  version: VERSION
+  js:
+    js/plugins/imce/imce.delete.js: {}
+  dependencies:
+    - imce/drupal.imce
+
+drupal.imce.resize:
+  version: VERSION
+  js:
+    js/plugins/imce/imce.resize.js: {}
+  dependencies:
+    - imce/drupal.imce
+
+drupal.imce.admin:
+  version: VERSION
+  css:
+    component:
+      css/imce.admin.css: {}
+
+drupal.imce.bueditor:
+  version: VERSION
+  js:
+    js/plugins/bueditor/imce.bueditor.js: {}
+  dependencies:
+    - bueditor/drupal.bueditor
+
+drupal.imce.ckeditor:
+  version: VERSION
+  js:
+    js/plugins/ckeditor/imce.ckeditor.js: {}
+  dependencies:
+    - ckeditor/drupal.ckeditor
+
+drupal.imce.ckeditor5:
+  version: VERSION
+  js:
+    js/plugins/ckeditor5/imce.ckeditor5.js: {}
+  dependencies:
+    - ckeditor5/internal.drupal.ckeditor5
+    - imce/drupal.imce.input
+
+drupal.imce.filefield:
+  version: VERSION
+  js:
+    js/imce.filefield.js: {}
+  css:
+    component:
+      css/imce.filefield.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+drupal.imce.input:
+  version: VERSION
+  css:
+    component:
+      css/imce.input.css: {}
+  js:
+    js/imce.input.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme implementation of the content area for a media library pane.
+ *
+ * This is used when displaying the content for media library panes in the
+ * media library modal dialog.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the main wrapper element.
+ * - content_attributes: HTML attributes for the container containing
+ *  - previews and form selection.
+ * - result_count: A result count summary.
+ * - previews: An array of result item previews provided by the plugin.
+ * - pager: The pane's pager.
+ * - form_selection: This element is needed for media library's Javascript to
+ *   to correctly show the number of selected items.
+ *
+ * @see template_preprocess_media_library_pane_content()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('view-content') }}>
+  {{ result_count }}
+
+  <div{{ content_attributes.addClass('media-library-views-form')}}>
+    {{ previews }}
+
+    {{ form_selection }}
+  </div>
+
+  {{ pager }}
+</div>

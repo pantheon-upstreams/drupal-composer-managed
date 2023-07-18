@@ -1,0 +1,39 @@
+layout_builder_browser.layout_builder_browser_blockcat.*:
+  type: config_entity
+  label: 'Layout builder browser block category'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    weight:
+      type: integer
+      label: 'Block category weight'
+
+layout_builder_browser.layout_builder_browser_block.*:
+  type: config_entity
+  label: 'Layout builder browser block'
+  mapping:
+    id:
+      type: string
+      label: 'Layout builder browser block ID'
+    block_id:
+      type: string
+      label: 'Block ID'
+    category:
+      type: string
+      label: 'Category ID'
+    label:
+      type: label
+      label: 'Label'
+    image_path:
+      type: string
+      label: "Image preview path"
+    image_alt:
+      type: string
+      label: "Image alt text"
+    weight:
+      type: integer
+      label: 'The block weight'
