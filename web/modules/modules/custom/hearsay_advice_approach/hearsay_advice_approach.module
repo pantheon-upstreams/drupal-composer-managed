@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_advice_approach module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_advice_approach_theme()
+{
+    return [
+        'hearsay_advice_approach' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

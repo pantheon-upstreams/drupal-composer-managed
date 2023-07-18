@@ -1,0 +1,103 @@
+<?php
+
+/**
+ * @file
+ * Main module functions for the admin tooltips module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+
+/**
+ * Implements hook_field_widget_third_party_settings_form().
+ */
+function admin_tooltips_field_widget_third_party_settings_form(WidgetInterface $plugin, FieldDefinitionInterface $field_definition, $form_mode, $form, FormStateInterface $form_state) {
+  $plugin_third_party_settings = $plugin->getThirdPartySettings('admin_tooltips');
+
+  $form['admin_tooltip'] = [
+    '#type' => 'details',
+    '#title' => t("Tooltip settings"),
+    '#weight' => -4,
+    '#open' => TRUE,
+  ];
+
+  $form['admin_tooltip']['admin_tooltip_text'] = [
+    '#type' => 'textarea',
+    '#title' => t('Text'),
+    '#description' => t("Text to be used in tooltip of this field"),
+    '#default_value' => isset($plugin_third_party_settings['admin_tooltip']['admin_tooltip_text']) ? $plugin_third_party_settings['admin_tooltip']['admin_tooltip_text'] : '',
+  ];
+
+  $plugin->setThirdPartySetting('admin_tooltips', 'admin_tooltip', $form['admin_tooltip']);
+  return $form;
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function admin_tooltips_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $third_party_settings = $context['widget']->getThirdPartySettings('admin_tooltips', 'admin_tooltip');
+  if (!empty($third_party_settings)) {
+    $element['#attached']['library'][] = 'admin_tooltips/tooltips';
+    if (isset($element['value'])) {
+      if ($element['value']['#type'] == 'datetime' || $element['value']['#type'] == 'datelist') {
+        $element['#admin_tooltip'] = $third_party_settings['admin_tooltip']['admin_tooltip_text'];
+      }
+      else {
+        $element['value']['#admin_tooltip'] = $third_party_settings['admin_tooltip']['admin_tooltip_text'];
+      }
+    }
+    elseif (isset($element['target_id'])) {
+      $element['target_id']['#cf_tooltip'] = $third_party_settings['admin_tooltip']['admin_tooltip_text'];
+    }
+    else {
+      $element['#admin_tooltip'] = $third_party_settings['admin_tooltip']['admin_tooltip_text'];
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_settings_summary_alter().
+ */
+function admin_tooltips_field_widget_settings_summary_alter(&$summary, $context) {
+  $third_party_settings = $context['widget']->getThirdPartySettings('admin_tooltips', 'admin_tooltip');
+
+  if (!empty($third_party_settings)) {
+    if (!empty($third_party_settings['admin_tooltip']['admin_tooltip_text'])) {
+      $text = $third_party_settings['admin_tooltip']['admin_tooltip_text'];
+      $text = strlen($text) > 30 ? substr($text, 0, 30) . "..." : $text;
+      $summary[] = t('Tooltip: @tooltip', ['@tooltip' => $text]);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function admin_tooltips_preprocess_form_element(&$variables) {
+  $element =& $variables['element'];
+  $variables['admin_tooltip'] = isset($element['#admin_tooltip']) ? $element['#admin_tooltip'] : NULL;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function admin_tooltips_theme($existing, $type, $theme, $path) {
+  return [
+    'form_element__admin_tooltips' => [
+      'base hook' => 'form_element',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * This hook adds a new theme suggestion for all radio form elements.
+ */
+function admin_tooltips_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#admin_tooltip'])) {
+    $suggestions[] = 'form_element__admin_tooltips';
+  }
+}

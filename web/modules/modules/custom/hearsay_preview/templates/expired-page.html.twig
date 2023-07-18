@@ -1,0 +1,28 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if label %}
+		<h2{{title_attributes}}>{{ label }}</h2>
+	{% endif %}
+	{{ title_suffix }}
+	{% block content %}
+		<section class="preview d-flex align-items-center" style="background-image: url('{{ items.theme_img }}');">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="error-404-content d-flex flex-column">
+							<h2>Preview has Expired</h2>
+							<h5>This Preview has expired and is no longer available. Please close this page and press the "Preview" button again.</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endblock %}
+</div>

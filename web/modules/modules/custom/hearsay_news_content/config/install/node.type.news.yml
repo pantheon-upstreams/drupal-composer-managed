@@ -1,0 +1,18 @@
+uuid: a4d783c0-22eb-41dd-a3d1-c3d7ff5558b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: News
+type: news
+description: 'This content type will be used for News and Insights page default layout.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

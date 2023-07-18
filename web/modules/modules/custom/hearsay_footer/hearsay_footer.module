@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_footer module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_footer_theme()
+{
+    return [
+        'hearsay_footer' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

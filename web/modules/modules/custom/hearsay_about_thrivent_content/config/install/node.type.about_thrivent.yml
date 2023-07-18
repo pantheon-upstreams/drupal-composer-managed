@@ -1,0 +1,22 @@
+uuid: b0d17c74-9806-4090-b672-0f9c42c19195
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - unique_content_field_validation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+name: 'About Thrivent'
+type: about_thrivent
+description: 'This content type will be used for Solutions page default layout.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

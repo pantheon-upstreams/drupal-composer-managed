@@ -1,0 +1,35 @@
+uuid: daf266dc-84ca-43dc-aa16-aebe390ab32b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_taxo_base_slug
+    - node.type.strong_and_stable
+    - taxonomy.vocabulary.base_slugs
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: node.strong_and_stable.field_ref_taxo_base_slug
+field_name: field_ref_taxo_base_slug
+entity_type: node
+bundle: strong_and_stable
+label: 'Base Slug'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      base_slugs: base_slugs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,28 @@
+advagg_cdn.settings:
+  type: config_entity
+  label: Settings
+  mapping:
+    cdn:
+      type: string
+      label: 'Which CDN to use.'
+    jquery:
+      type: boolean
+      label: 'Whether or not to use a CDN version of jQuery'
+    jquery_version:
+      type: string
+      label: 'jQuery version to use'
+    jquery_ui_css:
+      type: boolean
+      label: 'Whether or not to use a CDN version of jQuery UI CSS files.'
+    jquery_ui_js:
+      type: boolean
+      label: 'Whether or not to use a CDN version of jQuery UI JavaScript files.'
+    jquery_ui_theme:
+      type: string
+      label: 'jQuery UI theme to use.'
+    jquery_ui_version:
+      type: string
+      label: 'jQuery UI version to use.'
+    minified:
+      type: boolean
+      label: 'Whether or not to use minified cdn resources.'

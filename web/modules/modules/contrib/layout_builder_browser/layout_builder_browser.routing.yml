@@ -1,0 +1,82 @@
+layout_builder_browser.add_block:
+  path: '/layout_builder_browser/choose/block/{section_storage_type}/{section_storage}/{delta}/{region}'
+  defaults:
+    _controller: '\Drupal\layout_builder_browser\Controller\BrowserController::browse'
+    _title: 'Choose a block'
+  requirements:
+    _layout_builder_access: 'view'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+layout_builder_browser.admin_blocklisting:
+  path: '/admin/config/content/layout-builder-browser'
+  defaults:
+    _form: '\Drupal\layout_builder_browser\Form\BlockListingForm'
+    _title: 'Layout Builder Browser configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_block.add_form:
+  path: '/admin/config/content/layout-builder-browser/blocks/add'
+  defaults:
+    _entity_form: 'layout_builder_browser_block.add'
+    _title: 'Add block'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_block.edit_form:
+  path: '/admin/config/content/layout-builder-browser/blocks/{layout_builder_browser_block}'
+  defaults:
+    _entity_form: 'layout_builder_browser_block.edit'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_block.delete_form:
+  path: '/admin/config/content/layout-builder-browser/blocks/{layout_builder_browser_block}/delete'
+  defaults:
+    _entity_form: 'layout_builder_browser_block.delete'
+    _title: 'Delete'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_blockcat.add_form:
+  path: '/admin/config/content/layout-builder-browser/categories/add'
+  defaults:
+    _entity_form: 'layout_builder_browser_blockcat.add'
+    _title: 'Add Block Category'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_blockcat.edit_form:
+  path: '/admin/config/content/layout-builder-browser/categories/{layout_builder_browser_blockcat}/edit'
+  defaults:
+    _entity_form: 'layout_builder_browser_blockcat.edit'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_blockcat.delete_form:
+  path: '/admin/config/content/layout-builder-browser/categories/{layout_builder_browser_blockcat}/delete'
+  defaults:
+    _entity_form: 'layout_builder_browser_blockcat.delete'
+    _title: 'Delete'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.layout_builder_browser_blockcat.collection:
+  path: '/admin/config/content/layout-builder-browser/categories'
+  defaults:
+    _entity_list: 'layout_builder_browser_blockcat'
+    _title: 'Block categories'
+  requirements:
+    _permission: 'administer site configuration'
+
+layout_builder_browser.admin_settings:
+  path: '/admin/config/content/layout-builder-browser/settings'
+  defaults:
+    _form: '\Drupal\layout_builder_browser\Form\SettingsForm'
+    _title: 'Layout Builder Browser settings'
+  requirements:
+    _permission: 'administer site configuration'

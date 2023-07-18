@@ -1,0 +1,23 @@
+{
+    "name": "drupal/hierarchical_taxonomy_menu",
+    "description": "Create menus from taxonomy terms.",
+    "type": "drupal-module",
+    "homepage": "https://www.drupal.org/project/hierarchical_taxonomy_menu",
+    "authors": [
+        {
+            "name": "Goran Nikolovski",
+            "email": "goran@gorannikolovski.com",
+            "homepage": "https://gorannikolovski.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/hierarchical_taxonomy_menu",
+        "email": "goran@gorannikolovski.com"
+    },
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "require": {
+        "drupal/core": "^8.6 || ^9"
+    }
+}

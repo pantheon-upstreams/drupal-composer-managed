@@ -1,0 +1,66 @@
+uuid: 5b1de33a-56c4-4871-aac5-a39f209fd414
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.home.field_ref_taxo_base_slug
+    - node.type.home
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          fc79e86b-b87b-4b32-8d2b-e873ccd19363:
+            uuid: fc79e86b-b87b-4b32-8d2b-e873ccd19363
+            region: content
+            configuration:
+              id: 'extra_field_block:node:home:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          f2a6ad33-dde8-4043-bfd1-a5cb5129c973:
+            uuid: f2a6ad33-dde8-4043-bfd1-a5cb5129c973
+            region: content
+            configuration:
+              id: 'field_block:node:home:field_ref_taxo_base_slug'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.home.default
+targetEntityType: node
+bundle: home
+mode: default
+content:
+  field_ref_taxo_base_slug:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

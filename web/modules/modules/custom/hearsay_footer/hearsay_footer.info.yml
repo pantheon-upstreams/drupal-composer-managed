@@ -1,0 +1,5 @@
+name: Hearsay Footer Block
+description: This module provides Footer section on all pages.
+type: module
+core_version_requirement: '^9 || ^10'
+package: Hearsay

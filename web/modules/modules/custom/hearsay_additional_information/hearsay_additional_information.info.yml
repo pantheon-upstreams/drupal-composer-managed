@@ -1,0 +1,5 @@
+name: Hearsay Additional Information Block
+description: This block provides resource additional information section.
+type: module
+core_version_requirement: '^9 || ^10'
+package: Hearsay

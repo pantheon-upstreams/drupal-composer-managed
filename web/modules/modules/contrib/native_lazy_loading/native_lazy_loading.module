@@ -1,0 +1,130 @@
+<?php
+
+use Drupal\image\Plugin\Field\FieldType\ImageItem;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @see \template_preprocess_image()
+ */
+function native_lazy_loading_preprocess_image(&$variables) {
+  // To prevent layout shift, only enable lazy-loading if aspect ratio is sent
+  // to the browser.
+  $attributes = &$variables['attributes'];
+  if (isset($attributes['width'], $attributes['height'])
+    && !empty($attributes['width'])
+    && !empty($attributes['height'])
+    && !isset($attributes['loading'])) {
+    $variables['attributes']['loading'] = 'lazy';
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @see \template_preprocess_image_formatter()
+ */
+function native_lazy_loading_preprocess_image_formatter(&$variables) {
+  if (isset($variables['item'])) {
+    _native_lazy_loading_set_aspect_ratio($variables['image'], $variables['item']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @see \template_preprocess_responsive_image_formatter()
+ */
+function native_lazy_loading_preprocess_responsive_image_formatter(&$variables) {
+  if (isset($variables['item'])) {
+    _native_lazy_loading_set_aspect_ratio($variables['responsive_image'], $variables['item']);
+  }
+}
+
+/**
+ * Adds the image dimensions so that lazy-loading can be enabled with no fear
+ * of a layout shift because the browser knows the aspect ratio.
+ */
+function _native_lazy_loading_set_aspect_ratio(array &$image_render_array, ImageItem $item) {
+  // We do not directly set it in #attributes because changes made by
+  // template_preprocess_image_style() would not be taken into account by
+  // template_preprocess_image().
+  if (
+    !isset($image_render_array['#width'], $image_render_array['#height'])
+    && ($value = $item->getValue())
+    && isset($value['width'], $value['height'])
+  ) {
+    $image_render_array['#width'] = $value['width'];
+    $image_render_array['#height'] = $value['height'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * @see \template_preprocess_responsive_image()
+ */
+function native_lazy_loading_preprocess_responsive_image(&$variables) {
+  // Make sure width and height get passed to the img element.
+  if (!isset($variables['img_element']['#width'], $variables['img_element']['#height'])
+    || empty($variables['img_element']['#width'])
+    || empty($variables['img_element']['#height'])
+  ) {
+    if ((empty($variables['width']) || empty($variables['height']))) {
+      // Try to get the dimensions from the file.
+      $image = Drupal::service('image.factory')->get($variables['uri']);
+      $width = $image->getWidth();
+      $height = $image->getHeight();
+    }
+    else {
+      $width = $variables['width'];
+      $height = $variables['height'];
+    }
+
+    // Ensure we use the aspect ratio of the image style, if applied.
+    /** @var ResponsiveImageStyle $responsive_image_style */
+    if ($responsive_image_style = ResponsiveImageStyle::load($variables['responsive_image_style_id'])) {
+      $fallback_style = $responsive_image_style->getFallbackImageStyle();
+      $dimensions = responsive_image_get_image_dimensions($fallback_style, [
+        'width' => $width,
+        'height' => $height,
+      ], $variables['uri']);
+      $width = $dimensions['width'];
+      $height = $dimensions['height'];
+
+      // Also set aspect ratio on source elements, to handle the art direction
+      // case: when aspect ratio varies for different viewports.
+      // @see https://github.com/whatwg/html/issues/4968#issuecomment-790241902
+      if (count($variables['sources']) > 1) {
+        $breakpoints = array_reverse(Drupal::service('breakpoint.manager')
+          ->getBreakpointsByGroup($responsive_image_style->getBreakpointGroup()));
+        $i = 0;
+        foreach ($responsive_image_style->getKeyedImageStyleMappings() as $breakpoint_id => $multipliers) {
+          if (isset($breakpoints[$breakpoint_id], $variables['sources'][$i])) {
+            /** @var \Drupal\Core\Template\Attribute $source_attributes */
+            $source_attributes = $variables['sources'][$i];
+            // On the same source, all files should have the same aspect ratio,
+            // so we take the first style of the first multiplier.
+            $image_style_mapping = reset($multipliers);
+            $image_style_name = ($image_style_mapping['image_mapping_type'] === 'sizes') ?
+              reset($image_style_mapping['image_mapping']['sizes_image_styles']) :
+              $image_style_mapping['image_mapping'];
+            $dimensions = responsive_image_get_image_dimensions($image_style_name, [
+              'width' => $width,
+              'height' => $height,
+            ], $variables['uri']);
+            $source_attributes->setAttribute('width', $dimensions['width']);
+            $source_attributes->setAttribute('height', $dimensions['height']);
+            $i++;
+          }
+        }
+      }
+    }
+
+    $variables['img_element']['#width'] = $width;
+    $variables['img_element']['#height'] = $height;
+  }
+}
+

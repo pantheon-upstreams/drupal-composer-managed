@@ -1,0 +1,12 @@
+name: 'Hearsay Preview'
+type: module
+description: This module provide complete functionality for Preview mode.
+package: Hearsay
+core_version_requirement: ^9 || ^10
+dependencies:
+  - rest
+  - restui
+  - serialization
+  - basic_auth
+  - jsonapi
+  - hearsay_common

@@ -1,0 +1,27 @@
+uuid: 5f80368a-c30f-45d2-ab15-9f6cdfc78304
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_banner_canonical_name
+    - media.type.banner
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+_core:
+  default_config_hash: ppuc_Gzs67_rJfWFz8nEIJTq2DdAi4Hekns48bN3tgA
+id: media.banner.field_banner_canonical_name
+field_name: field_banner_canonical_name
+entity_type: media
+bundle: banner
+label: 'Banner Canonical Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

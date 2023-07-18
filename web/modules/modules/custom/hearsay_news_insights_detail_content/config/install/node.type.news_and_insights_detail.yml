@@ -1,0 +1,22 @@
+uuid: 43b04d97-2316-4a72-bd37-1c802a304e9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - unique_content_field_validation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+name: 'News and Insights Detail'
+type: news_and_insights_detail
+description: 'This content type will be used for News and Insights Detail page default layout.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

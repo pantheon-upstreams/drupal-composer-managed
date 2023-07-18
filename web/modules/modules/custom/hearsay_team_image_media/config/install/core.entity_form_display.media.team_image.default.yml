@@ -1,0 +1,45 @@
+uuid: 4af3f7fc-c971-4fdf-a1c8-ab9a3d54c0de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.team_image.field_media_image
+    - field.field.media.team_image.field_team_canonical_name
+    - image.style.thumbnail
+    - media.type.team_image
+  module:
+    - image
+id: media.team_image.default
+targetEntityType: media
+bundle: team_image
+mode: default
+content:
+  field_media_image:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_team_canonical_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true

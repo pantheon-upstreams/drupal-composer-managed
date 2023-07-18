@@ -1,0 +1,23 @@
+uuid: caeddad5-5bf6-47aa-8f01-53a73678bc73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_content_type_for_page
+    - taxonomy.vocabulary.hearsay_menu
+id: taxonomy_term.hearsay_menu.field_content_type_for_page
+field_name: field_content_type_for_page
+entity_type: taxonomy_term
+bundle: hearsay_menu
+label: 'Content type for page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

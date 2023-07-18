@@ -1,0 +1,22 @@
+uuid: 9e2e0f75-389f-462a-8f2f-ec3a111ba64f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - unique_content_field_validation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+name: Resources
+type: resources
+description: 'This content type will be used for Resources page default layout.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

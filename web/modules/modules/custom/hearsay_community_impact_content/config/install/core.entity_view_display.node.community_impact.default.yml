@@ -1,0 +1,69 @@
+uuid: c1855df9-bb85-43e6-8724-e5b5d8f5827b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.community_impact.field_ref_taxo_base_slug
+    - node.type.community_impact
+  module:
+    - layout_builder
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          c525b30c-89c4-4909-9f17-398dc9a05cc6:
+            uuid: c525b30c-89c4-4909-9f17-398dc9a05cc6
+            region: content
+            configuration:
+              id: 'extra_field_block:node:community_impact:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          586879a0-45bc-4545-8189-126c5f7f1c4a:
+            uuid: 586879a0-45bc-4545-8189-126c5f7f1c4a
+            region: content
+            configuration:
+              id: 'field_block:node:community_impact:field_ref_taxo_base_slug'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.community_impact.default
+targetEntityType: node
+bundle: community_impact
+mode: default
+content:
+  field_ref_taxo_base_slug:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

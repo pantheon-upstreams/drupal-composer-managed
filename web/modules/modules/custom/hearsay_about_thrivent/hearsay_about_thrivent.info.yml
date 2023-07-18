@@ -1,0 +1,5 @@
+name: Hearsay About Thrivent Block
+description: This block provides About Thrivent section on Homepage, About PAge and About Thrivent Page.
+type: module
+core_version_requirement: '^9 || ^10'
+package: Hearsay

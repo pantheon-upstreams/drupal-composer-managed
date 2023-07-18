@@ -1,0 +1,8 @@
+{
+    "require": {
+        "tubalmartin/cssmin": {
+            "version": "v4.1.1",
+            "url": "https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port/archive/v4.1.1.zip"
+        }
+    }
+}

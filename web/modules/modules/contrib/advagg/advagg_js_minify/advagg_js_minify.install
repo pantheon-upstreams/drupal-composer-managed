@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Handles AdvAgg JS minify installation and upgrade tasks.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_requirements().
+ */
+function advagg_js_minify_requirements($phase) {
+  $config = \Drupal::config('advagg_js_minify.settings');
+  $requirements = [];
+
+  // If not at runtime, return here.
+  if ($phase !== 'runtime') {
+    return $requirements;
+  }
+
+  // Make sure a minifier is being used.
+  if ($config->get('minifier') === 0) {
+    $requirements['advagg_js_minify_not_on'] = [
+      'title' => t('AdvAgg JS Minify'),
+      'severity' => REQUIREMENT_WARNING,
+      'value' => t('AdvAgg JS Minification is disabled.'),
+      'description' => t('Go to the <a href="@settings">AdvAgg Minify JavaScript settings page</a> and select a minifier, or go to the <a href="@modules">modules page</a> and disable the "AdvAgg Minify Javascript" module.', [
+        '@settings' => Url::fromRoute('advagg_js_minify.settings')->toString(),
+        '@modules' => Url::fromRoute('system.modules_list', [], [
+          'fragment' => 'edit-modules-advanced-cssjs-aggregation',
+        ])->toString(),
+      ]),
+    ];
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Clear some caches.
+ */
+function advagg_js_minify_install() {
+  \Drupal::cache('render')->invalidateAll();
+  \Drupal::cache('advagg')->invalidateAll();
+}

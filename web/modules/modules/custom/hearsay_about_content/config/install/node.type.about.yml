@@ -1,0 +1,18 @@
+uuid: fe2d3d44-8093-4bba-a2b8-7eb09a19a610
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: About
+type: about
+description: 'This content type will be used for About page default layout.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

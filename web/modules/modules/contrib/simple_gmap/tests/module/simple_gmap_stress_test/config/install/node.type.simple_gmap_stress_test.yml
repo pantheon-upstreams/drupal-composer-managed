@@ -1,0 +1,10 @@
+uuid: 39d6d049-a8c5-4f7a-b2da-92ad2661f2ee
+langcode: en
+status: true
+name: 'simple gmap stress test'
+type: simple_gmap_stress_test
+description: 'A series of field configured to utilize the simple gmap formatter. Each field test a different aspect of the formatter.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

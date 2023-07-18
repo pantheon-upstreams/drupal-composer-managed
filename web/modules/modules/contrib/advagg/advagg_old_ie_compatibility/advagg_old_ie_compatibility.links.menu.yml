@@ -1,0 +1,5 @@
+advagg_old_ie_compatibility.settings:
+  title: 'Old IE Compatibility'
+  parent: advagg.settings
+  description: 'AdvAgg Old IE Compatibility.'
+  route_name: advagg_old_ie_compatibility.settings

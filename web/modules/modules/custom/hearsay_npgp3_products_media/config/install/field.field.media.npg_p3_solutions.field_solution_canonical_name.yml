@@ -1,0 +1,25 @@
+uuid: 0afd2d49-5ae3-4a2d-bf6b-f88831351af3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_solution_canonical_name
+    - media.type.npg_p3_solutions
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.npg_p3_solutions.field_solution_canonical_name
+field_name: field_solution_canonical_name
+entity_type: media
+bundle: npg_p3_solutions
+label: 'Solution Canonical Name'
+description: 'Use this field to add Solution Canonical Name'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

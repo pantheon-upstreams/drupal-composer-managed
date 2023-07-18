@@ -1,0 +1,154 @@
+<?php
+
+/**
+ * @file
+ * Defines Drupal hooks for imce module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\WidgetInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\imce\ImceFileField;
+use Drupal\imce\Imce;
+use Drupal\imce\Controller\ImceHelpController;
+
+/**
+ * Implements hook_theme().
+ */
+function imce_theme() {
+  return [
+    'imce_page' => [
+      'render element' => 'page',
+    ],
+    'imce_help' => [
+      'variables' => [
+        'videos' => [],
+        'markup' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_file_download().
+ */
+function imce_file_download($uri) {
+  if (Imce::accessFileUri($uri, \Drupal::currentUser())) {
+    return [
+      'Content-type' => \Drupal::service('file.mime_type.guesser')->guessMimeType($uri),
+      'Content-Length' => filesize($uri),
+    ];
+  }
+}
+
+/**
+ * Implements hook_field_widget_third_party_settings_form().
+ *
+ * Returns imce settings form for supported file widgets.
+ */
+function imce_field_widget_third_party_settings_form(WidgetInterface $widget, FieldDefinitionInterface $field_definition, $form_mode, $form, FormStateInterface $form_state) {
+  return ImceFileField::widgetSettingsForm($widget, $field_definition, $form_mode, $form, $form_state);
+}
+
+/**
+ * Implements hook_field_widget_settings_summary_alter().
+ *
+ * Sets imce settings summary for supported file widgets.
+ */
+function imce_field_widget_settings_summary_alter(&$summary, $context) {
+  return ImceFileField::alterWidgetSettingsSummary($summary, $context);
+}
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ *
+ * Alters widget forms that have imce enabled.
+ */
+function imce_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
+  if ($context['widget']->getThirdPartySetting('imce', 'enabled')) {
+    $scheme = $context['items'][$context['delta']]->getFieldDefinition()->getSetting('uri_scheme');
+    if (Imce::access(\Drupal::currentUser(), $scheme)) {
+      $element['#scheme'] = $scheme;
+      $class = 'Drupal\imce\ImceFileField';
+      $element['#process'][] = [$class, 'processWidget'];
+      // Make sure default value callbacks are added.
+      if (empty($element['#file_value_callbacks'])) {
+        $info = \Drupal::service('element_info')->getInfo($element['#type']);
+        if (!empty($info['#file_value_callbacks'])) {
+          $element['#file_value_callbacks'] = $info['#file_value_callbacks'];
+        }
+      }
+      $element['#file_value_callbacks'][] = [$class, 'setWidgetValue'];
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for editor_link_dialog form.
+ */
+function imce_form_editor_link_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
+  imce_process_url_element($form['attributes']['href'], 'link');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for editor_image_dialog form.
+ */
+function imce_form_editor_image_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
+  imce_process_url_element($form['attributes']['src'], 'image');
+}
+
+/**
+ * Integrates Imce into an URL element.
+ */
+function imce_process_url_element(&$element, $type = 'link') {
+  if ($element && Imce::access()) {
+    $element['#attributes']['class'][] = 'imce-url-input';
+    $element['#attributes']['data-imce-type'] = $type;
+    $element['#attached']['library'][] = 'imce/drupal.imce.input';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for filter_format_form.
+ */
+function imce_form_filter_format_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // CKEditor 4.
+  if (isset($form['editor']['settings']['subform']['plugins']['drupalimage']['image_upload']['status'])) {
+    $desc = &$form['editor']['settings']['subform']['plugins']['drupalimage']['image_upload']['status']['#description'];
+    $str = t('Disable to use IMCE file browser.');
+    $desc = $desc ? $desc . ' ' . $str : $str;
+  }
+  // CKEditor 5.
+  if (isset($form['editor']['settings']['subform']['plugins']['ckeditor5_image']['status'])) {
+    $desc = &$form['editor']['settings']['subform']['plugins']['ckeditor5_image']['status']['#description'];
+    $str = t('Disable to use IMCE file browser.');
+    $desc = $desc ? $desc . ' ' . $str : $str;
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function imce_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'help.page.imce') {
+    return ImceHelpController::htmlHelp();
+  }
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function imce_editor_js_settings_alter(&$settings) {
+  if (!empty($settings['editor']['formats'])) {
+    foreach ($settings['editor']['formats'] as &$conf) {
+      if ($conf['editor'] === 'ckeditor5') {
+        // Disable ImceSelector integration if the user has no Imce access.
+        $index = array_search('imce.ImceSelector', $conf['editorSettings']['plugins']);
+        if ($index !== FALSE && !Imce::access()) {
+          array_splice($conf['editorSettings']['plugins'], $index, 1);
+        }
+      }
+    }
+  }
+}

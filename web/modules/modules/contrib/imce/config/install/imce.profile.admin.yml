@@ -1,0 +1,22 @@
+# Administrator profile
+id: admin
+label: 'Admin profile'
+description: 'Configuration for site administrators'
+conf:
+  usertab: false
+  extensions: '*'
+  maxsize: 0
+  quota: 0
+  maxwidth: 0
+  maxheight: 0
+  replace: 0
+  thumbnail_style: ''
+  thumbnail_grid_style: false
+  ignore_usage: false
+  url_alter: false
+  folders:
+    -
+      path: '.'
+      permissions:
+        all: true
+langcode: en

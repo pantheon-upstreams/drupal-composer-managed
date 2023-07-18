@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_privacy_policy module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_privacy_policy_theme()
+{
+    return [
+        'hearsay_privacy_policy' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

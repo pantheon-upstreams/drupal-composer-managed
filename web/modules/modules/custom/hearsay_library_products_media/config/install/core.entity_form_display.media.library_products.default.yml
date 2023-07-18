@@ -1,0 +1,84 @@
+uuid: 7190b4af-b770-4867-8b62-b9648fd4a1f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.library_products.field_alt_text
+    - field.field.media.library_products.field_media_image
+    - field.field.media.library_products.field_product_canonical_name
+    - field.field.media.library_products.field_product_description
+    - field.field.media.library_products.field_product_link
+    - field.field.media.library_products.field_product_title
+    - image.style.thumbnail
+    - media.type.library_products
+  module:
+    - image
+    - link
+_core:
+  default_config_hash: CYY4ZAAu2dfIIWxIaerMRUrdmhFNW9O7shGgEBm4nNQ
+id: media.library_products.default
+targetEntityType: media
+bundle: library_products
+mode: default
+content:
+  field_alt_text:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_image:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_product_canonical_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_description:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_link:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_product_title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true

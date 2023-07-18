@@ -1,0 +1,48 @@
+uuid: a2542826-6953-4d91-b1f8-74824d2844b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.hearsay_menu.field_content_type_for_page
+    - field.field.taxonomy_term.hearsay_menu.field_path_url
+    - field.field.taxonomy_term.hearsay_menu.field_theme_ids
+    - taxonomy.vocabulary.hearsay_menu
+  module:
+    - text
+id: taxonomy_term.hearsay_menu.default
+targetEntityType: taxonomy_term
+bundle: hearsay_menu
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_content_type_for_page:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_path_url:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_theme_ids:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

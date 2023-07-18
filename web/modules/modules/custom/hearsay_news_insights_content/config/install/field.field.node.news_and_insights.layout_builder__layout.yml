@@ -1,0 +1,21 @@
+uuid: bd8d3494-de58-47e0-b46e-9d0de36e534a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.news_and_insights
+  module:
+    - layout_builder
+id: node.news_and_insights.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: news_and_insights
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

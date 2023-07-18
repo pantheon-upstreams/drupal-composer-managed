@@ -1,0 +1,15 @@
+css_adjust_sort_browsers: false
+css_adjust_sort_external: false
+css_defer: 0
+css_defer_admin: false
+css_defer_external: true
+css_defer_js_code: 0
+css_preprocess: false
+css_translate: false
+js_adjust_sort_browsers: false
+js_adjust_sort_external: false
+js_async: false
+js_async_in_header: false
+js_defer: 0
+js_preprocess: false
+prefetch: false

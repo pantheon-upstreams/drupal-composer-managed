@@ -1,0 +1,14 @@
+name: Layout Builder Operation Link
+type: module
+description: Adds a Layout operation link for Layout Builder-enabled content.
+package: Layout Builder
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:layout_builder
+test_dependencies:
+  - layout_builder_at:layout_builder_at
+
+# Information added by Drupal.org packaging script on 2022-09-14
+version: '2.1.0'
+project: 'layout_builder_operation_link'
+datestamp: 1663176797

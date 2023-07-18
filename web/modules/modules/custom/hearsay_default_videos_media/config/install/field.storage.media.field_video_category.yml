@@ -1,0 +1,33 @@
+uuid: 68a41fa2-38ca-4f53-9125-fb685556e184
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_video_category
+field_name: field_video_category
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: about_thrivent
+      label: 'About Thrivent'
+    -
+      value: our_advice_approach
+      label: 'Our Advice Approach'
+    -
+      value: membership_benefits
+      label: 'Thrivent Membership Benefits'
+    -
+      value: strong_and_stable
+      label: 'Strong and Stable'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

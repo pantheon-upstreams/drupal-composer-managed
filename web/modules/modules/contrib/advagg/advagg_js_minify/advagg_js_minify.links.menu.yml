@@ -1,0 +1,5 @@
+advagg_js_minify.settings:
+  title: 'JavaScript Minification'
+  parent: advagg.settings
+  description: 'AdvAgg JavaScript minification settings.'
+  route_name: advagg_js_minify.settings

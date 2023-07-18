@@ -1,0 +1,11 @@
+name: 'Media Library Theme Reset Test Content Type'
+type: module
+description: 'Test content type containing a media field'
+package: Testing
+dependencies:
+  - drupal:media_library_theme_reset
+
+# Information added by Drupal.org packaging script on 2022-12-09
+version: '8.x-1.5'
+project: 'media_library_theme_reset'
+datestamp: 1670618182

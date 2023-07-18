@@ -1,0 +1,5 @@
+name: Hearsay Site Logo Media Type
+description: The module provides the functionality to create Site Logo Media Type structure.
+type: module
+core_version_requirement: ^9 || ^10
+package: Hearsay Media

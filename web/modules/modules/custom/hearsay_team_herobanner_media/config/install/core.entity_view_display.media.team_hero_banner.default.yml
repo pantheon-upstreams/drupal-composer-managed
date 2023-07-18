@@ -1,0 +1,40 @@
+uuid: f08bb480-eb09-4478-92e2-d8937dc82cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.team_hero_banner.field_hero_banner_canonical_name
+    - field.field.media.team_hero_banner.field_media_image
+    - image.style.large
+    - media.type.team_hero_banner
+  module:
+    - image
+id: media.team_hero_banner.default
+targetEntityType: media
+bundle: team_hero_banner
+mode: default
+content:
+  field_hero_banner_canonical_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

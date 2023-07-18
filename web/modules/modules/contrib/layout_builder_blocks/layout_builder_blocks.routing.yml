@@ -1,0 +1,7 @@
+layout_builder_blocks.styles:
+  path: '/admin/config/layout-builder-blocks/styles'
+  defaults:
+    _form: '\Drupal\layout_builder_blocks\Form\StylesForm'
+    _title: 'Layout Builder Blocks Styles'
+  requirements:
+    _permission: 'configure bootstrap layout builder'

@@ -1,0 +1,7 @@
+advagg_js_minify.settings:
+  path: '/admin/config/development/performance/advagg/js-minify'
+  defaults:
+    _form: 'Drupal\advagg_js_minify\Form\SettingsForm'
+    _title: 'AdvAgg: JS Minification'
+  requirements:
+    _permission: 'administer site configuration'

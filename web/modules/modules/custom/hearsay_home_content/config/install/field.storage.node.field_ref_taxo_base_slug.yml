@@ -1,0 +1,20 @@
+uuid: d2358f03-ce53-492b-a382-cbd0acd0b726
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_ref_taxo_base_slug
+field_name: field_ref_taxo_base_slug
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

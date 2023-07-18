@@ -1,0 +1,13 @@
+services:
+  minifyhtml_exit:
+    class: Drupal\minifyhtml\EventSubscriber\MinifyHTMLExit
+    arguments:
+      [
+        '@config.factory',
+        '@datetime.time',
+        '@logger.factory',
+        '@path.matcher',
+        '@path.current',
+      ]
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,33 @@
+uuid: 8c39fecd-8bf1-4ddc-8518-edfd43ad38dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_banner_themes
+field_name: field_banner_themes
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: npg
+      label: NPG
+    -
+      value: p3
+      label: P3
+    -
+      value: individual
+      label: 'Library Individual'
+    -
+      value: team
+      label: 'Library Team'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

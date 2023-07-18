@@ -1,0 +1,7 @@
+name: Hearsay Home Content Type
+description: The module provides the functionality to create Home content type structure.
+type: module
+core_version_requirement: ^9 || ^10
+package: Hearsay Content
+dependencies:
+  - hearsay_base_slug_taxonomy

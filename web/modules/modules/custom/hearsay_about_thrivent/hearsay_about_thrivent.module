@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_about_thrivent module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_about_thrivent_theme()
+{
+    return [
+        'hearsay_about_thrivent' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

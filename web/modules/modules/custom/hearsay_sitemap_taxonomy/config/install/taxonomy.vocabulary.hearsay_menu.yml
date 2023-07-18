@@ -1,0 +1,8 @@
+uuid: bc0247d0-963e-4692-8cd0-de8911cf7f28
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site Map'
+vid: hearsay_menu
+description: 'This taxonomy is used for showing primary menu.'
+weight: 0

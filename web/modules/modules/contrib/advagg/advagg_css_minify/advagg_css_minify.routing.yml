@@ -1,0 +1,7 @@
+advagg_css_minify.settings:
+  path: '/admin/config/development/performance/advagg/css-minify'
+  defaults:
+    _form: 'Drupal\advagg_css_minify\Form\SettingsForm'
+    _title: 'AdvAgg: CSS Minification'
+  requirements:
+    _permission: 'administer site configuration'

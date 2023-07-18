@@ -1,0 +1,25 @@
+uuid: e9b2a109-1cd8-43c9-ae47-77309d6aa4a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_solution_title
+    - media.type.npg_p3_solutions
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.npg_p3_solutions.field_solution_title
+field_name: field_solution_title
+entity_type: media
+bundle: npg_p3_solutions
+label: 'Solution Title'
+description: 'Use this field to add Solution Title'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_work_with_you module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_work_with_you_theme()
+{
+    return [
+        'hearsay_work_with_you' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

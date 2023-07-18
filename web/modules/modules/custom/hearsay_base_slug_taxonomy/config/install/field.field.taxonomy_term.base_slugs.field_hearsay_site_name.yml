@@ -1,0 +1,19 @@
+uuid: 6fab3938-b96d-49e0-90d1-690a01f14f09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_hearsay_site_name
+    - taxonomy.vocabulary.base_slugs
+id: taxonomy_term.base_slugs.field_hearsay_site_name
+field_name: field_hearsay_site_name
+entity_type: taxonomy_term
+bundle: base_slugs
+label: 'Site Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

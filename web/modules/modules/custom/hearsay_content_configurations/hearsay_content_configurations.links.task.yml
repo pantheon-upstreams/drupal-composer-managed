@@ -1,0 +1,29 @@
+hearsay_content_configurations.settings_form.tab:
+  route_name: hearsay_content_configurations.settings_form
+  base_route: hearsay_content_configurations.settings_form
+  title: 'Hearsay Content Configurations'
+  weight: 0
+
+hearsay_content_configurations.library_team_settings_form.tab:
+  route_name: hearsay_content_configurations.library_team_settings_form
+  base_route: hearsay_content_configurations.library_team_settings_form
+  title: 'Library Team Content Configurations'
+  weight: 0
+
+hearsay_content_configurations.library_individual_settings_form.tab:
+  route_name: hearsay_content_configurations.library_individual_settings_form
+  base_route: hearsay_content_configurations.library_individual_settings_form
+  title: 'Library Individual Content Configurations'
+  weight: 0
+
+hearsay_content_configurations.npg_settings_form.tab:
+  route_name: hearsay_content_configurations.npg_settings_form
+  base_route: hearsay_content_configurations.npg_settings_form
+  title: 'NPG Content Configurations'
+  weight: 0
+
+hearsay_content_configurations.p3_settings_form.tab:
+  route_name: hearsay_content_configurations.p3_settings_form
+  base_route: hearsay_content_configurations.p3_settings_form
+  title: 'P3 Content Configurations'
+  weight: 0

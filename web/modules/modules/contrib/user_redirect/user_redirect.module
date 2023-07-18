@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Module file for the User Redirect module.
+ */
+
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function user_redirect_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the user_redirect module.
+    case 'help.page.user_redirect':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module provides ability:') . '</p>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Redirect user to internal/external URL on Log in') . '</li>';
+      $output .= '<li>' . t('Redirect user to internal/external URL on Log out') . '</li>';
+      $output .= '</ul><br>';
+      $output .= t('In case of multiple assigned roles to an individual user, priority decide user redirection.<br>For example: You set roles ordering as:<br>+ Administrator<br>+ Architect<br>it means that when some user log in/log out, module will pick up the Redirect URL path of Administrator.');
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function user_redirect_user_login(AccountInterface $account) {
+    \Drupal::service('user_redirect.service')->setLoginRedirection($account);
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function user_redirect_user_logout(AccountInterface $account) {
+  \Drupal::service('user_redirect.service')->setLogoutRedirection($account);
+}

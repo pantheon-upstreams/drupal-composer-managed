@@ -1,0 +1,25 @@
+uuid: 67019965-4dc9-48f2-9924-250b162e1545
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_alt_text
+    - media.type.library_products
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.library_products.field_alt_text
+field_name: field_alt_text
+entity_type: media
+bundle: library_products
+label: 'Alt Text'
+description: 'Use this field to add the Icon Alt Text'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

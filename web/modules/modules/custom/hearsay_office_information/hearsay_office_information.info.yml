@@ -1,0 +1,5 @@
+name: Hearsay Office Information Block
+description: This block provides Office Information section on Home Page.
+type: module
+core_version_requirement: '^9 || ^10'
+package: Hearsay

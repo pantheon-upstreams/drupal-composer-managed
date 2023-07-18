@@ -1,0 +1,5 @@
+name: Hearsay Additional Information Content Type
+description: The module provides the functionality to create Additional Information content type structure.
+type: module
+core_version_requirement: ^9 || ^10
+package: Hearsay Content

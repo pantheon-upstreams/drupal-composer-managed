@@ -1,0 +1,5 @@
+name: Hearsay Our Advice Approach Block
+description: This block provides our advice approach section.
+type: module
+core_version_requirement: '^9 || ^10'
+package: Hearsay

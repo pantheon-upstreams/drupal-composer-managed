@@ -1,0 +1,25 @@
+uuid: 90e7cf43-85d0-47e8-bb03-d04ce9ce2c19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_alt_text
+    - media.type.npg_p3_solutions
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.npg_p3_solutions.field_alt_text
+field_name: field_alt_text
+entity_type: media
+bundle: npg_p3_solutions
+label: 'Alt Text'
+description: 'Use this field to add Alt Text'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

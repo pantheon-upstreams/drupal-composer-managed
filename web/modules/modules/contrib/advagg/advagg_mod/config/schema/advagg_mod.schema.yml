@@ -1,0 +1,58 @@
+advagg_mod.settings:
+  type: config_entity
+  label: Settings
+  mapping:
+    css_adjust_sort_browsers:
+      type: boolean
+      label: 'Default value to adjust the sorting of browser conditional CSS.'
+    css_adjust_sort_external:
+      type: boolean
+      label: 'Default value to adjust the sorting of external CSS.'
+    css_defer:
+      type: integer
+      label: 'Default value to use JavaScript to defer CSS loading.'
+    css_defer_admin:
+      type: boolean
+      label: 'Whether to defer loading of CSS on the admin theme.'
+    css_defer_external:
+      type: boolean
+      label: 'Whether to also defer loading of external stylesheets.'
+    css_defer_js_code:
+      type: integer
+      label: 'Default value of the inclusion method for the loadCSS code.'
+    css_preprocess:
+      type: boolean
+      label: 'Default value to turn on preprocessing for all CSS files.'
+    css_translate:
+      type: boolean
+      label: 'Default value to translate the content attributes of CSS files.'
+    js_adjust_sort_external:
+      type: boolean
+      label: 'Default value to adjust the sorting of external JavaScript'
+    js_adjust_sort_browsers:
+      type: boolean
+      label: 'Default value to adjust the sorting of browser conditional JavaScript.'
+    js_async:
+      type: boolean
+      label: 'Default value to have async on all JS script tags.'
+    js_async_in_header:
+      type: boolean
+      label: 'Default value to move async js to the header.'
+    js_defer:
+      type: integer
+      label: 'Default value to add the defer tag to all script tags.'
+    js_footer:
+      type: integer
+      label: 'Default value to move all JS to the footer.'
+    js_preprocess:
+      type: boolean
+      label: 'Default value to turn on preprocessing for all JavaScript files.'
+    js_remove_console_log:
+      type: boolean
+      label: 'Remove console.log() calls from JavaScript files.'
+    prefetch:
+      type: boolean
+      label: 'Default value to use the prefetch tag for certain domains.'
+    unified_multisite_dir:
+      type: string
+      label: 'Use one css/js directory for a multi-site.'

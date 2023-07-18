@@ -1,0 +1,19 @@
+uuid: 556617ef-4016-4c5d-9f44-b979c1b376b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_theme_ids
+    - taxonomy.vocabulary.hearsay_menu
+id: taxonomy_term.hearsay_menu.field_theme_ids
+field_name: field_theme_ids
+entity_type: taxonomy_term
+bundle: hearsay_menu
+label: 'Theme IDs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

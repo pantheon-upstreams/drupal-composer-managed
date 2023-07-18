@@ -1,0 +1,5 @@
+services:
+  hearsay_trailing_slash.path_processor_trailing_slash:
+    class: Drupal\hearsay_trailing_slash\PathProcessor\TrailingSlashPathProcessor
+    tags:
+      - { name: path_processor_outbound }

@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Section Library install file.
+ */
+
+/**
+ * Restricted permission on Section Library View.
+ */
+function section_library_update_9001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('views.view.section_library');
+  $config_name = 'display.default.display_options.access.options.perm';
+  if ($config->get($config_name) === 'access content') {
+    $config->set($config_name, 'view section library templates');
+    $config->save(TRUE);
+  }
+}

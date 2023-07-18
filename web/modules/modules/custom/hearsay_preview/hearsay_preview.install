@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Hearsay preview schema.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function hearsay_preview_schema()
+{
+    $schema['deletion_preview_log'] = array(
+        'description' => 'A table to store deleted preview data',
+        'fields' => array(
+            'id' => array(
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'slug' => array(
+                'type' => 'varchar',
+                'length' => '255',
+                'not null' => TRUE,
+            ),
+            'CreatedTime' => array(
+                'type' => 'varchar',
+                'length' => '255',
+                'not null' => TRUE,
+            ),
+            'ExpiredTime' => array(
+                'type' => 'varchar',
+                'length' => '255',
+                'not null' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

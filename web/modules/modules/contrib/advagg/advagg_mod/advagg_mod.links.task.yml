@@ -1,0 +1,4 @@
+advagg_mod.settings:
+  title: 'Modifications'
+  route_name: advagg_mod.settings
+  parent_id: advagg.settings

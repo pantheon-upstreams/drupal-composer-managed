@@ -1,0 +1,49 @@
+hearsay_content_configurations.settings_form:
+  path: '/admin/config/hearsay_content_config/settings'
+  defaults:
+    _form: '\Drupal\hearsay_content_configurations\Form\HsAdminContentSettings'
+    _title: 'Hearsay Content Configurations'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+hearsay_content_configurations.library_team_settings_form:
+  path: '/admin/config/hearsay_content_config/library_team_settings'
+  defaults:
+    _form: '\Drupal\hearsay_content_configurations\Form\HsLibraryTeamSettings'
+    _title: 'Library Team Content Configurations'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+hearsay_content_configurations.library_individual_settings_form:
+  path: '/admin/config/hearsay_content_config/library_individual_settings'
+  defaults:
+    _form: '\Drupal\hearsay_content_configurations\Form\HsLibraryIndividualSettings'
+    _title: 'Library Individual Content Configurations'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+hearsay_content_configurations.npg_settings_form:
+  path: '/admin/config/hearsay_content_config/npg_settings'
+  defaults:
+    _form: '\Drupal\hearsay_content_configurations\Form\HsNPGSettings'
+    _title: 'NPG Content Configurations'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+hearsay_content_configurations.p3_settings_form:
+  path: '/admin/config/hearsay_content_config/p3_settings'
+  defaults:
+    _form: '\Drupal\hearsay_content_configurations\Form\HsP3Settings'
+    _title: 'P3 Content Configurations'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

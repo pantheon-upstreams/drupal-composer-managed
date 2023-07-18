@@ -1,0 +1,25 @@
+uuid: 2da3436a-0fd5-431c-9e7a-d46fdc488ed6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_hero_banner_canonical_name
+    - media.type.team_hero_banner
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.team_hero_banner.field_hero_banner_canonical_name
+field_name: field_hero_banner_canonical_name
+entity_type: media
+bundle: team_hero_banner
+label: 'Hero Banner Canonical Name'
+description: 'Use this field to add Hero Banner Canonical Name'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

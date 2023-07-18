@@ -1,0 +1,7 @@
+hearsay_preview.previewapiexpired:
+  path: '/expired_page'
+  defaults:
+    _controller: '\Drupal\hearsay_preview\Controller\DeletePreview::pageExpired'
+    _title: 'Preview Expired'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Handles Advanced Aggregation installation and upgrade tasks.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function advagg_cdn_requirements($phase) {
+  $requirements = [];
+  // Ensure translations don't break at install time.
+  $t = 't';
+
+  // If not at runtime, return here.
+  if ($phase !== 'runtime') {
+    return $requirements;
+  }
+
+  $description = '';
+  if (\Drupal::config('advagg.settings')->get('cache_level') < 0) {
+    $description = $t('Will be using the unminified version due to AdvAgg being in Development mode.');
+  }
+
+  $requirements['advagg_cdn'] = [
+    'title' => $t('AdvAgg CDN'),
+    'severity' => REQUIREMENT_OK,
+    'value' => $t('OK'),
+    'description' => $t('Selected libraries should be coming from the CDN.') . ' ' . $description,
+  ];
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Clear some caches.
+ */
+function advagg_cdn_minify_install() {
+  \Drupal::cache('render')->invalidateAll();
+  \Drupal::cache('advagg')->invalidateAll();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update selected jQuery/jQuery UI versions to latest used in Drupal core.
+ */
+function advagg_cdn_update_8300() {
+  /** @var \Drupal\Core\Config\Config $config */
+  $config = \Drupal::configFactory()->getEditable('advagg_cdn.settings');
+  $config
+    ->set('jquery_version', '3.2.1')
+    ->set('jquery_ui_version', '1.12.1')
+    ->save();
+}

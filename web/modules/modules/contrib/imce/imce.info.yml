@@ -1,0 +1,14 @@
+name: Imce File Manager
+type: module
+description: Provides a file manager supporting personal folders.
+package: Media
+core_version_requirement: ^9.3 || ^10
+configure: imce.admin
+
+test_dependencies:
+  - ckeditor:ckeditor
+
+# Information added by Drupal.org packaging script on 2023-05-13
+version: '3.0.8'
+project: 'imce'
+datestamp: 1683975054

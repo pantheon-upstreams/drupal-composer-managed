@@ -1,0 +1,12 @@
+name: 'Simple Menu Permissions'
+type: module
+description: 'Defines permissions for each menu. Such as the edit and delete permission. Also defines a permission to create new menus.'
+core_version_requirement: ^8 || ^9 || ^10
+package: 'Administration'
+dependencies:
+  - drupal:menu_ui
+
+# Information added by Drupal.org packaging script on 2023-02-04
+version: '2.0.0'
+project: 'simple_menu_permissions'
+datestamp: 1675522197

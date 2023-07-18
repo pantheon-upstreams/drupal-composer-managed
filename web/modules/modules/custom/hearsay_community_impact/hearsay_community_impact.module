@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_community_impact module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_community_impact_theme()
+{
+    return [
+        'hearsay_community_impact' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

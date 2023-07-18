@@ -1,0 +1,29 @@
+uuid: 72753b8c-5640-4dbf-a99e-3e40f9044502
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_taxo_base_slug
+    - node.type.events
+    - taxonomy.vocabulary.base_slugs
+id: node.events.field_ref_taxo_base_slug
+field_name: field_ref_taxo_base_slug
+entity_type: node
+bundle: events
+label: 'Base Slug'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      base_slugs: base_slugs
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

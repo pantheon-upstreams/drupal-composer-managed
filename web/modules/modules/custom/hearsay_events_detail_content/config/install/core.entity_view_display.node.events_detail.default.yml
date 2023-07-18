@@ -1,0 +1,66 @@
+uuid: 5c53bb01-cd17-44fd-a5eb-5d9787bc3b73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.events_detail.field_ref_taxo_base_slug
+    - node.type.events_detail
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d2070d7c-cad2-4145-8740-7dbe85daa94d:
+            uuid: d2070d7c-cad2-4145-8740-7dbe85daa94d
+            region: content
+            configuration:
+              id: 'extra_field_block:node:events_detail:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          b9cbae61-7001-412b-8159-ed8139cac38f:
+            uuid: b9cbae61-7001-412b-8159-ed8139cac38f
+            region: content
+            configuration:
+              id: 'field_block:node:events_detail:field_ref_taxo_base_slug'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+id: node.events_detail.default
+targetEntityType: node
+bundle: events_detail
+mode: default
+content:
+  field_ref_taxo_base_slug:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

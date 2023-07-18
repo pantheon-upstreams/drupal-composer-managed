@@ -1,0 +1,6 @@
+hearsay_config.settings_form:
+  title: 'Hearsay Platform Settings'
+  route_name: hearsay_config.settings_form
+  description: 'Hearsay Platform Settings'
+  parent: system.admin_config
+  weight: -99

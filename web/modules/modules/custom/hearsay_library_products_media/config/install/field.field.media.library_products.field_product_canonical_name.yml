@@ -1,0 +1,25 @@
+uuid: 440c9128-02b6-4af0-bb78-502b4b762b50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_product_canonical_name
+    - media.type.library_products
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.library_products.field_product_canonical_name
+field_name: field_product_canonical_name
+entity_type: media
+bundle: library_products
+label: 'Product Canonical Name'
+description: 'Use this field to add Product Canonical Name'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

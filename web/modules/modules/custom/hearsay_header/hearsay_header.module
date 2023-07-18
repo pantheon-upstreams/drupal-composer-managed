@@ -1,0 +1,92 @@
+<?php
+
+/**
+ * @file
+ * Contains hearsay_header.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\hearsay_client_customization\Controller\HSHeaderController;
+
+/**
+ * Implements hook_help().
+ */
+function hearsay_header_help($route_name, RouteMatchInterface $route_match)
+{
+    if ($route_name === 'help.page.hearsay_header_menu') {
+        $readme_file = file_exists(__DIR__ . '/README.md') ? __DIR__ . '/README.md' : __DIR__ . '/README.txt';
+        if (!file_exists($readme_file)) {
+            return null;
+        }
+        $text = file_get_contents($readme_file);
+        if ($text && !\Drupal::moduleHandler()->moduleExists('markdown')) {
+            return '<pre>' . $text . '</pre>';
+        }
+        else {
+            // Use the Markdown filter to render the README.
+            $filter_manager = \Drupal::service('plugin.manager.filter');
+            $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+            $config = ['settings' => $settings];
+            $filter = $filter_manager->createInstance('markdown', $config);
+            return $filter->process($text, 'en');
+        }
+    }
+    return null;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_header_theme($existing, $type, $theme, $path)
+{
+
+    $hearsayHeader = new HSHeaderController();
+    $commonVariables = $hearsayHeader->defineThemeVariablesForHeader();
+    $themeVariables = [];
+
+    // Build the variables array for 'hearsay_header_menu' theme
+    $themeVariables['hearsay_header_menu'] = [
+        'variables' => $commonVariables,
+    ];
+
+    return $themeVariables;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function hearsay_header_preprocess_block(&$variables)
+{
+    if ($variables['plugin_id'] == 'hearsay_header_menu' 
+        && $variables['configuration']['label_display'] == 'visible' 
+        && $variables['configuration']['dynamic_block_title']
+    ) {
+        $term = \Drupal::routeMatch()
+        ->getParameter('taxonomy_term');
+
+        if (!$term) {
+            return null;
+        }
+
+        $langcode = \Drupal::languageManager()
+            ->getCurrentLanguage()
+            ->getId();
+
+        $translation_languages = $term->getTranslationLanguages();
+        if (isset($translation_languages[$langcode])) {
+            $term = $term->getTranslation($langcode);
+        }
+
+        $variables['label'] = $term->getName();
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function hearsay_header_theme_suggestions_hearsay_header(array $variables)
+{
+    if (isset($variables['vocabulary'])) {
+        return ['hearsay_header_menu__' . $variables['vocabulary']];
+    }
+}

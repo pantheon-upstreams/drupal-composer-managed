@@ -1,0 +1,10 @@
+name: 'Hearsay Common'
+description: 'Get Common data in other modules'
+type: module
+core_version_requirement: '^9 || ^10'
+package: Hearsay
+dependencies:
+  - hearsay_config
+  - hearsay_client_customization
+  - hearsay_automation_process
+  - hearsay_preview

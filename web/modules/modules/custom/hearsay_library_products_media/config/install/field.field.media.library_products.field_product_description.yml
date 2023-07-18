@@ -1,0 +1,25 @@
+uuid: 8963cf58-a5a2-43ef-b9d6-5fb1a7fa264b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_product_description
+    - media.type.library_products
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.library_products.field_product_description
+field_name: field_product_description
+entity_type: media
+bundle: library_products
+label: 'Product Description'
+description: 'Use this field to add the Product Description'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

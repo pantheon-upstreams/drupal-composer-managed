@@ -1,0 +1,25 @@
+uuid: 5f2385b3-0b49-4dd0-8dd4-fe7ead10ad95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_video_canonical_name
+    - media.type.default_videos
+  module:
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.default_videos.field_video_canonical_name
+field_name: field_video_canonical_name
+entity_type: media
+bundle: default_videos
+label: 'Video Canonical Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

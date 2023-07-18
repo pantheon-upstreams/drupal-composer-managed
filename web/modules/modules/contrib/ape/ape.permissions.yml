@@ -1,0 +1,4 @@
+administer ape:
+  title: 'Administer advanced page expiration'
+  description: 'Configure advanced page expiration.'
+  restrict access: TRUE

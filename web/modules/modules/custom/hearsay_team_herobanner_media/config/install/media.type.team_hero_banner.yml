@@ -1,0 +1,13 @@
+uuid: f4331d10-6a62-49b8-95fa-5938f202fd93
+langcode: en
+status: true
+dependencies: {  }
+id: team_hero_banner
+label: 'Team Hero Banner'
+description: 'Use this media type to add Team Hero Banner'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

@@ -1,0 +1,5 @@
+name: Hearsay Community Impact Details Content Type
+description: The module provides the functionality to create Community Impact Details content type structure.
+type: module
+core_version_requirement: ^9 || ^10
+package: Hearsay Content

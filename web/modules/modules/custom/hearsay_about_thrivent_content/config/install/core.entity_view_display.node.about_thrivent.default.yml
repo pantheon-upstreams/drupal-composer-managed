@@ -1,0 +1,69 @@
+uuid: 0ee21f37-547f-435d-8035-f4528f2f261a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.about_thrivent.field_ref_taxo_base_slug
+    - node.type.about_thrivent
+  module:
+    - layout_builder
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          74b8e20b-d395-4ce3-90a4-f9585400e012:
+            uuid: 74b8e20b-d395-4ce3-90a4-f9585400e012
+            region: content
+            configuration:
+              id: 'extra_field_block:node:about_thrivent:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          ab873339-97c3-4b90-9586-c25bfbcc8099:
+            uuid: ab873339-97c3-4b90-9586-c25bfbcc8099
+            region: content
+            configuration:
+              id: 'field_block:node:about_thrivent:field_ref_taxo_base_slug'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.about_thrivent.default
+targetEntityType: node
+bundle: about_thrivent
+mode: default
+content:
+  field_ref_taxo_base_slug:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

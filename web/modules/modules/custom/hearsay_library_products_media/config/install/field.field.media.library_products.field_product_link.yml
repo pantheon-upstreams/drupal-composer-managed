@@ -1,0 +1,28 @@
+uuid: 7b7f83e9-b640-415a-88ce-df6ebe700b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_product_link
+    - media.type.library_products
+  module:
+    - link
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.library_products.field_product_link
+field_name: field_product_link
+entity_type: media
+bundle: library_products
+label: 'Product Link'
+description: 'Use this field to add Product Link'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

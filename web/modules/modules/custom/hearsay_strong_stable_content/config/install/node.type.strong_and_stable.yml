@@ -1,0 +1,22 @@
+uuid: 017d66f0-4efd-4d37-9904-5225145d73cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - unique_content_field_validation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+name: 'Strong and Stable'
+type: strong_and_stable
+description: 'This content type will be used for Strong and Stable page default layout.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,13 @@
+uuid: 5f72f8a2-be03-4d6d-a71c-4acef9637ed3
+langcode: en
+status: true
+dependencies: {  }
+id: site_logo
+label: 'Site Logo'
+description: 'Use this media type to add Site Logo'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

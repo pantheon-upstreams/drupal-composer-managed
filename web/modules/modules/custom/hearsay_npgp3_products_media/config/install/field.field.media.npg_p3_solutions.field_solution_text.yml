@@ -1,0 +1,26 @@
+uuid: 4a5d837f-8796-405c-ab0b-c074098933e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_solution_text
+    - media.type.npg_p3_solutions
+  module:
+    - text
+    - unique_content_field_validation
+third_party_settings:
+  unique_content_field_validation:
+    unique: false
+    unique_text: ''
+id: media.npg_p3_solutions.field_solution_text
+field_name: field_solution_text
+entity_type: media
+bundle: npg_p3_solutions
+label: 'Solution Text'
+description: 'Use this field to add Solution Text for Detail Page'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

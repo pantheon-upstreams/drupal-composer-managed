@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * hearsay_strong_stable module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function hearsay_strong_stable_theme()
+{
+    return [
+        'hearsay_strong_stable' => [
+            'variables' => [
+                'items' => [],
+            ],
+        ],
+    ];
+}

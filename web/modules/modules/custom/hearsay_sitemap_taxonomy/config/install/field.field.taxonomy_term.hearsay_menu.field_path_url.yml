@@ -1,0 +1,19 @@
+uuid: 772c9ecb-c473-4cd3-ac73-c697769ee16d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_path_url
+    - taxonomy.vocabulary.hearsay_menu
+id: taxonomy_term.hearsay_menu.field_path_url
+field_name: field_path_url
+entity_type: taxonomy_term
+bundle: hearsay_menu
+label: 'Path Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

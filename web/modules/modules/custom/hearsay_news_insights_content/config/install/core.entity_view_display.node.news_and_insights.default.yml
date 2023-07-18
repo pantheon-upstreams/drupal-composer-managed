@@ -1,0 +1,69 @@
+uuid: c85f14a2-ecb6-49d8-8c65-0852b76ceccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_and_insights.field_ref_taxo_base_slug
+    - node.type.news_and_insights
+  module:
+    - layout_builder
+    - layout_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          653d9294-88b9-4f1e-aebd-145856710c97:
+            uuid: 653d9294-88b9-4f1e-aebd-145856710c97
+            region: content
+            configuration:
+              id: 'extra_field_block:node:news_and_insights:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          8c16f0a5-e9cb-4b40-a69b-dce0ea1fb1b1:
+            uuid: 8c16f0a5-e9cb-4b40-a69b-dce0ea1fb1b1
+            region: content
+            configuration:
+              id: 'field_block:node:news_and_insights:field_ref_taxo_base_slug'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.news_and_insights.default
+targetEntityType: node
+bundle: news_and_insights
+mode: default
+content:
+  field_ref_taxo_base_slug:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

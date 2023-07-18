@@ -1,0 +1,5 @@
+advagg_css_minify.settings:
+  title: 'CSS Minification'
+  parent: advagg.settings
+  description: 'AdvAgg CSS minification settings.'
+  route_name: advagg_css_minify.settings

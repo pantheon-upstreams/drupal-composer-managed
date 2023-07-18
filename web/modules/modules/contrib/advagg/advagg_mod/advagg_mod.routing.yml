@@ -1,0 +1,7 @@
+advagg_mod.settings:
+  path: '/admin/config/development/performance/advagg/mod'
+  defaults:
+    _form: 'Drupal\advagg_mod\Form\SettingsForm'
+    _title: 'AdvAgg: Modifications'
+  requirements:
+    _permission: 'administer site configuration'

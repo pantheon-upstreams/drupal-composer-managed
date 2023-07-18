@@ -1,0 +1,13 @@
+uuid: cb26c0a4-f325-49d1-b09d-e01466efb40e
+langcode: en
+status: true
+dependencies: {  }
+id: solution_banner
+label: 'Solution Banner'
+description: 'Use this Media Type to add Solution Banner'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }
