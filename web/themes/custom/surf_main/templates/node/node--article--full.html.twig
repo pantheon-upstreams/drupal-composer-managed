@@ -124,6 +124,7 @@
 %}
 
 {% set image_credit = 'Image credit can go here.' %}
+{% set video_title_value = label|field_value %}
 
 {% include "article-page" with {
   title: label|field_value,
@@ -135,7 +136,7 @@
   image_alt: image_alt,
   image_credit: image_credit,
   video_url: video_url,
-  video_title: label|field_value ~ 'video',
+  video_title: video_title_value ? render_var(video_title_value) ~ ' video' : '',
   categories: content.field_ref_research_areas,
   related: related,
   callouts: callouts,
