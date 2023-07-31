@@ -32,6 +32,8 @@
   ]
 %}
 
+{{ content.reservation_links }}
+
 {# Handle internal and external links/urls #}
 {% if content.field_link.0 is empty %}
 {% set link_url = '' %}
