@@ -1,0 +1,22 @@
+services:
+  logger.channel.advagg:
+    parent: logger.channel_base
+    arguments: ['advagg']
+  cache.advagg:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: cache_factory:get
+    arguments: ['advagg']
+  advagg.optimizer.css:
+    class: Drupal\advagg\Asset\CssOptimizer
+    arguments: [ '@config.factory', '@event_dispatcher', '@cache.advagg' ]
+  advagg.optimizer.js:
+    class: Drupal\advagg\Asset\JsOptimizer
+    arguments: [ '@config.factory', '@event_dispatcher', '@cache.advagg' ]
+  advagg.suscriber:
+    class: Drupal\advagg\EventSubscriber\ResponseSubscriber
+    tags:
+      -
+        name: event_subscriber
+    arguments: [ '@config.factory' ]

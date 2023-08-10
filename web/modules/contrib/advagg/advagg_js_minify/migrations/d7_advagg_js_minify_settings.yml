@@ -1,0 +1,17 @@
+id: d7_advagg_js_minify_settings
+label: 'AdvAgg JS Minify configuration'
+migration_tags:
+  - Drupal 7
+  - Configuration
+source:
+  plugin: variable
+  variables:
+    - advagg_js_compressor
+    - advagg_js_compress_add_license
+  source_module: advagg_js_minify
+process:
+  minifier: advagg_js_compressor
+  add_license: advagg_js_compress_add_license
+destination:
+  plugin: config
+  config_name: advagg_js_minify.settings

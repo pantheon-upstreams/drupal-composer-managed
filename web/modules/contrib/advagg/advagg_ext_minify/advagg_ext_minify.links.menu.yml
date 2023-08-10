@@ -1,0 +1,5 @@
+advagg_ext_minify.settings:
+  title: 'External Minification'
+  parent: advagg.settings
+  description: 'AdvAgg external minification settings.'
+  route_name: advagg_ext_minify.settings

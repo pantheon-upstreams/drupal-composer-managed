@@ -1,0 +1,295 @@
+<?php
+
+/**
+ * @file
+ * Advanced aggregates cdn module.
+ */
+
+/**
+ * Implements hook_js_alter().
+ */
+function advagg_cdn_js_alter(&$javascript) {
+  // Setup variables.
+  $cdn_settings = \Drupal::config('advagg_cdn.settings');
+  $cdn = $cdn_settings->get('cdn');
+  $min = $cdn_settings->get('minified') ? '.min' : '';
+
+  // If AdvAgg in development mode don't serve minified JS.
+  if (\Drupal::config('advagg.settings')->get('cache_level') < 0) {
+    $min = '';
+  }
+
+  $targets = [];
+  if ($cdn_settings->get('jquery')) {
+    $path = 'jquery/' . $cdn_settings->get('jquery_version') . '/jquery' . $min . '.js';
+    $targets['core/assets/vendor/jquery/jquery.min.js'] = [
+      'google' => 'https://ajax.googleapis.com/ajax/libs/' . $path,
+      'microsoft' => 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-' . $cdn_settings->get('jquery_version') . $min . '.js',
+      'type' => 'external',
+      'require' => 'window.jQuery',
+    ];
+  }
+  if ($cdn_settings->get('jquery_ui_js')) {
+    $path = $cdn_settings->get('jquery_ui_version') . '/jquery-ui' . $min . '.js';
+    $targets += [
+      'core/assets/vendor/jquery.ui/ui/core-min.js' => [
+        'require' => 'window.jQuery.ui',
+        'type' => 'external',
+        'google' => 'https://ajax.googleapis.com/ajax/libs/jqueryui/' . $path,
+        'microsoft' => 'https://ajax.aspnetcdn.com/ajax/jquery.ui/' . $path,
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-blind-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-bounce-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-clip-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-drop-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-explode-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-fade-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-fold-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-highlight-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-puff-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-pulsate-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-scale-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-shake-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-size-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-slide-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/effect-transfer-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/accordion-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/autocomplete-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/button-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/datepicker-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/dialog-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/draggable-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/droppable-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/menu-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/mouse-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/position-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/progressbar-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/resizable-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/selectable-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/selectmenu-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/slider-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/sortable-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/spinner-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/tabs-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/tooltip-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+      'core/assets/vendor/jquery.ui/ui/widget-min.js' => [
+        'unset' => TRUE,
+        'require' => 'window.jQuery.ui',
+      ],
+    ];
+  }
+  foreach ($targets as $name => $values) {
+    if (isset($javascript[$name])) {
+      if (isset($values['unset'])) {
+        unset($javascript[$name]);
+      }
+      elseif (isset($values[$cdn])) {
+        $javascript[$name]['data'] = $values[$cdn];
+        $javascript[$name]['type'] = $values['type'];
+      }
+
+      // Ensure full jQuery.ui is loaded if required since it is merged on CDN.
+      if ($values['require'] == 'window.jQuery.ui' && !isset($javascript['core/assets/vendor/jquery.ui/ui/core-min.js'])) {
+        $javascript['core/assets/vendor/jquery.ui/ui/core-min.js'] = [
+          'minified' => TRUE,
+          'weight' => -19.5,
+          'group' => -100,
+          'type' => 'external',
+          'scope' => 'footer',
+          'browsers' => [],
+          'data' => $targets['core/assets/vendor/jquery.ui/ui/core-min.js'][$cdn],
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_css_alter().
+ */
+function advagg_cdn_css_alter(&$css) {
+  // Setup variables.
+  $cdn_settings = \Drupal::config('advagg_cdn.settings');
+  $cdn = $cdn_settings->get('cdn');
+  $min = $cdn_settings->get('minified') ? '.min' : '';
+
+  // If AdvAgg in development mode don't serve minified CSS.
+  if (\Drupal::config('advagg.settings')->get('cache_level') < 0) {
+    $min = '';
+  }
+
+  $targets = [];
+  if ($cdn_settings->get('jquery_ui_css')) {
+    $path = $cdn_settings->get('jquery_ui_version') . '/themes/' . $cdn_settings->get('jquery_ui_theme') . '/jquery-ui' . $min . '.css';
+    $targets += [
+      'core/assets/vendor/jquery.ui/themes/base/core.css' => [
+        'google' => 'https://ajax.googleapis.com/ajax/libs/jqueryui/' . $path,
+        'microsoft' => 'https://ajax.aspnetcdn.com/ajax/jquery.ui/' . $path,
+        'type' => 'external',
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/theme.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/accordion.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/autocomplete.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/button.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/datepicker.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/dialog.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/menu.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/progressbar.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/resizable.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/selectable.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/selectmenu.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/slider.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/spinner.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/tabs.css' => [
+        'unset' => TRUE,
+      ],
+      'core/assets/vendor/jquery.ui/themes/base/tooltip.css' => [
+        'unset' => TRUE,
+      ],
+    ];
+  }
+
+  foreach ($targets as $name => $values) {
+    if (isset($css[$name])) {
+      if (isset($values['unset'])) {
+        unset($css[$name]);
+      }
+      elseif (isset($values[$cdn])) {
+        $css[$name]['data'] = $values[$cdn];
+        $css[$name]['type'] = $values['type'];
+      }
+    }
+  }
+}

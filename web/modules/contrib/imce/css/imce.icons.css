@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'imce-icons';
+  src: url('fonts/imce-icons.eot?-7jpipx');
+  src: url('fonts/imce-icons.eot?#iefix-7jpipx') format('embedded-opentype'),
+    url('fonts/imce-icons.woff?-7jpipx') format('woff'),
+    url('fonts/imce-icons.ttf?-7jpipx') format('truetype'),
+    url('fonts/imce-icons.svg?-7jpipx#imce-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.imce-ficon:before {
+  font-family: 'imce-icons';
+  speak: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.imce-ficon.busy:before {
+  content: '';
+  padding: 8px;
+  background: url(images/loading.gif) no-repeat 50% 50%;
+}
+
+.imce-ficon-image:before {
+  content: "\e600";
+}
+
+.imce-ficon-file:before {
+  content: "\e601";
+}
+
+.imce-ficon-file-text:before {
+  content: "\e602";
+}
+
+.imce-ficon-file-image:before {
+  content: "\e603";
+}
+
+.imce-ficon-file-audio:before {
+  content: "\e604";
+}
+
+.imce-ficon-file-video:before {
+  content: "\e605";
+}
+
+.imce-ficon-file-zip:before {
+  content: "\e606";
+}
+
+.imce-ficon-copy:before {
+  content: "\e607";
+}
+
+.imce-ficon-paste:before {
+  content: "\e608";
+}
+
+.imce-ficon-folder:before {
+  content: "\e609";
+}
+
+.imce-ficon-folder-open:before {
+  content: "\e60a";
+}
+
+.imce-ficon-folder-add:before {
+  content: "\e60b";
+}
+
+.imce-ficon-search:before {
+  content: "\e60c";
+}
+
+.imce-ficon-delete:before {
+  content: "\e60d";
+}
+
+.imce-ficon-download:before {
+  content: "\e60e";
+}
+
+.imce-ficon-upload:before {
+  content: "\e60f";
+}
+
+.imce-ficon-preview:before {
+  content: "\e610";
+}
+
+.imce-ficon-warning:before {
+  content: "\e611";
+}
+
+.imce-ficon-help:before {
+  content: "\e612";
+}
+
+.imce-ficon-add:before {
+  content: "\e622";
+}
+
+.imce-ficon-info:before {
+  content: "\e613";
+}
+
+.imce-ficon-cancel:before {
+  content: "\e614";
+}
+
+.imce-ficon-remove:before {
+  content: "\e623";
+}
+
+.imce-ficon-check:before {
+  content: "\e615";
+}
+
+.imce-ficon-refresh:before {
+  content: "\e616";
+}
+
+.imce-ficon-sort:before {
+  content: "\e617";
+}
+
+.imce-ficon-checked:before {
+  content: "\e618";
+}
+
+.imce-ficon-crop:before {
+  content: "\e619";
+}
+
+.imce-ficon-cut:before {
+  content: "\e61a";
+}
+
+.imce-ficon-file-pdf:before {
+  content: "\e61b";
+}
+
+.imce-ficon-file-word:before {
+  content: "\e61c";
+}
+
+.imce-ficon-file-excel:before {
+  content: "\e61d";
+}
+
+.imce-ficon-folder-white:before {
+  content: "\e61e";
+}
+
+.imce-ficon-plus:before {
+  content: "\e620";
+}
+
+.imce-ficon-minus:before {
+  content: "\e621";
+}
+
+.imce-ficon-click:before {
+  content: "\e61f";
+}

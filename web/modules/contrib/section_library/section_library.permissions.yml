@@ -1,0 +1,17 @@
+import template from section library:
+  title: 'Import template from Section library'
+
+view section library templates:
+  title: 'View Section library templates'
+
+add section library templates:
+  title: 'Create new Section library templates'
+
+edit section library templates:
+  title: 'Edit Section library templates'
+
+delete section library templates:
+  title: 'Delete Section library templates'
+
+administer section library template entities:
+  title: 'Administer Section library template entities'

@@ -1,0 +1,21 @@
+uuid: e5a33bb0-5699-46c8-bad7-196d1fc0d7ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_xss
+    - node.type.simple_gmap_stress_test
+id: node.simple_gmap_stress_test.field_xss
+field_name: field_xss
+entity_type: node
+bundle: simple_gmap_stress_test
+label: xss
+description: 'This field demonstrates the rejection of a XSS attack.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '<script>alert("hello");</script> Empire State Building'
+default_value_callback: ''
+settings: {  }
+field_type: string

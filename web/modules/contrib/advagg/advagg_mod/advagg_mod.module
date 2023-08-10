@@ -1,0 +1,235 @@
+<?php
+
+/**
+ * @file
+ * Advanced aggregation modifier module.
+ */
+
+use Drupal\advagg\Asset\AssetOptimizer;
+
+/**
+ * Implements hook_js_alter().
+ */
+function advagg_mod_js_alter(&$js) {
+  if (!advagg_enabled()) {
+    return;
+  }
+  $config = \Drupal::config('advagg_mod.settings');
+  // Use the current file system path for advagg_mod.
+  $module_path = drupal_get_path('module', 'advagg_mod');
+  if (isset($js[$module_path . '/js/loadCSS.js'])) {
+    if ($config->get('css_defer_js_code') === 4) {
+      $js[$module_path . '/js/loadCSS.js']['type'] = 'external';
+      $js[$module_path . '/js/loadCSS.js']['data'] = '//cdn.rawgit.com/filamentgroup/loadCSS/master/src/loadCSS.js';
+      $js[$module_path . '/js/cssrelpreload.js']['type'] = 'external';
+      $js[$module_path . '/js/cssrelpreload.js']['data'] = '//cdn.rawgit.com/filamentgroup/loadCSS/master/src/cssrelpreload.js';
+    }
+  }
+
+  // Change sort order so aggregates do not get split up.
+  if ($config->get('js_adjust_sort_external') || $config->get('js_adjust_sort_browsers')) {
+    advagg_mod_sort_css_js($js, 'js');
+  }
+
+  // Force all JS to be preprocessed.
+  if ($config->get('js_preprocess')) {
+    foreach ($js as $path => &$values) {
+      // However CKEditor must not be combined or errors *will* occur.
+      if ($path == 'core/assets/vendor/ckeditor/ckeditor.js') {
+        continue;
+      }
+      $values['preprocess'] = TRUE;
+    }
+    unset($values);
+  }
+
+  // Move all async JS to the header.
+  if ($config->get('js_async_in_header')) {
+    foreach ($js as &$values) {
+      // Skip if not file or external.
+      if ($values['type'] !== 'file' && $values['type'] !== 'external') {
+        continue;
+      }
+      // Skip if not async.
+      if (!$config->get('js_async') && empty($values['async']) && empty($values['attributes']['async'])) {
+        continue;
+      }
+
+      // Move to the header with a group of 1000.
+      $values['scope'] = 'header';
+      $values['group'] = 1000;
+    }
+    unset($values);
+  }
+}
+
+/**
+ * Implements hook_css_alter().
+ */
+function advagg_mod_css_alter(&$css) {
+  if (!advagg_enabled()) {
+    return;
+  }
+  $config = \Drupal::config('advagg_mod.settings');
+  if ($config->get('css_adjust_sort_external') || $config->get('css_adjust_sort_browsers')) {
+    advagg_mod_sort_css_js($css, 'css');
+  }
+
+  // Force all CSS to be preprocessed.
+  if ($config->get('css_preprocess')) {
+    foreach ($css as &$values) {
+      $values['preprocess'] = TRUE;
+    }
+    unset($values);
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function advagg_mod_page_attachments_alter(array &$page) {
+  if (advagg_mod_css_defer_active()) {
+    $page['#attached']['library'][] = 'advagg_mod/css_defer';
+  }
+}
+
+/**
+ * Rearrange CSS/JS so that aggregates are better grouped.
+ *
+ * This can move all external assets to the top, thus in one group.
+ * This can move all browser conditional assets together.
+ *
+ * @param array $assets
+ *   The CSS or JS array.
+ * @param string $type
+ *   String: css or js.
+ */
+function advagg_mod_sort_css_js(array &$assets, $type) {
+  $config = \Drupal::config('advagg_mod.settings');
+  if ($config->get($type . '_adjust_sort_external')) {
+    // Find all external items.
+    $external = [];
+    $group = NULL;
+    $weight = NULL;
+    foreach ($assets as $key => $value) {
+      // Set values if not set.
+      if (is_null($group)) {
+        $group = $value['group'];
+      }
+      if (is_null($weight)) {
+        $weight = $value['weight'];
+      }
+
+      // Find "lightest" item.
+      if ($value['group'] < $group) {
+        $group = $value['group'];
+      }
+      if ($value['weight'] < $weight) {
+        $weight = $value['weight'];
+      }
+
+      if (!empty($value['type']) && $value['type'] === 'external' && empty($value['movable'])) {
+        $external[$key] = $value;
+        unset($assets[$key]);
+      }
+    }
+    // Sort the array so that it appears in the correct order.
+    AssetOptimizer::sortStable($external);
+
+    // Group all external together.
+    $offset = 0.0001;
+    $weight -= 1;
+    $group -= 10;
+    $found_jquery = FALSE;
+    foreach ($external as $key => $value) {
+
+      // If bootstrap is used, it must be loaded after jquery. Don't move
+      // bootstrap if jquery is not above it.
+      if ($key == 'assets/vendor/jquery/jquery.min.js') {
+        $found_jquery = TRUE;
+      }
+      if (!$found_jquery && (strpos($value['data'], 'bootstrap.min.js') !== FALSE || strpos($value['data'], 'bootstrap.js') !== FALSE)) {
+        $assets[$key] = $value;
+        continue;
+      }
+      $value['group'] = $group;
+      $value['weight'] = $weight;
+      $weight += $offset;
+      $assets[$key] = $value;
+    }
+  }
+
+  if ($config->get($type . '_adjust_sort_browsers')) {
+    // Get a list of browsers.
+    $browsers_list = [];
+    foreach ($assets as $key => $value) {
+      if (isset($value['browsers']['IE']) && $value['browsers']['IE'] !== TRUE) {
+        $browsers_list['IE'][] = $value['browsers']['IE'];
+      }
+    }
+
+    // Group browsers CSS together.
+    if (isset($browsers_list['IE'])) {
+      $browsers_list['IE'] = array_values(array_unique($browsers_list['IE']));
+      foreach ($browsers_list['IE'] as $browser) {
+        $browsers = [];
+        $group = NULL;
+        $weight = NULL;
+        foreach ($assets as $key => $value) {
+          if (isset($value['browsers']['IE']) && $browser === $value['browsers']['IE']) {
+            // Set values if not set.
+            if (is_null($group)) {
+              $group = $value['group'];
+            }
+            if (is_null($weight)) {
+              $weight = $value['weight'];
+            }
+
+            // Find "heaviest" item.
+            if ($value['group'] > $group) {
+              $group = $value['group'];
+            }
+            if ($value['weight'] > $weight) {
+              $weight = $value['weight'];
+            }
+
+            $browsers[$key] = $value;
+            unset($assets[$key]);
+          }
+        }
+
+        // Sort the array so that it appears in the correct order.
+        AssetOptimizer::sortStable($browsers);
+
+        // Group all browsers together.
+        $offset = 0.0001;
+        $group += 1000;
+        foreach ($browsers as $key => $value) {
+          if (isset($value['movable']) && empty($value['movable'])) {
+            $assets[$key] = $value;
+            continue;
+          }
+          $value['group'] = $group;
+          $value['weight'] = $weight;
+          $weight += $offset;
+          $assets[$key] = $value;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Determines whether css defering should be active for the current request.
+ */
+function advagg_mod_css_defer_active() {
+  $config = \Drupal::config('advagg_mod.settings');
+  if (!$config->get('css_defer')) {
+    return FALSE;
+  }
+  $admin_route = \Drupal::service('router.admin_context')->isAdminRoute();
+  if ($admin_route && !$config->get('css_defer_admin')) {
+    return FALSE;
+  }
+  return TRUE;
+}

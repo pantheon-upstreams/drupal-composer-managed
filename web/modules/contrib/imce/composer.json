@@ -1,0 +1,25 @@
+{
+    "name": "drupal/imce",
+    "description": "Provides a file manager supporting personal folders.",
+    "type": "drupal-module",
+    "minimum-stability": "dev",
+    "homepage": "https://drupal.org/project/imce",
+    "authors": [
+        {
+            "name": "See contributors",
+            "homepage": "https://www.drupal.org/node/2841111/committers",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/imce",
+        "source": "https://git.drupalcode.org/project/imce"
+    },
+    "require": {
+        "drupal/core": "^9.3 || ^10"
+    },
+    "require-dev": {
+        "drupal/ckeditor": "^1.0"
+    },
+    "license": "GPL-2.0-or-later"
+}

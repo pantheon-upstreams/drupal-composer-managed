@@ -1,0 +1,23 @@
+@mixin b4-make-link(
+  $a-link-color: $link-color,
+  $a-link-decoration: $link-decoration,
+  $a-link-hover-color: $link-hover-color,
+  $a-link-hover-decoration: $link-hover-decoration,
+  $target-class: '') {
+  a#{$target-class} {
+    color: $a-link-color;
+    text-decoration: $a-link-decoration;
+
+    @include hover {
+      color: $a-link-hover-color;
+      text-decoration: $a-link-hover-decoration;
+    }
+  }
+}
+
+// @content
+// @mixin b4-make-fixed-container {
+//     margin: 0 auto;
+//     @include make-container;
+//     @include make-container-max-widths();
+// }

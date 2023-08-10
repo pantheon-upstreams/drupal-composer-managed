@@ -1,0 +1,12 @@
+services:
+  ape.subscriber:
+    class: Drupal\ape\EventSubscriber\ApeSubscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@config.factory', '@page_cache_request_policy', '@page_cache_response_policy', '@plugin.manager.condition']
+
+  ape.page_cache_response_policy.exclude_pages:
+    class: Drupal\ape\PageCache\ExcludePages
+    tags:
+      - { name: page_cache_response_policy }
+    arguments: ['@config.factory', '@plugin.manager.condition']

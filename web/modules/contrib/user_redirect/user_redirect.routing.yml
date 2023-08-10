@@ -1,0 +1,7 @@
+user_redirect.settings:
+  path: '/admin/people/users/redirect/form/settings'
+  defaults:
+    _form: '\Drupal\user_redirect\Form\UserRedirectSettingsForm'
+    _title: 'User Redirect Settings'
+  requirements:
+    _permission: 'administer user redirect settings'

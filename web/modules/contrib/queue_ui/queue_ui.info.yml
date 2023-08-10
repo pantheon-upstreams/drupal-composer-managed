@@ -1,0 +1,11 @@
+name: Queue UI
+type: module
+description: Interface and manager for Drupal queues.
+package: Queues
+core_version_requirement: ^9.2 || ^10
+configure: queue_ui.overview_form
+
+# Information added by Drupal.org packaging script on 2022-12-30
+version: '3.1.3'
+project: 'queue_ui'
+datestamp: 1672387005

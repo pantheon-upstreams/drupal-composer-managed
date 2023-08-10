@@ -1,0 +1,14 @@
+name: 'Hierarchical Taxonomy Menu'
+type: module
+description: 'Create menus from taxonomy terms.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Menu
+dependencies:
+  - drupal:taxonomy
+  - drupal:system (>=8.6.0)
+
+# Information added by Drupal.org packaging script on 2023-05-10
+version: '8.x-1.43'
+project: 'hierarchical_taxonomy_menu'
+datestamp: 1683716303

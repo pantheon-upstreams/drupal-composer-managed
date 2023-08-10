@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * Hooks and helper functions for the Minify HTML module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function minifyhtml_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.minifyhtml':
+      $text = file_get_contents(dirname(__FILE__) . '/README.md');
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for system_performance_settings form.
+ */
+function minifyhtml_form_system_performance_settings_alter(array &$form, FormStateInterface $form_state) {
+  $config = \Drupal::configFactory()->getEditable('minifyhtml.config');
+  $access = \Drupal::currentUser()->hasPermission('administer minifyhtml');
+
+  $form['bandwidth_optimization']['minifyhtml_minify'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Minified Source HTML.'),
+    '#description' => t('Toggle minified HTML on or off.'),
+    '#default_value' => $config->get('minify'),
+    '#access' => $access,
+  ];
+
+  $form['bandwidth_optimization']['strip_comments'] = [
+    '#title' => t('Strip comments from the source HTML'),
+    '#description' => t(
+      'If checked, strip HTML comments and multi-line comments in @script and @style tags.',
+      [
+        '@script' => '<script>',
+        '@style' => '<style>',
+      ]
+    ),
+    '#type' => 'checkbox',
+    '#default_value' => $config->get('strip_comments'),
+    '#states' => [
+      'enabled' => [
+        ':input[name="minifyhtml_minify"]' => ['checked' => TRUE],
+      ],
+    ],
+    '#access' => $access,
+  ];
+
+  $form['bandwidth_optimization']['exclude_pages'] = [
+    '#type' => 'textarea',
+    '#title' => t('Disable minification for specific pages'),
+    '#default_value' => $config->get('exclude_pages'),
+    '#description' => t(
+        "Specify pages by using their paths with leading forward slash. Enter one path per line. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.",
+        [
+          '%blog' => '/blog',
+          '%blog-wildcard' => '/blog/*',
+          '%front' => '<front>',
+        ]
+    ),
+    '#states' => [
+      'visible' => [
+        ':input[name="minifyhtml_minify"]' => ['checked' => TRUE],
+      ],
+    ],
+  ];
+
+  if ($access) {
+    $form['#submit'][] = 'minifyhtml_form_system_performance_settings_submit';
+  }
+}
+
+/**
+ * Submit callback for system_performance_settings form.
+ */
+function minifyhtml_form_system_performance_settings_submit(array $form, FormStateInterface $form_state) {
+  \Drupal::configFactory()->getEditable('minifyhtml.config')
+    ->set('strip_comments', $form_state->getValue('strip_comments'))
+    ->set('exclude_pages', $form_state->getValue('exclude_pages'))
+    ->set('minify', $form_state->getValue('minifyhtml_minify'))
+    ->save();
+}

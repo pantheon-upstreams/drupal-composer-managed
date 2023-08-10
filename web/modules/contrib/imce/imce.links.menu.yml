@@ -1,0 +1,5 @@
+imce.admin:
+  title: 'Imce File Manager'
+  description: 'Configure Imce File Manager.'
+  route_name: imce.admin
+  parent: system.admin_config_media

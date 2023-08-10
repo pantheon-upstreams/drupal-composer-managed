@@ -1,0 +1,5 @@
+advagg_cdn.settings:
+  title: 'CDN'
+  parent: advagg.settings
+  description: 'AdvAgg CDN settings.'
+  route_name: advagg_cdn.settings

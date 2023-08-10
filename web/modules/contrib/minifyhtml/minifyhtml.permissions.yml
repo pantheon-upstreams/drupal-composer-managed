@@ -1,0 +1,4 @@
+administer minifyhtml:
+  title: Administer Minify HTML Module
+  description: Perform administration tasks for Minify HTML module.
+  restrict access: true

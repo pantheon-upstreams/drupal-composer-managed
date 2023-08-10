@@ -1,0 +1,6 @@
+services:
+  advagg.commands:
+    arguments: [ '@cache.advagg', '@config.factory', '@file_system' ]
+    class: \Drupal\advagg\Commands\AdvaggCommands
+    tags:
+      - { name: drush.command }

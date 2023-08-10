@@ -1,0 +1,142 @@
+<?php
+
+/**
+ * @file
+ * Hooks and module logic for Media library extend.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function media_library_extend_theme($existing, $type, $theme, $path) {
+  return [
+    'media_library_pane' => [
+      'render element' => 'element',
+    ],
+    'media_library_pane_content' => [
+      'render element' => 'element',
+    ],
+    'media_library_result_preview' => [
+      'variables' => [
+        'result' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for a media library pane.
+ *
+ * Default template: media-library-pane.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ */
+function template_preprocess_media_library_pane(array &$variables) {
+  // Attributes are used by the wrapped theme function, so we empty them here.
+  $variables['attributes'] = [];
+
+  // Move main render elements into root of variable structure.
+  foreach (['filters', 'content', 'actions'] as $key) {
+    $variables[$key] = &$variables['element'][$key];
+  }
+
+  // Move form specific elements into the filter form for simpler templates.
+  foreach (['form_build_id', 'form_id', 'form_token'] as $key) {
+    $variables['filters'][$key] = &$variables['element'][$key];
+  }
+}
+
+/**
+ * Prepares variables for a media library pane's content.
+ *
+ * Default template: media-library-pane-content.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ */
+function template_preprocess_media_library_pane_content(array &$variables) {
+  // Move main render elements into root of variable structure.
+  foreach (['result_count', 'previews', 'pager', 'form_selection'] as $key) {
+    $variables[$key] = &$variables['element'][$key];
+  }
+
+  // Remove #-attributes from previews wrapper added by form api processing.
+  // These are not available when content gets replaced via AJAX anyway.
+  foreach ($variables['previews'] as $key => $value) {
+    if (strpos($key, '#') === 0) {
+      unset($variables['previews'][$key]);
+    }
+  }
+
+  // Add attributes for previews container.
+  $variables['content_attributes']['class'][] = 'js-media-library-views-form';
+}
+
+/**
+ * Prepares variables for a media library result preview.
+ *
+ * Default template: media-library-result-preview.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - result: An associative array containing the properties of the element.
+ */
+function template_preprocess_media_library_result_preview(array &$variables) {
+  // Move main render elements into root of variable structure.
+  foreach (['id', 'label', 'preview'] as $key) {
+    $variables[$key] = &$variables['result'][$key];
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function media_library_extend_form_alter(array &$form, FormStateInterface $form_state, string $form_id) {
+  if (strpos($form_id, 'views_form_media_library_widget') !== 0) {
+    // Only alter media library selection forms.
+    return;
+  }
+
+  $form['#validate'][] = '_media_library_extend_form_insert_validate';
+}
+
+/**
+ * Converts media library extend plugin ids to media ids in a validate callback.
+ *
+ * @param array $form
+ *   The form being validated.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ */
+function _media_library_extend_form_insert_validate(array $form, FormStateInterface $form_state) {
+  if (empty($form_state->getTriggeringElement()['#field_id'])) {
+    // Not an actual form submission, skip further validation.
+    return;
+  }
+
+  $field_id = $form_state->getTriggeringElement()['#field_id'];
+  $selected_ids = explode(',', $form_state->getValue($field_id));
+
+  // Get media entities and alter form state value accordingly.
+  $entity_ids = [];
+  foreach ($selected_ids as $selected_id) {
+    // Get entity IDs from plugin.
+    if (strpos($selected_id, 'mle:') !== 0) {
+      // Normal media id, just add it.
+      $entity_ids[] = $selected_id;
+      continue;
+    }
+
+    // Convert plugin ID to an actual media entity id.
+    list($prefix, $pane_id, $item_id) = explode(':', $selected_id, 3);
+    $pane = \Drupal::entityTypeManager()->getStorage('media_library_pane')->load($pane_id);
+    $plugin = $pane->getPlugin();
+    $entity_ids[] = $plugin->getEntityId($item_id);
+  }
+  $form_state->setValue($field_id, implode(',', $entity_ids));
+}

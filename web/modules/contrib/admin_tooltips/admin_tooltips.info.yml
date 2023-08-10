@@ -1,0 +1,11 @@
+name: Admin Tooltips
+description: It adds an extra field in the fields config to add a text to be used like tooltip.
+package: Fields
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+
+# Information added by Drupal.org packaging script on 2021-12-13
+version: '1.0.0-beta1'
+project: 'admin_tooltips'
+datestamp: 1639398898

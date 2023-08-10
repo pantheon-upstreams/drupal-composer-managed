@@ -1,0 +1,13 @@
+name: 'AdvAgg Old Internet Explorer Compatibility Enhancer'
+description: 'Provides some enhanced compatibility with outdated Internet Explorer versions.'
+package: 'Advanced CSS/JS Aggregation'
+core_version_requirement: ^9
+dependencies:
+  - advagg:advagg
+type: module
+configure: advagg_old_ie_compatibility.settings
+
+# Information added by Drupal.org packaging script on 2022-07-18
+version: '5.0.0'
+project: 'advagg'
+datestamp: 1658178952

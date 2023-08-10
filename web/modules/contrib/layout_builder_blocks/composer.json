@@ -1,0 +1,11 @@
+{
+  "name": "drupal/layout_builder_blocks",
+  "type": "drupal-module",
+  "keywords": ["Drupal", "style", "UI", "Layout Builder"],
+  "license": "GPL-2.0+",
+  "description": "Add UI styles support to blocks from Layout Builder module.",
+  "require": {
+    "drupal/bootstrap_styles": "^1.1",
+    "drupal/core": "^9.3 || ^10"
+  }
+}

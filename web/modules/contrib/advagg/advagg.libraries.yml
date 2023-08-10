@@ -1,0 +1,5 @@
+admin.operations:
+  js:
+    advagg.admin.js: {}
+  dependencies:
+    - core/drupal.form

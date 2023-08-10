@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Simple Google Maps module.
+ *
+ * Provides a Google Maps link/map formatter for simple Text fields. Note that
+ * this is just a field formatter for Text fields, not a field. See README.txt
+ * for more information.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function simple_gmap_theme() {
+  return [
+    'simple_gmap_output' => [
+      'variables' => [
+        'include_map' => NULL,
+        'include_static_map' => NULL,
+        'include_link' => NULL,
+        'include_text' => NULL,
+        'address_text' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+        'static_scale' => NULL,
+        'url_suffix' => NULL,
+        'zoom' => NULL,
+        'link_text' => NULL,
+        'map_type' => NULL,
+        'langcode' => NULL,
+        'static_map_type' => NULL,
+        'apikey' => NULL,
+        'iframe_title' => '',
+      ],
+      'template' => 'simple-gmap-output',
+    ],
+  ];
+}
