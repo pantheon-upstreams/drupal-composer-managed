@@ -99,8 +99,8 @@ b {
 //
 p,
 li {
-  margin: 15px 0;
-  @include surf-font-body-medium;
+  //margin: 15px 0;
+  //@include surf-font-body-medium;
 }
 
 blockquote:not([class]) {
