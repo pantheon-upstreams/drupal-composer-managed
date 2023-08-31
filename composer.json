@@ -22,7 +22,6 @@
         }
     ],
     "require": {
-        "atendesigngroup/mercury_editor": "dev-restructure",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "~1.0",
@@ -35,7 +34,6 @@
         "drupal/cl_generator": "^1.0@RC",
         "drupal/cl_server": "^2.0",
         "drupal/components": "^3.0",
-        "drupal/content_access": "~1.0",
         "drupal/core": "^9",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
@@ -54,7 +52,7 @@
         "drupal/honeypot": "~2.0",
         "drupal/imce": "^3.0",
         "drupal/inline_entity_form": "~1.0",
-        "drupal/insert_view": "~2.0",
+        "drupal/layout_paragraphs": "^2.0",
         "drupal/mailsystem": "^4.4",
         "drupal/maxlength": "^2.0",
         "drupal/menu_block": "~1.0",

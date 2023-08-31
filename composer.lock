@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21d13a4fabc27365be457513490595ce",
+    "content-hash": "7e16d197073757931f3bfe5906b14936",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,39 +61,6 @@
                 "source": "https://github.com/asm89/stack-cors/tree/1.3.0"
             },
             "time": "2019-12-24T22:41:47+00:00"
-        },
-        {
-            "name": "atendesigngroup/mercury_editor",
-            "version": "dev-restructure",
-            "source": {
-                "type": "git",
-                "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git",
-                "reference": "71fc3ce78d0e078d7fee14a83174b10588182e1d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/atendesigngroup/mercury_editor/get/71fc3ce78d0e078d7fee14a83174b10588182e1d.zip",
-                "reference": "71fc3ce78d0e078d7fee14a83174b10588182e1d",
-                "shasum": ""
-            },
-            "require": {
-                "drupal/layout_paragraphs": "^2",
-                "drupal/style_options": "^1"
-            },
-            "type": "drupal-module",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "description": "Mercury Editor",
-            "homepage": "https://bitbucket.org/atendesigngroup/mercury_editor",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "issues": "https://bitbucket.org/atendesigngroup/mercury_editor/jira",
-                "source": "https://bitbucket.org/atendesigngroup/mercury_editor/src"
-            },
-            "time": "2023-01-12T16:28:44+00:00"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2144,57 +2111,6 @@
             }
         },
         {
-            "name": "drupal/content_access",
-            "version": "1.0.0-alpha4",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/content_access.git",
-                "reference": "8.x-1.0-alpha4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/content_access-8.x-1.0-alpha4.zip",
-                "reference": "8.x-1.0-alpha4",
-                "shasum": "4ccaeb432d39de2649ea5602b15429633b6385cc"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "require-dev": {
-                "drupal/acl": "~1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-alpha4",
-                    "datestamp": "1654070349",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "fago",
-                    "homepage": "https://www.drupal.org/user/16747"
-                },
-                {
-                    "name": "gisle",
-                    "homepage": "https://www.drupal.org/user/409554"
-                }
-            ],
-            "description": "Provides flexible content access control.",
-            "homepage": "https://drupal.org/project/content_access",
-            "support": {
-                "source": "https://git.drupalcode.org/project/content_access"
-            }
-        },
-        {
             "name": "drupal/core",
             "version": "9.5.10",
             "source": {
@@ -2641,7 +2557,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/sandbox/asherry-3335446.git",
-                "reference": "b1f7743b48d4f00ba03240a9c8ea9e450caf98bf"
+                "reference": "648db5eff77d25794c70c875f00a8936e22dc4cb"
             },
             "require": {
                 "drupal/entity": "^1.4",
@@ -2653,7 +2569,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Allows users to request access to resources with approval functionality.",
-            "time": "2023-02-02T17:27:50+00:00"
+            "time": "2023-02-11T13:01:32+00:00"
         },
         {
             "name": "drupal/entity",
@@ -3417,81 +3333,6 @@
             }
         },
         {
-            "name": "drupal/insert_view",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/insert_view.git",
-                "reference": "2.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/insert_view-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "8ee1cb7cdbf2a068165441541cabef3a97cf96e7"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1664469522",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "andrew morton (drewish)",
-                    "homepage": "https://www.drupal.org/u/drewish",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Renato Gonçalves (RenatoG)",
-                    "homepage": "https://www.drupal.org/u/RenatoG",
-                    "email": "renatog@ciandt.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Michael Samuelson (mlsamuelson)",
-                    "homepage": "https://www.drupal.org/u/mlsamuelson",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Adam Balsam (balsama)",
-                    "homepage": "https://www.drupal.org/u/balsama",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Pasqualle",
-                    "homepage": "https://www.drupal.org/user/80733"
-                },
-                {
-                    "name": "paulocs",
-                    "homepage": "https://www.drupal.org/user/3640109"
-                },
-                {
-                    "name": "RenatoG",
-                    "homepage": "https://www.drupal.org/user/3326031"
-                }
-            ],
-            "description": "Input filter which allows to embed views.",
-            "homepage": "https://www.drupal.org/project/insert_view",
-            "support": {
-                "source": "https://cgit.drupalcode.org/insert_view",
-                "issues": "https://www.drupal.org/project/issues/insert_view",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
             "name": "drupal/jquery_ui",
             "version": "1.6.0",
             "source": {
@@ -3832,20 +3673,20 @@
         },
         {
             "name": "drupal/layout_paragraphs",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_paragraphs.git",
-                "reference": "2.0.2"
+                "reference": "2.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-2.0.2.zip",
-                "reference": "2.0.2",
-                "shasum": "5157a05120d81f0978093ddbdf92c3ead2e11010"
+                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "e0703d8b7c93931c4840167883d3993846485f44"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10",
+                "drupal/core": "^9.2 || ^10",
                 "drupal/paragraphs": "^1.6"
             },
             "require-dev": {
@@ -3856,8 +3697,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.2",
-                    "datestamp": "1671393681",
+                    "version": "2.0.3",
+                    "datestamp": "1683938207",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5250,17 +5091,17 @@
         },
         {
             "name": "drupal/state_machine",
-            "version": "1.6.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/state_machine.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/state_machine-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "9a29e00e4c47202fd4b27be792d18d2026f733b2"
+                "url": "https://ftp.drupal.org/files/projects/state_machine-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "dd59939a0f91f413c4f98e3f2966f8ea7a4a74ee"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10",
@@ -5269,8 +5110,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1644836575",
+                    "version": "8.x-1.8",
+                    "datestamp": "1684226801",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5283,14 +5124,6 @@
             ],
             "authors": [
                 {
-                    "name": "Brandonian",
-                    "homepage": "https://www.drupal.org/user/77766"
-                },
-                {
-                    "name": "Elijah Lynn",
-                    "homepage": "https://www.drupal.org/user/353190"
-                },
-                {
                     "name": "arithmetric",
                     "homepage": "https://www.drupal.org/user/162305"
                 },
@@ -5299,12 +5132,20 @@
                     "homepage": "https://www.drupal.org/user/86106"
                 },
                 {
+                    "name": "Brandonian",
+                    "homepage": "https://www.drupal.org/user/77766"
+                },
+                {
                     "name": "das-peter",
                     "homepage": "https://www.drupal.org/user/762870"
                 },
                 {
                     "name": "e2thex",
                     "homepage": "https://www.drupal.org/user/189123"
+                },
+                {
+                    "name": "Elijah Lynn",
+                    "homepage": "https://www.drupal.org/user/353190"
                 },
                 {
                     "name": "ericduran",
@@ -16548,7 +16389,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "atendesigngroup/mercury_editor": 20,
         "drupal/apitools": 20,
         "drupal/cl_generator": 5,
         "drupal/download_request": 20,

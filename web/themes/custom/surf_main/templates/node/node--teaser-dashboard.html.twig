@@ -1,6 +1,8 @@
+{# Variables: dashboard_url: what this is, and where it's coming from #}
+
 {% include '@surf_main-components/teaser/teaser.twig' with {
   description: content.body,
   title: label,
-  title_url: dashboard_url,
+  url: dashboard_url,
   attr: attributes
 } %}
