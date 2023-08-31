@@ -11,6 +11,7 @@ dependencies:
   module:
     - contact
     - contextual
+    - file
     - filter
     - node
     - scheduler
@@ -33,6 +34,7 @@ permissions:
   - 'change own username'
   - 'create event content'
   - 'delete own event content'
+  - 'delete own files'
   - 'edit any event content'
   - 'edit own event content'
   - 'schedule publishing of nodes'

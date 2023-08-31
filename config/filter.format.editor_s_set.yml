@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - editor
-name: 'Editor''s set'
+name: "Editor's set"
 format: editor_s_set
 weight: -6
 filters:
@@ -47,4 +47,10 @@ filters:
     provider: filter
     status: true
     weight: 0
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 1
     settings: {  }

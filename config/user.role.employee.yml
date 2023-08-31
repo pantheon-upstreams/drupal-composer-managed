@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.simple_text
   module:
+    - file
     - filter
     - node
 id: employee
@@ -12,5 +13,6 @@ label: Employee
 weight: -8
 is_admin: null
 permissions:
+  - 'delete own files'
   - 'use text format simple_text'
   - 'view own unpublished content'

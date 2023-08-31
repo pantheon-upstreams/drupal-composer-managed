@@ -12,7 +12,7 @@ field_name: field_link
 entity_type: paragraph
 bundle: card
 label: 'Link / Call to Action'
-description: 'If you just fill out the link URL and NOT the text it the callout''s title and image or icon will be linked. If you do fill out the link text only the call to action button will be linked.'
+description: "If you just fill out the link URL and NOT the text it the callout's title and image or icon will be linked. If you do fill out the link text only the call to action button will be linked."
 required: false
 translatable: true
 default_value: {  }

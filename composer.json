@@ -34,9 +34,9 @@
         "drupal/cl_generator": "^1.0@RC",
         "drupal/cl_server": "^2.0",
         "drupal/components": "^3.0",
-        "drupal/core": "^9",
-        "drupal/core-composer-scaffold": "^9",
-        "drupal/core-recommended": "^9",
+        "drupal/core": "^10",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-recommended": "^10",
         "drupal/ctools": "~3.0",
         "drupal/date_range_formatter": "^4.0",
         "drupal/download_request": "1.0.x-dev",
@@ -86,7 +86,8 @@
         "drupal/webform_content_creator": "^4.0",
         "drupal/webform_user_registration": "^1.0@alpha",
         "drush/drush": "^11 || ^12",
-        "pantheon-systems/drupal-integrations": "^9",
+        "mglaman/composer-drupal-lenient": "^1.0",
+        "pantheon-systems/drupal-integrations": "^10",
         "pantheon-upstreams/upstream-configuration": "dev-main",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -96,11 +97,11 @@
         "drupal/stage_file_proxy": "^2.0",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
-        "drupal/core-dev": "^9",
+        "drupal/core-dev": "^10",
         "drupal/devel": "^5.1",
         "drupal/devel_entity_updates": "^4.1",
         "weitzman/drupal-test-traits": "^2.0",
-        "drupal/upgrade_status": "^3.18"
+        "drupal/upgrade_status": "^4.0"
     },
     "conflict": {
             "drupal/drupal": "*"
@@ -142,7 +143,7 @@
             "Workflow state action fixes": "https://git.drupalcode.org/project/apitools/-/merge_requests/3.diff"
           },
           "drupal/core": {
-            "Provide some way to rebuild the persistent bundle field map": "https://git.drupalcode.org/project/drupal/-/merge_requests/1434.diff"
+            "Issue #3129179: Provide some way to rebuild the persistent bundle field map": "https://www.drupal.org/files/issues/2023-08-30/rebuild_field_map-3129179-39.patch"
           },
           "drupal/ctools": {
             "Cannot use Entity View block in Layout Builder when there is no context": "https://www.drupal.org/files/issues/2021-05-24/ctools-layout_builder_context-3029323-12.patch"
@@ -162,6 +163,12 @@
           "drupal/views_filters_summary": {
             "Issue #3290489: Automated Drupal 10 compatibility fixes": "https://git.drupalcode.org/project/views_filters_summary/-/merge_requests/15.diff"
           }
+        },
+        "drupal-lenient": {
+            "allowed-list": [
+                "drupal/views_filters_summary",
+                "drupal/webform_user_registration"
+            ]
         }
     },
     "autoload": {
@@ -191,7 +198,9 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "drupal/console-extend-plugin": true
+            "drupal/console-extend-plugin": true,
+            "mglaman/composer-drupal-lenient": true,
+            "phpstan/extension-installer": true
         }
     }
 }

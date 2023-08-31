@@ -13,8 +13,10 @@ dependencies:
     - node.type.page
   module:
     - block
+    - block_content
     - contact
     - contextual
+    - file
     - filter
     - node
     - path
@@ -28,6 +30,7 @@ weight: -4
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access block library'
   - 'access content'
   - 'access content overview'
   - 'access contextual links'
@@ -35,6 +38,8 @@ permissions:
   - 'access toolbar'
   - 'access user contact forms'
   - 'access user profiles'
+  - 'administer block content'
+  - 'administer block types'
   - 'administer blocks'
   - 'administer contact forms'
   - 'administer menu'
@@ -46,6 +51,7 @@ permissions:
   - 'delete any article content'
   - 'delete any page content'
   - 'delete own article content'
+  - 'delete own files'
   - 'delete own page content'
   - 'edit any article content'
   - 'edit any page content'

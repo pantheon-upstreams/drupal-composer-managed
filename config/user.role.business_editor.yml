@@ -10,6 +10,7 @@ dependencies:
   module:
     - contact
     - contextual
+    - file
     - filter
     - media
     - node
@@ -38,6 +39,7 @@ permissions:
   - 'create event content'
   - 'delete any article content'
   - 'delete own article content'
+  - 'delete own files'
   - 'edit any article content'
   - 'edit any event content'
   - 'edit own article content'

@@ -4,7 +4,7 @@ langcode: en
 uuid: 52ca27b6-27fa-4c10-91a8-5ab90b9d564b
 name: 'Sanford Underground Research Facility'
 mail: communication@sanfordlab.org
-slogan: 'America''s Underground Science Laboratory'
+slogan: "America's Underground Science Laboratory"
 page:
   403: ''
   404: ''

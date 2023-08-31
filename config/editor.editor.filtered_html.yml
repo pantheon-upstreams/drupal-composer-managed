@@ -26,6 +26,11 @@ settings:
       - blockQuote
       - code
   plugins:
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
@@ -37,11 +42,6 @@ settings:
         - '<ul type>'
         - '<ol type>'
         - '<img data-entity-type data-entity-uuid data-align data-caption>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
-    ckeditor5_imageResize:
-      allow_resize: true
 image_upload:
   status: false
   scheme: public

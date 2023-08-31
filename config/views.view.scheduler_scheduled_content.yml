@@ -755,7 +755,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_description: 'Overview of all scheduled content, as a tab on main ''content admin'' page'
+      display_description: "Overview of all scheduled content, as a tab on main 'content admin' page"
       display_extenders: {  }
       path: admin/content/scheduled
       menu:
@@ -845,7 +845,7 @@ display:
         arguments: false
         filters: true
         filter_groups: true
-      display_description: 'Scheduled content tab on user profile, showing just that user''s scheduled content'
+      display_description: "Scheduled content tab on user profile, showing just that user's scheduled content"
       display_extenders: {  }
       path: user/%user/scheduled
       menu:

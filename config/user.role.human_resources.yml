@@ -10,6 +10,7 @@ dependencies:
   module:
     - contact
     - contextual
+    - file
     - filter
     - media
     - node
@@ -35,6 +36,7 @@ permissions:
   - 'delete any job_posting content'
   - 'delete job_posting revisions'
   - 'delete own article content'
+  - 'delete own files'
   - 'delete own job_posting content'
   - 'edit any article content'
   - 'edit any job_posting content'

@@ -33,6 +33,11 @@ settings:
       enabled_headings:
         - heading5
         - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
@@ -43,11 +48,6 @@ settings:
         - '<ul type>'
         - '<ol type>'
         - '<img data-caption>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
-    ckeditor5_imageResize:
-      allow_resize: true
 image_upload:
   status: true
   scheme: public

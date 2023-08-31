@@ -9,8 +9,8 @@ label: 'Member profile'
 description: 'Configuration for site members'
 conf:
   extensions: 'jpg png gif svg'
-  maxsize: !!float 32
-  quota: !!float 60
+  maxsize: 32.0
+  quota: 60.0
   maxwidth: 1024
   maxheight: 1024
   replace: 0

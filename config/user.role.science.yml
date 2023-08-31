@@ -12,6 +12,7 @@ dependencies:
   module:
     - contact
     - contextual
+    - file
     - filter
     - node
     - scheduler
@@ -35,6 +36,7 @@ permissions:
   - 'create event content'
   - 'delete own article content'
   - 'delete own event content'
+  - 'delete own files'
   - 'edit own article content'
   - 'edit own event content'
   - 'schedule publishing of nodes'
