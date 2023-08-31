@@ -50,7 +50,6 @@ module:
   image: 0
   imce: 0
   inline_entity_form: 0
-  insert_view: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
