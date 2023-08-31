@@ -31,47 +31,48 @@
 
 {# GRADES #}
 {% set grade_levels = [] %}
-{% for item in content.field_ref_grade_level['#items'] if item.target_id %}
+{% for item in content.field_ref_grade_level['#items'] %}
+    {% if item.target_id %}
+        {% set id = item.target_id %}
+        {% set grade_levels_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
 
-  {% set id = item.target_id %}
-  {% set grade_levels_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
-
-  {% set grade_levels = grade_levels|merge([{
-    id: item.target_id,
-    title: grade_levels_title,
-  }]) %}
-
+          {% set grade_levels = grade_levels|merge([{
+            id: item.target_id,
+            title: grade_levels_title,
+          }]) %}
+    {% endif %}
 {% endfor %}
 {# <pre>{{dump(grade_levels)}}</pre> #}
 
 
 {# CONTENT AREA field_content_area #}
 {% set content_areas = [] %}
-{% for item in content.field_content_area['#items'] if item.target_id %}
+{% for item in content.field_content_area['#items'] %}
+    {% if item.target_id %}
 
-  {% set id = item.target_id %}
-  {% set content_areas_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
+      {% set id = item.target_id %}
+      {% set content_areas_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
 
-  {% set content_areas = content_areas|merge([{
-    id: item.target_id,
-    title: content_areas_title,
-  }]) %}
-
+      {% set content_areas = content_areas|merge([{
+        id: item.target_id,
+        title: content_areas_title,
+      }]) %}
+    {% endif %}
 {% endfor %}
 {# <pre>{{dump(content_areas)}}</pre> #}
 
 {# STANDARDS field_ref_standards  #}
 {% set standards = [] %}
-{% for item in content.field_ref_standards['#items'] if item.target_id %}
+{% for item in content.field_ref_standards['#items'] %}
+    {% if item.target_id %}
+      {% set id = item.target_id %}
+      {% set standards_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
 
-  {% set id = item.target_id %}
-  {% set standards_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
-
-  {% set standards = standards|merge([{
-    id: item.target_id,
-    title: standards_title
-  }]) %}
-
+      {% set standards = standards|merge([{
+        id: item.target_id,
+        title: standards_title
+      }]) %}
+    {% endif %}
 {% endfor %}
 {# <pre>{{dump(standards)}}</pre> #}
 

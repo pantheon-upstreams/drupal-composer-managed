@@ -20,7 +20,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<p> <a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <h5 id> <h6 id> <table> <td> <tr> <th> <tbody> <sup> <img src alt height width src alt data-entity-type data-entity-uuid data-align data-caption>'
+      allowed_html: '<br> <p> <h5 id> <h6 id> <cite> <blockquote cite> <a hreflang href> <ul type> <ol type start> <img data-caption src alt height width data-entity-uuid data-entity-type data-align> <strong> <em> <code> <sup> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:

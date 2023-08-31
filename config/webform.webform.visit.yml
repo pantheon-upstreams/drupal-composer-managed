@@ -11,7 +11,7 @@ archive: false
 id: visit
 title: 'Field trip / Presentation'
 description: ''
-category: ''
+categories: {  }
 elements: |-
   change_request:
     '#type': checkbox

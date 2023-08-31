@@ -18,7 +18,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  ckeditor: 0
   ckeditor5: 0
   cl_components: 0
   cl_generator: 0
@@ -51,7 +50,6 @@ module:
   image: 0
   imce: 0
   inline_entity_form: 0
-  insert_view: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
@@ -69,7 +67,6 @@ module:
   menu_block: 0
   menu_item_extras: 0
   menu_ui: 0
-  mercury_editor_layouts: 0
   mercury_editor_skip_form: 0
   metatag: 0
   metatag_facebook: 0
@@ -92,7 +89,6 @@ module:
   path: 0
   path_alias: 0
   pathauto: 0
-  rdf: 0
   redirect: 0
   redirect_404: 0
   responsive_image: 0
@@ -137,10 +133,8 @@ module:
   paragraphs: 11
   standard: 1000
 theme:
-  radix: 0
-  surf: 0
   claro: 0
   gin: 0
-  stable: 0
+  stable9: 0
   surf_main: 0
 profile: standard

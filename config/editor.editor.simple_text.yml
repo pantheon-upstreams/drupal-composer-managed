@@ -1,31 +1,22 @@
-uuid: 495f3ea4-9336-4179-a76e-b42d650c1fc5
+uuid: d59cc75c-dd75-4146-a3b7-659e15b85845
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.simple_text
   module:
-    - ckeditor
+    - ckeditor5
 format: simple_text
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Tools
-          items:
-            - RemoveFormat
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - '|'
+      - removeFormat
   plugins: {  }
 image_upload:
   status: false

@@ -40,6 +40,7 @@ function surf_registration_user_cancel($edit, UserInterface $account, $method) {
       $storage = \Drupal::entityTypeManager()->getStorage('user_request');
       $user_request_ids = $storage->getQuery()
         ->condition('uid', $account->id())
+        ->accessCheck(FALSE)
         ->execute();
       foreach ($storage->loadMultiple($user_request_ids) as $user_request) {
         $user_request->setOwnerId(0);
@@ -57,6 +58,7 @@ function surf_registration_user_predelete(UserInterface $account) {
   $storage = \Drupal::entityTypeManager()->getStorage('user_request');
   $user_request_ids = $storage->getQuery()
     ->condition('uid', $account->id())
+    ->accessCheck(FALSE)
     ->execute();
   $user_requests = $storage->loadMultiple($user_request_ids);
   $storage->delete($user_requests);

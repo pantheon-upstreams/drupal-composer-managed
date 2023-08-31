@@ -9,6 +9,7 @@ dependencies:
     - cl_server
     - filter
     - media
+    - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
@@ -16,7 +17,7 @@ label: 'anonymous user'
 weight: -10
 is_admin: false
 permissions:
-  - 'use cl server'
+  - 'access content'
   - 'use cl server'
   - 'use cl server'
   - 'use text format basic_html'

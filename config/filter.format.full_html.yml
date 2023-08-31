@@ -1,9 +1,7 @@
 uuid: d24a4e8a-f6af-4170-a4bc-aaf304595e98
 langcode: en
 status: true
-dependencies:
-  module:
-    - insert_view
+dependencies: {  }
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
 name: 'Full HTML'
@@ -35,15 +33,9 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <img src alt data-entity-type data-entity-uuid data-align data-caption> <h1> <pre> <p class="intro-paragraph large-paragraph"> <a href hreflang class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button">'
+      allowed_html: '<p class="intro-paragraph large-paragraph"> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button">'
       filter_html_help: true
       filter_html_nofollow: false
-  insert_view:
-    id: insert_view
-    provider: insert_view
-    status: true
-    weight: 0
-    settings: {  }
   filter_align:
     id: filter_align
     provider: filter

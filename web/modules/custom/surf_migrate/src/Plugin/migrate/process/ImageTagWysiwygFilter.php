@@ -104,8 +104,8 @@ class ImageTagWysiwygFilter extends ProcessPluginBase implements ContainerFactor
     try {
       $dom = $html5->parse($dom_text);
     } catch (\TypeError $e) {
-      $text_stream = new StringInputStream($dom_text);
-      $dom = $html5->parse($text_stream);
+//      $text_stream = new StringInputStream($dom_text);
+      $dom = $html5->parse($dom_text);
     }
 
     $source_connection = Database::getConnection('default', $config['source_db'] ?? 'migrate');

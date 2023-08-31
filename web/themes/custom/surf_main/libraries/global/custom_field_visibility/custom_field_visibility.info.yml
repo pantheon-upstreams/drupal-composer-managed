@@ -1,7 +1,7 @@
 name: "Custom Field Visibility"
 type: module
 description: "Provides functionality to conditionally show/hide fields in Drupal paragraphs."
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: Custom
 dependencies:
   - drupal:paragraphs

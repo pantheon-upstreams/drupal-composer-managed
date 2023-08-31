@@ -18,7 +18,7 @@ filters:
     status: true
     weight: 1
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <img src alt data-entity-type data-entity-uuid src alt data-entity-type data-entity-uuid data-align data-caption>'
+      allowed_html: '<br> <p> <cite> <dl> <dt> <dd> <blockquote cite> <a hreflang href> <ul type> <ol type start> <img data-entity-type data-entity-uuid data-align data-caption src alt height width> <strong> <em> <code> <li>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:

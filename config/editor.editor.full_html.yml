@@ -1,65 +1,91 @@
-uuid: 356667cb-bcc8-4149-9e6e-6645ea89d7b4
+uuid: 0a0749cd-a9d6-4813-8701-dc0f433ef7df
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.full_html
   module:
-    - ckeditor
-_core:
-  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+    - ckeditor5
 format: full_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Strike
-            - Superscript
-            - Subscript
-            - '-'
-            - RemoveFormat
-            - Outdent
-            - Indent
-        -
-          name: Linking
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - DrupalImage
-            - Table
-            - HorizontalRule
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-            - Styles
-        -
-          name: Tools
-          items:
-            - ShowBlocks
-            - Source
+    items:
+      - bold
+      - italic
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - outdent
+      - indent
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalInsertImage
+      - insertTable
+      - horizontalLine
+      - '|'
+      - heading
+      - codeBlock
+      - style
+      - '|'
+      - sourceEditing
   plugins:
-    stylescombo:
-      styles: "p.intro-paragraph|Intro paragraph\r\np.large-paragraph|Large paragraph\r\na.white-green-button|White bg and Forest text Solid button\r\na.white-black-button|White bg and Black text Solid button\r\na.forest-button|Forest bg and white text Solid button\r\na.kelly-green-button|Kelly bg and white text Solid button\r\na.gradient-button|Gradient bg and white text Solid button\r\na.black-button|Black bg and white text Solid button\r\na.underline-white-button|White Underline Button\r\na.underline-green-button|Forest Underline Button"
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Intro paragraph'
+          element: '<p class="intro-paragraph">'
+        -
+          label: 'Large paragraph'
+          element: '<p class="large-paragraph">'
+        -
+          label: 'White bg and Forest text Solid button'
+          element: '<a class="white-green-button">'
+        -
+          label: 'White bg and Black text Solid button'
+          element: '<a class="white-black-button">'
+        -
+          label: 'Forest bg and white text Solid button'
+          element: '<a class="forest-button">'
+        -
+          label: 'Kelly bg and white text Solid button'
+          element: '<a class="kelly-green-button">'
+        -
+          label: 'Gradient bg and white text Solid button'
+          element: '<a class="gradient-button">'
+        -
+          label: 'Black bg and white text Solid button'
+          element: '<a class="black-button">'
+        -
+          label: 'White Underline Button'
+          element: '<a class="underline-white-button">'
+        -
+          label: 'Forest Underline Button'
+          element: '<a class="underline-green-button">'
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_imageResize:
+      allow_resize: true
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

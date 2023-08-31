@@ -80,12 +80,11 @@ class Event extends Node implements EntityUserDashboardInterface {
 
   public function getActiveUserRequest(AccountInterface $user) {
     $query = $this->entityTypeManager()->getStorage('user_request')->getQuery();
-    $query->accessCheck(FALSE)
-      ->condition('type', 'event_registration')
+    $query->condition('type', 'event_registration')
       ->condition('state', 'registered', '!=')
       ->condition('field_ref_event.target_id', $this->id());
 
-    $result = $query->execute();
+    $result = $query->accessCheck(FALSE)->execute();
     if (empty($result)) {
       return FALSE;
     }

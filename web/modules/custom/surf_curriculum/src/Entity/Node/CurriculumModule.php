@@ -48,14 +48,11 @@ class CurriculumModule extends Node implements EntityUserDashboardInterface {
   public function getActiveDownloadRequest(AccountInterface $user) {
     $query = $this->entityTypeManager()->getStorage('download_request')->getQuery();
     $current_date = \Drupal::service('date.formatter')->format(\Drupal::time()->getCurrentTime(), 'custom', 'Y-m-d');
-    $query->accessCheck(FALSE)
-      // this might need to be modified
-      //->condition('request_items.entity.state', 'returned', '!=')
-      ->condition('field_dates.end_value', $current_date, '>=')
+    $query->condition('field_dates.end_value', $current_date, '>=')
       ->condition('request_items.entity.download_item.entity.type', 'curriculum_module_resources')
       ->condition('request_items.entity.download_item.entity.field_curriculum_module.target_id', $this->id());
 
-    $result = $query->execute();
+    $result = $query->accessCheck(FALSE)->execute();
     if (empty($result)) {
       return FALSE;
     }

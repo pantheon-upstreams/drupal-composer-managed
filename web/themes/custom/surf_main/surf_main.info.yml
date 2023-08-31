@@ -1,10 +1,8 @@
 name: SURF Main
 type: theme
 description: A dynamic theme powered by Prototype & Mercury Editor with a powerful display.
-package: prototype
-core_version_requirement: ^9
-base theme: stable
-# starterkit: true
+core_version_requirement: ^9 || ^10
+base theme: stable9
 
 regions:
   site_alert: Alert
@@ -27,8 +25,3 @@ components:
       - libraries/components
     surf_main-icons:
       - images/icons
-
-version: "4.0.0-alpha2"
-project: prototype
-datestamp: 1673374025
-generator: "prototype:4.0.0-alpha2"
