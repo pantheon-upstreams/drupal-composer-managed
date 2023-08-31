@@ -73,7 +73,6 @@
         "drupal/auto_entitylabel": "^3.0",
         "drupal/gin": "^3.0@RC",
         "drupal/mailsystem": "^4.4",
-        "drupal/prototype": "^4.0@alpha",
         "drupal/page_manager": "^4.0@RC",
         "drupal/search_api": "^1.28",
         "drupal/search_api_solr": "^4.2",
@@ -90,7 +89,8 @@
         "drupal/notification_message": "^1.0@RC",
         "drupal/allowed_formats": "^2.0",
         "drupal/twig_tweak": "^3.2",
-        "drupal/viewsreference": "^2.0@beta"
+        "drupal/viewsreference": "^2.0@beta",
+        "drupal/components": "^2.4"
     },
     "require-dev": {
         "drupal/stage_file_proxy": "^2.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0eea4c91ccdc9d795170f0788e6e3e40",
+    "content-hash": "b769c64d4cd8ba7bc2b89e5e8de3016e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4651,67 +4651,6 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
-            }
-        },
-        {
-            "name": "drupal/prototype",
-            "version": "4.0.0-alpha2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/prototype.git",
-                "reference": "4.0.0-alpha2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/prototype-4.0.0-alpha2.zip",
-                "reference": "4.0.0-alpha2",
-                "shasum": "d29ee5eda0e5d12a699b23ce0355dac5f1c90846"
-            },
-            "require": {
-                "drupal/components": "^2.0",
-                "drupal/core": "^8 || ^9",
-                "drupal/twig_field_value": "^2.0",
-                "drupal/twig_tweak": "^3.0"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "drupal": {
-                    "version": "4.0.0-alpha2",
-                    "datestamp": "1673374019",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "John Ferris",
-                    "homepage": "https://www.drupal.org/user/1783066",
-                    "email": "john@atendesigngroup.com"
-                },
-                {
-                    "name": "James Nettik",
-                    "homepage": "https://www.drupal.org/user/741478",
-                    "email": "james@atendesigngroup.com"
-                },
-                {
-                    "name": "kenwoodworth",
-                    "homepage": "https://www.drupal.org/user/727580"
-                },
-                {
-                    "name": "pixelwhip",
-                    "homepage": "https://www.drupal.org/user/275292"
-                }
-            ],
-            "description": "Aten Prototype Theme",
-            "homepage": "https://www.drupal.org/project/prototype",
-            "support": {
-                "source": "https://git.drupalcode.org/project/prototype"
             }
         },
         {
@@ -16580,7 +16519,6 @@
         "atendesigngroup/mercury_editor": 20,
         "drupal/name": 5,
         "drupal/gin": 5,
-        "drupal/prototype": 15,
         "drupal/page_manager": 5,
         "drupal/views_filters_summary": 15,
         "drupal/webform_user_registration": 15,
@@ -16597,5 +16535,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

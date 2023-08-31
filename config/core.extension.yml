@@ -4,6 +4,7 @@ module:
   action: 0
   address: 0
   admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
   allowed_formats: 0
@@ -13,10 +14,12 @@ module:
   backup_migrate: 0
   ban: 0
   better_exposed_filters: 0
+  big_pipe: 0
   block: 0
   block_content: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor5: 0
   cl_components: 0
   cl_generator: 0
   cl_server: 0
@@ -42,9 +45,8 @@ module:
   file: 0
   filefield_paths: 0
   filter: 0
+  gin_toolbar: 0
   google_analytics: 0
-  help: 0
-  history: 0
   honeypot: 0
   image: 0
   imce: 0
@@ -67,16 +69,8 @@ module:
   menu_block: 0
   menu_item_extras: 0
   menu_ui: 0
-  mercury_editor: 0
-  mercury_editor_components: 0
-  mercury_editor_dialog: 0
-  mercury_editor_edit_tray: 0
-  mercury_editor_iframe: 0
-  mercury_editor_inline_editor: 0
   mercury_editor_layouts: 0
   mercury_editor_skip_form: 0
-  mercury_editor_style_options: 0
-  mercury_editor_tabs: 0
   metatag: 0
   metatag_facebook: 0
   metatag_open_graph: 0
@@ -101,6 +95,7 @@ module:
   rdf: 0
   redirect: 0
   redirect_404: 0
+  responsive_image: 0
   scheduler: 0
   search_api: 0
   search_api_block: 0
@@ -124,10 +119,10 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   twig_field_value: 0
   twig_tweak: 0
   update: 0
+  upgrade_status: 0
   user: 0
   views_filters_summary: 0
   views_infinite_scroll: 0
