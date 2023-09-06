@@ -2446,7 +2446,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/sandbox/asherry-3335446.git",
-                "reference": "648db5eff77d25794c70c875f00a8936e22dc4cb"
+                "reference": "14a8681b343f8aef2472f6486b8c1062acad21d5"
             },
             "require": {
                 "drupal/entity": "^1.4",
@@ -2458,7 +2458,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Allows users to request access to resources with approval functionality.",
-            "time": "2023-02-11T13:01:32+00:00"
+            "time": "2023-09-01T12:52:13+00:00"
         },
         {
             "name": "drupal/entity",
