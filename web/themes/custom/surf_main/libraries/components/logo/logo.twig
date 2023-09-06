@@ -1,8 +1,0 @@
-{% import '@surf_main-components/component.twig' as component %}
-<a href="/" title="{{ title ? title : 'Home' }}" rel="home" {{ component.attributes('logo', modifiers, attr) }}>
-  {% if svg_source %}
-    <img src="{{ svg_source }}" alt="{{ alt ? alt : 'Home' }}" class="logo__image" {% if bitmap_source %}onerror="this.onerror=null; this.src='{{ bitmap_source }}'" {% endif %}>
-  {% else %}
-    <img src="{{ bitmap_source }}" alt="{{ alt ? alt : 'Home' }}" class="logo__image">
-  {% endif %}
-</a>

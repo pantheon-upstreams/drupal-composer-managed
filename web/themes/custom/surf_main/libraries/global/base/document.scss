@@ -5,7 +5,7 @@
 // This file outputs to global.css, the primary stylesheet for the theme
 //
 
-@import "../../partials/_partials";
+@use '../../partials/partials' as *;
 
 // Make everything border-box
 * {
@@ -105,12 +105,3 @@ hr.left-hook-divider {
     background: var(--color-surf--grey);
   }
 }
-
-// @keyframes bg-animation {
-//   from {
-//     background-position: 0% 100%;
-//   }
-//   to {
-//     background-position: 100% 0%;
-//   }
-// }

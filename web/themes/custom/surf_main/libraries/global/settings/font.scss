@@ -4,7 +4,7 @@
 // These default values are intended to be mofified and extended to suite the needs
 // of an individual project.
 
-@import "../../partials/_partials";
+@use "../../partials/partials" as *;
 
 :root {
   /*

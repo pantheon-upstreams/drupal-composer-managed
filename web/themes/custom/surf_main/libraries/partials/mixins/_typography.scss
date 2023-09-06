@@ -1,0 +1,80 @@
+//
+// Mixins - Typography
+// Use these mixins when needing to easily define typography styles, such as sizes and typographical layout.
+//
+// - 01 - Typography
+// - 02 - Headings
+// - 03 - Body
+//
+
+
+// ------------------------------------
+// 01 - Typography
+// Mixin for determining font sizing and line heights from CSS variables.
+// @param $font-size: [integer] size of font depicted by a number / associates with CSS variables.
+// @param $line-height: [string] setting of line height as depicted by a string / associates with CSS variables.
+// ------------------------------------
+
+@mixin font($font-size, $line-height: default) {
+  font-size: var(--prototype-font-size- + $font-size);
+  line-height: var(--prototype-line-height- + $line-height);
+}
+
+
+
+
+// ------------------------------------
+// 02 - Headings
+// ------------------------------------
+
+@mixin heading-base() {
+  font-family: var(--prototype-font-sans);
+  font-weight: var(--prototype-font-weight-bold);
+}
+
+@mixin heading-01() {
+  @include heading-base();
+  @include font(90, heading);
+}
+
+@mixin heading-02() {
+  @include heading-base();
+  @include font(48, heading);
+}
+
+@mixin heading-03() {
+  @include heading-base();
+  @include font(32, heading);
+}
+
+@mixin heading-04() {
+  @include heading-base();
+  @include font(24, heading);
+}
+
+@mixin heading-05() {
+  @include heading-base();
+  @include font(18, heading);
+}
+
+@mixin heading-06() {
+  @include heading-base();
+  @include font(16, heading);
+}
+
+
+
+
+// ------------------------------------
+// 03 - Body
+// ------------------------------------
+
+@mixin body-base() {
+  font-family: var(--prototype-font-sans);
+  font-weight: var(--prototype-font-weight-regular);
+}
+
+@mixin body-18() {
+  @include body-base();
+  @include font(18, default);
+}

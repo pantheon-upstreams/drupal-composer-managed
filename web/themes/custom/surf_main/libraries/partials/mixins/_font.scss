@@ -1,3 +1,5 @@
+@use 'breakpoints' as mixins-breakpoints;
+
 // SURF Main - Heading Fonts
 @mixin surf-font-heading-one() {
   font-weight: var(--font-weight-medium);
@@ -19,7 +21,7 @@
   font-size: var(--font-size-heading-two);
   line-height: var(--font-line-height-heading-two);
   letter-spacing: 0.015em;
-  @include bp-min(medium) {
+  @include mixins-breakpoints.bp-min(medium) {
     letter-spacing: 0.02em;
   }
 }

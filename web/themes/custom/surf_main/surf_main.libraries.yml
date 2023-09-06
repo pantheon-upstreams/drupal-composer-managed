@@ -1,4 +1,4 @@
-####
+#
 # SURF Main - Libraries
 # - 01 - Fonts
 # - 02 - Global
@@ -8,8 +8,8 @@
 # - 06 - Paragraphs
 # - 07 - Components
 # - 08 - Views
-# - 09 - Misc
-####
+#
+
 
 #------------------------------------#
 # 01 - Fonts
@@ -20,55 +20,37 @@ fonts:
     base:
       "//use.typekit.net/wjp3vgo.css": { type: external, minified: true }
 
+
+
+
 #------------------------------------#
 # 02 - Global
 #------------------------------------#
 
-normalize:
-  version: 4.0.x
-  css:
-    base:
-      dist/css/global/base/normalize.css: {}
-
 global:
-  version: 4.0.x
   css:
     base:
-      dist/css/global/settings/color.css: {}
-      dist/css/global/settings/font.css: {}
-      dist/css/global/settings/size.css: {}
-      dist/css/global/settings/space.css: {}
-      dist/css/global/base/buttons.css: {}
-      dist/css/global/base/document.css: {}
-      dist/css/global/base/forms.css: {}
-      dist/css/global/base/lists.css: {}
-      dist/css/global/base/media.css: {}
-      dist/css/global/base/tables.css: {}
-      dist/css/global/base/text.css: {}
-    layout:
-      dist/css/global/layout/align.css: {}
-      dist/css/global/layout/cluster.css: {}
-      dist/css/global/layout/constrained.css: {}
-      dist/css/global/layout/grid.css: {}
-      dist/css/global/layout/stack.css: {}
-      dist/css/global/layout/me-layouts.css: {}
-    theme:
-      dist/css/global/theme/reverse.css: {}
-      dist/css/global/theme/themes.css: {}
-      dist/css/global/utilities.css: {}
-  dependencies:
-    - surf_main/normalize
-  js:
-    node_modules/@splidejs/splide/dist/js/splide.min.js: {}
+      dist/css/global/base/buttons.css: { minified: true }
+      dist/css/global/base/document.css: { minified: true }
+      dist/css/global/base/forms.css: { minified: true }
+      dist/css/global/base/lists.css: { minified: true }
+      dist/css/global/base/media.css: { minified: true }
+      dist/css/global/base/reset.css: { minified: true }
+      dist/css/global/base/tables.css: { minified: true }
+      dist/css/global/base/text.css: { minified: true }
+      dist/css/global/layout/layout.css: { minified: true }
+      dist/css/global/settings/color.css: { minified: true }
+      dist/css/global/settings/font.css: { minified: true }
+      dist/css/global/settings/size.css: { minified: true }
+      dist/css/global/settings/space.css: { minified: true }
+      dist/css/global/theme/themes.css: { minified: true }
+
+
+
+
 #------------------------------------#
 # 03 - Nodes
 #------------------------------------#
-
-# Person
-person:
-  css:
-    component:
-      dist/css/components/person/full.component.css: {}
 
 #------------------------------------#
 # 04 - Blocks
@@ -86,88 +68,60 @@ person:
 # 07 - Components
 #------------------------------------#
 
-# Card
-card:
-  css:
-    component:
-      dist/css/components/card/card.component.css: {}
 
-# Breadcrumbs
-breadcrumbs:
-  css:
-    component:
-      dist/css/components/breadcrumbs/breadcrumbs.component.css: {}
-
-# Messages
 messages:
   css:
     component:
-      dist/css/components/messages/messages.component.css: {}
-      dist/css/components/messages/messages.theme.css: {}
+      dist/css/components/messages/messages.css: { minified: true }
 
-# Pager
-pager:
-  css:
-    component:
-      dist/css/components/pager/pager.component.css: {}
-
-# Search form
 search-form:
   css:
     theme:
-      dist/css/components/search-form/search-form.css: {}
+      dist/css/components/search-form/search-form.css: { minified: true }
   js:
-    dist/js/search-form/search-form.js: {}
+    dist/js/components/search-form/search-form.js: { minified: true }
   dependencies:
     - core/jquery
 
-# Section Title
 section-title:
   css:
     component:
-      dist/css/components/section-title/section-title.component.css: {}
+      dist/css/components/section-title/section-title.css: { minified: true }
 
-# Site: Footer
 site-footer:
   css:
     component:
-      dist/css/components/site-footer/site-footer.component.css: {}
+      dist/css/components/site-footer/site-footer.css: { minified: true }
 
-# Site: Header
 site-header:
   css:
     component:
-      dist/css/components/site-header/site-header.component.css: {}
+      dist/css/components/site-header/site-header.css: { minified: true }
   js:
-    dist/js/site-header/site-header.js: {}
-    dist/js/site-header-aria/site-header-aria.js: {}
+    dist/js/components/site-header/site-header.js: { minified: true }
+    dist/js/components/site-header/site-header-aria.js: { minified: true }
   dependencies:
     - core/jquery
     - core/once
 
-# Teaser
 teaser:
   css:
     component:
-      dist/css/components/teaser/teaser.component.css: {}
+      dist/css/components/teaser/teaser.css: {}
+
+
+
+
 #------------------------------------#
 # 08 - Views
 #------------------------------------#
-# Site: Header
+
 collapsible-filter:
   css:
     component:
-      dist/css/components/collapsible-filter/collapsible-filter.component.css:
-        {}
+      dist/css/components/collapsible-filter/collapsible-filter.css: { minified: true }
   js:
-    dist/js/collapsible-filter/collapsible-filter.js: {}
+    dist/js/components/collapsible-filter/collapsible-filter.js: { minified: false }
   dependencies:
     - core/jquery
     - core/once
-#------------------------------------#
-# 09 - Misc
-#------------------------------------#
-
-# Splide
-# splide:
-

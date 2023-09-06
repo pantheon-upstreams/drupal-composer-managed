@@ -74,6 +74,6 @@ module.exports = {
       encode: encode,
       paths: ["./images/icons"],
     }),
-    // cssnano(), // Uncomment this line if you would like to minimize all CSS
+    cssnano(), // Uncomment this line if you would like to minimize all CSS
   ],
 };

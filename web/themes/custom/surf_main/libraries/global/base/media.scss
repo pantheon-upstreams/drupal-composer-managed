@@ -1,7 +1,13 @@
-img {
-  max-width: 100%;
-  height: auto;
-}
+//
+// Global - Media
+//
+// - 01 - General
+//
+
+
+//------------------------------------
+//  01 - General
+//------------------------------------
 
 figure {
   margin: 0;
@@ -11,12 +17,11 @@ figure {
   }
 }
 
-figure {
-  figcaption {
-    margin: rem(8px) 0 0 0;
-    font-style: italic;
-    font-size: rem(14px);
-    line-height: 148%;
-    color: var(--color-surf--grey);
-  }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figcaption {
+  margin: 16px 0;
 }

@@ -1,6 +1,5 @@
-@import "../../partials/_partials";
+@use '../../partials/partials' as *;
 
-@custom-selector :--heading h1, h2, h3, h4, h5;
 
 h1,
 h2,
@@ -118,7 +117,6 @@ blockquote:not([class]) {
 
 // Rich Text Styles
 .field--name-field-text {
-  @include clearfix;
   p.intro-paragraph {
     @include surf-font-body-x-large;
   }

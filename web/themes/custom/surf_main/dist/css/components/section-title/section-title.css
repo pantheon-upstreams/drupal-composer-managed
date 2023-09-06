@@ -1,0 +1,14 @@
+.section-title > span {
+  display: block;
+}
+.section-title > small {
+  font-size: var(--font-size-tiny);
+  display: block;
+  margin-top: 0.5em;
+}
+
+.section-title--ruled {
+  border-bottom: solid 1px var(--border-color);
+  margin-bottom: var(--space-gap);
+  padding-bottom: var(--space-gap-y);
+}

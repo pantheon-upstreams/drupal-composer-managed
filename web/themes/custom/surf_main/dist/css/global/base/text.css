@@ -1,78 +1,3 @@
-/**
- * Functions - Breakpoints
- * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
- * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
- * global variable is used as the `$breakpoints` argument by default.
- *
- * - 01 - Breakpoint Next
- * - 02 - Breakpoint Minimum
- * - 03 - Breakpoint Maximum
- * - 04 - Breakpoint Infix
- */
-/*------------------------------------*\
-  01 - Breakpoint Next
-  Name of the next breakpoint, or null for the last breakpoint.
-\*------------------------------------*/
-/*------------------------------------*\
-  02 - Breakpoint Minimum
-  Minimum breakpoint width. Null for the smallest (first) breakpoint.
-\*------------------------------------*/
-/*------------------------------------*\
-  03 - Breakpoint Maximum
-  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
-  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
-  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
-\*------------------------------------*/
-/*------------------------------------*\
-  04 - Breakpoint Infix
-  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
-  responsive utilities.
-\*------------------------------------*/
-/**
- * Functions - Breakpoints
- * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
- * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
- * global variable is used as the `$breakpoints` argument by default.
- *
- * - 01 - Breakpoint Next
- * - 02 - Breakpoint Minimum
- * - 03 - Breakpoint Maximum
- * - 04 - Breakpoint Infix
- */
-/*------------------------------------*\
-  01 - Breakpoint Next
-  Name of the next breakpoint, or null for the last breakpoint.
-\*------------------------------------*/
-/*------------------------------------*\
-  02 - Breakpoint Minimum
-  Minimum breakpoint width. Null for the smallest (first) breakpoint.
-\*------------------------------------*/
-/*------------------------------------*\
-  03 - Breakpoint Maximum
-  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
-  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
-  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
-\*------------------------------------*/
-/*------------------------------------*\
-  04 - Breakpoint Infix
-  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
-  responsive utilities.
-\*------------------------------------*/
-/**
- * Settings - Breakpoints
- * - 01 - Mapping
- */
-/*------------------------------------*\
-  01 - Mapping
-\*------------------------------------*/
-/**
- * Mixins - Breakpoints
- * - 01 - Breakpoints
- */
-/*------------------------------------*\
-  01 - Breakpoints
-\*------------------------------------*/
-@custom-selector :--heading h1, h2, h3, h4, h5;
 h1,
 h2,
 h3,
@@ -115,7 +40,7 @@ h1 {
   font-size: var(--font-size-heading-one);
   line-height: var(--font-line-height-heading-one);
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768.98px) {
   h1 {
     font-size: 3rem;
   }
@@ -129,7 +54,7 @@ h2 {
   line-height: var(--font-line-height-heading-two);
   letter-spacing: 0.015em;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   h2 {
     letter-spacing: 0.02em;
   }
@@ -205,7 +130,7 @@ blockquote:not([class]) p {
   line-height: var(--font-line-height-heading-two);
   letter-spacing: 0.015em;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   blockquote:not([class]) p {
     letter-spacing: 0.02em;
   }
@@ -217,13 +142,6 @@ blockquote:not([class]) > p:last-child {
   margin-bottom: 0;
 }
 
-.field--name-field-text:before, .field--name-field-text:after {
-  content: " ";
-  display: table;
-}
-.field--name-field-text:after {
-  clear: both;
-}
 .field--name-field-text p.intro-paragraph {
   font-weight: var(--font-weight-regular);
   font-family: var(--font-family-body);
@@ -243,13 +161,13 @@ blockquote:not([class]) > p:last-child {
 .field--name-field-text p a:not([class]):hover {
   color: var(--color-surf--forest);
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .field--name-field-text img[data-align=right] {
     float: right;
     margin: 0 0 0.625rem 0.625rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .field--name-field-text img[data-align=center] {
     margin: 0 auto;
     display: block;

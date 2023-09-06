@@ -1,0 +1,224 @@
+:root {
+  --prototype-grid-gap: 24px;
+}
+@media (min-width: 992px) {
+  :root {
+    --prototype-grid-gap: 40px;
+  }
+}
+
+:root {
+  --prototype-width-xxlarge: 1920px;
+  --prototype-width-xlarge: 1440px;
+  --prototype-width-large: 1280px;
+  --prototype-width-medium: 960px;
+  --prototype-width-small: 768px;
+  --prototype-width-xsmall: 640px;
+  --prototype-width-xxsmall: 480px;
+}
+
+:root {
+  --prototype-zindex-super: 100;
+  --prototype-zindex-top: 90;
+  --prototype-zindex-over: 10;
+  --prototype-zindex-default: 1;
+  --prototype-zindex-under: -1;
+  --prototype-zindex-bottom: -9999px;
+}
+
+.align-left {
+  margin: 0 var(--prototype-grid-gap) var(--prototype-grid-gap) 0;
+}
+
+.align-right {
+  margin: 0 0 var(--prototype-grid-gap) var(--prototype-grid-gap);
+}
+
+.align-center {
+  margin: var(--prototype-grid-gap) auto;
+}
+
+[class*=l-flex] > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--prototype-grid-gap) / 2 * -1) calc(var(--prototype-grid-gap) / 2 * -1);
+}
+
+[class*=l-flex] > * > * {
+  margin: calc(var(--prototype-grid-gap) / 2) calc(var(--prototype-grid-gap) / 2);
+}
+
+.l-flex__alignment--start > * {
+  justify-content: flex-start;
+}
+
+.l-flex__alignment--center > * {
+  justify-content: center;
+}
+
+.l-flex__alignment--end > * {
+  justify-content: flex-end;
+}
+
+.l-flex__alignment--end > * {
+  justify-content: flex-end;
+}
+
+.l-flex__no-wrap > * {
+  flex-wrap: nowrap;
+}
+
+[class*=l-constrained] {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--prototype-width-xlarge);
+  width: 100%;
+}
+
+[class*=l-constrained] [class*=l-constrained] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.l-constrained {
+  max-width: var(--prototype-width-xlarge);
+}
+
+.l-constrained__width--narrow {
+  max-width: var(--prototype-width-medium);
+}
+
+.l-constrained__width--wide {
+  max-width: var(--prototype-width-xxlarge);
+}
+
+.l-constrained__width--full {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner {
+    display: flex;
+    flex-flow: nowrap row;
+    margin: 0 -var(--prototype-grid-gap);
+  }
+}
+.l-grid .l-grid__inner > * + * {
+  margin-top: var(--prototype-grid-gap);
+}
+.l-grid .l-grid__inner .l-grid__item {
+  flex-shrink: 0;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item {
+    padding: 0 var(--prototype-grid-gap);
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-2 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-2 {
+    width: 16.6666666667%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-3 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-3 {
+    width: 25%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-4 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-4 {
+    width: 33.3333333333%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-5 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-5 {
+    width: 41.6666666667%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-6 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-6 {
+    width: 50%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-7 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-7 {
+    width: 58.3333333333%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-8 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-8 {
+    width: 66.6666666667%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-9 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-9 {
+    width: 75%;
+  }
+}
+.l-grid .l-grid__inner .l-grid__item--col-10 {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .l-grid .l-grid__inner .l-grid__item--col-10 {
+    width: 83.3333333333%;
+  }
+}
+
+[class*=l-stack] > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+[class*=l-stack] > * + * {
+  margin-top: var(--space-gap-y);
+}
+
+.l-stack__ruled > * + * {
+  padding-top: var(--space-gap-y);
+  border-top: var(--size-border, 1px) var(--style-border, solid) var(--color-border);
+}
+
+.l-stack__none > * + * {
+  margin-top: 0;
+}
+
+.l-stack__minimal > * + * {
+  margin-top: 12px;
+}
+
+.l-stack__tight > * + * {
+  margin-top: 16px;
+}
+
+.l-stack__compact > * + * {
+  margin-top: 32px;
+}
+
+.l-stack__normal > * + * {
+  margin-top: 48px;
+}

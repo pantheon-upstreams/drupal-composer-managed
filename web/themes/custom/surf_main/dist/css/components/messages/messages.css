@@ -1,0 +1,112 @@
+.messages {
+  align-items: stretch;
+  border-radius: var(--size-radius, 0);
+  display: flex;
+  justify-content: stretch;
+}
+.messages:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.messages__content {
+  font-size: var(--font-size-small);
+  padding: 1em;
+}
+.messages__content ul {
+  margin: 0;
+  padding-left: 3em;
+}
+.messages__content a {
+  text-decoration: underline;
+}
+
+.messages__icon {
+  align-items: center;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  width: 3em;
+}
+.messages__icon > .icon {
+  height: 1em;
+  width: 1em;
+}
+.messages__icon svg {
+  height: 1em;
+  width: 1em;
+}
+
+.messages--full-screen {
+  align-items: center;
+  bottom: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  margin: 0 !important;
+  padding: 4em;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 6;
+}
+.messages--full-screen .messages__icon {
+  background: transparent;
+  height: 3em;
+  width: 3em;
+}
+.messages--full-screen .messages__icon > .icon {
+  height: 3em;
+  width: 3em;
+}
+.messages--full-screen .messages__icon svg {
+  height: 3em;
+  width: 3em;
+}
+.messages--full-screen .messages__content {
+  font-size: 2.5em;
+  line-height: 1;
+}
+
+.messages__content {
+  color: var(--color-text);
+  font-family: var(--font-family-interface);
+  flex: 1;
+}
+.messages__content a {
+  color: inherit;
+  font-weight: bold;
+}
+
+.messages {
+  background-color: var(--color-background);
+  border-radius: var(--size-radius);
+  overflow: hidden;
+}
+.messages .messages__icon {
+  background-color: var(--color-background);
+}
+
+.messages--status {
+  --color-background: var(--color-feedback-status);
+}
+
+.messages--warning {
+  --color-background: var(--color-feedback-warning);
+}
+
+.messages--error {
+  --color-background: var(--color-feedback-error);
+}
+
+.messages--full-screen {
+  background-color: var(--color-background);
+  color: #fff;
+}
+.messages--full-screen .messages__icon {
+  background: transparent;
+}
+.messages--full-screen .messages__content {
+  color: #fff;
+}

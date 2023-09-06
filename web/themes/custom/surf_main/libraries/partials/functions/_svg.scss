@@ -1,4 +1,0 @@
-// Format the SVG as a URL
-@function inline-svg($string) {
-  @return url('data:image/svg+xml,#{url-encode($string)}');
-}

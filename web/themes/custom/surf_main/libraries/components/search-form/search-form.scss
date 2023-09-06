@@ -1,7 +1,7 @@
 //
 // Global search bar styles
 //
-@import "../../partials/_partials";
+@use "../../partials/partials" as *;
 
 // Mobile styles from screens < 1024px
 @include bp-max(large) {

@@ -1,75 +1,22 @@
-/*
-  Lists
-*/
-@import "../../partials/_partials";
+//
+// Global - Lists
+//
+// - 01 - General
+//
+
+
+//------------------------------------
+//  01 - General
+//------------------------------------
 
 ul:not([class]),
 ol:not([class]) {
-  list-style: none;
-  margin-left: rem(4px);
-  padding-left: var(--space-indent);
-
-  > li:before {
-    position: absolute;
-  }
-
-  ul {
-    margin-top: 12px;
-
-    li:before {
-      content: "\25E6";
-    }
-  }
+  font-size: var(--prototype-font-size-16);
+  line-height: var(--prototype-line-height-default);
+  list-style-position: inside;
 }
 
-ul:not([class]) {
-  > li:before {
-    content: "\2022";
-    font-weight: var(--font-weight-bold);
-    margin-left: calc(var(--space-indent) * -1);
-  }
-}
-
-ol:not([class]) {
-  counter-reset: number;
-
-  > li:before {
-    content: counters(number, ".") ".";
-    counter-increment: number;
-    margin-left: calc((var(--space-indent) * -1) + 1ch);
-    text-align: right;
-    transform: translateX(-100%);
-  }
-
-  // Second Level
-  ol {
-    margin-top: 6px;
-    padding-left: 30px;
-
-    > li {
-      padding-left: 0;
-      text-indent: -30px;
-
-      &:before {
-        display: inline;
-        margin-right: 0.5em;
-        position: static;
-      }
-    }
-  }
-}
-
-/*
-  Definition Lists
-*/
-dl {
-  margin-bottom: 18px;
-}
-
-dt {
-  font-weight: var(--font-weight-bold);
-}
-
-dd {
-  margin-left: 30px;
+ul:not([class]):not(:first-child),
+ol:not([class]):not(:first-child) {
+  margin-top: 16px;
 }
