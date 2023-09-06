@@ -152,7 +152,8 @@
             "Add an overridden add page with destination support": "https://git.drupalcode.org/project/entity/-/merge_requests/8.diff"
           },
           "drupal/notification_message": {
-            "Block filtering by current timezone and not UTC": "https://www.drupal.org/files/issues/2023-02-17/3342687_0.patch"
+            "Block filtering by current timezone and not UTC": "https://www.drupal.org/files/issues/2023-02-17/3342687_0.patch",
+            "Issue #3357155: RouteEntityUuidCacheContext": "https://git.drupalcode.org/project/notification_message/-/merge_requests/14.diff"
           },
           "drupal/page_manager": {
             "\"Assigned contexts were not satisfied: user\" due to PageAccessCheck->access": "https://www.drupal.org/files/issues/2022-11-24/3323572-catch-context-exeptions-2.diff"
