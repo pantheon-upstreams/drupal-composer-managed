@@ -5,7 +5,6 @@
  * - 01 - Exports
  */
 
-
 /*------------------------------------*\
   01 - Exports
   Although Babel does not inherently require any other plugins or settings in order to operate, other plugins are
@@ -16,25 +15,26 @@
       without having to worry about browser support.
 \*------------------------------------*/
 
-'use strict'
+"use strict";
 
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache(true);
 
   const presets = [
     [
-      "@babel/preset-env", {
-        "corejs": 3.8, // https://babeljs.io/docs/en/babel-preset-env#corejs
-        "shippedProposals": true, // https://babeljs.io/docs/en/babel-preset-env#shippedproposals
-        "useBuiltIns": "entry", // https://babeljs.io/docs/en/babel-preset-env#usebuiltins-usage
-      }
-    ]
-  ]
+      "@babel/preset-env",
+      {
+        corejs: 3.8, // https://babeljs.io/docs/en/babel-preset-env#corejs
+        shippedProposals: true, // https://babeljs.io/docs/en/babel-preset-env#shippedproposals
+        useBuiltIns: "entry", // https://babeljs.io/docs/en/babel-preset-env#usebuiltins-usage
+      },
+    ],
+  ];
 
-  const plugins = [] // Additional Babel plugins can be added here
+  const plugins = []; // Additional Babel plugins can be added here
 
   return {
     presets,
-    plugins
-  }
-}
+    plugins,
+  };
+};

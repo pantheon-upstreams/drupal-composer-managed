@@ -2,10 +2,12 @@
  * Base Gulp File
  * - 01 - Requirements
  * - 02 - Paths
- * - 03 - Styles
- * - 04 - Scripts
- * - 05 - Exports
+ * - 03 - Entry Points
+ * - 04 - Styles
+ * - 05 - Scripts
+ * - 06 - Exports
  */
+
 
 /*------------------------------------*\
   01 - Requirements
@@ -15,10 +17,9 @@
 \*------------------------------------*/
 
 const browserSync = require("browser-sync").create();
+const dotenv = require("dotenv").config();
 const gulp = require("gulp");
 const ignore = require("gulp-ignore");
-const named = require("vinyl-named");
-const path = require("path");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
@@ -26,8 +27,10 @@ const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 const webpack = require("webpack-stream");
-const webpackCompiler = require("webpack");
-const webpackConfig = require("./webpack.config");
+const glob = require("glob");
+
+
+
 
 /*------------------------------------*\
   02 - Paths
@@ -36,96 +39,108 @@ const webpackConfig = require("./webpack.config");
 \*------------------------------------*/
 
 const paths = {
-  styles: {
-    src: `libraries/**/*.scss`,
-    dest: `dist/css`,
-  },
-  scripts: {
-    src: `libraries/**/*.js`,
-    dest: `dist/js`,
-  },
-  /*
-    These paths are used for the CL Component styles and scripts.
-    There is no destination. Compiled files will be saved
-    within their own component folder under /css and /js.
-  */
-  component: {
+  base: {
     styles: {
-      src: `./templates/components/**/src/*.scss`,
+      src: 'libraries/**/*.scss',
+      dest: 'dist/css',
     },
     scripts: {
-      src: `./templates/components/**/src/*.js`,
+      src: './libraries/**/*.js',
+      dest: 'dist/js',
+    },
+  },
+  component: {
+    styles: {
+      src: 'components/*/src/*.scss',
+      dest: 'components',
+    },
+    scripts: {
+      src: './components/*/src/*.js',
+      dest: './',
     },
   },
 };
 
-/*------------------------------------*\
-  03 -  Styles
-  Define both compilation of SASS files during development and also when ready for Production and final
-  build / minification. Autoprefixer is included in PostCSS Preset Env, thus is not defined here.
 
-  @TODO: This needs to be updated so
-  only files that have changed and those
-  that depend on them get recompiled
+
+
+/*------------------------------------*\
+  03 - Entry Points
+  In order for Webpack to compile multiple entry points, we will need to glob
+  together an array of paths. This needs to be done for both components and
+  any base JavaScript.
 \*------------------------------------*/
 
-gulp.task("styles", function () {
-  return gulp
-    .src(paths.styles.src)
+const componentEntryPoints = glob.sync(paths.component.scripts.src).reduce((entries, entry) => {
+  const name = entry.replace('/src', '');
+  entries[name] = entry
+  return entries
+}, {});
+
+const baseEntryPoints = glob.sync(paths.base.scripts.src).reduce((entries, entry) => {
+  const name = entry.replace('/libraries', '');
+  entries[name] = entry
+  return entries
+}, {});
+
+
+
+
+/*------------------------------------*\
+  04 -  Styles
+  Define both compilation of SASS files during development and also when ready for Production and final
+  build / minification. Autoprefixer is included in PostCSS Preset Env, thus is not defined here.
+\*------------------------------------*/
+
+gulp.task("baseStylesWatch", function () {
+  return gulp.src(paths.base.styles.src, { sourcemaps: true })
     .pipe(sourcemaps.init())
-    .pipe(sass({ includePaths: ["./libraries/partials"] }))
+    .pipe(sass())
     .on("error", sass.logError)
     .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(gulp.dest(paths.base.styles.dest, { sourcemaps: true }))
     .pipe(browserSync.stream());
 });
 
-gulp.task("stylesBuild", function () {
-  return gulp
-    .src(paths.styles.src)
-    .pipe(sass({ includePaths: ["./libraries/partials"] }))
+gulp.task("componentStylesWatch", function () {
+  return gulp.src(paths.component.styles.src, { sourcemaps: true })
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .on("error", sass.logError)
+    .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
+    .pipe(sourcemaps.write())
+    .pipe(rename(function (file) {
+      file.dirname = file.dirname.replace('/src', '');
+    }))
+    .pipe(gulp.dest(paths.component.styles.dest, { sourcemaps: true }))
+    .pipe(browserSync.stream());
+});
+
+gulp.task("baseStylesBuild", function () {
+  return gulp.src(paths.base.styles.src)
+    .pipe(sass())
     .on("error", sass.logError)
     .pipe(postcss([]))
-    .pipe(gulp.dest(paths.styles.dest));
-});
-
-gulp.task("componentStyles", function () {
-  return gulp
-    .src(paths.component.styles.src, { base: "./" })
-    .pipe(sourcemaps.init())
-    .pipe(sass({ includePaths: ["./libraries/partials"] }))
-    .on("error", sass.logError)
-    .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
-    .pipe(sourcemaps.write())
-    .pipe(
-      rename((path) => {
-        path.dirname = path.dirname.replace("src", "css");
-      })
-    )
-    .pipe(gulp.dest("./"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(paths.base.styles.dest));
 });
 
 gulp.task("componentStylesBuild", function () {
-  return gulp
-    .src(paths.component.styles.src, { base: "./" })
-    // .pipe(sass({ includePaths: ["./libraries/partials"] }))
-    .pipe(
-      sass({ includePaths: ["./libraries/partials", "./libraries/global"] })
-    )
+  return gulp.src(paths.component.styles.src)
+    .pipe(sass())
     .on("error", sass.logError)
     .pipe(postcss())
-    .pipe(
-      rename((path) => {
-        path.dirname = path.dirname.replace("src", "css");
-      })
-    )
-    .pipe(gulp.dest("./"));
+    .pipe(rename(function (file) {
+      file.dirname = file.dirname.replace('/src', '');
+    }))
+    .pipe(gulp.dest(paths.component.styles.dest))
 });
 
+
+
+
 /*------------------------------------*\
-  04 - Scripts
+  05 - Scripts
   Define both compilation of JavaScript files during development and also when
   ready for Production and final build / minification. Here, Webpack is
   defined and streamed into the Gulp process.
@@ -135,118 +150,71 @@ gulp.task("componentStylesBuild", function () {
   This greatly increases performance when running gulp watch with many files.
 \*------------------------------------*/
 
-const scriptsTask = function (cb) {
-  gulp
-    .src(paths.scripts.src, {
-      base: "./",
-      since: gulp.lastRun(scriptsTask),
-    })
-    // This is necessary to ensure Webpack treats each file as a separate entry point,
-    // rather than bundling them all together in main.js.
-    .pipe(
-      named((file) => {
-        return path.relative("./", file.path).slice(0, -3);
-      })
-    )
+gulp.task('baseScriptsWatch', function() {
+  return gulp.src(paths.base.scripts.src)
     .pipe(plumber())
-    .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(
-      rename((path) => {
-        // @TODO: Update this and the library definitions so the
-        // folder is not named after the file.
-        path.dirname = path.basename
-          // We have to strip the .js extension from the basename when .map files are passed through.
-          .replace(".js", "");
-      })
-    )
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(webpack({
+      ...require('./webpack.config.js'),
+      entry:  baseEntryPoints,
+      output: {
+        path: `${__dirname}/dist/js`,
+        filename: '[name]'
+      },
+    }))
+    .pipe(gulp.dest(paths.base.scripts.dest))
+});
 
-  cb();
-};
-gulp.task("scripts", scriptsTask);
-
-const scriptsBuildTask = function (cb) {
-  gulp
-    .src(paths.scripts.src, {
-      base: "./",
-      since: gulp.lastRun(scriptsBuildTask),
-    })
-    // This is necessary to ensure Webpack treats each file as a separate entry point,
-    // rather than bundling them all together in main.js.
-    .pipe(
-      named((file) => {
-        return path.relative("./", file.path).slice(0, -3);
-      })
-    )
+gulp.task('componentScriptsWatch', function() {
+  return gulp.src(paths.component.scripts.src)
     .pipe(plumber())
-    .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(ignore.exclude(["**/*.map"]))
+    .pipe(webpack({
+      ...require('./webpack.config.js'),
+      entry: componentEntryPoints,
+      output: {
+        path: `${__dirname}/components/[name]`,
+        filename: '[name]'
+      },
+    }))
+    .pipe(gulp.dest(paths.component.scripts.dest))
+});
+
+gulp.task('baseScriptsBuild', function() {
+  return gulp.src(paths.base.scripts.src)
+    .pipe(plumber())
+    .pipe(webpack({
+      ...require('./webpack.config.js'),
+      entry:  baseEntryPoints,
+      output: {
+        path: `${__dirname}/dist/js`,
+        filename: '[name]'
+      },
+    }))
+    .pipe(ignore.exclude([ "**/*.map" ]))
     .pipe(uglify())
-    .pipe(
-      rename((path) => {
-        // @TODO: Update this and the library definitions so the
-        // folder is not named after the file.
-        path.dirname = path.basename;
-      })
-    )
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(gulp.dest(paths.base.scripts.dest))
+});
 
-  cb();
-};
-gulp.task("scriptsBuild", scriptsBuildTask);
-
-const componentScriptsTask = function (cb) {
-  gulp
-    .src(paths.component.scripts.src, {
-      base: "./",
-      since: gulp.lastRun(componentScriptsTask),
-    })
-    .pipe(
-      named((file) => {
-        return path.relative("./", file.path).slice(0, -3);
-      })
-    )
+gulp.task('componentScriptsBuild', function() {
+  return gulp.src(paths.component.scripts.src)
     .pipe(plumber())
-    .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(
-      rename((path) => {
-        path.dirname = path.dirname.replace("src", "js");
-      })
-    )
-    .pipe(gulp.dest("./"));
-
-  cb();
-};
-gulp.task("componentScripts", componentScriptsTask);
-
-const componenetSriptsBuildTask = function (cb) {
-  gulp
-    .src(paths.component.scripts.src, {
-      base: "./",
-      since: gulp.lastRun(componenetSriptsBuildTask),
-    })
-    .pipe(
-      named((file) => {
-        return path.relative("./", file.path).slice(0, -3);
-      })
-    )
-    .pipe(plumber())
-    .pipe(webpack(webpackConfig), webpackCompiler)
-    .pipe(ignore.exclude(["**/*.map"]))
+    .pipe(webpack({
+      ...require('./webpack.config.js'),
+      entry: componentEntryPoints,
+      output: {
+        path: `${__dirname}/components/[name]`,
+        filename: '[name]'
+      },
+    }))
+    .pipe(ignore.exclude([ "**/*.map" ]))
     .pipe(uglify())
-    .pipe(
-      rename((path) => {
-        path.dirname = path.dirname.replace("src", "js");
-      })
-    )
-    .pipe(gulp.dest("./"));
+    .pipe(gulp.dest(paths.component.scripts.dest))
+});
 
-  cb();
-};
-gulp.task("componentScriptsBuild", componenetSriptsBuildTask);
+
+
 
 /*------------------------------------*\
-  05 - Exports
+  06 - Exports
   Define both the developmental, "Watch" and final production, "Build"
   processes for compiling files. The final production, "Build" process includes
   minified files.
@@ -258,20 +226,22 @@ gulp.task("componentScriptsBuild", componenetSriptsBuildTask);
 exports.watch = () => {
   console.log("You are currently in development watch mode.");
   browserSync.init({
-    proxy: process.env.BS_PROXY || "http://surf.lndo.site",
+    proxy: process.env.BS_PROXY || "http://prototype.lndo.site",
     browser: process.env.BS_BROWSER || "google chrome",
+    open: false,
+    logConnections: true,
   });
-  gulp.watch(paths.styles.src, gulp.series("styles"));
-  gulp.watch(paths.scripts.src, gulp.series("scripts"));
-  gulp.watch(paths.component.styles.src, gulp.series("componentStyles"));
-  gulp.watch(paths.component.scripts.src, gulp.series("componentScripts"));
+  gulp.watch(paths.base.styles.src, gulp.series("baseStylesWatch"));
+  gulp.watch(paths.base.scripts.src, gulp.series("baseScriptsWatch"));
+  gulp.watch(paths.component.styles.src, gulp.series("componentStylesWatch"));
+  gulp.watch(paths.component.scripts.src, gulp.series("componentScriptsWatch"));
 };
 
 exports.build = (done) => {
   console.log("You are building for production.");
   gulp.parallel(
-    "stylesBuild",
-    "scriptsBuild",
+    "baseStylesBuild",
+    "baseScriptsBuild",
     "componentStylesBuild",
     "componentScriptsBuild"
   )(done);

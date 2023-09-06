@@ -8,7 +8,6 @@
  * - 03 - Exports
  */
 
-
 /*------------------------------------*\
   01 - Requirements
   Although PostCSS does not inherently require any other plugins or settings in order to operate, other plugins are
@@ -23,11 +22,9 @@
     - Plugin to reference an SVG file and control its attributes with CSS syntax.
 \*------------------------------------*/
 
-const postcssPresetEnv = require('postcss-preset-env');
-const postcssInlineSvg = require('postcss-inline-svg');
-
-
-
+const cssnano = require("cssnano");
+const postcssPresetEnv = require("postcss-preset-env");
+const postcssInlineSvg = require("postcss-inline-svg");
 
 /*------------------------------------*\
   02 - SVG Encode
@@ -37,33 +34,30 @@ const postcssInlineSvg = require('postcss-inline-svg');
 
 function encode(code) {
   return code
-    .replace(/\%/g, '%25')
-    .replace(/\</g, '%3C')
-    .replace(/\>/g, '%3E')
-    .replace(/\s/g, '%20')
-    .replace(/\!/g, '%21')
-    .replace(/\*/g, '%2A')
-    .replace(/\'/g, '%27')
-    .replace(/\"/g, '%22')
-    .replace(/\(/g, '%28')
-    .replace(/\)/g, '%29')
-    .replace(/\;/g, '%3B')
-    .replace(/\:/g, '%3A')
-    .replace(/\@/g, '%40')
-    .replace(/\&/g, '%26')
-    .replace(/\=/g, '%3D')
-    .replace(/\+/g, '%2B')
-    .replace(/\$/g, '%24')
-    .replace(/\,/g, '%2C')
-    .replace(/\//g, '%2F')
-    .replace(/\?/g, '%3F')
-    .replace(/\#/g, '%23')
-    .replace(/\[/g, '%5B')
-    .replace(/\]/g, '%5D')
+    .replace(/\%/g, "%25")
+    .replace(/\</g, "%3C")
+    .replace(/\>/g, "%3E")
+    .replace(/\s/g, "%20")
+    .replace(/\!/g, "%21")
+    .replace(/\*/g, "%2A")
+    .replace(/\'/g, "%27")
+    .replace(/\"/g, "%22")
+    .replace(/\(/g, "%28")
+    .replace(/\)/g, "%29")
+    .replace(/\;/g, "%3B")
+    .replace(/\:/g, "%3A")
+    .replace(/\@/g, "%40")
+    .replace(/\&/g, "%26")
+    .replace(/\=/g, "%3D")
+    .replace(/\+/g, "%2B")
+    .replace(/\$/g, "%24")
+    .replace(/\,/g, "%2C")
+    .replace(/\//g, "%2F")
+    .replace(/\?/g, "%3F")
+    .replace(/\#/g, "%23")
+    .replace(/\[/g, "%5B")
+    .replace(/\]/g, "%5D");
 }
-
-
-
 
 /*------------------------------------*\
   03 - Exports
@@ -75,9 +69,11 @@ function encode(code) {
 module.exports = {
   plugins: [
     postcssPresetEnv({}), // Additional options can be defined here for PostCSS Preset Env
-    postcssInlineSvg({ // Other additional options can be defined here for PostCSS Inline SVG
+    postcssInlineSvg({
+      // Other additional options can be defined here for PostCSS Inline SVG
       encode: encode,
-      paths: ['./images/icons'],
-    })
-  ]
-}
+      paths: ["./images/icons"],
+    }),
+    // cssnano(), // Uncomment this line if you would like to minimize all CSS
+  ],
+};
