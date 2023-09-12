@@ -1,7 +1,7 @@
 {
-  "name": "surf_main",
-  "version": "4.0.0",
-  "description": "Collection of build tools for SURF projects",
+  "name": "prototype",
+  "version": "5.0.0",
+  "description": "Collection of build tools for Prototype projects",
   "author": "Aten Design Group",
   "main": "gulpfile.js",
   "devDependencies": {
@@ -10,8 +10,6 @@
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
     "browser-sync": "^2.27.9",
-    "core-js": "^3.30.1",
-    "cssnano": "^5.1.7",
     "exports-loader": "^3.1.0",
     "glob": "^8.0.3",
     "gulp": "^4.0.2",
@@ -22,7 +20,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "path": "^0.12.7",
     "postcss-preset-env": "^7.8.3",
     "sass": "^1.50.0",
     "webpack": "^5.75.0",
@@ -34,9 +31,8 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "@splidejs/splide": "^4.1.4",
+    "cssnano": "^6.0.1",
     "dotenv": "^16.0.3",
-    "postcss-inline-svg": "^5.0.0",
-    "vinyl-named": "^1.1.0"
+    "postcss-inline-svg": "^5.0.0"
   }
 }

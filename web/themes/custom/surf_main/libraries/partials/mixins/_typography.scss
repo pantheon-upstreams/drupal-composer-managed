@@ -4,7 +4,6 @@
 //
 // - 01 - Typography
 // - 02 - Headings
-// - 03 - Body
 //
 
 
@@ -16,8 +15,8 @@
 // ------------------------------------
 
 @mixin font($font-size, $line-height: default) {
-  font-size: var(--prototype-font-size- + $font-size);
-  line-height: var(--prototype-line-height- + $line-height);
+  font-size: var(--surf-font-size- + $font-size);
+  line-height: var(--surf-line-height- + $line-height);
 }
 
 
@@ -27,54 +26,38 @@
 // 02 - Headings
 // ------------------------------------
 
-@mixin heading-base() {
-  font-family: var(--prototype-font-sans);
-  font-weight: var(--prototype-font-weight-bold);
-}
-
 @mixin heading-01() {
-  @include heading-base();
-  @include font(90, heading);
+  @include font(176, heading);
+  font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-font-weight-medium);
 }
 
 @mixin heading-02() {
-  @include heading-base();
-  @include font(48, heading);
+  @include font(96, heading);
+  font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-font-weight-medium);
 }
 
 @mixin heading-03() {
-  @include heading-base();
-  @include font(32, heading);
+  @include font(52, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
 }
 
 @mixin heading-04() {
-  @include heading-base();
-  @include font(24, heading);
+  @include font(40, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
 }
 
 @mixin heading-05() {
-  @include heading-base();
-  @include font(18, heading);
+  @include font(24, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
 }
 
 @mixin heading-06() {
-  @include heading-base();
-  @include font(16, heading);
-}
-
-
-
-
-// ------------------------------------
-// 03 - Body
-// ------------------------------------
-
-@mixin body-base() {
-  font-family: var(--prototype-font-sans);
-  font-weight: var(--prototype-font-weight-regular);
-}
-
-@mixin body-18() {
-  @include body-base();
-  @include font(18, default);
+  @include font(18, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
 }

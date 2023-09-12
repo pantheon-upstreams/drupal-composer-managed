@@ -12,14 +12,25 @@
  * @ingroup themeable
  */
 #}
+
 {% import _self as menu %}
 
 {{ menu.build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) }}
 
 {% macro build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) %}
+  {% set menu_dropdown_classes = [
+    'menu__dropdown',
+    elements['#menu_level'] is defined ? 'menu__dropdown--level-' ~ elements['#menu_level'],
+    elements['#view_mode'] ? 'menu__view-mode--' ~ elements['#view_mode'],
+  ] %}
 
-	{% if content %}
-		{{ content }}
-	{% endif %}
+  <div {{ attributes.addClass(menu_dropdown_classes) }}>
+    {% if show_item_link %}
+      {{ link(menu_link_content.getTitle(), menu_link_content.getUrlObject()) }}
+    {% endif %}
 
+    {% if content %}
+      {{ content }}
+    {% endif %}
+  </div>
 {% endmacro %}

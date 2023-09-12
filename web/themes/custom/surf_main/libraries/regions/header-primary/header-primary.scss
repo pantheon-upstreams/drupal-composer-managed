@@ -1,0 +1,71 @@
+//
+// Regions - Header Primary
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+// - 04 - Mobile Menu
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.region.region__name--header-primary {
+  align-items: center;
+  display: flex;
+  height: var(--surf-height-region-header-primary);
+  left: 0;
+  position: fixed;
+  top: var(--surf-height-region-header-utility);
+  width: 100%;
+  z-index: var(--surf-zindex-top);
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: flex-end;
+  }
+}
+
+// Gin Toolbar
+body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-primary {
+  top: calc(var(--gin-toolbar-y-offset) + var(--gin-toolbar-secondary-height) + var(--surf-height-region-header-utility));
+}
+
+
+
+
+//------------------------------------
+//  03 - General
+//------------------------------------
+
+.region.region__name--header-primary {
+  background: var(--surf-color-white);
+}
+
+
+
+
+//------------------------------------
+//  04 - Mobile Menu
+//------------------------------------
+
+.region.region__name--header-primary .mobile-menu {
+  display: block;
+
+  @include mixins-breakpoints.bp-min(large) {
+    display: none;
+  }
+}

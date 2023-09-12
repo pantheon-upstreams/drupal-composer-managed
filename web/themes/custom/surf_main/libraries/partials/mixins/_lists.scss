@@ -15,7 +15,7 @@
 //  01 - Base
 //------------------------------------
 
-@mixin list--reset {
+@mixin list-reset {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
@@ -28,8 +28,8 @@
 //  02 - Bullets
 //------------------------------------
 
-@mixin list--bullets($item-selector: li) {
-  @include list--reset;
+@mixin list-bullets($item-selector: li) {
+  @include list-reset;
 
   > #{$item-selector}:before {
     content: "\2022";
@@ -49,8 +49,8 @@
 //  03 - Numbered
 //------------------------------------
 
-@mixin list--numbered($item-selector: li) {
-  @include list--reset;
+@mixin list-numbered($item-selector: li) {
+  @include list-reset;
   counter-reset: number;
 
   > #{$item-selector}:before {
@@ -83,7 +83,7 @@
 //  04 - No Bullets
 //------------------------------------
 
-@mixin list--no-bullets($item-selector: li) {
+@mixin list-no-bullets($item-selector: li) {
   margin: 0;
   padding: 0;
 
@@ -99,7 +99,7 @@
 //  05 - Inline
 //------------------------------------
 
-@mixin list--inline($item-selector: li) {
+@mixin list-inline($item-selector: li) {
   > #{$item-selector} {
     display: inline-block;
   }
@@ -112,7 +112,7 @@
 //  06 - Ruled
 //------------------------------------
 
-@mixin list--ruled (
+@mixin list-ruled (
   $spacing: 2em,
   $style: "inner",
   $border-color: var(--border-color),

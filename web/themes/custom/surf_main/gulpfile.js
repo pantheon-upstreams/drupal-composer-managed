@@ -73,14 +73,14 @@ const paths = {
 
 const componentEntryPoints = glob.sync(paths.component.scripts.src).reduce((entries, entry) => {
   const name = entry.replace('/src', '');
-  entries[name] = entry
-  return entries
+  entries[name] = entry;
+  return entries;
 }, {});
 
 const baseEntryPoints = glob.sync(paths.base.scripts.src).reduce((entries, entry) => {
   const name = entry.replace('/libraries', '');
-  entries[name] = entry
-  return entries
+  entries[name] = entry;
+  return entries;
 }, {});
 
 
@@ -93,18 +93,18 @@ const baseEntryPoints = glob.sync(paths.base.scripts.src).reduce((entries, entry
 \*------------------------------------*/
 
 gulp.task("baseStylesWatch", function () {
-  return gulp.src(paths.base.styles.src, { sourcemaps: true })
+  return gulp.src(paths.base.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on("error", sass.logError)
     .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.base.styles.dest, { sourcemaps: true }))
+    .pipe(gulp.dest(paths.base.styles.dest))
     .pipe(browserSync.stream());
 });
 
 gulp.task("componentStylesWatch", function () {
-  return gulp.src(paths.component.styles.src, { sourcemaps: true })
+  return gulp.src(paths.component.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on("error", sass.logError)
@@ -113,7 +113,7 @@ gulp.task("componentStylesWatch", function () {
     .pipe(rename(function (file) {
       file.dirname = file.dirname.replace('/src', '');
     }))
-    .pipe(gulp.dest(paths.component.styles.dest, { sourcemaps: true }))
+    .pipe(gulp.dest(paths.component.styles.dest))
     .pipe(browserSync.stream());
 });
 
@@ -121,7 +121,7 @@ gulp.task("baseStylesBuild", function () {
   return gulp.src(paths.base.styles.src)
     .pipe(sass())
     .on("error", sass.logError)
-    .pipe(postcss([]))
+    .pipe(postcss())
     .pipe(gulp.dest(paths.base.styles.dest));
 });
 

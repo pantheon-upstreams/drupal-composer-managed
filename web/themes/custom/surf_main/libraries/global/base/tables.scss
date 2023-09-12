@@ -18,8 +18,8 @@ table {
   border-spacing: 0;
   text-align: left;
   border-collapse: collapse;
-  font-family: var(--prototype-font-sans);
-  font-size: var(--prototype-font-size-16);
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-16);
 }
 
 h1 + table,
@@ -45,7 +45,7 @@ thead {
 
   & th,
   & td {
-    border-bottom: 1px solid var(--prototype-color-dark);
+    border-bottom: 1px solid var(--surf-color-dark);
   }
 }
 
@@ -57,8 +57,8 @@ td {
 }
 
 th {
-  color: var(--prototype-color-dark);
-  font-weight: var(--prototype-font-weight-bold);
+  color: var(--surf-color-dark);
+  font-weight: var(--surf-font-weight-bold);
 }
 
 // Remove top border from thead by default
@@ -73,9 +73,9 @@ thead:first-child tr:first-child td {
 
 // Account for multiple tbody instances
 tbody + tbody {
-  border-top: 2px solid var(--prototype-color-dark);
+  border-top: 2px solid var(--surf-color-dark);
 }
 
 tr.even {
-  background-color: var(--prototype-color-gray-200);
+  background-color: var(--surf-color-gray-100);
 }

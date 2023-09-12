@@ -1,1 +1,6 @@
-!function(){var i;i=jQuery,Drupal.behaviors.search_keys={attach:function(a,t){i("#search-api-form input").each(function(a){var t=Math.round(Math.random(8)),r=i(this).attr("id");i(this).attr("id",r+t),i(this).prev("label").attr("for",r+t)})}}}();
+/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	
+/******/ 	
+/******/ })()
+;

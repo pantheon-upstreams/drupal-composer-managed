@@ -1,9 +1,0 @@
-<section{{attributes.addclass(['l-teaser-grid', 'l-teaser-grid__length-' ~ items|length])}}>
-  <p>test: {{dump(custom_value)}}</p>
-  <ul{{ attributes.addClass(classes, 'item-list') }}>
-        {% for item in items %}
-          <li{{ item.attributes.addClass('item-row') }}>{{ item.content }}</li>
-        {% endfor %}
-  </ul>
-</section>
-

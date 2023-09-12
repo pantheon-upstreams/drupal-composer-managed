@@ -1,0 +1,52 @@
+//
+// Regions - Header Utility
+//
+// - 01 - Layout
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Layout
+//------------------------------------
+
+.region.region__name--header-utility {
+  align-items: center;
+  display: flex;
+  height: var(--surf-height-region-header-utility);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--surf-zindex-top);
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: flex-end;
+  }
+}
+
+body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-utility {
+  top: calc(var(--gin-toolbar-y-offset) + var(--gin-toolbar-secondary-height));
+}
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.region.region__name--header-utility {
+  background: var(--surf-gradient-hz-blue);
+  color: var(--surf-color-white);
+
+  a,
+  button,
+  input,
+  input::placeholder {
+    color: var(--surf-color-white);
+  }
+}

@@ -1,1 +1,6 @@
-!function(){var e,i;e=Drupal,i=once,e.behaviors.surf_collapsible_filter={attach:function(e,t){i("collapsible-filter",".collapsible__container",e).forEach(function(e){var t=e.querySelector(".collapsible__trigger"),i=e.querySelector(".collapsible__container-content");function r(){1400<=window.innerWidth&&(i.removeAttribute("hidden"),t.setAttribute("aria-expanded","true"))}t.addEventListener("click",function(){"true"===t.getAttribute("aria-expanded")?(t.setAttribute("aria-expanded","false"),i.setAttribute("hidden","true")):(t.setAttribute("aria-expanded","true"),i.removeAttribute("hidden"))}),window.addEventListener("resize",r),r()})}}}();
+/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	
+/******/ 	
+/******/ })()
+;

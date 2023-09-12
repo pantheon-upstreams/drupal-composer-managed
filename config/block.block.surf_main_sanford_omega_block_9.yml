@@ -12,7 +12,7 @@ dependencies:
 id: surf_main_sanford_omega_block_9
 theme: surf_main
 region: content
-weight: -6
+weight: 1
 provider: null
 plugin: 'block_content:cb68ec5f-059b-4408-88c7-7175bf5bbefd'
 settings:

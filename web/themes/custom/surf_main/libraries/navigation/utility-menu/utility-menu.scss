@@ -1,0 +1,82 @@
+//
+// Navigation - Utility Menu
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/links' as mixins-links;
+@use '../../partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.menu.menu__name--utility-nav {
+  display: none; // FUOC Fix
+
+  ul {
+    @include mixins-lists.list-reset();
+  }
+}
+
+// FUOC Fix
+.js .menu.menu__name--utility-nav {
+  display: block;
+}
+
+
+
+
+//------------------------------------
+//  03 - Level One
+//------------------------------------
+
+.menu.menu__name--utility-nav .menu__list.menu__level--1 {
+  display: flex;
+  flex-flow: nowrap row;
+  margin: 0;
+
+  > li {
+    padding: 0 24px;
+  }
+
+  > li > a,
+  > li > button,
+  > li > span {
+    @include mixins-links.link-menu(22, white);
+  }
+
+  > li > a.icon,
+  > li > button.icon,
+  > li > span.icon {
+    padding-right: 25px;
+  }
+
+  > li > a.icon:before,
+  > li > button.icon:before,
+  > li > span.icon:before {
+    bottom: 0;
+    height: 22px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 22px;
+  }
+
+  > li > a.icon__type--user:before,
+  > li > button.icon__type--user:before,
+  > li > span.icon__type--user:before {
+    background: svg-load('icon-user.svg', fill="#FFFFFF") no-repeat center;
+  }
+}

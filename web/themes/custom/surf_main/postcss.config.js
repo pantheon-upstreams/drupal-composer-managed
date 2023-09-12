@@ -68,7 +68,7 @@ function encode(code) {
 
 module.exports = {
   plugins: [
-    postcssPresetEnv({}), // Additional options can be defined here for PostCSS Preset Env
+    postcssPresetEnv(), // Additional options can be defined here for PostCSS Preset Env
     postcssInlineSvg({
       // Other additional options can be defined here for PostCSS Inline SVG
       encode: encode,

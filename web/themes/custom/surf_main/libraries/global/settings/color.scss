@@ -1,63 +1,47 @@
 //
-// @file
-// Color variables.
+// Global - Color
 //
-// SEE https://yeun.github.io/open-color/
+// - 01 - Theme Colors
+// - 02 - Grayscale
 //
+
+
+//------------------------------------
+//  01 - Theme Colors
+//------------------------------------
 
 :root {
-  // SURF Main Branding Colors
-  --color-surf--white: #ffffff;
-  --color-surf--black: #222222;
-  --color-surf--dark-grey: #494949;
-  --color-surf--grey: #6d6d6d;
-  --color-surf--cloud: #f2f2f2;
-  --color-surf--blue: #2976d9;
-  --color-surf--forest: #00492c;
-  --color-surf--kelly-green: #008535;
-  --color-surf--sage: #bcebbc;
-  --color-surf--gold: #ffbe34;
-  --color-surf--coral: #f26438;
+  --surf-color-red:     #CC2F08;
+  --surf-color-orange:  #FF6A00;
+  --surf-color-gold:    #FFBB00;
+  --surf-color-teal:    #00807E;
+  --surf-color-blue:    #007AB8;
+  --surf-color-navy:    #000080;
+}
 
-  // Color: Background
-  --color-background: transparent;
-  --color-background-interface-inactive: var(--color-gray-95);
-  --color-background-interface-active: #fff;
 
-  //
-  // Semantic colors
-  //
-  --color-border: var(--color-surf--black);
-  --color-border-muted: var(--color-surf--cloud);
 
-  --color-text: var(--color-surf--black);
-  --color-text-muted: var(--color-surf--grey);
-  --color-text-heading: var(--color-surf--black);
-  --color-text-heading-muted: #707070;
-  --color-text-input: var(--color-surf--black);
 
-  --color-link: var(--color-surf--forest);
-  --color-link-hover: var(--color-surf--black);
-  --color-link-active: var(--color-surf--black);
-  --color-link-visited: var(--color-surf--black);
+//------------------------------------
+//  02 - Grayscale
+//------------------------------------
 
-  // Callouts
-  --color-accent: #d6336c;
-  --color-required: #c00;
+:root {
+  --surf-color-white:     #FFFFFF;
+  --surf-color-gray-100:  #F2F2F2;
+  --surf-color-gray-600:  #6D6D6D;
+  --surf-color-gray-700:  #494949;
+  --surf-color-gray-900:  #222222;
+  --surf-color-black:     #000000;
+}
 
-  // Feedback
-  --color-feedback-status: #008535;
-  --color-feedback-success: #008535;
-  --color-feedback-warning: #ffbe34;
-  --color-feedback-error: #f26438;
-  --color-feedback-weak: #f26438;
-  --color-feedback-fair: #ffbe34;
-  --color-feedback-good: #008535;
-  --color-feedback-strong: #008535;
-  --color-feedback-background: #e1e0e1;
 
-  --table-color-border: var(--color-border);
-  --table-color-background-header: #e1e0e1;
-  --table-color-background-row-odd: #e1e0e1;
-  --table-color-background-row-even: #fff;
+
+
+//------------------------------------
+//  03 - Gradients
+//------------------------------------
+
+:root {
+  --surf-gradient-hz-blue:  linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
 }

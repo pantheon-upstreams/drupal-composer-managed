@@ -1,0 +1,100 @@
+//
+// Navigation - Utility Menu
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Level One
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/buttons' as mixins-buttons;
+@use '../../partials/mixins/links' as mixins-links;
+@use '../../partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.menu.menu__name--main {
+  display: none;
+
+  ul {
+    @include mixins-lists.list-reset();
+  }
+
+  button {
+    @include mixins-buttons.button-reset();
+  }
+}
+
+// FUOC Fix
+.js .menu.menu__name--main {
+  display: block;
+}
+
+
+
+
+//------------------------------------
+//  03 - Level One
+//------------------------------------
+
+.menu.menu__name--main .menu__list.menu__level--1 {
+  display: flex;
+  flex-flow: nowrap row;
+  margin: 0 -24px 0 -28px;
+
+  > li {
+    padding: 0 24px;
+    position: relative;
+  }
+
+  > li > a,
+  > li > button,
+  > li > span {
+    @include mixins-links.link-menu(28, navy);
+  }
+
+  > li > a.icon__type--chevron-down,
+  > li > button.icon__type--chevron-down,
+  > li > span.icon__type--chevron-down {
+    padding-right: 28px;
+
+    &:before {
+      background: svg-load('icon-angle-down.svg', fill="#000080") no-repeat center;
+      bottom: 0;
+      height: 26px;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      width: 26px;
+    }
+  }
+
+  > li > .menu__dropdown {
+    background-color: var(--surf-color-white);
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(-100%);
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    visibility: hidden;
+  }
+
+  > li.is-open > .menu__dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}

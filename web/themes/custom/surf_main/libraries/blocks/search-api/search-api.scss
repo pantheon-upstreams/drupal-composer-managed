@@ -1,0 +1,142 @@
+//
+// Blocks - Search API
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - Trigger
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/buttons' as mixins-buttons;
+@use '../../partials/mixins/links' as mixins-links;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+$search-form-size: 300px;
+
+.search-form {
+  display: none; // FUOC Fix
+  flex-flow: nowrap row;
+  padding: 0 0 0 24px;
+  transition: functions-animations.transition(width, 0.35s, easeInOutExpo);
+
+  > form {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    margin-left: -#{$search-form-size};
+    opacity: 0;
+    transform: translateX($search-form-size);
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    width: $search-form-size;
+    visibility: hidden;
+  }
+
+  &.search-form__state--open > form {
+    margin-left: 0;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  // FUOC Fix
+  .js & {
+    display: flex;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Trigger
+//------------------------------------
+
+.search-form {
+  .search-form__trigger {
+    @include mixins-buttons.button-reset();
+    @include mixins-links.link-menu(22, white);
+    padding-right: 25px;
+    position: relative;
+    max-width: 112px;
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+
+    &:before {
+      background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+      bottom: 0;
+      height: 22px;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      width: 22px;
+    }
+  }
+
+  &.search-form__state--open .search-form__trigger {
+    color: transparent;
+    max-width: 40px;
+
+    &:after {
+      display: none;
+    }
+
+    &:before {
+      background: svg-load('icon-close.svg', fill="#FFFFFF") no-repeat center;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Form
+//------------------------------------
+
+.search-form form {
+  .form-item,
+  .form-item input {
+    width: 100%;
+  }
+
+  .form-item {
+    position: relative;
+  }
+
+  .form-item input {
+    background: none;
+    border-bottom: solid 2px var(--surf-color-white);
+    font-size: var(--surf-font-size-18);
+    padding-left: 0;
+    padding-right: 40px;
+  }
+
+  .form-item input::placeholder {
+    font-style: italic;
+  }
+
+  .button {
+    background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+    bottom: 0;
+    display: block;
+    font: 0/0 transparent;
+    height: 22px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 22px;
+  }
+}

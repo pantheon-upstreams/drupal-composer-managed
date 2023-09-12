@@ -1,11 +1,1 @@
-ul:not([class]),
-ol:not([class]) {
-  font-size: var(--prototype-font-size-16);
-  line-height: var(--prototype-line-height-default);
-  list-style-position: inside;
-}
-
-ul:not([class]):not(:first-child),
-ol:not([class]):not(:first-child) {
-  margin-top: 16px;
-}
+ol:not([class]),ul:not([class]){font-size:var(--surf-font-size-16);line-height:var(--surf-line-height-default);list-style-position:inside}ol:not([class]):not(:first-child),ul:not([class]):not(:first-child){margin-top:16px}

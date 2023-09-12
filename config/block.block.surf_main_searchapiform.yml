@@ -20,7 +20,7 @@ settings:
   context_mapping: {  }
   action_url: /search
   input_name: text
-  input_placeholder: 'Search the website'
+  input_placeholder: 'Search the site...'
   submit_value: Search
   pass_get_params: 0
   input_label: Search

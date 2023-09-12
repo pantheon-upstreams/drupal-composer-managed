@@ -1,0 +1,97 @@
+{#
+/**
+ * @file
+ * Theme implementation for the menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% import _self as menu %}
+
+{{ menu.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+    {% set primary_nav_level = 'menu__level--' ~ (menu_level + 1) %}
+
+    {% if items %}
+        <ul {{ attributes.addClass('menu__list', primary_nav_level) }}>
+            {% set attributes = attributes.removeClass(primary_nav_level) %}
+
+            {% for item in items %}
+                {% set rendered_content = item.content|without(
+                    'field_style_icon'
+                )|render %}
+
+                {% set icon = item.entity.field_style_icon.value  %}
+
+                {% if item.url.isRouted and item.url.routeName == '<nolink>' %}
+                    {% set menu_item_type = 'nolink' %}
+                {% elseif item.url.isRouted and item.url.routeName == '<button>' %}
+                    {% set menu_item_type = 'button' %}
+                {% else %}
+                    {% set menu_item_type = 'link' %}
+                {% endif %}
+
+                {% set item_classes = [
+                    'menu__item',
+                    'menu__item--' ~ menu_item_type,
+                    'menu__item--level-' ~ (menu_level + 1),
+                    item.in_active_trail ? 'menu__item--active-trail',
+                    item.below ? 'menu__item--has-children',
+                ] %}
+
+                {% set link_classes = [
+                    'menu__link',
+                    'menu__link--' ~ menu_item_type,
+                    'menu__link--level-' ~ (menu_level + 1),
+                    item.in_active_trail ? 'menu__link--active-trail',
+                    item.below ? 'icon icon__type--chevron-down',
+                    icon ? 'icon icon__type--' ~ icon|clean_class
+                ] %}
+
+                <li {{ item.attributes.addClass(item_classes) }}>
+                    {% set aria_id = (item.title ~ '-submenu-' ~ loop.index )|clean_id %}
+                    {% set link_attributes = create_attribute() %}
+
+                    {% if menu_item_type == 'button' %}
+                        {{ link(
+                            item.title,
+                            item.url,
+                            link_attributes.setAttribute('aria-controls', item.title|clean_id),
+                            link_attributes.setAttribute('aria-expanded', 'false'),
+                            link_attributes.setAttribute('aria-haspopup', 'true'),
+                            link_attributes.addClass(link_classes)
+                        ) }}
+                    {% else %}
+                        {{ link(item.title, item.url, { 'class': link_classes }) }}
+                    {% endif %}
+
+                    {% if menu_item_type == 'button' and item.below %}
+                        {{ menus.menu_links(item.below, attributes.setAttribute('id', item.title|clean_id), menu_level + 1) }}
+                    {% elseif item.below %}
+                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                    {% endif %}
+
+                    {% if rendered_content %}
+                        {{ rendered_content }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

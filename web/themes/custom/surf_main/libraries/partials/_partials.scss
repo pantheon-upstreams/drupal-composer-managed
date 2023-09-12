@@ -34,11 +34,10 @@
 //  03 - Mixins
 //------------------------------------
 
-@forward 'mixins/animation';
 @forward 'mixins/breakpoints';
-@forward 'mixins/font';
+@forward 'mixins/buttons';
 @forward 'mixins/layout';
-@forward 'mixins/link';
+@forward 'mixins/links';
 @forward 'mixins/lists';
 @forward 'mixins/media';
 @forward "mixins/typography";

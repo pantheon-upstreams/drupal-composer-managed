@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override to display a Header Utility region.
+ *
+ * Available variables:
+ * - No additional variables are available for this region.
+ *
+ * @see surf_main/template/layout/region.html.twig
+ */
+#}
+
+{% extends 'region.html.twig' %}
+
+{% block content %}
+    <div class="container container__type--default">
+        {{ content }}
+    </div>
+{% endblock %}
