@@ -21,7 +21,7 @@
 
 @mixin link-menu($size, $color) {
   color: var(--surf-color-#{$color});
-  display: block;
+  display: inline-block;
   font-family: var(--surf-font-condensed);
   font-size: var(--surf-font-size-#{$size});
   font-weight: var(--surf-font-weight-bold);

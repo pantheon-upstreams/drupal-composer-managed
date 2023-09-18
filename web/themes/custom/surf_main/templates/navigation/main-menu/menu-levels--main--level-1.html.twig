@@ -34,10 +34,8 @@
 
             {% for item in items %}
                 {% set rendered_content = item.content|without(
-                    'field_style_icon'
+                    'field_main_menu_feature_text'
                 )|render %}
-
-                {% set icon = item.entity.field_style_icon.value  %}
 
                 {% if item.url.isRouted and item.url.routeName == '<nolink>' %}
                     {% set menu_item_type = 'nolink' %}
@@ -67,19 +65,26 @@
                 <li {{ item.attributes.addClass(item_classes) }}>
                     {% set aria_id = (item.title ~ '-submenu-' ~ loop.index )|clean_id %}
                     {% set link_attributes = create_attribute() %}
+                    {% set featured_text = item.content.field_main_menu_feature_text|render %}
 
-                    {% if menu_item_type == 'button' %}
-                        {{ link(
-                            item.title,
-                            item.url,
-                            link_attributes.setAttribute('aria-controls', item.title|clean_id),
-                            link_attributes.setAttribute('aria-expanded', 'false'),
-                            link_attributes.setAttribute('aria-haspopup', 'true'),
-                            link_attributes.addClass(link_classes)
-                        ) }}
-                    {% else %}
-                        {{ link(item.title, item.url, { 'class': link_classes }) }}
-                    {% endif %}
+                    <div class="menu__card">
+                        {% if menu_item_type == 'button' %}
+                            {{ link(
+                                item.title,
+                                item.url,
+                                link_attributes.setAttribute('aria-controls', item.title|clean_id),
+                                link_attributes.setAttribute('aria-expanded', 'false'),
+                                link_attributes.setAttribute('aria-haspopup', 'true'),
+                                link_attributes.addClass(link_classes)
+                            ) }}
+                        {% else %}
+                            {{ link(item.title, item.url, { 'class': link_classes }) }}
+                        {% endif %}
+
+                        {% if featured_text %}
+                            <p>{{ item.content.field_main_menu_feature_text|field_value }}</p>
+                        {% endif %}
+                    </div>
 
                     {% if menu_item_type == 'button' and item.below %}
                         {{ menus.menu_links(item.below, attributes.setAttribute('id', item.title|clean_id), menu_level + 1) }}

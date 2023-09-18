@@ -33,6 +33,10 @@
   button {
     @include mixins-buttons.button-reset();
   }
+
+  p {
+    margin: 0;
+  }
 }
 
 // FUOC Fix
@@ -82,12 +86,14 @@
   }
 
   > li > .menu__dropdown {
-    background-color: var(--surf-color-white);
+    background: url('../../../../images/backgrounds/background-particles-light-gray.svg') no-repeat left top var(--surf-color-white);
+    min-width: 740px;
     opacity: 0;
+    padding: 32px;
     position: absolute;
     right: 0;
     top: 100%;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
     visibility: hidden;
   }
@@ -96,5 +102,76 @@
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Level Two
+//------------------------------------
+
+.menu.menu__name--main .menu__list.menu__level--2 {
+  display: flex;
+  flex-flow: nowrap row;
+
+  > li {
+    display: flex;
+    flex-flow: nowrap row;
+    min-height: 240px;
+    margin: 0 12px;
+  }
+
+  > li > .menu__card {
+    background-color: var(--surf-color-white);
+    padding: 24px 32px;
+  }
+
+  > li > .menu__card > a,
+  > li > .menu__card > button,
+  > li > .menu__card > span {
+    @include mixins-links.link-menu(28, navy);
+  }
+
+  > li > .menu__card > p {
+    font-size: var(--surf-font-size-16);
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Level Three
+//------------------------------------
+
+.menu.menu__name--main .menu__list.menu__level--3 {
+  > li:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  > li > a {
+    display: inline-block;
+    font-size: var(--surf-font-size-18);
+    position: relative;
+    text-decoration: none;
+
+    &:after {
+      background-color: var(--surf-color-navy);
+      content: '';
+      display: block;
+      height: 2px;
+      left: 0;
+      opacity: 0;
+      top: calc(100% - 4px);
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      width: 100%;
+    }
+
+    &:hover:after,
+    &:focus:after {
+      opacity: 1;
+    }
   }
 }
