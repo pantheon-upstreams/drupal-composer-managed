@@ -76,9 +76,9 @@
   view_mode ? 'node__view-mode--' ~ view_mode|clean_class,
 ] %}
 
-{{ attach_library('nhmu/node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class) }}
-{{ attach_library('nhmu/node--' ~ view_mode|clean_class) }}
-{{ attach_library('nhmu/node--' ~ node.bundle|clean_class) }}
+{{ attach_library('surf_main/node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class) }}
+{{ attach_library('surf_main/node--' ~ view_mode|clean_class) }}
+{{ attach_library('surf_main/node--' ~ node.bundle|clean_class) }}
 
 <article {{ attributes.addClass(classes) }}>
   {% block content %}
