@@ -112,7 +112,7 @@ $settings['file_chmod_file'] = 0664;
 /**
  * Load services definition file.
  */
-$settings['container_yamls'][] = __DIR__ . '/local.services.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . 'sites/local.services.yml';
 
 /**
  * The default list of directories that will be ignored by Drupal's file API.
