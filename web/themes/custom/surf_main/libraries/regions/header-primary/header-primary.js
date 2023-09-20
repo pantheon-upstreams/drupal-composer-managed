@@ -2,9 +2,11 @@
  * Regions - Header Primary
  * Functionality to simply hide and show mobile menu.
  *
- * - 01 - Dropdown
- * - 02 - Drupal Attach
+ * - 01 - Mobile Move
+ * - 02 - Dropdown
+ * - 03 - Drupal Attach
  */
+
 
 /*------------------------------------*\
   01 - Mobile Move
@@ -27,13 +29,14 @@ const mobileMove = (wrapper, destination, breakpoint) => {
     if (mediaQuery.matches) {
       state = 'desktop';
 
-      // Need to put element back under parent
-      parent.prepend(wrapper);
+      if (wrapper.classList.contains('menu__name--main')) {
+        const branding = parent.querySelector('.site-branding');
+        branding.after(wrapper);
+      } else {
+        parent.prepend(wrapper);
+      }
     } else {
       state = 'mobile';
-
-      // Need to put element into destination
-      console.log(destination, 'destination')
       destination.prepend(wrapper);
     }
   };
@@ -61,7 +64,7 @@ const mobileMove = (wrapper, destination, breakpoint) => {
 
 
 /*------------------------------------*\
-  01 - Dropdown
+  02 - Dropdown
   Simply changing a set of classes, attributes and states upon either a click,
   or keyboard action.
 \*------------------------------------*/
@@ -69,6 +72,7 @@ const mobileMove = (wrapper, destination, breakpoint) => {
 const dropdown = (wrapper) => {
   // Constructor
   const openClass = 'is-open';
+  let flyout;
   let trigger;
 
   const close = () => {
@@ -105,6 +109,12 @@ const dropdown = (wrapper) => {
     }
   };
 
+  const onClickWrapper = (event) => {
+    if (event.target === flyout) {
+      close();
+    }
+  }
+
   /**
    * Initialization
    * Add any and all functionality as a singular program, dynamically setting
@@ -113,9 +123,11 @@ const dropdown = (wrapper) => {
    * inside the eventual modal.
    */
   const init = (wrapper) => {
+    flyout = wrapper.querySelector('.mobile-menu__flyout');
     trigger = wrapper.querySelector('.mobile-menu__trigger');
     trigger.addEventListener('click', onClickTrigger);
     trigger.addEventListener('keydown', onKeydownTrigger);
+    wrapper.addEventListener('click', onClickWrapper)
   };
 
   // Final Return
@@ -143,21 +155,17 @@ Drupal.behaviors.surfMobileMenu = {
 
 Drupal.behaviors.surfMobileMove = {
   attach(context) {
-    // define each element that needs to move
-    // Within const object, grab each one's parent for move reference
-    // Otherwise translate to mobile flyout content area
-    // Also need to define 2 breakpoints for breaking up movement
     const wrappers = [
       {
-        'id': 'surf-main-menu',
+        'id': 'surf-move-mobile-02',
         'class': '.menu__name--main',
-        'breakpoint': 1200,
+        'breakpoint': 1400,
       },
     ];
 
     wrappers.forEach((wrapper) => {
       const element = once(wrapper.id, context.querySelector(wrapper.class));
-      const destination = once('surf-mobile-menu', context.querySelector('.mobile-menu__flyout-content'));
+      const destination = once('surf-move-mobile-destination', context.querySelector('.mobile-menu__flyout-content'));
 
       if (element.length !== 0 && destination.length !== 0) {
         mobileMove(element[0], destination[0], wrapper.breakpoint);
