@@ -7,9 +7,8 @@
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
-
-{% include 'resource-link' with {
+{{ include('surf_main:resource-link', {
   link_title: content.field_link.0["#title"],
   link_url,
   attributes,
-} only %}
+}, with_context = false) }}

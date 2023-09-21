@@ -5,7 +5,7 @@
   }]) %}
 {% endfor %}
 
-{% include 'persons-list' with {
+{{ include('surf_main:persons-list', {
   items,
   attributes,
-} only %}
+}, with_context = false) }}

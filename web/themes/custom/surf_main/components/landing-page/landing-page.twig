@@ -1,0 +1,25 @@
+{%
+  set classes = [
+  'c-landing-page',
+  layout,
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {# Header #}
+  <div class="c-landing-page__header-wrapper l-constrained--xlarge">
+    {# Title #}
+    {% if title %}
+      <h1 class="c-landing-page__title l--bottom-spacing">
+        {{ title }}
+      </h1>
+    {% endif %}
+  </div>
+
+  {# Body #}
+  <div class="c-landing-page__body-wrapper">
+    {{ body }}
+  </div>
+
+</article>

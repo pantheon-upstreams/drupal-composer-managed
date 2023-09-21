@@ -1,0 +1,23 @@
+{%
+    set classes = [
+    'c-header',
+    heading_style,
+    heading_hr,
+    'l-constrained--xlarge',
+    'l--bottom-spacing',
+]
+%}
+
+<header {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% if heading_hr == 'horizontal-rule' %}
+    <hr class="left-hook-divider">
+  {% endif %}
+
+  {% if heading and type == 'h1' %}
+    <h1>{{heading}}</h1>
+  {% else %}
+    <h2>{{heading}}</h2>
+  {% endif %}
+
+</header>

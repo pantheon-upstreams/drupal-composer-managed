@@ -1,0 +1,17 @@
+{%
+  set classes = [
+  'c-view',
+  'l-constrained--xlarge',
+  'l--bottom-spacing',
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% if view is not empty %}
+    <section class="c-view__view-wrapper">
+      {{view}}
+    </section>
+  {% endif %}
+
+</article>

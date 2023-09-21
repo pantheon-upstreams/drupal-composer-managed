@@ -6,9 +6,9 @@
   {% set layout = content.field_layout.0["#markup"] %}
 {% endif %}
 
-
-{% include "landing-page" with {
-	title,
+{{ include('surf_main:landing-page', {
+  title,
   body,
   layout,
-} %}
+}, with_context = false) }}
+

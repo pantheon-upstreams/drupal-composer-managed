@@ -1,6 +1,6 @@
-{% include 'pullquote' with {
+{{ include('surf_main:pullquote', {
   credit: content.field_citation|field_value,
   quote: content.field_text.0["#text"],
   style: content.field_style.0["#markup"],
   attributes,
-} only %}
+}, with_context = false) }}

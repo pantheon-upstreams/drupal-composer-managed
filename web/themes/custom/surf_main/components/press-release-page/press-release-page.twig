@@ -1,0 +1,120 @@
+{%
+  set classes = [
+  'c-press-release',
+  style,
+  'l-constrained',
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+
+  <header class="c-press-release__header-wrapper">
+
+    <div class="c-press-release__breadcrumbs-date-wrapper">
+      {# Breadcrumbs #}
+      <nav class="c-press-release__breadcrumb" aria-label="Breadcrumb">
+        <ol class="c-press-release__breadcrumb-list">
+          <li class="c-press-release__breadcrumb-item">
+            <a href="/press-releases" class="c-press-release__breadcrumb-link" aria-current="page">{{ 'Press Releases'|t }}</a>
+          </li>
+        </ol>
+      </nav>
+
+      {# Date #}
+      {% if date %}
+        <div class="c-press-release__date">
+          {{date}}
+        </div>
+      {% endif %}
+
+    </div>
+
+    {# Title #}
+    <h1 class="c-press-release__title">{{title}}</h1>
+  </header>
+
+  {# Primary Media #}
+  {% if image_url %}
+    <div class="c-press-release__image-wrapper">
+      <img src="{{image_url}}" alt="{{image_alt}}">
+    </div>
+  {% endif %}
+
+  <div class="c-press-release__content-wrapper">
+
+    {# Overview #}
+    {% if overview %}
+      <div class="c-press-release__overview">
+        {{ overview }}
+      </div>
+    {% endif %}
+
+    {# Body #}
+    {% if body %}
+      <div class="c-press-release__body">
+        {{ body }}
+      </div>
+    {% endif %}
+
+  </div>
+
+
+  <div class="c-press-release__bottom-wrapper">
+
+    {# Author #}
+    {% if author %}
+      <p class="c-press-release__author">
+        by {{ author }}
+      </p>
+    {% endif %}
+
+    {# Categories #}
+    {% if categories %}
+      <ul class="c-press-release__categories">
+        {% for item in categories['#items'] %}
+          <li class="c-press-release__categories-item">
+            <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.tid.value}) }}">{{item.entity.name.value}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {# Press contact(s) #}
+    {% if contacts %}
+      <h2 class="c-press-release__contacts-title">Press Contact</h2>
+      <ul class="c-press-release__contacts">
+        {% for item in contacts %}
+          <li class="c-press-release__contacts-item">
+
+            {{ include('surf_main:person', {
+              image_url: item.image_url,
+              image_alt: item.image_alt,
+              full_name: item.name,
+              initials: initials,
+              title: item.title,
+              phone: item.phone,
+              contact_url: item.contact_url,
+              bio_url: item.bio_url,
+            }, with_context = false) }}
+
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {# Media Download(s) #}
+    {% if downloads %}
+      {{downloads}}
+    {% endif %}
+
+  </div>
+
+  <hr class="left-hook-divider" />
+
+  {# Press Resources #}
+  <div class="c-press-release__press-resources-wrapper">
+    <h2 class="c-press-release__press-resources-title">Press Resources</h2>
+    {{ drupal_entity('block_content', 17) }}
+  </div>
+
+</article>

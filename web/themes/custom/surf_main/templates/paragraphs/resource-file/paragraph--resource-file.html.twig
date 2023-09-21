@@ -13,10 +13,10 @@
 {# File Size #}
 {% set file_size = (content.field_file.0["#file"].filesize.value / 1048576)|round ~ " MB" %}
 
-{% include 'resource-file' with {
+{{ include('surf_main:resource-file', {
   file_title,
   file_url,
   file_size,
   file_mimetype,
   attributes,
-} only %}
+}, with_context = false) }}

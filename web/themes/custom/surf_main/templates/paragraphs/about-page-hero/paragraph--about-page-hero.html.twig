@@ -7,7 +7,7 @@
 {% set image_url = file_url(content.field_media.0["#media"].field_media_image.entity.fileuri | image_style('featured_image')) %}
 {% set image_alt = content.field_media.0["#media"].field_media_image.alt %}
 
-{% include "about-hero" with {
+{{ include('surf_main:about-hero', {
   heading,
   overview,
   body,
@@ -15,4 +15,5 @@
   image_url,
   image_alt,
   attributes,
-} only %}
+}, with_context = false) }}
+

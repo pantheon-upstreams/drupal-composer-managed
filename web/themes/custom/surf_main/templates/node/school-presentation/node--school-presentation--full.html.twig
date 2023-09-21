@@ -42,15 +42,14 @@
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
-
-{% include "basic-page" with {
+{{ include('surf_main:basic-page', {
   breadcrumbs: breadcrumbs,
-	title: label,
-	image_url: image,
-	image_alt: alt,
-	intro: content.field_teaser_text|field_value,
-	link_url: link_url,
+  title: label,
+  image_url: image,
+  image_alt: alt,
+  intro: content.field_teaser_text|field_value,
+  link_url: link_url,
   link_text: content.field_link.0["#title"],
   body: content.field_p_content,
-} %}
+}, with_context = false) }}
 

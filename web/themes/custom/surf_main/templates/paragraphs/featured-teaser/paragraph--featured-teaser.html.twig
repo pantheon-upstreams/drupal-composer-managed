@@ -74,18 +74,18 @@
 
 <article{{ attributes.addClass(['l-constrained--xlarge', 'l--bottom-spacing'])}}>
 
-{% include "teaser" with {
-  layout: 'super',
-  title,
-  body,
-  url,
-  category,
-  category_url,
-  teaser_date,
-  teaser_time,
-  image,
-  alt,
-  icon,
-} %}
+  {{ include('surf_main:teaser', {
+    layout: 'super',
+    title,
+    body,
+    url,
+    category,
+    category_url,
+    teaser_date,
+    teaser_time,
+    image,
+    alt,
+    icon,
+  }, with_context = false) }}
 
 </article>

@@ -33,7 +33,7 @@
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
-{% include "job-posting-page" with {
+{{ include('surf_main:job-posting-page', {
   breadcrumbs: breadcrumbs,
   title: label|field_value,
   date: content.field_date_application_due.value|date('F d, Y'),
@@ -41,4 +41,5 @@
   body: content.body,
   link_url: link_url,
   link_text: content.field_link.0["#title"],
-} %}
+}, with_context = false) }}
+

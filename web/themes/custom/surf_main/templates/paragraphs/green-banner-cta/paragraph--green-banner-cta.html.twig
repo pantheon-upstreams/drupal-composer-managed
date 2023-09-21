@@ -7,10 +7,10 @@
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
-{% include 'green-banner-cta' with {
+{{ include('surf_main:green-banner-cta', {
   heading: content.field_title|field_value,
   body: content.field_text.0["#text"],
   link_text: content.field_link.0["#title"],
   link_url,
   attributes,
-} only %}
+}, with_context = false) }}

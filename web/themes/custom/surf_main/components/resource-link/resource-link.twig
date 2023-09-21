@@ -1,0 +1,11 @@
+{%
+  set classes = [
+  'c-resources-link',
+]
+%}
+
+<section {{ attributes.addClass(classes).merge(attributes) }}>
+  <span class="c-resources-link__title-wrapper">
+    <a href="{{link_link}}" target="_blank" rel="nofollow noreferrer noopener" class="c-resources-link__link">{{link_title}}</a>
+  </span>
+</section>

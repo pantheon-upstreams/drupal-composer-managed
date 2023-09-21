@@ -1,4 +1,4 @@
-{% include 'view' with {
+{{ include('surf_main:view', {
   view: content.field_view,
   attributes,
-} only %}
+}, with_context = false) }}

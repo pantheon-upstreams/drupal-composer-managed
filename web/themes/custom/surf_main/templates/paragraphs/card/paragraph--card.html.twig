@@ -9,7 +9,7 @@
   {% endif %}
 {% endif %}
 
-{% include 'callout' with {
+{{ include('surf_main:callout', {
   heading: content.field_title|field_value,
   body: content.field_text.0["#text"],
   link_text: content.field_link.0["#title"],
@@ -19,4 +19,4 @@
   theme: content.field_theme.0["#markup"],
   icon: content.field_icon.0["#markup"],
   attributes,
-} only %}
+}, with_context = false) }}

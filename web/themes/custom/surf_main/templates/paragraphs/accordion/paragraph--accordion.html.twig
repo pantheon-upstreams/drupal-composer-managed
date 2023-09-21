@@ -6,7 +6,7 @@
   }]) %}
 {% endfor %}
 
-{% include "accordion" with {
+{{ include('surf_main:accordion', {
   items,
   attributes
-} %}
+}, with_context = false) }}

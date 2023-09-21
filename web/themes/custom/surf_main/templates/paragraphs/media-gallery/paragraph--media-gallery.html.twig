@@ -5,7 +5,7 @@
   }]) %}
 {% endfor %}
 
-{% include "media-gallery" with {
+{{ include('surf_main:media-gallery', {
   gallery_items: items,
   attributes
-} %}
+}, with_context = false) }}
