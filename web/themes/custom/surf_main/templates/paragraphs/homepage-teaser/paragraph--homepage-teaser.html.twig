@@ -18,7 +18,7 @@
 
 {% set media_alt = content.field_media_right.0["#media"].field_media_image.0.alt %}
 
-{% include 'homepage-teaser' with {
+{{ include('surf_main:homepage-teaser', {
   heading,
   body,
   link_url,
@@ -26,4 +26,4 @@
   media_url,
   media_alt,
   attributes,
-} only %}
+}, with_context = false) }}

@@ -13,9 +13,9 @@
   {% set length = 3 %}
 {% endif %}
 
-
-{% include 'callout-list' with {
+{{ include('surf_main:callout-list', {
   items,
   length,
   attributes,
-} only %}
+}, with_context = false) }}
+

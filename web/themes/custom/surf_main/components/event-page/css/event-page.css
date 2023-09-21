@@ -1,0 +1,408 @@
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+.c-event-title {
+  margin: 0 0 2rem 0;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-one);
+  line-height: var(--font-line-height-heading-one);
+  font-size: 3rem;
+  line-height: 94%;
+}
+@media (min-width: 1024px) {
+  .c-event-title {
+    font-size: 6.25rem;
+    line-height: 94%;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event-title {
+    font-size: 8.25rem;
+    line-height: 94%;
+  }
+}
+@media (min-width: 1400px) {
+  .c-event-title {
+    font-size: 8.25rem;
+    line-height: 94%;
+  }
+}
+
+.c-event__breadcrumb-list {
+  margin: 0 0 2rem 0;
+  padding: 0;
+  display: -webkit-box;
+  display: flex;
+}
+
+.c-event__breadcrumb-item {
+  margin: 0;
+  display: inline-block;
+}
+
+.c-event__breadcrumb-link {
+  font-style: normal;
+  text-transform: uppercase;
+  font-family: var(--font-family-condensed);
+  font-size: var(--font-size-label-peewee);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--font-letter-spacing-wide);
+  line-height: var(--font-line-height-label-peewee);
+  color: var(--color-surf--forest);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+}
+.c-event__breadcrumb-link:hover {
+  text-decoration: none;
+}
+
+.c-event__header-wrapper {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .c-event__header-wrapper {
+    margin-bottom: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__header-wrapper {
+    padding-top: 3.125rem;
+    margin-bottom: 3.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__header-wrapper:after {
+    content: "";
+    display: block;
+    background-image: url("event-illustration.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    width: 20.8125rem;
+    height: 13.875rem;
+    background-size: cover;
+    top: 0;
+  }
+}
+@media (min-width: 1400px) {
+  .c-event__header-wrapper:after {
+    width: 28.125rem;
+    height: 18.75rem;
+  }
+}
+
+.c-event__details-wrapper {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .c-event__details-wrapper {
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+  }
+}
+.c-event__details-wrapper li {
+  display: block;
+  margin: 0;
+}
+
+.c-event__details-wrapper li.c-event-dates {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-large);
+  line-height: var(--font-line-height-body-x-large);
+  font-weight: var(--font-weight-bold);
+}
+@media (min-width: 768px) {
+  .c-event__details-wrapper li.c-event-dates {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-large);
+    line-height: var(--font-line-height-body-large);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+@media (min-width: 768px) {
+  .c-event__datetime-wrapper {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+}
+
+.c-event__details-wrapper li.c-event-times {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-large);
+  line-height: var(--font-line-height-body-x-large);
+  font-weight: var(--font-weight-bold);
+  margin: 0.75rem 0 0 0;
+}
+@media (min-width: 768px) {
+  .c-event__details-wrapper li.c-event-times {
+    margin: 0;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-large);
+    line-height: var(--font-line-height-body-large);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+@media (min-width: 768px) {
+  .c-event.c-event--dateTimeSeparator li.c-event-dates {
+    margin: 0 1.5rem 0 0;
+    padding: 0 1.625rem 0 0;
+    position: relative;
+  }
+  .c-event.c-event--dateTimeSeparator li.c-event-dates:after {
+    content: "";
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-large);
+    line-height: var(--font-line-height-body-large);
+    font-weight: var(--font-weight-bold);
+    background: var(--color-surf--black);
+    height: 1.375rem;
+    width: 0.125rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+
+.c-event__details-wrapper li.c-event__link {
+  margin: 0.75rem 0 0 0;
+}
+@media (min-width: 768px) {
+  .c-event__details-wrapper li.c-event__link {
+    margin: 2rem 0 0 0;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__details-wrapper li.c-event__link {
+    margin: 0 0 0 1.5rem;
+  }
+}
+
+.c-event__link .forest-button {
+  text-transform: inherit;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-large);
+  line-height: var(--font-line-height-body-large);
+  font-family: var(--font-family-sans);
+  letter-spacing: 0;
+  font-weight: var(--font-weight-bold);
+}
+
+.c-event hr.left-hook-divider {
+  margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .c-event hr.left-hook-divider {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event hr.left-hook-divider {
+    margin-bottom: 5.75rem;
+  }
+}
+
+.c-event__overview {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-two);
+  line-height: var(--font-line-height-heading-two);
+  letter-spacing: 0.015em;
+  margin: 0 0 2rem 0;
+}
+@media (min-width: 768px) {
+  .c-event__overview {
+    letter-spacing: 0.02em;
+  }
+}
+@media (min-width: 768px) {
+  .c-event__overview {
+    margin: 0 0 2.5rem 0;
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__overview {
+    margin: 0 0 1.75rem 0;
+    max-width: 48.75rem;
+  }
+}
+
+.c-event__image-wrapper {
+  margin: 0 0 2rem 0;
+}
+@media (min-width: 768px) {
+  .c-event__image-wrapper {
+    margin: 0 0 2.5rem 0;
+    max-height: 14.125rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__image-wrapper {
+    margin: 0 0 3.75rem 0;
+    max-height: 23.125rem;
+  }
+}
+@media (min-width: 1400px) {
+  .c-event__image-wrapper {
+    margin: 0;
+    max-height: 23.125rem;
+  }
+}
+.c-event__image-wrapper img {
+  display: block;
+  max-height: 14.75rem;
+}
+@media (min-width: 768px) {
+  .c-event__image-wrapper img {
+    max-height: 14.125rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__image-wrapper img {
+    max-height: 23.125rem;
+  }
+}
+
+.c-event__content-wrapper {
+  padding: 0 0 1.5625rem 0;
+}
+@media (min-width: 768px) {
+  .c-event__content-wrapper {
+    padding: 0 0 4.75rem 0;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__content-wrapper {
+    padding: 0 0 4.1875rem 0;
+  }
+}
+@media (min-width: 1400px) {
+  .c-event__content-wrapper {
+    display: -webkit-box;
+    display: flex;
+    padding: 0 0 8.9375rem 0;
+  }
+  .c-event__content-wrapper .c-event__image-wrapper {
+    -webkit-box-ordinal-group: 3;
+            order: 2;
+    -webkit-box-flex: 0;
+            flex: none;
+    margin: 0 0 0 3.75rem;
+  }
+}
+
+.c-event__body-wrapper > .text-content > p:first-child {
+  margin-top: 0;
+}
+.c-event__body-wrapper > .text-content > p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .c-event__body-wrapper {
+    -webkit-box-ordinal-group: initial;
+            order: initial;
+    grid-area: body;
+  }
+}
+@media (min-width: 1024px) {
+  .c-event__body-wrapper {
+    max-width: 48.75rem;
+  }
+}

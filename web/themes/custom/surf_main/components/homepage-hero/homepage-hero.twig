@@ -1,0 +1,33 @@
+{%
+  set classes = [
+  'c-homepage-hero',
+  'l-constrained--xlarge',
+  'l--bottom-spacing',
+]
+%}
+
+<section {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% if heading is not empty %}
+    <div class="c-homepage-hero__heading">
+      <h2>{{heading|raw}}</h2>
+    </div>
+  {% endif %}
+
+  {% if body is not empty %}
+    <div class="c-homepage-hero__content">
+      {{ body }}
+    </div>
+  {% endif %}
+
+  {% if link_url is not empty and link_text is not empty %}
+    <p class="c-homepage-hero__link"><a href="{{link_url}}">{{link_text}}</a></p>
+  {% endif %}
+
+  {# {% if media_url is not empty %} #}
+  <div class="c-homepage-hero__image">
+    <img src="{{media_url}}" alt="{{media_alt ? media_alt : '' }}">
+  </div>
+  {# {% endif %} #}
+
+</section>

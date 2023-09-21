@@ -3,10 +3,10 @@
   {% set heading_hr = 'horizontal-rule' %}
 {% endif %}
 
-{% include 'header' with {
+{{ include('surf_main:header', {
   heading: content.field_title|field_value,
   heading_hr,
   heading_style: content.field_header_style.0["#markup"],
   type,
   attributes,
-} only %}
+}, with_context = false) }}

@@ -16,7 +16,7 @@
   {% endif %}
 {% endif %}
 
-{% include "media" with {
+{{ include('surf_main:media', {
   image_url,
   image_alt,
   image_credit: content.field_credit|field_value,
@@ -24,4 +24,4 @@
   title: content.field_media.0["#media"].name.value,
   caption: content.field_text.0["#text"],
   attributes,
-} %}
+}, with_context = false) }}

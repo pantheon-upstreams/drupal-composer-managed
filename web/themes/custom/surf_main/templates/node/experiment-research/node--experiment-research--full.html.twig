@@ -76,21 +76,21 @@
 
 {% set body = content.field_p_content %}
 
-{% include "experiment-research-page" with {
-  breadcrumbs,
-	title: label,
-	image_url,
-	image_alt,
-  icon_url,
-  icon_alt,
-	intro,
-  body,
-  key_facts,
-  media_gallery,
-  key_experiments,
-  research_area_id,
-  research_area_name,
-  dates,
-  extra_content,
-  type,
-} %}
+{{ include('surf_main:experiment-research-page', {
+ breadcrumbs,
+ title: label,
+ image_url,
+ image_alt,
+ icon_url,
+ icon_alt,
+ intro,
+ body,
+ key_facts,
+ media_gallery,
+ key_experiments,
+ research_area_id,
+ research_area_name,
+ dates,
+ extra_content,
+ type,
+}, with_context = false) }}

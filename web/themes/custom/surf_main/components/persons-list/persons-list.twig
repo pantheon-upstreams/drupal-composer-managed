@@ -1,0 +1,27 @@
+{%
+  set classes = [
+  'c-persons-list',
+  'l-constrained--medium',
+  'l--bottom-spacing',
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% if heading %}
+    <h2 class="c-persons-list__heading">{{ heading }}</h2>
+  {% endif %}
+
+  {% block items_block %}
+
+    <ul class="c-persons-list__items">
+      {% for item in items %}
+        <li class="c-persons-list__item">
+          {{ drupal_entity('paragraph', item.id, 'default') }}
+         </li>
+       {% endfor %}
+    </ul>
+
+  {% endblock items_block %}
+
+</article>

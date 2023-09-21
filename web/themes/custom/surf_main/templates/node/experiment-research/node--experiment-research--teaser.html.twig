@@ -35,15 +35,15 @@
 {# Body #}
 {% set body = content.field_overview.0["#text"] %}
 
- {% include "teaser" with {
-  layout: 'column-stack',
-  title,
-  body,
-  url,
-  category,
-  category_url: '/areas-of-research',
-  image,
-  alt,
-  icon,
-  type,
-  } %}
+ {{ include('surf_main:teaser', {
+   layout: 'column-stack',
+   title,
+   body,
+   url,
+   category,
+   category_url: '/areas-of-research',
+   image,
+   alt,
+   icon,
+   type,
+ }, with_context = false) }}

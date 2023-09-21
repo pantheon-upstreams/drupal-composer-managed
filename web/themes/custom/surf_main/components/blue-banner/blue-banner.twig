@@ -1,0 +1,63 @@
+{%
+  set classes = [
+  'c-blue-banner',
+  'l-constrained--xlarge',
+  'l--bottom-spacing',
+]
+%}
+
+<div class="l-constrained--xlarge cl-component">
+
+  <section {{ attributes.addClass(classes).merge(attributes) }}>
+
+  <div class="c-blue-banner__images-wrapper">
+
+    {% if primary_image %}
+      {% block primary_image_block %}
+        <div class="c-blue-banner__primary-image-wrapper">
+          <img src="{{ primary_image }}" alt="{{ primary_image_alt }}" />
+        </div>
+      {% endblock %}
+    {% endif %}
+
+    {% if secondary_image %}
+      {% block secondary_image_block %}
+        <div class="c-blue-banner__secondary-image-wrapper">
+          <img src="{{ secondary_image }}" alt="{{ secondary_image_alt }}" />
+        </div>
+      {% endblock %}
+    {% endif %}
+
+  </div>
+
+  {% if heading %}
+    {% block banner_heading_block %}
+      <h2 class="c-blue-banner__title">{{heading}}</h2>
+    {% endblock %}
+  {% endif %}
+
+  {% if body %}
+    {% block banner_body_block %}
+      <div class="c-blue-banner__body">
+        <p>{{ body }}</p>
+      </div>
+    {% endblock %}
+  {% endif %}
+
+  {% if link_text and link_url %}
+    {% block callout__link %}
+      <div class="c-blue-banner__link">
+
+        {{ include('surf_main:link-button', {
+          text: link_text,
+          url: link_url,
+          color: 'white-black',
+          uppercase: true,
+        }, with_context = false) }}
+
+      </div>
+    {% endblock %}
+  {% endif %}
+
+  </section>
+</div>

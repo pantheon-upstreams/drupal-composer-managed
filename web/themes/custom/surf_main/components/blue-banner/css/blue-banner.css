@@ -1,0 +1,250 @@
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+.c-blue-banner {
+  background: -o-linear-gradient(341.62deg, #0050b8 0%, #2976d9 82.91%);
+  background: linear-gradient(108.38deg, #0050b8 0%, #2976d9 82.91%);
+  padding: 0 0.9375rem 2rem 0.9375rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .c-blue-banner {
+    padding: 0 2.5rem 3.75rem 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-blue-banner {
+    padding: 0 2.5rem 5rem 2.5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .c-blue-banner {
+    padding: 0 5rem 5rem 5rem;
+  }
+}
+.c-blue-banner:after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: -112px;
+  bottom: -52px;
+  width: 21.5rem;
+  height: 25.3125rem;
+  background-image: url(blue-banner-circles.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+@media (min-width: 1024px) {
+  .c-blue-banner:after {
+    display: block;
+  }
+}
+.c-blue-banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-surf--white);
+  z-index: 0;
+  height: 1.4375rem;
+}
+@media (min-width: 768px) {
+  .c-blue-banner:before {
+    height: 2.625rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-blue-banner:before {
+    height: 2.1875rem;
+  }
+}
+@media (min-width: 1400px) {
+  .c-blue-banner:before {
+    height: 12.25rem;
+  }
+}
+
+.c-blue-banner__images-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  gap: 2rem;
+  margin: 0 0 1.25rem 0;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .c-blue-banner__images-wrapper {
+    grid-template-columns: 0.6fr 0.4fr;
+  }
+}
+@media (min-width: 1024px) {
+  .c-blue-banner__images-wrapper {
+    margin: 0 0 4.125rem 0;
+  }
+}
+@media (min-width: 1400px) {
+  .c-blue-banner__images-wrapper {
+    margin: 0 0 5.25rem 0;
+  }
+}
+.c-blue-banner__images-wrapper img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.c-blue-banner__primary-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 14.25rem;
+}
+@media (min-width: 768px) {
+  .c-blue-banner__primary-image-wrapper {
+    height: 16.4375rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-blue-banner__primary-image-wrapper {
+    height: 23.0625rem;
+  }
+}
+@media (min-width: 1400px) {
+  .c-blue-banner__primary-image-wrapper {
+    height: 32rem;
+  }
+}
+
+.c-blue-banner__secondary-image-wrapper {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .c-blue-banner__secondary-image-wrapper {
+    height: 16.4375rem;
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .c-blue-banner__secondary-image-wrapper {
+    height: 23.0625rem;
+  }
+}
+@media (min-width: 1400px) {
+  .c-blue-banner__secondary-image-wrapper {
+    height: 32rem;
+  }
+}
+
+.c-blue-banner__title {
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-one);
+  line-height: var(--font-line-height-heading-one);
+  color: var(--color-surf--white);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.c-blue-banner__body {
+  margin: 1.25rem 0 0 0;
+}
+.c-blue-banner__body > p {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-large);
+  line-height: var(--font-line-height-body-x-large);
+  color: var(--color-surf--white);
+  font-weight: var(--font-weight-bold);
+  margin-top: 0;
+  text-transform: uppercase;
+}
+.c-blue-banner__body > p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .c-blue-banner__body {
+    max-width: 54rem;
+  }
+}
+
+.c-blue-banner__link {
+  margin: 2.125rem 0 0 0;
+}

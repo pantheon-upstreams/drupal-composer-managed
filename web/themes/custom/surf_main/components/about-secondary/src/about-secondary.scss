@@ -1,0 +1,20 @@
+@use '../../../libraries/partials/partials' as *;
+
+.c-about-secondary {
+
+  // TODO: remove this
+  border: solid 1px red;
+  position: relative;
+
+  &::before {
+    background: red;
+    color: #ffffff;
+    content: 'about-secondary';
+    display: block;
+    font-size: rem(10px);
+    left: 0;
+    padding: rem(2px) rem(10px);
+    position: absolute;
+    top: 0;
+  }
+}

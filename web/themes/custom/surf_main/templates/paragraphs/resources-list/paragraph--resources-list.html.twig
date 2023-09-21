@@ -5,9 +5,8 @@
   }]) %}
 {% endfor %}
 
-
-{% include 'resources-list' with {
+{{ include('surf_main:resources-list', {
   heading: content.field_title|field_value,
   items,
   attributes,
-} only %}
+}, with_context = false) }}

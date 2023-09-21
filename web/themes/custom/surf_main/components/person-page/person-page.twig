@@ -1,0 +1,79 @@
+{% set style = style|default([])|merge([ image_url|render|striptags|trim ? 'has-media' : 'no-media' ]) %}
+
+{% set style = style|default([])|merge([ style ]) %}
+
+{%
+  set classes = [
+  'c-person-page',
+  style,
+  'l-constrained',
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+  <div class="l--1-col l-constrained">
+    <div class="l__primary">
+
+      {# Breadcumbs #}
+      {% if breadcrumbs %}
+
+        {{ include('surf_main:breadcrumbs', {
+          items: breadcrumbs,
+        }, with_context = false) }}
+
+      {% endif %}
+
+      <div class="c-person-page--grid">
+
+        {# Media #}
+        {% if image_url %}
+          <div class="person-content__photo-wrapper">
+            <img src="{{image_url}}" alt="{{image_alt}}">
+          </div>
+        {% endif %}
+
+
+        {# Title / Full Name #}
+        <h1 class="person-content__title">
+          {{ title }}
+        </h1>
+
+        {# Job Title #}
+        {% if job_title %}
+          <h2 class="person-content__job-title">
+            {{ job_title }}
+          </h2>
+        {% endif %}
+
+
+        {% if phone or email %}
+          <ul class="person-content__contact-wrapper">
+
+            {# Phone: office #}
+            {% if phone %}
+              <li class="person-content__phone-office">
+                <a href="tel:{{ phone }}">{{ phone }}</a>
+              </li>
+            {% endif %}
+
+            {# Email #}
+            {% if email %}
+              <li class="person-content__email">
+                <a href="mailto:{{ email }}">{{ 'Contact'|t }}</a>
+              </li>
+            {% endif %}
+
+          </ul>
+        {% endif %}
+
+        {# Body #}
+        {% if body %}
+          <div class="person-content__wrapper">
+            {{ body }}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</article>

@@ -8,7 +8,7 @@
 {% set media_right_image_url = file_url(content.field_media_right.0["#media"].field_media_image.entity.fileuri | image_style('featured_image')) %}
 {% set media_right_image_alt = content.field_media_right.0["#media"].field_media_image.alt %}
 
-{% include "about-secondary" with {
+{{ include('surf_main:about-secondary', {
   heading,
   left,
   media_left_image_url,
@@ -17,4 +17,4 @@
   media_right_image_url,
   media_right_image_alt,
   attributes,
-} only %}
+}, with_context = false) }}

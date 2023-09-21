@@ -19,7 +19,7 @@
 
 {% set media_alt = content.field_media.0["#media"].field_media_image.0.alt %}
 
-{% include 'homepage-hero' with {
+{{ include('surf_main:homepage-hero', {
   heading,
   body,
   link_url,
@@ -27,4 +27,4 @@
   media_url,
   media_alt,
   attributes,
-} only %}
+}, with_context = false) }}

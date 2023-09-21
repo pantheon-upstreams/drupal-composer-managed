@@ -7,17 +7,14 @@
   {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
-{% include "blue-banner" with {
+{{ include('surf_main:blue-banner', {
   heading: content.field_title|field_value,
   body: content.field_text|field_value,
-
   primary_image: file_url(content.field_media_left['#items'].entity.field_media_image.entity.fileuri),
   primary_image_alt: content.field_media_left['#items'].entity.field_media_image.alt,
-
   secondary_image: file_url(content.field_media_right['#items'].entity.field_media_image.entity.fileuri),
   secondary_image_alt: content.field_media_right['#items'].entity.field_media_image.alt,
-
   link_text: content.field_link.0["#title"],
   link_url,
   attributes
-} %}
+}, with_context = false) }}

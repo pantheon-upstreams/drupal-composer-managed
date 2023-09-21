@@ -152,20 +152,22 @@ TODO:
   {% endif %}
 
    <li class="item-row">
-  {% include "teaser" with {
-    layout,
-    title,
-    body,
-    url: node_url,
-    category,
-    category_url,
-    teaser_date,
-    teaser_time,
-    image,
-    alt,
-    icon,
-  } %}
-  </li>
+
+     {{ include('surf_main:teaser', {
+       layout,
+       title,
+       body,
+       url: node_url,
+       category,
+       category_url,
+       teaser_date,
+       teaser_time,
+       image,
+       alt,
+       icon,
+     }, with_context = false) }}
+
+    </li>
 
   {% endfor %}
     </ul>

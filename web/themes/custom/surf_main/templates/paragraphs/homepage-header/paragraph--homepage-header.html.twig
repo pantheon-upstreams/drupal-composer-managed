@@ -2,7 +2,7 @@
 
 {% set heading = content.field_heading_left.0["#context"].value|raw %}
 
-{% include 'homepage-header' with {
+{{ include('surf_main:homepage-header', {
   heading,
   attributes,
-} only %}
+}, with_context = false) }}

@@ -1,0 +1,54 @@
+@use 'libraries/partials/_partials' as *;
+
+nav.c-breadcrumb {
+  display: none;
+
+  @include bp-min(large) {
+    display: block;
+    margin: 0 0 rem(40px) 0;
+    padding-top: rem(32px);
+  }
+}
+
+nav.c-breadcrumb ol {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.c-breadcrumb li {
+  color: var(--color-surf--grey);
+  display: inline-block;
+  font-size: var(–surf-font-size-14);
+  margin: 0;
+
+  a {
+    color: var(--color-surf--forest);
+    font-size: var(–surf-font-size-14);
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &[aria-current='page'] {
+      color: var(--color-surf--grey);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+nav.c-breadcrumb li + li::before {
+  border-right: rem(1px) solid currentcolor;
+  content: '';
+  display: inline-block;
+  height: rem(14px);
+  margin: 0 rem(12px) 0 rem(13px);
+  position: relative;
+  top: rem(2px);
+}

@@ -10,7 +10,7 @@
 
  {% set pretitle = content.field_date_application_due.0["#markup"] ? 'Closing ' ~ content.field_date_application_due.0["#markup"]|date('F d, Y') : 'Open until filled' %}
 
- {% include "teaser" with {
+ {{ include('surf_main:teaser', {
   layout: 'list-stack',
   title: label,
   body: content.field_overview.0["#text"],
@@ -21,4 +21,4 @@
   teaser_time: null,
   image: null,
   alt: null,
-  } %}
+ }, with_context = false) }}

@@ -1,0 +1,69 @@
+@use '../../../libraries/partials/partials' as *;
+
+.c-header:not( .black-text ) {
+  h2 {
+    display: inline;
+
+    @include surf-font-heading-one;
+  }
+}
+
+.black-text h2 {
+  color: var(--color-surf--black);
+  font-family: var(--font-family-heading);
+  font-size: rem(40px);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: rem(0.6px);
+  line-height: rem(40px);
+  margin: 0;
+  text-transform: uppercase;
+
+  @include bp-min(medium) {
+    font-size: rem(64px);
+    letter-spacing: rem(1.28px);
+    line-height: rem(64px);
+  }
+
+  @include bp-min(large) {
+    font-size: rem(96px);
+    letter-spacing: rem(1.44px);
+    line-height: rem(96px);
+  }
+}
+
+.black-text-green-particles {
+  h2 {
+    background: url('../imgs/green.svg') no-repeat bottom left;
+    background-clip: text;
+    background-color: var(--color-surf--black);
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.black-text-gray-particles {
+  h2 {
+    background: url('../imgs/light-gray.svg') no-repeat bottom left;
+    background-clip: text;
+    background-color: var(--color-surf--black);
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.black-text-white-particles {
+  h2 {
+    background: url('../imgs/white-70.svg') no-repeat bottom left;
+    background-clip: text;
+    background-color: var(--color-surf--black);
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.c-header.horizontal-rule {
+  h2 {
+    padding-top: rem(32px);
+
+    @include bp-max(medium) {
+      padding-top: rem(60px);
+    }
+  }
+}
