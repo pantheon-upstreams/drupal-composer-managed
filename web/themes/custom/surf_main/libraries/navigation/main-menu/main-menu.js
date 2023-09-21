@@ -15,8 +15,10 @@
 
 const menuSystem = (wrapper) => {
   // Constructor
+  const mediaQuery = window.matchMedia('(min-width: 1400px)');
   const openClass = 'is-open';
   let links;
+  let state;
 
   const closeDropdown = (element) => {
     element.parentElement.classList.remove(openClass);
@@ -38,8 +40,11 @@ const menuSystem = (wrapper) => {
     if (event.currentTarget.parentElement.classList.contains(openClass)) {
       closeDropdown(event.currentTarget);
     } else {
-      // To prevent multiple dropdown sub-menus from being open, first collapse all.
-      closeAllDropdowns();
+      if (state === 'desktop') {
+        // To prevent multiple dropdown sub-menus from being open, first collapse all.
+        closeAllDropdowns();
+      }
+
       openDropdown(event.currentTarget);
     }
   };
@@ -51,8 +56,11 @@ const menuSystem = (wrapper) => {
       if (event.currentTarget.parentElement.classList.contains(openClass)) {
         closeDropdown(event.currentTarget);
       } else {
-        // To prevent multiple dropdown sub-menus from being open, first collapse all.
-        closeAllDropdowns();
+        if (state === 'desktop') {
+          // To prevent multiple dropdown sub-menus from being open, first collapse all.
+          closeAllDropdowns();
+        }
+
         openDropdown(event.currentTarget);
       }
     }
@@ -85,13 +93,28 @@ const menuSystem = (wrapper) => {
   /**
    * Window Click
    * Any events associated with clicking anywhere within the browser window.
-   * @param event: [object] details regarding the specific event taken.
+   * @param event - [object] details regarding the specific event taken.
    * @see init
    */
   const onWindowClick = (event) => {
-    // Close all dropdown sub-menus if clicking outside the menu system.
-    if (!wrapper.contains(event.target)) {
-      closeAllDropdowns();
+    if (state === 'desktop') {
+      // Close all dropdown sub-menus if clicking outside the menu system.
+      if (!wrapper.contains(event.target)) {
+        closeAllDropdowns();
+      }
+    }
+  };
+
+  /**
+   * Media Query Change
+   * Any events needing to be taken when a specific breakpoint has been activated.
+   * @see init
+   */
+  const onMediaQueryChange = () => {
+    if (mediaQuery.matches) {
+      state = 'desktop';
+    } else {
+      state = 'mobile';
     }
   };
 
@@ -115,6 +138,10 @@ const menuSystem = (wrapper) => {
     });
 
     window.addEventListener('click', onWindowClick);
+
+    // Device or viewport change listener and on load.
+    mediaQuery.addEventListener('change', onMediaQueryChange);
+    onMediaQueryChange();
   };
 
   // Final Return

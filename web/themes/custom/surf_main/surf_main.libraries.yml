@@ -52,6 +52,8 @@ region--header-primary:
   css:
     theme:
       dist/css/regions/header-primary/header-primary.css: { minified: true }
+  js:
+    dist/js/regions/header-primary/header-primary.js: { minified: true }
 
 region--header-utility:
   css:
