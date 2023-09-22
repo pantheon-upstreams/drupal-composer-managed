@@ -51,6 +51,10 @@
 
 body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-utility {
   top: calc(var(--gin-toolbar-y-offset) + var(--gin-toolbar-secondary-height));
+
+  &.scrolled {
+    transform: translateY(calc(-100% - var(--gin-toolbar-secondary-height)));
+  }
 }
 
 

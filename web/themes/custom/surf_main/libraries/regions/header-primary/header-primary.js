@@ -152,7 +152,7 @@ const dropdown = (wrapper) => {
 const scrolled = (wrapper) => {
   // Constructor
   const scrolledClass = 'scrolled';
-  const scrolledAmount = 40;
+  const scrolledAmount = 0;
 
   /**
    * On Scroll
@@ -160,7 +160,7 @@ const scrolled = (wrapper) => {
    * @see init
    */
   const onScroll = () => {
-    if (window.scrollY >= scrolledAmount) {
+    if (window.scrollY > scrolledAmount) {
       wrapper.classList.add(scrolledClass);
     } else {
       wrapper.classList.remove(scrolledClass);

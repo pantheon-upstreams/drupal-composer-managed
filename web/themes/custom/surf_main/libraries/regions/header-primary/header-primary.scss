@@ -79,6 +79,12 @@
 // Gin Toolbar
 body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-primary {
   top: calc(var(--gin-toolbar-y-offset) + var(--gin-toolbar-secondary-height) + var(--surf-height-region-header-utility));
+
+  &.scrolled {
+    @include mixins-breakpoints.bp-min(large) {
+      transform: translateY(calc((var(--surf-height-region-header-utility) + var(--gin-toolbar-secondary-height)) * -1));
+    }
+  }
 }
 
 
