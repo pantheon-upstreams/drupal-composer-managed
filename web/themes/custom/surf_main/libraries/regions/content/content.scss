@@ -1,10 +1,38 @@
 //
 // Regions - Content
 //
-// - 01 - General
+// - 01 - Imports
+// - 02 - General
 //
 
 
 //------------------------------------
-//  01 - General
+//  01 - Imports
 //------------------------------------
+
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.region.region__name--content {
+  @include mixins-breakpoints.bp-min(xlarge) {
+    padding-left: 24px;
+    position: relative;
+  }
+
+  &:before {
+    background: var(--surf-gradient-vt-multi);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 24px;
+  }
+}

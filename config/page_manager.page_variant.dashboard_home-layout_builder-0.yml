@@ -22,13 +22,6 @@ variant_settings:
     -
       layout_id: layout_onecol
       layout_settings:
-        label: Header
-        context_mapping: {  }
-      components: {  }
-      third_party_settings: {  }
-    -
-      layout_id: layout_onecol
-      layout_settings:
         label: 'Main content'
         context_mapping: {  }
       components:

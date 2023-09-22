@@ -51,9 +51,7 @@ class PageVariantViewBuilder extends PageManagerPageVariantViewBuilder {
 
   private function addCustomThemeForDashboardPages($content, PageVariant $entity, $view_mode, $langcode) {
     $build['#theme'] = 'dashboard_page';
-    $build['#content'] = $content + [
-      '#type' => 'container'
-      ];
+    $build['#content'] = $content;
     $build['#page_title'] = $entity->getPage()->label();
 
     $this->setUserDisplayName($build, $entity);

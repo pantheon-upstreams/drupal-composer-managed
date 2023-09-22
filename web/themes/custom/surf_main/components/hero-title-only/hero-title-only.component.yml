@@ -1,12 +1,12 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Breadcrumbs
+name: Hero - Title Only
 status: experimental
-group: Navigation
+group: Display
 props:
   type: object
   required:
-    - breadcrumbs
+    - title
   properties:
-    breadcrumbs:
-      title: Breadcrumbs
-      type: object
+    title:
+      title: Title
+      type: string
