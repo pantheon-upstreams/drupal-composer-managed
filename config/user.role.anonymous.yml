@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
     - filter.format.simple_text
   module:
-    - cl_server
     - filter
     - media
     - system
@@ -18,8 +17,6 @@ weight: -10
 is_admin: false
 permissions:
   - 'access content'
-  - 'use cl server'
-  - 'use cl server'
   - 'use text format basic_html'
   - 'use text format simple_text'
   - 'view media'

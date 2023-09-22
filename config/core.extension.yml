@@ -19,10 +19,6 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
-  cl_components: 0
-  cl_generator: 0
-  cl_server: 0
-  components: 0
   config: 0
   contact: 0
   contextual: 0
@@ -93,6 +89,7 @@ module:
   redirect_404: 0
   responsive_image: 0
   scheduler: 0
+  sdc: 0
   search_api: 0
   search_api_block: 0
   search_api_pantheon: 0
@@ -118,7 +115,6 @@ module:
   twig_field_value: 0
   twig_tweak: 0
   update: 0
-  upgrade_status: 0
   user: 0
   views_filters_summary: 0
   views_infinite_scroll: 0
