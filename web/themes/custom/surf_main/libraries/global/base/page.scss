@@ -41,10 +41,11 @@ html {
 //------------------------------------
 
 body {
-  background-color: var(--surf-color-black);
+  background-color: var(--surf-color-black); // Floating footer fix
 }
 
 .layout-container {
+  background-color: var(--surf-color-white);
   padding-top: var(--surf-height-region-header-primary);
 
   @include mixins-breakpoints.bp-min(large) {

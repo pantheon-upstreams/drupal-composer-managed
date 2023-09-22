@@ -152,7 +152,7 @@ const dropdown = (wrapper) => {
 const scrolled = (wrapper) => {
   // Constructor
   const scrolledClass = 'scrolled';
-  const scrolledAmount = 0;
+  const scrolledAmount = 72;
 
   /**
    * On Scroll
