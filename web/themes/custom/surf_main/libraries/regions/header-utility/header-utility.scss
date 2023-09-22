@@ -1,30 +1,51 @@
 //
 // Regions - Header Utility
 //
-// - 01 - Layout
-// - 02 - General
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
 //
 
 
 //------------------------------------
-//  01 - Layout
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - Layout
 //------------------------------------
 
 .region.region__name--header-utility {
   align-items: center;
-  display: flex;
+  display: none;
   height: var(--surf-height-region-header-utility);
   left: 0;
   position: fixed;
   top: 0;
+  transform: translateY(0);
+  transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
   width: 100%;
   z-index: var(--surf-zindex-top);
+
+  @include mixins-breakpoints.bp-min(large) {
+    display: flex;
+  }
 
   .container {
     align-items: center;
     display: flex;
     flex-flow: nowrap row;
     justify-content: flex-end;
+  }
+
+  &.scrolled {
+    transform: translateY(-100%);
   }
 }
 
@@ -36,7 +57,7 @@ body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-utility
 
 
 //------------------------------------
-//  02 - General
+//  03 - General
 //------------------------------------
 
 .region.region__name--header-utility {

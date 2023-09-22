@@ -4,7 +4,8 @@
  *
  * - 01 - Mobile Move
  * - 02 - Dropdown
- * - 03 - Drupal Attach
+ * - 03 - Scroll
+ * - 04 - Drupal Attach
  */
 
 
@@ -143,6 +144,47 @@ const dropdown = (wrapper) => {
 
 
 /*------------------------------------*\
+  03 - Scroll
+  Serves to add functionality to the Header of the site upon the window
+  being scrolled down or up.
+\*------------------------------------*/
+
+const scrolled = (wrapper) => {
+  // Constructor
+  const scrolledClass = 'scrolled';
+  const scrolledAmount = 40;
+
+  /**
+   * On Scroll
+   * Used to determine scroll amount and apply functionality.
+   * @see init
+   */
+  const onScroll = () => {
+    if (window.scrollY >= scrolledAmount) {
+      wrapper.classList.add(scrolledClass);
+    } else {
+      wrapper.classList.remove(scrolledClass);
+    }
+  };
+
+  /**
+   * Init
+   * Used to fully initialize the entire object and it's elements, along with
+   * add event listeners where necessary, and function initializations.
+   * @param wrapper
+   */
+  const init = (wrapper) => {
+    document.addEventListener('scroll', onScroll);
+  };
+
+  // Run Entire Program / Object
+  init(wrapper);
+};
+
+
+
+
+/*------------------------------------*\
   02 - Drupal Attach
   Attach any previously defined functionality into Drupal behaviors.
   https://www.drupal.org/docs/drupal-apis/javascript-api/javascript-api-overview
@@ -189,3 +231,21 @@ Drupal.behaviors.surfMobileMove = {
     });
   }
 }
+
+Drupal.behaviors.surfScrolled = {
+  attach(context) {
+    const areas = [
+      '.region__name--site-alert',
+      '.region__name--header-primary',
+      '.region__name--header-utility',
+    ];
+
+    areas.forEach((area) => {
+      const element = once('surf-scrolled', context.querySelector(area));
+
+      if (element.length !== 0) {
+        scrolled(element[0]);
+      }
+    });
+  },
+};

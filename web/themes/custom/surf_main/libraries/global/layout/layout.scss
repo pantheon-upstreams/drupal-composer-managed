@@ -58,7 +58,11 @@
 
 :root {
   --surf-height-region-header-utility: 72px;
-  --surf-height-region-header-primary: 120px;
+  --surf-height-region-header-primary: 72px;
+
+  @include mixins-breakpoints.bp-min(large) {
+    --surf-height-region-header-primary: 120px;
+  }
 }
 
 

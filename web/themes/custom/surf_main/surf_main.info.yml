@@ -18,10 +18,3 @@ regions:
 libraries:
   - surf_main/fonts
   - surf_main/global
-
-components:
-  namespaces:
-    surf_main-components:
-      - libraries/components
-    surf_main-icons:
-      - images/icons
