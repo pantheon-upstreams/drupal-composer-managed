@@ -1,0 +1,22 @@
+//
+// Settings - Breakpoints
+// - 01 - Mapping
+//
+
+
+//------------------------------------
+//  01 - Mapping
+//  Default mapping of grid breakpoints, which is used in the function and mixin breakpoint files. An example of using
+//  breakpoints in a file is by using the mixin with the name of a breakpoint: `@include bp-min(small) {}`.
+//
+//  These breakpoints may be altered depending on the theme needs.
+//------------------------------------
+
+$grid-breakpoints: (
+        xsmall:   0,
+        small:    576px,
+        medium:   769px,
+        large:    992px,
+        xlarge:   1200px,
+        xxlarge:  1400px,
+);

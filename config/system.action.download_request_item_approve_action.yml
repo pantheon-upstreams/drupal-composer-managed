@@ -1,0 +1,15 @@
+uuid: dc73a611-a98f-4926-b8f4-89fb1b6e6138
+langcode: en
+status: true
+dependencies:
+  module:
+    - apitools
+_core:
+  default_config_hash: 4G71Cd7ZCH5x2zlbvMgrz5XlR6YMajoLFZBsrCa1HG8
+id: download_request_item_approve_action
+label: Approve
+type: download_request_item
+plugin: apitools_workflow_state_update
+configuration:
+  state_id: approved
+  field_name: state

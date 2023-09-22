@@ -1,0 +1,48 @@
+//
+// Global - Color
+//
+// - 01 - Theme Colors
+// - 02 - Grayscale
+//
+
+
+//------------------------------------
+//  01 - Theme Colors
+//------------------------------------
+
+:root {
+  --surf-color-red:     #CC2F08;
+  --surf-color-orange:  #FF6A00;
+  --surf-color-gold:    #FFBB00;
+  --surf-color-teal:    #00807E;
+  --surf-color-blue:    #007AB8;
+  --surf-color-navy:    #000080;
+}
+
+
+
+
+//------------------------------------
+//  02 - Grayscale
+//------------------------------------
+
+:root {
+  --surf-color-white:     #FFFFFF;
+  --surf-color-gray-100:  #F2F2F2;
+  --surf-color-gray-600:  #6D6D6D;
+  --surf-color-gray-700:  #494949;
+  --surf-color-gray-900:  #222222;
+  --surf-color-black:     #000000;
+}
+
+
+
+
+//------------------------------------
+//  03 - Gradients
+//------------------------------------
+
+:root {
+  --surf-gradient-hz-blue:  linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
+  --surf-gradient-vt-blue:  linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-navy));
+}

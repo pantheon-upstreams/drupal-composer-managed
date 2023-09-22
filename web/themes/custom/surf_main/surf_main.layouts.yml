@@ -1,0 +1,15 @@
+default:
+  label: Default
+  category: surf_main
+  template: templates/layouts/default
+  regions:
+    content:
+      label: Content
+layout_onecolumn:
+  label: One Column
+  category: surf_main
+  template: templates/layout/one-column/one-column
+  default_region: main
+  regions:
+    main:
+      label: Main content

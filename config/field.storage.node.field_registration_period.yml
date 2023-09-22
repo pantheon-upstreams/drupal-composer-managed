@@ -1,0 +1,21 @@
+uuid: b04a7179-777a-4328-a446-994b0b0b6bd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - node
+id: node.field_registration_period
+field_name: field_registration_period
+entity_type: node
+type: daterange
+settings:
+  datetime_type: date
+  optional_end_date: false
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

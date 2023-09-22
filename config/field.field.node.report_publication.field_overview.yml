@@ -1,0 +1,26 @@
+uuid: 3fdf514a-5c7a-4ba5-9b39-c007222eecf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.report_publication
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: node.report_publication.field_overview
+field_name: field_overview
+entity_type: node
+bundle: report_publication
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

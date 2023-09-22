@@ -1,0 +1,36 @@
+uuid: a9a2d4e0-04e9-45db-b483-194cd3da2e3a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_layout
+field_name: field_layout
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: title_illustration
+      label: 'Title with Illustration'
+    -
+      value: homepage
+      label: Homepage
+    -
+      value: about_page
+      label: 'About Page'
+    -
+      value: dashboard
+      label: Dashboard
+    -
+      value: dashboard_subpage
+      label: 'Dashboard Subpage'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

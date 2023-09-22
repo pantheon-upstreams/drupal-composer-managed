@@ -1,0 +1,31 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: green-banner-cta
+name: Green Banner CTA
+status: WIP
+componentType: molecule
+description: A Green Banner CTA component
+schemas:
+  props:
+    type: object
+    properties:
+      heading:
+        type: string
+        title: Heading
+        description: The callout heading
+        examples:
+          - Questions? Contact Us!
+      body:
+        title: Body
+        type: string
+        examples:
+          - "<p>Our education experts & staff are here to help connect you with the right resources & opportunities.</p>"
+      link_text:
+        title: Link Text
+        type: string
+        examples:
+          - "Underline Button with Arrow Component"
+      link_url:
+        title: Link URL
+        type: string
+        examples:
+          - "https://github.com"

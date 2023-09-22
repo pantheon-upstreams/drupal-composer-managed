@@ -1,0 +1,21 @@
+uuid: 769ab39a-e55f-4b00-b80d-aa9719e56dfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_application_due
+    - node.type.job_posting
+  module:
+    - datetime
+id: node.job_posting.field_date_application_due
+field_name: field_date_application_due
+entity_type: node
+bundle: job_posting
+label: 'Application due date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

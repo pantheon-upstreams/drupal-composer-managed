@@ -1,0 +1,23 @@
+uuid: 20d17d10-73d6-4c46-901f-89b44d6c898a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_equipment
+    - node.type.job_posting
+id: node.job_posting.field_equipment
+field_name: field_equipment
+entity_type: node
+bundle: job_posting
+label: Equipment
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Equipment required'
+  off_label: Virtual
+field_type: boolean

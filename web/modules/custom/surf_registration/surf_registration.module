@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function surf_registration_theme() {
+  return [
+    'user_request' => [
+      'render element' => 'elements',
+      'file' => 'user_request.theme.inc'
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_registration_theme_suggestions_user_request_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\surf_registration\Entity\UserRequest $user_request */
+  if ($user_request = \Drupal\Component\Utility\NestedArray::getValue($variables, ['elements', '#user_request'])) {
+    $suggestions[] = 'user_request__' . $user_request->bundle();
+  }
+  if ($view_mode = \Drupal\Component\Utility\NestedArray::getValue($variables, ['elements', '#view_mode'])) {
+    $suggestions[] = 'user_request__' . $view_mode;
+  }
+
+  if ($user_request && $view_mode) {
+    $suggestions[] = 'user_request__' . $user_request->bundle() . '__' . $view_mode;
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function surf_registration_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_reassign':
+      // Anonymize user requests.
+      $storage = \Drupal::entityTypeManager()->getStorage('user_request');
+      $user_request_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->accessCheck(FALSE)
+        ->execute();
+      foreach ($storage->loadMultiple($user_request_ids) as $user_request) {
+        $user_request->setOwnerId(0);
+        $user_request->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function surf_registration_user_predelete(UserInterface $account) {
+  // Delete user requests.
+  $storage = \Drupal::entityTypeManager()->getStorage('user_request');
+  $user_request_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->accessCheck(FALSE)
+    ->execute();
+  $user_requests = $storage->loadMultiple($user_request_ids);
+  $storage->delete($user_requests);
+}
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function surf_registration_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['event'])) {
+    $bundles['node']['event']['class'] = \Drupal\surf_registration\Entity\Node\Event::class;
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function surf_registration_entity_extra_field_info() {
+  $extra = [];
+  $extra['node']['event']['display']['registration_links'] = [
+    'label' => t('Link to register or view on dashboard'),
+    'description' => t('Link to webform with prepopulated nid or view registration on dashboard.'),
+    'visible' => TRUE,
+    'weight' => 25,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function surf_registration_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('registration_links') && $entity->bundle() === 'event') {
+    /** @var \Drupal\surf_registration\Entity\Node\Event $entity */
+    $build['registration_links'] = $entity->getUserRegistrationLinks(\Drupal::currentUser());
+  }
+}

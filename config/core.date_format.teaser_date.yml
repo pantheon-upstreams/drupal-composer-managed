@@ -1,0 +1,8 @@
+uuid: 988082d2-80a2-4cf9-a140-a074ba443a37
+langcode: en
+status: true
+dependencies: {  }
+id: teaser_date
+label: 'Teaser Date'
+locked: false
+pattern: 'F d, Y'

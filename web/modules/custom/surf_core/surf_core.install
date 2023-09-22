@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\Core\Entity\FieldableEntityInterface;
+
+/**
+ * Uninstall comment module
+ */
+function surf_core_update_8001() {
+  /** @var \Drupal\Core\Extension\ModuleInstaller $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->uninstall(['comment']);
+}
+
+/**
+ * Uninstall content_access module previously only used for education resource.
+ */
+function surf_core_update_8002() {
+  /** @var \Drupal\Core\Extension\ModuleInstaller $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->uninstall(['content_access']);
+}
+
+/**
+ * Run a clean up on bundle_field_map key_value rows for deleted fields.
+ */
+function surf_core_update_8003() {
+  $entity_bundle_info = \Drupal::service('entity_type.bundle.info');
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+
+  $map = [];
+  foreach ($entity_type_manager->getDefinitions() as $entity_type_id => $entity_type) {
+    if (!$entity_type->entityClassImplements(FieldableEntityInterface::class)) {
+      continue;
+    }
+    foreach ($entity_bundle_info->getBundleInfo($entity_type_id) as $bundle => $bundle_info) {
+      foreach ($entity_field_manager->getFieldDefinitions($entity_type_id, $bundle) as $field_name => $field_definition) {
+        $map[$entity_type_id][$field_name]['type'] = $field_definition->getType();
+        $map[$entity_type_id][$field_name]['bundles'][] = $bundle;
+      }
+    }
+  }
+
+  $persistent_map = \Drupal::keyValue('entity.definitions.bundle_field_map');
+  $persistent_map->setMultiple($map);
+}
+

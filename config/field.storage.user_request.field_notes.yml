@@ -1,0 +1,19 @@
+uuid: 30ffda01-7cb3-4f14-b3b0-d9e48f7193b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - surf_core
+id: user_request.field_notes
+field_name: field_notes
+entity_type: user_request
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,50 @@
+uuid: d24a4e8a-f6af-4170-a4bc-aaf304595e98
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
+name: 'Full HTML'
+format: full_html
+weight: -10
+filters:
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 1
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<p class="intro-paragraph large-paragraph"> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }

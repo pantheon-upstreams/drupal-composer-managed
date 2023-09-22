@@ -1,0 +1,20 @@
+uuid: 9b75a112-4926-44c2-86e3-24d5b2d89097
+langcode: en
+status: true
+dependencies:
+  module:
+    - download_request
+id: download_request.field_webform_submission_id
+field_name: field_webform_submission_id
+entity_type: download_request
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

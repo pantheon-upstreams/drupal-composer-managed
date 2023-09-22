@@ -1,0 +1,12 @@
+uuid: 1b2fcddb-6d3e-4065-bd5f-db4cf4a45097
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: d4pLCmjTG-dPg_O4NKLNcrwXxypvnJvxA-J15PW00c8
+id: node.me_selection_preview
+label: 'Mercury: Selection Preview'
+targetEntityType: node
+cache: true

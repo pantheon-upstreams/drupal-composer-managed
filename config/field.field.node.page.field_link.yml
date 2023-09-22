@@ -1,0 +1,23 @@
+uuid: 708c1a52-ca6b-4910-9d34-c2f6f432d858
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.page
+  module:
+    - link
+id: node.page.field_link
+field_name: field_link
+entity_type: node
+bundle: page
+label: 'Call to Action Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

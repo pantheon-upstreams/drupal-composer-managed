@@ -1,0 +1,27 @@
+user_request_default:
+  label: User request default
+  group: user_request
+  states:
+    new:
+      label: New
+    pending:
+      label: Pending
+    approved:
+      label: Approved
+    declined:
+      label: Declined
+    expired:
+      label: Expired
+  transitions:
+    create:
+      label: Create
+      from: [new]
+      to:   pending
+    approved:
+      label: Approve
+      from: [new]
+      to: approved
+    decline:
+      label: Decline
+      from: [new, pending]
+      to: declined

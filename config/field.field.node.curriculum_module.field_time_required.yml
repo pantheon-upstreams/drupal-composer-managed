@@ -1,0 +1,19 @@
+uuid: 5f9e3b52-d1a0-40ea-ae03-ec6b76ed697e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_required
+    - node.type.curriculum_module
+id: node.curriculum_module.field_time_required
+field_name: field_time_required
+entity_type: node
+bundle: curriculum_module
+label: 'Time required'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

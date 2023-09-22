@@ -1,0 +1,21 @@
+# Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false
+  cors.config:
+    enabled: true
+    allowedHeaders: ["*"]
+    allowedMethods: []
+    allowedOrigins: ["*"]
+    exposedHeaders: false
+    maxAge: false
+    supportsCredentials: true
+  http.response.debug_cacheability_headers: false
+services:
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory

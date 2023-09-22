@@ -1,0 +1,24 @@
+{# {% include "job-posting-page" with {
+  breadcrumbs: breadcrumbs,
+  title: label|field_value,
+  date: content.field_date_application_due.value|date('F d, Y'),
+  overview: content.field_overview|field_value,
+  body: content.body,
+  link_url: link_url,
+  link_text: content.field_link.0["#title"],
+} %} #}
+
+ {% set pretitle = content.field_date_application_due.0["#markup"] ? 'Closing ' ~ content.field_date_application_due.0["#markup"]|date('F d, Y') : 'Open until filled' %}
+
+ {{ include('surf_main:teaser', {
+  layout: 'list-stack',
+  title: label,
+  body: content.field_overview.0["#text"],
+  url: url,
+  category: null,
+  category_url: null,
+  pretitle,
+  teaser_time: null,
+  image: null,
+  alt: null,
+ }, with_context = false) }}

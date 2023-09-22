@@ -1,0 +1,66 @@
+//
+// Global - Page
+//
+// - 01 - Page
+// - 02 - Skip Link
+// - 03 - Rule
+//
+
+
+//------------------------------------
+//  01 - Page
+//------------------------------------
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-tab-size: 4;
+  font-size: 100%;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  tab-size: 4;
+}
+
+
+
+
+//------------------------------------
+//  02 - Body
+//------------------------------------
+
+//body {
+//  background-color: var(--surf-color-black);
+//}
+
+.layout-container {
+  padding-top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
+}
+
+
+
+
+//------------------------------------
+//  02 - Skip Link
+//------------------------------------
+
+.skip-link {
+  display: block;
+  background-color: var(--surf-color-primary);
+  color: var(--surf-color-light);
+  padding: 16px 32px 20px;
+  text-decoration: none;
+  z-index: var(--surf-zindex-super);
+}
+
+
+
+
+//------------------------------------
+//  03 - Rule
+//------------------------------------
+
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--surf-color-dark);
+}

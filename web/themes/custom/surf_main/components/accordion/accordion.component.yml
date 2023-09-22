@@ -1,0 +1,31 @@
+"$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
+machineName: accordion
+name: Accordion
+componentType: molecule
+status: WIP
+description: An Accordion component
+schemas:
+  props:
+    type: object
+    properties:
+      items:
+        type: array
+        title: Items
+        description: Accordion items
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              description: Accordion title
+              examples:
+                - "Accordion one"
+                - "Accordion two"
+            content:
+              type: string
+              title: Title
+              description: Accordion content
+              examples:
+                - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+                - "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"

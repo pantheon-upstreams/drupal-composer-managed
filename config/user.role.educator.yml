@@ -1,0 +1,54 @@
+uuid: a928a640-89af-4dbf-8f2e-54258df7703e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.editor_s_set
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - filter.format.plain
+    - filter.format.simple_text
+    - node.type.event
+    - node.type.page
+  module:
+    - contact
+    - contextual
+    - file
+    - filter
+    - media
+    - node
+    - scheduler
+    - surf_registration
+    - system
+    - toolbar
+id: educator
+label: Educator
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer media'
+  - 'administer nodes'
+  - 'create event content'
+  - 'create page content'
+  - 'delete any event content'
+  - 'delete own event content'
+  - 'delete own files'
+  - 'edit any event content'
+  - 'edit own event content'
+  - 'edit own page content'
+  - 'schedule publishing of nodes'
+  - 'use text format editor_s_set'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'use text format plain'
+  - 'use text format simple_text'
+  - 'view own unpublished content'
+  - 'view own user_request'
+  - 'view scheduled content'
+  - 'view the administration theme'

@@ -1,0 +1,381 @@
+// Styles for blocks.
+// -----------------------------------------------------------------------------
+
+
+
+// Tabs for logged in users
+
+.block--surf-local-tasks {
+	text-align: right;
+	li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+
+
+// Event Details
+
+.view--event-details {
+	@include make-row();
+	
+	.view__content {
+		@include make-sm-column-offset(2);
+		@include make-sm-column(8);
+		@include make-md-column-offset(3);
+		@include make-md-column(6);
+		@include make-lg-column-offset(3);
+		@include make-lg-column(6);
+	}
+	h1 {margin-bottom: $surf-margin-xs;}
+	
+	.field.overview {margin-bottom: $surf-margin-sm;}
+	
+	.event-details-row,
+	.resource-details-row {
+		font-size: $font-size-small;
+		color:$surf-white;
+		border-top:1px solid $surf-green-rule;
+		border-bottom:1px solid $surf-green-rule;
+		padding:$surf-margin-xs 0 $surf-margin-xs 0;
+	}
+	.event-date-heading,
+	.location-heading {
+		font-weight: 700;
+	}
+	.address {margin-bottom: 0;}
+	
+	.location-note {font-style:italic;}
+	
+	a {
+		color:$surf-white;
+		border-bottom: 1px solid $surf-white;
+		&:hover {
+			color:$surf-green-rule;
+			border-color:$surf-green-rule;
+		}
+	}
+	
+	.country {
+		display:none;
+		visibility: hidden;
+	}
+	.col-event-date,
+	.col-event-address,
+	.col-event-note {
+		@include make-sm-column (4);
+		@include make-lg-column (4);
+		
+	}
+	.col-event-address {
+		a + a:before {
+			content:"<br>";
+		}
+	}
+	.map-link {
+		a {
+			@extend .fa;
+			@extend .fa-map-marker;
+			font-family: $font-family-base;
+			padding-bottom: 2px;
+			
+			&:before {
+				margin-right:5px;
+				font-family: fontawesome;
+				font-size: 13px;
+				color:$surf-green-rule
+			}
+		}
+	}
+}
+
+// Event CTA buttons
+
+.view--event-details--cta {
+	margin-top:$surf-margin-md;
+			
+	.event-details:first-child {
+		a {
+			margin-bottom: 0;
+			text-align: center;
+			padding: $surf-margin-xxs $surf-margin-md;
+			background:$surf-white;
+			color:$surf-green-link;
+			border: 1px solid $surf-green-dark-solid;
+			font-weight: 700;
+			border-radius: 4px;
+			&:hover {
+				color:$link-hover-color;
+				opacity:0.85;
+			}
+		}
+	}
+	.event-details + .event-details {margin-top:$surf-margin-xs;}
+}
+
+// Educator Resource details
+
+.view--event-details--resource {
+	
+	.col-grade-level,
+	.col-time-required {
+		@include make-sm-column (6);
+		@include make-lg-column (6);	
+	}	
+	.resource-type-label,
+	.grade-level-label,
+	.time-required-label {
+		font-weight: 700;
+	}	
+}
+
+
+
+
+
+
+// Article , Press Release, Publication, Job Posting Details
+
+.view--article-details {
+	margin-bottom: $surf-margin-lg;
+
+	
+	.overview {margin-bottom: $surf-margin-sm;}
+	
+	.article-details-row,
+	.job-details-row {
+		font-size: $font-size-small;
+		color:$surf-black;
+		border-top:1px solid $surf-green-rule;
+		border-bottom:1px solid $surf-green-rule;
+		padding:$surf-margin-xs 0 $surf-margin-xs 0;
+	}
+	
+	.col-article-date,
+	.closing-date {
+		font-weight: 700;
+	}
+	
+	.col-article-date,
+	.col-article-by {
+		@include make-sm-column (6);
+		@include make-lg-column (6);
+		
+	}
+}
+
+
+
+// General Listing Styles
+
+.view__content {
+	
+	.item {	
+		
+		a.wrapper-link {
+			display:block;
+			overflow: hidden;
+			background:$body-bg;
+			padding:15px 15px 21px 15px;
+			margin-left:-15px;
+			margin-right:-15px;			
+			
+			@include breakpoint(sm) {
+				padding:15px 30px 21px 30px;
+				margin-left:-30px;
+				margin-right:-30px;
+			}
+			@include breakpoint(lg) {
+				padding:15px 40px 21px 40px;
+				margin-left:-40px;
+				margin-right:-40px;
+			}			
+			.content-type,
+			h4 {
+				color:$surf-green-link;
+				@extend .transition;
+			}	
+			&:hover {
+				background: darken($body-bg, 3%);			
+				.content-type,
+				h4 {
+					color:$link-hover-color;
+				}
+			}
+		}		
+		&:nth-child(even) a.wrapper-link  {background:$surf-white;}
+		&:nth-child(even) a.wrapper-link:hover {background: darken($body-bg, 3%);}
+		
+		.item-row {
+			@include make-row();
+			
+			h4 {
+				margin:0;
+			}
+		}
+		.item-date {
+			font-size: $font-size-large;
+			line-height: 27px;
+		}
+		.item-eyebrow,
+		.item-title-wide {
+			@include make-sm-column(12);
+			@include make-lg-column(12);
+		}
+		.item-title {
+			@include make-sm-column(4);
+			@include make-lg-column(4);
+		}
+		.item-overview {
+			@include make-sm-column(8);
+			@include make-lg-column(8);
+		}
+	}
+
+}
+
+
+// Instagram Landing Page Overrides
+
+.view--news--instagram  {
+	.view__content {
+	
+		.item {	
+			.item-title {
+				@include make-xs-column(4);
+			}
+			.item-overview {
+				@include make-xs-column(8);
+			}
+			.meta-divider {
+				display: inline-block;
+				margin-left:10px;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+
+
+// More Information
+
+.block--views-block--more-information-block,
+.block--views-block--more-information-contacts,
+.block--views-block--more-information-documents {
+	
+	border-bottom: 1px solid $surf-green-rule;
+	font-size: $font-size-small;
+	
+	h4 {
+		margin-top:$surf-margin-xl;
+		margin-bottom:$surf-margin-sm;
+		padding-bottom:$surf-margin-xs;
+		border-bottom:1px solid $surf-green-rule;
+	}
+	
+	h6 {line-height: $line-height-base;}
+	.content-type {
+		font-weight: 400;
+		margin-bottom: 0;
+		color:$text-color;
+	}
+	
+	.view__content {
+		@include make-row();
+	}
+	.info-item {
+		@include make-xs-column(6);
+		@include make-sm-column(4);
+		@include make-lg-column(4);
+		margin-bottom:$surf-margin-sm;
+		
+		
+		//force new lines in listing every third or fourth item (depending on the display size)
+		&:nth-child(2n+3) {clear:left;}	
+		@include breakpoint(sm) {
+			&:nth-child(2n+3) {clear:none;}
+			&:nth-child(3n+4) {clear:left;}
+		}
+		
+		
+	}
+}
+
+
+// Related
+
+.block--views-block--related-block,
+.block--views-block--related-block-2 {
+	
+	h4 {
+		font-size: $font-size-small;		
+		background:$surf-green-dark-solid;
+		color:#fff;
+		font-weight: bold;
+		padding: 5px 15px;		
+		margin:0 -15px 0 -15px;
+		
+		@include breakpoint(sm) {
+			padding: 5px 30px;
+			margin:0 -30px 0 -30px;
+		}
+		@include breakpoint(lg) {
+			padding: 5px 40px;
+			margin:0 -40px 0 -40px;
+		}
+		
+	}
+	.item + .item {border-top: 2px solid $surf-green-rule;}
+}
+
+
+// Hero Image
+
+.block--views-block--hero-image-block {
+	
+}
+
+
+// Board Members
+
+.view--board-members {
+	border-bottom: 1px solid $surf-green-rule;
+	border-top: 1px solid $surf-green-rule;
+	padding-top:$surf-margin-sm;
+	
+	.view__content {
+		@include make-row();
+	}
+	.member {
+		@include make-xs-column(6);
+		@include make-sm-column(4);
+		@include make-lg-column(4);
+		font-size: $font-size-small;
+		margin-bottom: $surf-margin-md;
+		
+		//force new lines in listing every third or fourth item (depending on the display size)
+		&:nth-child(2n+3) {clear:left;}	
+		@include breakpoint(sm) {
+			&:nth-child(2n+3) {clear:none;}
+			&:nth-child(3n+4) {clear:left;}
+		}
+	}
+	.profile-photo {margin-bottom: $surf-margin-xs;}
+}
+
+
+// ESH Manual TOC
+
+.block-content--eshmanualtoclink {
+	a {
+		font-weight: 700;
+		color:$surf-green-dark-nav;
+	}
+}
+
+// ESH Manual Listing
+.view--esh-manual {
+	h5 {margin:0;}
+}
+

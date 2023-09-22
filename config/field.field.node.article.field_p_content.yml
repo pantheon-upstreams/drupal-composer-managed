@@ -1,0 +1,65 @@
+uuid: c351fc88-7db1-4172-b72e-02b9e5d2b0c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_p_content
+    - node.type.article
+  module:
+    - entity_reference_revisions
+id: node.article.field_p_content
+field_name: field_p_content
+entity_type: node
+bundle: article
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      centered_image_text:
+        weight: 14
+        enabled: false
+      entity_references_image_text:
+        weight: 15
+        enabled: false
+      entity_references_text:
+        weight: 16
+        enabled: false
+      full_teaser:
+        weight: 17
+        enabled: false
+      homepage_lead_teaser:
+        weight: 18
+        enabled: false
+      homepage_teaser:
+        weight: 19
+        enabled: false
+      image_with_caption:
+        weight: 20
+        enabled: false
+      one_up_teaser_image_text:
+        weight: 21
+        enabled: false
+      running_text:
+        weight: 22
+        enabled: false
+      schedule_item:
+        weight: 23
+        enabled: false
+      two_up_figures:
+        weight: 24
+        enabled: false
+      two_up_teaser_image_text:
+        weight: 25
+        enabled: false
+      two_up_teaser_text:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,21 @@
+uuid: 7f30352d-7c97-4251-b98d-1bb7f503b400
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - download_request
+id: download_request.field_dates
+field_name: field_dates
+entity_type: download_request
+type: daterange
+settings:
+  datetime_type: date
+  optional_end_date: true
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

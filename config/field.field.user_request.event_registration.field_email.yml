@@ -1,0 +1,19 @@
+uuid: ad46fe82-ec2d-440c-8c9f-259c965ea2be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_email
+    - surf_registration.user_request_type.event_registration
+id: user_request.event_registration.field_email
+field_name: field_email
+entity_type: user_request
+bundle: event_registration
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,34 @@
+uuid: 4b5d5d66-26e5-4b4d-860e-bb6453b71ad2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_related_content
+    - node.type.article
+    - node.type.event
+    - node.type.page
+    - node.type.press_release
+id: node.event.field_ref_related_content
+field_name: field_ref_related_content
+entity_type: node
+bundle: event
+label: 'Related content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      event: event
+      press_release: press_release
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

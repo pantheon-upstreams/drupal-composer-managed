@@ -1,0 +1,32 @@
+uuid: 8ef3fc71-180b-496a-92d6-703d5e540923
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.download_item.teaser
+    - download_request.download_item_type.curriculum_module_resources
+    - field.field.download_item.curriculum_module_resources.field_curriculum_module
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: download_item.curriculum_module_resources.teaser
+targetEntityType: download_item
+bundle: curriculum_module_resources
+mode: teaser
+content:
+  field_curriculum_module:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_dashboard
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  name: true
+  search_api_excerpt: true

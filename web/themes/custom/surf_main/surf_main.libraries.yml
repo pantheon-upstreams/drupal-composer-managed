@@ -1,0 +1,106 @@
+#
+# SURF Main - Libraries
+# - 01 - Fonts
+# - 02 - Global
+# - 03 - Regions
+# - 04 - Navigation
+# - 05 - Blocks
+# - 06 - Misc
+#
+
+
+#------------------------------------#
+# 01 - Fonts
+#------------------------------------#
+
+fonts:
+  css:
+    base:
+      "//use.typekit.net/wjp3vgo.css": { type: external, minified: true }
+
+
+
+
+#------------------------------------#
+# 02 - Global
+#------------------------------------#
+
+global:
+  css:
+    base:
+      dist/css/global/base/forms.css: { minified: true }
+      dist/css/global/base/icons.css: { minified: true }
+      dist/css/global/base/lists.css: { minified: true }
+      dist/css/global/base/media.css: { minified: true }
+      dist/css/global/base/page.css: { minified: true }
+      dist/css/global/base/reset.css: { minified: true }
+      dist/css/global/base/tables.css: { minified: true }
+      dist/css/global/layout/layout.css: { minified: true }
+      dist/css/global/settings/color.css: { minified: true }
+      dist/css/global/settings/typography.css: { minified: true }
+  dependencies:
+    - core/once
+
+
+
+
+#------------------------------------#
+# 03 - Regions
+#------------------------------------#
+
+region--header-primary:
+  css:
+    theme:
+      dist/css/regions/header-primary/header-primary.css: { minified: true }
+  js:
+    dist/js/regions/header-primary/header-primary.js: { minified: true }
+
+region--header-utility:
+  css:
+    theme:
+      dist/css/regions/header-utility/header-utility.css: { minified: true }
+
+
+
+
+#------------------------------------#
+# 04 - Navigation
+#------------------------------------#
+
+menu--main:
+  css:
+    theme:
+      dist/css/navigation/main-menu/main-menu.css: { minified: true }
+  js:
+    dist/js/navigation/main-menu/main-menu.js: { minified: true }
+
+menu--utility-nav:
+  css:
+    theme:
+      dist/css/navigation/utility-menu/utility-menu.css: { minified: true }
+
+
+
+
+#------------------------------------#
+# 05 - Blocks
+#------------------------------------#
+
+block--search-api-form-block:
+  css:
+    component:
+      dist/css/blocks/search-api/search-api.css: { minified: true }
+  js:
+    dist/js/blocks/search-api/search-api.js: { minified: true }
+
+
+
+
+#------------------------------------#
+# 06 - Misc
+#------------------------------------#
+
+status-messages:
+  css:
+    component:
+      dist/css/misc/status-messages/status-messages.css: { minified: true }

@@ -1,0 +1,192 @@
+uuid: 4cedb5a3-626e-45e3-85cc-db7240017318
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_capacity
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_department
+    - field.field.node.event.field_link
+    - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_title
+    - field.field.node.event.field_media_primary
+    - field.field.node.event.field_overview
+    - field.field.node.event.field_ref_attendees
+    - field.field.node.event.field_ref_audiences
+    - field.field.node.event.field_ref_eo_opportunities
+    - field.field.node.event.field_ref_event_types
+    - field.field.node.event.field_ref_key_impact_areas
+    - field.field.node.event.field_ref_related_content
+    - field.field.node.event.field_ref_research_areas
+    - field.field.node.event.field_registration_period
+    - field.field.node.event.field_registration_required
+    - node.type.event
+  module:
+    - datetime_range
+    - link
+    - text
+    - user
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_capacity:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_dates:
+    type: daterange_plain
+    label: hidden
+    settings:
+      timezone_override: America/Denver
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_location_title:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_media_primary:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_ref_attendees:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_ref_event_types:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_ref_key_impact_areas:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_ref_related_content:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_registration_period:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_registration_required:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  registration_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+hidden:
+  field_location_address: true
+  langcode: true
+  search_api_excerpt: true

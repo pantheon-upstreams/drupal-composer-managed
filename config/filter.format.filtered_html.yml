@@ -1,0 +1,36 @@
+uuid: 122dea53-0154-4b07-ad66-84efdcfe053b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Filtered HTML'
+format: filtered_html
+weight: -7
+filters:
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 2
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: 1
+    settings:
+      allowed_html: '<br> <p> <cite> <dl> <dt> <dd> <blockquote cite> <a hreflang href> <ul type> <ol type start> <img data-entity-type data-entity-uuid data-align data-caption src alt height width> <strong> <em> <code> <li>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72

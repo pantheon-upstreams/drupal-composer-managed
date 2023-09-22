@@ -1,0 +1,22 @@
+uuid: 9d29d465-91bb-446e-b5b6-5aea659d4558
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: parent_in_path
+label: 'Parent in Path'
+type: 'canonical_entities:node'
+pattern: '[node:field_parent_portal:entity:url:relative]/[node:title]'
+selection_criteria:
+  c864bda2-3d5a-4470-90f0-f8f7d23b3616:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: c864bda2-3d5a-4470-90f0-f8f7d23b3616
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,18 @@
+uuid: 5584a843-1998-4f79-8ec3-afdb30d6b0a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - surf_registration
+id: user_request.field_attended
+field_name: field_attended
+entity_type: user_request
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

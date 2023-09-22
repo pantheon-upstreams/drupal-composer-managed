@@ -1,0 +1,24 @@
+uuid: efc3817a-57f9-4f7c-9552-d7e9560a68af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource_file.field_file
+    - paragraphs.paragraphs_type.resource_file
+  module:
+    - file
+id: paragraph.resource_file.default
+targetEntityType: paragraph
+bundle: resource_file
+mode: default
+content:
+  field_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

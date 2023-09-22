@@ -1,0 +1,87 @@
+{%
+  set classes = [
+  'c-breadcrumb',
+  'c-job-posting',
+  'l-constrained'
+  style,
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+
+  <header class="c-job-posting__header-wrapper">
+
+    <div class="c-job-posting__breadcrumbs-date-wrapper">
+
+      {% if breadcrumbs %}
+
+        {# Breadcumbs #}
+        {{ include('surf_main:breadcrumbs', {
+          items: breadcrumbs,
+        }, with_context = false) }}
+
+      {% endif %}
+    </div>
+
+    {# Title #}
+    <h1 class="c-job-posting__title">{{title}}</h1>
+
+    {# Overview #}
+    {% if overview %}
+      <div class="c-job-posting__overview">
+        <p>{{ overview }}</p>
+      </div>
+    {% endif %}
+
+    {% if link_text and link_url and date %}
+      <div class="c-job-posting__link-date-wrapper">
+
+      {# Apply Button/Link #}
+      {% if link_text and link_url %}
+        <div class="c-job-posting__link">
+
+          {{ include('surf_main:link-button', {
+            text: link_text,
+            url: link_url,
+            color: 'forest',
+            button_style: 'solid',
+            uppercase: true,
+          }, with_context = false) }}
+
+        </div>
+      {% endif %}
+
+      {# Date #}
+      {% if date %}
+        <div class="c-job-posting__date">
+          Closing {{date}}
+        </div>
+      {% endif %}
+
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="c-job-posting__content-wrapper">
+    {# Body #}
+    {% if body %}
+      <div class="c-job-posting__body">
+        {{ body }}
+      </div>
+    {% endif %}
+
+  </div>
+
+  <hr class="left-hook-divider" />
+
+  {# CONNECT WITH US #}
+  <div class="c-job-posting__callout-outer-wrapper">
+    <h2 class="c-job-posting__callout-title">Connect with us</h2>
+
+    <div class="c-article__callout-wrapper">
+      {{ drupal_entity('block_content', 18) }}
+    </div>
+
+  </div>
+
+</article>

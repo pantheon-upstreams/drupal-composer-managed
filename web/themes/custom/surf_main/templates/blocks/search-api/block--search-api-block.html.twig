@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Search API block.
+ *
+ * Available variables:
+ * - No additional variables are available for this block.
+ *
+ * @see surf_main/templates/blocks/block.html.twig
+ */
+#}
+
+{% extends 'block.html.twig' %}
+
+{% set classes = [
+    'search-form',
+    'search-form__state--closed',
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{% block content %}
+    {{ content }}
+
+    <button
+            id="search-trigger"
+            class="search-form__trigger icon icon__type--search"
+            aria-haspopup="true"
+            aria-expanded="false">
+        {{ 'Search'|t }}
+    </button>
+{% endblock %}

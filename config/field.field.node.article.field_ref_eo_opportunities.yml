@@ -1,0 +1,29 @@
+uuid: 024079ec-ba2e-4b3e-8c54-97679d7eeff4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_eo_opportunities
+    - node.type.article
+    - taxonomy.vocabulary.eo_opportunity
+id: node.article.field_ref_eo_opportunities
+field_name: field_ref_eo_opportunities
+entity_type: node
+bundle: article
+label: 'EO Opportunities'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eo_opportunity: eo_opportunity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

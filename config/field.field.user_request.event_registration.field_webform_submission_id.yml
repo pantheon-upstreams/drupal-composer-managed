@@ -1,0 +1,19 @@
+uuid: ed59744e-3ef0-4344-bc78-449a70c32727
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_webform_submission_id
+    - surf_registration.user_request_type.event_registration
+id: user_request.event_registration.field_webform_submission_id
+field_name: field_webform_submission_id
+entity_type: user_request
+bundle: event_registration
+label: 'Webform Submission ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

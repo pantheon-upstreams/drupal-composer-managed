@@ -1,0 +1,8 @@
+uuid: 8759a4b2-4878-42d7-9fd2-39e76c526677
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard
+label: Dashboard
+description: ''
+locked: false

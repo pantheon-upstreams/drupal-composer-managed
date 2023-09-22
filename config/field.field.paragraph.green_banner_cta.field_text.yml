@@ -1,0 +1,26 @@
+uuid: 17e70e9b-9fc4-4cbd-aea0-3ffb53ac6dd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.green_banner_cta
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain
+id: paragraph.green_banner_cta.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: green_banner_cta
+label: 'Body Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

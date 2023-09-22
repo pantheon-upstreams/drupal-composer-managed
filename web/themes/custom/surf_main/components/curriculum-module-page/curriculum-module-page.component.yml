@@ -1,0 +1,6 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: curriculum-module-page
+name: Curriculum Module Page
+status: WIP
+componentType: molecule
+description: A Curriculum Module detail page component

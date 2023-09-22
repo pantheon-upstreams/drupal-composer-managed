@@ -1,0 +1,11 @@
+uuid: 9fe37a32-0c4b-424b-9afc-ad516c1ed963
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.professional_development
+id: node.professional_development
+target_entity_type_id: node
+target_bundle: professional_development
+default_langcode: site_default
+language_alterable: false

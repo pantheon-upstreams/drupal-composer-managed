@@ -1,0 +1,23 @@
+uuid: 8fe4a137-e21f-4cba-8596-e4739dc6d907
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_horizontal_rule
+    - paragraphs.paragraphs_type.header
+id: paragraph.header.field_horizontal_rule
+field_name: field_horizontal_rule
+entity_type: paragraph
+bundle: header
+label: 'Horizontal Rule'
+description: 'Add a horizontal rule (divider) above the header text.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

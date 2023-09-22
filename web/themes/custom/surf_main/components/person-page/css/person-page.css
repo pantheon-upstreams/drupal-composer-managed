@@ -1,0 +1,265 @@
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+.c-person-page.c-person-page--has-media .l-constrained {
+  width: 100%;
+  max-width: 100%;
+}
+.c-person-page.c-person-page--has-media .l__primary {
+  width: 100%;
+  padding-top: 2rem;
+}
+@media (min-width: 768px) {
+  .c-person-page.c-person-page--has-media .l__primary {
+    padding-top: 3.75rem;
+  }
+}
+.c-person-page.c-person-page--has-media .c-person-page--grid {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 2rem;
+  -webkit-column-gap: 2rem;
+     -moz-column-gap: 2rem;
+          column-gap: 2rem;
+}
+@media (min-width: 768px) {
+  .c-person-page.c-person-page--has-media .c-person-page--grid {
+    grid-template-areas: "title title" "job media" "contact media" "body media";
+    grid-template-columns: 1fr 13rem;
+  }
+}
+@media (min-width: 1024px) {
+  .c-person-page.c-person-page--has-media .c-person-page--grid {
+    grid-template-columns: 1fr 18.3125rem;
+  }
+}
+@media (min-width: 1400px) {
+  .c-person-page.c-person-page--has-media .c-person-page--grid {
+    -webkit-column-gap: 11.25rem;
+       -moz-column-gap: 11.25rem;
+            column-gap: 11.25rem;
+    grid-template-areas: "title media" "job media" "contact media" "body media";
+    grid-template-columns: 1fr 18.875rem;
+  }
+}
+
+.c-person-page.c-person-page--no-media .l-constrained {
+  width: 100%;
+  max-width: 100%;
+}
+@media (min-width: 1024px) {
+  .c-person-page.c-person-page--no-media .l__primary {
+    max-width: 38.6875rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1400px) {
+  .c-person-page.c-person-page--no-media .l__primary {
+    max-width: 55.5625rem;
+  }
+}
+
+.person-content__photo-wrapper {
+  max-width: 18.75rem;
+  padding: 0 0 2rem 0;
+  -webkit-box-ordinal-group: 2;
+          order: 1;
+}
+.person-content__photo-wrapper img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .person-content__photo-wrapper {
+    max-width: none;
+    max-width: initial;
+    padding: 0;
+    -webkit-box-ordinal-group: initial;
+            order: initial;
+    margin: 0;
+    grid-area: media;
+  }
+}
+
+.person-content__title {
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-heading-one);
+  line-height: var(--font-line-height-heading-one);
+  text-transform: uppercase;
+  margin: 0 0 2rem 0;
+  -webkit-box-ordinal-group: 3;
+          order: 2;
+}
+@media (min-width: 768px) {
+  .person-content__title {
+    -webkit-box-ordinal-group: initial;
+            order: initial;
+    grid-area: title;
+  }
+}
+@media (min-width: 1400px) {
+  .person-content__title {
+    font-size: 8.25rem;
+  }
+}
+
+.person-content__job-title {
+  max-width: 56.25rem;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-large);
+  line-height: var(--font-line-height-body-x-large);
+  color: var(--color-surf--dark-grey);
+  margin: 0 0 2rem 0;
+  -webkit-box-ordinal-group: 5;
+          order: 4;
+}
+@media (min-width: 768px) {
+  .person-content__job-title {
+    -webkit-box-ordinal-group: initial;
+            order: initial;
+    grid-area: job;
+  }
+}
+
+.person-content__contact-wrapper {
+  -webkit-box-ordinal-group: 4;
+          order: 3;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-large);
+  line-height: var(--font-line-height-body-x-large);
+  margin: 0 0 2rem 0;
+  padding: 0;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+          align-items: center;
+}
+@media (min-width: 768px) {
+  .person-content__contact-wrapper {
+    -webkit-box-ordinal-group: initial;
+            order: initial;
+    grid-area: contact;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-large);
+    line-height: var(--font-line-height-body-large);
+  }
+}
+.person-content__contact-wrapper li {
+  display: block;
+  margin: 0;
+}
+.person-content__contact-wrapper li a {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-large);
+  line-height: var(--font-line-height-body-x-large);
+}
+.person-content__contact-wrapper li a:hover {
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .person-content__contact-wrapper li a {
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body-large);
+    line-height: var(--font-line-height-body-large);
+  }
+}
+.person-content__contact-wrapper li:first-child {
+  margin: 0 2rem 0 0;
+}
+
+.person-content__wrapper {
+  max-width: 56.25rem;
+  -webkit-box-ordinal-group: 6;
+          order: 5;
+}
+.person-content__wrapper > .text-content > p:first-child {
+  margin-top: 0;
+}
+.person-content__wrapper > .text-content > p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .person-content__wrapper {
+    -webkit-box-ordinal-group: initial;
+            order: initial;
+    grid-area: body;
+  }
+}

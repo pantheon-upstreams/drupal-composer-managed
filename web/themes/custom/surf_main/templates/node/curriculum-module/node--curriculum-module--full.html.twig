@@ -1,0 +1,140 @@
+{# <pre>{{dump(content)}}</pre> #}
+
+  {#
+    TODO:
+    - [ ] Update the hard-coded breadcrumbs
+    - [ ] Update the hard-coded bottom block cta
+    - [ ] replace/update the hardcoded `category_url`
+  #}
+
+{# Temporary hard-coded: Breadcumbs #}
+{% set breadcrumbs = [
+    {
+      title: 'Home',
+      url: '/',
+      current: false,
+    },
+    {
+      title: 'In Your Classroom',
+      url: '/',
+      current: false,
+    },
+    {
+      title: 'Curriculum Modules',
+      url: '/',
+      current: false,
+    },
+    {
+      title: label,
+      url: url,
+      current: true,
+    }
+  ]
+%}
+
+{{ content.reservation_links }}
+
+{# Handle internal and external links/urls #}
+{% if content.field_link.0 is empty %}
+{% set link_url = '' %}
+{% elseif content.field_link.0["#url"].external %}
+  {% set link_url = content.field_link.0["#url"].uri %}
+{% else %}
+  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+{% endif %}
+
+{# Handle Media (images & video) #}
+{% set video_url = content.field_media['#items'].entity.field_media_oembed_video.value|replace({'https://vimeo.com/': ''}) %}
+
+{% set image_alt = content.field_media['#items'].entity.field_media_image.alt %}
+
+{% set image_url = file_url(content.field_media['#items'].entity.field_media_image.entity.fileuri) %}
+
+{# Related Content #}
+{% set related = [] %}
+{% if content.field_ref_related_content['#items']|length > 0 %}
+  {% for i, value in content.field_ref_related_content['#items'] %}
+    {% if value.entity %}
+
+      {% set icon = '' %}
+
+      {# set the category / entity type #}
+      {% set category = value.entity.type.value.0.target_id %}
+
+      {# set the teaser date with fallback #}
+      {% set teaser_date = value.entity.field_date_published.value ? value.entity.field_date_published.value|date('F d, Y') : value.entity.changed.value|date('F d, Y') %}
+
+      {# set default for image and alt values #}
+      {% set alt = value.entity.title.value %}
+      {% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+
+      {# set image #}
+
+      {# check if image #}
+      {% if value.entity.field_media_primary.0.entity.field_media_image %}
+
+        {# set image #}
+        {% set image = value.entity.field_media_primary.0.entity.field_media_image.entity.fileuri|image_style('full_teaser') %}
+
+        {# set alt to use the image's alt text #}
+        {% set alt = value.entity.field_media_primary.0.entity.field_media_image.alt %}
+
+      {# check if video #}
+      {% elseif value.entity.field_media_primary.0.entity.field_media_oembed_video %}
+
+        {# set category to video #}
+        {% set category = 'video' %}
+        {# set icon #}
+        {% set icon = 'video' %}
+
+        {# set image #}
+        {% set image = value.entity.field_media_primary.0.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+
+      {% endif %}
+
+      {# set title #}
+      {% set title = value.entity.title.value %}
+
+      {#TODO: Ask about this code#}
+      {% set related = related|merge([
+        { content:
+          {{ include('surf_main:teaser', {
+            layout: 'column-stack',
+            title,
+            body: '',
+            url: value.entity|entity_url,
+            category: category|replace({'_': ' '}),
+            category_url: '/news',
+            teaser_date: teaser_date,
+            image: image,
+            alt: alt,
+            icon: icon,
+          }, with_context = false) }}
+        }
+      %}
+
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+ {{ include('surf_main:curriculum-module-page', {
+   breadcrumbs,
+   category_url: '/curriculum',
+   title: label|field_value,
+   overview: content.field_overview|field_value,
+   grade_levels: content.field_ref_grade_level,
+   content_areas: content.field_content_area,
+   time_required: content.field_time_required|field_value,
+   link_url: link_url,
+   link_text: content.field_link.0["#title"],
+   image_url: image_url,
+   image_alt: image_alt,
+   image_credit: image_credit,
+   video_url: video_url,
+   video_title: label|field_value ~ 'video',
+   body: content.body,
+   curriculum_standards: content.field_ref_standards,
+   related: related,
+ }, with_context = false) }}
+
+{{ drupal_entity('block_content', 16) }}

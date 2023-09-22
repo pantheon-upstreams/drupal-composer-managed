@@ -1,0 +1,8 @@
+uuid: 655ddd0d-4a84-47e8-beb4-70e0b2429716
+langcode: en
+status: true
+dependencies: {  }
+name: Standard
+vid: standard
+description: ''
+weight: -2

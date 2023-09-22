@@ -1,0 +1,131 @@
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+nav.c-breadcrumb {
+  display: none;
+}
+@media (min-width: 1024px) {
+  nav.c-breadcrumb {
+    display: block;
+    padding-top: 2rem;
+    margin: 0 0 2.5rem 0;
+  }
+}
+
+nav.c-breadcrumb ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+nav.c-breadcrumb li {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-small);
+  line-height: var(--font-line-height-body-x-small);
+  color: var(--color-surf--grey);
+  display: inline-block;
+  margin: 0;
+}
+nav.c-breadcrumb li a {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-small);
+  line-height: var(--font-line-height-body-x-small);
+  color: var(--color-surf--forest);
+}
+nav.c-breadcrumb li a:hover {
+  text-decoration: none;
+}
+nav.c-breadcrumb li a[aria-current=page] {
+  color: var(--color-surf--grey);
+  text-decoration: none;
+}
+nav.c-breadcrumb li a[aria-current=page]:hover {
+  text-decoration: underline;
+}
+
+nav.c-breadcrumb li + li::before {
+  display: inline-block;
+  margin: 0 0.75rem 0 0.8125rem;
+  border-right: 0.0625rem solid currentcolor;
+  height: 0.875rem;
+  content: "";
+  position: relative;
+  top: 0.125rem;
+}

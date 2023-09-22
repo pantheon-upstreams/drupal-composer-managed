@@ -1,0 +1,40 @@
+uuid: 72861907-9c60-43f6-853e-c2e0c194eb1d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - surf_core
+    - surf_dashboard
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  surf_core:
+    webform_link:
+      text: 'Register for this event'
+  surf_dashboard:
+    request_link:
+      text_dashboard: 'View on my dashboard'
+      text_webform: 'Register for this event'
+name: Event
+type: event
+description: 'Use the <strong>Event</strong> type to add an event to the calendar.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

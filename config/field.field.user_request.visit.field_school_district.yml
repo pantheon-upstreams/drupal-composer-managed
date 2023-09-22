@@ -1,0 +1,19 @@
+uuid: 6a166f35-d729-4325-a075-2a1c6ce66585
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_school_district
+    - surf_registration.user_request_type.visit
+id: user_request.visit.field_school_district
+field_name: field_school_district
+entity_type: user_request
+bundle: visit
+label: 'School district'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

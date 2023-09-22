@@ -1,0 +1,11 @@
+{%
+  set classes = [
+  'page-title',
+]
+%}
+
+<h1 {{ attributes.addClass(classes).merge(attributes) }}>
+	{% block text %}
+		{{text}}
+	{% endblock %}
+</h1>

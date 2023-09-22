@@ -1,0 +1,6 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: callout-list
+name: callout List
+status: WIP
+componentType: molecule
+description: A callout List component

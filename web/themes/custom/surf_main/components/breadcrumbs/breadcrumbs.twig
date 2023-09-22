@@ -1,0 +1,25 @@
+{%
+  set classes = [
+  'c-breadcrumb',
+]
+%}
+
+<nav aria-label="Breadcrumb" {{ attributes.addClass(classes).merge(attributes) }}>
+  {% block breadcrumbs_block %}
+    <ol class="c-breadcrumb__list">
+      {% for item in items %}
+
+        {% if item.current == true %}
+          <li class="c-breadcrumb__item">
+            <a href="{{item.url}}" aria-current="page">{{item.title}}</a>
+          </li>
+        {% else %}
+          <li class="c-breadcrumb__item">
+            <a href="{{item.url}}">{{item.title}}</a>
+          </li>
+        {% endif %}
+
+      {% endfor %}
+    </ol>
+  {% endblock %}
+</nav>

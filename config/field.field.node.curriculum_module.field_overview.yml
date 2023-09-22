@@ -1,0 +1,26 @@
+uuid: 30027341-c34a-4a0f-ac6a-68183e3ae867
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.curriculum_module
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain
+id: node.curriculum_module.field_overview
+field_name: field_overview
+entity_type: node
+bundle: curriculum_module
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

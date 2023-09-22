@@ -1,0 +1,23 @@
+uuid: 46aed7d3-ca82-46e9-8ea4-10ba32c650b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.file.field_credit
+  module:
+    - file
+    - text
+id: file.image.field_credit
+field_name: field_credit
+entity_type: file
+bundle: image
+label: 'Photo Credit'
+description: 'Give credit to the person who took this photo.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Matthew Kapust'
+default_value_callback: ''
+settings: {  }
+field_type: text

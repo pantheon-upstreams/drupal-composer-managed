@@ -1,0 +1,29 @@
+uuid: 42a8991e-59b9-448c-bb8a-8ff76be0ab50
+langcode: en
+status: true
+dependencies:
+  config:
+    - download_request.download_item_type.curriculum_module_resources
+    - field.storage.download_item.field_curriculum_module
+    - node.type.curriculum_module
+id: download_item.curriculum_module_resources.field_curriculum_module
+field_name: field_curriculum_module
+entity_type: download_item
+bundle: curriculum_module_resources
+label: 'Curriculum module'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      curriculum_module: curriculum_module
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

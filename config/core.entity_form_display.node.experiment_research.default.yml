@@ -1,0 +1,290 @@
+uuid: 31bf1990-4f80-460c-858d-d4e9520dcf45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.experiment_research.field_dates
+    - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_extra_content
+    - field.field.node.experiment_research.field_key_experiments
+    - field.field.node.experiment_research.field_key_facts
+    - field.field.node.experiment_research.field_media
+    - field.field.node.experiment_research.field_media_primary
+    - field.field.node.experiment_research.field_overview
+    - field.field.node.experiment_research.field_p_content
+    - field.field.node.experiment_research.field_ref_audiences
+    - field.field.node.experiment_research.field_research_area
+    - field.field.node.experiment_research.field_teaser_text
+    - node.type.experiment_research
+  module:
+    - field_group
+    - layout_paragraphs
+    - media_library
+    - paragraphs
+    - path
+    - scheduler
+    - smart_date
+    - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_experiment_research_fields
+        - group_experiment_specific_fields
+        - group_research_specific_fields
+      label: Content
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: horizontal
+        width_breakpoint: 640
+    group_research_specific_fields:
+      children:
+        - field_overview
+        - field_media
+        - field_key_facts
+        - field_key_experiments
+        - field_extra_content
+      label: 'Research Specific Fields'
+      region: content
+      parent_name: group_content
+      weight: 26
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_experiment_specific_fields:
+      children:
+        - field_dates
+        - field_teaser_text
+      label: 'Experiment Specific Fields'
+      region: content
+      parent_name: group_content
+      weight: 25
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: false
+    group_experiment_research_fields:
+      children:
+        - field_experiment_research_type
+        - field_research_area
+        - title
+        - field_media_primary
+        - field_ref_audiences
+      label: 'Experiment & Research Fields'
+      region: content
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.experiment_research.default
+targetEntityType: node
+bundle: experiment_research
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dates:
+    type: smartdate_only
+    weight: 31
+    region: content
+    settings:
+      default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
+      default_duration: '60'
+      separator: to
+      hide_date: 0
+      modal: false
+      show_extra: false
+    third_party_settings: {  }
+  field_experiment_research_type:
+    type: options_buttons
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_extra_content:
+    type: layout_paragraphs
+    weight: 34
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+  field_key_experiments:
+    type: paragraphs
+    weight: 33
+    region: content
+    settings:
+      title: 'Key Experiments'
+      title_plural: 'Key Experiments'
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: teaser_list
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_key_facts:
+    type: paragraphs
+    weight: 32
+    region: content
+    settings:
+      title: 'Key Facts'
+      title_plural: 'Key Facts'
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: card_list
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 31
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_media_primary:
+    type: media_library_widget
+    weight: 29
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_overview:
+    type: text_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_content:
+    type: layout_paragraphs
+    weight: 0
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+  field_ref_audiences:
+    type: entity_reference_autocomplete
+    weight: 30
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_research_area:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_teaser_text:
+    type: string_textarea
+    weight: 32
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 8
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

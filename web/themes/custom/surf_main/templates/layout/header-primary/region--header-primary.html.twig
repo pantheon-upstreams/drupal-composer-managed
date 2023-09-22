@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override to display a Header Primary region.
+ *
+ * Available variables:
+ * - No additional variables are available for this region.
+ *
+ * @see surf_main/template/layout/region.html.twig
+ */
+#}
+
+{% extends 'region.html.twig' %}
+
+{% block content %}
+    <div class="container container__type--default">
+        {{ content }}
+
+        <div class="mobile-menu">
+            <button class="mobile-menu__trigger" aria-haspopup="true" aria-expanded="false">
+                {{- 'Menu'|t -}}
+            </button>
+
+            <div class="mobile-menu__flyout">
+                <div class="mobile-menu__flyout-content"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

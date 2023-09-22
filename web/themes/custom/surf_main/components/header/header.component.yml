@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: header
+name: Header
+status: WIP
+componentType: atom
+description: Header Component
+schemas:
+  props:
+    type: object
+    required:
+      - heading
+    properties:
+      heading:
+        type: string
+        title: Text
+        description: The Header text
+        examples:
+          - Header Example One
+          - Header Example Two
+      header_particle_style:
+        type: string
+        title: Particle Style
+        enum:
+          - green-particles
+          - light-gray-particles
+          - white-particles
+      header_text_style:
+        type: string
+        title: Header text Style
+        enum:
+          - white-text
+          - black-text

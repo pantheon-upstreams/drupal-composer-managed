@@ -1,0 +1,33 @@
+uuid: 6da42cfb-5ca6-45f7-acee-40d4c5d68c10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.schedule_item.field_milestone
+    - field.field.paragraph.schedule_item.field_milestone_date
+    - paragraphs.paragraphs_type.schedule_item
+  module:
+    - datetime
+id: paragraph.schedule_item.default
+targetEntityType: paragraph
+bundle: schedule_item
+mode: default
+content:
+  field_milestone:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_milestone_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

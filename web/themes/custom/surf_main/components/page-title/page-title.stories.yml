@@ -1,0 +1,5 @@
+title: Surf Main/Page Title
+args:
+  text: "Example Page Title"
+stories:
+  - name: "Default"

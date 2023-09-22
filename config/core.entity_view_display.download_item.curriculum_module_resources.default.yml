@@ -1,0 +1,25 @@
+uuid: ab891ab0-da52-4eea-8c96-8441a5da86e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - download_request.download_item_type.curriculum_module_resources
+    - field.field.download_item.curriculum_module_resources.field_curriculum_module
+id: download_item.curriculum_module_resources.default
+targetEntityType: download_item
+bundle: curriculum_module_resources
+mode: default
+content:
+  field_curriculum_module:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full_dashboard
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  name: true
+  search_api_excerpt: true

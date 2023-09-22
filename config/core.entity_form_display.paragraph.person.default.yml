@@ -1,0 +1,34 @@
+uuid: 56554253-8040-40d5-8731-fa00f4727c22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.person.field_person
+    - paragraphs.paragraphs_type.person
+  module:
+    - inline_entity_form
+id: paragraph.person.default
+targetEntityType: paragraph
+bundle: person
+mode: default
+content:
+  field_person:
+    type: inline_entity_form_complex
+    weight: 0
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: false
+      allow_existing: true
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

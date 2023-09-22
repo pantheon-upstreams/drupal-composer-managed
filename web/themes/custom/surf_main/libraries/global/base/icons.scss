@@ -1,0 +1,39 @@
+//
+// Global - Icons
+//
+// - 01 - Base
+// - 02 - Icons
+//
+
+
+//------------------------------------
+//  01 - Base
+//------------------------------------
+
+.icon {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+  }
+}
+
+
+
+
+//------------------------------------
+//  02 - Icons
+//------------------------------------
+
+.icon.icon__type--user:before {
+  background: svg-load('icon-user.svg') no-repeat center;
+}
+
+.icon.icon__type--chevron-down:before {
+  background: svg-load('icon-angle-down.svg') no-repeat center;
+}
+
+.icon.icon__type--search:before {
+  background: svg-load('icon-search.svg') no-repeat center;
+}

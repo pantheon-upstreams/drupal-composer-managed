@@ -1,0 +1,36 @@
+uuid: a8416ddd-8ed9-4665-acfb-e0c4e2a55837
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:cb68ec5f-059b-4408-88c7-7175bf5bbefd'
+  module:
+    - block_content
+    - system
+  theme:
+    - surf_main
+id: surf_main_sanford_omega_block_9
+theme: surf_main
+region: content
+weight: 1
+provider: null
+plugin: 'block_content:cb68ec5f-059b-4408-88c7-7175bf5bbefd'
+settings:
+  id: 'block_content:cb68ec5f-059b-4408-88c7-7175bf5bbefd'
+  label: 'Subscribe to Deep Thoughts'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: |-
+      /news
+      /news/*
+      /communications
+      /communications/*
+      /newsletters
+      /education/educators

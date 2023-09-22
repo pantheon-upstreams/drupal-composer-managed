@@ -1,0 +1,32 @@
+uuid: 855297ee-0283-4d8a-9e2d-818699bfb881
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.file.front
+    - field.field.file.image.field_caption
+    - field.field.file.image.field_credit
+  module:
+    - file
+    - text
+id: file.image.front
+targetEntityType: file
+bundle: image
+mode: front
+content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_credit:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

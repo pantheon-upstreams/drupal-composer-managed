@@ -1,0 +1,40 @@
+uuid: 38162acb-4bdc-46b3-acf2-8788e3060473
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - surf_core
+    - surf_dashboard
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  surf_core:
+    webform_link:
+      text: 'Request this Curriculum'
+  surf_dashboard:
+    request_link:
+      text_dashboard: 'View on my dashboard'
+      text_webform: 'Request this Curriculum'
+name: 'Curriculum Module'
+type: curriculum_module
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

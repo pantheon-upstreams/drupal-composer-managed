@@ -1,0 +1,8 @@
+uuid: 65570ed2-307e-4245-840e-77b62e659a73
+langcode: en
+status: true
+dependencies: {  }
+name: Department
+vid: department
+description: 'Lab department listing'
+weight: -1

@@ -1,0 +1,36 @@
+uuid: ed8b178e-be5d-45e2-9ba3-0240b772783e
+langcode: en
+status: true
+dependencies: {  }
+id: curriculum_reservation
+title: 'Curriculum reservation'
+webform: curriculum_reservation
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+sync_content: true
+sync_content_delete: true
+sync_content_node_field: null
+elements:
+  created:
+    type: true
+    mapping: default_mapping
+    webform_field: created
+    custom_check: 0
+    custom_value: ''
+  field_ref_curriculum_module:
+    type: false
+    mapping: entity_reference_mapping
+    webform_field: ref_curriculum_module
+    custom_check: 0
+    custom_value: ''
+  field_webform_submission_id:
+    type: true
+    mapping: default_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
+sync_content_field: field_webform_submission_id
+target_entity_type: download_request
+target_bundle: curriculum_module

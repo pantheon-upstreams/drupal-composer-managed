@@ -1,0 +1,21 @@
+uuid: a518a91d-eab7-4730-ae7c-4ee6b4c725a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_style_icon
+    - system.menu.utility-nav
+  module:
+    - options
+id: menu_link_content.utility-nav.field_style_icon
+field_name: field_style_icon
+entity_type: menu_link_content
+bundle: utility-nav
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

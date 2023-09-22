@@ -1,0 +1,26 @@
+uuid: 8a33958f-3f3c-4019-ac99-42798ff8b135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_right
+    - paragraphs.paragraphs_type.about_page_secondary
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: paragraph.about_page_secondary.field_content_right
+field_name: field_content_right
+entity_type: paragraph
+bundle: about_page_secondary
+label: 'Content: Right'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

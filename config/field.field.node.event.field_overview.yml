@@ -1,0 +1,26 @@
+uuid: 302ce4cf-5fda-4b3c-9c18-1e80d6a96beb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.event
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain
+id: node.event.field_overview
+field_name: field_overview
+entity_type: node
+bundle: event
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

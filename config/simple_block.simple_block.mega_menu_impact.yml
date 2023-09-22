@@ -1,0 +1,11 @@
+uuid: a40ba58b-adfe-472c-8564-d005a90633ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: mega_menu_impact
+title: 'Impact Mega Menu'
+content:
+  value: "<div class=\"row\">\r\n<div class=\"mega-menu-impact-teaser\">\r\n<div class=\"menu-eyebrow\">A Lasting Impact</div>\r\n\r\n<h2><a href=\"/feature/science-impact\">Science impact</a></h2>\r\n\r\n<div class=\"action-link\"><a href=\"/feature/science-impact\">Full Details</a></div>\r\n</div>\r\n\r\n<div class=\"mega-menu-impact-teaser\">\r\n<h2 class=\"no-eyebrow\"><a href=\"/feature/education-impact\">Education impact</a></h2>\r\n\r\n<div class=\"action-link\"><a href=\"/feature/education-impact\">Full Details</a></div>\r\n</div>\r\n\r\n<div class=\"mega-menu-impact-teaser\">\r\n<h2 class=\"no-eyebrow\"><a href=\"/feature/economic-impact\">Economic impact</a></h2>\r\n\r\n<div class=\"action-link\"><a href=\"/feature/economic-impact\">Full Details</a></div>\r\n</div>\r\n\r\n<div class=\"mega-menu-impact-teaser\">\r\n<div class=\"menu-eyebrow\">A Legacy of Discovery</div>\r\n\r\n<h2><a href=\"/feature/our-history\">Our history</a></h2>\r\n\r\n<div class=\"action-link\"><a href=\"/feature/our-history\">Full Details</a></div>\r\n</div>\r\n</div>"
+  format: full_html

@@ -1,0 +1,7 @@
+uuid: 54c6e1c9-1998-4af5-8b8a-d311a860f2c0
+langcode: en
+status: true
+dependencies: {  }
+id: curriculum_module_resources
+label: 'Curriculum module resources'
+access_field: id

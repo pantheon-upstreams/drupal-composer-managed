@@ -1,0 +1,35 @@
+id: surf_file_file
+label: SURF File Attachments
+migration_group: surf
+source:
+  key: migrate
+  plugin: d8_file_field_file
+  scheme: public
+  parent_entity_type: 'node'
+  file_fields:
+    - node:field_document
+process:
+  fid: fid
+  filename: filename
+  uid: uid
+  langcode: langcode
+  source_full_path:
+    -
+      plugin: str_replace
+      source: uri
+      search: "public://"
+      replace: 'https://sanfordlab.org/sites/default/files/'
+    -
+      plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - uri
+  filemime: filemime
+  filesize: filesize
+  status: status
+  created: created
+  changed: changed
+destination:
+  plugin: entity:file

@@ -1,0 +1,67 @@
+uuid: 61ad407d-7d1e-4071-977a-3332f959202b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.professional_development.field_link
+    - field.field.node.professional_development.field_media_primary
+    - field.field.node.professional_development.field_overview
+    - field.field.node.professional_development.field_p_content
+    - field.field.node.professional_development.field_ref_audiences
+    - field.field.node.professional_development.field_ref_eo_opportunities
+    - field.field.node.professional_development.field_ref_related_content
+    - field.field.node.professional_development.field_teaser_text
+    - node.type.professional_development
+  module:
+    - layout_paragraphs
+    - link
+    - user
+id: node.professional_development.default
+targetEntityType: node
+bundle: professional_development
+mode: default
+content:
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_primary:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_overview: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_related_content: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

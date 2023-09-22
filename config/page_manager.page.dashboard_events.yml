@@ -1,0 +1,22 @@
+uuid: 81355e6b-739c-4a9a-9f01-a7baa9300ce8
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_events
+label: 'My Events'
+description: ''
+use_admin_theme: false
+path: '/user/{user}/dashboard/events/{user_request}'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    label: User
+    type: 'entity:user'
+    optional: false
+  user_request:
+    machine_name: user_request
+    label: 'User request'
+    type: 'entity:user_request'
+    optional: true

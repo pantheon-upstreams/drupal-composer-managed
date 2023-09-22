@@ -1,0 +1,139 @@
+//
+// Mixins - Typography
+// Use these mixins when needing to easily define typography styles, such as sizes and typographical layout.
+//
+// - 00 - Imports
+// - 01 - Typography
+// - 02 - Headings
+// - 03 - Dynamic Headings
+//
+
+//------------------------------------
+//  00 - Imports
+//------------------------------------
+
+@use 'breakpoints' as *;
+
+// ------------------------------------
+// 01 - Typography
+// Mixin for determining font sizing and line heights from CSS variables.
+// @param $font-size: [integer] size of font depicted by a number / associates with CSS variables.
+// @param $line-height: [string] setting of line height as depicted by a string / associates with CSS variables.
+// ------------------------------------
+
+@mixin font($font-size, $line-height: default) {
+  font-size: var(--surf-font-size- + $font-size);
+  line-height: var(--surf-line-height- + $line-height);
+}
+
+
+// ------------------------------------
+// 02 - Headings
+// ------------------------------------
+
+@mixin heading-01() {
+
+  @include font(176, heading);
+  font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-font-weight-medium);
+}
+
+@mixin heading-02() {
+
+  @include font(96, heading);
+  font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-font-weight-medium);
+}
+
+@mixin heading-03() {
+
+  @include font(52, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
+}
+
+@mixin heading-04() {
+
+  @include font(40, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
+}
+
+@mixin heading-05() {
+
+  @include font(24, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
+}
+
+@mixin heading-06() {
+
+  @include font(18, heading);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-bold);
+}
+
+@mixin surf-font-label() {
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
+}
+
+@mixin surf-font-label-medium() {
+  font-family: var(--surf-font-condensed);
+  font-size: rem(22px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.8px;
+}
+
+// ------------------------------------
+// 03 - Dynamic Headings
+// ------------------------------------
+
+@mixin surf-font-heading-one() {
+  font-size: rem(48px);
+  line-height: 90%;
+
+  @include bp-min(medium) {
+    font-size: rem(100px);
+    line-height: 94%;
+  }
+
+  @include bp-min(large) {
+    font-size: rem(132px);
+    line-height: 94%;
+  }
+
+  @include bp-min(xlarge) {
+    font-size: rem(176px);
+    line-height: 90%;
+  }
+}
+
+@mixin surf-font-heading-one-alt() {
+  font-size: rem(40px);
+  line-height: 1.125;
+
+  @include bp-min(large) {
+    font-size: rem(52px);
+    line-height: 1.12;
+  }
+}
+
+@mixin surf-font-heading-two() {
+  font-size: rem(40px);
+  line-height: 1;
+
+  @include bp-min(small) {
+    font-size: rem(52px);
+  }
+
+  @include bp-min(medium) {
+    font-size: rem(64px);
+  }
+
+  @include bp-min(large) {
+    font-size: rem(96px);
+  }
+}

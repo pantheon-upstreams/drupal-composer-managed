@@ -1,0 +1,30 @@
+{# <pre>{{dump(content)}}</pre> #}
+
+{% set heading = content.field_title.0["#context"].value|raw %}
+
+{% set body = content.field_text|field_value %}
+
+{% set link_url = null %}
+{% if content.field_link.0 is not empty%}
+  {% if content.field_link.0["#url"].external %}
+    {% set link_url = content.field_link.0["#url"].uri %}
+  {% elseif content.field_link.0["#url"].external == false %}
+    {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+  {% endif %}
+{% endif %}
+
+{% set link_text = content.field_link.0["#title"] %}
+
+{% set media_url = file_url(content.field_media.0["#media"].field_media_image.0.entity.fileuri|image_style('large_540w')) %}
+
+{% set media_alt = content.field_media.0["#media"].field_media_image.0.alt %}
+
+{{ include('surf_main:homepage-hero', {
+  heading,
+  body,
+  link_url,
+  link_text,
+  media_url,
+  media_alt,
+  attributes,
+}, with_context = false) }}

@@ -1,0 +1,23 @@
+uuid: de51c637-a4fd-4bf7-9b7b-ab2a2895709d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_left
+    - paragraphs.paragraphs_type.two_up_figures
+  module:
+    - link
+id: paragraph.two_up_figures.field_link_left
+field_name: field_link_left
+entity_type: paragraph
+bundle: two_up_figures
+label: 'Link: Left'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

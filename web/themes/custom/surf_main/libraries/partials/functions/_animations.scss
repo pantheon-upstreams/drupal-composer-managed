@@ -1,0 +1,38 @@
+//
+// Functions - Animations
+// Simple functions to help developers easily grab pre-defined animation values from mapping lists.
+//
+// - 01 - Imports
+// - 02 - Transition
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../settings/animations' as settings-animations;
+
+
+
+
+//------------------------------------
+//  02 - Transition
+//  Easy to use function to quickly define a transition with the ability to reference a library mapping of bezier-curve
+//  animations, as defined in `partials/settings/_animations.scss`.
+//  - @param $argument: Style arguments that this transition should be applied to.
+//  - @param $duration: The length of time the transition should take place.
+//  - @param $style: The style of transition, as defined in `partials/settings/_animations.scss`
+//  - @example = transition: transition(all, 0.6s, easeInOutSine)
+//------------------------------------
+
+@function transition($argument: all, $duration: 0.35s, $style: easeInOut) {
+  @if map-has-key(settings-animations.$transitions, $style) {
+    @return $argument $duration map-get(settings-animations.$transitions, $style);
+  }
+
+  @else {
+    @warn "No value could be retrieved for `#{$style}`. "
+    + "Please make sure it is defined in `$animations` map.";
+  }
+}

@@ -1,0 +1,19 @@
+uuid: 235d1d1e-0cf6-44a9-a5e8-f7d4d19fc82b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_webform_submission_id
+    - surf_registration.user_request_type.visit
+id: user_request.visit.field_webform_submission_id
+field_name: field_webform_submission_id
+entity_type: user_request
+bundle: visit
+label: 'Webform Submission ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

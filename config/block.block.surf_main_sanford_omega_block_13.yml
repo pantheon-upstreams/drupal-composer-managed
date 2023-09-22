@@ -1,0 +1,32 @@
+uuid: d554957e-8502-4b34-b1a3-7def78ac2d2a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:80e24485-a9bd-4f48-a654-139e2060fab6'
+  module:
+    - block_content
+    - system
+  theme:
+    - surf_main
+id: surf_main_sanford_omega_block_13
+theme: surf_main
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:80e24485-a9bd-4f48-a654-139e2060fab6'
+settings:
+  id: 'block_content:80e24485-a9bd-4f48-a654-139e2060fab6'
+  label: 'NEPA Information for LBNF/DUNE'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: |-
+      /science/lbne
+      /science/lbne/*

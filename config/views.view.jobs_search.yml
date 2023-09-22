@@ -1,0 +1,525 @@
+uuid: 2ca670c2-410c-42bd-b8f3-e965bb79b8bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.job_posting
+    - taxonomy.vocabulary.audience
+  module:
+    - better_exposed_filters
+    - datetime
+    - node
+    - taxonomy
+    - user
+    - views_filters_summary
+id: jobs_search
+label: 'Jobs Search'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Jobs
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            trim: false
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 9
+          total_pages: null
+          id: 0
+          tags:
+            next: Next
+            previous: Prev.
+            first: ''
+            last: ''
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 4
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Filter
+          reset_button: true
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: full_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              title:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_ref_department_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All Departments'
+                  collapsible: false
+                  is_secondary: false
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'There are no jobs matching your search criteria. Please try another combination.'
+            format: full_html
+          tokenize: false
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+        field_date_application_due_value:
+          id: field_date_application_due_value
+          table: node__field_date_application_due
+          field: field_date_application_due_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
+      arguments: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: word
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        type_1:
+          id: type_1
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            job_posting: job_posting
+          group: 1
+          exposed: false
+          expose:
+            operator_id: type_1_op
+            label: 'Content type'
+            description: null
+            use_operator: false
+            operator: type_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type_1
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_ref_department_target_id:
+          id: field_ref_department_target_id
+          table: node__field_ref_department
+          field: field_ref_department_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_ref_department_target_id_op
+            label: Department
+            description: ''
+            use_operator: false
+            operator: field_ref_department_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: department
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: audience
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_date_application_due_value_1:
+          id: field_date_application_due_value_1
+          table: node__field_date_application_due
+          field: field_date_application_due_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: empty
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_date_application_due_value:
+          id: field_date_application_due_value
+          table: node__field_date_application_due
+          field: field_date_application_due_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: date
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
+      style:
+        type: html_list
+        options:
+          row_class: item-row
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list__wrapper
+          class: item-list
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      use_ajax: true
+      header:
+        views_filters_summary:
+          id: views_filters_summary
+          table: views
+          field: views_filters_summary
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: views_filters_summary
+          empty: false
+          filters: {  }
+          show_labels: false
+          content: '<p>Showing @current_record_count of @total jobs</p>'
+          filters_summary_separator: ''
+          filters_summary_prefix: 'for '
+          filters_result_label:
+            plural: posts
+            singular: post
+          show_remove_link: 0
+          show_reset_link: 0
+          filters_reset_link_title: 'Clear Results'
+      footer: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_jobs_search:
+    id: block_jobs_search
+    display_title: 'Jobs Search Block'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders: {  }
+      allow:
+        items_per_page: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

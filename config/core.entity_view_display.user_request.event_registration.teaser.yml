@@ -1,0 +1,72 @@
+uuid: 9f83e591-b26e-4e2a-af5b-7a86d3394dac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user_request.teaser
+    - field.field.user_request.event_registration.field_attended
+    - field.field.user_request.event_registration.field_email
+    - field.field.user_request.event_registration.field_name
+    - field.field.user_request.event_registration.field_number_requested
+    - field.field.user_request.event_registration.field_ref_event
+    - field.field.user_request.event_registration.field_webform_submission_id
+    - surf_registration.user_request_type.event_registration
+  module:
+    - layout_builder
+    - name
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: user_request.event_registration.teaser
+targetEntityType: user_request
+bundle: event_registration
+mode: teaser
+content:
+  field_name:
+    type: name_default
+    label: hidden
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_number_requested:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ref_event:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_dashboard
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  state:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  field_attended: true
+  field_email: true
+  field_webform_submission_id: true
+  search_api_excerpt: true

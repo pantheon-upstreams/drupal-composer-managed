@@ -1,0 +1,36 @@
+uuid: c455925b-0882-4aae-8553-93f7a8ab6510
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_related_content
+    - node.type.article
+    - node.type.curriculum_module
+    - node.type.page
+    - node.type.professional_development
+    - node.type.school_presentation
+id: node.professional_development.field_ref_related_content
+field_name: field_ref_related_content
+entity_type: node
+bundle: professional_development
+label: 'Related Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      curriculum_module: curriculum_module
+      professional_development: professional_development
+      school_presentation: school_presentation
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

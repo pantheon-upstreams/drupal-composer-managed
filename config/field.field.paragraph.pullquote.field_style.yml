@@ -1,0 +1,23 @@
+uuid: 98ec78a7-0914-40b0-8988-dbe562fdbd18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.pullquote
+  module:
+    - options
+id: paragraph.pullquote.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: pullquote
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: fullwidth
+default_value_callback: ''
+settings: {  }
+field_type: list_string

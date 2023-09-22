@@ -1,0 +1,12 @@
+{% set items = [] %}
+{% for item in paragraph.field_resource %}
+{% set items = items|merge([{
+  id: item.value.target_id
+  }]) %}
+{% endfor %}
+
+{{ include('surf_main:resources-list', {
+  heading: content.field_title|field_value,
+  items,
+  attributes,
+}, with_context = false) }}

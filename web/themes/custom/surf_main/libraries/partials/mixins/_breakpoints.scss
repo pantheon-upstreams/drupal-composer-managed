@@ -1,0 +1,125 @@
+//
+// Mixins - Breakpoints
+// Use these mixins mainly when defining media breakpoint specifications in theme files. Both settings and functions
+// are imported here to supplement the mixins themselves.
+//
+// - 01 - Imports
+// - 02 - Minimum Breakpoint
+// - 03 - Maximum Breakpoint
+// - 04 - Between Breakpoint
+// - 05 - Only Breakpoint
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../settings/breakpoints' as settings-breakpoints;
+@use '../functions/breakpoints' as functions-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - Minimum Breakpoint
+//  Media/screen-size of at least the minimum breakpoint width -- apply to screen-sizes above the breakpoint specified.
+//  - @param $name: Selected breakpoint name as defined in partials/settings/_breakpoints.scss
+//  - @param $breakpoints: Breakpoints mapping values as defined in partials/settings/_breakpoints.scss
+//  - @example = @include bp-min(large) {}
+//------------------------------------
+
+@mixin bp-min($name, $breakpoints: settings-breakpoints.$grid-breakpoints) {
+  $min: functions-breakpoints.breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Maximum Breakpoint
+//  Media/screen-size of at most the maximum breakpoint width -- apply to screen-sizes below the breakpoint specified.
+//  - @param $name: Selected breakpoint name as defined in partials/settings/_breakpoints.scss
+//  - @param $breakpoints: Breakpoints mapping values as defined in partials/settings/_breakpoints.scss
+//  - @example = @include bp-max(large) {}
+//------------------------------------
+
+@mixin bp-max($name, $breakpoints: settings-breakpoints.$grid-breakpoints) {
+  $max: functions-breakpoints.breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Between Breakpoint
+//  Media/screen-size that spans multiple breakpoint widths -- apply to screen-sizes between the breakpoints specified.
+//  - @param $lower: Selected minimum breakpoint name as defined in partials/settings/_breakpoints.scss
+//  - @param $upper: Selected maximum breakpoint name as defined in partials/settings/_breakpoints.scss
+//  - @param $breakpoints: Breakpoints mapping values as defined in partials/settings/_breakpoints.scss
+//  - @example = @include bp-between(xsmall, large) {}
+//------------------------------------
+
+@mixin bp-between($lower, $upper, $breakpoints: settings-breakpoints.$grid-breakpoints) {
+  $min: functions-breakpoints.breakpoint-min($lower, $breakpoints);
+  $max: functions-breakpoints.breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include bp-min($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include bp-max($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Only Breakpoint
+//  Media/screen-size between the breakpoint's minimum and maximum widths -- No minimum for the smallest breakpoint, and
+//  no maximum for the largest one.
+//  - @param $name: Selected breakpoint name as defined in partials/settings/_breakpoints.scss
+//  - @param $breakpoints: Breakpoints mapping values as defined in partials/settings/_breakpoints.scss
+//  - @example = @include bp-only(large) {}
+//------------------------------------
+
+@mixin bp-only($name, $breakpoints: settings-breakpoints.$grid-breakpoints) {
+  $min: functions-breakpoints.breakpoint-min($name, $breakpoints);
+  $max: functions-breakpoints.breakpoint-max($name, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include bp-min($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include bp-max($name, $breakpoints) {
+      @content;
+    }
+  }
+}

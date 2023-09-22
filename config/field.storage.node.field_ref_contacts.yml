@@ -1,0 +1,19 @@
+uuid: 36001622-7332-4e00-883d-a1507c97fed5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ref_contacts
+field_name: field_ref_contacts
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

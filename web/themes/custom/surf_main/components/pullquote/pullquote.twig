@@ -1,0 +1,26 @@
+{%
+  set classes = [
+  'c-pullquote',
+  style,
+  style == 'fullwidth' ? 'l-constrained--xlarge' : 'l-constrained--medium',
+  'l--bottom-spacing',
+]
+%}
+
+<blockquote {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% if quote %}
+    <div class="c-pullquote__content">
+      <p>{{quote|check_markup('plain') }}</p>
+    </div>
+  {% endif %}
+
+  {% if credit %}
+    {% block credit_body %}
+      <footer class="c-pullquote__footer">
+        <cite>{{credit}}</cite>
+      </footer>
+    {% endblock %}
+  {% endif %}
+
+</blockquote>

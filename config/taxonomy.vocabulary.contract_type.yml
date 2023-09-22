@@ -1,0 +1,8 @@
+uuid: d1aa03e7-438f-444b-9d96-ff7f791f2ac7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Contract Type'
+vid: contract_type
+description: 'Used for the contract content type'
+weight: -10

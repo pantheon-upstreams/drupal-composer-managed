@@ -1,0 +1,36 @@
+uuid: c35e0f97-d58a-41e2-afb6-0f5fcb910d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_address
+    - node.type.event
+  module:
+    - address
+id: node.event.field_location_address
+field_name: field_location_address
+entity_type: node
+bundle: event
+label: 'Location: Address'
+description: 'If applicable enter a street address for this location.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    US: US
+  langcode_override: ''
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    postalCode: postalCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    sortingCode: '0'
+    organization: '0'
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+field_type: address

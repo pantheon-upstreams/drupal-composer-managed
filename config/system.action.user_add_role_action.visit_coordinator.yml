@@ -1,0 +1,14 @@
+uuid: 132759f1-8236-41cd-8246-811ddc2da197
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.visit_coordinator
+  module:
+    - user
+id: user_add_role_action.visit_coordinator
+label: 'Add the Visit coordinator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: visit_coordinator

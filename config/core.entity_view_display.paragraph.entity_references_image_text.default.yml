@@ -1,0 +1,25 @@
+uuid: a1809b20-c156-4be5-9974-9d2f5ceb2906
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.entity_references_image_text.field_content_reference
+    - paragraphs.paragraphs_type.entity_references_image_text
+id: paragraph.entity_references_image_text.default
+targetEntityType: paragraph
+bundle: entity_references_image_text
+mode: default
+content:
+  field_content_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  search_api_excerpt: true
+  uid: true

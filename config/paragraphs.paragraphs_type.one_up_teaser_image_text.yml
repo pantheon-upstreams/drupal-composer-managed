@@ -1,0 +1,6 @@
+uuid: 613ccaa5-ebd2-4619-b371-b614a5ff6cb8
+langcode: en
+status: true
+dependencies: {  }
+id: one_up_teaser_image_text
+label: 'One-up Custom: Image and Text'

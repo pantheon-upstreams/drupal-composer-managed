@@ -1,0 +1,11 @@
+uuid: 6004e29f-1c74-4bc7-95f0-2e7edb6d6efa
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contract
+id: node.contract
+target_entity_type_id: node
+target_bundle: contract
+default_langcode: site_default
+language_alterable: false

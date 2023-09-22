@@ -1,0 +1,20 @@
+uuid: ec114f8e-d693-43ed-9c4a-a7ddbd8aa7da
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - surf_core
+id: user_request.field_date
+field_name: field_date
+entity_type: user_request
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

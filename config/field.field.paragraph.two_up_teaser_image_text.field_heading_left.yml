@@ -1,0 +1,19 @@
+uuid: 89e1d8ba-f21e-4359-a6e3-ba037f2279d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading_left
+    - paragraphs.paragraphs_type.two_up_teaser_image_text
+id: paragraph.two_up_teaser_image_text.field_heading_left
+field_name: field_heading_left
+entity_type: paragraph
+bundle: two_up_teaser_image_text
+label: 'Heading: Left'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

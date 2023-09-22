@@ -1,0 +1,22 @@
+uuid: 36665916-b60a-4d32-a624-6b04603f75e3
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_curriculum_units
+label: 'My Curriculum Units'
+description: ''
+use_admin_theme: false
+path: '/user/{user}/dashboard/curriculum-units/{download_request}'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    label: User
+    type: 'entity:user'
+    optional: false
+  download_request:
+    machine_name: download_request
+    label: 'Download request'
+    type: 'entity:download_request'
+    optional: true

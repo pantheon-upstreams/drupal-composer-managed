@@ -1,0 +1,25 @@
+uuid: 5a4824ad-ff5e-4d7e-9a92-b46404b685ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: education_and_outreach
+label: 'Education and Outreach'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      feature: feature
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Template for a field. Only content is rendered. All wrappers removed.
+ */
+#}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{% set field_name_value = field_name|replace({'field_': ""})|replace({'_': "-"}) %}
+
+{%
+  set field_classes = [
+    'field',
+    field_name_value,
+  ]
+%}
+
+
+<div{{ title_attributes.addClass(field_classes) }}>
+
+{% for item in items %}
+
+    <div{{ item.attributes.addClass('field__item') }}>
+    	{{ item.content }}
+    </div>
+
+{% endfor %}
+
+</div>

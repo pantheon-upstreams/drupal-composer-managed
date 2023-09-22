@@ -1,0 +1,29 @@
+uuid: 2d39e153-526d-49ef-b557-c66420d854a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_area
+    - node.type.curriculum_module
+    - taxonomy.vocabulary.content_area
+id: node.curriculum_module.field_content_area
+field_name: field_content_area
+entity_type: node
+bundle: curriculum_module
+label: 'Content Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      content_area: content_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

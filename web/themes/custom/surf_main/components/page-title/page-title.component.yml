@@ -1,0 +1,16 @@
+"$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
+machineName: "page-title"
+name: "Page Title"
+componentType: "atom"
+status: "WIP"
+description: "A simple page title component"
+schemas:
+  props:
+    type: object
+    properties:
+      "text":
+        type: "string"
+        title: "Page Title Text"
+        description: "The title text displayed on screen"
+        examples:
+          - "Example Page Title"

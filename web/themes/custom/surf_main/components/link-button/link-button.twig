@@ -1,0 +1,34 @@
+{# Prepare presentational attributes #}
+{% if uppercase is not empty %}
+	{% set attributes = attributes.addClass('c-link-button--uppercase') %}
+{% endif %}
+{% if button_style is not empty %}
+	{% set attributes = attributes.addClass('c-link-button--' ~ button_style) %}
+{% endif %}
+{% if color is not empty %}
+	{% set attributes = attributes.addClass('t-' ~ color) %}
+{% endif %}
+
+{%
+	set classes = [
+	'c-link-button',
+	'c-link-button--layout',
+	'c-link-button--icon',
+	'c-link-button--button_type_size',
+]
+%}
+
+<a {{ attributes.addClass(classes).merge(attributes).setAttribute('href', url) }}>
+	{% if icon_type and icon_type != 'arrow' %}
+		<span class="link-button__icon-left">
+			{{ source(clMeta.path ~ '/img/' ~ icon_type ~ '.svg') }}
+		</span>
+	{% endif %}
+	{{ text }}
+	{% if icon_type == 'arrow' or arrow %}
+		<span class="link-button__icon">
+			{{ source(clMeta.path ~ '/img/arrow.svg') }}
+		</span>
+	{% endif %}
+</a>
+{# cl-component cl-component--link-button cl-component--atom cl-component--ready link-button--uppercase link-button--solid t-black c-link-button c-link-button-- #}

@@ -1,0 +1,19 @@
+uuid: 586d7b9f-ca07-4aac-a93c-0400e3281c56
+langcode: und
+status: true
+dependencies:
+  module:
+    - file
+    - text
+id: file.field_caption
+field_name: field_caption
+entity_type: file
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

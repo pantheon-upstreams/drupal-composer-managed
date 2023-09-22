@@ -1,0 +1,19 @@
+uuid: 2529721a-083f-4a0b-a2fb-9bc450142b76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.about_page_secondary
+id: paragraph.about_page_secondary.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: about_page_secondary
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

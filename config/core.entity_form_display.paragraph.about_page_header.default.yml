@@ -1,0 +1,34 @@
+uuid: 0e9fbc9c-4f19-404f-8df9-c044c4769b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_page_header.field_text
+    - field.field.paragraph.about_page_header.field_title
+    - paragraphs.paragraphs_type.about_page_header
+  module:
+    - text
+id: paragraph.about_page_header.default
+targetEntityType: paragraph
+bundle: about_page_header
+mode: default
+content:
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

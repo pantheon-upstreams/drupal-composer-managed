@@ -1,0 +1,21 @@
+uuid: bbfeeb25-b420-4dde-bc61-21b0c1f60a29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_appointed
+    - node.type.person
+  module:
+    - datetime
+id: node.person.field_date_appointed
+field_name: field_date_appointed
+entity_type: node
+bundle: person
+label: 'Appointed date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

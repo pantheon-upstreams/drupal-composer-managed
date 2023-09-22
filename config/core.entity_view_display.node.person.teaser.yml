@@ -1,0 +1,96 @@
+uuid: c5ec435c-0d08-4c4a-a6f7-27aef3159556
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.body
+    - field.field.node.person.field_appointed_by
+    - field.field.node.person.field_board_type
+    - field.field.node.person.field_date_appointed
+    - field.field.node.person.field_email
+    - field.field.node.person.field_job_title
+    - field.field.node.person.field_location
+    - field.field.node.person.field_media_primary
+    - field.field.node.person.field_name
+    - field.field.node.person.field_phone_mobile
+    - field.field.node.person.field_phone_office
+    - field.field.node.person.field_ref_department
+    - node.type.person
+  module:
+    - name
+    - user
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_job_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_name:
+    type: name_default
+    label: above
+    settings:
+      format: default
+      markup: none
+      list_format: ''
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_phone_mobile:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_phone_office:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_appointed_by: true
+  field_board_type: true
+  field_date_appointed: true
+  field_location: true
+  field_ref_department: true
+  langcode: true
+  search_api_excerpt: true

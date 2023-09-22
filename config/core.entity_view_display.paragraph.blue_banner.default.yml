@@ -1,0 +1,66 @@
+uuid: bf7f1bfb-6e93-4714-8b42-251b3e19150f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.blue_banner.field_link
+    - field.field.paragraph.blue_banner.field_media_left
+    - field.field.paragraph.blue_banner.field_media_right
+    - field.field.paragraph.blue_banner.field_text
+    - field.field.paragraph.blue_banner.field_title
+    - paragraphs.paragraphs_type.blue_banner
+  module:
+    - link
+    - text
+id: paragraph.blue_banner.default
+targetEntityType: paragraph
+bundle: blue_banner
+mode: default
+content:
+  field_link:
+    type: link_separate
+    label: above
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_left:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media_right:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

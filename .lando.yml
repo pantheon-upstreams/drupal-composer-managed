@@ -1,0 +1,43 @@
+name: surf
+recipe: drupal9
+config:
+  xdebug: develop,debug
+  composer_version: '2'
+  webroot: web
+  php: 8.1
+services:
+  database:
+    portforward: 60657
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  appserver:
+    config:
+      php: .lando/php.ini
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "https://surf.lndo.site"
+        PHP_IDE_CONFIG: "serverName=appserver"
+        XDEBUG_SESSION_START: PHPSTORM
+        PANTHEON_ENVIRONMENT: lando
+  solr:
+    type: solr:8
+    portforward: true
+    core: lando
+    config:
+      dir: .lando/solr_conf
+tooling:
+  drush:
+    service: appserver
+    cmd: drush --root=/app/web
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
