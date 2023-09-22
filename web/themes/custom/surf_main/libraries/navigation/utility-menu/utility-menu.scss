@@ -11,6 +11,7 @@
 //------------------------------------
 
 @use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
 @use '../../partials/mixins/links' as mixins-links;
 @use '../../partials/mixins/lists' as mixins-lists;
 
@@ -43,23 +44,40 @@
 
 .menu.menu__name--utility-nav .menu__list.menu__level--1 {
   display: flex;
-  flex-flow: nowrap row;
+  flex-flow: nowrap column;
   margin: 0;
 
+  @include mixins-breakpoints.bp-min(large) {
+    flex-flow: nowrap row;
+  }
+
   > li {
-    padding: 0 18px;
+    @include mixins-breakpoints.bp-min(large) {
+      padding: 0 18px;
+    }
   }
 
   > li > a,
   > li > button,
   > li > span {
     @include mixins-links.link-menu(22, white);
+    display: block;
+    padding: 12px 16px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      padding: 4px 0;
+    }
   }
 
   > li > a.icon,
   > li > button.icon,
   > li > span.icon {
-    padding-right: 25px;
+    padding-left: 48px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      padding-left: 0;
+      padding-right: 25px;
+    }
   }
 
   > li > a.icon:before,
@@ -68,10 +86,15 @@
     bottom: 0;
     height: 22px;
     margin: auto;
+    left: 16px;
     position: absolute;
-    right: 0;
     top: 0;
     width: 22px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      left: initial;
+      right: 0;
+    }
   }
 
   > li > a.icon__type--user:before,

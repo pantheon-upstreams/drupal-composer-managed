@@ -48,6 +48,11 @@ global:
 # 03 - Regions
 #------------------------------------#
 
+region--content:
+  css:
+    theme:
+      dist/css/regions/content/content.css: { minified: true }
+
 region--header-primary:
   css:
     theme:

@@ -198,9 +198,11 @@
 .menu.menu__name--main .menu__list.menu__level--2 {
   display: flex;
   flex-flow: nowrap column;
+  margin-bottom: 8px;
 
   @include mixins-breakpoints.bp-min(xxlarge) {
     flex-flow: nowrap row;
+    margin-bottom: 0;
   }
 
   > li {
@@ -235,6 +237,7 @@
   > li > .menu__card > button,
   > li > .menu__card > span {
     color: var(--surf-color-white);
+    display: block;
     font-size: var(--surf-font-size-18);
     font-weight: var(--surf-font-weight-bold);
     padding: 8px 16px;
@@ -283,13 +286,21 @@
   }
 
   > li > a {
-    display: inline-block;
+    color: var(--surf-color-white);
+    display: block;
     font-size: var(--surf-font-size-18);
+    padding: 8px 16px;
     position: relative;
     text-decoration: none;
 
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      color: var(--surf-color-gray-900);
+      display: inline-block;
+      padding: 4px 0;
+    }
+
     &:after {
-      background-color: var(--surf-color-navy);
+      background-color: var(--surf-color-white);
       content: '';
       display: block;
       height: 2px;
@@ -299,6 +310,10 @@
       top: calc(100% - 3px);
       transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
       width: 100%;
+
+      @include mixins-breakpoints.bp-min(xxlarge) {
+        background-color: var(--surf-color-navy);
+      }
     }
 
     &:hover,
@@ -313,6 +328,11 @@
   }
 
   > li > p {
+    display: none;
     font-size: var(--surf-font-size-14);
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      display: inherit;
+    }
   }
 }

@@ -37,7 +37,12 @@ const mobileMove = (wrapper, destination, breakpoint) => {
       }
     } else {
       state = 'mobile';
-      destination.prepend(wrapper);
+
+      if (wrapper.classList.contains('search-form')) {
+        destination.prepend(wrapper);
+      } else {
+        destination.append(wrapper);
+      }
     }
   };
 
@@ -157,15 +162,26 @@ Drupal.behaviors.surfMobileMove = {
   attach(context) {
     const wrappers = [
       {
+        'id': 'surf-move-mobile-01',
+        'class': '.search-form',
+        'breakpoint': 992,
+      },
+      {
         'id': 'surf-move-mobile-02',
         'class': '.menu__name--main',
         'breakpoint': 1400,
       },
+      {
+        'id': 'surf-move-mobile-03',
+        'class': '.menu__name--utility-nav',
+        'breakpoint': 992,
+      },
     ];
+
+    const destination = once('surf-move-mobile-destination', context.querySelector('.mobile-menu__flyout-content'));
 
     wrappers.forEach((wrapper) => {
       const element = once(wrapper.id, context.querySelector(wrapper.class));
-      const destination = once('surf-move-mobile-destination', context.querySelector('.mobile-menu__flyout-content'));
 
       if (element.length !== 0 && destination.length !== 0) {
         mobileMove(element[0], destination[0], wrapper.breakpoint);
