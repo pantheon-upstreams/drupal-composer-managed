@@ -1,79 +1,69 @@
-{% set style = style|default([])|merge([ image_url|render|striptags|trim ? 'has-media' : 'no-media' ]) %}
-
-{% set style = style|default([])|merge([ style ]) %}
-
 {%
   set classes = [
   'c-person-page',
-  style,
-  'l-constrained',
+  media ? 'c-person-page--with-img',
 ]
 %}
 
 <article {{ attributes.addClass(classes).merge(attributes) }}>
-  <div class="l--1-col l-constrained">
-    <div class="l__primary">
-
+  <div class="container container__type--person">
+    <div class="c-person-page__grid">
       {# Breadcumbs #}
       {% if breadcrumbs %}
-
         {{ include('surf_main:breadcrumbs', {
           items: breadcrumbs,
         }, with_context = false) }}
-
       {% endif %}
 
-      <div class="c-person-page--grid">
+      {# Title / Full Name #}
+      <h1 class="person-content__title">
+        {{ title }}
+      </h1>
+      <div class="c-person-page__content">
+        <div class="c-person-page__content-grid">
 
-        {# Media #}
-        {% if image_url %}
-          <div class="person-content__photo-wrapper">
-            <img src="{{image_url}}" alt="{{image_alt}}">
-          </div>
-        {% endif %}
+          {# Job Title #}
+          {% if job_title %}
+            <h2 class="person-content__job-title">
+              {{ job_title }}
+            </h2>
+          {% endif %}
 
+          {% if phone or email %}
+            <div class="person-content__contact-wrapper">
 
-        {# Title / Full Name #}
-        <h1 class="person-content__title">
-          {{ title }}
-        </h1>
+              {# Phone #}
+              {% if phone %}
+                <p class="person-content__phone">
+                  {{ phone }}
+                </p>
+              {% endif %}
 
-        {# Job Title #}
-        {% if job_title %}
-          <h2 class="person-content__job-title">
-            {{ job_title }}
-          </h2>
-        {% endif %}
+              {# Email #}
+              {% if email %}
+                <p class="person-content__email">
+                  <a href="mailto:{{ email }}">{{ 'Contact'|t }}</a>
+                </p>
+              {% endif %}
 
+            </div>
+          {% endif %}
 
-        {% if phone or email %}
-          <ul class="person-content__contact-wrapper">
-
-            {# Phone: office #}
-            {% if phone %}
-              <li class="person-content__phone-office">
-                <a href="tel:{{ phone }}">{{ phone }}</a>
-              </li>
-            {% endif %}
-
-            {# Email #}
-            {% if email %}
-              <li class="person-content__email">
-                <a href="mailto:{{ email }}">{{ 'Contact'|t }}</a>
-              </li>
-            {% endif %}
-
-          </ul>
-        {% endif %}
-
-        {# Body #}
-        {% if body %}
-          <div class="person-content__wrapper">
-            {{ body }}
-          </div>
-        {% endif %}
-
+          {# Body#}
+          {% if body %}
+            <div class="person-content__wrapper">
+              {{ body }}
+            </div>
+          {% endif %}
+        </div>
       </div>
+
+      {% if media %}
+        <div class="c-person-page__media">
+          {{ media }}
+        </div>
+      {% endif %}
+
     </div>
   </div>
 </article>

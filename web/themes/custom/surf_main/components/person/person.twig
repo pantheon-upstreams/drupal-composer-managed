@@ -10,7 +10,7 @@
 ]
 %}
 
-<section {{ attributes.addClass(classes).merge(attributes) }}>
+<article {{ attributes.addClass(classes).merge(attributes) }}>
 
   {% block primary_image_block %}
     {% if image_url %}
@@ -32,29 +32,29 @@
       <p class="c-person__title">{{title}}</p>
     {% endif %}
 
-    <ol class="c-person__details">
+    <div class="c-person__details">
       {% if phone %}
         {% block phone_block %}
-          <li class="c-person__phone">
+          <p class="c-person__phone">
             <a href="tel:{{ phone}}">{{ phone }}</a>
-          </li>
+          </p>
         {% endblock %}
       {% endif %}
 
       {% if contact_url %}
         {% block contact_url_block %}
-          <li class="c-person__contact">
+          <p class="c-person__contact">
             <a href="mailto:{{ contact_url}}" aria-label="{{ 'Contact '|t ~ full_name}}">{{ 'Contact'|t }}</a>
-          </li>
+          </p>
         {% endblock %}
       {% endif %}
 
       {% if bio_url %}
-        <li class="c-person__bio">
+        <div class="c-person__bio">
           <a href="{{ bio_url }}">{{ 'View Bio'|t }}</a>
-        </li>
+        </div>
       {% endif %}
-    </ol>
+    </div>
 
   </div>
-</section>
+</article>
