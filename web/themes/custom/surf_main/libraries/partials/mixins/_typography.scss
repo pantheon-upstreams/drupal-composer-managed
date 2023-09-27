@@ -14,6 +14,8 @@
 
 @use 'breakpoints' as *;
 
+@use '../functions/calculations' as *;
+
 // ------------------------------------
 // 01 - Typography
 // Mixin for determining font sizing and line heights from CSS variables.
@@ -92,48 +94,42 @@
 // ------------------------------------
 
 @mixin surf-font-heading-one() {
-  font-size: rem(48px);
+  font-size: #{rem(48px)};
   line-height: 90%;
 
   @include bp-min(medium) {
-    font-size: rem(100px);
+    font-size: #{rem(100px)};
     line-height: 94%;
   }
 
   @include bp-min(large) {
-    font-size: rem(132px);
-    line-height: 94%;
-  }
-
-  @include bp-min(xlarge) {
-    font-size: rem(176px);
-    line-height: 90%;
+    font-size: #{rem(132px)};
   }
 }
 
 @mixin surf-font-heading-one-alt() {
-  font-size: rem(40px);
+  font-size: #{rem(40px)};
   line-height: 1.125;
 
   @include bp-min(large) {
-    font-size: rem(52px);
+    font-size: #{rem(52px)};
     line-height: 1.12;
   }
 }
 
 @mixin surf-font-heading-two() {
-  font-size: rem(40px);
+  font-size: #{rem(40px)};
   line-height: 1;
 
   @include bp-min(small) {
-    font-size: rem(52px);
+    font-size: #{rem(52px)};
   }
 
   @include bp-min(medium) {
-    font-size: rem(64px);
+    font-size: #{rem(64px)};
   }
 
   @include bp-min(large) {
-    font-size: rem(96px);
+    font-size: #{rem(96px)};
   }
 }
