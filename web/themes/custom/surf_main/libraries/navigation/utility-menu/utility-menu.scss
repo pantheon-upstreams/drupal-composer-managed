@@ -97,9 +97,9 @@
     }
   }
 
-  > li > a.icon__type--user:before,
-  > li > button.icon__type--user:before,
-  > li > span.icon__type--user:before {
+  > li > a.icon--user:before,
+  > li > button.icon--user:before,
+  > li > span.icon--user:before {
     background: svg-load('icon-user.svg', fill="#FFFFFF") no-repeat center;
   }
 }

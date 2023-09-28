@@ -2,7 +2,8 @@
 // Component - Notification
 //
 // - 01 - Imports
-// - 02 - General
+// - 02 - Layout
+// - 03 - General
 //
 
 
@@ -10,25 +11,50 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../libraries/partials/functions/animations' as functions-animations;
 @use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
-@use '../../../libraries/partials/mixins/lists' as mixins-lists;
 
 
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
+//------------------------------------
+
+.message.message--dashboard {
+  @include mixins-breakpoints.bp-min(large) {
+    display: flex;
+    flex-flow: nowrap row;
+  }
+
+  .message__content--primary {
+    @include mixins-breakpoints.bp-min(large) {
+      width: 100%;
+    }
+  }
+
+  .message__content--secondary {
+    @include mixins-breakpoints.bp-min(large) {
+      flex-shrink: 0;
+      margin-left: var(--surf-grid-gap);
+    }
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - General
 //------------------------------------
 
 .message.message--dashboard {
   background-color: var(--surf-color-gray-100);
   margin-top: 16px;
   padding: var(--surf-grid-gap);
-
-  &:first-child {
-    margin-top: 0;
-  }
 
   .message__title {
     color: var(--surf-color-navy);

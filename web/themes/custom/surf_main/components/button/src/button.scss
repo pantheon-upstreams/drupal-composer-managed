@@ -1,0 +1,78 @@
+//
+// Component - Atom - Button
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Full
+// - 04 - Ghost
+// - 05 - Colors
+// - 06 - Icons
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+// TBD
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.button {
+  display: inline-block;
+  font-size: var(--surf-font-size-24);
+  font-weight: var(--surf-font-weight-bold);
+  text-decoration: none;
+}
+
+
+
+
+//------------------------------------
+//  03 - Full
+//------------------------------------
+
+.button.button--full {
+  padding: 8px 16px;
+}
+
+
+
+
+//------------------------------------
+//  04 - Ghost
+//------------------------------------
+
+.button.button--ghost {
+}
+
+
+
+
+//------------------------------------
+//  05 - Colors
+//------------------------------------
+
+.button {
+  &.button--navy {
+    background-color: var(--surf-color-navy);
+    color: var(--surf-color-white);
+  }
+}
+
+
+
+
+//------------------------------------
+//  06 - Icons
+//------------------------------------
+
+
+.button.icon {
+
+}

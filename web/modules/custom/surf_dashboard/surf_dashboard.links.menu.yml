@@ -8,7 +8,7 @@ surf_dashboard.curriculum_units:
     attributes:
       class:
         - icon
-        - icon__type--illustration-document
+        - icon--illustration-document
 
 surf_dashboard.request:
   title: Request Curriculum
@@ -18,7 +18,7 @@ surf_dashboard.request:
     attributes:
       class:
         - icon
-        - icon icon__type--illustration-teacher
+        - icon icon--illustration-teacher
 
 surf_dashboard.tasks_challenges:
   title: Math tasks & design challenges
@@ -28,7 +28,7 @@ surf_dashboard.tasks_challenges:
     attributes:
       class:
         - icon
-        - icon__type--illustration-lightbulb
+        - icon--illustration-lightbulb
 
 surf_dashboard.visits:
   title: My field trips & presentations
@@ -40,7 +40,7 @@ surf_dashboard.visits:
     attributes:
       class:
         - icon
-        - icon__type--illustration-comment
+        - icon--illustration-comment
 
 surf_dashboard.events:
   title: My events
@@ -52,7 +52,7 @@ surf_dashboard.events:
     attributes:
       class:
         - icon
-        - icon__type--illustration-calendar
+        - icon--illustration-calendar
 
 surf_dashboard.my_account:
   title: My account
@@ -62,4 +62,4 @@ surf_dashboard.my_account:
     attributes:
       class:
         - icon
-        - icon__type--illustration-person
+        - icon--illustration-person
