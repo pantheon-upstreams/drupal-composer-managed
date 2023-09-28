@@ -1,30 +1,40 @@
-uuid: 2b8804c8-c0c5-42d0-87d1-3159e0b2c97d
+uuid: b3651497-772e-4090-bbfc-128f26f60a60
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.notification_message.dashboard_announcement.field_cta_link
-    - notification_message.type.dashboard_announcement
+    - field.field.notification_message.dashboard.field_link
+    - field.field.notification_message.dashboard.field_publish_date
+    - notification_message.type.dashboard
   module:
     - datetime
     - link
     - text
-id: notification_message.dashboard_announcement.default
+id: notification_message.dashboard.default
 targetEntityType: notification_message
-bundle: dashboard_announcement
+bundle: dashboard
 mode: default
 content:
-  field_cta_link:
+  field_link:
     type: link
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_date_only
+    third_party_settings: {  }
+    weight: 3
     region: content
   label:
     type: string
@@ -41,17 +51,9 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  publish_start_date:
-    type: datetime_custom
-    label: hidden
-    settings:
-      timezone_override: ''
-      date_format: n/d/y
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
   langcode: true
   publish_end_date: true
+  publish_start_date: true
   search_api_excerpt: true
   uid: true

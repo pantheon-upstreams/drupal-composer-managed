@@ -34,10 +34,12 @@
 
             {% for item in items %}
                 {% set rendered_content = item.content|without(
-                    'field_style_icon'
+                    'field_style_icon',
+                    'field_style_illustration'
                 )|render %}
 
                 {% set icon = item.entity.field_style_icon.value  %}
+                {% set illustration = item.entity.field_style_illustration.value %}
 
                 {% if item.url.isRouted and item.url.routeName == '<nolink>' %}
                     {% set menu_item_type = 'nolink' %}
@@ -61,7 +63,8 @@
                     'menu__link--level-' ~ (menu_level + 1),
                     item.in_active_trail ? 'menu__link--active-trail',
                     item.below ? 'icon icon__type--chevron-down',
-                    icon ? 'icon icon__type--' ~ icon|clean_class
+                    icon ? 'icon icon__type--' ~ icon|clean_class,
+                    illustration ? 'icon icon__type--illustration-' ~ illustration|clean_class
                 ] %}
 
                 <li {{ item.attributes.addClass(item_classes) }}>

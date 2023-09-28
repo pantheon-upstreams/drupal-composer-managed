@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Hero - Title Only
+name: Text - Section Title
 status: experimental
-group: Hero
+group: Text
 props:
   type: object
   required:

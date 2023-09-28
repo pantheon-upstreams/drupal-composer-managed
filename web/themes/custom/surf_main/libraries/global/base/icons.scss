@@ -26,6 +26,30 @@
 //  02 - Icons
 //------------------------------------
 
+.icon.icon__type--illustration-calendar:before {
+  background: url('../../../../images/illustrations/illustration-calendar.png') no-repeat center;
+}
+
+.icon.icon__type--illustration-comment:before {
+  background: url('../../../../images/illustrations/illustration-calendar.png') no-repeat center;
+}
+
+.icon.icon__type--illustration-document:before {
+  background: url('../../../../images/illustrations/illustration-document.png') no-repeat center;
+}
+
+.icon.icon__type--illustration-lightbulb:before {
+  background: url('../../../../images/illustrations/illustration-lightbulb.png') no-repeat center;
+}
+
+.icon.icon__type--illustration-person:before {
+  background: url('../../../../images/illustrations/illustration-person.png') no-repeat center;
+}
+
+.icon.icon__type--illustration-teacher:before {
+  background: url('../../../../images/illustrations/illustration-teacher.png') no-repeat center;
+}
+
 .icon.icon__type--user:before {
   background: svg-load('icon-user.svg') no-repeat center;
 }

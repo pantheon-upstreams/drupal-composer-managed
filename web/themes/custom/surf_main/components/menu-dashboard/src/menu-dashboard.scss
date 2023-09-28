@@ -1,0 +1,76 @@
+//
+// Navigation - Utility Menu
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/functions/animations' as functions-animations;
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../libraries/partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.menu.menu__name--dashboard {
+  ul.menu__list {
+    @include mixins-lists.list-reset();
+    margin: 0;
+  }
+}
+
+
+
+//------------------------------------
+//  02 - Level One
+//------------------------------------
+
+.menu.menu__name--dashboard {
+  > ul.menu__list {
+    @include mixins-breakpoints.bp-min(large) {
+      column-count: 2;
+      column-gap: var(--surf-grid-gap);
+    }
+  }
+
+  > ul.menu__list > li {
+    display: inline-block;
+    width: 100%;
+  }
+
+  > ul.menu__list > li > a.icon,
+  > ul.menu__list > li > button.icon,
+  > ul.menu__list > li > span.icon {
+    align-items: center;
+    color: var(--surf-color-black);
+    display: flex;
+    font-size: var(--surf-font-size-32);
+    font-weight: var(--surf-font-weight-bold);
+    flex-flow: nowrap row;
+    line-height: var(--surf-line-height-heading);
+    position: relative;
+    text-decoration: none;
+
+    &:before {
+      flex-shrink: 0;
+      height: 100px;
+      margin-right: var(--surf-grid-gap);
+      width: 100px;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-navy);
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,48 +1,49 @@
-uuid: 21e3284e-ee02-4683-9526-abc87fb7f02f
+uuid: 38e17a44-d289-4194-97ae-95e797624988
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.notification_message.dashboard_announcement.field_cta_link
-    - notification_message.type.dashboard_announcement
+    - field.field.notification_message.dashboard.field_link
+    - field.field.notification_message.dashboard.field_publish_date
+    - notification_message.type.dashboard
   module:
     - datetime
     - link
     - text
-id: notification_message.dashboard_announcement.default
+id: notification_message.dashboard.default
 targetEntityType: notification_message
-bundle: dashboard_announcement
+bundle: dashboard
 mode: default
 content:
-  field_cta_link:
+  field_link:
     type: link_default
-    weight: 97
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  field_publish_date:
+    type: datetime_default
+    weight: 97
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   label:
     type: string_textfield
-    weight: -15
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   message:
     type: text_textarea
-    weight: -5
+    weight: 1
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

@@ -22,7 +22,8 @@
 ] %}
 
 {% set rendered_content = content|without(
-    'header'
+    'announcements',
+    'navigation'
 ) %}
 
 {% set page_title = page_id == 'dashboard_home' ? user_display_name : page_title %}
@@ -39,8 +40,16 @@
             title: page_title,
         }) }}
 
-        {% if content.header %}
-            {{ content.header }}
+        {{ content.navigation }}
+
+        {% if content.announcements %}
+            <section class="section section__name--announcements">
+                {% include 'surf_main:text-section-title' with {
+                    title: "Announcements"|t
+                }%}
+
+                {{ content.announcements }}
+            </section>
         {% endif %}
 
         {{ rendered_content }}

@@ -117,4 +117,8 @@
   &.container__type--default {
     max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2))
   }
+
+  .region__name--content & {
+    padding-left: calc(var(--surf-grid-gap) * 2);
+  }
 }

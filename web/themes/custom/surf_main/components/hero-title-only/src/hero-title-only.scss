@@ -1,5 +1,5 @@
 //
-// Component - Breadcrumbs
+// Component - Hero Title Only
 //
 // - 01 - Imports
 // - 02 - General
@@ -10,22 +10,34 @@
 //  01 - Imports
 //------------------------------------
 
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
 //------------------------------------
 //  02 - General
 //------------------------------------
 
 .hero.hero__type--title-only {
+  padding: var(--surf-grid-gap) 0;
   position: relative;
 
   &:after {
     background: url('../../images/backgrounds/background-illustration-01.png');
+    background-size: cover;
     content: '';
     display: block;
-    height: 288px;
+    height: 200px;
     margin-right: -50vw;
     position: absolute;
     right: 50%;
     top: 0;
-    width: 464px;
+    width: 320px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      height: 288px;
+      width: 464px;
+    }
   }
 }

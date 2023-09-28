@@ -1,12 +1,12 @@
-uuid: 6a01bd2b-b415-41a2-8359-4afcf2a48c6a
+uuid: 69f4e447-ce7e-48bd-ac3d-1a6ba18c5a51
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - notification_message
-id: notification_message.field_cta_link
-field_name: field_cta_link
+id: notification_message.field_link
+field_name: field_link
 entity_type: notification_message
 type: link
 settings: {  }

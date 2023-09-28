@@ -1,0 +1,48 @@
+//
+// Component - Notification
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/functions/animations' as functions-animations;
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../libraries/partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.message.message--dashboard {
+  background-color: var(--surf-color-gray-100);
+  margin-top: 16px;
+  padding: var(--surf-grid-gap);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .message__title {
+    color: var(--surf-color-navy);
+    font-size: var(--surf-font-size-32);
+    margin-bottom: 8px;
+  }
+
+  .message__text p {
+    font-size: var(--surf-font-size-24);
+  }
+
+  .message__extra {
+    color: var(--surf-color-gray-600);
+    font-size: var(--surf-font-size-16);
+    margin-top: 8px;
+  }
+}

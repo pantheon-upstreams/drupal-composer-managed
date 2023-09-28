@@ -1,12 +1,12 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Hero - Title Only
+name: Menu - Dashboard
 status: experimental
-group: Hero
+group: Navigation
 props:
   type: object
   required:
-    - title
+    - content
   properties:
-    title:
-      title: Title
-      type: string
+    content:
+      title: Content
+      type: object
