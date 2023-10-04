@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display notification messages.
+ *
+ * Available variables:
+ * - count: The count of notification messages.
+ * - messages: An array of the notification messages entities.
+ */
+#}
+
+<div aria-live="polite" class="visually-hidden" id="notification-message-aria-announcement"></div>
+
+<div class="messages">
+  {{ messages }}
+</div>

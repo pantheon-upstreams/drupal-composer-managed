@@ -1,0 +1,20 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Notification
+status: experimental
+group: Molecule
+props:
+  type: object
+  required:
+    - notification_id
+  properties:
+    notification_attributes:
+      title: Attributes
+      type: string
+    notification_id:
+      title: ID
+      type: string
+  slots:
+    notification_content:
+      title: Content
+    notification_dismiss:
+      title: Dismiss

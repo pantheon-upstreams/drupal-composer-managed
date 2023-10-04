@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: dashboard
 label: Dashboard
-description: ''
+description: "The <em>Dashboard Menu</em> is used on a user's dashboard page."
 locked: false

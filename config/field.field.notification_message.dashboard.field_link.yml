@@ -1,0 +1,23 @@
+uuid: 0f6eae22-0c17-4a9b-9f8a-37a678b3eac6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.notification_message.field_link
+    - notification_message.type.dashboard
+  module:
+    - link
+id: notification_message.dashboard.field_link
+field_name: field_link
+entity_type: notification_message
+bundle: dashboard
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

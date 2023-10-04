@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Component for Notification
+ *
+ * Available props:
+ * - notification_attributes
+ * - notification_id
+ *
+ * Available slots:
+ * - notification_content
+ * - notification_dismiss
+ *
+ */
+#}
+
+{% set classes = [
+    'message',
+] %}
+
+<div {{ notification_attributes.addClass(classes) }} data-message-id="{{ notification_id }}">
+    {% block notification_content %}{% endblock %}
+    {% block notification_dismiss %}{% endblock %}
+</div>

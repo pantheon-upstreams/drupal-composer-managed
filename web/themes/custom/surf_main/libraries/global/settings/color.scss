@@ -29,10 +29,12 @@
 :root {
   --surf-color-white:     #FFFFFF;
   --surf-color-gray-100:  #F2F2F2;
-  --surf-color-gray-600:  #6D6D6D;
+  --surf-color-gray-500:  #6D6D6D;
+  --surf-color-gray-600:  #575966;
   --surf-color-gray-700:  #494949;
+  --surf-color-gray-800:  #3D404D;
   --surf-color-gray-900:  #222222;
-  --surf-color-black:     #000000;
+  --surf-color-black:     #1A1A1A;
 }
 
 
@@ -45,4 +47,5 @@
 :root {
   --surf-gradient-hz-blue:  linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
   --surf-gradient-vt-blue:  linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-navy));
+  --surf-gradient-vt-multi: linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-teal), var(--surf-color-navy), var(--surf-color-black));
 }

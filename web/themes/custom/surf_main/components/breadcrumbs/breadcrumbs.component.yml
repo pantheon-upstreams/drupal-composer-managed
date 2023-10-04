@@ -1,32 +1,12 @@
----
-$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: breadcrumbs
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 name: Breadcrumbs
-status: WIP
-componentType: molecule
-description: Breadcrumbs component
-schemas:
-  props:
-    type: object
-    properties:
-      items:
-        type: array
-        title: Items
-        items:
-          type: object
-          properties:
-            title:
-              type: string
-              title: Title
-              examples:
-                - "Home"
-            url:
-              type: string
-              title: Title
-              examples:
-                - "/"
-            current:
-              type: boolean
-              title: Current page
-              examples:
-                - false
+status: experimental
+group: Navigation
+props:
+  type: object
+  required:
+    - breadcrumbs
+  properties:
+    breadcrumbs:
+      title: Breadcrumbs
+      type: object

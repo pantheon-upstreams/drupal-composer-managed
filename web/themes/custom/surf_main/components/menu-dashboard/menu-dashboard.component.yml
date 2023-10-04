@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Menu - Dashboard
+status: experimental
+group: Navigation
+props:
+  type: object
+  required:
+    - content
+  properties:
+    content:
+      title: Content
+      type: object

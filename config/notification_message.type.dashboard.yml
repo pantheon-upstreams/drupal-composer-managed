@@ -1,0 +1,13 @@
+uuid: a65d43e8-92ae-4ebb-9f6d-ce4241d2681a
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard
+label: Dashboard
+help: ''
+description: "Use <em>Dashboard</em> notifications to display announcements on user's dashboard pages."
+allow_condition: true
+condition_datatype: {  }
+notification_dismiss:
+  show: false
+  button_text: Close
