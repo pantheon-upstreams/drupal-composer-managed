@@ -1,6 +1,0 @@
-$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: view
-name: view
-status: WIP
-componentType: molecule
-description: A view component

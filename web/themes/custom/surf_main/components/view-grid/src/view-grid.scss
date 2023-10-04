@@ -1,0 +1,25 @@
+//
+// Component - Organism - View Grid
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.view.view--grid {
+  background: lime;
+}

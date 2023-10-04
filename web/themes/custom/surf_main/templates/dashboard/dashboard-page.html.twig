@@ -32,12 +32,6 @@
 
 <div {{ attributes.addClass(classes) }}>
     <div class="container container__type--default">
-        {% if breadcrumbs|render %}
-            {% include 'surf_main:breadcrumbs' with {
-                breadcrumbs: breadcrumbs,
-            } %}
-        {% endif %}
-
         {{ include('surf_main:hero-title-only', {
             title: page_title,
         }) }}

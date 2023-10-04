@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Component for Notification
+ *
+ * Available props:
+ * - notification_attributes
+ * - notification_id
+ *
+ * Available slots:
+ * - notification_content
+ * - notification_dismiss
+ *
+ */
+#}
+
+{% set classes = [
+    'view',
+    'view--grid',
+] %}
+
+<div {{ view_attributes.addClass(classes) }}>
+    {% block view_title %}{% endblock %}
+    {% block view_header %}{% endblock %}
+    {% block view_filters %}{% endblock %}
+    {% block view_attach_before %}{% endblock %}
+    {% block view_rows %}{% endblock %}
+    {% block view_pager %}{% endblock %}
+    {% block view_attach_after %}{% endblock %}
+    {% block view_more %}{% endblock %}
+    {% block view_footer %}{% endblock %}
+</div>
