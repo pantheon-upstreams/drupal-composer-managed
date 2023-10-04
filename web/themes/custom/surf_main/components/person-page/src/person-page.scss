@@ -1,11 +1,26 @@
 @use '../../../libraries/partials/partials' as *;
 
+//
+// Person Page
+//
+// - 01 - Grid Related Styles
+//
+
 .c-person-page {
-  padding-block-end: rem(90px);
+  padding-block-end: rem(43px);
   position: relative;
 
+  @include bp-min(medium) {
+    padding-block-end: rem(50px);
+  }
+
+  @include bp-min(large) {
+    padding-block-end: rem(54px);
+  }
 
   @include bp-min(xxlarge) {
+    padding-block-end: rem(90px);
+
     &::before {
       background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
       content: '';
@@ -41,9 +56,14 @@
     margin: 0;
 
     a {
-      font-size: var(--surf-font-size-24);
+      font-size: var(--surf-font-size-18);
       font-weight: var(--surf-font-weight-book);
-      line-height: 1.4;
+      line-height: 1.44;
+
+      @include bp-min(medium) {
+        font-size: var(--surf-font-size-24);
+        line-height: 1.4;
+      }
     }
   }
 }
@@ -78,7 +98,9 @@
   }
 }
 
-// grid related
+//------------------------------------
+//  01 - Grid Related Styles
+//------------------------------------
 .c-person-page--with-img {
   .c-person-page__grid {
     display: grid;
@@ -97,7 +119,6 @@
     }
 
     @include bp-min(xlarge) {
-      gap: rem(62px);
       grid-template-columns: 9fr 3fr;
     }
 
