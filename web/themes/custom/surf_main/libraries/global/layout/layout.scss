@@ -119,6 +119,8 @@
   }
 
   .region__name--content & {
-    padding-left: calc(var(--surf-grid-gap) * 2);
+    @include mixins-breakpoints.bp-min(xlarge) {
+      padding-left: calc(var(--surf-grid-gap) * 2);
+    }
   }
 }

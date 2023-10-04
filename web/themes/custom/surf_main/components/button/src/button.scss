@@ -14,7 +14,7 @@
 //  01 - Imports
 //------------------------------------
 
-// TBD
+@use '../../../libraries/partials/functions/animations' as functions-animations;
 
 
 
@@ -28,6 +28,11 @@
   font-size: var(--surf-font-size-24);
   font-weight: var(--surf-font-weight-bold);
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 
@@ -62,6 +67,12 @@
   &.button--navy {
     background-color: var(--surf-color-navy);
     color: var(--surf-color-white);
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+
+    &:hover,
+    &:focus {
+      background-color: var(--surf-color-blue);
+    }
   }
 }
 
@@ -72,7 +83,27 @@
 //  06 - Icons
 //------------------------------------
 
-
 .button.icon {
+  padding-right: 56px;
 
+  &:before {
+    bottom: 0;
+    height: 32px;
+    margin: auto;
+    position: absolute;
+    right: 16px;
+    top: 0;
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    width: 32px;
+  }
+
+  &.icon--arrow-right:before {
+    background: svg-load('icon-arrow-right.svg', fill="#FFFFFF") no-repeat center;
+    transform: translateX(0);
+  }
+
+  &.icon--arrow-right:hover:before,
+  &.icon--arrow-right:focus:before {
+    transform: translateX(4px);
+  }
 }

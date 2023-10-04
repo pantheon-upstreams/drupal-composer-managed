@@ -26,6 +26,14 @@
 //  02 - Icons
 //------------------------------------
 
+.icon.icon--arrow-right:before {
+  background: svg-load('icon-arrow-right.svg') no-repeat center;
+}
+
+.icon.icon--chevron-down:before {
+  background: svg-load('icon-angle-down.svg') no-repeat center;
+}
+
 .icon.icon--illustration-calendar:before {
   background: url('../../../../images/illustrations/illustration-calendar.png') no-repeat center;
 }
@@ -52,10 +60,6 @@
 
 .icon.icon--user:before {
   background: svg-load('icon-user.svg') no-repeat center;
-}
-
-.icon.icon--chevron-down:before {
-  background: svg-load('icon-angle-down.svg') no-repeat center;
 }
 
 .icon.icon--search:before {

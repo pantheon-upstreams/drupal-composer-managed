@@ -68,6 +68,20 @@ variant_settings:
           weight: 0
           additional: {  }
       third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Events
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: News
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
   title_type: manual
   manual_title: 'My Dashboard'
   title_from_block: ''

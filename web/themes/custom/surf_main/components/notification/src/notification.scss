@@ -33,9 +33,12 @@
   }
 
   .message__content--secondary {
+    margin-top: 24px;
+
     @include mixins-breakpoints.bp-min(large) {
       flex-shrink: 0;
       margin-left: var(--surf-grid-gap);
+      margin-top: 0;
     }
   }
 

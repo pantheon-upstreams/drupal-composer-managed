@@ -26,13 +26,15 @@
   }
 
   &:before {
-    background: var(--surf-gradient-vt-multi);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 24px;
+    @include mixins-breakpoints.bp-min(xlarge) {
+      background: var(--surf-gradient-vt-multi);
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 24px;
+    }
   }
 }
