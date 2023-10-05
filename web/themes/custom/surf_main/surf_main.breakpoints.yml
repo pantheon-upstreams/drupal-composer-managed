@@ -1,0 +1,38 @@
+surf_main.small:
+  label: 'Small'
+  mediaQuery: 'all and (min-width: 480px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+
+surf_main.medium:
+  label: 'Medium'
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+
+surf_main.large:
+  label: 'Large'
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x
+
+surf_main.x_large:
+  label: 'X Large'
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 2x
+
+surf_main.2x_large:
+  label: '2X Large'
+  mediaQuery: 'all and (min-width: 1920px)'
+  weight: 4
+  multipliers:
+    - 1x

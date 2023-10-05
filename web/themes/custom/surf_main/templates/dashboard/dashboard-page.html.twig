@@ -32,9 +32,9 @@
 
 <div {{ attributes.addClass(classes) }}>
     <div class="container container__type--default">
-        {{ include('surf_main:hero-title-only', {
+        {% include 'surf_main:hero-title-only' with {
             title: page_title,
-        }) }}
+        } %}
 
         {{ content.navigation }}
 

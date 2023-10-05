@@ -1,0 +1,65 @@
+//
+// Component - Molecule - Teaser Default
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/functions/animations' as functions-animations;
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.teaser.teaser--default {
+  .teaser__media {
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .teaser__media img {
+    transform: scale(1);
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    width: 100%;
+  }
+
+  &:hover .teaser__media img,
+  &:focus-within .teaser__media img {
+    transform: scale(1.08);
+  }
+
+  .teaser__title {
+    font-size: var(--surf-font-size-32);
+  }
+
+  .teaser__text {
+    margin-top: 8px;
+  }
+
+  .teaser__text p {
+    color: var(--surf-color-gray-600);
+    font-size: var(--surf-font-size-16);
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Curriculum Module Status
+//------------------------------------
+
+.teaser.teaser--default + .form-item {
+  color: var(--surf-color-gray-800);
+  font-size: var(--surf-font-size-14);
+  margin-top: 24px;
+}

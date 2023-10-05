@@ -16,6 +16,15 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
 ] %}
 
+{% set button_classes = [
+    'button--navy',
+    'button--full',
+    'icon',
+    'icon--arrow-right'
+] %}
+
+{% set button_attributes = create_attribute() %}
+
 {% embed 'surf_main:view-grid' with {
     view_attributes: attributes.addClass(classes),
 } %}
@@ -84,10 +93,12 @@
     {% endblock %}
 
     {% block view_footer %}
-        {% if footer %}
-            <div class="view__footer">
-                {{ footer }}
-            </div>
-        {% endif %}
+        <div class="view__footer">
+            {% include 'surf_main:button' with {
+                button_attributes: button_attributes.addClass(button_classes),
+                button_title: 'Browse More Curriculum Units'|t,
+                button_url: '/browse-curriculum-units',
+            } %}
+        </div>
     {% endblock %}
 {% endembed %}

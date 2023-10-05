@@ -1,0 +1,12 @@
+uuid: e6f8e449-0759-453f-aa08-d750bcaa7c5b
+langcode: en
+status: true
+dependencies: {  }
+label: 'Teaser - Default'
+id: teaser_default
+description: ''
+aspect_ratio: '21:13'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

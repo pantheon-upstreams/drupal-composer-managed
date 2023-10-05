@@ -199,20 +199,7 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: '<a href="/browse-curriculum-units">Browse More Curriculum Units</a>'
-            format: basic_html
-          tokenize: false
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
