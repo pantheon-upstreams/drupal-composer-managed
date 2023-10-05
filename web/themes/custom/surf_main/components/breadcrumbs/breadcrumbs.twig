@@ -1,25 +1,14 @@
-{%
-  set classes = [
-  'c-breadcrumb',
-]
-%}
+{#
+/**
+ * @file
+ * Component for Breadcrumbs
 
-<nav aria-label="Breadcrumb" {{ attributes.addClass(classes).merge(attributes) }}>
-  {% block breadcrumbs_block %}
-    <ol class="c-breadcrumb__list">
-      {% for item in items %}
+ * Available props:
+ * - breadcrumbs: [object] the final, built, navigational element.
+ *
+ */
+#}
 
-        {% if item.current == true %}
-          <li class="c-breadcrumb__item">
-            <a href="{{item.url}}" aria-current="page">{{item.title}}</a>
-          </li>
-        {% else %}
-          <li class="c-breadcrumb__item">
-            <a href="{{item.url}}">{{item.title}}</a>
-          </li>
-        {% endif %}
-
-      {% endfor %}
-    </ol>
-  {% endblock %}
-</nav>
+<div class="breadcrumbs">
+    {{ breadcrumbs }}
+</div>

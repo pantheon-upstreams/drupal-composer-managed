@@ -1,0 +1,42 @@
+//
+// Navigation - Utility Menu
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/functions/animations' as functions-animations;
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../libraries/partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.heading.heading__type--section-title {
+  display: block;
+  margin-bottom: var(--surf-grid-gap);
+  margin-top: calc(var(--surf-grid-gap) * 2);
+  padding-top: 48px;
+  position: relative;
+
+  &:before {
+    border-left: solid 2px var(--surf-color-gray-800);
+    border-top: solid 2px var(--surf-color-gray-800);
+    content: '';
+    display: block;
+    height: 32px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

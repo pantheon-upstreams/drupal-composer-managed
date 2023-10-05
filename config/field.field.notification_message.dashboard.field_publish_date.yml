@@ -1,0 +1,24 @@
+uuid: 16249a13-b6c1-4e5d-b9c1-5ce26aace6aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.notification_message.field_publish_date
+    - notification_message.type.dashboard
+  module:
+    - datetime
+id: notification_message.dashboard.field_publish_date
+field_name: field_publish_date
+entity_type: notification_message
+bundle: dashboard
+label: 'Publish Date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

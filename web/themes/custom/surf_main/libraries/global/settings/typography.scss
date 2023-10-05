@@ -49,20 +49,16 @@
   --surf-font-size-16: #{functions-calculations.rem(16px)};
   --surf-font-size-18: #{functions-calculations.rem(18px)};
   --surf-font-size-22: #{functions-calculations.rem(22px)};
-  --surf-font-size-24: #{functions-calculations.rem(24px)};
+  --surf-font-size-24: #{functions-calculations.rem(18px)};
   --surf-font-size-28: #{functions-calculations.rem(28px)};
-  --surf-font-size-32: #{functions-calculations.rem(32px)};
-  --surf-font-size-40: #{functions-calculations.rem(32px)};
-  --surf-font-size-52: #{functions-calculations.rem(40px)};
-  --surf-font-size-96: #{functions-calculations.rem(40px)};
-  --surf-font-size-176: #{functions-calculations.rem(48px)};
+  --surf-font-size-32: #{functions-calculations.rem(30px)};
 
-  @include mixins-breakpoints.bp-min(medium) {
-    --surf-font-size-96: #{functions-calculations.rem(52px)};
-    --surf-font-size-176: #{functions-calculations.rem(100px)};
-  }
+  --surf-font-size-40: #{functions-calculations.rem(32px)};  --surf-font-size-52: #{functions-calculations.rem(40px)};
+  --surf-font-size-96: #{functions-calculations.rem(52px)};
+  --surf-font-size-176: #{functions-calculations.rem(100px)};
 
   @include mixins-breakpoints.bp-min(large) {
+    --surf-font-size-32: #{functions-calculations.rem(32px)};
     --surf-font-size-40: #{functions-calculations.rem(40px)};
     --surf-font-size-52: #{functions-calculations.rem(56px)};
     --surf-font-size-96: #{functions-calculations.rem(64px)};
@@ -70,6 +66,7 @@
   }
 
   @include mixins-breakpoints.bp-min(xlarge) {
+    --surf-font-size-24: #{functions-calculations.rem(24px)};
     --surf-font-size-96: #{functions-calculations.rem(96px)};
     --surf-font-size-176: #{functions-calculations.rem(176px)};
   }

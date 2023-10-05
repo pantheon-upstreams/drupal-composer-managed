@@ -1,0 +1,20 @@
+uuid: 07d7a93c-4fe6-472b-91e2-008c92006f98
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - notification_message
+id: notification_message.field_publish_date
+field_name: field_publish_date
+entity_type: notification_message
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

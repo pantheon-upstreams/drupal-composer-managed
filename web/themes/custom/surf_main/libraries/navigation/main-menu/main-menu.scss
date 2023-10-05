@@ -142,7 +142,7 @@
     visibility: hidden;
 
     @include mixins-breakpoints.bp-min(xxlarge) {
-      background: url('../../../../images/backgrounds/background-particles-light-gray.svg') no-repeat left top var(--surf-color-white);
+      background: url('../../../../images/backgrounds/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
       max-height: inherit;
       min-width: 740px;
       padding: 32px;

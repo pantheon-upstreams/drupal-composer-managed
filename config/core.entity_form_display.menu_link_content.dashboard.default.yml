@@ -1,0 +1,24 @@
+uuid: e83bd32b-67ff-4afe-9d45-bf5ce753e2eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dashboard
+  module:
+    - link
+id: menu_link_content.dashboard.default
+targetEntityType: menu_link_content
+bundle: dashboard
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  view_mode: true

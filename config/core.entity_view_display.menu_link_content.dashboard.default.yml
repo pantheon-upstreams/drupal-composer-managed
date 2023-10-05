@@ -1,0 +1,19 @@
+uuid: db30aab3-9f32-494f-b254-baa15534572f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.dashboard
+id: menu_link_content.dashboard.default
+targetEntityType: menu_link_content
+bundle: dashboard
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

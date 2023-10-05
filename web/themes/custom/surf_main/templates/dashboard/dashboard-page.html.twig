@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Theme implementation for page manager pages prefixed with "dashboard_"
+
+ * Available variables
+ * - content: Main render variable with page manager regions
+ * - user_display_name: The first and last name, (or username) of the current user
+ * - page_id: The ID for the current page manager page
+ * - page_title: The label for the page manager page entity (only editable in config)
+ * - node_title: The node title if viewing a details page for an event or curriculum module
+ *     This is probably not needed but left in place for reference in case anything from the
+ *     rest of the node is needed here, that can be modified in the same PageVariantViewBuilder custom class.
+ *
+ * @see surf_dashboard_entity_type_alter()
+ * @see template_preprocess_dashboard_page()
+ */
+#}
+
+{% set classes = [
+    'dashboard'
+] %}
+
+{% set rendered_content = content|without(
+    'announcements',
+    'events',
+    'navigation',
+    'news'
+) %}
+
+{% set page_title = page_id == 'dashboard_home' ? user_display_name : page_title %}
+
+<div {{ attributes.addClass(classes) }}>
+    <div class="container container__type--default">
+        {% if breadcrumbs|render %}
+            {% include 'surf_main:breadcrumbs' with {
+                breadcrumbs: breadcrumbs,
+            } %}
+        {% endif %}
+
+        {{ include('surf_main:hero-title-only', {
+            title: page_title,
+        }) }}
+
+        {{ content.navigation }}
+
+        {% if content.announcements %}
+            <section class="section section--announcements">
+                {% include 'surf_main:section-title' with {
+                    title: "Announcements"|t
+                }%}
+
+                {{ content.announcements }}
+            </section>
+        {% endif %}
+
+        {% if content.events %}
+            <section class="section section--events">
+                {% include 'surf_main:section-title' with {
+                    title: "Upcoming Events at SURF"|t
+                }%}
+
+                {{ content.events }}
+            </section>
+        {% endif %}
+
+        {% if content.news %}
+            <section class="section section--news">
+                {% include 'surf_main:section-title' with {
+                    title: "Related News"|t
+                }%}
+
+                {{ content.news }}
+            </section>
+        {% endif %}
+
+        {{ rendered_content }}
+    </div>
+</div>

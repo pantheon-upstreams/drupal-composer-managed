@@ -72,6 +72,11 @@ region--header-utility:
 # 04 - Navigation
 #------------------------------------#
 
+menu--dashboard:
+  css:
+    theme:
+      dist/css/navigation/dashboard-menu/dashboard-menu.css: { minified: true }
+
 menu--main:
   css:
     theme:
