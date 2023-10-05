@@ -1,3 +1,21 @@
+{#
+/**
+ * @file
+ * Component for Person Page.
+
+ * Available props:
+ * - title: [string] the page title.
+ * - job_title: [string] the job title of the person.
+ * - phone: [string] the office phone number of the person.
+ * - email: [string] the email address of the person.
+ * - body: [string] the body text.
+ * - media: [string] the media image of the person.
+ *
+ */
+#}
+
+{#{% set media = '' %}#}
+
 {%
   set classes = [
   'c-person-page',
@@ -6,23 +24,22 @@
 %}
 
 <article {{ attributes.addClass(classes).merge(attributes) }}>
-  <div class="container container__type--person">
+  <div class="container{% if media %} container__type--large{% else %} container__type--small{% endif %}">
     <div class="c-person-page__grid">
-      {# Breadcumbs #}
-      {% if breadcrumbs %}
-        {{ include('surf_main:breadcrumbs', {
-          items: breadcrumbs,
-        }, with_context = false) }}
+
+      {% if breadcrumbs|render %}
+        {% include 'surf_main:breadcrumbs' with {
+          breadcrumbs: breadcrumbs,
+        } %}
       {% endif %}
 
-      {# Title / Full Name #}
       <h1 class="person-content__title">
         {{ title }}
       </h1>
+
       <div class="c-person-page__content">
         <div class="c-person-page__content-grid">
 
-          {# Job Title #}
           {% if job_title %}
             <h2 class="person-content__job-title">
               {{ job_title }}
@@ -32,14 +49,12 @@
           {% if phone or email %}
             <div class="person-content__contact-wrapper">
 
-              {# Phone #}
               {% if phone %}
                 <p class="person-content__phone">
                   {{ phone }}
                 </p>
               {% endif %}
 
-              {# Email #}
               {% if email %}
                 <p class="person-content__email">
                   <a href="mailto:{{ email }}">{{ 'Contact'|t }}</a>
@@ -49,7 +64,6 @@
             </div>
           {% endif %}
 
-          {# Body#}
           {% if body %}
             <div class="person-content__wrapper">
               {{ body }}

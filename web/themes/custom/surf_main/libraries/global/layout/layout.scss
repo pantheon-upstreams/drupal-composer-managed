@@ -105,7 +105,27 @@
   }
 
   .region__name--content & {
+
     @include mixins-breakpoints.bp-min(xlarge) {
       padding-left: calc(var(--surf-grid-gap) * 2);
+    }
+  }
+
+  &.container__type--large {
+    --surf-grid-gap: 15px;
+    max-width: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
+
+    @include mixins-breakpoints.bp-min(medium) {
+      --surf-grid-gap: 40px;
+    }
+  }
+
+  &.container__type--small {
+    --surf-grid-gap: 15px;
+    max-width: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
+
+    @include mixins-breakpoints.bp-min(medium) {
+      --surf-grid-gap: 40px;
+    }
   }
 }

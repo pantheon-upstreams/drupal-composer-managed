@@ -3,32 +3,18 @@
 //
 // Person Page
 //
-// - 01 - Grid Related Styles
+// - 01 - Grid Styles
 //
-
 .c-person-page {
-  padding-block-end: rem(43px);
+  padding-block-end: rem(52px);
   position: relative;
 
-  @include bp-min(medium) {
-    padding-block-end: rem(50px);
-  }
-
   @include bp-min(large) {
-    padding-block-end: rem(54px);
+    padding-block-end: rem(80px);
   }
 
   @include bp-min(xxlarge) {
-    padding-block-end: rem(90px);
-
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      content: '';
-      height: 100%;
-      position: absolute;
-      width: rem(28px);
-      z-index: 2;
-    }
+    padding-block-end: rem(86px);
   }
 }
 
@@ -99,12 +85,35 @@
 }
 
 //------------------------------------
-//  01 - Grid Related Styles
+//  01 - Grid Styles
 //------------------------------------
+.c-person-page__grid {
+  display: grid;
+  gap: rem(32px);
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  max-width: rem(619px);
+}
+
 .c-person-page--with-img {
+  padding-block-end: rem(43px);
+
+  @include bp-min(medium) {
+    padding-block-end: rem(50px);
+  }
+
+  @include bp-min(large) {
+    padding-block-end: rem(54px);
+  }
+
+  @include bp-min(xxlarge) {
+    padding-block-end: rem(90px);
+  }
+
   .c-person-page__grid {
     display: grid;
     gap: rem(32px);
+    max-width: none;
 
     @include bp-min(medium) {
       grid-template-areas: 'header header'

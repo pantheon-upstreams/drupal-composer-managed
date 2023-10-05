@@ -67,7 +67,16 @@
  */
 #}
 
-{% set rendered_content = content|render %}
+{%
+  set rendered_fields = [
+    'field_name',
+    'field_job_title',
+    'body',
+    'field_phone_office',
+    'field_email',
+    'field_media_primary',
+  ]
+%}
 
 {{ include('surf_main:person-page', {
   title: content.field_name|field_value,
@@ -78,3 +87,5 @@
   media: content.field_media_primary,
   attributes,
 }, with_context = false) }}
+
+{{ content|without(rendered_fields) }}
