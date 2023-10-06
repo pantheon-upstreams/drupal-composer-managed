@@ -84,11 +84,15 @@ function surf_curriculum_download_request_item_view(array &$build, \Drupal\Core\
     }
 
     $build['status_description'] = [
-      '#type' => 'item',
-      '#markup' => t($status_description, [
+      '#type' => 'html_tag',
+      '#tag' => 'p',
+      '#value' => t($status_description, [
         '@label' => $state_label,
         '@date' => $status_date ? $status_date->format('F j, Y') : '',
-      ])
+      ]),
+      '#attributes' => [
+        'class' => 'status-description',
+      ],
     ];
   }
 }

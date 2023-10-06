@@ -24,7 +24,7 @@
 
 .view.view--grid {
   margin-bottom: 40px;
-  
+
   @include mixins-breakpoints.bp-min(large) {
     margin-bottom: 56px;
   }

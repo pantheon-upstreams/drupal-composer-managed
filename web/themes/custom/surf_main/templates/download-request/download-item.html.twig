@@ -16,11 +16,6 @@
  */
 #}
 
-{% set rendered_content = content|without(
-    'field_curriculum_module'
-) %}
-
 {% if content %}
-    {{ content.field_curriculum_module|field_value }}
-    {{ rendered_content }}
+    {{- content -}}
 {% endif %}
