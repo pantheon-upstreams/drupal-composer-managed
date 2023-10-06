@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_curriculum_units
-    - system.menu.dashboard
   module:
     - ctools
     - layout_discovery
-    - menu_block
 id: dashboard_curriculum_units-layout_builder-1
 label: Details
 weight: 0
@@ -22,36 +20,9 @@ variant_settings:
     -
       layout_id: layout_onecol
       layout_settings:
-        label: Header
-        context_mapping: {  }
-      components: {  }
-      third_party_settings: {  }
-    -
-      layout_id: layout_onecol
-      layout_settings:
         label: 'Main content'
         context_mapping: {  }
       components:
-        6f0d8838-2b59-4cdc-a564-13056642f2b5:
-          uuid: 6f0d8838-2b59-4cdc-a564-13056642f2b5
-          region: content
-          configuration:
-            id: 'menu_block:dashboard'
-            label: Dashboard
-            label_display: '0'
-            provider: menu_block
-            context_mapping: {  }
-            follow: false
-            follow_parent: child
-            label_link: false
-            label_type: block
-            level: 1
-            depth: 0
-            expand_all_items: false
-            parent: 'dashboard:'
-            suggestion: dashboard
-          weight: 1
-          additional: {  }
         798dd14d-9d6b-400f-9424-22069658041b:
           uuid: 798dd14d-9d6b-400f-9424-22069658041b
           region: content
