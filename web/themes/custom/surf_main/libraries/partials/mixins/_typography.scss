@@ -93,21 +93,15 @@
 
 @mixin surf-font-heading-one() {
   font-size: rem(48px);
-  line-height: 90%;
+  line-height: 0.9;
 
   @include bp-min(medium) {
     font-size: rem(100px);
-    line-height: 94%;
+    line-height: 0.94;
   }
 
   @include bp-min(large) {
     font-size: rem(132px);
-    line-height: 94%;
-  }
-
-  @include bp-min(xlarge) {
-    font-size: rem(176px);
-    line-height: 90%;
   }
 }
 

@@ -9,14 +9,13 @@
 //------------------------------------
 //  01 - Theme Colors
 //------------------------------------
-
 :root {
-  --surf-color-red:     #CC2F08;
-  --surf-color-orange:  #FF6A00;
-  --surf-color-gold:    #FFBB00;
-  --surf-color-teal:    #00807E;
-  --surf-color-blue:    #007AB8;
-  --surf-color-navy:    #000080;
+  --surf-color-red: #cc2f08;
+  --surf-color-orange: #ff6a00;
+  --surf-color-gold: #ffbb00;
+  --surf-color-teal: #00807e;
+  --surf-color-blue: #007ab8;
+  --surf-color-navy: #000080;
 }
 
 
@@ -25,16 +24,16 @@
 //------------------------------------
 //  02 - Grayscale
 //------------------------------------
-
 :root {
-  --surf-color-white:     #FFFFFF;
-  --surf-color-gray-100:  #F2F2F2;
+  --surf-color-white: #ffffff;
+  --surf-color-gray-100: #f2f2f2;
   --surf-color-gray-500:  #6D6D6D;
   --surf-color-gray-600:  #575966;
-  --surf-color-gray-700:  #494949;
+  --surf-color-gray-650: #575966;
+  --surf-color-gray-700: #494949;
   --surf-color-gray-800:  #3D404D;
-  --surf-color-gray-900:  #222222;
-  --surf-color-black:     #1A1A1A;
+  --surf-color-gray-900: #222222;
+  --surf-color-black: #1A1A1A;
 }
 
 
@@ -43,9 +42,8 @@
 //------------------------------------
 //  03 - Gradients
 //------------------------------------
-
 :root {
-  --surf-gradient-hz-blue:  linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
+  --surf-gradient-hz-blue: linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
   --surf-gradient-vt-blue:  linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-navy));
   --surf-gradient-vt-multi: linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-teal), var(--surf-color-navy), var(--surf-color-black));
 }

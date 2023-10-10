@@ -13,10 +13,10 @@
 //------------------------------------
 
 $grid-breakpoints: (
-        xsmall:   0,
-        small:    576px,
-        medium:   769px,
-        large:    992px,
-        xlarge:   1200px,
-        xxlarge:  1400px,
+  xsmall:   0,
+  small:    576px,
+  medium:   768px, // tablet
+  large:    992px, // smdesk
+  xlarge:   1200px,
+  xxlarge:  1400px, // lgdesk
 );

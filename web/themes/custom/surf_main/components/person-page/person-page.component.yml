@@ -33,15 +33,8 @@ schemas:
         type: string
         examples:
           - johndoe@test.com
-      image_url:
+      media:
+        title: Media
         type: string
-        title: Image URL
-        description: The url for the image
         examples:
-          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
-      image_alt:
-        type: string
-        title: Image Alt Text
-        description: The primary alt text for the image.
-        examples:
-          - "Ea irure adipisicing"
+          - '<img loading="eager" src="/sites/default/files/2023-03/deb-wolf.jpg" width="302" height="381" alt="Deb Wolf">'
