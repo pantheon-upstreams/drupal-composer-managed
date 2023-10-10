@@ -1,0 +1,26 @@
+uuid: 46dff035-9643-4068-854e-d5c972963cb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.teaser_default
+  module:
+    - crop
+name: small_480w_297h
+label: 'Small (480W x 297H)'
+effects:
+  099ce956-2b4f-44aa-8662-9f49ba67b16e:
+    uuid: 099ce956-2b4f-44aa-8662-9f49ba67b16e
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: teaser_default
+      automatic_crop_provider: null
+  aa674d53-51e0-437b-9a3b-87fa7943db8a:
+    uuid: aa674d53-51e0-437b-9a3b-87fa7943db8a
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 480
+      height: 297
+      anchor: center-center

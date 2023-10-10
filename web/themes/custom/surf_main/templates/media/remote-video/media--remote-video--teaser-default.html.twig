@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods.
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% extends 'media.html.twig' %}
+
+{% set rendered_content = content|without(
+    'thumbnail'
+) %}
+
+{% block content %}
+    {{ content.thumbnail|field_value }}
+    {{ rendered_content }}
+{% endblock %}

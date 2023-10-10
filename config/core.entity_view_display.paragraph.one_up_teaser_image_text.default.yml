@@ -7,10 +7,8 @@ dependencies:
     - field.field.paragraph.one_up_teaser_image_text.field_heading_left
     - field.field.paragraph.one_up_teaser_image_text.field_image_right
     - field.field.paragraph.one_up_teaser_image_text.field_link_right
-    - image.style.full_teaser
     - paragraphs.paragraphs_type.one_up_teaser_image_text
   module:
-    - image
     - link
     - text
 id: paragraph.one_up_teaser_image_text.default
@@ -33,17 +31,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_image_right:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: full_teaser
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_link_right:
     type: link
     label: hidden
@@ -58,5 +45,6 @@ content:
     region: content
 hidden:
   created: true
+  field_image_right: true
   search_api_excerpt: true
   uid: true

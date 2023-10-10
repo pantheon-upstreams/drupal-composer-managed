@@ -1,6 +1,1 @@
 <?php
-
-function surf_main_preprocess_field(&$variables) {
-  $test = 'test';
-  $var = 1;
-}

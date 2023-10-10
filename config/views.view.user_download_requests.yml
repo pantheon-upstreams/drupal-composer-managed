@@ -178,12 +178,12 @@ display:
       style:
         type: html_list
         options:
-          row_class: ''
-          default_row_class: true
+          row_class: view__item
+          default_row_class: false
           uses_fields: false
-          type: ul
-          wrapper_class: item-list
-          class: ''
+          type: ol
+          wrapper_class: view__items-wrapper
+          class: view__items
       row:
         type: 'entity:download_request'
         options:
@@ -199,20 +199,7 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: '<a href="/browse-curriculum-units">Browse More Curriculum Units</a>'
-            format: basic_html
-          tokenize: false
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1

@@ -1,0 +1,51 @@
+//
+// Component - Organism - View Grid
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../libraries/partials/mixins/layout' as mixins-layout;
+@use '../../../libraries/partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.view.view--grid {
+  margin-bottom: 40px;
+
+  @include mixins-breakpoints.bp-min(large) {
+    margin-bottom: 56px;
+  }
+
+  .view__items {
+    @include mixins-lists.list-reset();
+
+    @include mixins-breakpoints.bp-min(medium) {
+      @include mixins-layout.flex-grid(2, '.view__item', 40px, 40px);
+    }
+
+    @include mixins-breakpoints.bp-min(large) {
+      @include mixins-layout.flex-grid(3, '.view__item', 56px, 56px);
+    }
+  }
+
+  .view__footer {
+    margin-top: 40px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      margin-top: 56px;
+    }
+  }
+}

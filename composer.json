@@ -50,6 +50,7 @@
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/google_analytics": "^4.0",
         "drupal/honeypot": "~2.0",
+        "drupal/image_widget_crop": "^2.4",
         "drupal/imce": "^3.0",
         "drupal/inline_entity_form": "~1.0",
         "drupal/layout_paragraphs": "^2.0",

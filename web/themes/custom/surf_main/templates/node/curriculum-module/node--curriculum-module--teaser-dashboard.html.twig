@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a node.
+ *
+ * Available variables:
+ * -
+ *
+ * @see templates/node/node.html.twig
+ */
+#}
+
+{% set classes = [
+    'node',
+    'node--' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--' ~ view_mode|clean_class,
+] %}
+
+{% set rendered_content = content|without(
+    'body',
+    'field_media',
+    'label'
+) %}
+
+{{ rendered_content }}
+
+{% embed 'surf_main:teaser-default' with {
+    teaser_attributes: attributes.addClass(classes),
+    teaser_media: content.field_media|field_value,
+    teaser_link: url,
+    teaser_title: label|field_value,
+    teaser_text: content.body|field_value,
+} %}
+{% endembed %}
