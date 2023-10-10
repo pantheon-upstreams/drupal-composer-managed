@@ -51,11 +51,11 @@ const paths = {
   },
   component: {
     styles: {
-      src: 'components/*/src/*.scss',
+      src: 'components/**/src/*.scss',
       dest: 'components',
     },
     scripts: {
-      src: './components/*/src/*.js',
+      src: './components/**/src/*.js',
       dest: './',
     },
   },
