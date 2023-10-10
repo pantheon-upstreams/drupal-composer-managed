@@ -4,11 +4,9 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_events
-    - system.menu.dashboard
   module:
     - ctools
     - layout_discovery
-    - menu_block
     - surf_registration
 id: dashboard_events-layout_builder-1
 label: Details
@@ -26,26 +24,6 @@ variant_settings:
         label: 'Main content'
         context_mapping: {  }
       components:
-        a2fbd6b9-151d-40e1-8ffc-cd616bc1cc95:
-          uuid: a2fbd6b9-151d-40e1-8ffc-cd616bc1cc95
-          region: content
-          configuration:
-            id: 'menu_block:dashboard'
-            label: Dashboard
-            label_display: '0'
-            provider: menu_block
-            context_mapping: {  }
-            follow: false
-            follow_parent: child
-            label_link: false
-            label_type: block
-            level: 1
-            depth: 0
-            expand_all_items: false
-            parent: 'dashboard:'
-            suggestion: dashboard
-          weight: 1
-          additional: {  }
         914b4ec9-8ba2-4448-aeef-2dd8fc54b05a:
           uuid: 914b4ec9-8ba2-4448-aeef-2dd8fc54b05a
           region: content

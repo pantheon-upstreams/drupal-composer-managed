@@ -1,31 +1,25 @@
-uuid: 7faf2e61-04a7-44aa-a257-2a80c9b9be61
+uuid: d12c5def-7059-49e5-bebe-0a3f0449b4c5
 langcode: en
 status: true
 dependencies:
   config:
     - system.menu.main
   module:
-    - menu_block
+    - system
   theme:
     - surf_main
-id: surf_main_mainmenu
+id: surf_main_main_menu
 theme: surf_main
 region: header_primary
 weight: 0
 provider: null
-plugin: 'menu_block:main'
+plugin: 'system_menu_block:main'
 settings:
-  id: 'menu_block:main'
+  id: 'system_menu_block:main'
   label: 'Main menu'
   label_display: '0'
-  provider: menu_block
-  follow: false
-  follow_parent: child
-  label_link: false
-  label_type: block
+  provider: system
   level: 1
   depth: 0
   expand_all_items: true
-  parent: 'main:'
-  suggestion: main
 visibility: {  }

@@ -31,9 +31,9 @@
  */
 
 $databases['default']['default'] = array(
-  'database' => 'drupal9',
-  'username' => 'drupal9',
-  'password' => 'drupal9',
+  'database' => 'pantheon',
+  'username' => 'pantheon',
+  'password' => 'pantheon',
   'prefix' => '',
   'host' => 'database',
   'port' => '',

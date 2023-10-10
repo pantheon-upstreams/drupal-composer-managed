@@ -1,0 +1,38 @@
+//
+// Component - Organism - View List
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../libraries/partials/mixins/layout' as mixins-layout;
+@use '../../../libraries/partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.view.view--list {
+  .view__items {
+    @include mixins-lists.list-reset();
+    margin: 0;
+  }
+
+  .view__item {
+    border-top: solid 1px var(--surf-color-black);
+  }
+
+  .view__item:not(:first-child) {
+    margin-top: 40px;
+  }
+}

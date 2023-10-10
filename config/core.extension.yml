@@ -62,7 +62,6 @@ module:
   maxlength: 0
   media: 0
   media_library: 0
-  menu_block: 0
   menu_item_extras: 0
   menu_ui: 0
   metatag: 0
@@ -98,7 +97,6 @@ module:
   search_api_solr: 0
   serialization: 0
   shortcut: 0
-  simple_block: 0
   smart_date: 0
   state_machine: 0
   structure_sync: 0
