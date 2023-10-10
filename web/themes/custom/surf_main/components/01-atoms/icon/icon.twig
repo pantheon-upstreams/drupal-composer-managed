@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Component for a Icon
+ *
+ * Available props:
+ * - icon_position:
+ * - icon_title:
+ * - icon_type:
+ *
+ */
+#}
+
+{% set classes = [
+    'a-icon',
+    'a-icon--' ~ icon_type,
+    icon_position ? 'a-icon--position-' ~ icon_position
+] %}
+
+<span class="{{ classes|join(' ') }}" aria-hidden="true">{{ icon_title }}</span>

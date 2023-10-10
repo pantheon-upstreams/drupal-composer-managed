@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Component for Button
+ *
+ * Available props:
+ * - button_attributes
+ * - button_external
+ * - button_html_tag
+ * - button_prefix
+ * - button_style
+ * - button_suffix
+ * - button_title
+ * - button_url
+ *
+ */
+#}
+
+{% set button_attributes = create_attribute() %}
+
+{% set classes = [
+    'a-button',
+    'a-button--' ~ button_style,
+    'a-button--size-' ~ button_size,
+] %}
+
+{% if button_html_tag == 'link' %}
+    <a {{ button_attributes.addClass(classes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %}>
+        {% if button_prefix %}
+            {% include 'surf_main:icon' with {
+                icon_position: 'left',
+                icon_type: button_prefix,
+            } %}
+        {% endif %}
+
+        {{- button_title -}}
+
+        {% if button_suffix %}
+            {% include 'surf_main:icon' with {
+                icon_position: 'right',
+                icon_type: button_suffix,
+            } %}
+        {% endif %}
+    </a>
+{% endif %}
+
+{% if button_html_tag == 'input' %}
+    <input {{ button_attributes.addClass(classes) }} value="{{- button_title -}}">
+{% endif %}
+
+{% if button_html_tag == 'button' %}
+    <button {{ button_attributes.addClass(classes) }}>
+        {% if button_prefix %}
+            {% include 'surf_main:icon' with {
+                icon_position: 'left',
+                icon_type: button_prefix,
+            } %}
+        {% endif %}
+
+        {{- button_title -}}
+
+        {% if button_suffix %}
+            {% include 'surf_main:icon' with {
+                icon_position: 'right',
+                icon_type: button_suffix,
+            } %}
+        {% endif %}
+    </button>
+{% endif %}

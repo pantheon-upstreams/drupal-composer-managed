@@ -21,53 +21,11 @@
     'dashboard'
 ] %}
 
-{% set rendered_content = content|without(
-    'announcements',
-    'events',
-    'navigation',
-    'news'
-) %}
-
 {% set page_title = page_id == 'dashboard_home' ? user_display_name : page_title %}
 
 <div {{ attributes.addClass(classes) }}>
     <div class="container container__type--default">
-        {% include 'surf_main:hero-title-only' with {
-            title: page_title,
-        } %}
-
-        {{ content.navigation }}
-
-        {% if content.announcements %}
-            <section class="section section--announcements">
-                {% include 'surf_main:section-title' with {
-                    title: "Announcements"|t
-                }%}
-
-                {{ content.announcements }}
-            </section>
-        {% endif %}
-
-        {% if content.events %}
-            <section class="section section--events">
-                {% include 'surf_main:section-title' with {
-                    title: "Upcoming Events at SURF"|t
-                }%}
-
-                {{ content.events }}
-            </section>
-        {% endif %}
-
-        {% if content.news %}
-            <section class="section section--news">
-                {% include 'surf_main:section-title' with {
-                    title: "Related News"|t
-                }%}
-
-                {{ content.news }}
-            </section>
-        {% endif %}
-
-        {{ rendered_content }}
+        {# TODO: Include Heading component when finished, with page_title #}
+        {{ content }}
     </div>
 </div>

@@ -1,0 +1,75 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Icon
+status: experimental
+group: Atoms
+props:
+  type: object
+  required:
+    - icon_type
+  properties:
+    icon_position:
+      title: Position
+      type: string
+      enum:
+        - left
+        - right
+    icon_title:
+      title: Title
+      type: string
+    icon_type:
+      title: Type
+      type: string
+      enum:
+        - add
+        - angle-down
+        - angle-left
+        - angle-right
+        - angle-up
+        - arrow-down
+        - arrow-left
+        - arrow-right
+        - arrow-up
+        - bag
+        - boxed-error
+        - boxed-info
+        - boxed-success
+        - burst
+        - calendar
+        - calendar-alt
+        - chart-bar
+        - check
+        - check-empty-disabled
+        - check-partial
+        - check-selected
+        - clock
+        - close
+        - comment
+        - diagonal
+        - download
+        - envelope
+        - expand
+        - facebook
+        - file
+        - file-pdf
+        - heart
+        - info
+        - instagram
+        - link
+        - linkedin
+        - location
+        - location-alt
+        - menu
+        - pencil
+        - phone
+        - play
+        - question
+        - radio-selected
+        - radio-unselected
+        - search
+        - share
+        - share-alt
+        - star
+        - teacher
+        - thumbs-up
+        - user
+        - youtube

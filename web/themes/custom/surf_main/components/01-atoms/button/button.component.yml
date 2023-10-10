@@ -1,0 +1,52 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Button
+status: experimental
+group: Atoms
+props:
+  type: object
+  required:
+    - button_html_tag
+    - button_size
+    - button_style
+    - button_title
+  properties:
+    button_attributes:
+      title: Attributes
+    button_external:
+      title: External
+      type: string
+    button_html_tag:
+      title: HTML Tag
+      type: string
+      enum:
+        - link
+        - input
+        - button
+    button_prefix:
+      title: Prefix
+      type: string
+    button_size:
+      title: Size
+      type: string
+      enum:
+        - large
+        - small
+    button_style:
+      title: Style
+      type: string
+      enum:
+        - full-navy
+        - full-black
+        - full-white
+        - underline-navy
+        - underline-black
+        - underline-white
+    button_suffix:
+      title: Suffix
+      type: string
+    button_title:
+      title: Title
+      type: string
+    button_url:
+      title: URL
+      type: string
