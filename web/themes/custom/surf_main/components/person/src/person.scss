@@ -89,9 +89,12 @@
 }
 
 .c-person__full-name {
-  font-size: var(–surf-font-size-24);
-  font-weight: var(--font-weight-bold);
-  margin: 0 0 rem(4px) 0;
+  color: var(--surf-color-gray-650);
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-32);
+  font-weight: var(--surf-font-weight-regular);
+  line-height: 1.32;
+  max-width: rem(900px);
 }
 
 .c-person__title {
