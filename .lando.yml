@@ -1,6 +1,9 @@
 name: surf
-recipe: drupal9
+recipe: pantheon
 config:
+  framework: drupal8
+  site: surf-main
+  id: cb68cc29-02f1-42bc-8e9a-1b212c282647
   xdebug: develop,debug
   composer_version: '2'
   webroot: web
@@ -20,7 +23,6 @@ services:
         DRUSH_OPTIONS_URI: "https://surf.lndo.site"
         PHP_IDE_CONFIG: "serverName=appserver"
         XDEBUG_SESSION_START: PHPSTORM
-        PANTHEON_ENVIRONMENT: lando
   solr:
     type: solr:8
     portforward: true
@@ -41,3 +43,10 @@ tooling:
     description: Disable xdebug
     cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
     user: root
+  push: disabled
+  pull:
+    options:
+      code:
+        default: none
+      files:
+        default: none

@@ -3,15 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.basic
     - page_manager.page.dashboard_visits
-    - system.menu.dashboard
     - views.view.user_visits
     - webform.webform.visit
   module:
-    - layout_builder
     - layout_discovery
-    - menu_block
     - views
     - webform
 id: dashboard_visits-layout_builder-0
@@ -27,36 +23,9 @@ variant_settings:
     -
       layout_id: layout_onecol
       layout_settings:
-        label: Header
-        context_mapping: {  }
-      components: {  }
-      third_party_settings: {  }
-    -
-      layout_id: layout_onecol
-      layout_settings:
         label: 'Main content'
         context_mapping: {  }
       components:
-        16faa289-99ec-4442-8acd-1020b21931e9:
-          uuid: 16faa289-99ec-4442-8acd-1020b21931e9
-          region: content
-          configuration:
-            id: 'menu_block:dashboard'
-            label: Dashboard
-            label_display: '0'
-            provider: menu_block
-            context_mapping: {  }
-            follow: false
-            follow_parent: child
-            label_link: false
-            label_type: block
-            level: 1
-            depth: 0
-            expand_all_items: false
-            parent: 'dashboard:'
-            suggestion: dashboard
-          weight: 4
-          additional: {  }
         da091f77-a2fc-4c04-b429-8285f1145347:
           uuid: da091f77-a2fc-4c04-b429-8285f1145347
           region: content
@@ -69,20 +38,6 @@ variant_settings:
             views_label: ''
             items_per_page: none
           weight: 1
-          additional: {  }
-        ba5ce28d-eea5-4eca-8a85-fa2ed8a6357b:
-          uuid: ba5ce28d-eea5-4eca-8a85-fa2ed8a6357b
-          region: content
-          configuration:
-            id: 'inline_block:basic'
-            label: 'Request info'
-            label_display: '0'
-            provider: layout_builder
-            view_mode: full
-            context_mapping: {  }
-            block_revision_id: 13
-            block_serialized: null
-          weight: 2
           additional: {  }
         90c6c67b-6535-4fcd-b3c9-2dd4d656ef28:
           uuid: 90c6c67b-6535-4fcd-b3c9-2dd4d656ef28
