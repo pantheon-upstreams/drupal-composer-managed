@@ -1,16 +1,16 @@
+
+{% set media_attributes = create_attribute() %}
 {%
   set classes = [
-  'c-media',
-  'l-constrained--large',
-  'l--bottom-spacing',
+  'a-media',
 ]
 %}
 
-<figure {{ attributes.addClass(classes).merge(attributes) }}>
+<figure {{ media_attributes.addClass(classes) }}>
 
   {% block image_block %}
     {% if image_url %}
-      <div class="c-media__image-wrapper">
+      <div class="a-media__image-wrapper">
         <img src="{{ image_url }}" alt="{{ image_alt }}" />
         {% if image_credit %}<div class="c-media__image-credit">{{image_credit}}</div>{% endif %}
       </div>
@@ -19,7 +19,7 @@
 
   {% block video_block %}
     {% if video_url %}
-      <div class="c-media__video-wrapper">
+      <div class="a-media__video-wrapper">
         <iframe src="{{ video_url }}" frameborder="0" allowtransparency="" width="426" height="240" title="{{ title }}"></iframe>
       </div>
     {% endif %}
@@ -28,7 +28,7 @@
 
   {% block caption_block %}
     {% if caption %}
-      <figcaption class="c-media__caption">
+      <figcaption class="a-media__caption">
         {{caption|check_markup('plain')}}
       </figcaption>
     {% endif %}
