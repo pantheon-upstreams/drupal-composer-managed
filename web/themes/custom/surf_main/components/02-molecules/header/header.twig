@@ -4,6 +4,7 @@
  * Component for Header
  *
  * Available props:
+ * - header_attributes
  * - header_heading: [string] required
  * - header_teaser: [string]
  *
@@ -19,7 +20,7 @@
 {%
   set classes = [
   'm-header',
-  modifier ? modifier,
+  header_modifier ? header_modifier,
   header_media ? 'm-header--with-img',
 ]
 %}
@@ -37,7 +38,7 @@
       {{ include('surf_main:heading', {
         heading_text: header_heading,
         heading_level: header_heading_level,
-        modifier: modifier,
+        heading_modifier: heading_modifier,
       }, with_context = false) }}
 
       {% if header_teaser %}
