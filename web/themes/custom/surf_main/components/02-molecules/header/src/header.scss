@@ -1,0 +1,105 @@
+@use '../../../../libraries/partials/partials' as *;
+
+.m-header {
+  //empty
+}
+
+.m-header__content {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+  position: relative;
+}
+
+.m-header__heading {
+  color: var(--surf-color-black);
+  font-family: var(--surf-font-sans-alt);
+  font-size: rem(48px);
+  font-weight: var(--surf-font-weight-medium);
+  line-height: 0.9;
+  text-transform: uppercase;
+
+  @include bp-min(medium) {
+    font-size: rem(100px);
+    line-height: 0.94;
+  }
+
+  @include bp-min(large) {
+    font-size: rem(132px);
+  }
+
+  @include bp-min(xlarge) {
+    font-size: rem(176px);
+    line-height: 0.9;
+  }
+}
+
+.m-header__teaser {
+  color: var(--surf-color-gray-600);
+  font-size: rem(18px);
+  line-height: 1.44;
+  margin-block-start: rem(12px) !important;
+
+  @include bp-min(medium) {
+    font-size: rem(24px);
+    line-height: 1.4;
+  }
+
+  @include bp-min(large) {
+    font-size: rem(32px);
+    line-height: 1.32;
+  }
+}
+
+.m-header--with-bkg-color {
+
+  @include bp-min(medium) {
+    background-image: url('img/header-bkg-color.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 50%;
+  }
+
+  @include bp-min(xlarge) {
+    background-image: url('img/header-bkg-color.png');
+    background-position: 165% 0;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  @include bp-min(xxlarge) {
+    background-image: url('img/header-bkg-color.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+}
+
+.m-header--with-bkg-grid {
+
+  @include bp-min(large) {
+    background-image: url('img/header-bkg-grid.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+}
+
+.m-header--with-bkg-ripple {
+
+  @include bp-min(large) {
+    background-image: url('img/header-bkg-ripple.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+}
+
+.m-header--with-img {
+  .m-header__content {
+    background-color: var(--surf-color-white);
+    margin-block-start: rem(-143px);
+    margin-inline: auto;
+    max-width: rem(1320px);
+    padding-block: rem(60px);
+    padding-inline: rem(120px);
+  }
+}
+
