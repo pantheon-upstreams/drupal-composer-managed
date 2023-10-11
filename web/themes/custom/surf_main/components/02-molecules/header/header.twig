@@ -46,7 +46,14 @@
     </div>
 
     {% if header_cta_url %}
-      [embed button component when ready]
+      {% embed 'surf_main:button' with {
+        button_title: header_cta_text,
+        button_url: header_cta_url,
+        button_html_tag: header_cta_html_tag|default('link'),
+        button_style: header_cta_style|default('full-navy'),
+        button_size: header_cta_size|default('small'),
+      } only %}
+      {% endembed %}
     {% endif %}
 
     {% block header_metadata_block %}
