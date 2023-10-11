@@ -35,7 +35,7 @@ content:
     type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 190
     third_party_settings: {  }
     weight: 1
     region: content
@@ -43,7 +43,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: media_library
+      view_mode: teaser_default
       link: false
     third_party_settings: {  }
     weight: 0

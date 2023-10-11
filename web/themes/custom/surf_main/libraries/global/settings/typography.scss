@@ -20,7 +20,9 @@
 //------------------------------------
 
 @use '../../partials/functions/calculations' as functions-calculations;
+
 @use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+
 @use '../../partials/mixins/typography' as mixins-typography;
 
 
@@ -29,12 +31,11 @@
 //------------------------------------
 //  02 - Families
 //------------------------------------
-
 :root {
-  --surf-font-mono:       monospace;
-  --surf-font-sans:       'ballinger', sans-serif;
-  --surf-font-sans-alt:   'recent-grotesk', sans-serif;
-  --surf-font-condensed:  'ballinger-condensed', sans-serif;
+  --surf-font-mono: monospace;
+  --surf-font-sans: 'ballinger', sans-serif;
+  --surf-font-sans-alt: 'recent-grotesk', sans-serif;
+  --surf-font-condensed: 'ballinger-condensed', sans-serif;
 }
 
 
@@ -43,7 +44,6 @@
 //------------------------------------
 //  03 - Sizes
 //------------------------------------
-
 :root {
   --surf-font-size-14: #{functions-calculations.rem(14px)};
   --surf-font-size-16: #{functions-calculations.rem(16px)};
@@ -52,8 +52,8 @@
   --surf-font-size-24: #{functions-calculations.rem(18px)};
   --surf-font-size-28: #{functions-calculations.rem(28px)};
   --surf-font-size-32: #{functions-calculations.rem(30px)};
-  --surf-font-size-40: #{functions-calculations.rem(32px)};
-  --surf-font-size-52: #{functions-calculations.rem(40px)};
+
+  --surf-font-size-40: #{functions-calculations.rem(32px)};  --surf-font-size-52: #{functions-calculations.rem(40px)};
   --surf-font-size-96: #{functions-calculations.rem(52px)};
   --surf-font-size-176: #{functions-calculations.rem(100px)};
 
@@ -78,15 +78,14 @@
 //------------------------------------
 //  04 - Weights
 //------------------------------------
-
 :root {
-  --surf-font-weight-thin:     100;
-  --surf-font-weight-light:    300;
-  --surf-font-weight-regular:  400;
-  --surf-font-weight-book:     400;
-  --surf-font-weight-medium:   500;
+  --surf-font-weight-thin: 100;
+  --surf-font-weight-light: 300;
+  --surf-font-weight-regular: 400;
+  --surf-font-weight-book: 400;
+  --surf-font-weight-medium: 500;
   --surf-font-weight-semibold: 600;
-  --surf-font-weight-bold:     700;
+  --surf-font-weight-bold: 700;
 }
 
 
@@ -95,10 +94,9 @@
 //------------------------------------
 //  05 - Line Heights
 //------------------------------------
-
 :root {
-  --surf-line-height-default:  1.6;
-  --surf-line-height-heading:  1.2;
+  --surf-line-height-default: 1.6;
+  --surf-line-height-heading: 1.2;
 }
 
 
@@ -107,11 +105,10 @@
 //------------------------------------
 //  06 - Body
 //------------------------------------
-
 body {
+  color: var(--surf-color-gray-900);
   font-family: var(--surf-font-sans);
   font-size: var(--surf-font-size-18);
-  color: var(--surf-color-gray-900);
 }
 
 
@@ -120,7 +117,6 @@ body {
 //------------------------------------
 //  07 - Headings
 //------------------------------------
-
 h1, h2, h3, h4, h5 {
   color: var(--surf-color-gray-900);
   margin-bottom: 0;
@@ -139,26 +135,32 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
+
   @include mixins-typography.heading-01();
 }
 
 h2 {
+
   @include mixins-typography.heading-02();
 }
 
 h3 {
+
   @include mixins-typography.heading-03();
 }
 
 h4 {
+
   @include mixins-typography.heading-04();
 }
 
 h5 {
+
   @include mixins-typography.heading-05();
 }
 
 h6 {
+
   @include mixins-typography.heading-06();
 }
 
@@ -168,7 +170,6 @@ h6 {
 //------------------------------------
 //  08 - Links
 //------------------------------------
-
 a {
   color: var(--surf-color-navy);
   font-weight: var(--surf-font-weight-bold);
@@ -187,7 +188,6 @@ a {
 //------------------------------------
 //  09 - Bold
 //------------------------------------
-
 strong,
 b {
   font-weight: var(--surf-font-weight-bold);
@@ -199,8 +199,7 @@ b {
 //------------------------------------
 //  10 - Paragraphs
 //------------------------------------
-
-p:not(:first-child) {
+p:not( :first-child ) {
   margin-top: 16px;
 }
 
@@ -210,9 +209,8 @@ p:not(:first-child) {
 //------------------------------------
 //  11 - Blockquote
 //------------------------------------
-
 blockquote {
+  font-style: italic;
   margin: 15px 0;
   text-indent: -0.4em;
-  font-style: italic;
 }

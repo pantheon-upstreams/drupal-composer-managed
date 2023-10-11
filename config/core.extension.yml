@@ -22,6 +22,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  crop: 0
   ctools: 0
   date_range_formatter: 0
   datetime: 0
@@ -44,6 +45,7 @@ module:
   google_analytics: 0
   honeypot: 0
   image: 0
+  image_widget_crop: 0
   imce: 0
   inline_entity_form: 0
   jquery_ui: 0

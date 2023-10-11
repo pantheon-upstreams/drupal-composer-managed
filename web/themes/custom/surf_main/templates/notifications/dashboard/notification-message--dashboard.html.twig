@@ -51,12 +51,6 @@
 
         {% if content.field_link|render %}
             <div class="message__content--secondary">
-{#                {% include 'surf_main:button' with {#}
-{#                    button_color: 'navy',#}
-{#                    button_icon: 'arrow-right',#}
-{#                    button_title: content.field_link.0.title|default('title'),#}
-{#                    button_url: content.field_link.0.uri|default('https://example.com'),#}
-{#                } %}#}
                 {{ content.field_link }}
             </div>
         {% endif %}

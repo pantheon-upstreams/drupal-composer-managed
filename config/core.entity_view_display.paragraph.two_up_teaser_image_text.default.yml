@@ -11,10 +11,8 @@ dependencies:
     - field.field.paragraph.two_up_teaser_image_text.field_image_right
     - field.field.paragraph.two_up_teaser_image_text.field_link_left
     - field.field.paragraph.two_up_teaser_image_text.field_link_right
-    - image.style.featured_image
     - paragraphs.paragraphs_type.two_up_teaser_image_text
   module:
-    - image
     - link
     - text
 id: paragraph.two_up_teaser_image_text.default
@@ -52,28 +50,6 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_image_left:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: featured_image
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_image_right:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: featured_image
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_link_left:
     type: link
     label: hidden
@@ -100,5 +76,7 @@ content:
     region: content
 hidden:
   created: true
+  field_image_left: true
+  field_image_right: true
   search_api_excerpt: true
   uid: true

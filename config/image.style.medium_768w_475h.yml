@@ -1,0 +1,26 @@
+uuid: 3b929f62-6431-488f-b772-442c20221657
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.teaser_default
+  module:
+    - crop
+name: medium_768w_475h
+label: 'Medium (768W x 475H)'
+effects:
+  6f6b714a-d9c2-4e4d-a69f-48dca6102795:
+    uuid: 6f6b714a-d9c2-4e4d-a69f-48dca6102795
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: teaser_default
+      automatic_crop_provider: null
+  3e6e6759-d8d0-4881-9c33-b8b0dcad7c0a:
+    uuid: 3e6e6759-d8d0-4881-9c33-b8b0dcad7c0a
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 475
+      anchor: center-center
