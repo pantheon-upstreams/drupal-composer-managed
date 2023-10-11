@@ -1,0 +1,22 @@
+@use '../../../../libraries/partials/partials' as *;
+
+.a-heading {
+  color: var(--surf-color-black);
+  font-size: rem(48px);
+  line-height: 0.9;
+  text-transform: uppercase;
+
+  @include bp-min(medium) {
+    font-size: rem(100px);
+    line-height: 0.94;
+  }
+
+  @include bp-min(large) {
+    font-size: rem(132px);
+  }
+
+  @include bp-min(xlarge) {
+    font-size: rem(176px);
+    line-height: 0.9;
+  }
+}

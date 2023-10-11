@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Component for Heading
+ *
+ * Available props:
+ * - heading_attributes
+ * - heading_text: [string] required
+ * - heading_level: [string] default = 2
+ * - heading_url: [string]
+ *
+ */
+#}
+
+{% set heading_attributes = create_attribute() %}
+
+{%
+  set classes = [
+  'a-heading',
+  modifier ? modifier,
+]
+%}
+
+<h{{ heading_level|default('2') }} {{ heading_attributes.addClass(classes) }}>
+
+  {%- if heading_url -%}
+    <a href="{{ heading_url }}">{{ heading_text }}</a>
+  {%- else -%}
+    {{ heading_text }}
+  {%- endif -%}
+
+</h{{ heading_level|default('2') }}>
