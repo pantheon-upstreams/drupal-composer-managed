@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_home
+    - system.menu.dashboard
   module:
     - layout_discovery
     - notification_message
+    - system
 id: dashboard_home-layout_builder-0
 label: 'Layout builder'
 weight: 0
@@ -22,7 +24,21 @@ variant_settings:
       layout_settings:
         label: Navigation
         context_mapping: {  }
-      components: {  }
+      components:
+        fa5992c4-ef5b-47fb-b96c-d11c3753e113:
+          uuid: fa5992c4-ef5b-47fb-b96c-d11c3753e113
+          region: content
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
+          weight: 0
+          additional: {  }
       third_party_settings: {  }
     -
       layout_id: layout_onecol

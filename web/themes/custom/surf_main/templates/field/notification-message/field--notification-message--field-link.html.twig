@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Theme override for a Link field in a Notification Message.
+ *
+ * Available variables:
+ * - No additional variables are available for this Field type.
+ *
+ * @see templates/field/field.html.twig
+ */
+#}
+
+{% set classes = [
+    'field',
+    'field--' ~ field_name|clean_class,
+    'field--' ~ field_type|clean_class,
+    'field--' ~ label_display,
+] %}
+
+{% set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+] %}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div {{ attributes.addClass(classes, 'field__items') }}>
+      {% for item in items %}
+          {% include 'surf_main:button' with {
+              button_attributes: attributes,
+              button_external: item.content['#url'].isExternal(),
+              button_html_tag: 'link',
+              button_size: 'large',
+              button_style: 'full-navy',
+              button_suffix: 'arrow-right',
+              button_title: item.content['#title'],
+              button_url: item.content['#url'],
+          } %}
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+        {% include 'surf_main:button' with {
+            button_attributes: attributes,
+            button_external: item.content['#url'].isExternal(),
+            button_html_tag: 'link',
+            button_size: 'large',
+            button_style: 'full-navy',
+            button_suffix: 'arrow-right',
+            button_title: item.content['#title'],
+            button_url: item.content['#url'],
+        } %}
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div {{ attributes.addClass(classes) }}>
+    <div {{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+      <div class="field__items">
+    {% endif %}
+
+    {% for item in items %}
+        {% include 'surf_main:button' with {
+            button_attributes: attributes,
+            button_external: item.content['#url'].isExternal(),
+            button_html_tag: 'link',
+            button_size: 'large',
+            button_style: 'full-navy',
+            button_suffix: 'arrow-right',
+            button_title: item.content['#title'],
+            button_url: item.content['#url'],
+        } %}
+    {% endfor %}
+
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

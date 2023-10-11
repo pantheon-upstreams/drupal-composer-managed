@@ -134,6 +134,10 @@
     background: svg-load('icon-arrow-left.svg', fill="#FFFFFF");
   }
 
+  &.a-button--full-navy .a-icon--envelope {
+    background: svg-load('icon-envelope.svg', fill="#FFFFFF");
+  }
+
   &.a-button--full-black {
     background-color: var(--surf-color-black);
     color: var(--surf-color-white);
@@ -152,6 +156,10 @@
     background: svg-load('icon-arrow-left.svg', fill="#FFFFFF");
   }
 
+  &.a-button--full-black .a-icon--envelope {
+    background: svg-load('icon-envelope.svg', fill="#FFFFFF");
+  }
+
   &.a-button--full-white {
     background-color: var(--surf-color-white);
     color: var(--surf-color-navy);
@@ -162,12 +170,16 @@
     }
   }
 
-  &.a-button--full-black .a-icon--arrow-right {
+  &.a-button--full-white .a-icon--arrow-right {
     background: svg-load('icon-arrow-right.svg', fill="#000000");
   }
 
-  &.a-button--full-black .a-icon--arrow-left {
+  &.a-button--full-white .a-icon--arrow-left {
     background: svg-load('icon-arrow-left.svg', fill="#000000");
+  }
+
+  &.a-button--full-white .a-icon--envelope {
+    background: svg-load('icon-envelope.svg', fill="#000000");
   }
 
   &.a-button--underline-navy {
@@ -178,6 +190,18 @@
     }
   }
 
+  &.a-button--underline-navy .a-icon--arrow-right {
+    background: svg-load('icon-arrow-right.svg', fill="#000080");
+  }
+
+  &.a-button--underline-navy .a-icon--arrow-left {
+    background: svg-load('icon-arrow-left.svg', fill="#000080");
+  }
+
+  &.a-button--underline-navy .a-icon--envelope {
+    background: svg-load('icon-envelope.svg', fill="#000080");
+  }
+
   &.a-button--underline-black {
     color: var(--surf-color-black);
 
@@ -186,12 +210,36 @@
     }
   }
 
+  &.a-button--underline-black .a-icon--arrow-right {
+    background: svg-load('icon-arrow-right.svg', fill="#000000");
+  }
+
+  &.a-button--underline-black .a-icon--arrow-left {
+    background: svg-load('icon-arrow-left.svg', fill="#000000");
+  }
+
+  &.a-button--underline-black .a-icon--envelope {
+    background: svg-load('icon-envelope.svg', fill="#000000");
+  }
+
   &.a-button--underline-white {
     color: var(--surf-color-white);
 
     &:after {
       background-color: var(--surf-color-white);
     }
+  }
+
+  &.a-button--underline-white .a-icon--arrow-right {
+    background: svg-load('icon-arrow-right.svg', fill="#FFFFFF");
+  }
+
+  &.a-button--underline-white .a-icon--arrow-left {
+    background: svg-load('icon-arrow-left.svg', fill="#FFFFFF");
+  }
+
+  &.a-button--underline-white .a-icon--envelope {
+    background: svg-load('icon-envelope.svg', fill="#FFFFFF");
   }
 }
 
@@ -221,10 +269,5 @@
   &:hover .a-icon--position-right,
   &:focus .a-icon--position-right {
     transform: translateX(4px);
-  }
-
-  &:hover .a-icon--position-left,
-  &:focus .a-icon--position-left {
-    transform: translateX(-4px);
   }
 }
