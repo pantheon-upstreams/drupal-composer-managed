@@ -1,0 +1,26 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: chip
+name: Chip
+status: WIP
+componentType: atom
+description: A chip component
+schemas:
+  props:
+    type: object
+    required:
+      - chip_text
+    properties:
+      chip_attributes:
+        title: Attributes
+      chip_text:
+        type: string
+        title: Text
+        description: The chip text
+        examples:
+          - Category A
+          - Professional Development
+      chip_url:
+        title: Link Url
+        type: string
+        examples:
+          - "https://www.example.org"

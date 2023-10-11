@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Component for Chip
+ *
+ * Available props:
+ * - chip_attributes
+ * - chip_text: [string] required
+ * - chip_url: [string]
+ *
+ */
+#}
+
+{% set chip_attributes = create_attribute() %}
+
+{%
+  set classes = [
+  'a-chip',
+  modifier ? modifier,
+]
+%}
+
+<span {{ chip_attributes.addClass(classes) }}>
+  {% if chip_url %}
+    <a href="{{ chip_url }}">{{ chip_text }}</a>
+  {% else %}
+    {{ chip_text }}
+  {% endif %}
+</span>
