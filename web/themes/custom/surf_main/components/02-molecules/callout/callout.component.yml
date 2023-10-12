@@ -1,0 +1,33 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: header
+name: Header
+status: WIP
+componentType: molecule
+description: A header component
+schemas:
+  props:
+    type: object
+    required:
+      - header_heading
+    properties:
+      header_attributes:
+        title: Attributes
+      header_heading:
+        type: string
+        title: Heading
+        description: The header heading text
+        examples:
+          - Neutrino Day
+          - Press Releases
+      header_teaser:
+        title: Teaser Text
+        type: string
+        examples:
+          - "From cutting-edge research in dark matter to neutrinos, SURF hosts experiments that push the frontier of physics."
+    slots:
+      header_links_block:
+        title: Header Links
+        description: Slot for backlink or breadcrumb
+      header_metadata_block:
+        title: Header Metadata
+        description: Slot for additional dynamic content

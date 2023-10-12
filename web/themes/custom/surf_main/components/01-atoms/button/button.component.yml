@@ -12,9 +12,10 @@ props:
   properties:
     button_attributes:
       title: Attributes
+      type: string
     button_external:
       title: External
-      type: string
+      type: boolean
     button_html_tag:
       title: HTML Tag
       type: string

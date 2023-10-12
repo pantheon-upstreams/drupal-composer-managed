@@ -4,19 +4,18 @@
  * Component for Button
  *
  * Available props:
- * - button_attributes
- * - button_external
- * - button_html_tag
- * - button_prefix
- * - button_style
- * - button_suffix
- * - button_title
- * - button_url
+ * - button_attributes: [array] Any parent tag attributes.
+ * - button_external: [boolean] Determines whether or not to set the target attribute.
+ * - button_html_tag: [text] Restricted to 'link', 'input' or 'button'.
+ * - button_prefix: [string] Specifying icon elements (see atom Icon).
+ * - button_style: [string] Restricted to 'full-navy', 'full-black', 'full-white',
+ *   'underline-navy', 'underline-black', and 'underline-white'.
+ * - button_suffix: [string] Specifying icon elements (see atom Icon).
+ * - button_title: [string] Text for the button.
+ * - button_url: [string] URL if using a link.
  *
  */
 #}
-
-{% set button_attributes = create_attribute() %}
 
 {% set classes = [
     'a-button',

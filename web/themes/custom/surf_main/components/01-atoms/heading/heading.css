@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 .a-heading{color:var(--surf-color-black);font-family:var(--surf-font-sans-alt);font-size:3rem;font-weight:var(--surf-font-weight-medium);line-height:.9;text-transform:uppercase}@media (min-width:768px){.a-heading{font-size:6.25rem;line-height:.94}}@media (min-width:992px){.a-heading{font-size:8.25rem}}@media (min-width:1200px){.a-heading{font-size:11rem;line-height:.9}}.a-heading--gradient{-webkit-text-fill-color:transparent;background:linear-gradient(90deg,navy,#007ab8);-webkit-background-clip:text;background-clip:text;font-size:16.25rem;line-height:.8}.a-heading--transform-none{font-size:6rem;letter-spacing:.09rem;line-height:1;text-transform:none}
+=======
+.a-heading{color:var(--surf-color-black);font-size:3rem;line-height:.9;text-transform:uppercase}@media (min-width:768px){.a-heading{font-size:6.25rem;line-height:.94}}@media (min-width:992px){.a-heading{font-size:8.25rem}}@media (min-width:1200px){.a-heading{font-size:11rem;line-height:.9}}
+>>>>>>> 9f5b907a12df8c7faefa67779b3bfc27dfa3614d
