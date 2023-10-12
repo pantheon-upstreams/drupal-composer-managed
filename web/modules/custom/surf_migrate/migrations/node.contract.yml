@@ -15,7 +15,7 @@ process:
   body: body
   field_ref_contacts: field_contact_person_s_
   field_ref_contract_type: field_contract_type
-  field_p_contract_schedules: field_contract_schedule
+  field_p_contract_schedule: field_contract_schedule
   field_contract_summary: field_contract_summary
   field_overview: field_overview
   field_links:

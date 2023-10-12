@@ -43,7 +43,7 @@ process:
       migration: surf_media_from_paragraph
       source: field_paragraph_featured_image/0/target_id
   field_author: field_byline
-  field_ref_content_related: field_featured_related
+  field_ref_related_content: field_featured_related
   uid: uid
   created: created
   changed: changed
