@@ -5,6 +5,7 @@
 }
 
 .o-header__content {
+  align-items: start;
   display: flex;
   flex-direction: column;
   gap: rem(32px);
@@ -32,6 +33,21 @@
     font-size: rem(176px);
     line-height: 0.9;
   }
+}
+
+.o-header__heading--gradient {
+  background: linear-gradient(90deg, #000080 0%, #007ab8 100%);
+  background-clip: text;
+  font-size: rem(260px);
+  line-height: 0.8;
+  -webkit-text-fill-color: transparent;
+}
+
+.o-header__heading--transform-none {
+  font-size: rem(96px);
+  letter-spacing: rem(1.44px);
+  line-height: 1;
+  text-transform: none;
 }
 
 .o-header__teaser {
