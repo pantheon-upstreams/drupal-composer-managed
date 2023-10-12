@@ -24,6 +24,12 @@ schemas:
         type: string
         examples:
           - "From cutting-edge research in dark matter to neutrinos, SURF hosts experiments that push the frontier of physics."
+      header_media:
+        title: Header Media
+        type: boolean
+        examples:
+          - TRUE
+          - FALSE
     slots:
       header_links_block:
         title: Header Links

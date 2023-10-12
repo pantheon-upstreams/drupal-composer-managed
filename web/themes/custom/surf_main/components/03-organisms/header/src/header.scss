@@ -1,17 +1,17 @@
 @use '../../../../libraries/partials/partials' as *;
 
-.m-header {
+.o-header {
   //empty
 }
 
-.m-header__content {
+.o-header__content {
   display: flex;
   flex-direction: column;
   gap: rem(32px);
   position: relative;
 }
 
-.m-header__heading {
+.o-header__heading {
   color: var(--surf-color-black);
   font-family: var(--surf-font-sans-alt);
   font-size: rem(48px);
@@ -34,7 +34,7 @@
   }
 }
 
-.m-header__teaser {
+.o-header__teaser {
   color: var(--surf-color-gray-600);
   font-size: rem(18px);
   line-height: 1.44;
@@ -51,7 +51,7 @@
   }
 }
 
-.m-header--with-bkg-color {
+.o-header--with-bkg-color {
 
   @include bp-min(medium) {
     background-image: url('img/header-bkg-color.png');
@@ -74,7 +74,7 @@
   }
 }
 
-.m-header--with-bkg-grid {
+.o-header--with-bkg-grid {
 
   @include bp-min(large) {
     background-image: url('img/header-bkg-grid.png');
@@ -83,7 +83,7 @@
   }
 }
 
-.m-header--with-bkg-ripple {
+.o-header--with-bkg-ripple {
 
   @include bp-min(large) {
     background-image: url('img/header-bkg-ripple.png');
@@ -92,8 +92,8 @@
   }
 }
 
-.m-header--with-img {
-  .m-header__content {
+.o-header--with-img {
+  .o-header__content {
     background-color: var(--surf-color-white);
     margin-block-start: rem(-143px);
     margin-inline: auto;
