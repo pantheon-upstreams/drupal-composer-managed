@@ -49,7 +49,6 @@
   <div class="container container__type--default">
 
     {% embed 'surf_main:header' with {
-      header_attributes: create_attribute(),
       header_heading: label,
       header_teaser: content.field_teaser_text|field_value,
       header_media: content.field_media_primary.0 ? true: false,
