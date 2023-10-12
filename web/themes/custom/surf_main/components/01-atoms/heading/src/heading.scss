@@ -2,7 +2,9 @@
 
 .a-heading {
   color: var(--surf-color-black);
+  font-family: var(--surf-font-sans-alt);
   font-size: rem(48px);
+  font-weight: var(--surf-font-weight-medium);
   line-height: 0.9;
   text-transform: uppercase;
 
@@ -19,4 +21,19 @@
     font-size: rem(176px);
     line-height: 0.9;
   }
+}
+
+.a-heading--gradient {
+  background: linear-gradient(90deg, #000080 0%, #007ab8 100%);
+  background-clip: text;
+  font-size: rem(260px);
+  line-height: 0.8;
+  -webkit-text-fill-color: transparent;
+}
+
+.a-heading--transform-none {
+  font-size: rem(96px);
+  letter-spacing: rem(1.44px);
+  line-height: 1;
+  text-transform: none;
 }

@@ -4,23 +4,22 @@
  * Component for Chip
  *
  * Available props:
- * - chip_attributes
+ * - chip_attributes: [array] Any parent tag attributes.
  * - chip_text: [string] required
  * - chip_url: [string]
  *
  */
 #}
 
-{% set chip_attributes = create_attribute() %}
+{% set chip_attributes = chip_attributes ? chip_attributes : create_attribute() %}
 
 {%
   set classes = [
   'a-chip',
-  chip_modifier ? chip_modifier,
 ]
 %}
 
-<span {{ chip_attributes.addClass(classes) }}>
+<span {{ chip_attributes.addClass(classes) }} {{ attributes|without(class) }}>
   {% if chip_url %}
     <a href="{{ chip_url }}">{{ chip_text }}</a>
   {% else %}
