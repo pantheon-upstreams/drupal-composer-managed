@@ -1,0 +1,99 @@
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <h2>Header</h2>
+  <p><em>Default</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'My Curriculum',
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Teaser</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Work with Us',
+  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.'
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Teaser and CTA</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Work with Us',
+  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',
+  header_cta_url: 'http://www.example.com',
+  header_cta_text: 'Donate to the SURF Foundation',
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Ripple Background</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Work with Us',
+  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',
+  header_attributes: create_attribute({'class': ['o-header--with-bkg-ripple']}),
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Grid Background</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Work with Us',
+  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',
+  header_attributes: create_attribute({'class': ['o-header--with-bkg-grid']}),
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Color Background</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Work with Us',
+  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',
+  header_attributes: create_attribute({'class': ['o-header--with-bkg-color']}),
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Image</em></p>
+</div>
+<a href="https://surf.lndo.site/experiments">See example here</a>
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>With Gradient Heading</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Take a Deep Dive',
+  header_teaser: 'Deep underground in the Black Hills of South Dakota, world-class research is investigating the greatest secrets of the universe.',
+  heading_attributes: create_attribute({'class': ['a-heading--gradient']}),
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Heading with no Text Transform</em></p>
+</div>
+
+{% embed 'surf_main:header' with {
+  header_heading: 'Request for Quotes (RFQ) 2022-35 Integrated Pest Management',header_teaser: 'Deep underground in the Black Hills of South Dakota, world-class research is investigating the greatest secrets of the universe.',
+  heading_attributes: create_attribute({'class': ['a-heading--transform-none']}),
+} only %}
+{% endembed %}

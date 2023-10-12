@@ -1,0 +1,21 @@
+<div class="c-rich-text" style="margin: 32px 0">
+  <h2>Chip</h2>
+  <p><em>Default</em></p>
+</div>
+
+{% embed 'surf_main:chip' with {
+  chip_text: 'Category A',
+  chip_url: 'http://www.example.com'
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Highlight</em></p>
+</div>
+
+{% embed 'surf_main:chip' with {
+  chip_text: 'Business Development',
+  chip_attributes: create_attribute({'class': ['a-chip--highlight']}),
+} only %}
+{% endembed %}
+
