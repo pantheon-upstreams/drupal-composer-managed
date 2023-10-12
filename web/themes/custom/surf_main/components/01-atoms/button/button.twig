@@ -17,6 +17,9 @@
  */
 #}
 
+{% set button_attributes = button_attributes ? button_attributes : create_attribute() %}
+
+
 {% set classes = [
     'a-button',
     'a-button--' ~ button_style,
@@ -24,7 +27,7 @@
 ] %}
 
 {% if button_html_tag == 'link' %}
-    <a {{ button_attributes.addClass(classes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %}>
+    <a {{ button_attributes.addClass(classes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %}{{ attributes|without(class) }}>
         {% if button_prefix %}
             {% include 'surf_main:icon' with {
                 icon_position: 'left',
@@ -44,11 +47,11 @@
 {% endif %}
 
 {% if button_html_tag == 'input' %}
-    <input {{ button_attributes.addClass(classes) }} value="{{- button_title -}}">
+    <input {{ button_attributes.addClass(classes) }} value="{{- button_title -}}" {{ attributes|without(class) }}>
 {% endif %}
 
 {% if button_html_tag == 'button' %}
-    <button {{ button_attributes.addClass(classes) }}>
+    <button {{ button_attributes.addClass(classes) }} {{ attributes|without(class) }}>
         {% if button_prefix %}
             {% include 'surf_main:icon' with {
                 icon_position: 'left',
