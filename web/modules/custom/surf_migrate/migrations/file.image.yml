@@ -9,6 +9,13 @@ source:
     - paragraph:field_image
     - node:field_portrait
 process:
+  _skip_ids:
+    plugin: skip_on_value
+    source: fid
+    method: row
+    value:
+      - 3015
+      - 4649
   fid: fid
   filename: filename
   uid: uid
