@@ -1,0 +1,51 @@
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
+definitions:
+  standard__front_page:
+    menu_name: main
+    parent: ''
+    weight: -45
+    expanded: false
+    enabled: false
+  contact__site_page:
+    menu_name: footer
+    parent: ''
+    weight: -45
+    expanded: false
+    enabled: false
+  surf_dashboard__curriculum_units:
+    menu_name: dashboard
+    parent: ''
+    weight: -50
+    expanded: false
+    enabled: true
+  surf_dashboard__events:
+    menu_name: dashboard
+    parent: ''
+    weight: -46
+    expanded: false
+    enabled: true
+  surf_dashboard__visits:
+    menu_name: dashboard
+    parent: ''
+    weight: -47
+    expanded: false
+    enabled: true
+  surf_dashboard__my_account:
+    menu_name: dashboard
+    parent: ''
+    weight: -45
+    expanded: false
+    enabled: true
+  surf_dashboard__tasks_challenges:
+    menu_name: dashboard
+    parent: ''
+    weight: -48
+    expanded: false
+    enabled: true
+  surf_dashboard__request:
+    menu_name: dashboard
+    parent: ''
+    weight: -49
+    expanded: false
+    enabled: true

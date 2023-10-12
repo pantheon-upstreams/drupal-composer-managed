@@ -1,0 +1,81 @@
+//
+// Global - Tables
+//
+// - 01 - Theme Colors
+// - 02 - Elements
+//
+
+
+//------------------------------------
+//  01 - General
+//------------------------------------
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 72px;
+  border-spacing: 0;
+  text-align: left;
+  border-collapse: collapse;
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-16);
+}
+
+h1 + table,
+h2 + table,
+h3 + table,
+h4 + table,
+h5 + table,
+table:not(:first-child) {
+  margin-top: 24px;
+}
+
+
+
+
+//------------------------------------
+//  02 - Elements
+//------------------------------------
+
+thead {
+  & th {
+    vertical-align: bottom;
+  }
+
+  & th,
+  & td {
+    border-bottom: 1px solid var(--surf-color-dark);
+  }
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--surf-color-dark);
+  font-weight: var(--surf-font-weight-bold);
+}
+
+// Remove top border from thead by default
+caption + thead tr:first-child th,
+caption + thead tr:first-child td,
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+// Account for multiple tbody instances
+tbody + tbody {
+  border-top: 2px solid var(--surf-color-dark);
+}
+
+tr.even {
+  background-color: var(--surf-color-gray-100);
+}

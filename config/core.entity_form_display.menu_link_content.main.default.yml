@@ -1,0 +1,39 @@
+uuid: 9f5a0a91-93cf-4f9d-9438-8ee87875fe2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.main.field_main_menu_feature_text
+    - system.menu.main
+  module:
+    - link
+id: menu_link_content.main.default
+targetEntityType: menu_link_content
+bundle: main
+mode: default
+content:
+  field_main_menu_feature_text:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  view_mode: true

@@ -1,0 +1,20 @@
+title: Surf Main/Person
+stories:
+  - name: With Image
+    args:
+      image_url: https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/person/person.jpg
+      image_alt: Dr. Paul Schwering
+      full_name: Dr. Paul Schwering
+      initials: PS
+      title: Geophysicist
+      phone: (605) 722-8650
+      contact_url: https://github.com
+      bio_url: https://github.com
+  - name: Without Image
+    args:
+      full_name: Dr. Paul Schwering
+      initials: PS
+      title: Geophysicist
+      phone: (605) 722-8650
+      contact_url: https://github.com
+      bio_url: https://github.com

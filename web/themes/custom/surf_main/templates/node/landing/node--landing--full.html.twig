@@ -1,0 +1,13 @@
+{% set title = label|field_value %}
+
+{% set body = content.field_p_content %}
+
+{% if content.field_layout.0 is not empty %}
+  {% set layout = content.field_layout.0["#markup"] %}
+{% endif %}
+
+{{ include('surf_main:landing-page', {
+  title,
+  body,
+  layout,
+}, with_context = false) }}

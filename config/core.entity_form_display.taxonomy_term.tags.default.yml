@@ -1,0 +1,81 @@
+uuid: d94b97fa-9ec9-4536-84d7-856c374bf40b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tags.field_hero_image
+    - field.field.taxonomy_term.tags.field_overview
+    - image.style.thumbnail
+    - taxonomy.vocabulary.tags
+  module:
+    - image
+    - imce
+    - maxlength
+    - path
+    - text
+id: taxonomy_term.tags.default
+targetEntityType: taxonomy_term
+bundle: tags
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_hero_image:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings:
+      imce:
+        enabled: true
+  field_overview:
+    type: text_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 125
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 125
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 125
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 125
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

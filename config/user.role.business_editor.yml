@@ -1,0 +1,55 @@
+uuid: 11e5e57a-7e60-46ec-b6ef-ba0d5cae2516
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.simple_text
+    - node.type.article
+    - node.type.event
+  module:
+    - contact
+    - contextual
+    - file
+    - filter
+    - media
+    - node
+    - pathauto
+    - scheduler
+    - shortcut
+    - system
+    - toolbar
+id: business_editor
+label: 'Business editor'
+weight: -3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'access user contact forms'
+  - 'access user profiles'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'change own username'
+  - 'create event content'
+  - 'delete any article content'
+  - 'delete own article content'
+  - 'delete own files'
+  - 'edit any article content'
+  - 'edit any event content'
+  - 'edit own article content'
+  - 'edit own event content'
+  - 'notify of path changes'
+  - 'schedule publishing of nodes'
+  - 'use text format basic_html'
+  - 'use text format simple_text'
+  - 'view all revisions'
+  - 'view media'
+  - 'view own unpublished content'
+  - 'view scheduled content'
+  - 'view the administration theme'

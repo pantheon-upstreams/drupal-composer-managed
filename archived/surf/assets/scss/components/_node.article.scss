@@ -1,0 +1,486 @@
+
+
+
+
+// View mode: Teaser
+// -----------------------------------------------------------------------------
+
+
+.full-teaser,
+.related-content {
+	
+	.field__item {
+		@include make-row();
+		background:$surf-gray-back-dark;
+		border-top:1px solid $surf-white;
+				
+		margin-left:-15px !important;
+		margin-right:-15px !important;
+		
+		@include breakpoint(sm) {
+			margin-left:-30px !important;
+			margin-right:-30px !important;
+		}
+		@include breakpoint(lg) {
+			margin-left:-40px !important;
+			margin-right:-40px !important;
+		}
+	}
+	
+	.item {
+		@include make-row();
+		background:$surf-green-link;
+		border-top:none;
+		padding-top:0;
+		color:$surf-white;
+		a {
+			color:$surf-white;
+			&:hover {color:$surf-green-rule;}
+		}
+		.content-type {color:$surf-white;}
+		
+		+ .item {margin-top:0;}
+		
+		margin-left:-15px !important;
+		margin-right:-15px !important;
+		
+		@include breakpoint(sm) {
+			margin-left:-30px !important;
+			margin-right:-30px !important;
+		}
+		@include breakpoint(lg) {
+			margin-left:-40px !important;
+			margin-right:-40px !important;
+		}
+		
+	}
+	
+	
+	.teaser-image {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		
+		padding-left:0 !important;
+		padding-right:0 !important;
+		overflow:hidden;
+	}
+	.teaser-text {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		padding-top: $surf-margin-md;
+		padding-bottom: $surf-margin-md;
+	}
+}
+
+.related-content {
+	.teaser-image {	
+		
+		@include breakpoint(sm) {
+			background:url('/themes/surf/assets/images/SURF_bg-pattern.png') no-repeat;
+			min-height: 280px;
+			background-size: 100%;
+		}
+		@include breakpoint(md) {
+			img {
+				margin-top:-10%;
+				margin-bottom: -10%;
+			}
+		}
+	}
+	
+	.event-date {
+		margin-bottom:$surf-margin-sm;
+		margin-top:-12px;
+		font-size: $font-size-large;
+		line-height: 27px;
+	}
+	
+}
+
+
+
+// Paragraphs Styles
+// -----------------------------------------------------------------------------
+
+//.paragraph + .paragraph {margin-top:$surf-margin-xl;}
+
+
+
+
+
+.paragraph--type--entity-references-text,
+.paragraph--type--two-up-teaser-text {	
+	@include make-row();
+	padding-bottom: $surf-margin-xl;
+	
+	.field__item,
+	.teaser {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		margin-top: $surf-margin-md;
+		
+		&:nth-child(odd) {clear:left;}
+	}
+}
+
+
+
+.paragraph--type--two-up-teaser-image-text {
+	@include make-row();
+	background:$surf-gray-back-dark;
+	
+	margin-left:-15px !important;
+	margin-right:-15px !important;
+	
+	@include breakpoint(sm) {
+		margin-left:-30px !important;
+		margin-right:-30px !important;
+	}
+	@include breakpoint(lg) {
+		margin-left:-40px !important;
+		margin-right:-40px !important;
+	}
+	
+	.teaser-image {
+		margin-left:-15px;
+		margin-right:-15px;
+		border-top:1px solid $surf-white;
+	}
+	
+	.teaser {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		padding-bottom: $surf-margin-xl;
+				
+		@include breakpoint(sm) {
+			&:nth-child(odd) {
+				padding-left:30px;
+			}
+			&:nth-child(even) {
+				padding-right:30px;
+			}
+		}
+		@include breakpoint(lg) {
+			&:nth-child(odd) {
+				padding-left:40px;
+			}
+			&:nth-child(even) {
+				padding-right:40px;
+			}
+		}
+	}
+	
+	.teaser.left {	
+		@include breakpoint(sm) {			
+			.teaser-image {margin-left:-30px;}
+		}
+		@include breakpoint(lg) {
+			.teaser-image {margin-left:-40px;margin-right:-20px;}
+		}
+	}
+	.teaser.right {
+		@include breakpoint(sm) {			
+			.teaser-image {margin-right:-30px;}
+		}
+		@include breakpoint(lg) {
+			.teaser-image {margin-right:-40px;margin-left:-20px;}
+		}
+	}
+
+}
+
+.paragraph--type--one-up-teaser-image-text,
+.paragraph--type--homepage-teaser {
+	@include make-row();
+	border-top:1px solid $surf-white;
+	background:$surf-gray-back-dark;
+	
+	margin-left:-15px !important;
+	margin-right:-15px !important;
+	
+	@include breakpoint(sm) {
+		margin-left:-30px !important;
+		margin-right:-30px !important;
+	}
+	@include breakpoint(lg) {
+		margin-left:-40px !important;
+		margin-right:-40px !important;
+	}
+	
+	.teaser-image {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		
+		padding-left:0 !important;
+		padding-right:0 !important;
+	}
+	.teaser-text {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		padding-top: $surf-margin-md;
+		padding-bottom: $surf-margin-md;
+	}	
+	
+}
+
+.paragraph--type--homepage-lead-teaser {
+	@include make-row();
+	min-height: 700px;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	
+	margin-left:-15px !important;
+	margin-right:-15px !important;
+	
+	.teaser-text {
+		@include make-md-column(6);
+		@include make-md-column-offset(6);
+		@include make-lg-column(6);
+		padding-top: $surf-margin-xl;
+		padding-bottom: $surf-margin-md;
+	}
+	
+	@include breakpoint(xs) {
+		.teaser-text {
+			padding-top:$surf-margin-md;
+		}
+	}
+	
+	@include breakpoint(sm) {
+		min-height: 700px;
+		background-size: cover;
+		margin-left:-30px !important;
+		margin-right:-30px !important;
+	}
+	@include breakpoint(md) {
+		min-height: 750px;
+		background-position: 0 50%;
+
+	}
+	@include breakpoint(lg) {
+		min-height: 1000px;
+		margin-left:-40px !important;
+		margin-right:-40px !important;
+		.teaser-text {
+			padding-top: $surf-margin-xl + $surf-margin-xl;
+		}
+	}		
+}
+
+
+
+.paragraph--type--entity-references-image-text {
+	@include make-row();
+	background:$surf-gray-back-dark;
+	
+	margin-left:-15px !important;
+	margin-right:-15px !important;
+	
+	@include breakpoint(sm) {
+		margin-left:-30px !important;
+		margin-right:-30px !important;
+	}
+	@include breakpoint(lg) {
+		margin-left:-40px !important;
+		margin-right:-40px !important;
+	}
+	
+	.field__item {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		padding-bottom: $surf-margin-xl;
+		
+		@include breakpoint(sm) {
+			&:nth-child(odd) {
+				padding-left:30px;
+			}
+			&:nth-child(even) {
+				padding-right:30px;
+			}
+		}
+		@include breakpoint(lg) {
+			&:nth-child(odd) {
+				padding-left:40px;
+			}
+			&:nth-child(even) {
+				padding-right:40px;
+			}
+		}
+			
+		.teaser-image {
+			margin-left:-15px;
+			margin-right:-15px;
+			border-top:1px solid $surf-white;
+		}
+		@include breakpoint(sm) {
+			&:nth-child(odd) {
+				.teaser-image {margin-left:-30px;}
+			}
+			&:nth-child(even) {
+				.teaser-image {margin-right:-30px;}
+			}
+		}
+		@include breakpoint(lg) {
+			&:nth-child(odd) {
+				.teaser-image {margin-left:-40px;margin-right:-20px;}
+			}
+			&:nth-child(even) {
+				.teaser-image {margin-right:-40px;margin-left:-20px;}
+			}
+		}
+
+	}
+}
+
+.paragraph--type--two-up-figures {
+	@include make-row();
+	background:$surf-gray-back-dark;
+	
+	@include breakpoint(sm) {
+		margin-left:-30px !important;
+		margin-right:-30px !important;
+	}
+	@include breakpoint(lg) {
+		margin-left:-40px !important;
+		margin-right:-40px !important;
+	}
+	
+	
+	
+	
+	.figure {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		padding-bottom:$surf-margin-xl;
+		
+		.featured-figure {
+			margin-left:-15px;
+			margin-right:-15px;
+			border-top:1px solid $surf-white;
+			
+			font-size: 5em;
+			line-height: 1em;
+			padding-top:$surf-margin-xl;
+			padding-bottom:$surf-margin-sm;
+			background:lighten($surf-gray-text, 25%);
+			color:#fff;
+	
+			.field {
+				position: relative;
+				// Add triangle shape below figure text
+				&:after {
+					content:"";
+					display:block;
+					position: absolute;
+					bottom:-35px;
+					width: 0;
+					height: 0;
+					border-left: 20px solid transparent;
+					border-right: 20px solid transparent;
+					border-top: 15px solid lighten($surf-gray-text, 25%);
+				}	
+			}
+			
+			.field.figure-left{
+				padding-left:15px;	
+				@include breakpoint(sm) {
+					padding-left:30px;
+				}
+				@include breakpoint(lg) {
+					padding-left:40px;
+				}
+			}
+			.field.figure-right{
+				padding-left:15px;
+				@include breakpoint(sm) {
+					padding-left:15px;
+				}
+				@include breakpoint(lg) {
+					padding-left:20px;
+				}
+			}
+
+		}
+	}	
+	.figure.left {		
+		@include breakpoint(sm) {	
+			padding-left:30px;		
+			.featured-figure {margin-left:-30px;}
+		}
+		@include breakpoint(lg) {
+			padding-left:40px;
+			.featured-figure {margin-left:-40px;margin-right:-20px;}
+		}
+	}
+	.figure.right {		
+		@include breakpoint(sm) {	
+			padding-right:30px;		
+			.featured-figure {margin-right:-30px;}
+		}
+		@include breakpoint(lg) {
+			padding-right:40px;
+			.featured-figure {margin-right:-40px;margin-left:-20px;}
+		}
+	}	
+}
+
+.paragraph--type--running-text,
+.paragraph--type--centered-image-text {
+	@include make-row();
+	margin-bottom: $surf-margin-xl;
+	margin-top:$surf-margin-xl;
+	
+	.running-text,
+	.image-centered {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+		@include make-sm-column-offset(3);
+	}
+	.image-centered {
+		margin-bottom: $surf-margin-md;
+		
+		@include breakpoint(sm) {
+			.field__item {
+				margin-left:-10%;
+				margin-right:-10%;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+//  Contract  Styles
+// -----------------------------------------------------------------------------
+
+.page--contracts {
+	
+	// Hide full body when summary is employed
+	.contract-summary + .body {display: none;}
+	.action-toggle.open {display:none;}
+}
+
+.contract-schedule {
+	
+	table {
+		font-size: $font-size-small;
+		color:$surf-black;
+		border-top:1px solid $surf-green-rule;
+		border-bottom:1px solid $surf-green-rule;
+		
+		th,td {
+			padding:8px 0;
+			border-color:$surf-green-rule;
+		}
+		
+	}	
+}
+
+
+
+

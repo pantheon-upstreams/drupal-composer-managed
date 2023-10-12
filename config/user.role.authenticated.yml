@@ -1,0 +1,34 @@
+uuid: 99d9693b-f862-4da3-bb1f-bc602cd7c47f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.filtered_html
+  module:
+    - contact
+    - download_request
+    - file
+    - filter
+    - media
+    - surf_registration
+    - system
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'authenticated user'
+weight: -9
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access user contact forms'
+  - 'change own username'
+  - 'delete own files'
+  - 'use text format basic_html'
+  - 'use text format filtered_html'
+  - 'view curriculum_module_resources download_item'
+  - 'view download_item'
+  - 'view media'
+  - 'view own curriculum_module download_request'
+  - 'view own user_request'

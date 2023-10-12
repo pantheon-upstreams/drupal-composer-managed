@@ -1,0 +1,48 @@
+// Mixins
+// -----------------------------------------------------------------------------
+
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clearfix;
+  
+  @media (min-width: $screen-lg-min) {
+	  margin-left:  ceil((40px / -2));
+	  margin-right: floor((40px / -2));
+  }
+}
+
+
+// Generate the large columns
+@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+
+  @media (min-width: $screen-lg-min) {
+	  
+	padding-left:  (40px / 2);
+	padding-right: (40px / 2);
+	  
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-offset($columns) {
+  @media (min-width: $screen-lg-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-push($columns) {
+  @media (min-width: $screen-lg-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+@mixin make-lg-column-pull($columns) {
+  @media (min-width: $screen-lg-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}

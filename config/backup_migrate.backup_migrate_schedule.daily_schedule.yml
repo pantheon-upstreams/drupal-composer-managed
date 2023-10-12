@@ -1,0 +1,15 @@
+uuid: 22a18621-df90-44da-b7ec-d59ef37b40d5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j-rE9LRcHAh5WPmOIg9glR7GKLw1CkvVnJvKNe376vM
+id: daily_schedule
+label: 'Daily Schedule'
+enabled: true
+keep: 7
+period: 86400
+cron: null
+source_id: default_db
+destination_id: private_files
+settings_profile_id: sanford

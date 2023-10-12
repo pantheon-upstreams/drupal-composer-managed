@@ -1,0 +1,17 @@
+uuid: 87ac16a6-ed94-40f9-afdb-11c40fdf8ba4
+langcode: en
+status: true
+dependencies: {  }
+id: dashboard_visits
+label: 'Field Trips & Presentations'
+description: ''
+use_admin_theme: false
+path: '/user/{user}/dashboard/visits'
+access_logic: and
+access_conditions: {  }
+parameters:
+  user:
+    machine_name: user
+    label: User
+    type: 'entity:user'
+    optional: false

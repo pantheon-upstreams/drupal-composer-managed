@@ -1,0 +1,100 @@
+"$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
+machineName: "teaser"
+name: "Teaser"
+componentType: "molecule"
+status: "WIP"
+description: "A Teaser component"
+schemas:
+  props:
+    type: object
+    required:
+      - title
+      - url
+      - layout
+    properties:
+      layout:
+        type: string
+        title: Layout
+        enum:
+          - column-stack
+          - column-simple-stack
+          - list-stack
+          - super
+      alt:
+        type: "string"
+        title: "Image Alt Text"
+        description: "The alt text for the image."
+        examples:
+          - "Ea irure adipisicing"
+      image:
+        type: "string"
+        title: "image URL"
+        description: "The url for the image"
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      title:
+        type: "string"
+        title: "Title"
+        examples:
+          - "LUX exhibit opens at the Sanford Lab Homestake Visitor Center"
+      url:
+        type: "string"
+        title: "Teaser URL"
+        examples:
+          - "https://github.com"
+      category:
+        type: "string"
+        title: "Category"
+        examples:
+          - "Article"
+      category_url:
+        type: "string"
+        title: "Category URL"
+        examples:
+          - "https://github.com"
+      category_color:
+        type: string
+        title: Category Color
+        enum:
+          - forest
+          - cloud
+          - kelly
+          - gold
+      teaser_date:
+        type: "string"
+        title: "Date"
+        examples:
+          - "August 18, 2022"
+      teaser_time:
+        type: "string"
+        title: "Time"
+        examples:
+          - "4:00pm - 6:00pm"
+      body:
+        title: Body
+        type: string
+        examples:
+          - "<p>When LUX completed its 300-live-day run in May of 2016, the world learned LUX was even more sensitive than previously determined.</p>"
+      icon:
+        type: string
+        title: Category icon
+        enum:
+          - video
+      tags:
+        type: array
+        title: Tags
+        tags:
+          type: object
+          properties:
+            title:
+              type: string
+              title: Title
+              examples:
+                - "Tag one"
+                - "Tag two"
+            url:
+              type: string
+              title: Tag URL
+              examples:
+                - https://github.com
+                - https://github.com

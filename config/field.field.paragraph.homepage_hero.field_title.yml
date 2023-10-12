@@ -1,0 +1,19 @@
+uuid: 607d1a6b-7361-4495-8e62-da10d5792b0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.homepage_hero
+id: paragraph.homepage_hero.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: homepage_hero
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

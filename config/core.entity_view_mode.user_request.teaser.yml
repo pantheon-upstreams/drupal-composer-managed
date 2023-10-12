@@ -1,0 +1,10 @@
+uuid: 73dc4e0c-d75c-452d-b45e-51b3c5d8e215
+langcode: en
+status: true
+dependencies:
+  module:
+    - surf_core
+id: user_request.teaser
+label: Teaser
+targetEntityType: user_request
+cache: true

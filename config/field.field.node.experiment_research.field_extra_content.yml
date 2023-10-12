@@ -1,0 +1,148 @@
+uuid: 860a9dd6-11c8-4738-8879-76609e9ffd0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extra_content
+    - node.type.experiment_research
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.persons_list
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.experiment_research.field_extra_content
+field_name: field_extra_content
+entity_type: node
+bundle: experiment_research
+label: 'Extra Content'
+description: 'Only used for research.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+      card_list: card_list
+      header: header
+      media: media
+      media_gallery: media_gallery
+      persons_list: persons_list
+      pullquote: pullquote
+      resources_list: resources_list
+      section: section
+      text: text
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 35
+        enabled: true
+      accordion_item:
+        weight: 36
+        enabled: false
+      blue_banner:
+        weight: 37
+        enabled: false
+      card:
+        weight: 38
+        enabled: false
+      card_list:
+        weight: 39
+        enabled: true
+      centered_image_text:
+        weight: 40
+        enabled: false
+      entity_references_image_text:
+        weight: 41
+        enabled: false
+      entity_references_text:
+        weight: 42
+        enabled: false
+      full_teaser:
+        weight: 43
+        enabled: false
+      gallery:
+        weight: 44
+        enabled: false
+      green_banner_cta:
+        weight: 45
+        enabled: false
+      header:
+        weight: 46
+        enabled: true
+      homepage_lead_teaser:
+        weight: 47
+        enabled: false
+      homepage_teaser:
+        weight: 48
+        enabled: false
+      image:
+        weight: 49
+        enabled: false
+      image_with_caption:
+        weight: 50
+        enabled: false
+      media:
+        weight: 51
+        enabled: true
+      media_gallery:
+        weight: 52
+        enabled: true
+      one_up_teaser_image_text:
+        weight: 53
+        enabled: false
+      person:
+        weight: 54
+        enabled: false
+      persons_list:
+        weight: 55
+        enabled: true
+      pullquote:
+        weight: 56
+        enabled: true
+      resource_file:
+        weight: 58
+        enabled: false
+      resource_link:
+        weight: 59
+        enabled: false
+      resources_list:
+        weight: 57
+        enabled: true
+      running_text:
+        weight: 60
+        enabled: false
+      schedule_item:
+        weight: 61
+        enabled: false
+      section:
+        weight: 62
+        enabled: true
+      teaser_list:
+        weight: 63
+        enabled: false
+      text:
+        weight: 64
+        enabled: true
+      two_up_figures:
+        weight: 65
+        enabled: false
+      two_up_teaser_image_text:
+        weight: 66
+        enabled: false
+      two_up_teaser_text:
+        weight: 67
+        enabled: false
+      video:
+        weight: 68
+        enabled: false
+field_type: entity_reference_revisions

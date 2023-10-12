@@ -1,0 +1,29 @@
+uuid: 30e5df33-67f9-444a-8dec-052a7a0dab91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_key_impact_areas
+    - node.type.event
+    - taxonomy.vocabulary.key_impact_area
+id: node.event.field_ref_key_impact_areas
+field_name: field_ref_key_impact_areas
+entity_type: node
+bundle: event
+label: 'Key impact areas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      key_impact_area: key_impact_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

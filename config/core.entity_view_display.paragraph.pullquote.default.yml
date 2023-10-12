@@ -1,0 +1,41 @@
+uuid: 53c23d73-4602-4dfe-a4bd-6b94f7bbc0cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pullquote.field_citation
+    - field.field.paragraph.pullquote.field_style
+    - field.field.paragraph.pullquote.field_text
+    - paragraphs.paragraphs_type.pullquote
+  module:
+    - options
+    - text
+id: paragraph.pullquote.default
+targetEntityType: paragraph
+bundle: pullquote
+mode: default
+content:
+  field_citation:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_style:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: 95c3b4dd-1a4b-433b-ac8e-fe4faaf0a71c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_ref_event
+    - node.type.event
+    - surf_registration.user_request_type.event_registration
+id: user_request.event_registration.field_ref_event
+field_name: field_ref_event
+entity_type: user_request
+bundle: event_registration
+label: Event
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

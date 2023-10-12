@@ -1,0 +1,15 @@
+uuid: 076dc4bd-cdbe-4f75-acf5-3c0a3ff1c876
+langcode: en
+status: true
+dependencies:
+  module:
+    - apitools
+_core:
+  default_config_hash: xu-eXX5wo2lSRGRV0WWJd04sYsEJvTdU-yK2YRjo9r0
+id: download_request_item_decline_action
+label: Decline
+type: download_request_item
+plugin: apitools_workflow_state_update
+configuration:
+  state_id: declined
+  field_name: state

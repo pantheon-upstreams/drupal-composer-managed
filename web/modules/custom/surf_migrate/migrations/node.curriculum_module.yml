@@ -1,0 +1,29 @@
+id: surf_node_curriculum_module
+label: SURF Node -> Curriculum module
+migration_group: 'surf'
+migration_tags:
+  - Content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'educator_resource'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  body: body
+  field_overview: field_overview
+  field_media:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_media_from_paragraph
+      source: field_paragraph_featured_image/0/target_id
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'curriculum_module'

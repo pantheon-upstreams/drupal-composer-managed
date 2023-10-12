@@ -1,0 +1,91 @@
+{# <pre>{{dump(content.field_teaser.0["#node"].field_media_primary.entity)}}</pre> #}
+{# field_media_oembed_video #}
+{# NODE URL #}
+{% set url = drupal_url('node/' ~ content.field_teaser.0["#node"].nid.value) %}
+
+{# -- TYPE --- #}
+{% set type = content.field_teaser.0["#node"].type.0.target_id %}
+
+{# -- CATEGORY URL --- #}
+{% if type == 'event' %}
+  {% set category_url = '/events' %}
+{% elseif type == 'article' %}
+  {% set category_url = '/news' %}
+{% elseif type == 'press_release' %}
+  {% set category_url = '/press-releases' %}
+{% endif %}
+
+{# -- TITLE --- #}
+{% set title = content.field_teaser.0["#node"].title.value %}
+
+{# -- IMAGE --- #}
+{% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+{% set alt = title %}
+
+{% if content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.entity.fileuri is not empty %}
+  {% set image = file_url(content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.entity.fileuri|image_style('full_teaser')) %}
+  {% set alt = content.field_teaser.0["#node"].field_media_primary.entity.field_media_image.alt %}
+{% endif %}
+
+{# --- VIDEO --- #}
+{% if content.field_teaser.0["#node"].field_media_primary.entity.field_media_oembed_video %}
+  {# set category to video #}
+  {% set category = 'Featured Video' %}
+  {# set icon #}
+  {% set icon = 'video' %}
+  {# set image #}
+  {% set image = content.field_teaser.0["#node"].field_media_primary.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+{% else %}
+  {% set category = 'Featured' %}
+{% endif %}
+
+{# --- BODY --- #}
+{% set body = content.field_teaser.0["#node"].field_overview.0.value %}
+
+{# --- DATE --- #}
+{% if type == 'event' %}
+
+  {# Dates no set #}
+  {% if content.field_teaser.0["#node"].field_dates.0.start_date is empty and content.field_teaser.0["#node"].field_dates.0.end_date is empty %}
+    {% set teaser_date = null %}
+  {# Same Day #}
+  {% elseif content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') == content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('F j, Y') %}
+    {% set teaser_date = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j, Y') %}
+  {# Multiple Days #}
+  {% else %}
+    {% set teaser_date = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('F j') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date|date('F d, Y') %}
+  {% endif %}
+
+  {# Dates no set #}
+  {% if content.field_teaser.0["#node"].field_dates.0.start_date is empty and content.field_dates.0.end_date is empty %}
+    {% set teaser_time = null %}
+  {# All Day #}
+  {% elseif (content.field_teaser.0["#node"].field_dates.0.start_date["#text"])|date('g:i A') == '12:00 AM' and (content.field_teaser.0["#node"].field_dates.0.end_date["#text"])|date('g:i A') == '11:59 PM'  %}
+    {% set teaser_time = null %}
+  {# Times to be set #}
+  {% else %}
+    {% set teaser_time = content.field_teaser.0["#node"].field_dates.0.start_date["#text"]|date('g:i A') ~ '-' ~ content.field_teaser.0["#node"].field_dates.0.end_date["#text"]|date('g:i A') %}
+  {% endif %}
+
+
+{% else %}
+  {% set teaser_date = content.field_teaser.0["#node"].field_date_published.value|date('F d, Y') %}
+{% endif %}
+
+<article{{ attributes.addClass(['l-constrained--xlarge', 'l--bottom-spacing'])}}>
+
+  {{ include('surf_main:teaser', {
+    layout: 'super',
+    title,
+    body,
+    url,
+    category,
+    category_url,
+    teaser_date,
+    teaser_time,
+    image,
+    alt,
+    icon,
+  }, with_context = false) }}
+
+</article>

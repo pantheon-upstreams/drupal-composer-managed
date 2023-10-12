@@ -1,0 +1,26 @@
+uuid: 52706b02-c239-42fd-81a5-18839083cec4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_left
+    - paragraphs.paragraphs_type.about_page_secondary
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - full_html
+id: paragraph.about_page_secondary.field_content_left
+field_name: field_content_left
+entity_type: paragraph
+bundle: about_page_secondary
+label: 'Content: Left'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

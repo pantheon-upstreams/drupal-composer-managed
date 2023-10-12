@@ -1,0 +1,193 @@
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Functions - Breakpoints
+ * Breakpoint viewport sizes and media queries. Breakpoints are defined as a map of (name: minimum width), order from
+ * small to large: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px). The map defined in the `$grid-breakpoints`
+ * global variable is used as the `$breakpoints` argument by default.
+ *
+ * - 01 - Breakpoint Next
+ * - 02 - Breakpoint Minimum
+ * - 03 - Breakpoint Maximum
+ * - 04 - Breakpoint Infix
+ */
+/*------------------------------------*\
+  01 - Breakpoint Next
+  Name of the next breakpoint, or null for the last breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  02 - Breakpoint Minimum
+  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+\*------------------------------------*/
+/*------------------------------------*\
+  03 - Breakpoint Maximum
+  The maximum value is reduced by 0.02px to work around the limitations of `min-` and `max-` prefixes and viewports
+  with fractional widths. See https://www.w3.org/TR/mediaqueries-4/#mq-min-max. Uses 0.02px rather than 0.01px to work
+  around a current rounding bug in Safari. See https://bugs.webkit.org/show_bug.cgi?id=178261
+\*------------------------------------*/
+/*------------------------------------*\
+  04 - Breakpoint Infix
+  Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front. Useful for making
+  responsive utilities.
+\*------------------------------------*/
+/**
+ * Settings - Breakpoints
+ * - 01 - Mapping
+ */
+/*------------------------------------*\
+  01 - Mapping
+\*------------------------------------*/
+/**
+ * Mixins - Breakpoints
+ * - 01 - Breakpoints
+ */
+/*------------------------------------*\
+  01 - Breakpoints
+\*------------------------------------*/
+.c-person {
+  background: var(--color-surf--cloud);
+  display: grid;
+  grid-template-columns: 6.25rem 1fr;
+}
+@media (min-width: 1024px) {
+  .c-person {
+    grid-template-columns: 11.375rem 1fr;
+    min-height: 14.375rem;
+  }
+}
+.c-person.no-image {
+  grid-template-columns: 6.25rem 1fr;
+}
+@media (min-width: 1024px) {
+  .c-person.no-image {
+    grid-template-columns: 11.375rem 1fr;
+  }
+}
+
+.c-person__image {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .c-person__image {
+    height: 100%;
+  }
+}
+.c-person__image img {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .c-person__image img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    min-height: 14.375rem;
+  }
+}
+
+.c-person__initials {
+  color: #cfcfcf;
+  font-family: var(--font-family-serif);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-size: 3.75rem;
+  line-height: 94%;
+  height: 6.25rem;
+  font-weight: var(--font-weight-medium);
+}
+@media (min-width: 1024px) {
+  .c-person__initials {
+    font-size: 7.5rem;
+    height: 100%;
+  }
+}
+
+.c-person__content-wrapper {
+  margin: 1.25rem 1.25rem 1.4375rem 1.75rem;
+}
+@media (min-width: 1024px) {
+  .c-person__content-wrapper {
+    margin: 2.34375rem 1.25rem 2.34375rem 1.75rem;
+  }
+}
+
+.c-person__details {
+  margin: 0;
+  padding: 0;
+}
+.c-person__details > li {
+  display: block;
+  margin: 0 0 0.5rem 0;
+}
+.c-person__details > li a {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-small);
+  line-height: var(--font-line-height-body-x-small);
+}
+.c-person__details > li a:hover {
+  text-decoration: none;
+}
+.c-person__details > li:last-child {
+  margin: 0;
+}
+
+.c-person__full-name {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-large);
+  line-height: var(--font-line-height-body-large);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 0.25rem 0;
+}
+
+.c-person__title {
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body-x-small);
+  line-height: var(--font-line-height-body-x-small);
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+}
+
+.c-person__bio a {
+  padding: 0 1.5rem 0 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2217%22%20height%3D%2213%22%20fill%3D%22none%22%3E%3Cpath%20stroke%3D%22%2300492C%22%20stroke-width%3D%221.5%22%20d%3D%22M.645%206.5h14.71M9.934%2011.919l5.42-5.42-5.42-5.419%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: center right;
+}

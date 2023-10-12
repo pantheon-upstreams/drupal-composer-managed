@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Template for a field. Only content is rendered. All wrappers removed.
+ */
+#}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{% set field_name_value = field_name|replace({'field_': ""})|replace({'_': "-"}) %}
+
+{%
+  set field_classes = [
+    'field',
+    field_name_value,
+  ]
+%}
+
+
+<div{{ title_attributes.addClass(field_classes) }}>
+
+{% if label_display != 'hidden' %}
+  <h4 class="field__label">{{ label }}</h4>
+{% endif %}
+<table>
+	<thead>
+		<tr>
+			<th>Milestone</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for item in items %}
+		    {{ item.content }}
+		{% endfor %}
+	</tbody>
+</table>
+
+</div>

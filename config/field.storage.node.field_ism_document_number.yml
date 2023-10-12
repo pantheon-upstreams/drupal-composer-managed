@@ -1,0 +1,21 @@
+uuid: 4758cd00-db2e-479f-97bf-8b6346b60f1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ism_document_number
+field_name: field_ism_document_number
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

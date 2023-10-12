@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme implementation for page manager pages prefixed with "dashboard_"
+
+ * Available variables
+ * - content: Main render variable with page manager regions
+ * - user_display_name: The first and last name, (or username) of the current user
+ * - page_id: The ID for the current page manager page
+ * - page_title: The label for the page manager page entity (only editable in config)
+ * - node_title: The node title if viewing a details page for an event or curriculum module
+ *     This is probably not needed but left in place for reference in case anything from the
+ *     rest of the node is needed here, that can be modified in the same PageVariantViewBuilder custom class.
+ *
+ * @see surf_dashboard_entity_type_alter()
+ * @see template_preprocess_dashboard_page()
+ */
+#}
+
+{{ breadcrumbs }}
+
+{% if content.header %}
+  {{ content.header }}
+{% endif %}
+
+{% set page_title = (page_id == 'dashboard_home' ? user_display_name : page_title) %}
+
+{% if node_title is empty %}
+<h2>{{ page_title }}</h2>
+{% endif %}
+
+{{ content|without('header') }}

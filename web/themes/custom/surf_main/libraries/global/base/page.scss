@@ -1,0 +1,83 @@
+//
+// Global - Page
+//
+// - 01 - Imports
+// - 02 - Page
+// - 03 - Body
+// - 04 - Skip Link
+// - 05 - Rule
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+
+
+
+
+//------------------------------------
+//  02 - Page
+//------------------------------------
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-tab-size: 4;
+  font-size: 100%;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+  tab-size: 4;
+}
+
+
+
+
+//------------------------------------
+//  03 - Body
+//------------------------------------
+
+body {
+  background-color: var(--surf-color-black); // Floating footer fix
+}
+
+.layout-container {
+  background-color: var(--surf-color-white);
+  overflow: hidden;
+  padding-top: var(--surf-height-region-header-primary);
+
+  @include mixins-breakpoints.bp-min(large) {
+    padding-top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Skip Link
+//------------------------------------
+
+.skip-link {
+  display: block;
+  background-color: var(--surf-color-primary);
+  color: var(--surf-color-light);
+  padding: 16px 32px 20px;
+  text-decoration: none;
+  z-index: var(--surf-zindex-super);
+}
+
+
+
+
+//------------------------------------
+//  05 - Rule
+//------------------------------------
+
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--surf-color-dark);
+}

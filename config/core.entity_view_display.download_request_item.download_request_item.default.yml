@@ -1,0 +1,25 @@
+uuid: 1908b8a7-e5b7-4c4b-a883-92df0b64a560
+langcode: en
+status: true
+dependencies:
+  module:
+    - download_request
+id: download_request_item.download_request_item.default
+targetEntityType: download_request_item
+bundle: download_request_item
+mode: default
+content:
+  download_item:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
+  state: true
+  status_description: true

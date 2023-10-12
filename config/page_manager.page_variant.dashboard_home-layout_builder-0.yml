@@ -1,0 +1,69 @@
+uuid: 3c1924e2-5e48-4704-8520-21dfe7607e96
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_home
+  module:
+    - layout_discovery
+    - notification_message
+id: dashboard_home-layout_builder-0
+label: 'Layout builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 09df4b40-380d-4b90-9250-17d86ce83dc5
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Navigation
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Announcements
+        context_mapping: {  }
+      components:
+        6e8d1454-8e1e-4016-a706-26590da88e81:
+          uuid: 6e8d1454-8e1e-4016-a706-26590da88e81
+          region: content
+          configuration:
+            id: notification_message
+            label: Announcements
+            label_display: '0'
+            provider: notification_message
+            context_mapping: {  }
+            notification_message:
+              type:
+                dashboard: dashboard
+              display_mode: default
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Events
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: News
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+  title_type: manual
+  manual_title: 'My Dashboard'
+  title_from_block: ''
+page: dashboard_home
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

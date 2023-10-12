@@ -1,0 +1,14 @@
+uuid: dc43b6d1-bdaf-4ad4-a3a7-1e4739cf00ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: gallery
+label: 'Image Gallery'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins:
+  style_options:
+    enabled: true

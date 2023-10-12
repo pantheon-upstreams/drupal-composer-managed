@@ -1,0 +1,85 @@
+uuid: 24ee46fd-516c-45f5-869a-57b7f72f5bff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_p_contract_schedule
+    - node.type.contract
+    - paragraphs.paragraphs_type.schedule_item
+  module:
+    - entity_reference_revisions
+id: node.contract.field_p_contract_schedule
+field_name: field_p_contract_schedule
+entity_type: node
+bundle: contract
+label: 'Contract schedule'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      schedule_item: schedule_item
+    negate: 0
+    target_bundles_drag_drop:
+      card:
+        weight: 20
+        enabled: false
+      centered_image_text:
+        weight: 21
+        enabled: false
+      entity_references_image_text:
+        weight: 22
+        enabled: false
+      entity_references_text:
+        weight: 23
+        enabled: false
+      full_teaser:
+        weight: 24
+        enabled: false
+      gallery:
+        weight: 25
+        enabled: false
+      homepage_lead_teaser:
+        weight: 26
+        enabled: false
+      homepage_teaser:
+        weight: 27
+        enabled: false
+      image:
+        weight: 28
+        enabled: false
+      image_with_caption:
+        weight: 29
+        enabled: false
+      one_up_teaser_image_text:
+        weight: 30
+        enabled: false
+      running_text:
+        weight: 31
+        enabled: false
+      schedule_item:
+        weight: 32
+        enabled: true
+      section:
+        weight: 33
+        enabled: false
+      text:
+        weight: 34
+        enabled: false
+      two_up_figures:
+        weight: 35
+        enabled: false
+      two_up_teaser_image_text:
+        weight: 36
+        enabled: false
+      two_up_teaser_text:
+        weight: 37
+        enabled: false
+      video:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

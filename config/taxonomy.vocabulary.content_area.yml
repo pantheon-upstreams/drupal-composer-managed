@@ -1,0 +1,8 @@
+uuid: 0c0a58e9-7f1c-4845-ac12-64d674bc0d54
+langcode: en
+status: true
+dependencies: {  }
+name: 'Content Area'
+vid: content_area
+description: ''
+weight: 0

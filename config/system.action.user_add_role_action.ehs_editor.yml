@@ -1,0 +1,14 @@
+uuid: 5b6a407e-d622-42df-aa3e-a9aba44e32c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.ehs_editor
+  module:
+    - user
+id: user_add_role_action.ehs_editor
+label: 'Add the EHS editor role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: ehs_editor

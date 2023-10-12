@@ -1,0 +1,35 @@
+uuid: b9743f55-7337-4c19-9666-f62523fec7a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user_request.event_registration.field_attended
+    - field.field.user_request.event_registration.field_email
+    - field.field.user_request.event_registration.field_name
+    - field.field.user_request.event_registration.field_number_requested
+    - field.field.user_request.event_registration.field_ref_event
+    - field.field.user_request.event_registration.field_webform_submission_id
+    - surf_registration.user_request_type.event_registration
+id: user_request.event_registration.default
+targetEntityType: user_request
+bundle: event_registration
+mode: default
+content:
+  field_ref_event:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full_dashboard
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_attended: true
+  field_email: true
+  field_name: true
+  field_number_requested: true
+  field_webform_submission_id: true
+  search_api_excerpt: true
+  state: true

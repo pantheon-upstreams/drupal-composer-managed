@@ -1,0 +1,169 @@
+ <?php
+
+/**
+ * @file
+ * Primary module hooks for SURF Dashboard module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function surf_dashboard_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $variables['dashboard_url'] = '';
+  $user = \Drupal::routeMatch()->getParameter('user');
+  if (!is_a($node, \Drupal\surf_dashboard\Entity\EntityUserDashboardInterface::class)) {
+    return;
+  }
+
+  if ($user && ($entity = $node->getDashboardRelationEntity($user))) {
+    $variables['dashboard_url'] = $node->getUserDashboardUrl($user, $entity);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function surf_dashboard_theme_suggestions_layout_alter(array &$suggestions, array $variables) {
+  $dashboard_page_id = \Drupal\Component\Utility\NestedArray::getValue($variables, ['content', '#dashboard_page_id']);
+  if ($dashboard_page_id) {
+    $suggestions[] = 'layout__dashboard';
+    $suggestions[] = 'layout__dashboard__' . $dashboard_page_id;
+  }
+}
+/**
+ * Implements hook_theme().
+ */
+function surf_dashboard_theme($existing, $type, $theme, $path) {
+  return [
+    'dashboard_page' => [
+      'variables' => [
+        'breadcrumbs' => [],
+        'page_id' => NULL,
+        'page_title' => NULL,
+        'user_display_name' => NULL,
+        'content' => [],
+        'node_title' => NULL,
+      ]
+    ],
+  ];
+}
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function surf_dashboard_user_format_name_alter(&$name, \Drupal\Core\Session\AccountInterface $account) {
+  if ($account->isAnonymous()) {
+    return;
+  }
+  $user = \Drupal\user\Entity\User::load($account->id());
+  $first_name = $user->get('field_first_name')->value;
+  $last_name = $user->get('field_last_name')->value;
+  if ($first_name || $last_name) {
+    $name = join(' ', [$first_name, $last_name]);
+  }
+}
+
+function template_preprocess_dashboard_page(&$variables) {
+  /** @var \Drupal\Core\Breadcrumb\BreadcrumbManager $breadcrumb_manager */
+  $breadcrumb_manager = \Drupal::service('breadcrumb');
+  $variables['breadcrumbs'] = $breadcrumb_manager->build(\Drupal::routeMatch());
+
+  $content = &$variables['content'];
+  foreach (Element::children($variables['content']) as $id) {
+    $element = $variables['content'][$id];
+    if (!isset($element['#layout'])) {
+      $content[$id] = $element;
+      continue;
+    }
+    unset($content[$id]);
+    $element['#dashboard_page_id'] = $variables['page_id'];
+    $label = $element['#settings']['label'];
+    if (!empty($label)) {
+      $id = preg_replace('/[^a-z0-9_]+/', '_', mb_strtolower($label));
+    }
+    $content[$id] = $element;
+  }
+}
+/**
+ * Implements hook_entity_type_alter().
+ */
+function surf_dashboard_entity_type_alter(array &$entity_types) {
+  if (isset($entity_types['page_variant'])) {
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityType $entity_type */
+    $entity_type = $entity_types['page_variant'];
+    $entity_type->setViewBuilderClass(\Drupal\surf_dashboard\Entity\PageVariantViewBuilder::class);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function surf_dashboard_form_node_type_form_alter(&$form, FormStateInterface $form_state) {
+  // TODO: This is an interdependency, split this up and move this to surf_registration and surf_curriculum.
+  /** @var \Drupal\node\Entity\NodeType $node_type */
+  $entity = $form_state->getFormObject()->getEntity();
+  if (!in_array($entity->id(), ['curriculum_module', 'event'])) {
+    return;
+  }
+  if (!$node_type = NodeType::load($entity->id())) {
+    return;
+  }
+
+  $form['request_link'] = [
+    '#type' => 'details',
+    '#title' => t('Request link'),
+    '#description' => t('The user will see a link to request/reserve this node with the node id pre-populated. If the user already has an active request they will see a link to view on their dashboard.'),
+    '#group' => 'additional_settings',
+    '#weight' => 35,
+    '#tree' => TRUE,
+  ];
+
+  $request_link_settings = $node_type->getThirdPartySetting('surf_dashboard', 'request_link');
+  $form['request_link']['text_webform'] = [
+    '#type' => 'textfield',
+    '#title' => t('Webform link text'),
+    '#default_value' => $request_link_settings['text_webform'] ?? '',
+  ];
+
+  $form['request_link']['text_dashboard'] = [
+    '#type' => 'textfield',
+    '#title' => t('Dashboard link text'),
+    '#default_value' => $request_link_settings['text_dashboard'] ?? '',
+  ];
+
+  $form['actions']['submit']['#submit'][] = 'surf_dashboard_form_node_type_form_submit';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function surf_dashboard_page_variant_access(\Drupal\page_manager\PageVariantInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+  $page_id = $entity->getPage()->id();
+  if (strpos($page_id, 'dashboard_') !== 0) {
+    return AccessResult::neutral();
+  }
+  if ($account->hasPermission($entity->getEntityType()->getAdminPermission())) {
+    return AccessResult::neutral();
+  }
+  $contexts = $entity->getContexts();
+  if (empty($contexts['user'])) {
+    return AccessResult::forbidden();
+  }
+  $user = $contexts['user']->getContextData()->getValue();
+  return AccessResult::forbiddenIf(!$user->access('update', $account));
+}
+
+function surf_dashboard_form_node_type_form_submit(&$form, FormStateInterface $form_state) {
+  $bundle = $form['type']['#default_value'];
+  $node_type = NodeType::load($bundle);
+  $third_party_data = $form_state->getValue('request_link');
+  ksort($third_party_data);
+  $node_type->setThirdPartySetting('surf_dashboard', 'request_link', $third_party_data);
+  $node_type->save();
+}

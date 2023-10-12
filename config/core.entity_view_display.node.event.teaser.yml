@@ -1,0 +1,99 @@
+uuid: 2b282c2b-6ae3-4097-a1e8-7d121ddefb8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_capacity
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_department
+    - field.field.node.event.field_link
+    - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_title
+    - field.field.node.event.field_media_primary
+    - field.field.node.event.field_overview
+    - field.field.node.event.field_ref_attendees
+    - field.field.node.event.field_ref_audiences
+    - field.field.node.event.field_ref_eo_opportunities
+    - field.field.node.event.field_ref_event_types
+    - field.field.node.event.field_ref_key_impact_areas
+    - field.field.node.event.field_ref_related_content
+    - field.field.node.event.field_ref_research_areas
+    - field.field.node.event.field_registration_period
+    - field.field.node.event.field_registration_required
+    - node.type.event
+  module:
+    - datetime_range
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 125
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_dates:
+    type: daterange_plain
+    label: hidden
+    settings:
+      timezone_override: ''
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_overview:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ref_event_types:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  registration_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_capacity: true
+  field_department: true
+  field_link: true
+  field_location_address: true
+  field_location_title: true
+  field_ref_attendees: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
+  field_registration_period: true
+  field_registration_required: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

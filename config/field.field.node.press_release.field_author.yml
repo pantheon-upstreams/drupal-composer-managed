@@ -1,0 +1,19 @@
+uuid: 151a727f-9858-4a30-a51a-5bf08841b3bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.press_release
+id: node.press_release.field_author
+field_name: field_author
+entity_type: node
+bundle: press_release
+label: Author
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

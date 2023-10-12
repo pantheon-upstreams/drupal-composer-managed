@@ -1,0 +1,19 @@
+uuid: 34ca255c-9432-46ff-a75f-712b21d7c9f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.report_publication
+id: node.report_publication.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: report_publication
+label: 'Teaser text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

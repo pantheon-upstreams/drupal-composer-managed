@@ -1,0 +1,188 @@
+@use '../../../libraries/partials/partials' as *;
+
+//
+// Person Page
+//
+// - 01 - Grid Styles
+//
+.c-person-page {
+  padding-block-end: rem(52px);
+  position: relative;
+
+  @include bp-min(large) {
+    padding-block-end: rem(80px);
+  }
+
+  @include bp-min(xxlarge) {
+    padding-block-end: rem(86px);
+  }
+}
+
+.person-content__job-title {
+  color: var(--surf-color-gray-650);
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-18);
+  font-weight: var(--surf-font-weight-regular);
+  line-height: 1.44;
+  max-width: rem(900px);
+
+  @include bp-min(medium) {
+    font-size: var(--surf-font-size-32);
+    line-height: 1.32;
+  }
+}
+
+.person-content__contact-wrapper {
+  align-items: center;
+  display: flex;
+  gap: rem(32px);
+
+  .person-content__phone,
+  .person-content__email {
+    margin: 0;
+
+    a {
+      font-size: var(--surf-font-size-18);
+      font-weight: var(--surf-font-weight-book);
+      line-height: 1.44;
+
+      @include bp-min(medium) {
+        font-size: var(--surf-font-size-24);
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.person-content__wrapper {
+  p {
+    font-size: var(--surf-font-size-16);
+    line-height: 1.48;
+
+    @include bp-min(medium) {
+      font-size: var(--surf-font-size-18);
+      line-height: 1.44;
+    }
+  }
+}
+
+.c-person-page__content {
+  max-width: rem(780px);
+}
+
+.person-content__title {
+  text-transform: uppercase;
+
+  @include surf-font-heading-one;
+}
+
+.c-person-page__media {
+  width: 150px;
+
+  @include bp-min(medium) {
+    width: 100%;
+  }
+}
+
+//------------------------------------
+//  01 - Grid Styles
+//------------------------------------
+.c-person-page__grid {
+  display: grid;
+  gap: rem(32px);
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+  max-width: rem(619px);
+}
+
+.c-person-page--with-img {
+  padding-block-end: rem(43px);
+
+  @include bp-min(medium) {
+    padding-block-end: rem(50px);
+  }
+
+  @include bp-min(large) {
+    padding-block-end: rem(54px);
+  }
+
+  @include bp-min(xxlarge) {
+    padding-block-end: rem(90px);
+  }
+
+  .c-person-page__grid {
+    display: grid;
+    gap: rem(32px);
+    max-width: none;
+
+    @include bp-min(medium) {
+      grid-template-areas: 'header header'
+        'content sidebar';
+      grid-template-columns: 8fr 4fr;
+    }
+
+    @include bp-min(xxlarge) {
+      grid-template-areas: 'header sidebar'
+        'content sidebar';
+      grid-template-columns: 8fr 4fr;
+    }
+
+    @include bp-min(xlarge) {
+      grid-template-columns: 9fr 3fr;
+    }
+
+    .person-content__title {
+      order: 2;
+
+      @include bp-min(medium) {
+        grid-area: header;
+      }
+    }
+
+    .c-person-page__media {
+      order: 1;
+
+      @include bp-min(medium) {
+        grid-area: sidebar;
+      }
+    }
+
+    .c-person-page__content {
+      order: 3;
+
+      @include bp-min(medium) {
+        grid-area: content;
+      }
+    }
+  }
+}
+
+.c-person-page__content-grid {
+  display: grid;
+  row-gap: rem(32px);
+  width: 100%;
+
+  .person-content__title {
+    order: 1;
+  }
+
+  .person-content__job-title {
+    order: 3;
+
+    @include bp-min(medium) {
+      order: 2;
+    }
+  }
+
+  .person-content__contact-wrapper {
+    order: 2;
+
+    @include bp-min(medium) {
+      order: 3;
+    }
+  }
+
+  .person-content__wrapper {
+    order: 4;
+  }
+}

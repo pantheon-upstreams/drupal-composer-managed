@@ -1,0 +1,14 @@
+uuid: aad543aa-1be3-4021-9292-c2e78ccb526e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.business_editor
+  module:
+    - user
+id: user_remove_role_action.business_editor
+label: 'Remove the Business editor role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: business_editor

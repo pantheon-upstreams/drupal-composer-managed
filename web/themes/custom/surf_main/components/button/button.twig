@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Component for Button
+ *
+ * Available props:
+ * - button_color: [string]
+ * - button_external: [boolean]
+ * - button_icon: [string]
+ * - button_title: [string]
+ * - button_url: [string]
+ *
+ */
+#}
+
+{% set classes = [
+    'button',
+] %}
+
+<a {{ button_attributes.addClass(classes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %}>
+    {{- button_title -}}
+</a>

@@ -1,0 +1,10 @@
+uuid: 863e09c9-fb18-4549-a672-f8f221400178
+langcode: en
+status: true
+dependencies:
+  module:
+    - download_request
+id: download_item.teaser
+label: Teaser
+targetEntityType: download_item
+cache: true

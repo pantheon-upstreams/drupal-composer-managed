@@ -1,0 +1,10 @@
+uuid: d91ee642-c830-4a56-9819-9c978aecf038
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: file.content_slider
+label: content_slider
+targetEntityType: file
+cache: true

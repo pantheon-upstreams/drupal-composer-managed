@@ -1,0 +1,25 @@
+uuid: 439266a2-debd-4ad6-bba5-738007ddc691
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.persons_list.field_persons
+    - paragraphs.paragraphs_type.persons_list
+  module:
+    - entity_reference_revisions
+id: paragraph.persons_list.default
+targetEntityType: paragraph
+bundle: persons_list
+mode: default
+content:
+  field_persons:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

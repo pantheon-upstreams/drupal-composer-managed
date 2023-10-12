@@ -1,0 +1,23 @@
+uuid: f71ab4ba-ec3b-44dd-901c-730ccc365b24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user_request.field_change_request
+    - surf_registration.user_request_type.visit
+id: user_request.visit.field_change_request
+field_name: field_change_request
+entity_type: user_request
+bundle: visit
+label: 'Change request'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Change or cancel another request'
+  off_label: 'New request'
+field_type: boolean

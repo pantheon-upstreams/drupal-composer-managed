@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_cache_flush().
+ */
+function surf_core_cache_flush() {
+  $entity_field_manager = \Drupal::service('entity_field.manager');
+  // @see https://www.drupal.org/project/drupal/issues/3129179
+  // This could also be moved to a hook after a field is deleted.
+  if (method_exists(\Drupal\Core\Entity\EntityFieldManager::class, 'rebuildBundleFieldMap')) {
+    $entity_field_manager->rebuildBundleFieldMap();
+  }
+}
+
+/**
+ * Alter the information provided in \Drupal\webform\Annotation\WebformHandler.
+ *
+ * @param array $handlers
+ *   The array of webform handlers, keyed on the machine-readable handler name.
+ */
+function surf_core_webform_handler_info_alter(array &$handlers) {
+  if (isset($handlers['user_registration'])) {
+    $handlers['user_registration']['class'] =  \Drupal\surf_core\Plugin\WebformHandler\UserRegistrationWebformHandler::class;
+  }
+}

@@ -1,0 +1,13 @@
+uuid: 5973d533-83bd-4d6d-8153-9dedcbbff3a2
+langcode: en
+status: true
+dependencies: {  }
+id: document_private
+label: 'Document (private)'
+description: 'Files not accessible by public. Example: curriculum module node resources.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_private_file
+field_map: {  }

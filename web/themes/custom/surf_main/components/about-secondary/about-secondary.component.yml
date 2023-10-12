@@ -1,0 +1,6 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: about-secondary
+name: About Page Secondary
+status: WIP
+componentType: molecule
+description: A about page secondary component

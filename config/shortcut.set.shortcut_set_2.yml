@@ -1,0 +1,6 @@
+uuid: 76951e70-1365-4134-bf9d-22792efd4aff
+langcode: en
+status: true
+dependencies: {  }
+id: shortcut_set_2
+label: 'Basic add and find content'

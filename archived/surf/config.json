@@ -1,0 +1,36 @@
+{
+  "name": "surf",
+  "description": "A custom theme for SURF based on Radix.",
+  "proxy" : "http://sanford_d8.dd:8083",
+  "bowerDir": "./bower_components",
+  "css": {
+    "file" : "surf.style.scss",
+    "src": [
+      "assets/scss/**/*.scss"
+    ],
+    "dest": "assets/css",
+    "includePaths": [
+      "./bower_components/bootstrap-sass/assets/stylesheets",
+      "./bower_components/font-awesome/scss",
+      "../radix/scss"
+    ]
+  },
+  "js": {
+    "file" : "surf.script.js",
+    "src": [
+      "assets/js/**/*.js"
+    ]
+  },
+  "images": {
+    "src": [
+      "assets/images/**/*"
+    ],
+    "dest": "assets/images/"
+  },
+  "fonts": {
+    "src": [
+      "./bower_components/font-awesome/fonts/**.*"
+    ],
+    "dest": "./assets/fonts/"
+  }
+}

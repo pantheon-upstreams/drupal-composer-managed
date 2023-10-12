@@ -1,0 +1,40 @@
+id: surf_node_contract
+label: SURF Node -> Contract
+migration_group: 'surf'
+migration_tags:
+  - Content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'contracts'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  body: body
+  field_ref_contacts: field_contact_person_s_
+  field_ref_contract_type: field_contract_type
+  field_p_contract_schedules: field_contract_schedule
+  field_contract_summary: field_contract_summary
+  field_overview: field_overview
+  field_links:
+    plugin: sub_process
+    source: field_url
+    process:
+      uri: uri
+      title: title
+      options:
+        plugin: default_value
+        default_value: []
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'contract'
+migration_dependencies:
+  required:
+    - surf_node_person
+    - surf_paragraph_schedule_item

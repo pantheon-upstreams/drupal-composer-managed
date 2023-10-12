@@ -1,0 +1,5 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: media-gallery
+name: Media Gallery
+status: WIP
+componentType: atom

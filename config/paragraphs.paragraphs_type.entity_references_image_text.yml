@@ -1,0 +1,6 @@
+uuid: 93a7678b-dd9c-4ae4-8541-3a302c081bd3
+langcode: en
+status: true
+dependencies: {  }
+id: entity_references_image_text
+label: 'Entity References: Image and Text'

@@ -1,0 +1,338 @@
+//
+// Navigation - Utility Menu
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Level One
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../partials/mixins/buttons' as mixins-buttons;
+@use '../../partials/mixins/links' as mixins-links;
+@use '../../partials/mixins/lists' as mixins-lists;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.menu.menu__name--main {
+  display: none;
+
+  ul {
+    @include mixins-lists.list-reset();
+  }
+
+  button {
+    @include mixins-buttons.button-reset();
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+// FUOC Fix
+.js .menu.menu__name--main {
+  display: block;
+}
+
+
+
+
+//------------------------------------
+//  03 - Level One
+//------------------------------------
+
+.menu.menu__name--main .menu__list.menu__level--1 {
+  display: flex;
+  flex-flow: nowrap column;
+  margin: 0;
+
+  @include mixins-breakpoints.bp-min(xxlarge) {
+    flex-flow: nowrap row;
+    margin: 0 -24px 0 -28px;
+  }
+
+  > li {
+    background-color: transparent;
+    position: relative;
+    transition: functions-animations.transition(background-color, 0.35s, easeInOutExpo);
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      padding: 0 16px;
+    }
+  }
+
+  > li.is-open {
+    @include mixins-breakpoints.bp-max(xxlarge) {
+      background-color: fade-out(#000, 0.75);
+    }
+  }
+
+  > li > a,
+  > li > button,
+  > li > span {
+    @include mixins-links.link-menu(22, white);
+    padding: 12px 16px;
+    text-align: left;
+    width: 100%;
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      @include mixins-links.link-menu(28, navy);
+      padding: 4px 0;
+      width: auto;
+    }
+  }
+
+  > li > a:after,
+  > li > button:after,
+  > li > span:after {
+    @include mixins-breakpoints.bp-max(xxlarge) {
+      display: none;
+    }
+  }
+
+  > li > a.icon__type--chevron-down,
+  > li > button.icon__type--chevron-down,
+  > li > span.icon__type--chevron-down {
+    padding-right: 28px;
+
+    &:before {
+      background: svg-load('icon-angle-down.svg', fill="#FFFFFF") no-repeat center;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 26px;
+      margin: auto;
+      position: absolute;
+      right: 32px;
+      top: 0;
+      transform: scale(1);
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      width: 26px;
+
+      @include mixins-breakpoints.bp-min(xxlarge) {
+        background: svg-load('icon-angle-down.svg', fill="#000080") no-repeat center;
+        right: 0;
+      }
+    }
+  }
+
+  > li.is-open > a.icon__type--chevron-down:before,
+  > li.is-open > button.icon__type--chevron-down:before,
+  > li.is-open > span.icon__type--chevron-down:before {
+    transform: scale(-1)
+  }
+
+  > li > .menu__dropdown {
+    max-height: 0;
+    opacity: 0;
+    padding: 0;
+    position: relative;
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    visibility: hidden;
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      background: url('../../../../images/backgrounds/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
+      max-height: inherit;
+      min-width: 740px;
+      padding: 32px;
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  > li:not(:last-child) > .menu__dropdown {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      left: 50%;
+      transform: translate(-50%, 100%);
+    }
+  }
+
+  > li:last-child > .menu__dropdown {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      right: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  > li.is-open > .menu__dropdown {
+    max-height: 2000px;
+    opacity: 1;
+    visibility: visible;
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  > li.is-open:not(:last-child) > .menu__dropdown {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  > li.is-open:last-child > .menu__dropdown {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Level Two
+//------------------------------------
+
+.menu.menu__name--main .menu__list.menu__level--2 {
+  display: flex;
+  flex-flow: nowrap column;
+  margin-bottom: 8px;
+
+  @include mixins-breakpoints.bp-min(xxlarge) {
+    flex-flow: nowrap row;
+    margin-bottom: 0;
+  }
+
+  > li {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      display: flex;
+      flex-flow: nowrap row;
+      min-height: 240px;
+      margin: 0 12px;
+    }
+  }
+
+  > li > .menu__card {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      background-color: var(--surf-color-white);
+      padding: 24px 32px;
+    }
+
+    &:after {
+      @include mixins-breakpoints.bp-min(xxlarge) {
+        background: svg-load('icon-arrow-right.svg', fill="#000080") no-repeat center;
+        background-size: cover;
+        content: '';
+        display: block;
+        height: 40px;
+        margin-top: 8px;
+        width: 40px;
+      }
+    }
+  }
+
+  > li > .menu__card > a,
+  > li > .menu__card > button,
+  > li > .menu__card > span {
+    color: var(--surf-color-white);
+    display: block;
+    font-size: var(--surf-font-size-18);
+    font-weight: var(--surf-font-weight-bold);
+    padding: 8px 16px;
+    text-decoration: none;
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      @include mixins-links.link-menu(28, navy);
+      padding: 4px 0;
+    }
+  }
+
+  > li > .menu__card > a:before,
+  > li > .menu__card > button:before,
+  > li > .menu__card > span:before {
+    @include mixins-breakpoints.bp-max(xxlarge) {
+      display: none;
+    }
+  }
+
+  > li > .menu__card > p {
+    display: none;
+    font-size: var(--surf-font-size-16);
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      display: inherit;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Level Three
+//------------------------------------
+
+.menu.menu__name--main .menu__list.menu__level--3 {
+  @include mixins-breakpoints.bp-min(xxlarge) {
+    background-color: var(--surf-color-white);
+  }
+
+  > li:not(:first-child) {
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      margin-top: 24px;
+    }
+  }
+
+  > li > a {
+    color: var(--surf-color-white);
+    display: block;
+    font-size: var(--surf-font-size-18);
+    padding: 8px 16px;
+    position: relative;
+    text-decoration: none;
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      color: var(--surf-color-gray-900);
+      display: inline-block;
+      padding: 4px 0;
+    }
+
+    &:after {
+      background-color: var(--surf-color-white);
+      content: '';
+      display: block;
+      height: 2px;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: calc(100% - 3px);
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      width: 100%;
+
+      @include mixins-breakpoints.bp-min(xxlarge) {
+        background-color: var(--surf-color-navy);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-navy);
+    }
+
+    &:hover:after,
+    &:focus:after {
+      opacity: 1;
+    }
+  }
+
+  > li > p {
+    display: none;
+    font-size: var(--surf-font-size-14);
+
+    @include mixins-breakpoints.bp-min(xxlarge) {
+      display: inherit;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@import '../../../libraries/partials/partials';
+
+.c-accordion__title {
+  color: var(--color-surf--dark-black);
+  font-size: var(–surf-font-size-18);
+  margin: 0;
+}
+
+.c-accordion__trigger {
+  align-items: center;
+  background: none;
+  //border-bottom: solid 1px var(--color-surf--grey);
+  border-radius: 0;
+  border-style: none;
+  color: var(--color-surf--dark-black);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: rem(8px) rem(16px);
+  position: relative;
+  text-align: left;
+  width: 100%;
+
+  @include bp-min(medium) {
+    padding: rem(20px) rem(12px);
+  }
+
+  &:focus,
+  &:hover {
+    color: var(--color-surf--dark-grey);
+    text-decoration: underline;
+
+    .c-accordion__icon {
+      background-color: var(--color-surf--kelly-green);
+    }
+  }
+
+  &[aria-expanded='true'] .c-accordion__icon {
+    mask-image: inline-svg(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M6.223 14h15.555"/></svg>'
+    );
+  }
+}
+
+.c-accordion__icon {
+  background-color: var(--color-surf--forest);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  flex: none;
+  height: rem(28px);
+  margin: 0 rem(12px) 0 0;
+  mask-image: inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M14 5.871v16.258M22.129 14H5.87"/></svg>'
+  );
+  width: rem(28px);
+}
+
+.c-accordion__title-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.c-accordion__title-text {
+  flex: 1;
+  font-weight: var(--font-weight-bold);
+  text-transform: none;
+  width: 100%;
+}
+
+.c-accordion__panel {
+  border-bottom: solid 1px var(--color-surf--grey);
+  max-height: 100vh;
+  transition: max-height 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[hidden] {
+    border: none;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  p {
+    font-size: var(–surf-font-size-18);
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.c-accordion__panel-inner-wrapper {
+  padding: rem(28px);
+
+  @include bp-min(medium) {
+    padding: rem(48px);
+  }
+}

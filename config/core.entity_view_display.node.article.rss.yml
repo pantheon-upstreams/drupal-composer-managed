@@ -1,0 +1,46 @@
+uuid: 3a939226-af59-454e-afa8-4366ec64a410
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.article.field_author
+    - field.field.node.article.field_date_published
+    - field.field.node.article.field_highlight
+    - field.field.node.article.field_media_primary
+    - field.field.node.article.field_p_content
+    - field.field.node.article.field_publisher
+    - field.field.node.article.field_ref_audiences
+    - field.field.node.article.field_ref_eo_opportunities
+    - field.field.node.article.field_ref_key_impact_areas
+    - field.field.node.article.field_ref_related_content
+    - field.field.node.article.field_ref_research_areas
+    - node.type.article
+  module:
+    - user
+_core:
+  default_config_hash: Q90X1FmFdOkTx8udckWPoAgleOstOerbgDnNpoP6PO4
+id: node.article.rss
+targetEntityType: node
+bundle: article
+mode: rss
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_author: true
+  field_date_published: true
+  field_highlight: true
+  field_media_primary: true
+  field_p_content: true
+  field_publisher: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
+  langcode: true
+  search_api_excerpt: true

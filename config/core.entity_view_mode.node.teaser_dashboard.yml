@@ -1,0 +1,10 @@
+uuid: 73051430-3f32-44bb-9fd8-c1bb936a785b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_dashboard
+label: 'Teaser - User dashboard'
+targetEntityType: node
+cache: true

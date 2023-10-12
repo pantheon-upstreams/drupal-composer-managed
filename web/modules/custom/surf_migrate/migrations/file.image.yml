@@ -1,0 +1,36 @@
+id: surf_file_image
+label: SURF File Image
+migration_group: surf
+source:
+  key: migrate
+  plugin: d8_image_field_file
+  scheme: public
+  image_fields:
+    - paragraph:field_image
+    - node:field_portrait
+process:
+  fid: fid
+  filename: filename
+  uid: uid
+  langcode: langcode
+  source_full_path:
+    -
+      plugin: str_replace
+      source: uri
+      search: "public://"
+      replace: 'https://sanfordlab.org/sites/default/files/'
+    -
+      plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - uri
+  filemime: filemime
+  filesize: filesize
+  status: status
+  created: created
+  changed: changed
+destination:
+  plugin: entity:file
+

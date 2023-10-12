@@ -1,0 +1,14 @@
+uuid: 89d061e8-8076-4413-aa4a-91924786b3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.educator
+  module:
+    - user
+id: user_remove_role_action.educator
+label: 'Remove the Educator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: educator

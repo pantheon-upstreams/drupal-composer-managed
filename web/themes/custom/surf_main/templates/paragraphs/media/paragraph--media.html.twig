@@ -1,0 +1,27 @@
+{% if content.field_media.0["#media"].field_media_image %}
+  {# image #}
+  {% set image_url = file_url(content.field_media.0["#media"].field_media_image.entity.fileuri | image_style('featured_image')) %}
+   {% set image_alt = content.field_media.0["#media"].field_media_image.alt %}
+{% elseif content.field_media.0["#media"].field_media_oembed_video %}
+  {# video #}
+  {% set video_full_url = content.field_media.0["#media"].field_media_oembed_video.value %}
+  {% set parsedUrl = video_full_url|split('/') %}
+  {% set domain = parsedUrl[2] %}
+  {% set parts = video_full_url|split('/') %}
+  {% set code = parts|last %}
+  {% if domain == "vimeo.com" %}
+    {% set video_url = "https://player.vimeo.com/video/" ~ code %}
+  {% elseif domain == "youtube.com" %}
+    {% set video_url = "https://www.youtube.com/embed/" ~ code %}
+  {% endif %}
+{% endif %}
+
+{{ include('surf_main:media', {
+  image_url,
+  image_alt,
+  image_credit: content.field_credit|field_value,
+  video_url,
+  title: content.field_media.0["#media"].name.value,
+  caption: content.field_text.0["#text"],
+  attributes,
+}, with_context = false) }}

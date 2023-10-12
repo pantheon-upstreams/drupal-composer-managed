@@ -1,0 +1,21 @@
+{% set items = [] %}
+{% for item in paragraph.field_cards %}
+{% set items = items|merge([{
+  id: item.value.target_id
+  }]) %}
+{% endfor %}
+
+{% if items|length <= 1 %}
+  {% set length = 1 %}
+{% elseif items|length == 2 %}
+  {% set length = 2 %}
+{% elseif items|length >= 3 %}
+  {% set length = 3 %}
+{% endif %}
+
+{{ include('surf_main:callout-list', {
+  items,
+  length,
+  attributes,
+}, with_context = false) }}
+

@@ -1,0 +1,26 @@
+uuid: c876ca06-3979-42be-b94d-916c5e568a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.experiment_research
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
+id: node.experiment_research.field_overview
+field_name: field_overview
+entity_type: node
+bundle: experiment_research
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

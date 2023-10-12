@@ -1,0 +1,17 @@
+uuid: a758214d-093c-4733-a696-5e2a08b5c9fd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Simple Text'
+format: simple_text
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      filter_html_help: true
+      filter_html_nofollow: false

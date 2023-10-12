@@ -1,0 +1,14 @@
+uuid: f5f69785-87cf-49a6-9e55-b4929773cb2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: card
+label: Callout
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

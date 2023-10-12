@@ -1,0 +1,19 @@
+uuid: 299cc256-d945-40e2-874c-574a86a7d573
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_citation
+    - paragraphs.paragraphs_type.pullquote
+id: paragraph.pullquote.field_citation
+field_name: field_citation
+entity_type: paragraph
+bundle: pullquote
+label: Citation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

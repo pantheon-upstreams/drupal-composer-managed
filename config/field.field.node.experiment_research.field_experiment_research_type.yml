@@ -1,0 +1,21 @@
+uuid: a884e6c2-00db-4b9e-ba4f-58dcb469f240
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experiment_research_type
+    - node.type.experiment_research
+  module:
+    - options
+id: node.experiment_research.field_experiment_research_type
+field_name: field_experiment_research_type
+entity_type: node
+bundle: experiment_research
+label: 'Experiment/Research type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

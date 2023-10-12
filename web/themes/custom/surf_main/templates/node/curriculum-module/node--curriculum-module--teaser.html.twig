@@ -1,0 +1,92 @@
+{# <pre>{{dump(content)}}</pre> #}
+
+{#
+  TODO: replace/update the hardcoded `category_url`
+#}
+
+{# -- TITLE --- #}
+{% set title = label|field_value %}
+
+{# Type #}
+{% set type = content.field_experiment_research_type.0["#markup"] %}
+
+{# Category / Parent Logic #}
+{# {% if type == 'research_area' %}
+  {% set category = 'Areas of Research' %}
+  {% set category_url = '/areas-research' %}
+{% else %}
+  {% set category = 'Experiments' %}
+  {% set category_url = '/experiments' %}
+{% endif %} #}
+
+{# -- IMAGE --- #}
+{% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+{% set alt = title %}
+
+{% if content.field_media['#items'].entity.field_media_image is not empty %}
+  {% set image = file_url(content.field_media['#items'].entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+  {% set alt = content.field_media['#items'].entity.field_media_image.alt %}
+{% endif %}
+
+
+{# GRADES #}
+{% set grade_levels = [] %}
+{% for item in content.field_ref_grade_level['#items'] %}
+    {% if item.target_id %}
+      {% set id = item.target_id %}
+      {% set grade_levels_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
+
+      {% set grade_levels = grade_levels|merge([{
+        id: item.target_id,
+        title: grade_levels_title,
+      }]) %}
+    {% endif %}
+{% endfor %}
+
+{# CONTENT AREA field_content_area #}
+{% set content_areas = [] %}
+{% for item in content.field_content_area['#items'] %}
+    {% if item.target_id %}
+
+      {% set id = item.target_id %}
+      {% set content_areas_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
+
+      {% set content_areas = content_areas|merge([{
+        id: item.target_id,
+        title: content_areas_title,
+      }]) %}
+    {% endif %}
+{% endfor %}
+
+{# STANDARDS field_ref_standards  #}
+{% set standards = [] %}
+{% for item in content.field_ref_standards['#items'] %}
+  {% if item.target_id %}
+    {% set id = item.target_id %}
+    {% set standards_title = drupal_field('name', 'taxonomy_term', id)[0]['#context'].value %}
+
+    {% set standards = standards|merge([{
+      id: item.target_id,
+      title: standards_title
+    }]) %}
+  {% endif %}
+{% endfor %}
+
+{# Body #}
+{% set body = content.field_overview.0["#text"] %}
+
+ {{ include('surf_main:teaser', {
+   layout: 'column-stack',
+   title,
+   body,
+   url,
+   category: null,
+   category_url: null,
+   image,
+   alt,
+   icon,
+   type,
+   grade_levels,
+   content_areas,
+   standards,
+ }, with_context = false) }}

@@ -1,0 +1,38 @@
+uuid: 17c33a72-f5c0-47f4-9c18-d5d20274e5e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_left
+    - paragraphs.paragraphs_type.two_up_teaser_image_text
+  module:
+    - image
+id: paragraph.two_up_teaser_image_text.field_image_left
+field_name: field_image_left
+entity_type: paragraph
+bundle: two_up_teaser_image_text
+label: 'Image: Left'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: images/custom
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

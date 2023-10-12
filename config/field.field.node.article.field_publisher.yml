@@ -1,0 +1,21 @@
+uuid: 0356ccae-4579-4314-9acb-6f2dc73f85de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publisher
+    - node.type.article
+  module:
+    - text
+id: node.article.field_publisher
+field_name: field_publisher
+entity_type: node
+bundle: article
+label: Publisher
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

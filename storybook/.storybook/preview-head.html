@@ -1,0 +1,24 @@
+<!-- .storybook/preview-head.html -->
+
+<script>
+  (function () {
+
+  /**
+    * ResizeObserver callback that resizes the parent iframe based on
+    * the height of the child document html element.
+    *
+    * @param {ResizeObserverEntry[]} entries
+    */
+    function onBodyResize(entries) {
+      // Resize the parent iframe based on the html's border box height.
+      if (window.frameElement && entries.length) {
+        window.frameElement.height = entries[0].borderBoxSize[0].blockSize + 1;
+        window.frameElement.style.height = null;
+        window.frameElement.parentElement.style.height = null;
+      }
+    }
+
+    // Observe changes to the <html> dimensions.
+    new ResizeObserver(onBodyResize).observe(document.documentElement, { box: 'border-box'});
+  })();
+</script>

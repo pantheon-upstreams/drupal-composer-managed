@@ -1,0 +1,63 @@
+uuid: 8a402331-ebd4-467a-ac70-76f3844ba459
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_visits
+    - views.view.user_visits
+    - webform.webform.visit
+  module:
+    - layout_discovery
+    - views
+    - webform
+id: dashboard_visits-layout_builder-0
+label: 'Layout builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 9b8b9a3e-cccd-4a09-a9eb-9a18f36c2568
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Main content'
+        context_mapping: {  }
+      components:
+        da091f77-a2fc-4c04-b429-8285f1145347:
+          uuid: da091f77-a2fc-4c04-b429-8285f1145347
+          region: content
+          configuration:
+            id: 'views_block:user_visits-dashboard_visits'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 1
+          additional: {  }
+        90c6c67b-6535-4fcd-b3c9-2dd4d656ef28:
+          uuid: 90c6c67b-6535-4fcd-b3c9-2dd4d656ef28
+          region: content
+          configuration:
+            id: webform_block
+            label: 'Submit or change a request'
+            label_display: visible
+            provider: webform
+            context_mapping: {  }
+            webform_id: visit
+            default_data: ''
+            redirect: false
+          weight: 3
+          additional: {  }
+      third_party_settings: {  }
+  title_type: manual
+  manual_title: 'Field Trips & Presentations'
+  title_from_block: ''
+page: dashboard_visits
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

@@ -1,0 +1,20 @@
+name: SURF Main
+type: theme
+description: A dynamic theme powered by Prototype & Mercury Editor with a powerful display.
+core_version_requirement: ^9 || ^10
+base theme: stable9
+
+regions:
+  site_alert: Alert
+  header_utility: Header Utility
+  header_primary: Header Primary
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar_right: Right Sidebar
+  footer: Footer
+
+libraries:
+  - surf_main/fonts
+  - surf_main/global

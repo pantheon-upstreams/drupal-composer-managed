@@ -1,0 +1,113 @@
+@use '../../../libraries/partials/partials' as *;
+
+.c-person {
+  background: var(--color-surf--cloud);
+  display: grid;
+  grid-template-columns: rem(100px) 1fr;
+
+  @include bp-min(large) {
+    grid-template-columns: rem(182px) 1fr;
+    min-height: rem(230px);
+  }
+
+  &.no-image {
+    grid-template-columns: rem(100px) 1fr;
+
+    @include bp-min(large) {
+      grid-template-columns: rem(182px) 1fr;
+    }
+  }
+}
+
+.c-person__image {
+  position: relative;
+
+  @include bp-min(large) {
+    height: 100%;
+  }
+
+  img {
+    display: block;
+
+    @include bp-min(large) {
+      height: 100%;
+      min-height: rem(230px);
+      object-fit: cover;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+.c-person__initials {
+  align-items: center;
+  color: #cfcfcf;
+  display: flex;
+  font-family: var(--font-family-serif);
+  font-size: rem(60px);
+  font-weight: var(--font-weight-medium);
+  height: rem(100px);
+  justify-content: center;
+  letter-spacing: 0.02em;
+  line-height: 94%;
+  text-align: center;
+
+  @include bp-min(large) {
+    font-size: rem(120px);
+    height: 100%;
+  }
+}
+
+.c-person__content-wrapper {
+  margin: rem(20px) rem(20px) rem(23px) rem(28px);
+
+  @include bp-min(large) {
+    margin: rem(37.5px) rem(20px) rem(37.5px) rem(28px);
+  }
+}
+
+.c-person__details {
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    display: block;
+    margin: 0 0 rem(8px) 0;
+
+    a {
+      font-size: var(–surf-font-size-14);
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.c-person__full-name {
+  color: var(--surf-color-gray-650);
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-32);
+  font-weight: var(--surf-font-weight-regular);
+  line-height: 1.32;
+  max-width: rem(900px);
+}
+
+.c-person__title {
+  font-size: var(–surf-font-size-14);
+  font-style: italic;
+  margin: 0 0 rem(8px) 0;
+}
+
+.c-person__bio a {
+  background-image: inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="17" height="13" fill="none"><path stroke="#00492C" stroke-width="1.5" d="M.645 6.5h14.71M9.934 11.919l5.42-5.42-5.42-5.419"/></svg>'
+  );
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding: 0 rem(24px) 0 0;
+}

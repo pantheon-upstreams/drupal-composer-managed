@@ -1,0 +1,19 @@
+uuid: e49d6ed2-e318-44ca-b1a7-60676b32234f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.professional_development
+id: node.professional_development.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: professional_development
+label: 'Teaser text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

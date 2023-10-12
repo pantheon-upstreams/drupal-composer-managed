@@ -1,0 +1,38 @@
+curriculum_module_default:
+  label: Curriculum module
+  group: download_request
+  states:
+    new:
+      label: New
+    requested:
+      label: Requested
+    processing:
+      label: Processing for delivery
+    shipped:
+      label: In shipment
+    delivered:
+      label: Delivered
+    returned:
+      label: Returned
+  transitions:
+    request:
+      label: Request
+      from: [new]
+      to:   requested
+    process:
+      label: Process
+      from: [requested]
+      to: processing
+    ship:
+      label: Ship
+      from: [new, requested, processing]
+      to: shipped
+    delivered:
+      label: Deliver
+      from: [shipped]
+      to: delivered
+    returned:
+      label: Return
+      from: [delivered]
+      to: returned
+

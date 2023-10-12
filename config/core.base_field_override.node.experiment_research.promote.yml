@@ -1,0 +1,22 @@
+uuid: 643b1731-0f22-44eb-868f-ee98856a382e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.experiment_research
+id: node.experiment_research.promote
+field_name: promote
+entity_type: node
+bundle: experiment_research
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

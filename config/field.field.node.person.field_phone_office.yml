@@ -1,0 +1,21 @@
+uuid: d4a02ff8-8812-4aa0-849d-e51b1aac1c97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_office
+    - node.type.person
+  module:
+    - telephone
+id: node.person.field_phone_office
+field_name: field_phone_office
+entity_type: node
+bundle: person
+label: 'Phone (office)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

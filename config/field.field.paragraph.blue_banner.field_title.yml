@@ -1,0 +1,19 @@
+uuid: 0fadaa55-2708-4dbd-9384-8049c8a61956
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.blue_banner
+id: paragraph.blue_banner.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: blue_banner
+label: Heading
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

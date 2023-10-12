@@ -1,0 +1,159 @@
+uuid: fc1a97d9-8d9a-4151-a6f4-e9c3fbf99a2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_p_content
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.blue_banner
+    - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.green_banner_cta
+    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.persons_list
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.teaser_list
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+id: node.page.field_p_content
+field_name: field_p_content
+entity_type: node
+bundle: page
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      blue_banner: blue_banner
+      accordion: accordion
+      green_banner_cta: green_banner_cta
+      header: header
+      pullquote: pullquote
+      section: section
+      text: text
+      card_list: card_list
+      media: media
+      media_gallery: media_gallery
+      resources_list: resources_list
+      persons_list: persons_list
+      teaser_list: teaser_list
+      view: view
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 28
+        enabled: true
+      accordion_item:
+        weight: 29
+        enabled: false
+      blue_banner:
+        weight: 25
+        enabled: true
+      card:
+        weight: 20
+        enabled: false
+      card_list:
+        weight: 38
+        enabled: true
+      centered_image_text:
+        weight: 21
+        enabled: false
+      entity_references_image_text:
+        weight: 22
+        enabled: false
+      entity_references_text:
+        weight: 23
+        enabled: false
+      full_teaser:
+        weight: 24
+        enabled: false
+      gallery:
+        weight: 25
+        enabled: false
+      green_banner_cta:
+        weight: 28
+        enabled: true
+      header:
+        weight: 30
+        enabled: true
+      homepage_lead_teaser:
+        weight: 26
+        enabled: false
+      homepage_teaser:
+        weight: 27
+        enabled: false
+      image:
+        weight: 28
+        enabled: false
+      image_with_caption:
+        weight: 29
+        enabled: false
+      media:
+        weight: 39
+        enabled: true
+      media_gallery:
+        weight: 48
+        enabled: true
+      one_up_teaser_image_text:
+        weight: 30
+        enabled: false
+      person:
+        weight: 37
+        enabled: false
+      persons_list:
+        weight: 52
+        enabled: true
+      pullquote:
+        weight: 32
+        enabled: true
+      resource_file:
+        weight: 51
+        enabled: false
+      resource_link:
+        weight: 52
+        enabled: false
+      resources_list:
+        weight: 50
+        enabled: true
+      running_text:
+        weight: 31
+        enabled: false
+      schedule_item:
+        weight: 32
+        enabled: false
+      section:
+        weight: 33
+        enabled: true
+      teaser_list:
+        weight: 63
+        enabled: true
+      text:
+        weight: 34
+        enabled: true
+      two_up_figures:
+        weight: 35
+        enabled: false
+      two_up_teaser_image_text:
+        weight: 36
+        enabled: false
+      two_up_teaser_text:
+        weight: 37
+        enabled: false
+      video:
+        weight: 38
+        enabled: false
+      view:
+        weight: 70
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,102 @@
+uuid: 0b1dbaa6-06f5-4cf1-b70a-b8e923c8751e
+langcode: en
+status: true
+dependencies: {  }
+id: visit
+title: 'Field trip / Presentation'
+webform: visit
+content_type: null
+field_title: null
+use_encrypt: null
+encryption_profile: null
+sync_content: true
+sync_content_delete: false
+sync_content_node_field: null
+elements:
+  changed:
+    type: true
+    mapping: default_mapping
+    webform_field: changed
+    custom_check: 0
+    custom_value: ''
+  created:
+    type: true
+    mapping: default_mapping
+    webform_field: created
+    custom_check: 0
+    custom_value: ''
+  field_change_request:
+    type: false
+    mapping: default_mapping
+    webform_field: change_request
+    custom_check: 0
+    custom_value: ''
+  field_date:
+    type: false
+    mapping: datetime_mapping
+    webform_field: date
+    custom_check: 0
+    custom_value: ''
+  field_email:
+    type: false
+    mapping: default_mapping
+    webform_field: email
+    custom_check: 0
+    custom_value: ''
+  field_name:
+    type: false
+    mapping: name_mapping
+    webform_field: name
+    custom_check: 0
+    custom_value: ''
+  field_notes:
+    type: false
+    mapping: text_mapping
+    webform_field: notes
+    custom_check: 0
+    custom_value: ''
+  field_number_students:
+    type: false
+    mapping: numeric_mapping
+    webform_field: number_students
+    custom_check: 0
+    custom_value: ''
+  field_ref_grade_level:
+    type: false
+    mapping: entity_reference_mapping
+    webform_field: ref_grade_level
+    custom_check: 0
+    custom_value: ''
+  field_ref_school_presentation:
+    type: false
+    mapping: entity_reference_mapping
+    webform_field: ref_school_presentation
+    custom_check: 0
+    custom_value: ''
+  field_school_district:
+    type: false
+    mapping: default_mapping
+    webform_field: school_district
+    custom_check: 0
+    custom_value: ''
+  field_visit_type:
+    type: false
+    mapping: default_mapping
+    webform_field: request_type
+    custom_check: 0
+    custom_value: ''
+  field_webform_submission_id:
+    type: true
+    mapping: default_mapping
+    webform_field: sid
+    custom_check: 0
+    custom_value: ''
+  state:
+    type: false
+    mapping: default_mapping
+    webform_field: ''
+    custom_check: '1'
+    custom_value: pending
+sync_content_field: field_webform_submission_id
+target_entity_type: user_request
+target_bundle: visit

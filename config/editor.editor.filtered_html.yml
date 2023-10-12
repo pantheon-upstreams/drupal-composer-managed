@@ -1,0 +1,52 @@
+uuid: 28ab4504-4db6-4e90-9e4a-049dd3e71fa7
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+  module:
+    - ckeditor5
+format: filtered_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalInsertImage
+      - '|'
+      - sourceEditing
+      - '|'
+      - blockQuote
+      - code
+  plugins:
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<blockquote cite>'
+        - '<a hreflang>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<img data-entity-type data-entity-uuid data-align data-caption>'
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

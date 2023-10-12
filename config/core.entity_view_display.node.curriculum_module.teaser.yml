@@ -1,0 +1,84 @@
+uuid: c1327c1a-1b86-4397-9bf1-6ce263dcb21b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.curriculum_module.body
+    - field.field.node.curriculum_module.field_content_area
+    - field.field.node.curriculum_module.field_link
+    - field.field.node.curriculum_module.field_media
+    - field.field.node.curriculum_module.field_overview
+    - field.field.node.curriculum_module.field_ref_audiences
+    - field.field.node.curriculum_module.field_ref_eo_opportunities
+    - field.field.node.curriculum_module.field_ref_grade_level
+    - field.field.node.curriculum_module.field_ref_related_content
+    - field.field.node.curriculum_module.field_ref_research_areas
+    - field.field.node.curriculum_module.field_ref_standards
+    - field.field.node.curriculum_module.field_resources
+    - field.field.node.curriculum_module.field_time_required
+    - node.type.curriculum_module
+  module:
+    - text
+    - user
+id: node.curriculum_module.teaser
+targetEntityType: node
+bundle: curriculum_module
+mode: teaser
+content:
+  field_content_area:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ref_grade_level:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_ref_standards:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  body: true
+  field_link: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
+  field_resources: true
+  field_time_required: true
+  langcode: true
+  links: true
+  reservation_links: true
+  search_api_excerpt: true

@@ -1,0 +1,150 @@
+uuid: a80db492-ec03-44ba-a31c-5f8b6bb8cf8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.curriculum_module.body
+    - field.field.node.curriculum_module.field_content_area
+    - field.field.node.curriculum_module.field_link
+    - field.field.node.curriculum_module.field_media
+    - field.field.node.curriculum_module.field_overview
+    - field.field.node.curriculum_module.field_ref_audiences
+    - field.field.node.curriculum_module.field_ref_eo_opportunities
+    - field.field.node.curriculum_module.field_ref_grade_level
+    - field.field.node.curriculum_module.field_ref_related_content
+    - field.field.node.curriculum_module.field_ref_research_areas
+    - field.field.node.curriculum_module.field_ref_standards
+    - field.field.node.curriculum_module.field_resources
+    - field.field.node.curriculum_module.field_time_required
+    - node.type.curriculum_module
+  module:
+    - link
+    - text
+    - user
+id: node.curriculum_module.default
+targetEntityType: node
+bundle: curriculum_module
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_content_area:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_link:
+    type: link_separate
+    label: above
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_overview:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_ref_grade_level:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_ref_related_content:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_ref_standards:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_resources:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_time_required:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  reservation_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 25
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

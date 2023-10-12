@@ -1,0 +1,71 @@
+id: surf_node_field_p_body
+label: 'SURF Node - Field - Body'
+migration_group: surf
+migration_tags:
+  - field
+source:
+  plugin: d8_entity
+  entity_type: node
+  include_translations: false
+  key: migrate
+process:
+  _format_field:
+    plugin: null_coalesce
+    source:
+      - 'body/0/format'
+  _text_field:
+    plugin: null_coalesce
+    source:
+      - 'body/0/value'
+  field_text/format:
+    plugin: static_map
+    source: '@_format_field'
+    map:
+      filtered_html: basic_html
+      full_html: full_html
+      full_html_new: full_html
+      plain_text: plain_text
+      wysiwyg_editor: full_html
+      php_code: restricted_html
+    default_value: basic_html
+  field_text/value:
+    - plugin: 'wysiwyg_image_tag_to_media'
+      source: '@_text_field'
+      file_scheme: 'public'
+      destination_base_uri: 'public://embedded_images/'
+      destination_field: 'auto'
+      media_bundle: 'auto'
+      allowed_domains:
+        - 'sanfordlab.org'
+      source_remote_base_url: 'https://sanfordlab.org/sites/default/files/'
+    - plugin: 'wysiwyg_entity_embed_to_media'
+      file_scheme: 'public'
+      destination_base_uri: 'public://embedded_images/'
+      view_mode_matching:
+        default: 'full'
+        teaser: 'full'
+        preview: 'full'
+        media_link: 'full'
+        media_original: 'full'
+        wysiwyg: 'full'
+        file_styles_square_thumbnail: 'full'
+        file_styles_thumbnail: 'full'
+        file_styles_full: 'full'
+        file_styles_medium: 'full'
+        file_styles_list_block_style_5: 'full'
+        file_styles_related_image: 'full'
+      destination_field: 'auto'
+      media_bundle: 'auto'
+      source_remote_base_url: 'https://sanfordlab.org/sites/default/files/'
+      allowed_domains:
+        - 'sanfordlab.org'
+  uid:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity_complete:paragraph'
+  translations: true
+  default_bundle: text

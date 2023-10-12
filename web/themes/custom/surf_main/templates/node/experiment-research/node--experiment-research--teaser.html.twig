@@ -1,0 +1,49 @@
+{# <pre>{{dump(content)}}</pre> #}
+
+{#
+  TODO: replace/update the hardcoded `category_url`
+#}
+
+{# -- TITLE --- #}
+{% set title = label|field_value %}
+
+{# Type #}
+{% set type = content.field_experiment_research_type.0["#markup"] %}
+
+{# Category / Parent Logic #}
+{% if type == 'research_area' %}
+  {% set category = 'Areas of Research' %}
+  {% set category_url = '/areas-research' %}
+{% else %}
+  {% set category = 'Experiments' %}
+  {% set category_url = '/experiments' %}
+{% endif %}
+
+{# -- IMAGE --- #}
+{% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+{% set alt = title %}
+
+{% if content.field_media_primary['#items'].entity.field_media_image is not empty %}
+  {% set image = file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+  {% set alt = content.field_media_primary['#items'].entity.field_media_image.alt %}
+{% endif %}
+
+
+{# --- DATE --- #}
+{% set teaser_date = content.field_date_published.value|date('F d, Y') %}
+
+{# Body #}
+{% set body = content.field_overview.0["#text"] %}
+
+ {{ include('surf_main:teaser', {
+   layout: 'column-stack',
+   title,
+   body,
+   url,
+   category,
+   category_url: '/areas-of-research',
+   image,
+   alt,
+   icon,
+   type,
+ }, with_context = false) }}

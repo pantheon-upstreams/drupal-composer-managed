@@ -1,0 +1,10 @@
+uuid: 6e6f43c6-3b53-4faf-b622-33ad5b0da9ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.full_dashboard
+label: 'Full - Dashboard'
+targetEntityType: node
+cache: true

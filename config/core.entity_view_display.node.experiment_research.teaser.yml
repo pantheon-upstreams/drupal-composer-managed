@@ -1,0 +1,94 @@
+uuid: a968ecec-249a-4ecf-8a90-dec24180fe7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.experiment_research.field_dates
+    - field.field.node.experiment_research.field_experiment_research_type
+    - field.field.node.experiment_research.field_extra_content
+    - field.field.node.experiment_research.field_key_experiments
+    - field.field.node.experiment_research.field_key_facts
+    - field.field.node.experiment_research.field_media
+    - field.field.node.experiment_research.field_media_primary
+    - field.field.node.experiment_research.field_overview
+    - field.field.node.experiment_research.field_p_content
+    - field.field.node.experiment_research.field_ref_audiences
+    - field.field.node.experiment_research.field_research_area
+    - field.field.node.experiment_research.field_teaser_text
+    - node.type.experiment_research
+  module:
+    - datetime_range
+    - options
+    - text
+    - user
+id: node.experiment_research.teaser
+targetEntityType: node
+bundle: experiment_research
+mode: teaser
+content:
+  field_dates:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_experiment_research_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_research_area:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_extra_content: true
+  field_key_experiments: true
+  field_key_facts: true
+  field_p_content: true
+  field_ref_audiences: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

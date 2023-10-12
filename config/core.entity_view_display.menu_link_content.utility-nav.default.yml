@@ -1,0 +1,21 @@
+uuid: 9fd6966d-cd63-4e3c-a551-437eb7513532
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.utility-nav.field_style_icon
+    - system.menu.utility-nav
+id: menu_link_content.utility-nav.default
+targetEntityType: menu_link_content
+bundle: utility-nav
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_style_icon: true
+  langcode: true
+  search_api_excerpt: true

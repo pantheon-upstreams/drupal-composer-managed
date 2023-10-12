@@ -1,0 +1,42 @@
+uuid: 9197cb8c-0ee7-4379-812c-7da210557f90
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.download_request.teaser
+    - download_request.download_request_type.curriculum_module
+    - field.field.download_request.curriculum_module.field_date_returned
+    - field.field.download_request.curriculum_module.field_date_shipped
+    - field.field.download_request.curriculum_module.field_dates
+    - field.field.download_request.curriculum_module.field_ref_curriculum_module
+    - field.field.download_request.curriculum_module.field_webform_submission_id
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: download_request.curriculum_module.teaser
+targetEntityType: download_request
+bundle: curriculum_module
+mode: teaser
+content:
+  request_items:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_date_returned: true
+  field_date_shipped: true
+  field_dates: true
+  field_ref_curriculum_module: true
+  field_webform_submission_id: true
+  langcode: true
+  search_api_excerpt: true
+  user: true

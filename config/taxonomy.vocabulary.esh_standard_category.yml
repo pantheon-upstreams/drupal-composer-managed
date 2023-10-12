@@ -1,0 +1,8 @@
+uuid: ee0c4bed-02e5-4637-8f29-61b79a3ae1a5
+langcode: en
+status: true
+dependencies: {  }
+name: 'ESH Standard Category'
+vid: esh_standard_category
+description: ''
+weight: -9

@@ -1,0 +1,94 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+
+{# {{ kint(page) }} #}
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+	  <div class="row">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <div class="sanford-logo"><a href="/" title="SURF Home">Sanford Underground Research Facility</a></div>
+	    </div>
+	
+	    <div class="collapse navbar-collapse">
+	        <div class="navbar-utility">
+	          {{ page.navbar_right }}
+	        </div>
+	        <div class="navbar-primary">
+	          {{ page.navbar_left }}
+	        </div>
+	    </div>
+	  </div>
+  </div>
+</nav>
+<nav class="mega-menu hidden-xs" role="navigation">
+	<div class="container-fluid">
+		{{ page.mega_menu }}
+	</div>
+</nav>
+
+<main role="main">
+    {% if page.eyebrow|render is not empty %}
+    	{{ page.eyebrow }}
+	{% endif %}
+	{% if page.green|render is not empty %}
+    	{{ page.green }}
+	{% endif %}
+  {{ page.hero }}
+  <div class="container-fluid">
+  	<div class="main-content">
+	    {% if page.sidebar|render is not empty %}
+        	<div class="sidebar">
+        		{{ page.sidebar }}
+			</div>
+		{% endif %}
+		<div class="content">
+	    	{{ page.content }}
+		</div>
+  	</div>
+  	{% if page.listing|render is not empty %}
+  		<div class="content-listing">
+			{{ page.listing }}
+  		</div>
+	{% endif %}
+  	{% if page.related|render is not empty %}
+  		<div class="related-content">
+			{{ page.related }}
+  		</div>
+	{% endif %}
+  </div>
+</main>
+
+
+<footer id="footer">
+    <div class="container-fluid">
+    	<div class="footer-top">
+    		<div class="footer-nav">
+        		{{ page.footer }}
+    		</div>
+    		<div class="footer-updates">
+        		{{ page.updates }}
+    		</div>
+    		<div class="footer-resources">
+        		{{ page.resources }}
+    		</div>
+    	</div>
+    	<div class="footer-bottom">
+    		<div class="footer-logo"><div class="sanford-logo"><a href="/" title="SURF Home">Sanford Underground Research Facility</a></div></div>
+    		<div class="footer-copyright">
+    			{{ page.footer_bottom }}
+    		</div>
+    	</div>
+    </div>
+</footer>
+

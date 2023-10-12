@@ -1,0 +1,53 @@
+uuid: 68e01429-c77c-4bb0-8446-14be394072f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_link
+    - field.field.node.page.field_media_primary
+    - field.field.node.page.field_overview
+    - field.field.node.page.field_p_content
+    - field.field.node.page.field_ref_audiences
+    - field.field.node.page.field_ref_eo_opportunities
+    - field.field.node.page.field_ref_key_impact_areas
+    - field.field.node.page.field_ref_research_areas
+    - field.field.node.page.field_teaser_text
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: rN2zrScZAJ9xB16hm_Deb9QJKy6JXnn0PdI2n5Z3KRs
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_link: true
+  field_p_content: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_research_areas: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

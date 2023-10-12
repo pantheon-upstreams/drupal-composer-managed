@@ -1,0 +1,21 @@
+uuid: 5ceb3a8c-a251-4e6b-a69b-9f86a9db447e
+langcode: en
+status: true
+dependencies:
+  config:
+    - download_request.download_request_type.curriculum_module
+    - field.storage.download_request.field_date_returned
+  module:
+    - datetime
+id: download_request.curriculum_module.field_date_returned
+field_name: field_date_returned
+entity_type: download_request
+bundle: curriculum_module
+label: 'Date returned'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,40 @@
+{%
+  set classes = [
+  'c-accordion',
+  'l-constrained--small',
+  'l--bottom-spacing'
+]
+%}
+
+<section {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% block accordion_block %}
+
+    {% for key, accordion_item in items %}
+
+      {% block trigger %}
+        <h3 class="c-accordion__title">
+          <button type="button" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" class="c-accordion__trigger"
+            aria-controls="c-accordion__sect-{{key}}" id="c-accordion__id-{{key}}">
+            <span class="c-accordion__title-wrapper">
+              <span class="c-accordion__icon"></span>
+              <span class="c-accordion__title-text">{{accordion_item.title}}</span>
+            </span>
+          </button>
+        </h3>
+      {% endblock trigger %}
+
+      <div id="c-accordion__sect-{{key}}" role="region" aria-labelledby="c-accordion__id-{{key}}" class="c-accordion__panel" {% if loop.first
+        %}{% else %}hidden="true" {% endif %}>
+
+        {% block panel %}
+          <div class="c-accordion__panel-inner-wrapper">
+            {{accordion_item.content|check_markup('plain')}}
+          </div>
+        {% endblock panel %}
+
+      </div>
+
+    {% endfor %}
+  {% endblock %}
+</section>

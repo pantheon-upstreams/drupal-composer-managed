@@ -1,0 +1,58 @@
+uuid: e26f253b-e291-477a-8110-5703243ae158
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+_core:
+  default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
+name: 'Basic HTML'
+format: basic_html
+weight: -9
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p class="intro-paragraph large-paragraph"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button" hreflang href> <cite> <dl> <dt> <dd> <iframe> <blockquote cite> <ul type> <ol type start> <strong> <em> <code> <sub> <sup> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 7
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
+    settings: {  }

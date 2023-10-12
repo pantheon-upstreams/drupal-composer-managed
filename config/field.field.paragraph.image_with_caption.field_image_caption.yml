@@ -1,0 +1,21 @@
+uuid: 43abd57c-1d5c-47a2-89ec-aa7082898448
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_caption
+    - paragraphs.paragraphs_type.image_with_caption
+  module:
+    - text
+id: paragraph.image_with_caption.field_image_caption
+field_name: field_image_caption
+entity_type: paragraph
+bundle: image_with_caption
+label: 'Image Caption'
+description: 'Provide a brief caption for the image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

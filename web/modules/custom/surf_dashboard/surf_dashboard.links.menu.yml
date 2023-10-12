@@ -1,0 +1,65 @@
+surf_dashboard.curriculum_units:
+  title: My curriculum
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_curriculum_units
+    variant_id: 'layout_builder-0'
+    attributes:
+      class:
+        - icon
+        - icon--illustration-document
+
+surf_dashboard.request:
+  title: Request Curriculum
+  menu_name: dashboard
+  url: internal:/request-curriculum
+  options:
+    attributes:
+      class:
+        - icon
+        - icon icon--illustration-teacher
+
+surf_dashboard.tasks_challenges:
+  title: Math tasks & design challenges
+  menu_name: dashboard
+  url: internal:/math-tasks-design-challenges
+  options:
+    attributes:
+      class:
+        - icon
+        - icon--illustration-lightbulb
+
+surf_dashboard.visits:
+  title: My field trips & presentations
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_visits
+    variant_id: 'layout_builder-0'
+    attributes:
+      class:
+        - icon
+        - icon--illustration-comment
+
+surf_dashboard.events:
+  title: My events
+  menu_name: dashboard
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
+  options:
+    page_manager_page_id: dashboard_events
+    variant_id: 'layout_builder-0'
+    attributes:
+      class:
+        - icon
+        - icon--illustration-calendar
+
+surf_dashboard.my_account:
+  title: My account
+  menu_name: dashboard
+  route_name: user.page
+  options:
+    attributes:
+      class:
+        - icon
+        - icon--illustration-person

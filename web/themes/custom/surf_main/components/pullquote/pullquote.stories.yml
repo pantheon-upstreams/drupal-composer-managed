@@ -1,0 +1,21 @@
+title: Surf Main/Pullquote
+args:
+  quote: "<p>Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  credit: "The optional second quote credit."
+argTypes:
+  style:
+    options:
+      - fullwidth
+      - centered
+    control: select
+stories:
+  - name: "Full Width"
+    args:
+      quote: "<p>Extremely large emphasized text example. Lorem ipsum dolor sit amet.</p>"
+      credit: "Optional second line for quote credit."
+      style: fullwidth
+  - name: "Centered"
+    args:
+      quote: "<p>“Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.”</p>"
+      credit: "Albert Enstein"
+      style: centered

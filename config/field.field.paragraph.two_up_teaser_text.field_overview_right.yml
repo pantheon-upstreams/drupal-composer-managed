@@ -1,0 +1,21 @@
+uuid: c03f6734-6c1f-4633-9958-10ab186a8044
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_overview_right
+    - paragraphs.paragraphs_type.two_up_teaser_text
+  module:
+    - text
+id: paragraph.two_up_teaser_text.field_overview_right
+field_name: field_overview_right
+entity_type: paragraph
+bundle: two_up_teaser_text
+label: 'Overview: Right'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

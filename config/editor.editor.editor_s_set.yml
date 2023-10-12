@@ -1,0 +1,58 @@
+uuid: a17e2e25-e6e4-455e-8090-823ab8b6458c
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.editor_s_set
+  module:
+    - ckeditor5
+format: editor_s_set
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalInsertImage
+      - '|'
+      - sourceEditing
+      - '|'
+      - blockQuote
+      - code
+      - heading
+      - insertTable
+      - superscript
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<blockquote cite>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<a hreflang>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<img data-caption>'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

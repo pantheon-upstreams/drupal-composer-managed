@@ -1,0 +1,6 @@
+uuid: a117801a-a518-4127-b455-a441100d263e
+langcode: en
+status: true
+dependencies: {  }
+id: communications-shortcut
+label: Communications-shortcuts

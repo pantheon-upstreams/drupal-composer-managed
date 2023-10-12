@@ -1,0 +1,110 @@
+uuid: a40811cf-d1e5-4ac4-9879-f0540b919bcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_posting.body
+    - field.field.node.job_posting.field_date_application_due
+    - field.field.node.job_posting.field_equipment
+    - field.field.node.job_posting.field_link
+    - field.field.node.job_posting.field_media
+    - field.field.node.job_posting.field_overview
+    - field.field.node.job_posting.field_ref_audiences
+    - field.field.node.job_posting.field_ref_department
+    - field.field.node.job_posting.field_ref_job_type
+    - node.type.job_posting
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.job_posting.default
+targetEntityType: node
+bundle: job_posting
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date_application_due:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_equipment:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_ref_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_ref_job_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

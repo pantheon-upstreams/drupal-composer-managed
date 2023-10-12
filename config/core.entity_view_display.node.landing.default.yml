@@ -1,0 +1,37 @@
+uuid: 1a686988-8e98-4f69-97ac-b9153fe4d020
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing.field_layout
+    - field.field.node.landing.field_p_content
+    - node.type.landing
+  module:
+    - layout_paragraphs
+    - options
+    - user
+id: node.landing.default
+targetEntityType: node
+bundle: landing
+mode: default
+content:
+  field_layout:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

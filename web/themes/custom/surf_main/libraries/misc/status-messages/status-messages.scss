@@ -1,0 +1,67 @@
+//
+// Misc - Status Messages
+//
+// - 01 - General
+//
+
+
+//------------------------------------
+//  01 - General
+//------------------------------------
+
+.messages {
+  .messages__wrapper {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .messages__container {
+    padding-left: calc(48px + var(--surf-grid-gap));
+    position: relative;
+  }
+
+  .messages__container:before {
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 28px;
+    left: var(--surf-grid-gap);
+    position: absolute;
+    top: 0;
+    width: 28px;
+  }
+
+  .messages__type--status {
+    background-color: var(--surf-color-teal);
+    color: var(--surf-color-white);
+
+    a {
+      color: var(--surf-color-white);
+    }
+  }
+
+  .messages__type--status .messages__container:before {
+    background: svg-load('icon-boxed-success.svg', fill="#FFFFFF") no-repeat center;
+  }
+
+  .messages__type--warning {
+    background-color: var(--surf-color-gold);
+  }
+
+  .messages__type--warning .messages__container:before {
+    background: svg-load('icon-boxed-info.svg', fill="#222222") no-repeat center;
+  }
+
+  .messages__type--error {
+    background-color: var(--surf-color-red);
+    color: var(--surf-color-white);
+
+    a {
+      color: var(--surf-color-white);
+    }
+  }
+
+  .messages__type--error .messages__container:before {
+    background: svg-load('icon-boxed-error.svg', fill="#FFFFFF") no-repeat center;
+  }
+}

@@ -1,0 +1,72 @@
+uuid: 73a126c2-1f82-46cc-b036-faca61a3ed23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_link
+    - field.field.node.page.field_media_primary
+    - field.field.node.page.field_overview
+    - field.field.node.page.field_p_content
+    - field.field.node.page.field_ref_audiences
+    - field.field.node.page.field_ref_eo_opportunities
+    - field.field.node.page.field_ref_key_impact_areas
+    - field.field.node.page.field_ref_research_areas
+    - field.field.node.page.field_teaser_text
+    - node.type.page
+  module:
+    - layout_paragraphs
+    - link
+    - user
+_core:
+  default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_overview: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_research_areas: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,14 @@
+uuid: cab560a7-4646-4da5-804a-ead45db11a48
+langcode: en
+status: true
+dependencies:
+  module:
+    - redirect
+  enforced:
+    module:
+      - redirect
+id: redirect_delete_action
+label: 'Delete redirect'
+type: redirect
+plugin: redirect_delete_action
+configuration: {  }

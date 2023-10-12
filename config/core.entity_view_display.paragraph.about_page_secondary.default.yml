@@ -1,0 +1,60 @@
+uuid: 81f9f10d-e3b0-4944-b186-cd38010fb2c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_page_secondary.field_content_left
+    - field.field.paragraph.about_page_secondary.field_content_right
+    - field.field.paragraph.about_page_secondary.field_media_left
+    - field.field.paragraph.about_page_secondary.field_media_right
+    - field.field.paragraph.about_page_secondary.field_title
+    - paragraphs.paragraphs_type.about_page_secondary
+  module:
+    - text
+id: paragraph.about_page_secondary.default
+targetEntityType: paragraph
+bundle: about_page_secondary
+mode: default
+content:
+  field_content_left:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_content_right:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_left:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_right:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,317 @@
+// Styles for Menus and Navs
+// -----------------------------------------------------------------------------
+
+
+
+
+// Drupal toolbar overrides 
+
+body.toolbar-fixed {	
+	padding-top: 130px !important;
+	.navbar-fixed-top {top:40px;}
+	
+	&.toolbar-horizontal {
+		padding-top: 180px !important;
+		.navbar-fixed-top {top:80px;}
+	}
+	
+	@include breakpoint(xs) {
+		padding-top: 90px !important;
+	}
+	
+}
+
+
+
+// Header and Main Navigation
+
+.navbar {
+	margin-bottom: 0;
+	padding: $surf-margin-md 0 $surf-margin-sm 0;
+	background:$surf-gray-background;
+	border-bottom: 1px solid $surf-gray-rule;
+	
+	@include breakpoint(xs) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	.sanford-logo {
+		a {
+			display: block;
+			text-indent: -9999px;
+			background:url('/themes/surf/assets/images/SURF_Green_horizontal.svg') no-repeat;
+			height:29px;
+			width:230px;
+			background-size:100%;
+			@extend .transition-all;
+			
+			@include breakpoint(sm) {
+				margin-top:16px;
+			}
+			
+			@include breakpoint(md) {
+				height:35px;
+				width:280px;
+				margin-top:10px;
+			}
+			@include breakpoint(lg) {
+				margin-top:2px;
+				height:45px;
+				width:360px;
+			}
+		}
+	}
+	
+	.navbar-header {
+		@include make-sm-column(4);
+		@include make-md-column(4);
+		@include make-lg-column(6);
+	}
+	.navbar-collapse {
+		@include make-sm-column(8);
+		@include make-md-column(8);
+		@include make-lg-column(6);
+	}
+	
+	.navbar-utility {
+		margin-top:-4px;
+	}
+	
+	.navbar-nav {
+		
+		> li > a {
+			padding: 7px 10px;
+			color:$surf-green-dark-nav;
+			letter-spacing: -0.25px;
+			padding:0;
+			margin-right: 30px;
+			position: relative;
+			
+			i {
+				font-size: 0.6em;
+				color:$surf-green-link;
+				position: absolute;
+				top:8px;
+				margin-left:4px;
+				@extend .transition-all;
+				
+				@include breakpoint(xs) {
+					display:none;
+				}
+			}
+		}
+
+		li.open {
+			i {
+				color:$surf-green-dark-nav;
+				-ms-transform: rotate(180deg); /* IE 9 */
+			    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+			    transform: rotate(180deg);
+			}
+		}
+	}
+	
+	.block--utilitynav {
+		font-size: $font-size-small;
+		
+		.menu {
+			list-style: none;
+			padding:0;
+			margin-bottom: 4px;
+			
+			a {
+				color:$surf-green-light-nav;
+				&:hover {color:$surf-green-link;}
+			}
+		}
+		
+		@include breakpoint(sm) {
+			float:left;
+			.menu {
+				//padding-left:15px;
+			}
+			li {
+				display: inline-block;
+				margin-right:20px;
+			}
+		}
+	}
+	
+	// Targeted tweaks for mobile displays
+	@include breakpoint(xs) {
+		.navbar-primary {		
+			margin-left:15px;
+		}
+		.navbar-collapse {
+			margin-top:10px;
+			border-color:$surf-gray-rule;
+		}
+	}
+	
+
+}
+
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+	color:$surf-green-link;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+	background:inherit;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	background:inherit;
+	color:$surf-green-link;
+}
+
+
+// Navbar toggle styles
+
+.navbar-default .navbar-toggle {
+	background:none;
+	border:none;
+	margin:0;
+	padding:6px 8px;
+	
+	.icon-bar {
+		background-color: $surf-green-link;
+		height:3px;
+	}	
+	&:hover,
+	&:focus {
+		background:none;
+		.icon-bar {
+			background-color: $surf-green-dark-nav;
+		}
+	}
+
+}
+
+
+
+// Mega Menu Styles
+
+.mega-menu {
+	background:$surf-green-link;
+	display: block;
+	color:$surf-white;
+	position: fixed;
+	left:0;
+	right:0;
+	z-index: 499;
+	box-shadow: 0 0 20px rgba(0,0,0,0.7);
+	
+	.menu-eyebrow {
+		font-size: $font-size-small;
+		font-weight: 700;
+		margin-bottom:$surf-margin-sm;
+	}
+	h2 {
+		color:$surf-white;
+		&.no-eyebrow {
+			@include breakpoint(sm) {
+				margin-top:52px;
+			}
+		}
+		a {
+			color:$surf-white;
+			&:hover {color:$surf-green-dark-nav;}
+		}
+	}
+	
+	.action-link a {
+		color:$surf-white;
+		border-color:$surf-white;
+			&:hover {
+				color:$surf-green-dark-nav;
+				border-color:$surf-green-dark-nav;
+			}
+	}
+	
+	.block {
+		display: none;
+		margin:$surf-margin-lg 0 $surf-margin-xl 0;
+	}
+	.view--mega-menu {
+		@include make-row();
+		.menu-item {
+			@include make-sm-column(12);
+			@include make-md-column(6);
+			@include make-lg-column(6);
+			margin-bottom:$surf-margin-xs;
+			
+			a {
+				color:$surf-white;
+				border-bottom:1px solid $surf-white;
+				padding-bottom:2px;
+				&:hover {
+					color:$surf-green-dark-nav;
+					border-color:$surf-green-dark-nav;
+				}
+			}
+		}
+	}
+	
+	.mega-menu-teaser {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+	}
+	.mega-menu-impact-teaser {
+		@include make-sm-column(3);
+		@include make-lg-column(3);
+	}
+	.mega-menu-links {
+		@include make-sm-column(6);
+		@include make-lg-column(6);
+	}
+}
+
+
+// Sidebar Nav
+
+.sidebar {	
+	
+	line-height: 21px;
+	
+	.portal-parent {
+		margin-bottom: $surf-margin-xs;
+		a {
+			font-weight: 700;
+			color:$surf-green-overview;
+			&:hover {color:$surf-green-dark-nav;}
+		}
+	}
+	.menu {
+		padding:0;
+		
+		li {
+			list-style: none;
+			margin-bottom: $surf-margin-xs;
+		}
+	}
+	.navbar-nav li {float:none;}
+	.is-active {
+		@extend .fa;
+		@extend .fa-caret-right;
+		font-family: $font-family-base;
+		&:before {
+			margin-right:5px;
+			font-family: fontawesome;
+		}
+	}
+	.subnav-item {
+		margin-bottom: $surf-margin-xs;
+	}
+}
+
+

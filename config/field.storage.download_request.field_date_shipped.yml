@@ -1,0 +1,20 @@
+uuid: 4db265be-814f-436b-95eb-64e706233f9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - download_request
+id: download_request.field_date_shipped
+field_name: field_date_shipped
+entity_type: download_request
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

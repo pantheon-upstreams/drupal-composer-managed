@@ -1,0 +1,11 @@
+{% set items = [] %}
+{% for item in paragraph.field_persons %}
+{% set items = items|merge([{
+  id: item.value.target_id
+  }]) %}
+{% endfor %}
+
+{{ include('surf_main:persons-list', {
+  items,
+  attributes,
+}, with_context = false) }}

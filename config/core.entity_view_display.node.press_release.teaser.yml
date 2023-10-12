@@ -1,0 +1,57 @@
+uuid: 2f8ca78d-a97b-42af-8a72-8f8aa8f4f5a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.press_release.field_author
+    - field.field.node.press_release.field_date_published
+    - field.field.node.press_release.field_media_primary
+    - field.field.node.press_release.field_overview
+    - field.field.node.press_release.field_p_content
+    - field.field.node.press_release.field_ref_contacts
+    - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_resource_list
+    - field.field.node.press_release.field_teaser_text
+    - node.type.press_release
+  module:
+    - datetime
+    - text
+    - user
+id: node.press_release.teaser
+targetEntityType: node
+bundle: press_release
+mode: teaser
+content:
+  field_date_published:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: teaser_date
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_overview:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_author: true
+  field_media_primary: true
+  field_p_content: true
+  field_ref_contacts: true
+  field_ref_news_categories: true
+  field_resource_list: true
+  field_teaser_text: true
+  langcode: true
+  search_api_excerpt: true

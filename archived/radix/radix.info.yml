@@ -1,0 +1,34 @@
+name: Radix
+type: theme
+description: Responsive base theme for Drupal.
+base theme: false
+screenshot: screenshot.png
+core_version_requirement: ^8 || ^9
+
+stylesheets-remove:
+  - system.theme.css
+  - system.menus.css
+  - system.admin.css
+
+libraries:
+  - radix/style
+  - radix/bootstrap
+  - radix/script
+
+libraries-override:
+  seven/global-styling: false
+
+regions:
+  navbar_branding: 'Navbar branding'
+  navbar_left:  'Navbar left'
+  navbar_right: 'Navbar right'
+  content: Content
+  footer: Footer
+
+# version: 8.x-3.1
+
+# Information added by Drupal.org packaging script on 2018-02-26
+version: '8.x-3.2'
+core: '8.x'
+project: 'radix'
+datestamp: 1519625901

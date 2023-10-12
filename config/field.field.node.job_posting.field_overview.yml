@@ -1,0 +1,21 @@
+uuid: a9cde469-05f6-4e67-91d9-61f534fc34b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - node.type.job_posting
+  module:
+    - text
+id: node.job_posting.field_overview
+field_name: field_overview
+entity_type: node
+bundle: job_posting
+label: Overview
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

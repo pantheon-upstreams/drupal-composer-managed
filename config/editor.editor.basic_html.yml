@@ -1,0 +1,103 @@
+uuid: 7b88f5d5-11ed-44ae-b30b-da773d2810b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor5
+format: basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - superscript
+      - subscript
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - insertTable
+      - drupalInsertImage
+      - '|'
+      - heading
+      - style
+      - '|'
+      - sourceEditing
+      - removeFormat
+      - '|'
+      - blockQuote
+      - code
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<dl>'
+        - '<dt>'
+        - '<dd>'
+        - '<iframe>'
+        - '<blockquote cite>'
+        - '<ul type>'
+        - '<ol type>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<a hreflang>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Intro paragraph'
+          element: '<p class="intro-paragraph">'
+        -
+          label: 'Large paragraph'
+          element: '<p class="large-paragraph">'
+        -
+          label: 'White bg and Forest text Solid button'
+          element: '<a class="white-green-button">'
+        -
+          label: 'White bg and Black text Solid button'
+          element: '<a class="white-black-button">'
+        -
+          label: 'Forest bg and white text Solid button'
+          element: '<a class="forest-button">'
+        -
+          label: 'Kelly bg and white text Solid button'
+          element: '<a class="kelly-green-button">'
+        -
+          label: 'Gradient bg and white text Solid button'
+          element: '<a class="gradient-button">'
+        -
+          label: 'Black bg and white text Solid button'
+          element: '<a class="black-button">'
+        -
+          label: 'White Underline Button'
+          element: '<a class="underline-white-button">'
+        -
+          label: 'Forest Underline Button'
+          element: '<a class="underline-green-button">'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

@@ -1,0 +1,176 @@
+//
+// Blocks - Search API
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - Trigger
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/functions/animations' as functions-animations;
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../partials/mixins/buttons' as mixins-buttons;
+@use '../../partials/mixins/links' as mixins-links;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+$search-form-size: 300px;
+
+.search-form {
+  display: none; // FUOC Fix
+  flex-flow: nowrap row;
+  padding: 16px;
+  transition: functions-animations.transition(width, 0.35s, easeInOutExpo);
+
+  @include mixins-breakpoints.bp-min(large) {
+    padding: 0 0 0 24px;
+  }
+
+  > form {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    position: relative;
+    width: 100%;
+
+    @include mixins-breakpoints.bp-min(large) {
+      margin-left: -#{$search-form-size};
+      opacity: 0;
+      position: inherit;
+      transform: translateX($search-form-size);
+      visibility: hidden;
+      width: $search-form-size;
+    }
+  }
+
+  &.search-form__state--open > form {
+    margin-left: 0;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  // FUOC Fix
+  .js & {
+    display: flex;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Trigger
+//------------------------------------
+
+.search-form {
+  .search-form__trigger {
+    @include mixins-buttons.button-reset();
+    @include mixins-links.link-menu(22, white);
+    display: none;
+    padding-right: 25px;
+    position: relative;
+    max-width: 112px;
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+
+    @include mixins-breakpoints.bp-min(large) {
+      display: block;
+    }
+
+    &:before {
+      background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+      bottom: 0;
+      height: 22px;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      width: 22px;
+    }
+  }
+
+  &.search-form__state--open .search-form__trigger {
+    color: transparent;
+    max-width: 40px;
+
+    &:after {
+      display: none;
+    }
+
+    &:before {
+      background: svg-load('icon-close.svg', fill="#FFFFFF") no-repeat center;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Form
+//------------------------------------
+
+.search-form form {
+  .form-item,
+  .form-item input {
+    width: 100%;
+  }
+
+  .form-item {
+    position: relative;
+  }
+
+  .form-item input {
+    background: none;
+    border: solid 1px var(--surf-color-white);
+    color: var(--surf-color-white);
+    font-size: var(--surf-font-size-18);
+    font-weight: var(--surf-font-weight-bold);
+    padding-left: 16px;
+    padding-right: 40px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      border-bottom: solid 2px var(--surf-color-white);
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      padding-left: 0;
+    }
+  }
+
+  .form-item input::placeholder {
+    color: var(--surf-color-white);
+    
+    @include mixins-breakpoints.bp-min(large) {
+      font-style: italic;
+    }
+  }
+
+  .button {
+    background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+    bottom: 0;
+    display: block;
+    font: 0/0 transparent;
+    height: 22px;
+    margin: auto;
+    position: absolute;
+    right: 16px;
+    top: 0;
+    width: 22px;
+
+    @include mixins-breakpoints.bp-min(large) {
+      right: 0;
+    }
+  }
+}

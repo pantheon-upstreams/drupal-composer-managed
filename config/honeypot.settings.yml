@@ -1,0 +1,26 @@
+_core:
+  default_config_hash: jEhrePho9bAz_8-E-zPMXvlx4knpphzUdaiQJX-xc8Q
+protect_all_forms: false
+unprotected_forms:
+  - user_login_form
+  - search_form
+  - search_block_form
+  - views_exposed_form
+  - honeypot_settings_form
+log: false
+element_name: url
+time_limit: 5
+expire: 300
+form_settings:
+  user_register_form: true
+  user_pass: true
+  contact_message_feedback_form: true
+  contact_message_personal_form: true
+  contact_message_website_feedback_form: true
+  node_article_form: false
+  node_contract_form: false
+  node_event_form: false
+  node_job_posting_form: false
+  node_page_form: false
+  node_press_release_form: false
+  comment_comment_form: false

@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Component for Person Page.
+
+ * Available props:
+ * - title: [string] the page title.
+ * - job_title: [string] the job title of the person.
+ * - phone: [string] the office phone number of the person.
+ * - email: [string] the email address of the person.
+ * - body: [string] the body text.
+ * - media: [string] the media image of the person.
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'c-person-page',
+  media ? 'c-person-page--with-img',
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+  <div class="container{% if media %} container__type--large{% else %} container__type--small{% endif %}">
+    <div class="c-person-page__grid">
+
+      {% if breadcrumbs|render %}
+        {% include 'surf_main:breadcrumbs' with {
+          breadcrumbs: breadcrumbs,
+        } %}
+      {% endif %}
+
+      <h1 class="person-content__title">
+        {{ title }}
+      </h1>
+
+      <div class="c-person-page__content">
+        <div class="c-person-page__content-grid">
+
+          {% if job_title %}
+            <h2 class="person-content__job-title">
+              {{ job_title }}
+            </h2>
+          {% endif %}
+
+          {% if phone or email %}
+            <div class="person-content__contact-wrapper">
+
+              {% if phone %}
+                <p class="person-content__phone">
+                  {{ phone }}
+                </p>
+              {% endif %}
+
+              {% if email %}
+                <p class="person-content__email">
+                  <a href="mailto:{{ email }}">{{ 'Contact'|t }}</a>
+                </p>
+              {% endif %}
+
+            </div>
+          {% endif %}
+
+          {% if body %}
+            <div class="person-content__wrapper">
+              {{ body }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if media %}
+        <div class="c-person-page__media">
+          {{ media }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</article>

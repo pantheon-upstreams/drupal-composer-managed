@@ -1,0 +1,1 @@
+!function(){var i;i=jQuery,Drupal.behaviors.button={attach:function(a){i(".c-media__video-wrapper").fitVids()}}}();

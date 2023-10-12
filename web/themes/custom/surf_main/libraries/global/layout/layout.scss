@@ -1,0 +1,131 @@
+//
+// Global - Layout
+//
+// - 01 - Imports
+// - 02 - Grid
+// - 03 - Widths
+// - 04 - Heights
+// - 05 - Layers
+// - 06 - Alignment
+// - 07 - Container
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+
+//------------------------------------
+//  02 - Grid
+//------------------------------------
+:root {
+  --surf-grid-gap: 24px;
+
+  @include mixins-breakpoints.bp-min(large) {
+    --surf-grid-gap: 40px;
+  }
+}
+
+
+//------------------------------------
+//  03 - Widths
+//------------------------------------
+:root {
+  --surf-width-xxlarge: 1920px;
+  --surf-width-xlarge: 1384px;
+  --surf-width-large: 1280px;
+  --surf-width-medium: 960px;
+  --surf-width-small: 768px;
+  --surf-width-xsmall: 640px;
+  --surf-width-xxsmall: 480px;
+}
+
+
+
+
+//------------------------------------
+//  04 - Heights
+//------------------------------------
+:root {
+  --surf-height-region-header-utility: 72px;
+  --surf-height-region-header-primary: 72px;
+
+  @include mixins-breakpoints.bp-min(large) {
+    --surf-height-region-header-primary: 120px;
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Layers
+//------------------------------------
+:root {
+  --surf-zindex-super: 100;
+  --surf-zindex-top: 90;
+  --surf-zindex-over: 10;
+  --surf-zindex-default: 1;
+  --surf-zindex-under: -1;
+  --surf-zindex-bottom: -9999px;
+}
+
+
+
+
+//------------------------------------
+//  06 - Alignment
+//------------------------------------
+.align-left {
+  margin: 0 var(--surf-grid-gap) var(--surf-grid-gap) 0;
+}
+
+.align-right {
+  margin: 0 0 var(--surf-grid-gap) var(--surf-grid-gap);
+}
+
+.align-center {
+  margin: var(--surf-grid-gap) auto;
+}
+
+//------------------------------------
+//  07 - Container
+//------------------------------------
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--surf-grid-gap);
+  padding-right: var(--surf-grid-gap);
+  width: 100%;
+
+  &.container__type--default {
+    max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
+  }
+
+  .region__name--content & {
+
+    @include mixins-breakpoints.bp-min(xlarge) {
+      padding-left: calc(var(--surf-grid-gap) * 2);
+    }
+  }
+
+  &.container__type--large {
+    --surf-grid-gap: 15px;
+    max-width: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
+
+    @include mixins-breakpoints.bp-min(medium) {
+      --surf-grid-gap: 40px;
+    }
+  }
+
+  &.container__type--small {
+    --surf-grid-gap: 15px;
+    max-width: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
+
+    @include mixins-breakpoints.bp-min(medium) {
+      --surf-grid-gap: 40px;
+    }
+  }
+}

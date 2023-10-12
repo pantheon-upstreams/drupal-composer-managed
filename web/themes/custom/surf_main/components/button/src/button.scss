@@ -1,0 +1,109 @@
+//
+// Component - Atom - Button
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Full
+// - 04 - Ghost
+// - 05 - Colors
+// - 06 - Icons
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../libraries/partials/functions/animations' as functions-animations;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.button {
+  display: inline-block;
+  font-size: var(--surf-font-size-24);
+  font-weight: var(--surf-font-weight-bold);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Full
+//------------------------------------
+
+.button.button--full {
+  padding: 8px 16px;
+}
+
+
+
+
+//------------------------------------
+//  04 - Ghost
+//------------------------------------
+
+.button.button--ghost {
+}
+
+
+
+
+//------------------------------------
+//  05 - Colors
+//------------------------------------
+
+.button {
+  &.button--navy {
+    background-color: var(--surf-color-navy);
+    color: var(--surf-color-white);
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+
+    &:hover,
+    &:focus {
+      background-color: var(--surf-color-blue);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  06 - Icons
+//------------------------------------
+
+.button.icon {
+  padding-right: 56px;
+
+  &:before {
+    bottom: 0;
+    height: 32px;
+    margin: auto;
+    position: absolute;
+    right: 16px;
+    top: 0;
+    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    width: 32px;
+  }
+
+  &.icon--arrow-right:before {
+    background: svg-load('icon-arrow-right.svg', fill="#FFFFFF") no-repeat center;
+    transform: translateX(0);
+  }
+
+  &.icon--arrow-right:hover:before,
+  &.icon--arrow-right:focus:before {
+    transform: translateX(4px);
+  }
+}

@@ -1,0 +1,121 @@
+uuid: 5517b8ab-289d-4b6e-b2bb-70d71c7d85bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name
+    - node.type.person
+  module:
+    - name
+id: node.person.field_name
+field_name: field_name
+entity_type: node
+bundle: person
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  components:
+    title: false
+    given: true
+    middle: true
+    family: true
+    generational: false
+    credentials: false
+  minimum_components:
+    title: false
+    given: true
+    middle: false
+    family: true
+    generational: false
+    credentials: false
+  max_length:
+    title: 31
+    given: 63
+    middle: 127
+    family: 63
+    generational: 15
+    credentials: 255
+  labels:
+    title: Title
+    given: Given
+    middle: 'Middle name(s)'
+    family: Family
+    generational: Generational
+    credentials: Credentials
+  allow_family_or_given: false
+  autocomplete_source:
+    title:
+      title: title
+    given: {  }
+    middle: {  }
+    family: {  }
+    generational:
+      generational: '0'
+    credentials: {  }
+  autocomplete_separator:
+    title: ' '
+    given: ' -'
+    middle: ' -'
+    family: ' -'
+    generational: ' '
+    credentials: ', '
+  title_options:
+    - '-- --'
+    - Mr.
+    - Mrs.
+    - Miss
+    - Ms.
+    - Dr.
+    - Prof.
+  generational_options:
+    - '-- --'
+    - Jr.
+    - Sr.
+    - I
+    - II
+    - III
+    - IV
+    - V
+    - VI
+    - VII
+    - VIII
+    - IX
+    - X
+  sort_options:
+    title: false
+    generational: false
+  widget_layout: inline
+  component_layout: default
+  show_component_required_marker: false
+  credentials_inline: false
+  override_format: default
+  field_type:
+    title: select
+    given: text
+    middle: text
+    family: text
+    generational: select
+    credentials: text
+  size:
+    title: 6
+    given: 20
+    middle: 20
+    family: 20
+    generational: 5
+    credentials: 35
+  title_display:
+    title: description
+    given: description
+    middle: description
+    family: description
+    generational: description
+    credentials: description
+  preferred_field_reference: ''
+  preferred_field_reference_separator: ', '
+  alternative_field_reference: ''
+  alternative_field_reference_separator: ', '
+field_type: name

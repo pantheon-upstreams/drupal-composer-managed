@@ -1,0 +1,135 @@
+uuid: 0a0749cd-a9d6-4813-8701-dc0f433ef7df
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor5
+format: full_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - strikethrough
+      - superscript
+      - subscript
+      - removeFormat
+      - outdent
+      - indent
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalInsertImage
+      - insertTable
+      - horizontalLine
+      - '|'
+      - heading
+      - codeBlock
+      - style
+      - '|'
+      - sourceEditing
+  plugins:
+    ckeditor5_codeBlock:
+      languages:
+        -
+          label: 'Plain text'
+          language: plaintext
+        -
+          label: C
+          language: c
+        -
+          label: 'C#'
+          language: cs
+        -
+          label: C++
+          language: cpp
+        -
+          label: CSS
+          language: css
+        -
+          label: Diff
+          language: diff
+        -
+          label: HTML
+          language: html
+        -
+          label: Java
+          language: java
+        -
+          label: JavaScript
+          language: javascript
+        -
+          label: PHP
+          language: php
+        -
+          label: Python
+          language: python
+        -
+          label: Ruby
+          language: ruby
+        -
+          label: TypeScript
+          language: typescript
+        -
+          label: XML
+          language: xml
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      reversed: true
+      startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Intro paragraph'
+          element: '<p class="intro-paragraph">'
+        -
+          label: 'Large paragraph'
+          element: '<p class="large-paragraph">'
+        -
+          label: 'White bg and Forest text Solid button'
+          element: '<a class="white-green-button">'
+        -
+          label: 'White bg and Black text Solid button'
+          element: '<a class="white-black-button">'
+        -
+          label: 'Forest bg and white text Solid button'
+          element: '<a class="forest-button">'
+        -
+          label: 'Kelly bg and white text Solid button'
+          element: '<a class="kelly-green-button">'
+        -
+          label: 'Gradient bg and white text Solid button'
+          element: '<a class="gradient-button">'
+        -
+          label: 'Black bg and white text Solid button'
+          element: '<a class="black-button">'
+        -
+          label: 'White Underline Button'
+          element: '<a class="underline-white-button">'
+        -
+          label: 'Forest Underline Button'
+          element: '<a class="underline-green-button">'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: 0
+    height: 0

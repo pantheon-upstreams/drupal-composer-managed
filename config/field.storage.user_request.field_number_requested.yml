@@ -1,0 +1,20 @@
+uuid: 60a72db8-88ab-4161-9199-63fae2f30681
+langcode: en
+status: true
+dependencies:
+  module:
+    - surf_core
+id: user_request.field_number_requested
+field_name: field_number_requested
+entity_type: user_request
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

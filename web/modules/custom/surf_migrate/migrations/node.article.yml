@@ -1,0 +1,56 @@
+id: surf_node_article
+label: SURF Node -> Article
+migration_group: 'surf'
+migration_tags:
+  - Content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'article'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  field_p_content/target_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty          
+      method: process
+    - plugin: extract
+      index:
+        - 0
+  field_p_content/target_revision_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty          
+      method: process
+    - plugin: node_complete_node_revision_lookup
+  field_overview: field_overview
+  field_media_primary:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_media_from_paragraph
+      source: field_paragraph_featured_image/0/target_id
+  field_author: field_byline
+  field_ref_content_related: field_featured_related
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'article'
+migration_dependencies:
+  required:
+    - surf_node_field_p_body
+    - surf_media_from_paragraph

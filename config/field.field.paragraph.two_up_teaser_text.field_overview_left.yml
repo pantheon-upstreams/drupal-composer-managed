@@ -1,0 +1,21 @@
+uuid: 6afcbc0f-4a1e-43bb-9f10-a5458fc8130a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_overview_left
+    - paragraphs.paragraphs_type.two_up_teaser_text
+  module:
+    - text
+id: paragraph.two_up_teaser_text.field_overview_left
+field_name: field_overview_left
+entity_type: paragraph
+bundle: two_up_teaser_text
+label: 'Overview: Left'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

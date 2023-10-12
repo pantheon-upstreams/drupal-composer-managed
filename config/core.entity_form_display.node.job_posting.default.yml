@@ -1,0 +1,164 @@
+uuid: 70e62c86-a655-4b35-a7a9-1cbfe1115ea2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_posting.body
+    - field.field.node.job_posting.field_date_application_due
+    - field.field.node.job_posting.field_equipment
+    - field.field.node.job_posting.field_link
+    - field.field.node.job_posting.field_media
+    - field.field.node.job_posting.field_overview
+    - field.field.node.job_posting.field_ref_audiences
+    - field.field.node.job_posting.field_ref_department
+    - field.field.node.job_posting.field_ref_job_type
+    - node.type.job_posting
+  module:
+    - datetime
+    - link
+    - maxlength
+    - path
+    - scheduler
+    - text
+id: node.job_posting.default
+targetEntityType: node
+bundle: job_posting
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 8
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_application_due:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_equipment:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_overview:
+    type: text_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 125
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 200
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+  field_ref_department:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_job_type:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 7
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_media: true
+  field_ref_audiences: true

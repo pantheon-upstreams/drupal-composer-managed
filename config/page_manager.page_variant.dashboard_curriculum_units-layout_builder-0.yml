@@ -1,0 +1,60 @@
+uuid: a9b309fd-984c-4eeb-b052-e2383f491f6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_curriculum_units
+    - views.view.user_download_requests
+  module:
+    - layout_discovery
+    - system
+    - views
+id: dashboard_curriculum_units-layout_builder-0
+label: List
+weight: -10
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: c1920e69-ce3e-447c-bb2b-0d2c76dbed7a
+  sections:
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: Header
+        context_mapping: {  }
+      components: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Main content'
+        context_mapping: {  }
+      components:
+        ffa0544a-7e22-4bcb-b3bd-2dced791f3d5:
+          uuid: ffa0544a-7e22-4bcb-b3bd-2dced791f3d5
+          region: content
+          configuration:
+            id: 'views_block:user_download_requests-dashboard_curriculum_items'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 1
+          additional: {  }
+      third_party_settings: {  }
+  title_type: label
+  manual_title: ''
+  title_from_block: ''
+page: dashboard_curriculum_units
+selection_criteria:
+  -
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '/user/*/dashboard/curriculum-units'
+selection_logic: and
+static_context: {  }

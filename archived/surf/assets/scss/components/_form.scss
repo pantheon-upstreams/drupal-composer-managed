@@ -1,0 +1,154 @@
+// Nav: Main
+// -----------------------------------------------------------------------------
+
+
+
+
+
+// Search Block
+
+
+.navbar-default .navbar-form {
+	background:#fff;
+	border: none;
+	box-shadow: 0px 0px 3px lighten($surf-gray-rule, 10%);
+	border-radius: 30px;
+	position: relative;
+		
+	@extend .fa;
+	@extend .fa-search;
+	font-size: 12px;
+		
+	&:before {		
+		color:$surf-green-link;
+		position: absolute;
+		top:6px;
+		right:7px;
+	}	
+	&.open:before {
+		display:none;
+	}
+
+		
+	form {display: none;}
+	
+	&.open {
+		width:150px;
+		box-shadow: 0px 0px 3px lighten($surf-green-link, 10%);
+		form {display:block;}
+	}
+	
+	#search-block-form {
+		position: absolute;
+		top:1px;
+		width:130px;
+		
+	}
+	
+	#edit-actions {
+		width:15px;
+		display: block;
+		float:right;
+		margin-top:1px;
+	}
+	
+	.form-submit {
+		font:12px/1 FontAwesome;
+		color:$surf-green-link;
+		background: none;
+		border:none;
+		display:block;
+		padding:4px;
+		
+		&:hover,
+		&:focus {
+			box-shadow: none;
+		}
+				
+		// Tablet
+		@media only screen and (min-width:$screen-sm-min) and (max-width:$screen-sm-max) {
+			//margin-right: -10px;
+		}
+	}
+	
+		.form-search.form-type-search.form-control {
+			width:110px;
+			background:none;
+			border:none;
+			font-size: $font-size-small;
+			font-family: $font-family-base;
+			//margin-top:-30px;
+			padding:0;
+			height:inherit;
+			box-shadow: none;
+		}
+		
+	
+	@include breakpoint(sm) {
+		width:26px;
+		padding:12px 10px;
+		float:right;
+		height:10px;
+		margin:0;
+		
+
+	}
+	@include breakpoint(xs) {
+		width:100%;
+		left:15px;
+		top:15px;
+		height: 25px;
+		margin-bottom:25px;
+		
+		&.open {
+			width:100%;
+			box-shadow: 0px 0px 3px lighten($surf-green-link, 10%);
+			form {display:block;}
+		}
+		form {display: block;}
+		
+		.form-search.form-type-search.form-control {
+			width:inherit;
+		}
+		#search-block-form {
+			top:-8px;
+			position: relative;
+			width:inherit;
+		}
+		.form-item {
+			display:inline-block;
+			width:85%;
+		}
+		&:before {display: none;}
+	}
+}
+
+
+// Bootstrap Button Overrides
+
+.btn {
+	padding: 5px 30px;
+	@extend .transition;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+
+
+
+// Views Pager
+
+.pager {
+	text-align: left;
+	li > a {
+		border-radius: 4px;
+		background-color:$surf-green-link;
+		border:$surf-green-dark-nav;
+		color:$surf-white;
+		font-weight: 700;
+		line-height: 1.2em;
+		padding: 5px 30px;
+		&:hover {
+			background-color: $link-hover-color;
+		}
+	}
+}

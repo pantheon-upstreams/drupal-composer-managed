@@ -1,0 +1,27 @@
+uuid: ce7a2a19-48a3-434a-a93f-520d2f7d9d5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - surf_core
+id: user_request.field_visit_type
+field_name: field_visit_type
+entity_type: user_request
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: field_trip
+      label: 'Field trip'
+    -
+      value: school_presentation
+      label: 'School presentation'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

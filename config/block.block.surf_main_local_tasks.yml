@@ -1,0 +1,22 @@
+uuid: 22d05b81-11f1-46c3-8c6d-41caeaba167f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - surf_main
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: surf_main_local_tasks
+theme: surf_main
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

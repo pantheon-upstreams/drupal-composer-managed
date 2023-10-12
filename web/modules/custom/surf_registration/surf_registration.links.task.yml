@@ -1,0 +1,10 @@
+entity.user_request_type.collection:
+  title: 'List'
+  route_name: entity.user_request_type.collection
+  base_route: entity.user_request_type.collection
+
+entity.user_request.collection:
+  title: 'User requests'
+  route_name: view.user_requests.admin_content
+  base_route: system.admin_content
+  weight: 20

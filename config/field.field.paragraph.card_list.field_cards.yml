@@ -1,0 +1,127 @@
+uuid: 6d94c8b3-8d0b-4c38-8b11-bbc28b43fbed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - entity_reference_revisions
+id: paragraph.card_list.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: card_list
+label: Cards
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      card: card
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 34
+        enabled: false
+      accordion_item:
+        weight: 35
+        enabled: false
+      blue_banner:
+        weight: 36
+        enabled: false
+      card:
+        weight: 37
+        enabled: true
+      card_list:
+        weight: 38
+        enabled: false
+      centered_image_text:
+        weight: 39
+        enabled: false
+      entity_references_image_text:
+        weight: 40
+        enabled: false
+      entity_references_text:
+        weight: 41
+        enabled: false
+      full_teaser:
+        weight: 42
+        enabled: false
+      gallery:
+        weight: 43
+        enabled: false
+      green_banner_cta:
+        weight: 44
+        enabled: false
+      header:
+        weight: 45
+        enabled: false
+      homepage_lead_teaser:
+        weight: 46
+        enabled: false
+      homepage_teaser:
+        weight: 47
+        enabled: false
+      image:
+        weight: 48
+        enabled: false
+      image_with_caption:
+        weight: 49
+        enabled: false
+      media:
+        weight: 50
+        enabled: false
+      media_gallery:
+        weight: 51
+        enabled: false
+      one_up_teaser_image_text:
+        weight: 52
+        enabled: false
+      person:
+        weight: 53
+        enabled: false
+      persons_list:
+        weight: 54
+        enabled: false
+      pullquote:
+        weight: 55
+        enabled: false
+      resource_file:
+        weight: 57
+        enabled: false
+      resource_link:
+        weight: 58
+        enabled: false
+      resources_list:
+        weight: 56
+        enabled: false
+      running_text:
+        weight: 59
+        enabled: false
+      schedule_item:
+        weight: 60
+        enabled: false
+      section:
+        weight: 61
+        enabled: false
+      text:
+        weight: 62
+        enabled: false
+      two_up_figures:
+        weight: 63
+        enabled: false
+      two_up_teaser_image_text:
+        weight: 64
+        enabled: false
+      two_up_teaser_text:
+        weight: 65
+        enabled: false
+      video:
+        weight: 66
+        enabled: false
+field_type: entity_reference_revisions

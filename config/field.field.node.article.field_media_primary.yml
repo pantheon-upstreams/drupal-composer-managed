@@ -1,0 +1,31 @@
+uuid: 60383902-8e16-48ee-aa10-493245e4e13c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_primary
+    - media.type.image
+    - media.type.remote_video
+    - node.type.article
+id: node.article.field_media_primary
+field_name: field_media_primary
+entity_type: node
+bundle: article
+label: 'Primary image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

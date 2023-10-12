@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * The EDF one column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--one-column',
+  ]
+%}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if content.main %}
+      <div{{ region_attributes.main.addClass('main-region') }}>
+        {{ content.main }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

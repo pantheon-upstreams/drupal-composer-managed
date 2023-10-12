@@ -1,0 +1,14 @@
+uuid: c8bb080a-badb-436b-b55c-0d486959cb87
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: video
+label: Video
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins:
+  style_options:
+    enabled: true

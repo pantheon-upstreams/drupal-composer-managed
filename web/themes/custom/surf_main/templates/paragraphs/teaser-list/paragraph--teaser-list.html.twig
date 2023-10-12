@@ -1,0 +1,176 @@
+{# <pre>{{dump(content.field_featured.0["#markup"])}}</pre> #}
+
+{#
+TODO:
+ - [ ] the `category_url` URLs need to be reviewed to make sure it's the correct page
+ #}
+
+  {# --- LENGTH --- #}
+  {% set length = content.field_teasers.0["#paragraph"].field_full_teaser|length %}
+
+  {# --- FEATURED --- #}
+  {% set featured = false %}
+  {% if content.field_featured.0["#markup"] == 'true' %}
+    {% set featured = true %}
+  {% endif %}
+
+  {# --- LAYOUT --- #}
+  {% if featured and length == 1  %}
+    {% set layout = 'super' %}
+  {% else %}
+    {% set layout = 'column-stack' %}
+  {% endif %}
+
+<article{{ attributes.addClass(['c-teaser-list', 'l-teaser-grid__wrapper', 'l-constrained--xlarge', 'l--bottom-spacing'])}}>
+
+  {% if content.field_title.value is not empty %}
+  <hr class="left-hook-divider">
+
+  <h2 class="l-teaser-grid__title">{{content.field_title|field_value}}</h2>
+  {% endif %}
+
+<section class="l-teaser-grid l-teaser-grid__length-{{length}}">
+
+  <ul class="l-teaser-grid l-teaser-grid__length-{{length}} item-list">
+
+{# LOOP THROUGH THE TEASERS #}
+{% for item in content.field_teasers.0["#paragraph"].field_full_teaser %}
+{# <pre>{{dump(item.entity)}}</pre> #}
+
+  {# --- URL --- #}
+  {% set node_url = drupal_url('node/' ~ item.entity.nid.value) %}
+
+  {# --- TYPE --- #}
+  {% set type = item.entity.type.value.0.target_id %}
+
+
+  {# -- CATEGORY and CATEGORY URL --- #}
+
+  {% if type == 'event' %}
+    {% set category_url = '/events' %}
+    {% set category = 'Event' %}
+  {% elseif type == 'article' %}
+    {% set category_url = '/news' %}
+    {% set category = 'News' %}
+  {% elseif type == 'press_release' %}
+    {% set category_url = '/press-releases' %}
+    {% set category = 'Press Release' %}
+  {% elseif type == 'experiment_research' %}
+    {% set category_url = '/areas-of-research' %}
+    {% set category = 'Experiment & Research' %}
+  {% endif %}
+  {% if featured %}
+    {% set category = 'Featured' %}
+  {% endif %}
+
+  {# --- ICON --- #}
+  {% set icon = null %}
+
+  {# --- TITLE --- #}
+  {% set title = item.entity.title.value %}
+
+
+    {# -- IMAGE --- #}
+    {% set image = '/themes/custom/surf_main/templates/components/teaser/news-placeholder.png' %}
+    {% set alt = title %}
+
+    {% if item.entity.field_media_primary.entity.field_media_image.entity.fileuri is not empty and featured == true  %}
+      {% set image = file_url(item.entity.field_media_primary.entity.field_media_image.entity.fileuri|image_style('full_teaser')) %}
+      {% set alt = item.entity.field_media_primary.entity.field_media_image.alt %}
+    {% endif %}
+
+    {% if item.entity.field_media_primary.entity.field_media_image.entity.fileuri is not empty and featured != true %}
+      {% set image = file_url(item.entity.field_media_primary.entity.field_media_image.entity.fileuri|image_style('teaser')) %}
+      {% set alt = item.entity.field_media_primary.entity.field_media_image.alt %}
+    {% endif %}
+
+    {# --- VIDEO --- #}
+    {% if item.entity.field_media_primary.entity.field_media_oembed_video is not empty and featured == true  %}
+      {# set category to video #}
+      {% set category = 'Video' %}
+      {# set icon #}
+      {% set icon = 'video' %}
+      {# set image #}
+      {% set image = item.entity.field_media_primary.entity.thumbnail.entity.uri.value|image_style('full_teaser') %}
+    {% endif %}
+    {% if item.entity.field_media_primary.entity.field_media_oembed_video is not empty and featured != true %}
+      {# set category to video #}
+      {% set category = 'Video' %}
+      {# set icon #}
+      {% set icon = 'video' %}
+      {# set image #}
+      {% set image = item.entity.field_media_primary.entity.thumbnail.entity.uri.value|image_style('teaser') %}
+    {% endif %}
+
+
+{# --- DATE --- #}
+{% if type == 'event' %}
+
+    {# Dates no set #}
+  {% if item.entity.field_dates.0.start_date is empty and item.entity.field_dates.0.end_date is empty %}
+    {% set teaser_date = null %}
+  {# Same Day #}
+  {% elseif item.entity.field_dates.entity.field_dates.0.value|date('F j, Y') == item.entity.field_dates.entity.field_dates.0.end_value|date('F j, Y') %}
+    {% set teaser_date = item.entity.field_dates.entity.field_dates.0.value|date('F j, Y') %}
+  {# Multiple Days #}  {% else %}
+    {% set teaser_date = item.entity.field_dates.entity.field_dates.0.value|date('F j') ~ '-' ~ item.entity.field_dates.entity.field_dates.0.end_value|date|date('F d, Y') %}
+  {% endif %}
+
+  {# Dates no set #}
+  {% if item.entity.field_dates.entity.field_dates.0.value is empty and item.entity.field_dates.entity.field_dates.0.end_value is empty %}
+    {% set teaser_time = null %}
+  {# All Day #}
+  {% elseif (item.entity.field_dates.entity.field_dates.0.value)|date('g:i A') == '7:00 AM' and (item.entity.field_dates.entity.field_dates.0.end_value)|date('g:i A') == '6:59 AM'  %}
+    {% set teaser_time = null %}
+  {# Times to be set #}
+  {% else %}
+
+    {% set start_time =  item.entity.field_dates.entity.field_dates.0.value %}
+    {% set start_time_minus7 = start_time|date_modify('-7 hours') %}
+    {% set start_time_final = start_time_minus7|date('g:i A', 'America/Denver') %}
+
+    {% set end_time =  item.entity.field_dates.entity.field_dates.0.end_value %}
+    {% set end_time_minus7 = end_time|date_modify('-7 hours') %}
+    {% set end_time_final = end_time_minus7|date('g:i A', 'America/Denver') %}
+
+    {% set teaser_time = start_time_final ~ '-' ~ end_time_final %}
+
+  {% endif %}
+
+{% else %}
+  {% set teaser_date = item.entity.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : item.entity.created.value|date('F d, Y') %}
+{% endif %}
+
+  {# --- BODY --- #}
+  {% if type == 'experiment_research' %}
+    {% set body = item.entity.field_overview[0].value %}
+
+  {% elseif type == 'article' or type == 'press_release' %}
+    {% set body = item.entity.field_highlight[0].value %}
+  {% else %}
+    {% set body = null %}
+  {% endif %}
+
+   <li class="item-row">
+
+     {{ include('surf_main:teaser', {
+       layout,
+       title,
+       body,
+       url: node_url,
+       category,
+       category_url,
+       teaser_date,
+       teaser_time,
+       image,
+       alt,
+       icon,
+     }, with_context = false) }}
+
+    </li>
+
+  {% endfor %}
+    </ul>
+  </section>
+
+</article>

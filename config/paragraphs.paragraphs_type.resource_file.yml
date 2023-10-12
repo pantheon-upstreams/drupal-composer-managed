@@ -1,0 +1,10 @@
+uuid: b6802063-088d-425f-ab2b-1edecc235fc5
+langcode: en
+status: true
+dependencies: {  }
+id: resource_file
+label: 'Resource File'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

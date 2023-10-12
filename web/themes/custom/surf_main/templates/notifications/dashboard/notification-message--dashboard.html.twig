@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Dashboard Notification Message.
+ *
+ * Available variables:
+ * - No additional variables are available for this notification message type.
+ *
+ * Included components:
+ * - /components/notification
+ *
+ * @see template_preprocess_notification_message()
+ */
+#}
+
+{% set classes = [
+    'message--dashboard',
+] %}
+
+{% set rendered_content = content|without(
+    'field_link',
+    'field_publish_date',
+    'label',
+    'message'
+) %}
+
+{% embed 'surf_main:notification' with {
+    notification_attributes: attributes.addClass(classes),
+    notification_id: message.id(),
+} %}
+    {% block notification_content %}
+        <div class="message__content--primary">
+            {% if content.label|render %}
+                <h3 class="message__title">{{ content.label|field_value }}</h3>
+            {% endif %}
+
+            {% if content.message|render %}
+                <div class="message__text">
+                    {{ content.message|field_value }}
+                </div>
+            {% endif %}
+
+            {% if content.field_publish_date|render %}
+                <div class="message__extra">
+                    {{ content.field_publish_date|field_value }}
+                </div>
+            {% endif %}
+
+            {{ rendered_content }}
+        </div>
+
+        {% if content.field_link|render %}
+            <div class="message__content--secondary">
+{#                {% include 'surf_main:button' with {#}
+{#                    button_color: 'navy',#}
+{#                    button_icon: 'arrow-right',#}
+{#                    button_title: content.field_link.0.title|default('title'),#}
+{#                    button_url: content.field_link.0.uri|default('https://example.com'),#}
+{#                } %}#}
+                {{ content.field_link }}
+            </div>
+        {% endif %}
+    {% endblock %}
+
+    {% block notification_dismiss %}
+        {% if notification_dismiss.show and not is_message_entity %}
+            <a href="/" class="message__close" aria-label="Close {{ message.label() }} notification">
+                <span>{{ notification_dismiss.button_text|default('Close') }}</span>
+            </a>
+        {% endif %}
+    {% endblock %}
+{% endembed %}

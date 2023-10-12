@@ -1,0 +1,31 @@
+uuid: d68ca7f4-21fd-4d10-9646-a9264419f941
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.file.image.field_caption
+    - field.field.file.image.field_credit
+  module:
+    - file
+    - text
+id: file.image.default
+targetEntityType: file
+bundle: image
+mode: default
+content:
+  field_caption:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_credit:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,6 @@
+uuid: c289b627-ee12-4cf2-bf85-efe0068f0150
+langcode: en
+status: true
+dependencies: {  }
+id: two_up_teaser_text
+label: 'Two-up Custom: Text'

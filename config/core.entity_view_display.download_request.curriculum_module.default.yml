@@ -1,0 +1,35 @@
+uuid: 8a8b7582-0b5e-4540-a4a4-22a8a5a0b683
+langcode: en
+status: true
+dependencies:
+  config:
+    - download_request.download_request_type.curriculum_module
+    - field.field.download_request.curriculum_module.field_date_returned
+    - field.field.download_request.curriculum_module.field_date_shipped
+    - field.field.download_request.curriculum_module.field_dates
+    - field.field.download_request.curriculum_module.field_ref_curriculum_module
+    - field.field.download_request.curriculum_module.field_webform_submission_id
+id: download_request.curriculum_module.default
+targetEntityType: download_request
+bundle: curriculum_module
+mode: default
+content:
+  request_items:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_date_returned: true
+  field_date_shipped: true
+  field_dates: true
+  field_ref_curriculum_module: true
+  field_webform_submission_id: true
+  langcode: true
+  search_api_excerpt: true
+  user: true

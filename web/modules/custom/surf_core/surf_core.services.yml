@@ -1,0 +1,4 @@
+services:
+  Drupal\surf_core\Twig\TwigExtension:
+    tags:
+      - { name: twig.extension }

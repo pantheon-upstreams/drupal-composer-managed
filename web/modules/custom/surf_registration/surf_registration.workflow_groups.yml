@@ -1,0 +1,3 @@
+user_request:
+  label: User Request
+  entity_type: user_request

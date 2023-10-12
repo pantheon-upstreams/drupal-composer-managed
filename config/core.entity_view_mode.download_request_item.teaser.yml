@@ -1,0 +1,10 @@
+uuid: 6b257f7a-0a95-4df2-aaa2-8c7fa56ce6c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - download_request
+id: download_request_item.teaser
+label: Teaser
+targetEntityType: download_request_item
+cache: true

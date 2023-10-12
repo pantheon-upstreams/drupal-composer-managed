@@ -1,0 +1,38 @@
+// Helpers
+// -----------------------------------------------------------------------------
+
+
+// Link Styles
+
+.transition {
+  -webkit-transition:color 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -moz-transition:color 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -ms-transition:color 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  -o-transition:color 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition:color 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.transition-all {
+  -webkit-transition:all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -ms-transition:all 0.3s ease-in-out;
+  -o-transition:all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
+}
+
+.transition-long {
+  -webkit-transition:all 1s ease-in-out;
+  -moz-transition:all 1s ease-in-out;
+  -ms-transition:all 1s ease-in-out;
+  -o-transition:all 1s ease-in-out;
+  transition:all 1s ease-in-out;
+}
+
+
+a {
+  @extend .transition;	
+  text-decoration: none !important;
+  &:hover {text-decoration: none !important;}
+  &:focus {text-decoration: none !important; /* border:none !important; */ outline:none !important;}
+  &:active {text-decoration: none !important; /* border:none !important; */ outline:none !important;}
+}

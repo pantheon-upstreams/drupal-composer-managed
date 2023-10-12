@@ -1,0 +1,34 @@
+uuid: f9c04d00-4ec9-4efd-9990-2f6acaaf3e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.document_private.field_private_file
+    - media.type.document_private
+id: media.document_private.media_library
+targetEntityType: media
+bundle: document_private
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_private_file: true
+  path: true
+  status: true
+  uid: true

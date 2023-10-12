@@ -1,0 +1,40 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: person-page
+name: Person
+status: WIP
+componentType: molecule
+description: A Person detail page component
+schemas:
+  props:
+    type: object
+    properties:
+      title:
+        type: string
+        title: Title
+        examples:
+          - Deb Wolf
+      job_title:
+        type: string
+        title: Job Title
+        examples:
+          - Chief IDEA Officer, Director of Education and Public Relations
+      body:
+        title: Body
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      phone:
+        type: string
+        title: Phone Number
+        examples:
+          - "970-987-6543"
+      email:
+        title: Email Address
+        type: string
+        examples:
+          - johndoe@test.com
+      media:
+        title: Media
+        type: string
+        examples:
+          - '<img loading="eager" src="/sites/default/files/2023-03/deb-wolf.jpg" width="302" height="381" alt="Deb Wolf">'

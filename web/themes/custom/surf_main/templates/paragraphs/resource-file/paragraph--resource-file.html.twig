@@ -1,0 +1,22 @@
+
+{# File Title / Description #}
+{% set file_title = content.field_file.0["#description"] %}
+
+{# File URI #}
+{% set file_url = content.field_file.0["#file"].uri.value|file_url %}
+
+{# File Mimetype #}
+{% set orig_mimetype = content.field_file.0["#file"].filemime.value %}
+{% set parts_mimetype = orig_mimetype|split('/') %}
+{% set file_mimetype = parts_mimetype|last %}
+
+{# File Size #}
+{% set file_size = (content.field_file.0["#file"].filesize.value / 1048576)|round ~ " MB" %}
+
+{{ include('surf_main:resource-file', {
+  file_title,
+  file_url,
+  file_size,
+  file_mimetype,
+  attributes,
+}, with_context = false) }}

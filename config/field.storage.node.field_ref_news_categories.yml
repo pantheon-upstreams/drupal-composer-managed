@@ -1,0 +1,20 @@
+uuid: 0cba40f1-5cc9-4ae2-9188-838d73b574b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_ref_news_categories
+field_name: field_ref_news_categories
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
