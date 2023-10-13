@@ -1,0 +1,7 @@
+@use '../../../../libraries/partials/partials' as *;
+
+.a-left-hook {
+  border-block-start: 2px solid var(--surf-color-gray-800);
+  border-inline-start: 2px solid var(--surf-color-gray-800);
+  height: rem(32px);
+}
