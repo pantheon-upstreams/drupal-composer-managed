@@ -1,0 +1,22 @@
+"$schema": https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: pullquote
+name: Pullquote
+componentType: molecule
+status: WIP
+description: A pullquote component
+schemas:
+  props:
+    type: object
+    required:
+      - pullquote_quote
+    properties:
+      pullquote_quote:
+        type: string
+        title: Quote
+        examples:
+          - "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning."
+      pullquote_credit:
+        type: string
+        title: Quote Credit
+        examples:
+          - "— Albert Einstein"
