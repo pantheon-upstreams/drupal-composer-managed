@@ -72,8 +72,8 @@
 
 .person-content__title {
   text-transform: uppercase;
-
-  @include surf-font-heading-one;
+  //TODO: replace font mixin
+  //@include surf-font-heading-one;
 }
 
 .c-person-page__media {

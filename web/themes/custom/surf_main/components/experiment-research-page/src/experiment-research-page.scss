@@ -48,7 +48,8 @@
   margin: 0 0 rem(12px) 0;
   text-transform: uppercase;
 
-  @include surf-font-heading-one;
+  //TODO: replace font mixin
+  //@include surf-font-heading-one;
 }
 
 .c-experiment-research-page__intro {

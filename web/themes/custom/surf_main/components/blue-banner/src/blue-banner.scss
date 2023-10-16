@@ -127,7 +127,8 @@
 
 .c-blue-banner__title {
 
-  @include surf-font-heading-one;
+  //TODO: replace font mixin
+  //@include surf-font-heading-one;
   color: var(--color-surf--white);
   margin: 0;
   text-transform: uppercase;
