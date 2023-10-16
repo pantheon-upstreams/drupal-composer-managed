@@ -69,6 +69,7 @@
     --surf-font-size-52: #{functions-calculations.rem(56px)};
     --surf-font-size-96: #{functions-calculations.rem(64px)};
     --surf-font-size-176: #{functions-calculations.rem(100px)};
+    --surf-font-size-body-md: #{functions-calculations.rem(24px)};
   }
 
   @include mixins-breakpoints.bp-min(large) {
@@ -77,6 +78,7 @@
     --surf-font-size-52: #{functions-calculations.rem(56px)};
     --surf-font-size-96: #{functions-calculations.rem(64px)};
     --surf-font-size-176: #{functions-calculations.rem(132px)};
+    --surf-font-size-body-md: #{functions-calculations.rem(32px)};
   }
 
   @include mixins-breakpoints.bp-min(xlarge) {

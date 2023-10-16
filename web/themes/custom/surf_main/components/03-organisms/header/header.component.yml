@@ -15,10 +15,15 @@ schemas:
       header_heading:
         type: string
         title: Heading
-        description: The header heading text
         examples:
           - Neutrino Day
           - Press Releases
+      header_heading_level:
+        type: string
+        title: Heading Header Level
+        examples:
+          - "1"
+          - "2"
       header_teaser:
         title: Teaser Text
         type: string
@@ -33,7 +38,6 @@ schemas:
       header_cta_text:
         type: string
         title: Header CTA Text
-        description: The header CTA text
         examples:
           - Click here!
       header_cta_url:
@@ -41,10 +45,23 @@ schemas:
         type: string
         examples:
           - "https://www.example.org"
+      header_cta_html_tag:
+        title: Header CTA HTML Tag
+        type: string
+        examples:
+          - "link"
+      header_cta_style:
+        title: Header CTA Style
+        type: string
+        examples:
+          - "full-navy"
+      header_cta_size:
+        title: Header CTA Size
+        type: string
+        examples:
+          - "small"
     slots:
       header_links_block:
         title: Header Links
-        description: Slot for backlink or breadcrumb
       header_metadata_block:
         title: Header Metadata
-        description: Slot for additional dynamic content

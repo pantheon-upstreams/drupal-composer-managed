@@ -111,7 +111,7 @@
 
 @mixin body-xlg() {
 
-  @include font(body-xlg, default);
+  @include font(body-md, default);
   font-family: var(--surf-font-sans);
   font-weight: var(--surf-font-weight-book);
 }

@@ -14,25 +14,9 @@
 
 .o-header__heading {
   color: var(--surf-color-black);
-  font-family: var(--surf-font-sans-alt);
-  font-size: rem(48px);
-  font-weight: var(--surf-font-weight-medium);
-  line-height: 0.9;
   text-transform: uppercase;
 
-  @include bp-min(medium) {
-    font-size: rem(100px);
-    line-height: 0.94;
-  }
-
-  @include bp-min(large) {
-    font-size: rem(132px);
-  }
-
-  @include bp-min(xlarge) {
-    font-size: rem(176px);
-    line-height: 0.9;
-  }
+  @include heading-01;
 }
 
 .o-header__heading--gradient {
@@ -44,27 +28,17 @@
 }
 
 .o-header__heading--transform-none {
-  font-size: rem(96px);
   letter-spacing: rem(1.44px);
-  line-height: 1;
   text-transform: none;
+
+  @include heading-02;
 }
 
 .o-header__teaser {
   color: var(--surf-color-gray-600);
-  font-size: rem(18px);
-  line-height: 1.44;
   margin-block-start: rem(12px) !important;
 
-  @include bp-min(medium) {
-    font-size: rem(24px);
-    line-height: 1.4;
-  }
-
-  @include bp-min(large) {
-    font-size: rem(32px);
-    line-height: 1.32;
-  }
+  @include body-xlg;
 }
 
 .o-header--with-bkg-color {
