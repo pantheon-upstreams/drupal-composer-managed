@@ -1,37 +1,34 @@
+{#
+/**
+ * @file
+ * Component for a Icon
+ *
+ * Available props:
+ * - media_attributes: [array] Any parent tag attributes.
+ * - media: [array]
+ * - media_caption: [string]
+ *
+ */
+#}
 
-{% set media_attributes = create_attribute() %}
+{% set media_attributes = media_attributes ? media_attributes : create_attribute() %}
+
 {%
   set classes = [
   'a-media',
 ]
 %}
 
-<figure {{ media_attributes.addClass(classes) }}>
+<figure {{ media_attributes.addClass(classes) }} {{ attributes|without(class) }}>
 
-  {% block image_block %}
-    {% if image_url %}
-      <div class="a-media__image-wrapper">
-        <img src="{{ image_url }}" alt="{{ image_alt }}" />
-        {% if image_credit %}<div class="c-media__image-credit">{{image_credit}}</div>{% endif %}
-      </div>
-    {% endif %}
+  {% block media_block %}
+    {{ media }}
   {% endblock %}
 
-  {% block video_block %}
-    {% if video_url %}
-      <div class="a-media__video-wrapper">
-        <iframe src="{{ video_url }}" frameborder="0" allowtransparency="" width="426" height="240" title="{{ title }}"></iframe>
-      </div>
-    {% endif %}
-  {% endblock %}
-
-
-  {% block caption_block %}
-    {% if caption %}
-      <figcaption class="a-media__caption">
-        {{caption|check_markup('plain')}}
-      </figcaption>
-    {% endif %}
-  {% endblock %}
+  {% if media_caption %}
+    <figcaption class="a-media__caption">
+      {{ media_caption }}
+    </figcaption>
+  {% endif %}
 
 </figure>
