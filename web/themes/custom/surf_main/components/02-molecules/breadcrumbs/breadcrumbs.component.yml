@@ -1,0 +1,26 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Breadcrumbs
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - breadcrumbs_label
+    - breadcrumbs_type
+  properties:
+    breadcrumbs_attributes:
+      title: Attributes
+      type: string
+    breadcrumbs_label:
+      title: Label
+      type: string
+    breadcrumbs_type:
+      title: Type
+      type: string
+      enum:
+        - default
+        - large
+        - single-back
+  slots:
+    breadcrumbs_navigation:
+      title: Navigation

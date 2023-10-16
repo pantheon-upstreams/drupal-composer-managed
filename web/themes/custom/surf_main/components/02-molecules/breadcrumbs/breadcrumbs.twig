@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Component for Breadcrumbs
+ *
+ * Available props:
+ * - breadcrumbs_label: [string]
+ * - breadcrumbs_type: [string]
+ *
+ * Available slots:
+ * - breadcrumbs_navigation
+ *
+ */
+#}
+
+{% set classes = [
+    'breadcrumbs',
+    'breadcrumbs--' ~ breadcrumbs_type,
+] %}
+
+<nav aria-label="{{ breadcrumbs_label }}" {{ breadcrumbs_attributes.addClass(classes) }}>
+    {% block breadcrumbs_navigation %}{% endblock %}
+</nav>

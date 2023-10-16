@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% if breadcrumb %}
+    {% embed 'surf_main:breadcrumbs' with {
+        breadcrumbs_attributes: attributes,
+        breadcrumbs_label: 'Breadcrumbs',
+        breadcrumbs_type: 'default',
+    } %}
+        {% block breadcrumbs_navigation %}
+            <ol class="breadcrumbs__items">
+                {% for item in breadcrumb %}
+                    {% if loop.last %}
+                        <li class="breadcrumbs__item breadcrumbs__item--current">
+                            <a href="" class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">{{ item.text }}</a>
+                        </li>
+                    {% else %}
+                        <li class="breadcrumbs__item">
+                            <a href="{{ item.url }}" class="breadcrumbs__link">{{ item.text }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        {% endblock %}
+    {% endembed %}
+{% endif %}
