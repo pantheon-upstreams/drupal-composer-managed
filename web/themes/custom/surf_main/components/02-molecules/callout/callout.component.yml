@@ -2,7 +2,7 @@ $schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata
 machineName: header
 name: Header
 status: WIP
-componentType: organism
+componentType: molecule
 description: A header component
 schemas:
   props:

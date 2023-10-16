@@ -4,9 +4,17 @@
  * Component for Header
  *
  * Available props:
- * - header_attributes
+ * - header_attributes: [array] Any parent tag attributes.
  * - header_heading: [string] required
  * - header_teaser: [string]
+ *
+ * - header_media: [boolean]
+ *
+ * - header_cta_text [string]
+ * - header_cta_url [string]
+ * - header_cta_html_tag [string]
+ * - header_cta_style [string]
+ * - header_cta_size [string]
  *
  * Available slots:
  * - header_links_block: [object]
@@ -15,34 +23,33 @@
  */
 #}
 
-{% set header_attributes = create_attribute() %}
+{% set header_attributes = header_attributes ? header_attributes : create_attribute() %}
 
 {%
   set classes = [
-  'm-header',
-  header_modifier ? header_modifier,
-  header_media ? 'm-header--with-img',
+  'o-header',
+  header_media ? 'o-header--with-img',
 ]
 %}
 
-<header {{ header_attributes.addClass(classes) }}>
+<header {{ header_attributes.addClass(classes) }} {{ attributes|without(class) }}>
 
-  <div class="m-header__content">
+  <div class="o-header__content">
 
     {% block header_links_block %}
       <a href="http://www.example.com">Back to my dashboard</a>
     {% endblock %}
 
-    <div class="m-header__text-wrapper">
+    <div class="o-header__text-wrapper">
 
       {{ include('surf_main:heading', {
         heading_text: header_heading,
         heading_level: header_heading_level,
-        heading_modifier: heading_modifier,
+        heading_attributes: heading_attributes,
       }, with_context = false) }}
 
       {% if header_teaser %}
-       <p class="m-header__teaser">{{ header_teaser }}</p>
+        <p class="o-header__teaser">{{ header_teaser }}</p>
       {% endif %}
     </div>
 

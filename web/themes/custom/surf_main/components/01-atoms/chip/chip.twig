@@ -4,26 +4,36 @@
  * Component for Chip
  *
  * Available props:
- * - chip_attributes
+ * - chip_attributes: [array] Any parent tag attributes.
  * - chip_text: [string] required
  * - chip_url: [string]
+ *
+ * - chip_icon_prefix: [string]
  *
  */
 #}
 
-{% set chip_attributes = create_attribute() %}
+{% set chip_attributes = chip_attributes ? chip_attributes : create_attribute() %}
 
 {%
   set classes = [
   'a-chip',
-  chip_modifier ? chip_modifier,
 ]
 %}
 
-<span {{ chip_attributes.addClass(classes) }}>
+<span {{ chip_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+
+  {% if chip_icon_prefix %}
+    {% include 'surf_main:icon' with {
+      icon_position: 'left',
+      icon_type: chip_icon_prefix,
+    } %}
+  {% endif %}
+
   {% if chip_url %}
     <a href="{{ chip_url }}">{{ chip_text }}</a>
   {% else %}
     {{ chip_text }}
   {% endif %}
+
 </span>

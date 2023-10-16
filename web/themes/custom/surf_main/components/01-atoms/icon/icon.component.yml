@@ -62,6 +62,7 @@ props:
         - pencil
         - phone
         - play
+        - play-solid
         - question
         - radio-selected
         - radio-unselected

@@ -1,0 +1,32 @@
+
+{#
+/**
+ * @file
+ * Component for Pullquote
+ *
+ * Available props:
+ * - pullquote_attributes: [array] Any parent tag attributes.
+ * - pullquote_quote: [string] required
+ * - pullquote_credit: [string]
+ *
+ */
+#}
+
+{% set pullquote_attributes = pullquote_attributes ? pullquote_attributes : create_attribute() %}
+
+{%
+  set classes = [
+  'm-pullquote',
+]
+%}
+
+<figure {{ pullquote_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+
+  <blockquote class="m-pullquote__quote">
+    {{ pullquote_quote }}
+  </blockquote>
+
+  {% if pullquote_credit %}
+    <figcaption class="m-pullquote__credit">{{ pullquote_credit }}</figcaption>
+  {% endif %}
+</figure>

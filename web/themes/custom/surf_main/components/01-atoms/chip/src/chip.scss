@@ -5,13 +5,11 @@
   background-color: var(--surf-color-gray-100);
   color: var(--surf-color-navy);
   display: inline-flex;
-  font-family: var(--surf-font-condensed);
-  font-size: rem(16px);
-  font-weight: var(--surf-font-weight-bold);
-  letter-spacing: 1.5px;
   line-height: 1.4;
   padding: rem(2px) rem(8px);
   text-transform: uppercase;
+
+  @include surf-font-label-medium;
   
   a {
     text-decoration: none;
@@ -20,9 +18,39 @@
       text-decoration: underline;
     }
   }
+
+  .a-icon {
+    color: var(--surf-color-gray-600);
+    height: rem(14px);
+    position: relative;
+    width: rem(11px);
+  }
+
+  .a-icon--position-left {
+    margin-right: rem(4px);
+  }
+
+  .a-icon--position-right {
+    margin-left: rem(4px);
+  }
 }
 
-.a-chip--highlight {
+.a-chip--navy {
+  background-color: var(--surf-color-navy);
+  color: var(--surf-color-white);
+}
+
+.a-chip--blue {
+  background-color: var(--surf-color-blue);
+  color: var(--surf-color-white);
+}
+
+.a-chip--gold {
   background-color: var(--surf-color-gold);
+  color: var(--surf-color-black);
+}
+
+.a-chip--white {
+  background-color: var(--surf-color-white);
   color: var(--surf-color-black);
 }

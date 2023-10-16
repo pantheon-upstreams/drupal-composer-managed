@@ -4,7 +4,7 @@
  * Component for Heading
  *
  * Available props:
- * - heading_attributes
+ * - heading_attributes: [array] Any parent tag attributes.
  * - heading_text: [string] required
  * - heading_level: [string] default = 2
  * - heading_url: [string]
@@ -12,16 +12,15 @@
  */
 #}
 
-{% set heading_attributes = create_attribute() %}
+{% set heading_attributes = heading_attributes ? heading_attributes : create_attribute() %}
 
 {%
   set classes = [
   'a-heading',
-  heading_modifier ? heading_modifier,
 ]
 %}
 
-<h{{ heading_level|default('2') }} {{ heading_attributes.addClass(classes) }}>
+<h{{ heading_level|default('2') }} {{ heading_attributes.addClass(classes) }} {{ attributes|without(class) }}>
 
   {%- if heading_url -%}
     <a href="{{ heading_url }}">{{ heading_text }}</a>

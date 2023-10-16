@@ -5,7 +5,7 @@
 // - 00 - Imports
 // - 01 - Typography
 // - 02 - Headings
-// - 03 - Dynamic Headings
+// - 03 - Body Text
 //
 
 //------------------------------------
@@ -87,47 +87,31 @@
   letter-spacing: 1.8px;
 }
 
-// ------------------------------------
-// 03 - Dynamic Headings
-// ------------------------------------
+@mixin surf-font-label-small() {
+  font-family: var(--surf-font-condensed);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 
-@mixin surf-font-heading-one() {
-  font-size: rem(48px);
-  line-height: 0.9;
-
-  @include bp-min(medium) {
-    font-size: rem(100px);
-    line-height: 0.94;
-  }
-
-  @include bp-min(large) {
-    font-size: rem(132px);
-  }
+  @include font(20, label);
 }
 
-@mixin surf-font-heading-one-alt() {
-  font-size: rem(40px);
-  line-height: 1.125;
+@mixin surf-font-label-x-small() {
+  font-family: var(--surf-font-condensed);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 
-  @include bp-min(large) {
-    font-size: rem(52px);
-    line-height: 1.12;
-  }
+  @include font(16, label);
 }
 
-@mixin surf-font-heading-two() {
-  font-size: rem(40px);
-  line-height: 1;
+// ------------------------------------
+// 03 - Body Text
+// ------------------------------------
 
-  @include bp-min(small) {
-    font-size: rem(52px);
-  }
+@mixin body-xlg() {
 
-  @include bp-min(medium) {
-    font-size: rem(64px);
-  }
-
-  @include bp-min(large) {
-    font-size: rem(96px);
-  }
+  @include font(body-md, default);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-book);
 }

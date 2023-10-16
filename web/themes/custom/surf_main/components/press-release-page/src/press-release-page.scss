@@ -42,7 +42,8 @@
 }
 
 .c-press-release__title {
-  @include surf-font-heading-one-alt;
+  //TODO: replace font mixin
+  //@include surf-font-heading-one-alt;
 }
 
 .c-press-release__image-wrapper {

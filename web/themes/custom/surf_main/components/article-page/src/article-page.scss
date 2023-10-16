@@ -42,8 +42,8 @@
 }
 
 .c-article__title {
-
-  @include surf-font-heading-one-alt;
+ //TODO: replace font mixin
+  //@include surf-font-heading-one-alt;
 }
 
 .c-article__image-wrapper {
@@ -173,8 +173,8 @@
 }
 
 .c-article__press-resources-title {
-
-  @include surf-font-heading-two;
+  //TODO: replace font mixin
+  //@include surf-font-heading-two;
   margin: 0 0 rem(40px) 0;
 }
 

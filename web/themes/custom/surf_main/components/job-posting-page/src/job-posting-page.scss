@@ -53,7 +53,8 @@
 
 .c-job-posting__title {
 
-  @include surf-font-heading-one;
+  //TODO: replace font mixin
+  //@include surf-font-heading-one;
   margin: 0 0 rem(32px) 0;
   order: 2;
   text-transform: uppercase;

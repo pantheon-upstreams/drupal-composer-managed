@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Component for Left Hook
+ *
+ * Available props:
+ * - left_hook_attributes: [array] Any parent tag attributes.
+ *
+ */
+#}
+
+{% set left_hook_attributes = left_hook_attributes ? left_hook_attributes : create_attribute() %}
+
+{%
+  set classes = [
+  'a-left-hook',
+]
+%}
+
+<hr {{ left_hook_attributes.addClass(classes) }} {{ attributes|without(class) }}>

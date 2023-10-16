@@ -9,16 +9,16 @@ schemas:
     type: object
     required:
       - heading_text
+      - heading_level
     properties:
       heading_attributes:
         title: Attributes
       heading_text:
         type: string
         title: Heading Text
-        description: The heading text
         examples:
-          - REPORTS & PUBLICATIONS TEST PAGE
-          - Professional Development
+          - "REPORTS & PUBLICATIONS TEST PAGE"
+          - "Professional Development"
       heading_level:
         title: Heading Level
         type: string
