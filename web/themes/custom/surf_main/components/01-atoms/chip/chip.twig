@@ -8,6 +8,8 @@
  * - chip_text: [string] required
  * - chip_url: [string]
  *
+ * - chip_icon_prefix: [string]
+ *
  */
 #}
 
@@ -20,9 +22,18 @@
 %}
 
 <span {{ chip_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+
+  {% if chip_icon_prefix %}
+    {% include 'surf_main:icon' with {
+      icon_position: 'left',
+      icon_type: chip_icon_prefix,
+    } %}
+  {% endif %}
+
   {% if chip_url %}
     <a href="{{ chip_url }}">{{ chip_text }}</a>
   {% else %}
     {{ chip_text }}
   {% endif %}
+
 </span>
