@@ -1,12 +1,9 @@
-$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: left_hook
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 name: Left Hook
-status: WIP
-componentType: atom
-description: A left hook component
-schemas:
-  props:
-    type: object
-    properties:
-      left_hook_attributes:
-        title: Attributes
+status: experimental
+group: Atoms
+props:
+  type: object
+  properties:
+    left_hook_attributes:
+      title: Attributes

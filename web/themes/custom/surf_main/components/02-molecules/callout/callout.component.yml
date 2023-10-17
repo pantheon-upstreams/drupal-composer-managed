@@ -1,33 +1,46 @@
-$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: header
-name: Header
-status: WIP
-componentType: molecule
-description: A header component
-schemas:
-  props:
-    type: object
-    required:
-      - header_heading
-    properties:
-      header_attributes:
-        title: Attributes
-      header_heading:
-        type: string
-        title: Heading
-        description: The header heading text
-        examples:
-          - Neutrino Day
-          - Press Releases
-      header_teaser:
-        title: Teaser Text
-        type: string
-        examples:
-          - "From cutting-edge research in dark matter to neutrinos, SURF hosts experiments that push the frontier of physics."
-    slots:
-      header_links_block:
-        title: Header Links
-        description: Slot for backlink or breadcrumb
-      header_metadata_block:
-        title: Header Metadata
-        description: Slot for additional dynamic content
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Callout
+status: experimental
+group: Molecules
+props:
+  type: object
+  properties:
+    callout_attributes:
+      title: Attributes
+    callout_heading:
+      type: string
+      title: Callout Heading
+      examples:
+        - "Optional Heading"
+    callout_heading_level:
+      type: string
+      title: Callout Heading Level
+      examples:
+        - "1"
+        - "2"
+        - "3"
+    callout_text:
+      type: string
+      title: Callout Text
+      examples:
+        - "Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue."
+    callout_button_text:
+      type: string
+      title: Callout Button Text
+      examples:
+        - "Primary Button"
+    callout_button_url:
+      type: string
+      title: Callout Button URL
+      examples:
+        - "http://www.example.com"
+    callout_button_prefix:
+      type: string
+      title: Callout Button Prefix
+      examples:
+        - "play"
+    callout_button_suffix:
+      type: string
+      title: Callout Button Suffix
+      examples:
+        - "arrow-right"
