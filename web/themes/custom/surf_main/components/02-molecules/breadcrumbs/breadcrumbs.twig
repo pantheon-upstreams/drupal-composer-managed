@@ -4,20 +4,33 @@
  * Component for Breadcrumbs
  *
  * Available props:
- * - breadcrumbs_label: [string]
- * - breadcrumbs_type: [string]
- *
- * Available slots:
- * - breadcrumbs_navigation
+ * - breadcrumbs_attributes: [string] Any additional attributes needing to be specified.
+ * - breadcrumbs_label: [string] Value that will be used for accessibility purposes.
+ * - breadcrumbs_type: [string] Available options include 'default', 'large', and 'single-back'.
+ * - breadcrumbs_navigation: [array] Array of objects that include a 'text' and a 'url' property.
  *
  */
 #}
 
 {% set classes = [
-    'breadcrumbs',
-    'breadcrumbs--' ~ breadcrumbs_type,
+    'm-breadcrumbs',
+    'm-breadcrumbs--' ~ breadcrumbs_type,
 ] %}
 
 <nav aria-label="{{ breadcrumbs_label }}" {{ breadcrumbs_attributes.addClass(classes) }}>
-    {% block breadcrumbs_navigation %}{% endblock %}
+    {% if breadcrumbs_navigation %}
+        <ol class="m-breadcrumbs__items">
+            {% for item in breadcrumbs_navigation %}
+                {% if loop.last and not loop.first %}
+                    <li class="m-breadcrumbs__item m-breadcrumbs__item--current">
+                        <a href="" class="m-breadcrumbs__link m-breadcrumbs__link--current" aria-current="page">{{ item.text }}</a>
+                    </li>
+                {% else %}
+                    <li class="m-breadcrumbs__item">
+                        <a href="{{ item.url }}" class="m-breadcrumbs__link">{{ item.text }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    {% endif %}
 </nav>

@@ -14,6 +14,9 @@ props:
     breadcrumbs_label:
       title: Label
       type: string
+    breadcrumbs_navigation:
+      title: Navigation
+      type: array
     breadcrumbs_type:
       title: Type
       type: string
@@ -21,6 +24,3 @@ props:
         - default
         - large
         - single-back
-  slots:
-    breadcrumbs_navigation:
-      title: Navigation
