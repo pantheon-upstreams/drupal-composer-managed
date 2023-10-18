@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+{% if breadcrumb %}
+    {% include 'surf_main:breadcrumbs' with {
+        breadcrumbs_attributes: attributes,
+        breadcrumbs_label: 'Breadcrumbs',
+        breadcrumbs_type: 'default',
+        breadcrumbs_navigation: breadcrumb
+    } only %}
+{% endif %}

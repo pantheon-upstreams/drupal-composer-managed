@@ -26,5 +26,5 @@ destination:
   translations: true
   default_bundle: image
 migration_dependencies:
-  required:
+  optional:
     - surf_file_image

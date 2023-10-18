@@ -1,24 +1,17 @@
-id: surf_node_person
-label: SURF Node -> Person
+id: surf_node_person_employee
+label: SURF Node Employee -> Person
 migration_group: 'surf'
 migration_tags:
   - Content
 source:
   plugin:  'd8_entity'
   entity_type: node
+  bundle: 'employee_'
   include_translations: false
   key: 'migrate'
 process:
   nid: nid
   title: title
-  _skip_type:
-    plugin: skip_on_value
-    not_equals: true
-    source: type
-    method: row
-    value: 
-      - employee_
-      - board_member_profile
   body: body
   _title_first_part:
     - 
@@ -69,14 +62,8 @@ process:
   field_phone_mobile: field_cell_phone
   field_phone_office: field_office_phone
   field_email: field_email
-  field_board_type:
-    -
-      plugin: static_map
-      source: field_profile_type/0/target_id
-      map:
-        132: sdsta
-        133: cultural_advisory_committee
-        137: surf_foundation
+  field_date_appointed: field_date_appointed
+  field_job_title: field_job_title
   field_appointed_by/0/value: field_appointed_by/0/value
   field_location/0/value: field_from/0/value
   uid: uid

@@ -1,0 +1,129 @@
+//
+// Component - Molecule - Breadcrumbs
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Default
+// - 04 - Large
+// - 05 - Single Back
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/functions/animations' as functions-animations;
+@use '../../../00-base/partials/functions/calculations' as functions-calculations;
+@use '../../../00-base/partials/mixins/lists' as mixins-lists;
+@use '../../../00-base/partials/mixins/typography' as mixins-typography;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-breadcrumbs {
+  ol.m-breadcrumbs__items {
+    @include mixins-lists.reset();
+    display: flex;
+    flex-flow: wrap row;
+    margin: 0 -12px;
+  }
+
+  li.m-breadcrumbs__item {
+    padding: 0 12px;
+    position: relative;
+  }
+
+  li.m-breadcrumbs__item:not(:first-child):before {
+    background-color: var(--surf-color-black);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 14px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 2px;
+    width: 1px;
+  }
+
+  a.m-breadcrumbs__link--current {
+    color: var(--surf-color-gray-900);
+    cursor: initial;
+    text-decoration: none;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Default
+//------------------------------------
+
+.m-breadcrumbs.m-breadcrumbs--default {
+  a.m-breadcrumbs__link {
+    @include mixins-typography.size-14();
+    font-weight: var(--surf-font-weight-book);
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Large
+//------------------------------------
+
+.m-breadcrumbs.m-breadcrumbs--large {
+  a.m-breadcrumbs__link {
+    @include mixins-typography.size-16();
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Single Back
+//------------------------------------
+
+.m-breadcrumbs.m-breadcrumbs--single-back {
+  a.m-breadcrumbs__link {
+    @include mixins-typography.size-16();
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+  }
+
+  li.m-breadcrumbs__item:first-child a.m-breadcrumbs__link {
+    padding-left: 32px;
+
+    &:before {
+      background: svg-load('icon-arrow-left.svg', fill='#000080') no-repeat center;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 24px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      top: 2px;
+      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      transform: translateX(0);
+      width: 24px;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      background: svg-load('icon-arrow-left.svg', fill='#000000') no-repeat center;
+      transform: translateX(-4px);
+    }
+  }
+}

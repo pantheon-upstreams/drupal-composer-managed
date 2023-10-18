@@ -1,12 +1,12 @@
-id: surf_node_article
-label: SURF Node -> Article
+id: surf_node_page
+label: SURF Node -> Page
 migration_group: 'surf'
 migration_tags:
   - Content
 source:
   plugin:  'd8_entity'
   entity_type: node
-  bundle: 'article'
+  bundle: 'page'
   include_translations: false
   key: 'migrate'
 process:
@@ -49,7 +49,7 @@ process:
   status: status
 destination:
   plugin: entity:node
-  default_bundle: 'article'
+  default_bundle: 'page'
 migration_dependencies:
   required:
     - surf_node_field_p_body

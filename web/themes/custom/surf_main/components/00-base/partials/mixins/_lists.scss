@@ -1,0 +1,106 @@
+//
+// Mixins - Lists
+// Use these mixins when needing to easily define lists styles.
+//
+// - 01 - Base
+// - 02 - Bullets
+// - 03 - Numbered
+// - 04 - No Bullets
+// - 05 - Inline
+// - 06 - Ruled
+//
+
+
+//------------------------------------
+//  01 - Base
+//------------------------------------
+
+@mixin reset {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+
+
+
+//------------------------------------
+//  02 - Bullets
+//------------------------------------
+
+@mixin bullets($item-selector: li) {
+  @include reset;
+
+  > #{$item-selector}:before {
+    content: "\2022";
+    font-weight: var(--font-weight-bold);
+  }
+
+  ul {
+    margin-top: 6px;
+    padding-left: var(--space-indent);
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Numbered
+//------------------------------------
+
+@mixin numbered($item-selector: li) {
+  @include reset;
+  counter-reset: number;
+
+  > #{$item-selector}:before {
+    content: counters(number, ".") ".";
+    counter-increment: number;
+  }
+
+  // Second Level
+  ol {
+    margin-top: 6px;
+    padding-left: 30px;
+
+    > #{$item-selector} {
+      padding-left: 0;
+      text-indent: -30px;
+
+      &:before {
+        display: inline;
+        margin-right: .5em;
+        position: static;
+      }
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - No Bullets
+//------------------------------------
+
+@mixin no-bullets($item-selector: li) {
+  margin: 0;
+  padding: 0;
+
+  > #{$item-selector} {
+    list-style: none;
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Inline
+//------------------------------------
+
+@mixin inline($item-selector: li) {
+  > #{$item-selector} {
+    display: inline-block;
+  }
+}
