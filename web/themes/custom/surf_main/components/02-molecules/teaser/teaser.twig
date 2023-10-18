@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Component for Teaser
+ *
+ * Available props:
+ * - teaser_attributes [mixed] Any custom attributes for the teaser.
+ * - teaser_content: [string] Teaser text.
+ * - teaser_media: [mixed] Representative media for the teaser.
+ * - teaser_title: [string] Primary title for the teaser.
+ * - teaser_title_tag: [string] 'h3' for example.
+ * - teaser_type: [string] Available options include, 'col-3', 'col-2', 'col-1', 'list', and 'super'.
+ * - teaser_url: [string] Path alias for linking teasers.
+ *
+ * Available slots:
+ * - teaser_content_prefix
+ * - teaser_content_suffix
+ * - teaser_media_prefix
+ *
+ */
+#}
+
+{% set classes = [
+    'm-teaser',
+    'm-teaser--' ~ teaser_type,
+] %}
+
+<article {{ teaser_attributes.addClass(classes) }} {{ attributes }}>
+    {% if teaser_media %}
+        <div class="m-teaser__media">
+            {% if teaser_url %}
+                <a href="{{ teaser_url }}" class="m-teaser__link">
+            {% endif %}
+
+            {% block teaser_media_prefix %}{% endblock %}
+
+            {{ teaser_media }}
+
+            {% if teaser_url %}
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% if teaser_content %}
+        <div class="m-teaser__content">
+            {% block teaser_content_prefix %}{% endblock %}
+
+            <{{ teaser_title_tag|default('h3') }} class="m-teaser__title">
+                {% if teaser_url %}
+                    <a href="{{ teaser_url }}" class="m-teaser__link">
+                {% endif %}
+
+                {{ teaser_title }}
+
+                {% if teaser_url %}
+                    </a>
+                {% endif %}
+            </{{ teaser_title_tag|default('h3') }}>
+
+            {% if teaser_content %}
+                <p class="m-teaser__content-text">
+                    {{- teaser_content -}}
+                </p>
+            {% endif %}
+
+            {% block teaser_content_suffix %}{% endblock %}
+        </div>
+    {% endif %}
+</article>

@@ -1,0 +1,46 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Teaser
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - teaser_title
+    - teaser_type
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    teaser_attributes:
+      title: Attributes
+      type: string
+    teaser_content:
+      title: Content
+      type: string
+    teaser_media:
+      title: Media
+      type: string
+    teaser_title:
+      title: Title
+      type: string
+    teaser_title_tag:
+      title: Title Tag
+      type: string
+    teaser_type:
+      title: Type
+      type: string
+      enum:
+        - col-3
+        - col-2
+        - col-1
+        - list
+        - super
+    teaser_url:
+      title: URL
+      type: string
+  slots:
+    teaser_content_prefix:
+      title: Content Prefix
+    teaser_content_suffix:
+      title: Content Suffix
+    teaser_media_prefix:
+      title: Media Prefix

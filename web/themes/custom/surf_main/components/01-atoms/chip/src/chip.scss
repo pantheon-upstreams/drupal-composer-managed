@@ -1,4 +1,25 @@
+//
+// Component - Atom - Chip
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Sizes
+// - 04 - Colors
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
 @use '../../../../libraries/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .a-chip {
   align-items: center;
@@ -6,11 +27,9 @@
   color: var(--surf-color-navy);
   display: inline-flex;
   line-height: 1.4;
-  padding: rem(2px) rem(8px);
+  padding: 2px 8px;
   text-transform: uppercase;
 
-  @include surf-font-label-medium;
-  
   a {
     text-decoration: none;
     
@@ -35,22 +54,53 @@
   }
 }
 
-.a-chip--navy {
-  background-color: var(--surf-color-navy);
-  color: var(--surf-color-white);
+
+
+
+//------------------------------------
+//  03 - Sizes
+//------------------------------------
+
+.a-chip {
+  &.a-chip--small {
+    @include surf-font-label-x-small();
+  }
+
+  &.a-chip--large {
+    @include surf-font-label-medium();
+  }
 }
 
-.a-chip--blue {
-  background-color: var(--surf-color-blue);
-  color: var(--surf-color-white);
-}
 
-.a-chip--gold {
-  background-color: var(--surf-color-gold);
-  color: var(--surf-color-black);
-}
 
-.a-chip--white {
-  background-color: var(--surf-color-white);
-  color: var(--surf-color-black);
+
+//------------------------------------
+//  04 - Colors
+//------------------------------------
+
+.a-chip {
+  &.a-chip--navy {
+    background-color: var(--surf-color-navy);
+    color: var(--surf-color-white);
+  }
+
+  &.a-chip--blue {
+    background-color: var(--surf-color-blue);
+    color: var(--surf-color-white);
+  }
+
+  &.a-chip--gold {
+    background-color: var(--surf-color-gold);
+    color: var(--surf-color-black);
+  }
+
+  &.a-chip--white {
+    background-color: var(--surf-color-white);
+    color: var(--surf-color-black);
+  }
+
+  &.a-chip--transparent {
+    background-color: transparent;
+    color: var(--surf-color-white);
+  }
 }
