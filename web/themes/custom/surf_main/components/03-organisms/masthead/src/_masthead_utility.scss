@@ -1,0 +1,52 @@
+//
+// Components - Organism - Masthead Utility
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.o-masthead .o-masthead__utility {
+  height: var(--surf-height-region-header-utility);
+  width: 100%;
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: flex-end;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - General
+//------------------------------------
+
+.o-masthead .o-masthead__utility {
+  background: var(--surf-gradient-hz-blue);
+  color: var(--surf-color-white);
+
+  a,
+  button,
+  input,
+  input::placeholder {
+    color: var(--surf-color-white);
+  }
+}

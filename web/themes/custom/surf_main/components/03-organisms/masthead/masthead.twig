@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Component for Masthead
+ *
+ * Available props:
+ * -
+ *
+ */
+#}
+
+{% set classes = [
+    'o-masthead',
+] %}
+
+<header {{ masthead_attributes.addClass(classes) }} id="masthead" {{ attributes }}>
+    {% if masthead_alerts %}
+        <div class="o-masthead__alerts">
+            {{ masthead_alerts }}
+        </div>
+    {% endif %}
+
+    {% if masthead_utility %}
+        <div class="o-masthead__utility">
+            <div class="container container--default">
+                {{ masthead_utility }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if masthead_primary %}
+        <div class="o-masthead__primary">
+            <div class="container container--default">
+                {{ masthead_primary }}
+
+                <div class="o-masthead__flyout dropdown">
+                    <button class="o-masthead__flyout-trigger dropdown__trigger" aria-haspopup="true" aria-expanded="false">
+                        {{- 'Menu'|t -}}
+                    </button>
+
+                    <div class="o-masthead__flyout-content dropdown__content"></div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</header>

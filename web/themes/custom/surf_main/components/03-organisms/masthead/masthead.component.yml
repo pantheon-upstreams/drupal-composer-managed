@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Masthead
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    masthead_attributes:
+      title: Attributes
+      type: string
+    masthead_alerts:
+      title: Alerts
+      type: object
+    masthead_primary:
+      title: Primary
+      type: object
+    masthead_utility:
+      title: Utility
+      type: object
