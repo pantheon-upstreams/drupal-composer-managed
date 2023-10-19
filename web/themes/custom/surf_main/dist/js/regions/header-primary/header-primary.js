@@ -1,1 +1,221 @@
-Drupal.behaviors.surfMobileMenu={attach(a){var a=once("surf-mobile-menu",a.querySelector(".mobile-menu"));if(0!==a.length){var n=a[0];const r="is-open";let t,e;const s=()=>{n.classList.remove(r),e.setAttribute("aria-expanded","false")},i=()=>{n.classList.add(r),e.setAttribute("aria-expanded","true")},o=e=>{(n.classList.contains(r)?s:i)()},l=e=>{"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),(n.classList.contains(r)?s:i)()),"Escape"!==e.key&&"End"!==e.key||s()},c=e=>{e.target===t&&s()};a=n,t=a.querySelector(".mobile-menu__flyout"),(e=a.querySelector(".mobile-menu__trigger")).addEventListener("click",o),e.addEventListener("keydown",l),a.addEventListener("click",c)}}},Drupal.behaviors.surfMobileMove={attach(e){const l=once("surf-move-mobile-destination",e.querySelector(".mobile-menu__flyout-content"));[{id:"surf-move-mobile-01",class:".search-form",breakpoint:992},{id:"surf-move-mobile-02",class:".menu__name--main",breakpoint:1400},{id:"surf-move-mobile-03",class:".menu__name--utility-nav",breakpoint:992}].forEach(a=>{var n=once(a.id,e.querySelector(a.class));if(0!==n.length&&0!==l.length){var r=n[0];var s=l[0];n=a.breakpoint;const i=window.matchMedia(`(min-width: ${n}px)`);let e,t;const o=()=>{i.matches?(t="desktop",r.classList.contains("menu__name--main")?e.querySelector(".site-branding").after(r):e.prepend(r)):(t="mobile",r.classList.contains("search-form")?s.prepend(r):s.append(r))};e=r.parentElement,i.addEventListener("change",o),o()}})}},Drupal.behaviors.surfScrolled={attach(s){[".region__name--site-alert",".region__name--header-primary",".region__name--header-utility"].forEach(e=>{e=once("surf-scrolled",s.querySelector(e));if(0!==e.length){var t=e[0];const a="scrolled",n=72,r=()=>{window.scrollY>n?t.classList.add(a):t.classList.remove(a)};document.addEventListener("scroll",r)}})}};
+/******/ (function() { // webpackBootstrap
+var __webpack_exports__ = {};
+/**
+ * Regions - Header Primary
+ * Functionality to simply hide and show mobile menu.
+ *
+ * - 01 - Mobile Move
+ * - 02 - Dropdown
+ * - 03 - Scroll
+ * - 04 - Drupal Attach
+ */
+
+/*------------------------------------*\
+  01 - Mobile Move
+  Simply changing a set of classes, attributes and states upon either a click,
+  or keyboard action.
+\*------------------------------------*/
+
+const mobileMove = (wrapper, destination, breakpoint) => {
+  // Constructor
+  const mediaQuery = window.matchMedia(`(min-width: ${breakpoint}px)`);
+  let parent;
+  let state;
+
+  /**
+   * Media Query Change
+   * Any events needing to be taken when a specific breakpoint has been activated.
+   * @see init
+   */
+  const onMediaQueryChange = () => {
+    if (mediaQuery.matches) {
+      state = 'desktop';
+      if (wrapper.classList.contains('menu__name--main')) {
+        const branding = parent.querySelector('.site-branding');
+        branding.after(wrapper);
+      } else {
+        parent.prepend(wrapper);
+      }
+    } else {
+      state = 'mobile';
+      if (wrapper.classList.contains('search-form')) {
+        destination.prepend(wrapper);
+      } else {
+        destination.append(wrapper);
+      }
+    }
+  };
+
+  /**
+   * Initialization
+   * Add any and all functionality as a singular program, dynamically setting
+   * element variables, states and event listeners.
+   * @param wrapper - [HTMLObject] Element that contains all elements contained
+   * inside the eventual modal.
+   */
+  const init = wrapper => {
+    parent = wrapper.parentElement;
+
+    // Device or viewport change listener and on load.
+    mediaQuery.addEventListener('change', onMediaQueryChange);
+    onMediaQueryChange();
+  };
+
+  // Final Return
+  init(wrapper, destination, breakpoint);
+};
+
+/*------------------------------------*\
+  02 - Dropdown
+  Simply changing a set of classes, attributes and states upon either a click,
+  or keyboard action.
+\*------------------------------------*/
+
+const dropdown = wrapper => {
+  // Constructor
+  const openClass = 'is-open';
+  let flyout;
+  let trigger;
+  const close = () => {
+    wrapper.classList.remove(openClass);
+    trigger.setAttribute('aria-expanded', 'false');
+  };
+  const open = () => {
+    wrapper.classList.add(openClass);
+    trigger.setAttribute('aria-expanded', 'true');
+  };
+  const onClickTrigger = event => {
+    if (wrapper.classList.contains(openClass)) {
+      close();
+    } else {
+      open();
+    }
+  };
+  const onKeydownTrigger = event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (wrapper.classList.contains(openClass)) {
+        close();
+      } else {
+        open();
+      }
+    }
+    if (event.key === 'Escape' || event.key === 'End') {
+      close();
+    }
+  };
+  const onClickWrapper = event => {
+    if (event.target === flyout) {
+      close();
+    }
+  };
+
+  /**
+   * Initialization
+   * Add any and all functionality as a singular program, dynamically setting
+   * element variables, states and event listeners.
+   * @param wrapper - [HTMLObject] Element that contains all elements contained
+   * inside the eventual modal.
+   */
+  const init = wrapper => {
+    flyout = wrapper.querySelector('.mobile-menu__flyout');
+    trigger = wrapper.querySelector('.mobile-menu__trigger');
+    trigger.addEventListener('click', onClickTrigger);
+    trigger.addEventListener('keydown', onKeydownTrigger);
+    wrapper.addEventListener('click', onClickWrapper);
+  };
+
+  // Final Return
+  init(wrapper);
+};
+
+/*------------------------------------*\
+  03 - Scroll
+  Serves to add functionality to the Header of the site upon the window
+  being scrolled down or up.
+\*------------------------------------*/
+
+const scrolled = wrapper => {
+  // Constructor
+  const scrolledClass = 'scrolled';
+  const scrolledAmount = 72;
+
+  /**
+   * On Scroll
+   * Used to determine scroll amount and apply functionality.
+   * @see init
+   */
+  const onScroll = () => {
+    if (window.scrollY > scrolledAmount) {
+      wrapper.classList.add(scrolledClass);
+    } else {
+      wrapper.classList.remove(scrolledClass);
+    }
+  };
+
+  /**
+   * Init
+   * Used to fully initialize the entire object and it's elements, along with
+   * add event listeners where necessary, and function initializations.
+   * @param wrapper
+   */
+  const init = wrapper => {
+    document.addEventListener('scroll', onScroll);
+  };
+
+  // Run Entire Program / Object
+  init(wrapper);
+};
+
+/*------------------------------------*\
+  02 - Drupal Attach
+  Attach any previously defined functionality into Drupal behaviors.
+  https://www.drupal.org/docs/drupal-apis/javascript-api/javascript-api-overview
+\*------------------------------------*/
+
+Drupal.behaviors.surfMobileMenu = {
+  attach(context) {
+    const mobileMenu = once('surf-mobile-menu', context.querySelector('.mobile-menu'));
+    if (mobileMenu.length !== 0) {
+      dropdown(mobileMenu[0]);
+    }
+  }
+};
+Drupal.behaviors.surfMobileMove = {
+  attach(context) {
+    const wrappers = [{
+      'id': 'surf-move-mobile-01',
+      'class': '.search-form',
+      'breakpoint': 992
+    }, {
+      'id': 'surf-move-mobile-02',
+      'class': '.menu__name--main',
+      'breakpoint': 1400
+    }, {
+      'id': 'surf-move-mobile-03',
+      'class': '.menu__name--utility-nav',
+      'breakpoint': 992
+    }];
+    const destination = once('surf-move-mobile-destination', context.querySelector('.mobile-menu__flyout-content'));
+    wrappers.forEach(wrapper => {
+      const element = once(wrapper.id, context.querySelector(wrapper.class));
+      if (element.length !== 0 && destination.length !== 0) {
+        mobileMove(element[0], destination[0], wrapper.breakpoint);
+      }
+    });
+  }
+};
+Drupal.behaviors.surfScrolled = {
+  attach(context) {
+    const areas = ['.region--site-alert', '.region--header-primary', '.region--header-utility'];
+    areas.forEach(area => {
+      const element = once('surf-scrolled', context.querySelector(area));
+      if (element.length !== 0) {
+        scrolled(element[0]);
+      }
+    });
+  }
+};
+/******/ })()
+;
+//# sourceMappingURL=header-primary.js.map

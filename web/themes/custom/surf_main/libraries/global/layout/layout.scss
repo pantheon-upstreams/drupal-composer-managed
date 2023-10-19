@@ -104,7 +104,7 @@
     max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
   }
 
-  .region__name--content & {
+  .region--content & {
 
     @include mixins-breakpoints.bp-min(xlarge) {
       padding-left: calc(var(--surf-grid-gap) * 2);

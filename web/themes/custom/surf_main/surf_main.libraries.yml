@@ -28,16 +28,7 @@ fonts:
 global:
   css:
     base:
-      dist/css/global/base/forms.css: { minified: true }
-      dist/css/global/base/icons.css: { minified: true }
-      dist/css/global/base/lists.css: { minified: true }
-      dist/css/global/base/media.css: { minified: true }
-      dist/css/global/base/page.css: { minified: true }
-      dist/css/global/base/reset.css: { minified: true }
-      dist/css/global/base/tables.css: { minified: true }
-      dist/css/global/layout/layout.css: { minified: true }
-      dist/css/global/settings/color.css: { minified: true }
-      dist/css/global/settings/typography.css: { minified: true }
+      components/00-base/global/global.css: { minified: true }
   dependencies:
     - core/once
 

@@ -21,7 +21,7 @@
 //  02 - Layout
 //------------------------------------
 
-.region.region__name--header-utility {
+.region.region--header-utility {
   align-items: center;
   display: none;
   height: var(--surf-height-region-header-utility);
@@ -49,7 +49,7 @@
   }
 }
 
-body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-utility {
+body.user-logged-in.gin--horizontal-toolbar .region.region--header-utility {
   top: calc(var(--gin-toolbar-y-offset) + var(--gin-toolbar-secondary-height));
 
   &.scrolled {
@@ -64,7 +64,7 @@ body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-utility
 //  03 - General
 //------------------------------------
 
-.region.region__name--header-utility {
+.region.region--header-utility {
   background: var(--surf-gradient-hz-blue);
   color: var(--surf-color-white);
 

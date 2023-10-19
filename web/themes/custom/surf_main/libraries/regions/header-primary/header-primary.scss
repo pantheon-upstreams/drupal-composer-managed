@@ -24,7 +24,7 @@
 //  02 - Layout
 //------------------------------------
 
-.region.region__name--header-primary {
+.region.region--header-primary {
   align-items: center;
   display: flex;
   height: var(--surf-height-region-header-primary);
@@ -77,7 +77,7 @@
 }
 
 // Gin Toolbar
-body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-primary {
+body.user-logged-in.gin--horizontal-toolbar .region.region--header-primary {
   top: calc(var(--gin-toolbar-y-offset) + var(--gin-toolbar-secondary-height));
 
   @include mixins-breakpoints.bp-min(large) {
@@ -98,7 +98,7 @@ body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-primary
 //  03 - General
 //------------------------------------
 
-.region.region__name--header-primary {
+.region.region--header-primary {
   background: var(--surf-color-white);
 }
 
@@ -109,7 +109,7 @@ body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-primary
 //  04 - Mobile Menu
 //------------------------------------
 
-.region.region__name--header-primary {
+.region.region--header-primary {
   .mobile-menu {
     display: none;
   }
@@ -195,7 +195,7 @@ body.user-logged-in.gin--horizontal-toolbar .region.region__name--header-primary
   }
 }
 
-.js .region.region__name--header-primary .mobile-menu {
+.js .region.region--header-primary .mobile-menu {
   display: block;
 
   @include mixins-breakpoints.bp-min(xxlarge) {

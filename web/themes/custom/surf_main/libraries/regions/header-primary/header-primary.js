@@ -235,9 +235,9 @@ Drupal.behaviors.surfMobileMove = {
 Drupal.behaviors.surfScrolled = {
   attach(context) {
     const areas = [
-      '.region__name--site-alert',
-      '.region__name--header-primary',
-      '.region__name--header-utility',
+      '.region--site-alert',
+      '.region--header-primary',
+      '.region--header-utility',
     ];
 
     areas.forEach((area) => {

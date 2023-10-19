@@ -19,7 +19,7 @@
 //  02 - General
 //------------------------------------
 
-.region.region__name--content {
+.region.region--content {
   @include mixins-breakpoints.bp-min(xlarge) {
     padding-left: 24px;
     position: relative;
