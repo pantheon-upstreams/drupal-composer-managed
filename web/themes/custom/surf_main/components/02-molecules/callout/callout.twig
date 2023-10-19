@@ -1,0 +1,129 @@
+{#
+/**
+ * @file
+ * Component for Callout
+ *
+ * Available props:
+ * - callout_attributes: [array] Any parent tag attributes.
+ * - callout_text: [string]
+ *
+ * - callout_heading: [string] required
+ * - callout_heading_level: [string] required
+ *
+ * - callout_media: [array]
+ * - callout_media_caption: [string]
+ *
+ * - callout_button_text: [string]
+ * - callout_button_url: [string]
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'm-callout',
+]
+%}
+
+<aside {{ callout_attributes.addClass(classes).merge(attributes) }}>
+
+  {% if callout_media %}
+    {% embed 'surf_main:media' with {
+      media_attributes: create_attribute({'class': ['m-callout__media']}),
+      media_caption: callout_media_caption ? callout_media_caption,
+      media: callout_media,
+    } only %}
+
+    {% block media_block %}
+      {{ media }}
+    {% endblock %}
+
+    {% endembed %}
+  {% endif %}
+
+  <div class="m-callout__inner-wrapper">
+
+    {% if callout_heading %}
+
+      {% embed 'surf_main:heading' with {
+        heading_text: callout_heading ? callout_heading,
+        heading_level: '3',
+        heading_attributes: create_attribute({'class': ['m-callout__heading']}),
+      } only %}
+      {% endembed %}
+
+    {% endif %}
+
+    {% if callout_text %}
+      <p class="m-callout__text">{{ callout_text }}</p>
+    {% endif %}
+
+    {% if callout_button_url %}
+      {% if callout_attributes.hasClass('m-callout--navy') or callout_attributes.hasClass('m-callout--blue') %}
+
+        {% embed 'surf_main:button' with {
+          button_title: callout_button_text,
+          button_url: callout_button_url,
+          button_html_tag: 'link',
+          button_style: 'full-white',
+          button_size: 'small',
+        } only %}
+        {% endembed %}
+
+      {% elseif callout_attributes.hasClass('m-callout--news') %}
+
+        {% embed 'surf_main:button' with {
+          button_title: callout_button_text,
+          button_url: callout_button_url,
+          button_html_tag: 'link',
+          button_style: 'underline-navy',
+          button_size: 'small',
+          button_prefix: callout_button_prefix,
+          button_suffix: 'arrow-right',
+        } only %}
+        {% endembed %}
+
+      {% elseif callout_attributes.hasClass('m-callout--white') %}
+
+        {% embed 'surf_main:button' with {
+          button_title: callout_button_text,
+          button_url: callout_button_url,
+          button_html_tag: 'link',
+          button_style: 'underline-navy',
+          button_size: 'small',
+        } only %}
+        {% endembed %}
+
+      {% elseif callout_attributes.hasClass('m-callout--bkg-img') or callout_attributes.hasClass('m-callout--embed') %}
+
+        {% embed 'surf_main:button' with {
+          button_title: callout_button_text,
+          button_url: callout_button_url,
+          button_html_tag: 'link',
+          button_style: 'underline-white',
+          button_size: 'small',
+          button_prefix: callout_button_prefix ? callout_button_prefix,
+          button_suffix: 'arrow-right',
+        } only %}
+        {% endembed %}
+
+      {% else %}
+
+        {% embed 'surf_main:button' with {
+          button_title: callout_button_text,
+          button_url: callout_button_url,
+          button_html_tag: 'link',
+          button_style: 'full-navy',
+          button_size: 'small',
+        } only %}
+        {% endembed %}
+
+      {% endif %}
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+
+  </div>
+</aside>

@@ -43,7 +43,7 @@ label,
 legend {
   display: block;
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-16);
+  font-size: rem(16px);
   font-weight: var(--surf-fw-bold);
   margin-bottom: 0;
 }
@@ -61,7 +61,7 @@ textarea {
   border: solid 1px var(--surf-color-dark);
   border-radius: 0;
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-16);
+  font-size: rem(16px);
   max-width: 100%;
   padding: 8px 12px;
 }
@@ -96,7 +96,7 @@ select {
   border-radius: 0;
   color: var(--surf-color-gray-900);
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-16);
+  font-size: rem(16px);
   padding: 8px 12px;
   text-indent: 0.01px;
   text-overflow: "";
@@ -176,7 +176,7 @@ select::-ms-expand { display: none; }
 
 .description {
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-14);
+  font-size: rem(14px);
 }
 
 
@@ -208,7 +208,7 @@ select::-ms-expand { display: none; }
 .password-confirm,
 .password-strength__title {
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-14);
+  font-size: rem(14px);
 }
 
 .password-strength__text {
@@ -229,7 +229,7 @@ select::-ms-expand { display: none; }
 
 .password-suggestions {
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-14);
+  font-size: rem(14px);
   font-weight: var(--surf-fw-bold);
 
   > ul {

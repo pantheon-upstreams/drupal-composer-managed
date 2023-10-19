@@ -7,40 +7,25 @@ props:
   properties:
     callout_attributes:
       title: Attributes
+      type: string
     callout_heading:
-      type: string
       title: Callout Heading
-      examples:
-        - "Optional Heading"
+      type: string
     callout_heading_level:
-      type: string
       title: Callout Heading Level
-      examples:
-        - "1"
-        - "2"
-        - "3"
+      type: string
     callout_text:
-      type: string
       title: Callout Text
-      examples:
-        - "Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue."
+      type: string
     callout_button_text:
-      type: string
       title: Callout Button Text
-      examples:
-        - "Primary Button"
+      type: string
     callout_button_url:
-      type: string
       title: Callout Button URL
-      examples:
-        - "http://www.example.com"
+      type: string
     callout_button_prefix:
-      type: string
       title: Callout Button Prefix
-      examples:
-        - "play"
-    callout_button_suffix:
       type: string
+    callout_button_suffix:
       title: Callout Button Suffix
-      examples:
-        - "arrow-right"
+      type: string

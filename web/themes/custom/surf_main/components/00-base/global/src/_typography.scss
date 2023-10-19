@@ -44,29 +44,32 @@
 //------------------------------------
 
 :root {
-  --surf-fs-14: #{rem(14px)};
-  --surf-fs-16: #{rem(16px)};
-  --surf-fs-18: #{rem(18px)};
-  --surf-fs-20: #{rem(20px)};
   --surf-fs-24-18: #{rem(18px)};
   --surf-fs-32-30: #{rem(30px)};
   --surf-fs-96-64-52: #{rem(52px)};
+  --surf-fs-176-132-48: #{rem(48px)};
   --surf-fs-176-132-100-48: #{rem(48px)};
+  --surf-fs-260-200-140-80: #{rem(80px)};
 
   @include bp-min(medium) {
+    --surf-fs-176-132-48: #{rem(132px)};
     --surf-fs-176-132-100-48: #{rem(100px)};
+    --surf-fs-260-200-140-80: #{rem(140px)};
   }
 
   @include bp-min(large) {
     --surf-fs-32-30: #{rem(32px)};
     --surf-fs-96-64-52: #{rem(64px)};
     --surf-fs-176-132-100-48: #{rem(132px)};
+    --surf-fs-260-200-140-80: #{rem(200px)};
   }
 
   @include bp-min(xlarge) {
     --surf-fs-24-18: #{rem(24px)};
     --surf-fs-96-64-52: #{rem(96px)};
+    --surf-fs-176-132-48: #{rem(176px)};
     --surf-fs-176-132-100-48: #{rem(176px)};
+    --surf-fs-260-200-140-80: #{rem(260px)};
   }
 }
 
@@ -111,7 +114,7 @@
 body {
   color: var(--surf-color-gray-900);
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-18);
+  font-size: rem(18px);
 }
 
 
@@ -212,7 +215,7 @@ blockquote {
 
 ul:not([class]),
 ol:not([class]) {
-  font-size: var(--surf-fs-16);
+  font-size: rem(16px);
   line-height: var(--surf-lh-default);
   list-style-position: inside;
 }

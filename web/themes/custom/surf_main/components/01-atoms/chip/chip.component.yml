@@ -16,9 +16,6 @@ props:
     chip_icon_prefix:
       title: Icon Prefix
       type: string
-      examples:
-        - "play"
-        - "play-solid"
     chip_size:
       title: Size
       type: string
