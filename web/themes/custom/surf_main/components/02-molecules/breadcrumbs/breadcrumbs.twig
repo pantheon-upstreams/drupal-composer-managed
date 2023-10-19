@@ -17,7 +17,7 @@
     'm-breadcrumbs--' ~ breadcrumbs_type,
 ] %}
 
-<nav aria-label="{{ breadcrumbs_label }}" {{ breadcrumbs_attributes.addClass(classes) }}>
+<nav aria-label="{{ breadcrumbs_label }}" {{ breadcrumbs_attributes.addClass(classes) }} {{ attributes }}>
     {% if breadcrumbs_navigation %}
         <ol class="m-breadcrumbs__items">
             {% for item in breadcrumbs_navigation %}

@@ -6,17 +6,30 @@ props:
   type: object
   required:
     - chip_text
+    - chip_size
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
     chip_attributes:
       title: Attributes
       type: string
+    chip_icon_prefix:
+      title: Icon Prefix
+      type: string
+      examples:
+        - "play"
+        - "play-solid"
+    chip_size:
+      title: Size
+      type: string
+      enum:
+        - small
+        - large
     chip_text:
       title: Text
       type: string
     chip_url:
-      title: Link Url
+      title: URL
       type: string
     chip_icon_prefix:
       title: Icon Prefix

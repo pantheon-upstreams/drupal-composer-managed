@@ -27,7 +27,8 @@
     <div {{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
           {% include 'surf_main:button' with {
-              button_attributes: attributes,
+              attributes,
+              button_attributes: create_attribute(),
               button_external: item.content['#url'].isExternal(),
               button_html_tag: 'link',
               button_size: 'large',
@@ -41,7 +42,8 @@
   {% else %}
     {% for item in items %}
         {% include 'surf_main:button' with {
-            button_attributes: attributes,
+            attributes,
+            button_attributes: create_attribute(),
             button_external: item.content['#url'].isExternal(),
             button_html_tag: 'link',
             button_size: 'large',
@@ -61,7 +63,8 @@
 
     {% for item in items %}
         {% include 'surf_main:button' with {
-            button_attributes: attributes,
+            attributes,
+            button_attributes: create_attribute(),
             button_external: item.content['#url'].isExternal(),
             button_html_tag: 'link',
             button_size: 'large',

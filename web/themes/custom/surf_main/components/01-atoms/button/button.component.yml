@@ -10,6 +10,8 @@ props:
     - button_style
     - button_title
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     button_attributes:
       title: Attributes
       type: string

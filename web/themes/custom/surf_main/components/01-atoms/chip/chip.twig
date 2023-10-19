@@ -4,34 +4,32 @@
  * Component for Chip
  *
  * Available props:
- * - chip_attributes: [array] Any parent tag attributes.
- * - chip_text: [string] required
- * - chip_url: [string]
- *
- * - chip_icon_prefix: [string]
+ * - attributes: Drupal specific attribute injection.
+ * - chip_attributes: Component specific attribute injection.
+ * - chip_icon_prefix: [string] Uses the Atom - Icon component.
+ * - chip_size: [string] Available options are 'small' and 'large.
+ * - chip_text: [string] Required text to be displayed.
+ * - chip_url: [string] Link URL if this chip is linked.
  *
  */
 #}
 
-{%
-  set classes = [
-  'a-chip',
-]
-%}
+{% set classes = [
+    'a-chip',
+    'a-chip--' ~ chip_size|default('large'),
+] %}
 
 <span {{ chip_attributes.addClass(classes).merge(attributes) }}>
-
   {% if chip_icon_prefix %}
-    {% include 'surf_main:icon' with {
-      icon_position: 'left',
-      icon_type: chip_icon_prefix,
-    } %}
+      {% include 'surf_main:icon' with {
+          icon_position: 'left',
+          icon_type: chip_icon_prefix,
+      } %}
   {% endif %}
 
-  {% if chip_url %}
-    <a href="{{ chip_url }}">{{ chip_text }}</a>
-  {% else %}
-    {{ chip_text }}
-  {% endif %}
-
+    {% if chip_url %}
+        <a href="{{ chip_url }}">{{- chip_text -}}</a>
+    {% else %}
+        {{- chip_text -}}
+    {% endif %}
 </span>

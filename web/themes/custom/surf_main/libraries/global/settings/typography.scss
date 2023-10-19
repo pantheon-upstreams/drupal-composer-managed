@@ -145,10 +145,6 @@ h1, h2, h3, h4, h5 {
     text-decoration: none;
   }
 
-  + p {
-    margin-top: 16px;
-  }
-
   &:first-child {
     margin-top: 0;
   }
@@ -157,11 +153,6 @@ h1, h2, h3, h4, h5 {
 h1 {
 
   @include mixins-typography.heading-01();
-}
-
-h2 {
-
-  @include mixins-typography.heading-02();
 }
 
 h3 {

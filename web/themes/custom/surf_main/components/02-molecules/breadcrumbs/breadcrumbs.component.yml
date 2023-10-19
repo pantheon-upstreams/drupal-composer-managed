@@ -8,6 +8,8 @@ props:
     - breadcrumbs_label
     - breadcrumbs_type
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     breadcrumbs_attributes:
       title: Attributes
       type: string

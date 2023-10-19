@@ -25,6 +25,61 @@
 
 <div {{ attributes.addClass(classes) }}>
     <div class="container container__type--default">
+        {% embed 'surf_main:teaser' with {
+            attributes,
+            teaser_attributes: create_attribute(),
+            teaser_content: 'To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be extracted.',
+            teaser_media: drupal_entity('media', 3312),
+            teaser_title: 'Title of Teaser',
+            teaser_title_tag: 'h2',
+            teaser_type: 'super',
+            teaser_url: 'https://example.com'
+        } only %}
+            {% block teaser_content_prefix %}
+                <div class="m-teaser__content-prefix">
+                    <p>
+                        {% include 'surf_main:chip' with {
+                            attributes,
+                            chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                            chip_text: 'FEATURED'|t,
+                            chip_size: 'small',
+                        } only %}
+
+                        {% include 'surf_main:chip' with {
+                            attributes,
+                            chip_attributes: create_attribute({'class': 'a-chip--transparent'}),
+                            chip_text: 'August 18, 2022'|t,
+                            chip_size: 'small',
+                        } only %}
+                    </p>
+                </div>
+            {% endblock %}
+        {% endembed %}
+
+        {% embed 'surf_main:teaser' with {
+            attributes,
+            teaser_attributes: create_attribute(),
+            teaser_content: 'Students in a variety of fields get real-world experience during 10-week summer internships at SURF.',
+            teaser_media: drupal_entity('media', 3312),
+            teaser_title: 'Interning a mile beneath the surface, 2022 summer interns share their experiences',
+            teaser_title_tag: 'h3',
+            teaser_type: 'col-2',
+            teaser_url: 'https://example.com'
+        } only %}
+            {% block teaser_media_prefix %}
+                <div class="m-teaser__media-prefix">
+                    <p>
+                        {% include 'surf_main:chip' with {
+                            attributes,
+                            chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                            chip_text: 'FEATURED'|t,
+                            chip_size: 'small',
+                        } only %}
+                    </p>
+                </div>
+            {% endblock %}
+        {% endembed %}
+
         {# TODO: Include Heading component when finished, with page_title #}
         {{ content }}
     </div>
