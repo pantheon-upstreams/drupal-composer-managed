@@ -1,0 +1,184 @@
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <h3>Callouts</h3>
+  <p><em>Default</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute(),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+} only %}
+{% endembed %}
+
+
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Navy Background</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--navy']}),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Blue Background</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--blue']}),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Default with Image</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute(),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+} only %}
+
+  {% block media_block %}
+    {{ callout_media }}
+  {% endblock %}
+
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Navy Background with Image</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--navy']}),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+  callout_media_caption: 'Image credit can go here'
+} only %}
+
+  {% block media_block %}
+    {{ callout_media }}
+  {% endblock %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Blue Background with Image</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--blue']}),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+  callout_media: '<img loading="eager" src="/sites/default/files/2023-06/210609-TestSling-0052_0.jpg" width="5040" height="3360" alt="Test Sling">',
+} only %}
+
+  {% block media_block %}
+    {{ callout_media }}
+  {% endblock %}
+
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>White Background with Image</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--white']}),
+  callout_heading: 'Optional Heading',
+  callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
+  callout_button_text: 'Primary Button',
+  callout_button_url: 'http://www.example.com',
+} only %}
+
+  {% block media_block %}
+    {{ callout_media }}
+  {% endblock %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>News Callout Envelope</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--news']}),
+  callout_text: 'Stay up-to-date on our latest news and upcoming events.',
+  callout_button_text: 'Subscribe to Deep Thoughts',
+  callout_button_url: 'http://www.example.com',
+  callout_button_prefix: 'envelope',
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>News Callout Video</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--news']}),
+  callout_text: 'Watch our lectures on physics, algorithmic art, local history, botany and more!',
+  callout_button_text: 'Watch Deep Talks on Vimeo',
+  callout_button_url: 'http://www.example.com',
+  callout_button_prefix: 'play',
+} only %}
+{% endembed %}
+
+<hr style="border: 1px solid #F2F2F2; margin-top: 32px">
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Callout Blue with Bkg Image</em></p>
+</div>
+
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute({'class': ['m-callout--bkg-img']}),
+  callout_heading: 'Let\'s Dig Deeper',
+} only %}
+
+  {% block content %}
+    <ul class="test-grid">
+      <li>{% embed 'surf_main:callout' with {
+          callout_attributes: create_attribute({'class': ['m-callout--embed']}),
+          callout_text: 'Stay up-to-date on our latest news and upcoming events.',
+          callout_button_text: 'Subscribe to Deep Thoughts',
+          callout_button_url: 'http://www.example.com',
+          callout_button_prefix: 'envelope',
+        } only %}
+        {% endembed %}</li>
+      <li>{% embed 'surf_main:callout' with {
+          callout_attributes: create_attribute({'class': ['m-callout--embed']}),
+          callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',
+          callout_button_text: 'Watch Deep Talks on Vimeo',
+          callout_button_url: 'http://www.example.com',
+          callout_button_prefix: 'play',
+        } only %}
+        {% endembed %}</li>
+    </ul>
+  {% endblock %}
+
+
+{% endembed %}
+
+

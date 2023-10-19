@@ -12,15 +12,13 @@
  */
 #}
 
-{% set pullquote_attributes = pullquote_attributes ? pullquote_attributes : create_attribute() %}
-
 {%
   set classes = [
   'm-pullquote',
 ]
 %}
 
-<figure {{ pullquote_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+<figure {{ pullquote_attributes.addClass(classes).merge(attributes) }}>
 
   <blockquote class="m-pullquote__quote">
     {{ pullquote_quote }}

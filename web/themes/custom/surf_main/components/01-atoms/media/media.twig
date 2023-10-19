@@ -11,7 +11,6 @@
  */
 #}
 
-{% set media_attributes = media_attributes ? media_attributes : create_attribute() %}
 
 {%
   set classes = [
@@ -19,7 +18,7 @@
 ]
 %}
 
-<figure {{ media_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+<figure {{ media_attributes.addClass(classes).merge(attributes) }}>
 
   {% block media_block %}
     {{ media }}

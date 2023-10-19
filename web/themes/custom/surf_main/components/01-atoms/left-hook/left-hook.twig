@@ -9,12 +9,10 @@
  */
 #}
 
-{% set left_hook_attributes = left_hook_attributes ? left_hook_attributes : create_attribute() %}
-
 {%
   set classes = [
   'a-left-hook',
 ]
 %}
 
-<hr {{ left_hook_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+<hr {{ left_hook_attributes.addClass(classes).merge(attributes) }}>

@@ -1,5 +1,5 @@
 <div class="c-rich-text" style="margin: 32px 0">
-  <h2>Chip</h2>
+  <h3>Chips</h3>
   <p><em>Default</em></p>
 </div>
 
@@ -10,12 +10,53 @@
 {% endembed %}
 
 <div class="c-rich-text" style="margin: 32px 0">
-  <p><em>Highlight</em></p>
+  <p><em>Gold</em></p>
 </div>
 
 {% embed 'surf_main:chip' with {
   chip_text: 'Business Development',
-  chip_attributes: create_attribute({'class': ['a-chip--highlight']}),
+  chip_attributes: create_attribute({'class': ['a-chip--gold']}),
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Navy</em></p>
+</div>
+
+{% embed 'surf_main:chip' with {
+  chip_text: 'Business Development',
+  chip_attributes: create_attribute({'class': ['a-chip--navy']}),
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Blue</em></p>
+</div>
+
+{% embed 'surf_main:chip' with {
+  chip_text: 'Business Development',
+  chip_attributes: create_attribute({'class': ['a-chip--blue']}),
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>White</em></p>
+</div>
+
+{% embed 'surf_main:chip' with {
+  chip_text: 'Article',
+  chip_attributes: create_attribute({'class': ['a-chip--white']}),
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>White with Icon</em></p>
+</div>
+
+{% embed 'surf_main:chip' with {
+  chip_text: 'Video',
+  chip_icon_prefix: 'play-solid',
+  chip_attributes: create_attribute({'class': ['a-chip--white']}),
 } only %}
 {% endembed %}
 

@@ -27,14 +27,14 @@
   <p><em>With Teaser and CTA</em></p>
 </div>
 
-{% embed 'surf_main:header' with {
-  header_heading: 'Work with Us',
-  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',
-  header_cta_url: 'http://www.example.com',
-  header_cta_text: 'Donate to the SURF Foundation',
-  heading_attributes: create_attribute({'class': ['o-header__heading']}),
-} only %}
-{% endembed %}
+{#{% embed 'surf_main:header' with {#}
+{#  header_heading: 'Work with Us',#}
+{#  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',#}
+{#  header_cta_url: 'http://www.example.com',#}
+{#  header_cta_text: 'Donate to the SURF Foundation',#}
+{#  heading_attributes: create_attribute({'class': ['o-header__heading']}),#}
+{#} only %}#}
+{#{% endembed %}#}
 
 <hr style="border: 1px solid #F2F2F2; margin-top: 32px">
 <div class="c-rich-text" style="margin: 32px 0">
@@ -68,8 +68,7 @@
 </div>
 
 {% embed 'surf_main:header' with {
-  header_heading: 'Work with Us',
-  header_teaser: 'Operating a research facility nearly a mile underground requires personnel with a wide range of skills, ranging from technicians and administrative personnel to engineers and research scientists. Sanford Underground Research Facility is an equal opportunity employer that offers competitive compensation and benefits.',
+  header_heading: 'Events',
   header_attributes: create_attribute({'class': ['o-header--with-bkg-color']}),
   heading_attributes: create_attribute({'class': ['o-header__heading']}),
 } only %}
@@ -99,7 +98,8 @@
 </div>
 
 {% embed 'surf_main:header' with {
-  header_heading: 'Request for Quotes (RFQ) 2022-35 Integrated Pest Management',header_teaser: 'Deep underground in the Black Hills of South Dakota, world-class research is investigating the greatest secrets of the universe.',
+  header_heading: 'Request for Quotes (RFQ) 2022-35 Integrated Pest Management',
+  header_teaser: 'Deep underground in the Black Hills of South Dakota, world-class research is investigating the greatest secrets of the universe.',
   heading_attributes: create_attribute({'class': ['o-header__heading--transform-none','o-header__heading']}),
 } only %}
 {% endembed %}

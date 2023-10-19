@@ -1,7 +1,7 @@
 @use '../../../00-base/partials/partials' as *;
 
 .o-header {
-  //empty
+  //min-height: 320px;
 }
 
 .o-header__content {
@@ -23,9 +23,21 @@
 .o-header__heading--gradient {
   background: linear-gradient(90deg, #000080 0%, #007ab8 100%);
   background-clip: text;
-  font-size: rem(260px);
+  font-size: rem(80px);
   line-height: 0.8;
   -webkit-text-fill-color: transparent;
+
+  @include bp-min(medium) {
+    font-size: rem(140px);
+  }
+
+  @include bp-min(large) {
+    font-size: rem(200px);
+  }
+
+  @include bp-min(xlarge) {
+    font-size: rem(260px);
+  }
 }
 
 .o-header__heading--transform-none {
@@ -46,21 +58,18 @@
 }
 
 .o-header--with-bkg-color {
-
   @include bp-min(medium) {
     background-image: url('img/header-bkg-color.png');
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 50%;
   }
-
   @include bp-min(xlarge) {
     background-image: url('img/header-bkg-color.png');
     background-position: 165% 0;
     background-repeat: no-repeat;
     background-size: auto;
   }
-
   @include bp-min(xxlarge) {
     background-image: url('img/header-bkg-color.png');
     background-position: top right;
@@ -69,7 +78,6 @@
 }
 
 .o-header--with-bkg-grid {
-
   @include bp-min(large) {
     background-image: url('img/header-bkg-grid.png');
     background-position: top right;
@@ -78,7 +86,6 @@
 }
 
 .o-header--with-bkg-ripple {
-
   @include bp-min(large) {
     background-image: url('img/header-bkg-ripple.png');
     background-position: top right;

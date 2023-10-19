@@ -31,3 +31,6 @@ props:
     chip_url:
       title: URL
       type: string
+    chip_icon_prefix:
+      title: Icon Prefix
+      type: string

@@ -1,24 +1,20 @@
-"$schema": https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
-machineName: media
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 name: Media
-componentType: molecule
-status: WIP
-description: A media component
+group: Molecules
+status: experimental
 libraryDependencies:
   - core/jquery.once
-schemas:
-  props:
-    type: object
-    properties:
-      media_attributes:
-        title: Attributes
-      media:
-        type: array
-        title: Media
-        examples:
-          - '<img loading="eager" src="/sites/default/files/2023-06/210609-TestSling-0052_0.jpg" width="5040" height="3360" alt="Test Sling">'
-      media_caption:
-        type: string
-        title: Media Caption
-        examples:
-          - "In exercitation in tempor ea enim elit id consequat."
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    media_attributes:
+      title: Attributes
+      type: string
+    media:
+      type: string
+      title: Media
+    media_caption:
+      type: string
+      title: Media Caption
