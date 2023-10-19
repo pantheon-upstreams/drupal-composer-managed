@@ -1,0 +1,25 @@
+<div class="c-rich-text" style="margin: 32px 0">
+  <h3>Pullquotes</h3>
+  <p><em>Default</em></p>
+</div>
+
+{% embed 'surf_main:pullquote' with {
+  attributes,
+  pullquote_attributes: create_attribute(),
+  pullquote_quote: '“Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.”',
+  pullquote_credit: '— Albert Einstein',
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Large</em></p>
+</div>
+
+
+{% embed 'surf_main:pullquote' with {
+  attributes,
+  pullquote_attributes: create_attribute({'class': ['m-pullquote--large']}),
+  pullquote_quote: 'Extremely large emphasized text example. Lorem ipsum dolor sit amet.',
+  pullquote_credit: '— Optional second line for quote credit.',
+} only %}
+{% endembed %}
