@@ -5,5 +5,8 @@ group: Atoms
 props:
   type: object
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     left_hook_attributes:
       title: Attributes
+      type: string
