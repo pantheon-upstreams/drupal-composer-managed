@@ -7,56 +7,38 @@ props:
   required:
     - header_heading
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     header_attributes:
       title: Attributes
+      type: string
     header_heading:
-      type: string
       title: Heading
-      examples:
-        - Neutrino Day
-        - Press Releases
-    header_heading_level:
       type: string
+    header_heading_level:
       title: Heading Header Level
-      examples:
-        - "1"
-        - "2"
+      type: string
     header_teaser:
       title: Teaser Text
       type: string
-      examples:
-        - "From cutting-edge research in dark matter to neutrinos, SURF hosts experiments that push the frontier of physics."
     header_media:
       title: Header Media
       type: boolean
-      examples:
-        - TRUE
-        - FALSE
     header_cta_text:
-      type: string
       title: Header CTA Text
-      examples:
-        - Click here!
+      type: string
     header_cta_url:
       title: Header CTA Url
       type: string
-      examples:
-        - "https://www.example.org"
     header_cta_html_tag:
       title: Header CTA HTML Tag
       type: string
-      examples:
-        - "link"
     header_cta_style:
       title: Header CTA Style
       type: string
-      examples:
-        - "full-navy"
     header_cta_size:
       title: Header CTA Size
       type: string
-      examples:
-        - "small"
   slots:
     header_links_block:
       title: Header Links

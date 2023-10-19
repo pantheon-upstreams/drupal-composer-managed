@@ -23,8 +23,6 @@
  */
 #}
 
-{% set header_attributes = header_attributes ? header_attributes : create_attribute() %}
-
 {%
   set classes = [
   'o-header',
@@ -32,19 +30,19 @@
 ]
 %}
 
-<header {{ header_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+<header {{ header_attributes.addClass(classes).merge(attributes) }}>
 
   <div class="o-header__content">
 
     {% block header_links_block %}
-      <a href="http://www.example.com">Back to my dashboard</a>
+
     {% endblock %}
 
     <div class="o-header__text-wrapper">
 
       {{ include('surf_main:heading', {
-        heading_text: header_heading,
-        heading_level: header_heading_level,
+        heading_text: header_heading ? header_heading,
+        heading_level: header_heading_level ? header_heading_level,
         heading_attributes: heading_attributes,
       }, with_context = false) }}
 
