@@ -5,7 +5,8 @@
 
 {% embed 'surf_main:chip' with {
   chip_text: 'Category A',
-  chip_url: 'http://www.example.com'
+  chip_url: 'http://www.example.com',
+  chip_size: 'large',
 } only %}
 {% endembed %}
 
@@ -13,18 +14,40 @@
   <p><em>Gold</em></p>
 </div>
 
+<p>small</p>
 {% embed 'surf_main:chip' with {
   chip_text: 'Business Development',
+  chip_size: 'small',
   chip_attributes: create_attribute({'class': ['a-chip--gold']}),
 } only %}
 {% endembed %}
+
+<p style="margin-top: 16px">large</p>
+{% embed 'surf_main:chip' with {
+  chip_text: 'Business Development',
+  chip_size: 'large',
+  chip_attributes: create_attribute({'class': ['a-chip--gold']}),
+} only %}
+{% endembed %}
+
+
 
 <div class="c-rich-text" style="margin: 32px 0">
   <p><em>Navy</em></p>
 </div>
 
+<p>small</p>
 {% embed 'surf_main:chip' with {
   chip_text: 'Business Development',
+  chip_size: 'small',
+  chip_attributes: create_attribute({'class': ['a-chip--navy']}),
+} only %}
+{% endembed %}
+
+<p style="margin-top: 16px">large</p>
+{% embed 'surf_main:chip' with {
+  chip_text: 'Business Development',
+  chip_size: 'large',
   chip_attributes: create_attribute({'class': ['a-chip--navy']}),
 } only %}
 {% endembed %}
@@ -33,8 +56,18 @@
   <p><em>Blue</em></p>
 </div>
 
+<p>small</p>
 {% embed 'surf_main:chip' with {
   chip_text: 'Business Development',
+  chip_size: 'small',
+  chip_attributes: create_attribute({'class': ['a-chip--blue']}),
+} only %}
+{% endembed %}
+
+<p style="margin-top: 16px">large</p>
+{% embed 'surf_main:chip' with {
+  chip_text: 'Business Development',
+  chip_size: 'large',
   chip_attributes: create_attribute({'class': ['a-chip--blue']}),
 } only %}
 {% endembed %}
@@ -43,8 +76,18 @@
   <p><em>White</em></p>
 </div>
 
+<p>small</p>
 {% embed 'surf_main:chip' with {
   chip_text: 'Article',
+  chip_size: 'small',
+  chip_attributes: create_attribute({'class': ['a-chip--white']}),
+} only %}
+{% endembed %}
+
+<p style="margin-top: 16px">large</p>
+{% embed 'surf_main:chip' with {
+  chip_text: 'Article',
+  chip_size: 'large',
   chip_attributes: create_attribute({'class': ['a-chip--white']}),
 } only %}
 {% endembed %}
@@ -53,9 +96,20 @@
   <p><em>White with Icon</em></p>
 </div>
 
+<p>small</p>
 {% embed 'surf_main:chip' with {
   chip_text: 'Video',
   chip_icon_prefix: 'play-solid',
+  chip_size: 'small',
+  chip_attributes: create_attribute({'class': ['a-chip--white']}),
+} only %}
+{% endembed %}
+
+<p style="margin-top: 16px">large</p>
+{% embed 'surf_main:chip' with {
+  chip_text: 'Video',
+  chip_icon_prefix: 'play-solid',
+  chip_size: 'large',
   chip_attributes: create_attribute({'class': ['a-chip--white']}),
 } only %}
 {% endembed %}
