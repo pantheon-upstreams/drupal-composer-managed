@@ -1,0 +1,30 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Person Page
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    person_attributes:
+      title: Attributes
+      type: string
+    person_heading:
+      title: Person Heading
+      type: string
+    person_job_title:
+      title: Person Job Title
+      type: string
+    person_phone:
+      title: Person Phone
+      type: string
+    person_email:
+      title: Person Email
+      type: string
+    person_body:
+      title: Person Body
+      type: string
+    person_media:
+      title: Person Media
+      type: string

@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Component for Person Page.
+
+ * Available props:
+ * - person_title: [string] the page title.
+ * - person_job_title: [string] the job title of the person.
+ * - person_phone: [string] the office phone number of the person.
+ * - person_email: [string] the email address of the person.
+ * - person_body: [string] the body text.
+ * - person_media: [string] the media image of the person.
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'p-person',
+]
+%}
+
+<article {{ person_attributes.addClass(classes).merge(attributes) }}>
+  {{ title_suffix }}
+  <div class="container{% if person_media %} container__type--large{% else %} container__type--small{% endif %}">
+    <div class="p-person__grid">
+
+      {% embed 'surf_main:header' with {
+        header_heading: person_heading,
+        header_heading_level: '1',
+        header_attributes: create_attribute(),
+        heading_attributes: create_attribute({'class': ['o-header__heading']}),
+      } only %}
+      {% endembed %}
+      <div class="p-person__content">
+        <div class="p-person__content-grid">
+
+          {% if person_job_title %}
+            <h2 class="p-person__job-title">
+              {{ person_job_title }}
+            </h2>
+          {% endif %}
+
+          {% if person_phone or person_email %}
+            <div class="p-person__contact-wrapper">
+
+              {% if person_phone %}
+                <p class="p-person__phone">
+                  {{ person_phone }}
+                </p>
+              {% endif %}
+
+              {% if person_email %}
+                <p class="p-person__email">
+                  <a href="mailto:{{ person_email }}">{{ 'Contact'|t }}</a>
+                </p>
+              {% endif %}
+
+            </div>
+          {% endif %}
+
+          {% if person_body %}
+            <div class="p-person-content__wrapper">
+              {{ person_body }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if person_media %}
+
+        {% embed 'surf_main:media' with {
+          media_attributes: create_attribute({'class': ['p-person__media']}),
+          media: person_media,
+        } only %}
+
+          {% block media_block %}
+              {{ media }}
+          {% endblock %}
+
+        {% endembed %}
+      {% endif %}
+
+    </div>
+  </div>
+</article>
