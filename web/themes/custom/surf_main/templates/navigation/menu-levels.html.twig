@@ -26,10 +26,10 @@
 {{ menu.menu_links(items, attributes, 0) }}
 
 {% macro menu_links(items, attributes, menu_level) %}
-    {% set primary_nav_level = 'menu__level--' ~ (items|first.menu_level + 1) %}
+    {% set primary_nav_level = 'm-menu__level--' ~ (items|first.menu_level + 1) %}
 
     {% if items %}
-        <ul {{ attributes.addClass('menu__list', primary_nav_level) }}>
+        <ul {{ attributes.addClass('m-menu__list', primary_nav_level) }}>
             {% set attributes = attributes.removeClass(primary_nav_level) %}
 
             {% for item in items %}
@@ -50,21 +50,21 @@
                 {% endif %}
 
                 {% set item_classes = [
-                    'menu__item',
-                    'menu__item--' ~ menu_item_type,
-                    'menu__item--level-' ~ (menu_level + 1),
-                    item.in_active_trail ? 'menu__item--active-trail',
-                    item.below ? 'menu__item--has-children',
+                    'm-menu__item',
+                    'm-menu__item--' ~ menu_item_type,
+                    'm-menu__item--level-' ~ (menu_level + 1),
+                    item.in_active_trail ? 'm-menu__item--active-trail',
+                    item.below ? 'm-menu__item--has-children',
                 ] %}
 
                 {% set link_classes = [
-                    'menu__link',
-                    'menu__link--' ~ menu_item_type,
-                    'menu__link--level-' ~ (menu_level + 1),
-                    item.in_active_trail ? 'menu__link--active-trail',
-                    item.below ? 'icon icon__type--chevron-down',
-                    icon ? 'icon icon--' ~ icon|clean_class,
-                    illustration ? 'icon icon--illustration-' ~ illustration|clean_class
+                    'm-menu__link',
+                    'm-menu__link--' ~ menu_item_type,
+                    'm-menu__link--level-' ~ (menu_level + 1),
+                    item.in_active_trail ? 'm-menu__link--active-trail',
+                    item.below ? 'a-icon a-icon--chevron-down',
+                    icon ? 'a-icon a-icon--' ~ icon|clean_class,
+                    illustration ? 'a-icon a-icon--illustration-' ~ illustration|clean_class
                 ] %}
 
                 <li {{ item.attributes.addClass(item_classes) }}>

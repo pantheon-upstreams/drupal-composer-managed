@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Search Bar
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - search_bar_form
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    search_bar_attributes:
+      title: Attributes
+      type: string
+    search_bar_form:
+      title: Form
+      type: object

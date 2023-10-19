@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Component for Utility Menu
+ *
+ * Available props:
+ * -
+ *
+ */
+#}
+
+{% set classes = [
+    'm-search-bar',
+    'm-search-bar--closed',
+] %}
+
+<div {{ search_bar_attributes.addClass(classes) }} {{ attributes }}>
+    {{ search_bar_form }}
+
+    <button id="search-trigger"
+            class="m-search-bar__trigger"
+            aria-haspopup="true"
+            aria-expanded="false">
+        {{ 'Search'|t }}
+    </button>
+</div>

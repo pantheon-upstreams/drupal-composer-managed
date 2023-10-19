@@ -1,0 +1,102 @@
+//
+// Navigation - Utility Menu
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-menu.m-menu--utility-menu {
+  display: none; // FUOC Fix
+
+  ul {
+    @include list-reset();
+  }
+}
+
+// FUOC Fix
+.js .m-menu.m-menu--utility-menu {
+  display: block;
+}
+
+
+
+
+//------------------------------------
+//  03 - Level One
+//------------------------------------
+
+.m-menu.m-menu--utility-menu .m-menu__list.m-menu__level--1 {
+  display: flex;
+  flex-flow: nowrap column;
+  margin: 0;
+
+  @include bp-min(large) {
+    flex-flow: nowrap row;
+  }
+
+  > li {
+    @include bp-min(large) {
+      padding: 0 18px;
+    }
+  }
+
+  > li > a,
+  > li > button,
+  > li > span {
+    @include link-menu(22px, white);
+    display: block;
+    padding: 12px 16px;
+
+    @include bp-min(large) {
+      padding: 4px 0;
+    }
+  }
+
+  > li > a.a-icon,
+  > li > button.a-icon,
+  > li > span.icon {
+    padding-left: 48px;
+
+    @include bp-min(large) {
+      padding-left: 0;
+      padding-right: 25px;
+    }
+  }
+
+  > li > a.a-icon:before,
+  > li > button.a-icon:before,
+  > li > span.a-icon:before {
+    bottom: 0;
+    height: 22px;
+    margin: auto;
+    left: 16px;
+    position: absolute;
+    top: 0;
+    width: 22px;
+
+    @include bp-min(large) {
+      left: initial;
+      right: 0;
+    }
+  }
+
+  > li > a.a-icon--user:before,
+  > li > button.a-icon--user:before,
+  > li > span.a-icon--user:before {
+    background: svg-load('icon-user.svg', fill="#FFFFFF") no-repeat center;
+  }
+}

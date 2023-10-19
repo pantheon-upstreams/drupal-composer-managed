@@ -1,0 +1,172 @@
+//
+// Component - Molecule - Search Bar
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - Trigger
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+$search-form-size: 300px;
+
+.m-search-bar {
+  flex-flow: nowrap row;
+  padding: 16px;
+  transition: transition(width, 0.35s, easeInOutExpo);
+
+  @include bp-min(large) {
+    padding: 0 0 0 24px;
+  }
+
+  > form {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+    transition: transition(all, 0.35s, easeInOutExpo);
+    position: relative;
+    width: 100%;
+
+    @include bp-min(large) {
+      margin-left: -#{$search-form-size};
+      opacity: 0;
+      position: inherit;
+      transform: translateX($search-form-size);
+      visibility: hidden;
+      width: $search-form-size;
+    }
+  }
+
+  &.m-search-bar--open > form {
+    margin-left: 0;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  // FUOC Fix
+  .js & {
+    display: flex;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Trigger
+//------------------------------------
+
+.m-search-bar {
+  .m-search-bar__trigger {
+    @include button-reset();
+    @include link-menu(22px, white);
+    display: none;
+    padding-right: 25px;
+    position: relative;
+    max-width: 112px;
+    transition: transition(all, 0.35s, easeInOutExpo);
+
+    @include bp-min(large) {
+      display: block;
+    }
+
+    &:before {
+      background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+      bottom: 0;
+      height: 22px;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: transition(all, 0.35s, easeInOutExpo);
+      width: 22px;
+    }
+  }
+
+  &.m-search-bar--open .m-search-bar__trigger {
+    color: transparent;
+    max-width: 40px;
+
+    &:after {
+      display: none;
+    }
+
+    &:before {
+      background: svg-load('icon-close.svg', fill="#FFFFFF") no-repeat center;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Form
+//------------------------------------
+
+.m-search-bar form {
+  .form__item,
+  .form__item input {
+    width: 100%;
+  }
+
+  .form__item {
+    position: relative;
+  }
+
+  .form__item input {
+    background: none;
+    border: solid 1px var(--surf-color-white);
+    color: var(--surf-color-white);
+    font-size: var(--surf-font-size-18);
+    font-weight: var(--surf-font-weight-bold);
+    padding-left: 16px;
+    padding-right: 40px;
+
+    @include bp-min(large) {
+      border-bottom: solid 2px var(--surf-color-white);
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      padding-left: 0;
+    }
+  }
+
+  .form-item input::placeholder {
+    color: var(--surf-color-white);
+    
+    @include bp-min(large) {
+      font-style: italic;
+    }
+  }
+
+  .button {
+    background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+    bottom: 0;
+    display: block;
+    font: 0/0 transparent;
+    height: 22px;
+    margin: auto;
+    position: absolute;
+    right: 16px;
+    top: 0;
+    width: 22px;
+
+    @include bp-min(large) {
+      right: 0;
+    }
+  }
+}

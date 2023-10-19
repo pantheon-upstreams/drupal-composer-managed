@@ -30,11 +30,11 @@ We call a macro which calls itself to render the full tree.
 {{ menus.menu_links(items, attributes, 0) }}
 
 {% macro menu_links(items, attributes, menu_level) %}
-    {% set primary_nav_level = 'menu__level--' ~ (menu_level + 1) %}
+    {% set primary_nav_level = 'm-menu__level--' ~ (menu_level + 1) %}
 
     {% import _self as menus %}
     {% if items %}
-        <ul {{ attributes.addClass('menu__list', primary_nav_level) }}>
+        <ul {{ attributes.addClass('m-menu__list', primary_nav_level) }}>
             {% set attributes = attributes.removeClass(primary_nav_level) %}
             {% for item in items %}
 
@@ -47,26 +47,26 @@ We call a macro which calls itself to render the full tree.
                 {% endif %}
 
                 {% set item_classes = [
-                    'menu__item',
-                    'menu__item--' ~ menu_item_type,
-                    'menu__item--level-' ~ (menu_level + 1),
-                    item.in_active_trail ? 'menu__item--active-trail',
-                    item.below ? 'menu__item--has-children',
+                    'm-menu__item',
+                    'm-menu__item--' ~ menu_item_type,
+                    'm-menu__item--level-' ~ (menu_level + 1),
+                    item.in_active_trail ? 'm-menu__item--active-trail',
+                    item.below ? 'm-menu__item--has-children',
                 ] %}
 
                 {% set link_classes = [
-                    'menu__link',
-                    'menu__link--' ~ menu_item_type,
-                    'menu__link--level-' ~ (menu_level + 1),
-                    item.in_active_trail ? 'menu__link--active-trail',
-                    item.below ? 'menu__link--has-children',
+                    'm-menu__link',
+                    'm-menu__link--' ~ menu_item_type,
+                    'm-menu__link--level-' ~ (menu_level + 1),
+                    item.in_active_trail ? 'm-menu__link--active-trail',
+                    item.below ? 'm-menu__link--has-children',
                 ] %}
 
                 <li {{ item.attributes.addClass(item_classes) }}>
                     {#
-                    A unique HTML ID should be used, but that isn't available through
-                    Twig yet, so the |clean_id filter is used for now.
-                    @see https://www.drupal.org/project/drupal/issues/3115445
+                        A unique HTML ID should be used, but that isn't available through
+                        Twig yet, so the |clean_id filter is used for now.
+                        @see https://www.drupal.org/project/drupal/issues/3115445
                     #}
                     {% set aria_id = (item.title ~ '-submenu-' ~ loop.index )|clean_id %}
                     {% set link_attributes = create_attribute() %}
