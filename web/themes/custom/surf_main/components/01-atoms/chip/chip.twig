@@ -13,15 +13,13 @@
  */
 #}
 
-{% set chip_attributes = chip_attributes ? chip_attributes : create_attribute() %}
-
 {%
   set classes = [
   'a-chip',
 ]
 %}
 
-<span {{ chip_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+<span {{ chip_attributes.addClass(classes).merge(attributes) }}>
 
   {% if chip_icon_prefix %}
     {% include 'surf_main:icon' with {
