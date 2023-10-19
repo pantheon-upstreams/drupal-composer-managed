@@ -12,7 +12,7 @@
 .c-resources-list__heading {
   font-family: var(--surf-font-condensed);
   font-size: rem(16px);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   letter-spacing: 1.5px;
   margin: 0;
 }
@@ -57,7 +57,7 @@
 .c-resources-list__link {
   color: var(--color-surf--forest);
   display: inline-block;
-  font-size: var(--surf-font-size-16);
+  font-size: var(--surf-fs-16);
   font-weight: var(--font-weight-regular);
   text-decoration: none;
 

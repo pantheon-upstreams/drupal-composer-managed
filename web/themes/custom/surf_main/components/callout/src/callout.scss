@@ -62,7 +62,7 @@
     }
 
     .c-callout__body p {
-      font-size: var(--surf-font-size-16);
+      font-size: var(--surf-fs-16);
       margin-top: 0;
 
       @include bp-min(medium) {

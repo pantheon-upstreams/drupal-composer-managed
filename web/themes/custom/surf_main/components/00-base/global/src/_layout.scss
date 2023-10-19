@@ -15,15 +15,19 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../00-base/partials/partials' as *;
+
+
+
 
 //------------------------------------
 //  02 - Grid
 //------------------------------------
+
 :root {
   --surf-grid-gap: 24px;
 
-  @include mixins-breakpoints.bp-min(large) {
+  @include bp-min(large) {
     --surf-grid-gap: 40px;
   }
 }
@@ -32,6 +36,7 @@
 //------------------------------------
 //  03 - Widths
 //------------------------------------
+
 :root {
   --surf-width-xxlarge: 1920px;
   --surf-width-xlarge: 1384px;
@@ -48,11 +53,12 @@
 //------------------------------------
 //  04 - Heights
 //------------------------------------
+
 :root {
   --surf-height-region-header-utility: 72px;
   --surf-height-region-header-primary: 72px;
 
-  @include mixins-breakpoints.bp-min(large) {
+  @include bp-min(large) {
     --surf-height-region-header-primary: 120px;
   }
 }
@@ -63,6 +69,7 @@
 //------------------------------------
 //  05 - Layers
 //------------------------------------
+
 :root {
   --surf-zindex-super: 100;
   --surf-zindex-top: 90;
@@ -78,6 +85,7 @@
 //------------------------------------
 //  06 - Alignment
 //------------------------------------
+
 .align-left {
   margin: 0 var(--surf-grid-gap) var(--surf-grid-gap) 0;
 }
@@ -90,9 +98,13 @@
   margin: var(--surf-grid-gap) auto;
 }
 
+
+
+
 //------------------------------------
 //  07 - Container
 //------------------------------------
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -100,32 +112,15 @@
   padding-right: var(--surf-grid-gap);
   width: 100%;
 
-  &.container__type--default {
+  &.container--default {
     max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
   }
 
-  .region__name--content & {
-
-    @include mixins-breakpoints.bp-min(xlarge) {
-      padding-left: calc(var(--surf-grid-gap) * 2);
-    }
-  }
-
-  &.container__type--large {
-    --surf-grid-gap: 15px;
+  &.container--large {
     max-width: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
-
-    @include mixins-breakpoints.bp-min(medium) {
-      --surf-grid-gap: 40px;
-    }
   }
 
-  &.container__type--small {
-    --surf-grid-gap: 15px;
+  &.container--small {
     max-width: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
-
-    @include mixins-breakpoints.bp-min(medium) {
-      --surf-grid-gap: 40px;
-    }
   }
 }

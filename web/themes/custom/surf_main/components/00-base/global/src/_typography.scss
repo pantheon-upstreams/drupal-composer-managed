@@ -44,47 +44,29 @@
 //------------------------------------
 
 :root {
-  --surf-font-size-14: #{rem(14px)};
-  --surf-font-size-16: #{rem(16px)};
-  --surf-font-size-18: #{rem(18px)};
-  --surf-font-size-20: #{rem(20px)};
-  --surf-font-size-22: #{rem(22px)};
-  --surf-font-size-24: #{rem(18px)};
-  --surf-font-size-28: #{rem(28px)};
-  --surf-font-size-32: #{rem(30px)};
-  --surf-font-size-40: #{rem(32px)};
-  --surf-font-size-52: #{rem(40px)};
-  --surf-font-size-96: #{rem(52px)};
-  --surf-font-size-176: #{rem(48px)};
-  --surf-font-size-body-xs: #{rem(14px)};
-  --surf-font-size-body-sm: #{rem(16px)};
-  --surf-font-size-body-md: #{rem(18px)};
-  --surf-font-size-body-lg: #{rem(24px)};
-  --surf-font-size-body-xlg: #{rem(32px)};
+  --surf-fs-14: #{rem(14px)};
+  --surf-fs-16: #{rem(16px)};
+  --surf-fs-18: #{rem(18px)};
+  --surf-fs-20: #{rem(20px)};
+  --surf-fs-24-18: #{rem(18px)};
+  --surf-fs-32-30: #{rem(30px)};
+  --surf-fs-96-64-52: #{rem(52px)};
+  --surf-fs-176-132-100-48: #{rem(48px)};
 
   @include bp-min(medium) {
-    --surf-font-size-32: #{rem(32px)};
-    --surf-font-size-40: #{rem(40px)};
-    --surf-font-size-52: #{rem(56px)};
-    --surf-font-size-96: #{rem(64px)};
-    --surf-font-size-176: #{rem(100px)};
-    --surf-font-size-body-md: #{rem(24px)};
+    --surf-fs-176-132-100-48: #{rem(100px)};
   }
 
   @include bp-min(large) {
-    --surf-font-size-32: #{rem(32px)};
-    --surf-font-size-40: #{rem(40px)};
-    --surf-font-size-52: #{rem(56px)};
-    --surf-font-size-96: #{rem(64px)};
-    --surf-font-size-176: #{rem(132px)};
-    --surf-font-size-body-md: #{rem(32px)};
+    --surf-fs-32-30: #{rem(32px)};
+    --surf-fs-96-64-52: #{rem(64px)};
+    --surf-fs-176-132-100-48: #{rem(132px)};
   }
 
   @include bp-min(xlarge) {
-    --surf-font-size-24: #{rem(24px)};
-    --surf-font-size-96: #{rem(96px)};
+    --surf-fs-24-18: #{rem(24px)};
+    --surf-fs-96-64-52: #{rem(96px)};
     --surf-fs-176-132-100-48: #{rem(176px)};
-    --surf-font-size-body-xlg: #{rem(40px)};
   }
 }
 
@@ -96,13 +78,13 @@
 //------------------------------------
 
 :root {
-  --surf-font-weight-thin: 100;
-  --surf-font-weight-light: 300;
-  --surf-font-weight-regular: 400;
-  --surf-font-weight-book: 400;
-  --surf-font-weight-medium: 500;
-  --surf-font-weight-semibold: 600;
-  --surf-font-weight-bold: 700;
+  --surf-fw-thin: 100;
+  --surf-fw-light: 300;
+  --surf-fw-regular: 400;
+  --surf-fw-book: 400;
+  --surf-fw-medium: 500;
+  --surf-fw-semibold: 600;
+  --surf-fw-bold: 700;
 }
 
 
@@ -113,10 +95,10 @@
 //------------------------------------
 
 :root {
-  --surf-line-height-default: 1.6;
-  --surf-line-height-heading: 1.2;
-  --surf-line-height-label:   1.4;
-  --surf-line-height-base:    1;
+  --surf-lh-default: 1.6;
+  --surf-lh-heading: 1.2;
+  --surf-lh-label:   1.4;
+  --surf-lh-base:    1;
 }
 
 
@@ -129,7 +111,7 @@
 body {
   color: var(--surf-color-gray-900);
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-font-size-18);
+  font-size: var(--surf-fs-18);
 }
 
 
@@ -141,7 +123,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   color: var(--surf-color-gray-900);
-  line-height: var(--surf-line-height-heading);
+  line-height: var(--surf-lh-heading);
   margin-bottom: 0;
 
   > a {
@@ -177,7 +159,7 @@ h6 {
 
 a {
   color: var(--surf-color-navy);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   text-decoration: underline;
 
   &:hover,
@@ -196,7 +178,7 @@ a {
 
 strong,
 b {
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
 }
 
 
@@ -230,8 +212,8 @@ blockquote {
 
 ul:not([class]),
 ol:not([class]) {
-  font-size: var(--surf-font-size-16);
-  line-height: var(--surf-line-height-default);
+  font-size: var(--surf-fs-16);
+  line-height: var(--surf-lh-default);
   list-style-position: inside;
 }
 

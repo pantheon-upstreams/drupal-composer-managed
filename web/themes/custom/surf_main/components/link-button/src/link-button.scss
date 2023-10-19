@@ -16,7 +16,7 @@
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   font-family: var(--surf-font-condensed);
   font-size: rem(16px);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   letter-spacing: 1.5px;
 
   &:hover,
@@ -35,12 +35,12 @@
     padding: var(--space-inset-y) var(--space-inset-x);
     font-family: var(--surf-font-condensed);
     font-size: rem(22px);
-    font-weight: var(--surf-font-weight-bold);
+    font-weight: var(--surf-fw-bold);
     letter-spacing: 1.8px;
   }
 
   &.c-link-button--medium {
-    font-size: var(--surf-font-size-16);
+    font-size: var(--surf-fs-16);
     font-weight: var(--font-weight-bold);
     padding: rem(6px) rem(12px);
   }
@@ -108,7 +108,7 @@
     padding-right: 0;
     font-family: var(--surf-font-condensed);
     font-size: rem(16px);
-    font-weight: var(--surf-font-weight-bold);
+    font-weight: var(--surf-fw-bold);
     letter-spacing: 1.5px;
 
     .link-button__icon {

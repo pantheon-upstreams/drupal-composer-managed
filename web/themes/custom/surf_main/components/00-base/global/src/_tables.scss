@@ -19,7 +19,7 @@ table {
   text-align: left;
   border-collapse: collapse;
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-font-size-16);
+  font-size: var(--surf-fs-16);
 }
 
 h1 + table,
@@ -58,7 +58,7 @@ td {
 
 th {
   color: var(--surf-color-dark);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
 }
 
 // Remove top border from thead by default

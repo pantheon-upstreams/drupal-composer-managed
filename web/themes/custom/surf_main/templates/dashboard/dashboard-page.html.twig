@@ -24,7 +24,7 @@
 {% set page_title = page_id == 'dashboard_home' ? user_display_name : page_title %}
 
 <div {{ attributes.addClass(classes) }}>
-    <div class="container container__type--default">
+    <div class="container container--default">
         {% embed 'surf_main:teaser' with {
             attributes,
             teaser_attributes: create_attribute(),

@@ -35,7 +35,7 @@
             .setAttribute('role', 'contentinfo')
             .setAttribute('aria-label', status_headings[type])
         }}>
-            <div class="messages__container l-container l-container__type--default" data-drupal-selector="messages-container"{% if type == 'error' %} role="alert"{% endif %}>
+            <div class="messages__container l-container l-container--default" data-drupal-selector="messages-container"{% if type == 'error' %} role="alert"{% endif %}>
                 {% if status_headings[type] %}
                     <div class="messages__header">
                         <h2 class="visually-hidden">{{ status_headings[type] }}</h2>

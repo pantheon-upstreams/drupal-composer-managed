@@ -111,7 +111,7 @@
     }
   }
 
-  &.container__type--large {
+  &.container--large {
     --surf-grid-gap: 15px;
     max-width: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
 

@@ -19,7 +19,7 @@
 .c-press-release__breadcrumb-link {
   font-family: var(--surf-font-condensed);
   font-size: rem(16px);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   letter-spacing: 1.5px;
   color: var(--color-surf--forest);
   text-decoration: underline;
@@ -32,7 +32,7 @@
 .c-press-release__date {
   font-family: var(--surf-font-condensed);
   font-size: rem(16px);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   letter-spacing: 1.5px;
   color: var(--color-surf--black);
   margin: 0 0 0 rem(28px);
@@ -121,7 +121,7 @@
   a {
     font-family: var(--surf-font-condensed);
     font-size: rem(16px);
-    font-weight: var(--surf-font-weight-bold);
+    font-weight: var(--surf-fw-bold);
     letter-spacing: 1.5px;
     background: var(--color-surf--cloud);
     color: var(--color-surf--forest);
@@ -138,7 +138,7 @@
 .c-press-release__contacts-title {
   font-family: var(--surf-font-condensed);
   font-size: rem(16px);
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   letter-spacing: 1.5px;
   margin: 0 0 rem(28px) 0;
 }

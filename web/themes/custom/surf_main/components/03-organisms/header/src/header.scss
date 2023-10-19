@@ -14,9 +14,9 @@
 
 .o-header__heading {
   color: var(--surf-color-black);
-  font-size: var(--surf-font-size-176);
+  font-size: var(--surf-fs-176-132-100-48);
   font-family: var(--surf-font-sans-alt);
-  font-weight: var(--surf-font-weight-medium);
+  font-weight: var(--surf-fw-medium);
   text-transform: uppercase;
 }
 
@@ -41,19 +41,19 @@
 }
 
 .o-header__heading--transform-none {
-  font-size: var(--surf-font-size-96);
+  font-size: var(--surf-fs-96-64-52);
   font-family: var(--surf-font-sans-alt);
-  font-weight: var(--surf-font-weight-medium);
+  font-weight: var(--surf-fw-medium);
   letter-spacing: rem(1.44px);
   text-transform: none;
 }
 
 .o-header__teaser {
   color: var(--surf-color-gray-600);
-  font-size: var(--surf-font-size-24);
+  font-size: var(--surf-fs-24-18);
   font-family: var(--surf-font-sans);
-  font-weight: var(--surf-font-weight-book);
-  line-height: var(--surf-line-height-base);
+  font-weight: var(--surf-fw-book);
+  line-height: var(--surf-lh-base);
   margin-block-start: rem(12px) !important;
 }
 

@@ -26,7 +26,7 @@
 .a-button {
   cursor: pointer;
   display: inline-block;
-  font-weight: var(--surf-font-weight-bold);
+  font-weight: var(--surf-fw-bold);
   text-decoration: none;
   transition: transition(all, 0.35s, easeInOutExpo);
 }
@@ -40,11 +40,11 @@
 
 .a-button {
   &.a-button--size-small {
-    font-size: var(--surf-font-size-16);
+    font-size: var(--surf-fs-16);
   }
 
   &.a-button--size-large {
-    font-size: var(--surf-font-size-24);
+    font-size: var(--surf-fs-24-18);
   }
 
   &.a-button--size-small .a-icon {

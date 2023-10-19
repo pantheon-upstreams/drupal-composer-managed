@@ -19,12 +19,12 @@
 .p-person__job-title {
   color: var(--surf-color-gray-650);
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-font-size-18);
-  font-weight: var(--surf-font-weight-regular);
+  font-size: var(--surf-fs-18);
+  font-weight: var(--surf-fw-regular);
   line-height: 1.44;
   max-width: rem(900px);
   @include bp-min(medium) {
-    font-size: var(--surf-font-size-32);
+    font-size: var(--surf-fs-32-30);
     line-height: 1.32;
   }
 }
@@ -39,11 +39,11 @@
     margin: 0;
 
     a {
-      font-size: var(--surf-font-size-18);
-      font-weight: var(--surf-font-weight-book);
+      font-size: var(--surf-fs-18);
+      font-weight: var(--surf-fw-book);
       line-height: 1.44;
       @include bp-min(medium) {
-        font-size: var(--surf-font-size-24);
+        font-size: var(--surf-fs-24-18);
         line-height: 1.4;
       }
     }

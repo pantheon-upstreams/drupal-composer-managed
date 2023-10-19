@@ -11,7 +11,7 @@
   font-family: var(--surf-font-sans-alt);
   font-size: rem(64px);
   font-style: normal;
-  font-weight: var(--surf-font-weight-medium);
+  font-weight: var(--surf-fw-medium);
   letter-spacing: 0.02em;
   line-height: 1;
   text-indent: 0;
@@ -20,9 +20,9 @@
 .m-pullquote__credit {
   margin-block-start: rem(20px);
   font-family: var(--surf-font-condensed);
-  font-size: var(--surf-font-size-16);
-  font-weight: var(--surf-font-weight-bold);
-  line-height: var(--surf-line-height-label);
+  font-size: var(--surf-fs-16);
+  font-weight: var(--surf-fw-bold);
+  line-height: var(--surf-lh-label);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -44,10 +44,10 @@
 
   .m-pullquote__credit {
     font-family: var(--surf-font-condensed);
-    font-size: var(--surf-font-size-20);
-    font-weight: var(--surf-font-weight-bold);
+    font-size: var(--surf-fs-20);
+    font-weight: var(--surf-fw-bold);
     letter-spacing: 1.5px;
-    line-height: var(--surf-line-height-label);
+    line-height: var(--surf-lh-label);
     text-transform: uppercase;
   }
 }
