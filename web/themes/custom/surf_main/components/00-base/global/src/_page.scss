@@ -13,7 +13,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../partials/mixins/breakpoints' as mixins-breakpoints;
+@use '../../../00-base/partials/partials' as *;
 
 
 
@@ -47,11 +47,6 @@ body {
 .layout-container {
   background-color: var(--surf-color-white);
   overflow: hidden;
-  padding-top: var(--surf-height-region-header-primary);
-
-  @include mixins-breakpoints.bp-min(large) {
-    padding-top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
-  }
 }
 
 
