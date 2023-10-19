@@ -7,15 +7,14 @@ libraryDependencies:
 props:
   type: object
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     media_attributes:
       title: Attributes
+      type: string
     media:
-      type: array
+      type: string
       title: Media
-      examples:
-        - '<img loading="eager" src="/sites/default/files/2023-06/210609-TestSling-0052_0.jpg" width="5040" height="3360" alt="Test Sling">'
     media_caption:
       type: string
       title: Media Caption
-      examples:
-        - "In exercitation in tempor ea enim elit id consequat."
