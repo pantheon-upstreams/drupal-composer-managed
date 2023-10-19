@@ -12,15 +12,13 @@
  */
 #}
 
-{% set heading_attributes = heading_attributes ? heading_attributes : create_attribute() %}
-
 {%
   set classes = [
   'a-heading',
 ]
 %}
 
-<h{{ heading_level|default('2') }} {{ heading_attributes.addClass(classes) }} {{ attributes|without(class) }}>
+<h{{ heading_level|default('2') }} {{ heading_attributes.addClass(classes).merge(attributes) }}>
 
   {%- if heading_url -%}
     <a href="{{ heading_url }}">{{ heading_text }}</a>
