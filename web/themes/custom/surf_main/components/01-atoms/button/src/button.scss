@@ -14,7 +14,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../../libraries/partials/functions/animations' as functions-animations;
+@use '../../../00-base/partials/partials' as *;
 
 
 
@@ -28,7 +28,7 @@
   display: inline-block;
   font-weight: var(--surf-font-weight-bold);
   text-decoration: none;
-  transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+  transition: transition(all, 0.35s, easeInOutExpo);
 }
 
 
@@ -97,7 +97,7 @@
     position: absolute;
     transform: scaleX(1);
     transform-origin: left;
-    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    transition: transition(all, 0.35s, easeInOutExpo);
     top: 100%;
     width: 100%;
   }
@@ -255,7 +255,7 @@
     position: relative;
     top: 5px;
     transform: translateX(0);
-    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    transition: transition(all, 0.35s, easeInOutExpo);
   }
 
   .a-icon--position-left {

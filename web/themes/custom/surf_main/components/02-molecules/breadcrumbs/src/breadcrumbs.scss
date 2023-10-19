@@ -13,10 +13,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/functions/animations' as functions-animations;
-@use '../../../00-base/partials/functions/calculations' as functions-calculations;
-@use '../../../00-base/partials/mixins/lists' as mixins-lists;
-@use '../../../00-base/partials/mixins/typography' as mixins-typography;
+@use '../../../00-base/partials/partials' as *;
 
 
 
@@ -27,7 +24,7 @@
 
 .m-breadcrumbs {
   ol.m-breadcrumbs__items {
-    @include mixins-lists.reset();
+    @include reset();
     display: flex;
     flex-flow: wrap row;
     margin: 0 -12px;
@@ -67,7 +64,6 @@
 
 .m-breadcrumbs.m-breadcrumbs--default {
   a.m-breadcrumbs__link {
-    @include mixins-typography.size-14();
     font-weight: var(--surf-font-weight-book);
   }
 }
@@ -81,7 +77,6 @@
 
 .m-breadcrumbs.m-breadcrumbs--large {
   a.m-breadcrumbs__link {
-    @include mixins-typography.size-16();
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -96,7 +91,6 @@
 
 .m-breadcrumbs.m-breadcrumbs--single-back {
   a.m-breadcrumbs__link {
-    @include mixins-typography.size-16();
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
@@ -115,7 +109,7 @@
       margin: auto;
       position: absolute;
       top: 2px;
-      transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+      transition: transition(all, 0.35s, easeInOutExpo);
       transform: translateX(0);
       width: 24px;
     }

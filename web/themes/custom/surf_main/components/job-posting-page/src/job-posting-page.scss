@@ -21,8 +21,10 @@
 }
 
 .c-job-posting__breadcrumb-link {
-
-  @include surf-font-label;
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
   color: var(--color-surf--forest);
   text-decoration: underline;
 
@@ -41,8 +43,10 @@
 }
 
 .c-job-posting__date {
-
-  @include surf-font-label;
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
   color: var(--color-surf--black);
   margin: rem(18px) 0 0 0;
 

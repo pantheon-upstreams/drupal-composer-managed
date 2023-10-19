@@ -1,0 +1,21 @@
+//
+// Partials Combined
+// Partials can be imported into theme files either one by one, or by using this combined Partials file. To use this
+// file as the import statement, `@use '[path]/partials/partials' as *`.
+//
+// - 01 - Forwards
+//
+
+
+//------------------------------------
+//  01 - Forwards
+//------------------------------------
+
+@forward 'animations';
+@forward 'breakpoints';
+@forward 'buttons';
+@forward 'calculations';
+@forward 'layout';
+@forward 'links';
+@forward 'lists';
+@forward 'media';

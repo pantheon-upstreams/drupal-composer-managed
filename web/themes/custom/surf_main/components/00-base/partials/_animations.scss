@@ -1,13 +1,15 @@
 //
-// Settings - Animations
+// Partials - Animations
 // Standard sets of animation variables and mappings to be of use across the site, for consistency and accuracy.
 //
-// - 01 - Transitions
+// - 01 - Transition Settings
+// - 02 - Transition Function
 //
 
 
 //------------------------------------
-//  01 - Transitions
+//  01 - Transition Settings
+//  Settings based upon https://easings.net and offers cubic bezier settings.
 //------------------------------------
 
 $transitions: (
@@ -47,3 +49,27 @@ $transitions: (
   'easeOutBack':    cubic-bezier(0.34, 1.56, 0.64, 1), // https://easings.net/#easeOutBack
   'easeInOutBack':  cubic-bezier(0.68, -0.6, 0.32, 1.6), // https://easings.net/#easeInOutBack
 );
+
+
+
+
+//------------------------------------
+//  02 - Transition Function
+//  Easy to use function to quickly define a transition with the ability to reference a library mapping of bezier-curve
+//  animations, as defined in `partials/settings/_animations.scss`.
+//  - @param $argument: Style arguments that this transition should be applied to.
+//  - @param $duration: The length of time the transition should take place.
+//  - @param $style: The style of transition, as defined in `partials/settings/_animations.scss`
+//  - @example = transition: transition(all, 0.6s, easeInOutSine)
+//------------------------------------
+
+@function transition($argument: all, $duration: 0.35s, $style: easeInOut) {
+  @if map-has-key($transitions, $style) {
+    @return $argument $duration map-get($transitions, $style);
+  }
+
+  @else {
+    @warn "No value could be retrieved for `#{$style}`. "
+    + "Please make sure it is defined in `$animations` map.";
+  }
+}

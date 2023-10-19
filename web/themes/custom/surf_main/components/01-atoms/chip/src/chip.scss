@@ -12,7 +12,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../../libraries/partials/partials' as *;
+@use '../../../00-base/partials/partials' as *;
 
 
 
@@ -63,11 +63,17 @@
 
 .a-chip {
   &.a-chip--small {
-    @include surf-font-label-x-small();
+    font-family: var(--surf-font-condensed);
+    font-size: rem(16px);
+    font-weight: var(--surf-font-weight-bold);
+    letter-spacing: 1.5px;
   }
 
   &.a-chip--large {
-    @include surf-font-label-medium();
+    font-family: var(--surf-font-condensed);
+    font-size: rem(22px);
+    font-weight: var(--surf-font-weight-bold);
+    letter-spacing: 1.8px;
   }
 }
 

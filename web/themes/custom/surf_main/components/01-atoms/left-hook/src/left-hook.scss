@@ -1,4 +1,4 @@
-@use '../../../../libraries/partials/partials' as *;
+@use '../../../00-base/partials/partials' as *;
 
 .a-left-hook {
   border-block-start: 2px solid var(--surf-color-gray-800);

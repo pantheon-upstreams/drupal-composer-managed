@@ -10,8 +10,10 @@
 }
 
 .c-resources-list__heading {
-
-  @include surf-font-label;
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
   margin: 0;
 }
 

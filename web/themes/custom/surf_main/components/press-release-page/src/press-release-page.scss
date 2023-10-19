@@ -17,8 +17,10 @@
 }
 
 .c-press-release__breadcrumb-link {
-
-  @include surf-font-label;
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
   color: var(--color-surf--forest);
   text-decoration: underline;
 
@@ -28,8 +30,10 @@
 }
 
 .c-press-release__date {
-
-  @include surf-font-label;
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
   color: var(--color-surf--black);
   margin: 0 0 0 rem(28px);
 }
@@ -115,8 +119,10 @@
   margin: 0 rem(12px) rem(12px) 0;
 
   a {
-
-    @include surf-font-label;
+    font-family: var(--surf-font-condensed);
+    font-size: rem(16px);
+    font-weight: var(--surf-font-weight-bold);
+    letter-spacing: 1.5px;
     background: var(--color-surf--cloud);
     color: var(--color-surf--forest);
     padding: rem(2px) rem(8px);
@@ -130,8 +136,10 @@
 }
 
 .c-press-release__contacts-title {
-
-  @include surf-font-label;
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-font-weight-bold);
+  letter-spacing: 1.5px;
   margin: 0 0 rem(28px) 0;
 }
 

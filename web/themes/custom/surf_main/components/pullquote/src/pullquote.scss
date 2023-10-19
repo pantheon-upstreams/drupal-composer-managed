@@ -10,8 +10,10 @@
   margin: rem(20px) 0 0 0;
 
   cite {
-
-    @include surf-font-label;
+    font-family: var(--surf-font-condensed);
+    font-size: rem(16px);
+    font-weight: var(--surf-font-weight-bold);
+    letter-spacing: 1.5px;
     align-items: baseline;
     color: var(--color-text-muted);
     display: flex;

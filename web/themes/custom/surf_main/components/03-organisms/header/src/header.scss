@@ -1,4 +1,4 @@
-@use '../../../../libraries/partials/partials' as *;
+@use '../../../00-base/partials/partials' as *;
 
 .o-header {
   //empty
@@ -14,9 +14,10 @@
 
 .o-header__heading {
   color: var(--surf-color-black);
+  font-size: var(--surf-font-size-176);
+  font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-font-weight-medium);
   text-transform: uppercase;
-
-  @include heading-01;
 }
 
 .o-header__heading--gradient {
@@ -28,17 +29,20 @@
 }
 
 .o-header__heading--transform-none {
+  font-size: var(--surf-font-size-96);
+  font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-font-weight-medium);
   letter-spacing: rem(1.44px);
   text-transform: none;
-
-  @include heading-02;
 }
 
 .o-header__teaser {
   color: var(--surf-color-gray-600);
+  font-size: var(--surf-font-size-24);
+  font-family: var(--surf-font-sans);
+  font-weight: var(--surf-font-weight-book);
+  line-height: var(--surf-line-height-base);
   margin-block-start: rem(12px) !important;
-
-  @include body-xlg;
 }
 
 .o-header--with-bkg-color {

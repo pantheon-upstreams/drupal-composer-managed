@@ -1,4 +1,4 @@
-@use '../../../../libraries/partials/partials' as *;
+@use '../../../00-base/partials/partials' as *;
 
 .m-pullquote {
   border-block: 2px solid var(--surf-color-gray-100);
@@ -19,8 +19,12 @@
 
 .m-pullquote__credit {
   margin-block-start: rem(20px);
-
-  @include surf-font-label-x-small;
+  font-family: var(--surf-font-condensed);
+  font-size: var(--surf-font-size-16);
+  font-weight: var(--surf-font-weight-bold);
+  line-height: var(--surf-line-height-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .m-pullquote--large {
@@ -39,7 +43,11 @@
   }
 
   .m-pullquote__credit {
-
-    @include surf-font-label-small;
+    font-family: var(--surf-font-condensed);
+    font-size: var(--surf-font-size-20);
+    font-weight: var(--surf-font-weight-bold);
+    letter-spacing: 1.5px;
+    line-height: var(--surf-line-height-label);
+    text-transform: uppercase;
   }
 }

@@ -1,0 +1,241 @@
+//
+// Settings - Typography
+//
+// - 01 - Imports
+// - 02 - Families
+// - 03 - Sizes
+// - 04 - Weights
+// - 05 - Line Heights
+// - 06 - Body
+// - 07 - Headings
+// - 08 - Links
+// - 09 - Bold
+// - 10 - Paragraphs
+// - 11 - Blockquote
+// - 12 - Lists
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - Families
+//------------------------------------
+
+:root {
+  --surf-font-mono: monospace;
+  --surf-font-sans: 'ballinger', sans-serif;
+  --surf-font-sans-alt: 'recent-grotesk', sans-serif;
+  --surf-font-condensed: 'ballinger-condensed', sans-serif;
+}
+
+
+
+
+//------------------------------------
+//  03 - Sizes
+//------------------------------------
+
+:root {
+  --surf-font-size-14: #{rem(14px)};
+  --surf-font-size-16: #{rem(16px)};
+  --surf-font-size-18: #{rem(18px)};
+  --surf-font-size-20: #{rem(20px)};
+  --surf-font-size-22: #{rem(22px)};
+  --surf-font-size-24: #{rem(18px)};
+  --surf-font-size-28: #{rem(28px)};
+  --surf-font-size-32: #{rem(30px)};
+  --surf-font-size-40: #{rem(32px)};
+  --surf-font-size-52: #{rem(40px)};
+  --surf-font-size-96: #{rem(52px)};
+  --surf-font-size-176: #{rem(48px)};
+  --surf-font-size-body-xs: #{rem(14px)};
+  --surf-font-size-body-sm: #{rem(16px)};
+  --surf-font-size-body-md: #{rem(18px)};
+  --surf-font-size-body-lg: #{rem(24px)};
+  --surf-font-size-body-xlg: #{rem(32px)};
+
+  @include bp-min(medium) {
+    --surf-font-size-32: #{rem(32px)};
+    --surf-font-size-40: #{rem(40px)};
+    --surf-font-size-52: #{rem(56px)};
+    --surf-font-size-96: #{rem(64px)};
+    --surf-font-size-176: #{rem(100px)};
+    --surf-font-size-body-md: #{rem(24px)};
+  }
+
+  @include bp-min(large) {
+    --surf-font-size-32: #{rem(32px)};
+    --surf-font-size-40: #{rem(40px)};
+    --surf-font-size-52: #{rem(56px)};
+    --surf-font-size-96: #{rem(64px)};
+    --surf-font-size-176: #{rem(132px)};
+    --surf-font-size-body-md: #{rem(32px)};
+  }
+
+  @include bp-min(xlarge) {
+    --surf-font-size-24: #{rem(24px)};
+    --surf-font-size-96: #{rem(96px)};
+    --surf-fs-176-132-100-48: #{rem(176px)};
+    --surf-font-size-body-xlg: #{rem(40px)};
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Weights
+//------------------------------------
+
+:root {
+  --surf-font-weight-thin: 100;
+  --surf-font-weight-light: 300;
+  --surf-font-weight-regular: 400;
+  --surf-font-weight-book: 400;
+  --surf-font-weight-medium: 500;
+  --surf-font-weight-semibold: 600;
+  --surf-font-weight-bold: 700;
+}
+
+
+
+
+//------------------------------------
+//  05 - Line Heights
+//------------------------------------
+
+:root {
+  --surf-line-height-default: 1.6;
+  --surf-line-height-heading: 1.2;
+  --surf-line-height-label:   1.4;
+  --surf-line-height-base:    1;
+}
+
+
+
+
+//------------------------------------
+//  06 - Body
+//------------------------------------
+
+body {
+  color: var(--surf-color-gray-900);
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-18);
+}
+
+
+
+
+//------------------------------------
+//  07 - Headings
+//------------------------------------
+
+h1, h2, h3, h4, h5 {
+  color: var(--surf-color-gray-900);
+  line-height: var(--surf-line-height-heading);
+  margin-bottom: 0;
+
+  > a {
+    text-decoration: none;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+
+
+
+//------------------------------------
+//  08 - Links
+//------------------------------------
+
+a {
+  color: var(--surf-color-navy);
+  font-weight: var(--surf-font-weight-bold);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: var(--surf-color-gray-900);
+    text-decoration: none;
+  }
+}
+
+
+
+
+//------------------------------------
+//  09 - Bold
+//------------------------------------
+
+strong,
+b {
+  font-weight: var(--surf-font-weight-bold);
+}
+
+
+
+
+//------------------------------------
+//  10 - Paragraphs
+//------------------------------------
+
+p {}
+
+
+
+
+//------------------------------------
+//  11 - Blockquote
+//------------------------------------
+
+blockquote {
+  font-style: italic;
+  margin: 15px 0;
+  text-indent: -0.4em;
+}
+
+
+
+
+//------------------------------------
+//  12 - Lists
+//------------------------------------
+
+ul:not([class]),
+ol:not([class]) {
+  font-size: var(--surf-font-size-16);
+  line-height: var(--surf-line-height-default);
+  list-style-position: inside;
+}
+
+ul:not([class]):not(:first-child),
+ol:not([class]):not(:first-child) {
+  margin-top: 16px;
+}

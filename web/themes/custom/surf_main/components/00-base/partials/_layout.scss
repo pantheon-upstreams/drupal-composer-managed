@@ -1,9 +1,10 @@
 //
-// Mixins - Layout
+// Partials - Layout
 // Use these mixins when needing to easily define layout styles, such as widths and grids.
 //
 // - 01 - Imports
 // - 02 - Full Width
+// - 03 - Flex Grid
 //
 
 
@@ -11,7 +12,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../functions/calculations' as functions-calculations;
+@use 'calculations' as functions-calculations;
 
 
 

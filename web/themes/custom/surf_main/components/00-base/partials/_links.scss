@@ -1,5 +1,5 @@
 //
-// Mixins - Links
+// Partials - Links
 //
 // - 01 - Imports
 // - 02 - Menu Link
@@ -10,7 +10,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../functions/animations' as functions-animations;
+@use 'animations' as functions-animations;
 
 
 

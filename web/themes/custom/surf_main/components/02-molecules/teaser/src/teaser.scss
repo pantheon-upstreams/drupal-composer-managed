@@ -13,11 +13,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/functions/animations' as functions-animations;
-@use '../../../00-base/partials/mixins/breakpoints' as mixins-breakpoints;
-@use '../../../00-base/partials/mixins/layout' as mixins-layout;
-@use '../../../00-base/partials/mixins/media' as mixins-media;
-@use '../../../00-base/partials/mixins/typography' as mixins-typography;
+@use '../../../00-base/partials/partials' as *;
 
 
 
@@ -34,7 +30,7 @@
 
   .m-teaser__media img {
     transform: scale(1);
-    transition: functions-animations.transition(all, 0.35s, easeInOutExpo);
+    transition: transition(all, 0.35s, easeInOutExpo);
   }
 
   &:hover .m-teaser__media img,
@@ -62,12 +58,12 @@
   position: relative;
   width: 100%;
 
-  @include mixins-breakpoints.bp-max(xlarge) {
+  @include bp-max(xlarge) {
     margin-left: calc(var(--surf-grid-gap) * -1);
     width: 100vw;
   }
 
-  @include mixins-breakpoints.bp-min(large) {
+  @include bp-min(large) {
     min-height: 690px;
   }
 
@@ -82,7 +78,7 @@
 
   .m-teaser__media,
   .m-teaser__media *:not(img) {
-    @include mixins-breakpoints.bp-min(large) {
+    @include bp-min(large) {
       height: 100%;
       left: 0;
       position: absolute;
@@ -94,8 +90,8 @@
   .m-teaser__media img {
     width: 100%;
 
-    @include mixins-breakpoints.bp-min(large) {
-      @include mixins-media.background-image();
+    @include bp-min(large) {
+      @include background-image();
     }
   }
 
@@ -110,7 +106,7 @@
     pointer-events: none;
     width: 100%;
 
-    @include mixins-breakpoints.bp-min(large) {
+    @include bp-min(large) {
       background-color: transparent;
       bottom: 0;
       left: 0;
@@ -118,17 +114,15 @@
       position: absolute;
     }
 
-    @include mixins-breakpoints.bp-min(xlarge) {
+    @include bp-min(xlarge) {
       padding: 64px;
     }
   }
 
   .m-teaser__title {
-    @include mixins-typography.size-40();
   }
 
   p.m-teaser__content-text {
-    @include mixins-typography.size-24();
     margin: 16px 0 0;
   }
 }
@@ -141,7 +135,7 @@
 //------------------------------------
 
 .m-teaser.m-teaser--col-2 {
-  @include mixins-breakpoints.bp-min(large) {
+  @include bp-min(large) {
     display: flex;
     flex-flow: nowrap row;
   }
@@ -160,7 +154,6 @@
   }
 
   .m-teaser__title {
-    @include mixins-typography.size-40();
   }
 
   &:hover .m-teaser__title a,
@@ -170,7 +163,6 @@
   }
 
   p.m-teaser__content-text {
-    @include mixins-typography.size-24();
     margin: 16px 0 0;
   }
 }
