@@ -1,0 +1,35 @@
+uuid: fb291435-52e3-4109-b54e-4851fb36bd59
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.ratio_4_5_max_152w
+    - image.style.ratio_4_5_max_304w
+    - image.style.ratio_4_5_max_608w_
+  theme:
+    - surf_main
+id: person
+label: Person
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: ratio_4_5_max_304w
+    breakpoint_id: surf_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: ratio_4_5_max_608w_
+    breakpoint_id: surf_main.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: ratio_4_5_max_152w
+    breakpoint_id: surf_main.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: ratio_4_5_max_304w
+    breakpoint_id: surf_main.small
+    multiplier: 2x
+breakpoint_group: surf_main
+fallback_image_style: ratio_4_5_max_152w

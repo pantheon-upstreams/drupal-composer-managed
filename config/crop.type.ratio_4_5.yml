@@ -1,0 +1,12 @@
+uuid: e24225f8-1424-4107-88cc-6a56d0e2e2cc
+langcode: en
+status: true
+dependencies: {  }
+label: 'Ratio 4:5'
+id: ratio_4_5
+description: ''
+aspect_ratio: '4:5'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

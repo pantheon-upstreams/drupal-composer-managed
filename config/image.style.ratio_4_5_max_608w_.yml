@@ -1,0 +1,32 @@
+uuid: 5ded71c7-55b1-4bc9-8076-6b0c66b2c527
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.ratio_4_5
+  module:
+    - crop
+name: ratio_4_5_max_608w_
+label: 'Ratio 4:5 (Max 608W)'
+effects:
+  f3f54141-d44a-49a3-9488-ec82cec9d23f:
+    uuid: f3f54141-d44a-49a3-9488-ec82cec9d23f
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: ratio_4_5
+      automatic_crop_provider: null
+  ece67b63-3973-4566-a455-b64129f87161:
+    uuid: ece67b63-3973-4566-a455-b64129f87161
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 608
+      height: 760
+      anchor: center-center
+  e6c9064d-891a-4c0e-bbfd-12ea7b91640b:
+    uuid: e6c9064d-891a-4c0e-bbfd-12ea7b91640b
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
