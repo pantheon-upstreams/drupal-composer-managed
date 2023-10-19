@@ -14,8 +14,8 @@
 
 .o-header__heading {
   color: var(--surf-color-black);
-  font-size: var(--surf-fs-176-132-100-48);
   font-family: var(--surf-font-sans-alt);
+  font-size: var(--surf-fs-176-132-100-48);
   font-weight: var(--surf-fw-medium);
   text-transform: uppercase;
 }
@@ -23,26 +23,14 @@
 .o-header__heading--gradient {
   background: linear-gradient(90deg, #000080 0%, #007ab8 100%);
   background-clip: text;
-  font-size: rem(80px);
+  font-size: var(--surf-fs-260-200-140-80);
   line-height: 0.8;
   -webkit-text-fill-color: transparent;
-
-  @include bp-min(medium) {
-    font-size: rem(140px);
-  }
-
-  @include bp-min(large) {
-    font-size: rem(200px);
-  }
-
-  @include bp-min(xlarge) {
-    font-size: rem(260px);
-  }
 }
 
 .o-header__heading--transform-none {
-  font-size: var(--surf-fs-96-64-52);
   font-family: var(--surf-font-sans-alt);
+  font-size: var(--surf-fs-96-64-52);
   font-weight: var(--surf-fw-medium);
   letter-spacing: rem(1.44px);
   text-transform: none;
@@ -50,8 +38,8 @@
 
 .o-header__teaser {
   color: var(--surf-color-gray-600);
-  font-size: var(--surf-fs-24-18);
   font-family: var(--surf-font-sans);
+  font-size: var(--surf-fs-24-18);
   font-weight: var(--surf-fw-book);
   line-height: var(--surf-lh-base);
   margin-block-start: rem(12px) !important;

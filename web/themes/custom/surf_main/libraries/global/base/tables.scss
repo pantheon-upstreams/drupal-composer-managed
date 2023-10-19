@@ -9,17 +9,16 @@
 //------------------------------------
 //  01 - General
 //------------------------------------
-
 table {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 0;
-  margin-bottom: 72px;
-  border-spacing: 0;
-  text-align: left;
   border-collapse: collapse;
+  border-spacing: 0;
   font-family: var(--surf-font-sans);
   font-size: var(--surf-font-size-16);
+  margin-bottom: 72px;
+  margin-top: 0;
+  max-width: 100%;
+  text-align: left;
+  width: 100%;
 }
 
 h1 + table,
@@ -27,39 +26,42 @@ h2 + table,
 h3 + table,
 h4 + table,
 h5 + table,
-table:not(:first-child) {
+table:not( :first-child ) {
   margin-top: 24px;
 }
-
 
 
 
 //------------------------------------
 //  02 - Elements
 //------------------------------------
-
 thead {
   & th {
     vertical-align: bottom;
-  }
-
-  & th,
-  & td {
-    border-bottom: 1px solid var(--surf-color-dark);
   }
 }
 
 th,
 td {
-  padding: 8px;
-  text-align: left;
+  border-bottom: 1px solid var(--surf-color-gray-800);
+  padding: 12px 20px;
   vertical-align: top;
 }
 
 th {
-  color: var(--surf-color-dark);
+  font-family: var(--surf-font-sans);
+  font-size: var(--surf-font-size-24);
   font-weight: var(--surf-font-weight-bold);
+  line-height: 1.42;
 }
+
+td {
+  font-size: var(--surf-font-size-18);
+  min-width: 300px;
+}
+
+
+
 
 // Remove top border from thead by default
 caption + thead tr:first-child th,
@@ -73,7 +75,7 @@ thead:first-child tr:first-child td {
 
 // Account for multiple tbody instances
 tbody + tbody {
-  border-top: 2px solid var(--surf-color-dark);
+  border-top: 2px solid var(--surf-color-gray-800);
 }
 
 tr.even {

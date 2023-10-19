@@ -40,7 +40,7 @@
 
 .a-button {
   &.a-button--size-small {
-    font-size: var(--surf-fs-16);
+    font-size: rem(16px);
   }
 
   &.a-button--size-large {

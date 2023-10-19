@@ -26,7 +26,7 @@
   background-color: var(--surf-color-gray-100);
   color: var(--surf-color-navy);
   display: inline-flex;
-  line-height: 1.4;
+  line-height: var(--surf-lh-label);
   padding: 2px 8px;
   text-transform: uppercase;
 

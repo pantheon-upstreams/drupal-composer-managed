@@ -19,7 +19,7 @@
 .p-person__job-title {
   color: var(--surf-color-gray-650);
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-18);
+  font-size: rem(18px);
   font-weight: var(--surf-fw-regular);
   line-height: 1.44;
   max-width: rem(900px);
@@ -39,7 +39,7 @@
     margin: 0;
 
     a {
-      font-size: var(--surf-fs-18);
+      font-size: rem(18px);
       font-weight: var(--surf-fw-book);
       line-height: 1.44;
       @include bp-min(medium) {

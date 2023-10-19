@@ -19,7 +19,7 @@ table {
   text-align: left;
   border-collapse: collapse;
   font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-16);
+  font-size: rem(16px);
 }
 
 h1 + table,
