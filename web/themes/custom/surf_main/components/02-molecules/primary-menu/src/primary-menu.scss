@@ -20,7 +20,7 @@
 //  02 - General
 //------------------------------------
 
-.menu.menu__name--main {
+.m-menu.m-menu--primary-menu {
   display: none;
 
   ul {
@@ -37,7 +37,7 @@
 }
 
 // FUOC Fix
-.js .menu.menu__name--main {
+.js .m-menu.m-menu--primary-menu {
   display: block;
 }
 
@@ -48,7 +48,7 @@
 //  03 - Level One
 //------------------------------------
 
-.menu.menu__name--main .menu__list.menu__level--1 {
+.m-menu.m-menu--primary-menu .m-menu__list.m-menu__level--1 {
   display: flex;
   flex-flow: nowrap column;
   margin: 0;
@@ -97,9 +97,9 @@
     }
   }
 
-  > li > a.icon__type--chevron-down,
-  > li > button.icon__type--chevron-down,
-  > li > span.icon__type--chevron-down {
+  > li > a.a-icon--chevron-down,
+  > li > button.a-icon--chevron-down,
+  > li > span.a-icon--chevron-down {
     padding-right: 28px;
 
     &:before {
@@ -123,13 +123,13 @@
     }
   }
 
-  > li.is-open > a.icon__type--chevron-down:before,
-  > li.is-open > button.icon__type--chevron-down:before,
-  > li.is-open > span.icon__type--chevron-down:before {
+  > li.is-open > a.a-icon--chevron-down:before,
+  > li.is-open > button.a-icon--chevron-down:before,
+  > li.is-open > span.a-icon--chevron-down:before {
     transform: scale(-1)
   }
 
-  > li > .menu__dropdown {
+  > li > .m-menu__dropdown {
     max-height: 0;
     opacity: 0;
     padding: 0;
@@ -147,21 +147,21 @@
     }
   }
 
-  > li:not(:last-child) > .menu__dropdown {
+  > li:not(:last-child) > .m-menu__dropdown {
     @include bp-min(xxlarge) {
       left: 50%;
       transform: translate(-50%, 100%);
     }
   }
 
-  > li:last-child > .menu__dropdown {
+  > li:last-child > .m-menu__dropdown {
     @include bp-min(xxlarge) {
       right: 0;
       transform: translateY(100%);
     }
   }
 
-  > li.is-open > .menu__dropdown {
+  > li.is-open > .m-menu__dropdown {
     max-height: 2000px;
     opacity: 1;
     visibility: visible;
@@ -171,13 +171,13 @@
     }
   }
 
-  > li.is-open:not(:last-child) > .menu__dropdown {
+  > li.is-open:not(:last-child) > .m-menu__dropdown {
     @include bp-min(xxlarge) {
       transform: translate(-50%, 0);
     }
   }
 
-  > li.is-open:last-child > .menu__dropdown {
+  > li.is-open:last-child > .m-menu__dropdown {
     @include bp-min(xxlarge) {
       transform: translateY(0);
     }
@@ -191,7 +191,7 @@
 //  04 - Level Two
 //------------------------------------
 
-.menu.menu__name--main .menu__list.menu__level--2 {
+.m-menu.m-menu--primary-menu .m-menu__list.m-menu__level--2 {
   display: flex;
   flex-flow: nowrap column;
   margin-bottom: 8px;
@@ -210,7 +210,7 @@
     }
   }
 
-  > li > .menu__card {
+  > li > .m-menu__card {
     @include bp-min(xxlarge) {
       background-color: var(--surf-color-white);
       padding: 24px 32px;
@@ -229,9 +229,9 @@
     }
   }
 
-  > li > .menu__card > a,
-  > li > .menu__card > button,
-  > li > .menu__card > span {
+  > li > .m-menu__card > a,
+  > li > .m-menu__card > button,
+  > li > .m-menu__card > span {
     color: var(--surf-color-white);
     display: block;
     font-size: var(--surf-font-size-18);
@@ -245,15 +245,15 @@
     }
   }
 
-  > li > .menu__card > a:before,
-  > li > .menu__card > button:before,
-  > li > .menu__card > span:before {
+  > li > .m-menu__card > a:before,
+  > li > .m-menu__card > button:before,
+  > li > .m-menu__card > span:before {
     @include bp-max(xxlarge) {
       display: none;
     }
   }
 
-  > li > .menu__card > p {
+  > li > .m-menu__card > p {
     display: none;
     font-size: var(--surf-font-size-16);
 
@@ -270,7 +270,7 @@
 //  04 - Level Three
 //------------------------------------
 
-.menu.menu__name--main .menu__list.menu__level--3 {
+.m-menu.m-menu--primary-menu .m-menu__list.m-menu__level--3 {
   @include bp-min(xxlarge) {
     background-color: var(--surf-color-white);
   }

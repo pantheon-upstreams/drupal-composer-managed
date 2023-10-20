@@ -1,72 +1,16 @@
 /**
- * Blocks - Search API
- * Functionality to simply hide and show the search form.
+ * Components - Molecule - Search Bar
  *
- * - 01 - Hide / Show
+ * - 01 - Imports
  * - 02 - Drupal Attach
  */
 
 
 /*------------------------------------*\
-  01 - Hide / Show
-  Simply changing a set of classes, attributes and states upon either a click,
-  or keyboard action.
+  01 - Imports
 \*------------------------------------*/
 
-const hideShow = (wrapper) => {
-  // Constructor
-  const openedClass = 'm-search-bar--open';
-  const closedClass = 'm-search-bar--closed';
-  let trigger;
-
-  const openedState = () => {
-    wrapper.classList.remove(closedClass);
-    wrapper.classList.add(openedClass);
-    trigger.setAttribute('aria-expanded', 'true');
-  };
-
-  const closedState = (element) => {
-    element.classList.add(closedClass);
-    element.classList.remove(openedClass);
-    trigger.setAttribute('aria-expanded', 'false');
-  };
-
-  const onClickTrigger = (event) => {
-    if (wrapper.classList.contains(closedClass)) {
-      openedState(wrapper);
-    } else {
-      closedState(wrapper);
-    }
-  };
-
-  const onKeydownTrigger = (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-
-      if (wrapper.classList.contains(closedClass)) {
-        openedState(wrapper);
-      } else {
-        closedState(wrapper);
-      }
-    }
-  };
-
-  /**
-   * Initialization
-   * Add any and all functionality as a singular program, dynamically setting
-   * element variables, states and event listeners.
-   * @param wrapper - [HTMLObject] Element that contains all elements contained
-   * inside the eventual modal.
-   */
-  const init = (wrapper) => {
-    trigger = wrapper.querySelector('#search-trigger');
-    trigger.addEventListener('click', onClickTrigger);
-    trigger.addEventListener('keydown', onKeydownTrigger);
-  };
-
-  // Final Return
-  init (wrapper);
-};
+import { a11yDropdown } from '../../../00-base/libraries/a11y-dropdown';
 
 
 
@@ -79,11 +23,11 @@ const hideShow = (wrapper) => {
 
 Drupal.behaviors.surfSearchBar = {
   attach(context) {
-    const searchBar = once('surf-search-api-form-block', context.querySelectorAll('.m-search-bar'));
+    const searchBar = once('surf-search-bar', context.querySelectorAll('.m-search-bar'));
 
     if (searchBar.length !== 0) {
-      searchBar.forEach((block) => {
-        hideShow(block);
+      searchBar.forEach((element) => {
+        a11yDropdown(element);
       });
     }
   },
