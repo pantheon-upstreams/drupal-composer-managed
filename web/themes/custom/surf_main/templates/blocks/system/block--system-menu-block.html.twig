@@ -35,7 +35,7 @@
 
 {% set classes = [
     'menu',
-    'menu__name--' ~ derivative_plugin_id|clean_class,
+    'menu--' ~ derivative_plugin_id|clean_class,
 ] %}
 
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}

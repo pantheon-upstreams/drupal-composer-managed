@@ -19,9 +19,9 @@
 
 {% macro build_menu_link_content(attributes, menu_link_content, show_item_link, content, elements) %}
     {% set menu_dropdown_classes = [
-        'menu__dropdown',
-        elements['#menu_level'] is defined ? 'menu__dropdown--' ~ elements['#menu_level'],
-        elements['#view_mode'] ? 'menu__view-mode--' ~ elements['#view_mode'],
+        'm-menu__dropdown',
+        elements['#menu_level'] is defined ? 'm-menu__dropdown--' ~ elements['#menu_level'],
+        elements['#view_mode'] ? 'm-menu__dropdown--' ~ elements['#view_mode'],
     ] %}
 
     <div{{ attributes.addClass(menu_dropdown_classes) }}>

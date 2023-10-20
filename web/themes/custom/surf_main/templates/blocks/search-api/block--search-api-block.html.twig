@@ -10,23 +10,8 @@
  */
 #}
 
-{% extends 'block.html.twig' %}
-
-{% set classes = [
-    'search-form',
-    'search-form__state--closed',
-] %}
-
-{% set attributes = attributes.addClass(classes) %}
-
-{% block content %}
-    {{ content }}
-
-    <button
-            id="search-trigger"
-            class="search-form__trigger icon icon__type--search"
-            aria-haspopup="true"
-            aria-expanded="false">
-        {{ 'Search'|t }}
-    </button>
-{% endblock %}
+{% include 'surf_main:search-bar' with {
+    attributes,
+    search_bar_attributes: create_attribute(),
+    search_bar_form: content,
+} %}

@@ -2,10 +2,6 @@
 # SURF Main - Libraries
 # - 01 - Fonts
 # - 02 - Global
-# - 03 - Regions
-# - 04 - Navigation
-# - 05 - Blocks
-# - 06 - Misc
 #
 
 
@@ -31,77 +27,3 @@ global:
       components/00-base/global/global.css: { minified: true }
   dependencies:
     - core/once
-
-
-
-
-#------------------------------------#
-# 03 - Regions
-#------------------------------------#
-
-region--content:
-  css:
-    theme:
-      dist/css/regions/content/content.css: { minified: true }
-
-region--header-primary:
-  css:
-    theme:
-      dist/css/regions/header-primary/header-primary.css: { minified: true }
-  js:
-    dist/js/regions/header-primary/header-primary.js: { minified: true }
-
-region--header-utility:
-  css:
-    theme:
-      dist/css/regions/header-utility/header-utility.css: { minified: true }
-
-
-
-
-#------------------------------------#
-# 04 - Navigation
-#------------------------------------#
-
-menu--dashboard:
-  css:
-    theme:
-      dist/css/navigation/dashboard-menu/dashboard-menu.css: { minified: true }
-
-menu--main:
-  css:
-    theme:
-      dist/css/navigation/main-menu/main-menu.css: { minified: true }
-  js:
-    dist/js/navigation/main-menu/main-menu.js: { minified: true }
-
-menu--utility-nav:
-  css:
-    theme:
-      dist/css/navigation/utility-menu/utility-menu.css: { minified: true }
-
-
-
-
-#------------------------------------#
-# 05 - Blocks
-#------------------------------------#
-
-block--search-api-form-block:
-  css:
-    component:
-      dist/css/blocks/search-api/search-api.css: { minified: true }
-  js:
-    dist/js/blocks/search-api/search-api.js: { minified: true }
-
-
-
-
-#------------------------------------#
-# 06 - Misc
-#------------------------------------#
-
-status-messages:
-  css:
-    component:
-      dist/css/misc/status-messages/status-messages.css: { minified: true }

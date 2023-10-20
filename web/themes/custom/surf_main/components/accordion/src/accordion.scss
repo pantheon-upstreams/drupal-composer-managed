@@ -1,4 +1,4 @@
-@import '../../../libraries/partials/partials';
+@use '../../00-base/partials/partials' as *;
 
 .c-accordion__title {
   color: var(--color-surf--dark-black);
@@ -9,7 +9,6 @@
 .c-accordion__trigger {
   align-items: center;
   background: none;
-  //border-bottom: solid 1px var(--color-surf--grey);
   border-radius: 0;
   border-style: none;
   color: var(--color-surf--dark-black);

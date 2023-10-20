@@ -21,6 +21,8 @@
 //------------------------------------
 
 .o-masthead .o-masthead__utility {
+  align-items: center;
+  display: flex;
   height: var(--surf-height-region-header-utility);
   width: 100%;
 

@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Component for Utility Menu
+ *
+ * Available props:
+ * - attributes
+ * - menu_attributes
+ * - menu_content
+ * - menu_label_display
+ * - menu_title
+ *
+ * Available slots:
+ * - menu_prefix
+ *
+ */
+#}
+
+{% set classes = [
+    'm-menu',
+    'm-menu--utility-menu',
+] %}
+
+{% set title_classes = [
+    'm-menu__title',
+    not menu_label_display ? 'visually-hidden',
+] %}
+
+<nav {{ menu_attributes.addClass(classes) }} aria-labelledby="utility-menu" role="navigation" {{ attributes }}>
+    {% block menu_prefix %}{% endblock %}
+
+    <h2 id="menu-utility" class="{{ title_classes|join(' ') }}">
+        {{- menu_title -}}
+    </h2>
+
+    {{ menu_content }}
+</nav>

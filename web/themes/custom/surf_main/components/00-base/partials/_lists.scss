@@ -14,7 +14,7 @@
 //  01 - Base
 //------------------------------------
 
-@mixin reset {
+@mixin list-reset() {
   list-style: none;
   margin-left: 0;
   padding-left: 0;

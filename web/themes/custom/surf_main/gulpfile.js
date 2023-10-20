@@ -39,16 +39,6 @@ const glob = require("glob");
 \*------------------------------------*/
 
 const paths = {
-  base: {
-    styles: {
-      src: 'libraries/**/*.scss',
-      dest: 'dist/css',
-    },
-    scripts: {
-      src: './libraries/**/*.js',
-      dest: 'dist/js',
-    },
-  },
   component: {
     styles: {
       src: 'components/**/src/*.scss',
@@ -77,12 +67,6 @@ const componentEntryPoints = glob.sync(paths.component.scripts.src).reduce((entr
   return entries;
 }, {});
 
-const baseEntryPoints = glob.sync(paths.base.scripts.src).reduce((entries, entry) => {
-  const name = entry.replace('/libraries', '');
-  entries[name] = entry;
-  return entries;
-}, {});
-
 
 
 
@@ -91,17 +75,6 @@ const baseEntryPoints = glob.sync(paths.base.scripts.src).reduce((entries, entry
   Define both compilation of SASS files during development and also when ready for Production and final
   build / minification. Autoprefixer is included in PostCSS Preset Env, thus is not defined here.
 \*------------------------------------*/
-
-gulp.task("baseStylesWatch", function () {
-  return gulp.src(paths.base.styles.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .on("error", sass.logError)
-    .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.base.styles.dest))
-    .pipe(browserSync.stream());
-});
 
 gulp.task("componentStylesWatch", function () {
   return gulp.src(paths.component.styles.src)
@@ -115,14 +88,6 @@ gulp.task("componentStylesWatch", function () {
     }))
     .pipe(gulp.dest(paths.component.styles.dest))
     .pipe(browserSync.stream());
-});
-
-gulp.task("baseStylesBuild", function () {
-  return gulp.src(paths.base.styles.src)
-    .pipe(sass())
-    .on("error", sass.logError)
-    .pipe(postcss())
-    .pipe(gulp.dest(paths.base.styles.dest));
 });
 
 gulp.task("componentStylesBuild", function () {
@@ -150,20 +115,6 @@ gulp.task("componentStylesBuild", function () {
   This greatly increases performance when running gulp watch with many files.
 \*------------------------------------*/
 
-gulp.task('baseScriptsWatch', function() {
-  return gulp.src(paths.base.scripts.src)
-    .pipe(plumber())
-    .pipe(webpack({
-      ...require('./webpack.config.js'),
-      entry:  baseEntryPoints,
-      output: {
-        path: `${__dirname}/dist/js`,
-        filename: '[name]'
-      },
-    }))
-    .pipe(gulp.dest(paths.base.scripts.dest))
-});
-
 gulp.task('componentScriptsWatch', function() {
   return gulp.src(paths.component.scripts.src)
     .pipe(plumber())
@@ -176,22 +127,6 @@ gulp.task('componentScriptsWatch', function() {
       },
     }))
     .pipe(gulp.dest(paths.component.scripts.dest))
-});
-
-gulp.task('baseScriptsBuild', function() {
-  return gulp.src(paths.base.scripts.src)
-    .pipe(plumber())
-    .pipe(webpack({
-      ...require('./webpack.config.js'),
-      entry:  baseEntryPoints,
-      output: {
-        path: `${__dirname}/dist/js`,
-        filename: '[name]'
-      },
-    }))
-    .pipe(ignore.exclude([ "**/*.map" ]))
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.base.scripts.dest))
 });
 
 gulp.task('componentScriptsBuild', function() {
@@ -231,8 +166,6 @@ exports.watch = () => {
     open: false,
     logConnections: true,
   });
-  gulp.watch(paths.base.styles.src, gulp.series("baseStylesWatch"));
-  gulp.watch(paths.base.scripts.src, gulp.series("baseScriptsWatch"));
   gulp.watch(paths.component.styles.src, gulp.series("componentStylesWatch"));
   gulp.watch(paths.component.scripts.src, gulp.series("componentScriptsWatch"));
 };
@@ -240,8 +173,6 @@ exports.watch = () => {
 exports.build = (done) => {
   console.log("You are building for production.");
   gulp.parallel(
-    "baseStylesBuild",
-    "baseScriptsBuild",
     "componentStylesBuild",
     "componentScriptsBuild"
   )(done);
