@@ -44,32 +44,32 @@
 //------------------------------------
 
 :root {
-  --surf-fs-24-18: #{rem(18px)};
-  --surf-fs-32-30: #{rem(30px)};
-  --surf-fs-96-64-52: #{rem(52px)};
-  --surf-fs-176-132-48: #{rem(48px)};
-  --surf-fs-176-132-100-48: #{rem(48px)};
-  --surf-fs-260-200-140-80: #{rem(80px)};
+  --surf-fs-18-24: #{rem(18px)};
+  --surf-fs-30-32: #{rem(30px)};
+  --surf-fs-52-64-96: #{rem(52px)};
+  --surf-fs-48-132-176: #{rem(48px)};
+  --surf-fs-48-100-132-176: #{rem(48px)};
+  --surf-fs-80-140-200-260: #{rem(80px)};
 
   @include bp-min(medium) {
-    --surf-fs-176-132-48: #{rem(132px)};
-    --surf-fs-176-132-100-48: #{rem(100px)};
-    --surf-fs-260-200-140-80: #{rem(140px)};
+    --surf-fs-48-100-132-176: #{rem(100px)};
+    --surf-fs-48-132-176: #{rem(132px)};
+    --surf-fs-80-140-200-260: #{rem(140px)};
   }
 
   @include bp-min(large) {
-    --surf-fs-32-30: #{rem(32px)};
-    --surf-fs-96-64-52: #{rem(64px)};
-    --surf-fs-176-132-100-48: #{rem(132px)};
-    --surf-fs-260-200-140-80: #{rem(200px)};
+    --surf-fs-30-32: #{rem(32px)};
+    --surf-fs-52-64-96: #{rem(64px)};
+    --surf-fs-48-100-132-176: #{rem(132px)};
+    --surf-fs-80-140-200-260: #{rem(200px)};
   }
 
   @include bp-min(xlarge) {
-    --surf-fs-24-18: #{rem(24px)};
-    --surf-fs-96-64-52: #{rem(96px)};
-    --surf-fs-176-132-48: #{rem(176px)};
-    --surf-fs-176-132-100-48: #{rem(176px)};
-    --surf-fs-260-200-140-80: #{rem(260px)};
+    --surf-fs-18-24: #{rem(24px)};
+    --surf-fs-52-64-96: #{rem(96px)};
+    --surf-fs-48-100-132-176: #{rem(176px)};
+    --surf-fs-48-132-176: #{rem(176px)};
+    --surf-fs-80-140-200-260: #{rem(260px)};
   }
 }
 
