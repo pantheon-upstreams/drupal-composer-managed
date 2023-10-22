@@ -1,4 +1,23 @@
+//
+// Component - Atom - Left Hook
+//
+// - 01 - Imports
+// - 02 - General
+//
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
 @use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .a-left-hook {
   border-block-start: 2px solid var(--surf-color-gray-800);

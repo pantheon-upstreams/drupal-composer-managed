@@ -1,12 +1,26 @@
-@use '../../../00-base/partials/partials' as *;
-
 //
-// Media Component
+// Component - Atom - Media
 //
 // https://atendesign.atlassian.net/browse/SRL-122
 // https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1210-262986&mode=design&t=oRwpZclcMzKWEldA-4
 //
+// - 01 - Imports
+// - 02 - General
 //
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .a-media {
   position: relative;

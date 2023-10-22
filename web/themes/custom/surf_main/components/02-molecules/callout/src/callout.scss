@@ -1,10 +1,27 @@
+//
+// Component - Molecule - Callout
+//
+// https://atendesign.atlassian.net/browse/SRL-107
+// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-232968&mode=design&t=oRwpZclcMzKWEldA-4
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Colors
+// - 04 - Misc
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
 @use '../../../00-base/partials/partials' as *;
 
-.test-grid {
-  padding: 0;
-  width: 100%;
-  @include flex-grid(2, 'li', 20px, 20px);
-}
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .m-callout {
   background-color: var(--surf-color-gray-100);
@@ -34,114 +51,129 @@
 }
 
 
-.m-callout--blue {
-  background-color: var(--surf-color-blue);
-}
 
-.m-callout--navy {
-  background-color: var(--surf-color-navy);
-}
+//------------------------------------
+//  03 - Colors
+//------------------------------------
 
-.m-callout--navy,
-.m-callout--blue {
-  .m-callout__heading,
-  .m-callout__text {
-    color: var(--surf-color-white);
+.m-callout {
+  &.m-callout--blue {
+    background-color: var(--surf-color-blue);
+  }
+
+  &.m-callout--navy {
+    background-color: var(--surf-color-navy);
+  }
+
+  &.m-callout--navy,
+  &.m-callout--blue {
+    .m-callout__heading,
+    .m-callout__text {
+      color: var(--surf-color-white);
+    }
+  }
+
+  &.m-callout--white {
+    background-color: var(--surf-color-white);
+
+    .m-callout__inner-wrapper {
+      margin-block-start: rem(40px);
+      padding: 0;
+    }
+
+    .m-callout__heading,
+    .m-callout__text {
+      color: var(--surf-color-black);
+    }
   }
 }
 
-.m-callout--white {
-  background-color: var(--surf-color-white);
 
-  .m-callout__inner-wrapper {
-    margin-block-start: rem(40px);
-    padding: 0;
-  }
 
-  .m-callout__heading,
-  .m-callout__text {
-    color: var(--surf-color-black);
-  }
-}
+//------------------------------------
+//  04 - Misc
+//------------------------------------
 
-.m-callout--bkg-img {
-  background-image: linear-gradient(99deg, #007ab8 0%, #000080 100%);
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: auto;
-  position: relative;
-
-  &::before {
-    background-image: url('img/callout-bkg-left.png');
+.m-callout {
+  &.m-callout--bkg-img {
+    background-image: linear-gradient(99deg, #007ab8 0%, #000080 100%);
+    background-position: 0 0;
     background-repeat: no-repeat;
-    background-size: 324px;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    background-size: auto;
+    position: relative;
+
+    &::before {
+      background-image: url('img/callout-bkg-left.png');
+      background-repeat: no-repeat;
+      background-size: 324px;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &::after {
+      background-image: url('img/callout-bkg-right.png');
+      background-repeat: no-repeat;
+      background-size: 220px auto;
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 220px;
+    }
+
+    .m-callout__inner-wrapper {
+      gap: rem(32px);
+      padding: rem(80px);
+      padding-inline-end: rem(220px);
+    }
+
+    .m-callout__heading,
+    .m-callout__text {
+      color: var(--surf-color-white);
+      z-index: 2;
+    }
+
+    .m-callout__heading {
+      font-family: var(--surf-font-sans-alt);
+      font-size: rem(96px);
+      font-weight: var(--surf-fw-medium);
+      letter-spacing: rem(1.44px);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .m-callout__text {
+      font-family: var(--surf-font-sans);
+      font-size: rem(32px);
+      font-weight: var(--surf-fw-bold);
+      line-height: 1.32;
+    }
+
+    .a-button {
+      font-family: var(--surf-font-condensed);
+      font-size: rem(22px);
+      letter-spacing: rem(1.8px);
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
   }
 
-  &::after {
-    background-image: url('img/callout-bkg-right.png');
-    background-repeat: no-repeat;
-    background-size: 220px auto;
-    content: '';
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 220px;
-  }
+  &.m-callout--embed {
+    background-color: transparent;
 
-  .m-callout__inner-wrapper {
-    gap: rem(32px);
-    padding: rem(80px);
-    padding-inline-end: rem(220px);
-  }
+    .m-callout__inner-wrapper {
+      padding: 0 !important;
+    }
 
-  .m-callout__heading,
-  .m-callout__text {
-    color: var(--surf-color-white);
-    z-index: 2;
-  }
-
-  .m-callout__heading {
-    font-family: var(--surf-font-sans-alt);
-    font-size: rem(96px);
-    font-weight: var(--surf-fw-medium);
-    letter-spacing: rem(1.44px);
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .m-callout__text {
-    font-family: var(--surf-font-sans);
-    font-size: rem(32px);
-    font-weight: var(--surf-fw-bold);
-    line-height: 1.32;
-  }
-
-  .a-button {
-    font-family: var(--surf-font-condensed);
-    font-size: rem(22px);
-    letter-spacing: rem(1.8px);
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-}
-
-.m-callout--embed {
-  background-color: transparent;
-
-  .m-callout__inner-wrapper {
-    padding: 0 !important;
-  }
-
-  .m-callout__text {
-    //TODO: update and remove mixin
-    //@include body-lg;
-    font-weight: var(--surf-fw-bold);
+    .m-callout__text {
+      //TODO: update and remove mixin
+      //@include body-lg;
+      font-weight: var(--surf-fw-bold);
+    }
   }
 }

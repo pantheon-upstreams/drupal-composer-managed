@@ -1,14 +1,27 @@
-@use '../../../00-base/partials/partials' as *;
-
 //
-// Person Page
+// Component - Page - Person
 //
 // https://atendesign.atlassian.net/browse/SRL-79
 // https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-209040&mode=design&t=l3XzFBYi7FyaUJzA-4
 //
-// - 01 - Grid Styles
+// - 01 - Imports
+// - 02 - General
+// - 03 - Grids
 //
 
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .p-person {
   padding-block-end: rem(52px);
@@ -70,8 +83,10 @@
   }
 }
 
+
+
 //------------------------------------
-//  01 - Grid Styles
+//  03 - Grids
 //------------------------------------
 
 .p-person__grid {
@@ -80,60 +95,6 @@
   margin-inline-end: auto;
   margin-inline-start: auto;
   max-width: rem(619px);
-}
-
-.p-person--with-img {
-  padding-block-end: rem(43px);
-  @include bp-min(medium) {
-    padding-block-end: rem(50px);
-  }
-  @include bp-min(large) {
-    padding-block-end: rem(54px);
-  }
-  @include bp-min(xxlarge) {
-    padding-block-end: rem(90px);
-  }
-
-  .p-person__grid {
-    align-items: start;
-    display: grid;
-    gap: rem(32px);
-    max-width: none;
-    @include bp-min(medium) {
-      grid-template-areas: 'header header'
-        'content sidebar';
-      grid-template-columns: 8fr 4fr;
-    }
-    @include bp-min(xxlarge) {
-      grid-template-areas: 'header sidebar'
-        'content sidebar';
-      grid-template-columns: 8fr 4fr;
-    }
-    @include bp-min(xlarge) {
-      grid-template-columns: 9fr 3fr;
-    }
-
-    .p-person__title {
-      order: 2;
-      @include bp-min(medium) {
-        grid-area: header;
-      }
-    }
-
-    .p-person__media {
-      order: 1;
-      @include bp-min(medium) {
-        grid-area: sidebar;
-      }
-    }
-
-    .p-person__content {
-      order: 3;
-      @include bp-min(medium) {
-        grid-area: content;
-      }
-    }
-  }
 }
 
 .p-person__content-grid {
@@ -161,5 +122,61 @@
 
   .p-person-content__wrapper {
     order: 4;
+  }
+}
+
+.p-person {
+  &.p-person--with-img {
+    padding-block-end: rem(43px);
+    @include bp-min(medium) {
+      padding-block-end: rem(50px);
+    }
+    @include bp-min(large) {
+      padding-block-end: rem(54px);
+    }
+    @include bp-min(xxlarge) {
+      padding-block-end: rem(90px);
+    }
+
+    .p-person__grid {
+      align-items: start;
+      display: grid;
+      gap: rem(32px);
+      max-width: none;
+      @include bp-min(medium) {
+        grid-template-areas: 'header header'
+          'content sidebar';
+        grid-template-columns: 8fr 4fr;
+      }
+      @include bp-min(xxlarge) {
+        grid-template-areas: 'header sidebar'
+          'content sidebar';
+        grid-template-columns: 8fr 4fr;
+      }
+      @include bp-min(xlarge) {
+        grid-template-columns: 9fr 3fr;
+      }
+
+      .p-person__title {
+        order: 2;
+        @include bp-min(medium) {
+          grid-area: header;
+        }
+      }
+
+      .p-person__media {
+        order: 1;
+        @include bp-min(medium) {
+          grid-area: sidebar;
+        }
+      }
+
+      .p-person__content {
+        order: 3;
+        @include bp-min(medium) {
+          grid-area: content;
+        }
+      }
+    }
   }
 }

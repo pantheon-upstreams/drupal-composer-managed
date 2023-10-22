@@ -1,4 +1,26 @@
+//
+// Component - Molecule - Pullquote
+//
+// https://atendesign.atlassian.net/browse/SRL-118
+// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1213-263587&mode=dev
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Sizes
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
 @use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .m-pullquote {
   border-block: 2px solid var(--surf-color-gray-100);
@@ -27,27 +49,35 @@
   text-transform: uppercase;
 }
 
-.m-pullquote--large {
-  border: none;
-  max-width: 100%;
-  padding: 0;
 
-  .m-pullquote__quote {
-    background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
-    background-clip: text;
-    font-size: rem(96px);
-    letter-spacing: 0.015em;
-    line-height: 1;
-    margin: 0;
-    -webkit-text-fill-color: transparent;
-  }
 
-  .m-pullquote__credit {
-    font-family: var(--surf-font-condensed);
-    font-size: rem(20px);
-    font-weight: var(--surf-fw-bold);
-    letter-spacing: 1.5px;
-    line-height: var(--surf-lh-label);
-    text-transform: uppercase;
+//------------------------------------
+//  03 - Sizes
+//------------------------------------
+
+.m-pullquote {
+  &.m-pullquote--large {
+    border: none;
+    max-width: 100%;
+    padding: 0;
+
+    .m-pullquote__quote {
+      background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
+      background-clip: text;
+      font-size: rem(96px);
+      letter-spacing: 0.015em;
+      line-height: 1;
+      margin: 0;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .m-pullquote__credit {
+      font-family: var(--surf-font-condensed);
+      font-size: rem(20px);
+      font-weight: var(--surf-fw-bold);
+      letter-spacing: 1.5px;
+      line-height: var(--surf-lh-label);
+      text-transform: uppercase;
+    }
   }
 }

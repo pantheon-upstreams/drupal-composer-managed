@@ -1,4 +1,27 @@
+//
+// Component - Organism - Header
+//
+// https://atendesign.atlassian.net/browse/SRL-113
+// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-231719&mode=dev
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Backgrounds
+//
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
 @use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
 
 .o-header {
   //min-height: 320px;
@@ -45,50 +68,57 @@
   margin-block-start: rem(12px) !important;
 }
 
-.o-header--with-bkg-color {
-  @include bp-min(medium) {
-    background-image: url('img/header-bkg-color.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 50%;
+
+
+//------------------------------------
+//  03 - Backgrounds
+//------------------------------------
+
+.o-header {
+  &.o-header--with-bkg-color {
+    @include bp-min(medium) {
+      background-image: url('img/header-bkg-color.png');
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: 50%;
+    }
+    @include bp-min(xlarge) {
+      background-image: url('img/header-bkg-color.png');
+      background-position: 165% 0;
+      background-repeat: no-repeat;
+      background-size: auto;
+    }
+    @include bp-min(xxlarge) {
+      background-image: url('img/header-bkg-color.png');
+      background-position: top right;
+      background-repeat: no-repeat;
+    }
   }
-  @include bp-min(xlarge) {
-    background-image: url('img/header-bkg-color.png');
-    background-position: 165% 0;
-    background-repeat: no-repeat;
-    background-size: auto;
+
+  &.o-header--with-bkg-grid {
+    @include bp-min(large) {
+      background-image: url('img/header-bkg-grid.png');
+      background-position: top right;
+      background-repeat: no-repeat;
+    }
   }
-  @include bp-min(xxlarge) {
-    background-image: url('img/header-bkg-color.png');
-    background-position: top right;
-    background-repeat: no-repeat;
+
+  &.o-header--with-bkg-ripple {
+    @include bp-min(large) {
+      background-image: url('img/header-bkg-ripple.png');
+      background-position: top right;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.o-header--with-img {
+    .o-header__content {
+      background-color: var(--surf-color-white);
+      margin-block-start: rem(-143px);
+      margin-inline: auto;
+      max-width: rem(1320px);
+      padding-block: rem(60px);
+      padding-inline: rem(120px);
+    }
   }
 }
-
-.o-header--with-bkg-grid {
-  @include bp-min(large) {
-    background-image: url('img/header-bkg-grid.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-  }
-}
-
-.o-header--with-bkg-ripple {
-  @include bp-min(large) {
-    background-image: url('img/header-bkg-ripple.png');
-    background-position: top right;
-    background-repeat: no-repeat;
-  }
-}
-
-.o-header--with-img {
-  .o-header__content {
-    background-color: var(--surf-color-white);
-    margin-block-start: rem(-143px);
-    margin-inline: auto;
-    max-width: rem(1320px);
-    padding-block: rem(60px);
-    padding-inline: rem(120px);
-  }
-}
-
