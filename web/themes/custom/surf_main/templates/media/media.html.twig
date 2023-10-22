@@ -15,15 +15,7 @@
  */
 #}
 
-{% set classes = [
-  'media',
-  'media--' ~ media.bundle()|clean_class,
-  not media.isPublished() ? 'media--unpublished',
-  view_mode ? 'media--' ~ view_mode|clean_class,
-] %}
+{% block content %}
+  {{ content }}
+{% endblock %}
 
-<figure {{ attributes.addClass(classes) }}>
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</figure>

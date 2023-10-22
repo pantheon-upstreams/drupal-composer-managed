@@ -21,6 +21,10 @@
   }
 }
 
+.p-person__heading {
+  line-height: var(--surf-lh-base);
+}
+
 .p-person__job-title {
   color: var(--surf-color-gray-650);
   font-family: var(--surf-font-sans);
@@ -91,6 +95,7 @@
   }
 
   .p-person__grid {
+    align-items: start;
     display: grid;
     gap: rem(32px);
     max-width: none;
