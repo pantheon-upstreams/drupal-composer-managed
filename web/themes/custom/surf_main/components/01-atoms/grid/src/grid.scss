@@ -1,0 +1,74 @@
+//
+// Component - Atom - Chip
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Grids
+//
+
+
+//
+// ------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.a-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style-type: none;
+  margin-block: 0;
+  padding-left: 0;
+}
+
+//TODO: remove after review example only
+.teaser__img {
+  aspect-ratio: 5 / 3;
+  background-color: gray;
+  width: 100%;
+}
+
+//------------------------------------
+//  02 - Grids
+//------------------------------------
+
+.a-grid--teaser-3-col {
+  gap: 60px;
+  grid-template-columns: 1fr;
+  list-style-type: none;
+  margin-block: 0;
+  padding-left: 0;
+  @include bp-min(xlarge) {
+    grid-template-columns: repeat(3, minmax(min(300px), 1fr));
+  }
+}
+
+.a-grid--teaser-2-col {
+  gap: 60px;
+  grid-template-columns: 1fr;
+  list-style-type: none;
+  margin-block: 0;
+  padding-left: 0;
+  @include bp-min(xlarge) {
+    grid-template-columns: repeat(2, minmax(min(500px), 1fr));
+  }
+}
+
+.a-grid--teaser {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 2fr;
+  }
+  @include bp-min(xlarge) {
+    grid-template-columns: 1fr;
+  }
+}
