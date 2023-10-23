@@ -1,25 +1,36 @@
 //
 // Global - Tables
 //
-// - 01 - Theme Colors
-// - 02 - Elements
+// https://atendesign.atlassian.net/browse/SRL-120
+// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1214-299482&mode=dev
 //
+// - 01 - Imports
+// - 02 - General
+// - 03 - Elements
+//
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
 
 
 //------------------------------------
-//  01 - General
+//  02 - General
 //------------------------------------
 
 table {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 0;
-  margin-bottom: 72px;
-  border-spacing: 0;
-  text-align: left;
   border-collapse: collapse;
+  border-spacing: 0;
   font-family: var(--surf-font-sans);
   font-size: rem(16px);
+  margin-bottom: 72px;
+  margin-top: 0;
+  max-width: 100%;
+  text-align: left;
+  width: 100%;
 }
 
 h1 + table,
@@ -27,7 +38,7 @@ h2 + table,
 h3 + table,
 h4 + table,
 h5 + table,
-table:not(:first-child) {
+table:not( :first-child ) {
   margin-top: 24px;
 }
 
@@ -35,31 +46,36 @@ table:not(:first-child) {
 
 
 //------------------------------------
-//  02 - Elements
+//  03 - Elements
 //------------------------------------
 
 thead {
   & th {
     vertical-align: bottom;
   }
-
-  & th,
-  & td {
-    border-bottom: 1px solid var(--surf-color-dark);
-  }
 }
 
 th,
 td {
-  padding: 8px;
+  border-bottom: 1px solid var(--surf-color-gray-800);
+  color: var(--surf-color-black);
+  padding: 12px 20px;
   text-align: left;
   vertical-align: top;
 }
 
 th {
-  color: var(--surf-color-dark);
+  font-family: var(--surf-font-sans);
+  font-size: rem(24px);
   font-weight: var(--surf-fw-bold);
+  line-height: var(--surf-lh-label);
 }
+
+td {
+  font-size: rem(18px);
+  min-width: 300px;
+}
+
 
 // Remove top border from thead by default
 caption + thead tr:first-child th,
@@ -73,7 +89,7 @@ thead:first-child tr:first-child td {
 
 // Account for multiple tbody instances
 tbody + tbody {
-  border-top: 2px solid var(--surf-color-dark);
+  border-top: 2px solid var(--surf-color-gray-800);
 }
 
 tr.even {
