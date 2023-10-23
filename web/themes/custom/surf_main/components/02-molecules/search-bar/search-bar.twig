@@ -11,16 +11,17 @@
 
 {% set classes = [
     'm-search-bar',
-    'm-search-bar--closed',
+    'dropdown',
 ] %}
 
 <div {{ search_bar_attributes.addClass(classes) }} {{ attributes }}>
     {{ search_bar_form }}
 
     <button id="search-trigger"
-            class="m-search-bar__trigger"
+            class="m-search-bar__trigger dropdown__trigger"
             aria-haspopup="true"
             aria-expanded="false">
         {{ 'Search'|t }}
+        <span class="m-search-bar__trigger-icon"></span>
     </button>
 </div>

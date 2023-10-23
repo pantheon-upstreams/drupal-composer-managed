@@ -1,16 +1,25 @@
 /**
- * Regions - Header Primary
+ * Components - Organism - Masthead
  * Functionality to simply hide and show mobile menu.
  *
- * - 01 - Mobile Move
- * - 02 - Dropdown
- * - 03 - Scroll
- * - 04 - Drupal Attach
+ * - 01 - Imports
+ * - 02 - Mobile Move
+ * - 03 - Drupal Attach
  */
 
 
 /*------------------------------------*\
-  01 - Mobile Move
+  01 - Imports
+\*------------------------------------*/
+
+import { a11yDropdown } from '../../../00-base/libraries/a11y-dropdown';
+import { scrolled } from '../../../00-base/libraries/scrolled';
+
+
+
+
+/*------------------------------------*\
+  02 - Mobile Move
   Simply changing a set of classes, attributes and states upon either a click,
   or keyboard action.
 \*------------------------------------*/
@@ -30,7 +39,7 @@ const mobileMove = (wrapper, destination, breakpoint) => {
     if (mediaQuery.matches) {
       state = 'desktop';
 
-      if (wrapper.classList.contains('menu__name--main')) {
+      if (wrapper.classList.contains('m-menu--primary-menu')) {
         const branding = parent.querySelector('.site-branding');
         branding.after(wrapper);
       } else {
@@ -39,7 +48,7 @@ const mobileMove = (wrapper, destination, breakpoint) => {
     } else {
       state = 'mobile';
 
-      if (wrapper.classList.contains('search-form')) {
+      if (wrapper.classList.contains('m-search-bar')) {
         destination.prepend(wrapper);
       } else {
         destination.append(wrapper);
@@ -68,184 +77,52 @@ const mobileMove = (wrapper, destination, breakpoint) => {
 
 
 
-
 /*------------------------------------*\
-  02 - Dropdown
-  Simply changing a set of classes, attributes and states upon either a click,
-  or keyboard action.
-\*------------------------------------*/
-
-const dropdown = (wrapper) => {
-  // Constructor
-  const openClass = 'is-open';
-  let flyout;
-  let trigger;
-
-  const close = () => {
-    wrapper.classList.remove(openClass);
-    trigger.setAttribute('aria-expanded', 'false');
-  };
-
-  const open = () => {
-    wrapper.classList.add(openClass);
-    trigger.setAttribute('aria-expanded', 'true');
-  }
-
-  const onClickTrigger = (event) => {
-    if (wrapper.classList.contains(openClass)) {
-      close()
-    } else {
-      open()
-    }
-  };
-
-  const onKeydownTrigger = (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-
-      if (wrapper.classList.contains(openClass)) {
-        close()
-      } else {
-        open()
-      }
-    }
-
-    if (event.key === 'Escape' || event.key === 'End') {
-      close();
-    }
-  };
-
-  const onClickWrapper = (event) => {
-    if (event.target === flyout) {
-      close();
-    }
-  }
-
-  /**
-   * Initialization
-   * Add any and all functionality as a singular program, dynamically setting
-   * element variables, states and event listeners.
-   * @param wrapper - [HTMLObject] Element that contains all elements contained
-   * inside the eventual modal.
-   */
-  const init = (wrapper) => {
-    flyout = wrapper.querySelector('.mobile-menu__flyout');
-    trigger = wrapper.querySelector('.mobile-menu__trigger');
-    trigger.addEventListener('click', onClickTrigger);
-    trigger.addEventListener('keydown', onKeydownTrigger);
-    wrapper.addEventListener('click', onClickWrapper)
-  };
-
-  // Final Return
-  init (wrapper);
-};
-
-
-
-
-/*------------------------------------*\
-  03 - Scroll
-  Serves to add functionality to the Header of the site upon the window
-  being scrolled down or up.
-\*------------------------------------*/
-
-const scrolled = (wrapper) => {
-  // Constructor
-  const scrolledClass = 'scrolled';
-  const scrolledAmount = 72;
-
-  /**
-   * On Scroll
-   * Used to determine scroll amount and apply functionality.
-   * @see init
-   */
-  const onScroll = () => {
-    if (window.scrollY > scrolledAmount) {
-      wrapper.classList.add(scrolledClass);
-    } else {
-      wrapper.classList.remove(scrolledClass);
-    }
-  };
-
-  /**
-   * Init
-   * Used to fully initialize the entire object and it's elements, along with
-   * add event listeners where necessary, and function initializations.
-   * @param wrapper
-   */
-  const init = (wrapper) => {
-    document.addEventListener('scroll', onScroll);
-  };
-
-  // Run Entire Program / Object
-  init(wrapper);
-};
-
-
-
-
-/*------------------------------------*\
-  02 - Drupal Attach
+  03 - Drupal Attach
   Attach any previously defined functionality into Drupal behaviors.
   https://www.drupal.org/docs/drupal-apis/javascript-api/javascript-api-overview
 \*------------------------------------*/
 
-Drupal.behaviors.surfMobileMenu = {
+Drupal.behaviors.surfMasthead = {
   attach(context) {
-    const mobileMenu = once('surf-mobile-menu', context.querySelector('.mobile-menu'));
-
-    if (mobileMenu.length !== 0) {
-      dropdown(mobileMenu[0])
-    }
-  },
-}
-
-Drupal.behaviors.surfMobileMove = {
-  attach(context) {
-    const wrappers = [
+    const masthead = once('surf-masthead', context.querySelector('.o-masthead'));
+    const mastheadFlyout = once(
+      'surf-masthead-flyout',
+      context.querySelector('.o-masthead__flyout')
+    );
+    const mastheadFlyoutContent = once('surf-masthead-destination', context.querySelector('.o-masthead__flyout-content'));
+    const mastheadMoveElements = [
       {
         'id': 'surf-move-mobile-01',
-        'class': '.search-form',
+        'class': '.m-search-bar',
         'breakpoint': 992,
       },
       {
         'id': 'surf-move-mobile-02',
-        'class': '.menu__name--main',
+        'class': '.m-menu--primary-menu',
         'breakpoint': 1400,
       },
       {
         'id': 'surf-move-mobile-03',
-        'class': '.menu__name--utility-nav',
+        'class': '.m-menu--utility-menu',
         'breakpoint': 992,
       },
     ];
 
-    const destination = once('surf-move-mobile-destination', context.querySelector('.mobile-menu__flyout-content'));
+    if (mastheadFlyout.length !== 0) {
+      a11yDropdown(mastheadFlyout[0]);
+    }
 
-    wrappers.forEach((wrapper) => {
-      const element = once(wrapper.id, context.querySelector(wrapper.class));
+    if (masthead.length !== 0) {
+      scrolled(masthead[0], 0);
+    }
 
-      if (element.length !== 0 && destination.length !== 0) {
-        mobileMove(element[0], destination[0], wrapper.breakpoint);
-      }
-    });
-  }
-}
+    mastheadMoveElements.forEach((element) => {
+      const moveElement = once(element.id, context.querySelector(element.class));
 
-Drupal.behaviors.surfScrolled = {
-  attach(context) {
-    const areas = [
-      '.region--site-alert',
-      '.region--header-primary',
-      '.region--header-utility',
-    ];
-
-    areas.forEach((area) => {
-      const element = once('surf-scrolled', context.querySelector(area));
-
-      if (element.length !== 0) {
-        scrolled(element[0]);
+      if (element.length !== 0 && mastheadFlyoutContent.length !== 0) {
+        mobileMove(moveElement[0], mastheadFlyoutContent[0], element.breakpoint);
       }
     });
   },
-};
+}

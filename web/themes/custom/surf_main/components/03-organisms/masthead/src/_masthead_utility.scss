@@ -22,9 +22,13 @@
 
 .o-masthead .o-masthead__utility {
   align-items: center;
-  display: flex;
+  display: none;
   height: var(--surf-height-region-header-utility);
   width: 100%;
+
+  @include bp-min(large) {
+    display: flex;
+  }
 
   .container {
     align-items: center;

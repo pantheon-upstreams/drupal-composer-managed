@@ -11,3 +11,21 @@
 
 @use 'masthead_primary';
 @use 'masthead_utility';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.o-masthead {
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+
+  &.scrolled {
+    position: fixed;
+  }
+}

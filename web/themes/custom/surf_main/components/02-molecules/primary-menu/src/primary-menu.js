@@ -2,151 +2,16 @@
  * Blocks - Search API
  * Functionality to simply hide and show the search form.
  *
- * - 01 - Hide / Show
+ * - 01 - Imports
  * - 02 - Drupal Attach
  */
 
 
 /*------------------------------------*\
-  01 - Hide / Show
-  Simply changing a set of classes, attributes and states upon either a click,
-  or keyboard action.
+  01 - Imports
 \*------------------------------------*/
 
-const menuSystem = (wrapper) => {
-  // Constructor
-  const mediaQuery = window.matchMedia('(min-width: 1400px)');
-  const openClass = 'is-open';
-  let links;
-  let state;
-
-  const closeDropdown = (element) => {
-    element.parentElement.classList.remove(openClass);
-    element.setAttribute('aria-expanded', 'false');
-  };
-
-  const openDropdown = (element) => {
-    element.parentElement.classList.add(openClass);
-    element.setAttribute('aria-expanded', 'true');
-  }
-
-  const closeAllDropdowns = () => {
-    links.forEach((link) => {
-      closeDropdown(link);
-    });
-  }
-
-  const onClickDropdownLink = (event) => {
-    if (event.currentTarget.parentElement.classList.contains(openClass)) {
-      closeDropdown(event.currentTarget);
-    } else {
-      if (state === 'desktop') {
-        // To prevent multiple dropdown sub-menus from being open, first collapse all.
-        closeAllDropdowns();
-      }
-
-      openDropdown(event.currentTarget);
-    }
-  };
-
-  const onKeydownDropdownLink = (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-
-      if (event.currentTarget.parentElement.classList.contains(openClass)) {
-        closeDropdown(event.currentTarget);
-      } else {
-        if (state === 'desktop') {
-          // To prevent multiple dropdown sub-menus from being open, first collapse all.
-          closeAllDropdowns();
-        }
-
-        openDropdown(event.currentTarget);
-      }
-    }
-  };
-
-  const onKeydownLink = (event) => {
-    // Close dropdown sub-menu and refocus on parent button, if available.
-    if (event.key === 'Escape' || event.key === 'End') {
-      if (event.currentTarget.closest(`.${openClass}`)) {
-        const opened = event.currentTarget.closest(`.${openClass}`);
-        const openedTrigger = opened.firstElementChild;
-
-        opened.classList.remove(openClass);
-        openedTrigger.setAttribute('aria-expanded', 'false');
-
-        setTimeout(focus => {
-          openedTrigger.focus();
-        }, 1);
-      }
-    }
-
-    // Collapse all menus if tabbing on the last link of the menu.
-    if (!event.shiftKey && event.key === 'Tab') {
-      if (event.currentTarget === links[links.length - 1]) {
-        closeAllDropdowns();
-      }
-    }
-  };
-
-  /**
-   * Window Click
-   * Any events associated with clicking anywhere within the browser window.
-   * @param event - [object] details regarding the specific event taken.
-   * @see init
-   */
-  const onWindowClick = (event) => {
-    if (state === 'desktop') {
-      // Close all dropdown sub-menus if clicking outside the menu system.
-      if (!wrapper.contains(event.target)) {
-        closeAllDropdowns();
-      }
-    }
-  };
-
-  /**
-   * Media Query Change
-   * Any events needing to be taken when a specific breakpoint has been activated.
-   * @see init
-   */
-  const onMediaQueryChange = () => {
-    if (mediaQuery.matches) {
-      state = 'desktop';
-    } else {
-      state = 'mobile';
-    }
-  };
-
-  /**
-   * Initialization
-   * Add any and all functionality as a singular program, dynamically setting
-   * element variables, states and event listeners.
-   * @param wrapper: [HTMLObject] Element that contains all elements contained
-   * inside the eventual modal.
-   */
-  const init = (wrapper) => {
-    links = wrapper.querySelectorAll('.menu__link');
-
-    links.forEach((link) => {
-      if (link.getAttribute('aria-haspopup')) {
-        link.addEventListener('click', onClickDropdownLink);
-        link.addEventListener('keydown', onKeydownDropdownLink);
-      } else {
-        link.addEventListener('keydown', onKeydownLink);
-      }
-    });
-
-    window.addEventListener('click', onWindowClick);
-
-    // Device or viewport change listener and on load.
-    mediaQuery.addEventListener('change', onMediaQueryChange);
-    onMediaQueryChange();
-  };
-
-  // Final Return
-  init (wrapper);
-};
+import { a11yMenu } from '../../../00-base/libraries/a11y-menu';
 
 
 
@@ -157,12 +22,12 @@ const menuSystem = (wrapper) => {
   https://www.drupal.org/docs/drupal-apis/javascript-api/javascript-api-overview
 \*------------------------------------*/
 
-Drupal.behaviors.surfMainMenu = {
+Drupal.behaviors.surfPrimaryMenu = {
   attach(context) {
-    const mainMenu = once('surf-main-menu', context.querySelector('.menu.menu__name--main'));
+    const mainMenu = once('surf-primary-menu', context.querySelector('.m-menu.m-menu--primary-menu'));
 
     if (mainMenu.length !== 0) {
-      menuSystem(mainMenu[0]);
+      a11yMenu(mainMenu[0], 1440);
     }
   },
 }

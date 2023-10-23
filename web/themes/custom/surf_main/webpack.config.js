@@ -29,7 +29,6 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'none',
-  devtool: "source-map",
   externals: {
     "jquery": "jQuery"
   },
