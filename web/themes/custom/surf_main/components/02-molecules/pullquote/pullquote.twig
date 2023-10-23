@@ -12,14 +12,11 @@
  */
 #}
 
-{%
-  set classes = [
+{% set classes = [
   'm-pullquote',
-]
-%}
+] %}
 
 <figure {{ pullquote_attributes.addClass(classes).merge(attributes) }}>
-
   <blockquote class="m-pullquote__quote">
     {{ pullquote_quote }}
   </blockquote>

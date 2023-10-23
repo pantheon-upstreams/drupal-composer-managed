@@ -9,10 +9,8 @@
  */
 #}
 
-{%
-  set classes = [
+{% set classes = [
   'a-left-hook',
-]
-%}
+] %}
 
 <hr {{ left_hook_attributes.addClass(classes).merge(attributes) }}>
