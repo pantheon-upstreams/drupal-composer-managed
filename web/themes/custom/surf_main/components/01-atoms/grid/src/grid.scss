@@ -39,6 +39,14 @@
 //  02 - Grids
 //------------------------------------
 
+.a-grid--callout {
+  gap: 60px;
+  grid-template-columns: 1fr;
+  @include bp-min(large) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .a-grid--teaser-3-col {
   gap: 60px;
   grid-template-columns: 1fr;

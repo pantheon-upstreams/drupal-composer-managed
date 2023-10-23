@@ -158,24 +158,49 @@
 } only %}
 
   {% block content %}
-    <ul class="test-grid">
-      <li>{% embed 'surf_main:callout' with {
-          callout_attributes: create_attribute({'class': ['m-callout--embed']}),
-          callout_text: 'Stay up-to-date on our latest news and upcoming events.',
-          callout_button_text: 'Subscribe to Deep Thoughts',
-          callout_button_url: 'http://www.example.com',
-          callout_button_prefix: 'envelope',
-        } only %}
-        {% endembed %}</li>
-      <li>{% embed 'surf_main:callout' with {
-          callout_attributes: create_attribute({'class': ['m-callout--embed']}),
-          callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',
-          callout_button_text: 'Watch Deep Talks on Vimeo',
-          callout_button_url: 'http://www.example.com',
-          callout_button_prefix: 'play',
-        } only %}
-        {% endembed %}</li>
-    </ul>
+
+    {% embed 'surf_main:grid' with {
+      grid_attributes: create_attribute({'class': ['a-grid--callout']}),
+    } only %}
+      {% block grid_items_block %}
+        <li>{% embed 'surf_main:callout' with {
+            callout_attributes: create_attribute({'class': ['m-callout--embed']}),
+            callout_text: 'Stay up-to-date on our latest news and upcoming events.',
+            callout_button_text: 'Subscribe to Deep Thoughts',
+            callout_button_url: 'http://www.example.com',
+            callout_button_prefix: 'envelope',
+          } only %}
+          {% endembed %}</li>
+        <li>{% embed 'surf_main:callout' with {
+            callout_attributes: create_attribute({'class': ['m-callout--embed']}),
+            callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',
+            callout_button_text: 'Watch Deep Talks on Vimeo',
+            callout_button_url: 'http://www.example.com',
+            callout_button_prefix: 'play',
+          } only %}
+          {% endembed %}</li>
+      {% endblock %}
+    {% endembed %}
+
+
+{#    <ul class="test-grid">#}
+{#      <li>{% embed 'surf_main:callout' with {#}
+{#          callout_attributes: create_attribute({'class': ['m-callout--embed']}),#}
+{#          callout_text: 'Stay up-to-date on our latest news and upcoming events.',#}
+{#          callout_button_text: 'Subscribe to Deep Thoughts',#}
+{#          callout_button_url: 'http://www.example.com',#}
+{#          callout_button_prefix: 'envelope',#}
+{#        } only %}#}
+{#        {% endembed %}</li>#}
+{#      <li>{% embed 'surf_main:callout' with {#}
+{#          callout_attributes: create_attribute({'class': ['m-callout--embed']}),#}
+{#          callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',#}
+{#          callout_button_text: 'Watch Deep Talks on Vimeo',#}
+{#          callout_button_url: 'http://www.example.com',#}
+{#          callout_button_prefix: 'play',#}
+{#        } only %}#}
+{#        {% endembed %}</li>#}
+{#    </ul>#}
   {% endblock %}
 
 

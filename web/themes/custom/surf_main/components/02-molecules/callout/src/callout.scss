@@ -171,8 +171,7 @@
     }
 
     .m-callout__text {
-      //TODO: update and remove mixin
-      //@include body-lg;
+      font-size: rem(32px);
       font-weight: var(--surf-fw-bold);
     }
   }

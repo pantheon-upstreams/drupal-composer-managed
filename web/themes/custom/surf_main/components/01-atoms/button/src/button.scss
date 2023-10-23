@@ -241,6 +241,10 @@
   &.a-button--underline-white .a-icon--envelope {
     background: svg-load('icon-envelope.svg', fill="#FFFFFF");
   }
+
+  &.a-button--underline-white .a-icon--play {
+    background: svg-load('icon-play.svg', fill="#FFFFFF");
+  }
 }
 
 
