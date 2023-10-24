@@ -114,7 +114,7 @@ Drupal.behaviors.surfMasthead = {
     }
 
     if (masthead.length !== 0) {
-      scrolled(masthead[0], 0);
+      scrolled(masthead[0], 60);
     }
 
     mastheadMoveElements.forEach((element) => {

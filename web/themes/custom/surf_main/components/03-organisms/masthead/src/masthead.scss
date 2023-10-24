@@ -9,6 +9,7 @@
 //  01 - Imports
 //------------------------------------
 
+@use '../../../00-base/partials/partials' as *;
 @use 'masthead_primary';
 @use 'masthead_utility';
 
@@ -21,11 +22,32 @@
 
 .o-masthead {
   left: 0;
-  position: relative;
+  position: fixed;
   top: 0;
+  transform: translateY(0);
+  transition: transition(all, 0.35s, easeInOutExpo);
   width: 100%;
+  z-index: var(--surf-zindex-super);
 
   &.scrolled {
-    position: fixed;
+    @include bp-min(large) {
+      top: calc(var(--surf-height-region-header-utility) * -1);
+    }
+  }
+
+  .gin--horizontal-toolbar & {
+    top: calc(var(--gin-toolbar-height) + var(--gin-toolbar-secondary-height));
+
+    @include bp-min(large) {
+      top: calc(var(--gin-toolbar-height) + var(--gin-toolbar-secondary-height));
+    }
+
+    &.scrolled {
+      top: var(--gin-toolbar-height);
+
+      @include bp-min(large) {
+        top: calc((var(--surf-height-region-header-utility) - var(--gin-toolbar-height)) * -1);
+      }
+    }
   }
 }

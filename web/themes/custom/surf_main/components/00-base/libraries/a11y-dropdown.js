@@ -5,6 +5,7 @@
 export const a11yDropdown = (wrapper) => {
   // Constructor
   const openedClass = 'is-open';
+  let overlay;
   let trigger;
 
   const open = () => {
@@ -37,6 +38,12 @@ export const a11yDropdown = (wrapper) => {
     }
   };
 
+  const onOverlayClick = (event) => {
+    if (event.target === overlay) {
+      close(wrapper);
+    }
+  };
+
   /**
    * Initialization
    * Add any and all functionality as a singular program, dynamically setting
@@ -45,9 +52,14 @@ export const a11yDropdown = (wrapper) => {
    * inside the eventual modal.
    */
   const init = (wrapper) => {
+    overlay = wrapper.querySelector('.dropdown__content-wrapper');
     trigger = wrapper.querySelector('.dropdown__trigger');
     trigger.addEventListener('click', onClickTrigger);
     trigger.addEventListener('keydown', onKeydownTrigger);
+
+    if (overlay) {
+      overlay.addEventListener('click', onOverlayClick);
+    }
   };
 
   // Final Return
