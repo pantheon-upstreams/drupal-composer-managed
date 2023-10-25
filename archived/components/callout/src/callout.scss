@@ -1,0 +1,298 @@
+@use '../../../../web/themes/custom/surf_main/components/00-base/partials/partials' as *;
+
+//FIXME: update image references
+.c-callout {
+  background-color: var(--color-surf--white);
+
+  &.c-callout--cloud {
+    background-color: var(--color-surf--cloud);
+  }
+
+  &.c-callout--forest {
+    background-color: var(--color-surf--forest);
+    color: var(--color-surf--white);
+  }
+
+  &.c-callout--kelly {
+    background-color: var(--color-surf--kelly-green);
+    color: var(--color-surf--white);
+  }
+
+  &:not( .c-callout--white ) .c-callout__content-wrapper {
+    padding: rem(20px);
+
+    @include bp-min(medium) {
+      padding: rem(28px);
+    }
+
+    @include bp-min(large) {
+      padding: rem(32px);
+    }
+
+    @include bp-min(xxlarge) {
+      padding: rem(40px);
+    }
+  }
+
+  &.c-callout--white .c-callout__content-wrapper {
+    padding-top: rem(20px);
+
+    @include bp-min(medium) {
+      padding-top: rem(28px);
+    }
+
+    @include bp-min(large) {
+      padding-top: rem(32px);
+    }
+
+    @include bp-min(xxlarge) {
+      padding-top: rem(40px);
+    }
+  }
+
+  &.c-callout--simple-icon-cta {
+    background-color: var(--color-surf--cloud);
+
+    .c-callout__content-wrapper {
+      padding: rem(20px);
+
+      @include bp-min(medium) {
+        padding: rem(40px);
+      }
+    }
+
+    .c-callout__body p {
+      font-size: rem(16px);
+      margin-top: 0;
+
+      @include bp-min(medium) {
+        font-size: var(–surf-font-size-18);
+      }
+
+      @include bp-min(large) {
+        font-size: var(–surf-font-size-24);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .c-callout__link {
+      margin-top: rem(10px);
+
+      @include bp-min(large) {
+        margin-top: rem(28px);
+      }
+
+      .cl-component--link-button {
+        padding-top: 0;
+
+        .link-button__icon {
+          position: relative;
+          right: 0;
+          transition: right 350ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &:hover {
+          border-bottom-color: var(--color-surf--cloud);
+
+          .link-button__icon {
+            right: -5px;
+            transition: right 200ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-callout__image {
+  img {
+    width: 100%;
+  }
+}
+
+.c-callout__title {
+  color: inherit;
+  font-size: var(–surf-font-size-40);
+  font-weight: var(--font-weight-bold);
+}
+
+// Icon
+.c-callout.c-callout--icon {
+  .c-callout__content-wrapper {
+    padding: 0;
+
+    @include bp-min(medium) {
+      padding: 0;
+    }
+
+    @include bp-min(large) {
+      padding: 0;
+    }
+
+    @include bp-min(xxlarge) {
+      padding: 0;
+    }
+  }
+
+  .c-callout__image {
+    display: none;
+  }
+
+  .c-callout__icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: rem(100px);
+    margin: 0 0 rem(30px) 0;
+    width: rem(100px);
+  }
+}
+
+.c-callout__icon {
+  &.bar-chart {
+    background-image: url('../../../../images/icons/bar-chart/color.png');
+  }
+
+  &.burst {
+    background-image: url('../../../../images/icons/burst/color.png');
+  }
+
+  &.calendar {
+    background-image: url('../../../../images/icons/calendar/color.png');
+  }
+
+  &.cell {
+    background-image: url('../../../../images/icons/cell/color.png');
+  }
+
+  &.comment {
+    background-image: url('../../../../images/icons/comment/color.png');
+  }
+
+  &.computer {
+    background-image: url('../../../../images/icons/computer/color.png');
+  }
+
+  &.cosmic-rays {
+    background-image: url('../../../../images/icons/cosmic-rays/color.png');
+  }
+
+  &.document {
+    background-image: url('../../../../images/icons/document/color.png');
+  }
+
+  &.flashlight {
+    background-image: url('../../../../images/icons/flashlight/color.png');
+  }
+
+  &.globe {
+    background-image: url('../../../../images/icons/globe/color.png');
+  }
+
+  &.group {
+    background-image: url('../../../../images/icons/group/color.png');
+  }
+
+  &.hardhat {
+    background-image: url('../../../../images/icons/hardhat/color.png');
+  }
+
+  &.heart {
+    background-image: url('../../../../images/icons/heart/color.png');
+  }
+
+  &.hexagon {
+    background-image: url('../../../../images/icons/hexagon/color.png');
+  }
+
+  &.ladder {
+    background-image: url('../../../../images/icons/ladder/color.png');
+  }
+
+  &.lightbulb {
+    background-image: url('../../../../images/icons/lightbulb/color.png');
+  }
+
+  &.ladder {
+    background-image: url('../../../../images/icons/ladder/color.png');
+  }
+
+  &.magnifying-glass {
+    background-image: url('../../../../images/icons/magnifying-glass/color.png');
+  }
+
+  &.nobel-prize {
+    background-image: url('../../../../images/icons/nobel-prize/color.png');
+  }
+
+  &.particles {
+    background-image: url('../../../../images/icons/particles/color.png');
+  }
+
+  &.person {
+    background-image: url('../../../../images/icons/person/color.png');
+  }
+
+  &.shovel {
+    background-image: url('../../../../images/icons/shovel/color.png');
+  }
+
+  &.starburst {
+    background-image: url('../../../../images/icons/starburst/color.png');
+  }
+
+  &.teacher {
+    background-image: url('../../../../images/icons/teacher/color.png');
+  }
+
+  &.tunnels {
+    background-image: url('../../../../images/icons/tunnels/color.png');
+  }
+}
+
+.c-callout__title-link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Two Column Overrides
+.l--layout-twocolumn-halves,
+.c-layout--twocolumn-halves,
+.l--layout-twocolumn-onethird-twothirds,
+.c-layout--twocolumn-onethird-twothirds,
+.l--layout-twocolumn-twothirds-onethird,
+.c-layout--twocolumn-twothirds-onethird {
+  .c-callout__image {
+  }
+
+  .c-callout__title {
+    color: inherit;
+    font-size: var(–surf-font-size-24);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .c-callout__body {
+    font-size: var(–surf-font-size-24);
+  }
+}
+// Three and Four Column Overrides
+.l--layout-threecolumn-thirds,
+.c-layout--threecolumn-thirds,
+.l--layout-fourcolumns-forths,
+.c-layout--fourcolumns-forths {
+  .c-callout__title {
+    color: inherit;
+    font-size: var(–surf-font-size-24);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .c-callout__body {
+    font-size: var(–surf-font-size-24);
+  }
+}

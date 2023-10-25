@@ -1,0 +1,21 @@
+@use '../../../../web/themes/custom/surf_main/components/00-base/partials/partials' as *;
+
+.c-video__video-wrapper {
+  position: relative;
+}
+
+.c-video__caption {
+  color: var(--color-surf--dark-grey);
+  font-size: var(–surf-font-size-14);
+  margin: rem(8px) 0 0 0;
+
+  & > p {
+    color: var(--color-surf--dark-grey);
+    font-size: var(–surf-font-size-14);
+    margin: 0 0 rem(12px) 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

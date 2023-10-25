@@ -1,22 +1,26 @@
-{#{% set grid_type = grid_type|default('grid') %}#}
+{#
+/**
+ * @file
+ * Component for Grid
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Space for Drupal attributes.
+ * - grid_attributes: [mixed] Any custom attributes for the grid.
+ * - grid_column_type: [string] Options include 'col-1', 'col-2', 'col-3' and 'col-4'.
+ * - grid_items: [array] Rendered items that make up the grid.
+ * - grid_html_type: [string] Options include 'ul', 'ol' and 'div'.
+ *
+ * Available slots:
+ * - grid_items: [array] Rendered items that make up the grid.
+ *
+ */
+#}
 
-{#{% if grid_type == 'grid'%}#}
+{% set classes = [
+    'a-grid',
+    'a-grid--' ~ grid_column_type,
+] %}
 
-{#  {% set grid_styles = [#}
-{#    grid_col_gap ? 'column-gap:' ~ 'var(' ~ grid_col_gap ~ ');' : '',#}
-{#    grid_row_gap ? 'row-gap:' ~ 'var(' ~ grid_row_gap ~ ');' : '',#}
-{#  ]|safe_join('')|trim %}#}
-
-{#{% endif %}#}
-
-{%
-  set classes = [
-  'a-grid',
-]
-%}
-
-<ul {{ grid_attributes.addClass(classes).merge(attributes) }} {% if grid_styles %}style="{{ grid_styles }}"{% endif %}>
-  {% block grid_items_block %}
-    {{ grid_items }}
-  {% endblock %}
-</ul>
+<{{ grid_html_type }} {{ grid_attributes.addClass(classes).merge(attributes) }}>
+    {% block grid_items %}{% endblock %}
+</{{ grid_html_type }}>

@@ -1,0 +1,116 @@
+@use '../../../../web/themes/custom/surf_main/components/00-base/partials/partials' as *;
+
+.c-job-posting__header-wrapper {
+  margin: 0 auto rem(48px) auto;
+  max-width: rem(1140px);
+
+  @include bp-min(medium) {
+    margin: 0 auto rem(68px) auto;
+  }
+}
+
+.c-job-posting__breadcrumb-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.c-job-posting__breadcrumb-item {
+  display: inline-block;
+  margin: 0;
+}
+
+.c-job-posting__breadcrumb-link {
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-fw-bold);
+  letter-spacing: 1.5px;
+  color: var(--color-surf--forest);
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-job-posting__link-date-wrapper {
+
+  @include bp-min(medium) {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.c-job-posting__date {
+  font-family: var(--surf-font-condensed);
+  font-size: rem(16px);
+  font-weight: var(--surf-fw-bold);
+  letter-spacing: 1.5px;
+  color: var(--color-surf--black);
+  margin: rem(18px) 0 0 0;
+
+  @include bp-min(medium) {
+    margin: 0 0 0 rem(32px);
+  }
+}
+
+.c-job-posting__title {
+
+  //TODO: replace font mixin
+  //@include surf-font-heading-one;
+  margin: 0 0 rem(32px) 0;
+  order: 2;
+  text-transform: uppercase;
+
+  @include bp-min(medium) {
+    grid-area: title;
+    order: unset;
+  }
+}
+
+.c-job-posting__overview {
+  p {
+    font-size: var(–surf-font-size-40);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include bp-min(medium) {
+      &:last-child {
+        margin-bottom: rem(28px);
+      }
+    }
+  }
+}
+
+.c-job-posting__content-wrapper {
+  margin: 0 auto rem(60px) auto;
+  max-width: rem(780px);
+}
+
+.c-job-posting__body {
+  .text-content > p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.c-job-posting__callout-outer-wrapper {
+  margin: rem(50px) 0 0 0;
+}
+
+.c-job-posting__callout-title {
+  margin: 0 0 rem(32px) 0;
+  text-transform: uppercase;
+
+  @include bp-min(medium) {
+    margin: 0 0 rem(50px) 0;
+  }
+}

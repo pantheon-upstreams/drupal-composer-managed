@@ -4,6 +4,7 @@
  * Component for Teaser
  *
  * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Space for Drupal attributes.
  * - teaser_attributes [mixed] Any custom attributes for the teaser.
  * - teaser_content: [string] Teaser text.
  * - teaser_media: [mixed] Representative media for the teaser.
@@ -42,29 +43,27 @@
         </div>
     {% endif %}
 
-    {% if teaser_content %}
-        <div class="m-teaser__content">
-            {% block teaser_content_prefix %}{% endblock %}
+    <div class="m-teaser__content">
+        {% block teaser_content_prefix %}{% endblock %}
 
-            <{{ teaser_title_tag|default('h3') }} class="m-teaser__title">
-                {% if teaser_url %}
-                    <a href="{{ teaser_url }}" class="m-teaser__link">
-                {% endif %}
-
-                {{ teaser_title }}
-
-                {% if teaser_url %}
-                    </a>
-                {% endif %}
-            </{{ teaser_title_tag|default('h3') }}>
-
-            {% if teaser_content %}
-                <p class="m-teaser__content-text">
-                    {{- teaser_content -}}
-                </p>
+        <{{ teaser_title_tag|default('h3') }} class="m-teaser__title">
+            {% if teaser_url %}
+                <a href="{{ teaser_url }}" class="m-teaser__link">
             {% endif %}
 
-            {% block teaser_content_suffix %}{% endblock %}
-        </div>
-    {% endif %}
+            {{ teaser_title }}
+
+            {% if teaser_url %}
+                </a>
+            {% endif %}
+        </{{ teaser_title_tag|default('h3') }}>
+
+        {% if teaser_content %}
+            <p class="m-teaser__content-text">
+                {{- teaser_content -}}
+            </p>
+        {% endif %}
+
+        {% block teaser_content_suffix %}{% endblock %}
+    </div>
 </article>

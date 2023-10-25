@@ -52,6 +52,7 @@
   flex-flow: wrap row;
   margin-left: calc(#{$column-gutter} / -2);
   margin-right: calc(#{$column-gutter} / -2);
+  padding: 0;
 
   > #{$selector} {
     $width: functions-calculations.percent(1, #{$columns});

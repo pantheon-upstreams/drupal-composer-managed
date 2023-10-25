@@ -44,7 +44,11 @@
 //------------------------------------
 
 :root {
+  --surf-fs-16-18: #{rem(16px)};
+  --surf-fs-16-18-24: #{rem(16px)};
   --surf-fs-18-24: #{rem(18px)};
+  --surf-fs-18-24-40: #{rem(18px)};
+  --surf-fs-18-24-32: #{rem(18px)};
   --surf-fs-30-32: #{rem(30px)};
   --surf-fs-52-64-96: #{rem(52px)};
   --surf-fs-48-132-176: #{rem(48px)};
@@ -52,12 +56,19 @@
   --surf-fs-80-140-200-260: #{rem(80px)};
 
   @include bp-min(medium) {
+    --surf-fs-16-18-24: #{rem(18px)};
+    --surf-fs-18-24: #{rem(24px)};
+    --surf-fs-18-24-40: #{rem(24px)};
+    --surf-fs-18-24-32: #{rem(24px)};
     --surf-fs-48-100-132-176: #{rem(100px)};
     --surf-fs-48-132-176: #{rem(132px)};
     --surf-fs-80-140-200-260: #{rem(140px)};
   }
 
   @include bp-min(large) {
+    --surf-fs-16-18: #{rem(18px)};
+    --surf-fs-18-24-40: #{rem(40px)};
+    --surf-fs-18-24-32: #{rem(32px)};
     --surf-fs-30-32: #{rem(32px)};
     --surf-fs-52-64-96: #{rem(64px)};
     --surf-fs-48-100-132-176: #{rem(132px)};
@@ -65,7 +76,7 @@
   }
 
   @include bp-min(xlarge) {
-    --surf-fs-18-24: #{rem(24px)};
+    --surf-fs-16-18-24: #{rem(24px)};
     --surf-fs-52-64-96: #{rem(96px)};
     --surf-fs-48-100-132-176: #{rem(176px)};
     --surf-fs-48-132-176: #{rem(176px)};
@@ -191,7 +202,9 @@ b {
 //  10 - Paragraphs
 //------------------------------------
 
-p {}
+p {
+  line-height: var(--surf-lh-default);
+}
 
 
 

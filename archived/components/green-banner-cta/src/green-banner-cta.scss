@@ -1,0 +1,82 @@
+@use '../../../../web/themes/custom/surf_main/components/00-base/partials/partials' as *;
+
+.green-banner-cta {
+  background: linear-gradient(98.64deg, #00492c 41.67%, #008535 100%);
+  overflow: hidden;
+  padding: rem(32px) rem(15px);
+  position: relative;
+  z-index: 1;
+
+  @include bp-min(medium) {
+    padding: rem(60px) rem(40px);
+  }
+
+  @include bp-min(large) {
+    padding: rem(80px) rem(40px);
+  }
+
+  @include bp-min(xlarge) {
+    padding: rem(80px);
+  }
+
+  &:before {
+    background-image: url('../imgs/banner-green-corner-particles.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    display: block;
+    height: rem(324px);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: rem(324px);
+    z-index: -1;
+  }
+
+  &:after {
+    background-image: url('../imgs/banner-illustration.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    content: '';
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: rem(220px);
+    z-index: -1;
+
+    @include bp-min(medium) {
+      display: block;
+    }
+  }
+}
+
+.green-banner-cta__title {
+  color: var(--color-surf--white);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.green-banner-cta__body {
+  margin: rem(32px) 0 0 0;
+
+  & > p {
+    color: var(--color-surf--white);
+    font-size: var(–surf-font-size-40);
+    font-weight: var(--font-weight-bold);
+    margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include bp-min(large) {
+    max-width: rem(864px);
+  }
+}
+
+.green-banner-cta__link {
+  margin: rem(32px) 0 0 0;
+}

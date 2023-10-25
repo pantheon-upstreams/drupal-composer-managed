@@ -1,0 +1,47 @@
+@use '../../../../web/themes/custom/surf_main/components/00-base/partials/partials' as *;
+
+.c-about-page {
+  width: 100%;
+
+  &.title_illustration {
+
+    @include bp-min(medium) {
+      // TODO: fix url
+      background-image: url('../../../../images/illustrations/landing-page-header.png');
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: rem(460px);
+      min-height: rem(160px);
+    }
+
+    @include bp-min(large) {
+      background-position: top right -270px;
+      background-size: rem(930px);
+      min-height: rem(320px);
+    }
+
+    @include bp-min(xlarge) {
+      background-position: top right;
+      background-size: rem(930px);
+      min-height: rem(320px);
+    }
+
+    .c-about-page__title {
+      background: var(--color-surf--black)
+        url('/components/header/imgs/green.svg')
+        no-repeat bottom left;
+      background-clip: text;
+      color: var(--color-surf--black);
+      display: inline;
+      margin-top: 0;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+
+.c-about-page__body-wrapper > .field--name-field-p-content {
+  & > .field__item:last-child {
+    background: linear-gradient(180deg, #00492c 0%, #000000 100%);
+  }
+}
