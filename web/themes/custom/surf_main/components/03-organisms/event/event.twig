@@ -1,0 +1,149 @@
+{%
+  set classes = [
+  'o-event',
+]
+%}
+
+<article {{ event_attributes.addClass(classes).merge(attributes) }}>
+  {{ title_suffix }}
+
+  <div class="container container--xlarge">
+    <div class="o-event__inner-wrapper">
+
+      {# Header component #}
+      {% embed 'surf_main:header' with {
+        header_heading: event_heading,
+        header_attributes: create_attribute({'class': ['o-header--with-bkg-grid']}),
+        heading_attributes: create_attribute({'class': ['o-header__heading']}),
+        event_dates,
+        event_link_text,
+        event_link_url,
+      } only %}
+
+        {% block header_links_block %}
+          {% set breadcrumbs_default = [
+            {'text': 'Events', 'url': 'https://example.com'},
+          ]%}
+
+          {% include 'surf_main:breadcrumbs' with {
+            breadcrumbs_attributes: attributes|without('class'),
+            breadcrumbs_label: 'Breadcrumbs',
+            breadcrumbs_type: 'default',
+            breadcrumbs_navigation: breadcrumbs_default,
+          } only %}
+        {% endblock %}
+
+        {% block header_metadata_block %}
+          <div class="o-event__meta-wrapper">
+
+            <div class="o-event__dates">{{ event_dates }}</div>
+
+            {% embed 'surf_main:button' with {
+              button_attributes: create_attribute(),
+              button_title: event_link_text,
+              button_url: event_link_url,
+              button_html_tag: 'link',
+              button_style: 'full-navy',
+              button_size: 'small',
+            } only %}
+            {% endembed %}
+
+          </div>
+
+        {% endblock %}
+      {% endembed %}
+
+
+      {# Left Hook component #}
+      {% embed 'surf_main:left-hook' with {
+        left_hook_attributes: create_attribute(),
+      } only %}
+      {% endembed %}
+
+      <div class="o-event__content-grid">
+
+        {# Media Component #}
+        {% embed 'surf_main:media' with {
+          media_attributes: create_attribute({'class': ['o-event__media']}),
+          media: event_media,
+        } only %}
+
+          {% block media_block %}
+            {{ media }}
+          {% endblock %}
+
+        {% endembed %}
+
+
+        <div class="o-event__body-wrapper">
+        {# Heading Component - Overview#}
+        {% embed 'surf_main:heading' with {
+          heading_attributes: create_attribute({'class': ['o-event__overview']}),
+          heading_text: event_overview,
+          heading_level: '2',
+        } only %}
+        {% endembed %}
+
+        {# Editor Component - Body #}
+        {% embed 'surf_main:editor' with {
+          editor_attributes: create_attribute(),
+          editor_content: event_body,
+        } only %}
+        {% endembed %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+{#{% embed 'surf_main:event' with {#}
+{#  event_attributes: create_attribute({'class': ['o-event--full']}),#}
+{#  content: content,#}
+{#  label: label,#}
+{#} only %}#}
+
+{#  {% block event_content %}#}
+
+{#    #}{# Header component #}
+{#    {% embed 'surf_main:header' with {#}
+{#      header_heading: label,#}
+{#      header_attributes: create_attribute({'class': ['o-header--with-bkg-grid']}),#}
+{#      heading_attributes: create_attribute({'class': ['o-header__heading']}),#}
+{#    } only %}#}
+
+{#      {% block header_links_block %}#}
+{#        [Breadcrumbs]#}
+{#      {% endblock %}#}
+
+{#      {% block header_metadata_block %}#}
+{#        This is metadata#}
+{#      {% endblock %}#}
+
+{#    {% endembed %}#}
+
+{#    #}{# Left Hook component #}
+{#    {% embed 'surf_main:left-hook' with {#}
+{#      left_hook_attributes: create_attribute(),#}
+{#    } only %}#}
+{#    {% endembed %}#}
+{#    <div class="o-event__content-wrapper">#}
+{#      #}{# Heading Component - Overview#}
+{#      {% embed 'surf_main:heading' with {#}
+{#        heading_attributes: create_attribute({'class': ['o-event__overview']}),#}
+{#        heading_text: content.field_overview|field_value,#}
+{#        heading_level: '2',#}
+{#      } only %}#}
+{#      {% endembed %}#}
+
+{#      #}{# Editor Component - Body #}
+{#      {% embed 'surf_main:editor' with {#}
+{#        editor_attributes: create_attribute(),#}
+{#        editor_content: content.body|field_value,#}
+{#      } only %}#}
+{#      {% endembed %}#}
+{#    </div>#}
+
+{#  {% endblock %}#}
+{#{% endembed %}#}

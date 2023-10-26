@@ -1,0 +1,120 @@
+//
+// Component - Organism - Event
+//
+//
+//
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Component Overrides
+//
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.o-event {
+  padding-block-end: rem(26px);
+  position: relative;
+  @include bp-min(medium) {
+    padding-block-end: rem(60px);
+  }
+  @include bp-min(large) {
+    padding-block-end: rem(50px);
+  }
+  @include bp-min(xxlarge) {
+    padding-block-end: rem(143px);
+  }
+}
+
+.o-event__content-wrapper,
+.o-event__inner-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-event__inner-wrapper {
+  gap: rem(28px);
+  @include bp-min(medium) {
+    gap: rem(40px);
+  }
+  @include bp-min(large) {
+    gap: rem(60px);
+  }
+  @include bp-min(xxlarge) {
+    gap: rem(28px);
+  }
+}
+
+.o-event__meta-wrapper,
+.o-event__dates {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(24px);
+}
+
+.o-event__dates {
+  color: var(--surf-color-black-alt);
+  font-family: var(--surf-font-sans);
+  font-size: rem(18px);
+  font-weight: var(--surf-font-weight-bold);
+  line-height: 1.44;
+  @include bp-min(medium) {
+    font-size: rem(24px);
+    line-height: 1.4;
+  }
+}
+
+.o-event__overview {
+  color: var(--surf-color-black-alt);
+  font-family: var(--surf-font-sans-alt);
+  font-size: var(--surf-fs-40-64);
+  font-weight: var(--surf-font-weight-medium);
+  letter-spacing: rem(0.6px);
+  line-height: 1;
+  margin-bottom: rem(28px);
+  @include bp-min(medium) {
+    letter-spacing: rem(1.28px);
+  }
+}
+
+.o-event__content-grid {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: 1fr;
+  @include bp-min(xlarge) {
+    grid-template-columns: 1fr 400px;
+
+    .o-event__body-wrapper {
+      order: 1;
+    }
+
+    .o-event__media {
+      justify-self: end;
+      order: 2;
+    }
+  }
+}
+
+
+
+//------------------------------------
+//  03 - Component Overrides
+//------------------------------------
+
+.o-event {
+  .a-left-hook {
+    width: 65%;
+  }
+}
