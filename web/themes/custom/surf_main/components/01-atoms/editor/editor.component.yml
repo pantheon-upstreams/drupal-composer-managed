@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Editor
+status: experimental
+group: Atoms
+props:
+  type: object
+  required:
+    - editor_content
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    editor_attributes:
+      title: Attributes
+      type: string
+    editor_content:
+      title: Editor Content
+      type: string

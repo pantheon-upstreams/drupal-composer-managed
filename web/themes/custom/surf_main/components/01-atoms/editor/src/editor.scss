@@ -1,0 +1,32 @@
+//
+// Component - Atom - Editor
+//
+// - 01 - Imports
+// - 02 - General
+//
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.a-editor {
+
+  p:not( :first-child ) {
+    margin-top: 16px;
+  }
+}
+
+.a-editor__x-scroll {
+  overflow-x: auto;
+}
+

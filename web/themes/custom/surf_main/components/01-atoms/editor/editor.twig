@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Component for Editor
+ *
+ * Available props:
+ * - editor_attributes: [array] Any parent tag attributes.
+ * - editor_content: [string]
+ *
+ */
+#}
+
+{% set classes = [
+  'a-editor',
+] %}
+
+<div {{ editor_attributes.addClass(classes).merge(attributes) }}>
+  {{ editor_content }}
+</div>
