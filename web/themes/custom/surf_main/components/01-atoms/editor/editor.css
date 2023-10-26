@@ -1,1 +1,1 @@
-.a-editor p:not(:first-child){margin-top:16px}.a-editor__x-scroll{overflow-x:auto}
+.a-editor p:not(:first-child){margin-top:16px}.a-editor .a-editor__table{max-width:100%;overflow:auto}

@@ -3,7 +3,7 @@
 //
 // - 01 - Imports
 // - 02 - General
-//
+// - 03 - Tables
 //
 
 
@@ -15,18 +15,25 @@
 
 
 
+
 //------------------------------------
 //  02 - General
 //------------------------------------
 
 .a-editor {
-
-  p:not( :first-child ) {
+  p:not(:first-child) {
     margin-top: 16px;
   }
 }
 
-.a-editor__x-scroll {
-  overflow-x: auto;
-}
 
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.a-editor .a-editor__table {
+  max-width: 100%;
+  overflow: auto;
+}
