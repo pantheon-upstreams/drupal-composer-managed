@@ -23,8 +23,8 @@ dependencies:
     - field.field.node.event.field_registration_required
     - node.type.event
   module:
-    - datetime_range
     - link
+    - smart_date
     - text
     - user
 id: node.event.default
@@ -39,31 +39,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_capacity:
-    type: number_integer
-    label: hidden
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    weight: 9
-    region: content
   field_dates:
-    type: daterange_plain
+    type: smartdate_default
     label: hidden
     settings:
       timezone_override: America/Denver
-      separator: '-'
+      format_type: medium
+      format: compact
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_department:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 17
     region: content
   field_link:
     type: link_separate
@@ -75,118 +63,43 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_location_title:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 18
+    weight: 4
     region: content
   field_media_primary:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: person
+      link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 15
-    region: content
-  field_ref_attendees:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_ref_eo_opportunities:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_ref_event_types:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  field_ref_key_impact_areas:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  field_ref_related_content:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_ref_research_areas:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_registration_period:
-    type: daterange_default
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_registration_required:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-  registration_links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 16
-    region: content
 hidden:
+  field_capacity: true
+  field_department: true
   field_location_address: true
+  field_location_title: true
+  field_ref_attendees: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_event_types: true
+  field_ref_key_impact_areas: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
+  field_registration_period: true
+  field_registration_required: true
   langcode: true
+  registration_links: true
   search_api_excerpt: true
