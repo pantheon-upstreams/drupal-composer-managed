@@ -6,7 +6,7 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Backgrounds
+// - 03 - Types
 //
 
 
@@ -64,18 +64,18 @@
   font-family: var(--surf-font-sans);
   font-size: var(--surf-fs-18-24);
   font-weight: var(--surf-fw-book);
-  line-height: var(--surf-lh-base);
+  line-height: var(--surf-lh-label);
   margin-block-start: rem(12px) !important;
 }
 
 
 
 //------------------------------------
-//  03 - Backgrounds
+//  03 - Types
 //------------------------------------
 
 .o-header {
-  &.o-header--with-bkg-color {
+  &.o-header--type-color {
     @include bp-min(medium) {
       background-image: url('img/header-bkg-color.png');
       background-position: top right;
@@ -95,7 +95,7 @@
     }
   }
 
-  &.o-header--with-bkg-grid {
+  &.o-header--type-grid {
     @include bp-min(large) {
       background-image: url('img/header-bkg-grid.png');
       background-position: top right;
@@ -103,7 +103,7 @@
     }
   }
 
-  &.o-header--with-bkg-ripple {
+  &.o-header--type-ripple {
     @include bp-min(large) {
       background-image: url('img/header-bkg-ripple.png');
       background-position: top right;
@@ -111,7 +111,7 @@
     }
   }
 
-  &.o-header--with-img {
+  &.o-header--type-img {
     .o-header__content {
       background-color: var(--surf-color-white);
       margin-block-start: rem(-143px);

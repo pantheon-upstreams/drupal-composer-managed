@@ -18,3 +18,8 @@ props:
     pullquote_credit:
       title: Quote Credit
       type: string
+    pullquote_type:
+      title: Size
+      type: string
+      enum:
+        - large

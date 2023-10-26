@@ -6,8 +6,7 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Colors
-// - 04 - Misc
+// - 03 - Types
 //
 
 
@@ -53,27 +52,27 @@
 
 
 //------------------------------------
-//  03 - Colors
+//  03 - Types
 //------------------------------------
 
 .m-callout {
-  &.m-callout--blue {
+  &.m-callout--type-blue {
     background-color: var(--surf-color-blue);
   }
 
-  &.m-callout--navy {
+  &.m-callout--type-navy {
     background-color: var(--surf-color-navy);
   }
 
-  &.m-callout--navy,
-  &.m-callout--blue {
+  &.m-callout--type-navy,
+  &.m-callout--type-blue {
     .m-callout__heading,
     .m-callout__text {
       color: var(--surf-color-white);
     }
   }
 
-  &.m-callout--white {
+  &.m-callout--type-white {
     background-color: var(--surf-color-white);
 
     .m-callout__inner-wrapper {
@@ -86,16 +85,8 @@
       color: var(--surf-color-black);
     }
   }
-}
 
-
-
-//------------------------------------
-//  04 - Misc
-//------------------------------------
-
-.m-callout {
-  &.m-callout--bkg-img {
+  &.m-callout--type-img {
     background-image: linear-gradient(99deg, #007ab8 0%, #000080 100%);
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -163,7 +154,7 @@
     }
   }
 
-  &.m-callout--embed {
+  &.m-callout--type-embed {
     background-color: transparent;
 
     .m-callout__inner-wrapper {

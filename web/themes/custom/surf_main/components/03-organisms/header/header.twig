@@ -27,6 +27,7 @@
   set classes = [
   'o-header',
   header_media ? 'o-header--with-img',
+  header_type ? 'o-header--type-' ~ header_type,
 ]
 %}
 
@@ -36,11 +37,26 @@
 
     {% block header_links_block %}
 
+      {% set breadcrumbs_default = [
+        {'text': 'Home', 'url': 'https://example.com'},
+        {'text': 'Education', 'url': 'https://example.com'},
+        {'text': 'Our Team', 'url': 'https://example.com'},
+        {'text': 'Deb Wolf'},
+      ]%}
+
+      {% include 'surf_main:breadcrumbs' with {
+        breadcrumbs_attributes: attributes|without('class'),
+        breadcrumbs_label: 'Breadcrumbs',
+        breadcrumbs_type: 'default',
+        breadcrumbs_navigation: breadcrumbs_default,
+      } only %}
+
     {% endblock %}
 
     <div class="o-header__text-wrapper">
 
       {{ include('surf_main:heading', {
+        heading_type: heading_type ? heading_type,
         heading_text: header_heading ? header_heading,
         heading_level: header_heading_level ? header_heading_level,
         heading_attributes: heading_attributes,

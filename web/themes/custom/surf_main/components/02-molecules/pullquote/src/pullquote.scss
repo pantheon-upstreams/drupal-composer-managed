@@ -6,7 +6,7 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Sizes
+// - 03 - Types
 //
 
 
@@ -54,11 +54,11 @@
 
 
 //------------------------------------
-//  03 - Sizes
+//  03 - Types
 //------------------------------------
 
 .m-pullquote {
-  &.m-pullquote--large {
+  &.m-pullquote--type-large {
     border: none;
     max-width: 100%;
     padding: 0;

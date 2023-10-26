@@ -14,6 +14,7 @@
 
 {% set classes = [
   'm-pullquote',
+  pullquote_type ? 'm-pullquote--type-' ~ pullquote_type,
 ] %}
 
 <figure {{ pullquote_attributes.addClass(classes).merge(attributes) }}>

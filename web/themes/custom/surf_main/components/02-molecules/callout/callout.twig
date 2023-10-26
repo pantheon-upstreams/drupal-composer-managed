@@ -22,6 +22,7 @@
 {%
   set classes = [
   'm-callout',
+  callout_type ? 'm-callout--type-' ~ callout_type,
 ]
 %}
 
@@ -59,7 +60,7 @@
     {% endif %}
 
     {% if callout_button_url %}
-      {% if callout_attributes.hasClass('m-callout--navy') or callout_attributes.hasClass('m-callout--blue') %}
+      {% if callout_type == 'navy' or callout_type == 'blue' %}
 
         {% embed 'surf_main:button' with {
           button_attributes: create_attribute(),
@@ -71,21 +72,7 @@
         } only %}
         {% endembed %}
 
-      {% elseif callout_attributes.hasClass('m-callout--news') %}
-
-        {% embed 'surf_main:button' with {
-          button_attributes: create_attribute(),
-          button_title: callout_button_text,
-          button_url: callout_button_url,
-          button_html_tag: 'link',
-          button_style: 'underline-navy',
-          button_size: 'small',
-          button_prefix: callout_button_prefix,
-          button_suffix: 'arrow-right',
-        } only %}
-        {% endembed %}
-
-      {% elseif callout_attributes.hasClass('m-callout--white') %}
+      {% elseif callout_type == 'white' %}
 
         {% embed 'surf_main:button' with {
           button_attributes: create_attribute(),
@@ -97,7 +84,7 @@
         } only %}
         {% endembed %}
 
-      {% elseif callout_attributes.hasClass('m-callout--bkg-img') or callout_attributes.hasClass('m-callout--embed') %}
+      {% elseif callout_type == 'img' or callout_type == 'embed' %}
 
         {% embed 'surf_main:button' with {
           button_attributes: create_attribute(),
@@ -118,8 +105,10 @@
           button_title: callout_button_text,
           button_url: callout_button_url,
           button_html_tag: 'link',
-          button_style: 'full-navy',
+          button_style: 'underline-navy',
           button_size: 'small',
+          button_prefix: callout_button_prefix ? callout_button_prefix,
+          button_suffix: 'arrow-right',
         } only %}
         {% endembed %}
 

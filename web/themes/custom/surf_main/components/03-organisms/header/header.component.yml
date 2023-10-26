@@ -39,6 +39,14 @@ props:
     header_cta_size:
       title: Header CTA Size
       type: string
+    header_type:
+      title: Type
+      type: string
+      enum:
+        - color
+        - grid
+        - ripple
+        - img
   slots:
     header_links_block:
       title: Header Links

@@ -117,6 +117,10 @@
   }
 
   &.container--large {
+    max-width: calc(1143px + (var(--surf-grid-gap) * 2));
+  }
+
+  &.container--xlarge {
     max-width: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
   }
 
