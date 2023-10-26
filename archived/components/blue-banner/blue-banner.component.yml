@@ -1,0 +1,61 @@
+$schema: https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json
+machineName: blue-banner
+name: Blue Banner
+status: WIP
+componentType: molecule
+description: A Blue Banner component
+schemas:
+  props:
+    type: object
+    required:
+      - primary_image
+      - primary_image_alt
+      - secondary_image
+      - secondary_image_alt
+      - heading
+    properties:
+      primary_image:
+        type: "string"
+        title: "Primary Image URL"
+        description: "The url for the primary image"
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      primary_image_alt:
+        type: "string"
+        title: "Primary image Alt Text"
+        description: "The primary alt text for the image."
+        examples:
+          - "Ea irure adipisicing"
+      secondary_image:
+        type: "string"
+        title: "Secondary Image URL"
+        description: "The url for the secondary image"
+        examples:
+          - "https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg"
+      secondary_image_alt:
+        type: "string"
+        title: "Secondary image Alt Text"
+        description: "The secondary alt text for the image."
+        examples:
+          - "Ea irure adipisicing"
+      heading:
+        type: string
+        title: Heading
+        description: The callout heading
+        examples:
+          - Questions? Contact Us!
+      body:
+        title: Body
+        type: string
+        examples:
+          - "<p>Our education experts & staff are here to help connect you with the right resources & opportunities.</p>"
+      link_text:
+        title: Link Text
+        type: string
+        examples:
+          - "Underline Button with Arrow Component"
+      link_url:
+        title: Link URL
+        type: string
+        examples:
+          - "https://github.com"

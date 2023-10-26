@@ -234,8 +234,8 @@
   > li > .m-menu__card > span {
     color: var(--surf-color-white);
     display: block;
-    font-size: var(--surf-font-size-18);
-    font-weight: var(--surf-font-weight-bold);
+    font-size: rem(18px);
+    font-weight: var(--surf-fw-bold);
     padding: 8px 16px;
     text-decoration: none;
 
@@ -255,7 +255,7 @@
 
   > li > .m-menu__card > p {
     display: none;
-    font-size: var(--surf-font-size-16);
+    font-size: rem(16px);
 
     @include bp-min(xxlarge) {
       display: inherit;
@@ -284,7 +284,7 @@
   > li > a {
     color: var(--surf-color-white);
     display: block;
-    font-size: var(--surf-font-size-18);
+    font-size: rem(18px);
     padding: 8px 16px;
     position: relative;
     text-decoration: none;
@@ -325,7 +325,7 @@
 
   > li > p {
     display: none;
-    font-size: var(--surf-font-size-14);
+    font-size: rem(14px);
 
     @include bp-min(xxlarge) {
       display: inherit;

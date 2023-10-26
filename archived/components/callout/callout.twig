@@ -1,0 +1,113 @@
+{#TODO: update this file, need info on the theme part#}
+
+{# Prepare presentational attributes #}
+{% if image_url is not empty and theme != 'icon' %}
+  {% set clAttributes = clAttributes.addClass('has-image') %}
+{% endif %}
+
+{# Button / Theme logic #}
+{% set button_bg_color = 'forest' %}
+{% if theme == 'white' %}
+  {% set button_bg_color = 'forest' %}
+{% elseif theme == 'cloud' %}
+  {% set button_bg_color = 'forest' %}
+{% elseif theme == 'icon' %}
+  {% set button_bg_color = 'forest' %}
+{% elseif theme == 'kelly' %}
+  {% set button_bg_color = 'white' %}
+{% elseif theme == 'forest' %}
+  {% set button_bg_color = 'white' %}
+{% endif %}
+
+{%
+  set classes = [
+  'c-callout',
+  theme,
+]
+%}
+
+{# Markup for the component #}
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+
+  {% if link_url is not empty and (link_text is empty or link_text == '/') and (image_url is not empty or theme == 'icon') %}
+    <a href="{{ link_url }}" class="c-callout__link-wrapper">
+  {% endif %}
+
+  {% if image_url and image_alt and theme != 'icon' %}
+    <div class="c-callout__image">
+
+      {{ include('surf_main:image', {
+        image: image_url,
+        alt: image_alt
+      }, with_context = false) }}
+
+    </div>
+
+  {% endif %}
+
+  {% if image is empty and theme == 'icon' %}
+      <div{{ attributes.addClass(['c-callout__icon', icon]) }}></div>
+  {% endif %}
+
+  {% if link_url is not empty and (link_text is empty or link_text == '/') and (image_url is not empty or theme == 'icon') %}</a>{% endif %}
+
+  <div class="c-callout__content-wrapper">
+
+    {% if heading %}
+      {% if link_url is not empty and (link_text is empty or link_text == '/') %}
+        <h3 class="c-callout__title"><a href="{{ link_url }}" class="c-callout__title-link">{{heading}}</a></h3>
+      {% else %}
+        <h3 class="c-callout__title">{{heading}}</h3>
+      {% endif %}
+    {% endif %}
+
+    {% if body %}
+      {% block banner_body_block %}
+        <div class="c-callout__body">
+          {{ body|check_markup('plain') }}
+        </div>
+      {% endblock %}
+    {% endif %}
+
+    {% if link_text is not empty and link_text != '/' and link_url is not empty %}
+      {% block callout_link %}
+        <div class="c-callout__link">
+          {% if theme == 'simple-icon-cta' %}
+
+            {{ include('surf_main:link-button', {
+              text: link_text,
+              url: link_url,
+              button_style: 'underline',
+              color: 'underline-green',
+              button_type_size: 'medium',
+              icon_type: icon ? icon : 'arrow',
+              uppercase: true
+            }, with_context = false) }}
+
+          {% elseif arrow or theme == 'icon' %}
+
+            {{ include('surf_main:link-button', {
+              text: link_text,
+              url: link_url,
+              button_style: 'solid',
+              color: button_bg_color,
+              button_type_size: 'medium',
+              icon_type: 'arrow'
+            }, with_context = false) }}
+
+          {% else %}
+
+            {{ include('surf_main:link-button', {
+              text: link_text,
+              url: link_url,
+              button_style: 'solid',
+              color: button_bg_color,
+              button_type_size: 'medium'
+            }, with_context = false) }}
+
+          {% endif %}
+        </div>
+      {% endblock %}
+    {% endif %}
+  </div>
+</article>

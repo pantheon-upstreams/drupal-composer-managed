@@ -37,10 +37,10 @@
 
   > .container > .site-branding {
     margin-right: auto;
-    width: 160px;
+    width: 164px;
 
     @include bp-min(large) {
-      width: 216px;
+      width: 220px;
     }
   }
 
@@ -127,17 +127,17 @@
     width: 100vw;
 
     @include bp-min(large) {
-      height: calc(100vh - (var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility)));
+      height: calc(100vh - (var(--surf-height-region-header-primary) - var(--surf-height-region-header-utility)));
       top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
     }
 
     .gin--horizontal-toolbar & {
-      height: calc(100vh - (var(--surf-height-region-header-primary) + var(--gin-toolbar-secondary-height) + var(--gin-toolbar-height)));
-      top: calc(var(--surf-height-region-header-primary) + var(--gin-toolbar-secondary-height) + var(--gin-toolbar-height));
+      height: calc(100vh - (var(--surf-height-region-header-primary) + var(--gin-toolbar-height)));
+      top: var(--surf-height-region-header-primary);
 
       @include bp-min(large) {
-        height: calc(100vh - (var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility) + var(--gin-toolbar-secondary-height) + var(--gin-toolbar-height)));
-        top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility) + var(--gin-toolbar-secondary-height) + var(--gin-toolbar-height));
+        height: calc(100vh - (var(--surf-height-region-header-primary) + var(--gin-toolbar-height)));
+        top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
       }
     }
   }

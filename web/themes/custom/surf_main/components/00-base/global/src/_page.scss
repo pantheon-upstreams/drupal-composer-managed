@@ -47,7 +47,12 @@ body {
 .layout-container {
   background-color: var(--surf-color-white);
   overflow: hidden;
+  padding-top: var(--surf-height-region-header-primary);
   min-height: 2200px; // temporary
+
+  @include bp-min(large) {
+    padding-top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
+  }
 }
 
 

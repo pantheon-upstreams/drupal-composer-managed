@@ -1,11 +1,26 @@
-{%
-  set classes = [
-  'a-grid',
-]
-%}
+{#
+/**
+ * @file
+ * Component for Grid
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Space for Drupal attributes.
+ * - grid_attributes: [mixed] Any custom attributes for the grid.
+ * - grid_column_type: [string] Options include 'col-1', 'col-2', 'col-3' and 'col-4'.
+ * - grid_items: [array] Rendered items that make up the grid.
+ * - grid_html_type: [string] Options include 'ul', 'ol' and 'div'.
+ *
+ * Available slots:
+ * - grid_items: [array] Rendered items that make up the grid.
+ *
+ */
+#}
 
-<ul {{ grid_attributes.addClass(classes).merge(attributes) }} {% if grid_styles %}style="{{ grid_styles }}"{% endif %}>
-  {% block grid_items_block %}
-    {{ grid_items }}
-  {% endblock %}
-</ul>
+{% set classes = [
+    'a-grid',
+    'a-grid--' ~ grid_column_type,
+] %}
+
+<{{ grid_html_type }} {{ grid_attributes.addClass(classes).merge(attributes) }}>
+    {% block grid_items %}{% endblock %}
+</{{ grid_html_type }}>

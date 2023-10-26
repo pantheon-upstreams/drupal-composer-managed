@@ -1,0 +1,47 @@
+"$schema": "https://git.drupalcode.org/project/cl_components/-/raw/1.x/src/metadata.schema.json"
+machineName: layout
+name: Layout
+componentType: "molecule"
+status: "WIP"
+description: A Layout Component
+schemas:
+  props:
+    type: object
+    properties:
+      primary:
+        title: Primary Column
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      secondary:
+        title: Secondary Column
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      tertiary:
+        title: Tertiary Column
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      quaternary:
+        title: Quaternary Column
+        type: string
+        examples:
+          - "<p><strong>Example paragraph</strong>. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.</p>"
+      layout_columns:
+        type: string
+        title: Layout Columns
+        enum:
+          - one
+          - twocolumn-halves
+          - twocolumn-onethird-twothirds
+          - twocolumn-twothirds-onethird
+          - threecolumn-thirds
+          - fourcolumns-forths
+      layout_width:
+        type: string
+        title: Layout Width
+        enum:
+          - normal
+          - narrow
+          - full

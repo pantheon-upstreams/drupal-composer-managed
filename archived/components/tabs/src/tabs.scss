@@ -1,0 +1,59 @@
+//
+// @file
+// Tabs Container Styles
+//
+
+@use '../../../../web/themes/custom/surf_main/components/00-base/partials/partials' as *;
+
+// Tabs ul
+.tabs {
+  --tab-text-color: var(--color-border);
+  --tab-background-color: var(--color-border);
+  --tab-border-color: var(--color-border);
+
+  --tab-text-color-hover: var(--color-border);
+  --tab-background-color-hover: var(--color-border);
+
+  --tab-text-color-active: var(--color-border);
+  --tab-background-color-active: var(--color-border);
+  border-bottom: 1px solid var(--color-border); // Give the tabs something to sit on
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+// Tabs item
+.tabs__item {
+  display: block;
+  list-style: none;
+  margin-bottom: -1px; // Make the list-items overlay the bottom border
+  margin-top: 0;
+  padding-left: 0;
+
+  a {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-bottom-color: var(--color-border);
+    border-radius: 3px 3px 0 0;
+    color: var(--color-link);
+    display: block;
+    font-family: var(--font-family-interface);
+    margin-right: -1px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--color-surf--cloud);
+    }
+  }
+
+  // Active Styles
+  &.is-active > a,
+  &.is-active > a:hover {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-bottom-color: transparent;
+    color: var(--color-text);
+  }
+}

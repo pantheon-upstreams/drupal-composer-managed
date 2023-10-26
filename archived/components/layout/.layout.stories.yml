@@ -1,0 +1,113 @@
+title: Surf Main/Layout
+argTypes:
+  layout_width:
+    options:
+      - normal
+      - narrow
+      - full
+    control: select
+  layout_columns:
+    options:
+      - onecolumn
+      - twocolumn-halves
+      - twocolumn-onethird-twothirds
+      - twocolumn-twothirds-onethird
+      - threecolumn-thirds
+      - fourcolumns-forths
+    control: select
+stories:
+  - name: "1. One Column [1]"
+    args:
+      layout_width: normal
+      layout_columns: onecolumn
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "2. Two Columns [1:1]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-halves
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "3. Two Column [1:2]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-onethird-twothirds
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "4. Two Column [2:1]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-twothirds-onethird
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "5. Three Column [1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: threecolumn-thirds
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      tertiary: "<p>Tertiary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+  - name: "6. Four Column [1:1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: fourcolumns-forths
+      primary: "<p>Primary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      secondary: "<p>Secondary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      tertiary: "<p>Tertiary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+      quaternary: "<p>Quaternary Example quote paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed.</p>"
+
+  - name: "7. Callout - Two Columns [1:1]"
+    args:
+      layout_width: normal
+      layout_columns: twocolumn-halves
+      primary: true
+      primary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'cloud', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+      secondary: true
+      secondary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'cloud', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+  - name: "8. Callout - Three Columns [1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: threecolumn-thirds
+      primary: true
+      primary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'cloud', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+      secondary: true
+      secondary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'forest', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+      tertiary: true
+      tertiary_block: |
+        {{ include('callout', {  heading: 'It\'s a Callout!', body: '<p>This is a callout <strong>component</strong>. It\'s a great way to highlight important information.</p>',link_text: 'Click Me', link_url: 'http://example.com', theme: 'kelly', image_url: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/images/examples/large.jpg',image_alt: 'Ea irure adipisicing' }) }}
+  - name: "9a. News Teaser - One Column [1]"
+    args:
+      layout_width: normal
+      layout_columns: onecolumn
+      primary: true
+      primary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'Excavation of huge caverns for DUNE particle detector is underway',  body: '<p>To date, about 274,000 tons of rock have been removed—more than a third of the 800,000 tons that needs to be extracted.</p>', url: 'https://github.com', category: 'Featured', category_url: 'https://github.com', date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example' }) }}
+  - name: "9b. News Teaser - Three Columns [1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: threecolumn-thirds
+      primary: true
+      primary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'Researchers record successful startup of LUX-ZEPLIN dark matter detector at Sanford Underground Research Facility', url: 'https://github.com', category: 'Press Release', category_url: 'https://github.com', date: 'August 18, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/news-placeholder.png',  alt: 'Atl text example' }) }}
+      secondary: true
+      secondary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'Stratton family members visit Stratton Station', url: 'https://github.com', category: 'Video', category_url: 'https://github.com', date: 'August 17, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example', icon: 'video' }) }}
+      tertiary: true
+      tertiary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'Davis-Bahcall Scholars reflect on 2022 program', url: 'https://github.com', category: 'Deep Talk', category_url: 'https://github.com', date: 'August 16, 2022', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example', icon: 'video' }) }}
+  - name: "9c. Curriculum Teaser - Three Columns [1:1:1]"
+    args:
+      layout_width: normal
+      layout_columns: threecolumn-thirds
+      primary: true
+      primary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'Ghost Particles', url: 'https://github.com', body: '<p>What is a neutrino and why is it so difficult to detect? During this unit, make the conceptual leap from the macroscopic to the microscopic by exploring extremely small objects.</p>', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/curriculum-placeholder.png',  alt: 'Atl text example', tags: [{ title: 'Upper Elementary', url: 'https://github.com'}, { title: 'Content Area', url: 'https://github.com'}, { title: 'View Standards (5)', url: 'https://github.com'}] }) }}
+      secondary: true
+      secondary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'Argon Transfer Challenge', url: 'https://github.com', body: '<p>How do you transfer 70,000 tons of argon nearly one mile underground to the DUNE detectors? Learn about phase changes in matter and design an engineering solution to this enormous problem.</p>', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example', tags: [{ title: 'Upper Elementary', url: 'https://github.com'}, { title: 'Content Area', url: 'https://github.com'}, { title: 'View Standards (5)', url: 'https://github.com'}] }) }}
+      tertiary: true
+      tertiary_block: |
+        {{ include('teaser', { layout: 'column-stack', title: 'May the Force Be With You', url: 'https://github.com', body: '<p>What do magnets and electromagnets have to do with particle accelerators and neutrino beams? How are magnetism, electricity, and movement related? Use the force to find out.</p>', image: 'https://dev-surf-main.pantheonsite.io/themes/custom/surf_main/templates/components/teaser/teaser.jpg',  alt: 'Atl text example', tags: [{ title: 'Upper Elementary', url: 'https://github.com'}, { title: 'Content Area', url: 'https://github.com'}, { title: 'View Standards (5)', url: 'https://github.com'}] }) }}

@@ -1,0 +1,36 @@
+title: Surf Main/Resources List
+args:
+  heading: Curriculum Resources
+  items:
+    - title: "Lorem ipsum dolor sit amet"
+      url: "/"
+      icon: "link"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Sed nulla sagittis odio euismod"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Return instructions & checklist"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Aenean elit, justo dictum sit"
+      url: "/"
+      icon: "link"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Scelerisque egestas maecenas sit praesent"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+    - title: "Hendrerit sapien blandit aliquet purus"
+      url: "/"
+      icon: "file"
+      size: "5 MB"
+      type: "pdf"
+stories:
+  - name: Default
