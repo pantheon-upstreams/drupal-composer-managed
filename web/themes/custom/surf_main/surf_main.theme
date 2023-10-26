@@ -1,1 +1,12 @@
 <?php
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function surf_main_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+        $suggestions[] = 'page__' . $node->bundle();
+    }
+}

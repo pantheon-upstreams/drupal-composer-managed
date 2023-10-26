@@ -1,0 +1,15 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Article
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    article_attributes:
+      title: Attributes
+      type: string
+    article_body:
+      title: Article Body
+      type: string

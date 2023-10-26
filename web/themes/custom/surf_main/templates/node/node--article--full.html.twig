@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a node.
+ *
+ * Available variables:
+ *  See embed below
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{%
+  set rendered_fields = [
+  'field_p_content',
+  'field_date_published',
+  'field_publisher',
+  'field_ref_related_content',
+  'field_ref_audiences',
+  'field_highlight',
+  'field_ref_key_impact_areas',
+  'field_ref_eo_opportunities',
+  'field_media_primary',
+  'field_ref_research_areas',
+  'field_author',
+]
+%}
+
+{% embed 'surf_main:article' with {
+  article_attributes: create_attribute({'class': ['o-article--full']}),
+  article_heading: label,
+  article_media: content.field_media_primary|field_value ? content.field_media_primary|field_value,
+  article_overview: content.field_highlight|field_value ? content.field_highlight|field_value,
+  article_body: content.field_p_content|field_value,
+  article_date: content.field_date_published|field_value ? content.field_date_published|field_value,
+  article_author: content.field_author|field_value ? content.field_author|field_value,
+  article_tags: content.field_ref_research_areas|field_value ? content.field_ref_research_areas|field_value,
+  title_suffix: title_suffix,
+  attributes,
+} only %}
+{% endembed %}
+
+{{ content|without(rendered_fields) }}
