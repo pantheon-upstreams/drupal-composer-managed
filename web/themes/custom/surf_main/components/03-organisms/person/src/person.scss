@@ -1,5 +1,5 @@
 //
-// Component - Page - Person
+// Component - Organism - Person
 //
 // https://atendesign.atlassian.net/browse/SRL-79
 // https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-209040&mode=design&t=l3XzFBYi7FyaUJzA-4
@@ -23,7 +23,7 @@
 //  02 - General
 //------------------------------------
 
-.p-person {
+.o-person {
   padding-block-end: rem(52px);
   position: relative;
   @include bp-min(large) {
@@ -34,11 +34,11 @@
   }
 }
 
-.p-person__heading {
+.o-person__heading {
   line-height: var(--surf-lh-base);
 }
 
-.p-person__job-title {
+.o-person__job-title {
   color: var(--surf-color-gray-650);
   font-family: var(--surf-font-sans);
   font-size: rem(18px);
@@ -51,13 +51,13 @@
   }
 }
 
-.p-person__contact-wrapper {
+.o-person__contact-wrapper {
   align-items: center;
   display: flex;
   gap: rem(32px);
 
-  .p-person__phone,
-  .p-person__email {
+  .o-person__phone,
+  .o-person__email {
     margin: 0;
 
     a {
@@ -72,11 +72,11 @@
   }
 }
 
-.p-person__content {
+.o-person__content {
   max-width: rem(780px);
 }
 
-.p-person__media {
+.o-person__media {
   width: 150px;
   @include bp-min(medium) {
     width: 100%;
@@ -89,7 +89,7 @@
 //  03 - Grids
 //------------------------------------
 
-.p-person__grid {
+.o-person__grid {
   display: grid;
   gap: rem(32px);
   margin-inline-end: auto;
@@ -97,36 +97,36 @@
   max-width: rem(619px);
 }
 
-.p-person__content-grid {
+.o-person__content-grid {
   display: grid;
   row-gap: rem(32px);
   width: 100%;
 
-  .p-person__title {
+  .o-person__title {
     order: 1;
   }
 
-  .p-person__job-title {
+  .o-person__job-title {
     order: 3;
     @include bp-min(medium) {
       order: 2;
     }
   }
 
-  .p-person__contact-wrapper {
+  .o-person__contact-wrapper {
     order: 2;
     @include bp-min(medium) {
       order: 3;
     }
   }
 
-  .p-person-content__wrapper {
+  .o-person-content__wrapper {
     order: 4;
   }
 }
 
-.p-person {
-  &.p-person--with-img {
+.o-person {
+  &.o-person--with-img {
     padding-block-end: rem(43px);
     @include bp-min(medium) {
       padding-block-end: rem(50px);
@@ -138,7 +138,7 @@
       padding-block-end: rem(90px);
     }
 
-    .p-person__grid {
+    .o-person__grid {
       align-items: start;
       display: grid;
       gap: rem(32px);
@@ -157,21 +157,21 @@
         grid-template-columns: 9fr 3fr;
       }
 
-      .p-person__title {
+      .o-person__title {
         order: 2;
         @include bp-min(medium) {
           grid-area: header;
         }
       }
 
-      .p-person__media {
+      .o-person__media {
         order: 1;
         @include bp-min(medium) {
           grid-area: sidebar;
         }
       }
 
-      .p-person__content {
+      .o-person__content {
         order: 3;
         @include bp-min(medium) {
           grid-area: content;
@@ -180,3 +180,4 @@
     }
   }
 }
+
