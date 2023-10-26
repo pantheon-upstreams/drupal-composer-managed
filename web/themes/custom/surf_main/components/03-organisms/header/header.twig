@@ -7,9 +7,7 @@
  * - header_attributes: [array] Any parent tag attributes.
  * - header_heading: [string] required
  * - header_teaser: [string]
- *
  * - header_media: [boolean]
- *
  * - header_cta_text [string]
  * - header_cta_url [string]
  * - header_cta_html_tag [string]
@@ -23,38 +21,17 @@
  */
 #}
 
-{%
-  set classes = [
+{% set classes = [
   'o-header',
   header_media ? 'o-header--with-img',
   header_type ? 'o-header--type-' ~ header_type,
-]
-%}
+] %}
 
 <header {{ header_attributes.addClass(classes).merge(attributes) }}>
-
   <div class="o-header__content">
-
-    {% block header_links_block %}
-
-      {% set breadcrumbs_default = [
-        {'text': 'Home', 'url': 'https://example.com'},
-        {'text': 'Education', 'url': 'https://example.com'},
-        {'text': 'Our Team', 'url': 'https://example.com'},
-        {'text': 'Deb Wolf'},
-      ]%}
-
-      {% include 'surf_main:breadcrumbs' with {
-        breadcrumbs_attributes: attributes|without('class'),
-        breadcrumbs_label: 'Breadcrumbs',
-        breadcrumbs_type: 'default',
-        breadcrumbs_navigation: breadcrumbs_default,
-      } only %}
-
-    {% endblock %}
+    {% block header_links_block %}{% endblock %}
 
     <div class="o-header__text-wrapper">
-
       {{ include('surf_main:heading', {
         heading_type: heading_type ? heading_type,
         heading_text: header_heading ? header_heading,
@@ -68,18 +45,15 @@
     </div>
 
     {% if header_cta_url %}
-      {% embed 'surf_main:button' with {
+      {% include 'surf_main:button' with {
         button_title: header_cta_text,
         button_url: header_cta_url,
         button_html_tag: header_cta_html_tag|default('link'),
         button_style: header_cta_style|default('full-navy'),
         button_size: header_cta_size|default('small'),
       } only %}
-      {% endembed %}
     {% endif %}
 
-    {% block header_metadata_block %}
-    {% endblock %}
-
+    {% block header_metadata_block %}{% endblock %}
   </div>
 </header>
