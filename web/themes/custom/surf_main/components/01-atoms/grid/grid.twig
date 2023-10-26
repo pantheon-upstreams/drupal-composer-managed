@@ -1,14 +1,3 @@
-{#{% set grid_type = grid_type|default('grid') %}#}
-
-{#{% if grid_type == 'grid'%}#}
-
-{#  {% set grid_styles = [#}
-{#    grid_col_gap ? 'column-gap:' ~ 'var(' ~ grid_col_gap ~ ');' : '',#}
-{#    grid_row_gap ? 'row-gap:' ~ 'var(' ~ grid_row_gap ~ ');' : '',#}
-{#  ]|safe_join('')|trim %}#}
-
-{#{% endif %}#}
-
 {%
   set classes = [
   'a-grid',
