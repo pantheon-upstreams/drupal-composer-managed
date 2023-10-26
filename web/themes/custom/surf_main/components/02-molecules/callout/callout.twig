@@ -6,118 +6,90 @@
  * Available props:
  * - callout_attributes: [array] Any parent tag attributes.
  * - callout_text: [string]
- *
  * - callout_heading: [string] required
  * - callout_heading_level: [string] required
- *
  * - callout_media: [array]
  * - callout_media_caption: [string]
- *
  * - callout_button_text: [string]
  * - callout_button_url: [string]
  *
  */
 #}
 
-{%
-  set classes = [
-  'm-callout',
-  callout_type ? 'm-callout--type-' ~ callout_type,
-]
-%}
+{% set classes = [
+    'm-callout',
+    callout_type ? 'm-callout--type-' ~ callout_type,
+] %}
 
 <aside {{ callout_attributes.addClass(classes).merge(attributes) }}>
-
-  {% if callout_media %}
-    {% embed 'surf_main:media' with {
-      media_attributes: create_attribute({'class': ['m-callout__media']}),
-      media_caption: callout_media_caption ? callout_media_caption,
-      media: callout_media,
-    } only %}
-
-    {% block media_block %}
-      {{ media }}
-    {% endblock %}
-
-    {% endembed %}
-  {% endif %}
-
-  <div class="m-callout__inner-wrapper">
-
-    {% if callout_heading %}
-
-      {% embed 'surf_main:heading' with {
-        heading_text: callout_heading ? callout_heading,
-        heading_level: '3',
-        heading_attributes: create_attribute({'class': ['m-callout__heading']}),
-      } only %}
-      {% endembed %}
-
+    {% if callout_media %}
+        {% embed 'surf_main:media' with {
+            media_attributes: create_attribute({'class': ['m-callout__media']}),
+            media_caption: callout_media_caption ? callout_media_caption,
+            media: callout_media,
+        } only %}
+            {% block media_block %}
+                {{ media }}
+            {% endblock %}
+        {% endembed %}
     {% endif %}
 
-    {% if callout_text %}
-      <p class="m-callout__text">{{ callout_text }}</p>
-    {% endif %}
+    <div class="m-callout__inner-wrapper">
+        {% if callout_heading %}
+            {% embed 'surf_main:heading' with {
+                heading_text: callout_heading ? callout_heading,
+                heading_level: '3',
+                heading_attributes: create_attribute({'class': ['m-callout__heading']}),
+            } only %}
+            {% endembed %}
+        {% endif %}
 
-    {% if callout_button_url %}
-      {% if callout_type == 'navy' or callout_type == 'blue' %}
+        {% if callout_text %}
+            <p class="m-callout__text">{{ callout_text }}</p>
+        {% endif %}
 
-        {% embed 'surf_main:button' with {
-          button_attributes: create_attribute(),
-          button_title: callout_button_text,
-          button_url: callout_button_url,
-          button_html_tag: 'link',
-          button_style: 'full-white',
-          button_size: 'small',
-        } only %}
-        {% endembed %}
-
-      {% elseif callout_type == 'white' %}
-
-        {% embed 'surf_main:button' with {
-          button_attributes: create_attribute(),
-          button_title: callout_button_text,
-          button_url: callout_button_url,
-          button_html_tag: 'link',
-          button_style: 'underline-navy',
-          button_size: 'small',
-        } only %}
-        {% endembed %}
-
-      {% elseif callout_type == 'img' or callout_type == 'embed' %}
-
-        {% embed 'surf_main:button' with {
-          button_attributes: create_attribute(),
-          button_title: callout_button_text,
-          button_url: callout_button_url,
-          button_html_tag: 'link',
-          button_style: 'underline-white',
-          button_size: 'small',
-          button_prefix: callout_button_prefix ? callout_button_prefix,
-          button_suffix: 'arrow-right',
-        } only %}
-        {% endembed %}
-
-      {% else %}
-
-        {% embed 'surf_main:button' with {
-          button_attributes: create_attribute(),
-          button_title: callout_button_text,
-          button_url: callout_button_url,
-          button_html_tag: 'link',
-          button_style: 'underline-navy',
-          button_size: 'small',
-          button_prefix: callout_button_prefix ? callout_button_prefix,
-          button_suffix: 'arrow-right',
-        } only %}
-        {% endembed %}
-
-      {% endif %}
-    {% endif %}
-
-    {% block content %}
-
-    {% endblock %}
-
-  </div>
+        {% if callout_button_url %}
+            {% if callout_type == 'navy' or callout_type == 'blue' %}
+                {% include 'surf_main:button' with {
+                    button_attributes: create_attribute(),
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                    button_html_tag: 'link',
+                    button_style: 'full-white',
+                    button_size: 'small',
+                } only %}
+            {% elseif callout_type == 'white' %}
+                {% include 'surf_main:button' with {
+                    button_attributes: create_attribute(),
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                    button_html_tag: 'link',
+                    button_style: 'underline-navy',
+                    button_size: 'small',
+                } only %}
+            {% elseif callout_type == 'img' or callout_type == 'embed' %}
+                {% include 'surf_main:button' with {
+                    button_attributes: create_attribute(),
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                    button_html_tag: 'link',
+                    button_style: 'underline-white',
+                    button_size: 'small',
+                    button_prefix: callout_button_prefix ? callout_button_prefix,
+                    button_suffix: 'arrow-right',
+                } only %}
+            {% else %}
+                {% include 'surf_main:button' with {
+                    button_attributes: create_attribute(),
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                    button_html_tag: 'link',
+                    button_style: 'underline-navy',
+                    button_size: 'small',
+                    button_prefix: callout_button_prefix ? callout_button_prefix,
+                    button_suffix: 'arrow-right',
+                } only %}
+            {% endif %}
+        {% endif %}
+    </div>
 </aside>
