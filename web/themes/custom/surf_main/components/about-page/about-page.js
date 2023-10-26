@@ -1,1 +1,0 @@
-!function(){var c;c=jQuery,Drupal.behaviors.accordion={attach:function(o){c(".c-about-page",o).each(function(o,a){c(this);console.log("About page")})}}}();
