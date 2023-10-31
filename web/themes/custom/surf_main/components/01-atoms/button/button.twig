@@ -4,14 +4,15 @@
  * Component for Button
  *
  * Available props:
- * - attributes:
- * - button_attributes: [array] Any parent tag attributes.
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal space specific attributes.
+ * - button_attributes: [array] Any custom attributes needed for this component.
+ * - button_color: [string] Options include 'navy', 'black', and 'white'.
  * - button_external: [boolean] Determines whether or not to set the target attribute.
- * - button_html_tag: [text] Restricted to 'link', 'input' or 'button'.
- * - button_prefix: [string] Specifying icon elements (see atom Icon).
- * - button_style: [string] Restricted to 'full-navy', 'full-black', 'full-white',
- *   'underline-navy', 'underline-black', and 'underline-white'.
- * - button_suffix: [string] Specifying icon elements (see atom Icon).
+ * - button_html_tag: [text] Options include 'link', 'input' or 'button'.
+ * - button_prefix: [string] Specifying icon elements as classes -- example 'icon-arrow-right'.
+ * - button_size: [string] Options include 'small', and 'large'.
+ * - button_style: [string] Options include 'primary', and 'underline'.
+ * - button_suffix: [string] Specifying icon elements as classes -- example 'icon-arrow-right'.
  * - button_title: [string] Text for the button.
  * - button_url: [string] URL if using a link.
  *
@@ -20,27 +21,16 @@
 
 {% set classes = [
     'a-button',
+    'a-button--' ~ button_color,
     'a-button--' ~ button_style,
-    'a-button--size-' ~ button_size,
+    'a-button--' ~ button_size,
+    button_prefix ? 'a-button--' ~ button_prefix,
+    button_suffix ? 'a-button--' ~ button_suffix,
 ] %}
 
 {% if button_html_tag == 'link' %}
     <a {{ button_attributes.addClass(classes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %} {{ attributes }}>
-        {% if button_prefix %}
-            {% include 'surf_main:icon' with {
-                icon_position: 'left',
-                icon_type: button_prefix,
-            } %}
-        {% endif %}
-
         {{- button_title -}}
-
-        {% if button_suffix %}
-            {% include 'surf_main:icon' with {
-                icon_position: 'right',
-                icon_type: button_suffix,
-            } %}
-        {% endif %}
     </a>
 {% endif %}
 
@@ -50,20 +40,6 @@
 
 {% if button_html_tag == 'button' %}
     <button {{ button_attributes.addClass(classes) }} {{ attributes }}>
-        {% if button_prefix %}
-            {% include 'surf_main:icon' with {
-                icon_position: 'left',
-                icon_type: button_prefix,
-            } %}
-        {% endif %}
-
         {{- button_title -}}
-
-        {% if button_suffix %}
-            {% include 'surf_main:icon' with {
-                icon_position: 'right',
-                icon_type: button_suffix,
-            } %}
-        {% endif %}
     </button>
 {% endif %}

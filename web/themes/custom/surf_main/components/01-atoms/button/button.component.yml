@@ -5,6 +5,7 @@ group: Atoms
 props:
   type: object
   required:
+    - button_color
     - button_html_tag
     - button_size
     - button_style
@@ -15,6 +16,13 @@ props:
     button_attributes:
       title: Attributes
       type: string
+    button_color:
+      title: Color
+      type: string
+      enum:
+        - black
+        - navy
+        - white
     button_external:
       title: External
       type: boolean
@@ -38,12 +46,8 @@ props:
       title: Style
       type: string
       enum:
-        - full-navy
-        - full-black
-        - full-white
-        - underline-navy
-        - underline-black
-        - underline-white
+        - primary
+        - underline
     button_suffix:
       title: Suffix
       type: string

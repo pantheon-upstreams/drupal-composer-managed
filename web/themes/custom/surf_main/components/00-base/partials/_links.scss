@@ -10,8 +10,8 @@
 //  01 - Imports
 //------------------------------------
 
-@use 'animations' as animations;
-@use 'calculations' as calculations;
+@use 'animations';
+@use 'calculations';
 
 
 
@@ -20,7 +20,7 @@
 //  02 - Menu Link
 //------------------------------------
 
-@mixin link-menu($size, $color) {
+@mixin menu($size, $color) {
   color: var(--surf-color-#{$color});
   display: inline-block;
   font-family: var(--surf-font-condensed);

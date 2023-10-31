@@ -11,7 +11,12 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/animations';
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/buttons';
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/links';
+@use '../../../00-base/partials/lists';
 
 
 
@@ -24,11 +29,11 @@
   display: none;
 
   ul {
-    @include list-reset();
+    @include lists.list-reset();
   }
 
   button {
-    @include button-reset();
+    @include buttons.button-reset();
   }
 
   p {
@@ -53,7 +58,7 @@
   flex-flow: nowrap column;
   margin: 0;
 
-  @include bp-min(xxlarge) {
+  @include breakpoints.bp-min(xxlarge) {
     flex-flow: nowrap row;
     margin: 0 -24px 0 -28px;
   }
@@ -61,15 +66,15 @@
   > li {
     background-color: transparent;
     position: relative;
-    transition: transition(background-color, 0.35s, easeInOutExpo);
+    transition: animations.transition(background-color, 0.35s, easeInOutExpo);
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       padding: 0 16px;
     }
   }
 
   > li.is-open {
-    @include bp-max(xxlarge) {
+    @include breakpoints.bp-max(xxlarge) {
       background-color: fade-out(#000, 0.75);
     }
   }
@@ -77,13 +82,13 @@
   > li > a,
   > li > button,
   > li > span {
-    @include link-menu(22px, white);
+    @include links.menu(22px, white);
     padding: 12px 16px;
     text-align: left;
     width: 100%;
 
-    @include bp-min(xxlarge) {
-      @include link-menu(28px, navy);
+    @include breakpoints.bp-min(xxlarge) {
+      @include links.menu(28px, navy);
       padding: 4px 0;
       width: auto;
     }
@@ -92,7 +97,7 @@
   > li > a:after,
   > li > button:after,
   > li > span:after {
-    @include bp-max(xxlarge) {
+    @include breakpoints.bp-max(xxlarge) {
       display: none;
     }
   }
@@ -113,10 +118,10 @@
       right: 32px;
       top: 0;
       transform: scale(1);
-      transition: transition(all, 0.35s, easeInOutExpo);
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
       width: 26px;
 
-      @include bp-min(xxlarge) {
+      @include breakpoints.bp-min(xxlarge) {
         background: svg-load('icon-angle-down.svg', fill="#000080") no-repeat center;
         right: 0;
       }
@@ -134,10 +139,10 @@
     opacity: 0;
     padding: 0;
     position: relative;
-    transition: transition(all, 0.35s, easeInOutExpo);
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
     visibility: hidden;
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       background: url('img/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
       max-height: inherit;
       min-width: 740px;
@@ -148,14 +153,14 @@
   }
 
   > li:not(:last-child) > .m-menu__dropdown {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       left: 50%;
       transform: translate(-50%, 100%);
     }
   }
 
   > li:last-child > .m-menu__dropdown {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       right: 0;
       transform: translateY(100%);
     }
@@ -166,19 +171,19 @@
     opacity: 1;
     visibility: visible;
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       transform: translate(-50%, 0);
     }
   }
 
   > li.is-open:not(:last-child) > .m-menu__dropdown {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       transform: translate(-50%, 0);
     }
   }
 
   > li.is-open:last-child > .m-menu__dropdown {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       transform: translateY(0);
     }
   }
@@ -196,13 +201,13 @@
   flex-flow: nowrap column;
   margin-bottom: 8px;
 
-  @include bp-min(xxlarge) {
+  @include breakpoints.bp-min(xxlarge) {
     flex-flow: nowrap row;
     margin-bottom: 0;
   }
 
   > li {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       display: flex;
       flex-flow: nowrap row;
       min-height: 240px;
@@ -211,14 +216,14 @@
   }
 
   > li > .m-menu__card {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       background-color: var(--surf-color-white);
       min-width: 360px;
       padding: 24px 32px;
     }
 
     &:after {
-      @include bp-min(xxlarge) {
+      @include breakpoints.bp-min(xxlarge) {
         background: svg-load('icon-arrow-right.svg', fill="#000080") no-repeat center;
         background-size: cover;
         content: '';
@@ -235,13 +240,13 @@
   > li > .m-menu__card > span {
     color: var(--surf-color-white);
     display: block;
-    font-size: rem(18px);
+    font-size: calculations.rem(18px);
     font-weight: var(--surf-fw-bold);
     padding: 8px 16px;
     text-decoration: none;
 
-    @include bp-min(xxlarge) {
-      @include link-menu(28px, navy);
+    @include breakpoints.bp-min(xxlarge) {
+      @include links.menu(28px, navy);
       padding: 4px 0;
     }
   }
@@ -249,16 +254,16 @@
   > li > .m-menu__card > a:before,
   > li > .m-menu__card > button:before,
   > li > .m-menu__card > span:before {
-    @include bp-max(xxlarge) {
+    @include breakpoints.bp-max(xxlarge) {
       display: none;
     }
   }
 
   > li > .m-menu__card > p {
     display: none;
-    font-size: rem(16px);
+    font-size: calculations.rem(16px);
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       display: inherit;
     }
   }
@@ -272,12 +277,12 @@
 //------------------------------------
 
 .m-menu.m-menu--primary-menu .m-menu__list.m-menu__level--3 {
-  @include bp-min(xxlarge) {
+  @include breakpoints.bp-min(xxlarge) {
     background-color: var(--surf-color-white);
   }
 
   > li:not(:first-child) {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       margin-top: 24px;
     }
   }
@@ -285,12 +290,12 @@
   > li > a {
     color: var(--surf-color-white);
     display: block;
-    font-size: rem(18px);
+    font-size: calculations.rem(18px);
     padding: 8px 16px;
     position: relative;
     text-decoration: none;
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       color: var(--surf-color-gray-900);
       display: inline-block;
       padding: 4px 0;
@@ -305,10 +310,10 @@
       opacity: 0;
       position: absolute;
       top: calc(100% - 6px);
-      transition: transition(all, 0.35s, easeInOutExpo);
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
       width: 100%;
 
-      @include bp-min(xxlarge) {
+      @include breakpoints.bp-min(xxlarge) {
         background-color: var(--surf-color-navy);
       }
     }
@@ -326,9 +331,9 @@
 
   > li > p {
     display: none;
-    font-size: rem(14px);
+    font-size: calculations.rem(14px);
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       display: inherit;
     }
   }

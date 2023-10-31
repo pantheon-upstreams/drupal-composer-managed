@@ -1,0 +1,295 @@
+//
+// Global - Buttons
+//
+// - 01 - Imports
+// - 02 - Base
+// - 03 - Primary
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/animations';
+@use '../../partials/calculations';
+@use '../../partials/buttons';
+
+
+
+
+//------------------------------------
+//  02 - Base
+//------------------------------------
+
+@mixin base() {
+  .a-button {
+    @include buttons.button-reset;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: var(--surf-fw-bold);
+    position: relative;
+    text-decoration: none;
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
+
+    &:after {
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
+    }
+
+    &:hover:after,
+    &:focus:after {
+      transform: translateX(4px);
+    }
+  }
+}
+
+@include base();
+
+
+
+
+//------------------------------------
+//  03 - Sizes
+//------------------------------------
+
+@mixin sizes() {
+  .a-button {
+    &.a-button--small {
+      font-size: calculations.rem(16px);
+    }
+
+    &.a-button--large {
+      font-size: var(--surf-fs-18-24);
+    }
+  }
+}
+
+@include sizes();
+
+
+
+
+//------------------------------------
+//  04 - Primary
+//------------------------------------
+
+@mixin primary() {
+  .a-button.a-button--primary {
+    padding: 8px 16px;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    // Navy Primary Button
+    &.a-button--navy {
+      background-color: var(--surf-color-navy);
+      color: var(--surf-color-white);
+
+      &:after,
+      &:before {
+        background-color: var(--surf-color-white);
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--surf-color-black);
+      }
+    }
+
+    // Black Primary Button
+    &.a-button--black {
+      background-color: var(--surf-color-black);
+      color: var(--surf-color-white);
+
+      &:after,
+      &:before {
+        background-color: var(--surf-color-white);
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--surf-color-gray-800);
+      }
+    }
+
+    // White Primary Button
+    &.a-button--white {
+      background-color: var(--surf-color-white);
+      color: var(--surf-color-navy);
+
+      &:after,
+      &:before {
+        background-color: var(--surf-color-navy);
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--surf-color-gray-100);
+      }
+    }
+  }
+}
+
+@include primary();
+
+
+
+
+//------------------------------------
+//  05 - Underline
+//------------------------------------
+
+@mixin underline() {
+  .a-button.a-button--underline {
+    border-bottom: solid 2px;
+    padding: 4px 0;
+    position: relative;
+
+    // Navy Underline Button
+    &.a-button--navy {
+      border-bottom-color: var(--surf-color-navy);
+      color: var(--surf-color-navy);
+
+      &:before,
+      &:after {
+        background-color: var(--surf-color-navy);
+      }
+    }
+
+    // Black Underline Button
+    &.a-button--black {
+      border-bottom-color: var(--surf-color-black);
+      color: var(--surf-color-black);
+
+      &:before,
+      &:after {
+        background-color: var(--surf-color-black);
+      }
+    }
+
+    // White Underline Button
+    &.a-button--white {
+      border-bottom-color: var(--surf-color-white);
+      color: var(--surf-color-white);
+
+      &:before,
+      &:after {
+        background-color: var(--surf-color-white);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+@include underline();
+
+
+
+
+//------------------------------------
+//  04 - Icons
+//------------------------------------
+
+@mixin icons() {
+  .a-button.a-button--primary.a-button--icon-arrow-right {
+    padding-right: 56px;
+  }
+
+  .a-button.a-button--primary.a-button--icon-arrow-left,
+  .a-button.a-button--primary.a-button--icon-play-left,
+  .a-button.a-button--primary.a-button--icon-envelope-left {
+    padding-left: 56px;
+  }
+
+  .a-button.a-button--underline.a-button--icon-arrow-right {
+    padding-right: 40px;
+  }
+
+  .a-button.a-button--underline.a-button--icon-arrow-left,
+  .a-button.a-button--underline.a-button--icon-play-left,
+  .a-button.a-button--underline.a-button--icon-envelope-left {
+    padding-left: 40px;
+  }
+
+  .a-button.a-button--icon-arrow-right:after,
+  .a-button.a-button--icon-arrow-left:before,
+  .a-button.a-button--icon-play-left:before,
+  .a-button.a-button--icon-envelope-left:before {
+    content: '';
+    display: block;
+    height: 32px;
+    margin: auto;
+    position: absolute;
+    width: 32px;
+  }
+
+  .a-button.a-button--icon-arrow-right:after {
+    --surf-icon-arrow-right: svg-load('icon-arrow-right.svg');
+    bottom: 0;
+    mask-image: var(--surf-icon-arrow-right);
+    top: 2px;
+  }
+
+  .a-button.a-button--primary.a-button--icon-arrow-right:after {
+    right: 16px;
+  }
+
+  .a-button.a-button--underline.a-button--icon-arrow-right:after {
+    right: 0;
+  }
+
+  .a-button.a-button--icon-arrow-left:before {
+    --surf-icon-arrow-left: svg-load('icon-arrow-left.svg');
+    bottom: 0;
+    mask-image: var(--surf-icon-arrow-left);
+    top: 2px;
+  }
+
+  .a-button.a-button--primary.a-button--icon-arrow-left:before {
+    left: 16px;
+  }
+
+  .a-button.a-button--underline.a-button--icon-arrow-left:before {
+    left: 0;
+  }
+
+  .a-button.a-button--icon-play-left:before {
+    --surf-icon-play: svg-load('icon-play.svg');
+    bottom: 0;
+    left: 16px;
+    mask-image: var(--surf-icon-play);
+    top: 2px;
+  }
+
+  .a-button.a-button--primary.a-button--icon-play-left:before {
+    left: 16px;
+  }
+
+  .a-button.a-button--underline.a-button--icon-play-left:before {
+    left: 0;
+  }
+
+  .a-button.a-button--icon-envelope-left:before {
+    --surf-icon-envelope: svg-load('icon-envelope.svg');
+    bottom: 0;
+    left: 16px;
+    mask-image: var(--surf-icon-envelope);
+    top: 2px;
+  }
+
+  .a-button.a-button--primary.a-button--icon-envelope-left:before {
+    left: 16px;
+  }
+
+  .a-button.a-button--underline.a-button--icon-envelope-left:before {
+    left: 0;
+  }
+}
+
+@include icons();

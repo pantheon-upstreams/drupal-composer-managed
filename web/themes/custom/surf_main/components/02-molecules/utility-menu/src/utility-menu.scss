@@ -10,7 +10,9 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/links';
+@use '../../../00-base/partials/lists';
 
 
 
@@ -23,7 +25,7 @@
   display: none; // FUOC Fix
 
   ul {
-    @include list-reset();
+    @include lists.list-reset();
   }
 }
 
@@ -44,12 +46,12 @@
   flex-flow: nowrap column;
   margin: 0;
 
-  @include bp-min(large) {
+  @include breakpoints.bp-min(large) {
     flex-flow: nowrap row;
   }
 
   > li {
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       padding: 0 18px;
     }
   }
@@ -57,11 +59,11 @@
   > li > a,
   > li > button,
   > li > span {
-    @include link-menu(22px, white);
+    @include links.menu(22px, white);
     display: block;
     padding: 12px 16px;
 
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       padding: 4px 0;
     }
   }
@@ -71,7 +73,7 @@
   > li > span.icon {
     padding-left: 48px;
 
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       padding-left: 0;
       padding-right: 25px;
     }
@@ -88,7 +90,7 @@
     top: 0;
     width: 22px;
 
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       left: initial;
       right: 0;
     }
