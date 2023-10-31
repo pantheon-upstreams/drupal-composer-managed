@@ -1,0 +1,27 @@
+_core:
+  default_config_hash: '-hIna-Wer82f4uUFdPEmBNA6-RerV3rxWsqgsPi4o7A'
+content_types:
+  article: '1'
+  page: '1'
+edit_screen_theme: claro
+skip_create_form: {  }
+mobile_presets:
+  -
+    name: 'iPhone 12 Pro'
+    width: 390
+    height: 844
+  -
+    name: 'iPhone XR'
+    width: 414
+    height: 896
+  -
+    name: 'Pixel 5'
+    width: 393
+    height: 851
+dialog_settings:
+  _defaults:
+    width: fit-content
+    height: fit-content
+    drupalAutoButtons: false
+    dialogClass: lpb-dialog
+    resizable: true

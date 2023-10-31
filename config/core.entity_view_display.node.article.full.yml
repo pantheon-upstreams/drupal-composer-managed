@@ -1,8 +1,9 @@
-uuid: 6f813fc1-b290-436e-9705-786a484241ff
+uuid: fa58db0e-c9ca-4aa7-827d-0d99f2ff773c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.article.field_author
     - field.field.node.article.field_date_published
     - field.field.node.article.field_highlight
@@ -17,103 +18,108 @@ dependencies:
     - node.type.article
   module:
     - datetime
+    - layout_builder
     - layout_paragraphs
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: 1x2VMLBhwpRPa-_Q_6J_ZN4QNazwCmP1dt01Zc-Iors
-id: node.article.default
+id: node.article.full
 targetEntityType: node
 bundle: article
-mode: default
+mode: full
 content:
   field_author:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 1
     region: content
   field_date_published:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: teaser_date
     third_party_settings: {  }
-    weight: 1
+    weight: 6
     region: content
   field_highlight:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 10
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 5
     region: content
   field_p_content:
     type: layout_paragraphs
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_publisher:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_ref_eo_opportunities:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
     third_party_settings: {  }
     weight: 7
     region: content
-  field_ref_key_impact_areas:
+  field_ref_audiences:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 0
     region: content
-  field_ref_related_content:
-    type: entity_reference_entity_view
-    label: above
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: hidden
     settings:
-      view_mode: teaser
       link: false
     third_party_settings: {  }
     weight: 3
     region: content
+  field_ref_key_impact_areas:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_ref_related_content:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_ref_research_areas:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 9
     region: content

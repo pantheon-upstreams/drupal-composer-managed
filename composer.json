@@ -58,6 +58,7 @@
         "drupal/maxlength": "^2.0",
         "drupal/menu_block": "~1.0",
         "drupal/menu_item_extras": "^2.19",
+        "drupal/mercury_editor": "^2.1@alpha",
         "drupal/metatag": "~1.0",
         "drupal/migrate_drupal_d8": "^1.0",
         "drupal/name": "^1.0",

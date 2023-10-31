@@ -9,9 +9,9 @@ id: node.article.field_highlight
 field_name: field_highlight
 entity_type: node
 bundle: article
-label: Overview
+label: Summary
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

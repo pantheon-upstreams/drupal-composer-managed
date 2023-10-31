@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7464a6f825addda17928ff8b411b7ca0",
+    "content-hash": "ea27e8de2f6fb385b0d4fd84cd133d95",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4029,6 +4029,66 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/menu_item_extras",
                 "issues": "https://www.drupal.org/project/issues/menu_item_extras"
+            }
+        },
+        {
+            "name": "drupal/mercury_editor",
+            "version": "2.1.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/mercury_editor.git",
+                "reference": "2.1.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/mercury_editor-2.1.0-alpha4.zip",
+                "reference": "2.1.0-alpha4",
+                "shasum": "872ddb49174753694f3f583b15019f365756a2e5"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10",
+                "drupal/layout_paragraphs": "^2.0.3",
+                "drupal/style_options": "^1"
+            },
+            "require-dev": {
+                "drupal/layout_paragraphs": "*",
+                "drupal/mercury_editor_components": "*",
+                "drupal/paragraphs": "*",
+                "drupal/style_options": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0-alpha4",
+                    "datestamp": "1691076803",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "justin2pin",
+                    "homepage": "https://www.drupal.org/user/278450"
+                },
+                {
+                    "name": "pixelwhip",
+                    "homepage": "https://www.drupal.org/user/275292"
+                }
+            ],
+            "description": "Mercury Editor",
+            "homepage": "https://bitbucket.org/atendesigngroup/mercury_editor",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://bitbucket.org/atendesigngroup/mercury_editor/src",
+                "issues": "https://bitbucket.org/atendesigngroup/mercury_editor/jira"
             }
         },
         {
