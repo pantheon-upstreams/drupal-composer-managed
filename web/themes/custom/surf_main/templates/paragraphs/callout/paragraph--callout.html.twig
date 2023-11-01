@@ -1,0 +1,15 @@
+{% embed 'surf_main:callout' with {
+  callout_attributes: create_attribute(),
+  callout_type: content.field_callout_theme.0 ? content.field_callout_theme.0['#markup'],
+  callout_heading: content.field_title|field_value,
+  callout_text: content.field_text|field_value,
+  callout_button_text: content.field_link.0 ? content.field_link.0['#title'],
+  callout_button_url: content.field_link.0 ? content.field_link.0['#url'],
+  callout_media: content.field_media.0 ? content.field_media|field_value,
+} only %}
+
+  {% block media_block %}
+    {{ callout_media }}
+  {% endblock %}
+
+{% endembed %}

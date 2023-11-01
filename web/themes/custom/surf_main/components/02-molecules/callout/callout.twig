@@ -45,7 +45,7 @@
         {% endif %}
 
         {% if callout_text %}
-            <p class="m-callout__text">{{ callout_text }}</p>
+            <div class="m-callout__text">{{ callout_text }}</div>
         {% endif %}
 
         {% if callout_button_url %}
@@ -78,6 +78,15 @@
                     button_prefix: callout_button_prefix ? callout_button_prefix,
                     button_suffix: 'arrow-right',
                 } only %}
+            {% elseif callout_type == 'gray' %}
+                {% include 'surf_main:button' with {
+                    button_attributes: create_attribute(),
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                    button_html_tag: 'link',
+                    button_style: 'full-navy',
+                    button_size: 'small',
+                } only %}
             {% else %}
                 {% include 'surf_main:button' with {
                     button_attributes: create_attribute(),
@@ -91,5 +100,9 @@
                 } only %}
             {% endif %}
         {% endif %}
+
+        {% block callout_content %}
+        {% endblock %}
     </div>
+
 </aside>
