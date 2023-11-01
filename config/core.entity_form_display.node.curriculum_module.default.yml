@@ -18,11 +18,99 @@ dependencies:
     - field.field.node.curriculum_module.field_time_required
     - node.type.curriculum_module
   module:
+    - field_group
     - link
+    - maxlength
     - media_library
     - path
     - scheduler
     - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_media_resources
+        - group_related
+        - group_tags
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
+    group_content:
+      children:
+        - field_time_required
+        - body
+      label: Content
+      region: content
+      parent_name: group_tabs
+      weight: 25
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_related:
+      children:
+        - field_ref_related_content
+      label: Related
+      region: content
+      parent_name: group_tabs
+      weight: 27
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tags:
+      children:
+        - field_ref_audiences
+        - field_content_area
+        - field_ref_eo_opportunities
+        - field_ref_grade_level
+        - field_ref_research_areas
+        - field_ref_standards
+      label: Tags
+      region: content
+      parent_name: group_tabs
+      weight: 28
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_media_resources:
+      children:
+        - field_media
+        - field_resources
+      label: 'Media / Resources'
+      region: content
+      parent_name: group_tabs
+      weight: 26
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.curriculum_module.default
 targetEntityType: node
 bundle: curriculum_module
@@ -30,33 +118,35 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 16
+    weight: 4
     region: content
     settings:
-      rows: 9
+      rows: 5
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_summary: null
+        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_content_area:
-    type: entity_reference_autocomplete
-    weight: 3
+    type: options_select
+    weight: 4
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 5
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
@@ -64,7 +154,7 @@ content:
     third_party_settings: {  }
   field_media:
     type: media_library_widget
-    weight: 17
+    weight: 3
     region: content
     settings:
       media_types: {  }
@@ -76,40 +166,32 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_ref_audiences:
-    type: entity_reference_autocomplete
-    weight: 23
+    type: options_select
+    weight: 3
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_eo_opportunities:
-    type: entity_reference_autocomplete
-    weight: 22
+    type: options_select
+    weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_grade_level:
-    type: entity_reference_autocomplete
-    weight: 2
+    type: options_select
+    weight: 6
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_related_content:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -118,76 +200,61 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_ref_research_areas:
-    type: entity_reference_autocomplete
-    weight: 20
+    type: options_select
+    weight: 7
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_standards:
-    type: entity_reference_autocomplete
-    weight: 21
+    type: options_select
+    weight: 8
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_resources:
     type: media_library_widget
-    weight: 18
+    weight: 4
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_time_required:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 6
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 9
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 10
+    weight: 8
     region: content
     settings:
       display_label: true
@@ -202,7 +269,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -212,13 +279,14 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 13
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

@@ -5,10 +5,10 @@ dependencies:
   module:
     - style_options
 id: gallery
-label: 'Image Gallery'
+label: 'Media Gallery'
 icon_uuid: null
 icon_default: null
-description: null
+description: ''
 behavior_plugins:
   style_options:
     enabled: true

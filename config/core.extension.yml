@@ -7,7 +7,6 @@ module:
   admin_toolbar_links_access_filter: 0
   admin_toolbar_search: 0
   admin_toolbar_tools: 0
-  allowed_formats: 0
   apitools: 0
   auto_entitylabel: 0
   automated_cron: 0

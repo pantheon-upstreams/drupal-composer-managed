@@ -10,7 +10,7 @@ id: node.event.field_ref_key_impact_areas
 field_name: field_ref_key_impact_areas
 entity_type: node
 bundle: event
-label: 'Key impact areas'
+label: 'Key Impact Areas'
 description: ''
 required: false
 translatable: true

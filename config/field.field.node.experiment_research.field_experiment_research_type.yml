@@ -11,7 +11,7 @@ id: node.experiment_research.field_experiment_research_type
 field_name: field_experiment_research_type
 entity_type: node
 bundle: experiment_research
-label: 'Experiment/Research type'
+label: 'Experiment/Research Type'
 description: ''
 required: true
 translatable: false

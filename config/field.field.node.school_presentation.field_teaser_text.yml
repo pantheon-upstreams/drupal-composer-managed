@@ -9,7 +9,7 @@ id: node.school_presentation.field_teaser_text
 field_name: field_teaser_text
 entity_type: node
 bundle: school_presentation
-label: 'Teaser text'
+label: 'Teaser Text'
 description: ''
 required: false
 translatable: true

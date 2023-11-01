@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: 'Report Publication'
 type: report_publication
-description: ''
+description: 'Use <em>Report Publication</em> to add content relating to publications on scientific work and progress.'
 help: ''
 new_revision: false
 preview_mode: 0

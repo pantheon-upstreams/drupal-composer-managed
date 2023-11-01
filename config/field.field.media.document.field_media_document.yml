@@ -7,9 +7,28 @@ dependencies:
     - media.type.document
   module:
     - file
+    - filefield_paths
   enforced:
     module:
       - media
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: 'documents/[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
 _core:
   default_config_hash: 52m0CtJVAoE3Qvh2AiciSkV8odAgQeRo4yNDGgUA7dc
 id: media.document.field_media_document
@@ -27,6 +46,6 @@ settings:
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
   file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf odf odg odp ods odt fodt fods fodp fodg key numbers pages'
-  max_filesize: ''
+  max_filesize: '5 MB'
   description_field: false
 field_type: file

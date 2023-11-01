@@ -9,7 +9,7 @@ id: node.person.field_appointed_by
 field_name: field_appointed_by
 entity_type: node
 bundle: person
-label: 'Appointed by'
+label: 'Appointed By'
 description: ''
 required: false
 translatable: false

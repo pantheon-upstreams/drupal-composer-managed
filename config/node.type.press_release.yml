@@ -24,8 +24,8 @@ third_party_settings:
     unpublish_revision: false
 name: 'Press Release'
 type: press_release
-description: ''
+description: 'Use <em>Press Release</em> to add content, generally from an outside source.'
 help: ''
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: false

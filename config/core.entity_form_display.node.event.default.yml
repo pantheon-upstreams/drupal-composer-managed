@@ -25,6 +25,7 @@ dependencies:
   module:
     - address
     - datetime_range
+    - field_group
     - link
     - maxlength
     - media_library
@@ -32,6 +33,126 @@ dependencies:
     - scheduler
     - smart_date
     - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_details
+        - group_content
+        - group_media
+        - group_related
+        - group_tags
+        - group_attendees
+      label: Tabs
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
+    group_tags:
+      children:
+        - field_ref_audiences
+        - field_department
+        - field_ref_eo_opportunities
+        - field_ref_event_types
+        - field_ref_key_impact_areas
+        - field_ref_research_areas
+      label: Tags
+      region: content
+      parent_name: group_tabs
+      weight: 29
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_related:
+      children:
+        - field_ref_related_content
+      label: Related
+      region: content
+      parent_name: group_tabs
+      weight: 27
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_media:
+      children:
+        - field_media_primary
+      label: Media
+      region: content
+      parent_name: group_tabs
+      weight: 26
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_details:
+      children:
+        - field_location_address
+        - field_capacity
+        - field_link
+        - field_location_title
+        - field_registration_period
+      label: Details
+      region: content
+      parent_name: group_tabs
+      weight: 24
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_content:
+      children:
+        - body
+      label: Content
+      region: content
+      parent_name: group_tabs
+      weight: 25
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_attendees:
+      children:
+        - field_ref_attendees
+      label: Attendees
+      region: content
+      parent_name: group_tabs
+      weight: 30
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -39,17 +160,23 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 9
+    weight: 5
     region: content
     settings:
-      rows: 9
+      rows: 5
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_summary: null
+        maxlength_js_label_summary: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -62,7 +189,7 @@ content:
     third_party_settings: {  }
   field_dates:
     type: smartdate_default
-    weight: 4
+    weight: 2
     region: content
     settings:
       modal: false
@@ -77,18 +204,14 @@ content:
       hide_date: true
     third_party_settings: {  }
   field_department:
-    type: entity_reference_autocomplete
-    weight: 28
+    type: options_select
+    weight: 23
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 19
+    weight: 23
     region: content
     settings:
       placeholder_url: ''
@@ -96,38 +219,35 @@ content:
     third_party_settings: {  }
   field_location_address:
     type: address_default
-    weight: 8
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_location_title:
-    type: entity_reference_autocomplete
-    weight: 7
+    type: options_select
+    weight: 24
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 18
+    weight: 17
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
-      size: 125
+      size: 60
       placeholder: ''
     third_party_settings:
       maxlength:
         maxlength_js: 200
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_ref_attendees:
     type: entity_reference_autocomplete
     weight: 21
@@ -139,48 +259,32 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_ref_audiences:
-    type: entity_reference_autocomplete
-    weight: 24
+    type: options_select
+    weight: 22
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_eo_opportunities:
-    type: entity_reference_autocomplete
-    weight: 23
+    type: options_select
+    weight: 24
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_event_types:
-    type: entity_reference_autocomplete
-    weight: 27
+    type: options_select
+    weight: 25
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_key_impact_areas:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 26
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_related_content:
     type: entity_reference_autocomplete
-    weight: 20
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -189,34 +293,23 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_ref_research_areas:
-    type: entity_reference_autocomplete
-    weight: 25
+    type: options_select
+    weight: 27
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_registration_period:
     type: daterange_default
-    weight: 17
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
   field_registration_required:
     type: boolean_checkbox
-    weight: 16
+    weight: 3
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 1
-    region: content
-    settings:
-      include_locked: true
     third_party_settings: {  }
   path:
     type: path
@@ -226,7 +319,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -261,7 +354,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -280,4 +373,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

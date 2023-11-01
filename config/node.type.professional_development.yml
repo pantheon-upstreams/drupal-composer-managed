@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: 'Professional Development'
 type: professional_development
-description: ''
+description: 'Use <em>Professional Development</em> for any content that is focused on career-building.'
 help: ''
 new_revision: false
 preview_mode: 0

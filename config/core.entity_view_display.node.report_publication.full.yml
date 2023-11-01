@@ -1,0 +1,75 @@
+uuid: 8a79ae2b-533d-426d-ba9e-b4e4249b27ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.report_publication.field_authors
+    - field.field.node.report_publication.field_date_published
+    - field.field.node.report_publication.field_link
+    - field.field.node.report_publication.field_media_primary
+    - field.field.node.report_publication.field_overview
+    - field.field.node.report_publication.field_p_content
+    - field.field.node.report_publication.field_ref_publication_type
+    - field.field.node.report_publication.field_teaser_text
+    - node.type.report_publication
+  module:
+    - layout_builder
+    - layout_paragraphs
+    - link
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.report_publication.full
+targetEntityType: node
+bundle: report_publication
+mode: full
+content:
+  field_authors:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_date_published: true
+  field_overview: true
+  field_ref_publication_type: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

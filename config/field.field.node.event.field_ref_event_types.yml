@@ -10,7 +10,7 @@ id: node.event.field_ref_event_types
 field_name: field_ref_event_types
 entity_type: node
 bundle: event
-label: 'Event types'
+label: 'Event Types'
 description: ''
 required: false
 translatable: false

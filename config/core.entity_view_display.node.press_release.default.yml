@@ -26,7 +26,7 @@ mode: default
 content:
   field_author:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -34,7 +34,7 @@ content:
     region: content
   field_date_published:
     type: datetime_default
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
       format_type: teaser_date
@@ -43,7 +43,7 @@ content:
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: true
@@ -52,27 +52,23 @@ content:
     region: content
   field_overview:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
   field_p_content:
-    type: layout_paragraphs_builder
-    label: hidden
+    type: layout_paragraphs
+    label: above
     settings:
       view_mode: default
       link: ''
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
     third_party_settings: {  }
     weight: 5
     region: content
   field_ref_contacts:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
@@ -80,7 +76,7 @@ content:
     region: content
   field_ref_news_categories:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
@@ -88,7 +84,7 @@ content:
     region: content
   field_resource_list:
     type: entity_reference_revisions_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
@@ -97,7 +93,7 @@ content:
     region: content
   field_teaser_text:
     type: basic_string
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 8

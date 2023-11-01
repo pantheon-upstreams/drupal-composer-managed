@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_teasers
-    - paragraphs.paragraphs_type.full_teaser
     - paragraphs.paragraphs_type.teaser_list
   module:
     - entity_reference_revisions
@@ -21,8 +20,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles:
-      full_teaser: full_teaser
+    target_bundles: {  }
     negate: 0
     target_bundles_drag_drop:
       accordion:

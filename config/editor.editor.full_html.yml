@@ -11,74 +11,26 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
+      - style
+      - '|'
+      - heading
       - bold
       - italic
+      - underline
       - strikethrough
       - superscript
       - subscript
-      - removeFormat
+      - '|'
+      - bulletedList
+      - numberedList
       - outdent
       - indent
       - '|'
       - link
       - '|'
-      - bulletedList
-      - numberedList
-      - '|'
-      - drupalInsertImage
       - insertTable
-      - horizontalLine
-      - '|'
-      - heading
-      - codeBlock
-      - style
-      - '|'
-      - sourceEditing
+      - drupalMedia
   plugins:
-    ckeditor5_codeBlock:
-      languages:
-        -
-          label: 'Plain text'
-          language: plaintext
-        -
-          label: C
-          language: c
-        -
-          label: 'C#'
-          language: cs
-        -
-          label: C++
-          language: cpp
-        -
-          label: CSS
-          language: css
-        -
-          label: Diff
-          language: diff
-        -
-          label: HTML
-          language: html
-        -
-          label: Java
-          language: java
-        -
-          label: JavaScript
-          language: javascript
-        -
-          label: PHP
-          language: php
-        -
-          label: Python
-          language: python
-        -
-          label: Ruby
-          language: ruby
-        -
-          label: TypeScript
-          language: typescript
-        -
-          label: XML
-          language: xml
     ckeditor5_heading:
       enabled_headings:
         - heading2
@@ -86,45 +38,25 @@ settings:
         - heading4
         - heading5
         - heading6
-    ckeditor5_imageResize:
-      allow_resize: true
     ckeditor5_list:
       reversed: true
       startIndex: true
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
     ckeditor5_style:
       styles:
         -
-          label: 'Intro paragraph'
-          element: '<p class="intro-paragraph">'
+          label: 'Navy Button'
+          element: '<a class="a-button a-button--large a-button--navy">'
         -
-          label: 'Large paragraph'
-          element: '<p class="large-paragraph">'
+          label: 'Navy Button with Arrow Right'
+          element: '<a class="a-button a-button--large a-button--navy a-button--icon-arrow-right">'
         -
-          label: 'White bg and Forest text Solid button'
-          element: '<a class="white-green-button">'
+          label: 'Black Button'
+          element: '<a class="a-button a-button--large a-button--black">'
         -
-          label: 'White bg and Black text Solid button'
-          element: '<a class="white-black-button">'
-        -
-          label: 'Forest bg and white text Solid button'
-          element: '<a class="forest-button">'
-        -
-          label: 'Kelly bg and white text Solid button'
-          element: '<a class="kelly-green-button">'
-        -
-          label: 'Gradient bg and white text Solid button'
-          element: '<a class="gradient-button">'
-        -
-          label: 'Black bg and white text Solid button'
-          element: '<a class="black-button">'
-        -
-          label: 'White Underline Button'
-          element: '<a class="underline-white-button">'
-        -
-          label: 'Forest Underline Button'
-          element: '<a class="underline-green-button">'
+          label: 'Black Button with Arrow Right'
+          element: '<a class="a-button a-button--large a-button--black a-button--icon-arrow-right">'
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public

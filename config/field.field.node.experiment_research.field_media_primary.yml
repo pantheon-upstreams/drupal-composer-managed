@@ -10,7 +10,7 @@ id: node.experiment_research.field_media_primary
 field_name: field_media_primary
 entity_type: node
 bundle: experiment_research
-label: 'Primary image'
+label: 'Primary Media'
 description: ''
 required: true
 translatable: true

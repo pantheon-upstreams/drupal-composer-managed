@@ -24,17 +24,17 @@ mode: default
 content:
   body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_contract_summary:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_links:
     type: link
@@ -46,14 +46,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
   field_overview:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 105
+    weight: 4
     region: content
   field_p_contract_schedule:
     type: entity_reference_revisions_entity_view
@@ -62,7 +62,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 109
+    weight: 7
     region: content
   field_ref_contacts:
     type: entity_reference_label
@@ -70,7 +70,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   field_ref_contract_type:
     type: entity_reference_label
@@ -78,7 +78,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   field_ref_documents:
     type: entity_reference_entity_view
@@ -87,13 +87,9 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 107
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 6
     region: content
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true

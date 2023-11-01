@@ -8,7 +8,7 @@ id: node.contract.title
 field_name: title
 entity_type: node
 bundle: contract
-label: 'Contract title'
+label: Title
 description: ''
 required: true
 translatable: true

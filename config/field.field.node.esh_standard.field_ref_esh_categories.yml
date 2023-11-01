@@ -10,7 +10,7 @@ id: node.esh_standard.field_ref_esh_categories
 field_name: field_ref_esh_categories
 entity_type: node
 bundle: esh_standard
-label: 'ESH Standard categories'
+label: 'ESH Standard Categories'
 description: ''
 required: false
 translatable: false

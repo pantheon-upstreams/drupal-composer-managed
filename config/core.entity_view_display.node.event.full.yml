@@ -1,0 +1,111 @@
+uuid: 0d96ad03-5920-426f-aaf3-2e686c36027e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.body
+    - field.field.node.event.field_capacity
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_department
+    - field.field.node.event.field_link
+    - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_title
+    - field.field.node.event.field_media_primary
+    - field.field.node.event.field_overview
+    - field.field.node.event.field_ref_attendees
+    - field.field.node.event.field_ref_audiences
+    - field.field.node.event.field_ref_eo_opportunities
+    - field.field.node.event.field_ref_event_types
+    - field.field.node.event.field_ref_key_impact_areas
+    - field.field.node.event.field_ref_related_content
+    - field.field.node.event.field_ref_research_areas
+    - field.field.node.event.field_registration_period
+    - field.field.node.event.field_registration_required
+    - node.type.event
+  module:
+    - layout_builder
+    - link
+    - smart_date
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dates:
+    type: smartdate_default
+    label: hidden
+    settings:
+      timezone_override: America/Denver
+      format_type: medium
+      format: compact
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  registration_links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_capacity: true
+  field_department: true
+  field_location_address: true
+  field_location_title: true
+  field_ref_attendees: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_event_types: true
+  field_ref_key_impact_areas: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
+  field_registration_period: true
+  field_registration_required: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

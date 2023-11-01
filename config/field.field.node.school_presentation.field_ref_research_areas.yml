@@ -10,7 +10,7 @@ id: node.school_presentation.field_ref_research_areas
 field_name: field_ref_research_areas
 entity_type: node
 bundle: school_presentation
-label: 'Research areas'
+label: 'Research Areas'
 description: ''
 required: false
 translatable: true

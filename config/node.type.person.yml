@@ -24,8 +24,8 @@ third_party_settings:
     unpublish_revision: false
 name: Person
 type: person
-description: ''
+description: 'Use <em>Person</em> to add content pertaining to any single person, including a biography.'
 help: ''
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: false

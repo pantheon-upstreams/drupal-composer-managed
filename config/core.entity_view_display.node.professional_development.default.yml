@@ -15,6 +15,7 @@ dependencies:
   module:
     - layout_paragraphs
     - link
+    - text
     - user
 id: node.professional_development.default
 targetEntityType: node
@@ -22,8 +23,8 @@ bundle: professional_development
 mode: default
 content:
   field_link:
-    type: link_separate
-    label: hidden
+    type: link
+    label: above
     settings:
       trim_length: null
       url_only: false
@@ -35,33 +36,60 @@ content:
     region: content
   field_media_primary:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
     weight: 2
     region: content
+  field_overview:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_p_content:
     type: layout_paragraphs
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     weight: 0
     region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_ref_eo_opportunities:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_ref_related_content:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
   field_teaser_text:
     type: basic_string
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
 hidden:
-  field_overview: true
-  field_ref_audiences: true
-  field_ref_eo_opportunities: true
-  field_ref_related_content: true
   langcode: true
   links: true
   search_api_excerpt: true

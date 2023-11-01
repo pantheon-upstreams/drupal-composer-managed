@@ -11,7 +11,7 @@ id: node.report_publication.field_date_published
 field_name: field_date_published
 entity_type: node
 bundle: report_publication
-label: 'Published date'
+label: 'Published Date'
 description: ''
 required: false
 translatable: true

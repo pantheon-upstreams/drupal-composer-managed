@@ -16,15 +16,33 @@ dependencies:
   module:
     - layout_paragraphs
     - link
+    - text
     - user
 id: node.esh_standard.default
 targetEntityType: node
 bundle: esh_standard
 mode: default
 content:
+  field_ism_document_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_ism_rev_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_link:
     type: link_separate
-    label: hidden
+    label: above
     settings:
       trim_length: null
       url_only: false
@@ -36,35 +54,53 @@ content:
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
     weight: 2
     region: content
+  field_overview:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_p_content:
     type: layout_paragraphs
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     weight: 0
     region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_ref_esh_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_teaser_text:
     type: basic_string
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
 hidden:
-  field_ism_document_number: true
-  field_ism_rev_number: true
-  field_overview: true
-  field_ref_audiences: true
-  field_ref_esh_categories: true
   langcode: true
   links: true
   search_api_excerpt: true

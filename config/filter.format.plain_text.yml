@@ -11,20 +11,20 @@ filters:
   filter_url:
     id: filter_url
     provider: filter
-    status: true
+    status: false
     weight: 1
     settings:
       filter_url_length: 72
   filter_autop:
     id: filter_autop
     provider: filter
-    status: true
+    status: false
     weight: 2
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
-    status: true
+    status: false
     weight: 10
     settings:
       allowed_html: '<span>'

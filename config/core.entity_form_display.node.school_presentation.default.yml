@@ -17,62 +17,59 @@ dependencies:
     - field_group
     - layout_paragraphs
     - link
+    - maxlength
     - media_library
     - path
     - scheduler
     - text
 third_party_settings:
   field_group:
-    group_content:
+    group_tags:
       children:
-        - group_header
-        - group_hidden_content
-      label: Content
+        - field_ref_audiences
+        - field_ref_eo_opportunities
+        - field_ref_grade_levels
+        - field_ref_research_areas
+      label: Tags
       region: content
       parent_name: ''
-      weight: 1
-      format_type: tabs
+      weight: 5
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        direction: vertical
-        width_breakpoint: 640
-    group_header:
-      children:
-        - title
-        - field_teaser_text
-        - field_link
-        - field_media_primary
-      label: Header
-      region: content
-      parent_name: group_content
-      weight: 20
-      format_type: tab
-      format_settings:
-        classes: ''
-        show_empty_fields: false
-        id: ''
-        formatter: closed
+        open: false
         description: ''
         required_fields: true
-    group_hidden_content:
+    group_teaser:
       children:
-        - field_overview
-        - field_ref_eo_opportunities
-        - field_ref_research_areas
-        - field_ref_grade_levels
-        - field_ref_audiences
-      label: 'Hidden Content'
+        - field_teaser_text
+      label: Teaser
       region: content
-      parent_name: group_content
-      weight: 21
-      format_type: tab
+      parent_name: ''
+      weight: 4
+      format_type: details
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        formatter: closed
+        open: false
+        description: ''
+        required_fields: true
+    group_media:
+      children:
+        - field_media_primary
+      label: Media
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
         description: ''
         required_fields: true
 id: node.school_presentation.default
@@ -82,13 +79,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 7
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 23
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
@@ -96,106 +93,91 @@ content:
     third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 24
+    weight: 13
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 26
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_p_content:
     type: layout_paragraphs
-    weight: 0
+    weight: 6
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
-      require_layouts: 1
+      require_layouts: 0
       empty_message: ''
     third_party_settings: {  }
   field_ref_audiences:
-    type: entity_reference_autocomplete
-    weight: 30
+    type: options_select
+    weight: 16
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_eo_opportunities:
-    type: entity_reference_autocomplete
-    weight: 27
+    type: options_select
+    weight: 18
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_grade_levels:
-    type: entity_reference_autocomplete
-    weight: 29
+    type: options_select
+    weight: 19
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ref_research_areas:
-    type: entity_reference_autocomplete
-    weight: 28
+    type: options_select
+    weight: 20
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_teaser_text:
     type: string_textarea
-    weight: 22
+    weight: 12
     region: content
     settings:
-      rows: 5
+      rows: 2
       placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 4
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   path:
     type: path
-    weight: 2
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 21
+    weight: 0
     region: content
     settings:
       size: 60
@@ -203,7 +185,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -213,15 +195,16 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 9
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 3
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  langcode: true
   promote: true
   sticky: true

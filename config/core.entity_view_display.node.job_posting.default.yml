@@ -25,33 +25,33 @@ mode: default
 content:
   body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
   field_date_application_due:
     type: datetime_default
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_equipment:
     type: boolean
-    label: hidden
+    label: above
     settings:
       format: default
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_link:
     type: link_separate
-    label: hidden
+    label: above
     settings:
       trim_length: null
       url_only: false
@@ -59,52 +59,48 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_media:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_overview:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 8
     region: content
   field_ref_audiences:
     type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_ref_department:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_ref_job_type:
-    type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
     weight: 6
     region: content
-  links:
-    settings: {  }
+  field_ref_department:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  field_ref_job_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true

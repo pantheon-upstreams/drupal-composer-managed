@@ -11,7 +11,7 @@ id: node.job_posting.field_date_application_due
 field_name: field_date_application_due
 entity_type: node
 bundle: job_posting
-label: 'Application due date'
+label: 'Application Due Date'
 description: ''
 required: false
 translatable: false

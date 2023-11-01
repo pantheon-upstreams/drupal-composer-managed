@@ -1,6 +1,6 @@
 uuid: a758214d-093c-4733-a696-5e2a08b5c9fd
 langcode: en
-status: true
+status: false
 dependencies: {  }
 name: 'Simple Text'
 format: simple_text

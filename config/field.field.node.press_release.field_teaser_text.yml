@@ -9,7 +9,7 @@ id: node.press_release.field_teaser_text
 field_name: field_teaser_text
 entity_type: node
 bundle: press_release
-label: 'Teaser text'
+label: 'Teaser Text'
 description: ''
 required: false
 translatable: true

@@ -1,7 +1,13 @@
 uuid: d24a4e8a-f6af-4170-a4bc-aaf304595e98
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - core.entity_view_mode.media.large
+    - core.entity_view_mode.media.small
+  module:
+    - editor
+    - media
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
 name: 'Full HTML'
@@ -20,31 +26,42 @@ filters:
     status: true
     weight: 1
     settings: {  }
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
   filter_html:
     id: filter_html
     provider: filter
-    status: false
+    status: true
     weight: -10
     settings:
-      allowed_html: '<p class="intro-paragraph large-paragraph"> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button">'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <a class="a-button a-button--large a-button--navy a-button--icon-arrow-right a-button--black" href> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-align>'
       filter_html_help: true
       filter_html_nofollow: false
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: small
+      allowed_view_modes:
+        large: large
+        small: small
+      allowed_media_types:
+        image: image
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 0
+    settings: {  }
   filter_align:
     id: filter_align
     provider: filter
     status: true
     weight: 0
     settings: {  }
-  filter_caption:
-    id: filter_caption
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
     provider: filter
     status: true
-    weight: 0
+    weight: 15
     settings: {  }

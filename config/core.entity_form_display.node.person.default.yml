@@ -27,39 +27,88 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_contact_info:
+    group_content:
       children:
+        - field_email
         - field_phone_mobile
         - field_phone_office
-        - field_email
-      label: 'Contact info'
+        - field_location
+        - body
+      label: Content
       region: content
-      parent_name: ''
-      weight: 14
-      format_type: details
+      parent_name: group_tabs
+      weight: 26
+      format_type: tab
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: false
+        formatter: closed
         description: ''
         required_fields: true
-    group_board_t:
+    group_tabs:
       children:
-        - field_location
-        - field_date_appointed
-        - field_appointed_by
-        - field_board_type
-      label: 'Board details'
+        - group_details
+        - group_content
+        - group_media
+        - group_tags
+      label: Tabs
       region: content
       parent_name: ''
-      weight: 15
-      format_type: details
+      weight: 2
+      format_type: tabs
       format_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: false
+        direction: vertical
+        width_breakpoint: 640
+    group_details:
+      children:
+        - field_appointed_by
+        - field_date_appointed
+        - field_job_title
+      label: Details
+      region: content
+      parent_name: group_tabs
+      weight: 25
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_tags:
+      children:
+        - field_board_type
+        - field_ref_department
+      label: Tags
+      region: content
+      parent_name: group_tabs
+      weight: 28
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_media:
+      children:
+        - field_media_primary
+      label: Media
+      region: content
+      parent_name: group_tabs
+      weight: 27
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
         description: ''
         required_fields: true
 id: node.person.default
@@ -69,7 +118,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 11
+    weight: 26
     region: content
     settings:
       rows: 9
@@ -79,13 +128,13 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_appointed_by:
     type: string_textfield
-    weight: 29
+    weight: 20
     region: content
     settings:
       size: 60
@@ -93,19 +142,19 @@ content:
     third_party_settings: {  }
   field_board_type:
     type: options_select
-    weight: 30
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_date_appointed:
     type: datetime_default
-    weight: 28
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_email:
     type: email_default
-    weight: 14
+    weight: 22
     region: content
     settings:
       placeholder: ''
@@ -113,7 +162,7 @@ content:
     third_party_settings: {  }
   field_job_title:
     type: string_textfield
-    weight: 13
+    weight: 25
     region: content
     settings:
       size: 60
@@ -121,7 +170,7 @@ content:
     third_party_settings: {  }
   field_location:
     type: string_textfield
-    weight: 27
+    weight: 25
     region: content
     settings:
       size: 60
@@ -129,7 +178,7 @@ content:
     third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 12
+    weight: 23
     region: content
     settings:
       media_types: {  }
@@ -167,64 +216,53 @@ content:
     third_party_settings: {  }
   field_phone_mobile:
     type: telephone_default
-    weight: 12
+    weight: 23
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_phone_office:
     type: telephone_default
-    weight: 13
+    weight: 24
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_ref_department:
-    type: entity_reference_autocomplete
-    weight: 31
+    type: options_select
+    weight: 22
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 10
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -239,7 +277,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -249,13 +287,14 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  url_redirects:
     weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+  url_redirects:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

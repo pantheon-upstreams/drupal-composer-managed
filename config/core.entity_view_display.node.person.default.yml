@@ -30,70 +30,70 @@ mode: default
 content:
   body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_appointed_by:
     type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_board_type:
     type: list_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_date_appointed:
     type: datetime_default
-    label: hidden
+    label: above
     settings:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 11
+    weight: 10
     region: content
   field_email:
     type: basic_string
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_job_title:
     type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_location:
-    type: string
-    label: hidden
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 9
     region: content
+  field_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
-      view_mode: person
+      view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_name:
     type: name_default
-    label: hidden
+    label: above
     settings:
       format: default
       markup: none
@@ -104,30 +104,33 @@ content:
       alternative_field_reference: ''
       alternative_field_reference_separator: ', '
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_phone_mobile:
     type: telephone_link
-    label: hidden
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_phone_office:
+    type: telephone_link
+    label: above
     settings:
       title: ''
     third_party_settings: {  }
     weight: 2
     region: content
-  field_phone_office:
-    type: telephone_link
-    label: hidden
+  field_ref_department:
+    type: entity_reference_label
+    label: above
     settings:
-      title: ''
+      link: true
     third_party_settings: {  }
-    weight: 3
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 11
     region: content
 hidden:
-  field_ref_department: true
   langcode: true
+  links: true
   search_api_excerpt: true

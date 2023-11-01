@@ -4,23 +4,21 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_overview
+    - filter.format.basic_html
     - node.type.report_publication
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - plain_text
 id: node.report_publication.field_overview
 field_name: field_overview
 entity_type: node
 bundle: report_publication
-label: Overview
+label: Summary
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - basic_html
 field_type: text

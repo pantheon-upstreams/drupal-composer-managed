@@ -10,7 +10,7 @@ id: node.press_release.field_media_primary
 field_name: field_media_primary
 entity_type: node
 bundle: press_release
-label: 'Featured image'
+label: 'Primary Media'
 description: ''
 required: false
 translatable: true

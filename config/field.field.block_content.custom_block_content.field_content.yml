@@ -6,7 +6,6 @@ dependencies:
     - block_content.type.custom_block_content
     - field.storage.block_content.field_content
     - paragraphs.paragraphs_type.card_list
-    - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.teaser_list
   module:
     - entity_reference_revisions
@@ -25,7 +24,6 @@ settings:
   handler_settings:
     target_bundles:
       card_list: card_list
-      green_banner_cta: green_banner_cta
       teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:

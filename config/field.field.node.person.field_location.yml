@@ -9,7 +9,7 @@ id: node.person.field_location
 field_name: field_location
 entity_type: node
 bundle: person
-label: From
+label: Location
 description: ''
 required: false
 translatable: false

@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.page.field_teaser_text
     - node.type.page
   module:
-    - allowed_formats
     - field_group
     - layout_paragraphs
     - link
@@ -109,9 +108,6 @@ content:
       size: 255
       placeholder: ''
     third_party_settings:
-      allowed_formats:
-        hide_help: '1'
-        hide_guidelines: '1'
       maxlength:
         maxlength_js: 200
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'

@@ -10,7 +10,7 @@ id: node.report_publication.field_ref_publication_type
 field_name: field_ref_publication_type
 entity_type: node
 bundle: report_publication
-label: 'Publication type'
+label: 'Publication Type'
 description: ''
 required: false
 translatable: false

@@ -2,8 +2,12 @@ uuid: e26f253b-e291-477a-8110-5703243ae158
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.large
+    - core.entity_view_mode.media.small
   module:
     - editor
+    - media
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -16,7 +20,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class="intro-paragraph large-paragraph"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button" hreflang href> <cite> <dl> <dt> <dd> <iframe> <blockquote cite> <ul type> <ol type start> <strong> <em> <code> <sub> <sup> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <a class="a-button a-button--large a-button--navy a-button--icon-arrow-right a-button--black" href> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <drupal-media data-entity-type data-entity-uuid alt data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -28,14 +32,8 @@ filters:
   filter_caption:
     id: filter_caption
     provider: filter
-    status: true
+    status: false
     weight: 8
-    settings: {  }
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: true
-    weight: 9
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
@@ -43,16 +41,33 @@ filters:
     status: true
     weight: 11
     settings: {  }
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: true
-    weight: 0
-    settings:
-      filter_url_length: 72
   filter_image_lazy_load:
     id: filter_image_lazy_load
     provider: filter
     status: true
     weight: 12
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: small
+      allowed_view_modes:
+        large: large
+        small: small
+      allowed_media_types:
+        image: image
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
     settings: {  }

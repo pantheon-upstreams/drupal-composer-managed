@@ -11,7 +11,7 @@ id: node.event.field_registration_period
 field_name: field_registration_period
 entity_type: node
 bundle: event
-label: 'Registration period'
+label: 'Registration Period'
 description: ''
 required: false
 translatable: false

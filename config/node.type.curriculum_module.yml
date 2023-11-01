@@ -33,8 +33,8 @@ third_party_settings:
       text_webform: 'Request this Curriculum'
 name: 'Curriculum Module'
 type: curriculum_module
-description: ''
+description: 'Use <em>Curriculum Module</em> to add learning segments, often used within classroom settings.'
 help: ''
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: false

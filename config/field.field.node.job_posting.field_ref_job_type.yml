@@ -10,7 +10,7 @@ id: node.job_posting.field_ref_job_type
 field_name: field_ref_job_type
 entity_type: node
 bundle: job_posting
-label: 'Job type'
+label: 'Job Type'
 description: ''
 required: false
 translatable: false

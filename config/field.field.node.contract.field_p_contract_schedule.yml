@@ -12,7 +12,7 @@ id: node.contract.field_p_contract_schedule
 field_name: field_p_contract_schedule
 entity_type: node
 bundle: contract
-label: 'Contract schedule'
+label: 'Contract Schedule'
 description: ''
 required: false
 translatable: false
@@ -25,8 +25,29 @@ settings:
       schedule_item: schedule_item
     negate: 0
     target_bundles_drag_drop:
+      about_page_header:
+        weight: 40
+        enabled: false
+      about_page_hero:
+        weight: 41
+        enabled: false
+      about_page_secondary:
+        weight: 42
+        enabled: false
+      accordion:
+        weight: 43
+        enabled: false
+      accordion_item:
+        weight: 44
+        enabled: false
+      blue_banner:
+        weight: 45
+        enabled: false
       card:
         weight: 20
+        enabled: false
+      card_list:
+        weight: 47
         enabled: false
       centered_image_text:
         weight: 21
@@ -43,8 +64,17 @@ settings:
       gallery:
         weight: 25
         enabled: false
-      homepage_lead_teaser:
-        weight: 26
+      green_banner_cta:
+        weight: 53
+        enabled: false
+      header:
+        weight: 54
+        enabled: false
+      homepage_header:
+        weight: 55
+        enabled: false
+      homepage_hero:
+        weight: 56
         enabled: false
       homepage_teaser:
         weight: 27
@@ -55,8 +85,32 @@ settings:
       image_with_caption:
         weight: 29
         enabled: false
+      media:
+        weight: 60
+        enabled: false
+      media_gallery:
+        weight: 61
+        enabled: false
       one_up_teaser_image_text:
         weight: 30
+        enabled: false
+      person:
+        weight: 63
+        enabled: false
+      persons_list:
+        weight: 64
+        enabled: false
+      pullquote:
+        weight: 65
+        enabled: false
+      resource_file:
+        weight: 67
+        enabled: false
+      resource_link:
+        weight: 68
+        enabled: false
+      resources_list:
+        weight: 66
         enabled: false
       running_text:
         weight: 31
@@ -66,6 +120,9 @@ settings:
         enabled: true
       section:
         weight: 33
+        enabled: false
+      teaser_list:
+        weight: 72
         enabled: false
       text:
         weight: 34
@@ -81,5 +138,8 @@ settings:
         enabled: false
       video:
         weight: 38
+        enabled: false
+      view:
+        weight: 78
         enabled: false
 field_type: entity_reference_revisions

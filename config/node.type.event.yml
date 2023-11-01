@@ -33,8 +33,8 @@ third_party_settings:
       text_webform: 'Register for this event'
 name: Event
 type: event
-description: 'Use the <strong>Event</strong> type to add an event to the calendar.'
+description: 'Use <em>Event</em> to add content based on events and additional information to calendars.'
 help: ''
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: false

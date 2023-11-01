@@ -9,8 +9,8 @@ id: node.experiment_research.field_teaser_text
 field_name: field_teaser_text
 entity_type: node
 bundle: experiment_research
-label: 'Teaser text'
-description: 'Only used for experiment teasers.'
+label: 'Teaser Text'
+description: ''
 required: false
 translatable: false
 default_value: {  }

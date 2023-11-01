@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_contract_summary
+    - filter.format.basic_html
     - node.type.contract
   module:
     - text
@@ -17,5 +18,7 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - basic_html
 field_type: text_long

@@ -9,7 +9,7 @@ id: node.esh_standard.field_ism_rev_number
 field_name: field_ism_rev_number
 entity_type: node
 bundle: esh_standard
-label: 'ISM Revision number'
+label: 'ISM Revision Number'
 description: ''
 required: true
 translatable: false

@@ -1,0 +1,34 @@
+uuid: c651ad49-1558-47ae-a905-edbbcc340dcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.landing.field_p_content
+    - node.type.landing
+  module:
+    - layout_builder
+    - layout_paragraphs
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.landing.full
+targetEntityType: node
+bundle: landing
+mode: full
+content:
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -6,12 +6,9 @@ dependencies:
     - field.storage.node.field_p_content
     - node.type.page
     - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.blue_banner
     - paragraphs.paragraphs_type.card_list
-    - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
-    - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
@@ -35,16 +32,13 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      blue_banner: blue_banner
       accordion: accordion
-      green_banner_cta: green_banner_cta
       header: header
       pullquote: pullquote
       section: section
       text: text
       card_list: card_list
       media: media
-      media_gallery: media_gallery
       resources_list: resources_list
       persons_list: persons_list
       teaser_list: teaser_list

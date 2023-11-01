@@ -10,7 +10,7 @@ id: node.experiment_research.field_research_area
 field_name: field_research_area
 entity_type: node
 bundle: experiment_research
-label: 'Research area'
+label: 'Research Area'
 description: ''
 required: true
 translatable: false

@@ -3,12 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.ds_code
-    - filter.format.editor_s_set
-    - filter.format.filtered_html
-    - filter.format.full_html
-    - filter.format.plain
-    - filter.format.simple_text
     - node.type.article
     - node.type.page
   module:
@@ -17,7 +11,6 @@ dependencies:
     - contact
     - contextual
     - file
-    - filter
     - node
     - path
     - scheduler
@@ -58,11 +51,5 @@ permissions:
   - 'edit own article content'
   - 'edit own page content'
   - 'schedule publishing of nodes'
-  - 'use text format ds_code'
-  - 'use text format editor_s_set'
-  - 'use text format filtered_html'
-  - 'use text format full_html'
-  - 'use text format plain'
-  - 'use text format simple_text'
   - 'view own unpublished content'
   - 'view the administration theme'

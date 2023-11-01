@@ -6,12 +6,7 @@ dependencies:
     - field.storage.paragraph.field_text
     - paragraphs.paragraphs_type.media
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - simple_text
 id: paragraph.media.field_text
 field_name: field_text
 entity_type: paragraph
@@ -22,5 +17,6 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long

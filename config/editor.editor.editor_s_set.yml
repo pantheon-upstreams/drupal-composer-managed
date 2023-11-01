@@ -1,6 +1,6 @@
 uuid: a17e2e25-e6e4-455e-8090-823ab8b6458c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - filter.format.editor_s_set

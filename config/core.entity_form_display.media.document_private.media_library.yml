@@ -6,17 +6,19 @@ dependencies:
     - core.entity_form_mode.media.media_library
     - field.field.media.document_private.field_private_file
     - media.type.document_private
+  module:
+    - file
 id: media.document_private.media_library
 targetEntityType: media
 bundle: document_private
 mode: media_library
 content:
-  langcode:
-    type: language_select
-    weight: 2
+  field_private_file:
+    type: file_generic
+    weight: 1
     region: content
     settings:
-      include_locked: true
+      progress_indicator: throbber
     third_party_settings: {  }
   name:
     type: string_textfield
@@ -28,7 +30,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_private_file: true
+  langcode: true
   path: true
   status: true
   uid: true

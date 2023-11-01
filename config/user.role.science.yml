@@ -3,17 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.editor_s_set
-    - filter.format.filtered_html
-    - filter.format.full_html
-    - filter.format.simple_text
     - node.type.article
     - node.type.event
   module:
     - contact
     - contextual
     - file
-    - filter
     - node
     - scheduler
     - system
@@ -40,9 +35,5 @@ permissions:
   - 'edit own article content'
   - 'edit own event content'
   - 'schedule publishing of nodes'
-  - 'use text format editor_s_set'
-  - 'use text format filtered_html'
-  - 'use text format full_html'
-  - 'use text format simple_text'
   - 'view own unpublished content'
   - 'view the administration theme'

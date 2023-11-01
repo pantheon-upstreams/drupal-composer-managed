@@ -24,8 +24,8 @@ third_party_settings:
     unpublish_revision: false
 name: Contract
 type: contract
-description: 'Use this content type to add contracts, RFPs, RFQs, etc.'
+description: 'Use <em>Contract</em> to add contracts, RFPs, RFQs, etc.'
 help: ''
 new_revision: false
-preview_mode: 1
+preview_mode: 0
 display_submitted: false

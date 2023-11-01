@@ -9,7 +9,7 @@ id: node.event.field_registration_required
 field_name: field_registration_required
 entity_type: node
 bundle: event
-label: 'Registration required'
+label: 'Registration Required'
 description: ''
 required: false
 translatable: false

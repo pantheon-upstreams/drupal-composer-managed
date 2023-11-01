@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: 'ESH Standard'
 type: esh_standard
-description: ''
+description: 'Use <em>ESH Standard</em> to set specific standards pages with related content.'
 help: ''
 new_revision: false
 preview_mode: 0

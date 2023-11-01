@@ -1,6 +1,0 @@
-uuid: bb016013-3a94-483b-bf2f-51f2c4b77641
-langcode: en
-status: true
-dependencies: {  }
-id: entity_references_text
-label: 'Entity References: Text'

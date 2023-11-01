@@ -9,7 +9,7 @@ id: node.esh_standard.field_teaser_text
 field_name: field_teaser_text
 entity_type: node
 bundle: esh_standard
-label: 'Teaser text'
+label: 'Teaser Text'
 description: ''
 required: false
 translatable: true

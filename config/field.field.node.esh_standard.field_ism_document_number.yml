@@ -9,7 +9,7 @@ id: node.esh_standard.field_ism_document_number
 field_name: field_ism_document_number
 entity_type: node
 bundle: esh_standard
-label: 'ISM Document number'
+label: 'ISM Document Number'
 description: ''
 required: true
 translatable: true

@@ -10,7 +10,7 @@ id: node.school_presentation.field_ref_grade_levels
 field_name: field_ref_grade_levels
 entity_type: node
 bundle: school_presentation
-label: 'Grade levels'
+label: 'Grade Levels'
 description: ''
 required: false
 translatable: false

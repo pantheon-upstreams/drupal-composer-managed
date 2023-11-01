@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_overview
+    - filter.format.basic_html
     - node.type.job_posting
   module:
     - text
@@ -11,11 +12,13 @@ id: node.job_posting.field_overview
 field_name: field_overview
 entity_type: node
 bundle: job_posting
-label: Overview
+label: Summary
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - basic_html
 field_type: text

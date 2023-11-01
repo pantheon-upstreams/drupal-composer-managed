@@ -1,6 +1,6 @@
 uuid: d59cc75c-dd75-4146-a3b7-659e15b85845
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - filter.format.simple_text

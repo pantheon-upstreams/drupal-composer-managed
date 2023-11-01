@@ -28,10 +28,10 @@ mode: default
 content:
   body:
     type: text_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
   field_content_area:
     type: entity_reference_label
@@ -39,7 +39,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 113
+    weight: 13
     region: content
   field_link:
     type: link_separate
@@ -51,7 +51,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 112
+    weight: 12
     region: content
   field_media:
     type: entity_reference_entity_view
@@ -60,14 +60,14 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
   field_overview:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 111
+    weight: 11
     region: content
   field_ref_audiences:
     type: entity_reference_label
@@ -75,7 +75,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 110
+    weight: 10
     region: content
   field_ref_eo_opportunities:
     type: entity_reference_label
@@ -83,7 +83,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 109
+    weight: 9
     region: content
   field_ref_grade_level:
     type: entity_reference_label
@@ -91,7 +91,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_ref_related_content:
     type: entity_reference_label
@@ -99,7 +99,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 106
+    weight: 6
     region: content
   field_ref_research_areas:
     type: entity_reference_label
@@ -107,16 +107,16 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 107
+    weight: 7
     region: content
   field_ref_standards:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 108
+    weight: 8
     region: content
   field_resources:
     type: entity_reference_entity_view
@@ -125,7 +125,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_time_required:
     type: string
@@ -133,18 +133,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 3
     region: content
   reservation_links:
     settings: {  }
     third_party_settings: {  }
-    weight: 25
+    weight: 0
     region: content
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true

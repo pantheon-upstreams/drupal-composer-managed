@@ -1,6 +1,6 @@
 uuid: bf2b241d-9c69-492b-b2a0-daa58906b26a
 langcode: en
-status: true
+status: false
 dependencies: {  }
 name: 'Display Suite code'
 format: ds_code

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.report_publication.body
     - field.field.node.report_publication.field_authors
     - field.field.node.report_publication.field_date_published
     - field.field.node.report_publication.field_link
@@ -39,7 +38,6 @@ content:
     weight: 1
     region: content
 hidden:
-  body: true
   field_authors: true
   field_date_published: true
   field_link: true

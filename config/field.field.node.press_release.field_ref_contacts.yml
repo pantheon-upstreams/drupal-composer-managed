@@ -10,7 +10,7 @@ id: node.press_release.field_ref_contacts
 field_name: field_ref_contacts
 entity_type: node
 bundle: press_release
-label: 'Press contacts'
+label: 'Press Contacts'
 description: ''
 required: false
 translatable: true

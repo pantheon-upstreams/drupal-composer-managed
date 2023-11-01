@@ -24,7 +24,7 @@ third_party_settings:
     unpublish_revision: false
 name: 'School Presentation'
 type: school_presentation
-description: ''
+description: 'Use <em>School Presentation</em> for any information relating to school data and information.'
 help: ''
 new_revision: false
 preview_mode: 0

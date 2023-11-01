@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: pullquote
-label: Pullquote
+label: 'Pull Quote'
 icon_uuid: null
 icon_default: null
 description: ''

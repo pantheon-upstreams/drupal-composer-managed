@@ -9,7 +9,7 @@ id: node.professional_development.field_teaser_text
 field_name: field_teaser_text
 entity_type: node
 bundle: professional_development
-label: 'Teaser text'
+label: 'Teaser Text'
 description: ''
 required: false
 translatable: true

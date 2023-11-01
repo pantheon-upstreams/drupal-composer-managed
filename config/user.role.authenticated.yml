@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
-    - filter.format.filtered_html
   module:
     - contact
     - download_request
@@ -26,7 +25,6 @@ permissions:
   - 'change own username'
   - 'delete own files'
   - 'use text format basic_html'
-  - 'use text format filtered_html'
   - 'view curriculum_module_resources download_item'
   - 'view download_item'
   - 'view media'

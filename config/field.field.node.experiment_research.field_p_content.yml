@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
-    - paragraphs.paragraphs_type.media_gallery
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section
@@ -37,7 +36,6 @@ settings:
       card_list: card_list
       header: header
       media: media
-      media_gallery: media_gallery
       pullquote: pullquote
       resources_list: resources_list
       teaser_list: teaser_list

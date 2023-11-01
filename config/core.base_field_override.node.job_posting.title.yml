@@ -8,7 +8,7 @@ id: node.job_posting.title
 field_name: title
 entity_type: node
 bundle: job_posting
-label: 'Position title'
+label: Title
 description: ''
 required: false
 translatable: true
