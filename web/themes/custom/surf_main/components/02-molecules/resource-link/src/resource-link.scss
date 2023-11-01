@@ -34,13 +34,15 @@
   width: 100%;
 
   &::before {
-    background-image: svg-load('icon-diagonal.svg');
+    --resource_file_icon: svg-load('icon-diagonal.svg');
+    background-color: var(--surf-color-navy);
     background-position: center center;
     background-repeat: no-repeat;
     content: '';
     display: block;
     height: rem(24px);
     margin: 0 rem(6px) 0 0;
+    mask-image: var(--resource_file_icon);
     width: rem(24px);
   }
 }

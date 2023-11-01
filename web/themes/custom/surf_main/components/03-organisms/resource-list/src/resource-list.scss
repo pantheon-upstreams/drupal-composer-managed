@@ -43,8 +43,11 @@
 .o-resource-list__items {
   column-gap: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   margin: 0;
   padding: 0;
   row-gap: 20px;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
 }

@@ -24,7 +24,12 @@
 {% set resource_file_mimetype = parts_mimetype|last %}
 
 {# File Size #}
-{% set resource_file_size = (content.field_file.0["#file"].filesize.value / 1048576)|round ~ " MB" %}
+{% set file_size_in_bytes = content.field_file.0["#file"].filesize.value %}
+{% set resource_file_size = (file_size_in_bytes / 1048576)|round(2) ~ " MB" %}
+
+{% if file_size_in_bytes < 1048576 %}
+  {% set resource_file_size = (file_size_in_bytes / 1024)|round(2) ~ " KB" %}
+{% endif %}
 
 {%
   set rendered_fields = [
