@@ -125,6 +125,12 @@ settings:
         -
           label: 'Forest Underline Button'
           element: '<a class="underline-green-button">'
+        -
+          label: 'Primary Button'
+          element: '<a class="a-button a-button--size-small a-button--full-navy">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="a-button a-button--size-small a-button--underline-navy">'
 image_upload:
   status: true
   scheme: public

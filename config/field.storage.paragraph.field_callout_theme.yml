@@ -1,28 +1,28 @@
-uuid: 8e68355f-d4e6-4dfd-b07b-5dffcb14eca9
+uuid: 7abdb5a1-5b50-4ca3-a764-947f4c60f5c6
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-id: paragraph.field_style
-field_name: field_style
+id: paragraph.field_callout_theme
+field_name: field_callout_theme
 entity_type: paragraph
 type: list_string
 settings:
   allowed_values:
     -
-      value: small
-      label: Small
+      value: blue
+      label: Blue
     -
-      value: large
-      label: Large
+      value: gray
+      label: Gray
     -
-      value: fullwidth
-      label: 'Full Width'
+      value: navy
+      label: Navy
     -
-      value: centered
-      label: Centered
+      value: white
+      label: White
   allowed_values_function: ''
 module: options
 locked: false

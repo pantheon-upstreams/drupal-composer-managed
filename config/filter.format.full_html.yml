@@ -33,7 +33,7 @@ filters:
     status: false
     weight: -10
     settings:
-      allowed_html: '<p class="intro-paragraph large-paragraph"> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button">'
+      allowed_html: '<p class="intro-paragraph large-paragraph"> <a class="white-green-button white-black-button forest-button kelly-green-button gradient-button black-button underline-white-button underline-green-button a-button a-button--size-small a-button--full-navy a-button--underline-navy">'
       filter_html_help: true
       filter_html_nofollow: false
   filter_align:

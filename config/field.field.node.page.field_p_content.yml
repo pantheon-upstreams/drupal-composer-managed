@@ -7,11 +7,13 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.blue_banner
+    - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.green_banner_cta
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.media_gallery
+    - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
@@ -42,8 +44,10 @@ settings:
       pullquote: pullquote
       section: section
       text: text
+      person: person
       card_list: card_list
       media: media
+      callout: callout
       media_gallery: media_gallery
       resources_list: resources_list
       persons_list: persons_list
@@ -51,6 +55,15 @@ settings:
       view: view
     negate: 0
     target_bundles_drag_drop:
+      about_page_header:
+        weight: 40
+        enabled: false
+      about_page_hero:
+        weight: 41
+        enabled: false
+      about_page_secondary:
+        weight: 42
+        enabled: false
       accordion:
         weight: 28
         enabled: true
@@ -59,6 +72,9 @@ settings:
         enabled: false
       blue_banner:
         weight: 25
+        enabled: true
+      callout:
+        weight: 47
         enabled: true
       card:
         weight: 20
@@ -87,8 +103,11 @@ settings:
       header:
         weight: 30
         enabled: true
-      homepage_lead_teaser:
-        weight: 26
+      homepage_header:
+        weight: 55
+        enabled: false
+      homepage_hero:
+        weight: 56
         enabled: false
       homepage_teaser:
         weight: 27
@@ -110,7 +129,7 @@ settings:
         enabled: false
       person:
         weight: 37
-        enabled: false
+        enabled: true
       persons_list:
         weight: 52
         enabled: true

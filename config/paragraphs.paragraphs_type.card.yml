@@ -5,7 +5,7 @@ dependencies:
   module:
     - style_options
 id: card
-label: Callout
+label: 'Callout [Legacy]'
 icon_uuid: null
 icon_default: null
 description: ''
