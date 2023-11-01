@@ -1,0 +1,35 @@
+.o-research {
+
+}
+@media ( min-width: 500px ) {
+  .o-research-wrapper {
+    display: grid;
+    grid-gap: 1rem 180px;
+    grid-template-columns: 3fr 1fr;
+    width: 100%;
+  }
+
+  .o-research__overview {
+
+    /*   grid-row: 1 / 2; */
+    grid-column: 1 / -1;
+  }
+
+  .o-research__main-content {
+
+    /*   grid-row: 2 / 4; */
+    grid-column: 1 / 2;
+  }
+
+  .o-research__sidebar {
+
+    /*   grid-row: 2 / 3; */
+    grid-column: 2 / 4;
+  }
+
+  .o-research__additional-content {
+
+    /*   grid-row: 4 / 5; */
+    grid-column: 1 / -1;
+  }
+}

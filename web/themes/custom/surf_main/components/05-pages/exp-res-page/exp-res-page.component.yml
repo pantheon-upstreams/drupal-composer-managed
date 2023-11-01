@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Experiment Research Page
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    page_attributes:
+      title: Attributes
+      type: string
+  slots:
+    page_header:
+      title: Page Header
+    page_system:
+      title: Page System
+    page_sidebar:
+      title: Page Sidebar
+    page_content:
+      title: Page Content
+    page_footer:
+      title: Page Footer
