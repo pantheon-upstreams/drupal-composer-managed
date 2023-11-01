@@ -1,69 +1,38 @@
-{# Temporary hard-coded: Breadcumbs #}
-{#{% set breadcrumbs = [#}
-{#    {#}
-{#      title: 'Home',#}
-{#      url: '/',#}
-{#      current: false,#}
-{#    },#}
-{#    {#}
-{#      title: 'Parent Page',#}
-{#      url: '/',#}
-{#      current: false,#}
-{#    },#}
-{#    {#}
-{#      title: label,#}
-{#      url: url,#}
-{#      current: true,#}
-{#    }#}
-{#  ]#}
-{#%}#}
+{#
+/**
+ * @file
+ * Theme implementation to display a node.
+ *
+ * Available variables:
+ *  See embed below
+ *
+ * @see template_preprocess_node()
+ */
+#}
 
-{# set image and alt#}
-{# {% if content.field_media_primary.0 %}#}
-{#	{% set image = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('hero') %}#}
-{#	#}{# set alt to use the image's alt text #}
-{#	{% set alt = content.field_media_primary.0["#media"].thumbnail.alt %}#}
-{#{% endif %}#}
+{%
+  set rendered_fields = [
+  'field_p_content',
+  'field_teaser_text',
+  'field_media_primary',
+  'field_link',
+]
+%}
 
-{# Handle internal and external links/urls #}
-{#{% if content.field_link.0 is empty %}#}
-{#{% set link_url = '' %}#}
-{#{% elseif content.field_link.0["#url"].external %}#}
-{#  {% set link_url = content.field_link.0["#url"].uri %}#}
-{#{% else %}#}
-{#  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}#}
-{#{% endif %}#}
+{% embed 'surf_main:page' with {
+  page_attributes: create_attribute({'class': ['o-page--with-img']}),
+  page_heading: label|field_value,
+  page_teaser: content.field_teaser_text ? content.field_teaser_text|field_value,
+  page_cta_url: content.field_link.0 ? content.field_link.0['#url'],
+  page_cta_text: content.field_link.0 ? content.field_link.0['#title'],
+  page_cta_html_tag,
+  page_cta_style,
+  page_cta_size,
+  page_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
+  page_content: content.field_p_content|field_value,
+  title_suffix: title_suffix,
+  attributes,
+} only %}
+{% endembed %}
 
-<article>
-
-  {% embed 'surf_main:media' with {
-    media: content.field_media_primary.0 ? content.field_media_primary
-  } only %}
-
-    {% block image_block %}
-      {{ media }}
-    {% endblock %}
-
-  {% endembed %}
-
-  <div class="container container--default">
-
-    {% embed 'surf_main:header' with {
-      header_heading: label,
-      header_teaser: content.field_teaser_text|field_value,
-      header_media: content.field_media_primary.0 ? true: false,
-      header_cta_url: content.field_link.0 ? content.field_link.0['#url_title'],
-      header_cta_text: content.field_link.0 ? content.field_link.0['#title'],
-    } only %}
-
-      {% block header_links_block %}
-        [Breadcrumbs]
-      {% endblock %}
-
-    {% endembed %}
-
-    {{ content.field_p_content }}
-
-  </div>
-</article>
-
+{{ content|without(rendered_fields) }}

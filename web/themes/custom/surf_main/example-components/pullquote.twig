@@ -11,9 +11,19 @@
 {% endembed %}
 
 <div class="c-rich-text" style="margin: 32px 0">
-  <p><em>Large</em></p>
+  <p><em>Small</em></p>
 </div>
 
+{% embed 'surf_main:pullquote' with {
+  pullquote_attributes: create_attribute(),
+  pullquote_quote: 'SURF hosts a highly sensitive WIMP detector beneath nearly a mile of rock, and inside a 72,000-gallon, high-purity water tank, shielding it from cosmic rays and other radiation that would interfere with a dark matter signal.',
+  pullquote_type: 'small',
+} only %}
+{% endembed %}
+
+<div class="c-rich-text" style="margin: 32px 0">
+  <p><em>Large</em></p>
+</div>
 
 {% embed 'surf_main:pullquote' with {
   pullquote_attributes: create_attribute(),
