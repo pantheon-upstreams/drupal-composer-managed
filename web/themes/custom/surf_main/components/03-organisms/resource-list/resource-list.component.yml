@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Resource List
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    resource_list_attributes:
+      title: Attributes
+      type: string
+    resource_list_heading:
+      title: Resource List Heading
+      type: string
+    resource_list_items:
+      title: Resource List Items
+      type: array

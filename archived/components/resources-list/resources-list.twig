@@ -17,7 +17,8 @@
       <ul class="c-resources-list__items">
         {% for item in items %}
           <li class="c-resources-list__item">
-            {{ drupal_entity('paragraph', item.id, 'default') }}
+            {{ item }}
+{#            {{ drupal_entity('paragraph', item.id, 'default') }}#}
           </li>
          {% endfor %}
       </ul>
