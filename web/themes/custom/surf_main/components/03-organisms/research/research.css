@@ -1,0 +1,1 @@
+@media (min-width:500px){.o-research-wrapper{grid-gap:1rem 180px;display:grid;grid-template-columns:3fr 1fr;width:100%}.o-research__overview{grid-column:1/-1}.o-research__main-content{grid-column:1/2}.o-research__sidebar{grid-column:2/4}.o-research__additional-content{grid-column:1/-1}}

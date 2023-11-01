@@ -1,3 +1,17 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+  * Available variables:
+ *  See embed below
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
 {% set items = [] %}
 {% for item in paragraph.field_resource %}
 {% set items = items|merge([{
@@ -5,8 +19,18 @@
   }]) %}
 {% endfor %}
 
-{{ include('surf_main:resources-list', {
-  heading: content.field_title|field_value,
-  items,
-  attributes,
-}, with_context = false) }}
+{%
+  set rendered_fields = [
+  'field_title',
+  'field_resource',
+]
+%}
+
+{% embed 'surf_main:resource-list' with {
+  resource_list_heading: content.field_title|field_value,
+  resource_list_items: items,
+  resource_list_attributes: create_attribute(),
+} only %}
+{% endembed %}
+
+{{ content|without(rendered_fields) }}

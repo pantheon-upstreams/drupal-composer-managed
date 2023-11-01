@@ -1,14 +1,37 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+  * Available variables:
+ *  See embed below
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
 {# Handle internal and external links #}
-{% set link_url = null %}
+{% set resource_link_url = null %}
 
 {% if content.field_link.0["#url"].external %}
-  {% set link_url = content.field_link.0["#url"].uri %}
+  {% set resource_link_url = content.field_link.0["#url"].uri %}
 {% elseif content.field_link.0["#url"].external == false %}
-  {% set link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
+  {% set resource_link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
-{{ include('surf_main:resource-link', {
-  link_title: content.field_link.0["#title"],
-  link_url,
-  attributes,
-}, with_context = false) }}
+{%
+  set rendered_fields = [
+  'field_link',
+]
+%}
+
+{% embed 'surf_main:resource-link' with {
+  resource_link_title: content.field_link.0["#title"],
+  resource_link_url,
+  resource_link_attributes: create_attribute(),
+} only %}
+{% endembed %}
+
+{{ content|without(rendered_fields) }}

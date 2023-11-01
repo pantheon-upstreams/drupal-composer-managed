@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Resource File
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - resource_file_url
+    - resource_file_title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    resource_file_attributes:
+      title: Attributes
+      type: string
+    resource_file_url:
+      title: Resource File URL
+      type: string
+    resource_file_title:
+      title: Resource File Title
+      type: string
+    resource_file_size:
+      title: Resource File Size
+      type: string
+    resource_file_mimetype:
+      title: Resource File MIME type
+      type: string

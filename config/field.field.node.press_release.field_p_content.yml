@@ -5,6 +5,13 @@ dependencies:
   config:
     - field.storage.node.field_p_content
     - node.type.press_release
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
 id: node.press_release.field_p_content
@@ -20,64 +27,71 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      accordion: accordion
+      callout: callout
+      header: header
+      media: media
+      pullquote: pullquote
+      resources_list: resources_list
+      text: text
     negate: 0
     target_bundles_drag_drop:
+      accordion:
+        weight: 20
+        enabled: true
+      accordion_item:
+        weight: 21
+        enabled: false
+      callout:
+        weight: 22
+        enabled: true
       card:
         weight: 20
         enabled: false
-      centered_image_text:
-        weight: 21
-        enabled: false
-      entity_references_image_text:
-        weight: 22
-        enabled: false
-      entity_references_text:
-        weight: 23
-        enabled: false
-      full_teaser:
+      card_list:
         weight: 24
         enabled: false
       gallery:
         weight: 25
         enabled: false
-      homepage_lead_teaser:
+      header:
         weight: 26
-        enabled: false
-      homepage_teaser:
+        enabled: true
+      media:
         weight: 27
-        enabled: false
-      image:
+        enabled: true
+      person:
         weight: 28
         enabled: false
-      image_with_caption:
+      persons_list:
         weight: 29
         enabled: false
-      one_up_teaser_image_text:
+      pullquote:
         weight: 30
+        enabled: true
+      resource_file:
+        weight: 32
         enabled: false
-      running_text:
+      resource_link:
+        weight: 33
+        enabled: false
+      resources_list:
         weight: 31
-        enabled: false
+        enabled: true
       schedule_item:
         weight: 32
         enabled: false
       section:
         weight: 33
         enabled: false
-      text:
-        weight: 34
-        enabled: false
-      two_up_figures:
-        weight: 35
-        enabled: false
-      two_up_teaser_image_text:
+      teaser_list:
         weight: 36
         enabled: false
-      two_up_teaser_text:
-        weight: 37
-        enabled: false
-      video:
+      text:
+        weight: 34
+        enabled: true
+      view:
         weight: 38
         enabled: false
 field_type: entity_reference_revisions

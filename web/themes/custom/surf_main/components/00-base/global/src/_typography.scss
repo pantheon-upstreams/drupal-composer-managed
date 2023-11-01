@@ -48,11 +48,14 @@
   --surf-fs-16-18-24: #{rem(16px)};
   --surf-fs-16-24: #{rem(16px)};
   --surf-fs-18-24: #{rem(18px)};
+  --surf-fs-18-24-32: #{rem(18px)};
   --surf-fs-18-24-40: #{rem(18px)};
+  --surf-fs-24-40: #{rem(24px)};
   --surf-fs-24-40-52: #{rem(24px)};
   --surf-fs-18-24-32: #{rem(18px)};
   --surf-fs-30-32: #{rem(30px)};
   --surf-fs-40-64: #{rem(40px)};
+  --surf-fs-40-52-64-96: #{rem(40px)};
   --surf-fs-52-64-96: #{rem(52px)};
   --surf-fs-48-132-176: #{rem(48px)};
   --surf-fs-48-100-132: #{rem(48px)};
@@ -62,10 +65,12 @@
   @include bp-min(medium) {
     --surf-fs-16-18-24: #{rem(18px)};
     --surf-fs-18-24: #{rem(24px)};
+    --surf-fs-18-24-32: #{rem(24px)};
     --surf-fs-18-24-40: #{rem(24px)};
     --surf-fs-18-24-32: #{rem(24px)};
     --surf-fs-16-24: #{rem(24px)};
     --surf-fs-24-40-52: #{rem(40px)};
+    --surf-fs-40-52-64-96: #{rem(52px)};
     --surf-fs-40-64: #{rem(64px)};
     --surf-fs-48-100-132: #{rem(100px)};
     --surf-fs-48-100-132-176: #{rem(100px)};
@@ -75,10 +80,13 @@
 
   @include bp-min(large) {
     --surf-fs-16-18: #{rem(18px)};
+    --surf-fs-24-40: #{rem(40px)};
     --surf-fs-24-40-52: #{rem(52px)};
+    --surf-fs-18-24-32: #{rem(32px)};
     --surf-fs-18-24-40: #{rem(40px)};
     --surf-fs-18-24-32: #{rem(32px)};
     --surf-fs-30-32: #{rem(32px)};
+    --surf-fs-40-52-64-96: #{rem(52px)};
     --surf-fs-52-64-96: #{rem(64px)};
     --surf-fs-48-100-132: #{rem(132px)};
     --surf-fs-48-100-132-176: #{rem(132px)};
@@ -87,6 +95,7 @@
 
   @include bp-min(xlarge) {
     --surf-fs-16-18-24: #{rem(24px)};
+    --surf-fs-40-52-64-96: #{rem(96px)};
     --surf-fs-52-64-96: #{rem(96px)};
     --surf-fs-48-100-132-176: #{rem(176px)};
     --surf-fs-48-132-176: #{rem(176px)};
@@ -133,7 +142,7 @@
 //------------------------------------
 
 body {
-  color: var(--surf-color-gray-900);
+  color: var(--surf-color-black);
   font-family: var(--surf-font-sans);
   font-size: rem(18px);
 }
@@ -146,7 +155,7 @@ body {
 //------------------------------------
 
 h1, h2, h3, h4, h5 {
-  color: var(--surf-color-gray-900);
+  color: var(--surf-color-black);
   line-height: var(--surf-lh-heading);
   margin-bottom: 0;
 

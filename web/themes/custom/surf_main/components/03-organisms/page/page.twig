@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Component for Person (Node)
+ *
+ * Available props:
+ * - page_attributes: [array] Any parent tag attributes.
+ * - page_heading: [string]
+ * - page_teaser: [string]
+ * - person_phone: [string]
+ * - person_body: [string]
+ * - person_media: [string]
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'o-page',
+]
+%}
+
+<article {{ page_attributes.addClass(classes).merge(attributes) }}>
+
+  {% embed 'surf_main:media' with {
+    media_attributes: create_attribute(),
+    media: page_media,
+  } only %}
+
+    {% block media_block %}
+      {{ media }}
+    {% endblock %}
+
+  {% endembed %}
+
+  <div class="container container--xlarge">
+  {{ title_suffix }}
+
+    {% embed 'surf_main:header' with {
+      header_heading: page_heading,
+      header_heading_level: '1',
+      header_teaser: page_teaser,
+      header_cta_url: page_cta_url,
+      header_cta_text: page_cta_text,
+      header_cta_html_tag: page_cta_html_tag|default('link'),
+      header_cta_style: page_cta_style|default('full-navy'),
+      header_cta_size: page_cta_size|default('large'),
+      header_attributes: create_attribute(),
+      heading_attributes: create_attribute({'class': ['o-header__heading', 'o-page__heading']}),
+    } only %}
+    {% endembed %}
+
+  {{ page_content }}
+
+  </div>
+</article>

@@ -21,7 +21,8 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--navy']}),
+  callout_attributes: create_attribute(),
+  callout_type: 'navy',
   callout_heading: 'Optional Heading',
   callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
   callout_button_text: 'Primary Button',
@@ -35,7 +36,8 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--blue']}),
+  callout_attributes: create_attribute(),
+  callout_type: 'blue',
   callout_heading: 'Optional Heading',
   callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
   callout_button_text: 'Primary Button',
@@ -54,6 +56,7 @@
   callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
   callout_button_text: 'Primary Button',
   callout_button_url: 'http://www.example.com',
+  callout_media: drupal_entity('media', 3313),
 } only %}
 
   {% block media_block %}
@@ -68,11 +71,13 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--navy']}),
+  callout_attributes: create_attribute(),
+  callout_type: 'navy',
   callout_heading: 'Optional Heading',
   callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
   callout_button_text: 'Primary Button',
   callout_button_url: 'http://www.example.com',
+  callout_media: drupal_entity('media', 3313),
   callout_media_caption: 'Image credit can go here'
 } only %}
 
@@ -87,12 +92,13 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--blue']}),
+  callout_attributes: create_attribute(),
+  callout_type: 'blue',
   callout_heading: 'Optional Heading',
   callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
   callout_button_text: 'Primary Button',
   callout_button_url: 'http://www.example.com',
-  callout_media: '<img loading="eager" src="/sites/default/files/2023-06/210609-TestSling-0052_0.jpg" width="5040" height="3360" alt="Test Sling">',
+  callout_media: drupal_entity('media', 3313),
 } only %}
 
   {% block media_block %}
@@ -107,11 +113,13 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--white']}),
+  callout_attributes: create_attribute(),
+  callout_type: 'white',
   callout_heading: 'Optional Heading',
   callout_text: 'Example paragraph. Interdum risus tortor turpis gravida sed. Risus sit et egestas tellus ac sed. Purus ut eu fermentum non. Arcu lectus sed in quisque vitae posuere. Adipiscing nullam mauris iaculis leo turpis leo, congue.',
   callout_button_text: 'Primary Button',
   callout_button_url: 'http://www.example.com',
+  callout_media: drupal_entity('media', 3313),
 } only %}
 
   {% block media_block %}
@@ -125,7 +133,7 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--news']}),
+  callout_attributes: create_attribute(),
   callout_text: 'Stay up-to-date on our latest news and upcoming events.',
   callout_button_text: 'Subscribe to Deep Thoughts',
   callout_button_url: 'http://www.example.com',
@@ -139,7 +147,7 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--news']}),
+  callout_attributes: create_attribute(),
   callout_text: 'Watch our lectures on physics, algorithmic art, local history, botany and more!',
   callout_button_text: 'Watch Deep Talks on Vimeo',
   callout_button_url: 'http://www.example.com',
@@ -153,34 +161,43 @@
 </div>
 
 {% embed 'surf_main:callout' with {
-  callout_attributes: create_attribute({'class': ['m-callout--bkg-img']}),
+  callout_attributes: create_attribute(),
+  callout_type: 'img',
   callout_heading: 'Let\'s Dig Deeper',
 } only %}
 
-  {% block content %}
+  {% block callout_content %}
 
-{#    {% embed 'surf_main:grid' with {#}
-{#      grid_attributes: create_attribute({'class': ['a-grid--callout']}),#}
-{#    } only %}#}
-{#      {% block grid_items_block %}#}
-{#        <li>{% embed 'surf_main:callout' with {#}
-{#            callout_attributes: create_attribute({'class': ['m-callout--embed']}),#}
-{#            callout_text: 'Stay up-to-date on our latest news and upcoming events.',#}
-{#            callout_button_text: 'Subscribe to Deep Thoughts',#}
-{#            callout_button_url: 'http://www.example.com',#}
-{#            callout_button_prefix: 'envelope',#}
-{#          } only %}#}
-{#          {% endembed %}</li>#}
-{#        <li>{% embed 'surf_main:callout' with {#}
-{#            callout_attributes: create_attribute({'class': ['m-callout--embed']}),#}
-{#            callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',#}
-{#            callout_button_text: 'Watch Deep Talks on Vimeo',#}
-{#            callout_button_url: 'http://www.example.com',#}
-{#            callout_button_prefix: 'play',#}
-{#          } only %}#}
-{#          {% endembed %}</li>#}
-{#      {% endblock %}#}
-{#    {% endembed %}#}
+    {% embed 'surf_main:grid' with {
+      grid_column_type: 'col-2',
+      grid_html_type: 'div',
+      grid_attributes: create_attribute(),
+    } only %}
+      {% block grid_items %}
+        <div class="a-grid__item">
+          {% embed 'surf_main:callout' with {
+            callout_attributes: create_attribute(),
+            callout_type: 'embed',
+            callout_text: 'Stay up-to-date on our latest news and upcoming events.',
+            callout_button_text: 'Subscribe to Deep Thoughts',
+            callout_button_url: 'http://www.example.com',
+            callout_button_prefix: 'envelope',
+          } only %}
+          {% endembed %}
+        </div>
+        <div class="a-grid__item">
+          {% embed 'surf_main:callout' with {
+            callout_attributes: create_attribute(),
+            callout_type: 'embed',
+            callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',
+            callout_button_text: 'Watch Deep Talks on Vimeo',
+            callout_button_url: 'http://www.example.com',
+            callout_button_prefix: 'play',
+            } only %}
+          {% endembed %}
+        </div>
+      {% endblock %}
+    {% endembed %}
 
   {% endblock %}
 

@@ -46,11 +46,12 @@
 
     {% if header_cta_url %}
       {% include 'surf_main:button' with {
+        button_attributes: create_attribute(),
         button_title: header_cta_text,
         button_url: header_cta_url,
-        button_html_tag: header_cta_html_tag|default('link'),
-        button_style: header_cta_style|default('full-navy'),
-        button_size: header_cta_size|default('small'),
+        button_html_tag: header_cta_html_tag,
+        button_style: header_cta_style,
+        button_size: header_cta_size,
       } only %}
     {% endif %}
 

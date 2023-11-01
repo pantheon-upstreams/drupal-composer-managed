@@ -12,6 +12,12 @@ type: list_string
 settings:
   allowed_values:
     -
+      value: small
+      label: Small
+    -
+      value: large
+      label: Large
+    -
       value: fullwidth
       label: 'Full Width'
     -

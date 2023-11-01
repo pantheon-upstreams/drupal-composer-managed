@@ -45,7 +45,7 @@
         {% endif %}
 
         {% if callout_text %}
-            <p class="m-callout__text">{{ callout_text }}</p>
+            <div class="m-callout__text">{{ callout_text }}</div>
         {% endif %}
 
         {% if callout_button_url %}
@@ -161,5 +161,9 @@
                 {% endif %}
             {% endif %}
         {% endif %}
+
+        {% block callout_content %}
+        {% endblock %}
     </div>
+
 </aside>

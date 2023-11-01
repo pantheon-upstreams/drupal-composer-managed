@@ -19,6 +19,7 @@ dependencies:
     - node.type.person
   module:
     - name
+    - telephone
     - user
 id: node.person.teaser
 targetEntityType: node
@@ -27,14 +28,14 @@ mode: teaser
 content:
   field_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
   field_job_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -42,16 +43,16 @@ content:
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_name:
     type: name_default
-    label: above
+    label: hidden
     settings:
       format: default
       markup: none
@@ -64,21 +65,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_phone_mobile:
-    type: string
-    label: above
+  field_phone_office:
+    type: telephone_link
+    label: hidden
     settings:
-      link_to_entity: false
+      title: ''
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_phone_office:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 5
     region: content
   links:
     settings: {  }
@@ -91,6 +84,7 @@ hidden:
   field_board_type: true
   field_date_appointed: true
   field_location: true
+  field_phone_mobile: true
   field_ref_department: true
   langcode: true
   search_api_excerpt: true

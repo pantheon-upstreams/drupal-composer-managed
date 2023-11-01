@@ -6,14 +6,12 @@ dependencies:
     - field.storage.node.field_p_content
     - node.type.report_publication
     - paragraphs.paragraphs_type.accordion
-    - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
-    - paragraphs.paragraphs_type.section
-    - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -31,14 +29,12 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      callout: callout
       persons_list: persons_list
       pullquote: pullquote
       resources_list: resources_list
-      section: section
-      teaser_list: teaser_list
       text: text
       accordion: accordion
-      card_list: card_list
       header: header
       media: media
     negate: 0
@@ -49,57 +45,24 @@ settings:
       accordion_item:
         weight: 50
         enabled: false
-      blue_banner:
-        weight: 51
+      callout:
+        weight: 22
         enabled: true
       card:
         weight: 52
         enabled: false
       card_list:
         weight: 53
-        enabled: true
-      centered_image_text:
-        weight: 54
-        enabled: false
-      entity_references_image_text:
-        weight: 55
-        enabled: false
-      entity_references_text:
-        weight: 56
-        enabled: false
-      full_teaser:
-        weight: 57
         enabled: false
       gallery:
         weight: 58
         enabled: false
-      green_banner_cta:
-        weight: 59
-        enabled: true
       header:
         weight: 60
         enabled: true
-      homepage_lead_teaser:
-        weight: 61
-        enabled: false
-      homepage_teaser:
-        weight: 62
-        enabled: false
-      image:
-        weight: 63
-        enabled: false
-      image_with_caption:
-        weight: 64
-        enabled: false
       media:
         weight: 65
         enabled: true
-      media_gallery:
-        weight: 66
-        enabled: true
-      one_up_teaser_image_text:
-        weight: 67
-        enabled: false
       person:
         weight: 68
         enabled: false
@@ -118,31 +81,19 @@ settings:
       resources_list:
         weight: 37
         enabled: true
-      running_text:
-        weight: 40
-        enabled: false
       schedule_item:
         weight: 41
         enabled: false
       section:
         weight: 42
-        enabled: true
+        enabled: false
       teaser_list:
         weight: 43
-        enabled: true
+        enabled: false
       text:
         weight: 44
         enabled: true
-      two_up_figures:
-        weight: 45
-        enabled: false
-      two_up_teaser_image_text:
-        weight: 46
-        enabled: false
-      two_up_teaser_text:
-        weight: 47
-        enabled: false
-      video:
-        weight: 48
+      view:
+        weight: 38
         enabled: false
 field_type: entity_reference_revisions

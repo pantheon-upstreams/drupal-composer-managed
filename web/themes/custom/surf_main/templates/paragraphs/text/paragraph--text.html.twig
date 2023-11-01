@@ -1,16 +1,5 @@
-{%
-  set classes = [
-    'paragraph',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    'c-text', 'l-constrained--small', 'l--bottom-spacing'
-  ]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% embed 'surf_main:editor' with {
+  editor_attributes: create_attribute(),
+  editor_content: content.field_text|field_value,
+} only %}
+{% endembed %}

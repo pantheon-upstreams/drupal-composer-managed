@@ -8,13 +8,14 @@
  * - pullquote_attributes: [array] Any parent tag attributes.
  * - pullquote_quote: [string] required
  * - pullquote_credit: [string]
+ * - pullquote_type: [string]
  *
  */
 #}
 
 {% set classes = [
   'm-pullquote',
-  pullquote_type ? 'm-pullquote--type-' ~ pullquote_type,
+  pullquote_type ? 'm-pullquote--' ~ pullquote_type,
 ] %}
 
 <figure {{ pullquote_attributes.addClass(classes).merge(attributes) }}>

@@ -34,12 +34,15 @@ props:
         - col-1
         - list
         - super
+        - person
     teaser_url:
       title: URL
       type: string
   slots:
     teaser_content_prefix:
       title: Content Prefix
+    teaser_content:
+        title: Content
     teaser_content_suffix:
       title: Content Suffix
     teaser_media_prefix:

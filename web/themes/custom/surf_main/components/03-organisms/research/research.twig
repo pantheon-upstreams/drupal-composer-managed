@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * Component for Person (Node)
+ *
+ * Available props:
+ * - page_attributes: [array] Any parent tag attributes.
+ * - page_heading: [string]
+ * - page_teaser: [string]
+ * - person_phone: [string]
+ * - person_body: [string]
+ * - person_media: [string]
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'o-research',
+]
+%}
+
+<article {{ research_attributes.addClass(classes).merge(attributes) }}>
+
+  {% embed 'surf_main:media' with {
+    media_attributes: create_attribute(),
+    media: research_media,
+  } only %}
+
+    {% block media_block %}
+      {{ media }}
+    {% endblock %}
+
+  {% endembed %}
+
+  <div class="container container--xlarge">
+    {{ title_suffix }}
+
+    {% embed 'surf_main:header' with {
+      header_heading: research_heading,
+      header_heading_level: '1',
+      header_attributes: create_attribute(),
+      heading_attributes: create_attribute({'class': ['o-header__heading']}),
+    } only %}
+    {% endembed %}
+
+    <div class="o-research-wrapper">
+
+      {# Overview #}
+      <div class="o-research__overview">
+      {% embed 'surf_main:pullquote' with {
+        pullquote_attributes: create_attribute(),
+        pullquote_quote: research_overview,
+        pullquote_type: 'large',
+      } only %}
+      {% endembed %}
+      </div>
+
+      {# Main Content #}
+      <div class="o-research__main-content">
+      {% embed 'surf_main:editor' with {
+        editor_attributes: create_attribute(),
+        editor_content: research_content,
+      } only %}
+      {% endembed %}
+      </div>
+
+      {# Sidebar #}
+      <aside class="o-research__sidebar">
+        {% embed 'surf_main:media' with {
+          media_attributes: create_attribute(),
+          media: research_sidebar_icon,
+        } only %}
+
+          {% block media_block %}
+            {{ media }}
+          {% endblock %}
+
+        {% endembed %}
+
+      </aside>
+
+      {# Additional Content #}
+      <div class="o-research__additional-content">
+        [ADDITIONAL CONTENT]
+      </div>
+    </div>
+
+  </div>
+</article>

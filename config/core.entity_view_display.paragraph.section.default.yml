@@ -1,0 +1,27 @@
+uuid: 06165536-3285-45db-a518-f0f4e0337dc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.section
+  module:
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true
