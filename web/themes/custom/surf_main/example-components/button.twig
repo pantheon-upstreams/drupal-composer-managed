@@ -1,78 +1,219 @@
 <div class="c-rich-text" style="margin: 32px 0">
   <h3>Buttons</h3>
-  <p><em>Full</em></p>
+  <p><em>Primary - Large</em></p>
 </div>
 
-{% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'full-navy',
-    button_title: 'Example Button',
-    button_url: 'https://example.com',
-} %}
+<div>
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'navy',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
 
-{% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'full-navy',
-    button_suffix: 'arrow-right',
-    button_title: 'Example Button',
-    button_url: 'https://example.com',
-} %}
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'navy',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
 
-{% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'full-black',
-    button_title: 'Example Button',
-    button_url: 'https://example.com',
-} %}
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'black',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
 
-{% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'full-black',
-    button_suffix: 'arrow-right',
-    button_title: 'Example Button',
-    button_url: 'https://example.com',
-} %}
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'black',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
 
-{% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'full-white',
-    button_title: 'Example Button',
-    button_url: 'https://example.com',
-} %}
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'white',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
 
-{% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'full-white',
-    button_suffix: 'arrow-right',
-    button_title: 'Example Button',
-    button_url: 'https://example.com',
-} %}
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'white',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+</div>
 
 
 <div class="c-rich-text" style="margin: 32px 0">
-    <p><em>List</em></p>
+    <p><em>Primary - Small</em></p>
+</div>
+
+<div>
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'navy',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'navy',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'black',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'black',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'white',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'white',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+</div>
+
+<div class="c-rich-text" style="margin: 32px 0">
+    <p><em>Underline</em></p>
+</div>
+
+<div>
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'navy',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'underline',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'navy',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'underline',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'black',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'underline',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
+
+    {% include 'surf_main:button' with {
+        attributes,
+        button_attributes: create_attribute(),
+        button_color: 'black',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'underline',
+        button_suffix: 'icon-arrow-right',
+        button_title: 'Example Button'|t,
+        button_url: 'https://example',
+    } only %}
 </div>

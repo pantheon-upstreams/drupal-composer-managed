@@ -1,8 +1,9 @@
-uuid: 73a126c2-1f82-46cc-b036-faca61a3ed23
+uuid: c6b9fa9d-0d61-491e-880b-d497da3bf817
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.page.field_link
     - field.field.node.page.field_media_primary
     - field.field.node.page.field_overview
@@ -14,20 +15,25 @@ dependencies:
     - field.field.node.page.field_teaser_text
     - node.type.page
   module:
+    - layout_builder
     - layout_paragraphs
     - link
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
-id: node.page.default
+id: node.page.full
 targetEntityType: node
 bundle: page
-mode: default
+mode: full
 content:
   field_link:
-    type: link
-    label: above
+    type: link_separate
+    label: hidden
     settings:
       trim_length: null
       url_only: false
@@ -35,11 +41,11 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
   field_media_primary:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -48,60 +54,26 @@ content:
     region: content
   field_overview:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_p_content:
     type: layout_paragraphs
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_ref_eo_opportunities:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_ref_key_impact_areas:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_ref_research_areas:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_teaser_text:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
     weight: 1
     region: content
 hidden:
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_research_areas: true
+  field_teaser_text: true
   langcode: true
   links: true
   search_api_excerpt: true

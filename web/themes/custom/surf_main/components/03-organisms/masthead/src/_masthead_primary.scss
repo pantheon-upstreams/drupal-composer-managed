@@ -12,7 +12,10 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/animations';
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/buttons';
+@use '../../../00-base/partials/links';
 
 
 
@@ -39,7 +42,7 @@
     margin-right: auto;
     width: 164px;
 
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       width: 220px;
     }
   }
@@ -52,7 +55,7 @@
   > .container > .menu {
     display: none;
 
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       display: block;
     }
   }
@@ -78,14 +81,14 @@
 
 .o-masthead .o-masthead__primary {
   .o-masthead__flyout {
-    @include bp-min(xxlarge) {
+    @include breakpoints.bp-min(xxlarge) {
       display: none;
     }
   }
 
   .o-masthead__flyout .o-masthead__flyout-trigger {
-    @include button-reset();
-    @include link-menu(28px, navy);
+    @include buttons.button-reset();
+    @include links.menu(28px, navy);
     padding-left: 40px;
 
     &:after {
@@ -104,7 +107,7 @@
       position: absolute;
       top: 0;
       transform: rotate(0deg);
-      transition: transition(all, 0.35s, easeInOutExpo);
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
       width: 32px;
     }
   }
@@ -122,11 +125,11 @@
     opacity: 0;
     position: fixed;
     top: var(--surf-height-region-header-primary);
-    transition: transition(all, 0.35s, easeInOutExpo);
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
     visibility: hidden;
     width: 100vw;
 
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       height: calc(100vh - (var(--surf-height-region-header-primary) - var(--surf-height-region-header-utility)));
       top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
     }
@@ -135,7 +138,7 @@
       height: calc(100vh - (var(--surf-height-region-header-primary) + var(--gin-toolbar-height)));
       top: var(--surf-height-region-header-primary);
 
-      @include bp-min(large) {
+      @include breakpoints.bp-min(large) {
         height: calc(100vh - (var(--surf-height-region-header-primary) + var(--gin-toolbar-height)));
         top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
       }
@@ -155,10 +158,10 @@
     right: 0;
     top: 0;
     transform: translateX(100%);
-    transition: transition(all, 0.35s, easeInOutExpo);
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
     width: 100%;
 
-    @include bp-min(small) {
+    @include breakpoints.bp-min(small) {
       transform: translateX(376px);
       width: 376px;
     }

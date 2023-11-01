@@ -25,95 +25,68 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_tabs:
+    group_tags:
       children:
-        - group_overview
-        - group_featured_image
-        - group_content
-        - group_related
-        - group_categorize
-      label: Tabs
+        - field_ref_audiences
+        - field_ref_eo_opportunities
+        - field_ref_key_impact_areas
+      label: Tags
       region: content
       parent_name: ''
-      weight: 0
-      format_type: tabs
+      weight: 6
+      format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
-        direction: horizontal
-    group_overview:
-      children:
-        - title
-        - field_date_published
-        - field_author
-        - field_publisher
-        - field_highlight
-      label: Overview
-      region: content
-      parent_name: group_tabs
-      weight: 17
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: open
+        open: false
         description: ''
         required_fields: true
-    group_featured_image:
-      children: {  }
-      label: 'Featured Image'
-      region: content
-      parent_name: group_tabs
-      weight: 19
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_content:
+    group_media:
       children:
-        - field_p_content
-      label: Content
+        - field_media_primary
+      label: Media
       region: content
-      parent_name: group_tabs
-      weight: 20
-      format_type: tab
+      parent_name: ''
+      weight: 4
+      format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
-        formatter: closed
-        description: ''
-        required_fields: true
-    group_categorize:
-      children:
-        - field_ref_key_impact_areas
-        - field_ref_eo_opportunities
-        - field_ref_audiences
-      label: Categorize
-      region: content
-      parent_name: group_tabs
-      weight: 22
-      format_type: tab
-      format_settings:
-        classes: ''
-        id: ''
-        formatter: closed
+        open: false
         description: ''
         required_fields: true
     group_related:
       children:
         - field_ref_related_content
+        - field_ref_research_areas
       label: Related
       region: content
-      parent_name: group_tabs
-      weight: 21
-      format_type: tab
+      parent_name: ''
+      weight: 5
+      format_type: details
       format_settings:
         classes: ''
+        show_empty_fields: false
         id: ''
-        formatter: closed
+        open: false
+        description: ''
+        required_fields: true
+    group_attribution:
+      children:
+        - field_author
+        - field_publisher
+      label: Attribution
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
         description: ''
         required_fields: true
 _core:
@@ -125,13 +98,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_author:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
@@ -139,13 +112,13 @@ content:
     third_party_settings: {  }
   field_date_published:
     type: datetime_default
-    weight: 3
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_highlight:
     type: string_textarea
-    weight: 6
+    weight: 2
     region: content
     settings:
       rows: 5
@@ -153,14 +126,14 @@ content:
     third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 30
+    weight: 17
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_p_content:
     type: layout_paragraphs
-    weight: 15
+    weight: 7
     region: content
     settings:
       preview_view_mode: default
@@ -170,33 +143,33 @@ content:
     third_party_settings: {  }
   field_publisher:
     type: text_textfield
-    weight: 5
+    weight: 4
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_ref_audiences:
-    type: options_buttons
-    weight: 25
+    type: options_select
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_eo_opportunities:
-    type: options_buttons
-    weight: 24
+    type: options_select
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_key_impact_areas:
-    type: options_buttons
-    weight: 23
+    type: options_select
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_related_content:
     type: entity_reference_autocomplete
-    weight: 29
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -206,7 +179,7 @@ content:
     third_party_settings: {  }
   field_ref_research_areas:
     type: entity_reference_autocomplete
-    weight: 31
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -214,54 +187,33 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    weight: 4
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 9
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    weight: 5
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60
@@ -269,7 +221,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -279,13 +231,16 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 8
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true
+  promote: true
+  sticky: true

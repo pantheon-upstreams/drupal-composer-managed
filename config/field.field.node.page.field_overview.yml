@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_overview
+    - filter.format.plain
     - node.type.page
   module:
     - allowed_formats
@@ -11,16 +12,18 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - plain_text
+      - plain
 id: node.page.field_overview
 field_name: field_overview
 entity_type: node
 bundle: page
-label: Overview
+label: Summary
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - plain
 field_type: text

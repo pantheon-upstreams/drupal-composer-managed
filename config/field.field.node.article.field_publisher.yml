@@ -4,9 +4,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_publisher
+    - filter.format.plain_text
     - node.type.article
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - plain_text
 id: node.article.field_publisher
 field_name: field_publisher
 entity_type: node
@@ -17,5 +23,7 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - plain_text
 field_type: text

@@ -51,53 +51,114 @@
         {% if callout_button_url %}
             {% if callout_type == 'navy' or callout_type == 'blue' %}
                 {% include 'surf_main:button' with {
+                    attributes,
                     button_attributes: create_attribute(),
+                    button_color: 'white',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'small',
+                    button_style: 'primary',
                     button_title: callout_button_text,
                     button_url: callout_button_url,
-                    button_html_tag: 'link',
-                    button_style: 'full-white',
-                    button_size: 'small',
                 } only %}
             {% elseif callout_type == 'white' %}
                 {% include 'surf_main:button' with {
+                    attributes,
                     button_attributes: create_attribute(),
+                    button_color: 'navy',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'small',
+                    button_style: 'underline',
                     button_title: callout_button_text,
                     button_url: callout_button_url,
-                    button_html_tag: 'link',
-                    button_style: 'underline-navy',
-                    button_size: 'small',
                 } only %}
             {% elseif callout_type == 'img' or callout_type == 'embed' %}
-                {% include 'surf_main:button' with {
-                    button_attributes: create_attribute(),
-                    button_title: callout_button_text,
-                    button_url: callout_button_url,
-                    button_html_tag: 'link',
-                    button_style: 'underline-white',
-                    button_size: 'small',
-                    button_prefix: callout_button_prefix ? callout_button_prefix,
-                    button_suffix: 'arrow-right',
-                } only %}
-            {% elseif callout_type == 'gray' %}
-                {% include 'surf_main:button' with {
-                    button_attributes: create_attribute(),
-                    button_title: callout_button_text,
-                    button_url: callout_button_url,
-                    button_html_tag: 'link',
-                    button_style: 'full-navy',
-                    button_size: 'small',
-                } only %}
+                {% if callout_button_prefix == 'play' %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'white',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_prefix: 'icon-play-left',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_suffix: 'icon-arrow-right',
+                        button_title: callout_button_text,
+                        button_url: callout_button_url,
+                    } only %}
+                {% elseif callout_button_prefix == 'envelope' %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'white',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_prefix: 'icon-envelope-left',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_suffix: 'icon-arrow-right',
+                        button_title: callout_button_text,
+                        button_url: callout_button_url,
+                    } only %}
+                {% else %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'white',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_suffix: 'icon-arrow-right',
+                        button_title: callout_button_text,
+                        button_url: callout_button_url,
+                    } only %}
+                {% endif %}
             {% else %}
-                {% include 'surf_main:button' with {
-                    button_attributes: create_attribute(),
-                    button_title: callout_button_text,
-                    button_url: callout_button_url,
-                    button_html_tag: 'link',
-                    button_style: 'underline-navy',
-                    button_size: 'small',
-                    button_prefix: callout_button_prefix ? callout_button_prefix,
-                    button_suffix: 'arrow-right',
-                } only %}
+                {% if callout_button_prefix == 'play' %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'navy',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_prefix: 'icon-play-left',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_suffix: 'icon-arrow-right',
+                        button_title: callout_button_text,
+                        button_url: callout_button_url,
+                    } only %}
+                {% elseif callout_button_prefix == 'envelope' %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'navy',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_prefix: 'icon-envelope-left',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_suffix: 'icon-arrow-right',
+                        button_title: callout_button_text,
+                        button_url: callout_button_url,
+                    } only %}
+                {% else %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'navy',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_suffix: 'icon-arrow-right',
+                        button_title: callout_button_text,
+                        button_url: callout_button_url,
+                    } only %}
+                {% endif %}
             {% endif %}
         {% endif %}
 

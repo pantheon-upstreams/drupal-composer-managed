@@ -29,14 +29,14 @@
           {% include 'surf_main:button' with {
               attributes,
               button_attributes: create_attribute(),
+              button_color: 'navy',
               button_external: item.content['#url'].isExternal(),
               button_html_tag: 'link',
               button_size: 'large',
-              button_style: 'full-navy',
-              button_suffix: 'arrow-right',
+              button_style: 'primary',
               button_title: item.content['#title'],
               button_url: item.content['#url'],
-          } %}
+          } only %}
       {% endfor %}
     </div>
   {% else %}
@@ -44,14 +44,14 @@
         {% include 'surf_main:button' with {
             attributes,
             button_attributes: create_attribute(),
+            button_color: 'navy',
             button_external: item.content['#url'].isExternal(),
             button_html_tag: 'link',
             button_size: 'large',
-            button_style: 'full-navy',
-            button_suffix: 'arrow-right',
+            button_style: 'primary',
             button_title: item.content['#title'],
             button_url: item.content['#url'],
-        } %}
+        } only %}
     {% endfor %}
   {% endif %}
 {% else %}
@@ -65,14 +65,14 @@
         {% include 'surf_main:button' with {
             attributes,
             button_attributes: create_attribute(),
+            button_color: 'navy',
             button_external: item.content['#url'].isExternal(),
             button_html_tag: 'link',
             button_size: 'large',
-            button_style: 'full-navy',
-            button_suffix: 'arrow-right',
+            button_style: 'primary',
             button_title: item.content['#title'],
             button_url: item.content['#url'],
-        } %}
+        } only %}
     {% endfor %}
 
     {% if multiple %}
