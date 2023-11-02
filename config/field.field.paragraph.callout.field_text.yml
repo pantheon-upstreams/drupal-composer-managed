@@ -7,7 +7,6 @@ dependencies:
     - filter.format.basic_html
     - paragraphs.paragraphs_type.callout
   module:
-    - allowed_formats
     - text
 third_party_settings:
   allowed_formats:
