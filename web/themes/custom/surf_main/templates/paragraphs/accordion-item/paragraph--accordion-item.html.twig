@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a .
+ *
+ * Available variables:
+ * -
+ *
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_title',
+    'field_text'
+) %}
+
+{% embed 'surf_main:accordion-item' with {
+    attributes,
+    accordion_item_attributes: create_attribute(),
+    accordion_item_id: paragraph.field_title.value|clean_class,
+    accordion_item_title: content.field_title|field_value,
+    accordion_item_content: content.field_text|field_value,
+} only %}
+    {% block accordion_item_content %}
+        {{ accordion_item_content }}
+    {% endblock %}
+{% endembed %}
+
+{{ rendered_content }}

@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Component for Accordion
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - accordion_attributes: [string] Any additional attributes needing to be specified.
+ * - accordion_
+ *
+ */
+#}
+
+{% set classes = [
+    'm-accordion__item',
+    'accordion__item'
+] %}
+
+<div {{ accordion_item_attributes.addClass(classes) }} {{ attributes }}>
+    <h3 id="{{ accordion_item_id }}" class="m-accordion__title accordion__title">
+        <button type="button"
+                aria-expanded="false"
+                class="m-accordion__trigger accordion__trigger"
+                aria-controls="accordion-{{ accordion_item_id }}">
+            {{- accordion_item_title -}}
+        </button>
+    </h3>
+
+    <div id="accordion-{{ accordion_item_id }}"
+         class="m-accordion__panel accordion__panel"
+         role="region"
+         aria-labelledby="{{ accordion_item_id }}">
+        {% block accordion_item_content %}{% endblock %}
+    </div>
+</div>

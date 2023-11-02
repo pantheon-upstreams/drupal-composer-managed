@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Accordion Item
+status: experimental
+group: Atom
+props:
+  type: object
+  required:
+    - accordion_item_id
+    - accordion_item_title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    accordion_item_attributes:
+      title: Attributes
+      type: string
+    accordion_item_id:
+      title: ID
+      type: string
+    accordion_item_title:
+      title: Title
+      type: string
+  slots:
+    accordion_item_content:
+      title: Content

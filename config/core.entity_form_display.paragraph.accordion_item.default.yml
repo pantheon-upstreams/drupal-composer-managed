@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.accordion_item.field_title
     - paragraphs.paragraphs_type.accordion_item
   module:
+    - maxlength
     - text
 id: paragraph.accordion_item.default
 targetEntityType: paragraph
@@ -18,9 +19,13 @@ content:
     weight: 1
     region: content
     settings:
-      rows: 5
+      rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
   field_title:
     type: string_textfield
     weight: 0
@@ -28,7 +33,11 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
 hidden:
   created: true
   status: true

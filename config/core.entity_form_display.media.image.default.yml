@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_caption
-    - field.field.media.image.field_credit
     - field.field.media.image.field_media_image
     - image.style.crop_thumbnail
     - media.type.image
@@ -28,14 +27,6 @@ content:
   field_caption:
     type: string_textfield
     weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_credit:
-    type: string_textfield
-    weight: 3
     region: content
     settings:
       size: 60

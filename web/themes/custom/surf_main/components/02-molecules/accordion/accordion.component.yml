@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Accordion
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - accordion_items
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    accordion_attributes:
+      title: Attributes
+      type: string
+    accordion_items:
+      title: Items
+      type: array

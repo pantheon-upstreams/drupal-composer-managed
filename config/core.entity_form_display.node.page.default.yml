@@ -123,8 +123,8 @@ content:
     region: content
     settings:
       preview_view_mode: default
-      nesting_depth: 1
-      require_layouts: 1
+      nesting_depth: 0
+      require_layouts: 0
       empty_message: ''
     third_party_settings: {  }
   field_ref_audiences:

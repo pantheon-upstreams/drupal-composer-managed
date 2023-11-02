@@ -1,12 +1,29 @@
-{% set items = [] %}
-{% for item in paragraph.field_accordion_items %}
-{% set items = items|merge([{
-  title: item.entity.field_title.value,
-  content: item.entity.field_text.value
-  }]) %}
-{% endfor %}
+{#
+/**
+ * @file
+ * Default theme implementation to display a .
+ *
+ * Available variables:
+ * -
+ *
+ */
+#}
 
-{{ include('surf_main:accordion', {
-  items,
-  attributes
-}, with_context = false) }}
+{% set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+    'field_p_accordion_items'
+) %}
+
+{{ rendered_content }}
+
+{% include 'surf_main:accordion' with {
+    attributes,
+    accordion_attributes: create_attribute({'class': classes}),
+    accordion_items: content.field_p_accordion_items|field_value,
+} only %}

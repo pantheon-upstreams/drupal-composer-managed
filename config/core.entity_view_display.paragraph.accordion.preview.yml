@@ -1,22 +1,28 @@
-uuid: 61847540-6994-4058-8d40-378d153d8d17
+uuid: 6310f4d0-8b9a-425c-a6c7-8ea3cc9c9cb6
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.accordion.field_p_accordion_items
     - paragraphs.paragraphs_type.accordion
   module:
     - entity_reference_revisions
-id: paragraph.accordion.default
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.accordion.preview
 targetEntityType: paragraph
 bundle: accordion
-mode: default
+mode: preview
 content:
   field_p_accordion_items:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: preview
       link: ''
     third_party_settings: {  }
     weight: 0

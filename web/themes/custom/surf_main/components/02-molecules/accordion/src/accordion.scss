@@ -1,0 +1,137 @@
+//
+// Component - Molecule - Accordion
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/animations';
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/buttons';
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.m-accordion {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--surf-width-small);
+
+  .m-accordion__item:not(:first-child) {
+    margin-top: -2px;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Expand/Collapse
+//------------------------------------
+
+.m-accordion {
+  .m-accordion__panel {
+    opacity: 0;
+    max-height: 0;
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
+    visibility: hidden;
+  }
+
+  .expanded .m-accordion__panel {
+    opacity: 1;
+    max-height: 9999px;
+    visibility: visible;
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Title/Trigger
+//------------------------------------
+
+.m-accordion {
+  .m-accordion__trigger {
+    @include buttons.button-reset();
+    border-bottom: solid 2px var(--surf-color-gray-800);
+    border-top: solid 2px var(--surf-color-gray-800);
+    font-size: var(--surf-fs-16-18);
+    padding: 16px 16px 16px 32px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    @include breakpoints.bp-min(medium) {
+      padding: 16px 16px 16px 48px;
+    }
+
+    &:before {
+      --surf-icon-plus: svg-load('icon-add.svg');
+      --surf-icon-minus: svg-load('icon-minus.svg');
+      background-color: var(--surf-color-blue);
+      content: '';
+      display: block;
+      height: 24px;
+      left: 4px;
+      mask-image: var(--surf-icon-plus);
+      position: absolute;
+      top: 15px;
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
+      width: 24px;
+
+      @include breakpoints.bp-min(medium) {
+        left: 12px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline solid var(--surf-color-gray-800) 2px;
+    }
+  }
+
+  .expanded .m-accordion__trigger:before {
+    background-color: var(--surf-color-navy);
+    mask-image: var(--surf-icon-minus);
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Panels
+//------------------------------------
+
+.m-accordion {
+  .m-accordion__panel {
+    padding: 0 32px;
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
+
+    @include breakpoints.bp-min(medium) {
+      padding: 0 48px;
+    }
+  }
+
+  .expanded .m-accordion__panel {
+    padding: 24px 32px;
+
+    @include breakpoints.bp-min(medium) {
+      padding: 48px;
+    }
+  }
+
+  .m-accordion__panel p {
+    font-size: var(--surf-fs-16-18);
+  }
+}

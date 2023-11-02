@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Component for Accordion
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - accordion_attributes: [string] Any additional attributes needing to be specified.
+ * - accordion_items
+ *
+ */
+#}
+
+{% set classes = [
+    'm-accordion',
+    'accordion'
+] %}
+
+<div {{ accordion_attributes.addClass(classes) }} {{ attributes }}>
+    {{ accordion_items }}
+</div>

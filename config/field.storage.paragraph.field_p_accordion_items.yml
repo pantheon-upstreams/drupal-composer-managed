@@ -1,12 +1,12 @@
-uuid: 71a60c41-4de9-4c88-925d-de0294e23243
+uuid: 930b9894-4b6c-4b4f-aac7-b07e78a96dfc
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-id: paragraph.field_accordion_items
-field_name: field_accordion_items
+id: paragraph.field_p_accordion_items
+field_name: field_p_accordion_items
 entity_type: paragraph
 type: entity_reference_revisions
 settings:
