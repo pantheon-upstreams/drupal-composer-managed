@@ -1,0 +1,99 @@
+# Configuration files should be named [theme|module machine name].style_options.yml
+# and placed in the root folder of the applicable theme/module.
+
+# The "options" section defines all available options.
+options:
+  # The name "example_class" is arbitrary.
+  example_class:
+    # See \Drupal\style_options\OptionPlugin\CssClass
+    plugin: css_class
+    label: 'My custom class'
+    # Defaults to false.
+    multiple: true
+    options:
+      -
+        label: None
+      -
+        label: Style 1
+        class: style_1
+      -
+        label: Style 2
+        class: style_2
+
+  # The name "bg_color" is arbitrary.
+  bg_color:
+    # See \Drupal\style_options\OptionPlugin\BackgroundColor
+    plugin: background_color
+    label: Background Color
+    # can be "css" or "inline"
+    method: css
+    # Settings are passed as JS options.
+    # See https://bgrins.github.io/spectrum/ for more info.
+    settings:
+      allowEmpty: TRUE
+      showInput: TRUE
+      showAlpha: TRUE
+      showPalette: TRUE
+      appendTo: '.ui-dialog-content'
+      palette:
+        -
+          - "#CC0000"
+          - "#E04800"
+          - "#F29300"
+          - "#FDC400"
+        -
+          - "#44284D"
+          - "#6C3E6C"
+          - "#9C5A9D"
+          - "#3FA447"
+        -
+          - "#00659B"
+          - "#0098CE"
+          - "#e9eff4"
+          - "#130F13"
+        -
+          - "#261F26"
+          - "#363136"
+          - "#504B50"
+          - "#777277"
+
+  bg_image:
+    # See \Drupal\opton_plugin\OptionPlugin\BackgroundImage
+    plugin: background_image
+    label: Background Image
+    method: css
+
+# The "contexts" section defines which options should be available for specific contexts,
+# i.e. specific Layout Plugins, Paragraph Types, etc.
+contexts:
+
+  # Configure which options should be available for layout plugins.
+  layout:
+    # Defines defaults for all layouts.
+    _defaults:
+      options:
+        example_class:
+          # This option will show as a main layout option.
+          layout: true
+          # This option will also appear for each region.
+          regions: true
+    # Defines specific overrides for one column layouts
+    layout_onecolumn:
+      # Disables options defined as defaults
+      _disable:
+        - example_class
+      options:
+        ## The bg_color option will appear for layout_onecolumn only.
+        bg_color:
+          layout: true
+
+  # Configure which options should be available for paragraph behaviors.
+  paragraphs:
+    _defaults:
+      options:
+        example_class: true
+    text_paragraph:
+      _disable:
+        - example_class
+      options:
+        bg_color: true
