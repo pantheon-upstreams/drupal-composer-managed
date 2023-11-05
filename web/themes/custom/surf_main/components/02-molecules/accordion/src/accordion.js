@@ -1,5 +1,5 @@
 /**
- *
+ * Components - Molecule - Accordion
  *
  * - 01 - Imports
  * - 02 - Drupal Attach

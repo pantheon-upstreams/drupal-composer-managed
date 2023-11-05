@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.persons_list
@@ -33,6 +34,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      gallery: gallery
       accordion: accordion
       pullquote: pullquote
       section: section
@@ -64,7 +66,7 @@ settings:
         enabled: true
       gallery:
         weight: 25
-        enabled: false
+        enabled: true
       header:
         weight: 30
         enabled: false

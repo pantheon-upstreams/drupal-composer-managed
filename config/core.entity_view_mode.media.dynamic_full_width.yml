@@ -1,0 +1,10 @@
+uuid: 24169fbc-2ebc-44b9-bd2f-f9a900ab53d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.dynamic_full_width
+label: 'Dynamic - Full Width'
+targetEntityType: media
+cache: true

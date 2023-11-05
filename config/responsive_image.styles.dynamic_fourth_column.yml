@@ -1,0 +1,23 @@
+uuid: be9f7e5e-151b-484a-ac7e-148dc695d364
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.small_480w
+  theme:
+    - surf_main
+id: dynamic_fourth_column
+label: 'Dynamic - Fourth Column'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: small_480w
+    breakpoint_id: surf_main.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: ''
+    breakpoint_id: surf_main.small
+    multiplier: 2x
+breakpoint_group: surf_main
+fallback_image_style: small_480w

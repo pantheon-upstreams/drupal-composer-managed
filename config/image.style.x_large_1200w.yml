@@ -1,0 +1,15 @@
+uuid: 90af5453-68a0-4224-857b-44f599eb0a88
+langcode: en
+status: true
+dependencies: {  }
+name: x_large_1200w
+label: 'X Large (1200W)'
+effects:
+  1fa50ae6-cd7c-4c2d-995a-ddb7e17999ea:
+    uuid: 1fa50ae6-cd7c-4c2d-995a-ddb7e17999ea
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false

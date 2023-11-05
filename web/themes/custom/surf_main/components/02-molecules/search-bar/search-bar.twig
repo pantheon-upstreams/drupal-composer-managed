@@ -14,7 +14,7 @@
     'dropdown',
 ] %}
 
-<div {{ search_bar_attributes.addClass(classes) }} {{ attributes }}>
+<div {{ search_bar_attributes.addClass(classes).merge(attributes) }}>
     {{ search_bar_form }}
 
     <button id="search-trigger"

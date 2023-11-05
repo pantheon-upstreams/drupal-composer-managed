@@ -1,0 +1,15 @@
+uuid: be5347ad-7960-458c-a1e0-f0ec34cfcd40
+langcode: en
+status: true
+dependencies: {  }
+name: small_480w
+label: 'Small (480W)'
+effects:
+  e39a82a8-3a9f-473e-b162-c43c0aed79df:
+    uuid: e39a82a8-3a9f-473e-b162-c43c0aed79df
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false

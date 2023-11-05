@@ -1,0 +1,10 @@
+uuid: f55ce6b4-d098-4983-9e64-f31490ba6468
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.dynamic_fourth_column
+label: 'Dynamic - Fourth Column'
+targetEntityType: media
+cache: true

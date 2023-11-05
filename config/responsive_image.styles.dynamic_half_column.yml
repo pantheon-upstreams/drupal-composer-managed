@@ -1,0 +1,40 @@
+uuid: 7e3b6fe5-6b59-4a37-9253-e362f74ea88b
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_992w
+    - image.style.medium_768w
+    - image.style.small_480w
+  theme:
+    - surf_main
+id: dynamic_half_column
+label: 'Dynamic - Half Column'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: large_992w
+    breakpoint_id: surf_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_768w
+    breakpoint_id: surf_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_992w
+    breakpoint_id: surf_main.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_480w
+    breakpoint_id: surf_main.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_768w
+    breakpoint_id: surf_main.small
+    multiplier: 2x
+breakpoint_group: surf_main
+fallback_image_style: small_480w

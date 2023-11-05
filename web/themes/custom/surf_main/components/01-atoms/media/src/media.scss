@@ -25,16 +25,3 @@
 .a-media {
   position: relative;
 }
-
-.a-media__caption {
-  align-items: flex-start;
-  background: var(--surf-color-white);
-  bottom: 0;
-  color: var(--surf-color-black);
-  display: flex;
-  margin: 0;
-  max-width: rem(400px);
-  padding: 20px;
-  position: absolute;
-  right: 0;
-}

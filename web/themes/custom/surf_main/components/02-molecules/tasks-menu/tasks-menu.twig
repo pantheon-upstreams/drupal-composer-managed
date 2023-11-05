@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Component for Tasks Menu
+ *
+ * Available props:
+ * - attributes - [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - menu_attributes - [string] Any additional attributes needing to be specified.
+ * - menu_content - [object] All elemental parts of this menu.
+ * - menu_label_display - [boolean] Whether or not to display this menu's title.
+ * - menu_title - [string] The identifying title for this menu.
+ *
+ * Available slots:
+ * - menu_prefix
+ *
+ */
+#}
+
+{% set classes = [
+    'm-menu',
+    'm-menu--tasks-menu',
+] %}
+
+{% set title_classes = [
+    'm-menu__title',
+    not menu_label_display ? 'visually-hidden',
+] %}
+
+<nav {{ menu_attributes.addClass(classes).merge(attributes) }} aria-labelledby="tasks-menu" role="navigation">
+    {% block menu_prefix %}{% endblock %}
+
+    <h2 id="menu-tasks" class="{{ title_classes|join(' ') }}">
+        {{- menu_title -}}
+    </h2>
+
+    {{ menu_content }}
+</nav>

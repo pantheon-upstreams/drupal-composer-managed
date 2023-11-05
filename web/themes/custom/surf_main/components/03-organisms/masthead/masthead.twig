@@ -13,7 +13,7 @@
     'o-masthead',
 ] %}
 
-<header {{ masthead_attributes.addClass(classes) }} id="masthead" {{ attributes }}>
+<header {{ masthead_attributes.addClass(classes).merge(attributes) }} id="masthead">
     {% if masthead_alerts %}
         <div class="o-masthead__alerts">
             {{ masthead_alerts }}

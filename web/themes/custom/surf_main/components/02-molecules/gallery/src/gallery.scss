@@ -1,0 +1,134 @@
+//
+// Component - Molecule - Accordion
+//
+// - 01 - Imports
+// - 02 - Slides
+// - 03 - Splide
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../../node_modules/@splidejs/splide/dist/css/splide-core.min.css';
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/buttons';
+@use '../../../00-base/partials/calculations';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-gallery {
+  display: flex;
+  flex-flow: nowrap column;
+}
+
+
+
+
+//------------------------------------
+//  03 - Slides
+//------------------------------------
+
+.m-gallery {
+  .m-gallery__slide > figure > figcaption {
+    font-size: calculations.rem(14px);
+    line-height: var(--surf-lh-default);
+    max-width: 100%;
+    padding: 16px 0;
+    text-align: center;
+
+    @include breakpoints.bp-min(medium) {
+      background: var(--surf-color-white);
+      bottom: -1px;
+      max-width: 400px;
+      padding: 24px;
+      position: absolute;
+      right: 0;
+      text-align: left;
+    }
+  }
+
+  .m-gallery__slide > figure img {
+    margin: auto;
+    max-height: 660px;
+    object-fit: contain;
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Splide
+//------------------------------------
+
+.m-gallery {
+  .splide__slide:not(.is-active) {
+    height: 0;
+
+    @include breakpoints.bp-min(medium) {
+      height: auto;
+    }
+  }
+
+  .splide__track {
+    overflow: visible;
+  }
+
+  .splide__arrows {
+    display: flex;
+    flex-flow: nowrap row;
+    gap: 24px;
+    justify-content: center;
+    order: 1;
+    margin-top: 24px;
+
+    @include breakpoints.bp-min(medium) {
+      justify-content: flex-end;
+      margin-top: 64px;
+    }
+  }
+
+  .splide__arrow {
+    @include buttons.button-reset();
+    background: transparent;
+    border-radius: 50%;
+    display: block;
+    height: 64px;
+    width: 64px;
+
+    &:hover,
+    &:focus {
+      background: var(--surf-color-gray-100);
+    }
+  }
+
+  .splide__arrow:before {
+    background-color: var(--surf-color-black);
+    content: '';
+    display: block;
+    height: 48px;
+    margin: auto;
+    width: 48px;
+  }
+
+  .splide__arrow--prev:before {
+    background: svg-load('icon-arrow-left.svg');
+    mask-image: var(--surf-icon-arrow-left);
+  }
+
+  .splide__arrow--next:before {
+    --surf-icon-arrow-right: svg-load('icon-arrow-right.svg');
+    mask-image: var(--surf-icon-arrow-right);
+  }
+
+  .splide__arrow svg {
+    display: none;
+  }
+}

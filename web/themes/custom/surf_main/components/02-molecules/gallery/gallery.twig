@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Component for Gallery
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - gallery_attributes: [string] Any additional attributes needing to be specified.
+ * - gallery_items: [array] Grouping of objects that function as the gallery slides.
+ * - gallery_title: [string] Title of the gallery.
+ *
+ */
+#}
+
+{% set classes = [
+    'm-gallery',
+    'splide'
+] %}
+
+<div {{ gallery_attributes.addClass(classes).merge(attributes) }}
+    role="group"
+    aria-label="{{ gallery_title }}">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {{ gallery_items }}
+        </ul>
+    </div>
+</div>

@@ -1,13 +1,9 @@
 //
-// Component - Page - Basic Page
-//
-// https://atendesign.atlassian.net/browse/SRL-50
-// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-209822&mode=dev
+// Components - Page - Basic Page
 //
 // - 01 - Imports
 // - 02 - General
 //
-
 
 
 //------------------------------------
@@ -15,6 +11,7 @@
 //------------------------------------
 
 @use '../../../00-base/partials/partials' as *;
+
 
 
 
@@ -30,25 +27,27 @@
 
     > .m-callout {
       margin-inline: auto;
-      max-width: rem(780px);
+      //max-width: rem(780px); // rework using defined custom prop
     }
   }
 
   .a-editor {
     margin-inline: auto;
-    max-width: rem(780px);
+    //max-width: rem(780px); // rework using defined custom prop
   }
 
-  .a-media {
-    img {
-      max-height: 600px;
-      object-fit: cover;
-    }
-  }
+  // Needs to be reworked to not include all images on page
+  // Needs to be reworked to have fallback for object fit
+  //.a-media {
+  //  img {
+  //    max-height: 600px;
+  //    object-fit: cover;
+  //  }
+  //}
 
   .m-pullquote--small {
     margin-inline: auto;
-    max-width: rem(1020px);
+    //max-width: rem(1020px); // rework using defined custom prop
   }
 
   .m-pullquote--large {
@@ -58,7 +57,7 @@
 
   .o-header {
     @include bp-min(xlarge) {
-      margin-block-start: rem(-120px);
+      //margin-block-start: rem(-120px); // rework if no image
     }
   }
 

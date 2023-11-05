@@ -1,0 +1,15 @@
+uuid: 797240f4-f661-432f-8e06-ac29c8a24d90
+langcode: en
+status: true
+dependencies: {  }
+name: 2x_large_1920w
+label: '2X Large (1920W)'
+effects:
+  c5b2810d-133f-4644-94fd-74c498f00b66:
+    uuid: c5b2810d-133f-4644-94fd-74c498f00b66
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false

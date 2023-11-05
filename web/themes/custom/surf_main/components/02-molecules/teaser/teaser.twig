@@ -26,7 +26,7 @@
     'm-teaser--' ~ teaser_type,
 ] %}
 
-<article {{ teaser_attributes.addClass(classes) }} {{ attributes }}>
+<article {{ teaser_attributes.addClass(classes).merge(attributes) }}>
     {% if teaser_media %}
         <div class="m-teaser__media">
             {% if teaser_url %}
