@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an Gallery Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ * @see components/02-molecules/gallery/gallery.twig
+ *
+ */
+#}
+
+{% set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+    'field_ref_media'
+) %}
+
+{{ rendered_content }}
+
+{% include 'surf_main:gallery' with {
+    attributes,
+    gallery_attributes: create_attribute({'class': classes}),
+    gallery_items: content.field_ref_media,
+    gallery_title: 'Gallery ' ~ paragraph.id(),
+} only %}

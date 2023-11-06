@@ -15,7 +15,24 @@
  */
 #}
 
-{% block content %}
-  {{ content }}
-{% endblock %}
+{% set classes = [
+    'media',
+    'media--' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--' ~ view_mode|clean_class,
+] %}
 
+{% set rendered_content = content|without(
+    'field_caption'
+)%}
+
+{% embed 'surf_main:media' with {
+    attributes,
+    media_attributes: create_attribute({'class': classes}),
+    media_caption: content.field_caption|render ? content.field_caption,
+    media_content: rendered_content,
+} only %}
+    {% block media_content %}
+        {{ media_content }}
+    {% endblock %}
+{% endembed %}

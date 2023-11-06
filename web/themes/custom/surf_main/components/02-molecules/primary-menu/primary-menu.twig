@@ -26,7 +26,7 @@
     not menu_label_display ? 'visually-hidden',
 ] %}
 
-<nav {{ menu_attributes.addClass(classes) }} aria-labelledby="primary-menu" role="navigation" {{ attributes }}>
+<nav {{ menu_attributes.addClass(classes).merge(attributes) }} aria-labelledby="primary-menu" role="navigation">
     {% block menu_prefix %}{% endblock %}
 
     <h2 id="menu-primary" class="{{ title_classes|join(' ') }}">

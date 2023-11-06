@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.gallery.field_gallery_items
+    - field.field.paragraph.gallery.field_ref_media
     - paragraphs.paragraphs_type.gallery
   module:
     - media_library
@@ -12,9 +12,9 @@ targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
-  field_gallery_items:
+  field_ref_media:
     type: media_library_widget
-    weight: 1
+    weight: 0
     region: content
     settings:
       media_types: {  }

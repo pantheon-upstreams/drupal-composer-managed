@@ -1,0 +1,15 @@
+uuid: e2b89ee9-65fb-42e1-a598-0e8dd60d072c
+langcode: en
+status: true
+dependencies: {  }
+name: medium_768w
+label: 'Medium (768W)'
+effects:
+  7441de1b-b76a-44d2-b794-eaa81f5e3e2b:
+    uuid: 7441de1b-b76a-44d2-b794-eaa81f5e3e2b
+    id: image_scale
+    weight: 1
+    data:
+      width: 768
+      height: null
+      upscale: false

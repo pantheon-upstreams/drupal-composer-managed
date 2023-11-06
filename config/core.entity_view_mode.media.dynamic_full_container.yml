@@ -1,0 +1,10 @@
+uuid: 93737265-1aec-4cbc-9cbe-e4994bc62923
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.dynamic_full_container
+label: 'Dynamic - Full Container'
+targetEntityType: media
+cache: true

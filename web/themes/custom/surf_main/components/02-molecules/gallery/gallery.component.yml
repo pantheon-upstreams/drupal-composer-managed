@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Gallery
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - gallery_items
+    - gallery_title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    gallery_attributes:
+      title: Attributes
+      type: string
+    gallery_items:
+      title: Items
+      type: array
+    gallery_title:
+      title: Title
+      type: string

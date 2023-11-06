@@ -31,6 +31,7 @@
     "build": "gulp build"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "cssnano": "^6.0.1",
     "dotenv": "^16.0.3",
     "postcss-inline-svg": "^5.0.0"

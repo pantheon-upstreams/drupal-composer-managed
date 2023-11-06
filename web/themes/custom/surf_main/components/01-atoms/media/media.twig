@@ -1,12 +1,12 @@
 {#
 /**
  * @file
- * Component for a Icon
+ * Component for Media
  *
  * Available props:
- * - media_attributes: [array] Any parent tag attributes.
- * - media: [array]
- * - media_caption: [string]
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal space specific attributes.
+ * - media_attributes: [array] Any custom attributes needed for this component.
+ * - media_caption: [string] Related text attribution for the media.
  *
  * Example usage:
 {% embed 'surf_main:media' with {
@@ -23,22 +23,16 @@
 #}
 
 
-{%
-  set classes = [
+{% set classes = [
   'a-media',
-]
-%}
+] %}
 
 <figure {{ media_attributes.addClass(classes).merge(attributes) }}>
-
-  {% block media_block %}
-    {{ media }}
-  {% endblock %}
+  {% block media_content %}{% endblock %}
 
   {% if media_caption %}
     <figcaption class="a-media__caption">
       {{ media_caption }}
     </figcaption>
   {% endif %}
-
 </figure>

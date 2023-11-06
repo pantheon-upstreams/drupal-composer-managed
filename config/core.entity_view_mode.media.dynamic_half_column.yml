@@ -1,0 +1,10 @@
+uuid: d86545ab-4f21-4589-a54a-a70bc8623273
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.dynamic_half_column
+label: 'Dynamic - Half Column'
+targetEntityType: media
+cache: true

@@ -177,6 +177,6 @@ export const a11yMenu = (wrapper, breakpoint) => {
     onMediaQueryChange();
   };
 
-  // Final Return
+  // Final Program Run
   init (wrapper, breakpoint);
 };

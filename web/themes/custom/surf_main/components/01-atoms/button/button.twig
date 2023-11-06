@@ -41,17 +41,17 @@
 ] %}
 
 {% if button_html_tag == 'link' %}
-    <a {{ button_attributes.addClass(classes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %} {{ attributes }}>
+    <a {{ button_attributes.addClass(classes).merge(attributes) }} href="{{ button_url }}" {% if button_external %} target="_blank" {% endif %}>
         {{- button_title -}}
     </a>
 {% endif %}
 
 {% if button_html_tag == 'input' %}
-    <input {{ button_attributes.addClass(classes) }} value="{{- button_title -}}" {{ attributes }}>
+    <input {{ button_attributes.addClass(classes).merge(attributes) }} value="{{- button_title -}}">
 {% endif %}
 
 {% if button_html_tag == 'button' %}
-    <button {{ button_attributes.addClass(classes) }} {{ attributes }}>
+    <button {{ button_attributes.addClass(classes).merge(attributes) }}>
         {{- button_title -}}
     </button>
 {% endif %}

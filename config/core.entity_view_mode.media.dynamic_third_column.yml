@@ -1,0 +1,10 @@
+uuid: 0f310abc-98d9-4962-929d-d773ed05e3cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.dynamic_third_column
+label: 'Dynamic - Third Column'
+targetEntityType: media
+cache: true

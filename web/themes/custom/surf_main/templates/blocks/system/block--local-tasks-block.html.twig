@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for the a Local Tasks navigation block.
+ *
+ * Available variables:
+ * - No additional variables are available for this block type.
+ *
+ * @see templates/blocks/block.html.twig
+ * @see components/02-molecules/tasks-menu
+ */
+#}
+
+{% embed 'surf_main:tasks-menu' with {
+    attributes,
+    menu_attributes: create_attribute(),
+    menu_content: content,
+    menu_label_display: false,
+    menu_title: configuration.label,
+} only %}
+    {% block menu_prefix %}
+        {{ title_prefix }}
+        {{ title_suffix }}
+    {% endblock %}
+{% endembed %}

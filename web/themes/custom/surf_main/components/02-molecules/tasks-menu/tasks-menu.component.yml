@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Tasks Menu
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - menu_content
+    - menu_title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    menu_attributes:
+      title: Attributes
+      type: string
+    menu_content:
+      title: Content
+      type: object
+    menu_label_display:
+      title: Label display
+      type: boolean
+    menu_title:
+      title: Title
+      type: string
+  slots:
+    menu_prefix:
+      title: Prefix
