@@ -43,14 +43,15 @@
       header_cta_url: page_cta_url,
       header_cta_text: page_cta_text,
       header_cta_html_tag: page_cta_html_tag|default('link'),
-      header_cta_style: page_cta_style|default('full-navy'),
+      header_cta_style: page_cta_style|default('primary'),
       header_cta_size: page_cta_size|default('large'),
+      header_cta_color: page_cta_size|default('navy'),
       header_attributes: create_attribute(),
       heading_attributes: create_attribute({'class': ['o-header__heading', 'o-page__heading']}),
     } only %}
     {% endembed %}
 
-  {{ page_content }}
+    {{ page_content }}
 
   </div>
 </article>

@@ -4,6 +4,7 @@
 // - 01 - Imports
 // - 02 - General
 // - 03 - Tables
+// - 04 - Contexts
 //
 
 
@@ -15,12 +16,14 @@
 
 
 
-
 //------------------------------------
 //  02 - General
 //------------------------------------
 
 .a-editor {
+  // this is for accessibility
+  max-width: rem(780px);
+
   p {
     line-height: var(--surf-lh-label);
   }
@@ -74,7 +77,7 @@
 
 
 //------------------------------------
-//  02 - General
+//  03 - Tables
 //------------------------------------
 
 .a-editor .a-editor__table {
@@ -88,3 +91,15 @@
 }
 
 
+
+//------------------------------------
+//  04 - Contexts
+//------------------------------------
+
+// Apply these styles when using ME Editor
+.a-editor {
+  .p-page__me-content > &,
+  .lp-builder div > & {
+    margin-inline: auto;
+  }
+}

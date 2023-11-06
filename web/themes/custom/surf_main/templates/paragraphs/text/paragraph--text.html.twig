@@ -1,5 +1,13 @@
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
 {% embed 'surf_main:editor' with {
-  editor_attributes: create_attribute(),
+  attributes,
+  editor_attributes: create_attribute({'class': classes}),
   editor_content: content.field_text|field_value,
 } only %}
 {% endembed %}

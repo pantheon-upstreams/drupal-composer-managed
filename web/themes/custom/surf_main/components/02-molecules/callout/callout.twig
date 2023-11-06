@@ -73,6 +73,18 @@
                     button_title: callout_button_text,
                     button_url: callout_button_url,
                 } only %}
+            {% elseif callout_type == 'gray' %}
+                {% include 'surf_main:button' with {
+                    attributes,
+                    button_attributes: create_attribute(),
+                    button_color: 'navy',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'small',
+                    button_style: 'primary',
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                } only %}
             {% elseif callout_type == 'img' or callout_type == 'embed' %}
                 {% if callout_button_prefix == 'play' %}
                     {% include 'surf_main:button' with {

@@ -97,10 +97,10 @@
   max-width: rem(619px);
 }
 
-.o-person__content-grid {
-  //display: grid;
-  row-gap: rem(32px);
-  width: 100%;
+.o-person__content-wrapper {
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+  }
 
   .o-person__title {
     order: 1;

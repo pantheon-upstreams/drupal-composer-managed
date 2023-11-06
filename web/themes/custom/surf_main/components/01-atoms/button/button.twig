@@ -15,7 +15,19 @@
  * - button_suffix: [string] Specifying icon elements as classes -- example 'icon-arrow-right'.
  * - button_title: [string] Text for the button.
  * - button_url: [string] URL if using a link.
- *
+
+ * Example usage:
+{% include 'surf_main:button' with {
+  attributes,
+  button_attributes: create_attribute(),
+  button_color: 'navy',
+  button_external: true,
+  button_html_tag: 'link',
+  button_size: 'large',
+  button_style: 'primary',
+  button_title: 'Example Button'|t,
+  button_url: 'https://example',
+ } only %}
  */
 #}
 

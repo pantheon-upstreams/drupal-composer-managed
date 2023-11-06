@@ -8,6 +8,17 @@
  * - media: [array]
  * - media_caption: [string]
  *
+ * Example usage:
+{% embed 'surf_main:media' with {
+  media_attributes: create_attribute(),
+  media_caption: 'Photo caption.',
+} only %}
+
+  {% block media_block %}
+    {{ media }}
+  {% endblock %}
+
+{% endembed %}
  */
 #}
 

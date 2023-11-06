@@ -25,19 +25,13 @@
 .p-exp-res-page {
   .layout__region--content {
     > :not( :last-child ) {
-      margin-block-end: rem(80px);
+      margin-block-end: rem(28px);
     }
 
-    //> .m-callout {
-    //  margin-inline: auto;
-    //  max-width: rem(780px);
-    //}
+    > .m-callout {
+      margin-inline: auto;
+    }
   }
-
-  //.a-editor {
-  //  margin-inline: auto;
-  //  max-width: rem(780px);
-  //}
 
   .a-media {
     img {
@@ -49,12 +43,6 @@
   .m-pullquote--small {
     max-width: 100%;
   }
-
-  //
-  //.m-pullquote--large {
-  //  margin-inline: auto;
-  //  max-width: 100%;
-  //}
 
   .o-header {
     @include bp-min(xlarge) {

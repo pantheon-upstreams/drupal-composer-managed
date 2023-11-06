@@ -8,7 +8,14 @@
  * - heading_text: [string] required
  * - heading_level: [string] default = 2
  * - heading_url: [string]
- *
+
+ * Example usage:
+{% embed 'surf_main:heading' with {
+  heading_attributes: create_attribute(),
+  heading_text: 'Heading Level Two',
+  heading_level: '2',
+} only %}
+{% endembed %}
  */
 #}
 

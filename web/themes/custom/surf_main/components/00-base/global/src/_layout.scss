@@ -8,6 +8,7 @@
 // - 05 - Layers
 // - 06 - Alignment
 // - 07 - Container
+// - 08 - Layout
 //
 
 
@@ -128,3 +129,98 @@
     max-width: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
   }
 }
+
+
+
+//------------------------------------
+//  08 - Layout
+//------------------------------------
+
+.layout--twocol-section,
+.layout--threecol-section {
+  display: grid;
+  gap: 60px;
+}
+
+.layout--twocol-section--50-50 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.layout--twocol-section--33-67 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.layout--twocol-section--67-33 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.layout--twocol-section--25-75 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.layout--twocol-section--75-25 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+.layout--threecol-section--33-34-33 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include bp-min(large) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.layout--threecol-section--25-50-25 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include bp-min(large) {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+
+.layout--threecol-section--25-25-50 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include bp-min(large) {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+}
+
+.layout--threecol-section--50-25-25 {
+  grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include bp-min(large) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+// TODO: move to another place once through testing.
+.field__name--field-p-content {
+  > *:not(:last-child) {
+    margin-block-end: rem(32px);
+  }
+}
+

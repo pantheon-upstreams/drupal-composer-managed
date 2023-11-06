@@ -31,6 +31,13 @@
   {% set resource_file_size = (file_size_in_bytes / 1024)|round(2) ~ " KB" %}
 {% endif %}
 
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
 {%
   set rendered_fields = [
   'field_file',
@@ -38,11 +45,12 @@
 %}
 
 {% embed 'surf_main:resource-file' with {
+  attributes,
   resource_file_title,
   resource_file_url,
   resource_file_size,
   resource_file_mimetype,
-  resource_file_attributes: create_attribute(),
+  resource_file_attributes: create_attribute({'class': classes}),
 } only %}
 {% endembed %}
 

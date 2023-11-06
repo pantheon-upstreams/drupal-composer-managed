@@ -23,20 +23,12 @@
 //------------------------------------
 
 .p-basic-page {
-  .layout__region--content {
+  .layout__region--content,
+  .lp-builder div,
+  .p-page__me-content {
     > :not( :last-child ) {
       margin-block-end: rem(80px);
     }
-
-    > .m-callout {
-      margin-inline: auto;
-      max-width: rem(780px);
-    }
-  }
-
-  .a-editor {
-    margin-inline: auto;
-    max-width: rem(780px);
   }
 
   .a-media {
