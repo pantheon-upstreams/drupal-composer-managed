@@ -6,7 +6,6 @@
 // - 03 - Widths
 // - 04 - Heights
 // - 05 - Layers
-// - 06 - Alignment
 // - 07 - Container
 //
 
@@ -24,13 +23,19 @@
 //  02 - Grid
 //------------------------------------
 
-:root {
-  --surf-grid-gap: 24px;
+@mixin grid() {
+  :root, .ck {
+    --surf-grid-gap: 24px;
 
-  @include bp-min(large) {
-    --surf-grid-gap: 40px;
+    @include bp-min(large) {
+      --surf-grid-gap: 40px;
+    }
   }
 }
+
+@include grid();
+
+
 
 
 //------------------------------------
@@ -83,26 +88,7 @@
 
 
 //------------------------------------
-//  06 - Alignment
-//------------------------------------
-
-.align-left {
-  margin: 0 var(--surf-grid-gap) var(--surf-grid-gap) 0;
-}
-
-.align-right {
-  margin: 0 0 var(--surf-grid-gap) var(--surf-grid-gap);
-}
-
-.align-center {
-  margin: var(--surf-grid-gap) auto;
-}
-
-
-
-
-//------------------------------------
-//  07 - Container
+//  06 - Container
 //------------------------------------
 
 .container {

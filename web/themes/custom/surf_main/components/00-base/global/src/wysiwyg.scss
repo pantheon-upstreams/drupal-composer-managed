@@ -1,0 +1,49 @@
+//
+// WYSIWYG
+//
+// - 01 - Imports
+// - 02 - CKEditor
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use 'color';
+@use 'layout';
+@use 'lists';
+@use 'media';
+@use 'tables';
+@use 'typography';
+
+
+
+
+//------------------------------------
+//  02 - CKEditor
+//------------------------------------
+
+.ck-content {
+  @include color.gradients();
+  @include color.grayscale();
+  @include color.theme();
+  @include layout.grid();
+  @include lists.general();
+  @include lists.ordered();
+  @include lists.unordered();
+  @include media.general();
+  @include media.alignment();
+  @include media.sizes();
+  @include tables.elements();
+  @include tables.general();
+  @include typography.bold();
+  @include typography.families();
+  @include typography.general();
+  @include typography.headings-general();
+  @include typography.headings-editor();
+  @include typography.line-heights();
+  @include typography.links();
+  @include typography.sizes();
+  @include typography.weights();
+}

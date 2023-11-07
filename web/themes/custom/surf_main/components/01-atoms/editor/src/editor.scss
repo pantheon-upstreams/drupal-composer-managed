@@ -3,7 +3,11 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Tables
+// - 03 - Headings
+// - 04 - Links
+// - 05 - Lists
+// - 06 - Tables
+// - 07 - Media
 //
 
 
@@ -11,7 +15,11 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/global/src/lists';
+@use '../../../00-base/global/src/media';
+@use '../../../00-base/global/src/tables';
+@use '../../../00-base/global/src/typography';
 
 
 
@@ -21,70 +29,93 @@
 //------------------------------------
 
 .a-editor {
-  p {
-    line-height: var(--surf-lh-label);
-  }
-
-  p:not( :first-child ) {
-    margin-top: 16px;
-  }
-
-  h2 {
-    color: var(--surf-color-black);
-    font-family: var(--surf-font-sans-alt);
-    font-size: var(--surf-fs-40-52-64-96);
-    font-weight: var(--surf-fw-medium);
-    letter-spacing: 1.44px;
-    line-height: var(--surf-lh-base);
-    margin-block-end: rem(32px);
-  }
-
-  h3 {
-    color: var(--surf-color-black);
-    font-family: var(--surf-font-sans);
-    font-size: var(--surf-fs-24-40);
-    font-weight: var(--surf-fw-bold);
-    line-height: var(--surf-lh-label);
-    margin-block-end: rem(28px);
-  }
-
-  p + h2 {
-    margin-block-start: rem(28px);
-  }
-
-  p + h3 {
-    margin-block-start: rem(32px);
-  }
-
-  h4 {
-    color: var(--surf-color-black);
-    font-family: var(--surf-font-sans);
-    font-size: rem(32px);
-    font-weight: var(--surf-fw-bold);
-    line-height: var(--surf-lh-heading);
-  }
-
-  a {
-    color: var(--surf-color-navy);
-    font-weight: var(--surf-fw-bold);
-    text-decoration: underline;
-  }
+  @include typography.general();
+  @include typography.bold();
+  margin-inline: auto;
+  max-inline-size: var(--surf-width-small);
 }
+
 
 
 
 //------------------------------------
-//  02 - General
+//  03 - Headings
 //------------------------------------
 
-.a-editor .a-editor__table {
-  margin-block-start: rem(24px);
-  max-width: 100%;
-  overflow: auto;
-}
-
-.a-editor .a-button {
-  text-decoration: none;
+.a-editor {
+  @include typography.headings-editor();
 }
 
 
+
+
+//------------------------------------
+//  04 - Links
+//------------------------------------
+
+.a-editor {
+  @include typography.links();
+}
+
+
+
+
+//------------------------------------
+//  05 - Lists
+//------------------------------------
+
+.a-editor {
+  @include lists.general();
+  @include lists.unordered();
+  @include lists.ordered();
+}
+
+
+
+
+//------------------------------------
+//  06 - Tables
+//------------------------------------
+
+.a-editor {
+  @include tables.general();
+  @include tables.elements();
+
+  .a-editor__table {
+    max-inline-size: 100%;
+    overflow: auto;
+  }
+}
+
+
+
+
+//------------------------------------
+//  07 - Media
+//------------------------------------
+
+.a-editor {
+  @include media.alignment();
+  @include media.general();
+  @include media.sizes();
+
+  .a-media.align-right {
+    @include breakpoints.bp-min(large) {
+      margin-inline-end: -8vw;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      margin-inline-end: -16vw;
+    }
+  }
+
+  .a-media.align-left {
+    @include breakpoints.bp-min(large) {
+      margin-inline-start: -8vw;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      margin-inline-start: -16vw;
+    }
+  }
+}

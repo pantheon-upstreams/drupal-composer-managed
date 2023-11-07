@@ -60,4 +60,5 @@ function surf_admin_improvements_help($route_name, RouteMatchInterface $route_ma
  */
 function surf_admin_form_alter(&$form, &$form_state, $form_id) {
   $form['#attached']['library'][] = 'surf_admin/admin';
+  $form['#attached']['library'][] = 'surf_main/fonts';
 }

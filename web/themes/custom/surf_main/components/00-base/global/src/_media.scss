@@ -6,17 +6,75 @@
 
 
 //------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/breakpoints';
+@use '../../partials/calculations';
+
+
+
+
+//------------------------------------
 //  01 - General
 //------------------------------------
 
-figure {
-  margin: 0;
-
+@mixin general() {
   img {
-    display: block;
+    height: auto;
+  }
+
+  figcaption {
+    font-size: calculations.rem(14px);
+    font-style: italic;
+    margin-top: 8px;
   }
 }
 
-img {
-  max-width: 100%;
+
+
+
+//------------------------------------
+//  02 - Alignment
+//------------------------------------
+
+@mixin alignment() {
+  .media--small.align-right {
+    float: none;
+    margin-block-end: var(--surf-grid-gap);
+
+    @include breakpoints.bp-min(small) {
+      float: right;
+      margin-inline-start: var(--surf-grid-gap);
+    }
+  }
+
+  .media--small.align-left {
+    float: none;
+    margin-block-end: var(--surf-grid-gap);
+
+    @include breakpoints.bp-min(small) {
+      float: left;
+      margin-inline-end: var(--surf-grid-gap);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Sizes
+//------------------------------------
+
+@mixin sizes() {
+  .media--small {
+    @include breakpoints.bp-min(small) {
+      max-inline-size: 320px;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      max-inline-size: 540px;
+    }
+  }
 }

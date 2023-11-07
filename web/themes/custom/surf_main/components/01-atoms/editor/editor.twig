@@ -12,9 +12,10 @@
 #}
 
 {% set classes = [
-  'a-editor',
+    'a-editor',
+    'clearfix'
 ] %}
 
 <div {{ editor_attributes.addClass(classes).merge(attributes) }}>
-  {{ editor_content }}
+    {{ editor_content }}
 </div>

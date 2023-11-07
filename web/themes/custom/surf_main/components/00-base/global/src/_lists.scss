@@ -1,0 +1,101 @@
+//
+// Settings - Lists
+//
+// - 01 - Imports
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../partials/calculations';
+@use '../../partials/lists';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+@mixin general() {
+  ul:not([class]),
+  ol:not([class]) {
+    @include lists.list-reset();
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Unordered
+//------------------------------------
+
+@mixin unordered() {
+  ul:not([class]) li {
+    padding-inline-start: 32px;
+    position: relative;
+  }
+
+  ul:not([class]) li:not(:first-child) {
+    margin-block-start: 16px;
+  }
+
+  ul:not([class]) li:before {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 5px;
+    inset-block-start: 12px;
+    inset-inline-start: 8px;
+    position: absolute;
+    width: 5px;
+  }
+
+  ul:not([class]) > li:before {
+    background-color: var(--surf-color-gray-600);
+  }
+
+  ul:not([class]) > li > ul > li:before {
+    background-color: transparent;
+    border: solid 1px var(--surf-color-gray-600);
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Ordered
+//------------------------------------
+
+@mixin ordered() {
+  ol:not([class]) {
+    counter-reset: ordered-list-counter;
+  }
+
+  ol:not([class]) li {
+    padding-inline-start: 32px;
+    position: relative;
+  }
+
+  ol:not([class]) li:not(:first-child) {
+    margin-block-start: 16px;
+  }
+
+  ol:not([class]) > li {
+    counter-increment: ordered-list-counter;
+  }
+
+  ol:not([class]) > li:before {
+    color: var(--surf-color-gray-600);
+    content: counter(ordered-list-counter) ". ";
+    display: block;
+    font-size: calculations.rem(14px);
+    inset-block-start: 4px;
+    inset-inline-start: 8px;
+    position: absolute;
+  }
+}

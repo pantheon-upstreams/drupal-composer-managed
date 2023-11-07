@@ -7,12 +7,10 @@
 // - 04 - Weights
 // - 05 - Line Heights
 // - 06 - Body
-// - 07 - Headings
-// - 08 - Links
-// - 09 - Bold
-// - 10 - Paragraphs
-// - 11 - Blockquote
-// - 12 - Lists
+// - 07 - General
+// - 08 - Headings
+// - 09 - Links
+// - 10 - Bold
 //
 
 
@@ -20,7 +18,8 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../partials/breakpoints';
+@use '../../partials/calculations';
 
 
 
@@ -29,12 +28,16 @@
 //  02 - Families
 //------------------------------------
 
-:root {
-  --surf-font-mono: monospace;
-  --surf-font-sans: 'ballinger', sans-serif;
-  --surf-font-sans-alt: 'recent-grotesk', sans-serif;
-  --surf-font-condensed: 'ballinger-condensed', sans-serif;
+@mixin families() {
+  :root, .ck {
+    --surf-font-mono: monospace;
+    --surf-font-sans: 'ballinger', sans-serif;
+    --surf-font-sans-alt: 'recent-grotesk', sans-serif;
+    --surf-font-condensed: 'ballinger-condensed', sans-serif;
+  }
 }
+
+@include families();
 
 
 
@@ -43,65 +46,66 @@
 //  03 - Sizes
 //------------------------------------
 
-:root {
-  --surf-fs-16-18: #{rem(16px)};
-  --surf-fs-16-18-24: #{rem(16px)};
-  --surf-fs-16-24: #{rem(16px)};
-  --surf-fs-18-24: #{rem(18px)};
-  --surf-fs-18-24-32: #{rem(18px)};
-  --surf-fs-18-24-40: #{rem(18px)};
-  --surf-fs-24-40: #{rem(24px)};
-  --surf-fs-24-40-52: #{rem(24px)};
-  --surf-fs-18-24-32: #{rem(18px)};
-  --surf-fs-30-32: #{rem(30px)};
-  --surf-fs-40-64: #{rem(40px)};
-  --surf-fs-40-52-64-96: #{rem(40px)};
-  --surf-fs-52-64-96: #{rem(52px)};
-  --surf-fs-48-132-176: #{rem(48px)};
-  --surf-fs-48-100-132: #{rem(48px)};
-  --surf-fs-48-100-132-176: #{rem(48px)};
-  --surf-fs-80-140-200-260: #{rem(80px)};
+@mixin sizes() {
+  :root, .ck {
+    --surf-fs-16-18: #{calculations.rem(16px)};
+    --surf-fs-16-18-24: #{calculations.rem(16px)};
+    --surf-fs-16-24: #{calculations.rem(16px)};
+    --surf-fs-18-24: #{calculations.rem(18px)};
+    --surf-fs-18-24-32: #{calculations.rem(18px)};
+    --surf-fs-18-24-40: #{calculations.rem(18px)};
+    --surf-fs-24-40: #{calculations.rem(24px)};
+    --surf-fs-24-40-52: #{calculations.rem(24px)};
+    --surf-fs-30-32: #{calculations.rem(30px)};
+    --surf-fs-40-64: #{calculations.rem(40px)};
+    --surf-fs-40-52-64-96: #{calculations.rem(40px)};
+    --surf-fs-52-64-96: #{calculations.rem(52px)};
+    --surf-fs-48-132-176: #{calculations.rem(48px)};
+    --surf-fs-48-100-132: #{calculations.rem(48px)};
+    --surf-fs-48-100-132-176: #{calculations.rem(48px)};
+    --surf-fs-80-140-200-260: #{calculations.rem(80px)};
 
-  @include bp-min(medium) {
-    --surf-fs-16-18-24: #{rem(18px)};
-    --surf-fs-18-24: #{rem(24px)};
-    --surf-fs-18-24-32: #{rem(24px)};
-    --surf-fs-18-24-40: #{rem(24px)};
-    --surf-fs-18-24-32: #{rem(24px)};
-    --surf-fs-16-24: #{rem(24px)};
-    --surf-fs-24-40-52: #{rem(40px)};
-    --surf-fs-40-52-64-96: #{rem(52px)};
-    --surf-fs-40-64: #{rem(64px)};
-    --surf-fs-48-100-132: #{rem(100px)};
-    --surf-fs-48-100-132-176: #{rem(100px)};
-    --surf-fs-48-132-176: #{rem(132px)};
-    --surf-fs-80-140-200-260: #{rem(140px)};
-  }
+    @include breakpoints.bp-min(medium) {
+      --surf-fs-16-18-24: #{calculations.rem(18px)};
+      --surf-fs-18-24: #{calculations.rem(24px)};
+      --surf-fs-18-24-32: #{calculations.rem(24px)};
+      --surf-fs-18-24-40: #{calculations.rem(24px)};
+      --surf-fs-16-24: #{calculations.rem(24px)};
+      --surf-fs-24-40-52: #{calculations.rem(40px)};
+      --surf-fs-40-52-64-96: #{calculations.rem(52px)};
+      --surf-fs-40-64: #{calculations.rem(64px)};
+      --surf-fs-48-100-132: #{calculations.rem(100px)};
+      --surf-fs-48-100-132-176: #{calculations.rem(100px)};
+      --surf-fs-48-132-176: #{calculations.rem(132px)};
+      --surf-fs-80-140-200-260: #{calculations.rem(140px)};
+    }
 
-  @include bp-min(large) {
-    --surf-fs-16-18: #{rem(18px)};
-    --surf-fs-24-40: #{rem(40px)};
-    --surf-fs-24-40-52: #{rem(52px)};
-    --surf-fs-18-24-32: #{rem(32px)};
-    --surf-fs-18-24-40: #{rem(40px)};
-    --surf-fs-18-24-32: #{rem(32px)};
-    --surf-fs-30-32: #{rem(32px)};
-    --surf-fs-40-52-64-96: #{rem(52px)};
-    --surf-fs-52-64-96: #{rem(64px)};
-    --surf-fs-48-100-132: #{rem(132px)};
-    --surf-fs-48-100-132-176: #{rem(132px)};
-    --surf-fs-80-140-200-260: #{rem(200px)};
-  }
+    @include breakpoints.bp-min(large) {
+      --surf-fs-16-18: #{calculations.rem(18px)};
+      --surf-fs-24-40: #{calculations.rem(40px)};
+      --surf-fs-24-40-52: #{calculations.rem(52px)};
+      --surf-fs-18-24-32: #{calculations.rem(32px)};
+      --surf-fs-18-24-40: #{calculations.rem(40px)};
+      --surf-fs-30-32: #{calculations.rem(32px)};
+      --surf-fs-40-52-64-96: #{calculations.rem(52px)};
+      --surf-fs-52-64-96: #{calculations.rem(64px)};
+      --surf-fs-48-100-132: #{calculations.rem(132px)};
+      --surf-fs-48-100-132-176: #{calculations.rem(132px)};
+      --surf-fs-80-140-200-260: #{calculations.rem(200px)};
+    }
 
-  @include bp-min(xlarge) {
-    --surf-fs-16-18-24: #{rem(24px)};
-    --surf-fs-40-52-64-96: #{rem(96px)};
-    --surf-fs-52-64-96: #{rem(96px)};
-    --surf-fs-48-100-132-176: #{rem(176px)};
-    --surf-fs-48-132-176: #{rem(176px)};
-    --surf-fs-80-140-200-260: #{rem(260px)};
+    @include breakpoints.bp-min(xlarge) {
+      --surf-fs-16-18-24: #{calculations.rem(24px)};
+      --surf-fs-40-52-64-96: #{calculations.rem(96px)};
+      --surf-fs-52-64-96: #{calculations.rem(96px)};
+      --surf-fs-48-100-132-176: #{calculations.rem(176px)};
+      --surf-fs-48-132-176: #{calculations.rem(176px)};
+      --surf-fs-80-140-200-260: #{calculations.rem(260px)};
+    }
   }
 }
+
+@include sizes();
 
 
 
@@ -110,15 +114,19 @@
 //  04 - Weights
 //------------------------------------
 
-:root {
-  --surf-fw-thin: 100;
-  --surf-fw-light: 300;
-  --surf-fw-regular: 400;
-  --surf-fw-book: 400;
-  --surf-fw-medium: 500;
-  --surf-fw-semibold: 600;
-  --surf-fw-bold: 700;
+@mixin weights() {
+  :root, .ck {
+    --surf-fw-thin: 100;
+    --surf-fw-light: 300;
+    --surf-fw-regular: 400;
+    --surf-fw-book: 400;
+    --surf-fw-medium: 500;
+    --surf-fw-semibold: 600;
+    --surf-fw-bold: 700;
+  }
 }
+
+@include weights();
 
 
 
@@ -127,12 +135,16 @@
 //  05 - Line Heights
 //------------------------------------
 
-:root {
-  --surf-lh-default: 1.6;
-  --surf-lh-heading: 1.2;
-  --surf-lh-label:   1.4;
-  --surf-lh-base:    1;
+@mixin line-heights() {
+  :root, .ck {
+    --surf-lh-default: 1.6;
+    --surf-lh-heading: 1.2;
+    --surf-lh-label:   1.4;
+    --surf-lh-base:    1;
+  }
 }
+
+@include line-heights();
 
 
 
@@ -144,61 +156,23 @@
 body {
   color: var(--surf-color-black);
   font-family: var(--surf-font-sans);
-  font-size: rem(18px);
 }
 
 
 
 
 //------------------------------------
-//  07 - Headings
+//  07 - General
 //------------------------------------
 
-h1, h2, h3, h4, h5 {
-  color: var(--surf-color-black);
-  line-height: var(--surf-lh-heading);
-  margin-bottom: 0;
-
-  > a {
-    text-decoration: none;
+@mixin general() {
+  p, li, td {
+    font-size: var(--surf-fs-16-18);
+    line-height: var(--surf-lh-default);
   }
 
-  &:first-child {
-    margin-top: 0;
-  }
-}
-
-h1 {
-}
-
-h3 {
-}
-
-h4 {
-}
-
-h5 {
-}
-
-h6 {
-}
-
-
-
-
-//------------------------------------
-//  08 - Links
-//------------------------------------
-
-a {
-  color: var(--surf-color-navy);
-  font-weight: var(--surf-fw-bold);
-  text-decoration: underline;
-
-  &:hover,
-  &:focus {
-    color: var(--surf-color-gray-900);
-    text-decoration: none;
+  p:not(:first-child) {
+    margin-block-start: 16px;
   }
 }
 
@@ -206,53 +180,90 @@ a {
 
 
 //------------------------------------
-//  09 - Bold
+//  08 - Headings
 //------------------------------------
 
-strong,
-b {
-  font-weight: var(--surf-fw-bold);
+@mixin headings-general () {
+  h1, h2, h3, h4, h5 {
+    color: var(--surf-color-black);
+    line-height: var(--surf-lh-heading);
+    margin-bottom: 0;
+
+    > a {
+      text-decoration: none;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@mixin headings-editor () {
+  h2:not(:first-child),
+  h3:not(:first-child),
+  h4:not(:first-child),
+  h5:not(:first-child) {
+    margin-block-start: 32px;
+  }
+
+  h2, h3, h4, h5 {
+    margin-block-end: 32px;
+  }
+
+  h2 {
+    font-family: var(--surf-font-sans-alt);
+    font-size: var(--surf-fs-40-52-64-96);
+    font-weight: var(--surf-fw-book);
+    letter-spacing: 1.44px;
+  }
+
+  h3 {
+    font-size: var(--surf-fs-24-40);
+  }
+
+  h4 {
+    font-size: var(--surf-fs-18-24-32);
+  }
+
+  h5 {
+    font-size: var(--surf-fs-18-24);
+  }
+}
+
+@include headings-general();
+
+
+
+
+//------------------------------------
+//  09 - Links
+//------------------------------------
+
+@mixin links() {
+  a {
+    color: var(--surf-color-navy);
+    font-weight: var(--surf-fw-bold);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-gray-900);
+      text-decoration: none;
+    }
+  }
 }
 
 
 
 
 //------------------------------------
-//  10 - Paragraphs
+//  10 - Bold
 //------------------------------------
 
-p {
-  line-height: var(--surf-lh-default);
-}
-
-
-
-
-//------------------------------------
-//  11 - Blockquote
-//------------------------------------
-
-blockquote {
-  font-style: italic;
-  margin: 15px 0;
-  text-indent: -0.4em;
-}
-
-
-
-
-//------------------------------------
-//  12 - Lists
-//------------------------------------
-
-ul:not([class]),
-ol:not([class]) {
-  font-size: rem(16px);
-  line-height: var(--surf-lh-default);
-  list-style-position: inside;
-}
-
-ul:not([class]):not(:first-child),
-ol:not([class]):not(:first-child) {
-  margin-top: 16px;
+@mixin bold() {
+  strong,
+  b {
+    font-weight: var(--surf-fw-bold);
+  }
 }

@@ -26,6 +26,9 @@ const cssnano = require("cssnano");
 const postcssPresetEnv = require("postcss-preset-env");
 const postcssInlineSvg = require("postcss-inline-svg");
 
+
+
+
 /*------------------------------------*\
   02 - SVG Encode
   Since we are using PostCSS Inline SVG, we will need to add to the default set of encode regex options when replacing
@@ -59,6 +62,9 @@ function encode(code) {
     .replace(/\]/g, "%5D");
 }
 
+
+
+
 /*------------------------------------*\
   03 - Exports
   Define both the developmental, "Watch" and final production, "Build"
@@ -68,7 +74,11 @@ function encode(code) {
 
 module.exports = {
   plugins: [
-    postcssPresetEnv(), // Additional options can be defined here for PostCSS Preset Env
+    postcssPresetEnv(
+      {
+        stage: 3, // Includes logical properties
+      },
+    ), // Additional options can be defined here for PostCSS Preset Env
     postcssInlineSvg({
       // Other additional options can be defined here for PostCSS Inline SVG
       encode: encode,
