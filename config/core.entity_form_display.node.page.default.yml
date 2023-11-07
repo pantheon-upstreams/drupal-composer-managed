@@ -86,7 +86,7 @@ third_party_settings:
         classes: ''
         show_empty_fields: false
         id: ''
-        open: true
+        open: false
         description: ''
         required_fields: true
         weight: 0
@@ -97,7 +97,7 @@ third_party_settings:
       label: Authoring
       region: content
       parent_name: ''
-      weight: 6
+      weight: 8
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -195,7 +195,7 @@ content:
         maxlength_js_enforce: false
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -237,7 +237,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

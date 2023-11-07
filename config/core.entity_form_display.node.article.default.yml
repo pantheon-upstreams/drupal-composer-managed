@@ -89,6 +89,42 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+    group_publishing:
+      children:
+        - status
+        - scheduler_settings
+        - publish_on
+        - unpublish_on
+      label: Publishing
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_authoring:
+      children:
+        - uid
+        - created
+      label: Authoring
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: 7CvVDwPYotAZFBa36mcpMKZOfVRRp_iGuPHpHaavI6E
 id: node.article.default
@@ -98,7 +134,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -137,7 +173,7 @@ content:
     third_party_settings: {  }
   field_p_content:
     type: layout_paragraphs
-    weight: 7
+    weight: 11
     region: content
     settings:
       preview_view_mode: default
@@ -193,18 +229,18 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -235,12 +271,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
