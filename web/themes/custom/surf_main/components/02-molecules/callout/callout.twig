@@ -17,20 +17,17 @@
 #}
 
 {% set classes = [
-    'm-callout',
-    callout_type ? 'm-callout--type-' ~ callout_type,
+  'm-callout',
+  callout_type ? 'm-callout--type-' ~ callout_type,
 ] %}
 
-<aside {{ callout_attributes.addClass(classes).merge(attributes) }}>
+<div {{ callout_attributes.addClass(classes).merge(attributes) }}>
     {% if callout_media %}
         {% embed 'surf_main:media' with {
             media_attributes: create_attribute({'class': ['m-callout__media']}),
             media_caption: callout_media_caption ? callout_media_caption,
             media: callout_media,
         } only %}
-            {% block media_block %}
-                {{ media }}
-            {% endblock %}
         {% endembed %}
     {% endif %}
 
@@ -178,4 +175,4 @@
         {% endblock %}
     </div>
 
-</aside>
+</div>

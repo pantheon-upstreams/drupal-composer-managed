@@ -10,6 +10,10 @@
  */
 #}
 
+{% set classes = [
+  content.field_media_primary.0 ? 'o-page--with-img',
+] %}
+
 {%
   set rendered_fields = [
   'field_p_content',
@@ -20,7 +24,7 @@
 %}
 
 {% embed 'surf_main:page' with {
-  page_attributes: create_attribute({'class': ['o-page--with-img']}),
+  page_attributes: create_attribute({'class': classes}),
   page_heading: label|field_value,
   page_teaser: content.field_overview ? content.field_overview|field_value,
   page_cta_url: content.field_link.0 ? content.field_link.0['#url'],

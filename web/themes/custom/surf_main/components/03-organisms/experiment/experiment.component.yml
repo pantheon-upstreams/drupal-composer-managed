@@ -1,5 +1,5 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Research
+name: Experiment
 status: experimental
 group: Organisms
 props:
@@ -7,9 +7,9 @@ props:
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    research_attributes:
+    experiment_attributes:
       title: Attributes
       type: string
-    research_heading:
+    experiment_heading:
       title: Page Heading
       type: string

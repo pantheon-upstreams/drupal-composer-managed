@@ -1,12 +1,10 @@
 //
 // Component - Organism - Research Node
 //
-// https://atendesign.atlassian.net/browse/SRL-48
-// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-214852&mode=dev
-//
 // - 01 - Imports
 // - 02 - General
 // - 03 - Modifiers
+// - 04 - Component Overrides
 //
 
 
@@ -24,73 +22,62 @@
 //------------------------------------
 //
 
-.o-research {
+.o-experiment {
   // empty
 }
 
-.o-research__media {
+.o-experiment__media {
   img {
     max-height: 600px;
     object-fit: cover;
   }
 }
 
-.o-research__overview {
+.o-experiment__overview {
   margin-block-end: rem(32px);
   @include bp-min(medium) {
     margin-block-end: rem(60px);
   }
 }
 
-.o-research-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 100%;
-  @include bp-min(xlarge) {
-    grid-column-gap: 180px;
-    grid-template-columns: 1fr 420px;
 
-    .o-research__overview {
-      grid-column: 1 / span 2;
-    }
-
-    .o-research__main-content {
-      grid-column: 1 / span 1;
-    }
-
-    .o-research__sidebar {
-      grid-column: 2 / span 1;
-    }
-
-    .o-research__additional-content {
-      grid-column: 1 / span 2;
-    }
-  }
-}
-
-.o-research__sidebar-icon {
-  margin-block-end: rem(40px);
-}
-
-.o-research__keyfacts {
-  .o-component-list__heading {
-    font-family: var(--surf-font-condensed);
-    font-size: rem(16px);
-    font-weight: var(--surf-fw-bold);
-    line-height: var(--surf-lh-label);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-block-end: rem(60px);
-  }
-}
 
 //------------------------------------
 //  03 - Modifiers
 //------------------------------------
 
-.o-research--with-img
+.o-experiment--with-img
 .o-header {
   @include bp-min(xlarge) {
     margin-block-start: rem(-120px);
+  }
+}
+
+
+//------------------------------------
+//  04 - Component Overrides
+//------------------------------------
+//
+
+.o-experiment__main-content,
+.lpb-component-list {
+  > * {
+    margin-inline: auto;
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(60px);
+  }
+
+  .layout--twocol-section {
+    max-width: rem(888px);
+    margin-inline: auto;
+  }
+
+  .m-pullquote.m-pullquote--medium {
+    max-width: rem(1020px);
+    padding-inline: 0;
+    margin-block-start: rem(-28px);
+    margin-block-end: rem(32px);
   }
 }

@@ -12,7 +12,8 @@
       {{ translation_warning }}
     </div>
     {% endif %}
-    <div class="js-lpb-component-list">
+    {# target 'js-lpb-component-list' class only within a JS application context #}
+    <div class="js-lpb-component-list lpb-component-list">
       {{ root_components }}
     </div>
   {% endif %}

@@ -16,16 +16,16 @@
 
 {%
   set classes = [
-  'o-research',
+  'o-experiment',
 ]
 %}
 
-<article {{ research_attributes.addClass(classes).merge(attributes) }}>
-  {% if research_media %}
-    <div class="o-research__media">
+<article {{ experiment_attributes.addClass(classes).merge(attributes) }}>
+  {% if experiment_media %}
+    <div class="o-experiment__media">
       {% embed 'surf_main:media' with {
         media_attributes: create_attribute(),
-        media: research_media,
+        media: experiment_media,
       } only %}
       {% endembed %}
     </div>
@@ -35,62 +35,23 @@
     {{ title_suffix }}
 
     {% embed 'surf_main:header' with {
-      header_heading: research_heading,
+      header_heading: experiment_heading,
       header_heading_level: '1',
+      header_teaser: experiment_header_teaser,
       header_attributes: create_attribute(),
       heading_attributes: create_attribute({'class': ['o-header__heading']}),
     } only %}
     {% endembed %}
 
-    <div class="o-research-wrapper">
-
-      {# Overview #}
-      <div class="o-research__overview">
-      {% embed 'surf_main:pullquote' with {
-        pullquote_attributes: create_attribute(),
-        pullquote_quote: research_overview,
-        pullquote_type: 'large',
-      } only %}
-      {% endembed %}
-      </div>
+    <div class="o-experiment-wrapper">
 
       {# Main Content #}
-      <div class="o-research__main-content">
-      {% embed 'surf_main:editor' with {
-        editor_attributes: create_attribute(),
-        editor_content: research_content,
-      } only %}
-      {% endembed %}
+      <div class="o-experiment__main-content">
+        {{ experiment_content }}
       </div>
 
-      {# Sidebar #}
-      <aside class="o-research__sidebar">
-
-        {% if research_sidebar_icon %}
-          <div class="o-research__sidebar-icon">
-            {% embed 'surf_main:media' with {
-              media_attributes: create_attribute(),
-              media: research_sidebar_icon,
-            } only %}
-            {% endembed %}
-          </div>
-        {% endif %}
-
-        {% if research_key_facts %}
-          <div class="o-research__keyfacts">
-            {% embed 'surf_main:component-list' with {
-              component_list_heading: 'Key Facts',
-              component_list_items: research_key_facts,
-              component_list_attributes: create_attribute(),
-            } only %}
-            {% endembed %}
-          </div>
-        {% endif %}
-
-      </aside>
-
       {# Additional Content #}
-      <div class="o-research__additional-content">
+      <div class="o-experiment__additional-content">
         [ADDITIONAL CONTENT]
       </div>
     </div>

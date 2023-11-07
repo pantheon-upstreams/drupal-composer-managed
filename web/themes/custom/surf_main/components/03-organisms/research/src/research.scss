@@ -6,7 +6,7 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Grids
+// - 03 - Modifiers
 //
 
 
@@ -28,6 +28,13 @@
   // empty
 }
 
+.o-research__media {
+  img {
+    max-height: 600px;
+    object-fit: cover;
+  }
+}
+
 .o-research__overview {
   margin-block-end: rem(32px);
   @include bp-min(medium) {
@@ -44,19 +51,54 @@
     grid-template-columns: 1fr 420px;
 
     .o-research__overview {
-      grid-column: 1 / 4;
+      grid-column: 1 / span 2;
     }
 
     .o-research__main-content {
-      grid-column: 1 / 3;
+      grid-column: 1 / span 1;
     }
 
     .o-research__sidebar {
-      grid-column: 3 / 4;
+      grid-column: 2 / span 1;
     }
 
     .o-research__additional-content {
-      grid-column: 1 / 4;
+      grid-column: 1 / span 2;
     }
+  }
+}
+
+.o-research__main-content,
+.lpb-component-list {
+
+  > :not( :last-child ) {
+    margin-block-end: rem(80px);
+  }
+}
+
+.o-research__sidebar-icon {
+  margin-block-end: rem(40px);
+}
+
+.o-research__keyfacts {
+  .o-component-list__heading {
+    font-family: var(--surf-font-condensed);
+    font-size: rem(16px);
+    font-weight: var(--surf-fw-bold);
+    line-height: var(--surf-lh-label);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-block-end: rem(60px);
+  }
+}
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+
+.o-research--with-img
+.o-header {
+  @include bp-min(xlarge) {
+    margin-block-start: rem(-120px);
   }
 }

@@ -59,6 +59,7 @@
 
 .m-pullquote.m-pullquote--small {
   padding: rem(32px);
+  max-width: rem(1020px);
 
   .m-pullquote__quote {
     p {
@@ -87,6 +88,7 @@
 .m-pullquote.m-pullquote--large {
   border: none;
   padding: 0;
+  max-width: 100%;
 
   .m-pullquote__quote {
     p {
@@ -110,4 +112,6 @@
     line-height: var(--surf-lh-label);
     text-transform: uppercase;
   }
+
+
 }

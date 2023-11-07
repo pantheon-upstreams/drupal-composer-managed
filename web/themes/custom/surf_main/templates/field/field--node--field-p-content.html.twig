@@ -38,8 +38,8 @@
  */
 #}
 
-<div{{ attributes.addClass(classes, 'p-page__me-content') }}>
-  {% for item in items %}
-    {{ item.content }}
-  {% endfor %}
-</div>
+
+{% for item in items %}
+  {{ item.content }}
+{% endfor %}
+

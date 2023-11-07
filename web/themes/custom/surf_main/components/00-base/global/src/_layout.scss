@@ -40,6 +40,7 @@
 
 :root {
   --surf-width-xxlarge: 1920px;
+  --surf-width-default: 1440px;
   --surf-width-xlarge: 1384px;
   --surf-width-large: 1280px;
   --surf-width-medium: 960px;
@@ -114,7 +115,7 @@
   width: 100%;
 
   &.container--default {
-    max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
+    max-width: calc(var(--surf-width-default) + (var(--surf-grid-gap) * 2));
   }
 
   &.container--large {
@@ -122,7 +123,7 @@
   }
 
   &.container--xlarge {
-    max-width: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
+    max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
   }
 
   &.container--small {

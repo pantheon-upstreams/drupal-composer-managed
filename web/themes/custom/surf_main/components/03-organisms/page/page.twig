@@ -21,17 +21,15 @@
 %}
 
 <article {{ page_attributes.addClass(classes).merge(attributes) }}>
-
-  {% embed 'surf_main:media' with {
-    media_attributes: create_attribute(),
-    media: page_media,
-  } only %}
-
-    {% block media_block %}
-      {{ media }}
-    {% endblock %}
-
-  {% endembed %}
+  {% if page_media %}
+    <div class="o-page__media">
+      {% embed 'surf_main:media' with {
+        media_attributes: create_attribute(),
+        media: page_media,
+      } only %}
+      {% endembed %}
+    </div>
+  {% endif %}
 
   <div class="container container--xlarge">
   {{ title_suffix }}
@@ -51,7 +49,9 @@
     } only %}
     {% endembed %}
 
-    {{ page_content }}
+    <div class="o-page__main-content">
+      {{ page_content }}
+    </div>
 
   </div>
 </article>

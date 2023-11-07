@@ -28,7 +28,9 @@
 ] %}
 
 <figure {{ media_attributes.addClass(classes).merge(attributes) }}>
-  {% block media_content %}{% endblock %}
+  {% block media_content %}
+    {{ media }}
+  {% endblock %}
 
   {% if media_caption %}
     <figcaption class="a-media__caption">

@@ -74,7 +74,7 @@
     }
   }
 
-  &.m-callout--type-white {
+  &.m-callout--type-white{
     background-color: var(--surf-color-white);
 
     .m-callout__inner-wrapper {
@@ -166,6 +166,25 @@
     .m-callout__text {
       font-size: rem(32px);
       font-weight: var(--surf-fw-bold);
+    }
+  }
+
+  &.m-callout--type-factoid {
+    background-color: var(--surf-color-white);
+
+    .m-callout__inner-wrapper {
+      gap: rem(4px);
+      margin-block-start: rem(16px);
+      padding: 0;
+    }
+
+    .m-callout__heading,
+    .m-callout__text {
+      color: var(--surf-color-black);
+    }
+
+    .m-callout__heading {
+      font-size: rem(24px);
     }
   }
 }
