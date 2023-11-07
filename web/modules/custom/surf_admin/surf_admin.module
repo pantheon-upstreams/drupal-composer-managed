@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * SURF Admin - @file
+ * Contains update hooks and alterations to SURF, specific for admin pages.
+ * - 01 - Imports
+ * - 02 - General
+ * - 03 - Preprocess
+ */
+
+
+/*------------------------------------*\
+  01 - Imports
+\*------------------------------------*/
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+
+
+
+
+/*------------------------------------*\
+  02 - General
+\*------------------------------------*/
+
+/**
+ * Help
+ * Simple default function to provide help text to editors and developers on the front end.
+ * - Implements hook_help().
+ * - @param $route_name
+ * - @param RouteMatchInterface $route_match
+ * - @return string|void
+ */
+function surf_admin_improvements_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the surf_admin module.
+    case 'help.page.surf_admin':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('SURF Admin') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  03 - Preprocess
+\*------------------------------------*/
+
+/**
+ * Form Alter - Preprocess
+ * - Implements hook_form_alter()
+ * - @param $form
+ * - @param $form_state
+ * - @param $form_id
+ * - @return void
+ */
+function surf_admin_form_alter(&$form, &$form_state, $form_id) {
+  $form['#attached']['library'][] = 'surf_admin/admin';
+}

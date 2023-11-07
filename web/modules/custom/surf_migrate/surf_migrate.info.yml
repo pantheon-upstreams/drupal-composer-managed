@@ -1,7 +1,7 @@
 name: SURF Migrate
 type: module
 description: Site migrations from legacy content types to new architecture. This module should be deleted after launch.
-package: Custom
+package: SURF
 core_version_requirement: ^9 || ^10
 dependencies:
   - migrate

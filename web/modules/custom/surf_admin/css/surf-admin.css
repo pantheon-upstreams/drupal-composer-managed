@@ -1,0 +1,35 @@
+/**
+ * SURF Admin Theming
+ * - 01 - Mercury Editor
+ */
+
+
+/*------------------------------------*\
+  01 - Mercury Editor
+\*------------------------------------*/
+
+.me-node-form .claro-details {
+  margin: 0;
+}
+
+.me-node-form .claro-details__summary {
+  line-height: var(--space-m);
+  padding: 18px 0 14px 0 !important;
+}
+
+.me-node-form .claro-details__summary::before {
+  right: 8px;
+}
+
+.me-node-form .entity-meta {
+  display: flex;
+  flex-flow: nowrap column;
+}
+
+.me-node-form .entity-meta .entity-meta__header {
+  order: 1;
+}
+
+.me-node-form .accordion {
+  border-top: none;
+}

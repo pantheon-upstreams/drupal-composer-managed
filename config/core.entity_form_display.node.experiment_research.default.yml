@@ -31,6 +31,8 @@ third_party_settings:
     group_experiment:
       children:
         - field_dates
+        - field_key_experiments
+        - field_key_facts
       label: Experiment
       region: content
       parent_name: ''
@@ -46,8 +48,6 @@ third_party_settings:
     group_research:
       children:
         - field_research_area
-        - field_key_facts
-        - field_key_experiments
       label: Research
       region: content
       parent_name: ''
@@ -66,7 +66,7 @@ third_party_settings:
       label: Teaser
       region: content
       parent_name: ''
-      weight: 7
+      weight: 6
       format_type: details
       format_settings:
         classes: ''
@@ -97,7 +97,7 @@ third_party_settings:
       label: Tags
       region: content
       parent_name: ''
-      weight: 8
+      weight: 7
       format_type: tab
       format_settings:
         classes: ''
@@ -106,6 +106,41 @@ third_party_settings:
         formatter: closed
         description: ''
         required_fields: true
+    group_publishing:
+      children:
+        - status
+        - publish_on
+        - unpublish_on
+      label: Publishing
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_authoring:
+      children:
+        - uid
+        - created
+      label: Authoring
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.experiment_research.default
 targetEntityType: node
 bundle: experiment_research
@@ -113,7 +148,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 17
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -137,7 +172,7 @@ content:
     third_party_settings: {  }
   field_extra_content:
     type: layout_paragraphs
-    weight: 10
+    weight: 13
     region: content
     settings:
       preview_view_mode: default
@@ -147,7 +182,7 @@ content:
     third_party_settings: {  }
   field_key_experiments:
     type: paragraphs
-    weight: 15
+    weight: 3
     region: content
     settings:
       title: 'Key Experiment'
@@ -166,7 +201,7 @@ content:
     third_party_settings: {  }
   field_key_facts:
     type: paragraphs
-    weight: 14
+    weight: 4
     region: content
     settings:
       title: 'Key Fact'
@@ -211,7 +246,7 @@ content:
         maxlength_js_enforce: false
   field_p_content:
     type: layout_paragraphs
-    weight: 9
+    weight: 12
     region: content
     settings:
       preview_view_mode: default
@@ -245,19 +280,19 @@ content:
         maxlength_js_enforce: false
   path:
     type: path
-    weight: 13
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 15
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 11
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -272,7 +307,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 13
     region: content
     settings:
       match_operator: CONTAINS
@@ -282,12 +317,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 16
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

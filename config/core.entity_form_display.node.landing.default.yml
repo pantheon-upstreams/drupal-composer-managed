@@ -6,9 +6,47 @@ dependencies:
     - field.field.node.landing.field_p_content
     - node.type.landing
   module:
+    - field_group
     - layout_paragraphs
     - path
     - scheduler
+third_party_settings:
+  field_group:
+    group_publishing:
+      children:
+        - status
+        - publish_on
+        - unpublish_on
+      label: Publishing
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
+    group_authoring:
+      children:
+        - uid
+        - created
+      label: Authoring
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.landing.default
 targetEntityType: node
 bundle: landing
@@ -22,7 +60,7 @@ content:
     third_party_settings: {  }
   field_p_content:
     type: layout_paragraphs
-    weight: 1
+    weight: 5
     region: content
     settings:
       preview_view_mode: default
@@ -32,13 +70,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 4
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 5
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -69,12 +107,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -10,7 +10,7 @@ content_types:
   professional_development: '1'
   report_publication: '1'
   school_presentation: '1'
-edit_screen_theme: claro
+edit_screen_theme: gin
 skip_create_form: {  }
 mobile_presets:
   -

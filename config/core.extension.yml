@@ -101,6 +101,7 @@ module:
   state_machine: 0
   structure_sync: 0
   style_options: 0
+  surf_admin: 0
   surf_core: 0
   surf_curriculum: 0
   surf_dashboard: 0

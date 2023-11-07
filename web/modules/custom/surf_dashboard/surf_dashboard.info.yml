@@ -1,7 +1,7 @@
 name: SURF Dashboard
 type: module
 description: Provides additional functionality for user dashboard pages
-package: Custom
+package: SURF
 core_version_requirement: ^9 || ^10
 dependencies:
   - page_manager:page_manager

@@ -1,0 +1,4 @@
+admin:
+  css:
+    theme:
+      css/surf-admin.css: {}
