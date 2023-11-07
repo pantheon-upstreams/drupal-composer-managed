@@ -39,7 +39,17 @@
 //------------------------------------
 
 @mixin alignment() {
-  .media--small.align-right {
+  .media--large.align-right,
+  .media--large.align-left,
+  figure[data-view-mode='large'].drupal-media-style-align-right,
+  figure[data-view-mode='large'].drupal-media-style-align-left {
+    float: none;
+    margin-block-end: var(--surf-grid-gap);
+    margin-inline: 0;
+  }
+
+  .media--small.align-right,
+  figure[data-view-mode='small'].drupal-media-style-align-right {
     float: none;
     margin-block-end: var(--surf-grid-gap);
 
@@ -49,7 +59,8 @@
     }
   }
 
-  .media--small.align-left {
+  .media--small.align-left,
+  figure[data-view-mode='small'].drupal-media-style-align-left {
     float: none;
     margin-block-end: var(--surf-grid-gap);
 
@@ -68,7 +79,12 @@
 //------------------------------------
 
 @mixin sizes() {
-  .media--small {
+  figure[data-view-mode='large'] {
+    max-width: inherit;
+  }
+
+  .media--small,
+  figure[data-view-mode='small'] {
     @include breakpoints.bp-min(small) {
       max-inline-size: 320px;
     }

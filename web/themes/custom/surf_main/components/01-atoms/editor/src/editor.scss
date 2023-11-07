@@ -99,7 +99,7 @@
   @include media.general();
   @include media.sizes();
 
-  .a-media.align-right {
+  .a-media.media--small.align-right {
     @include breakpoints.bp-min(large) {
       margin-inline-end: -8vw;
     }
@@ -109,7 +109,7 @@
     }
   }
 
-  .a-media.align-left {
+  .a-media.media--small.align-left {
     @include breakpoints.bp-min(large) {
       margin-inline-start: -8vw;
     }
