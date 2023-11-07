@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_key_facts
     - node.type.experiment_research
-    - paragraphs.paragraphs_type.card_list
+    - paragraphs.paragraphs_type.callout
   module:
     - entity_reference_revisions
 id: node.experiment_research.field_key_facts
@@ -22,7 +22,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      card_list: card_list
+      callout: callout
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -31,56 +31,23 @@ settings:
       accordion_item:
         weight: 36
         enabled: false
-      blue_banner:
-        weight: 37
-        enabled: false
+      callout:
+        weight: 22
+        enabled: true
       card:
         weight: 38
         enabled: false
       card_list:
         weight: 39
-        enabled: true
-      centered_image_text:
-        weight: 40
-        enabled: false
-      entity_references_image_text:
-        weight: 41
-        enabled: false
-      entity_references_text:
-        weight: 42
-        enabled: false
-      full_teaser:
-        weight: 43
         enabled: false
       gallery:
         weight: 44
         enabled: false
-      green_banner_cta:
-        weight: 45
-        enabled: false
       header:
         weight: 46
         enabled: false
-      homepage_lead_teaser:
-        weight: 47
-        enabled: false
-      homepage_teaser:
-        weight: 48
-        enabled: false
-      image:
-        weight: 49
-        enabled: false
-      image_with_caption:
-        weight: 50
-        enabled: false
       media:
         weight: 51
-        enabled: false
-      media_gallery:
-        weight: 52
-        enabled: false
-      one_up_teaser_image_text:
-        weight: 53
         enabled: false
       person:
         weight: 54
@@ -100,9 +67,6 @@ settings:
       resources_list:
         weight: 59
         enabled: false
-      running_text:
-        weight: 60
-        enabled: false
       schedule_item:
         weight: 61
         enabled: false
@@ -115,16 +79,7 @@ settings:
       text:
         weight: 64
         enabled: false
-      two_up_figures:
-        weight: 65
-        enabled: false
-      two_up_teaser_image_text:
-        weight: 66
-        enabled: false
-      two_up_teaser_text:
-        weight: 67
-        enabled: false
-      video:
-        weight: 68
+      view:
+        weight: 38
         enabled: false
 field_type: entity_reference_revisions

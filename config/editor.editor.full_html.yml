@@ -55,6 +55,9 @@ settings:
         -
           label: 'Black Button with Arrow Right'
           element: '<a class="a-button a-button--large a-button--black a-button--icon-arrow-right">'
+        -
+          label: 'Large Text'
+          element: '<p class="a-editor__text--large">'
     media_media:
       allow_view_mode_override: false
 image_upload:

@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
@@ -30,6 +31,7 @@ settings:
   handler_settings:
     target_bundles:
       callout: callout
+      section: section
       text: text
       accordion: accordion
       header: header
@@ -86,7 +88,7 @@ settings:
         enabled: false
       section:
         weight: 33
-        enabled: false
+        enabled: true
       teaser_list:
         weight: 63
         enabled: true
