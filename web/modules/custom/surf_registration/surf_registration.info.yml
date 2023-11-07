@@ -1,7 +1,7 @@
 name: SURF Registration
 type: module
 description: User registrations for events and visits
-package: Custom
+package: SURF
 core_version_requirement: ^9 || ^10
 dependencies:
   - surf_dashboard:surf_dashboard

@@ -2,8 +2,9 @@
 // Component - Molecule - Accordion
 //
 // - 01 - Imports
-// - 02 - Slides
-// - 03 - Splide
+// - 02 - General
+// - 03 - Slides
+// - 04 - Splide
 //
 
 
@@ -36,6 +37,11 @@
 //------------------------------------
 
 .m-gallery {
+  .m-gallery__slide > figure {
+    margin: auto;
+    width: fit-content;
+  }
+
   .m-gallery__slide > figure > figcaption {
     font-size: calculations.rem(14px);
     line-height: var(--surf-lh-default);
@@ -49,15 +55,28 @@
       max-width: 400px;
       padding: 24px;
       position: absolute;
-      right: 0;
+      right: -1px;
       text-align: left;
     }
   }
 
   .m-gallery__slide > figure img {
     margin: auto;
-    max-height: 660px;
+    max-height: 210px;
     object-fit: contain;
+    width: auto;
+
+    @include breakpoints.bp-min(medium) {
+      max-height: 330px;
+    }
+
+    @include breakpoints.bp-min(large) {
+      max-height: 434px;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      max-height: 660px;
+    }
   }
 }
 

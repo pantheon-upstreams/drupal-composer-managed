@@ -1,0 +1,5 @@
+name: SURF - Admin
+type: module
+description: 'Provides additional functionality and defaults for admin pages.'
+package: SURF
+core_version_requirement: ^9.2 || ^10
