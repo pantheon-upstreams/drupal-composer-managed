@@ -35,6 +35,12 @@ filters:
     status: false
     weight: 8
     settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
@@ -65,9 +71,3 @@ filters:
         small: small
       allowed_media_types:
         image: image
-  filter_html_image_secure:
-    id: filter_html_image_secure
-    provider: filter
-    status: true
-    weight: 9
-    settings: {  }

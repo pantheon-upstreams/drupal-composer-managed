@@ -1,9 +1,6 @@
 //
 // Component - Organism - Person
 //
-// https://atendesign.atlassian.net/browse/SRL-79
-// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-209040&mode=design&t=l3XzFBYi7FyaUJzA-4
-//
 // - 01 - Imports
 // - 02 - General
 // - 03 - Grids
@@ -97,12 +94,14 @@
   max-width: rem(619px);
 }
 
-.o-person__content-grid {
-  //display: grid;
-  row-gap: rem(32px);
-  width: 100%;
+.o-person__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+  }
 
-  .o-person__title {
+  .o-header {
     order: 1;
   }
 
@@ -157,11 +156,12 @@
         grid-template-columns: 9fr 3fr;
       }
 
-      .o-person__title {
+      .o-header {
         order: 2;
         @include bp-min(medium) {
           grid-area: header;
         }
+
       }
 
       .o-person__media {

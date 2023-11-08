@@ -12,7 +12,7 @@ entity_type: node
 bundle: experiment_research
 label: 'Research Area'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

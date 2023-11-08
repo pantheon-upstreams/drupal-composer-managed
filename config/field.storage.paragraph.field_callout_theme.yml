@@ -23,6 +23,9 @@ settings:
     -
       value: white
       label: White
+    -
+      value: factoid
+      label: Factoid
   allowed_values_function: ''
 module: options
 locked: false

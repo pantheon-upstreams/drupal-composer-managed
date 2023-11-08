@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_media
+    - media.type.icon
     - media.type.image
     - media.type.remote_video
     - paragraphs.paragraphs_type.callout
@@ -21,6 +22,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
+      icon: icon
       image: image
       remote_video: remote_video
     sort:

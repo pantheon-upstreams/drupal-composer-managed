@@ -31,8 +31,6 @@ third_party_settings:
     group_experiment:
       children:
         - field_dates
-        - field_key_experiments
-        - field_key_facts
       label: Experiment
       region: content
       parent_name: ''
@@ -48,6 +46,8 @@ third_party_settings:
     group_research:
       children:
         - field_research_area
+        - field_key_facts
+        - field_key_experiments
       label: Research
       region: content
       parent_name: ''
@@ -182,7 +182,7 @@ content:
     third_party_settings: {  }
   field_key_experiments:
     type: paragraphs
-    weight: 3
+    weight: 15
     region: content
     settings:
       title: 'Key Experiment'
@@ -201,7 +201,7 @@ content:
     third_party_settings: {  }
   field_key_facts:
     type: paragraphs
-    weight: 4
+    weight: 14
     region: content
     settings:
       title: 'Key Fact'

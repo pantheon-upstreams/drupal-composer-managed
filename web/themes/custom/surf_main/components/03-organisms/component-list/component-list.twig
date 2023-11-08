@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Component for Component List
+ *
+ * Available props:
+ * - component_list_attributes: [array] Any parent tag attributes.
+ * - component_list_heading: [string]
+ * - component_list_items: [array]
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'o-component-list',
+]
+%}
+
+<article {{ component_list_attributes.addClass(classes).merge(attributes) }}>
+
+  {% if component_list_heading %}
+
+    {% embed 'surf_main:heading' with {
+      heading_attributes: create_attribute({'class': ['o-component-list__heading']}),
+      heading_text: component_list_heading,
+      heading_level: '3',
+    } only %}
+    {% endembed %}
+
+  {% endif %}
+
+  {% if component_list_items %}
+    <ul class="o-component-list__items">
+      {% block list_items %}
+          {% for item in component_list_items %}
+            <li class="o-component-list__item">
+              {{ item }}
+  {#            {{ drupal_entity('paragraph', item.id, 'default') }}#}
+            </li>
+          {% endfor %}
+      {% endblock %}
+    </ul>
+  {% endif %}
+
+</article>

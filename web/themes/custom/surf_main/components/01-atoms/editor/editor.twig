@@ -8,6 +8,12 @@
  * - editor_attributes: [array] Any component level attributes.
  * - editor_content: [string] Content for the editor component.
  *
+ * Example usage:
+{% embed 'surf_main:editor' with {
+  editor_attributes: create_attribute(),
+  editor_content: body,
+} only %}
+{% endembed %}
  */
 #}
 

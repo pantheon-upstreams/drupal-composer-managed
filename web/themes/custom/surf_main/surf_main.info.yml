@@ -21,3 +21,13 @@ libraries:
 
 ckeditor5-stylesheets:
   - components/00-base/global/wysiwyg.css
+
+libraries-override:
+  layout_builder/twocol_section:
+    css:
+      theme:
+        /core/themes/stable9/layouts/layout_builder/twocol_section/twocol_section.css: false
+  layout_builder/threecol_section:
+    css:
+      theme:
+        /core/themes/stable9/layouts/layout_builder/threecol_section/threecol_section.css: false

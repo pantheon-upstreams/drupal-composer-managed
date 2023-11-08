@@ -10,6 +10,14 @@
  */
 #}
 
+{% set research_classes = [
+  content.field_media_primary.0 ? 'o-research--with-img',
+] %}
+
+{% set experiment_classes = [
+  content.field_media_primary.0 ? 'o-experiment--with-img',
+] %}
+
 {%
   set rendered_fields = [
   'field_p_content',
@@ -29,134 +37,32 @@
 {% if content.field_experiment_research_type.0['#markup'] == 'research_area' %}
 
   {% embed 'surf_main:research' with {
-    research_attributes: create_attribute(),
+    research_attributes: create_attribute({'class': research_classes}),
     research_heading: label|field_value,
     research_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
     research_sidebar_icon: content.field_media.0 ? content.field_media|field_value,
+    research_key_facts: content.field_key_facts.0 ? content.field_key_facts|field_value,
     research_overview: content.field_overview.0 ? content.field_overview|field_value,
-    research_content: content.field_p_content|field_value,
+    research_content: content.field_p_content,
     title_suffix: title_suffix,
     attributes,
   } only %}
   {% endembed %}
 
-  {{ dd(content) }}
-
-
 {% else %}
-  Experiment
+  {% embed 'surf_main:experiment' with {
+    experiment_attributes: create_attribute({'class': experiment_classes}),
+    experiment_heading: label|field_value,
+    experiment_header_teaser: content.field_overview.0 ? content.field_overview.0['#text'],
+    experiment_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
+    experiment_sidebar_icon: content.field_media.0 ? content.field_media|field_value,
+    experiment_key_facts: content.field_key_facts.0 ? content.field_key_facts|field_value,
+    experiment_overview: content.field_overview.0 ? content.field_overview|field_value,
+    experiment_content: content.field_p_content,
+    title_suffix: title_suffix,
+    attributes,
+  } only %}
+  {% endembed %}
 {% endif %}
 
-{#{% embed 'surf_main:research' with {#}
-{#  page_attributes: create_attribute(),#}
-{#  page_heading: label|field_value,#}
-{#  page_teaser: content.field_teaser_text ? content.field_teaser_text|field_value,#}
-{#  page_cta_url: content.field_link.0 ? content.field_link.0['#url'],#}
-{#  page_cta_text: content.field_link.0 ? content.field_link.0['#title'],#}
-{#  page_cta_html_tag,#}
-{#  page_cta_style,#}
-{#  page_cta_size,#}
-{#  page_media: content.field_media.0 ? content.field_media|field_value,#}
-{#  page_content: content.field_p_content|field_value,#}
-{#  title_suffix: title_suffix,#}
-{#  attributes,#}
-{#} only %}#}
-{#{% endembed %}#}
-
 {{ content|without(rendered_fields) }}
-
-{#  #}{##}
-{#    TODO:#}
-{#    - [ ] Update the hard-coded breadcrumbs#}
-{#  #}
-
-
-{#{% set type = content.field_experiment_research_type.0["#markup"] %}#}
-
-{#{% if type == 'experiment' %}#}
-{#  #}{# Experiment ONLY fields #}
-
-{#  {% set intro = content.field_teaser_text|field_value %}#}
-
-{#  #}{# Start and end date set#}
-{#  {% if content.field_dates.0.end_date["#attributes"].datetime is not empty and content.field_dates.0.start_date["#attributes"].datetime is not empty %}#}
-{#    {% set dates = content.field_dates.0.start_date["#attributes"].datetime|date('Y') ~ ' - ' ~ content.field_dates.0.end_date["#attributes"].datetime|date('Y') %}#}
-{#  #}{# Same date and no end date #}
-{#  {% elseif content.field_dates.0["#attributes"].datetime is not empty %}#}
-{#   {% set dates = content.field_dates.0["#attributes"].datetime|date('Y') ~ ' - Present' %}#}
-{#  {% else %}#}
-{#    #}{# No dates set #}
-{#    {% set dates = null %}#}
-{#  {% endif %}#}
-
-{#{% else %}#}
-{#  #}{# Research Area ONLY fields #}
-
-{#  {% set intro = content.field_overview.0["#text"] %}#}
-
-{#  {% if content.field_media.0 %}#}
-{#    {% set icon_url = content.field_media.0["#media"].field_media_image.entity.uri.value|image_style('420x420') %}#}
-{#    {% set icon_alt = content.field_media.0["#media"].thumbnail.alt %}#}
-{#  {% endif %}#}
-{#  {% set key_facts = content.field_key_facts  %}#}
-{#  {% set key_experiments =  content.field_key_experiments %}#}
-{#  {% set research_area_id = content.field_research_area.0["#taxonomy_term"].tid.value %}#}
-{#  {% set research_area_name = content.field_research_area.0["#taxonomy_term"].name.value %}#}
-{#  {% set extra_content = content.field_extra_content %}#}
-{#{% endif %}#}
-
-{#  #}{# Parent Logic #}
-{#  {% if type == 'research_area' %}#}
-{#    {% set parent_name = 'Areas of Research' %}#}
-{#    {% set parent_url = '/areas-research' %}#}
-{#  {% else %}#}
-{#    {% set parent_name = 'Experiments' %}#}
-{#    {% set parent_url = '/experiments' %}#}
-{#  {% endif %}#}
-
-{# Temporary hard-coded: Breadcumbs #}
-{#{% set breadcrumbs = [#}
-{#    {#}
-{#      title: 'Home',#}
-{#      url: '/',#}
-{#      current: false,#}
-{#    },#}
-{#    {#}
-{#      title: parent_name,#}
-{#      url: parent_url,#}
-{#      current: false,#}
-{#    },#}
-{#    {#}
-{#      title: label,#}
-{#      url: url,#}
-{#      current: true,#}
-{#    }#}
-{#  ]#}
-{#%}#}
-
-{# set image and alt#}
-{# {% if content.field_media_primary.0 %}#}
-{#	{% set image_url = content.field_media_primary.0["#media"].field_media_image.entity.uri.value|image_style('hero') %}#}
-{#	{% set image_alt = content.field_media_primary.0["#media"].thumbnail.alt %}#}
-{#{% endif %}#}
-
-{#{% set body = content.field_p_content %}#}
-
-{#{{ include('surf_main:experiment-research-page', {#}
-{# breadcrumbs,#}
-{# title: label,#}
-{# image_url,#}
-{# image_alt,#}
-{# icon_url,#}
-{# icon_alt,#}
-{# intro,#}
-{# body,#}
-{# key_facts,#}
-{# media_gallery,#}
-{# key_experiments,#}
-{# research_area_id,#}
-{# research_area_name,#}
-{# dates,#}
-{# extra_content,#}
-{# type,#}
-{#}, with_context = false) }}#}

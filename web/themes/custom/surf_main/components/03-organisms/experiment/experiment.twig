@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Component for Person (Node)
+ *
+ * Available props:
+ * - page_attributes: [array] Any parent tag attributes.
+ * - page_heading: [string]
+ * - page_teaser: [string]
+ * - person_phone: [string]
+ * - person_body: [string]
+ * - person_media: [string]
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'o-experiment',
+]
+%}
+
+<article {{ experiment_attributes.addClass(classes).merge(attributes) }}>
+  {% if experiment_media %}
+    <div class="o-experiment__media">
+      {% embed 'surf_main:media' with {
+        media_attributes: create_attribute(),
+        media: experiment_media,
+      } only %}
+      {% endembed %}
+    </div>
+  {% endif %}
+
+  <div class="container container--xlarge">
+    {{ title_suffix }}
+
+    {% embed 'surf_main:header' with {
+      header_heading: experiment_heading,
+      header_heading_level: '1',
+      header_teaser: experiment_header_teaser,
+      header_attributes: create_attribute(),
+      heading_attributes: create_attribute({'class': ['o-header__heading']}),
+    } only %}
+    {% endembed %}
+
+    <div class="o-experiment-wrapper">
+
+      {# Main Content #}
+      <div class="o-experiment__main-content">
+        {{ experiment_content }}
+      </div>
+
+      {# Additional Content #}
+      <div class="o-experiment__additional-content">
+        [ADDITIONAL CONTENT]
+      </div>
+    </div>
+
+  </div>
+</article>

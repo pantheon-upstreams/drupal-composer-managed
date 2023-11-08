@@ -22,52 +22,12 @@
 //  02 - General
 //------------------------------------
 
-.p-exp-res-page {
-  .layout__region--content {
-    > :not( :last-child ) {
-      margin-block-end: rem(80px);
-    }
-
-    //> .m-callout {
-    //  margin-inline: auto;
-    //  max-width: rem(780px);
-    //}
-  }
-
-  //.a-editor {
-  //  margin-inline: auto;
-  //  max-width: rem(780px);
-  //}
-
-  .a-media {
-    img {
-      max-height: 600px;
-      object-fit: cover;
-    }
-  }
-
-  .m-pullquote--small {
-    max-width: 100%;
-  }
-
-  //
-  //.m-pullquote--large {
-  //  margin-inline: auto;
-  //  max-width: 100%;
-  //}
-
-  .o-header {
-    @include bp-min(xlarge) {
-      margin-block-start: rem(-120px);
-    }
-  }
-
-  .o-header__content {
-    background-color: var(--surf-color-white);
-    padding-block: rem(32px);
-    @include bp-min(xlarge) {
-      padding-block: rem(60px);
-      padding-inline: rem(120px);
-    }
+.o-header__content {
+  background-color: var(--surf-color-white);
+  padding-block: rem(32px);
+  @include bp-min(xlarge) {
+    padding-block: rem(60px);
+    padding-inline: rem(120px);
   }
 }
+

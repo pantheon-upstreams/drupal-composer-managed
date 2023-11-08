@@ -1,0 +1,197 @@
+{%
+  set classes = [
+  'o-article',
+  'o-article--portrait',
+]
+%}
+
+<article {{ attributes.addClass(classes).merge(attributes) }}>
+  <div class="container container--xlarge">
+
+    <div class="o-article__inner-wrapper">
+
+      <div class="o-article__content-wrapper">
+
+        {% set breadcrumbs_default = [
+          {'text': 'News', 'url': 'https://example.com'},
+        ]%}
+
+        {% include 'surf_main:breadcrumbs' with {
+          breadcrumbs_attributes: attributes|without('class'),
+          breadcrumbs_label: 'Breadcrumbs',
+          breadcrumbs_type: 'large',
+          breadcrumbs_navigation: breadcrumbs_default,
+        } only %}
+
+        {% embed 'surf_main:heading' with {
+          heading_text: article_heading,
+          heading_level: '1',
+          heading_attributes: create_attribute({'class': ['o-article__heading']}),
+        } only %}
+        {% endembed %}
+
+        <p class="o-article__overview">{{ article_overview }}</p>
+
+        {% embed 'surf_main:editor' with {
+          editor_attributes: create_attribute(),
+          editor_content: article_body,
+        } only %}
+        {% endembed %}
+
+      </div>
+{#      <div class="grid-sidebar">#}
+        {% if article_media %}
+          <div class="o-article__image-wrapper">
+
+            {% embed 'surf_main:media' with {
+              media: article_media,
+              media_attributes: create_attribute(),
+            } only %}
+
+              {% block media_block %}
+                {{ media }}
+              {% endblock %}
+
+            {% endembed %}
+          </div>
+        {% endif %}
+
+        <div class="test">
+
+          {% if article_date %}
+            <div class="o-article__date">
+              {{ article_date }}
+            </div>
+          {% endif %}
+
+          {% if article_author %}
+            <p class="o-article__author">
+              by {{ article_author }}
+            </p>
+          {% endif %}
+
+          {% if article_tags %}
+            <ul class="o-article__tags">
+              {% for tag in article_tags %}
+                <li>
+                  {% embed 'surf_main:chip' with {
+                    chip_text: tag,
+                    chip_size: 'small',
+                    chip_attributes: create_attribute(),
+                  } only %}
+                  {% endembed %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+        </div>
+
+        <div class="o-article__callout-wrapper">
+
+          {% embed 'surf_main:callout' with {
+            callout_attributes: create_attribute(),
+            callout_text: 'Stay up-to-date on our latest news and upcoming events.',
+            callout_button_text: 'Subscribe to Deep Thoughts',
+            callout_button_url: 'http://www.example.com',
+            callout_button_prefix: 'envelope',
+          } only %}
+          {% endembed %}
+
+          {% embed 'surf_main:callout' with {
+            callout_attributes: create_attribute(),
+            callout_text: 'Watch our lectures on physics, algorithmic art, local history, botany and more!',
+            callout_button_text: 'Watch Deep Talks on Vimeo',
+            callout_button_url: 'http://www.example.com',
+            callout_button_prefix: 'play',
+          } only %}
+          {% endembed %}
+
+{#        </div>#}
+
+{#        <div class="o-article__press-resources-wrapper">#}
+{#          {% embed 'surf_main:left-hook' with {#}
+{#            left_hook_attributes: create_attribute(),#}
+{#          } only %}#}
+{#          {% endembed %}#}
+
+{#          <p><strong>[Related News - View]</strong></p>#}
+{#        </div>#}
+      </div>
+
+                {#      <div class="o-article__aside-wrapper">#}
+
+                {#        <div class="o-article__aside-constraint">#}
+
+
+
+                {#      <div class="test">#}
+
+                {#          {% if article_date %}#}
+                {#            <div class="o-article__date">#}
+                {#              {{ article_date }}#}
+                {#            </div>#}
+                {#          {% endif %}#}
+
+                {#          {% if article_author %}#}
+                {#            <p class="o-article__author">#}
+                {#              by {{ article_author }}#}
+                {#            </p>#}
+                {#          {% endif %}#}
+
+                {#          {% if article_tags %}#}
+                {#            <ul class="o-article__tags">#}
+                {#              {% for tag in article_tags %}#}
+                {#                <li>#}
+                {#                  {% embed 'surf_main:chip' with {#}
+                {#                    chip_text: tag,#}
+                {#                    chip_size: 'small',#}
+                {#                    chip_attributes: create_attribute(),#}
+                {#                  } only %}#}
+                {#                  {% endembed %}#}
+                {#                </li>#}
+                {#              {% endfor %}#}
+                {#            </ul>#}
+                {#          {% endif %}#}
+
+                {#        </div>#}
+
+{#                        <div class="o-article__callout-wrapper">#}
+{#                #}
+{#                          {% embed 'surf_main:callout' with {#}
+{#                            callout_attributes: create_attribute(),#}
+{#                            callout_text: 'Stay up-to-date on our latest news and upcoming events.',#}
+{#                            callout_button_text: 'Subscribe to Deep Thoughts',#}
+{#                            callout_button_url: 'http://www.example.com',#}
+{#                            callout_button_prefix: 'envelope',#}
+{#                          } only %}#}
+{#                          {% endembed %}#}
+{#                #}
+{#                          {% embed 'surf_main:callout' with {#}
+{#                            callout_attributes: create_attribute(),#}
+{#                            callout_text: 'Watch our lectures on physics, algorithmic art, local history, botany and more!',#}
+{#                            callout_button_text: 'Watch Deep Talks on Vimeo',#}
+{#                            callout_button_url: 'http://www.example.com',#}
+{#                            callout_button_prefix: 'play',#}
+{#                          } only %}#}
+{#                          {% endembed %}#}
+{#                #}
+{#                        </div>#}
+
+      </div>
+  </div>
+  </div>
+
+    </div>
+
+{#    <div class="o-article__press-resources-wrapper">#}
+{#      {% embed 'surf_main:left-hook' with {#}
+{#        left_hook_attributes: create_attribute(),#}
+{#      } only %}#}
+{#      {% endembed %}#}
+
+{#      <p><strong>[Related News - View]</strong></p>#}
+{#    </div>#}
+
+  </div>
+</article>

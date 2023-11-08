@@ -17,20 +17,17 @@
 #}
 
 {% set classes = [
-    'm-callout',
-    callout_type ? 'm-callout--type-' ~ callout_type,
+  'm-callout',
+  callout_type ? 'm-callout--type-' ~ callout_type,
 ] %}
 
-<aside {{ callout_attributes.addClass(classes).merge(attributes) }}>
+<div {{ callout_attributes.addClass(classes).merge(attributes) }}>
     {% if callout_media %}
         {% embed 'surf_main:media' with {
             media_attributes: create_attribute({'class': ['m-callout__media']}),
             media_caption: callout_media_caption ? callout_media_caption,
             media: callout_media,
         } only %}
-            {% block media_block %}
-                {{ media }}
-            {% endblock %}
         {% endembed %}
     {% endif %}
 
@@ -70,6 +67,18 @@
                     button_html_tag: 'link',
                     button_size: 'small',
                     button_style: 'underline',
+                    button_title: callout_button_text,
+                    button_url: callout_button_url,
+                } only %}
+            {% elseif callout_type == 'gray' %}
+                {% include 'surf_main:button' with {
+                    attributes,
+                    button_attributes: create_attribute(),
+                    button_color: 'navy',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'small',
+                    button_style: 'primary',
                     button_title: callout_button_text,
                     button_url: callout_button_url,
                 } only %}
@@ -166,4 +175,4 @@
         {% endblock %}
     </div>
 
-</aside>
+</div>

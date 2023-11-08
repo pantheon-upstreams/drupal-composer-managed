@@ -8,6 +8,17 @@
  * - media_attributes: [array] Any custom attributes needed for this component.
  * - media_caption: [string] Related text attribution for the media.
  *
+ * Example usage:
+{% embed 'surf_main:media' with {
+  media_attributes: create_attribute(),
+  media_caption: 'Photo caption.',
+} only %}
+
+  {% block media_block %}
+    {{ media }}
+  {% endblock %}
+
+{% endembed %}
  */
 #}
 
@@ -17,7 +28,9 @@
 ] %}
 
 <figure {{ media_attributes.addClass(classes).merge(attributes) }}>
-  {% block media_content %}{% endblock %}
+  {% block media_content %}
+    {{ media }}
+  {% endblock %}
 
   {% if media_caption %}
     <figcaption class="a-media__caption">

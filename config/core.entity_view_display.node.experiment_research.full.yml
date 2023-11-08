@@ -22,6 +22,7 @@ dependencies:
     - entity_reference_revisions
     - layout_builder
     - layout_paragraphs
+    - options
     - text
     - user
 third_party_settings:
@@ -42,6 +43,13 @@ content:
       separator: '-'
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_experiment_research_type:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_extra_content:
     type: layout_paragraphs
@@ -114,7 +122,6 @@ content:
     weight: 7
     region: content
 hidden:
-  field_experiment_research_type: true
   field_ref_audiences: true
   field_teaser_text: true
   langcode: true

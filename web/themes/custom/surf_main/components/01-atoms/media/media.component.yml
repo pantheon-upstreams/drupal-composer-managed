@@ -10,6 +10,9 @@ props:
     media_attributes:
       title: Attributes
       type: string
+    media:
+      title: Media
+      type: string
     media_caption:
       title: Caption
       type: string

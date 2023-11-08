@@ -26,7 +26,6 @@
 .m-pullquote {
   border-block: 2px solid var(--surf-color-gray-100);
   margin-inline: auto;
-  max-width: 65%;
   padding-block: rem(32px);
 
   blockquote {
@@ -35,13 +34,10 @@
 }
 
 .m-pullquote__quote {
-  font-family: var(--surf-font-sans-alt);
-  font-size: rem(64px);
-  font-style: normal;
-  font-weight: var(--surf-fw-medium);
-  letter-spacing: 0.02em;
-  line-height: 1;
-  text-indent: 0;
+  p {
+    font-style: normal;
+    text-indent: 0;
+  }
 }
 
 .m-pullquote__credit {
@@ -62,28 +58,50 @@
 //------------------------------------
 
 .m-pullquote.m-pullquote--small {
+  padding: rem(32px);
+  max-width: rem(1020px);
 
   .m-pullquote__quote {
-    font-size: rem(32px);
-    font-family: var(--surf-font-sans);
-    font-weight: var(--surf-fw-book);
-    line-height: var(--surf-lh-label);
+    p {
+      font-family: var(--surf-font-sans);
+      font-size: var(--surf-fs-20-24-32);
+      font-weight: var(--surf-fw-book);
+      line-height: var(--surf-lh-label);
+    }
+  }
+}
+
+.m-pullquote.m-pullquote--medium {
+  padding: rem(32px);
+
+  .m-pullquote__quote {
+    p {
+      font-family: var(--surf-font-sans-alt);
+      font-size: var(--surf-fs-40-52-64);
+      font-weight: var(--surf-fw-medium);
+      letter-spacing: 1.28px;
+      line-height: var(--surf-lh-base);
+    }
   }
 }
 
 .m-pullquote.m-pullquote--large {
   border: none;
-  max-width: 100%;
   padding: 0;
+  max-width: 100%;
 
   .m-pullquote__quote {
-    background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
-    background-clip: text;
-    font-size: rem(96px);
-    letter-spacing: 0.015em;
-    line-height: 1;
-    margin: 0;
-    -webkit-text-fill-color: transparent;
+    p {
+      background: linear-gradient(92.82deg, #707070 0.11%, #000000 95.94%);
+      background-clip: text;
+      font-family: var(--surf-font-sans-alt);
+      font-size: var(--surf-fs-40-52-64-96);
+      font-weight: var(--surf-fw-medium);
+      letter-spacing: 0.015em;
+      line-height: var(--surf-lh-base);
+      margin: 0;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   .m-pullquote__credit {
@@ -94,4 +112,6 @@
     line-height: var(--surf-lh-label);
     text-transform: uppercase;
   }
+
+
 }

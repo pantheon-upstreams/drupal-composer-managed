@@ -7,6 +7,7 @@
 // - 01 - Imports
 // - 02 - General
 // - 03 - Types
+// - 04 - Contexts
 //
 
 
@@ -24,6 +25,7 @@
 
 .m-callout {
   background-color: var(--surf-color-gray-100);
+  max-width: rem(780px);
 }
 
 .m-callout__inner-wrapper {
@@ -72,7 +74,7 @@
     }
   }
 
-  &.m-callout--type-white {
+  &.m-callout--type-white{
     background-color: var(--surf-color-white);
 
     .m-callout__inner-wrapper {
@@ -165,5 +167,39 @@
       font-size: rem(32px);
       font-weight: var(--surf-fw-bold);
     }
+  }
+
+  &.m-callout--type-factoid {
+    background-color: var(--surf-color-white);
+
+    .m-callout__inner-wrapper {
+      gap: rem(4px);
+      margin-block-start: rem(16px);
+      padding: 0;
+    }
+
+    .m-callout__heading,
+    .m-callout__text {
+      color: var(--surf-color-black);
+    }
+
+    .m-callout__heading {
+      font-size: rem(24px);
+    }
+  }
+}
+
+
+
+//------------------------------------
+//  04 - Contexts
+//------------------------------------
+
+
+// Apply these styles when using ME Editor
+.m-callout {
+  .p-page__me-content > &,
+  .lp-builder div > &{
+    margin-inline: auto;
   }
 }

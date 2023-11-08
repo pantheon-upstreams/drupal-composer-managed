@@ -10,24 +10,29 @@
  */
 #}
 
+{% set classes = [
+  content.field_media_primary.0 ? 'o-page--with-img',
+] %}
+
 {%
   set rendered_fields = [
   'field_p_content',
-  'field_teaser_text',
+  'field_overview',
   'field_media_primary',
   'field_link',
 ]
 %}
 
 {% embed 'surf_main:page' with {
-  page_attributes: create_attribute({'class': ['o-page--with-img']}),
+  page_attributes: create_attribute({'class': classes}),
   page_heading: label|field_value,
-  page_teaser: content.field_teaser_text ? content.field_teaser_text|field_value,
+  page_teaser: content.field_overview ? content.field_overview|field_value,
   page_cta_url: content.field_link.0 ? content.field_link.0['#url'],
   page_cta_text: content.field_link.0 ? content.field_link.0['#title'],
   page_cta_html_tag,
   page_cta_style,
   page_cta_size,
+  page_cta_color,
   page_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
   page_content: content.field_p_content,
   title_suffix: title_suffix,

@@ -1,35 +1,122 @@
+//
+// Component - Organism - Research Node
+//
+// https://atendesign.atlassian.net/browse/SRL-48
+// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-214852&mode=dev
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Modifiers
+//
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+//
+
 .o-research {
-
+  // empty
 }
-@media ( min-width: 500px ) {
-  .o-research-wrapper {
+
+.o-research__media {
+  img {
+    max-height: 600px;
+    object-fit: cover;
+  }
+}
+
+.o-research__overview {
+  margin-block-end: rem(32px);
+  @include bp-min(medium) {
+    margin-block-end: rem(60px);
+  }
+}
+
+.o-research-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  @include bp-min(xlarge) {
+    grid-column-gap: 180px;
+    grid-template-columns: 1fr 420px;
+
+    .o-research__overview {
+      grid-column: 1 / span 2;
+    }
+
+    .o-research__main-content {
+      grid-column: 1 / span 1;
+    }
+
+    .o-research__sidebar {
+      grid-column: 2 / span 1;
+    }
+
+    .o-research__additional-content {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.o-research__main-content,
+.lpb-component-list {
+
+  > :not( :last-child ) {
+    margin-block-end: rem(80px);
+  }
+}
+
+.o-research__sidebar-icon {
+  display: none;
+  @include bp-min(xlarge) {
+    display: block;
+    margin-block-end: rem(40px);
+  }
+}
+
+.o-research__keyfacts {
+  .o-component-list__heading {
+    font-family: var(--surf-font-condensed);
+    font-size: rem(16px);
+    font-weight: var(--surf-fw-bold);
+    line-height: var(--surf-lh-label);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-block-end: rem(60px);
+  }
+
+  .o-component-list__items {
     display: grid;
-    grid-gap: 1rem 180px;
-    grid-template-columns: 3fr 1fr;
-    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    @include bp-min(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include bp-min(xlarge) {
+      grid-template-columns: 1fr;
+    }
   }
+}
 
-  .o-research__overview {
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
 
-    /*   grid-row: 1 / 2; */
-    grid-column: 1 / -1;
-  }
-
-  .o-research__main-content {
-
-    /*   grid-row: 2 / 4; */
-    grid-column: 1 / 2;
-  }
-
-  .o-research__sidebar {
-
-    /*   grid-row: 2 / 3; */
-    grid-column: 2 / 4;
-  }
-
-  .o-research__additional-content {
-
-    /*   grid-row: 4 / 5; */
-    grid-column: 1 / -1;
+.o-research--with-img
+.o-header {
+  @include bp-min(xlarge) {
+    margin-block-start: rem(-120px);
   }
 }

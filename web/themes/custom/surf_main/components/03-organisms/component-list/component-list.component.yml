@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Component List
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    component_list_attributes:
+      title: Attributes
+      type: string
+    component_list_heading:
+      title: Component List Heading
+      type: string
+    component_list_items:
+      title: Component List Items
+      type: array

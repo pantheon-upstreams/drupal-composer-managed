@@ -1,0 +1,83 @@
+//
+// Component - Organism - Research Node
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Modifiers
+// - 04 - Component Overrides
+//
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+//
+
+.o-experiment {
+  // empty
+}
+
+.o-experiment__media {
+  img {
+    max-height: 600px;
+    object-fit: cover;
+  }
+}
+
+.o-experiment__overview {
+  margin-block-end: rem(32px);
+  @include bp-min(medium) {
+    margin-block-end: rem(60px);
+  }
+}
+
+
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+
+.o-experiment--with-img
+.o-header {
+  @include bp-min(xlarge) {
+    margin-block-start: rem(-120px);
+  }
+}
+
+
+//------------------------------------
+//  04 - Component Overrides
+//------------------------------------
+//
+
+.o-experiment__main-content,
+.lpb-component-list {
+  > * {
+    margin-inline: auto;
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(60px);
+  }
+
+  .layout--twocol-section {
+    max-width: rem(888px);
+    margin-inline: auto;
+  }
+
+  .m-pullquote.m-pullquote--medium {
+    max-width: rem(1020px);
+    padding-inline: 0;
+    margin-block-start: rem(-28px);
+    margin-block-end: rem(32px);
+  }
+}

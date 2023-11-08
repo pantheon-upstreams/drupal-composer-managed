@@ -40,3 +40,4 @@ props:
         - gradient
         - embed
         - img
+        - factoid

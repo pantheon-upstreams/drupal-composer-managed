@@ -19,6 +19,13 @@
   }]) %}
 {% endfor %}
 
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
 {%
   set rendered_fields = [
   'field_title',
@@ -27,9 +34,10 @@
 %}
 
 {% embed 'surf_main:resource-list' with {
+  attributes,
   resource_list_heading: content.field_title|field_value,
   resource_list_items: items,
-  resource_list_attributes: create_attribute(),
+  resource_list_attributes: create_attribute({'class': classes}),
 } only %}
 {% endembed %}
 

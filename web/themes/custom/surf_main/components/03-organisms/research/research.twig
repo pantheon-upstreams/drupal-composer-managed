@@ -21,17 +21,15 @@
 %}
 
 <article {{ research_attributes.addClass(classes).merge(attributes) }}>
-
-  {% embed 'surf_main:media' with {
-    media_attributes: create_attribute(),
-    media: research_media,
-  } only %}
-
-    {% block media_block %}
-      {{ media }}
-    {% endblock %}
-
-  {% endembed %}
+  {% if research_media %}
+    <div class="o-research__media">
+      {% embed 'surf_main:media' with {
+        media_attributes: create_attribute(),
+        media: research_media,
+      } only %}
+      {% endembed %}
+    </div>
+  {% endif %}
 
   <div class="container container--xlarge">
     {{ title_suffix }}
@@ -58,25 +56,32 @@
 
       {# Main Content #}
       <div class="o-research__main-content">
-      {% embed 'surf_main:editor' with {
-        editor_attributes: create_attribute(),
-        editor_content: research_content,
-      } only %}
-      {% endembed %}
+        {{ research_content }}
       </div>
 
       {# Sidebar #}
       <aside class="o-research__sidebar">
-        {% embed 'surf_main:media' with {
-          media_attributes: create_attribute(),
-          media: research_sidebar_icon,
-        } only %}
 
-          {% block media_block %}
-            {{ media }}
-          {% endblock %}
+        {% if research_sidebar_icon %}
+          <div class="o-research__sidebar-icon">
+            {% embed 'surf_main:media' with {
+              media_attributes: create_attribute(),
+              media: research_sidebar_icon,
+            } only %}
+            {% endembed %}
+          </div>
+        {% endif %}
 
-        {% endembed %}
+        {% if research_key_facts %}
+          <div class="o-research__keyfacts">
+            {% embed 'surf_main:component-list' with {
+              component_list_heading: 'Key Facts',
+              component_list_items: research_key_facts,
+              component_list_attributes: create_attribute(),
+            } only %}
+            {% endembed %}
+          </div>
+        {% endif %}
 
       </aside>
 

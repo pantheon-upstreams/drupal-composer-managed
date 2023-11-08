@@ -1,12 +1,13 @@
 //
-// Component - Organism - Person
+// Component - Organism - Page (Basic Page)
 //
 // https://atendesign.atlassian.net/browse/SRL-79
 // https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-209040&mode=design&t=l3XzFBYi7FyaUJzA-4
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Grids
+// - 03 - Modifiers
+// - 04 - Component Overrides
 //
 
 
@@ -23,161 +24,64 @@
 //  02 - General
 //------------------------------------
 
-.o-person {
-  padding-block-end: rem(52px);
-  position: relative;
-  @include bp-min(large) {
-    padding-block-end: rem(80px);
-  }
-  @include bp-min(xxlarge) {
-    padding-block-end: rem(86px);
-  }
-}
+.o-page {
 
-.o-person__heading {
-  line-height: var(--surf-lh-base);
-}
-
-.o-person__job-title {
-  color: var(--surf-color-gray-600);
-  font-family: var(--surf-font-sans);
-  font-size: rem(18px);
-  font-weight: var(--surf-fw-regular);
-  line-height: 1.44;
-  max-width: rem(900px);
-  @include bp-min(medium) {
-    font-size: var(--surf-fs-30-32);
-    line-height: 1.32;
-  }
-}
-
-.o-person__contact-wrapper {
-  align-items: center;
-  display: flex;
-  gap: rem(32px);
-
-  .o-person__phone,
-  .o-person__email {
-    margin: 0;
-
-    a {
-      font-size: rem(18px);
-      font-weight: var(--surf-fw-book);
-      line-height: 1.44;
-      @include bp-min(medium) {
-        font-size: var(--surf-fs-18-24);
-        line-height: 1.4;
-      }
+  .o-header__content {
+    background-color: var(--surf-color-white);
+    padding-block: rem(32px);
+    @include bp-min(xlarge) {
+      padding-block: rem(60px);
+      padding-inline: rem(120px);
     }
   }
 }
 
-.o-person__content {
-  max-width: rem(780px);
-}
-
-.o-person__media {
-  width: 150px;
-  @include bp-min(medium) {
-    width: 100%;
+.o-page__media {
+  img {
+    max-height: 600px;
+    object-fit: cover;
   }
 }
 
-
-
-//------------------------------------
-//  03 - Grids
-//------------------------------------
-
-.o-person__grid {
-  display: grid;
-  gap: rem(32px);
-  margin-inline-end: auto;
-  margin-inline-start: auto;
-  max-width: rem(619px);
-}
-
-.o-person__content-wrapper {
+.o-page__main-content {
   > :not( :last-child ) {
-    margin-bottom: 32px;
+    margin-block-end: rem(80px);
   }
 
-  .o-person__title {
-    order: 1;
-  }
-
-  .o-person__job-title {
-    order: 3;
-    @include bp-min(medium) {
-      order: 2;
-    }
-  }
-
-  .o-person__contact-wrapper {
-    order: 2;
-    @include bp-min(medium) {
-      order: 3;
-    }
-  }
-
-  .o-person-content__wrapper {
-    order: 4;
+  .m-pullquote--small,
+  .m-pullquote--medium,
+  .m-pullquote--large {
+    margin-inline: auto;
   }
 }
 
-.o-person {
-  &.o-person--with-img {
-    padding-block-end: rem(43px);
-    @include bp-min(medium) {
-      padding-block-end: rem(50px);
-    }
-    @include bp-min(large) {
-      padding-block-end: rem(54px);
-    }
-    @include bp-min(xxlarge) {
-      padding-block-end: rem(90px);
-    }
 
-    .o-person__grid {
-      align-items: start;
-      display: grid;
-      gap: rem(32px);
-      max-width: none;
-      @include bp-min(medium) {
-        grid-template-areas: 'header header'
-          'content sidebar';
-        grid-template-columns: 8fr 4fr;
-      }
-      @include bp-min(xxlarge) {
-        grid-template-areas: 'header sidebar'
-          'content sidebar';
-        grid-template-columns: 8fr 4fr;
-      }
-      @include bp-min(xlarge) {
-        grid-template-columns: 9fr 3fr;
-      }
 
-      .o-person__title {
-        order: 2;
-        @include bp-min(medium) {
-          grid-area: header;
-        }
-      }
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
 
-      .o-person__media {
-        order: 1;
-        @include bp-min(medium) {
-          grid-area: sidebar;
-        }
-      }
+.o-page--with-img
+  .o-header {
+    @include bp-min(xlarge) {
+    margin-block-start: rem(-120px);
+  }
+}
 
-      .o-person__content {
-        order: 3;
-        @include bp-min(medium) {
-          grid-area: content;
-        }
-      }
-    }
+
+//------------------------------------
+//  04 - Component Overrides
+//------------------------------------
+//
+
+.o-page__main-content,
+.lpb-component-list {
+  > * {
+    margin-inline: auto;
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(60px);
   }
 }
 

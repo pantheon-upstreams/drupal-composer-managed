@@ -21,6 +21,13 @@
   {% set resource_link_url = path(content.field_link.0["#url"].routeName, content.field_link.0["#url"].routeParameters) %}
 {% endif %}
 
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
 {%
   set rendered_fields = [
   'field_link',
@@ -28,9 +35,10 @@
 %}
 
 {% embed 'surf_main:resource-link' with {
+  attributes,
   resource_link_title: content.field_link.0["#title"],
   resource_link_url,
-  resource_link_attributes: create_attribute(),
+  resource_link_attributes: create_attribute({'class': classes}),
 } only %}
 {% endembed %}
 
