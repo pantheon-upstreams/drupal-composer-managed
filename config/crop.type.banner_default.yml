@@ -1,0 +1,12 @@
+uuid: d6c2fc9d-acc7-4f58-b25f-b118c51969b4
+langcode: en
+status: true
+dependencies: {  }
+label: 'Banner - Default'
+id: banner_default
+description: ''
+aspect_ratio: '27:10'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

@@ -1,0 +1,32 @@
+uuid: e9d867c0-50fa-477a-8a48-b7e6f2201cf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner_default
+  module:
+    - crop
+name: medium_992w_367h
+label: 'Medium (992W x 367H)'
+effects:
+  f44df864-011d-4c11-900a-bcf43d973430:
+    uuid: f44df864-011d-4c11-900a-bcf43d973430
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_default
+      automatic_crop_provider: null
+  a5b63564-7611-4416-b1c7-c96c84c5e7b8:
+    uuid: a5b63564-7611-4416-b1c7-c96c84c5e7b8
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 992
+      height: 367
+      anchor: center-center
+  586ced62-15ac-478d-b686-29a105b23a58:
+    uuid: 586ced62-15ac-478d-b686-29a105b23a58
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

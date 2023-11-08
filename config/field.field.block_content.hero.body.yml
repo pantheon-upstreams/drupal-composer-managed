@@ -1,18 +1,16 @@
-uuid: fe1a5935-585e-4dbd-8bf5-22c9f332a3ff
+uuid: ba625f14-6a54-4945-9ef2-106580c4a127
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.basic
+    - block_content.type.hero
     - field.storage.block_content.body
   module:
     - text
-_core:
-  default_config_hash: R__6wc-rMfFMO8d7jcgqnqiA92j8spKhcc5MiqecrMc
-id: block_content.basic.body
+id: block_content.hero.body
 field_name: body
 entity_type: block_content
-bundle: basic
+bundle: hero
 label: Body
 description: ''
 required: false
@@ -22,4 +20,5 @@ default_value_callback: ''
 settings:
   display_summary: false
   required_summary: false
+  allowed_formats: {  }
 field_type: text_with_summary

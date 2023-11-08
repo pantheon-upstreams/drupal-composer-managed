@@ -91,8 +91,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: banner_default
+      link: false
     third_party_settings: {  }
     weight: 6
     region: content

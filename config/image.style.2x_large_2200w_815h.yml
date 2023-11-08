@@ -1,0 +1,32 @@
+uuid: a93a26d7-cee4-4d6f-8c5f-855523b6de7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner_default
+  module:
+    - crop
+name: 2x_large_2200w_815h
+label: '2X Large (2200W x 815H)'
+effects:
+  d7b1e4f1-63c8-455c-a968-f6ee2917fb9c:
+    uuid: d7b1e4f1-63c8-455c-a968-f6ee2917fb9c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_default
+      automatic_crop_provider: null
+  79c5a3f8-e12c-4982-bd5a-117429c9af0d:
+    uuid: 79c5a3f8-e12c-4982-bd5a-117429c9af0d
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 2200
+      height: 815
+      anchor: center-center
+  d5914f54-8072-45fe-b72e-81c9af2ceb1b:
+    uuid: d5914f54-8072-45fe-b72e-81c9af2ceb1b
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

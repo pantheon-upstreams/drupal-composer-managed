@@ -1,22 +1,20 @@
-uuid: 7da7e074-1994-49ca-a5d6-28372f362880
+uuid: 92b6b027-b4be-42aa-91df-db7f9ec0a1c5
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.basic
-    - field.field.block_content.basic.body
+    - block_content.type.hero
+    - field.field.block_content.hero.body
   module:
     - text
-_core:
-  default_config_hash: kv6gwb6PJ8DcMSj5kgsd52qCIHl1xkxBDL5_AMm-g8k
-id: block_content.basic.default
+id: block_content.hero.default
 targetEntityType: block_content
-bundle: basic
+bundle: hero
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: -4
+    weight: 26
     region: content
     settings:
       rows: 9
