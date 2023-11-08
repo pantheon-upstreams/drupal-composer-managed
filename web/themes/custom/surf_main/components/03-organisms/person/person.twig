@@ -32,6 +32,7 @@
         heading_attributes: create_attribute({'class': ['o-header__heading', 'o-person__heading']}),
       } only %}
       {% endembed %}
+
       <div class="o-person__content">
         <div class="o-person__content-wrapper">
 
@@ -74,17 +75,9 @@
       </div>
 
       {% if person_media %}
-
-        {% embed 'surf_main:media' with {
-          media_attributes: create_attribute({'class': ['o-person__media']}),
-          media: person_media,
-        } only %}
-
-          {% block media_block %}
-            {{ media }}
-          {% endblock %}
-
-        {% endembed %}
+        <div class="o-person__media">
+          {{ person_media }}
+        </div>
       {% endif %}
 
     </div>
