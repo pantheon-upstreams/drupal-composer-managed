@@ -77,7 +77,11 @@
 }
 
 .o-research__sidebar-icon {
-  margin-block-end: rem(40px);
+  display: none;
+  @include bp-min(xlarge) {
+    display: block;
+    margin-block-end: rem(40px);
+  }
 }
 
 .o-research__keyfacts {
@@ -89,6 +93,20 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-block-end: rem(60px);
+  }
+
+  .o-component-list__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    @include bp-min(medium) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include bp-min(xlarge) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
