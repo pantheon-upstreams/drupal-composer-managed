@@ -88,7 +88,6 @@ export const a11yAccordion = (wrapper) => {
     accordionItems = wrapper.querySelectorAll('.accordion__item');
 
     accordionItems.forEach((item) => {
-      console.log(item, 'item');
       const accordionTrigger = item.querySelector('.accordion__trigger');
       accordionTrigger.addEventListener('click', onClickTrigger);
       accordionTrigger.addEventListener('keydown', onKeydownTrigger);

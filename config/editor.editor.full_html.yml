@@ -59,7 +59,7 @@ settings:
           label: 'Large Text'
           element: '<p class="a-editor__text--large">'
     media_media:
-      allow_view_mode_override: false
+      allow_view_mode_override: true
 image_upload:
   status: true
   scheme: public
