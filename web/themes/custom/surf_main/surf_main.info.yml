@@ -21,6 +21,7 @@ libraries:
 
 ckeditor5-stylesheets:
   - components/00-base/global/wysiwyg.css
+
 libraries-override:
   layout_builder/twocol_section:
     css:
