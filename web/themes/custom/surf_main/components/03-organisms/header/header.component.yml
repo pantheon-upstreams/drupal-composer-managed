@@ -18,8 +18,8 @@ props:
     header_heading_level:
       title: Heading Header Level
       type: string
-    header_teaser:
-      title: Teaser Text
+    header_summary:
+      title: Summary Text
       type: string
     header_media:
       title: Header Media

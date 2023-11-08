@@ -6,7 +6,7 @@
  * Available props:
  * - page_attributes: [array] Any parent tag attributes.
  * - page_heading: [string]
- * - page_teaser: [string]
+ * - page_summary: [string]
  * - person_phone: [string]
  * - person_body: [string]
  * - person_media: [string]
@@ -37,7 +37,7 @@
     {% embed 'surf_main:header' with {
       header_heading: page_heading,
       header_heading_level: '1',
-      header_teaser: page_teaser,
+      header_summary: page_summary,
       header_cta_url: page_cta_url,
       header_cta_text: page_cta_text,
       header_cta_html_tag: page_cta_html_tag|default('link'),
