@@ -25,8 +25,8 @@ content:
     type: entity_reference_entity_view
     label: visually_hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: teaser_default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

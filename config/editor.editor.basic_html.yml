@@ -28,6 +28,7 @@ settings:
       - '|'
       - link
       - '|'
+      - insertTable
       - drupalMedia
   plugins:
     ckeditor5_heading:

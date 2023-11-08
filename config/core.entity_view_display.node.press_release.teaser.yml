@@ -25,12 +25,21 @@ mode: teaser
 content:
   field_date_published:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: teaser_date
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_default
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_overview:
     type: text_trimmed
@@ -40,18 +49,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
   field_author: true
-  field_media_primary: true
   field_p_content: true
   field_ref_contacts: true
   field_ref_news_categories: true
   field_resource_list: true
   field_teaser_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

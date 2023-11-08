@@ -1,0 +1,10 @@
+uuid: 9f363a4c-bba1-40b7-987f-43bccfd520dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.profile_default
+label: 'Profile - Default'
+targetEntityType: media
+cache: true

@@ -2,14 +2,20 @@ uuid: e2b89ee9-65fb-42e1-a598-0e8dd60d072c
 langcode: en
 status: true
 dependencies: {  }
-name: medium_768w
-label: 'Medium (768W)'
+name: medium_992w
+label: 'Medium (992W)'
 effects:
   7441de1b-b76a-44d2-b794-eaa81f5e3e2b:
     uuid: 7441de1b-b76a-44d2-b794-eaa81f5e3e2b
     id: image_scale
     weight: 1
     data:
-      width: 768
+      width: 992
       height: null
       upscale: false
+  738fc06b-7233-4956-a0e5-476bef57717e:
+    uuid: 738fc06b-7233-4956-a0e5-476bef57717e
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

@@ -2,14 +2,20 @@ uuid: 46197f80-dce6-4072-a649-e858f0f9e0f8
 langcode: en
 status: true
 dependencies: {  }
-name: large_992w
-label: 'Large (992W)'
+name: large_1200w
+label: 'Large (1200W)'
 effects:
   5e338905-fb10-4de3-9ae0-25a1f9259aad:
     uuid: 5e338905-fb10-4de3-9ae0-25a1f9259aad
     id: image_scale
     weight: 1
     data:
-      width: 992
+      width: 1200
       height: null
       upscale: false
+  07062400-5e9c-4018-807f-1a8311c2ade7:
+    uuid: 07062400-5e9c-4018-807f-1a8311c2ade7
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

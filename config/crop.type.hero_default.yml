@@ -1,11 +1,11 @@
-uuid: e24225f8-1424-4107-88cc-6a56d0e2e2cc
+uuid: 7704a0d9-5413-4e5e-8773-82f4f516788c
 langcode: en
 status: true
 dependencies: {  }
-label: 'Ratio 4:5'
-id: ratio_4_5
+label: 'Hero - Default'
+id: hero_default
 description: ''
-aspect_ratio: '4:5'
+aspect_ratio: '9:5'
 soft_limit_width: null
 soft_limit_height: null
 hard_limit_width: null

@@ -1,0 +1,32 @@
+uuid: 203686d0-78c4-4e2c-b066-a910eeae6a2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.profile_default
+  module:
+    - crop
+name: small_768w_968h
+label: 'Small (768W x 968H)'
+effects:
+  1fe43088-e9de-4838-805d-43eca0b468c5:
+    uuid: 1fe43088-e9de-4838-805d-43eca0b468c5
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: profile_default
+      automatic_crop_provider: null
+  f2114b43-30de-431b-99c4-0378186c7c05:
+    uuid: f2114b43-30de-431b-99c4-0378186c7c05
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 968
+      anchor: center-center
+  876757dc-5236-4ec0-9a75-b407b13f3bd7:
+    uuid: 876757dc-5236-4ec0-9a75-b407b13f3bd7
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

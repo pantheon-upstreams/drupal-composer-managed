@@ -3,10 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - image.style.large_992w
-    - image.style.medium_768w
-    - image.style.small_480w
-    - image.style.x_large_1200w
+    - image.style.large_1200w
+    - image.style.medium_992w
+    - image.style.small_768w
+    - image.style.x_large_1920w
+    - image.style.x_small_480w
   theme:
     - surf_main
 id: dynamic_full_container
@@ -14,38 +15,38 @@ label: 'Dynamic - Full Container'
 image_style_mappings:
   -
     image_mapping_type: image_style
-    image_mapping: x_large_1200w
+    image_mapping: x_large_1920w
     breakpoint_id: surf_main.x_large
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: large_992w
+    image_mapping: large_1200w
     breakpoint_id: surf_main.large
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: x_large_1200w
+    image_mapping: x_large_1920w
     breakpoint_id: surf_main.large
     multiplier: 2x
   -
     image_mapping_type: image_style
-    image_mapping: medium_768w
+    image_mapping: medium_992w
     breakpoint_id: surf_main.medium
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: large_992w
+    image_mapping: large_1200w
     breakpoint_id: surf_main.medium
     multiplier: 2x
   -
     image_mapping_type: image_style
-    image_mapping: small_480w
+    image_mapping: small_768w
     breakpoint_id: surf_main.small
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: medium_768w
+    image_mapping: medium_992w
     breakpoint_id: surf_main.small
     multiplier: 2x
 breakpoint_group: surf_main
-fallback_image_style: small_480w
+fallback_image_style: x_small_480w

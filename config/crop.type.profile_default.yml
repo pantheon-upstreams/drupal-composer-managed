@@ -1,0 +1,12 @@
+uuid: d9f24ade-65f6-4d04-822b-c7649313f642
+langcode: en
+status: true
+dependencies: {  }
+label: 'Profile - Default'
+id: profile_default
+description: ''
+aspect_ratio: '15:19'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

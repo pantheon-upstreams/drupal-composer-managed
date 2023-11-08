@@ -2,14 +2,20 @@ uuid: be5347ad-7960-458c-a1e0-f0ec34cfcd40
 langcode: en
 status: true
 dependencies: {  }
-name: small_480w
-label: 'Small (480W)'
+name: small_768w
+label: 'Small (768W)'
 effects:
   e39a82a8-3a9f-473e-b162-c43c0aed79df:
     uuid: e39a82a8-3a9f-473e-b162-c43c0aed79df
     id: image_scale
     weight: 1
     data:
-      width: 480
+      width: 768
       height: null
       upscale: false
+  e8c272da-eb16-416d-9f31-c73c2add6c80:
+    uuid: e8c272da-eb16-416d-9f31-c73c2add6c80
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

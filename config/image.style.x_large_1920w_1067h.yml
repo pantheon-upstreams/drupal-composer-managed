@@ -1,0 +1,32 @@
+uuid: 07a0e679-9f86-4086-9ef9-75aa744693a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_default
+  module:
+    - crop
+name: x_large_1920w_1067h
+label: 'X Large (1920W x 1067H)'
+effects:
+  c8ac509d-5307-4a5b-87d8-3fdf4335f0c5:
+    uuid: c8ac509d-5307-4a5b-87d8-3fdf4335f0c5
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero_default
+      automatic_crop_provider: null
+  7fa9318d-9941-4aa1-8719-0b0e095435ab:
+    uuid: 7fa9318d-9941-4aa1-8719-0b0e095435ab
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 1067
+      anchor: center-center
+  db8da19f-b6e2-44da-8147-18f9ddd237d2:
+    uuid: db8da19f-b6e2-44da-8147-18f9ddd237d2
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

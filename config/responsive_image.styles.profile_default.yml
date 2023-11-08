@@ -1,30 +1,29 @@
-uuid: a7d7e6a4-c80b-4c48-a408-1468c37e494b
+uuid: 3875d2bb-30b4-4a83-858a-afbd2bd75c30
 langcode: en
 status: true
 dependencies:
   config:
-    - image.style.medium_992w_614h
-    - image.style.small_768w_475h
-    - image.style.x_small_480w_297h
+    - image.style.small_768w_968h
+    - image.style.x_small_480w_605h
   theme:
     - surf_main
-id: teaser_default
-label: 'Teaser - Default'
+id: profile_default
+label: 'Profile - Default'
 image_style_mappings:
   -
     image_mapping_type: image_style
-    image_mapping: x_small_480w_297h
+    image_mapping: x_small_480w_605h
     breakpoint_id: surf_main.medium
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: small_768w_475h
+    image_mapping: small_768w_968h
     breakpoint_id: surf_main.small
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: medium_992w_614h
+    image_mapping: small_768w_968h
     breakpoint_id: surf_main.small
     multiplier: 2x
 breakpoint_group: surf_main
-fallback_image_style: x_small_480w_297h
+fallback_image_style: x_small_480w_605h

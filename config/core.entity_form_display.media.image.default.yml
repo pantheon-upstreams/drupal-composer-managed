@@ -41,7 +41,8 @@ content:
       preview_image_style: crop_thumbnail
       crop_preview_image_style: crop_thumbnail
       crop_list:
-        - ratio_4_5
+        - hero_default
+        - profile_default
         - teaser_default
       crop_types_required: {  }
       warn_multiple_usages: true

@@ -1,0 +1,32 @@
+uuid: 00de65dc-5bf5-4d09-b61e-87f4daaffa24
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_default
+  module:
+    - crop
+name: 2x_large_2200w_1222h
+label: '2X Large (2200W x 1222H)'
+effects:
+  998300a7-0240-46f3-9b64-cdd3e00037f1:
+    uuid: 998300a7-0240-46f3-9b64-cdd3e00037f1
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero_default
+      automatic_crop_provider: null
+  cbd586d1-deff-40f2-a70c-973e569924ec:
+    uuid: cbd586d1-deff-40f2-a70c-973e569924ec
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 2200
+      height: 1222
+      anchor: center-center
+  9cc9aa9f-418f-42d4-8aaf-72adce381064:
+    uuid: 9cc9aa9f-418f-42d4-8aaf-72adce381064
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

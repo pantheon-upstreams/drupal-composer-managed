@@ -6,8 +6,8 @@ dependencies:
     - crop.type.teaser_default
   module:
     - crop
-name: small_480w_297h
-label: 'Small (480W x 297H)'
+name: small_768w_475h
+label: 'Small (768W x 475H)'
 effects:
   099ce956-2b4f-44aa-8662-9f49ba67b16e:
     uuid: 099ce956-2b4f-44aa-8662-9f49ba67b16e
@@ -21,6 +21,12 @@ effects:
     id: image_scale_and_crop
     weight: 2
     data:
-      width: 480
-      height: 297
+      width: 768
+      height: 475
       anchor: center-center
+  15ebc8e3-d9be-4e88-a4df-7b692e4dead3:
+    uuid: 15ebc8e3-d9be-4e88-a4df-7b692e4dead3
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
