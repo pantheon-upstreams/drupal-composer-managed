@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing.field_p_content
+    - field.field.node.landing.field_p_hero
     - node.type.landing
   module:
     - entity_reference_revisions
@@ -24,6 +25,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_p_hero: true
   langcode: true
   links: true
   search_api_excerpt: true

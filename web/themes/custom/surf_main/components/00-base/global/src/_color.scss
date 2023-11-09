@@ -34,6 +34,7 @@
   :root, .ck {
     --surf-color-white:     #FFFFFF;
     --surf-color-gray-100:  #F2F2F2;
+    --surf-color-gray-200:  #DDDDDD;
     --surf-color-gray-500:  #6D6D6D;
     --surf-color-gray-600:  #575966;
     --surf-color-gray-700:  #494949;
@@ -57,6 +58,7 @@
     --surf-gradient-hz-blue: linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
     --surf-gradient-vt-blue:  linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-navy));
     --surf-gradient-vt-multi: linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-teal), var(--surf-color-navy), var(--surf-color-black));
+    --surf-gradient-dg-white: linear-gradient(135deg, var(--surf-color-white), var(--surf-color-gray-200));
   }
 }
 

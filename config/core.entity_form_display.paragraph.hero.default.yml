@@ -1,41 +1,34 @@
-uuid: 92b6b027-b4be-42aa-91df-db7f9ec0a1c5
+uuid: 123110b5-d2f3-4286-88d1-a647a1806f73
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.hero
-    - field.field.block_content.hero.field_ref_media_single
-    - field.field.block_content.hero.field_style_type
-    - field.field.block_content.hero.field_text_formatted
-    - field.field.block_content.hero.field_title
+    - field.field.paragraph.hero.field_ref_media_single
+    - field.field.paragraph.hero.field_text
+    - field.field.paragraph.hero.field_title
+    - paragraphs.paragraphs_type.hero
   module:
     - maxlength
     - media_library
     - text
-id: block_content.hero.default
-targetEntityType: block_content
+id: paragraph.hero.default
+targetEntityType: paragraph
 bundle: hero
 mode: default
 content:
   field_ref_media_single:
     type: media_library_widget
-    weight: 1
+    weight: 0
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_style_type:
-    type: options_select
-    weight: 26
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_text_formatted:
-    type: text_textfield
-    weight: 3
+  field_text:
+    type: text_textarea
+    weight: 1
     region: content
     settings:
-      size: 60
+      rows: 2
       placeholder: ''
     third_party_settings:
       maxlength:
@@ -44,7 +37,7 @@ content:
         maxlength_js_enforce: false
   field_title:
     type: string_textfield
-    weight: 2
+    weight: 0
     region: content
     settings:
       size: 60
@@ -54,13 +47,6 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
-  info:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
 hidden:
-  langcode: true
+  created: true
+  status: true

@@ -1,12 +1,82 @@
 <?php
+/**
+ * Theme Preprocess Functions
+ *
+ * - 01 - Imports
+ * - 02 - Block
+ * - 03 - Theme Suggestions
+ */
+
+
+/*------------------------------------*\
+  01 - Imports
+\*------------------------------------*/
+
+use Drupal\block\Entity\Block;
+
+
+
+
+/*------------------------------------*\
+  02 - Block
+\*------------------------------------*/
 
 /**
+ * Block Preprocess
+ * Attempts to add or edit data on all Block entities.
+ * - Implements template_preprocess_block()
+ * - @param $variables
+ * - @return void
+ */
+function surf_main_preprocess_block(&$variables) {
+  if (!empty($variables['elements']['content']['#block_content'])) {
+    /** @var Block $block */
+    $block = $variables['elements']['content']['#block_content'];
+    $function = __FUNCTION__ . '_' . $block->bundle();
+
+    // Theme suggestions update
+    if (function_exists($function)) {
+      $function($variables);
+    }
+
+    // Block type
+    $variables['block_type'] = $block->bundle();
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  03 - Theme Suggestions
+\*------------------------------------*/
+
+/**
+ * Page Suggestions Alter
  * Implements hook_theme_suggestions_page_alter().
+ * @param array $suggestions
+ * @param array $variables
+ * @return void
  */
 function surf_main_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-    $node = \Drupal::routeMatch()->getParameter('node');
+  $node = \Drupal::routeMatch()->getParameter('node');
 
-    if ($node instanceof \Drupal\node\NodeInterface) {
-        $suggestions[] = 'page__' . $node->bundle();
-    }
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Block Theme Suggestions
+ * Attempts to update the template suggestions.
+ * - Implements template_theme_suggestions_HOOK_alter().
+ * - @param array $suggestions
+ * - @param array $variables
+ * - @return void
+ */
+function surf_main_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
 }

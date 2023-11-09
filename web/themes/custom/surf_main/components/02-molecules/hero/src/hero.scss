@@ -1,0 +1,73 @@
+//
+// Component - Molecule - Hero
+//
+// - 01 - Imports
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+//@use '../../../00-base/partials/animations';
+//@use '../../../00-base/partials/breakpoints';
+//@use '../../../00-base/partials/buttons';
+@use '../../../00-base/partials/calculations';
+
+
+
+
+//------------------------------------
+//  02 - Content Right
+//------------------------------------
+
+.m-hero.m-hero--content-right {
+  max-block-size: 900px;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+  }
+
+  .m-hero__media {
+    z-index: var(--surf-zindex-default);
+  }
+
+  .m-hero__media,
+  .m-hero__media *:not(img) {
+    block-size: 100%;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+  }
+
+  .m-hero__media img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .m-hero__content {
+    color: var(--surf-color-white);
+    margin-inline: auto;
+    max-inline-size: var(--surf-width-default);
+    padding-block: 144px;
+    position: relative;
+    z-index: var(--surf-zindex-over);
+  }
+
+  .m-hero__title {
+    background: url('img/background-particles-black.png') no-repeat right bottom, var(--surf-gradient-dg-white);
+    color: var(--surf-color-white);
+    font-family: var(--surf-font-sans-alt);
+    font-size: calculations.rem(260px);
+    font-weight: var(--surf-fw-book);
+    line-height: 0.75;
+    margin-inline-start: auto;
+    max-inline-size: 674px;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

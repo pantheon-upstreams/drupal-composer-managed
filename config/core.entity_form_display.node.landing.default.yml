@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.landing.field_p_content
+    - field.field.node.landing.field_p_hero
     - node.type.landing
   module:
     - field_group
@@ -60,12 +61,22 @@ content:
     third_party_settings: {  }
   field_p_content:
     type: layout_paragraphs
-    weight: 5
+    weight: 6
     region: content
     settings:
       preview_view_mode: default
       nesting_depth: 0
       require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+  field_p_hero:
+    type: layout_paragraphs
+    weight: 5
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
       empty_message: ''
     third_party_settings: {  }
   path:

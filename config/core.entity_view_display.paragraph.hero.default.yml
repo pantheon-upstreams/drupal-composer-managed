@@ -1,18 +1,16 @@
-uuid: 0b6f1655-9a46-4dac-8f23-9e55f74dedb7
+uuid: 4eddea2f-ac67-48c7-a9c6-fb598b220936
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.hero
-    - field.field.block_content.hero.field_ref_media_single
-    - field.field.block_content.hero.field_style_type
-    - field.field.block_content.hero.field_text_formatted
-    - field.field.block_content.hero.field_title
+    - field.field.paragraph.hero.field_ref_media_single
+    - field.field.paragraph.hero.field_text
+    - field.field.paragraph.hero.field_title
+    - paragraphs.paragraphs_type.hero
   module:
-    - options
     - text
-id: block_content.hero.default
-targetEntityType: block_content
+id: paragraph.hero.default
+targetEntityType: paragraph
 bundle: hero
 mode: default
 content:
@@ -23,21 +21,14 @@ content:
       view_mode: hero_default
       link: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
-  field_style_type:
-    type: list_key
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_text_formatted:
+  field_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_title:
     type: string
@@ -48,5 +39,4 @@ content:
     weight: 2
     region: content
 hidden:
-  langcode: true
   search_api_excerpt: true
