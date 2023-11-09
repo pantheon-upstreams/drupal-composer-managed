@@ -13,3 +13,18 @@ props:
     research_heading:
       title: Page Heading
       type: string
+    research_media:
+      title: Primary Media
+      type: string
+    research_key_experiments:
+      title: Key Experiments
+      type: string
+    research_overview:
+      title: Overview
+      type: string
+    research_area:
+      title: Research Area
+      type: string
+    research_content:
+      title: Content
+      type: string

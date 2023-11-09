@@ -1,15 +1,15 @@
 {#
 /**
  * @file
- * Component for Person (Node)
+ * Component for Experiment (Node)
  *
  * Available props:
- * - page_attributes: [array] Any parent tag attributes.
- * - page_heading: [string]
- * - page_teaser: [string]
- * - person_phone: [string]
- * - person_body: [string]
- * - person_media: [string]
+ * - experiment_attributes: [array] Any parent tag attributes.
+ * - experiment_heading: [string]
+ * - experiment_header_teaser: [string]
+ * - experiment_media: [string]
+ * - experiment_overview: [string]
+ * - experiment_content: [array]
  *
  */
 #}
@@ -52,7 +52,22 @@
 
       {# Additional Content #}
       <div class="o-experiment__additional-content">
-        [ADDITIONAL CONTENT]
+        <div class="o-experiment__in-the-news">
+
+          {% embed 'surf_main:left-hook' with {
+            left_hook_attributes: create_attribute(),
+          } only %}
+          {% endembed %}
+
+          {% embed 'surf_main:heading' with {
+            heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+            heading_text: research_area ~ ' In the News',
+            heading_level: '2',
+          } only %}
+          {% endembed %}
+
+          {{ drupal_view('in_the_news', 'experiment') }}
+        </div>
       </div>
     </div>
 

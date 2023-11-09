@@ -1,10 +1,10 @@
 //
-// Component - Organism - Research Node
+// Component - Organism - Experiment Node
 //
 // - 01 - Imports
 // - 02 - General
 // - 03 - Modifiers
-// - 04 - Component Overrides
+// - 04 - Context Overrides
 //
 
 
@@ -40,6 +40,55 @@
   }
 }
 
+.o-experiment__main-content,
+.lpb-component-list {
+  > * {
+    margin-inline: auto;
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(60px);
+  }
+}
+
+.o-experiment__additional-content {
+  margin-block-start: rem(32px);
+
+  @include bp-min(medium) {
+    margin-block-start: rem(60px);
+  }
+
+  @include bp-min(large) {
+    margin-block-start: rem(80px);
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+
+    @include bp-min(large) {
+      margin-block-end: rem(80px);
+    }
+  }
+}
+
+.o-experiment__in-the-news {
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+
+    @include bp-min(large) {
+      margin-block-end: rem(68px);
+    }
+  }
+}
+
 
 
 //------------------------------------
@@ -55,23 +104,23 @@
 
 
 //------------------------------------
-//  04 - Component Overrides
+//  04 - Context Overrides
 //------------------------------------
 //
 
 .o-experiment__main-content,
 .lpb-component-list {
-  > * {
-    margin-inline: auto;
-  }
-
-  > :not( :last-child ) {
-    margin-block-end: rem(60px);
-  }
 
   .layout--twocol-section {
     max-width: rem(888px);
     margin-inline: auto;
+  }
+
+  .m-gallery {
+    margin-block: rem(40px);
+    @include bp-min(medium) {
+      margin-block: rem(60px);
+    }
   }
 
   .m-pullquote.m-pullquote--medium {

@@ -1,15 +1,16 @@
 {#
 /**
  * @file
- * Component for Person (Node)
+ * Component for Research (Node)
  *
  * Available props:
- * - page_attributes: [array] Any parent tag attributes.
- * - page_heading: [string]
- * - page_teaser: [string]
- * - person_phone: [string]
- * - person_body: [string]
- * - person_media: [string]
+ * - research_attributes: [array] Any parent tag attributes.
+ * - research_heading: [string]
+ * - research_media: [string]
+ * - research_key_experiments: [array]
+ * - research_overview: [string]
+ * - research_area: [string]
+ * - research_content: [array]
  *
  */
 #}
@@ -44,50 +45,72 @@
 
     <div class="o-research-wrapper">
 
-      {# Overview #}
-      <div class="o-research__overview">
-      {% embed 'surf_main:pullquote' with {
-        pullquote_attributes: create_attribute(),
-        pullquote_quote: research_overview,
-        pullquote_type: 'large',
-      } only %}
-      {% endembed %}
-      </div>
-
       {# Main Content #}
       <div class="o-research__main-content">
+
+        {# Overview #}
+        <div class="o-research__overview">
+          {% embed 'surf_main:pullquote' with {
+            pullquote_attributes: create_attribute(),
+            pullquote_quote: research_overview,
+            pullquote_type: 'large',
+          } only %}
+          {% endembed %}
+        </div>
+
         {{ research_content }}
+
       </div>
-
-      {# Sidebar #}
-      <aside class="o-research__sidebar">
-
-        {% if research_sidebar_icon %}
-          <div class="o-research__sidebar-icon">
-            {% embed 'surf_main:media' with {
-              media_attributes: create_attribute(),
-              media: research_sidebar_icon,
-            } only %}
-            {% endembed %}
-          </div>
-        {% endif %}
-
-        {% if research_key_facts %}
-          <div class="o-research__keyfacts">
-            {% embed 'surf_main:component-list' with {
-              component_list_heading: 'Key Facts',
-              component_list_items: research_key_facts,
-              component_list_attributes: create_attribute(),
-            } only %}
-            {% endembed %}
-          </div>
-        {% endif %}
-
-      </aside>
 
       {# Additional Content #}
       <div class="o-research__additional-content">
-        [ADDITIONAL CONTENT]
+
+        <div class="o-research__key-experiments">
+
+          {% embed 'surf_main:left-hook' with {
+            left_hook_attributes: create_attribute(),
+          } only %}
+          {% endembed %}
+
+          {% embed 'surf_main:heading' with {
+            heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+            heading_text: 'Key Experiments',
+            heading_level: '2',
+          } only %}
+          {% endembed %}
+
+          {% embed 'surf_main:component-list' with {
+            component_list_attributes: create_attribute({'class': ['o-component-list__heading','o-component-list--teaser-2-col']}),
+            component_list_items: research_key_experiments,
+          } only %}
+
+            {% block list_items %}
+              {% for item in component_list_items %}
+                <li class="o-component-list__item">
+                  {{ item }}
+                </li>
+              {% endfor %}
+            {% endblock %}
+          {% endembed %}
+
+        </div>
+
+        <div class="o-research__in-the-news">
+
+          {% embed 'surf_main:left-hook' with {
+            left_hook_attributes: create_attribute(),
+          } only %}
+          {% endembed %}
+
+          {% embed 'surf_main:heading' with {
+            heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+            heading_text: research_area ~ ' In the News',
+            heading_level: '2',
+          } only %}
+          {% endembed %}
+
+          {{ drupal_view('in_the_news', 'research') }}
+        </div>
       </div>
     </div>
 
