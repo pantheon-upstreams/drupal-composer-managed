@@ -46,8 +46,22 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
-<div {{ attributes.addClass(classes) }}>
-    {% block content %}
-        {{ content }}
-    {% endblock %}
-</div>
+{% set rendered_content = content|without(
+    'field_ref_media_single',
+    'field_text',
+    'field_title'
+) %}
+
+{{ rendered_content }}
+
+{% include 'surf_main:hero' with {
+    attributes,
+    hero_attributes: create_attribute({'class': classes}),
+    hero_media: content.field_ref_media_single|field_value,
+    hero_text: content.field_text|field_value,
+    hero_title: content.field_title|field_value,
+    hero_type: style_options['hero_type'],
+} only %}
+
+{% if style_options['hero_type'] == 'content-right' %}
+{% endif %}

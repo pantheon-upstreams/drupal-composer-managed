@@ -1,22 +1,24 @@
-uuid: d0dfe06f-1ae5-4c1a-ad3d-6a88b13ab08c
+uuid: 418a84fd-bbcb-407a-ad20-1874da26f8f5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
-    - paragraphs.paragraphs_type.card
+    - filter.format.simple_html
+    - paragraphs.paragraphs_type.hero
   module:
     - text
-id: paragraph.card.field_text
+id: paragraph.hero.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: card
-label: Text
+bundle: hero
+label: Content
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - simple_html
 field_type: text_long

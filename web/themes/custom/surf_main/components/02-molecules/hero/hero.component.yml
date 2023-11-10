@@ -1,0 +1,31 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Hero
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - hero_media
+    - hero_title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    hero_attributes:
+      title: Attributes
+      type: string
+    hero_media:
+      title: Media
+      type: array
+    hero_text:
+      title: Text
+      type: array
+    hero_title:
+      title: Title
+      type: string
+    hero_type:
+      title: Type
+      type: string
+      enum:
+        - content-left
+        - content-right
+        - content-top

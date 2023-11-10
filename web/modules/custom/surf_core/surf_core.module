@@ -23,3 +23,22 @@ function surf_core_webform_handler_info_alter(array &$handlers) {
     $handlers['user_registration']['class'] =  \Drupal\surf_core\Plugin\WebformHandler\UserRegistrationWebformHandler::class;
   }
 }
+
+/**
+ * Preprocess Paragraph
+ * Implements theme_preprocess_paragraph().
+ * @param $variables
+ * @return void
+ */
+function surf_main_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $behaviorSettings = $paragraph->getAllBehaviorSettings();
+
+  // Set style option behaviors as a logical template variable.
+  if (!empty($behaviorSettings['style_options'])) {
+    foreach ($behaviorSettings['style_options'] as $key => $style) {
+      $variables['style_options'][$key] = $style['property'];
+    }
+  }
+}

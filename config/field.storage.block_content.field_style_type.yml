@@ -1,0 +1,30 @@
+uuid: 5bc56600-b583-4062-9449-1cf7c7a92ebf
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_style_type
+field_name: field_style_type
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: content_right
+      label: 'Content Right'
+    -
+      value: content_left
+      label: 'Content Left'
+    -
+      value: content_top
+      label: 'Content Top'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
