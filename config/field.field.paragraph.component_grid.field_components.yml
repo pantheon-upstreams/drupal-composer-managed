@@ -1,19 +1,19 @@
-uuid: 38649c1e-8626-4aee-8369-9f29621951d2
+uuid: 44a2f7f8-4118-4d11-a718-42e30da2c765
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_key_facts
-    - node.type.experiment_research
+    - field.storage.paragraph.field_components
     - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.component_grid
   module:
     - entity_reference_revisions
-id: node.experiment_research.field_key_facts
-field_name: field_key_facts
-entity_type: node
-bundle: experiment_research
-label: 'Key Facts [legacy]'
-description: 'Only used for research.'
+id: paragraph.component_grid.field_components
+field_name: field_components
+entity_type: paragraph
+bundle: component_grid
+label: Components
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -26,60 +26,63 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       accordion:
-        weight: 35
+        weight: 21
         enabled: false
       accordion_item:
-        weight: 36
+        weight: 22
         enabled: false
       callout:
-        weight: 22
+        weight: 23
         enabled: true
       card:
-        weight: 38
+        weight: 24
         enabled: false
       card_list:
-        weight: 39
+        weight: 25
+        enabled: false
+      component_grid:
+        weight: 26
         enabled: false
       gallery:
-        weight: 44
+        weight: 27
         enabled: false
       header:
-        weight: 46
+        weight: 28
         enabled: false
       media:
-        weight: 51
+        weight: 29
         enabled: false
       person:
-        weight: 54
+        weight: 30
         enabled: false
       persons_list:
-        weight: 55
+        weight: 31
         enabled: false
       pullquote:
-        weight: 56
+        weight: 32
         enabled: false
       resource_file:
-        weight: 57
+        weight: 34
         enabled: false
       resource_link:
-        weight: 58
+        weight: 35
         enabled: false
       resources_list:
-        weight: 59
+        weight: 33
         enabled: false
       schedule_item:
-        weight: 61
+        weight: 36
         enabled: false
       section:
-        weight: 62
+        weight: 37
         enabled: false
       teaser_list:
-        weight: 63
+        weight: 38
         enabled: false
       text:
-        weight: 64
+        weight: 39
         enabled: false
       view:
-        weight: 38
+        weight: 40
         enabled: false
 field_type: entity_reference_revisions

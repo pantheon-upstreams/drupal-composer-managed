@@ -1,0 +1,35 @@
+uuid: e4f0bcb5-d6ee-437e-b4bb-be5afa6ed916
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.component_grid.field_components
+    - paragraphs.paragraphs_type.component_grid
+  module:
+    - paragraphs
+id: paragraph.component_grid.default
+targetEntityType: paragraph
+bundle: component_grid
+mode: default
+content:
+  field_components:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

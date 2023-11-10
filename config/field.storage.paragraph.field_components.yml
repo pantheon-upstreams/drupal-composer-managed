@@ -1,14 +1,13 @@
-uuid: 1a2eeb86-62b3-46ba-8ef9-7025101c83b0
+uuid: 5f5495b5-95e8-44c6-9fc6-51c4830694a8
 langcode: en
 status: true
 dependencies:
   module:
-    - block_content
     - entity_reference_revisions
     - paragraphs
-id: block_content.field_content
-field_name: field_content
-entity_type: block_content
+id: paragraph.field_components
+field_name: field_components
+entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph

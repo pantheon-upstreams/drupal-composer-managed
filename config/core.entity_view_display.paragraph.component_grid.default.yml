@@ -1,18 +1,18 @@
-uuid: 59d6f660-3ff3-4544-bbdf-604ed20eb4be
+uuid: 65b4448c-7744-4e99-93b1-ced9930ca909
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.custom_block_content
-    - field.field.block_content.custom_block_content.field_content
+    - field.field.paragraph.component_grid.field_components
+    - paragraphs.paragraphs_type.component_grid
   module:
     - entity_reference_revisions
-id: block_content.custom_block_content.default
-targetEntityType: block_content
-bundle: custom_block_content
+id: paragraph.component_grid.default
+targetEntityType: paragraph
+bundle: component_grid
 mode: default
 content:
-  field_content:
+  field_components:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
@@ -22,5 +22,4 @@ content:
     weight: 0
     region: content
 hidden:
-  langcode: true
   search_api_excerpt: true

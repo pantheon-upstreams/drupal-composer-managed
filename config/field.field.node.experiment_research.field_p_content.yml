@@ -7,6 +7,8 @@ dependencies:
     - node.type.experiment_research
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.component_grid
+    - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
@@ -31,6 +33,8 @@ settings:
   handler_settings:
     target_bundles:
       callout: callout
+      gallery: gallery
+      component_grid: component_grid
       section: section
       text: text
       accordion: accordion
@@ -56,9 +60,12 @@ settings:
       card_list:
         weight: 39
         enabled: false
+      component_grid:
+        weight: 26
+        enabled: true
       gallery:
         weight: 25
-        enabled: false
+        enabled: true
       header:
         weight: 46
         enabled: true

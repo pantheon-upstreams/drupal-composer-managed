@@ -1,20 +1,18 @@
-uuid: f9eed1ef-f51a-45cc-8e5c-60ae83d7b015
+uuid: 7af6749b-c3d4-4eb2-b9b3-4f22312efa4d
 langcode: en
 status: true
 dependencies:
   module:
-    - entity_reference_revisions
     - node
-    - paragraphs
 id: node.field_key_experiments
 field_name: field_key_experiments
 entity_type: node
-type: entity_reference_revisions
+type: entity_reference
 settings:
-  target_type: paragraph
-module: entity_reference_revisions
+  target_type: node
+module: core
 locked: false
-cardinality: 1
+cardinality: 2
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

@@ -21,7 +21,6 @@ dependencies:
     - layout_paragraphs
     - maxlength
     - media_library
-    - paragraphs
     - path
     - scheduler
     - smart_date
@@ -46,7 +45,6 @@ third_party_settings:
     group_research:
       children:
         - field_research_area
-        - field_key_facts
         - field_key_experiments
       label: Research
       region: content
@@ -114,7 +112,7 @@ third_party_settings:
       label: Publishing
       region: content
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -131,7 +129,7 @@ third_party_settings:
       label: Authoring
       region: content
       parent_name: ''
-      weight: 10
+      weight: 11
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -172,7 +170,7 @@ content:
     third_party_settings: {  }
   field_extra_content:
     type: layout_paragraphs
-    weight: 13
+    weight: 14
     region: content
     settings:
       preview_view_mode: default
@@ -181,42 +179,14 @@ content:
       empty_message: ''
     third_party_settings: {  }
   field_key_experiments:
-    type: paragraphs
-    weight: 15
+    type: entity_reference_autocomplete
+    weight: 26
     region: content
     settings:
-      title: 'Key Experiment'
-      title_plural: 'Key Experiments'
-      edit_mode: closed
-      closed_mode: preview
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: button
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: '0'
-        duplicate: '0'
-    third_party_settings: {  }
-  field_key_facts:
-    type: paragraphs
-    weight: 14
-    region: content
-    settings:
-      title: 'Key Fact'
-      title_plural: 'Key Facts'
-      edit_mode: closed
-      closed_mode: preview
-      autocollapse: none
-      closed_mode_threshold: 0
-      add_mode: button
-      form_display_mode: default
-      default_paragraph_type: _none
-      features:
-        add_above: '0'
-        collapse_edit_all: '0'
-        duplicate: '0'
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_media:
     type: media_library_widget
@@ -246,7 +216,7 @@ content:
         maxlength_js_enforce: false
   field_p_content:
     type: layout_paragraphs
-    weight: 12
+    weight: 13
     region: content
     settings:
       preview_view_mode: default
@@ -280,7 +250,7 @@ content:
         maxlength_js_enforce: false
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -327,6 +297,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_key_facts: true
   langcode: true
   promote: true
   sticky: true
