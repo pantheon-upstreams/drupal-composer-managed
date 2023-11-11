@@ -10,3 +10,24 @@ props:
     event_attributes:
       title: Attributes
       type: string
+    event_heading:
+        title: Heading
+        type: string
+    event_media:
+        title: Media
+        type: array
+    event_summary:
+        title: Summary
+        type: string
+    event_body:
+        title: Body
+        type: array
+    event_dates:
+        title: Event Dates
+        type: string
+    event_link_text:
+        title: Link Text
+        type: string
+    event_link_url:
+        title: Link URL
+        type: string

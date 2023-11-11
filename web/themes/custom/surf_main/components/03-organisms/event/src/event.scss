@@ -37,22 +37,27 @@
   }
 }
 
-.o-event__content-wrapper,
 .o-event__inner-wrapper {
-  display: flex;
-  flex-direction: column;
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+    @include bp-min(medium) {
+      margin-block-end: rem(40px);
+    }
+    @include bp-min(large) {
+      margin-block-end: rem(60px);
+    }
+  }
 }
 
-.o-event__inner-wrapper {
-  gap: rem(28px);
-  @include bp-min(medium) {
-    gap: rem(40px);
-  }
-  @include bp-min(large) {
-    gap: rem(60px);
-  }
-  @include bp-min(xxlarge) {
-    gap: rem(28px);
+.o-event__body-wrapper {
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+    @include bp-min(medium) {
+      margin-block-end: rem(40px);
+    }
+    @include bp-min(large) {
+      margin-block-end: rem(28px);
+    }
   }
 }
 
@@ -65,24 +70,22 @@
 }
 
 .o-event__dates {
-  color: var(--surf-color-black-alt);
-  font-family: var(--surf-font-sans);
-  font-size: rem(18px);
-  font-weight: var(--surf-font-weight-bold);
-  line-height: 1.44;
-  @include bp-min(medium) {
-    font-size: rem(24px);
-    line-height: 1.4;
+  p {
+    color: var(--surf-color-black-alt);
+    font-family: var(--surf-font-sans);
+    font-size: var(--surf-fs-18-24);
+    font-weight: var(--surf-fw-bold);
+    line-height: var(--surf-lh-label);
   }
 }
 
-.o-event__overview {
+.o-event__summary {
   color: var(--surf-color-black-alt);
   font-family: var(--surf-font-sans-alt);
   font-size: var(--surf-fs-40-64);
-  font-weight: var(--surf-font-weight-medium);
+  font-weight: var(--surf-fw-medium);
   letter-spacing: rem(0.6px);
-  line-height: 1;
+  line-height: var(--surf-lh-base);
   margin-bottom: rem(28px);
   @include bp-min(medium) {
     letter-spacing: rem(1.28px);
@@ -91,8 +94,14 @@
 
 .o-event__content-grid {
   display: grid;
-  gap: 60px;
+  gap: 32px;
   grid-template-columns: 1fr;
+  @include bp-min(medium) {
+    gap: 40px;
+  }
+  @include bp-min(large) {
+    gap: 60px;
+  }
   @include bp-min(xlarge) {
     grid-template-columns: 1fr 400px;
 
@@ -115,6 +124,8 @@
 
 .o-event {
   .a-left-hook {
-    width: 65%;
+    @include bp-min(xlarge) {
+      width: 65%;
+    }
   }
 }

@@ -12,24 +12,24 @@
 
 {%
   set rendered_fields = [
-  'body',
-  'field_overview',
-  'label',
+  'registration_links',
   'field_dates',
-  'field_media_primary',
+  'body',
   'field_link',
+  'field_overview',
+  'field_media_primary',
 ]
 %}
 
 {% embed 'surf_main:event' with {
   event_attributes: create_attribute({'class': ['o-event--full']}),
-  event_heading: label,
-  event_media: content.field_media_primary|field_value,
-  event_overview: content.field_overview|field_value,
-  event_body: content.body|field_value,
-  event_dates: content.field_dates|field_value,
+  event_heading: label.0['#context'].value,
+  event_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
+  event_summary: content.field_overview.0 ? content.field_overview|field_value,
+  event_body: content.body.0 ? content.body|field_value,
+  event_dates: content.field_dates.0 ? content.field_dates|field_value,
   event_link_text: content.field_link.0['#title'] ? content.field_link.0['#title'] : 'Visit Website',
-  event_link_url: content.field_link.0['#url_title'],
+  event_link_url: content.field_link.0 ? content.field_link.0['#url_title'],
   title_suffix: title_suffix,
   attributes,
 } only %}

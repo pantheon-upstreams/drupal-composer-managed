@@ -74,7 +74,7 @@
 //------------------------------------
 
 .o-header {
-  &.o-header--type-color {
+  &.o-header--color {
     @include bp-min(medium) {
       background-image: url('img/header-bkg-color.png');
       background-position: top right;
@@ -94,7 +94,7 @@
     }
   }
 
-  &.o-header--type-grid {
+  &.o-header--grid {
     @include bp-min(large) {
       background-image: url('img/header-bkg-grid.png');
       background-position: top right;
@@ -102,7 +102,7 @@
     }
   }
 
-  &.o-header--type-ripple {
+  &.o-header--ripple {
     @include bp-min(large) {
       background-image: url('img/header-bkg-ripple.png');
       background-position: top right;
@@ -110,7 +110,7 @@
     }
   }
 
-  &.o-header--type-img {
+  &.o-header--img {
     .o-header__content {
       background-color: var(--surf-color-white);
       margin-block-start: rem(-143px);
@@ -121,4 +121,5 @@
     }
   }
 }
+
 
