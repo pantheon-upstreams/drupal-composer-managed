@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Component for Component List
+ *
+ * Available props:
+ * - component_grid_attributes: [array] Any parent tag attributes.
+ * - component_grid_heading: [string]
+ * - component_grid_items: [array]
+ *
+ */
+#}
+
+{%
+  set classes = [
+  'o-component-grid',
+  'o-component-grid--' ~ grid_type,
+  'o-component-grid--gap-' ~ grid_gap,
+]
+%}
+
+<article {{ component_grid_attributes.addClass(classes).merge(attributes) }}>
+
+  {% if component_grid_heading %}
+
+    {% embed 'surf_main:heading' with {
+      heading_attributes: create_attribute({'class': ['o-component-grid__heading']}),
+      heading_text: component_grid_heading,
+      heading_level: '3',
+    } only %}
+    {% endembed %}
+
+  {% endif %}
+  {% if component_grid_items or test %}
+    <ul class="o-component-grid__items">
+      {% block grid_items %}
+          {% for item in component_grid_items %}
+            <li class="o-component-grid__item">
+              {{ item }}
+            </li>
+          {% endfor %}
+      {% endblock %}
+    </ul>
+  {% endif %}
+
+</article>

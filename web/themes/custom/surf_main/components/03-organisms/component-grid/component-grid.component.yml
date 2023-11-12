@@ -1,5 +1,5 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Component List
+name: Component Grid
 status: experimental
 group: Organisms
 props:
@@ -7,12 +7,12 @@ props:
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    component_list_attributes:
+    component_grid_attributes:
       title: Attributes
       type: string
-    component_list_heading:
+    component_grid_heading:
       title: Component List Heading
       type: string
-    component_list_items:
+    component_grid_items:
       title: Component List Items
       type: array

@@ -1,0 +1,61 @@
+//
+// Component - Organism - Component Grid
+//
+// - 01 - Imports
+// - 02 - General
+
+//
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.o-component-grid__items {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+
+  .o-component-grid.o-component-grid--gap-sm & {
+    gap: 32px;
+  }
+
+  .o-component-grid.o-component-grid--gap-md & {
+    gap: 48px;
+  }
+}
+
+.o-component-grid__item {
+  > * {
+    height: 100%;
+  }
+}
+
+.o-component-grid.o-component-grid--col-2 {
+
+  .o-component-grid__items {
+    @include bp-min(xlarge) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.o-component-grid.o-component-grid--col-3 {
+
+  .o-component-grid__items {
+    @include bp-min(xlarge) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
