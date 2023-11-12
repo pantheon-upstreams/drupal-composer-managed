@@ -28,6 +28,25 @@
 #
 
 options:
+  callout_type:
+    plugin: property
+    label: 'Callout Type'
+    default: gray
+    options:
+      blue:
+        label: Blue
+      gray:
+        label: Gray
+      navy:
+        label: Navy
+      white:
+        label: White
+      factoid:
+        label: Factoid
+      img-left:
+        label: Image Left
+      img-right:
+        label: Image Right
   hero_type:
     plugin: property
     label: 'Hero Type'
@@ -39,9 +58,61 @@ options:
         label: Content Left
       content-top:
         label: Content Top
-
+  grid_type:
+    plugin: property
+    label: 'Grid Type'
+    default: col-2
+    options:
+      col-2:
+        label: 2-Columns
+      col-3:
+        label: 3-Columns
+  grid_gap:
+    plugin: property
+    label: 'Grid Gap'
+    default: lg
+    options:
+      sm:
+        label: Small (32px)
+      md:
+        label: Medium (48px)
+      lg:
+        label: Large (60px)
+  link_highlight_type:
+    plugin: property
+    label: 'Link Highlight Type'
+    default: img-left
+    options:
+      img-left:
+        label: Image Left
+      img-right:
+        label: Image Right
+  pullquote_type:
+    plugin: property
+    label: 'Pullquote Type'
+    default: lg
+    options:
+      sm:
+        label: Small
+      md:
+        label: Medium
+      lg:
+        label: Large
 contexts:
   paragraphs:
+    callout:
+      options:
+        callout_type: true
+    component_grid:
+      options:
+        grid_type: true
+        grid_gap: true
     hero:
       options:
         hero_type: true
+    link_highlight:
+      options:
+        link_highlight_type: true
+    pullquote:
+      options:
+        pullquote_type: true

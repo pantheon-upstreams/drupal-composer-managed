@@ -1,0 +1,96 @@
+//
+// Component - Molecule - Link Highlight
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Types
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+//
+
+.m-link-highlight {
+  @include bp-min(small) {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 32px;
+  }
+}
+
+.m-link-highlight__media {
+  flex-shrink: 0;
+  margin-block-end: rem(32px);
+  width: 100%;
+  @include bp-min(small) {
+    width: 33%;
+  }
+}
+
+.m-link-highlight__link {
+  margin-block-end: rem(9px);
+  @include bp-min(medium) {
+    margin-block-end: rem(16px);
+  }
+
+  .a-button.a-button--primary.a-button--white {
+    font-size: var(--surf-fs-18-24-32-40);
+    padding-block-start: 0;
+    padding-inline-start: 0;
+
+    &:hover {
+      background-color: var(--surf-color-white);
+    }
+  }
+}
+
+.m-link-highlight__text {
+  font-size: var(--surf-fs-16-18-24);
+  line-height: var(--surf-lh-label);
+}
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+.m-link-highlight--img-left {
+  .m-link-highlight__media {
+    order: 1;
+  }
+
+  .m-link-highlight__content {
+    order: 2;
+  }
+}
+
+.m-link-highlight.m-link-highlight--img-right {
+  .m-link-highlight__media {
+    order: 1;
+  }
+
+  .m-link-highlight__content {
+    order: 2;
+  }
+  @include bp-min(small) {
+    .m-link-highlight__media {
+      order: 2;
+    }
+
+    .m-link-highlight__content {
+      order: 1;
+    }
+  }
+}

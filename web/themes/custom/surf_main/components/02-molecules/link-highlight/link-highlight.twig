@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Component for Link Highlight
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - link_highlight_attributes: [string] Any additional attributes needing to be specified.
+ * - link_highlight_media: [array] Media element used as either a background or primary media.
+ * - link_highlight_text: [string].
+ * - link_highlight_button_text: [string].
+ * - link_highlight_button_url: [string].
+ * - link_highlight_type: [string] Options include 'img-left', 'img-right'.
+ */
+#}
+
+{% set classes = [
+  'm-link-highlight',
+  'm-link-highlight--' ~ link_highlight_type,
+] %}
+
+<div {{ link_highlight_attributes.addClass(classes).merge(attributes) }}>
+  <div class="m-link-highlight__media">
+    {{ link_highlight_media }}
+  </div>
+
+  <div class="m-link-highlight__content">
+  <div class="m-link-highlight__link">
+      {% include 'surf_main:button' with {
+        button_attributes: create_attribute(),
+        button_color: 'white',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'large',
+        button_style: 'primary',
+        button_suffix: 'icon-arrow-right',
+        button_title: link_highlight_button_text,
+        button_url: link_highlight_button_url,
+      } only %}
+  </div>
+
+    {% if link_highlight_text %}
+      <div class="m-link-highlight__text">
+        {{- link_highlight_text -}}
+      </div>
+    {% endif %}
+  </div>
+</div>
