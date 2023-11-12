@@ -1,11 +1,11 @@
-uuid: b964f656-95f6-46cd-8924-0bd3273c6845
+uuid: 3d340fbc-7c33-4fc2-8f8c-0c21aa6285a1
 langcode: en
 status: true
 dependencies:
   module:
     - style_options
-id: callout
-label: Callout
+id: link_highlight
+label: 'Link Highlight'
 icon_uuid: null
 icon_default: null
 description: ''

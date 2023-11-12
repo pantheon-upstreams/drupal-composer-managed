@@ -1,10 +1,14 @@
 uuid: f80fac08-980b-40a1-99dd-5929626a0a8c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - style_options
 id: pullquote
 label: 'Pull Quote'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  style_options:
+    enabled: true

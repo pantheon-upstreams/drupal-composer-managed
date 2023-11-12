@@ -1,21 +1,20 @@
-uuid: d84714b9-69b8-4591-a383-6c2f1bcceed2
+uuid: 5a2a8c31-b8db-4860-957f-f2a0f34c9272
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.callout.field_callout_theme
-    - field.field.paragraph.callout.field_link
-    - field.field.paragraph.callout.field_media
-    - field.field.paragraph.callout.field_text
-    - field.field.paragraph.callout.field_title
-    - paragraphs.paragraphs_type.callout
+    - field.field.paragraph.link_highlight.field_link
+    - field.field.paragraph.link_highlight.field_media
+    - field.field.paragraph.link_highlight.field_text
+    - paragraphs.paragraphs_type.link_highlight
   module:
     - link
+    - maxlength
     - media_library
     - text
-id: paragraph.callout.default
+id: paragraph.link_highlight.default
 targetEntityType: paragraph
-bundle: callout
+bundle: link_highlight
 mode: default
 content:
   field_link:
@@ -35,21 +34,16 @@ content:
     third_party_settings: {  }
   field_text:
     type: text_textarea
-    weight: 2
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_title:
-    type: string_textfield
     weight: 1
     region: content
     settings:
-      size: 60
+      rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
 hidden:
   created: true
-  field_callout_theme: true
   status: true

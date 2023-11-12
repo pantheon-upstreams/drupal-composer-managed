@@ -1,30 +1,19 @@
-<<<<<<<< HEAD:config/field.storage.paragraph.field_components.yml
 uuid: 5f5495b5-95e8-44c6-9fc6-51c4830694a8
-========
-uuid: 89710c72-e853-46f6-a021-c78ddb940519
->>>>>>>> b809118a16ed8ff0446c1f1f15b5585f2a768263:config/field.storage.node.field_p_hero.yml
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
-    - node
     - paragraphs
-<<<<<<<< HEAD:config/field.storage.paragraph.field_components.yml
 id: paragraph.field_components
 field_name: field_components
 entity_type: paragraph
-========
-id: node.field_p_hero
-field_name: field_p_hero
-entity_type: node
->>>>>>>> b809118a16ed8ff0446c1f1f15b5585f2a768263:config/field.storage.node.field_p_hero.yml
 type: entity_reference_revisions
 settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

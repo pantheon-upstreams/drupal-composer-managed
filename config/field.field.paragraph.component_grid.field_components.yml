@@ -49,6 +49,12 @@ settings:
       header:
         weight: 28
         enabled: false
+      hero:
+        weight: 30
+        enabled: false
+      link_highlight:
+        weight: 32
+        enabled: false
       media:
         weight: 29
         enabled: false
