@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Form
+status: experimental
+group: Molecules
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    form_attributes:
+      title: Attributes
+      type: string
+    form_children:
+      title: Callout Heading
+      type: string
+    form_type:
+      title: Type
+      type: string
+      enum:
+        - block
+        - inline

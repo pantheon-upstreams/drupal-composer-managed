@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Component for Form
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - form_attributes: [array] Any parent tag attributes.
+ * - form_children: [array]
+ *
+ */
+#}
+
+{% set classes = [
+  'm-form',
+  form_type ? 'm-form--' ~ form_type,
+] %}
+
+<form action="" {{ form_attributes.addClass(classes).merge(attributes) }}>
+  {{ form_children }}
+</form>
