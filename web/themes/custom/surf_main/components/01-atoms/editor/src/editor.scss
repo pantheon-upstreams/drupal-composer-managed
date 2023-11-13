@@ -31,7 +31,6 @@
 .a-editor {
   @include typography.general();
   @include typography.bold();
-  margin-inline: auto;
   max-inline-size: var(--surf-width-small);
 }
 
