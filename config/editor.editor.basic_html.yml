@@ -11,6 +11,7 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
+      - sourceEditing
       - style
       - '|'
       - heading
@@ -20,6 +21,7 @@ settings:
       - strikethrough
       - superscript
       - subscript
+      - removeFormat
       - '|'
       - bulletedList
       - numberedList
@@ -41,6 +43,8 @@ settings:
     ckeditor5_list:
       reversed: true
       startIndex: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
     ckeditor5_style:
       styles:
         -
@@ -55,6 +59,18 @@ settings:
         -
           label: 'Black Button with Arrow Right'
           element: '<a class="a-button a-button--large a-button--black a-button--icon-arrow-right">'
+        -
+          label: 'Heading 2 - Large'
+          element: '<h2 class="large">'
+        -
+          label: 'Heading 2 - Default'
+          element: '<h2 class="default">'
+        -
+          label: 'Paragraph - Large Text Size'
+          element: '<p class="large">'
+        -
+          label: 'Paragraph - Default Text Size'
+          element: '<p class="default">'
     media_media:
       allow_view_mode_override: true
 image_upload:
