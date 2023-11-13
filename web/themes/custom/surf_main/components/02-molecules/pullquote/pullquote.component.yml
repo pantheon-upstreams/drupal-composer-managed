@@ -22,6 +22,6 @@ props:
       title: Size
       type: string
       enum:
-        - small
-        - medium
-        - large
+        - sm
+        - md
+        - lg

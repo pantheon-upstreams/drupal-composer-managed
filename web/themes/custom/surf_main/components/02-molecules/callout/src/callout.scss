@@ -187,6 +187,35 @@
       font-size: rem(24px);
     }
   }
+
+  &.m-callout--type-news {
+
+    .m-callout__inner-wrapper {
+      padding: 20px;
+
+      @include bp-min(medium) {
+        padding: 40px;
+      }
+    }
+
+    .m-callout__text {
+      font-size: var(--surf-fs-16-18-24);
+      line-height: var(--surf-lh-label);
+    }
+
+   .a-button.a-button--underline.a-button--icon-envelope-left,
+   .a-button.a-button--underline.a-button--icon-play-left {
+      padding-inline-start: 33px;
+    }
+
+    .a-button.a-button--icon-envelope-left,
+    .a-button.a-button--icon-play-left {
+      &::before {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
 }
 
 

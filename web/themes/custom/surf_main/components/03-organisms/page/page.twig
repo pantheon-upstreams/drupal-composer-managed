@@ -22,12 +22,9 @@
 
 <article {{ page_attributes.addClass(classes).merge(attributes) }}>
   {% if page_media %}
+
     <div class="o-page__media">
-      {% embed 'surf_main:media' with {
-        media_attributes: create_attribute(),
-        media: page_media,
-      } only %}
-      {% endembed %}
+      {{ page_media }}
     </div>
   {% endif %}
 

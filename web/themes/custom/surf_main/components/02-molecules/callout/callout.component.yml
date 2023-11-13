@@ -5,6 +5,8 @@ group: Molecules
 props:
   type: object
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     callout_attributes:
       title: Attributes
       type: string
@@ -41,3 +43,4 @@ props:
         - embed
         - img
         - factoid
+        - news

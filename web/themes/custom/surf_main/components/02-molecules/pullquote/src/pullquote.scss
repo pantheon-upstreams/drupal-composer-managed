@@ -57,7 +57,7 @@
 //  03 - Types
 //------------------------------------
 
-.m-pullquote.m-pullquote--small {
+.m-pullquote.m-pullquote--sm {
   padding: rem(32px);
   max-width: rem(1020px);
 
@@ -71,7 +71,7 @@
   }
 }
 
-.m-pullquote.m-pullquote--medium {
+.m-pullquote.m-pullquote--md {
   padding: rem(32px);
 
   .m-pullquote__quote {
@@ -85,7 +85,7 @@
   }
 }
 
-.m-pullquote.m-pullquote--large {
+.m-pullquote.m-pullquote--lg {
   border: none;
   padding: 0;
   max-width: 100%;
@@ -112,6 +112,4 @@
     line-height: var(--surf-lh-label);
     text-transform: uppercase;
   }
-
-
 }

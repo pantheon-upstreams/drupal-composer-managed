@@ -4,6 +4,7 @@
  * Component for Callout
  *
  * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
  * - callout_attributes: [array] Any parent tag attributes.
  * - callout_text: [string]
  * - callout_heading: [string] required
@@ -22,27 +23,25 @@
 ] %}
 
 <div {{ callout_attributes.addClass(classes).merge(attributes) }}>
+
     {% if callout_media %}
-        {% embed 'surf_main:media' with {
-            media_attributes: create_attribute({'class': ['m-callout__media']}),
-            media_caption: callout_media_caption ? callout_media_caption,
-            media: callout_media,
-        } only %}
-        {% endembed %}
+      <div class="m-callout__media">
+        {{ callout_media }}
+      </div>
     {% endif %}
 
     <div class="m-callout__inner-wrapper">
         {% if callout_heading %}
-            {% embed 'surf_main:heading' with {
-                heading_text: callout_heading ? callout_heading,
-                heading_level: '3',
-                heading_attributes: create_attribute({'class': ['m-callout__heading']}),
-            } only %}
-            {% endembed %}
+          {% embed 'surf_main:heading' with {
+            heading_text: callout_heading ? callout_heading,
+            heading_level: '3',
+            heading_attributes: create_attribute({'class': ['m-callout__heading']}),
+          } only %}
+          {% endembed %}
         {% endif %}
 
         {% if callout_text %}
-            <div class="m-callout__text">{{ callout_text }}</div>
+          <div class="m-callout__text">{{ callout_text }}</div>
         {% endif %}
 
         {% if callout_button_url %}
