@@ -12,17 +12,6 @@
 
       <div class="o-article__content-wrapper">
 
-        {% set breadcrumbs_default = [
-          {'text': 'News', 'url': 'https://example.com'},
-        ]%}
-
-        {% include 'surf_main:breadcrumbs' with {
-          breadcrumbs_attributes: attributes|without('class'),
-          breadcrumbs_label: 'Breadcrumbs',
-          breadcrumbs_type: 'large',
-          breadcrumbs_navigation: breadcrumbs_default,
-        } only %}
-
         {% embed 'surf_main:heading' with {
           heading_text: article_heading,
           heading_level: '1',
@@ -39,22 +28,12 @@
         {% endembed %}
 
       </div>
-{#      <div class="grid-sidebar">#}
-        {% if article_media %}
-          <div class="o-article__image-wrapper">
-
-            {% embed 'surf_main:media' with {
-              media: article_media,
-              media_attributes: create_attribute(),
-            } only %}
-
-              {% block media_block %}
-                {{ media }}
-              {% endblock %}
-
-            {% endembed %}
-          </div>
-        {% endif %}
+      <div class="grid-sidebar">
+{#        {% if article_media %}#}
+{#          <div class="o-article__image-wrapper">#}
+{#            {{ article_media }}#}
+{#          </div>#}
+{#        {% endif %}#}
 
         <div class="test">
 
@@ -107,16 +86,16 @@
           } only %}
           {% endembed %}
 
-{#        </div>#}
+        </div>
 
-{#        <div class="o-article__press-resources-wrapper">#}
-{#          {% embed 'surf_main:left-hook' with {#}
-{#            left_hook_attributes: create_attribute(),#}
-{#          } only %}#}
-{#          {% endembed %}#}
+        <div class="o-article__press-resources-wrapper">
+          {% embed 'surf_main:left-hook' with {
+            left_hook_attributes: create_attribute(),
+          } only %}
+          {% endembed %}
 
-{#          <p><strong>[Related News - View]</strong></p>#}
-{#        </div>#}
+          <p><strong>[Related News - View]</strong></p>
+        </div>
       </div>
 
                 {#      <div class="o-article__aside-wrapper">#}

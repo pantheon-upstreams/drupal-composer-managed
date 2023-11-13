@@ -11,33 +11,24 @@
     <div class="container container--large">
       <div class="o-article__video-wrapper">
 
-        {% embed 'surf_main:media' with {
-          media: article_media,
-          media_attributes: create_attribute(),
-        } only %}
+        {{ article_media }}
 
-          {% block media_block %}
-            {{ media }}
-          {% endblock %}
+{#        {% embed 'surf_main:media' with {#}
+{#          media: article_media,#}
+{#          media_attributes: create_attribute(),#}
+{#        } only %}#}
 
-        {% endembed %}
+{#          {% block media_block %}#}
+{#            {{ media }}#}
+{#          {% endblock %}#}
+
+{#        {% endembed %}#}
       </div>
     </div>
   {% endif %}
 
   <div class="container container--small">
     <div class="o-article__inner-wrapper">
-
-      {% set breadcrumbs_default = [
-        {'text': 'News', 'url': 'https://example.com'},
-      ]%}
-
-      {% include 'surf_main:breadcrumbs' with {
-        breadcrumbs_attributes: attributes|without('class'),
-        breadcrumbs_label: 'Breadcrumbs',
-        breadcrumbs_type: 'large',
-        breadcrumbs_navigation: breadcrumbs_default,
-      } only %}
 
       {% embed 'surf_main:heading' with {
         heading_text: article_heading,
@@ -90,6 +81,7 @@
           callout_button_text: 'Subscribe to Deep Thoughts',
           callout_button_url: 'http://www.example.com',
           callout_button_prefix: 'envelope',
+          callout_type: 'news',
         } only %}
         {% endembed %}
 
@@ -99,6 +91,7 @@
           callout_button_text: 'Watch Deep Talks on Vimeo',
           callout_button_url: 'http://www.example.com',
           callout_button_prefix: 'play',
+          callout_type: 'news',
         } only %}
         {% endembed %}
 
@@ -113,6 +106,11 @@
       } only %}
       {% endembed %}
 
-      <p><strong>[Related News - View]</strong></p>
+      {% embed 'surf_main:heading' with {
+        heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+        heading_text: research_area ~ 'Related News',
+        heading_level: '2',
+      } only %}
+      {% endembed %}
   </div>
 </article>

@@ -10,17 +10,6 @@
   <div class="container container--small">
     <div class="o-article__inner-wrapper">
 
-      {% set breadcrumbs_default = [
-        {'text': 'News', 'url': 'https://example.com'},
-      ]%}
-
-      {% include 'surf_main:breadcrumbs' with {
-        breadcrumbs_attributes: attributes|without('class'),
-        breadcrumbs_label: 'Breadcrumbs',
-        breadcrumbs_type: 'large',
-        breadcrumbs_navigation: breadcrumbs_default,
-      } only %}
-
       {% embed 'surf_main:heading' with {
         heading_text: article_heading,
         heading_level: '1',
@@ -62,16 +51,16 @@
       {% endif %}
     </div>
   </div>
+
   <div class="container container--large">
-
     <div class="o-article__callout-wrapper">
-
       {% embed 'surf_main:callout' with {
         callout_attributes: create_attribute(),
         callout_text: 'Stay up-to-date on our latest news and upcoming events.',
         callout_button_text: 'Subscribe to Deep Thoughts',
         callout_button_url: 'http://www.example.com',
         callout_button_prefix: 'envelope',
+        callout_type: 'news',
       } only %}
       {% endembed %}
 
@@ -81,20 +70,23 @@
         callout_button_text: 'Watch Deep Talks on Vimeo',
         callout_button_url: 'http://www.example.com',
         callout_button_prefix: 'play',
+        callout_type: 'news',
       } only %}
       {% endembed %}
-
     </div>
-
   </div>
 
   <div class="container container--xlarge">
-
     {% embed 'surf_main:left-hook' with {
       left_hook_attributes: create_attribute(),
     } only %}
     {% endembed %}
 
-    <p><strong>[Related News - View]</strong></p>
+    {% embed 'surf_main:heading' with {
+      heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+      heading_text: research_area ~ 'Related News',
+      heading_level: '2',
+    } only %}
+    {% endembed %}
   </div>
 </article>

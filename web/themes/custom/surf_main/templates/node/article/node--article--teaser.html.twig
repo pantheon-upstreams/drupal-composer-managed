@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a node as a teaser.
+ *
+ * Available variables:
+ *  See embed below
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{%
+  set rendered_fields = [
+  'field_media_primary',
+  '_layout_builder',
+  'field_date_published',
+  'field_highlight',
+]
+%}
+
+{% embed 'surf_main:teaser' with {
+  attributes,
+  teaser_attributes: create_attribute(),
+  teaser_content: content.field_highlight.0 ? content.field_highlight|field_value,
+  teaser_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
+  teaser_date: content.field_date_published.0 ? content.field_date_published|field_value,
+  teaser_title: label,
+  teaser_title_tag: 'h3',
+  teaser_type: 'col-2',
+  teaser_url: path('entity.node.canonical', {'node': node.id}),
+} only %}
+
+  {% block teaser_media_prefix %}
+    <div class="m-teaser__media-prefix">
+      <p>
+        {% include 'surf_main:chip' with {
+          attributes,
+          chip_attributes: create_attribute({'class': 'a-chip--white'}),
+          chip_text: 'Article'|t,
+          chip_size: 'small',
+        } only %}
+      </p>
+    </div>
+  {% endblock %}
+
+  {% block teaser_content_suffix %}
+    <div class="m-teaser__content-suffix">
+      <p>
+        {% include 'surf_main:chip' with {
+          attributes,
+          chip_attributes: create_attribute({'class': 'a-chip--white'}),
+          chip_text: teaser_date,
+          chip_size: 'small',
+        } only %}
+      </p>
+    </div>
+  {% endblock %}
+{% endembed %}
+
+{{ content|without(rendered_fields) }}
