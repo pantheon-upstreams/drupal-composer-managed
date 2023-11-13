@@ -35,7 +35,7 @@
       <ul class="o-resource-list__items">
         {% for item in resource_list_items %}
           <li class="o-resource-list__item">
-            {{ drupal_entity('paragraph', item.id, 'default') }}
+            {{ item }}
           </li>
         {% endfor %}
       </ul>
