@@ -51,7 +51,7 @@
   .media--small.align-right,
   figure[data-view-mode='small'].drupal-media-style-align-right {
     float: none;
-    margin-block-end: var(--surf-grid-gap);
+    margin-block: 24px;
 
     @include breakpoints.bp-min(small) {
       float: right;
@@ -62,7 +62,7 @@
   .media--small.align-left,
   figure[data-view-mode='small'].drupal-media-style-align-left {
     float: none;
-    margin-block-end: var(--surf-grid-gap);
+    margin-block: 24px;
 
     @include breakpoints.bp-min(small) {
       float: left;
