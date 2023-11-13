@@ -111,11 +111,6 @@
 .o-experiment__main-content,
 .lpb-component-list {
 
-  .layout--twocol-section {
-    max-width: rem(888px);
-    margin-inline: auto;
-  }
-
   .m-gallery {
     margin-block: rem(40px);
     @include bp-min(medium) {
@@ -123,10 +118,19 @@
     }
   }
 
-  .m-pullquote.m-pullquote--medium {
+  .m-pullquote.m-pullquote--md {
     max-width: rem(1020px);
     padding-inline: 0;
     margin-block-start: rem(-28px);
     margin-block-end: rem(32px);
+  }
+
+  .m-link-highlight {
+    max-width: rem(1020px);
+  }
+
+  .o-component-grid.o-component-grid--col-2 {
+    max-width: rem(888px);
+    margin-inline: auto;
   }
 }

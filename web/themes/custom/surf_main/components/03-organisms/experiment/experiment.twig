@@ -4,6 +4,7 @@
  * Component for Experiment (Node)
  *
  * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
  * - experiment_attributes: [array] Any parent tag attributes.
  * - experiment_heading: [string]
  * - experiment_header_teaser: [string]
@@ -21,13 +22,10 @@
 %}
 
 <article {{ experiment_attributes.addClass(classes).merge(attributes) }}>
+
   {% if experiment_media %}
     <div class="o-experiment__media">
-      {% embed 'surf_main:media' with {
-        media_attributes: create_attribute(),
-        media: experiment_media,
-      } only %}
-      {% endembed %}
+      {{ experiment_media }}
     </div>
   {% endif %}
 
@@ -37,7 +35,7 @@
     {% embed 'surf_main:header' with {
       header_heading: experiment_heading,
       header_heading_level: '1',
-      header_teaser: experiment_header_teaser,
+      header_summary: experiment_header_summary,
       header_attributes: create_attribute(),
       heading_attributes: create_attribute({'class': ['o-header__heading']}),
     } only %}

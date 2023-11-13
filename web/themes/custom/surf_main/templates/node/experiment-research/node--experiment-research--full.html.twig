@@ -48,10 +48,11 @@
   {% endembed %}
 
 {% else %}
+
   {% embed 'surf_main:experiment' with {
     experiment_attributes: create_attribute({'class': experiment_classes}),
     experiment_heading: label|field_value,
-    experiment_header_teaser: content.field_overview.0 ? content.field_overview.0['#text'],
+    experiment_header_summary: content.field_overview.0 ? content.field_overview.0['#text'],
     experiment_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
     experiment_overview: content.field_overview.0 ? content.field_overview|field_value,
     experiment_content: content.field_p_content,

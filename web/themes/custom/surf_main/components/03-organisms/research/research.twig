@@ -4,6 +4,7 @@
  * Component for Research (Node)
  *
  * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
  * - research_attributes: [array] Any parent tag attributes.
  * - research_heading: [string]
  * - research_media: [string]
@@ -24,11 +25,7 @@
 <article {{ research_attributes.addClass(classes).merge(attributes) }}>
   {% if research_media %}
     <div class="o-research__media">
-      {% embed 'surf_main:media' with {
-        media_attributes: create_attribute(),
-        media: research_media,
-      } only %}
-      {% endembed %}
+      {{ research_media }}
     </div>
   {% endif %}
 
@@ -53,7 +50,7 @@
           {% embed 'surf_main:pullquote' with {
             pullquote_attributes: create_attribute(),
             pullquote_quote: research_overview,
-            pullquote_type: 'large',
+            pullquote_type: 'lg',
           } only %}
           {% endembed %}
         </div>
@@ -79,14 +76,16 @@
           } only %}
           {% endembed %}
 
-          {% embed 'surf_main:component-list' with {
-            component_list_attributes: create_attribute({'class': ['o-component-list__heading','o-component-list--teaser-2-col']}),
-            component_list_items: research_key_experiments,
+          {% embed 'surf_main:component-grid' with {
+            component_grid_attributes: create_attribute({'class': ['o-component-grid__heading']}),
+            component_grid_items: research_key_experiments,
+            grid_type: 'col-2',
+            grid_gap: 'lg',
           } only %}
 
-            {% block list_items %}
-              {% for item in component_list_items %}
-                <li class="o-component-list__item">
+            {% block grid_items %}
+              {% for item in component_grid_items %}
+                <li class="o-component-grid__item">
                   {{ item }}
                 </li>
               {% endfor %}
