@@ -3,22 +3,23 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.resource_file.field_document
     - field.field.paragraph.resource_file.field_file
     - paragraphs.paragraphs_type.resource_file
-  module:
-    - file
 id: paragraph.resource_file.default
 targetEntityType: paragraph
 bundle: resource_file
 mode: default
 content:
-  field_file:
-    type: file_default
-    label: above
+  field_document:
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_file: true
   search_api_excerpt: true
