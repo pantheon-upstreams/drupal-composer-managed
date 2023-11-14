@@ -194,14 +194,9 @@ content:
     settings:
       modal: false
       default_duration: 60
-      default_duration_increments: |-
-        30
-        60|1 hour
-        90
-        120|2 hours
-        custom
+      default_duration_increments: "30\r\n60|1 hour\r\n90\r\n120|2 hours\r\ncustom"
       show_extra: false
-      hide_date: true
+      hide_date: false
     third_party_settings: {  }
   field_department:
     type: options_select

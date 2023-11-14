@@ -189,6 +189,10 @@ body {
   p:not(:first-child) {
     margin-block-start: 16px;
   }
+
+  p.large {
+    font-size: var(--surf-fs-18-24);
+  }
 }
 
 
@@ -228,9 +232,13 @@ body {
 
   h2 {
     font-family: var(--surf-font-sans-alt);
-    font-size: var(--surf-fs-40-52-64-96);
+    font-size: var(--surf-fs-40-52-64);
     font-weight: var(--surf-fw-book);
     letter-spacing: 1.44px;
+  }
+
+  h2.large {
+    font-size: var(--surf-fs-40-52-64-96);
   }
 
   h3 {
