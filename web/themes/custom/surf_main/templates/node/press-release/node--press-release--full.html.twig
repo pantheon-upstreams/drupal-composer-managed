@@ -1,40 +1,28 @@
-  {#
-    TODO:
-    - [ ] Update the hard-coded contact_url
-  #}
+{%
+  set rendered_fields = [
+  "field_author",
+  "field_ref_news_categories",
+  "field_p_content",
+  "field_ref_contacts",
+  "field_media_primary",
+  "field_date_published",
+  "field_resource_list",
+  "field_overview",
+]
+%}
 
+{% embed 'surf_main:press-release' with {
+  press_release_attributes: create_attribute({'class': ['o-press-release--full']}),
+  press_release_heading: label|field_value,
+  press_release_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
+  press_release_author: content.field_author.0 ? content.field_author|field_value,
+  press_release_pub_date: content.field_date_published.0 ? content.field_date_published|field_value,
+  press_release_content: content.field_p_content.0 ? content.field_p_content,
+  press_release_categories: content.field_ref_news_categories.0 ? content.field_ref_news_categories|field_value,
+  press_release_primary_contact: content.field_ref_contacts.0 ? content.field_ref_contacts|field_value,
+  press_release_resource_list: content.field_resource_list.0 ? content.field_resource_list|field_value,
+  attributes,
+} only %}
+{% endembed %}
 
-{% set contacts = [] %}
-{% if content.field_ref_contacts['#items']|length > 0 %}
-  {% for i, value in content.field_ref_contacts['#items'] %}
-  {% set initials = value.entity.field_name.0.given|slice(0, 1) ~ value.entity.field_name.0.family|slice(0, 1) %}
-    {% if value.entity %}
-      {% set contacts = contacts|merge([{
-        name: value.entity.title.value,
-        title: value.entity.field_job_title.0.value,
-        email: value.entity.field_email.0.value,
-        phone: value.entity.field_phone_office.0.value,
-        image_url: file_url(value.entity.field_media_primary.0.entity.field_media_image.entity.fileuri),
-        image_alt: value.entity.field_media_primary.0.entity.field_media_image.alt,
-        contact_url: '/contact',
-        bio_url: value.entity|entity_url,
-        initials: initials,
-        }]) %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-{% set date = content.field_date_published.0["#text"] ? content.field_date_published.0["#text"] : node.created.value|date('F d, Y') %}
-
-{{ include('surf_main:press-release-page', {
-  title: label|field_value,
-  overview: content.field_overview|field_value,
-  body: content.field_p_content,
-  author: content.field_author|field_value,
-  categories: content.field_ref_news_categories,
-  downloads: content.field_resource_list,
-  contacts: contacts,
-  date,
-  image_url: file_url(content.field_media_primary['#items'].entity.field_media_image.entity.fileuri),
-  image_alt: content.field_media_primary['#items'].entity.field_media_image.alt,
-}, with_context = false) }}
+{{ content|without(rendered_fields) }}

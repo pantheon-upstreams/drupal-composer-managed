@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Component for Person Card
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - person_card_attributes: [array] Any parent tag attributes.
+ * - person_card_media: [array] required
+ * - person_card_name: [string] required
+ * - person_card_role: [string]
+ * - person_card_office_phone: [string]
+ * - person_card_email: [array]
+ * - person_card_url: [string]
+ *
+ */
+#}
+
+{% set classes = [
+  'm-person-card',
+] %}
+
+<div {{ person_card_attributes.addClass(classes).merge(attributes) }}>
+
+  {% if person_card_media %}
+    <div class="m-person-card__media">
+      {{ person_card_media }}
+    </div>
+  {% else %}
+    <div class="m-person-card__icon">
+      {% include 'surf_main:icon' with {
+        icon_type: 'user',
+      } %}
+    </div>
+  {% endif %}
+
+  <div class="m-person-card__content-wrapper">
+
+    {% if person_card_name %}
+      <p class="m-person-card__fullname">{{ person_card_name }}</p>
+    {% endif %}
+
+    {% if person_card_role %}
+      <p class="m-person-card__role">{{ person_card_role }}</p>
+    {% endif %}
+
+    {% if person_card_office_phone %}
+      <p class="m-person-card__phone">{{ person_card_office_phone }}</p>
+    {% endif %}
+
+    {% if person_card_email %}
+      <p class="m-person-card__email"><a href="mailto:{{ person_card_email }}">Contact</a></p>
+    {% endif %}
+
+    {% if person_card_url %}
+      <p class="m-person-card__link"><a href="{{ person_card_url }}">View Bio</a></p>
+    {% endif %}
+
+  </div>
+
+</div>

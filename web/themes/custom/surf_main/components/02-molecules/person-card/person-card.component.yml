@@ -1,0 +1,30 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Person Card
+status: experimental
+group: Molecules
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    person_card_attributes:
+      title: Attributes
+      type: string
+    person_card_media:
+      title: Photo
+      type: string
+    person_card_name:
+      title: Full Name
+      type: string
+    person_card_role:
+      title: Role
+      type: string
+    person_card_office_phone:
+      title: Office Phone Number
+      type: string
+    person_card_email:
+      title: Email
+      type: string
+    person_card_url:
+      title: Link URL
+      type: string

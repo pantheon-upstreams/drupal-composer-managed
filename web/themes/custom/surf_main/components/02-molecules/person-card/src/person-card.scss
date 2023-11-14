@@ -1,0 +1,94 @@
+//
+// Component - Molecule - Person Card
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+//
+
+.m-person-card {
+  align-items: center;
+  background-color: var(--surf-color-gray-100);
+  display: flex;
+  gap: 28px;
+  max-inline-size: rem(510px);
+}
+
+.m-person-card__media {
+  height: 100%;
+  max-inline-size: rem(182px);
+}
+
+.m-person-card__icon {
+  height: 100%;
+  max-inline-size: rem(182px);
+
+  .a-icon {
+    height: 200px;
+    width: 182px;
+  }
+}
+
+.m-person-card__content-wrapper {
+  flex-grow: 1;
+  padding-inline-end: rem(20px);
+
+  p:not( :last-of-type ) {
+    margin-block-end: rem(8px);
+  }
+}
+
+.m-person-card__fullname {
+  font-size: rem(24px);
+  font-weight: var(--surf-fw-bold);
+  line-height: var(--surf-lh-label);
+  margin-block-end: rem(2px) !important;
+}
+
+.m-person-card__role {
+  font-size: rem(14px);
+  font-style: italic;
+  line-height: var(--surf-lh-label);
+}
+
+.m-person-card__phone {
+  font-size: rem(16px);
+  line-height: var(--surf-lh-label);
+}
+
+.m-person-card__email {
+  font-size: rem(16px);
+  line-height: var(--surf-lh-label);
+}
+
+.m-person-card__link {
+  a {
+    position: relative;
+
+    &::after {
+      background-image: svg-load('icon-arrow-right.svg');
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      height: 24px;
+      margin: auto;
+      position: absolute;
+      right: -26px;
+      top: 0;
+      width: 24px;
+    }
+  }
+}
