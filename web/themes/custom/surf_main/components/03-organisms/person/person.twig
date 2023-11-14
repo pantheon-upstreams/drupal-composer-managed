@@ -25,9 +25,7 @@
     {{ title_suffix }}
 
     <div class="container {% if person_media %}container--xlarge{% else %}container--small{% endif %}">
-        {% if person_media %}
-            <div class="o-person__grid">
-        {% endif %}
+        <div class="o-person__grid">
 
             {% embed 'surf_main:header' with {
                 header_heading: person_heading,
@@ -87,8 +85,6 @@
                 </div>
             {% endif %}
 
-        {% if person_media %}
-            </div>
-        {% endif %}
+        </div>
     </div>
 </article>

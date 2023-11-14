@@ -30,4 +30,4 @@ props:
       type: string
     person_media:
       title: Person Media
-      type: array
+      type: string
