@@ -95,20 +95,21 @@
         </div>
 
         <div class="o-research__in-the-news">
+          {% if drupal_view_result('in_the_news', 'research') is not empty %}
+            {% embed 'surf_main:left-hook' with {
+              left_hook_attributes: create_attribute(),
+            } only %}
+            {% endembed %}
 
-          {% embed 'surf_main:left-hook' with {
-            left_hook_attributes: create_attribute(),
-          } only %}
-          {% endembed %}
+            {% embed 'surf_main:heading' with {
+              heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+              heading_text: research_area ~ ' In the News',
+              heading_level: '2',
+            } only %}
+            {% endembed %}
 
-          {% embed 'surf_main:heading' with {
-            heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
-            heading_text: research_area ~ ' In the News',
-            heading_level: '2',
-          } only %}
-          {% endembed %}
-
-          {{ drupal_view('in_the_news', 'research') }}
+            {{ drupal_view('in_the_news', 'research') }}
+          {% endif %}
         </div>
       </div>
     </div>

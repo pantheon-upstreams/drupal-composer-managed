@@ -32,9 +32,10 @@
     margin-block-end: 0;
   }
 
-  figure img {
-    max-block-size: 690px;
+  img {
+    max-height: 690px;
     object-fit: cover;
+    width: 100%;
   }
 }
 

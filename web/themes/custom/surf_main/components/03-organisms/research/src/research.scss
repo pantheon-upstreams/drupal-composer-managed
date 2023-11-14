@@ -28,8 +28,13 @@
 
 .o-research__media {
   img {
-    max-height: 600px;
+    max-height: 480px;
     object-fit: cover;
+    width: 100%;
+
+    @include bp-min(xlarge) {
+      max-height: 690px;
+    }
   }
 }
 
