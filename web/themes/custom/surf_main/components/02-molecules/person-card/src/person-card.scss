@@ -44,6 +44,7 @@
 
 .m-person-card__content-wrapper {
   flex-grow: 1;
+  padding-block: rem(20px);
   padding-inline-end: rem(20px);
 
   p:not( :last-of-type ) {
