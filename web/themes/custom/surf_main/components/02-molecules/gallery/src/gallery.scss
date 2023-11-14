@@ -45,14 +45,14 @@
   .m-gallery__slide > figure > figcaption {
     font-size: calculations.rem(14px);
     line-height: var(--surf-lh-default);
-    max-width: 100%;
+    max-inline-size: 100%;
     padding: 16px 0;
     text-align: center;
 
     @include breakpoints.bp-min(medium) {
       background: var(--surf-color-white);
       bottom: -1px;
-      max-width: 400px;
+      max-inline-size: 400px;
       padding: 24px;
       position: absolute;
       right: -1px;
@@ -106,11 +106,11 @@
     gap: 24px;
     justify-content: center;
     order: 1;
-    margin-top: 24px;
+    margin-block-start: 24px;
 
     @include breakpoints.bp-min(medium) {
       justify-content: flex-end;
-      margin-top: 64px;
+      margin-block-start: 64px;
     }
   }
 

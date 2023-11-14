@@ -23,25 +23,25 @@
 //  02 - General
 //------------------------------------
 
-.m-resource-file {
-  display: flex;
-  flex-direction: column;
-}
-
 .m-resource-file__wrapper {
   display: flex;
+  flex-direction: column;
   position: relative;
-  width: 100%;
+
+  p {
+    padding-inline-start: rem(30px);
+  }
 
   &::before {
     --resource_file_icon: svg-load('icon-file.svg');
     background-color: var(--surf-color-navy);
-    background-position: center center;
+    background-position: top left;
     background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
     content: '';
-    display: block;
     height: rem(24px);
-    margin: 0 rem(6px) 0 0;
+    margin-inline-end: rem(6px); /* Adjusted margin for spacing */
     mask-image: var(--resource_file_icon);
     width: rem(24px);
   }

@@ -41,7 +41,7 @@
   font-size: rem(18px);
   font-weight: var(--surf-fw-regular);
   line-height: 1.44;
-  max-width: rem(900px);
+  max-inline-size: rem(900px);
   @include bp-min(medium) {
     font-size: var(--surf-fs-30-32);
     line-height: 1.32;
@@ -70,7 +70,7 @@
 }
 
 .o-person__content {
-  max-width: rem(780px);
+  max-inline-size: rem(780px);
 }
 
 .o-person__media {
@@ -91,7 +91,7 @@
   gap: rem(32px);
   margin-inline-end: auto;
   margin-inline-start: auto;
-  max-width: rem(619px);
+  max-inline-size: rem(619px);
 }
 
 .o-person__content-wrapper {
@@ -141,7 +141,7 @@
       align-items: start;
       display: grid;
       gap: rem(32px);
-      max-width: none;
+      max-inline-size: none;
       @include bp-min(medium) {
         grid-template-areas: 'header header'
           'content sidebar';

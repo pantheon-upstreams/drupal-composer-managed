@@ -18,7 +18,7 @@
 %}
 
 <div {{ resource_link_attributes.addClass(classes).merge(attributes) }}>
-  <span class="m-resource-link__wrapper">
-    <a href="{{resource-link_url}}" target="_blank" rel="nofollow noreferrer noopener" class="m-resource-link__url">{{resource_link_title}}</a>
-  </span>
+  <div class="m-resource-link__wrapper">
+    <p><a href="{{resource-link_url}}" target="_blank" rel="nofollow noreferrer noopener" class="m-resource-link__url">{{resource_link_title}}</a></p>
+  </div>
 </div>

@@ -202,14 +202,14 @@ body {
   h1, h2, h3, h4, h5 {
     color: var(--surf-color-black);
     line-height: var(--surf-lh-heading);
-    margin-bottom: 0;
+    margin-block-end: 0;
 
     > a {
       text-decoration: none;
     }
 
     &:first-child {
-      margin-top: 0;
+      margin-block-start: 0;
     }
   }
 }

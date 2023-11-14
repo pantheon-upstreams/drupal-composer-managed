@@ -198,23 +198,23 @@
 
 @mixin icons() {
   .a-button.a-button--primary.a-button--icon-arrow-right {
-    padding-right: 56px;
+    padding-inline-end: 56px;
   }
 
   .a-button.a-button--primary.a-button--icon-arrow-left,
   .a-button.a-button--primary.a-button--icon-play-left,
   .a-button.a-button--primary.a-button--icon-envelope-left {
-    padding-left: 56px;
+    padding-inline-start: 56px;
   }
 
   .a-button.a-button--underline.a-button--icon-arrow-right {
-    padding-right: 40px;
+    padding-inline-end: 40px;
   }
 
   .a-button.a-button--underline.a-button--icon-arrow-left,
   .a-button.a-button--underline.a-button--icon-play-left,
   .a-button.a-button--underline.a-button--icon-envelope-left {
-    padding-left: 40px;
+    padding-inline-start: 40px;
   }
 
   .a-button.a-button--icon-arrow-right:after,

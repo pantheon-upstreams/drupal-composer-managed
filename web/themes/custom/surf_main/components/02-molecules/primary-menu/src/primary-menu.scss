@@ -105,7 +105,7 @@
   > li > a.a-icon--chevron-down,
   > li > button.a-icon--chevron-down,
   > li > span.a-icon--chevron-down {
-    padding-right: 28px;
+    padding-inline-end: 28px;
 
     &:before {
       background: svg-load('icon-angle-down.svg', fill="#FFFFFF") no-repeat center;
@@ -199,11 +199,11 @@
 .m-menu.m-menu--primary-menu .m-menu__list.m-menu__level--2 {
   display: flex;
   flex-flow: nowrap column;
-  margin-bottom: 8px;
+  margin-block-end: 8px;
 
   @include breakpoints.bp-min(xxlarge) {
     flex-flow: nowrap row;
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   > li {
@@ -229,7 +229,7 @@
         content: '';
         display: block;
         height: 40px;
-        margin-top: 8px;
+        margin-block-start: 8px;
         width: 40px;
       }
     }
@@ -283,7 +283,7 @@
 
   > li:not(:first-child) {
     @include breakpoints.bp-min(xxlarge) {
-      margin-top: 24px;
+      margin-block-start: 24px;
     }
   }
 

@@ -111,7 +111,7 @@
   }
 
   @include bp-min(large) {
-    max-width: rem(780px);
+    max-inline-size: rem(780px);
   }
   @include bp-min(xxlarge) {
     margin-block-start: rem(-120px);
@@ -142,7 +142,7 @@
   }
 
   @include bp-min(large) {
-    max-width: rem(780px);
+    max-inline-size: rem(780px);
   }
 
   > :not( :last-child ) {
@@ -169,7 +169,7 @@
 
   @include bp-min(xxlarge) {
     grid-template-columns: 1fr;
-    margin-top: rem(28px);
+    margin-block-start: rem(28px);
   }
 }
 

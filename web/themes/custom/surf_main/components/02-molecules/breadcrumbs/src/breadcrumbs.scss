@@ -97,7 +97,7 @@
   }
 
   li.m-breadcrumbs__item:first-child a.m-breadcrumbs__link {
-    padding-left: 32px;
+    padding-inline-start: 32px;
 
     &:before {
       background: svg-load('icon-arrow-left.svg', fill='#000080') no-repeat center;

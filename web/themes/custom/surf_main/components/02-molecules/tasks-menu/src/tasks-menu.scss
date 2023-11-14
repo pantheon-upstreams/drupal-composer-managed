@@ -54,7 +54,7 @@
     flex-flow: nowrap;
     gap: 8px;
     margin: 0 auto;
-    max-width: var(--surf-width-xlarge);
+    max-inline-size: var(--surf-width-xlarge);
   }
 
   > ul.m-menu__items > li > a {

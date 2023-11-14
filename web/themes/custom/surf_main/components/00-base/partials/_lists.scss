@@ -38,8 +38,8 @@
   }
 
   ul {
-    margin-top: 6px;
-    padding-left: var(--space-indent);
+    margin-block-start: 6px;
+    padding-inline-start: var(--space-indent);
   }
 }
 
@@ -61,16 +61,16 @@
 
   // Second Level
   ol {
-    margin-top: 6px;
-    padding-left: 30px;
+    margin-block-start: 6px;
+    padding-inline-start: 30px;
 
     > #{$item-selector} {
-      padding-left: 0;
+      padding-inline-start: 0;
       text-indent: -30px;
 
       &:before {
         display: inline;
-        margin-right: .5em;
+        margin-inline-end: .5em;
         position: static;
       }
     }

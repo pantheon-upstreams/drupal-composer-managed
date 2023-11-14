@@ -59,7 +59,7 @@
 
 .m-pullquote.m-pullquote--sm {
   padding: rem(32px);
-  max-width: rem(1020px);
+  max-inline-size: rem(1020px);
 
   .m-pullquote__quote {
     p {
@@ -88,7 +88,7 @@
 .m-pullquote.m-pullquote--lg {
   border: none;
   padding: 0;
-  max-width: 100%;
+  max-inline-size: 100%;
 
   .m-pullquote__quote {
     p {

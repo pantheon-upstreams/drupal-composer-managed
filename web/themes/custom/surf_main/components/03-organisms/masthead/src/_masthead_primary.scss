@@ -39,7 +39,7 @@
   }
 
   > .container > .site-branding {
-    margin-right: auto;
+    margin-inline-end: auto;
     width: 164px;
 
     @include breakpoints.bp-min(large) {
@@ -89,7 +89,7 @@
   .o-masthead__flyout .o-masthead__flyout-trigger {
     @include buttons.button-reset();
     @include links.menu(28px, navy);
-    padding-left: 40px;
+    padding-inline-start: 40px;
 
     &:after {
       display: none;

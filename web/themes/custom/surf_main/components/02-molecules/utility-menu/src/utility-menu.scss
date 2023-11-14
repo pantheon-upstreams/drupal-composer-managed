@@ -71,11 +71,11 @@
   > li > a.a-icon,
   > li > button.a-icon,
   > li > span.icon {
-    padding-left: 48px;
+    padding-inline-start: 48px;
 
     @include breakpoints.bp-min(large) {
-      padding-left: 0;
-      padding-right: 25px;
+      padding-inline-start: 0;
+      padding-inline-end: 25px;
     }
   }
 

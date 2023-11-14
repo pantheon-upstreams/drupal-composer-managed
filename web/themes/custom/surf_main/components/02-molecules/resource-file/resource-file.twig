@@ -21,10 +21,8 @@
 %}
 
 <div {{ resource_file_attributes.addClass(classes).merge(attributes) }}>
-  <span class="m-resource-file__wrapper">
-    <a href="{{resource_file_url}}" target="_blank" rel="nofollow noreferrer noopener" class="m-resource-file__url">{{resource_file_title}}</a>
-  </span>
-  <span class="m-resource-file__meta-wrapper">
-    <span class="m-resource-file__size">{{resource_file_size}}</span> <span class="m-resource-file__mimetype">{{resource_file_mimetype}}</span>
-  </span>
+  <div class="m-resource-file__wrapper">
+    <p><a href="{{resource_file_url}}" target="_blank" rel="nofollow noreferrer noopener" class="m-resource-file__url">{{resource_file_title}}</a></p>
+    <p><span class="m-resource-file__size">{{resource_file_size}}</span> <span class="m-resource-file__mimetype">{{resource_file_mimetype}}</span></p>
+  </div>
 </div>

@@ -94,26 +94,25 @@
 //------------------------------------
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--surf-grid-gap);
-  padding-right: var(--surf-grid-gap);
+  margin-inline: auto;
+  padding-inline-start: var(--surf-grid-gap);
+  padding-inline-end: var(--surf-grid-gap);
   width: 100%;
 
   &.container--default {
-    max-width: calc(var(--surf-width-default) + (var(--surf-grid-gap) * 2));
+    max-inline-size: calc(var(--surf-width-default) + (var(--surf-grid-gap) * 2));
   }
 
   &.container--large {
-    max-width: calc(1143px + (var(--surf-grid-gap) * 2));
+    max-inline-size: calc(1143px + (var(--surf-grid-gap) * 2));
   }
 
   &.container--xlarge {
-    max-width: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
+    max-inline-size: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
   }
 
   &.container--small {
-    max-width: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
+    max-inline-size: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
   }
 }
 

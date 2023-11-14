@@ -25,8 +25,7 @@
 //------------------------------------
 
 @mixin full-width() {
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-inline: -50vw;
   left: 50%;
   position: relative;
   right: 50%;
@@ -50,8 +49,7 @@
 @mixin flex-grid($columns, $selector, $column-gutter, $bottom-gutter) {
   display: flex;
   flex-flow: wrap row;
-  margin-left: calc(#{$column-gutter} / -2);
-  margin-right: calc(#{$column-gutter} / -2);
+  margin-inline: calc(#{$column-gutter} / -2);
   padding: 0;
 
   > #{$selector} {
@@ -59,14 +57,14 @@
     $gutter: calc(#{$column-gutter} / 2);
 
     flex: 0 0 $width;
-    margin-top: $bottom-gutter;
-    max-width: $width;
+    margin-block-start: $bottom-gutter;
+    max-inline-size: $width;
     padding: 0 $gutter;
 
     // Account for margin top for all items not in the first row
     @for $i from 1 through $columns {
       &:nth-child(#{$i}) {
-        margin-top: 0;
+        margin-block-start: 0;
       }
     }
   }

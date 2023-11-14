@@ -47,10 +47,10 @@ body {
 .layout-container {
   background-color: var(--surf-color-white);
   overflow: hidden;
-  padding-top: var(--surf-height-region-header-primary);
+  padding-block-start: var(--surf-height-region-header-primary);
 
   @include bp-min(large) {
-    padding-top: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
+    padding-block-start: calc(var(--surf-height-region-header-primary) + var(--surf-height-region-header-utility));
   }
 }
 

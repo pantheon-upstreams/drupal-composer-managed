@@ -11,12 +11,11 @@
 
 .messages {
   .messages__wrapper {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-block: 16px;
   }
 
   .messages__container {
-    padding-left: calc(48px + var(--surf-grid-gap));
+    padding-inline-start: calc(48px + var(--surf-grid-gap));
     position: relative;
   }
 

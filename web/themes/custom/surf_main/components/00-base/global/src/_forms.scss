@@ -24,9 +24,9 @@
 form {
   > * + *,
   .form-item + .form-item {
-    margin-top: var(--surf-gap-small);
+    margin-block-start: var(--surf-gap-small);
     @include bp-min(large) {
-      margin-top: var(--surf-gap-large);
+      margin-block-start: var(--surf-gap-large);
     }
   }
 }
@@ -84,7 +84,7 @@ textarea {
   border-radius: 0;
   font-family: var(--surf-font-sans);
   font-size: rem(18px) !important;
-  max-width: 100%;
+  max-inline-size: 100%;
   padding: 10px 12px;
 }
 

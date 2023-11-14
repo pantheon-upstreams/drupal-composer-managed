@@ -86,7 +86,7 @@
   font-weight: var(--surf-fw-medium);
   letter-spacing: rem(0.6px);
   line-height: var(--surf-lh-base);
-  margin-bottom: rem(28px);
+  margin-block-end: rem(28px);
   @include bp-min(medium) {
     letter-spacing: rem(1.28px);
   }
