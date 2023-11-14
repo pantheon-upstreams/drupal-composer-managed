@@ -147,13 +147,14 @@
           'content sidebar';
         grid-template-columns: 8fr 4fr;
       }
+      @include bp-min(xlarge) {
+        grid-template-columns: 7fr 5fr;
+      }
       @include bp-min(xxlarge) {
+        gap: rem(60px);
         grid-template-areas: 'header sidebar'
           'content sidebar';
         grid-template-columns: 8fr 4fr;
-      }
-      @include bp-min(xlarge) {
-        grid-template-columns: 9fr 3fr;
       }
 
       .o-header {
@@ -165,9 +166,15 @@
       }
 
       .o-person__media {
+        display: flex;
+        justify-content: center;
         order: 1;
         @include bp-min(medium) {
           grid-area: sidebar;
+        }
+
+        > figure {
+          max-inline-size: 302px;
         }
       }
 
