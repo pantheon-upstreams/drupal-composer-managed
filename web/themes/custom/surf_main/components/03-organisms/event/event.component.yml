@@ -21,7 +21,7 @@ props:
         type: string
     event_body:
         title: Body
-        type: array
+        type: string
     event_dates:
         title: Event Dates
         type: string

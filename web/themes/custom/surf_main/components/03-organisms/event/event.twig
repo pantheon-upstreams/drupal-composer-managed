@@ -32,6 +32,7 @@
         header_heading: event_heading,
         header_summary: event_summary,
         header_attributes: create_attribute({'class': ['o-header--grid']}),
+        header_heading_level: '1',
         heading_attributes: create_attribute({'class': ['o-header__heading']}),
         event_dates,
         event_link_text,
@@ -44,7 +45,12 @@
 
         {% block header_metadata_block %}
           <div class="o-event__meta-wrapper">
-            <div class="o-event__dates"><p>{{ event_dates }}</p></div>
+
+            {% if event_dates %}
+              <div class="o-event__dates"><p>{{ event_dates }}</p></div>
+            {% endif %}
+
+            {% if event_link_url %}
               {% include 'surf_main:button' with {
                 attributes,
                 button_attributes: create_attribute(),
@@ -56,6 +62,8 @@
                 button_title: event_link_text,
                 button_url: event_link_url,
               } only %}
+            {% endif %}
+
           </div>
         {% endblock %}
 
@@ -95,11 +103,13 @@
           {% endif %}
 
         {# Editor Component - Body #}
-        {% embed 'surf_main:editor' with {
-          editor_attributes: create_attribute(),
-          editor_content: event_body,
-        } only %}
-        {% endembed %}
+          {% if event_body %}
+            {% embed 'surf_main:editor' with {
+              editor_attributes: create_attribute(),
+              editor_content: event_body,
+            } only %}
+            {% endembed %}
+          {% endif %}
         </div>
 
       </div>
