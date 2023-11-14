@@ -27,7 +27,11 @@
   background-color: var(--surf-color-gray-100);
   margin-inline: auto;
   max-inline-size: rem(900px);
-  padding: 40px;
+  padding: 20px;
+
+  @include bp-min(medium) {
+    padding: 40px;
+  }
 }
 
 .o-resource-list__heading {

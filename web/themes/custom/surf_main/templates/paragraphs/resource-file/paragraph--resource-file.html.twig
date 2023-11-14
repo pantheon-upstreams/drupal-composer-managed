@@ -39,19 +39,21 @@
  */
 #}
 
+{% set doc = content.field_document.0['#media'].field_media_document.entity %}
+
 {# File Title / Description #}
-{% set resource_file_title = content.field_file.0["#description"] %}
+{% set resource_file_title = doc.origname.value %}
 
 {# File URI #}
-{% set resource_file_url = content.field_file.0["#file"].uri.value|file_url %}
+{% set resource_file_url = file_url(doc.uri.value) %}
 
 {# File Mimetype #}
-{% set orig_mimetype = content.field_file.0["#file"].filemime.value %}
+{% set orig_mimetype = doc.filemime.value %}
 {% set parts_mimetype = orig_mimetype|split('/') %}
 {% set resource_file_mimetype = parts_mimetype|last %}
 
 {# File Size #}
-{% set file_size_in_bytes = content.field_file.0["#file"].filesize.value %}
+{% set file_size_in_bytes = doc.filesize.value %}
 {% set resource_file_size = (file_size_in_bytes / 1048576)|round(2) ~ " MB" %}
 
 {% if file_size_in_bytes < 1048576 %}
@@ -67,7 +69,7 @@
 
 {%
   set rendered_fields = [
-  'field_file',
+  'field_document',
 ]
 %}
 
