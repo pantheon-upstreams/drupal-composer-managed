@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
-    - image.style.crop_thumbnail
+    - image.style.media_library
     - media.type.image
   module:
     - image_widget_crop
@@ -38,7 +38,7 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: crop_thumbnail
+      preview_image_style: media_library
       crop_preview_image_style: crop_thumbnail
       crop_list:
         - hero_default

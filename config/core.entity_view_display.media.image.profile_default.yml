@@ -29,7 +29,7 @@ content:
       responsive_image_style: profile_default
       image_link: ''
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
     weight: 0
     region: content

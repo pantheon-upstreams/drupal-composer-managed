@@ -21,13 +21,19 @@
 //------------------------------------
 
 .o-person {
-  padding-block-end: rem(52px);
+  padding-block: 32px 56px;
   position: relative;
+
   @include bp-min(large) {
-    padding-block-end: rem(80px);
+    padding-block: 64px 80px;
   }
-  @include bp-min(xxlarge) {
-    padding-block-end: rem(86px);
+
+  .m-breadcrumbs {
+    display: none;
+
+    @include bp-min(medium) {
+      display: block;
+    }
   }
 }
 
@@ -70,13 +76,15 @@
 }
 
 .o-person__content {
-  max-inline-size: rem(780px);
+  max-inline-size: var(--surf-width-small);
 }
 
 .o-person__media {
-  width: 150px;
+  max-inline-size: 150px;
+
   @include bp-min(medium) {
-    width: 100%;
+    margin-inline: auto;
+    max-inline-size: 320px;
   }
 }
 

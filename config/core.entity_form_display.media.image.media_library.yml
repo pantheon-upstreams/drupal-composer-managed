@@ -6,7 +6,7 @@ dependencies:
     - core.entity_form_mode.media.media_library
     - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
-    - image.style.thumbnail
+    - image.style.media_library
     - media.type.image
   module:
     - image_widget_crop
@@ -32,10 +32,11 @@ content:
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: media_library
       crop_preview_image_style: crop_thumbnail
       crop_list:
-        - ratio_4_5
+        - hero_default
+        - profile_default
         - teaser_default
       crop_types_required: {  }
       warn_multiple_usages: true
