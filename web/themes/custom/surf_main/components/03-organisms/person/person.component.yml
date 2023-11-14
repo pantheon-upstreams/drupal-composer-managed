@@ -10,6 +10,9 @@ props:
     person_attributes:
       title: Attributes
       type: string
+    person_breadcrumbs:
+      title: Breadcrumbs
+      type: array
     person_heading:
       title: Person Heading
       type: string
@@ -27,4 +30,4 @@ props:
       type: string
     person_media:
       title: Person Media
-      type: string
+      type: array

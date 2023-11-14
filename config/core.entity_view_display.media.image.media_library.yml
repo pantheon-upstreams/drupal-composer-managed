@@ -24,7 +24,7 @@ content:
       image_link: ''
       image_style: media_library
       image_loading:
-        attribute: lazy
+        attribute: eager
     third_party_settings: {  }
     weight: 0
     region: content

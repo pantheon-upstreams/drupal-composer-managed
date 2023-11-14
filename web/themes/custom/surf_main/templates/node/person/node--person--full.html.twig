@@ -1,37 +1,35 @@
 {#
 /**
  * @file
- * Theme implementation to display a node.
+ * Theme implementation to display a Person Node with Full view mode.
  *
  * Available variables:
- *  See embed below
+ * - No additional variables are available for this node type.
  *
- * @see template_preprocess_node()
+ * @see templates/nodes/node.html.twig
+ * @see components/03-organisms/person/person.twig
  */
 #}
 
-{%
-  set rendered_fields = [
+{% set rendered_fields = [
     'field_name',
     'field_job_title',
     'body',
     'field_phone_office',
     'field_email',
     'field_media_primary',
-  ]
-%}
+] %}
 
 {% embed 'surf_main:person' with {
-  person_attributes: create_attribute({'class': ['o-person--with-img']}),
-  person_heading: content.field_name.0 ? content.field_name|field_value,
-  person_job_title: content.field_job_title.0 ? content.field_job_title|field_value,
-  person_body: content.body.0 ? content.body|field_value,
-  person_phone: content.field_phone_office.0 ? content.field_phone_office|field_value,
-  person_email: content.field_email.0 ? content.field_email|field_value,
-  person_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
   attributes,
+  person_attributes: create_attribute(),
+  person_heading: content.field_name|field_value,
+  person_job_title: content.field_job_title|field_value,
+  person_body: content.body|field_value,
+  person_phone: content.field_phone_office|field_value,
+  person_email: content.field_email|field_value,
+  person_media: content.field_media_primary|field_value,
 } only %}
 {% endembed %}
 
 {{ content|without(rendered_fields) }}
-

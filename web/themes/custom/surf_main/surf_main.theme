@@ -4,7 +4,8 @@
  *
  * - 01 - Imports
  * - 02 - Block
- * - 03 - Theme Suggestions
+ * - 03 - Breadcrumb
+ * - 04 - Theme Suggestions
  */
 
 
@@ -48,7 +49,28 @@ function surf_main_preprocess_block(&$variables) {
 
 
 /*------------------------------------*\
-  03 - Theme Suggestions
+  03 - Breadcrumb
+\*------------------------------------*/
+
+/**
+ * Breadcrumb Preprocess
+ * Implements template_preprocess_breadcrumb()
+ * @param $variables
+ * @return void
+ */
+function surf_main_preprocess_breadcrumb(&$variables){
+  if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+    $variables['breadcrumb'][] = [
+      'text' => $node->getTitle(),
+    ];
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  04 - Theme Suggestions
 \*------------------------------------*/
 
 /**

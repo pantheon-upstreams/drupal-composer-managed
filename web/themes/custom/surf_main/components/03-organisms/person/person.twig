@@ -10,76 +10,85 @@
  * - person_phone: [string]
  * - person_body: [string]
  * - person_media: [string]
+ * - person_breadcrumbs: [array]
  *
  */
 #}
 
-{%
-  set classes = [
-  'o-person',
-]
-%}
+{% set classes = [
+    'o-person',
+    person_media ? 'o-person--with-img'
+] %}
 
 <article {{ person_attributes.addClass(classes).merge(attributes) }}>
-  {{ title_suffix }}
-  <div class="container{% if person_media %} container--xlarge{% else %} container__type--small{% endif %}">
-    <div class="o-person__grid">
+    {{ title_prefix }}
+    {{ title_suffix }}
 
-      {% embed 'surf_main:header' with {
-        header_heading: person_heading,
-        header_heading_level: '1',
-        header_attributes: create_attribute(),
-        heading_attributes: create_attribute({'class': ['o-header__heading', 'o-person__heading']}),
-      } only %}
-      {% endembed %}
+    <div class="container {% if person_media %}container--xlarge{% else %}container--small{% endif %}">
+        {% if person_media %}
+            <div class="o-person__grid">
+        {% endif %}
 
-      <div class="o-person__content">
-        <div class="o-person__content-wrapper">
+            {% embed 'surf_main:header' with {
+                header_heading: person_heading,
+                header_heading_level: '1',
+                header_attributes: create_attribute(),
+                heading_attributes: create_attribute({'class': ['o-header__heading', 'o-person__heading']}),
+            } only %}
+                {% block header_links_block %}
+                    {{ drupal_breadcrumb() }}
+                {% endblock %}
+            {% endembed %}
 
-          {% if person_job_title %}
-            <h2 class="o-person__job-title">
-              {{ person_job_title }}
-            </h2>
-          {% endif %}
+            <div class="o-person__content">
+                <div class="o-person__content-wrapper">
 
-          {% if person_phone or person_email %}
-            <div class="o-person__contact-wrapper">
+                    {% if person_job_title %}
+                        <h2 class="o-person__job-title">
+                            {{ person_job_title }}
+                        </h2>
+                    {% endif %}
 
-              {% if person_phone %}
-                <p class="o-person__phone">
-                  {{ person_phone }}
-                </p>
-              {% endif %}
+                    {% if person_phone or person_email %}
+                        <div class="o-person__contact-wrapper">
 
-              {% if person_email %}
-                <p class="o-person__email">
-                  <a href="mailto:{{ person_email }}">{{ 'Contact'|t }}</a>
-                </p>
-              {% endif %}
+                            {% if person_phone %}
+                                <p class="o-person__phone">
+                                    {{ person_phone }}
+                                </p>
+                            {% endif %}
 
+                            {% if person_email %}
+                                <p class="o-person__email">
+                                    <a href="mailto:{{ person_email }}">{{ 'Contact'|t }}</a>
+                                </p>
+                            {% endif %}
+
+                        </div>
+                    {% endif %}
+
+                    {% if person_body %}
+                        <div class="o-person-content__wrapper">
+
+                            {% embed 'surf_main:editor' with {
+                                editor_attributes: create_attribute(),
+                                editor_content: person_body,
+                            } only %}
+                            {% endembed %}
+
+                        </div>
+                    {% endif %}
+                </div>
             </div>
-          {% endif %}
 
-          {% if person_body %}
-            <div class="o-person-content__wrapper">
+            {% if person_media %}
+                <div class="o-person__media">
+                    {{ person_media }}
+                </div>
+            {% endif %}
 
-              {% embed 'surf_main:editor' with {
-                editor_attributes: create_attribute(),
-                editor_content: person_body,
-              } only %}
-              {% endembed %}
-
+        {% if person_media %}
             </div>
-          {% endif %}
-        </div>
-      </div>
-
-      {% if person_media %}
-        <div class="o-person__media">
-          {{ person_media }}
-        </div>
-      {% endif %}
-
+        {% endif %}
     </div>
-  </div>
 </article>
