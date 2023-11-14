@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Press Release
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    press_release_attributes:
+      title: Attributes
+      type: string
+    press_release_heading:
+      title: Page Heading
+      type: string
+    press_release_content:
+      title: Content
+      type: string
