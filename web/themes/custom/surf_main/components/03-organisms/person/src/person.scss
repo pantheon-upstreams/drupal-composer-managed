@@ -27,6 +27,14 @@
   @include bp-min(large) {
     padding-block: 64px 80px;
   }
+
+  .m-breadcrumbs {
+    display: none;
+
+    @include bp-min(medium) {
+      display: block;
+    }
+  }
 }
 
 .o-person__heading {
