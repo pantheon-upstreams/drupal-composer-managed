@@ -31,6 +31,25 @@
   @include bp-min(xxlarge) {
     margin-block-end: 0;
   }
+
+  figure img {
+    max-block-size: 690px;
+    object-fit: cover;
+  }
+}
+
+.o-article__video-wrapper {
+  margin-block-end: rem(32px);
+  @include bp-min(medium) {
+    margin-block-end: rem(40px)
+  }
+  @include bp-min(large) {
+    margin-block-end: rem(60px)
+  }
+
+  figure {
+    @include responsive-iframe(16, 9);
+  }
 }
 
 .o-article__inner-wrapper {
