@@ -1,0 +1,142 @@
+//
+// Component - Organism - Experiment Node
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Modifiers
+// - 04 - Context Overrides
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.p-experiment {
+  // empty
+}
+
+.p-experiment__media {
+  img {
+    max-block-size: 480px;
+    object-fit: cover;
+    width: 100%;
+
+    @include bp-min(xlarge) {
+      max-block-size: 690px;
+    }
+  }
+}
+
+.p-experiment__overview {
+  margin-block-end: rem(32px);
+
+  @include bp-min(medium) {
+    margin-block-end: rem(60px);
+  }
+}
+
+.p-experiment__main-content,
+.lpb-component-list {
+  > * {
+    margin-inline: auto;
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(60px);
+  }
+}
+
+.p-experiment__additional-content {
+  margin-block-start: rem(32px);
+
+  @include bp-min(medium) {
+    margin-block-start: rem(60px);
+  }
+
+  @include bp-min(large) {
+    margin-block-start: rem(80px);
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+
+    @include bp-min(large) {
+      margin-block-end: rem(80px);
+    }
+  }
+}
+
+.p-experiment__in-the-news {
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+
+    @include bp-min(large) {
+      margin-block-end: rem(68px);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+
+.p-experiment--with-img
+.o-header {
+  @include bp-min(xlarge) {
+    margin-block-start: rem(-120px);
+  }
+}
+
+
+//------------------------------------
+//  04 - Context Overrides
+//------------------------------------
+//
+
+.p-experiment__main-content,
+.lpb-component-list {
+  .m-gallery {
+    margin-block: rem(40px);
+
+    @include bp-min(medium) {
+      margin-block: rem(60px);
+    }
+  }
+
+  .m-pullquote.m-pullquote--md {
+    max-inline-size: rem(1020px);
+    padding-inline: 0;
+    margin-block-start: rem(-28px);
+    margin-block-end: rem(32px);
+  }
+
+  .m-link-highlight {
+    max-inline-size: rem(1020px);
+  }
+
+  .o-component-grid.o-component-grid--col-2 {
+    max-inline-size: rem(888px);
+    margin-inline: auto;
+  }
+}

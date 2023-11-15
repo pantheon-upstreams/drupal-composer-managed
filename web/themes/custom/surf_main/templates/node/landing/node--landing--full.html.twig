@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Landing Page Node with Full view mode.
+ *
+ * Available variables:
+ * - No additional variables are available for this Node type.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% include 'surf_main:landing' with {
+    attributes,
+    landing_attributes: create_attribute(),
+    landing_content: content.field_p_content,
+    landing_hero: content.field_p_hero,
+} only %}

@@ -28,6 +28,30 @@
 #
 
 options:
+  layout_two_column:
+    plugin: property
+    label: Two Column Widths
+    default: 55-45
+    options:
+      50-50:
+        label: 50/50
+      55-45:
+        label: 55/45
+      45-55:
+        label: 45/55
+      25-75:
+        label: 25/75
+      75-25:
+        label: 75/25
+
+  layout_three_column:
+    plugin: property
+    label: Three Column Widths
+    default: 33-34-33
+    options:
+      33-34-33:
+        label: 33/34/33
+
   callout_type:
     plugin: property
     label: 'Callout Type'
@@ -47,6 +71,7 @@ options:
         label: Image Left
       img-right:
         label: Image Right
+
   hero_type:
     plugin: property
     label: 'Hero Type'
@@ -58,6 +83,7 @@ options:
         label: Content Left
       content-top:
         label: Content Top
+
   grid_type:
     plugin: property
     label: 'Grid Type'
@@ -67,6 +93,7 @@ options:
         label: 2-Columns
       col-3:
         label: 3-Columns
+
   grid_gap:
     plugin: property
     label: 'Grid Gap'
@@ -78,6 +105,7 @@ options:
         label: Medium (48px)
       lg:
         label: Large (60px)
+
   link_highlight_type:
     plugin: property
     label: 'Link Highlight Type'
@@ -87,6 +115,7 @@ options:
         label: Image Left
       img-right:
         label: Image Right
+
   pullquote_type:
     plugin: property
     label: 'Pullquote Type'
@@ -98,7 +127,18 @@ options:
         label: Medium
       lg:
         label: Large
+
 contexts:
+  layout:
+    two_column:
+      options:
+        layout_two_column:
+          layout: true
+    three_column:
+      options:
+        layout_three_column:
+          layout: true
+
   paragraphs:
     callout:
       options:

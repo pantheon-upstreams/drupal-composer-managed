@@ -1,0 +1,129 @@
+//
+// Component - Page - Research Node
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Modifiers
+// - 04 - Context Overrides
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.p-research {
+  // empty
+}
+
+.p-research__media {
+  img {
+    max-block-size: 480px;
+    object-fit: cover;
+    width: 100%;
+
+    @include bp-min(xlarge) {
+      max-block-size: 690px;
+    }
+  }
+}
+
+.p-research__overview {
+  margin-block-end: rem(32px);
+
+  @include bp-min(medium) {
+    margin-block-end: rem(60px);
+  }
+}
+
+.p-research__main-content,
+.lpb-component-list {
+  > :not( :last-child ) {
+    margin-block-end: rem(28px);
+  }
+}
+
+.p-research__additional-content {
+  margin-block-start: rem(32px);
+
+  @include bp-min(medium) {
+    margin-block-start: rem(60px);
+  }
+
+  @include bp-min(large) {
+    margin-block-start: rem(80px);
+  }
+
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+
+    @include bp-min(large) {
+      margin-block-end: rem(80px);
+    }
+  }
+}
+
+.p-research__key-experiments {
+  > :not( :last-child ) {
+    margin-block-end: rem(40px);
+  }
+}
+
+.p-research__in-the-news {
+  > :not( :last-child ) {
+    margin-block-end: rem(32px);
+
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+
+    @include bp-min(large) {
+      margin-block-end: rem(68px);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+
+.p-research--with-img {
+  .o-header {
+    @include bp-min(xlarge) {
+      margin-block-start: rem(-120px);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Context Overrides
+//------------------------------------
+
+.p-research {
+  .m-gallery {
+    margin-block: rem(40px);
+
+    @include bp-min(medium) {
+      margin-block: rem(60px);
+    }
+  }
+}

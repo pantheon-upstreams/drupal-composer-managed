@@ -1,0 +1,21 @@
+uuid: d3304108-d0ac-4e6c-96fc-71bbd4e60bae
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+    - style_options
+id: section_extended
+label: 'Section - Extended'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      one_column: '01 - One Column'
+      two_column: '02 - Two Column'
+      three_column: '03 - Three Column'
+  style_options:
+    enabled: true

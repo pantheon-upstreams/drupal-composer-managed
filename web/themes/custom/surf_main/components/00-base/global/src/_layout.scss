@@ -6,8 +6,8 @@
 // - 03 - Widths
 // - 04 - Heights
 // - 05 - Layers
-// - 07 - Container
-// - 08 - Layout
+// - 06 - Container
+// - 07 - Layout
 //
 
 
@@ -15,7 +15,8 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+//@use '../../../00-base/partials/partials' as *;
 
 
 
@@ -28,7 +29,7 @@
   :root, .ck {
     --surf-grid-gap: 24px;
 
-    @include bp-min(large) {
+    @include breakpoints.bp-min(large) {
       --surf-grid-gap: 40px;
     }
   }
@@ -64,7 +65,7 @@
   --surf-height-region-header-utility: 72px;
   --surf-height-region-header-primary: 72px;
 
-  @include bp-min(large) {
+  @include breakpoints.bp-min(large) {
     --surf-height-region-header-primary: 120px;
   }
 }
@@ -117,88 +118,105 @@
 
 
 
+
 //------------------------------------
-//  08 - Layout
+//  07 - Layout
 //------------------------------------
 
-.layout--twocol-section,
-.layout--threecol-section {
+ul.l-onecol,
+ul.l-twocol,
+ul.l-threecol {
+  padding: 0;
+}
+
+.l-onecol,
+.l-twocol,
+.l-threecol, {
+  margin-block: 64px;
+
+  @include breakpoints.bp-min(large) {
+    margin-block: 88px;
+  }
+}
+
+.l-onecol__region > *:not(:first-child),
+.l-twocol__region > *:not(:first-child),
+.l-threecol__region > *:not(:first-child) {
+  margin-block-start: 40px;
+
+  @include breakpoints.bp-min(large) {
+    margin-block-start: 64px;
+  }
+}
+
+.l-twocol,
+.l-threecol {
   display: grid;
   gap: 60px;
 }
 
-.layout--twocol-section--50-50 {
+.l-onecol--listing {
+  > * {
+    border-bottom: solid 2px var(--surf-color-gray-800);
+    border-top: solid 2px var(--surf-color-gray-800);
+    padding-block-end: 96px;
+    padding-block-start: 40px;
+  }
+
+  > *:not(:first-child) {
+    margin-block-start: -2px;
+  }
+}
+
+.l-twocol--50-50 {
   grid-template-columns: 1fr;
-  @include bp-min(medium) {
+
+  @include breakpoints.bp-min(medium) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.layout--twocol-section--33-67 {
+.l-twocol--55-45 {
   grid-template-columns: 1fr;
-  @include bp-min(medium) {
-    grid-template-columns: 1fr 2fr;
+
+  @include breakpoints.bp-min(medium) {
+    grid-template-columns: 55% 45%;
   }
 }
 
-.layout--twocol-section--67-33 {
+.l-twocol--45-55 {
   grid-template-columns: 1fr;
-  @include bp-min(medium) {
-    grid-template-columns: 2fr 1fr;
+
+  @include breakpoints.bp-min(medium) {
+    grid-template-columns: 45% 55%;
   }
 }
 
-.layout--twocol-section--25-75 {
+.l-twocol--25-75 {
   grid-template-columns: 1fr;
-  @include bp-min(medium) {
+
+  @include breakpoints.bp-min(medium) {
     grid-template-columns: 1fr 3fr;
   }
 }
 
-.layout--twocol-section--75-25 {
+.l-twocol--75-25 {
   grid-template-columns: 1fr;
-  @include bp-min(medium) {
+
+  @include breakpoints.bp-min(medium) {
     grid-template-columns: 3fr 1fr;
   }
 }
 
-.layout--threecol-section--33-34-33 {
+.l-threecol--33-34-33 {
   grid-template-columns: 1fr;
-  @include bp-min(medium) {
+
+  @include breakpoints.bp-min(medium) {
     grid-template-columns: 1fr 1fr;
   }
-  @include bp-min(large) {
+
+  @include breakpoints.bp-min(large) {
     grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.layout--threecol-section--25-50-25 {
-  grid-template-columns: 1fr;
-  @include bp-min(medium) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @include bp-min(large) {
-    grid-template-columns: 1fr 2fr 1fr;
-  }
-}
-
-.layout--threecol-section--25-25-50 {
-  grid-template-columns: 1fr;
-  @include bp-min(medium) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @include bp-min(large) {
-    grid-template-columns: 1fr 1fr 2fr;
-  }
-}
-
-.layout--threecol-section--50-25-25 {
-  grid-template-columns: 1fr;
-  @include bp-min(medium) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @include bp-min(large) {
-    grid-template-columns: 2fr 1fr 1fr;
   }
 }
 

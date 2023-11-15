@@ -1,0 +1,31 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Two Column
+status: experimental
+group: Layouts
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    layout_attributes:
+      title: Attributes
+      type: string
+    layout_html_wrapper:
+      title: Wrapper Markup
+      type: string
+      enum:
+        - section
+        - ul
+        - div
+    layout_column_widths:
+      title: Column Widths
+      type: string
+      enum:
+        - 50-50
+        - 45-55
+        - 55-45
+        - 25-75
+        - 75-25
+  slots:
+    layout_content:
+      title: Content

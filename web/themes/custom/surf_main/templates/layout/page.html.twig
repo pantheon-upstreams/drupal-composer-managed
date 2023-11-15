@@ -32,7 +32,18 @@
  */
 #}
 
-{{ include('surf_main:basic-page', {
-    page: page,
-    attributes: attributes,
-}, with_context = false) }}
+<div class="layout-container">
+    {% if page.site_alert or page.header_utility or page.header_primary %}
+        {% include 'surf_main:masthead' with {
+            attributes,
+            masthead_attributes: create_attribute(),
+            masthead_alerts: page.site_alert,
+            masthead_utility: page.header_utility,
+            masthead_primary: page.header_primary,
+        } only %}
+    {% endif %}
+
+    {{ page.content }}
+    {{ page.sidebar_right }}
+    {{ page.footer }}
+</div>

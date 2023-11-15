@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Organism Component for Landing Page
+ *
+ * Available props:
+ * - attributes: []
+ * - landing_attributes: [array]
+ * - landing_content: [array]
+ * - landing_hero: [array]
+ *
+ */
+#}
+
+{% set classes = [
+    'p-landing',
+] %}
+
+<article {{ landing_attributes.addClass(classes).merge(attributes) }}>
+    {{ landing_hero }}
+
+    <div class="container container--default">
+        {{ landing_content }}
+    </div>
+</article>

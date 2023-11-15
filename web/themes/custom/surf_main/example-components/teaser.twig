@@ -38,13 +38,13 @@
     <p><em>List</em></p>
 </div>
 
-{% embed 'surf_main:grid' with {
+{% embed 'surf_main:one-column' with {
     attributes,
-    grid_attributes: create_attribute(),
-    grid_column_type: 'col-1',
-    grid_html_type: 'ul',
+    layout_attributes: create_attribute(),
+    layout_html_wrapper: 'ul',
+    layout_listing: true,
 } only %}
-    {% block grid_items %}
+    {% block layout_content %}
         <li class="a-grid__item">
             {% embed 'surf_main:teaser' with {
                 attributes,
@@ -133,19 +133,18 @@
         </li>
     {% endblock %}
 {% endembed %}
-
 
 <div class="c-rich-text" style="margin: 32px 0">
     <p><em>3 Column</em></p>
 </div>
 
-{% embed 'surf_main:grid' with {
+{% embed 'surf_main:three-column' with {
     attributes,
-    grid_attributes: create_attribute(),
-    grid_column_type: 'col-3',
-    grid_html_type: 'ul',
+    layout_attributes: create_attribute(),
+    layout_html_wrapper: 'ul',
+    layout_column_widths: '33-34-33',
 } only %}
-    {% block grid_items %}
+    {% block layout_content %}
         <li class="a-grid__item">
             {% embed 'surf_main:teaser' with {
                 attributes,
@@ -382,19 +381,17 @@
     {% endblock %}
 {% endembed %}
 
-
-
 <div class="c-rich-text" style="margin: 32px 0">
     <p><em>2 column</em></p>
 </div>
 
-{% embed 'surf_main:grid' with {
+{% embed 'surf_main:two-column' with {
     attributes,
-    grid_attributes: create_attribute(),
-    grid_column_type: 'col-2',
-    grid_html_type: 'ul',
+    layout_attributes: create_attribute(),
+    layout_html_wrapper: 'ul',
+    layout_column_widths: '50-50',
 } only %}
-    {% block grid_items %}
+    {% block layout_content %}
         <li class="a-grid__item">
             {% embed 'surf_main:teaser' with {
                 attributes,

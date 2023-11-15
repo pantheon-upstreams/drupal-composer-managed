@@ -1,0 +1,23 @@
+uuid: 829b6469-4977-4e3f-97ad-5b034893be47
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.section_extended.field_title
+    - paragraphs.paragraphs_type.section_extended
+id: paragraph.section_extended.preview
+targetEntityType: paragraph
+bundle: section_extended
+mode: preview
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
