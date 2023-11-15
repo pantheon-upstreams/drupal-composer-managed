@@ -3,22 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.resource_file.field_document
     - field.field.paragraph.resource_file.field_file
     - paragraphs.paragraphs_type.resource_file
   module:
-    - file
+    - media_library
 id: paragraph.resource_file.default
 targetEntityType: paragraph
 bundle: resource_file
 mode: default
 content:
-  field_file:
-    type: file_generic
+  field_document:
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      progress_indicator: throbber
+      media_types: {  }
     third_party_settings: {  }
 hidden:
   created: true
+  field_file: true
   status: true

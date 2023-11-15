@@ -27,12 +27,12 @@
 
 .p-experiment__media {
   img {
-    max-height: 480px;
+    max-block-size: 480px;
     object-fit: cover;
     width: 100%;
 
     @include bp-min(xlarge) {
-      max-height: 690px;
+      max-block-size: 690px;
     }
   }
 }

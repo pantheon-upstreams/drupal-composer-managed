@@ -135,7 +135,7 @@
   }
 
   > li > .m-menu__dropdown {
-    max-height: 0;
+    max-block-size: 0;
     opacity: 0;
     padding: 0;
     position: relative;
@@ -144,8 +144,8 @@
 
     @include breakpoints.bp-min(xxlarge) {
       background: url('img/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
-      max-height: inherit;
-      min-width: 740px;
+      max-block-size: inherit;
+      min-inline-size: 740px;
       padding: 32px;
       position: absolute;
       top: 100%;
@@ -167,7 +167,7 @@
   }
 
   > li.is-open > .m-menu__dropdown {
-    max-height: 2000px;
+    max-block-size: 2000px;
     opacity: 1;
     visibility: visible;
 
@@ -210,7 +210,7 @@
     @include breakpoints.bp-min(xxlarge) {
       display: flex;
       flex-flow: nowrap row;
-      min-height: 240px;
+      min-block-size: 240px;
       margin: 0 12px;
     }
   }
@@ -218,7 +218,7 @@
   > li > .m-menu__card {
     @include breakpoints.bp-min(xxlarge) {
       background-color: var(--surf-color-white);
-      min-width: 360px;
+      min-inline-size: 360px;
       padding: 24px 32px;
     }
 

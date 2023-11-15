@@ -6,9 +6,9 @@ _core:
   default_config_hash: 3k0ojgMLZae-f358WLWxfKYddQPSaQSnIdAKiYw2wnY
 id: compact
 label: Compact
-date_format: 'M j Y'
-time_format: 'g:ia'
-time_hour_format: ga
+date_format: 'F j, Y'
+time_format: 'g:i A'
+time_hour_format: 'g:i A'
 allday_label: ''
 separator: ' - '
 join: ' | '

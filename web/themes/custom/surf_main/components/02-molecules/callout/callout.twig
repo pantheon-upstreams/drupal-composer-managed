@@ -47,7 +47,6 @@
         {% if callout_button_url %}
             {% if callout_type == 'navy' or callout_type == 'blue' %}
                 {% include 'surf_main:button' with {
-                    attributes,
                     button_attributes: create_attribute(),
                     button_color: 'white',
                     button_external: true,
@@ -59,7 +58,6 @@
                 } only %}
             {% elseif callout_type == 'white' %}
                 {% include 'surf_main:button' with {
-                    attributes,
                     button_attributes: create_attribute(),
                     button_color: 'navy',
                     button_external: true,
@@ -71,7 +69,6 @@
                 } only %}
             {% elseif callout_type == 'gray' %}
                 {% include 'surf_main:button' with {
-                    attributes,
                     button_attributes: create_attribute(),
                     button_color: 'navy',
                     button_external: true,
@@ -84,7 +81,6 @@
             {% elseif callout_type == 'img' or callout_type == 'embed' %}
                 {% if callout_button_prefix == 'play' %}
                     {% include 'surf_main:button' with {
-                        attributes,
                         button_attributes: create_attribute(),
                         button_color: 'white',
                         button_external: true,
@@ -98,7 +94,6 @@
                     } only %}
                 {% elseif callout_button_prefix == 'envelope' %}
                     {% include 'surf_main:button' with {
-                        attributes,
                         button_attributes: create_attribute(),
                         button_color: 'white',
                         button_external: true,
@@ -112,7 +107,6 @@
                     } only %}
                 {% else %}
                     {% include 'surf_main:button' with {
-                        attributes,
                         button_attributes: create_attribute(),
                         button_color: 'white',
                         button_external: true,
@@ -127,7 +121,6 @@
             {% else %}
                 {% if callout_button_prefix == 'play' %}
                     {% include 'surf_main:button' with {
-                        attributes,
                         button_attributes: create_attribute(),
                         button_color: 'navy',
                         button_external: true,
@@ -141,7 +134,6 @@
                     } only %}
                 {% elseif callout_button_prefix == 'envelope' %}
                     {% include 'surf_main:button' with {
-                        attributes,
                         button_attributes: create_attribute(),
                         button_color: 'navy',
                         button_external: true,
@@ -155,7 +147,6 @@
                     } only %}
                 {% else %}
                     {% include 'surf_main:button' with {
-                        attributes,
                         button_attributes: create_attribute(),
                         button_color: 'navy',
                         button_external: true,

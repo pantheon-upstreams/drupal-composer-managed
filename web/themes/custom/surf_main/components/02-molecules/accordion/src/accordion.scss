@@ -43,14 +43,14 @@
 .m-accordion {
   .m-accordion__panel {
     opacity: 0;
-    max-height: 0;
+    max-block-size: 0;
     transition: animations.transition(all, 0.35s, easeInOutExpo);
     visibility: hidden;
   }
 
   .expanded .m-accordion__panel {
     opacity: 1;
-    max-height: 9999px;
+    max-block-size: 9999px;
     visibility: visible;
   }
 }

@@ -49,16 +49,16 @@ settings:
       styles:
         -
           label: 'Navy Button'
-          element: '<a class="a-button a-button--large a-button--navy">'
+          element: '<a class="a-button a-button--small a-button--navy a-button--primary">'
         -
           label: 'Navy Button with Arrow Right'
-          element: '<a class="a-button a-button--large a-button--navy a-button--icon-arrow-right">'
+          element: '<a class="a-button a-button--small a-button--navy a-button--icon-arrow-right a-button--underline">'
         -
           label: 'Black Button'
-          element: '<a class="a-button a-button--large a-button--black">'
+          element: '<a class="a-button a-button--small a-button--black a-button--primary">'
         -
           label: 'Black Button with Arrow Right'
-          element: '<a class="a-button a-button--large a-button--black a-button--icon-arrow-right">'
+          element: '<a class="a-button a-button--small a-button--black a-button--icon-arrow-right a-button--underline">'
         -
           label: 'Heading 2 - Large'
           element: '<h2 class="large">'
