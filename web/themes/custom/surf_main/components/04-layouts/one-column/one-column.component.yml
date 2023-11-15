@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: One Column
+status: experimental
+group: Layouts
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    layout_attributes:
+      title: Attributes
+      type: string
+    layout_html_wrapper:
+      title: Wrapper Markup
+      type: string
+      enum:
+        - section
+        - ul
+        - div
+    layout_listing:
+      title: Listing
+      type: boolean
+  slots:
+    layout_content:
+      title: Content

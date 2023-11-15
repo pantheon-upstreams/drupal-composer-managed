@@ -1,15 +1,64 @@
-default:
-  label: Default
-  category: surf_main
-  template: templates/layouts/default
+#
+# SURF - Layouts
+#
+# - 01 - One Column
+# - 02 - Two Column
+# - 03 - Three Column
+#
+
+
+#------------------------------------#
+# 01 - One Column
+#------------------------------------#
+
+one_column:
+  label: 01 - One Column
+  category: SURF
+  template: templates/layouts/one-column/one-column
+  icon_map:
+    - [first]
   regions:
-    content:
-      label: Content
-layout_onecolumn:
-  label: One Column
-  category: surf_main
-  template: templates/layout/one-column/one-column
-  default_region: main
+    first:
+      label: First
+
+
+
+
+#------------------------------------#
+# 02 - Two Column
+#------------------------------------#
+
+two_column:
+  label: 02 - Two Column
+  category: SURF
+  class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
+  template: templates/layouts/two-column/two-column
+  icon_map:
+    - [first, second]
   regions:
-    main:
-      label: Main content
+    first:
+      label: First
+    second:
+      label: Second
+
+
+
+
+#------------------------------------#
+# 03 - Three Column
+#------------------------------------#
+
+three_column:
+  label: 03 - Three Column
+  category: SURF
+  class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
+  template: templates/layouts/three-column/three-column
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third

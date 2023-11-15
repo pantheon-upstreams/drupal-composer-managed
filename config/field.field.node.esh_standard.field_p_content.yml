@@ -7,12 +7,10 @@ dependencies:
     - node.type.esh_standard
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
-    - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
-    - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -33,12 +31,10 @@ settings:
       callout: callout
       text: text
       accordion: accordion
-      card_list: card_list
       header: header
       media: media
       pullquote: pullquote
       resources_list: resources_list
-      teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:
       accordion:

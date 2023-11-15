@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme override to display a two-column layout.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ */
+#}
+
+{% embed 'surf_main:two-column' with {
+    attributes,
+    region_attributes,
+    layout_attributes: create_attribute(),
+    layout_html_wrapper: 'section',
+    layout_column_widths: content['#layout_two_column'],
+    layout_content: content,
+} only %}
+    {% block layout_content %}
+        <div {{ region_attributes.first.addClass('l-twocol__region', 'l-twocol__region--first')}}>
+            {{ layout_content.first }}
+        </div>
+
+        <div {{ region_attributes.second.addClass('l-twocol__region', 'l-twocol__region--second')}}>
+            {{ layout_content.second }}
+        </div>
+    {% endblock %}
+{% endembed %}

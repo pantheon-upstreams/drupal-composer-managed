@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Component for Experiment (Node)
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - experiment_attributes: [array] Any parent tag attributes.
+ * - experiment_heading: [string]
+ * - experiment_header_teaser: [string]
+ * - experiment_media: [string]
+ * - experiment_overview: [string]
+ * - experiment_content: [array]
+ *
+ */
+#}
+
+{% set classes = [
+    'p-experiment',
+] %}
+
+<article {{ experiment_attributes.addClass(classes).merge(attributes) }}>
+    {% if experiment_media %}
+        <div class="p-experiment__media">
+            {{ experiment_media }}
+        </div>
+    {% endif %}
+
+    <div class="container container--xlarge">
+        {{ title_suffix }}
+
+        {% embed 'surf_main:header' with {
+            header_heading: experiment_heading,
+            header_heading_level: '1',
+            header_summary: experiment_header_summary,
+            header_attributes: create_attribute(),
+            heading_attributes: create_attribute({'class': ['o-header__heading']}),
+        } only %}
+        {% endembed %}
+
+        <div class="p-experiment-wrapper">
+            {# Main Content #}
+            <div class="p-experiment__main-content">
+                {{ experiment_content }}
+            </div>
+
+            {# Additional Content #}
+            <div class="p-experiment__additional-content">
+                <div class="p-experiment__in-the-news">
+                    {% if drupal_view_result('in_the_news', 'experiment') is not empty %}
+                        {% embed 'surf_main:left-hook' with {
+                            left_hook_attributes: create_attribute(),
+                        } only %}
+                        {% endembed %}
+
+                        {% embed 'surf_main:heading' with {
+                            heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
+                            heading_text: research_area ~ ' In the News',
+                            heading_level: '2',
+                        } only %}
+                        {% endembed %}
+
+                        {{ drupal_view('in_the_news', 'experiment') }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

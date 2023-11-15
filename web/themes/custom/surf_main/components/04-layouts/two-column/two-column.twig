@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Layout component for Two Column layouts
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - layout_attributes: [string] Any additional attributes needing to be specified.
+ * - layout_column_widths: [string] Options include '50-50', '55-45', '45-55', '25-75', '75-25'.
+ *
+ * Available slots:
+ * - layout_content
+ *
+ */
+#}
+
+{% set classes = [
+    'l-twocol',
+    'l-twocol--' ~ layout_column_widths,
+] %}
+
+<{{ layout_html_wrapper }} {{ layout_attributes.addClass(classes).merge(attributes) }}>
+    {% block layout_content %}{% endblock %}
+</{{ layout_html_wrapper }}>

@@ -10,10 +10,8 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
-    - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
-    - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -37,10 +35,8 @@ settings:
       accordion: accordion
       header: header
       media: media
-      persons_list: persons_list
       pullquote: pullquote
       resources_list: resources_list
-      teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:
       accordion:

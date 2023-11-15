@@ -7,7 +7,6 @@ dependencies:
     - node.type.experiment_research
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
-    - paragraphs.paragraphs_type.component_grid
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.link_highlight
@@ -15,7 +14,6 @@ dependencies:
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section
-    - paragraphs.paragraphs_type.teaser_list
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -35,7 +33,6 @@ settings:
     target_bundles:
       callout: callout
       gallery: gallery
-      component_grid: component_grid
       link_highlight: link_highlight
       section: section
       text: text
@@ -44,7 +41,6 @@ settings:
       media: media
       pullquote: pullquote
       resources_list: resources_list
-      teaser_list: teaser_list
     negate: 0
     target_bundles_drag_drop:
       accordion:

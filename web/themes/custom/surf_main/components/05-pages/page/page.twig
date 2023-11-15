@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Component for Basic Page (Node)
+ *
+ * Available props:
+ * - page_attributes: [array] Any parent tag attributes.
+ * - page_heading: [string]
+ * - page_summary: [string]
+ * - person_phone: [string]
+ * - person_body: [string]
+ * - person_media: [string]
+ *
+ */
+#}
+
+{% set classes = [
+    'p-page',
+] %}
+
+<article {{ page_attributes.addClass(classes).merge(attributes) }}>
+    {% if page_media %}
+        <div class="p-page__media">
+            {{ page_media }}
+        </div>
+    {% endif %}
+
+    <div class="container container--xlarge">
+        {{ title_suffix }}
+
+        {% embed 'surf_main:header' with {
+            header_heading: page_heading,
+            header_heading_level: '1',
+            header_summary: page_summary,
+            header_cta_url: page_cta_url,
+            header_cta_text: page_cta_text,
+            header_cta_html_tag: page_cta_html_tag|default('link'),
+            header_cta_style: page_cta_style|default('primary'),
+            header_cta_size: page_cta_size|default('large'),
+            header_cta_color: page_cta_size|default('navy'),
+            header_attributes: create_attribute(),
+            heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
+        } only %}
+        {% endembed %}
+
+        <div class="p-page__main-content">
+            {{ page_content }}
+        </div>
+    </div>
+</article>

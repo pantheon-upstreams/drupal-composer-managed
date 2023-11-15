@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override to display a Three Column layout.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ */
+#}
+
+{% embed 'surf_main:three-column' with {
+    attributes,
+    region_attributes,
+    layout_attributes: create_attribute(),
+    layout_html_wrapper: 'section',
+    layout_column_widths: content['#layout_three_column'],
+    layout_content: content,
+} only %}
+    {% block layout_content %}
+        <div {{ region_attributes.first.addClass('l-threecol__region', 'l-threecol__region--first')}}>
+            {{ layout_content.first }}
+        </div>
+
+        <div {{ region_attributes.second.addClass('l-threecol__region', 'l-threecol__region--second')}}>
+            {{ layout_content.second }}
+        </div>
+
+        <div {{ region_attributes.third.addClass('l-threecol__region', 'l-threecol__region--third')}}>
+            {{ layout_content.third }}
+        </div>
+    {% endblock %}
+{% endembed %}

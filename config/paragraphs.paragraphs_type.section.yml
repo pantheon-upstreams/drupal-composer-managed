@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - layout_paragraphs
+    - style_options
 id: section
 label: Section
 icon_uuid: null
@@ -13,6 +14,8 @@ behavior_plugins:
   layout_paragraphs:
     enabled: true
     available_layouts:
-      layout_onecol: 'One column'
-      layout_twocol_section: 'Two column'
-      layout_threecol_section: 'Three column'
+      one_column: '01 - One Column'
+      two_column: '02 - Two Column'
+      three_column: '03 - Three Column'
+  style_options:
+    enabled: true

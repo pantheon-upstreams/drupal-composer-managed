@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Layout component for One Column layouts
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - layout_attributes: [string] Any additional attributes needing to be specified.
+ * - layout_listing: [boolean] Determines whether or not to place nested items in a listing format.
+ *
+ * Available slots:
+ * - layout_content
+ *
+ */
+#}
+
+{% set classes = [
+    'l-onecol',
+    layout_listing ? 'l-onecol--listing',
+] %}
+
+<{{ layout_html_wrapper }} {{ layout_attributes.addClass(classes).merge(attributes) }}>
+    {% block layout_content %}{% endblock %}
+</{{ layout_html_wrapper }}>

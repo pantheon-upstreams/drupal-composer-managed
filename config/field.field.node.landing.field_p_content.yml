@@ -7,16 +7,13 @@ dependencies:
     - node.type.landing
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
-    - paragraphs.paragraphs_type.card_list
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.person
-    - paragraphs.paragraphs_type.persons_list
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
-    - paragraphs.paragraphs_type.section
-    - paragraphs.paragraphs_type.teaser_list
+    - paragraphs.paragraphs_type.section_extended
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.view
   module:
@@ -36,17 +33,14 @@ settings:
   handler_settings:
     target_bundles:
       callout: callout
+      section_extended: section_extended
       accordion: accordion
-      card_list: card_list
       gallery: gallery
       header: header
       media: media
       person: person
-      persons_list: persons_list
       pullquote: pullquote
       resources_list: resources_list
-      section: section
-      teaser_list: teaser_list
       text: text
       view: view
     negate: 0
@@ -60,26 +54,23 @@ settings:
       callout:
         weight: 22
         enabled: true
-      card:
-        weight: 39
-        enabled: false
-      card_list:
-        weight: 40
-        enabled: true
       gallery:
         weight: 45
         enabled: true
       header:
         weight: 47
         enabled: true
+      hero:
+        weight: 24
+        enabled: false
+      link_highlight:
+        weight: 25
+        enabled: false
       media:
         weight: 52
         enabled: true
       person:
         weight: 55
-        enabled: true
-      persons_list:
-        weight: 56
         enabled: true
       pullquote:
         weight: 57
@@ -98,9 +89,9 @@ settings:
         enabled: false
       section:
         weight: 63
-        enabled: true
-      teaser_list:
-        weight: 64
+        enabled: false
+      section_extended:
+        weight: 34
         enabled: true
       text:
         weight: 65
