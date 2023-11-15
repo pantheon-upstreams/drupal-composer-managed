@@ -62,20 +62,20 @@
 
   .m-gallery__slide > figure img {
     margin: auto;
-    max-height: 210px;
+    max-block-size: 210px;
     object-fit: contain;
     width: auto;
 
     @include breakpoints.bp-min(medium) {
-      max-height: 330px;
+      max-block-size: 330px;
     }
 
     @include breakpoints.bp-min(large) {
-      max-height: 434px;
+      max-block-size: 434px;
     }
 
     @include breakpoints.bp-min(xlarge) {
-      max-height: 660px;
+      max-block-size: 660px;
     }
   }
 }

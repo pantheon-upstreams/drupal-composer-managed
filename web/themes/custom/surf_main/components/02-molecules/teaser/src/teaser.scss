@@ -69,7 +69,7 @@
     width: 100vw;
   }
   @include bp-min(large) {
-    min-height: 690px;
+    min-block-size: 690px;
   }
 
   a {
@@ -432,7 +432,7 @@
   background-color: var(--surf-color-gray-100);
   display: flex;
   flex-flow: row nowrap;
-  min-height: rem(230px);
+  min-block-size: rem(230px);
   padding-inline-end: rem(20px);
 
   .m-teaser__media {

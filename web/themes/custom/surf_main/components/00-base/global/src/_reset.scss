@@ -74,7 +74,7 @@ html:focus-within {
 //------------------------------------
 
 body {
-  min-height: 100vh;
+  min-block-size: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -99,7 +99,7 @@ a:not([class]) {
 
 img,
 picture {
-  max-width: 100%;
+  max-inline-size: 100%;
   display: block;
   height: auto;
 }

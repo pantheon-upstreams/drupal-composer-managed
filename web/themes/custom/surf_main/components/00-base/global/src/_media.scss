@@ -80,7 +80,7 @@
 
 @mixin sizes() {
   figure[data-view-mode='large'] {
-    max-width: inherit;
+    max-inline-size: inherit;
   }
 
   .media--small,

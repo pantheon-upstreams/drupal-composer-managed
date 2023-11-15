@@ -67,7 +67,7 @@ $grid-breakpoints: (
   $min: breakpoint-min($name, $breakpoints);
 
   @if $min {
-    @media (min-width: $min) {
+    @media (min-inline-size: $min) {
       @content;
     }
   } @else {
@@ -167,7 +167,7 @@ $grid-breakpoints: (
   $max: breakpoint-max($name, $breakpoints);
 
   @if $min != null and $max != null {
-    @media (min-width: $min) and (max-width: $max) {
+    @media (min-inline-size: $min) and (max-inline-size: $max) {
       @content;
     }
   } @else if $max == null {
