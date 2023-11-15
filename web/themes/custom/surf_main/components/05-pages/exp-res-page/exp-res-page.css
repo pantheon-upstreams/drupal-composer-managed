@@ -1,1 +1,1 @@
-.o-header__content{background-color:var(--surf-color-white);padding-block:2rem}@media (min-inline-size:1200px){.o-header__content{padding-block:3.75rem;padding-inline:7.5rem}}
+.o-header__content{background-color:var(--surf-color-white);padding-block:2rem}@media (min-width:1200px){.o-header__content{padding-block:3.75rem;padding-inline:7.5rem}}
