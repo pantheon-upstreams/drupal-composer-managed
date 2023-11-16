@@ -1,0 +1,19 @@
+uuid: f0fd5d48-4a9a-4c7b-89c8-51cf1b361f6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ref_experiments
+field_name: field_ref_experiments
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

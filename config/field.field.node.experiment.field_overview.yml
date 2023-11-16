@@ -1,0 +1,24 @@
+uuid: 1e42574b-6d39-4c69-af00-0852751df32a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - filter.format.basic_html
+    - node.type.experiment
+  module:
+    - text
+id: node.experiment.field_overview
+field_name: field_overview
+entity_type: node
+bundle: experiment
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

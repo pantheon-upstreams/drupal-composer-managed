@@ -1,0 +1,65 @@
+uuid: 3edc43cb-1cdb-4e75-a542-cc4b21fb434e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.feature.field_media_primary
+    - field.field.node.feature.field_overview
+    - field.field.node.feature.field_p_content
+    - field.field.node.feature.field_ref_articles
+    - field.field.node.feature.field_ref_audiences
+    - field.field.node.feature.field_ref_experiments
+    - field.field.node.feature.field_ref_research_areas
+    - field.field.node.feature.field_teaser_text
+    - node.type.feature
+  module:
+    - layout_paragraphs
+    - text
+    - user
+id: node.feature.full
+targetEntityType: node
+bundle: feature
+mode: full
+content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: banner_default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_ref_articles: true
+  field_ref_audiences: true
+  field_ref_experiments: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

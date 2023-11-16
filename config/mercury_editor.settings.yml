@@ -2,14 +2,15 @@ _core:
   default_config_hash: '-hIna-Wer82f4uUFdPEmBNA6-RerV3rxWsqgsPi4o7A'
 content_types:
   article: '1'
-  esh_standard: '1'
-  experiment_research: '1'
+  experiment: '1'
+  feature: '1'
   landing: '1'
   page: '1'
   press_release: '1'
   professional_development: '1'
   report_publication: '1'
   school_presentation: '1'
+  standard: '1'
 edit_screen_theme: gin
 skip_create_form: {  }
 mobile_presets:

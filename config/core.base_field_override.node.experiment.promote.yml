@@ -1,0 +1,22 @@
+uuid: bc560205-7a37-48e8-86c8-d890a2f79975
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.experiment
+id: node.experiment.promote
+field_name: promote
+entity_type: node
+bundle: experiment
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

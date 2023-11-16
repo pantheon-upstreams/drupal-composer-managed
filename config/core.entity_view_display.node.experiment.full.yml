@@ -1,0 +1,70 @@
+uuid: 7701744e-f73e-445c-b24a-af70c4517433
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.experiment.field_dates
+    - field.field.node.experiment.field_media_primary
+    - field.field.node.experiment.field_overview
+    - field.field.node.experiment.field_p_content
+    - field.field.node.experiment.field_ref_articles
+    - field.field.node.experiment.field_ref_audiences
+    - field.field.node.experiment.field_teaser_text
+    - node.type.experiment
+  module:
+    - date_range_formatter
+    - layout_paragraphs
+    - text
+    - user
+id: node.experiment.full
+targetEntityType: node
+bundle: experiment
+mode: full
+content:
+  field_dates:
+    type: date_range_without_time
+    label: hidden
+    settings:
+      timezone_override: America/Denver
+      date_format: 'Y-m-d\TH:i:s'
+      separator: '-'
+      one_day: 'd F Y'
+      one_month: 'd - {d} F Y'
+      several_months: 'd F - {d} {F} Y'
+      several_years: 'd F Y - {d} {F} {Y}'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: banner_default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_ref_articles: true
+  field_ref_audiences: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,4 +1,4 @@
-uuid: ec6c9ee0-32a1-4bec-b745-6ba5f4b8072c
+uuid: 6c135ca4-b623-4c8b-95e0-b08693c4331a
 langcode: en
 status: true
 dependencies:
@@ -22,10 +22,10 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Report / Publication'
-type: report_publication
-description: 'Use <em>Report / Publication</em> to add content relating to publications on scientific work and progress.'
+name: Experiment
+type: experiment
+description: 'Use <em>Experiment</em> to add content related to on-going experiments across the facility.'
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 0
 display_submitted: false

@@ -1,4 +1,4 @@
-uuid: ec6c9ee0-32a1-4bec-b745-6ba5f4b8072c
+uuid: 9376ab7b-4ed1-4810-943b-a0bfca1d136e
 langcode: en
 status: true
 dependencies:
@@ -22,9 +22,9 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: 'Report / Publication'
-type: report_publication
-description: 'Use <em>Report / Publication</em> to add content relating to publications on scientific work and progress.'
+name: Feature
+type: feature
+description: 'Use <em>Feature</em> to add content about anything happening at the facility.'
 help: ''
 new_revision: false
 preview_mode: 0

@@ -1,0 +1,11 @@
+uuid: ff6b925e-d2f1-47ae-abb0-40468883e10c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.experiment
+id: node.experiment
+target_entity_type_id: node
+target_bundle: experiment
+default_langcode: site_default
+language_alterable: false

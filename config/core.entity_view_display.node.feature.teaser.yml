@@ -1,0 +1,59 @@
+uuid: b18dfab9-f80b-46da-9acc-a8c32aa11523
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.feature.field_media_primary
+    - field.field.node.feature.field_overview
+    - field.field.node.feature.field_p_content
+    - field.field.node.feature.field_ref_articles
+    - field.field.node.feature.field_ref_audiences
+    - field.field.node.feature.field_ref_experiments
+    - field.field.node.feature.field_ref_research_areas
+    - field.field.node.feature.field_teaser_text
+    - node.type.feature
+  module:
+    - text
+    - user
+id: node.feature.teaser
+targetEntityType: node
+bundle: feature
+mode: teaser
+content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_p_content: true
+  field_ref_articles: true
+  field_ref_audiences: true
+  field_ref_experiments: true
+  field_ref_research_areas: true
+  langcode: true
+  search_api_excerpt: true

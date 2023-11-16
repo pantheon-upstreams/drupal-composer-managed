@@ -1,18 +1,16 @@
-uuid: 4ea02192-ee18-40b3-955a-eb81879d53e1
+uuid: feb84754-0469-4101-af39-fa1eb486e0fd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_ref_related_content
+    - field.storage.node.field_ref_articles
     - node.type.article
-    - node.type.event
-    - node.type.page
-    - node.type.press_release
-id: node.article.field_ref_related_content
-field_name: field_ref_related_content
+    - node.type.experiment
+id: node.experiment.field_ref_articles
+field_name: field_ref_articles
 entity_type: node
-bundle: article
-label: 'Related Content'
+bundle: experiment
+label: 'Related Articles'
 description: ''
 required: false
 translatable: false
@@ -23,12 +21,9 @@ settings:
   handler_settings:
     target_bundles:
       article: article
-      page: page
-      event: event
-      press_release: press_release
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: article
+    auto_create_bundle: ''
 field_type: entity_reference

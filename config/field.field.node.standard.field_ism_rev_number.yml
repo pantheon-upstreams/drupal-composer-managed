@@ -1,0 +1,23 @@
+uuid: 00518ba1-d33a-43de-b7f5-23d611400d08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ism_rev_number
+    - node.type.standard
+id: node.standard.field_ism_rev_number
+field_name: field_ism_rev_number
+entity_type: node
+bundle: standard
+label: 'ISM Revision Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

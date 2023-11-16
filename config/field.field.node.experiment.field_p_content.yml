@@ -1,0 +1,94 @@
+uuid: bc005043-633e-4930-a47b-157ae0e24fc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_p_content
+    - node.type.experiment
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+id: node.experiment.field_p_content
+field_name: field_p_content
+entity_type: node
+bundle: experiment
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+      callout: callout
+      gallery: gallery
+      media: media
+      pullquote: pullquote
+      section: section
+      text: text
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 20
+        enabled: true
+      accordion_item:
+        weight: 21
+        enabled: false
+      callout:
+        weight: 22
+        enabled: true
+      gallery:
+        weight: 25
+        enabled: true
+      header:
+        weight: 26
+        enabled: false
+      hero:
+        weight: 24
+        enabled: false
+      link_highlight:
+        weight: 25
+        enabled: false
+      media:
+        weight: 27
+        enabled: true
+      person:
+        weight: 28
+        enabled: false
+      pullquote:
+        weight: 30
+        enabled: true
+      resource_file:
+        weight: 32
+        enabled: false
+      resource_link:
+        weight: 33
+        enabled: false
+      resources_list:
+        weight: 31
+        enabled: false
+      schedule_item:
+        weight: 23
+        enabled: false
+      section:
+        weight: 35
+        enabled: true
+      section_extended:
+        weight: 34
+        enabled: false
+      text:
+        weight: 37
+        enabled: true
+      view:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

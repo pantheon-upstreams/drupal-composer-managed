@@ -1,0 +1,19 @@
+uuid: f2bc3180-5ffb-4013-9104-c698a0fe84e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_text
+    - node.type.feature
+id: node.feature.field_teaser_text
+field_name: field_teaser_text
+entity_type: node
+bundle: feature
+label: 'Teaser Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

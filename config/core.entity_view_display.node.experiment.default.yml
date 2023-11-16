@@ -1,0 +1,89 @@
+uuid: 3428b0ae-dbfd-4afa-b8c8-80e4c2c3702c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.experiment.field_dates
+    - field.field.node.experiment.field_media_primary
+    - field.field.node.experiment.field_overview
+    - field.field.node.experiment.field_p_content
+    - field.field.node.experiment.field_ref_articles
+    - field.field.node.experiment.field_ref_audiences
+    - field.field.node.experiment.field_teaser_text
+    - node.type.experiment
+  module:
+    - layout_paragraphs
+    - smart_date
+    - text
+    - user
+id: node.experiment.default
+targetEntityType: node
+bundle: experiment
+mode: default
+content:
+  field_dates:
+    type: smartdate_default
+    label: above
+    settings:
+      timezone_override: America/Denver
+      format_type: medium
+      format: compact
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_overview:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_content:
+    type: layout_paragraphs
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ref_articles:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_ref_audiences:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  langcode: true
+  links: true
+  search_api_excerpt: true
