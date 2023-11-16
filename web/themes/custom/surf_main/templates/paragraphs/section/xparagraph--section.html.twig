@@ -41,7 +41,7 @@
 
 {%
   set rendered_fields = [
-  '_layout_builder',
+  'field_title',
   'regions',
 ]
 %}
@@ -53,16 +53,16 @@
   not paragraph.isPublished() ? 'paragraph--unpublished',
 ] %}
 
-{% embed 'surf_main:section' with {
-  attributes,
-  section_content: content|without('_layout_builder'),
-  section_attributes: create_attribute({'class': classes}),
-} only %}
+<section {{ attributes.addClass(classes) }}>
 
-  {% block section_content %}
-    {{ section_content }}
-  {% endblock %}
+  {% embed 'surf_main:heading' with {
+    heading_attributes: create_attribute(),
+    heading_text: content.field_title|field_value|default([]),
+    heading_level: '2',
+  } only %}
+  {% endembed %}
 
-{% endembed %}
+  {{ content.regions }}
+</section>
 
 {{ content|without(rendered_fields) }}
