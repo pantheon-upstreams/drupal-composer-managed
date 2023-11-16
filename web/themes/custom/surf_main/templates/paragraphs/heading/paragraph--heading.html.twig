@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Heading Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ * @see components/01-atoms/heading/heading.twig
+ *
+ */
+#}
+
+{% set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+    'field_title'
+) %}
+
+<div {{ attributes.addClass(classes) }}>
+    {% include 'surf_main:heading' with {
+        rendered_content,
+        heading_attributes: create_attribute(),
+        heading_text: content.field_title|field_value,
+        heading_level: '2',
+    } only %}
+</div>

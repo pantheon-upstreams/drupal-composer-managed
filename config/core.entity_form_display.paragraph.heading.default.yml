@@ -1,0 +1,29 @@
+uuid: 08a39e76-3c6d-470f-a32e-fe203afcb6d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.heading.field_title
+    - paragraphs.paragraphs_type.heading
+  module:
+    - maxlength
+id: paragraph.heading.default
+targetEntityType: paragraph
+bundle: heading
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+hidden:
+  created: true
+  status: true

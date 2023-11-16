@@ -7,10 +7,11 @@ dependencies:
     - node.type.report_publication
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
-    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -29,11 +30,12 @@ settings:
   handler_settings:
     target_bundles:
       callout: callout
+      heading: heading
       pullquote: pullquote
       resources_list: resources_list
+      section: section
       text: text
       accordion: accordion
-      header: header
       media: media
     negate: 0
     target_bundles_drag_drop:
@@ -46,27 +48,24 @@ settings:
       callout:
         weight: 22
         enabled: true
-      card:
-        weight: 52
-        enabled: false
-      card_list:
-        weight: 53
-        enabled: false
       gallery:
         weight: 58
         enabled: false
-      header:
-        weight: 60
+      heading:
+        weight: 23
         enabled: true
+      hero:
+        weight: 24
+        enabled: false
+      link_highlight:
+        weight: 25
+        enabled: false
       media:
         weight: 65
         enabled: true
       person:
         weight: 68
         enabled: false
-      persons_list:
-        weight: 35
-        enabled: true
       pullquote:
         weight: 36
         enabled: true
@@ -84,9 +83,9 @@ settings:
         enabled: false
       section:
         weight: 42
-        enabled: false
-      teaser_list:
-        weight: 43
+        enabled: true
+      section_extended:
+        weight: 34
         enabled: false
       text:
         weight: 44

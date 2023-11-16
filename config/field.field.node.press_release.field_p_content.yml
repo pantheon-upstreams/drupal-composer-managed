@@ -7,10 +7,11 @@ dependencies:
     - node.type.press_release
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
-    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
+    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -30,10 +31,11 @@ settings:
     target_bundles:
       accordion: accordion
       callout: callout
-      header: header
+      heading: heading
       media: media
       pullquote: pullquote
       resources_list: resources_list
+      section: section
       text: text
     negate: 0
     target_bundles_drag_drop:
@@ -46,26 +48,23 @@ settings:
       callout:
         weight: 22
         enabled: true
-      card:
-        weight: 20
-        enabled: false
-      card_list:
-        weight: 24
-        enabled: false
       gallery:
         weight: 25
         enabled: false
-      header:
-        weight: 26
+      heading:
+        weight: 23
         enabled: true
+      hero:
+        weight: 24
+        enabled: false
+      link_highlight:
+        weight: 25
+        enabled: false
       media:
         weight: 27
         enabled: true
       person:
         weight: 28
-        enabled: false
-      persons_list:
-        weight: 29
         enabled: false
       pullquote:
         weight: 30
@@ -84,9 +83,9 @@ settings:
         enabled: false
       section:
         weight: 33
-        enabled: false
-      teaser_list:
-        weight: 36
+        enabled: true
+      section_extended:
+        weight: 34
         enabled: false
       text:
         weight: 34

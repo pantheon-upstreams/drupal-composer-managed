@@ -1,0 +1,14 @@
+uuid: 3efa0ed3-74c9-4b2f-8658-27122e39854d
+langcode: en
+status: true
+dependencies:
+  module:
+    - style_options
+id: heading
+label: Heading
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  style_options:
+    enabled: true

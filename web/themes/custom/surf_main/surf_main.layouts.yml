@@ -16,8 +16,11 @@ one_column:
   category: SURF
   template: templates/layouts/one-column/one-column
   icon_map:
+    - [header]
     - [first]
   regions:
+    header:
+      label: Header
     first:
       label: First
 
@@ -34,8 +37,11 @@ two_column:
   class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
   template: templates/layouts/two-column/two-column
   icon_map:
+    - [header]
     - [first, second]
   regions:
+    header:
+      label: Header
     first:
       label: First
     second:
@@ -54,8 +60,11 @@ three_column:
   class: '\Drupal\style_options\Plugin\Layout\StyleOptionLayoutPlugin'
   template: templates/layouts/three-column/three-column
   icon_map:
+    - [header]
     - [first, second, third]
   regions:
+    header:
+      label: Header
     first:
       label: First
     second:

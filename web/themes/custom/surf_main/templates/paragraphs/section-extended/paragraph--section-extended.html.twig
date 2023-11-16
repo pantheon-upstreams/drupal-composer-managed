@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Section Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+] %}
+
+<section {{ attributes.addClass(classes) }}>
+    <div class="container container--default">
+        {{ content }}
+    </div>
+</section>

@@ -3,27 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.section_extended.field_title
     - paragraphs.paragraphs_type.section_extended
-  module:
-    - maxlength
 id: paragraph.section_extended.default
 targetEntityType: paragraph
 bundle: section_extended
 mode: default
 content:
-  field_title:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings:
-      maxlength:
-        maxlength_js: null
-        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
-        maxlength_js_enforce: false
   layout_paragraphs_fields:
     weight: -200
     region: content

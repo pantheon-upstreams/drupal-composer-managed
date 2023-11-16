@@ -8,7 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.gallery
-    - paragraphs.paragraphs_type.header
+    - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.pullquote
@@ -33,10 +33,10 @@ settings:
   handler_settings:
     target_bundles:
       callout: callout
+      heading: heading
       section_extended: section_extended
       accordion: accordion
       gallery: gallery
-      header: header
       media: media
       person: person
       pullquote: pullquote
@@ -57,8 +57,8 @@ settings:
       gallery:
         weight: 45
         enabled: true
-      header:
-        weight: 47
+      heading:
+        weight: 23
         enabled: true
       hero:
         weight: 24
