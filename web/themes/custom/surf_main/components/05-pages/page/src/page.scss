@@ -74,12 +74,17 @@
 //------------------------------------
 
 .p-page__main-content,
-.lpb-component-list {
+.lp-builder > div {
   > * {
     margin-inline: auto;
   }
 
   > :not( :last-child ) {
     margin-block-end: rem(60px);
+  }
+
+  .m-pullquote--md,
+  .l-twocol {
+    max-inline-size: var(--surf-width-medium);
   }
 }
