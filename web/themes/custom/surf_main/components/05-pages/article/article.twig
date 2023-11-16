@@ -1,8 +1,8 @@
 {% if article_media.0['#media'].field_media_oembed_video %}
-  {% include '@surf_main/components/04-pages/article/inc/_article--video.twig' %}
+  {% include '@surf_main/components/05-pages/article/inc/_article--video.twig' %}
 {% elseif article_media.0['#media'].field_media_image %}
-  {% include '@surf_main/components/04-pages/article/inc/_article.twig' %}
+  {% include '@surf_main/components/05-pages/article/inc/_article.twig' %}
 {% else %}
-  {% include '@surf_main/components/04-pages/article/inc/_article--text.twig' %}
+  {% include '@surf_main/components/05-pages/article/inc/_article--text.twig' %}
 {% endif %}
 
