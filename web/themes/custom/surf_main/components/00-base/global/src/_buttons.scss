@@ -141,49 +141,75 @@
 //  05 - Underline
 //------------------------------------
 
-@mixin underline() {
-  .a-button.a-button--underline {
-    border-bottom: solid 2px;
-    padding: 4px 0;
-    position: relative;
+@mixin underline-base($color) {
+  border-bottom: solid 2px;
+  padding: 4px 0;
+  position: relative;
+  text-decoration: none;
+  transition: animations.transition(all, 0.35s, easeInOutExpo);
 
-    // Navy Underline Button
-    &.a-button--navy {
-      border-bottom-color: var(--surf-color-navy);
-      color: var(--surf-color-navy);
+  @if $color == 'navy' {
+    border-bottom-color: var(--surf-color-navy);
+    color: var(--surf-color-navy);
 
-      &:before,
-      &:after {
-        background-color: var(--surf-color-navy);
-      }
-    }
-
-    // Black Underline Button
-    &.a-button--black {
-      border-bottom-color: var(--surf-color-black);
-      color: var(--surf-color-black);
-
-      &:before,
-      &:after {
-        background-color: var(--surf-color-black);
-      }
-    }
-
-    // White Underline Button
-    &.a-button--white {
-      border-bottom-color: var(--surf-color-white);
-      color: var(--surf-color-white);
-
-      &:before,
-      &:after {
-        background-color: var(--surf-color-white);
-      }
+    &:before,
+    &:after {
+      background-color: var(--surf-color-navy);
     }
 
     &:hover,
     &:focus {
-      border-bottom-color: transparent;
+      color: var(--surf-color-black);
     }
+  }
+
+  @if $color == 'black' {
+    border-bottom-color: var(--surf-color-black);
+    color: var(--surf-color-black);
+
+    &:before,
+    &:after {
+      background-color: var(--surf-color-black);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-navy);
+    }
+  }
+
+  @if $color == 'white' {
+    border-bottom-color: var(--surf-color-white);
+    color: var(--surf-color-white);
+
+    &:before,
+    &:after {
+      background-color: var(--surf-color-white);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-gray-600);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: transparent;
+  }
+}
+
+@mixin underline() {
+  .a-button.a-button--underline.a-button--navy {
+    @include underline-base('navy');
+  }
+
+  .a-button.a-button--underline.a-button--black {
+    @include underline-base('black');
+  }
+
+  .a-button.a-button--underline.a-button--white {
+    @include underline-base('white');
   }
 }
 

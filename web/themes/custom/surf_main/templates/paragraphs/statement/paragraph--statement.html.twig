@@ -1,13 +1,13 @@
 {#
 /**
  * @file
- * Default theme implementation to display a Hero Paragraph.
+ * Default theme implementation to display a Statement Paragraph.
  *
  * Available variables:
  * - No additional variables are available for this Paragraph type.
  *
  * @see templates/paragraphs/paragraph.html.twig
- * @see components/02-molecules/hero/hero.twig
+ * @see components/02-molecules/statement/statement.twig
  */
 #}
 
@@ -19,17 +19,18 @@
 ] %}
 
 {% set rendered_content = content|without(
-    'field_ref_media_single',
+    'field_eyebrow',
+    'field_link',
     'field_text',
     'field_title'
 ) %}
 
-{% include 'surf_main:hero' with {
+{% include 'surf_main:statement' with {
     attributes,
     rendered_content,
-    hero_attributes: create_attribute({'class': classes}),
-    hero_media: content.field_ref_media_single|field_value,
-    hero_text: content.field_text|field_value,
-    hero_title: content.field_title|field_value,
-    hero_type: style_options['hero_type'],
+    statement_attributes: create_attribute({'class': classes}),
+    statement_eyebrow: content.field_eyebrow|field_value,
+    statement_link: content.field_link|field_value|default([]),
+    statement_text: content.field_text|field_value,
+    statement_title: content.field_title|field_value,
 } only %}

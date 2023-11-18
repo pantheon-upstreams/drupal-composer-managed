@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section_extended
+    - paragraphs.paragraphs_type.statement
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.view
   module:
@@ -36,6 +37,7 @@ settings:
       heading: heading
       section_extended: section_extended
       accordion: accordion
+      statement: statement
       gallery: gallery
       media: media
       person: person
@@ -92,6 +94,9 @@ settings:
         enabled: false
       section_extended:
         weight: 34
+        enabled: true
+      statement:
+        weight: 36
         enabled: true
       text:
         weight: 65

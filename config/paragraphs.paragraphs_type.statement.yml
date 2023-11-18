@@ -1,0 +1,10 @@
+uuid: e828ea6c-c42f-4169-8856-b03c3eb2e246
+langcode: en
+status: true
+dependencies: {  }
+id: statement
+label: Statement
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -177,6 +177,8 @@ ul.l-threecol {
 
 // Two Column
 .l-twocol {
+  align-items: center;
+
   &.l-twocol--50-50 {
     grid-template-columns: 1fr;
 

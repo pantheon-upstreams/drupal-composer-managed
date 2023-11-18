@@ -1,15 +1,17 @@
-uuid: 45616ba9-8bc3-4127-b29d-0156c0d65678
+uuid: aee1b29b-6fb1-4094-9cb8-264eab7a1c0e
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_credit
-field_name: field_credit
+id: paragraph.field_eyebrow
+field_name: field_eyebrow
 entity_type: paragraph
-type: string_long
+type: string
 settings:
+  max_length: 255
   case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
 cardinality: 1
