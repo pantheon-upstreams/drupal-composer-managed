@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Feature
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    feature_attributes:
+      title: Attributes
+      type: string
+    feature_content:
+      title: content
+      type: array
+    feature_heading:
+      title: Heading
+      type: string
+    feature_heading_summary:
+      title: Overview
+      type: string
+    feature_media:
+      title: Media
+      type: array
