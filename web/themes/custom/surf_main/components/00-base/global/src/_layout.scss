@@ -171,9 +171,9 @@ ul.l-threecol {
 
 // Two Column
 .l-twocol {
+  align-items: center;
   margin-inline: auto;
-  //max-inline-size: var(--surf-width-medium);
-  
+
   &.l-twocol--50-50 {
     grid-template-columns: 1fr;
     @include breakpoints.bp-min(medium) {

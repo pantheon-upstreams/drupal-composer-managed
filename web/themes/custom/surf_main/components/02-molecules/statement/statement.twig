@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Component for Statement
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - statement_attributes: [string] Component reserved space for attributes.
+ * - statement_eyebrow: [string] Text element representing the text above the title.
+ * - statement_link: [array] Rendered array of link object for this component.
+ * - statement_text: [string] Text element representing supportive content of this component.
+ * - statement_title: [string] Text representing the primary title of this component.
+ */
+#}
+
+{% set classes = [
+    'm-statement',
+] %}
+
+<div {{ statement_attributes.addClass(classes).merge(attributes) }}>
+    {% if statement_eyebrow %}
+        <p class="m-statement__eyebrow">{{ statement_eyebrow }}</p>
+    {% endif %}
+
+    <h2 class="m-statement__title">{{ statement_title }}</h2>
+
+    {% if statement_text %}
+        <div class="m-statement__text">{{ statement_text }}</div>
+    {% endif %}
+
+    {% if statement_link %}
+        <div class="m-statement__link">{{ statement_link }}</div>
+    {% endif %}
+</div>

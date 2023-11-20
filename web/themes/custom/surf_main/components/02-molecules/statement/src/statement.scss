@@ -1,0 +1,77 @@
+//
+// Component - Molecule - Statement
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/global/src/buttons';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-statement {
+  .m-statement__eyebrow {
+    color: var(--surf-color-gray-600);
+    font-family: var(--surf-font-condensed);
+    font-weight: var(--surf-fw-bold);
+    font-size: calculations.rem(40px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .m-statement__title {
+    font-family: var(--surf-font-sans-alt);
+    font-size: calculations.rem(48px);
+    font-weight: var(--surf-fw-book);
+    line-height: 0.85;
+    text-transform: uppercase;
+
+    @include breakpoints.bp-min(medium) {
+      font-size: calculations.rem(132px);
+    }
+
+    @include breakpoints.bp-min(large) {
+      font-size: calculations.rem(176px);
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      font-size: calculations.rem(180px);
+      background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
+      background-size: 320px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .m-statement__text {
+    margin-block-start: 32px;
+  }
+
+  .m-statement__text p {
+    color: var(--surf-color-gray-600);
+    font-size: calculations.rem(24px);
+    line-height: var(--surf-lh-default);
+  }
+
+  .m-statement__link {
+    margin-block-start: 32px;
+  }
+
+  .m-statement__link a {
+    @include buttons.underline-base('navy');
+    font-size: calculations.rem(22px);
+    text-transform: uppercase;
+  }
+}

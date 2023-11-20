@@ -1,0 +1,26 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Statement
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - statement_title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    statement_attributes:
+      title: Attributes
+      type: string
+    statement_eyebrow:
+      title: Eyebrow
+      type: string
+    statement_link:
+      title: Link
+      type: array
+    statement_text:
+      title: Text
+      type: string
+    statement_title:
+      title: Title
+      type: string
