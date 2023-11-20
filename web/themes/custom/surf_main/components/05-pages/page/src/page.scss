@@ -82,9 +82,4 @@
   > :not( :last-child ) {
     margin-block-end: rem(60px);
   }
-
-  .m-pullquote--md,
-  .l-twocol {
-    max-inline-size: var(--surf-width-medium);
-  }
 }

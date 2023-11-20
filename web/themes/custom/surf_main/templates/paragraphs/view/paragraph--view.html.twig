@@ -1,4 +1,5 @@
-{{ include('surf_main:view', {
-  view: content.field_view,
+{{ include('surf_main:view-embed', {
+  view_embed_attributes: create_attribute(),
+  view_embed_view: content.field_view,
   attributes,
 }, with_context = false) }}

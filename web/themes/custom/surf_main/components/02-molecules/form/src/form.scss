@@ -3,11 +3,10 @@
 }
 
 .m-form--inline {
-  max-inline-size: 780px;
-  display: flex;
   align-items: flex-end;
+  display: flex;
   gap: 20px;
-  margin-inline: auto;
+  max-inline-size: 780px;
 
   .form-item {
     margin-block-end: 0;

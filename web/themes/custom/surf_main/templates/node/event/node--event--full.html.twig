@@ -10,17 +10,6 @@
  */
 #}
 
-{%
-  set rendered_fields = [
-  'registration_links',
-  'field_dates',
-  'body',
-  'field_link',
-  'field_overview',
-  'field_media_primary',
-]
-%}
-
 {% embed 'surf_main:event' with {
   event_attributes: create_attribute({'class': ['o-event--full']}),
   event_heading: label.0['#context'].value,
@@ -35,4 +24,11 @@
 } only %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'registration_links',
+  'field_dates',
+  'body',
+  'field_link',
+  'field_overview',
+  'field_media_primary',
+) }}

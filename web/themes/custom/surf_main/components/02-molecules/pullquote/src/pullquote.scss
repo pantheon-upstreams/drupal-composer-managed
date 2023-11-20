@@ -7,6 +7,7 @@
 // - 01 - Imports
 // - 02 - General
 // - 03 - Types
+// - 04 - Context
 //
 
 
@@ -58,8 +59,8 @@
 //------------------------------------
 
 .m-pullquote.m-pullquote--sm {
-  padding: rem(32px);
   max-inline-size: rem(1020px);
+  padding: rem(32px);
 
   .m-pullquote__quote {
     p {
@@ -72,6 +73,7 @@
 }
 
 .m-pullquote.m-pullquote--md {
+  max-inline-size: var(--surf-width-medium);
   padding: rem(32px);
 
   .m-pullquote__quote {
@@ -87,8 +89,8 @@
 
 .m-pullquote.m-pullquote--lg {
   border: none;
-  padding: 0;
   max-inline-size: 100%;
+  padding: 0;
 
   .m-pullquote__quote {
     p {
@@ -113,3 +115,9 @@
     text-transform: uppercase;
   }
 }
+
+
+
+//------------------------------------
+//  04 - Context
+//------------------------------------

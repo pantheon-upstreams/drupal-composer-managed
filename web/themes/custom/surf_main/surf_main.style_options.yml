@@ -72,6 +72,28 @@ options:
       img-right:
         label: Image Right
 
+  add_rule:
+    plugin: property
+    label: 'Add Rule'
+    default: 1
+    options:
+      1:
+        label: Yes
+      0:
+        label: No
+
+  heading_type:
+    plugin: property
+    label: 'Heading Style'
+    default: none
+    options:
+      none:
+        label: None
+      lg:
+        label: Large
+      gradient:
+        label: Gradient
+
   hero_type:
     plugin: property
     label: 'Hero Type'
@@ -147,6 +169,10 @@ contexts:
       options:
         grid_type: true
         grid_gap: true
+    heading:
+      options:
+        heading_type: true
+        add_rule: true
     hero:
       options:
         hero_type: true

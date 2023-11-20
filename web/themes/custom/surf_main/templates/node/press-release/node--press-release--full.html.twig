@@ -1,16 +1,3 @@
-{%
-  set rendered_fields = [
-  "field_author",
-  "field_ref_news_categories",
-  "field_p_content",
-  "field_ref_contacts",
-  "field_media_primary",
-  "field_date_published",
-  "field_resource_list",
-  "field_overview",
-]
-%}
-
 {% embed 'surf_main:press-release' with {
   press_release_attributes: create_attribute({'class': ['o-press-release--full']}),
   press_release_heading: label|field_value,
@@ -25,4 +12,13 @@
 } only %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  "field_author",
+  "field_ref_news_categories",
+  "field_p_content",
+  "field_ref_contacts",
+  "field_media_primary",
+  "field_date_published",
+  "field_resource_list",
+  "field_overview",
+) }}

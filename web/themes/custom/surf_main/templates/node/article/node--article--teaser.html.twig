@@ -10,15 +10,6 @@
  */
 #}
 
-{%
-  set rendered_fields = [
-  'field_media_primary',
-  '_layout_builder',
-  'field_date_published',
-  'field_highlight',
-]
-%}
-
 {% embed 'surf_main:teaser' with {
   attributes,
   teaser_attributes: create_attribute(),
@@ -58,4 +49,9 @@
   {% endblock %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'field_media_primary',
+  '_layout_builder',
+  'field_date_published',
+  'field_highlight',
+) }}

@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: View Embed
+status: experimental
+group: Organisms
+props:
+  type: object
+  required:
+    - view_embed_view
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    view_embed_attributes:
+      title: Attributes
+      type: string
+    view_embed_view:
+      title: View
+      type: array

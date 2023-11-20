@@ -24,6 +24,7 @@
     {% embed 'surf_main:heading' with {
       heading_attributes: create_attribute({'class': ['o-resource-list__heading']}),
       heading_text: resource_list_heading,
+      heading_type: style_options['heading_type']|default('none'),
       heading_level: '3',
     } only %}
     {% endembed %}

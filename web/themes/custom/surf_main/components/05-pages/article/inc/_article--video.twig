@@ -18,19 +18,7 @@
     {% if article_media %}
         <div class="container container--large">
             <div class="p-article__video-wrapper">
-
-                {{ article_media }}
-
-                {#        {% embed 'surf_main:media' with { #}
-                {#          media: article_media, #}
-                {#          media_attributes: create_attribute(), #}
-                {#        } only %} #}
-
-                {#          {% block media_block %} #}
-                {#            {{ media }} #}
-                {#          {% endblock %} #}
-
-                {#        {% endembed %} #}
+              {{ article_media }}
             </div>
         </div>
     {% endif %}
@@ -115,8 +103,8 @@
         {% endembed %}
 
         {% embed 'surf_main:heading' with {
-            heading_attributes: create_attribute({'class': ['a-heading--list-large']}),
-            heading_text: research_area ~ 'Related News',
+            heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+            heading_text: research_area ~ 'RELATED NEWS',
             heading_level: '2',
         } only %}
         {% endembed %}
