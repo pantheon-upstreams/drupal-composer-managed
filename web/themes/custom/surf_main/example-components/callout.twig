@@ -168,14 +168,14 @@
 
   {% block callout_content %}
 
-    {% embed 'surf_main:component-grid' with {
-      grid_type: 'col-2',
-      grid_gap: 'sm',
-      test: true,
-      component_grid_attributes: create_attribute(),
+    {% embed 'surf_main:two-column' with {
+      layout_attributes: create_attribute(),
+      layout_column_widths: '50-50',
+      layout_html_wrapper: 'div',
     } only %}
-      {% block grid_items %}
-        <div class="a-grid__item">
+
+      {% block layout_content %}
+        <div>
           {% embed 'surf_main:callout' with {
             callout_attributes: create_attribute(),
             callout_text: 'Stay up-to-date on our latest news and upcoming events.',
@@ -186,7 +186,7 @@
           } only %}
           {% endembed %}
         </div>
-        <div class="a-grid__item">
+        <div>
           {% embed 'surf_main:callout' with {
             callout_attributes: create_attribute(),
             callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',
@@ -194,10 +194,11 @@
             callout_button_url: 'http://www.example.com',
             callout_button_prefix: 'play',
             callout_type: 'embed',
-            } only %}
+          } only %}
           {% endembed %}
         </div>
       {% endblock %}
+
     {% endembed %}
 
   {% endblock %}
