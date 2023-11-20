@@ -39,19 +39,23 @@
     text-transform: uppercase;
 
     @include breakpoints.bp-min(medium) {
-      font-size: calculations.rem(132px);
+      font-size: calculations.rem(120px);
     }
 
     @include breakpoints.bp-min(large) {
-      font-size: calculations.rem(176px);
+      font-size: calculations.rem(120px);
     }
 
     @include breakpoints.bp-min(xlarge) {
-      font-size: calculations.rem(180px);
+      font-size: calculations.rem(144px);
       background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
       background-size: 320px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    @include breakpoints.bp-min(xxlarge) {
+      font-size: calculations.rem(176px);
     }
   }
 

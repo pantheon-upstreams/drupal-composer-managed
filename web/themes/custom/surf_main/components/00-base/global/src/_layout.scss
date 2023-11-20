@@ -15,8 +15,9 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/breakpoints' as breakpoints;
+@use '../../../00-base/partials/breakpoints';
 //@use '../../../00-base/partials/partials' as *;
+
 
 
 
@@ -27,11 +28,13 @@
 @mixin grid() {
   :root, .ck {
     --surf-grid-gap: 24px;
+
     @include breakpoints.bp-min(large) {
       --surf-grid-gap: 40px;
     }
   }
 }
+
 @include grid();
 
 
@@ -62,6 +65,7 @@
 :root {
   --surf-height-region-header-utility: 72px;
   --surf-height-region-header-primary: 72px;
+
   @include breakpoints.bp-min(large) {
     --surf-height-region-header-primary: 120px;
   }
@@ -92,8 +96,7 @@
 
 .container {
   margin-inline: auto;
-  padding-inline-end: var(--surf-grid-gap);
-  padding-inline-start: var(--surf-grid-gap);
+  padding-inline: var(--surf-grid-gap);
   width: 100%;
 
   &.container--default {
@@ -130,15 +133,17 @@ ul.l-threecol {
 .l-twocol,
 .l-threecol, {
   margin-block: 64px;
+
   @include breakpoints.bp-min(large) {
     margin-block: 88px;
   }
 }
 
-.l-onecol__region > *:not( :first-child ),
-.l-twocol__region > *:not( :first-child ),
-.l-threecol__region > *:not( :first-child ) {
+.l-onecol__region > *:not(:first-child),
+.l-twocol__region > *:not(:first-child),
+.l-threecol__region > *:not(:first-child) {
   margin-block-start: 40px;
+
   @include breakpoints.bp-min(large) {
     margin-block-start: 64px;
   }
@@ -163,7 +168,7 @@ ul.l-threecol {
       padding-block-start: 40px;
     }
 
-    > *:not( :first-child ) {
+    > *:not(:first-child) {
       margin-block-start: -2px;
     }
   }
@@ -173,8 +178,13 @@ ul.l-threecol {
 .l-twocol {
   margin-inline: auto;
 
+  @include breakpoints.bp-min(medium) {
+    align-items: center;
+  }
+
   &.l-twocol--50-50 {
     grid-template-columns: 1fr;
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -182,6 +192,7 @@ ul.l-threecol {
 
   &.l-twocol--55-45 {
     grid-template-columns: 1fr;
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 55% 1fr;
     }
@@ -189,6 +200,7 @@ ul.l-threecol {
 
   &.l-twocol--45-55 {
     grid-template-columns: 1fr;
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 1fr 55%;
     }
@@ -196,6 +208,7 @@ ul.l-threecol {
 
   &.l-twocol--25-75 {
     grid-template-columns: 1fr;
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 1fr 3fr;
     }
@@ -203,19 +216,20 @@ ul.l-threecol {
 
   &.l-twocol--75-25 {
     grid-template-columns: 1fr;
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 3fr 1fr;
     }
   }
 
-  .l-twocol__region {
-    > div {
-      height: 100%;
-    }
+  .l-twocol__region > div {
+    height: 100%;
   }
 
   .l-twocol__region--heading {
-    grid-column: 1/3;
+    @include breakpoints.bp-min(medium) {
+      grid-column: 1/3;
+    }
   }
 }
 
@@ -223,9 +237,11 @@ ul.l-threecol {
 .l-threecol {
   &.l-threecol--33-34-33 {
     grid-template-columns: 1fr;
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
     @include breakpoints.bp-min(large) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -238,6 +254,8 @@ ul.l-threecol {
   }
 
   .l-threecol__region--heading {
-    grid-column: 1/4;
+    @include breakpoints.bp-min(medium) {
+      grid-column: 1/4;
+    }
   }
 }

@@ -1,4 +1,5 @@
 services:
-  Drupal\surf_core\Twig\TwigExtension:
+  surf_core.twig_extension:
+    class: Drupal\surf_core\Twig\Extension\SurfTwigExtension
     tags:
       - { name: twig.extension }
