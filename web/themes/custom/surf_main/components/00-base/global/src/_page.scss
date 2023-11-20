@@ -62,12 +62,15 @@ body {
 //------------------------------------
 
 .skip-link {
-  display: block;
-  background-color: var(--surf-color-primary);
-  color: var(--surf-color-light);
+  background-color: var(--surf-color-navy);
+  color: var(--surf-color-white) !important;
   padding: 16px 32px 20px;
   text-decoration: none;
-  z-index: var(--surf-zindex-super);
+  z-index: 999;
+}
+
+.visually-hidden.focusable:focus {
+  position: absolute !important;
 }
 
 

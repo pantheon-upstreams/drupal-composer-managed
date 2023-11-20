@@ -18,6 +18,9 @@ props:
     header_heading_level:
       title: Heading Header Level
       type: string
+    header_label:
+      title: Label
+      type: string
     header_summary:
       title: Summary Text
       type: string

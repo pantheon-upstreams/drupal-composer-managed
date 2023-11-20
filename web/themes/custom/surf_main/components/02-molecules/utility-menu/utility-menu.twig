@@ -26,12 +26,7 @@
     not menu_label_display ? 'visually-hidden',
 ] %}
 
-<nav {{ menu_attributes.addClass(classes).merge(attributes) }} aria-labelledby="utility-menu" role="navigation">
+<nav {{ menu_attributes.addClass(classes).merge(attributes) }} aria-label="Utility Menu" role="navigation">
     {% block menu_prefix %}{% endblock %}
-
-    <h2 id="menu-utility" class="{{ title_classes|join(' ') }}">
-        {{- menu_title -}}
-    </h2>
-
     {{ menu_content }}
 </nav>

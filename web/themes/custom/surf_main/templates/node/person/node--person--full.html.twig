@@ -14,7 +14,7 @@
 {% embed 'surf_main:person' with {
   attributes,
   person_attributes: create_attribute(),
-  person_heading: content.field_name|render ? content.field_name|field_value,
+  person_heading: content.field_name|field_value|default([]),
   person_job_title: content.field_job_title|render ? content.field_job_title|field_value,
   person_body: content.body|render ? content.body|field_value,
   person_phone: content.field_phone_office|render ? content.field_phone_office|field_value,
