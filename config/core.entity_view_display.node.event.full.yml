@@ -49,7 +49,7 @@ content:
     type: smartdate_default
     label: hidden
     settings:
-      timezone_override: America/Denver
+      timezone_override: ''
       format_type: medium
       format: compact
       force_chronological: false
@@ -75,7 +75,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: dynamic_third_column
       link: false
     third_party_settings: {  }
     weight: 5

@@ -1,9 +1,6 @@
 //
 // Component - Organism - Header
 //
-// https://atendesign.atlassian.net/browse/SRL-113
-// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-231719&mode=dev
-//
 // - 01 - Imports
 // - 02 - General
 // - 03 - Types
@@ -67,6 +64,8 @@
 //------------------------------------
 
 .o-header {
+  position: relative;
+
   &.o-header--color {
     @include bp-min(medium) {
       background-image: url('img/header-bkg-color.png');
@@ -87,11 +86,15 @@
     }
   }
 
-  &.o-header--grid {
+  &.o-header--grid:after {
     @include bp-min(large) {
-      background-image: url('img/header-bkg-grid.png');
-      background-position: top right;
-      background-repeat: no-repeat;
+      @include full-width();
+      background: url('img/header-bkg-grid.png') no-repeat center right;
+      content: '';
+      height: 300px;
+      pointer-events: none;
+      position: absolute;
+      top: -64px;
     }
   }
 
