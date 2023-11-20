@@ -1,15 +1,16 @@
-{% embed 'surf_main:component-grid' with {
-  component_grid_attributes: create_attribute({'class': ['o-component-grid__heading']}),
-  component_grid_items: rows,
-  grid_type: 'col-2',
-  grid_gap: 'lg',
+{% embed 'surf_main:two-column' with {
+  layout_attributes: create_attribute(),
+  layout_items: rows,
+  layout_column_widths: '50-50',
+  layout_html_wrapper: 'ul',
 } only %}
 
-  {% block grid_items %}
-    {% for item in component_grid_items %}
-      <li class="o-component-grid__item">
+  {% block layout_content %}
+    {% for item in layout_items %}
+      <li>
         {{ item.content }}
       </li>
     {% endfor %}
   {% endblock %}
+
 {% endembed %}
