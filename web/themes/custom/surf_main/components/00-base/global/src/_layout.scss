@@ -171,7 +171,6 @@ ul.l-threecol {
 
 // Two Column
 .l-twocol {
-  align-items: center;
   margin-inline: auto;
 
   &.l-twocol--50-50 {
@@ -242,10 +241,3 @@ ul.l-threecol {
     grid-column: 1/4;
   }
 }
-
-// TODO: move to another place once through testing.
-//.field__name--field-p-content {
-//  > *:not( :last-child ) {
-//    margin-block-end: rem(32px);
-//  }
-//}
