@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.experiment.field_dates
+    - field.field.node.experiment.field_dates_only
     - field.field.node.experiment.field_media_primary
     - field.field.node.experiment.field_overview
     - field.field.node.experiment.field_p_content
@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.experiment.field_teaser_text
     - node.type.experiment
   module:
-    - datetime_range
     - text
     - user
 id: node.experiment.teaser
@@ -21,15 +20,6 @@ targetEntityType: node
 bundle: experiment
 mode: teaser
 content:
-  field_dates:
-    type: daterange_plain
-    label: hidden
-    settings:
-      timezone_override: ''
-      separator: '-'
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_media_primary:
     type: entity_reference_entity_view
     label: hidden
@@ -59,6 +49,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_dates_only: true
   field_p_content: true
   field_ref_articles: true
   field_ref_audiences: true

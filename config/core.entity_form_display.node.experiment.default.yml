@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.experiment.field_dates
+    - field.field.node.experiment.field_dates_only
     - field.field.node.experiment.field_media_primary
     - field.field.node.experiment.field_overview
     - field.field.node.experiment.field_p_content
@@ -124,11 +124,11 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_dates:
+  field_dates_only:
     type: daterange_default
     weight: 2
     region: content
@@ -136,7 +136,7 @@ content:
     third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 9
+    weight: 13
     region: content
     settings:
       media_types: {  }
@@ -175,7 +175,7 @@ content:
     third_party_settings: {  }
   field_ref_audiences:
     type: options_select
-    weight: 10
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,14 +1,14 @@
-uuid: 20175639-ba47-46f0-887f-ed06840b0a9f
+uuid: 28f7daef-c797-4bff-aa84-6c5ff7446ec0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_dates
+    - field.storage.node.field_dates_only
     - node.type.experiment
   module:
     - datetime_range
-id: node.experiment.field_dates
-field_name: field_dates
+id: node.experiment.field_dates_only
+field_name: field_dates_only
 entity_type: node
 bundle: experiment
 label: Dates

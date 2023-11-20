@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.experiment.field_dates
+    - field.field.node.experiment.field_dates_only
     - field.field.node.experiment.field_media_primary
     - field.field.node.experiment.field_overview
     - field.field.node.experiment.field_p_content
@@ -13,7 +13,7 @@ dependencies:
     - field.field.node.experiment.field_teaser_text
     - node.type.experiment
   module:
-    - date_range_formatter
+    - datetime_range
     - layout_paragraphs
     - text
     - user
@@ -22,19 +22,15 @@ targetEntityType: node
 bundle: experiment
 mode: full
 content:
-  field_dates:
-    type: date_range_without_time
+  field_dates_only:
+    type: daterange_default
     label: hidden
     settings:
-      timezone_override: America/Denver
-      date_format: 'Y-m-d\TH:i:s'
+      timezone_override: ''
+      format_type: published_date
       separator: '-'
-      one_day: 'd F Y'
-      one_month: 'd - {d} F Y'
-      several_months: 'd F - {d} {F} Y'
-      several_years: 'd F Y - {d} {F} {Y}'
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -59,7 +55,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   field_ref_articles: true
