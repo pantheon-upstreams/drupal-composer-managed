@@ -1,18 +1,18 @@
-uuid: 56554253-8040-40d5-8731-fa00f4727c22
+uuid: ba4c21c0-799e-4ef9-8da6-4b2d70f6feb1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.person.field_person
-    - paragraphs.paragraphs_type.person
+    - field.field.paragraph.content_as_teaser.field_ref_content
+    - paragraphs.paragraphs_type.content_as_teaser
   module:
     - inline_entity_form
-id: paragraph.person.default
+id: paragraph.content_as_teaser.default
 targetEntityType: paragraph
-bundle: person
+bundle: content_as_teaser
 mode: default
 content:
-  field_person:
+  field_ref_content:
     type: inline_entity_form_complex
     weight: 0
     region: content

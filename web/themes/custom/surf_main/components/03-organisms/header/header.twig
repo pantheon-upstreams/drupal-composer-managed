@@ -33,7 +33,7 @@
 
     <div class="o-header__text-wrapper">
       {{ include('surf_main:heading', {
-        heading_type: heading_type ? heading_type,
+        heading_type: style_options['heading_type']|default('none'),
         heading_text: header_heading ? header_heading,
         heading_level: header_heading_level ? header_heading_level,
         heading_attributes: heading_attributes,

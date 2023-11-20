@@ -35,6 +35,7 @@
           {% embed 'surf_main:heading' with {
             heading_text: callout_heading ? callout_heading,
             heading_level: '3',
+            heading_type: style_options['heading_type']|default('none'),
             heading_attributes: create_attribute({'class': ['m-callout__heading']}),
           } only %}
           {% endembed %}

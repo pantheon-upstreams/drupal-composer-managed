@@ -10,17 +10,6 @@
  */
 #}
 
-{%
-  set rendered_fields = [
-    'field_name',
-    'field_job_title',
-    'field_phone_office',
-    'field_email',
-    'field_media_primary',
-    'links',
-  ]
-%}
-
 {% embed 'surf_main:person-card' with {
   person_card_attributes: create_attribute(),
   person_card_name: content.field_name.0 ? content.field_name|field_value,
@@ -33,5 +22,12 @@
 } only %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'field_name',
+  'field_job_title',
+  'field_phone_office',
+  'field_email',
+  'field_media_primary',
+  'links',
+) }}
 

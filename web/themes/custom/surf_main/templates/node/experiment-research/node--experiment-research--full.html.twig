@@ -18,21 +18,6 @@
   content.field_media_primary.0 ? 'o-experiment--with-img',
 ] %}
 
-{%
-  set rendered_fields = [
-  'field_p_content',
-  '_layout_builder',
-  'field_dates',
-  'field_extra_content',
-  'field_key_facts',
-  'field_media_primary',
-  'field_research_area',
-  'field_overview',
-  'field_experiment_research_type',
-  'field_key_experiments',
-]
-%}
-
 {% if content.field_experiment_research_type.0['#markup'] == 'research_area' %}
   {% embed 'surf_main:research' with {
     research_attributes: create_attribute({'class': research_classes}),
@@ -62,4 +47,15 @@
   {% endembed %}
 {% endif %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'field_p_content',
+  '_layout_builder',
+  'field_dates',
+  'field_extra_content',
+  'field_key_facts',
+  'field_media_primary',
+  'field_research_area',
+  'field_overview',
+  'field_experiment_research_type',
+  'field_key_experiments',
+) }}

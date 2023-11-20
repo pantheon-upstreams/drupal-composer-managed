@@ -1,0 +1,35 @@
+//
+// Component - Organism - View Embed
+//
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.o-view-embed {
+  //empty
+}
+
+.o-view__header {
+  font-size: rem(14px);
+  line-height: var(--surf-lh-label);
+  margin-block-start: rem(20px);
+}
+
+.o-view__rows {
+  margin-block-start: rem(68px);
+}

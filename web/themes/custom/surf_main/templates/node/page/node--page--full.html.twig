@@ -14,15 +14,6 @@
   content.field_media_primary.0 ? 'o-page--with-img',
 ] %}
 
-{%
-  set rendered_fields = [
-  'field_p_content',
-  'field_overview',
-  'field_media_primary',
-  'field_link',
-]
-%}
-
 {% embed 'surf_main:page' with {
   page_attributes: create_attribute({'class': classes}),
   page_heading: label|field_value,
@@ -40,4 +31,9 @@
 } only %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'field_p_content',
+  'field_overview',
+  'field_media_primary',
+  'field_link',
+) }}

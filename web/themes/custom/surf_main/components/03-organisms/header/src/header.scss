@@ -43,14 +43,6 @@
   text-transform: uppercase;
 }
 
-.o-header__heading--gradient {
-  background: linear-gradient(90deg, #000080 0%, #007ab8 100%);
-  background-clip: text;
-  font-size: var(--surf-fs-80-140-200-260);
-  line-height: 0.8;
-  -webkit-text-fill-color: transparent;
-}
-
 .o-header__heading--transform-none {
   font-family: var(--surf-font-sans-alt);
   font-size: var(--surf-fs-52-64-96);

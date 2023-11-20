@@ -10,22 +10,6 @@
  */
 #}
 
-{%
-  set rendered_fields = [
-  'field_p_content',
-  'field_date_published',
-  'field_publisher',
-  'field_ref_related_content',
-  'field_ref_audiences',
-  'field_highlight',
-  'field_ref_key_impact_areas',
-  'field_ref_eo_opportunities',
-  'field_media_primary',
-  'field_ref_research_areas',
-  'field_author',
-]
-%}
-
 {% embed 'surf_main:article' with {
   article_attributes: create_attribute({'class': ['o-article--full']}),
   article_heading: label,
@@ -40,4 +24,16 @@
 } only %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'field_p_content',
+  'field_date_published',
+  'field_publisher',
+  'field_ref_related_content',
+  'field_ref_audiences',
+  'field_highlight',
+  'field_ref_key_impact_areas',
+  'field_ref_eo_opportunities',
+  'field_media_primary',
+  'field_ref_research_areas',
+  'field_author',
+) }}

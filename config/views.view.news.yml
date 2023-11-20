@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.article
-    - taxonomy.vocabulary.news_category
+    - taxonomy.vocabulary.audience
   module:
     - datetime
     - node
@@ -98,9 +98,9 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
+          submit_button: Filter
+          reset_button: true
+          reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -178,8 +178,8 @@ display:
           default_row_class: false
           uses_fields: false
           type: ul
-          wrapper_class: item-list
-          class: item-list
+          wrapper_class: ''
+          class: ''
       row:
         type: 'entity:node'
         options:
@@ -205,8 +205,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
+  all_news_block:
+    id: all_news_block
     display_title: 'All news'
     display_plugin: block
     position: 2
@@ -232,6 +232,20 @@ display:
             offset: false
             offset_label: Offset
           quantity: 9
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>There are no news articles that meet your search criteria. Please try again!</p>'
+            format: full_html
+          tokenize: false
       filters:
         status:
           id: status
@@ -255,13 +269,65 @@ display:
           plugin_id: bundle
           value:
             article: article
+          group: 1
           expose:
             operator_limit_selection: false
             operator_list: {  }
-        field_ref_news_categories_target_id:
-          id: field_ref_news_categories_target_id
-          table: node__field_ref_news_categories
-          field: field_ref_news_categories_target_id
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
           relationship: none
           group_type: group
           admin_label: ''
@@ -271,14 +337,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: field_ref_news_categories_target_id_op
+            operator_id: tid_op
             label: Categories
             description: ''
             use_operator: false
-            operator: field_ref_news_categories_target_id_op
+            operator: tid_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_ref_news_categories_target_id
+            identifier: tid
             required: false
             remember: false
             multiple: false
@@ -308,7 +374,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: news_category
+          vid: audience
           type: select
           hierarchy: false
           limit: true
@@ -318,10 +384,23 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         pager: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Showing @end of @total posts'
       display_extenders: {  }
     cache_metadata:
       max-age: -1

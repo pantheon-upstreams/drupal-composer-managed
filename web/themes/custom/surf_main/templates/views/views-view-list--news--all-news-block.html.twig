@@ -1,0 +1,15 @@
+{% embed 'surf_main:component-grid' with {
+  component_grid_attributes: create_attribute({'class': ['o-component-grid__heading']}),
+  component_grid_items: rows,
+  grid_type: 'col-3',
+  grid_gap: 'lg',
+} only %}
+
+  {% block grid_items %}
+    {% for item in component_grid_items %}
+      <li class="o-component-grid__item">
+        {{ item.content }}
+      </li>
+    {% endfor %}
+  {% endblock %}
+{% endembed %}

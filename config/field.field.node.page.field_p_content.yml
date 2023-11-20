@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.content_as_teaser
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.media
@@ -32,6 +33,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      content_as_teaser: content_as_teaser
       heading: heading
       gallery: gallery
       accordion: accordion
@@ -53,6 +55,9 @@ settings:
         enabled: false
       callout:
         weight: 47
+        enabled: true
+      content_as_teaser:
+        weight: 23
         enabled: true
       gallery:
         weight: 25

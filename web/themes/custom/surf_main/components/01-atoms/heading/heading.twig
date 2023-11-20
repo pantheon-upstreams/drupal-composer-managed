@@ -22,9 +22,17 @@
 
 {%
   set classes = [
-  'a-heading',
-]
+    'a-heading',
+    heading_type ? 'a-heading--' ~ heading_type,
+  ]
 %}
+
+{% if heading_rule == '1' %}
+  {% embed 'surf_main:left-hook' with {
+    left_hook_attributes: create_attribute(),
+  } only %}
+  {% endembed %}
+{% endif %}
 
 <h{{ heading_level|default('2') }} {{ heading_attributes.addClass(classes).merge(attributes) }}>
 

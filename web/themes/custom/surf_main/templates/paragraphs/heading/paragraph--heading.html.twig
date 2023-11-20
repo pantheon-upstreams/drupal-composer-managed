@@ -19,15 +19,17 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
-{% set rendered_content = content|without(
-    'field_title'
-) %}
-
 <div {{ attributes.addClass(classes) }}>
     {% include 'surf_main:heading' with {
         rendered_content,
         heading_attributes: create_attribute(),
-        heading_text: content.field_title|field_value,
+        heading_text: content.field_title|field_value|default([]),
         heading_level: '2',
+        heading_type: style_options['heading_type']|default('none'),
+        heading_rule: style_options['add_rule']|default('0'),
     } only %}
 </div>
+
+{{ content|without(
+    'field_title',
+) }}

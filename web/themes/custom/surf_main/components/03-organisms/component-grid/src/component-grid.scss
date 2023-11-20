@@ -48,7 +48,7 @@
     grid-template-columns: 1fr;
 
     @include bp-min(xlarge) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }
@@ -58,7 +58,7 @@
 
   .o-component-grid__items {
     @include bp-min(xlarge) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }

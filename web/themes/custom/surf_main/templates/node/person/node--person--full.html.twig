@@ -11,15 +11,6 @@
  */
 #}
 
-{% set rendered_fields = [
-    'field_name',
-    'field_job_title',
-    'body',
-    'field_phone_office',
-    'field_email',
-    'field_media_primary',
-] %}
-
 {% embed 'surf_main:person' with {
   attributes,
   person_attributes: create_attribute(),
@@ -32,4 +23,11 @@
 } only %}
 {% endembed %}
 
-{{ content|without(rendered_fields) }}
+{{ content|without(
+  'field_name',
+  'field_job_title',
+  'body',
+  'field_phone_office',
+  'field_email',
+  'field_media_primary',
+) }}
