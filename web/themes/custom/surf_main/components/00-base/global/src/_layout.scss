@@ -177,7 +177,9 @@ ul.l-threecol {
 
 // Two Column
 .l-twocol {
-  align-items: center;
+  @include breakpoints.bp-min(medium) {
+    align-items: center;
+  }
 
   &.l-twocol--50-50 {
     grid-template-columns: 1fr;
@@ -220,7 +222,9 @@ ul.l-threecol {
   }
 
   .l-twocol__region--heading {
-    grid-column: 1/3;
+    @include breakpoints.bp-min(medium) {
+      grid-column: 1/3;
+    }
   }
 }
 
@@ -239,7 +243,9 @@ ul.l-threecol {
   }
 
   .l-threecol__region--heading {
-    grid-column: 1/4;
+    @include breakpoints.bp-min(medium) {
+      grid-column: 1/4;
+    }
   }
 }
 

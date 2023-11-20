@@ -34,11 +34,12 @@
 
 .a-icon {
   &.a-icon--add {
-    background: svg-load('icon-add.svg', fill="currentColor") no-repeat center;
+    --icon-add: svg-load('icon-add.svg');
+    mask-image: var(--icon-add);
   }
 
   &.a-icon--angle-down {
-    background: svg-load('icon-angle-down.svg', fill="currentColor") no-repeat center;
+    background: svg-load('icon-angle-down.svg', fill="#000") no-repeat center;
   }
 
   &.a-icon--angle-left {

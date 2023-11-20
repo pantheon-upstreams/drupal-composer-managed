@@ -1,16 +1,5 @@
 _core:
   default_config_hash: '-hIna-Wer82f4uUFdPEmBNA6-RerV3rxWsqgsPi4o7A'
-content_types:
-  article: '1'
-  experiment: '1'
-  feature: '1'
-  landing: '1'
-  page: '1'
-  press_release: '1'
-  professional_development: '1'
-  report_publication: '1'
-  school_presentation: '1'
-  standard: '1'
 edit_screen_theme: gin
 skip_create_form: {  }
 mobile_presets:
@@ -33,3 +22,15 @@ dialog_settings:
     drupalAutoButtons: false
     dialogClass: lpb-dialog
     resizable: true
+bundles:
+  node:
+    article: article
+    experiment: experiment
+    feature: feature
+    landing: landing
+    page: page
+    press_release: press_release
+    professional_development: professional_development
+    report_publication: report_publication
+    school_presentation: school_presentation
+    standard: standard
