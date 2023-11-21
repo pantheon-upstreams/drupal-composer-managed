@@ -1,15 +1,55 @@
+//
+// Component - Molecule - Form
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+//
+
+
+
 .m-form {
   //empty
 }
 
 .m-form--inline {
-  align-items: flex-end;
-  display: flex;
-  gap: 20px;
-  max-inline-size: 780px;
+  @include bp-min(medium) {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
   .form-item {
-    margin-block-end: 0;
+    margin-block-end: rem(32px);
+    @include bp-min(medium) {
+      margin-block-end: 0;
+    }
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='date'],
+  input[type='email'],
+  input[type='number'],
+  select {
+    inline-size: 100%;
+    @include bp-min(small) {
+      inline-size: auto;
+    }
   }
 
   .form-actions {

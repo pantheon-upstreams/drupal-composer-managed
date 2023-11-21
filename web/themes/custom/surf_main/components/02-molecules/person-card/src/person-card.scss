@@ -28,22 +28,31 @@
 }
 
 .m-person-card__media {
-  height: 100%;
+  block-size: 100%;
   max-inline-size: rem(182px);
 }
 
 .m-person-card__icon {
-  height: 100%;
-  max-inline-size: rem(182px);
+  align-items: center;
+  block-size: 100%;
+  display: flex;
+  inline-size: rem(182px);
+  justify-content: center;
 
-  .a-icon {
-    height: 150px;
-    width: 182px;
+
+  > span {
+    --surf-icon-user: svg-load('icon-user.svg');
+    background-color: var(--surf-color-gray-500);
+    background-repeat: no-repeat;
+    block-size: 150px;
+    display: block;
+    inline-size: 150px;
+    mask-image: var(--surf-icon-user);
   }
 }
 
 .m-person-card__content-wrapper {
-  flex-grow: 1;
+  flex: 1;
   padding-block: rem(20px);
   padding-inline-end: rem(20px);
 
@@ -82,14 +91,14 @@
     &::after {
       background-image: svg-load('icon-arrow-right.svg');
       background-repeat: no-repeat;
+      block-size: 24px;
       content: '';
       display: block;
-      height: 24px;
+      inline-size: 24px;
       margin: auto;
       position: absolute;
       right: -26px;
       top: 0;
-      width: 24px;
     }
   }
 }
@@ -104,7 +113,6 @@
 .l-onecol,
 .l-twocol,
 .l-threecol {
-
   .m-person-card {
     block-size: 100%;
   }
