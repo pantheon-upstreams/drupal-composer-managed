@@ -17,6 +17,7 @@ dependencies:
     - layout_builder
     - layout_paragraphs
     - link
+    - text
     - user
 third_party_settings:
   layout_builder:
@@ -27,14 +28,6 @@ targetEntityType: node
 bundle: report_publication
 mode: full
 content:
-  field_authors:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_link:
     type: link
     label: hidden
@@ -45,7 +38,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -54,7 +47,14 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_p_content:
     type: layout_paragraphs
@@ -63,11 +63,11 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
+  field_authors: true
   field_date_published: true
-  field_overview: true
   field_ref_publication_type: true
   field_teaser_text: true
   langcode: true

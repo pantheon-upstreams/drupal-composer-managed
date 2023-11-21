@@ -64,15 +64,11 @@ content:
     weight: 7
     region: content
   field_p_content:
-    type: layout_paragraphs_builder
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
       link: ''
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
     third_party_settings: {  }
     weight: 2
     region: content
