@@ -27,6 +27,7 @@
     {% endif %}
 
     <div class="p-page__header">
+        <div class="container container--large">
         {% embed 'surf_main:header' with {
             header_attributes: create_attribute(),
             header_heading: page_heading,
@@ -41,6 +42,7 @@
             heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
         } only %}
         {% endembed %}
+        </div>
     </div>
 
     <div class="p-page__content l-main">

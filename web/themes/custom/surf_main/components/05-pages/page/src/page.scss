@@ -30,7 +30,7 @@
 
     @include breakpoints.bp-min(xlarge) {
       padding-block-start: calculations.rem(60px);
-      padding-inline: calculations.rem(120px);
+      padding-inline: calculations.rem(80px);
     }
   }
 

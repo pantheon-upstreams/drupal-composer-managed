@@ -27,3 +27,10 @@
   margin: 0;
   width: 100%;
 }
+
+.a-left-hook--with-heading {
+  margin-block-end: rem(32px);
+  @include bp-min(large) {
+    margin-block-end: rem(68px);
+  }
+}
