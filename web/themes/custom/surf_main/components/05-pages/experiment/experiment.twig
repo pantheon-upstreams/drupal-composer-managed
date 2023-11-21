@@ -1,16 +1,16 @@
 {#
 /**
  * @file
- * Component for Experiment (Node)
+ * Page component for an Experiment
  *
  * Available props:
  * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
- * - experiment_attributes: [array] Any parent tag attributes.
- * - experiment_heading: [string]
- * - experiment_header_teaser: [string]
- * - experiment_media: [string]
- * - experiment_overview: [string]
- * - experiment_content: [array]
+ * - experiment_attributes: [string] Component reserved space for attributes.
+ * - experiment_content: [array] Rendered array of the main content for this component.
+ * - experiment_dates: [array] Rendered array of dates relating to this component.
+ * - experiment_heading: [string] Value of the page title for this component.
+ * - experiment_heading_summary: [string] Value of sub-title text for this component.
+ * - experiment_media: [array] Rendered array of the Media object for this component.
  *
  */
 #}
@@ -27,43 +27,44 @@
     {% endif %}
 
     <div class="container container--xlarge">
-        {{ title_suffix }}
-
         {% embed 'surf_main:header' with {
             header_heading: experiment_heading,
             header_heading_level: '1',
-            header_summary: experiment_header_summary,
+            header_label: 'Experiment',
+            header_summary: experiment_heading_summary|default({}),
             header_attributes: create_attribute(),
             heading_attributes: create_attribute({'class': ['o-header__heading']}),
+            experiment_dates,
         } only %}
+            {% block header_links_block %}
+                {{ drupal_breadcrumb() }}
+
+                <div class="p-experiment__dates">
+                    {{ experiment_dates }}
+                </div>
+            {% endblock %}
         {% endembed %}
 
-        <div class="p-experiment-wrapper">
-            {# Main Content #}
+        <main id="main-content" class="p-experiment__content-wrapper">
             <div class="p-experiment__main-content">
                 {{ experiment_content }}
             </div>
 
-            {# Additional Content #}
-            <div class="p-experiment__additional-content">
-                <div class="p-experiment__in-the-news">
-                    {% if drupal_view_result('in_the_news', 'experiment') is not empty %}
-                        {% embed 'surf_main:left-hook' with {
-                            left_hook_attributes: create_attribute(),
-                        } only %}
-                        {% endembed %}
+            {% if drupal_view_result('related_articles', 'experiment') is not empty %}
+                <div class="p-experiment__related">
+                    {% include 'surf_main:left-hook' with {
+                        left_hook_attributes: create_attribute(),
+                    } %}
 
-                        {% embed 'surf_main:heading' with {
-                            heading_attributes: create_attribute({'class': ['a-heading--lg']}),
-                            heading_text: research_area ~ 'IN THE NEWS',
-                            heading_level: '2',
-                        } only %}
-                        {% endembed %}
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                        heading_text: research_area ~ 'in the news'|t,
+                        heading_level: '2',
+                    } %}
 
-                        {{ drupal_view('in_the_news', 'experiment') }}
-                    {% endif %}
+                    {{ drupal_view('related_articles', 'experiment') }}
                 </div>
-            </div>
-        </div>
+            {% endif %}
+        </main>
     </div>
 </article>

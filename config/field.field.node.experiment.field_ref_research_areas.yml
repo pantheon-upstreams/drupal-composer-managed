@@ -1,16 +1,16 @@
-uuid: 619d8bbc-3c0b-4915-893c-9fd7d712c174
+uuid: ec1bd6a2-9c20-49c8-aa5f-f1c0b5bdb5f1
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_ref_research_areas
-    - node.type.article
+    - node.type.experiment
     - taxonomy.vocabulary.research_area
-id: node.article.field_ref_research_areas
+id: node.experiment.field_ref_research_areas
 field_name: field_ref_research_areas
 entity_type: node
-bundle: article
-label: 'Research Areas'
+bundle: experiment
+label: 'Research areas'
 description: ''
 required: false
 translatable: false

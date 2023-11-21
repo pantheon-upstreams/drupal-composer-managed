@@ -21,19 +21,11 @@
 //------------------------------------
 
 .p-event {
-  padding-block-end: rem(26px);
+  padding-block: 32px 56px;
   position: relative;
 
-  @include bp-min(medium) {
-    padding-block-end: rem(60px);
-  }
-
   @include bp-min(large) {
-    padding-block-end: rem(50px);
-  }
-
-  @include bp-min(xxlarge) {
-    padding-block-end: rem(143px);
+    padding-block: 64px 80px;
   }
 }
 

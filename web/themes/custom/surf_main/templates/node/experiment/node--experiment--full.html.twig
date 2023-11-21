@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Experiment Node with Full view mode.
+ *
+ * Available variables:
+ *  No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/05-pages/experiment/experiment.twig
+ */
+#}
+
+{% set classes = [
+  content.field_media_primary|render ? 'p-experiment--with-img',
+] %}
+
+{% set rendered_content = content|without(
+    'field_dates_only',
+    'field_media_primary',
+    'field_p_content',
+    'field_overview',
+) %}
+
+{% set experiment_dates %}
+    {% if content.field_dates_only|render and not node.field_dates_only.0.get('end_value').value %}
+        {{ content.field_dates_only|field_value }} - <p>{{- 'Present'|t -}}</p>
+    {% else %}
+        {{ content.field_dates_only|field_value|default([]) }}
+    {% endif %}
+{% endset %}
+
+{% include 'surf_main:experiment' with {
+    attributes,
+    rendered_content,
+    experiment_attributes: create_attribute({'class': classes}),
+    experiment_content: content.field_p_content,
+    experiment_dates: experiment_dates,
+    experiment_heading: label|field_value,
+    experiment_heading_summary: content.field_overview|field_value,
+    experiment_media: content.field_media_primary|field_value|default([]),
+} only %}

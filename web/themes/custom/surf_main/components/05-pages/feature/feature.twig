@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Page component for a Feature
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - feature_attributes: [string] Component reserved space for attributes.
+ * - feature_content: [array] Rendered array of the main content for this component.
+ * - feature_heading: [string] Value of the page title for this component.
+ * - feature_heading_summary: [string] Value of sub-title text for this component.
+ * - feature_media: [array] Rendered array of the Media object for this component.
+ *
+ */
+#}
+
+{% set classes = [
+    'p-feature',
+] %}
+
+<article {{ feature_attributes.addClass(classes).merge(attributes) }}>
+    {% if feature_media %}
+        <div class="p-feature__media">
+            {{ feature_media }}
+        </div>
+    {% endif %}
+
+    <div class="container container--xlarge">
+        {% embed 'surf_main:header' with {
+            header_heading: feature_heading,
+            header_heading_level: '1',
+            header_label: 'feature',
+            header_summary: feature_heading_summary|default({}),
+            header_attributes: create_attribute(),
+            heading_attributes: create_attribute({'class': ['o-header__heading']}),
+        } only %}
+            {% block header_links_block %}
+                {{ drupal_breadcrumb() }}
+            {% endblock %}
+        {% endembed %}
+
+        <main id="main-content" class="p-feature__content-wrapper">
+            <div class="p-feature__main-content">
+                {{ feature_content }}
+            </div>
+        </main>
+    </div>
+</article>

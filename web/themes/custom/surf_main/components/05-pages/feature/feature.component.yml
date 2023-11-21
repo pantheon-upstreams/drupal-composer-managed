@@ -1,5 +1,5 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Experiment
+name: Feature
 status: experimental
 group: Pages
 props:
@@ -7,21 +7,18 @@ props:
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    experiment_attributes:
+    feature_attributes:
       title: Attributes
       type: string
-    experiment_content:
+    feature_content:
       title: content
       type: array
-    experiment_dates:
-      title: Dates
-      type: string
-    experiment_heading:
+    feature_heading:
       title: Heading
       type: string
-    experiment_heading_summary:
+    feature_heading_summary:
       title: Overview
       type: string
-    experiment_media:
+    feature_media:
       title: Media
       type: array

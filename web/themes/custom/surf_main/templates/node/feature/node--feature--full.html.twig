@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Feature Node with Full view mode.
+ *
+ * Available variables:
+ *  No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/05-pages/feature/feature.twig
+ */
+#}
+
+{% set classes = [
+    content.field_media_primary|render ? 'p-feature--with-img',
+] %}
+
+{% set rendered_content = content|without(
+    'field_media_primary',
+    'field_p_content',
+    'field_overview',
+) %}
+
+{% include 'surf_main:feature' with {
+    attributes,
+    rendered_content,
+    feature_attributes: create_attribute({'class': classes}),
+    feature_content: content.field_p_content,
+    feature_heading: label|field_value,
+    feature_heading_summary: content.field_overview|field_value|default([]),
+    feature_media: content.field_media_primary|field_value|default([]),
+} only %}

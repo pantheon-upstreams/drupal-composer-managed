@@ -1,5 +1,5 @@
 //
-// Component - Page - Experiment
+// Component - Page - Feature
 //
 // - 01 - Imports
 // - 02 - General
@@ -21,7 +21,7 @@
 //  02 - General
 //------------------------------------
 
-.p-experiment {
+.p-feature {
   .o-header__content {
     background-color: var(--surf-color-white);
     padding-block: calculations.rem(32px);
@@ -32,7 +32,7 @@
     }
   }
 
-  .p-experiment__media {
+  .p-feature__media {
     img {
       max-block-size: 480px;
       object-fit: cover;
@@ -52,16 +52,7 @@
     }
   }
 
-  .p-experiment__dates {
-    color: var(--surf-color-gray-800);
-    display: flex;
-    grid-gap: 2px;
-    font-size: calculations.rem(16px);
-    font-weight: var(--surf-fw-bold);
-    text-transform: uppercase;
-  }
-
-  .p-experiment__overview {
+  .p-feature__overview {
     margin-block-end: calculations.rem(32px);
 
     @include breakpoints.bp-min(medium) {
@@ -69,27 +60,13 @@
     }
   }
 
-  .p-experiment__main-content {
+  .p-feature__main-content {
     > * {
       margin-inline: auto;
     }
 
     > :not(:last-child) {
       margin-block-end: calculations.rem(60px);
-    }
-  }
-
-  .p-experiment__in-the-news {
-    > :not( :last-child ) {
-      margin-block-end: calculations.rem(32px);
-
-      @include breakpoints.bp-min(medium) {
-        margin-block-end: calculations.rem(60px);
-      }
-
-      @include breakpoints.bp-min(large) {
-        margin-block-end: calculations.rem(68px);
-      }
     }
   }
 }
@@ -101,7 +78,7 @@
 //  03 - Modifiers
 //------------------------------------
 
-.p-experiment.p-experiment--with-img .o-header {
+.p-feature.p-feature--with-img .o-header {
   @include breakpoints.bp-min(xlarge) {
     margin-block-start: calculations.rem(-120px);
   }

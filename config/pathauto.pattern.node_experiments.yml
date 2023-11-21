@@ -1,0 +1,22 @@
+uuid: f82cb11c-7e00-409c-b5b1-d698396ea4d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_experiments
+label: 'Node - Experiments'
+type: 'canonical_entities:node'
+pattern: '/experiments/[node:title]'
+selection_criteria:
+  f22a38f5-24f3-4162-b4ae-c6e9d5f9076c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: f22a38f5-24f3-4162-b4ae-c6e9d5f9076c
+    context_mapping:
+      node: node
+    bundles:
+      experiment: experiment
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -73,6 +73,7 @@
         "drupal/search_api_block": "^1.1",
         "drupal/search_api_pantheon": "^8.1",
         "drupal/search_api_solr": "^4.2",
+        "drupal/similarterms": "^1.8",
         "drupal/simple_block": "~1.0",
         "drupal/smart_date": "^3.7",
         "drupal/state_machine": "^1.6",

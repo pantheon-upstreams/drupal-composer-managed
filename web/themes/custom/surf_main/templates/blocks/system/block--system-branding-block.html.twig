@@ -19,11 +19,11 @@
 
 {% block content %}
     {% if site_logo and site_logo|split('.')|last == 'svg'%}
-        <a href="{{ path('<front>') }}" rel="home" class="site-branding__logo">
+        <a href="{{ path('<front>') }}" rel="home" class="site-branding__logo" aria-label="Sanford Underground Research facility - Home">
             {{ source(site_logo) }}
         </a>
     {% elseif site_logo %}
-        <a href="{{ path('<front>') }}" rel="home" class="site-branding__logo">
+        <a href="{{ path('<front>') }}" rel="home" class="site-branding__logo" aria-label="Sanford Underground Research facility - Home">
             <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
         </a>
     {% endif %}

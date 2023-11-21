@@ -9,7 +9,7 @@ _core:
 id: surf_main_local_actions
 theme: surf_main
 region: content
-weight: -6
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

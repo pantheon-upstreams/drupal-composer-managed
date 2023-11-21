@@ -9,7 +9,7 @@ dependencies:
 id: surf_main_searchapiform
 theme: surf_main
 region: header_utility
-weight: -2
+weight: -5
 provider: null
 plugin: search_api_form_block
 settings:

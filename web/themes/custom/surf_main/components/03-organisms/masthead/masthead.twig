@@ -16,7 +16,7 @@
     'o-masthead',
 ] %}
 
-<header {{ masthead_attributes.addClass(classes).merge(attributes) }} id="masthead">
+<header {{ masthead_attributes.addClass(classes).merge(attributes) }} id="masthead" aria-label="Site Header">
     {% if masthead_alerts %}
         <div class="o-masthead__alerts">
             {{ masthead_alerts }}

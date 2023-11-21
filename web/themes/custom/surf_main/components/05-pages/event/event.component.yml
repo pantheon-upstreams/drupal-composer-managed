@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 name: Event
 status: experimental
-group: Organisms
+group: Pages
 props:
   type: object
   properties:
@@ -21,9 +21,9 @@ props:
         type: string
     event_body:
         title: Body
-        type: string
+        type: array
     event_dates:
-        title: Event Dates
+        title: Dates
         type: string
     event_link_text:
         title: Link Text

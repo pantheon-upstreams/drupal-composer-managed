@@ -7,6 +7,7 @@
  * - header_attributes: [array] Any parent tag attributes.
  * - header_heading: [string] required
  * - header_teaser: [string]
+ * - header_label: [string]
  * - header_media: [boolean]
  * - header_cta_text [string]
  * - header_cta_url [string]
@@ -27,7 +28,7 @@
   header_type ? 'o-header--type-' ~ header_type,
 ] %}
 
-<header {{ header_attributes.addClass(classes).merge(attributes) }}>
+<header {{ header_attributes.addClass(classes).merge(attributes).setAttribute('aria-label', header_label) }}>
   <div class="o-header__content">
     {% block header_links_block %}{% endblock %}
 

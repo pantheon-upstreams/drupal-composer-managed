@@ -28,6 +28,7 @@
         <div class="p-person__grid">
             {% embed 'surf_main:header' with {
                 header_heading: person_heading,
+                header_label: 'Person',
                 header_heading_level: '1',
                 header_attributes: create_attribute(),
                 heading_attributes: create_attribute({'class': ['o-header__heading', 'p-person__heading']}),
@@ -37,7 +38,7 @@
                 {% endblock %}
             {% endembed %}
 
-            <div class="p-person__content">
+            <main id="main-content" class="p-person__content">
                 <div class="p-person__content-wrapper">
                     {% if person_job_title %}
                         <h2 class="p-person__job-title">
@@ -71,7 +72,7 @@
                         </div>
                     {% endif %}
                 </div>
-            </div>
+            </main>
 
             {% if person_media %}
                 <div class="p-person__media">
