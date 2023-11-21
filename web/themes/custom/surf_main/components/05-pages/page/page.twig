@@ -1,15 +1,16 @@
 {#
 /**
  * @file
- * Component for Basic Page (Node)
+ * Page component for a Basic Page
  *
  * Available props:
- * - page_attributes: [array] Any parent tag attributes.
- * - page_heading: [string]
- * - page_summary: [string]
- * - person_phone: [string]
- * - person_body: [string]
- * - person_media: [string]
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - page_attributes: [string] Component reserved space for attributes.
+ * - page_cta_url: [string] Value of the URL that represents the primary CTA button.
+ * - page_cta_text: [string] Value of the text that represents the primary CTA button.
+ * - page_heading: [string] Value of the page title for this component.
+ * - page_heading_summary: [string] Value of sub-title text for this component.
+ * - page_media: [array] Rendered array of the Media object for this component.
  *
  */
 #}
@@ -25,25 +26,24 @@
         </div>
     {% endif %}
 
-    <div class="container container--xlarge">
-
+    <div class="p-page__header">
         {% embed 'surf_main:header' with {
+            header_attributes: create_attribute(),
             header_heading: page_heading,
             header_heading_level: '1',
-            header_summary: page_summary,
+            header_summary: page_heading_summary,
             header_cta_url: page_cta_url,
             header_cta_text: page_cta_text,
-            header_cta_html_tag: page_cta_html_tag|default('link'),
-            header_cta_style: page_cta_style|default('primary'),
-            header_cta_size: page_cta_size|default('large'),
-            header_cta_color: page_cta_size|default('navy'),
-            header_attributes: create_attribute(),
+            header_cta_html_tag: 'link',
+            header_cta_style: 'primary',
+            header_cta_size: 'large',
+            header_cta_color: 'navy',
             heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
         } only %}
         {% endembed %}
+    </div>
 
-        <div class="p-page__main-content">
-            {{ page_content }}
-        </div>
+    <div class="p-page__content l-main">
+        {{ page_content }}
     </div>
 </article>

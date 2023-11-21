@@ -77,7 +77,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 3
+          items_per_page: 2
       exposed_form:
         type: basic
         options:

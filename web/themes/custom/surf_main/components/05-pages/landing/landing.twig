@@ -14,9 +14,13 @@
 
 {% set classes = [
     'p-landing',
+    'p-page',
 ] %}
 
 <article {{ landing_attributes.addClass(classes).merge(attributes) }}>
     {{ landing_hero }}
-    {{ landing_content }}
+
+    <div class="p-page__content">
+        {{ landing_content }}
+    </div>
 </article>

@@ -22,12 +22,14 @@
 //------------------------------------
 
 .p-experiment {
-  .o-header__content {
-    background-color: var(--surf-color-white);
-    padding-block: calculations.rem(32px);
+  .p-experiment__header {
+    margin-inline: auto;
+    max-inline-size: var(--surf-width-xlarge);
+    padding-block-start: calculations.rem(32px);
+    position: relative;
 
     @include breakpoints.bp-min(xlarge) {
-      padding-block: calculations.rem(60px);
+      padding-block-start: calculations.rem(60px);
       padding-inline: calculations.rem(120px);
     }
   }
@@ -69,27 +71,12 @@
     }
   }
 
-  .p-experiment__main-content {
-    > * {
-      margin-inline: auto;
-    }
+  .p-experiment__related h2 {
+    margin-block: 32px;
+    text-transform: uppercase;
 
-    > :not(:last-child) {
-      margin-block-end: calculations.rem(60px);
-    }
-  }
-
-  .p-experiment__in-the-news {
-    > :not( :last-child ) {
-      margin-block-end: calculations.rem(32px);
-
-      @include breakpoints.bp-min(medium) {
-        margin-block-end: calculations.rem(60px);
-      }
-
-      @include breakpoints.bp-min(large) {
-        margin-block-end: calculations.rem(68px);
-      }
+    @include breakpoints.bp-min(large) {
+      margin-block: 64px;
     }
   }
 }
@@ -101,8 +88,9 @@
 //  03 - Modifiers
 //------------------------------------
 
-.p-experiment.p-experiment--with-img .o-header {
+.p-experiment.p-experiment--with-img .p-experiment__header {
   @include breakpoints.bp-min(xlarge) {
+    background-color: var(--surf-color-white);
     margin-block-start: calculations.rem(-120px);
   }
 }

@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Page
+name: Basic Page
 status: experimental
-group: Organisms
+group: Pages
 props:
   type: object
   properties:
@@ -10,6 +10,18 @@ props:
     page_attributes:
       title: Attributes
       type: string
+    page_cta_url:
+      title: CTA URL
+      type: string
+    page_cta_text:
+      title: CTA Text
+      type: string
     page_heading:
       title: Page Heading
       type: string
+    page_heading_summary:
+      title: Overview
+      type: string
+    page_media:
+      title: Media
+      type: array

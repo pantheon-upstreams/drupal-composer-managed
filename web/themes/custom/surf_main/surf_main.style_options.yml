@@ -28,6 +28,18 @@
 #
 
 options:
+  section_width:
+    plugin: property
+    label: Section Width
+    default: large
+    options:
+      large:
+        label: Large
+      medium:
+        label: Medium
+      small:
+        label: Small
+
   layout_two_column:
     plugin: property
     label: Two Column Widths
@@ -182,3 +194,11 @@ contexts:
     pullquote:
       options:
         pullquote_type: true
+    section:
+      options:
+        section_width:
+          layout: true
+    section_extended:
+      options:
+        section_width:
+          layout: true
