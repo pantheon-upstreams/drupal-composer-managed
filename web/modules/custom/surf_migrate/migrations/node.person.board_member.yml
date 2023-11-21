@@ -2,7 +2,7 @@ id: surf_node_person_board_member
 label: SURF Node Board Member -> Person
 migration_group: 'surf'
 migration_tags:
-  - Content
+  - content
 source:
   plugin:  'd8_entity'
   entity_type: node
