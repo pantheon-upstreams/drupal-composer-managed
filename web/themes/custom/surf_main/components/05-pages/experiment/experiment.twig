@@ -11,6 +11,7 @@
  * - experiment_heading: [string] Value of the page title for this component.
  * - experiment_heading_summary: [string] Value of sub-title text for this component.
  * - experiment_media: [array] Rendered array of the Media object for this component.
+ * - experiment_research_area: [string] Value of the selected research area.
  *
  */
 #}
@@ -26,7 +27,7 @@
         </div>
     {% endif %}
 
-    <div class="container container--xlarge">
+    <div class="p-experiment__header">
         {% embed 'surf_main:header' with {
             header_heading: experiment_heading,
             header_heading_level: '1',
@@ -44,27 +45,27 @@
                 </div>
             {% endblock %}
         {% endembed %}
-
-        <main id="main-content" class="p-experiment__content-wrapper">
-            <div class="p-experiment__main-content">
-                {{ experiment_content }}
-            </div>
-
-            {% if drupal_view_result('related_articles', 'experiment') is not empty %}
-                <div class="p-experiment__related">
-                    {% include 'surf_main:left-hook' with {
-                        left_hook_attributes: create_attribute(),
-                    } %}
-
-                    {% include 'surf_main:heading' with {
-                        heading_attributes: create_attribute({'class': ['a-heading--lg']}),
-                        heading_text: research_area ~ 'in the news'|t,
-                        heading_level: '2',
-                    } %}
-
-                    {{ drupal_view('related_articles', 'experiment') }}
-                </div>
-            {% endif %}
-        </main>
     </div>
+
+    <div class="p-experiment__content l-main">
+        {{ experiment_content }}
+    </div>
+
+    {% if drupal_view_result('related_articles', 'experiment') is not empty %}
+        <section class="p-experiment__related">
+            <div class="container container--default">
+                {% include 'surf_main:left-hook' with {
+                    left_hook_attributes: create_attribute(),
+                } %}
+
+                {% include 'surf_main:heading' with {
+                    heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                    heading_text: 'In The News'|t,
+                    heading_level: '2',
+                } %}
+
+                {{ drupal_view('related_articles', 'experiment') }}
+            </div>
+        </section>
+    {% endif %}
 </article>

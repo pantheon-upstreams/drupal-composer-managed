@@ -11,14 +11,21 @@
 #}
 
 {% set classes = [
-  'paragraph',
-  'paragraph--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished',
+    'l-section',
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
 ] %}
 
 <section {{ attributes.addClass(classes) }}>
-    <div class="container container--default">
+    {% if style_options['section_width'] == 'large' %}
+        <div class="container container--default">
+    {% elseif style_options['section_width'] == 'medium' %}
+        <div class="container container--medium">
+    {% elseif style_options['section_width'] == 'small' %}
+        <div class="container container--small">
+    {% endif %}
         {{ content }}
     </div>
 </section>

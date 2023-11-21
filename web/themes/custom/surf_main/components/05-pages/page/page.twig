@@ -26,7 +26,6 @@
     {% endif %}
 
     <div class="container container--xlarge">
-
         {% embed 'surf_main:header' with {
             header_heading: page_heading,
             header_heading_level: '1',
@@ -42,7 +41,7 @@
         } only %}
         {% endembed %}
 
-        <div class="p-page__main-content">
+        <div class="p-page__content">
             {{ page_content }}
         </div>
     </div>
