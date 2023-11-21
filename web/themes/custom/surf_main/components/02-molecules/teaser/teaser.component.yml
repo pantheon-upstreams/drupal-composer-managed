@@ -29,6 +29,7 @@ props:
       title: Type
       type: string
       enum:
+        - none
         - col-3
         - col-2
         - col-1

@@ -10,7 +10,7 @@
  * - teaser_media: [mixed] Representative media for the teaser.
  * - teaser_title: [string] Primary title for the teaser.
  * - teaser_title_tag: [string] 'h3' for example.
- * - teaser_type: [string] Available options include, 'col-3', 'col-2', 'col-1', 'list', and 'super'.
+ * - teaser_type: [string] Available options include, 'list', 'super' and 'person'.
  * - teaser_url: [string] Path alias for linking teasers.
  *
  * Available slots:
@@ -23,7 +23,7 @@
 
 {% set classes = [
     'm-teaser',
-    'm-teaser--' ~ teaser_type,
+    teaser_type != 'none' ? 'm-teaser--' ~ teaser_type,
 ] %}
 
 <article {{ teaser_attributes.addClass(classes).merge(attributes) }}>
@@ -46,7 +46,7 @@
           {% if teaser_url %}
             <a href="{{ teaser_url }}" class="m-teaser__link">
             {% endif %}
-            <img loading="lazy" src="themes/custom/surf_main/components/02-molecules/teaser/img/news-placeholder.png" width="840" height="560" alt="Sanford Underground Research Facility">
+            <img aria-hidden="true" loading="lazy" src="themes/custom/surf_main/components/02-molecules/teaser/img/news-placeholder.png" width="840" height="560" alt="Sanford Underground Research Facility">
             {% if teaser_url %}
               </a>
             {% endif %}
