@@ -30,6 +30,7 @@ third_party_settings:
         - field_ref_audiences
         - field_ref_eo_opportunities
         - field_ref_key_impact_areas
+        - field_ref_research_areas
       label: Tags
       region: content
       parent_name: ''
@@ -60,7 +61,6 @@ third_party_settings:
     group_related:
       children:
         - field_ref_related_content
-        - field_ref_research_areas
       label: Related
       region: content
       parent_name: ''
@@ -197,13 +197,13 @@ content:
     third_party_settings: {  }
   field_ref_eo_opportunities:
     type: options_select
-    weight: 23
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_key_impact_areas:
     type: options_select
-    weight: 24
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -218,14 +218,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_ref_research_areas:
-    type: entity_reference_autocomplete
-    weight: 19
+    type: options_select
+    weight: 24
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

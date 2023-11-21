@@ -50,23 +50,19 @@
                 {{ experiment_content }}
             </div>
 
-            {% if drupal_view_result('in_the_news', 'experiment') is not empty %}
-                <div class="p-experiment__additional-content">
-                    <div class="p-experiment__in-the-news">
-                        {% embed 'surf_main:left-hook' with {
-                            left_hook_attributes: create_attribute(),
-                        } only %}
-                        {% endembed %}
+            {% if drupal_view_result('related_articles', 'experiment') is not empty %}
+                <div class="p-experiment__related">
+                    {% include 'surf_main:left-hook' with {
+                        left_hook_attributes: create_attribute(),
+                    } %}
 
-                        {% embed 'surf_main:heading' with {
-                            heading_attributes: create_attribute({'class': ['a-heading--lg']}),
-                            heading_text: research_area ~ 'IN THE NEWS',
-                            heading_level: '2',
-                        } only %}
-                        {% endembed %}
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                        heading_text: research_area ~ 'in the news'|t,
+                        heading_level: '2',
+                    } %}
 
-                        {{ drupal_view('in_the_news', 'experiment') }}
-                    </div>
+                    {{ drupal_view('related_articles', 'experiment') }}
                 </div>
             {% endif %}
         </main>

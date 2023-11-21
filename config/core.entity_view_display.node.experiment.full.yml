@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.experiment.field_p_content
     - field.field.node.experiment.field_ref_articles
     - field.field.node.experiment.field_ref_audiences
+    - field.field.node.experiment.field_ref_research_areas
     - field.field.node.experiment.field_teaser_text
     - node.type.experiment
   module:
@@ -60,6 +61,7 @@ content:
 hidden:
   field_ref_articles: true
   field_ref_audiences: true
+  field_ref_research_areas: true
   field_teaser_text: true
   langcode: true
   links: true

@@ -18,7 +18,7 @@
     layout_content: content,
 } only %}
     {% block layout_content %}
-        {% if layout_content.header|render %}
+        {% if layout_content.header|mercury_editor or layout_content.header|render %}
             <div {{ region_attributes.header.addClass('l-onecol__region', 'l-onecol__region--heading')}}>
                 {{ layout_content.header }}
             </div>
