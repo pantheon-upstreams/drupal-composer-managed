@@ -11,22 +11,23 @@
 #}
 
 {% set classes = [
-  content.field_media_primary.0 ? 'p-report-pub--with-img',
+  content.field_media_primary.0 ? 'p-page--with-img',
 ] %}
 
-{% embed 'surf_main:report-pub' with {
+{% embed 'surf_main:page' with {
+  page_attributes: create_attribute({'class': classes}),
+  page_heading: label|field_value,
+  page_summary: content.field_overview.0 ? content.field_overview|field_value,
+  page_cta_url: content.field_link.0 ? content.field_link.0['#url'],
+  page_cta_text: content.field_link.0 ? content.field_link.0['#title'],
+  page_cta_html_tag,
+  page_cta_style,
+  page_cta_size,
+  page_cta_color,
+  page_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
+  page_content: content.field_p_content,
+  title_suffix: title_suffix,
   attributes,
-  report_pub_attributes: create_attribute({'class': classes}),
-  report_pub_heading: label|field_value|default([]),
-  report_pub_summary: content.field_overview|field_value|default([]),
-  report_pub_cta_url: content.field_link.0 ? content.field_link.0['#url'],
-  report_pub_cta_text: content.field_link.0 ? content.field_link.0['#title'],
-  report_pub_cta_html_tag,
-  report_pub_cta_style,
-  report_pub_cta_size,
-  report_pub_cta_color,
-  report_pub_media: content.field_media_primary|field_value|default([]),
-  report_pub_content: content.field_p_content,
 } only %}
 {% endembed %}
 
