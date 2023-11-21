@@ -1,39 +1,35 @@
 {#
 /**
  * @file
- * Theme implementation to display a node.
+ * Theme implementation to display Basic Page Node with Full view mode.
  *
  * Available variables:
- *  See embed below
+ * - No additional variables are available for this Node type.
  *
- * @see template_preprocess_node()
+ * @see templates/nodes/node.html.twig
+ * @see components/05-pages/experiment/experiment.twig
  */
 #}
 
 {% set classes = [
-  content.field_media_primary.0 ? 'p-page--with-img',
+  content.field_media_primary|render ? 'p-page--with-img',
 ] %}
 
-{% embed 'surf_main:page' with {
-  page_attributes: create_attribute({'class': classes}),
-  page_heading: label|field_value,
-  page_summary: content.field_overview.0 ? content.field_overview|field_value,
-  page_cta_url: content.field_link.0 ? content.field_link.0['#url'],
-  page_cta_text: content.field_link.0 ? content.field_link.0['#title'],
-  page_cta_html_tag,
-  page_cta_style,
-  page_cta_size,
-  page_cta_color,
-  page_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
-  page_content: content.field_p_content,
-  title_suffix: title_suffix,
-  attributes,
-} only %}
-{% endembed %}
+{% set rendered_content = content|without(
+    'field_link',
+    'field_overview',
+    'field_p_content',
+    'field_media_primary',
+) %}
 
-{{ content|without(
-  'field_p_content',
-  'field_overview',
-  'field_media_primary',
-  'field_link',
-) }}
+{% include 'surf_main:page' with {
+    attributes,
+    rendered_content,
+    page_attributes: create_attribute({'class': classes}),
+    page_heading: label|field_value,
+    page_heading_summary: content.field_overview|field_value,
+    page_cta_url: content.field_link|render ? content.field_link.0['#url'],
+    page_cta_text: content.field_link|render ? content.field_link.0['#title'],
+    page_media: content.field_media_primary|field_value|default([]),
+    page_content: content.field_p_content,
+} only %}

@@ -1,10 +1,9 @@
 //
-// Component - Page - Page (Basic Page)
+// Component - Page - Basic Page
 //
 // - 01 - Imports
 // - 02 - General
 // - 03 - Modifiers
-// - 04 - Component Overrides
 //
 
 
@@ -12,7 +11,8 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
 
 
 
@@ -22,32 +22,36 @@
 //------------------------------------
 
 .p-page {
-  .o-header__content {
-    background-color: var(--surf-color-white);
-    padding-block: rem(32px);
-    @include bp-min(xlarge) {
-      padding-block: rem(60px);
-      padding-inline: rem(120px);
+  .p-page__header {
+    margin-inline: auto;
+    max-inline-size: var(--surf-width-xlarge);
+    padding-block-start: calculations.rem(32px);
+    position: relative;
+
+    @include breakpoints.bp-min(xlarge) {
+      padding-block-start: calculations.rem(60px);
+      padding-inline: calculations.rem(120px);
     }
   }
-}
 
-.p-page__media {
-  img {
-    max-block-size: 600px;
-    object-fit: cover;
+  .p-page__media {
+    img {
+      max-block-size: 480px;
+      object-fit: cover;
+      width: 100%;
+
+      @include breakpoints.bp-min(xlarge) {
+        max-block-size: 690px;
+      }
+    }
   }
-}
 
-.p-page__main-content {
-  > :not( :last-child ) {
-    margin-block-end: rem(80px);
-  }
+  .p-page__overview {
+    margin-block-end: calculations.rem(32px);
 
-  .m-pullquote--small,
-  .m-pullquote--medium,
-  .m-pullquote--large {
-    margin-inline: auto;
+    @include breakpoints.bp-min(medium) {
+      margin-block-end: calculations.rem(60px);
+    }
   }
 }
 
@@ -58,28 +62,9 @@
 //  03 - Modifiers
 //------------------------------------
 
-.p-page--with-img {
-  .o-header {
-    @include bp-min(xlarge) {
-      margin-block-start: rem(-120px);
-    }
-  }
-}
-
-
-
-
-//------------------------------------
-//  04 - Component Overrides
-//------------------------------------
-
-.p-page__main-content,
-.lp-builder > div {
-  > * {
-    margin-inline: auto;
-  }
-
-  > :not( :last-child ) {
-    margin-block-end: rem(60px);
+.p-page.p-page--with-img .p-page__header {
+  @include breakpoints.bp-min(xlarge) {
+    background-color: var(--surf-color-white);
+    margin-block-start: calculations.rem(-120px);
   }
 }
