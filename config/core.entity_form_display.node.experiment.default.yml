@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.experiment.field_dates_only
+    - field.field.node.experiment.field_links
     - field.field.node.experiment.field_media_primary
     - field.field.node.experiment.field_overview
     - field.field.node.experiment.field_p_content
@@ -16,6 +17,7 @@ dependencies:
     - datetime_range
     - field_group
     - layout_paragraphs
+    - link
     - maxlength
     - media_library
     - path
@@ -91,6 +93,7 @@ third_party_settings:
     group_related:
       children:
         - field_ref_articles
+        - field_links
       label: Related
       region: content
       parent_name: ''
@@ -136,9 +139,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 14
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_media_primary:
     type: media_library_widget
-    weight: 13
+    weight: 9
     region: content
     settings:
       media_types: {  }

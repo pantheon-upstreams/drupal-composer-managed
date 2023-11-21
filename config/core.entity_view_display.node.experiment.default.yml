@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.experiment.field_dates_only
+    - field.field.node.experiment.field_links
     - field.field.node.experiment.field_media_primary
     - field.field.node.experiment.field_overview
     - field.field.node.experiment.field_p_content
@@ -15,6 +16,8 @@ dependencies:
   module:
     - datetime_range
     - layout_paragraphs
+    - link
+    - smart_date
     - text
     - user
 id: node.experiment.default
@@ -31,6 +34,18 @@ content:
       separator: '-'
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_media_primary:
     type: entity_reference_entity_view

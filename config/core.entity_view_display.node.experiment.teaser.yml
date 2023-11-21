@@ -51,6 +51,7 @@ content:
     region: content
 hidden:
   field_dates_only: true
+  field_links: true
   field_p_content: true
   field_ref_articles: true
   field_ref_audiences: true

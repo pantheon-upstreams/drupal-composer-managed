@@ -59,6 +59,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_links: true
   field_ref_articles: true
   field_ref_audiences: true
   field_ref_research_areas: true

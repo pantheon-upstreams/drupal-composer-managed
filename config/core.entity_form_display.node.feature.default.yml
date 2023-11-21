@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.feature.field_ref_articles
     - field.field.node.feature.field_ref_audiences
     - field.field.node.feature.field_ref_experiments
+    - field.field.node.feature.field_ref_features
     - field.field.node.feature.field_ref_research_areas
     - field.field.node.feature.field_teaser_text
     - node.type.feature
@@ -77,6 +78,7 @@ third_party_settings:
       children:
         - field_ref_articles
         - field_ref_experiments
+        - field_ref_features
       label: Related
       region: content
       parent_name: ''
@@ -176,6 +178,16 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_ref_experiments:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_features:
     type: entity_reference_autocomplete
     weight: 10
     region: content
