@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Heading Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ * @see components/01-atoms/heading/heading.twig
+ *
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+<div {{ attributes.addClass(classes) }}>
+{{ content.field_ref_content|field_value }}
+</div>
+
+{{ content|without(
+  'field_ref_content',
+) }}
