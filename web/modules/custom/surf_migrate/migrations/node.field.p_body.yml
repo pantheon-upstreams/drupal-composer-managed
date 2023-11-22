@@ -21,12 +21,12 @@ process:
     plugin: static_map
     source: '@_format_field'
     map:
-      filtered_html: basic_html
+      filtered_html: simple_html
       full_html: full_html
       full_html_new: full_html
       plain_text: plain_text
       wysiwyg_editor: full_html
-      php_code: restricted_html
+      php_code: full_html
     default_value: basic_html
   field_text/value:
     - plugin: 'wysiwyg_image_tag_to_media'
