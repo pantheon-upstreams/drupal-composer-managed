@@ -43,7 +43,10 @@ process:
       source:
         - field_last_name/0/value
         - '@_title_second_part'
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
   field_media_primary/0/target_id:
     -
       plugin: migration_lookup

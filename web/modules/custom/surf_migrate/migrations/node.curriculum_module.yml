@@ -13,7 +13,10 @@ process:
   nid: nid
   title: title
   body: body
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
   field_media:
     -
       plugin: migration_lookup

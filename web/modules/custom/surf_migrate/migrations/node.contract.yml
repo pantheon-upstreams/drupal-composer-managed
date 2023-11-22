@@ -17,7 +17,10 @@ process:
   field_ref_contract_type: field_contract_type
   field_p_contract_schedule: field_contract_schedule
   field_contract_summary: field_contract_summary
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
   field_links:
     plugin: sub_process
     source: field_url
