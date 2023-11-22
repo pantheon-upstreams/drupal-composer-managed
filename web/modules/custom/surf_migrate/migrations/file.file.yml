@@ -8,6 +8,7 @@ source:
   parent_entity_type: 'node'
   file_fields:
     - node:field_document
+    - node:field_attachment
 process:
   fid: fid
   filename: filename
@@ -26,6 +27,7 @@ process:
       plugin: urlencode
   uri:
     plugin: file_copy
+    file_exists: 'use existing'
     source:
       - '@source_full_path'
       - uri

@@ -21,6 +21,23 @@ process:
   field_overview/0/format:
     plugin: default_value
     default_value: 'basic_html'
+  field_ref_documents:
+    plugin: sub_process
+    source: field_documents
+    process:
+      target_id:
+        -
+          plugin: callback
+          callable: '\Drupal\surf_migrate\MigrationCallbacks::convertDocumentNodeToFid'
+          source: target_id
+        -
+          plugin: migration_lookup
+          no_stub: true
+          migration: surf_file_file
+        -
+          plugin: file_to_media
+          destination_field: field_media_document
+          media_bundle: document
   field_links:
     plugin: sub_process
     source: field_url

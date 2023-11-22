@@ -8,6 +8,7 @@ source:
   image_fields:
     - paragraph:field_image
     - node:field_portrait
+    - node:field_hero_image
 process:
   _skip_ids:
     plugin: skip_on_value
