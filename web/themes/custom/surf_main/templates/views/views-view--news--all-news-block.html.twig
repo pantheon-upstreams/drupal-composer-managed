@@ -49,18 +49,18 @@
   </div>
 
   {% if header %}
-    <header class='o-view__header'>
+    <header class='o-view-embed__header'>
       {{ header }}
     </header>
   {% endif %}
 
 
   {% if rows -%}
-    <div class="o-view__rows">
+    <div class="o-view-embed__rows">
       {{ rows }}
     </div>
   {% elseif empty -%}
-    <div class="o-view__rows">
+    <div class="o-view-embed__rows">
       {{ empty }}
     </div>
   {% endif %}

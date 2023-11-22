@@ -24,12 +24,17 @@
   //empty
 }
 
-.o-view__header {
+.o-view-embed__header {
   font-size: rem(14px);
   line-height: var(--surf-lh-label);
   margin-block-start: rem(20px);
 }
 
-.o-view__rows {
+.o-view-embed__rows {
   margin-block-start: rem(68px);
 }
+
+.o-view-embed__title {
+  margin-block-end: rem(20px);
+}
+
