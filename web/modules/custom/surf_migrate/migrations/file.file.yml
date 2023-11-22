@@ -15,6 +15,9 @@ process:
   langcode: langcode
   source_full_path:
     -
+      plugin: prepare_directory
+      directory: 'public://documents/contracts'
+    -
       plugin: str_replace
       source: uri
       search: "public://"

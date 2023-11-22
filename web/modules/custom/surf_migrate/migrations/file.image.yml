@@ -22,6 +22,9 @@ process:
   langcode: langcode
   source_full_path:
     -
+      plugin: prepare_directory
+      directory: 'public://images/featured'
+    -
       plugin: str_replace
       source: uri
       search: "public://"
