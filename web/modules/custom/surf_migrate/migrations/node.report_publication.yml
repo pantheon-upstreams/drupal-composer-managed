@@ -1,0 +1,83 @@
+id: surf_node_report_publication
+label: 'SURF Node -> Report/Publication'
+migration_group: 'surf'
+migration_tags:
+  - content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'reports_and_publications'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  field_date_published: field_published_on
+  field_authors: field_authors
+  field_link:
+    plugin: sub_process
+    source: field_url
+    process:
+      uri: uri
+      title: title
+      options:
+        plugin: default_value
+        default_value: []
+  field_ref_publication_type:
+    plugin: sub_process
+    source: field_highlighted
+    process:
+      target_id:
+        - 
+          plugin: migration_lookup
+          migration: surf_taxonomy_publication_type
+          source: target_id
+        -
+          plugin: extract
+          index:
+            - 0
+  field_p_content/target_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty          
+      method: process
+    - plugin: extract
+      index:
+        - 0
+  field_p_content/target_revision_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty          
+      method: process
+    - plugin: node_complete_node_revision_lookup
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
+  field_media_primary:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_media_from_paragraph
+      source: field_paragraph_featured_image/0/target_id
+  field_author: field_byline
+  field_ref_related_content: field_featured_related
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'report_publication'
+migration_dependencies:
+  required:
+    - surf_node_field_p_body
+    - surf_media_from_paragraph

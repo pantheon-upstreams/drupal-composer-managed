@@ -1,0 +1,71 @@
+id: surf_node_press_release
+label: SURF Node -> Press Release
+migration_group: 'surf'
+migration_tags:
+  - content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'press_release'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  field_date_published/0/value:
+    plugin: format_date
+    from_format: 'Y-m-d\TH:i:s'
+    to_format: 'Y-m-d'
+    to_timezone: 'UTC'
+    source: field_published_on/0/value
+  field_p_content/target_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty          
+      method: process
+    - plugin: extract
+      index:
+        - 0
+  field_p_content/target_revision_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty          
+      method: process
+    - plugin: node_complete_node_revision_lookup
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
+  field_media_primary:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_media_from_paragraph
+      source: field_paragraph_featured_image/0/target_id
+  field_ref_contacts:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_person_employee
+      source: field_more_information/0/target_id
+  field_author: field_byline
+  field_ref_related_content: field_featured_related
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'press_release'
+migration_dependencies:
+  required:
+    - surf_node_field_p_body
+    - surf_media_from_paragraph

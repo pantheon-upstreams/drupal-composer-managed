@@ -1,0 +1,55 @@
+id: surf_node_standard
+label: SURF Node -> Standard
+migration_group: 'surf'
+migration_tags:
+  - content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'ehs_manual_page'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  body: body
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
+  field_ism_document_number: field_ism_document_number
+  field_ism_rev_number: field_ism_rev_
+  field_ref_esh_categories:
+    plugin: sub_process
+    source: field_manual_category
+    process:
+      target_id:
+        - 
+          plugin: migration_lookup
+          migration: surf_taxonomy_esh_standard_category
+          source: target_id
+        -
+          plugin: extract
+          index:
+            - 0
+  field_ref_documents:
+    -
+      plugin: merge
+      source:
+        - field_document
+        - field_attachment
+    -
+      plugin: sub_process
+      process:
+        target_id:
+          source: target_id
+          plugin: file_to_media
+          destination_field: field_media_document
+          media_bundle: document
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'standard'
