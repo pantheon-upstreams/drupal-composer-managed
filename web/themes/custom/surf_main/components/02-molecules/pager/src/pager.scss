@@ -1,0 +1,41 @@
+//
+// Component - Molecule - Pager
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-pager {
+  margin-block: rem(68px);
+}
+
+.m-pager__items {
+  display: flex;
+  gap: rem(16px);
+  padding: 0;
+}
+
+.m-pager__item {
+  a {
+    text-decoration: none;
+  }
+
+  a[aria-current="Current page"] {
+    color: var(--surf-color-white);
+    padding-inline: 7px;
+    background-color: var(--surf-color-black);
+  }
+}
