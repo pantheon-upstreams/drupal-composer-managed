@@ -1,0 +1,24 @@
+uuid: 1d22076d-971e-4128-82cc-516e9f108c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview
+    - filter.format.basic_html
+    - node.type.article
+  module:
+    - text
+id: node.article.field_overview
+field_name: field_overview
+entity_type: node
+bundle: article
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text

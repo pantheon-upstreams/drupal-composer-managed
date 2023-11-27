@@ -8,12 +8,16 @@ source:
   parent_entity_type: 'node'
   file_fields:
     - node:field_document
+    - node:field_attachment
 process:
   fid: fid
   filename: filename
   uid: uid
   langcode: langcode
   source_full_path:
+    -
+      plugin: prepare_directory
+      directory: 'public://documents/contracts'
     -
       plugin: str_replace
       source: uri
@@ -23,6 +27,7 @@ process:
       plugin: urlencode
   uri:
     plugin: file_copy
+    file_exists: 'use existing'
     source:
       - '@source_full_path'
       - uri

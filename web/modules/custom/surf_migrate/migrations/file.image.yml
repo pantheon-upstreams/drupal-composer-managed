@@ -8,6 +8,7 @@ source:
   image_fields:
     - paragraph:field_image
     - node:field_portrait
+    - node:field_hero_image
 process:
   _skip_ids:
     plugin: skip_on_value
@@ -21,6 +22,9 @@ process:
   uid: uid
   langcode: langcode
   source_full_path:
+    -
+      plugin: prepare_directory
+      directory: 'public://images/featured'
     -
       plugin: str_replace
       source: uri

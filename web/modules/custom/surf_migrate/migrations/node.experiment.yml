@@ -1,0 +1,59 @@
+id: surf_node_experiment
+label: SURF Node -> Experiment
+migration_group: 'surf'
+migration_tags:
+  - content
+source:
+  plugin:  'd8_entity'
+  entity_type: node
+  bundle: 'experiment'
+  include_translations: false
+  key: 'migrate'
+process:
+  nid: nid
+  title: title
+  body: body
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
+  field_links:
+    plugin: sub_process
+    source: field_url
+    process:
+      uri: uri
+      title: title
+      options:
+        plugin: default_value
+        default_value: []
+  field_media_primary/0/target_id:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: surf_file_image
+      source: field_hero_image/0/target_id
+    -
+      plugin: file_to_media
+      metadata:
+        alt: 'field_hero_image/0/alt'
+        title: 'field_hero_image/0/title'
+        width: 'field_hero_image/0/width'
+        height: 'field_hero_image/0/height'
+      destination_field: field_media_image
+      media_bundle: image
+  field_ref_articles:
+    plugin: sub_process
+    source: field_featured_related
+    process:
+      target_id:
+        plugin: migration_lookup
+        source: target_id
+        migration:
+          - surf_node_article
+  uid: uid
+  created: created
+  changed: changed
+  status: status
+destination:
+  plugin: entity:node
+  default_bundle: 'experiment'
