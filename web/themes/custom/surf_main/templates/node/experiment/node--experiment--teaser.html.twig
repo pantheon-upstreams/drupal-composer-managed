@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a node as a teaser.
+ *
+ * Available variables:
+ *  See embed below
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% embed 'surf_main:teaser' with {
+  attributes,
+  teaser_attributes: create_attribute(),
+  teaser_content: content.field_overview|field_value|default([]),
+  teaser_title: label,
+  teaser_title_tag: 'h3',
+  teaser_type: 'experiment',
+  teaser_dates: '2012–Present',
+  teaser_tags: content.field_ref_research_areas|field_value|default([]),
+  teaser_url: path('entity.node.canonical', {'node': node.id}),
+} only %}
+  {% block teaser_content_suffix %}
+    <div class="m-teaser__content-suffix">
+      <p class="m-teaser__dates">{{ teaser_dates }}</p>
+      <ul class="m-teaser__tags">
+        {% for tag in teaser_tags %}
+          <li>
+            {{ tag }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endblock %}
+{% endembed %}
+
+{{ content|without(
+  'field_dates_only',
+  'field_overview',
+  'field_ref_research_areas',
+) }}

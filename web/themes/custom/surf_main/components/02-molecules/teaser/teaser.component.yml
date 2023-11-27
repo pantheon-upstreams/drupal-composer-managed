@@ -36,6 +36,7 @@ props:
         - list
         - super
         - person
+        - experiment
     teaser_url:
       title: URL
       type: string

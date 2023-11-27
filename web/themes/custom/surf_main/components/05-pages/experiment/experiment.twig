@@ -28,6 +28,7 @@
     {% endif %}
 
     <div class="p-experiment__header">
+      <div class="container container--large">
         {% embed 'surf_main:header' with {
             header_heading: experiment_heading,
             header_heading_level: '1',
@@ -45,6 +46,7 @@
                 </div>
             {% endblock %}
         {% endembed %}
+      </div>
     </div>
 
     <div class="p-experiment__content l-main">

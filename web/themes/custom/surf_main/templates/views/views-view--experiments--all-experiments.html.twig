@@ -1,0 +1,112 @@
+{#
+/**
+ * @file
+ * Theme override for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  <div id="views-aria" aria-live="polite">
+    <p class="visually-hidden"></p>
+  </div>
+
+  {% if header %}
+    <header class='o-view-embed__header'>
+      {{ header }}
+    </header>
+  {% endif %}
+
+
+  {% if rows -%}
+    <div class="o-view-embed__rows">
+      {{ rows }}
+    </div>
+  {% elseif empty -%}
+    <div class="o-view-embed__rows">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% embed 'surf_main:callout' with {
+    callout_attributes: create_attribute(),
+    callout_type: 'img',
+    callout_heading: 'Research with Us',
+  } only %}
+
+    {% block callout_content %}
+
+      {% embed 'surf_main:one-column' with {
+        layout_attributes: create_attribute(),
+        layout_html_wrapper: 'div',
+      } only %}
+
+        {% block layout_content %}
+          <div>
+            {% embed 'surf_main:callout' with {
+              callout_attributes: create_attribute(),
+              callout_text: 'Sanford Lab\'s unique features make it a perfect place to host a variety of experiments. The information you need before submitting a research proposal or preparing for a site visit, is here.',
+              callout_button_text: 'Research with Us',
+              callout_button_url: 'http://www.example.com',
+              callout_button_prefix: 'arrow-right',
+              callout_type: 'embed',
+            } only %}
+            {% endembed %}
+          </div>
+        {% endblock %}
+
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

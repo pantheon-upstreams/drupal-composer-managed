@@ -12,15 +12,8 @@
 #}
 
 {% set classes = [
-  content.field_media_primary|render ? 'p-experiment--with-img',
+    content.field_media_primary|render ? 'p-experiment--with-img',
 ] %}
-
-{% set rendered_content = content|without(
-    'field_dates_only',
-    'field_media_primary',
-    'field_p_content',
-    'field_overview',
-) %}
 
 {% set experiment_dates %}
     {% if content.field_dates_only|render and not node.field_dates_only.0.get('end_value').value %}
@@ -40,3 +33,11 @@
     experiment_heading_summary: content.field_overview|field_value,
     experiment_media: content.field_media_primary|field_value|default([]),
 } only %}
+
+{{ content|without(
+  'field_dates_only',
+  'field_media_primary',
+  'field_p_content',
+  'field_overview'
+) }}
+
