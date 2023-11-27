@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.experiment.field_teaser_text
     - node.type.experiment
   module:
+    - datetime_range
     - text
     - user
 id: node.experiment.teaser
@@ -21,14 +22,15 @@ targetEntityType: node
 bundle: experiment
 mode: teaser
 content:
-  field_media_primary:
-    type: entity_reference_entity_view
+  field_dates_only:
+    type: daterange_default
     label: hidden
     settings:
-      view_mode: teaser_default
-      link: false
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_overview:
     type: text_default
@@ -37,23 +39,20 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_teaser_text:
-    type: basic_string
+  field_ref_research_areas:
+    type: entity_reference_label
     label: hidden
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 5
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
-  field_dates_only: true
+  field_media_primary: true
   field_p_content: true
   field_ref_articles: true
   field_ref_audiences: true
-  field_ref_research_areas: true
+  field_teaser_text: true
   langcode: true
+  links: true
   search_api_excerpt: true

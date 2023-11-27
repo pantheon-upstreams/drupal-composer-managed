@@ -1,0 +1,23 @@
+uuid: e30e3f73-3321-407e-89dc-f826a5cfacb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.header
+  module:
+    - link
+id: paragraph.header.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: header
+label: 'Link / Call to Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

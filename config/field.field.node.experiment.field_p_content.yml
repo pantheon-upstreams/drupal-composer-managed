@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.heading
+    - paragraphs.paragraphs_type.link_highlight
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.section
@@ -33,6 +34,7 @@ settings:
       callout: callout
       heading: heading
       gallery: gallery
+      link_highlight: link_highlight
       media: media
       pullquote: pullquote
       section: section
@@ -48,6 +50,9 @@ settings:
       callout:
         weight: 22
         enabled: true
+      content_as_teaser:
+        weight: 24
+        enabled: false
       gallery:
         weight: 25
         enabled: true
@@ -59,7 +64,7 @@ settings:
         enabled: false
       link_highlight:
         weight: 25
-        enabled: false
+        enabled: true
       media:
         weight: 27
         enabled: true
@@ -86,6 +91,9 @@ settings:
         enabled: true
       section_extended:
         weight: 34
+        enabled: false
+      statement:
+        weight: 38
         enabled: false
       text:
         weight: 37

@@ -7,7 +7,9 @@ dependencies:
     - node.type.landing
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.content_as_teaser
     - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.person
@@ -35,6 +37,8 @@ settings:
     target_bundles:
       callout: callout
       heading: heading
+      content_as_teaser: content_as_teaser
+      header: header
       section_extended: section_extended
       accordion: accordion
       statement: statement
@@ -56,8 +60,14 @@ settings:
       callout:
         weight: 22
         enabled: true
+      content_as_teaser:
+        weight: 24
+        enabled: true
       gallery:
         weight: 45
+        enabled: true
+      header:
+        weight: 27
         enabled: true
       heading:
         weight: 23

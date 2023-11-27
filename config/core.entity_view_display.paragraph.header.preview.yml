@@ -1,0 +1,27 @@
+uuid: 7fa380c0-0329-471c-b95f-0610ab6eaa7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.header.field_link
+    - field.field.paragraph.header.field_text
+    - field.field.paragraph.header.field_title
+    - paragraphs.paragraphs_type.header
+id: paragraph.header.preview
+targetEntityType: paragraph
+bundle: header
+mode: preview
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_text: true
+  search_api_excerpt: true
