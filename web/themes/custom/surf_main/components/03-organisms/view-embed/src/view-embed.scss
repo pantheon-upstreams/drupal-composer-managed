@@ -31,7 +31,12 @@
 }
 
 .o-view-embed__rows {
-  margin-block-start: rem(68px);
+  margin-block: rem(68px);
+
+  //style no results message
+  > p {
+    margin-block: rem(68px);
+  }
 }
 
 .o-view-embed__title {

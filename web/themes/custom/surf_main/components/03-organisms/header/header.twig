@@ -25,7 +25,7 @@
 {% set classes = [
   'o-header',
   header_media ? 'o-header--with-img',
-  header_type ? 'o-header--type-' ~ header_type,
+  header_type ? 'o-header--' ~ header_type,
 ] %}
 
 <header {{ header_attributes.addClass(classes).merge(attributes).setAttribute('aria-label', header_label) }}>

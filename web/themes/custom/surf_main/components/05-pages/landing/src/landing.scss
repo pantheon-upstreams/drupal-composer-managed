@@ -1,0 +1,24 @@
+//
+// Component - Page - Landing Page
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Modifiers
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+
+.p-landing__content {
+  > *:not( :last-child ) {
+    margin-block-end: calculations.rem(32px);
+    @include breakpoints.bp-min(large) {
+      margin-block-end: calculations.rem(68px);
+    }
+  }
+}

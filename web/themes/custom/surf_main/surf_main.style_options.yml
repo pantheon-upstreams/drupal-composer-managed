@@ -94,6 +94,20 @@ options:
       0:
         label: No
 
+  header_type:
+    plugin: property
+    label: 'Header Style'
+    default: none
+    options:
+      none:
+        label: None
+      ripple:
+        label: Ripple
+      grid:
+        label: Grid
+      color:
+        label: Color
+
   heading_type:
     plugin: property
     label: 'Heading Style'
@@ -181,6 +195,9 @@ contexts:
       options:
         grid_type: true
         grid_gap: true
+    header:
+      options:
+        header_type: true
     heading:
       options:
         heading_type: true
