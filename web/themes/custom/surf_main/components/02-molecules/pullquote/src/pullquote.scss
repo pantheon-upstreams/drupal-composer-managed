@@ -74,7 +74,10 @@
 
 .m-pullquote.m-pullquote--md {
   max-inline-size: var(--surf-width-medium);
-  padding: rem(32px);
+  padding-block: rem(32px);
+  @include bp-min(small) {
+    padding: rem(32px);
+  }
 
   .m-pullquote__quote {
     p {

@@ -145,7 +145,6 @@
   .splide__arrow--next:before {
     --surf-icon-arrow-right: svg-load('icon-arrow-right.svg');
     mask-image: var(--surf-icon-arrow-right);
-    background-color: pink;
   }
 
   .splide__arrow svg {
