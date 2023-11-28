@@ -144,6 +144,8 @@
 
     @include breakpoints.bp-min(xxlarge) {
       background: url('img/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
+      background-size: 324px 324px;
+      box-shadow: 4px 4px 24px 0 fade-out(black, 0.75);
       max-block-size: inherit;
       min-inline-size: 740px;
       padding: 32px;
@@ -155,14 +157,14 @@
   > li:not(:last-child) > .m-menu__dropdown {
     @include breakpoints.bp-min(xxlarge) {
       left: 50%;
-      transform: translate(-50%, 100%);
+      transform: translate(-50%, -25%);
     }
   }
 
   > li:last-child > .m-menu__dropdown {
     @include breakpoints.bp-min(xxlarge) {
       right: 0;
-      transform: translateY(100%);
+      transform: translateY(-25%);
     }
   }
 
@@ -242,7 +244,7 @@
     display: block;
     font-size: calculations.rem(18px);
     font-weight: var(--surf-fw-bold);
-    padding: 8px 16px;
+    padding: 5px 16px;
     text-decoration: none;
 
     @include breakpoints.bp-min(xxlarge) {
@@ -291,41 +293,44 @@
     color: var(--surf-color-white);
     display: block;
     font-size: calculations.rem(18px);
-    padding: 8px 16px;
+    padding: 5px 16px;
     position: relative;
     text-decoration: none;
 
     @include breakpoints.bp-min(xxlarge) {
-      color: var(--surf-color-gray-900);
+      color: var(--surf-color-navy);
       display: inline-block;
       padding: 4px 0;
     }
 
     &:after {
-      background-color: var(--surf-color-white);
-      content: '';
-      display: block;
-      height: 2px;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      top: calc(100% - 6px);
-      transition: animations.transition(all, 0.35s, easeInOutExpo);
-      width: 100%;
-
       @include breakpoints.bp-min(xxlarge) {
-        background-color: var(--surf-color-navy);
+        background-color: var(--surf-color-black);
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: calc(100% - 6px);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: animations.transition(all, 0.35s, easeInOutExpo);
+        width: 100%;
       }
     }
 
     &:hover,
     &:focus {
-      color: var(--surf-color-navy);
+      @include breakpoints.bp-min(xxlarge) {
+        color: var(--surf-color-gray-900);
+      }
     }
 
     &:hover:after,
     &:focus:after {
       opacity: 1;
+      transform: scaleX(1);
     }
   }
 

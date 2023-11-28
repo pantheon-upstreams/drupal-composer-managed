@@ -1,16 +1,17 @@
 {#
 /**
  * @file
- * Component for Person (Node)
+ * Page component for a Person.
  *
  * Available props:
- * - person_attributes: [array] Any parent tag attributes.
- * - person_heading: [string]
- * - person_job_title: [string]
- * - person_phone: [string]
- * - person_body: [string]
- * - person_media: [string]
- * - person_breadcrumbs: [array]
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - person_attributes: [string] Component reserved space for attributes.
+ * - person_heading: [string] Reserved for the name of the person.
+ * - person_job_title: [string] Reserved for the job title of any person.
+ * - person_phone: [string] Reserved for the phone number of any person.
+ * - person_email: [string] Reserved for the email address of any person.
+ * - person_body: [string] Reserved for the biography of any person.
+ * - person_media: [string] Reserved for the headshot of any person.
  *
  */
 #}
@@ -38,7 +39,7 @@
                 {% endblock %}
             {% endembed %}
 
-            <main id="main-content" class="p-person__content">
+            <div class="p-person__content">
                 <div class="p-person__content-wrapper">
                     {% if person_job_title %}
                         <h2 class="p-person__job-title">
@@ -72,14 +73,13 @@
                         </div>
                     {% endif %}
                 </div>
-            </main>
+            </div>
 
             {% if person_media %}
                 <div class="p-person__media">
                     {{ person_media }}
                 </div>
             {% endif %}
-
         </div>
     </div>
 </article>

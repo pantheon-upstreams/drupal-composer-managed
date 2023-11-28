@@ -128,6 +128,8 @@ $search-form-size: 300px;
   }
 
   .form__item {
+    flex-shrink: 0;
+    margin: 0;
     position: relative;
   }
 
@@ -160,12 +162,14 @@ $search-form-size: 300px;
   .button {
     background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
     bottom: 0;
+    cursor: pointer;
     display: block;
     font: 0/0 transparent;
     height: 22px;
     margin: auto;
     position: absolute;
     right: 16px;
+    text-indent: -9999px;
     top: 0;
     width: 22px;
 
