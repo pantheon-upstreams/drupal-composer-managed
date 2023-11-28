@@ -25,9 +25,17 @@
 
 {{ rendered_content }}
 
+{% set gallery_items %}
+    {% for i in 0..content.field_ref_media|field_value|length - 1 %}
+        <li class="splide__slide m-gallery__slide">
+            {{- content.field_ref_media[loop.index0] -}}
+        </li>
+    {% endfor %}
+{% endset %}
+
 {% include 'surf_main:gallery' with {
     attributes,
     gallery_attributes: create_attribute({'class': classes}),
-    gallery_items: content.field_ref_media,
+    gallery_items: gallery_items,
     gallery_title: 'Gallery ' ~ paragraph.id(),
 } only %}

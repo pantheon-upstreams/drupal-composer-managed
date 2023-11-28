@@ -15,7 +15,7 @@ props:
       type: string
     gallery_items:
       title: Items
-      type: array
+      type: string
     gallery_title:
       title: Title
       type: string
