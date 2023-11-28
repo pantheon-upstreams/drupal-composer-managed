@@ -23,6 +23,13 @@
     {% endif %}
 {% endset %}
 
+{% set rendered_content = content|without(
+    'field_dates_only',
+    'field_media_primary',
+    'field_p_content',
+    'field_overview'
+) %}
+
 {% include 'surf_main:experiment' with {
     attributes,
     rendered_content,
@@ -33,11 +40,3 @@
     experiment_heading_summary: content.field_overview|field_value|default({}),
     experiment_media: content.field_media_primary|field_value|default([]),
 } only %}
-
-{{ content|without(
-  'field_dates_only',
-  'field_media_primary',
-  'field_p_content',
-  'field_overview'
-) }}
-

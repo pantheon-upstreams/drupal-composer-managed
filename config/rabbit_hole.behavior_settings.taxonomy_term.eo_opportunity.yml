@@ -1,0 +1,13 @@
+uuid: a2923de8-7a3f-4c6a-93c3-1f3adb9c0c1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.eo_opportunity
+id: taxonomy_term.eo_opportunity
+targetEntityType: taxonomy_term
+bundle: eo_opportunity
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

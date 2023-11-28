@@ -1,0 +1,13 @@
+uuid: 8c10d555-8c14-4851-bcf5-3ae78ddf56cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.remote_video
+id: media.remote_video
+targetEntityType: media
+bundle: remote_video
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

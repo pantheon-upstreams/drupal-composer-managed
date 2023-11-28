@@ -1,0 +1,13 @@
+uuid: 308dfbde-8a0a-47b8-831c-e0051f509774
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event_type
+id: taxonomy_term.event_type
+targetEntityType: taxonomy_term
+bundle: event_type
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

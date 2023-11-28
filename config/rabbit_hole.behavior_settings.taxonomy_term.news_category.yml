@@ -1,0 +1,13 @@
+uuid: b921c1a0-8eef-40ac-807b-e5535646ca73
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_category
+id: taxonomy_term.news_category
+targetEntityType: taxonomy_term
+bundle: news_category
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

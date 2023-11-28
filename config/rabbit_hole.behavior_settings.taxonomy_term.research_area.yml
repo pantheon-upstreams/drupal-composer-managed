@@ -1,0 +1,13 @@
+uuid: f5853e3c-2e32-46c5-a7ce-ebb04e1c51c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.research_area
+id: taxonomy_term.research_area
+targetEntityType: taxonomy_term
+bundle: research_area
+action: display_page
+no_bypass: false
+bypass_message: false
+configuration: {  }

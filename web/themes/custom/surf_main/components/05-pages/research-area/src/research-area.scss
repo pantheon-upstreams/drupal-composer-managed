@@ -1,0 +1,89 @@
+//
+// Component - Page - Research Area
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Modifiers
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.p-research-area {
+  margin-block-end: calculations.rem(88px);
+
+  .p-research-area__header {
+    margin-inline: auto;
+    max-inline-size: var(--surf-width-xlarge);
+    padding-block-start: calculations.rem(32px);
+    position: relative;
+
+    @include breakpoints.bp-min(xlarge) {
+      padding-block-start: calculations.rem(60px);
+      padding-inline: calculations.rem(80px);
+    }
+  }
+
+  .p-research-area__media {
+    img {
+      max-block-size: 480px;
+      object-fit: cover;
+      width: 100%;
+
+      @include breakpoints.bp-min(xlarge) {
+        max-block-size: 690px;
+      }
+    }
+  }
+
+  .m-breadcrumbs {
+    display: none;
+
+    @include breakpoints.bp-min(medium) {
+      display: block;
+    }
+  }
+
+  .p-research-area__overview {
+    margin-block-end: calculations.rem(32px);
+
+    @include breakpoints.bp-min(medium) {
+      margin-block-end: calculations.rem(60px);
+    }
+  }
+
+  .p-research-area__related h2 {
+    margin-block: 32px;
+    text-transform: uppercase;
+
+    @include breakpoints.bp-min(large) {
+      margin-block: 64px;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+
+.p-research-area.p-research-area--with-img .p-research-area__header {
+  @include breakpoints.bp-min(xlarge) {
+    background-color: var(--surf-color-white);
+    margin-block-start: calculations.rem(-120px);
+  }
+}

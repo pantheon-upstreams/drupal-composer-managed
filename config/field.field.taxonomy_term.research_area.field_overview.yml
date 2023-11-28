@@ -1,0 +1,24 @@
+uuid: 03090623-60be-403e-bf5f-37853a3f8483
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_overview
+    - filter.format.simple_html
+    - taxonomy.vocabulary.research_area
+  module:
+    - text
+id: taxonomy_term.research_area.field_overview
+field_name: field_overview
+entity_type: taxonomy_term
+bundle: research_area
+label: Overview
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - simple_html
+field_type: text

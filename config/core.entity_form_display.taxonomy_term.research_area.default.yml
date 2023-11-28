@@ -3,38 +3,111 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.research_area.field_icon
+    - field.field.taxonomy_term.research_area.field_overview
+    - field.field.taxonomy_term.research_area.field_p_content
+    - field.field.taxonomy_term.research_area.field_ref_experiments
+    - field.field.taxonomy_term.research_area.field_ref_media_primary
+    - field.field.taxonomy_term.research_area.rabbit_hole__settings
     - taxonomy.vocabulary.research_area
   module:
+    - field_group
+    - layout_paragraphs
+    - maxlength
     - media_library
     - path
+    - rabbit_hole
     - text
+third_party_settings:
+  field_group:
+    group_related:
+      children:
+        - field_ref_experiments
+      label: Related
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_media:
+      children:
+        - field_ref_media_primary
+      label: Media
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+    group_publishing:
+      children:
+        - status
+      label: Publishing
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: taxonomy_term.research_area.default
 targetEntityType: taxonomy_term
 bundle: research_area
 mode: default
 content:
-  description:
-    type: text_textarea
-    weight: 2
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_icon:
-    type: media_library_widget
+  field_overview:
+    type: text_textfield
     weight: 1
     region: content
     settings:
-      media_types: {  }
-    third_party_settings: {  }
-  langcode:
-    type: language_select
-    weight: 2
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: 125
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+  field_p_content:
+    type: layout_paragraphs
+    weight: 7
     region: content
     settings:
-      include_locked: true
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+  field_ref_experiments:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_media_primary:
+    type: media_library_widget
+    weight: 4
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   name:
     type: string_textfield
@@ -46,15 +119,24 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 3
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
+  rabbit_hole__settings:
+    type: rabbit_hole_default
+    weight: 100
+    region: content
+    settings:
+      advanced: true
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  description: true
+  langcode: true

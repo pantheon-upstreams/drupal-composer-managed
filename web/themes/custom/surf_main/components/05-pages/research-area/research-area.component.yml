@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Research Area
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    research_area_attributes:
+      title: Attributes
+      type: string
+    research_area_content:
+      title: content
+      type: array
+    research_area_heading:
+      title: Heading
+      type: string
+    research_area_heading_summary:
+      title: Overview
+      type: string
+    research_area_media:
+      title: Media
+      type: array
+    research_area_related_experiments:
+      title: Related Experiments
+      type: array

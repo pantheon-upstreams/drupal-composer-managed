@@ -69,16 +69,12 @@
 
 {% set classes = [
   'node',
-  'node__type--' ~ node.bundle|clean_class,
-  node.isPromoted() ? 'node__promoted',
-  node.isSticky() ? 'node__sticky',
-  not node.isPublished() ? 'node__unpublished',
-  view_mode ? 'node__view-mode--' ~ view_mode|clean_class,
+  'node--' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--' ~ view_mode|clean_class,
 ] %}
-
-{{ attach_library('surf_main/node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class) }}
-{{ attach_library('surf_main/node--' ~ view_mode|clean_class) }}
-{{ attach_library('surf_main/node--' ~ node.bundle|clean_class) }}
 
 <article {{ attributes.addClass(classes) }}>
   {% block content %}

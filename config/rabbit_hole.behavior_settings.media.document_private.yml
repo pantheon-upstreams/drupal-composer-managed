@@ -1,0 +1,13 @@
+uuid: c947662d-c741-4480-bd89-e326ea0c3058
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document_private
+id: media.document_private
+targetEntityType: media
+bundle: document_private
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

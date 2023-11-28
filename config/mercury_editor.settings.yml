@@ -23,6 +23,7 @@ dialog_settings:
     dialogClass: lpb-dialog
     resizable: true
 bundles:
+  me_template: {  }
   node:
     article: article
     experiment: experiment
@@ -34,3 +35,5 @@ bundles:
     report_publication: report_publication
     school_presentation: school_presentation
     standard: standard
+  taxonomy_term:
+    research_area: research_area

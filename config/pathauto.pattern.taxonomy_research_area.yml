@@ -1,0 +1,22 @@
+uuid: 7d536096-b5d7-4c61-856e-c3df89a8e415
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_research_area
+label: 'Taxonomy - Research Area'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/areas-of-research/[term:name]'
+selection_criteria:
+  4252cfc7-c05b-44dd-85df-1ea49b439729:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 4252cfc7-c05b-44dd-85df-1ea49b439729
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      research_area: research_area
+selection_logic: and
+weight: -5
+relationships: {  }

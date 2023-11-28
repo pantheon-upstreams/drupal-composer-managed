@@ -1,0 +1,13 @@
+uuid: d544ebb8-3273-42a2-b506-fec7a7f40bf4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.audience
+id: taxonomy_term.audience
+targetEntityType: taxonomy_term
+bundle: audience
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

@@ -1,26 +1,26 @@
-uuid: 70ea66f4-c6e9-4768-a903-143e01388186
+uuid: b0d0ab0d-c77b-4b9a-b77a-b702b17a4923
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_icon
-    - media.type.image
+    - field.storage.taxonomy_term.field_ref_experiments
+    - node.type.experiment
     - taxonomy.vocabulary.research_area
-id: taxonomy_term.research_area.field_icon
-field_name: field_icon
+id: taxonomy_term.research_area.field_ref_experiments
+field_name: field_ref_experiments
 entity_type: taxonomy_term
 bundle: research_area
-label: Icon
+label: 'Related Experiments'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      image: image
+      experiment: experiment
     sort:
       field: _none
       direction: ASC

@@ -1,0 +1,19 @@
+uuid: 8c8c1fd0-d0af-473a-b989-6ad97bffab63
+langcode: en
+status: true
+dependencies:
+  module:
+    - rabbit_hole
+    - taxonomy
+id: taxonomy_term.rabbit_hole__settings
+field_name: rabbit_hole__settings
+entity_type: taxonomy_term
+type: rabbit_hole
+settings: {  }
+module: rabbit_hole
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

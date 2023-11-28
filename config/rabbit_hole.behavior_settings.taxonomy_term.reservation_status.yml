@@ -1,0 +1,13 @@
+uuid: d84212dc-06c9-4030-8900-de767e484293
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.reservation_status
+id: taxonomy_term.reservation_status
+targetEntityType: taxonomy_term
+bundle: reservation_status
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

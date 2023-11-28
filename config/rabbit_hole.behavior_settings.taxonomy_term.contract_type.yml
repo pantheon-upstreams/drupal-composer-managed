@@ -1,0 +1,13 @@
+uuid: d1823368-bc52-4735-9222-e344b9f43d93
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.contract_type
+id: taxonomy_term.contract_type
+targetEntityType: taxonomy_term
+bundle: contract_type
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }
