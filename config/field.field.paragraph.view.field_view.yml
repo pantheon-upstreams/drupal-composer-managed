@@ -29,18 +29,20 @@ settings:
     feed: 0
     embed: 0
   preselect_views:
-    browse_curriculum: browse_curriculum
+    curriculum: curriculum
     events_search: events_search
     experiments: experiments
     jobs_search: jobs_search
     news: news
     news_search: news_search
     our_team: our_team
-    press_releases_search: press_releases_search
+    press_releases: press_releases
     related_articles: related_articles
+    research_areas: research_areas
     research_news: research_news
     admin_download_requests: 0
     block_content: 0
+    browse_curriculum: 0
     content: 0
     events: 0
     experiment_content: 0
@@ -50,6 +52,7 @@ settings:
     media_library: 0
     my_curriculum: 0
     portal_parent: 0
+    press_releases_search: 0
     redirect: 0
     redirect_404: 0
     scheduler_scheduled_content: 0

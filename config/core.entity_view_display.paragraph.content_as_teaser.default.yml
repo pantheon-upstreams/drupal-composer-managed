@@ -3,19 +3,31 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.content_as_teaser.field_display_mode
     - field.field.paragraph.content_as_teaser.field_ref_content
     - paragraphs.paragraphs_type.content_as_teaser
+  module:
+    - entity_reference_display
+    - options
 id: paragraph.content_as_teaser.default
 targetEntityType: paragraph
 bundle: content_as_teaser
 mode: default
 content:
+  field_display_mode:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_ref_content:
-    type: entity_reference_entity_view
+    type: entity_reference_display_default
     label: hidden
     settings:
       view_mode: teaser
       link: false
+      display_field: null
     third_party_settings: {  }
     weight: 0
     region: content
