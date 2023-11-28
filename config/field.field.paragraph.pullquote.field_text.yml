@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
+    - filter.format.simple_html
     - paragraphs.paragraphs_type.pullquote
   module:
     - text
@@ -18,5 +19,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - simple_html
 field_type: text_long

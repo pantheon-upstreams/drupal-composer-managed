@@ -7,6 +7,7 @@ dependencies:
     - core.entity_view_mode.media.small
   module:
     - editor
+    - linkit
     - media
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
@@ -20,7 +21,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class="large default"> <h2 class="large default"> <h3> <h4> <h5> <h6> <a class="a-button a-button--small a-button--navy a-button--primary a-button--icon-arrow-right a-button--underline a-button--black" href> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-align>'
+      allowed_html: '<br> <p class="large default"> <h2 class="large default"> <h3> <h4> <h5> <h6> <a class="a-button a-button--small a-button--navy a-button--primary a-button--icon-arrow-right a-button--underline a-button--black" href target="_blank" data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -71,3 +72,10 @@ filters:
         small: small
       allowed_media_types:
         image: image
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

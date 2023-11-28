@@ -71,6 +71,12 @@ settings:
         -
           label: 'Paragraph - Default Text Size'
           element: '<p class="default">'
+    editor_advanced_link_link:
+      enabled_attributes:
+        - target
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
     media_media:
       allow_view_mode_override: true
 image_upload:
