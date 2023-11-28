@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser_super
     - field.field.node.article.field_author
     - field.field.node.article.field_date_published
-    - field.field.node.article.field_highlight
+    - field.field.node.article.field_overview
     - field.field.node.article.field_media_primary
     - field.field.node.article.field_p_content
     - field.field.node.article.field_publisher
@@ -40,11 +40,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_highlight:
-    type: basic_string
+  field_overview:
+    type: text_trimmed
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
+    settings:
+      trim_length: 200
+    third_party_settings: { }
     weight: 2
     region: content
   field_media_primary:
