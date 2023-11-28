@@ -9,7 +9,6 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - image
-    - imce
     - maxlength
     - path
     - text
@@ -33,9 +32,7 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings:
-      imce:
-        enabled: true
+    third_party_settings: {  }
   field_overview:
     type: text_textfield
     weight: 1
