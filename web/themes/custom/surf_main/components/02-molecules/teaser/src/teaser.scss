@@ -52,6 +52,10 @@
     position: absolute;
     z-index: var(--surf-zindex-over);
   }
+
+  .m-teaser__content {
+    width: 100%;
+  }
 }
 
 
@@ -61,6 +65,7 @@
 //  03 - Super
 //------------------------------------
 
+//.l-onecol .paragraph--content-as-teaser > .m-teaser,
 .m-teaser.m-teaser--super {
   color: var(--surf-color-white);
   position: relative;
@@ -374,68 +379,68 @@
 //  07 - 1 Column
 //------------------------------------
 
-.l-onecol {
-  .m-teaser {
-    @include bp-min(small) {
-      align-items: center;
-      display: flex;
-      flex-flow: nowrap row;
-    }
-
-    .m-teaser__media {
-      margin-block-end: 20px;
-      width: 100%;
-      @include bp-min(small) {
-        flex-shrink: 0;
-        margin-block-end: 0;
-        margin-inline-end: 32px;
-        width: 45%;
-      }
-      @include bp-min(xlarge) {
-        margin-inline-end: 56px;
-      }
-    }
-
-    .m-teaser__title {
-      font-size: var(--surf-fs-18-24-40);
-    }
-
-    &:hover .m-teaser__title a,
-    &:focus-within .m-teaser__title a {
-      color: var(--surf-color-black);
-    }
-
-    p.m-teaser__content-text {
-      font-size: var(--surf-fs-16-18-24);
-      margin-block-start: 12px;
-      @include bp-min(medium) {
-        margin-block-start: 16px;
-      }
-    }
-
-    .m-teaser__content-suffix {
-      margin: 8px -8px 0;
-      @include bp-min(medium) {
-        margin: 16px -8px 0;
-      }
-    }
-
-    .m-teaser__content-suffix a,
-    .m-teaser__content-suffix span:not( .a-chip ) {
-      font-size: rem(14px);
-      font-weight: var(--surf-fw-book);
-      margin: 0 8px;
-      white-space: pre;
-    }
-
-    .m-teaser__content-suffix span:not( .a-chip ):not( :last-child ),
-    .m-teaser__content-suffix a:not( :last-child ) {
-      @include bp-min(medium) {
-        border-left: solid 1px var(--surf-color-gray-800);
-      }
-    }
-  }
-}
+//.l-onecol {
+//  .m-teaser {
+//    @include bp-min(small) {
+//      align-items: center;
+//      display: flex;
+//      flex-flow: nowrap row;
+//    }
+//
+//    .m-teaser__media {
+//      margin-block-end: 20px;
+//      width: 100%;
+//      @include bp-min(small) {
+//        flex-shrink: 0;
+//        margin-block-end: 0;
+//        margin-inline-end: 32px;
+//        width: 45%;
+//      }
+//      @include bp-min(xlarge) {
+//        margin-inline-end: 56px;
+//      }
+//    }
+//
+//    .m-teaser__title {
+//      font-size: var(--surf-fs-18-24-40);
+//    }
+//
+//    &:hover .m-teaser__title a,
+//    &:focus-within .m-teaser__title a {
+//      color: var(--surf-color-black);
+//    }
+//
+//    p.m-teaser__content-text {
+//      font-size: var(--surf-fs-16-18-24);
+//      margin-block-start: 12px;
+//      @include bp-min(medium) {
+//        margin-block-start: 16px;
+//      }
+//    }
+//
+//    .m-teaser__content-suffix {
+//      margin: 8px -8px 0;
+//      @include bp-min(medium) {
+//        margin: 16px -8px 0;
+//      }
+//    }
+//
+//    .m-teaser__content-suffix a,
+//    .m-teaser__content-suffix span:not( .a-chip ) {
+//      font-size: rem(14px);
+//      font-weight: var(--surf-fw-book);
+//      margin: 0 8px;
+//      white-space: pre;
+//    }
+//
+//    .m-teaser__content-suffix span:not( .a-chip ):not( :last-child ),
+//    .m-teaser__content-suffix a:not( :last-child ) {
+//      @include bp-min(medium) {
+//        border-left: solid 1px var(--surf-color-gray-800);
+//      }
+//    }
+//  }
+//}
 
 
 
@@ -465,6 +470,7 @@
   .m-teaser__content-suffix {
     align-items: baseline;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 !important;
   }
 
@@ -477,6 +483,7 @@
     line-height: var(--surf-lh-label);
     position: relative;
     text-transform: uppercase;
+    padding-inline-end: 24px;
 
     &::after {
       bottom: 2px;
@@ -484,7 +491,7 @@
       font-size: rem(14px);
       font-weight: var(--surf-fw-book);
       position: absolute;
-      right: -12px;
+      right: 8px;
     }
   }
 
@@ -493,6 +500,18 @@
     font-size: rem(14px);
     line-height: var(--surf-lh-label);
     margin: 0;
-    padding-inline-start: 8px;
+    padding: 0;
+
+    > li {
+      margin-inline: 8px;
+    }
+
+    > li:first-of-type {
+      margin-inline-start: 0;
+    }
+
+    > li a {
+      margin-inline: 0 !important;
+    }
   }
 }

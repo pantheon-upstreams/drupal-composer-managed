@@ -22,3 +22,11 @@
     }
   }
 }
+
+.p-landing {
+  margin-block-end: calculations.rem(60px);
+
+  > *:not( :last-child ) {
+    margin-block-end: calculations.rem(32px);
+  }
+}

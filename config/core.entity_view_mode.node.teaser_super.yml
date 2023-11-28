@@ -1,0 +1,10 @@
+uuid: f1bec618-d6f7-4404-b821-00bbf5aa1a4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_super
+label: 'Teaser - Super'
+targetEntityType: node
+cache: true

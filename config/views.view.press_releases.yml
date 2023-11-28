@@ -1,6 +1,6 @@
-uuid: 2ad7d3df-062f-431e-8734-7f67ea49a667
+uuid: d899aed9-0e10-449a-b966-a1de3283fb03
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -8,13 +8,11 @@ dependencies:
     - taxonomy.vocabulary.research_area
   module:
     - better_exposed_filters
-    - datetime
     - node
     - taxonomy
     - user
-    - views_filters_summary
-id: press_releases_search
-label: 'Press Releases Search'
+id: press_releases
+label: 'Press Releases'
 module: views
 description: ''
 tag: ''
@@ -27,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'All Press Releases'
+      title: 'Press Releases'
       fields:
         title:
           id: title
@@ -96,13 +94,13 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 4
+          quantity: 9
       exposed_form:
         type: bef
         options:
           submit_button: Filter
           reset_button: true
-          reset_button_label: Reset
+          reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -142,35 +140,8 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'There are no posts matching your search criteria. Please try another combination.'
-            format: full_html
-          tokenize: false
+      empty: {  }
       sorts:
-        field_date_published_value:
-          id: field_date_published_value
-          table: node__field_date_published
-          field: field_date_published_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
         created:
           id: created
           table: node_field_data
@@ -200,8 +171,15 @@ display:
           group: 1
           expose:
             operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            press_release: press_release
         title:
           id: title
           table: node_field_data
@@ -212,7 +190,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: string
-          operator: word
+          operator: '='
           value: ''
           group: 1
           exposed: true
@@ -273,7 +251,7 @@ display:
             operator: field_ref_research_areas_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: research_areas
+            identifier: field_ref_research_areas_target_id
             required: false
             remember: false
             multiple: false
@@ -308,61 +286,8 @@ display:
           hierarchy: false
           limit: true
           error_message: true
-        type_1:
-          id: type_1
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          operator: in
-          value:
-            press_release: press_release
-          group: 1
-          exposed: false
-          expose:
-            operator_id: type_1_op
-            label: 'Content type'
-            description: null
-            use_operator: false
-            operator: type_1_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type_1
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
       style:
         type: html_list
-        options:
-          row_class: item-row
-          default_row_class: true
-          uses_fields: false
-          type: ul
-          wrapper_class: item-list__wrapper
-          class: item-list
       row:
         type: 'entity:node'
         options:
@@ -376,28 +301,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      use_ajax: true
-      header:
-        views_filters_summary:
-          id: views_filters_summary
-          table: views
-          field: views_filters_summary
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: views_filters_summary
-          empty: false
-          filters: {  }
-          show_labels: false
-          content: '<p>Showing @current_record_count of @total news</p>'
-          filters_summary_separator: ''
-          filters_summary_prefix: 'for '
-          filters_result_label:
-            plural: posts
-            singular: post
-          show_remove_link: 0
-          show_reset_link: 0
-          filters_reset_link_title: 'Clear Results'
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -411,16 +315,33 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_press_releases_search:
-    id: block_press_releases_search
-    display_title: 'All Press Releases Search Block'
+  all_press_releases:
+    id: all_press_releases
+    display_title: 'All Press Releases'
     display_plugin: block
-    position: 1
+    position: 2
     display_options:
       display_description: ''
       display_extenders: {  }
-      allow:
-        items_per_page: false
+      block_description: 'All Press Releases'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 1
+    display_options:
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:

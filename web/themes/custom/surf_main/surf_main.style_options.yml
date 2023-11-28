@@ -43,7 +43,7 @@ options:
   layout_two_column:
     plugin: property
     label: Two Column Widths
-    default: 55-45
+    default: 50/50
     options:
       50-50:
         label: 50/50
@@ -191,10 +191,6 @@ contexts:
     callout:
       options:
         callout_type: true
-    component_grid:
-      options:
-        grid_type: true
-        grid_gap: true
     header:
       options:
         header_type: true

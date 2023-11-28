@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_p_hero
     - node.type.landing
+    - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.hero
   module:
     - entity_reference_revisions
@@ -12,7 +13,7 @@ id: node.landing.field_p_hero
 field_name: field_p_hero
 entity_type: node
 bundle: landing
-label: Hero
+label: Hero/Header
 description: ''
 required: false
 translatable: false
@@ -22,6 +23,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      header: header
       hero: hero
     negate: 0
     target_bundles_drag_drop:
@@ -34,10 +36,7 @@ settings:
       callout:
         weight: 23
         enabled: false
-      card:
-        weight: 24
-        enabled: false
-      card_list:
+      content_as_teaser:
         weight: 25
         enabled: false
       gallery:
@@ -45,18 +44,21 @@ settings:
         enabled: false
       header:
         weight: 27
+        enabled: true
+      heading:
+        weight: 28
         enabled: false
       hero:
         weight: 28
         enabled: true
+      link_highlight:
+        weight: 30
+        enabled: false
       media:
         weight: 29
         enabled: false
       person:
         weight: 30
-        enabled: false
-      persons_list:
-        weight: 31
         enabled: false
       pullquote:
         weight: 32
@@ -76,8 +78,11 @@ settings:
       section:
         weight: 37
         enabled: false
-      teaser_list:
-        weight: 38
+      section_extended:
+        weight: 39
+        enabled: false
+      statement:
+        weight: 40
         enabled: false
       text:
         weight: 39

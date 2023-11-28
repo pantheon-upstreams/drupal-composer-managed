@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.content_as_teaser
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.heading
+    - paragraphs.paragraphs_type.link_highlight
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.pullquote
@@ -36,6 +37,7 @@ settings:
       content_as_teaser: content_as_teaser
       heading: heading
       gallery: gallery
+      link_highlight: link_highlight
       accordion: accordion
       pullquote: pullquote
       section: section
@@ -53,6 +55,9 @@ settings:
       accordion_item:
         weight: 29
         enabled: false
+      block:
+        weight: 25
+        enabled: true
       callout:
         weight: 47
         enabled: true
@@ -62,6 +67,9 @@ settings:
       gallery:
         weight: 25
         enabled: true
+      header:
+        weight: 27
+        enabled: false
       heading:
         weight: 23
         enabled: true
@@ -70,7 +78,7 @@ settings:
         enabled: false
       link_highlight:
         weight: 25
-        enabled: false
+        enabled: true
       media:
         weight: 39
         enabled: true
@@ -97,6 +105,9 @@ settings:
         enabled: true
       section_extended:
         weight: 34
+        enabled: false
+      statement:
+        weight: 40
         enabled: false
       text:
         weight: 34

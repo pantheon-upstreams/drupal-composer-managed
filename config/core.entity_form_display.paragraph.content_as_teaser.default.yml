@@ -3,32 +3,29 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.content_as_teaser.field_display_mode
     - field.field.paragraph.content_as_teaser.field_ref_content
     - paragraphs.paragraphs_type.content_as_teaser
-  module:
-    - inline_entity_form
 id: paragraph.content_as_teaser.default
 targetEntityType: paragraph
 bundle: content_as_teaser
 mode: default
 content:
+  field_display_mode:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_ref_content:
-    type: inline_entity_form_complex
+    type: entity_reference_autocomplete
     weight: 0
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: false
-      allow_existing: true
       match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: false
-      collapsed: false
-      revision: false
-      removed_reference: keep
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

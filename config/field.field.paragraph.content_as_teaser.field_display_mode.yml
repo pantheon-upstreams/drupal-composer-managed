@@ -1,0 +1,27 @@
+uuid: a89ddb27-c589-493d-b902-86541bb4b93e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_mode
+    - paragraphs.paragraphs_type.content_as_teaser
+  module:
+    - entity_reference_display
+id: paragraph.content_as_teaser.field_display_mode
+field_name: field_display_mode
+entity_type: paragraph
+bundle: content_as_teaser
+label: 'Display Mode'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: teaser
+default_value_callback: ''
+settings:
+  exclude:
+    teaser: teaser
+    teaser_super: teaser_super
+  negate: true
+field_type: entity_reference_display

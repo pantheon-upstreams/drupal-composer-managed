@@ -20,9 +20,10 @@
 ] %}
 
 <div {{ attributes.addClass(classes) }}>
-{{ content.field_ref_content|field_value }}
+  {{ content.field_ref_content|field_value }}
 </div>
 
 {{ content|without(
   'field_ref_content',
+  'field_display_mode',
 ) }}
