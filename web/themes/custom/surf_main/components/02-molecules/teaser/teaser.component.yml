@@ -6,7 +6,6 @@ props:
   type: object
   required:
     - teaser_title
-    - teaser_type
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute

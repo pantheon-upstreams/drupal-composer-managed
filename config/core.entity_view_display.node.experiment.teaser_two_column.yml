@@ -1,8 +1,9 @@
-uuid: 3428b0ae-dbfd-4afa-b8c8-80e4c2c3702c
+uuid: b6b2fa84-db23-4334-be89-291b709333e5
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser_two_column
     - field.field.node.experiment.field_dates_only
     - field.field.node.experiment.field_links
     - field.field.node.experiment.field_media_primary
@@ -15,94 +16,59 @@ dependencies:
     - node.type.experiment
   module:
     - datetime_range
-    - layout_paragraphs
-    - link
+    - layout_builder
     - text
     - user
-id: node.experiment.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.experiment.teaser_two_column
 targetEntityType: node
 bundle: experiment
-mode: default
+mode: teaser_two_column
 content:
   field_dates_only:
     type: daterange_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: teaser_date
       separator: '-'
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_links:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_media_primary:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_overview:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_p_content:
-    type: layout_paragraphs
-    label: above
-    settings:
-      view_mode: default
-      link: ''
     third_party_settings: {  }
     weight: 0
     region: content
-  field_ref_articles:
-    type: entity_reference_label
-    label: above
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
     settings:
+      view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 1
     region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: above
+  field_overview:
+    type: text_trimmed
+    label: hidden
     settings:
-      link: true
+      trim_length: 200
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_ref_research_areas:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_teaser_text:
-    type: basic_string
-    label: above
-    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
 hidden:
+  field_links: true
+  field_p_content: true
+  field_ref_articles: true
+  field_ref_audiences: true
+  field_teaser_text: true
   langcode: true
   links: true
   search_api_excerpt: true

@@ -25,5 +25,10 @@ content:
     weight: 1
     region: content
 hidden:
+  field_overview: true
+  field_p_content: true
+  field_ref_experiments: true
+  field_ref_media_primary: true
   langcode: true
+  rabbit_hole__settings: true
   search_api_excerpt: true

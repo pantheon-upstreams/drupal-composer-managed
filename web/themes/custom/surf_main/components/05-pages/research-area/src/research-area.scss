@@ -72,6 +72,14 @@
       margin-block: 64px;
     }
   }
+
+  .p-research-area__related hr:not(:first-child) {
+    margin-block-start: 64px;
+
+    @include breakpoints.bp-min(large) {
+      margin-block-start: 80px;
+    }
+  }
 }
 
 
