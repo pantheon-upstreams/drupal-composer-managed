@@ -43,7 +43,11 @@
         } only %}
     {% endif %}
 
-    {{ page.content }}
-    {{ page.sidebar_right }}
+    {% if page.content %}
+        <main id="site-content">
+            {{ page.content }}
+        </main>
+    {% endif %}
+
     {{ page.footer }}
 </div>

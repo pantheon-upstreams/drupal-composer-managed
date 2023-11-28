@@ -2,7 +2,7 @@ id: surf_node_event
 label: SURF Node -> Event
 migration_group: 'surf'
 migration_tags:
-  - Content
+  - content
 source:
   plugin:  'd8_entity'
   entity_type: node
@@ -13,6 +13,14 @@ process:
   nid: nid
   title: title
   field_location_address: field_location_address
+  _from_single_date/value: field_time_and_date/0/value
+  _from_single_date/end_value: field_time_and_date/0/value
+  _from_date_range: field_event_date_range
+  field_dates:
+    plugin: null_coalesce
+    source:
+      - '@_from_single_date'
+      - '@_from_date_range'
   field_p_content/target_id:
     - plugin: migration_lookup
       no_stub: true
@@ -35,7 +43,10 @@ process:
     - plugin: skip_on_empty          
       method: process
     - plugin: node_complete_node_revision_lookup
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
   field_media_primary:
     -
       plugin: migration_lookup

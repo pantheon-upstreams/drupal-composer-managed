@@ -83,6 +83,8 @@
   > li > button.a-icon:before,
   > li > span.a-icon:before {
     bottom: 0;
+    content: '';
+    display: block;
     height: 22px;
     margin: auto;
     left: 16px;

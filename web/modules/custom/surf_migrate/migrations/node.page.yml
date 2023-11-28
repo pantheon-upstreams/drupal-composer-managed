@@ -2,7 +2,7 @@ id: surf_node_page
 label: SURF Node -> Page
 migration_group: 'surf'
 migration_tags:
-  - Content
+  - content
 source:
   plugin:  'd8_entity'
   entity_type: node
@@ -34,7 +34,10 @@ process:
     - plugin: skip_on_empty          
       method: process
     - plugin: node_complete_node_revision_lookup
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
   field_media_primary:
     -
       plugin: migration_lookup

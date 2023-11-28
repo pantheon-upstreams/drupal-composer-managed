@@ -60,6 +60,7 @@ trait FileToMediaTrait {
     // Check if we have already created the image in the destination.
     $filename = str_replace($config['file_scheme'], '', $sourceUri);
     $filename = basename($filename);
+    \Drupal::service('file_system')->prepareDirectory($config['destination_base_uri'], FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
     $destinationUri = $config['destination_base_uri'] . $filename;
     $query = $destinationDb->select('file_managed', 'fm')->fields('fm', ['fid']);
     $query->condition('fm.uri', $destinationUri);

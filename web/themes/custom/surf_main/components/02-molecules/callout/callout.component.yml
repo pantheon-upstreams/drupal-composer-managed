@@ -42,5 +42,7 @@ props:
         - gradient
         - embed
         - img
+        - img-left
+        - img-right
         - factoid
         - news

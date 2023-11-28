@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.standard.field_overview
     - field.field.node.standard.field_p_content
     - field.field.node.standard.field_ref_audiences
+    - field.field.node.standard.field_ref_documents
     - field.field.node.standard.field_ref_esh_categories
     - field.field.node.standard.field_teaser_text
     - node.type.standard
@@ -65,6 +66,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_ref_documents:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
     region: content
 hidden:
   field_ism_document_number: true

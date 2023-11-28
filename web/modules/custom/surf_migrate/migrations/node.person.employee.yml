@@ -2,7 +2,7 @@ id: surf_node_person_employee
 label: SURF Node Employee -> Person
 migration_group: 'surf'
 migration_tags:
-  - Content
+  - content
 source:
   plugin:  'd8_entity'
   entity_type: node
@@ -43,7 +43,10 @@ process:
       source:
         - field_last_name/0/value
         - '@_title_second_part'
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
   field_media_primary/0/target_id:
     -
       plugin: migration_lookup

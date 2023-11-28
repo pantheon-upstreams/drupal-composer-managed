@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.field_author
     - field.field.node.article.field_date_published
-    - field.field.node.article.field_highlight
     - field.field.node.article.field_media_primary
+    - field.field.node.article.field_overview
     - field.field.node.article.field_p_content
     - field.field.node.article.field_publisher
     - field.field.node.article.field_ref_audiences
@@ -18,6 +18,7 @@ dependencies:
     - node.type.article
   module:
     - datetime
+    - text
     - user
 _core:
   default_config_hash: U8ghxJXn8JE2p6Q2wLpPWAxpz4r_8crL1LxtapSrHAE
@@ -35,19 +36,19 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_highlight:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_media_primary:
     type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: teaser_default
       link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content

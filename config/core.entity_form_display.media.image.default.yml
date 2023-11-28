@@ -9,7 +9,6 @@ dependencies:
     - media.type.image
   module:
     - image_widget_crop
-    - imce
     - path
 _core:
   default_config_hash: WeM0d1VqhuyGELo4SRiDJfhDQSLqfKavISEbrnlcTaE
@@ -48,9 +47,7 @@ content:
       warn_multiple_usages: true
       show_crop_area: false
       show_default_crop: true
-    third_party_settings:
-      imce:
-        enabled: false
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0

@@ -26,12 +26,6 @@ class SurfTwigExtension extends AbstractExtension {
     ];
   }
 
-  public function getFunctions() {
-    return [
-      new TwigFunction('mercury_editor', [$this, 'getMercuryEditor']),
-    ];
-  }
-
   public function addModifiers($baseClass, $modifiers = [], $separator = '--') {
     $result = [$baseClass];
 
@@ -48,8 +42,12 @@ class SurfTwigExtension extends AbstractExtension {
 
   public function getMercuryEditor($build) {
     $routeName = \Drupal::routeMatch()->getRouteName();
+    $mercuryEditorRoutes = [
+      'mercury_editor.preview',
+      'mercury_editor.builder.choose_component',
+    ];
 
-    if ($routeName === 'mercury_editor.preview') {
+    if (in_array($routeName, $mercuryEditorRoutes)) {
       return $build;
     }
   }

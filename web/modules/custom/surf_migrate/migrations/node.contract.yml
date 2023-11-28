@@ -2,7 +2,7 @@ id: surf_node_contract
 label: SURF Node -> Contract
 migration_group: 'surf'
 migration_tags:
-  - Content
+  - content
 source:
   plugin:  'd8_entity'
   entity_type: node
@@ -17,7 +17,27 @@ process:
   field_ref_contract_type: field_contract_type
   field_p_contract_schedule: field_contract_schedule
   field_contract_summary: field_contract_summary
-  field_overview: field_overview
+  field_overview/0/value: field_overview/0/value
+  field_overview/0/format:
+    plugin: default_value
+    default_value: 'basic_html'
+  field_ref_documents:
+    plugin: sub_process
+    source: field_documents
+    process:
+      target_id:
+        -
+          plugin: callback
+          callable: '\Drupal\surf_migrate\MigrationCallbacks::convertDocumentNodeToFid'
+          source: target_id
+        -
+          plugin: migration_lookup
+          no_stub: true
+          migration: surf_file_file
+        -
+          plugin: file_to_media
+          destination_field: field_media_document
+          media_bundle: document
   field_links:
     plugin: sub_process
     source: field_url

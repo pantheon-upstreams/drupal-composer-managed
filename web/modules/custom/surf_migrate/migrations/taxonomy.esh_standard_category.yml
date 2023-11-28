@@ -1,0 +1,23 @@
+id: surf_taxonomy_esh_standard_category
+label: "SURF Taxonomy term -> ESH Standard Category"
+migration_group: surf
+migration_tags:
+  - taxonomy
+source:
+  plugin: d8_entity
+  entity_type: taxonomy_term
+  include_translations: false
+  bundle: 'ehs_manual'
+  key: migrate
+process:
+  id: id
+  vid:
+    plugin: default_value
+    default_value: 'esh_standard_category'
+  name: name
+  changed: changed
+  description: description
+destination:
+  plugin: 'entity_complete:taxonomy_term'
+  translations: true
+  default_bundle: esh_standard_category

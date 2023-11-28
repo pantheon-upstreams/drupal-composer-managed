@@ -6,8 +6,8 @@ dependencies:
     - core.entity_view_mode.node.rss
     - field.field.node.article.field_author
     - field.field.node.article.field_date_published
-    - field.field.node.article.field_highlight
     - field.field.node.article.field_media_primary
+    - field.field.node.article.field_overview
     - field.field.node.article.field_p_content
     - field.field.node.article.field_publisher
     - field.field.node.article.field_ref_audiences
@@ -33,8 +33,8 @@ content:
 hidden:
   field_author: true
   field_date_published: true
-  field_highlight: true
   field_media_primary: true
+  field_overview: true
   field_p_content: true
   field_publisher: true
   field_ref_audiences: true

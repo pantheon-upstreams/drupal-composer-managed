@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.standard.field_overview
     - field.field.node.standard.field_p_content
     - field.field.node.standard.field_ref_audiences
+    - field.field.node.standard.field_ref_documents
     - field.field.node.standard.field_ref_esh_categories
     - field.field.node.standard.field_teaser_text
     - node.type.standard
@@ -49,6 +50,7 @@ hidden:
   field_link: true
   field_p_content: true
   field_ref_audiences: true
+  field_ref_documents: true
   field_ref_esh_categories: true
   field_teaser_text: true
   langcode: true

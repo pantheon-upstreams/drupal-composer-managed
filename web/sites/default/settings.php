@@ -68,8 +68,3 @@ $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
 }
-
-/**
- * Manually setting this since it keeps getting reverted
- */
-$config['user.role.anonymous']['permissions'][] = 'access content';

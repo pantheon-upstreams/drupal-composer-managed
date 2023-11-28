@@ -1,7 +1,0 @@
-_core:
-  default_config_hash: 6Wk4BLqlH9PdR3lPJohO4Ek3-uRJAgdfrVT4qWYXVMY
-abs_urls: false
-roles_profiles:
-  administrator:
-    public: admin
-    private: admin
