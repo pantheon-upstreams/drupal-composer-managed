@@ -70,50 +70,6 @@
   {{ attachment_after }}
   {{ more }}
 
-  {% embed 'surf_main:callout' with {
-    callout_attributes: create_attribute(),
-    callout_type: 'img',
-    callout_heading: 'Let\'s Dig Deeper',
-  } only %}
-
-    {% block callout_content %}
-
-      {% embed 'surf_main:two-column' with {
-        layout_attributes: create_attribute(),
-        layout_column_widths: '50-50',
-        layout_html_wrapper: 'div',
-      } only %}
-
-        {% block layout_content %}
-          <div>
-            {% embed 'surf_main:callout' with {
-              callout_attributes: create_attribute(),
-              callout_text: 'Stay up-to-date on our latest news and upcoming events.',
-              callout_button_text: 'Subscribe to Deep Thoughts',
-              callout_button_url: 'http://www.example.com',
-              callout_button_prefix: 'envelope',
-              callout_type: 'embed',
-            } only %}
-            {% endembed %}
-          </div>
-          <div>
-            {% embed 'surf_main:callout' with {
-              callout_attributes: create_attribute(),
-              callout_text: 'Watch our lectures on physics, algorith,ic art, local history, botany and more!',
-              callout_button_text: 'Watch Deep Talks on Vimeo',
-              callout_button_url: 'http://www.example.com',
-              callout_button_prefix: 'play',
-              callout_type: 'embed',
-            } only %}
-            {% endembed %}
-          </div>
-        {% endblock %}
-
-      {% endembed %}
-
-    {% endblock %}
-  {% endembed %}
-
   {% if footer %}
     <footer>
       {{ footer }}
