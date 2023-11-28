@@ -40,6 +40,7 @@
         "drupal/ctools": "~3.0",
         "drupal/date_range_formatter": "^4.0",
         "drupal/download_request": "1.0.x-dev",
+        "drupal/easy_breadcrumb": "^2.0",
         "drupal/entity": "^1.4",
         "drupal/entity_reference_display": "^2.0",
         "drupal/entity_reference_revisions": "~1.0",
