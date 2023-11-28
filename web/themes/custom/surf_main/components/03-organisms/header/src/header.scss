@@ -64,25 +64,46 @@
 //------------------------------------
 
 .o-header {
+  align-items: center;
+  display: flex;
   position: relative;
 
   &.o-header--color {
+
     @include bp-min(medium) {
       background-image: url('img/header-bkg-color.png');
       background-position: top right;
       background-repeat: no-repeat;
       background-size: 50%;
+      min-block-size: rem(175px);
+
+      .o-header__heading {
+        background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
+        background-clip: text;
+        background-size: 320px;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+    @include bp-min(large) {
+      background-image: url('img/header-bkg-color.png');
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      //background-size: auto;
+      background-size: 50%;
+      min-block-size: rem(210px);
     }
     @include bp-min(xlarge) {
       background-image: url('img/header-bkg-color.png');
       background-position: 165% 0;
       background-repeat: no-repeat;
       background-size: auto;
+      min-block-size: rem(270px);
     }
     @include bp-min(xxlarge) {
       background-image: url('img/header-bkg-color.png');
       background-position: top right;
       background-repeat: no-repeat;
+      min-block-size: rem(330px);
     }
   }
 
