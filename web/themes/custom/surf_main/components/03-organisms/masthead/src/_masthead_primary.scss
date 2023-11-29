@@ -154,6 +154,7 @@
     background: var(--surf-gradient-vt-blue);
     height: 100%;
     overflow-y: auto;
+    overscroll-behavior: contain;
     position: absolute;
     right: 0;
     top: 0;
