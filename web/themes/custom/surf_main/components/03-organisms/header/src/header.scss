@@ -29,6 +29,7 @@
   flex-direction: column;
   gap: rem(32px);
   position: relative;
+  z-index: var(--surf-zindex-over);
 }
 
 .o-header__heading {

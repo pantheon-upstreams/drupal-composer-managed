@@ -68,6 +68,14 @@
     }
   }
 
+  > li > a:after,
+  > li > button:after,
+  > li > span:after {
+    @include breakpoints.bp-max(xxlarge) {
+      display: none;
+    }
+  }
+
   > li > a.a-icon,
   > li > button.a-icon,
   > li > span.icon {

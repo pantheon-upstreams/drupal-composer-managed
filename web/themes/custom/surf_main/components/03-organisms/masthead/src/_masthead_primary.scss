@@ -40,10 +40,14 @@
 
   > .container > .site-branding {
     margin-inline-end: auto;
-    width: 164px;
+    width: 113px;
+
+    @include breakpoints.bp-min(medium) {
+      width: 154px;
+    }
 
     @include breakpoints.bp-min(large) {
-      width: 220px;
+      width: 217px;
     }
   }
 
@@ -88,8 +92,13 @@
 
   .o-masthead__flyout .o-masthead__flyout-trigger {
     @include buttons.button-reset();
-    @include links.menu(28px, navy);
-    padding-inline-start: 40px;
+    @include links.menu(22px, navy);
+    padding-inline-start: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      @include links.menu(28px, navy);
+      padding-inline-start: 40px;
+    }
 
     &:after {
       display: none;
@@ -101,14 +110,19 @@
       bottom: 0;
       content: '';
       display: block;
-      height: 32px;
+      height: 24px;
       left: 0;
       margin: auto;
       position: absolute;
       top: 0;
       transform: rotate(0deg);
       transition: animations.transition(all, 0.35s, easeInOutExpo);
-      width: 32px;
+      width: 24px;
+
+      @include breakpoints.bp-min(medium) {
+        height: 32px;
+        width: 32px;
+      }
     }
   }
 
@@ -123,6 +137,8 @@
     height: calc(100vh - (var(--surf-height-region-header-primary)));
     left: 0;
     opacity: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     position: fixed;
     top: var(--surf-height-region-header-primary);
     transition: animations.transition(all, 0.35s, easeInOutExpo);
@@ -152,9 +168,7 @@
 
   .o-masthead__flyout .o-masthead__flyout-content {
     background: var(--surf-gradient-vt-blue);
-    height: 100%;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    height: 100vh;
     position: absolute;
     right: 0;
     top: 0;
