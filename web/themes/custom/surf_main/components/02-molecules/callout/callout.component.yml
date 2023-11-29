@@ -41,7 +41,7 @@ props:
         - white
         - gradient
         - embed
-        - img
+        - blue-cta
         - img-left
         - img-right
         - factoid
