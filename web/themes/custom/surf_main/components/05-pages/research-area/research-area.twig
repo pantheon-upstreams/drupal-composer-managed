@@ -1,0 +1,93 @@
+{#
+/**
+ * @file
+ * Page component for a Research Area
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - research_area_attributes: [string] Component reserved space for attributes.
+ * - research_area_content: [array] Rendered array of the main content for this component.
+ * - research_area_heading: [string] Value of the page title for this component.
+ * - research_area_heading_summary: [string] Value of sub-title text for this component.
+ * - research_area_media: [array] Rendered array of the Media object for this component.
+ * - research_area_related_experiments: [array] Reserved space for any related Experiments.
+ *
+ */
+#}
+
+{% set classes = [
+    'p-research-area',
+] %}
+
+<article {{ research_area_attributes.addClass(classes).merge(attributes) }}>
+    {% if research_area_media %}
+        <div class="p-research-area__media">
+            {{ research_area_media }}
+        </div>
+    {% endif %}
+
+    <div class="p-research-area__header">
+      <div class="container container--large">
+        {% embed 'surf_main:header' with {
+            header_heading: research_area_heading,
+            header_heading_level: '1',
+            header_label: 'Area of Research',
+            header_summary: research_area_heading_summary|default({}),
+            header_attributes: create_attribute(),
+            heading_attributes: create_attribute({'class': ['o-header__heading']}),
+        } only %}
+            {% block header_links_block %}
+                {{ drupal_breadcrumb() }}
+            {% endblock %}
+        {% endembed %}
+      </div>
+    </div>
+
+    <div class="p-research-area__content l-main">
+        {{ research_area_content }}
+    </div>
+
+    {% if drupal_view_result('related_articles', 'research_area') is not empty or research_area_related_experiments is not empty %}
+        <section class="p-research-area__related">
+            <div class="container container--default">
+                {% if research_area_related_experiments is not empty %}
+                    {% include 'surf_main:left-hook' with {
+                        left_hook_attributes: create_attribute(),
+                    } %}
+
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                        heading_text: 'Key Experiments'|t,
+                        heading_level: '2',
+                    } %}
+
+                    {% embed 'surf_main:two-column' with {
+                        layout_attributes: create_attribute(),
+                        layout_items: rows,
+                        layout_column_widths: '50-50',
+                        layout_html_wrapper: 'ul',
+                        research_area_related_experiments,
+                    } only %}
+                        {% block layout_content %}
+                            {{ research_area_related_experiments }}
+                        {% endblock %}
+                    {% endembed %}
+                {% endif %}
+
+                {% if drupal_view_result('related_articles', 'research_area') is not empty %}
+                    {% include 'surf_main:left-hook' with {
+                        left_hook_attributes: create_attribute(),
+                    } %}
+
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                        heading_text: name|field_value ~ 'In The News'|t,
+                        heading_level: '2',
+                    } %}
+
+                    {{ drupal_view('related_articles', 'research_area') }}
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+</article>
