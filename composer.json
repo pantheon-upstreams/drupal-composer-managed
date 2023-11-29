@@ -68,6 +68,7 @@
         "drupal/page_manager": "^4.0@RC",
         "drupal/paragraphs": "~1.0",
         "drupal/pathauto": "~1.0",
+        "drupal/rabbit_hole": "^2.0",
         "drupal/redirect": "~1.0",
         "drupal/scheduler": "~1.0",
         "drupal/search_api": "^1.28",
