@@ -1,0 +1,13 @@
+uuid: 5177a19c-5a15-4303-a274-9036eabe885c
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.icon
+id: media.icon
+targetEntityType: media
+bundle: icon
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

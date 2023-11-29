@@ -1,0 +1,13 @@
+uuid: 56c7c7b5-17c5-4fc9-91a5-568733e63cb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.key_impact_area
+id: taxonomy_term.key_impact_area
+targetEntityType: taxonomy_term
+bundle: key_impact_area
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

@@ -1,0 +1,10 @@
+uuid: c9efccf1-119e-4da0-b74e-73e88204d6d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.view_mode_selector
+label: 'View mode selector'
+targetEntityType: paragraph
+cache: true

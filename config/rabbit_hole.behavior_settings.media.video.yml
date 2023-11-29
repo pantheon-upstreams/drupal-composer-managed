@@ -1,0 +1,13 @@
+uuid: 7e676959-f8de-4854-85fe-b8931da72d37
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.video
+id: media.video
+targetEntityType: media
+bundle: video
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

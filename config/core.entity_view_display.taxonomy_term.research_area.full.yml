@@ -1,8 +1,9 @@
-uuid: c171c706-e970-48f6-a861-54ca4e91e6aa
+uuid: e9bddad6-ad28-489a-874d-dfc3596969d5
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.research_area.field_overview
     - field.field.taxonomy_term.research_area.field_p_content
     - field.field.taxonomy_term.research_area.field_ref_experiments
@@ -10,34 +11,35 @@ dependencies:
     - field.field.taxonomy_term.research_area.rabbit_hole__settings
     - taxonomy.vocabulary.research_area
   module:
-    - entity_reference_revisions
+    - layout_paragraphs
     - text
-id: taxonomy_term.research_area.default
+id: taxonomy_term.research_area.full
 targetEntityType: taxonomy_term
 bundle: research_area
-mode: default
+mode: full
 content:
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_p_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
   field_ref_experiments:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: teaser
+      link: false
     third_party_settings: {  }
     weight: 3
     region: content
@@ -45,10 +47,10 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: banner_default
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   description: true

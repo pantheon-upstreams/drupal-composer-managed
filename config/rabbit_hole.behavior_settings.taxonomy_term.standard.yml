@@ -1,0 +1,13 @@
+uuid: ff60bea3-75ac-4008-b0c0-86627c65875c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.standard
+id: taxonomy_term.standard
+targetEntityType: taxonomy_term
+bundle: standard
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

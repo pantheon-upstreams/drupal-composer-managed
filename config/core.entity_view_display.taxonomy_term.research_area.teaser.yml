@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser
-    - field.field.taxonomy_term.research_area.field_icon
     - taxonomy.vocabulary.research_area
   module:
     - layout_builder
@@ -25,15 +24,11 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_icon:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
+  field_overview: true
+  field_p_content: true
+  field_ref_experiments: true
+  field_ref_media_primary: true
   langcode: true
+  rabbit_hole__settings: true
   search_api_excerpt: true

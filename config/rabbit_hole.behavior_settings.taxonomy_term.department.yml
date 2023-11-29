@@ -1,0 +1,13 @@
+uuid: 740e5702-23cb-4c13-9a9f-03b82121992c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.department
+id: taxonomy_term.department
+targetEntityType: taxonomy_term
+bundle: department
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

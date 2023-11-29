@@ -1,0 +1,13 @@
+uuid: 68e2cf42-3bde-43e3-8610-98c4b15dc082
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: media.image
+targetEntityType: media
+bundle: image
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

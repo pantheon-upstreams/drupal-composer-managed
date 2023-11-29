@@ -1,0 +1,13 @@
+uuid: fd73b02f-1aab-4905-ab21-af7b784e8ec7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.esh_standard_category
+id: taxonomy_term.esh_standard_category
+targetEntityType: taxonomy_term
+bundle: esh_standard_category
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

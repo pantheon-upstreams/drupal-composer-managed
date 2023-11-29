@@ -1,0 +1,13 @@
+uuid: 82b33a66-e785-4e93-a78b-0dbe6d645627
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.document
+id: media.document
+targetEntityType: media
+bundle: document
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }

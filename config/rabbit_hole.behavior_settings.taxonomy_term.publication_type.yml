@@ -1,0 +1,13 @@
+uuid: 70858c2c-48ba-4b44-9731-87792ce1b187
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.publication_type
+id: taxonomy_term.publication_type
+targetEntityType: taxonomy_term
+bundle: publication_type
+action: page_not_found
+no_bypass: false
+bypass_message: true
+configuration: {  }
