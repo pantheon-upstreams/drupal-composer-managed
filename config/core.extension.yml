@@ -29,7 +29,9 @@ module:
   dblog: 0
   download_request: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
   editor: 0
+  editor_advanced_link: 0
   entity: 0
   entity_reference_display: 0
   entity_reference_revisions: 0
@@ -57,6 +59,7 @@ module:
   layout_discovery: 0
   layout_paragraphs: 0
   link: 0
+  linkit: 0
   mailsystem: 0
   maxlength: 0
   media: 0

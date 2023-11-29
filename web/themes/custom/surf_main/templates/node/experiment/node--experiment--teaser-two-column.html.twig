@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme implementation to display an Experiement Node with Teaser - Two Column view mode.
+ *
+ * Available variables:
+ *  - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
+ */
+#}
+
+{% set experiment_dates %}
+    {% if content.field_dates_only|render and not node.field_dates_only.0.get('end_value').value %}
+        {{- content.field_dates_only|field_value }} - {{ 'Present'|t -}}
+    {% else %}
+        {{ content.field_dates_only|field_value|default([]) }}
+    {% endif %}
+{% endset %}
+
+{% set rendered_content = content|without(
+    'field_dates_only',
+    'field_media_primary',
+    'field_overview',
+    'field_ref_research_areas',
+) %}
+
+{% embed 'surf_main:teaser' with {
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute(),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_title: label|field_value,
+    teaser_title_tag: 'h3',
+    teaser_dates: experiment_dates,
+    teaser_tags: content.field_ref_research_areas|field_value|default([]),
+    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_url: url,
+} only %}
+    {% block teaser_content_suffix %}
+        {% if teaser_dates or teaser_tags %}
+            <div class="m-teaser__content-suffix">
+                {% if teaser_dates %}
+                    <p class="m-teaser__dates">
+                        {{ teaser_dates }}
+                    </p>
+                {% endif %}
+
+                {% if teaser_tags %}
+                    <ul class="m-teaser__tags">
+                        {% for tag in teaser_tags %}
+                            <li>
+                                {{ tag }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endblock %}
+{% endembed %}

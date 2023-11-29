@@ -23,7 +23,7 @@
 
 {% set classes = [
     'm-teaser',
-    teaser_type != 'none' ? 'm-teaser--' ~ teaser_type,
+    teaser_type ? 'm-teaser--' ~ teaser_type,
 ] %}
 
 <article {{ teaser_attributes.addClass(classes).merge(attributes) }}>

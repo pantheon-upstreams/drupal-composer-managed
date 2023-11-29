@@ -1,0 +1,10 @@
+uuid: 88d5564f-8dfd-4334-b82f-9bf6cd310302
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_two_column
+label: 'Teaser - Two Column'
+targetEntityType: node
+cache: true
