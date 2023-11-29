@@ -20,7 +20,7 @@
 {% embed 'surf_main:teaser' with {
   attributes,
   teaser_attributes: create_attribute(),
-  teaser_content: content.field_highlight|field_value|default([]),
+  teaser_content: content.field_overview|field_value|default([]),
   teaser_media: content.field_media_primary|field_value|default([]),
   teaser_date: content.field_date_published|field_value|default([]),
   teaser_title: label,
@@ -56,5 +56,5 @@
   'field_media_primary',
   '_layout_builder',
   'field_date_published',
-  'field_highlight',
+  'field_overview',
 ) }}
