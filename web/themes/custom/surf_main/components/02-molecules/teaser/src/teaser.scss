@@ -9,6 +9,7 @@
 // - 06 - 2 Column
 // - 07 - 1 Column
 // - 08 - Experiment
+// - 09 - Standard
 //
 
 
@@ -528,5 +529,30 @@
     > li a {
       margin-inline: 0 !important;
     }
+  }
+}
+
+
+
+//------------------------------------
+//  09 - Standard
+//------------------------------------
+
+.m-teaser.m-teaser--standard {
+  .m-teaser__title {
+    font-size: rem(18px);
+    line-height: var(--surf-lh-label);
+    margin-block-end: rem(4px);
+  }
+
+  .m-teaser__link {
+    font-weight: var(--surf-fw-book);
+    text-decoration-line: underline;
+  }
+
+  .m-teaser__content-text {
+    font-size: rem(18px) !important;
+    line-height: var(--surf-lh-label);
+    margin-block-start: 0 !important;
   }
 }

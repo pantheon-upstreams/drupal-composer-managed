@@ -45,6 +45,8 @@
       {% endif %}
     </div>
 
+    {% block header_pre_cta_block %}{% endblock %}
+
     {% if header_cta_url %}
       {% include 'surf_main:button' with {
         button_attributes: create_attribute(),

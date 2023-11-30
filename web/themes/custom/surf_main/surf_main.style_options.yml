@@ -83,6 +83,8 @@ options:
         label: Image Left
       img-right:
         label: Image Right
+      blue-cta:
+        label: Blue CTA
 
   add_rule:
     plugin: property
