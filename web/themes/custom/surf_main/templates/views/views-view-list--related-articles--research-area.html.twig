@@ -1,14 +1,14 @@
 {% embed 'surf_main:two-column' with {
-  layout_attributes: create_attribute(),
-  layout_items: rows,
-  layout_column_widths: '50-50',
-  layout_html_wrapper: 'ul',
+    layout_attributes: create_attribute(),
+    layout_items: rows,
+    layout_column_widths: '50-50',
+    layout_html_wrapper: 'ul',
 } only %}
-  {% block layout_content %}
-    {% for item in layout_items %}
-      <li class="l-twocol__region">
-        {{ item.content }}
-      </li>
-    {% endfor %}
-  {% endblock %}
+    {% block layout_content %}
+        {% for item in layout_items %}
+            <li class="l-twocol__region">
+                {{ item.content }}
+            </li>
+        {% endfor %}
+    {% endblock %}
 {% endembed %}

@@ -1,17 +1,16 @@
-uuid: b6b439da-c4d1-48b3-b759-dd738c0d43af
+uuid: 0717f89f-5aa6-4c58-acab-094fe7c7217f
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - text
-id: block_content.field_text_formatted
-field_name: field_text_formatted
+    - link
+id: block_content.field_link
+field_name: field_link
 entity_type: block_content
-type: text
-settings:
-  max_length: 255
-module: text
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

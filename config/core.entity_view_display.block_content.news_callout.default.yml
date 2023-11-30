@@ -1,0 +1,38 @@
+uuid: 0c0da290-ab48-4342-a33e-906aa9af2e27
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.news_callout
+    - field.field.block_content.news_callout.field_link
+    - field.field.block_content.news_callout.field_title
+  module:
+    - link
+id: block_content.news_callout.default
+targetEntityType: block_content
+bundle: news_callout
+mode: default
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

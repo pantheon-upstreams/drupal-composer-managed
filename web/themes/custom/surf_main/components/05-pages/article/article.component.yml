@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 name: Article
 status: experimental
-group: Organisms
+group: Pages
 props:
   type: object
   properties:
@@ -10,6 +10,34 @@ props:
     article_attributes:
       title: Attributes
       type: string
-    article_body:
-      title: Article Body
+    article_author:
+      title: Author
       type: string
+    article_body:
+      title: Body
+      type: array
+    article_callouts:
+      title: Callouts
+      type: array
+    article_heading:
+      title: Heading
+      type: string
+    article_layout:
+      title: Layout
+      type: string
+      enum:
+        - video
+        - image
+        - text
+    article_media:
+      title: Media
+      type: array
+    article_overview:
+      title: Overview
+      type: string
+    article_publish_date:
+      title: Publish Date
+      type: string
+    article_tags:
+      title: Tags
+      type: array

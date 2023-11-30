@@ -59,12 +59,20 @@
   > li > a,
   > li > button,
   > li > span {
-    @include links.menu(22px, white);
+    @include links.menu(22px, white, white);
     display: block;
-    padding: 12px 16px;
+    padding: 8px 16px;
 
     @include breakpoints.bp-min(large) {
       padding: 4px 0;
+    }
+  }
+
+  > li > a:after,
+  > li > button:after,
+  > li > span:after {
+    @include breakpoints.bp-max(xxlarge) {
+      display: none;
     }
   }
 

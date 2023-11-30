@@ -1,8 +1,113 @@
-{% if article_media.0['#media'].field_media_oembed_video %}
-  {% include '@surf_main/components/05-pages/article/inc/_article--video.twig' %}
-{% elseif article_media.0['#media'].field_media_image %}
-  {% include '@surf_main/components/05-pages/article/inc/_article.twig' %}
-{% else %}
-  {% include '@surf_main/components/05-pages/article/inc/_article--text.twig' %}
-{% endif %}
+{#
+/**
+ * @file
+ * Page component for an Article
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - article_attributes: [string] Component reserved space for attributes.
+ * - article_author: [string] Reserved space for the author of an Article.
+ * - article_body: [array] Reserved space for builder array of content components.
+ * - article_heading: [string] Reserved space for the main title of an Article.
+ * - article_layout: [string] Available options include, 'text', 'image', and 'video'.
+ * - article_media: [array] Reserved space for any available primary media.
+ * - article_overview: [string] Reserved space for larger, highlighted text.
+ * - article_publish_date: [string] Reserved space for the date that this Article was published.
+ * - article_tags: [array] Any term tags that are applied to this Article.
+ */
+#}
 
+{% set classes = [
+    'p-article',
+    'p-article--' ~ article_layout,
+] %}
+
+<article {{ article_attributes.addClass(classes).merge(attributes) }}>
+    {% if article_layout == 'video' or article_layout == 'image' and article_media %}
+        <div class="container {{ article_layout == 'image' ? 'container--xlarge' }} {{ article_layout == 'video' ? 'container--large' }}">
+            <div class="p-article__media">
+                {{ article_media }}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="p-article__content-wrapper container {{ article_layout == 'image' ? 'container--xlarge' : 'container--small' }}">
+        <section class="p-article__main">
+            {{ drupal_breadcrumb() }}
+
+            {% include 'surf_main:heading' with {
+                heading_text: article_heading,
+                heading_level: '1',
+                heading_attributes: create_attribute({'class': ['p-article__heading']}),
+            } only %}
+
+            {% if article_overview %}
+                <div class="p-article__overview">
+                    <p>{{ article_overview }}</p>
+                </div>
+            {% endif %}
+
+            {% if article_body %}
+                <div class="p-article__content l-main">
+                    {% include 'surf_main:editor' with {
+                        editor_attributes: create_attribute(),
+                        editor_content: article_body,
+                    } only %}
+                </div>
+            {% endif %}
+        </section>
+
+        <section class="p-article__meta">
+            {% if article_publish_date %}
+                <div class="p-article__publish-date">
+                    {{ article_publish_date }}
+                </div>
+            {% endif %}
+
+            {% if article_author %}
+                <div class="p-article__author">
+                    <p>{{- 'by'|t }} {{ article_author -}}</p>
+                </div>
+            {% endif %}
+
+            {% if article_tags %}
+                <ul class="p-article__tags">
+                    {% for tag in article_tags %}
+                        <li>
+                            {% embed 'surf_main:chip' with {
+                                chip_text: tag,
+                                chip_size: 'small',
+                                chip_attributes: create_attribute(),
+                            } only %}
+                            {% endembed %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if article_callouts %}
+                <div class="p-article__callouts">
+                    {{ article_callouts }}
+                </div>
+            {% endif %}
+        </section>
+    </div>
+
+    {% if drupal_view_result('related_articles', 'article') is not empty %}
+        <section class="p-article__related">
+            <div class="container container--xlarge">
+                {% include 'surf_main:left-hook' with {
+                    left_hook_attributes: create_attribute(),
+                } only %}
+
+                {% include 'surf_main:heading' with {
+                    heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                    heading_text: research_area ~ 'Related news'|t,
+                    heading_level: '2',
+                } only %}
+
+                {{ drupal_view('related_articles', 'article') }}
+            </div>
+        </section>
+    {% endif %}
+</article>

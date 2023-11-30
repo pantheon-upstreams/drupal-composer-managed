@@ -62,7 +62,12 @@
 
 :root {
   --surf-height-region-header-utility: 72px;
-  --surf-height-region-header-primary: 72px;
+  --surf-height-region-header-primary: 55px;
+
+  @include breakpoints.bp-min(medium) {
+    --surf-height-region-header-primary: 68px;
+  }
+
   @include breakpoints.bp-min(large) {
     --surf-height-region-header-primary: 120px;
   }

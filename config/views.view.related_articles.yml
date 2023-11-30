@@ -207,12 +207,17 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  experiment:
-    id: experiment
-    display_title: Experiment
+  article:
+    id: article
+    display_title: Article
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 3
       arguments:
         similar_nid:
           id: similar_nid
@@ -253,6 +258,72 @@ display:
             research_area: research_area
           include_args: false
       defaults:
+        pager: false
+        arguments: false
+      display_description: ''
+      display_extenders: {  }
+      block_description: 'Related Articles - Article'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  experiment:
+    id: experiment
+    display_title: Experiment
+    display_plugin: block
+    position: 1
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 2
+      arguments:
+        similar_nid:
+          id: similar_nid
+          table: node
+          field: similar_nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: similar_terms_arg
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: node
+          default_argument_options: {  }
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            override: false
+            items_per_page: 25
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          vocabularies:
+            research_area: research_area
+          include_args: false
+      defaults:
+        pager: false
         arguments: false
       display_description: ''
       display_extenders: {  }
@@ -272,6 +343,11 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 2
       arguments:
         tid:
           id: tid
@@ -316,6 +392,7 @@ display:
           require_value: false
           reduce_duplicates: false
       defaults:
+        pager: false
         arguments: false
       display_description: ''
       display_extenders: {  }

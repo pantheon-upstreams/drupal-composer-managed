@@ -117,10 +117,11 @@
   .splide__arrow {
     @include buttons.button-reset();
     background: transparent;
+    block-size: 64px;
     border-radius: 50%;
     display: block;
-    height: 64px;
-    width: 64px;
+    inline-size: 64px;
+    position: relative;
 
     &:hover,
     &:focus {
@@ -130,11 +131,14 @@
 
   .splide__arrow:before {
     background-color: var(--surf-color-black);
+    block-size: 48px;
     content: '';
     display: block;
-    height: 48px;
+    inline-size: 48px;
+    inset-block: 0;
+    inset-inline: 0;
     margin: auto;
-    width: 48px;
+    position: absolute;
   }
 
   .splide__arrow--prev:before {

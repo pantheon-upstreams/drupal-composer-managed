@@ -75,7 +75,7 @@ $search-form-size: 300px;
 .m-search-bar {
   .m-search-bar__trigger {
     @include buttons.button-reset();
-    @include links.menu(22px, white);
+    @include links.menu(22px, white, white);
     display: none;
     padding-inline-end: 25px;
     position: relative;

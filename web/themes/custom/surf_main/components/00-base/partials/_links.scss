@@ -20,7 +20,7 @@
 //  02 - Menu Link
 //------------------------------------
 
-@mixin menu($size, $color) {
+@mixin menu($size, $color, $hover-color: 'black') {
   color: var(--surf-color-#{$color});
   display: inline-block;
   font-family: var(--surf-font-condensed);
@@ -31,6 +31,11 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    color: var(--surf-color-#{$hover-color});
+  }
 
   &:after {
     background-color: var(--surf-color-#{$color});
@@ -49,6 +54,7 @@
 
   &:hover:after,
   &:focus:after {
+    background-color: var(--surf-color-#{$hover-color});
     opacity: 1;
     transform: scaleX(1);
   }
