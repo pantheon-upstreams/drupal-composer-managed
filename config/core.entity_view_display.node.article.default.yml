@@ -10,12 +10,14 @@ dependencies:
     - field.field.node.article.field_p_content
     - field.field.node.article.field_publisher
     - field.field.node.article.field_ref_audiences
+    - field.field.node.article.field_ref_content_blocks
     - field.field.node.article.field_ref_eo_opportunities
     - field.field.node.article.field_ref_key_impact_areas
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
     - node.type.article
   module:
+    - block_field
     - datetime
     - layout_paragraphs
     - text
@@ -83,6 +85,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_ref_content_blocks:
+    type: block_field
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_ref_eo_opportunities:
     type: entity_reference_label

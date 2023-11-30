@@ -1,0 +1,8 @@
+uuid: b4eba071-9cc8-47c9-9cd9-2b9b1e622d8c
+langcode: en
+status: true
+dependencies: {  }
+id: news_callout
+label: 'News Callout'
+revision: 0
+description: ''

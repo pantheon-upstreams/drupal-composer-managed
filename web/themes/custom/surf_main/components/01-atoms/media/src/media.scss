@@ -1,20 +1,18 @@
 //
 // Component - Atom - Media
 //
-// https://atendesign.atlassian.net/browse/SRL-122
-// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1210-262986&mode=design&t=oRwpZclcMzKWEldA-4
-//
 // - 01 - Imports
 // - 02 - General
+// - 03 - Contextual
 //
-
 
 
 //------------------------------------
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/calculations';
+
 
 
 
@@ -24,17 +22,35 @@
 
 .a-media {
   position: relative;
+
+  .a-media__caption {
+    align-items: flex-start;
+    background: var(--surf-color-white);
+    bottom: 0;
+    color: var(--surf-color-black);
+    display: flex;
+    margin: 0;
+    max-inline-size: 400px;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+  }
 }
 
-.a-media__caption {
-  align-items: flex-start;
-  background: var(--surf-color-white);
-  bottom: 0;
-  color: var(--surf-color-black);
-  display: flex;
-  margin: 0;
-  max-inline-size: rem(400px);
-  padding: 20px;
-  position: absolute;
-  right: 0;
+
+
+
+//------------------------------------
+//  03 - Contextual
+//------------------------------------
+
+.a-media {
+  &.media--banner-default .a-media__caption {
+    background: fade-out(black, 0.5);
+    color: var(--surf-color-white);
+    font-size: calculations.rem(14px);
+    font-style: italic;
+    padding-block: 4px;
+    padding-inline: 8px;
+  }
 }

@@ -1,11 +1,11 @@
-uuid: 10abb2ad-ed15-4857-8779-fc76828ebfe3
+uuid: 76e9411e-6f20-4449-b84d-1576c7c4fc75
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.hero
-id: block_content.hero
+    - block_content.type.news_callout
+id: block_content.news_callout
 target_entity_type_id: block_content
-target_bundle: hero
+target_bundle: news_callout
 default_langcode: site_default
 language_alterable: false

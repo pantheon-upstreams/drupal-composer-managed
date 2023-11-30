@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.callout.field_callout_theme
     - field.field.paragraph.callout.field_link
     - field.field.paragraph.callout.field_media
     - field.field.paragraph.callout.field_text
@@ -51,5 +50,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_callout_theme: true
   status: true

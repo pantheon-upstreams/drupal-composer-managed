@@ -1,0 +1,23 @@
+uuid: 67aa15e9-27eb-4eb6-93de-06bb50770d2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.news_callout
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.news_callout.field_link
+field_name: field_link
+entity_type: block_content
+bundle: news_callout
+label: Link
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

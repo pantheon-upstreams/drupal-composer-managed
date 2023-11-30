@@ -10,12 +10,14 @@ dependencies:
     - field.field.node.article.field_p_content
     - field.field.node.article.field_publisher
     - field.field.node.article.field_ref_audiences
+    - field.field.node.article.field_ref_content_blocks
     - field.field.node.article.field_ref_eo_opportunities
     - field.field.node.article.field_ref_key_impact_areas
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
     - node.type.article
   module:
+    - block_field
     - datetime
     - field_group
     - layout_paragraphs
@@ -34,7 +36,7 @@ third_party_settings:
       label: Tags
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -98,7 +100,7 @@ third_party_settings:
       label: Publishing
       region: content
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -115,7 +117,7 @@ third_party_settings:
       label: Authoring
       region: content
       parent_name: ''
-      weight: 10
+      weight: 11
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -125,6 +127,21 @@ third_party_settings:
         description: ''
         required_fields: true
         weight: 0
+    group_callouts:
+      children:
+        - field_ref_content_blocks
+      label: Callouts
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: 7CvVDwPYotAZFBa36mcpMKZOfVRRp_iGuPHpHaavI6E
 id: node.article.default
@@ -161,7 +178,7 @@ content:
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 255
@@ -173,7 +190,7 @@ content:
         maxlength_js_enforce: false
   field_p_content:
     type: layout_paragraphs
-    weight: 7
+    weight: 8
     region: content
     settings:
       preview_view_mode: default
@@ -194,6 +211,15 @@ content:
     weight: 21
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_ref_content_blocks:
+    type: block_field_default
+    weight: 31
+    region: content
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: hidden
     third_party_settings: {  }
   field_ref_eo_opportunities:
     type: options_select
@@ -225,24 +251,24 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 10
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 9
+    weight: 28
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 27
     region: content
     settings:
       display_label: true
@@ -267,12 +293,12 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 12
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,0 +1,19 @@
+uuid: 13a5e1da-e4c1-4996-ae89-69eb23fd3c01
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_field
+    - node
+id: node.field_ref_content_blocks
+field_name: field_ref_content_blocks
+entity_type: node
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,57 @@
+uuid: c6cf64c1-88b3-475a-8101-cc56bf7f7f15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_content_blocks
+    - node.type.article
+  module:
+    - block_field
+id: node.article.field_ref_content_blocks
+field_name: field_ref_content_blocks
+entity_type: node
+bundle: article
+label: Callouts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: categories
+  selection_settings:
+    categories:
+      'Content block': 'Content block'
+      Block: '0'
+      'Chaos Tools': '0'
+      'Contact message fields': '0'
+      'Content block fields': '0'
+      'Content fields': '0'
+      core: '0'
+      'Crop fields': '0'
+      'Custom menu link fields': '0'
+      'Download item fields': '0'
+      'Download request fields': '0'
+      'Download request item fields': '0'
+      'Entity subqueue fields': '0'
+      'File fields': '0'
+      Forms: '0'
+      'Inline blocks': '0'
+      'Lists (Views)': '0'
+      'Media fields': '0'
+      Menus: '0'
+      'Mercury Editor Template fields': '0'
+      'Notification Message': '0'
+      'Notification Message fields': '0'
+      'Paragraph fields': '0'
+      'Redirect fields': '0'
+      'Search task fields': '0'
+      'Shortcut link fields': '0'
+      System: '0'
+      'Taxonomy term fields': '0'
+      'URL alias fields': '0'
+      'User fields': '0'
+      'User Request fields': '0'
+      Webform: '0'
+      'Webform submission fields': '0'
+field_type: block_field

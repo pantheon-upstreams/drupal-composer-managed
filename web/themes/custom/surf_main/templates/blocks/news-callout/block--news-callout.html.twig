@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a News Callout Block.
+ *
+ * Available variables:
+ * - No additional variables are available for this Block type.
+ *
+ * @see templates/blocks/block.html.twig
+ * @see components/02-molecules/callout/callout.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_title',
+    'field_link',
+) %}
+
+{% include 'surf_main:callout' with {
+    attributes,
+    rendered_content,
+    title_prefix,
+    title_suffix,
+    callout_attributes: create_attribute(),
+    callout_text: content.field_title|field_value,
+    callout_button_text: content.field_link|render ? content.field_link.0['#title'],
+    callout_button_url: content.field_link|render ? content.field_link.0['#url'],
+    callout_type: 'news',
+} only %}

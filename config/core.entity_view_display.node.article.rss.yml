@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.article.field_p_content
     - field.field.node.article.field_publisher
     - field.field.node.article.field_ref_audiences
+    - field.field.node.article.field_ref_content_blocks
     - field.field.node.article.field_ref_eo_opportunities
     - field.field.node.article.field_ref_key_impact_areas
     - field.field.node.article.field_ref_related_content
@@ -38,6 +39,7 @@ hidden:
   field_p_content: true
   field_publisher: true
   field_ref_audiences: true
+  field_ref_content_blocks: true
   field_ref_eo_opportunities: true
   field_ref_key_impact_areas: true
   field_ref_related_content: true

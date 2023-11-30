@@ -1,14 +1,14 @@
-uuid: 22078059-fc9d-4d54-afeb-1f6dcdbdb3a9
+uuid: 34215886-10df-4964-845b-a3c7d7435516
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.hero
+    - block_content.type.news_callout
     - field.storage.block_content.field_title
-id: block_content.hero.field_title
+id: block_content.news_callout.field_title
 field_name: field_title
 entity_type: block_content
-bundle: hero
+bundle: news_callout
 label: Title
 description: ''
 required: true
