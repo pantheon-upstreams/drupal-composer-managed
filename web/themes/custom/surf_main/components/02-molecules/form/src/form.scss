@@ -3,6 +3,7 @@
 //
 // - 01 - Imports
 // - 02 - General
+// - 03 - Modifiers
 //
 
 
@@ -18,8 +19,6 @@
 //  02 - General
 //------------------------------------
 //
-
-
 
 .m-form {
   //empty
@@ -55,5 +54,18 @@
   .form-actions {
     display: flex;
     gap: 20px;
+  }
+}
+
+
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+//
+
+.m-form.m-form--browse-curriculum {
+  .form-item__name--title {
+    inline-size: 100%;
   }
 }

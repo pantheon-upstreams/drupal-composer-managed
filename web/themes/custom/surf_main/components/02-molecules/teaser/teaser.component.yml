@@ -37,6 +37,7 @@ props:
         - person
         - experiment
         - standard
+        - curriculum
     teaser_url:
       title: URL
       type: string

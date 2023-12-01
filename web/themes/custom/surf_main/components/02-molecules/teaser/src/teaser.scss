@@ -10,6 +10,7 @@
 // - 07 - 1 Column
 // - 08 - Experiment
 // - 09 - Standard
+// - 10 - Curriculum
 //
 
 
@@ -56,6 +57,27 @@
 
   .m-teaser__content {
     width: 100%;
+  }
+
+  .m-teaser__tags {
+    display: flex;
+    font-size: rem(14px);
+    line-height: var(--surf-lh-label);
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+
+    > li {
+      margin-inline-end: 16px;
+    }
+
+    //> li:first-of-type {
+    //  margin-inline-start: 0;
+    //}
+
+    > li a {
+      margin-inline: 0 !important;
+    }
   }
 }
 
@@ -510,26 +532,6 @@
       right: 8px;
     }
   }
-
-  .m-teaser__tags {
-    display: flex;
-    font-size: rem(14px);
-    line-height: var(--surf-lh-label);
-    margin: 0;
-    padding: 0;
-
-    > li {
-      margin-inline: 8px;
-    }
-
-    > li:first-of-type {
-      margin-inline-start: 0;
-    }
-
-    > li a {
-      margin-inline: 0 !important;
-    }
-  }
 }
 
 
@@ -548,6 +550,8 @@
   .m-teaser__link {
     font-weight: var(--surf-fw-book);
     text-decoration-line: underline;
+    margin-block-end: rem(4px);
+    display: inline-block;
   }
 
   .m-teaser__content-text {
@@ -556,3 +560,20 @@
     margin-block-start: 0 !important;
   }
 }
+
+
+
+//------------------------------------
+//  10 - Curriculum
+//------------------------------------
+
+.m-teaser.m-teaser--curriculum {
+  .m-teaser__tags {
+    margin-block-start: rem(12px);
+  }
+
+  .m-teaser__content-text {
+    margin-block-start: rem(12px) !important;
+  }
+}
+

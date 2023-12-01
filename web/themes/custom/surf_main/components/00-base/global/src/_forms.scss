@@ -148,7 +148,9 @@ select {
   font-family: var(--surf-font-sans);
   font-size: rem(18px) !important;
   height: 48px;
-  padding: 10px 12px;
+  padding-block: 10px;
+  padding-inline-start: 12px;
+  padding-inline-end: 42px;
   text-indent: 0.01px;
 
   &:focus,

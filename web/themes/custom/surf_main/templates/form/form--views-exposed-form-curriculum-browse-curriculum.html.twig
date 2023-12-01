@@ -12,14 +12,15 @@
 #}
 
 {% set classes = [
-    'm-form',
+  'm-form',
+  'm-form--browse-curriculum',
 ] %}
 
 {% embed 'surf_main:form' with {
-    attributes,
-    form_attributes: create_attribute({'class': classes}),
-    form_children: children,
-    form_type: 'inline',
+  attributes,
+  form_attributes: create_attribute({'class': classes}),
+  form_children: children,
+  form_type: 'inline',
 } only %}
 {% endembed %}
 

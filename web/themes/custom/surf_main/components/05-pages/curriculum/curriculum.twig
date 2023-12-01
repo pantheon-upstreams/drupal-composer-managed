@@ -17,7 +17,7 @@
   'p-curriculum',
 ] %}
 
-<article {{ article_attributes.addClass(classes).merge(attributes) }}>
+<article {{ curriculum_attributes.addClass(classes).merge(attributes) }}>
   <div class="container container--xlarge">
 
     {% embed 'surf_main:header' with {
@@ -73,16 +73,20 @@
 
 <div class="container container--small p-curriculum__content">
 
-  {% embed 'surf_main:media' with {
-    media_attributes: create_attribute(),
-    media: curriculum_media,
-  } only %}
+  {% if curriculum_media %}
+    <div class="p-curriculum__media">
+      {% embed 'surf_main:media' with {
+        media_attributes: create_attribute(),
+        media: curriculum_media,
+      } only %}
 
-    {% block media_block %}
-      {{ media }}
-    {% endblock %}
+        {% block media_block %}
+          {{ media }}
+        {% endblock %}
 
-  {% endembed %}
+      {% endembed %}
+    </div>
+  {% endif %}
 
   {% embed 'surf_main:editor' with {
     editor_attributes: create_attribute(),
@@ -91,31 +95,41 @@
   {% endembed %}
 
   {% if curriculum_standards %}
-    <div class="a-editor">
-      <h2>Curriculum Standards</h2>
+    <div class="p-curriculum__standards">
+      <span class="a-editor">
+        <h2>Curriculum Standards</h2>
+      </span>
+      <ol>
+        {% for curriculum in curriculum_standards %}
+          <li>{{ curriculum }}</li>
+        {% endfor %}
+      </ol>
     </div>
-    <ul class="p-curriculum__standards">
-      {% for curriculum in curriculum_standards %}
-        <li>{{ curriculum }}</li>
-      {% endfor %}
-    </ul>
   {% endif %}
 
 </div>
 
-    {% include 'surf_main:button' with {
-      attributes,
-      button_attributes: create_attribute(),
-      button_color: 'navy',
-      button_external: true,
-      button_html_tag: 'link',
-      button_size: 'large',
-      button_style: 'primary',
-      button_prefix: 'icon-arrow-left',
-      button_title: 'Back to All Curriculum'|t,
-      button_url: 'https://example',
-    } only %}
 
+  {% if drupal_view_result('curriculum', 'grade_level') is not empty %}
+    <div class="p-curriculum__more-view">
+      {{ drupal_block('views_block:curriculum-grade_level', {'label': true} ) }}
+    </div>
+  {% endif %}
+
+<div class="p-curriculum__back-button">
+  {% include 'surf_main:button' with {
+    attributes,
+    button_attributes: create_attribute(),
+    button_color: 'navy',
+    button_external: true,
+    button_html_tag: 'link',
+    button_size: 'large',
+    button_style: 'primary',
+    button_prefix: 'icon-arrow-left',
+    button_title: 'Back to All Curriculum'|t,
+    button_url: '/curriculum-modules',
+  } only %}
+</div>
     {% embed 'surf_main:callout' with {
       callout_attributes: create_attribute(),
       callout_type: 'blue-cta',

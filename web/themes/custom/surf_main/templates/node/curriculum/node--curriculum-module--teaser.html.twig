@@ -23,6 +23,7 @@
   curriculum_grade_level: content.field_ref_grade_level|field_value|default([]),
   curriculum_standards: content.field_ref_standards|field_value|default([]),
 } only %}
+
   {% block teaser_content_suffix %}
     <ul class="m-teaser__tags">
       {% for grade_level in curriculum_grade_level %}

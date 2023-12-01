@@ -97,3 +97,13 @@ function surf_main_theme_suggestions_taxonomy_term_alter(array &$suggestions, ar
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $view_mode;
 }
+
+/**
+ * Form Alter
+ * - Implements hook_theme_suggestions_form_alter().
+ * - @param array $suggestions - Inspector theme file name suggestions.
+ * - @param array $variables - Suggestion variables.
+ */
+function surf_main_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+    $suggestions[] = 'form__' . str_replace('-','_', $variables['element']['#id']);
+}

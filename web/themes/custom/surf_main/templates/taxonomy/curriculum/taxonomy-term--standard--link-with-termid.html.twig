@@ -24,24 +24,22 @@
  */
 #}
 
-{% embed 'surf_main:teaser' with {
-  attributes,
-  teaser_attributes: create_attribute(),
-  teaser_content: content.description|field_value,
-  teaser_title: name|field_value,
-  teaser_type: 'standard',
-  term,
-  name,
-} only %}
+{% set classes = [
+  'term',
+  'term--' ~ term.bundle|clean_class,
+  view_mode ? 'term--' ~ view_mode|clean_class,
+  not term.isPublished() ? 'term--unpublished'
+] %}
 
-  {% block teaser_content %}
 
-    <div class="m-teaser__content-text">
-      <a class="m-teaser__link" href="/curriculum-modules?standard={{ term.id }}">{{ teaser_title }}</a>
-      {{- teaser_content -}}
-    </div>
 
+  {% if name and not page %}
+    <a href="/curriculum-modules?standard={{ term.id }}">{{ name }}</a>
+  {% else %}
+    <h1>{{ name }}</h1>
+  {% endif %}
+
+  {% block content %}
+    {{ content }}
   {% endblock %}
-
-{% endembed %}
 

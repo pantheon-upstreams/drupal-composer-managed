@@ -21,14 +21,27 @@
 //------------------------------------
 
 .p-curriculum {
-  // empty
+  margin-block-end: rem(32px);
+  @include bp-min(large) {
+    margin-block-end: rem(68px);
+  }
 }
 
 .p-curriculum__meta {
-  padding: rem(60px);
+  padding: rem(20px);
   background-color: var(--surf-color-gray-100);
   display: flex;
-  gap: rem(60px);
+  gap: rem(20px);
+  flex-wrap: wrap;
+  inline-size: 100%;
+
+  @include bp-min(medium) {
+    padding: rem(40px);
+    gap: rem(40px) rem(60px);
+  }
+  @include bp-min(large) {
+    padding: rem(60px);
+  }
 
   ul {
     margin: 0;
@@ -41,13 +54,22 @@
 
   a {
     font-weight: var(--surf-fw-book);
-    font-size: rem(24px);
+    font-size: var(--surf-fs-16-18-24);
   }
 }
 
 .p-curriculum__content {
+  margin-block-start: rem(60px);
+  margin-block-end: rem(32px);
+  @include bp-min(medium) {
+    margin-block-end: rem(90px);
+  }
+
   > *:not(:last-child) {
-    margin-block-end: rem(48px);
+    margin-block-end: rem(32px);
+    @include bp-min(large) {
+      margin-block-end: rem(48px);
+    }
   }
 }
 
@@ -62,13 +84,36 @@
 }
 
 .p-curriculum__meta-time {
-  font-size: rem(24px);
+  font-size: var(--surf-fs-16-18-24);
 }
 
 .p-curriculum__standards {
-  margin: 0;
-  padding: 0;
-  li:not(:last-child) {
+  .a-editor h2 {
     margin-block-end: rem(16px);
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    li:not(:last-child) {
+      margin-block-end: rem(16px);
+    }
+  }
+}
+
+.p-curriculum__more-view {
+  .a-heading {
+    margin-block-end: rem(32px);
+    @include bp-min(medium) {
+      margin-block-end: rem(60px);
+    }
+  }
+}
+
+.p-curriculum__back-button {
+  margin-block: rem(32px);
+  @include bp-min(medium) {
+    margin-block: rem(60px);
   }
 }
