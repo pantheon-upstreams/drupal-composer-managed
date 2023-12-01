@@ -1,0 +1,10 @@
+uuid: b97f75b6-7be6-4f67-ad5f-72a66db6b8e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.link_with_termid
+label: 'Link with TermID'
+targetEntityType: taxonomy_term
+cache: true

@@ -55,8 +55,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: link_with_termid
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content
@@ -64,8 +64,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: link_with_termid
+      link: false
     third_party_settings: {  }
     weight: 4
     region: content

@@ -1,0 +1,29 @@
+uuid: 1b0b0bdc-cb73-4f2b-9980-f2a7e76686e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.link_with_termid
+    - taxonomy.vocabulary.grade_level
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.grade_level.link_with_termid
+targetEntityType: taxonomy_term
+bundle: grade_level
+mode: link_with_termid
+content:
+  description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
