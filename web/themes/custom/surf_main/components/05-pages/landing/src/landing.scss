@@ -14,19 +14,22 @@
 @use '../../../00-base/partials/breakpoints';
 @use '../../../00-base/partials/calculations';
 
+.p-landing {
+  margin-block-end: calculations.rem(60px);
+}
+
+.p-landing__hero {
+  margin-block-end: calculations.rem(32px);
+  @include breakpoints.bp-min(medium) {
+    margin-block-end: calculations.rem(60px);
+  }
+}
+
 .p-landing__content {
   > *:not( :last-child ) {
     margin-block-end: calculations.rem(32px);
     @include breakpoints.bp-min(large) {
       margin-block-end: calculations.rem(68px);
     }
-  }
-}
-
-.p-landing {
-  margin-block-end: calculations.rem(60px);
-
-  > *:not( :last-child ) {
-    margin-block-end: calculations.rem(32px);
   }
 }

@@ -17,7 +17,9 @@
 ] %}
 
 <article {{ landing_attributes.addClass(classes).merge(attributes) }}>
-    {{ landing_hero }}
+    <div class="p-landing__hero">
+        {{ landing_hero }}
+    </div>
 
     <div class="p-landing__content">
         {{ landing_content }}

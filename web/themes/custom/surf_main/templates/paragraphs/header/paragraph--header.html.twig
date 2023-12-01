@@ -25,7 +25,7 @@
         heading_attributes: create_attribute({'class': 'o-header__heading a-heading a-heading--none'}),
         header_heading: content.field_title|field_value|default([]),
         header_heading_level: '1',
-        header_cta_text: content.field_text|field_value|default([]),
+        header_summary: content.field_text|field_value|default([]),
         header_cta_url: content.field_link|render ? content.field_link.0['#url'],
         header_cta_text: content.field_link|render ? content.field_link.0['#title'],
         header_cta_html_tag: 'link',
