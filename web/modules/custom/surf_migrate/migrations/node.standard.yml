@@ -12,7 +12,28 @@ source:
 process:
   nid: nid
   title: title
-  body: body
+  field_p_content/target_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty
+      method: process
+    - plugin: extract
+      index:
+        - 0
+  field_p_content/target_revision_id:
+    - plugin: migration_lookup
+      no_stub: true
+      migration: surf_node_field_p_body
+      source_ids:
+        surf_node_field_p_body:
+          - nid
+    - plugin: skip_on_empty
+      method: process
+    - plugin: node_complete_node_revision_lookup
   field_overview/0/value: field_overview/0/value
   field_overview/0/format:
     plugin: default_value
