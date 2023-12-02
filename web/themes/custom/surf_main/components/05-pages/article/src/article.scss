@@ -13,6 +13,7 @@
 
 @use '../../../00-base/partials/breakpoints';
 @use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/media';
 
 
 
@@ -22,7 +23,8 @@
 //------------------------------------
 
 .p-article {
-  &.p-article--text {
+  &.p-article--text,
+  &.p-article--video {
     padding-block-start: 40px;
 
     @include breakpoints.bp-min(large) {
@@ -49,6 +51,18 @@
     }
   }
 
+  &.p-article--video .p-article__media {
+    margin-block-end: 40px;
+
+    @include breakpoints.bp-min(large) {
+      margin-block-end: 64px;
+    }
+  }
+
+  &.p-article--video .media--remote-video {
+    @include media.responsive-iframe();
+  }
+
   .p-article__main > *:not(:last-child) {
     margin-block-end: 24px;
   }
@@ -70,12 +84,21 @@
     }
   }
 
+  .p-article__callouts {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 32px;
+  }
+
   &.p-article--text .p-article__callouts,
   &.p-article--video .p-article__callouts {
     @include breakpoints.bp-min(large) {
-      display: flex;
-      inline-size: var(--surf-width-large);
+      flex-flow: nowrap row;
       gap: 60px;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      inline-size: var(--surf-width-large);
       margin-inline-start: calc(((var(--surf-width-large) - var(--surf-width-small)) / 2) * -1);
     }
   }

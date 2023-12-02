@@ -20,10 +20,22 @@
 {% endif %}
 
 {% set article_tags = [] %}
-{% set article_tags = article_tags|merge(content.field_ref_research_areas|field_value) %}
-{% set article_tags = article_tags|merge(content.field_ref_key_impact_areas|field_value) %}
-{% set article_tags = article_tags|merge(content.field_ref_eo_opportunities|field_value) %}
-{% set article_tags = article_tags|merge(content.field_ref_audiences|field_value) %}
+
+{% if content.field_ref_research_areas|render %}
+    {% set article_tags = article_tags|merge(content.field_ref_research_areas|field_value) %}
+{% endif %}
+
+{% if content.field_ref_key_impact_areas|render %}
+    {% set article_tags = article_tags|merge(content.field_ref_key_impact_areas|field_value) %}
+{% endif %}
+
+{% if content.field_ref_eo_opportunities|render %}
+    {% set article_tags = article_tags|merge(content.field_ref_eo_opportunities|field_value) %}
+{% endif %}
+
+{% if content.field_ref_audiences|render %}
+    {% set article_tags = article_tags|merge(content.field_ref_audiences|field_value) %}
+{% endif %}
 
 {% set rendered_content = content|without(
     'field_author',
