@@ -22,46 +22,46 @@
 ] %}
 
 <article {{ event_attributes.addClass(classes).merge(attributes) }}>
-    {% embed 'surf_main:header' with {
-        header_heading: event_heading,
-        header_label: 'Event',
-        header_attributes: create_attribute({'class': ['o-header--grid']}),
-        header_heading_level: '1',
-        heading_attributes: create_attribute({'class': ['o-header__heading']}),
-        event_dates,
-        event_link_text,
-        event_link_url,
-    } only %}
-        {% block header_links_block %}
-            {{ drupal_breadcrumb() }}
-        {% endblock %}
-
-        {% block header_metadata_block %}
-            <div class="p-event__meta-wrapper">
-                {% if event_dates %}
-                    <div class="p-event__dates">
-                        <p>{{ event_dates }}</p>
-                    </div>
-                {% endif %}
-
-                {% if event_link_url %}
-                    {% include 'surf_main:button' with {
-                        attributes,
-                        button_attributes: create_attribute(),
-                        button_color: 'navy',
-                        button_external: true,
-                        button_html_tag: 'link',
-                        button_size: 'large',
-                        button_style: 'primary',
-                        button_title: event_link_text,
-                        button_url: event_link_url,
-                    } only %}
-                {% endif %}
-            </div>
-        {% endblock %}
-    {% endembed %}
-
     <div class="container container--xlarge">
+        {% embed 'surf_main:header' with {
+            header_heading: event_heading,
+            header_label: 'Event',
+            header_attributes: create_attribute({'class': ['o-header--grid']}),
+            header_heading_level: '1',
+            heading_attributes: create_attribute({'class': ['o-header__heading']}),
+            event_dates,
+            event_link_text,
+            event_link_url,
+        } only %}
+            {% block header_links_block %}
+                {{ drupal_breadcrumb() }}
+            {% endblock %}
+
+            {% block header_metadata_block %}
+                <div class="p-event__meta-wrapper">
+                    {% if event_dates %}
+                        <div class="p-event__dates">
+                            <p>{{ event_dates }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if event_link_url %}
+                        {% include 'surf_main:button' with {
+                            attributes,
+                            button_attributes: create_attribute(),
+                            button_color: 'navy',
+                            button_external: true,
+                            button_html_tag: 'link',
+                            button_size: 'large',
+                            button_style: 'primary',
+                            button_title: event_link_text,
+                            button_url: event_link_url,
+                        } only %}
+                    {% endif %}
+                </div>
+            {% endblock %}
+        {% endembed %}
+
         <div class="p-event__inner-wrapper">
             {% embed 'surf_main:left-hook' with {
                 left_hook_attributes: create_attribute(),

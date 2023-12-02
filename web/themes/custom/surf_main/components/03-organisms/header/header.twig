@@ -29,7 +29,7 @@
 ] %}
 
 <header {{ header_attributes.addClass(classes).merge(attributes).setAttribute('aria-label', header_label) }}>
-  <div class="o-header__content container container--large">
+  <div class="o-header__content">
     {% block header_links_block %}{% endblock %}
 
     <div class="o-header__text-wrapper">
