@@ -40,9 +40,10 @@ content:
     weight: 2
     region: content
   field_content_area:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
+      view_mode: link_with_termid
       link: false
     third_party_settings: {  }
     weight: 4
@@ -92,9 +93,10 @@ content:
     weight: 5
     region: content
   field_ref_grade_level:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
+      view_mode: link_with_termid
       link: false
     third_party_settings: {  }
     weight: 6

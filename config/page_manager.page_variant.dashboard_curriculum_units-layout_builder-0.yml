@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_curriculum_units
+    - system.menu.dashboard
     - views.view.user_download_requests
   module:
     - layout_discovery
@@ -22,9 +23,23 @@ variant_settings:
     -
       layout_id: layout_onecol
       layout_settings:
-        label: Header
+        label: 'Dashboard Menu'
         context_mapping: {  }
-      components: {  }
+      components:
+        857e270d-2c50-4a45-9078-feda25554f97:
+          uuid: 857e270d-2c50-4a45-9078-feda25554f97
+          region: content
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
+          weight: 0
+          additional: {  }
       third_party_settings: {  }
     -
       layout_id: layout_onecol

@@ -20,15 +20,15 @@ definitions:
     expanded: false
     enabled: true
   surf_dashboard__events:
+    weight: -47
     menu_name: dashboard
     parent: ''
-    weight: -46
     expanded: false
     enabled: true
   surf_dashboard__visits:
+    weight: -49
     menu_name: dashboard
     parent: ''
-    weight: -47
     expanded: false
     enabled: true
   surf_dashboard__my_account:
@@ -38,14 +38,14 @@ definitions:
     expanded: false
     enabled: true
   surf_dashboard__tasks_challenges:
+    weight: -46
     menu_name: dashboard
     parent: ''
-    weight: -48
     expanded: false
     enabled: true
   surf_dashboard__request:
+    weight: -48
     menu_name: dashboard
     parent: ''
-    weight: -49
-    expanded: false
     enabled: true
+    expanded: false

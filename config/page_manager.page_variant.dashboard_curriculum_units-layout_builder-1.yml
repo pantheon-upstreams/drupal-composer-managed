@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_curriculum_units
+    - system.menu.dashboard
   module:
     - ctools
     - layout_discovery
+    - system
 id: dashboard_curriculum_units-layout_builder-1
 label: Details
 weight: 0
@@ -34,6 +36,27 @@ variant_settings:
             view_mode: default
             context_mapping:
               entity: download_request
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Dashboard Menu'
+        context_mapping: {  }
+      components:
+        1fa687ce-67b0-4078-ac58-17faa4b6da78:
+          uuid: 1fa687ce-67b0-4078-ac58-17faa4b6da78
+          region: content
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
           weight: 0
           additional: {  }
       third_party_settings: {  }
