@@ -19,10 +19,17 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
+{% set rendered_content = content|without(
+    'field_link',
+    'field_text',
+    'field_title',
+) %}
+
 <div {{ attributes.addClass(classes) }}>
-    {% include 'surf_main:header' with {
+    {% embed 'surf_main:header' with {
+        rendered_content,
         header_attributes: create_attribute(),
-        heading_attributes: create_attribute({'class': 'o-header__heading a-heading a-heading--none'}),
+        heading_attributes: create_attribute({'class': 'o-header__heading a-heading'}),
         header_heading: content.field_title|field_value|default([]),
         header_heading_level: '1',
         header_summary: content.field_text|field_value|default([]),
@@ -32,12 +39,10 @@
         header_cta_style: 'primary',
         header_cta_size: 'large',
         header_cta_color: 'navy',
-        header_type: style_options['header_type']|default('color'),
+        header_type: style_options['header_type']|default('none'),
     } only %}
+        {% block header_links_block %}
+            {{ drupal_breadcrumb() }}
+        {% endblock %}
+    {% endembed %}
 </div>
-
-{{ content|without(
-    'field_title',
-    'field_text',
-    'field_link',
-) }}

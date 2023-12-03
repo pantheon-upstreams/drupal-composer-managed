@@ -50,6 +50,7 @@ props:
         - grid
         - ripple
         - img
+        - none
   slots:
     header_links_block:
       title: Header Links

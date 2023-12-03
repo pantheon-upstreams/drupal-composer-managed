@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.person.field_phone_mobile
     - field.field.node.person.field_phone_office
     - field.field.node.person.field_ref_department
+    - field.field.node.person.field_ref_person_type
     - node.type.person
   module:
     - datetime
@@ -129,6 +130,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 11
+    region: content
+  field_ref_person_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
     region: content
   links:
     settings: {  }

@@ -10,20 +10,23 @@ props:
     person_card_attributes:
       title: Attributes
       type: string
+    person_card_email:
+      title: Email
+      type: string
+    person_card_initials:
+      title: Initials
+      type: string
     person_card_media:
-      title: Photo
+      title: Media
       type: string
     person_card_name:
       title: Full Name
       type: string
+    person_card_phone:
+      title: Phone Number
+      type: string
     person_card_role:
       title: Role
-      type: string
-    person_card_office_phone:
-      title: Office Phone Number
-      type: string
-    person_card_email:
-      title: Email
       type: string
     person_card_url:
       title: Link URL

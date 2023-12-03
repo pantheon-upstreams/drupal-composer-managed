@@ -1,33 +1,34 @@
 {#
 /**
  * @file
- * Theme implementation to display a node.
+ * Theme implementation to display a Person Node with Teaser view mode.
  *
  * Available variables:
- *  See embed below
+ *  person_initials: [string] The first letter of the first and last name.
  *
- * @see template_preprocess_node()
+ * @see surf_main_preprocess_node__person()
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/person-card/person-card.twig
  */
 #}
 
-{% embed 'surf_main:person-card' with {
-  person_card_attributes: create_attribute(),
-  person_card_name: content.field_name.0 ? content.field_name|field_value,
-  person_card_role: content.field_job_title.0 ? content.field_job_title|field_value,
-  person_card_office_phone: content.field_phone_office.0 ? content.field_phone_office|field_value,
-  person_card_email: content.field_email.0 ? content.field_email|field_value,
-  person_card_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
-  person_card_url: path('entity.node.canonical', {'node': node.id}),
-  attributes,
+{% set rendered_content = content|without(
+    'field_name',
+    'field_job_title',
+    'field_phone_office',
+    'field_email',
+    'field_media_primary'
+) %}
+
+{% include 'surf_main:person-card' with {
+    attributes,
+    rendered_content,
+    person_card_attributes: create_attribute(),
+    person_card_email: content.field_email|render ? content.field_email|field_value,
+    person_card_initials: person_initials,
+    person_card_media: content.field_media_primary|field_value|default([]),
+    person_card_name: content.field_name|render ? content.field_name|field_value,
+    person_card_phone: content.field_phone_office|render ? content.field_phone_office|field_value,
+    person_card_role: content.field_job_title|render ? content.field_job_title|field_value,
+    person_card_url: url,
 } only %}
-{% endembed %}
-
-{{ content|without(
-  'field_name',
-  'field_job_title',
-  'field_phone_office',
-  'field_email',
-  'field_media_primary',
-  'links',
-) }}
-

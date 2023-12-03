@@ -1,0 +1,8 @@
+uuid: 6db2f83a-4cda-456b-a3aa-639acd595850
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person Type'
+vid: person_type
+description: ''
+weight: 0
