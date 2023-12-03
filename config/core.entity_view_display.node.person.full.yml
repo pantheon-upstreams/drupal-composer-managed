@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.person.field_phone_mobile
     - field.field.node.person.field_phone_office
     - field.field.node.person.field_ref_department
+    - field.field.node.person.field_ref_person_type
     - node.type.person
   module:
     - datetime
@@ -135,5 +136,6 @@ content:
     region: content
 hidden:
   field_ref_department: true
+  field_ref_person_type: true
   langcode: true
   search_api_excerpt: true

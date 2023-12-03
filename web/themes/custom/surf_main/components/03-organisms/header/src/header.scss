@@ -155,6 +155,6 @@
   padding-inline: var(--surf-grid-gap);
 
   @include bp-min(large) {
-    padding-block: 64px 72px;
+    padding-block: 64px 0;
   }
 }

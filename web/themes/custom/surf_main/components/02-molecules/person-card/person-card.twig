@@ -1,62 +1,68 @@
 {#
 /**
  * @file
- * Component for Person Card
+ * Molecule component for Person Card
  *
  * Available props:
  * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
- * - person_card_attributes: [array] Any parent tag attributes.
- * - person_card_media: [array] required
- * - person_card_name: [string] required
- * - person_card_role: [string]
- * - person_card_office_phone: [string]
- * - person_card_email: [array]
- * - person_card_url: [string]
+ * - person_card_attributes: [string] Component reserved space for attributes.
+ * - person_card_email: [string] Reserved for a person's email address.
+ * - person_card_initials: [string] Reserved for a person's first name and last name initials.
+ * - person_card_media: [array] Reserved for a person's profile photo.
+ * - person_card_name: [string] Reserved for the full name of a person.
+ * - person_card_phone: [string] Reserved for a person's contact phone number.
+ * - person_card_role: [string] Reserved for a person's job title or titles.
+ * - person_card_url: [string] Reserved for the URL to a person's profile page.
  *
  */
 #}
 
 {% set classes = [
-  'm-person-card',
+    'm-person-card',
 ] %}
 
-<div {{ person_card_attributes.addClass(classes).merge(attributes) }}>
+<article {{ person_card_attributes.addClass(classes).merge(attributes) }}>
+    {% if person_card_media %}
+        <div class="m-person-card__avatar">
+            <a href="{{ person_card_url }}" tabindex="-1">{{ person_card_media }}</a>
+        </div>
+    {% else %}
+        <div class="m-person-card__avatar">
+            <a href="{{ person_card_url }}" tabindex="-1">
+                <span class="m-person-card__initials">{{ person_card_initials }}</span>
+            </a>
+        </div>
+    {% endif %}
 
-  {% if person_card_media %}
-    <div class="m-person-card__media">
-      {{ person_card_media }}
+    <div class="m-person-card__content">
+        {% if person_card_name %}
+            <div class="m-person-card__name">
+                <h3>{{ person_card_name }}</h3>
+            </div>
+        {% endif %}
+
+        {% if person_card_role %}
+            <div class="m-person-card__role">
+                <p>{{ person_card_role }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_card_phone %}
+            <div class="m-person-card__phone">
+                <p>{{ person_card_phone }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_card_email %}
+            <div class="m-person-card__email">
+                <a href="mailto://{{ person_card_email }}">{{ 'Contact'|t }}</a>
+            </div>
+        {% endif %}
+
+        {% if person_card_url %}
+            <div class="m-person-card__link">
+                <a href="{{ person_card_url }}">{{ 'View Bio'|t }}</a>
+            </div>
+        {% endif %}
     </div>
-  {% else %}
-    <div class="m-person-card__icon">
-      <span></span>
-{#      {% include 'surf_main:icon' with {#}
-{#        icon_type: 'user',#}
-{#      } %}#}
-    </div>
-  {% endif %}
-
-  <div class="m-person-card__content-wrapper">
-
-    {% if person_card_name %}
-      <p class="m-person-card__fullname">{{ person_card_name }}</p>
-    {% endif %}
-
-    {% if person_card_role %}
-      <p class="m-person-card__role">{{ person_card_role }}</p>
-    {% endif %}
-
-    {% if person_card_office_phone %}
-      <p class="m-person-card__phone">{{ person_card_office_phone }}</p>
-    {% endif %}
-
-    {% if person_card_email %}
-      <p class="m-person-card__email"><a href="mailto:{{ person_card_email }}">Contact</a></p>
-    {% endif %}
-
-    {% if person_card_url %}
-      <p class="m-person-card__link"><a href="{{ person_card_url }}">View Bio</a></p>
-    {% endif %}
-
-  </div>
-
-</div>
+</article>

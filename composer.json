@@ -26,7 +26,6 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "~1.0",
         "drupal/admin_toolbar": "~3.0",
-        "drupal/allowed_formats": "^2.0",
         "drupal/apitools": "dev-1.x",
         "drupal/auto_entitylabel": "^3.0",
         "drupal/backup_migrate": "~5.0",
@@ -41,6 +40,7 @@
         "drupal/ctools": "~3.0",
         "drupal/date_range_formatter": "^4.0",
         "drupal/download_request": "1.0.x-dev",
+        "drupal/draggableviews": "^2.1",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/entity": "^1.4",
@@ -108,7 +108,6 @@
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/stage_file_proxy": "^2.0",
-        "drupal/upgrade_status": "^4.0",
         "weitzman/drupal-test-traits": "^2.0"
     },
     "conflict": {

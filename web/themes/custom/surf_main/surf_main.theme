@@ -3,8 +3,9 @@
  * Theme Preprocess Functions
  *
  * - 01 - Imports
- * - 02 - Block
- * - 03 - Theme Suggestions
+ * - 02 - Node
+ * - 03 - Block
+ * - 04 - Theme Suggestions
  */
 
 
@@ -18,7 +19,32 @@ use Drupal\block\Entity\Block;
 
 
 /*------------------------------------*\
-  02 - Block
+  02 - Node
+\*------------------------------------*/
+
+/**
+ * Person
+ * Implements template_preprocess_node()
+ * @param $variables
+ * @return void
+ */
+function surf_main_preprocess_node__person(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'];
+
+  if ($node->hasField('field_name') && !$node->get('field_name')->isEmpty()) {
+    $person_name = $node->get('field_name')->getValue();
+    $person_name_first_initial = substr($person_name[0]['given'], 0, 1);
+    $person_name_last_initial = substr($person_name[0]['family'], 0, 1);
+    $variables['person_initials'] = $person_name_first_initial . $person_name_last_initial;
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  03 - Block
 \*------------------------------------*/
 
 /**
@@ -48,7 +74,7 @@ function surf_main_preprocess_block(&$variables) {
 
 
 /*------------------------------------*\
-  03 - Theme Suggestions
+  04 - Theme Suggestions
 \*------------------------------------*/
 
 /**
