@@ -19,6 +19,9 @@ props:
     heading_level:
       title: Heading Level
       type: string
+    heading_rule:
+      title: Heading Rule
+      type: boolean
     heading_url:
       title: Heading Url
       type: string

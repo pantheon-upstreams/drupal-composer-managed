@@ -343,3 +343,79 @@
     }
   }
 }
+
+.m-menu__list--dashboard {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    block-size: calculations.rem(76px);
+    inline-size: 100%;
+    @include breakpoints.bp-min(medium) {
+      inline-size: 50%;
+    }
+    @include breakpoints.bp-min(large) {
+      block-size: calculations.rem(132px);
+    }
+
+    a {
+      padding: calculations.rem(16px);
+      display: inline-block;
+      padding-inline-start: calculations.rem(97px);
+      block-size: 100%;
+      inline-size: 100%;
+      color: var(--surf-color-black);
+      font-size: calculations.rem(22px);
+      font-weight: var(--surf-fw-bold);
+      line-height: var(--surf-lh-heading);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      @include breakpoints.bp-min(large) {
+        padding-inline-start: calculations.rem(128px);
+        font-size: calculations.rem(32px);
+      }
+
+      &.is-active {
+        background-color: var(--surf-color-gray-100);
+      }
+    }
+  }
+
+  .icon {
+    background-position: 16px center;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+
+    @include breakpoints.bp-min(large) {
+      background-size: 100px 100px;
+    }
+  }
+
+  .icon--illustration-calendar {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-calendar.png');
+  }
+
+  .icon--illustration-comment {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-comment.png');
+  }
+
+  .icon--illustration-document {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-document.png');
+  }
+
+  .icon--illustration-lightbulb {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-lightbulb.png');
+  }
+
+  .icon--illustration-person {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-person.png');
+  }
+
+  .icon--illustration-teacher {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-teacher.png');
+  }
+}

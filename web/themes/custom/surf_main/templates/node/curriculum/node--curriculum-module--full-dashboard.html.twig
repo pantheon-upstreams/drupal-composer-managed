@@ -12,7 +12,7 @@
 
 {% embed 'surf_main:curriculum' with {
   attributes,
-  curriculum_attributes: create_attribute({'class': ['p-curriculum--full']}),
+  curriculum_attributes: create_attribute({'class': ['p-curriculum--full-dashboard']}),
   curriculum_heading: label,
   curriculum_media: content.field_media|field_value|default([]),
   curriculum_summary: content.field_overview|field_value|default([]),
@@ -21,12 +21,14 @@
   curriculum_content_area: content.field_content_area|field_value|default([]),
   curriculum_time_required: content.field_time_required|field_value|default([]),
   curriculum_standards: content.field_ref_standards|field_value|default([]),
-  curriculum_cta_url: content.reservation_links.webform['#url'] ? content.reservation_links.webform['#url'],
-  curriculum_cta_text: content.reservation_links.webform['#title'] ? content.reservation_links.webform['#title'],
+  curriculum_resources: content.field_resources|field_value|default([]),
+  curriculum_cta_url: content.field_link.0 ? content.field_link.0['#url'],
+  curriculum_cta_text: content.field_link.0 ? content.field_link.0['#title'],
   curriculum_cta_html_tag,
   curriculum_cta_style,
   curriculum_cta_size,
   curriculum_cta_color,
+  curriculum_dashboard: true,
 } only %}
 {% endembed %}
 
@@ -44,4 +46,5 @@
   'field_ref_standards',
   'field_overview',
   'field_time_required',
+  'reservation_links',
 ) }}

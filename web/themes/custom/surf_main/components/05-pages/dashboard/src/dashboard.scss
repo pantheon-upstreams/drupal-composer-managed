@@ -1,0 +1,30 @@
+//
+// Component - Page - Dashboard
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.p-dashboard {
+  margin-block-end: rem(120px);
+
+  .menu--dashboard {
+    inline-size: 100%;
+    margin-inline: auto;
+    padding-inline: var(--surf-grid-gap);
+    max-inline-size: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
+  }
+}

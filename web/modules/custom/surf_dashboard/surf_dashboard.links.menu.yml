@@ -10,26 +10,6 @@ surf_dashboard.curriculum_units:
         - icon
         - icon--illustration-document
 
-surf_dashboard.request:
-  title: Request Curriculum
-  menu_name: dashboard
-  url: internal:/request-curriculum
-  options:
-    attributes:
-      class:
-        - icon
-        - icon icon--illustration-teacher
-
-surf_dashboard.tasks_challenges:
-  title: Math tasks & design challenges
-  menu_name: dashboard
-  url: internal:/math-tasks-design-challenges
-  options:
-    attributes:
-      class:
-        - icon
-        - icon--illustration-lightbulb
-
 surf_dashboard.visits:
   title: My field trips & presentations
   menu_name: dashboard
@@ -42,6 +22,16 @@ surf_dashboard.visits:
         - icon
         - icon--illustration-comment
 
+surf_dashboard.request:
+  title: Request Curriculum
+  menu_name: dashboard
+  url: internal:/request-curriculum
+  options:
+    attributes:
+      class:
+        - icon
+        - icon--illustration-teacher
+
 surf_dashboard.events:
   title: My events
   menu_name: dashboard
@@ -53,6 +43,16 @@ surf_dashboard.events:
       class:
         - icon
         - icon--illustration-calendar
+
+surf_dashboard.tasks_challenges:
+  title: Math tasks & design challenges
+  menu_name: dashboard
+  url: internal:/math-tasks-design-challenges
+  options:
+    attributes:
+      class:
+        - icon
+        - icon--illustration-lightbulb
 
 surf_dashboard.my_account:
   title: My account

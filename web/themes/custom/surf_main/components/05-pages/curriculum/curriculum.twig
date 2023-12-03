@@ -17,26 +17,52 @@
   'p-curriculum',
 ] %}
 
-<article {{ curriculum_attributes.addClass(classes).merge(attributes) }}>
-  <div class="container container--xlarge">
+{% if curriculum_dashboard %}
+
+  <article {{ curriculum_attributes.addClass(classes).merge(attributes) }}>
 
     {% embed 'surf_main:header' with {
       header_heading: curriculum_heading,
       header_heading_level: '1',
       header_summary: curriculum_summary,
-      header_cta_url: curriculum_cta_url,
-      header_cta_text: curriculum_cta_text,
-      header_cta_html_tag: curriculum_cta_html_tag|default('link'),
-      header_cta_style: curriculum_cta_style|default('primary'),
-      header_cta_size: curriculum_cta_size|default('large'),
-      header_cta_color: curriculum_cta_size|default('navy'),
       header_attributes: create_attribute({'class': ['o-header--ripple']}),
       heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
-      curriculum_grade_level,
-      curriculum_content_area,
-      curriculum_time_required,
     } only %}
-      {% block header_pre_cta_block %}
+    {% endembed %}
+
+    <div class="container container--large p-curriculum__content">
+
+      {% if curriculum_resources %}
+        {% embed 'surf_main:resource-list' with {
+          attributes,
+          resource_list_heading: 'Curriculum Resources',
+          resource_list_items: curriculum_resources,
+          resource_list_attributes: create_attribute(),
+        } only %}
+
+          {% block list_items %}
+            <ul class="o-resource-list__items">
+              {% for item in resource_list_items %}
+                <li class="o-resource-list__item">
+                  {{ item }}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endblock %}
+        {% endembed %}
+      {% endif %}
+
+      <p>[Your access message goes here]</p>
+
+      {% embed 'surf_main:heading' with {
+        heading_attributes: create_attribute({'class': 'a-heading--lg'}),
+        heading_text: 'ABOUT THE CURRICULUM',
+        heading_level: '2',
+        heading_rule: true,
+      } only %}
+      {% endembed %}
+
+      {% if curriculum_grade_level or curriculum_content_area or curriculum_time_required %}
         <div class="p-curriculum__meta">
           {% if curriculum_grade_level %}
             <div>
@@ -67,78 +93,190 @@
             </div>
           {% endif %}
         </div>
-      {% endblock %}
-    {% endembed %}
+      {% endif %}
 
+      {% if curriculum_media %}
+        <div class="p-curriculum__media">
+          {% embed 'surf_main:media' with {
+            media_attributes: create_attribute(),
+            media: curriculum_media,
+          } only %}
 
-<div class="container container--small p-curriculum__content">
+            {% block media_block %}
+              {{ media }}
+            {% endblock %}
 
-  {% if curriculum_media %}
-    <div class="p-curriculum__media">
-      {% embed 'surf_main:media' with {
-        media_attributes: create_attribute(),
-        media: curriculum_media,
+          {% endembed %}
+        </div>
+      {% endif %}
+
+      {% embed 'surf_main:editor' with {
+        editor_attributes: create_attribute(),
+        editor_content: curriculum_body,
       } only %}
-
-        {% block media_block %}
-          {{ media }}
-        {% endblock %}
-
       {% endembed %}
+
+      {% if curriculum_standards %}
+        <div class="p-curriculum__standards">
+        <span class="a-editor">
+          <h2>Curriculum Standards</h2>
+        </span>
+            <ol>
+              {% for curriculum in curriculum_standards %}
+                <li>{{ curriculum }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+      {% endif %}
+
     </div>
-  {% endif %}
 
-  {% embed 'surf_main:editor' with {
-    editor_attributes: create_attribute(),
-    editor_content: curriculum_body,
-  } only %}
-  {% endembed %}
+    {% if drupal_view_result('curriculum', 'grade_level') is not empty %}
+      <div class="p-curriculum__more-view">
+        {{ drupal_block('views_block:curriculum-grade_level', {'label': true} ) }}
+      </div>
+    {% endif %}
 
-  {% if curriculum_standards %}
-    <div class="p-curriculum__standards">
-      <span class="a-editor">
-        <h2>Curriculum Standards</h2>
-      </span>
-      <ol>
-        {% for curriculum in curriculum_standards %}
-          <li>{{ curriculum }}</li>
-        {% endfor %}
-      </ol>
-    </div>
-  {% endif %}
+  </article>
 
-</div>
+{% else %}
 
+  <article {{ curriculum_attributes.addClass(classes).merge(attributes) }}>
 
-  {% if drupal_view_result('curriculum', 'grade_level') is not empty %}
-    <div class="p-curriculum__more-view">
-      {{ drupal_block('views_block:curriculum-grade_level', {'label': true} ) }}
-    </div>
-  {% endif %}
-
-<div class="p-curriculum__back-button">
-  {% include 'surf_main:button' with {
-    attributes,
-    button_attributes: create_attribute(),
-    button_color: 'navy',
-    button_external: true,
-    button_html_tag: 'link',
-    button_size: 'large',
-    button_style: 'primary',
-    button_prefix: 'icon-arrow-left',
-    button_title: 'Back to All Curriculum'|t,
-    button_url: '/curriculum-modules',
-  } only %}
-</div>
-    {% embed 'surf_main:callout' with {
-      callout_attributes: create_attribute(),
-      callout_type: 'blue-cta',
-      callout_heading: 'Questions? Contact Us!'|t,
-      callout_text: 'Our education experts & staff are here to help connect you with the right resources & opportunities.'|t,
-      callout_button_text: 'Contact Education & Outreach'|t,
-      callout_button_url: 'http://www.example.com',
+    {% embed 'surf_main:header' with {
+      header_heading: curriculum_heading,
+      header_heading_level: '1',
+      header_summary: curriculum_summary,
+      header_attributes: create_attribute({'class': ['o-header--ripple']}),
+      heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
     } only %}
     {% endembed %}
 
-  </div>
-</article>
+    {% if curriculum_grade_level or curriculum_content_area or curriculum_time_required %}
+          <div class="container container--large">
+            <div class="p-curriculum__meta">
+            {% if curriculum_grade_level %}
+              <div>
+                <p class="p-curriculum__meta-label">Grade Level</p>
+                <ul>
+                  {% for grade_level in curriculum_grade_level %}
+                    <li>{{ grade_level }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if curriculum_content_area %}
+              <div>
+                <p class="p-curriculum__meta-label">Content Area</p>
+                <ul>
+                  {% for content_area in curriculum_content_area %}
+                    <li>{{ content_area }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if curriculum_time_required %}
+              <div>
+                <p class="p-curriculum__meta-label">Time Required</p>
+                <p class="p-curriculum__meta-time">{{ curriculum_time_required }}</p>
+              </div>
+            {% endif %}
+          </div>
+          </div>
+        {% endif %}
+
+    {% if curriculum_cta_url %}
+          <div class="container container--large p-curriculum__request-button">
+            {% include 'surf_main:button' with {
+              attributes,
+              button_attributes: create_attribute(),
+              button_color: 'navy',
+              button_external: true,
+              button_html_tag: 'link',
+              button_size: 'large',
+              button_style: 'primary',
+              button_title: curriculum_cta_text,
+              button_url: curriculum_cta_url,
+              button_suffix: 'icon-arrow-right',
+            } only %}
+          </div>
+        {% endif %}
+
+    <div class="container container--small p-curriculum__content">
+
+        {% if curriculum_media %}
+          <div class="p-curriculum__media">
+            {% embed 'surf_main:media' with {
+              media_attributes: create_attribute(),
+              media: curriculum_media,
+            } only %}
+
+              {% block media_block %}
+                {{ media }}
+              {% endblock %}
+
+            {% endembed %}
+          </div>
+        {% endif %}
+
+        {% embed 'surf_main:editor' with {
+          editor_attributes: create_attribute(),
+          editor_content: curriculum_body,
+        } only %}
+        {% endembed %}
+
+        {% if curriculum_standards %}
+          <div class="p-curriculum__standards">
+      <span class="a-editor">
+        <h2>Curriculum Standards</h2>
+      </span>
+            <ol>
+              {% for curriculum in curriculum_standards %}
+                <li>{{ curriculum }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+        {% endif %}
+
+      </div>
+
+    <div class="container container--xlarge">
+
+        {% if drupal_view_result('curriculum', 'grade_level') is not empty %}
+          <div class="p-curriculum__more-view">
+            {{ drupal_block('views_block:curriculum-grade_level', {'label': true} ) }}
+          </div>
+        {% endif %}
+
+        <div class="p-curriculum__back-button">
+          {% include 'surf_main:button' with {
+            attributes,
+            button_attributes: create_attribute(),
+            button_color: 'navy',
+            button_external: true,
+            button_html_tag: 'link',
+            button_size: 'large',
+            button_style: 'primary',
+            button_prefix: 'icon-arrow-left',
+            button_title: 'Back to All Curriculum'|t,
+            button_url: '/curriculum-modules',
+          } only %}
+        </div>
+
+        {% embed 'surf_main:callout' with {
+          callout_attributes: create_attribute(),
+          callout_type: 'blue-cta',
+          callout_heading: 'Questions? Contact Us!'|t,
+          callout_text: 'Our education experts & staff are here to help connect you with the right resources & opportunities.'|t,
+          callout_button_text: 'Contact Education & Outreach'|t,
+          callout_button_url: 'http://www.example.com',
+        } only %}
+        {% endembed %}
+
+      </div>
+
+  </article>
+
+{% endif %}

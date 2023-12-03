@@ -3,7 +3,7 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Article Types
+// - 03 - Contexts
 //
 
 
@@ -29,6 +29,7 @@
 
 .p-curriculum__meta {
   padding: rem(20px);
+  margin-block-start: rem(32px);
   background-color: var(--surf-color-gray-100);
   display: flex;
   gap: rem(20px);
@@ -87,7 +88,13 @@
   font-size: var(--surf-fs-16-18-24);
 }
 
+.p-curriculum__request-button {
+  margin-block-start: rem(32px);
+}
+
 .p-curriculum__standards {
+  max-inline-size: var(--surf-width-small);
+
   .a-editor h2 {
     margin-block-end: rem(16px);
   }
@@ -115,5 +122,19 @@
   margin-block: rem(32px);
   @include bp-min(medium) {
     margin-block: rem(60px);
+  }
+}
+
+
+
+//------------------------------------
+//  03 - Contexts
+//------------------------------------
+
+.p-curriculum {
+
+  .o-resource-list {
+    margin-inline: revert;
+    max-inline-size: rem(900px);
   }
 }

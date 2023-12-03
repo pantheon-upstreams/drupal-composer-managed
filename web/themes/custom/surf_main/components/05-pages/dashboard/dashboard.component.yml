@@ -1,15 +1,12 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Curriculum
+name: Dashboard
 status: experimental
-group: Organisms
+group: Pages
 props:
   type: object
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    curriculum_attributes:
+    dashboard_attributes:
       title: Attributes
       type: string
-    curriculum_dashboard:
-      title: Attributes
-      type: boolean

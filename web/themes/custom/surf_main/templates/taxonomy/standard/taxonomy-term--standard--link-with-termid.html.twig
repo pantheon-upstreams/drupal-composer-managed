@@ -31,15 +31,13 @@
   not term.isPublished() ? 'term--unpublished'
 ] %}
 
+{% if name and not page %}
+  <a href="/curriculum-modules?standard={{ term.id }}">{{ name|field_value }}</a>
+{% else %}
+  <h1>{{ name }}</h1>
+{% endif %}
 
-
-  {% if name and not page %}
-    <a href="/curriculum-modules?standard={{ term.id }}">{{ name }}</a>
-  {% else %}
-    <h1>{{ name }}</h1>
-  {% endif %}
-
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+{% block content %}
+  {{ content }}
+{% endblock %}
 

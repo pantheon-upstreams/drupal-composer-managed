@@ -27,7 +27,7 @@
   ]
 %}
 
-{% if heading_rule == '1' %}
+{% if heading_rule == true %}
   {% embed 'surf_main:left-hook' with {
     left_hook_attributes: create_attribute({'class': 'a-left-hook--with-heading'}),
   } only %}

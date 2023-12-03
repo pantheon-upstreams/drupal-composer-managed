@@ -3,6 +3,7 @@
 //
 // - 01 - Imports
 // - 02 - General
+// - 03 - Contexts
 //
 //
 
@@ -32,5 +33,16 @@
   margin-block-end: rem(32px);
   @include bp-min(large) {
     margin-block-end: rem(68px);
+  }
+}
+
+
+//------------------------------------
+//  03 - Contexts
+//------------------------------------
+
+.menu--dashboard {
+  .a-left-hook {
+    margin-block-end: rem(20px);
   }
 }
