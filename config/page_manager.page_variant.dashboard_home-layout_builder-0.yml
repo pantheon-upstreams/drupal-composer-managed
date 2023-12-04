@@ -5,10 +5,13 @@ dependencies:
   config:
     - page_manager.page.dashboard_home
     - system.menu.dashboard
+    - views.view.news
+    - views.view.user_event_registrations
   module:
     - layout_discovery
     - notification_message
     - system
+    - views
 id: dashboard_home-layout_builder-0
 label: 'Layout builder'
 weight: 0
@@ -67,14 +70,40 @@ variant_settings:
       layout_settings:
         label: Events
         context_mapping: {  }
-      components: {  }
+      components:
+        e890cd89-0e02-4ee0-a652-c68f8765ad60:
+          uuid: e890cd89-0e02-4ee0-a652-c68f8765ad60
+          region: content
+          configuration:
+            id: 'views_block:user_event_registrations-dashboard_events_upcoming'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
       third_party_settings: {  }
     -
       layout_id: layout_onecol
       layout_settings:
         label: News
         context_mapping: {  }
-      components: {  }
+      components:
+        23341480-3f3b-4f54-882b-4f5121663c91:
+          uuid: 23341480-3f3b-4f54-882b-4f5121663c91
+          region: content
+          configuration:
+            id: 'views_block:news-news_surf'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
       third_party_settings: {  }
   title_type: manual
   manual_title: 'My Dashboard'
