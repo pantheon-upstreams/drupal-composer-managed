@@ -158,19 +158,3 @@
     padding-block: 64px 0;
   }
 }
-
-// Curriculum Pages
-.p-curriculum {
-  .o-header__content {
-    inline-size: 100%;
-    margin-inline: auto;
-    max-inline-size: calc(1143px + (var(--surf-grid-gap) * 2));
-    padding-block-start: rem(32px);
-    padding-inline: var(--surf-grid-gap);
-
-    .o-header__summary {
-      margin-block-start: rem(12px);
-    }
-  }
-}
-
