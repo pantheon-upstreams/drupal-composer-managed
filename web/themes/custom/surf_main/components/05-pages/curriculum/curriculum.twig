@@ -33,30 +33,29 @@
     <div class="container container--large p-curriculum__content">
 
       {% if curriculum_resources %}
-        {% embed 'surf_main:resource-list' with {
-          attributes,
-          resource_list_heading: 'Curriculum Resources',
-          resource_list_items: curriculum_resources,
-          resource_list_attributes: create_attribute(),
-        } only %}
-
-          {% block list_items %}
-            <ul class="o-resource-list__items">
-              {% for item in resource_list_items %}
-                <li class="o-resource-list__item">
-                  {{ item }}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endblock %}
-        {% endembed %}
+        {{ curriculum_resources }}
       {% endif %}
 
-      <p>[Your access message goes here]</p>
+      <div class="p-curriculum__status-message">
+        <p><strong>{variable}.</strong> Review the checklist before returning, which can be found in your curriculum resources.</p>
+
+        {% include 'surf_main:button' with {
+          attributes,
+          button_attributes: create_attribute(),
+          button_color: 'navy',
+          button_external: true,
+          button_html_tag: 'link',
+          button_size: 'small',
+          button_style: 'underline',
+          button_title: 'View physical & digital curriculum expiration information'|t,
+          button_url: '/curriculum-module-expiration-information',
+          button_suffix: 'icon-arrow-right',
+        } only %}
+      </div>
 
       {% embed 'surf_main:heading' with {
         heading_attributes: create_attribute({'class': 'a-heading--lg'}),
-        heading_text: 'ABOUT THE CURRICULUM',
+        heading_text: 'ABOUT THE CURRICULUM'|t,
         heading_level: '2',
         heading_rule: true,
       } only %}

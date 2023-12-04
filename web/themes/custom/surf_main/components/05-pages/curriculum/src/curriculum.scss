@@ -59,6 +59,13 @@
   }
 }
 
+.p-curriculum__status-message {
+  p {
+    font-size: rem(18px);
+    margin-block-end: rem(20px);
+  }
+}
+
 .p-curriculum__content {
   margin-block-start: rem(60px);
   margin-block-end: rem(32px);
