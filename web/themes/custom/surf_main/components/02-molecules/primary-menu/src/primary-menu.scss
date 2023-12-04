@@ -379,7 +379,8 @@
         font-size: calculations.rem(32px);
       }
 
-      &.is-active {
+      &.is-active,
+      &:hover {
         background-color: var(--surf-color-gray-100);
       }
     }
