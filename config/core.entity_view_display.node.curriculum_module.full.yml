@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.curriculum_module.field_ref_related_content
     - field.field.node.curriculum_module.field_ref_research_areas
     - field.field.node.curriculum_module.field_ref_standards
+    - field.field.node.curriculum_module.field_resource_list
     - field.field.node.curriculum_module.field_resources
     - field.field.node.curriculum_module.field_time_required
     - node.type.curriculum_module
@@ -74,7 +75,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 11
     region: content
   field_ref_audiences:
     type: entity_reference_label
@@ -125,15 +126,6 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 11
-    region: content
-  field_resources:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
     weight: 10
     region: content
   field_time_required:
@@ -142,7 +134,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 13
+    weight: 12
     region: content
   reservation_links:
     settings: {  }
@@ -150,6 +142,8 @@ content:
     weight: 0
     region: content
 hidden:
+  field_resource_list: true
+  field_resources: true
   langcode: true
   links: true
   search_api_excerpt: true

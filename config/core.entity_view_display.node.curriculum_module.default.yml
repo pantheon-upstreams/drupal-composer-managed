@@ -14,10 +14,12 @@ dependencies:
     - field.field.node.curriculum_module.field_ref_related_content
     - field.field.node.curriculum_module.field_ref_research_areas
     - field.field.node.curriculum_module.field_ref_standards
+    - field.field.node.curriculum_module.field_resource_list
     - field.field.node.curriculum_module.field_resources
     - field.field.node.curriculum_module.field_time_required
     - node.type.curriculum_module
   module:
+    - entity_reference_revisions
     - link
     - text
     - user
@@ -118,12 +120,12 @@ content:
     third_party_settings: {  }
     weight: 8
     region: content
-  field_resources:
-    type: entity_reference_entity_view
-    label: above
+  field_resource_list:
+    type: entity_reference_revisions_entity_view
+    label: hidden
     settings:
       view_mode: default
-      link: false
+      link: ''
     third_party_settings: {  }
     weight: 5
     region: content
@@ -141,6 +143,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_resources: true
   langcode: true
   links: true
   search_api_excerpt: true

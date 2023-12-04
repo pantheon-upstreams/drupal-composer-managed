@@ -1,0 +1,91 @@
+uuid: d126f178-2633-4865-a1e7-8e7fc2f2efcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_list
+    - node.type.curriculum_module
+    - paragraphs.paragraphs_type.resources_list
+  module:
+    - entity_reference_revisions
+id: node.curriculum_module.field_resource_list
+field_name: field_resource_list
+entity_type: node
+bundle: curriculum_module
+label: 'Resource List'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      resources_list: resources_list
+    negate: 0
+    target_bundles_drag_drop:
+      accordion:
+        weight: 35
+        enabled: false
+      accordion_item:
+        weight: 36
+        enabled: false
+      callout:
+        weight: 24
+        enabled: false
+      content_as_teaser:
+        weight: 25
+        enabled: false
+      gallery:
+        weight: 44
+        enabled: false
+      header:
+        weight: 46
+        enabled: false
+      heading:
+        weight: 28
+        enabled: false
+      hero:
+        weight: 29
+        enabled: false
+      link_highlight:
+        weight: 30
+        enabled: false
+      media:
+        weight: 51
+        enabled: false
+      person:
+        weight: 54
+        enabled: false
+      pullquote:
+        weight: 56
+        enabled: false
+      resource_file:
+        weight: 57
+        enabled: false
+      resource_link:
+        weight: 58
+        enabled: false
+      resources_list:
+        weight: 59
+        enabled: true
+      schedule_item:
+        weight: 61
+        enabled: false
+      section:
+        weight: 62
+        enabled: false
+      section_extended:
+        weight: 39
+        enabled: false
+      statement:
+        weight: 40
+        enabled: false
+      text:
+        weight: 64
+        enabled: false
+      view:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

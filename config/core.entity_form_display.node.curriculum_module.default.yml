@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.curriculum_module.field_ref_related_content
     - field.field.node.curriculum_module.field_ref_research_areas
     - field.field.node.curriculum_module.field_ref_standards
+    - field.field.node.curriculum_module.field_resource_list
     - field.field.node.curriculum_module.field_resources
     - field.field.node.curriculum_module.field_time_required
     - node.type.curriculum_module
@@ -22,6 +23,7 @@ dependencies:
     - link
     - maxlength
     - media_library
+    - paragraphs
     - path
     - scheduler
     - text
@@ -36,7 +38,7 @@ third_party_settings:
       label: Tabs
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: tabs
       format_settings:
         classes: ''
@@ -98,7 +100,7 @@ third_party_settings:
     group_media_resources:
       children:
         - field_media
-        - field_resources
+        - field_resource_list
       label: 'Media / Resources'
       region: content
       parent_name: group_tabs
@@ -134,13 +136,13 @@ content:
         maxlength_js_enforce: false
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_content_area:
     type: options_select
-    weight: 4
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -173,19 +175,19 @@ content:
         maxlength_js_enforce: false
   field_ref_audiences:
     type: options_select
-    weight: 3
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_eo_opportunities:
     type: options_select
-    weight: 5
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_grade_level:
     type: options_select
-    weight: 6
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -201,22 +203,34 @@ content:
     third_party_settings: {  }
   field_ref_research_areas:
     type: options_select
-    weight: 7
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_standards:
     type: options_select
-    weight: 8
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_resources:
-    type: media_library_widget
-    weight: 4
+  field_resource_list:
+    type: paragraphs
+    weight: 5
     region: content
     settings:
-      media_types: {  }
+      title: Resource
+      title_plural: Resources
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
   field_time_required:
     type: string_textfield
@@ -228,33 +242,33 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 8
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -269,7 +283,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -279,14 +293,15 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_resources: true
   langcode: true

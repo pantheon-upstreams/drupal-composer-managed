@@ -23,27 +23,6 @@ variant_settings:
     -
       layout_id: layout_onecol
       layout_settings:
-        label: 'Dashboard Menu'
-        context_mapping: {  }
-      components:
-        857e270d-2c50-4a45-9078-feda25554f97:
-          uuid: 857e270d-2c50-4a45-9078-feda25554f97
-          region: content
-          configuration:
-            id: 'system_menu_block:dashboard'
-            label: Dashboard
-            label_display: '0'
-            provider: system
-            context_mapping: {  }
-            level: 1
-            depth: 0
-            expand_all_items: false
-          weight: 0
-          additional: {  }
-      third_party_settings: {  }
-    -
-      layout_id: layout_onecol
-      layout_settings:
         label: 'Main content'
         context_mapping: {  }
       components:
@@ -58,7 +37,28 @@ variant_settings:
             context_mapping: {  }
             views_label: ''
             items_per_page: none
-          weight: 1
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Dashboard Menu'
+        context_mapping: {  }
+      components:
+        ebbfff20-ef89-4fc1-90d4-feaf191fb358:
+          uuid: ebbfff20-ef89-4fc1-90d4-feaf191fb358
+          region: content
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
+          weight: 0
           additional: {  }
       third_party_settings: {  }
   title_type: label

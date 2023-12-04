@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.curriculum_module.field_ref_related_content
     - field.field.node.curriculum_module.field_ref_research_areas
     - field.field.node.curriculum_module.field_ref_standards
+    - field.field.node.curriculum_module.field_resource_list
     - field.field.node.curriculum_module.field_resources
     - field.field.node.curriculum_module.field_time_required
     - node.type.curriculum_module
@@ -76,6 +77,7 @@ hidden:
   field_ref_eo_opportunities: true
   field_ref_related_content: true
   field_ref_research_areas: true
+  field_resource_list: true
   field_resources: true
   field_time_required: true
   langcode: true
