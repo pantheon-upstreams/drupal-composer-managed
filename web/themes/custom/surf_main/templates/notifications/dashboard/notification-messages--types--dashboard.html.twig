@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display notification messages.
+ *
+ * Available variables:
+ * - count: The count of notification messages.
+ * - messages: An array of the notification messages entities.
+ */
+#}
+
+<div aria-live="polite" class="visually-hidden" id="notification-message-aria-announcement"></div>
+  <div class="container container--xlarge">
+    {% embed 'surf_main:heading' with {
+      heading_attributes: create_attribute({'class': 'a-heading--lg'}),
+      heading_text: 'ANNOUNCEMENTS',
+      heading_level: '2',
+      heading_rule: true,
+    } only %}
+    {% endembed %}
+
+    <div class="messages">
+      {{ messages }}
+    </div>
+  </div>

@@ -21,6 +21,14 @@
 .p-dashboard {
   margin-block-end: rem(120px);
 
+  h2.a-heading--lg {
+    margin-block-end: rem(60px);
+  }
+
+  .block__system-main-block > *:not(:last-child)  {
+    margin-block-end: rem(60px);
+  }
+
   .menu--dashboard {
     inline-size: 100%;
     margin-inline: auto;

@@ -41,9 +41,9 @@
             {% endif %}
 
             {% if content.field_publish_date|render %}
-                <div class="message__extra">
-                    {{ content.field_publish_date|field_value }}
-                </div>
+                <p class="message__extra">
+                    Posted {{ content.field_publish_date|field_value }}
+                </p>
             {% endif %}
 
             {{ rendered_content }}
@@ -51,6 +51,8 @@
 
         {% if content.field_link|render %}
             <div class="message__content--secondary">
+
+
                 {{ content.field_link }}
             </div>
         {% endif %}
