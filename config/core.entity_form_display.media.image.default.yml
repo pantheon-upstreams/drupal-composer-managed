@@ -40,6 +40,7 @@ content:
       preview_image_style: media_library
       crop_preview_image_style: crop_thumbnail
       crop_list:
+        - banner_default
         - hero_default
         - profile_default
         - teaser_default

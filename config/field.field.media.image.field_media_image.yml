@@ -6,29 +6,10 @@ dependencies:
     - field.storage.media.field_media_image
     - media.type.image
   module:
-    - filefield_paths
     - image
   enforced:
     module:
       - media
-third_party_settings:
-  filefield_paths:
-    enabled: true
-    file_path:
-      value: 'images/[date:custom:Y]-[date:custom:m]'
-      options:
-        slashes: false
-        pathauto: false
-        transliterate: false
-    file_name:
-      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
-      options:
-        slashes: false
-        pathauto: false
-        transliterate: false
-    redirect: false
-    retroactive_update: false
-    active_updating: false
 _core:
   default_config_hash: pzPA-2JwyxlJ3qMb4L9viAnhNhbEhl2couH8A3FO020
 id: media.image.field_media_image
@@ -44,7 +25,7 @@ default_value_callback: ''
 settings:
   handler: 'default:file'
   handler_settings: {  }
-  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_directory: 'images/[date:custom:Y]-[date:custom:m]'
   file_extensions: 'png gif jpg jpeg'
   max_filesize: '5 MB'
   max_resolution: ''

@@ -41,6 +41,9 @@
             header_cta_color: 'navy',
             heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
         } only %}
+            {% block header_links_block %}
+                {{ drupal_breadcrumb() }}
+            {% endblock %}
         {% endembed %}
         </div>
     </div>

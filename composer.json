@@ -159,7 +159,6 @@
             "Add an overridden add page with destination support": "https://git.drupalcode.org/project/entity/-/merge_requests/8.diff"
           },
           "drupal/notification_message": {
-            "Block filtering by current timezone and not UTC": "https://www.drupal.org/files/issues/2023-02-17/3342687_0.patch",
             "Issue #3388715: Error when deleting message type": "https://git.drupalcode.org/project/notification_message/-/merge_requests/17.diff"
           },
           "drupal/page_manager": {
@@ -167,14 +166,10 @@
           },
           "drupal/webform_user_registration": {
             "Issue #3304147: Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-12-24/webform_user_registration.1.x-dev.rector.patch"
-          },
-          "drupal/views_filters_summary": {
-            "Issue #3290489: Automated Drupal 10 compatibility fixes": "https://git.drupalcode.org/project/views_filters_summary/-/merge_requests/15.diff"
           }
         },
         "drupal-lenient": {
             "allowed-list": [
-                "drupal/views_filters_summary",
                 "drupal/webform_user_registration"
             ]
         }

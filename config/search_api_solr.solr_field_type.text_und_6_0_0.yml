@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 2xb5k-Caf5ZpfENY29WfTUenkbRVeotW3YVAYSbuOis
+  default_config_hash: DqdOvMuIzXMCDoocc05x8_YyJnzHUHBD1azcdZv1upo
 id: text_und_6_0_0
 label: 'Language Undefined Text Field'
 minimum_solr_version: 6.0.0
@@ -14,6 +14,7 @@ field_type:
   name: text_und
   class: solr.TextField
   positionIncrementGap: 100
+  storeOffsetsWithPositions: true
   analyzers:
     -
       type: index
@@ -22,7 +23,7 @@ field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_und.txt
       tokenizer:
-        class: solr.WhitespaceTokenizerFactory
+        class: solr.StandardTokenizerFactory
       filters:
         -
           class: solr.StopFilterFactory
@@ -53,7 +54,7 @@ field_type:
           class: solr.MappingCharFilterFactory
           mapping: accents_und.txt
       tokenizer:
-        class: solr.WhitespaceTokenizerFactory
+        class: solr.StandardTokenizerFactory
       filters:
         -
           class: solr.SynonymFilterFactory
@@ -87,13 +88,14 @@ spellcheck_field_type:
   name: text_spell_und
   class: solr.TextField
   positionIncrementGap: 100
+  storeOffsetsWithPositions: true
   analyzer:
     charFilters:
       -
         class: solr.MappingCharFilterFactory
         mapping: accents_und.txt
     tokenizer:
-      class: solr.WhitespaceTokenizerFactory
+      class: solr.StandardTokenizerFactory
     filters:
       -
         class: solr.LengthFilterFactory
@@ -165,6 +167,9 @@ solr_configs:
               name: name
               VALUE: und
             -
+              name: indexPath
+              VALUE: ./und
+            -
               name: lookupImpl
               VALUE: AnalyzingInfixLookupFactory
             -
@@ -181,15 +186,17 @@ solr_configs:
               VALUE: sm_context_tags
             -
               name: buildOnCommit
-              VALUE: 'true'
+              VALUE: 'false'
             -
               name: buildOnStartup
               VALUE: 'false'
 text_files:
-  stopwords: ''
+  stopwords: |
+
   synonyms: |
     drupal, durpal
-  protwords: ''
+  protwords: |
+
   accents: |
     # À => A
     "\u00C0" => "A"
