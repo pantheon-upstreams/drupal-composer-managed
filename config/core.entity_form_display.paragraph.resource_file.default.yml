@@ -3,8 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.resource_file.field_document
-    - field.field.paragraph.resource_file.field_file
+    - field.field.paragraph.resource_file.field_ref_media
     - paragraphs.paragraphs_type.resource_file
   module:
     - media_library
@@ -13,7 +12,7 @@ targetEntityType: paragraph
 bundle: resource_file
 mode: default
 content:
-  field_document:
+  field_ref_media:
     type: media_library_widget
     weight: 0
     region: content
@@ -22,5 +21,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_file: true
   status: true

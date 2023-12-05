@@ -34,10 +34,10 @@
             header_summary: curriculum_module_summary,
             header_attributes: create_attribute({'class': ['o-header--ripple']}),
             heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
-            curriculum_module_dashboard,
+            curriculum_module_dashboard: curriculum_module_dashboard|default(false),
         } only %}
             {% block header_links_block %}
-                {% if curriculum_module_dashboard == 'true' %}
+                {% if curriculum_module_dashboard %}
                     {% include 'surf_main:button' with {
                         attributes,
                         button_attributes: create_attribute(),

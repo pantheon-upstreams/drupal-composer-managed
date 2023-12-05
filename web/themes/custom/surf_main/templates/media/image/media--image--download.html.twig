@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods.
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set classes = [
+    'media',
+    'media--' ~ media.bundle()|clean_class,
+    not media.isPublished() ? 'media--unpublished',
+    view_mode ? 'media--' ~ view_mode|clean_class,
+] %}
+
+{% set file_size_mb = media.field_media_image.entity.getSize() / 1000 %}
+{% set extension = media.field_media_image.entity.filemime.value|split('/') %}
+
+<figure {{ attributes.addClass(classes) }}>
+    <a class="media__download-link" href="{{ content.field_media_image|field_value }}" download>
+        {{- content.name|field_value -}}
+    </a>
+
+    <p class="media__details">
+        <span class="media__size">{{ file_size_mb|round(1, 'floor') }} MB</span>
+        <span class="media__type">{{ extension[1] }}</span>
+    </p>
+</figure>
+
+

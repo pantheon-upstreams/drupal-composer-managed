@@ -1,19 +1,20 @@
-uuid: 39ae9723-65d2-4b3d-88a8-f4f8ac6c5a19
+uuid: d8558bfe-8fbd-4d55-9c5a-0b4e050bfce3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_document
+    - field.storage.paragraph.field_ref_media
     - media.type.document
     - media.type.document_private
+    - media.type.image
     - paragraphs.paragraphs_type.resource_file
-id: paragraph.resource_file.field_document
-field_name: field_document
+id: paragraph.resource_file.field_ref_media
+field_name: field_ref_media
 entity_type: paragraph
 bundle: resource_file
-label: Document
+label: Files
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -23,6 +24,7 @@ settings:
     target_bundles:
       document: document
       document_private: document_private
+      image: image
     sort:
       field: _none
       direction: ASC

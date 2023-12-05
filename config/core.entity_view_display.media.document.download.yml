@@ -1,18 +1,24 @@
-uuid: 22ea8131-f3ca-4ff0-a759-d2893ea71b83
+uuid: b5196bb2-213a-484f-b860-3635734e1217
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.download
     - field.field.media.document.field_media_document
     - media.type.document
   module:
     - file
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 _core:
   default_config_hash: DXitcriWmE5QHvGvk2OzWouaSnXD5uipkRdAG6_pnkg
-id: media.document.default
+id: media.document.download
 targetEntityType: media
 bundle: document
-mode: default
+mode: download
 content:
   field_media_document:
     type: file_url_plain

@@ -42,17 +42,26 @@ function surf_curriculum_entity_bundle_info_alter(array &$bundles): void {
  */
 function surf_curriculum_entity_extra_field_info() {
   $extra = [];
+
   $extra['download_request_item']['download_request_item']['display']['status_description'] = [
     'label' => t('Status with date info'),
     'description' => t('The status of the item with additional info based on the value of the status'),
     'visible' => TRUE,
     'weight' => 15,
   ];
+
   $extra['node']['curriculum_module']['display']['reservation_links'] = [
     'label' => t('Link to reserve or view on dashboard'),
     'description' => t('Link to webform with prepopulated nid or view reservation on dashboard.'),
     'visible' => TRUE,
     'weight' => 25,
+  ];
+
+  $extra['node']['curriculum_module']['display']['reservation_status'] = [
+    'label' => t('Reservation status'),
+    'description' => t('Status of the download request.'),
+    'visible' => TRUE,
+    'weight' => 26,
   ];
 
   return $extra;
@@ -101,7 +110,16 @@ function surf_curriculum_download_request_item_view(array &$build, \Drupal\Core\
  * Implements hook_ENTITY_TYPE_view().
  */
 function surf_curriculum_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
-  if ($display->getComponent('reservation_links') && $entity->bundle() === 'curriculum_module') {
+  if ($display->getComponent('reservation_links')) {
     $build['reservation_links'] = $entity->getUserReservationLinks(\Drupal::currentUser());
   }
+
+//  if ($display->getComponent('reservation_status')) {
+//    $download_item_storage = \Drupal::entityTypeManager()->getStorage('download_item');
+//    $download_item_id = $entity->getActiveDownloadRequest(\Drupal::currentUser())->get('request_items')->first()->getEntity()->id();
+//    $download_item = $download_item_storage->load(intval($download_item_id));
+//    $download_item_state = $download_item->getParentEntity();
+//    $build['reservation_status'] = 'test';
+//    $var = 1;
+//  }
 }

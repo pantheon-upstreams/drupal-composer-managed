@@ -10,9 +10,27 @@ props:
     press_release_attributes:
       title: Attributes
       type: string
-    press_release_heading:
-      title: Page Heading
+    press_release_author:
+      title: Author
       type: string
+    press_release_categories:
+      title: Categories
+      type: array
     press_release_content:
       title: Content
+      type: array
+    press_release_heading:
+      title: Heading
       type: string
+    press_release_media:
+      title: Media
+      type: array
+    press_release_press_contact:
+      title: Press Contact
+      type: array
+    press_release_pub_date:
+      title: Published Date
+      type: string
+    press_release_resources:
+      title: Resources
+      type: array

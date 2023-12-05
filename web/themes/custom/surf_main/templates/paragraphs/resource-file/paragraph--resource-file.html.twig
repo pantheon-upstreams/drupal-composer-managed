@@ -39,48 +39,9 @@
  */
 #}
 
-{% set doc = content.field_document.0['#media'].field_media_document.entity %}
+{% set rendered_content = content|without(
+    'field_ref_media'
+) %}
 
-{# File Title / Description #}
-{% set resource_file_title = doc.origname.value %}
-
-{# File URI #}
-{% set resource_file_url = file_url(doc.uri.value) %}
-
-{# File Mimetype #}
-{% set orig_mimetype = doc.filemime.value %}
-{% set parts_mimetype = orig_mimetype|split('/') %}
-{% set resource_file_mimetype = parts_mimetype|last %}
-
-{# File Size #}
-{% set file_size_in_bytes = doc.filesize.value %}
-{% set resource_file_size = (file_size_in_bytes / 1048576)|round(2) ~ " MB" %}
-
-{% if file_size_in_bytes < 1048576 %}
-  {% set resource_file_size = (file_size_in_bytes / 1024)|round(2) ~ " KB" %}
-{% endif %}
-
-{% set classes = [
-  'paragraph',
-  'paragraph--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
-] %}
-
-{%
-  set rendered_fields = [
-  'field_document',
-]
-%}
-
-{% embed 'surf_main:resource-file' with {
-  attributes,
-  resource_file_title,
-  resource_file_url,
-  resource_file_size,
-  resource_file_mimetype,
-  resource_file_attributes: create_attribute({'class': classes}),
-} only %}
-{% endembed %}
-
-{{ content|without(rendered_fields) }}
+{{ content.field_ref_media|field_value }}
+{{ rendered_content }}

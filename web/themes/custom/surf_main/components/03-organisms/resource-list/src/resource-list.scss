@@ -1,57 +1,126 @@
 //
-// Component - Organism - Resource List
-//
-// https://atendesign.atlassian.net/browse/SRL-119
-// https://www.figma.com/file/JX6eNUHRmRVVEJBaRcfSoC/SURF-Main-Site-Design?type=design&node-id=1120-209888&mode=dev
+// Component - Organism - Resources List
 //
 // - 01 - Imports
-// - 02 - General
-
+// - 02 - Layout
+// - 03 - General
 //
-
 
 
 //------------------------------------
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/breakpoints';
+
 
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
+//------------------------------------
+
+.o-resource-list {
+  margin-inline: auto;
+  padding-block: var(--surf-grid-gap);
+  padding-inline: var(--surf-grid-gap);
+
+  ul.o-resource-list__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px 40px;
+    margin-block: 20px 0;
+    margin-inline: 0;
+    padding: 0;
+
+    @include breakpoints.bp-min(large) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - General
 //------------------------------------
 
 .o-resource-list {
   background-color: var(--surf-color-gray-100);
-  margin-inline: auto;
-  max-inline-size: rem(900px);
-  padding: 20px;
 
-  @include bp-min(medium) {
-    padding: 40px;
+  .o-resource-list__heading {
+    font-family: var(--surf-font-condensed);
+    font-size: calculations.rem(16px);
+    font-weight: var(--surf-fw-bold);
+    letter-spacing: 1px;
+    line-height: var(--surf-lh-label);
+    margin-block-end: rem(15px);
+    text-transform: uppercase;
   }
-}
 
-.o-resource-list__heading {
-  font-family: var(--surf-font-condensed);
-  font-size: rem(16px);
-  font-weight: var(--surf-fw-bold);
-  letter-spacing: 1.5px;
-  line-height: var(--surf-lh-label);
-  margin-block-end: rem(15px);
-  text-transform: uppercase;
-}
+  li.o-resource-list__item a {
+    font-weight: var(--surf-fw-book);
+    text-decoration: none;
 
-.o-resource-list__items {
-  column-gap: 40px;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 0;
-  padding: 0;
-  row-gap: 20px;
-  @include bp-min(medium) {
-    grid-template-columns: 1fr 1fr;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  li.o-resource-list__item > figure,
+  li.o-resource-list__item > a {
+    display: inline-block;
+    padding-inline-start: 32px;
+    position: relative;
+  }
+
+  li.o-resource-list__item > figure:before,
+  li.o-resource-list__item > a:before {
+    background-color: var(--surf-color-navy);
+    block-size: 24px;
+    content: '';
+    display: block;
+    inline-size: 24px;
+    inset-inline-start: 0;
+    mask-size: contain;
+    position: absolute;
+  }
+
+  li.o-resource-list__item > figure:before {
+    --icon-document: svg-load('icon-file.svg');
+    mask: var(--icon-document) no-repeat center;
+    inset-block-start: 4px;
+  }
+
+  li.o-resource-list__item > a:before {
+    --icon-diagonal: svg-load('icon-diagonal.svg');
+    mask: var(--icon-diagonal) no-repeat center;
+  }
+
+  li.o-resource-list__item > .media .media__details {
+    font-size: calculations.rem(14px);
+    text-transform: uppercase;
+  }
+
+  li.o-resource-list__item > .media .media__details > span:not(:first-child) {
+    display: inline-block;
+    margin-inline-start: 6px;
+    padding-inline-start: 10px;
+    position: relative;
+
+    &:before {
+      background-color: var(--surf-color-gray-800);
+      block-size: 12px;
+      content: '';
+      display: block;
+      inline-size: 1px;
+      inset-block: 0;
+      inset-inline-start: 0;
+      margin-block: auto;
+      position: absolute;
+    }
   }
 }

@@ -1,24 +1,36 @@
-{% embed 'surf_main:press-release' with {
-  attributes,
-  press_release_attributes: create_attribute({'class': ['p-press-release--full']}),
-  press_release_heading: label|field_value,
-  press_release_media: content.field_media_primary.0 ? content.field_media_primary|field_value,
-  press_release_author: content.field_author.0 ? content.field_author|field_value,
-  press_release_pub_date: content.field_date_published.0 ? content.field_date_published|field_value,
-  press_release_content: content.field_p_content,
-  press_release_categories: content.field_ref_news_categories.0 ? content.field_ref_news_categories|field_value,
-  press_release_primary_contact: content.field_ref_contacts.0 ? content.field_ref_contacts|field_value,
-  press_release_resource_list: content.field_resource_list.0 ? content.field_resource_list|field_value,
-} only %}
-{% endembed %}
+{#
+/**
+ * @file
+ * Theme implementation to display an Press Release Node with Full view mode.
+ *
+ * Available variables:
+ *  - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/05-pages/press-release/press-release.twig
+ */
+#}
 
-{{ content|without(
-  "field_author",
-  "field_ref_news_categories",
-  "field_p_content",
-  "field_ref_contacts",
-  "field_media_primary",
-  "field_date_published",
-  "field_resource_list",
-  "field_overview",
-) }}
+{% set rendered_content = content|without(
+    'field_author',
+    'field_ref_news_categories',
+    'field_p_content',
+    'field_media_primary',
+    'field_ref_contacts',
+    'field_date_published',
+    'field_resource_list',
+) %}
+
+{% include 'surf_main:press-release' with {
+    attributes,
+    rendered_content,
+    press_release_attributes: create_attribute(),
+    press_release_author: content.field_author|render ? content.field_author|field_value,
+    press_release_categories: content.field_ref_news_categories|field_value|default([]),
+    press_release_content: content.field_p_content,
+    press_release_heading: label|field_value,
+    press_release_media: content.field_media_primary|field_value|default([]),
+    press_release_press_contact: content.field_ref_contacts|field_value|default([]),
+    press_release_pub_date: content.field_date_published|render ? content.field_date_published|field_value,
+    press_release_resources: content.field_resource_list|field_value|default([]),
+} only %}

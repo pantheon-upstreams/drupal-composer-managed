@@ -1,19 +1,19 @@
 {#
 /**
  * @file
- * Component for Press Release (Node)
+ * Page component for Press Release
  *
  * Available props:
  * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
  * - press_release_attributes: [array] Any parent tag attributes.
- * - press_release_heading: [string]
- * - press_release_media: [array]
- * - press_release_author: [string]
- * - press_release_pub_date: [string]
- * - press_release_primary_contact: [string]
- * - press_release_content: [array]
- * - press_release_categories: [array]
- * - press_release_resources_list: [array]
+ * - press_release_author: [string] Reserved for the author's name.
+ * - press_release_categories: [array] Reserved for a list of relevant categories.
+ * - press_release_content: [array] Reserved for the builder's content.
+ * - press_release_heading: [string] Reserved for the primary title.
+ * - press_release_media: [array] Reserved for the primary media item.
+ * - press_release_press_contact: [array] Reserved for a specific contact item.
+ * - press_release_pub_date: [string] Reserved for the published date.
+ * - press_release_resources: [array] Reserved for any related resources.
  *
  */
 #}
@@ -23,71 +23,97 @@
 ] %}
 
 <article {{ press_release_attributes.addClass(classes).merge(attributes) }}>
-    <div class="container container--xlarge">
-        <p class="p-press-release__pub-date">{{ press_release_pub_date }}</p>
+    <section class="p-press-release__header">
+        <div class="container container--small">
+            {{ drupal_breadcrumb() }}
 
-        {% embed 'surf_main:heading' with {
-            heading_attributes: create_attribute({'class': ['p-press-release__heading']}),
-            heading_text: press_release_heading,
-            heading_level: '1',
-        } only %}
-        {% endembed %}
+            {% if press_release_pub_date %}
+                <div class="p-press-release__pub-date">
+                    {{ press_release_pub_date }}
+                </div>
+            {% endif %}
 
-        {% if press_release_media %}
-            <div class="p-press-release__media">
+            {% include 'surf_main:heading' with {
+                heading_attributes: create_attribute({'class': ['p-press-release__heading']}),
+                heading_text: press_release_heading,
+                heading_level: '1',
+            } only %}
+        </div>
+    </section>
+
+    {% if press_release_media %}
+        <section class="p-press-release__media">
+            <div class="container container--medium">
+                <h2 class="visually-hidden">{{ 'Press release media'|t }}</h2>
                 {{ press_release_media }}
             </div>
-        {% endif %}
+        </section>
+    {% endif %}
 
-        {# Main Content #}
-        <div class="p-press-release__main-content">
-            {{ press_release_content }}
+    {% if press_release_content %}
+        <section class="p-press-release__content">
+            <div class="container container--small">
+                {{ press_release_content }}
+            </div>
+        </section>
+    {% endif %}
 
-            <hr class="p-press-release__divider">
+    <section class="p-press-release__meta">
+        <div class="container container--small">
+            <h2 class="visually-hidden">{{ 'Press release meta information'|t }}</h2>
 
             {% if press_release_author %}
-                <p class="p-press-release__author">
-                    By {{ press_release_author }}</p>
+                <div class="p-press-release__author">
+                    <p>{{- 'By'|t }} {{ press_release_author }}</p>
+                </div>
+            {% endif %}
 
-                {% if press_release_categories %}
-                    <ul class="p-press-release__categories">
+            {% if press_release_categories %}
+                <div class="p-press-release__categories">
+                    <ul>
                         {% for category in press_release_categories %}
                             <li>
-                                {% embed 'surf_main:chip' with {
-                                    chip_text: category,
-                                    chip_size: 'small',
+                                {% include 'surf_main:chip' with {
                                     chip_attributes: create_attribute(),
+                                    chip_size: 'small',
+                                    chip_text: category,
                                 } only %}
-                                {% endembed %}
                             </li>
                         {% endfor %}
                     </ul>
-                {% endif %}
+                </div>
             {% endif %}
 
-            {% if press_release_primary_contact %}
-                <p class="p-press-release__contact-label">Press Contact</p>
-                {{ press_release_primary_contact }}
+            {% if press_release_press_contact %}
+                <div class="p-press-release__press-contact">
+                    <h3>{{ 'Press Contact'|t }}</h3>
+                    {{ press_release_press_contact }}
+                </div>
             {% endif %}
 
-            {% if press_release_resource_list %}
-                {{ press_release_resource_list }}
+            {% if press_release_resources %}
+                <div class="p-press-release__resources">
+                    {{ press_release_resources }}
+                </div>
             {% endif %}
         </div>
+    </section>
 
-        {# Additional Content #}
-        <div class="p-press-release__additional-content">
-            {% embed 'surf_main:left-hook' with {
-                left_hook_attributes: create_attribute(),
-            } only %}
-            {% endembed %}
+    {% if drupal_view_result('related_press_releases', 'press_release') is not empty %}
+        <section class="p-press-release__related">
+            <div class="container container--xlarge">
+                {% include 'surf_main:left-hook' with {
+                    left_hook_attributes: create_attribute(),
+                } only %}
 
-            {% embed 'surf_main:heading' with {
-                heading_attributes: create_attribute({'class': ['a-heading--lg']}),
-                heading_text: 'PRESS RESOURCES',
-                heading_level: '2',
-            } only %}
-            {% endembed %}
-        </div>
-    </div>
+                {% include 'surf_main:heading' with {
+                    heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                    heading_text: research_area ~ 'Related press releases'|t,
+                    heading_level: '2',
+                } only %}
+
+                {{ drupal_view('related_press_releases', 'press_release') }}
+            </div>
+        </section>
+    {% endif %}
 </article>

@@ -1,46 +1,38 @@
 {#
 /**
  * @file
- * Component for Pullquote
+ * Organism component for Resource List
  *
  * Available props:
- * - resource_list_attributes: [array] Any parent tag attributes.
- * - resource_list_heading: [string]
- * - resource_list_items: [array]
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - resource_list_attributes: [array] Component reserved space for attributes.
+ * - resource_list_heading: [string] Reserved for the primary title of this grouping.
+ * - resource_list_items: [array] Reserved for the list of resources.
  *
  */
 #}
 
-{%
-  set classes = [
-  'o-resource-list',
-]
-%}
+{% set classes = [
+    'o-resource-list',
+] %}
 
-<article {{ resource_list_attributes.addClass(classes).merge(attributes) }}>
+<div {{ resource_list_attributes.addClass(classes).merge(attributes) }}>
+    {% if resource_list_heading %}
+        {% include 'surf_main:heading' with {
+            heading_attributes: create_attribute({'class': ['o-resource-list__heading']}),
+            heading_text: resource_list_heading,
+            heading_type: style_options['heading_type']|default('none'),
+            heading_level: '3',
+        } only %}
+    {% endif %}
 
-  {% if resource_list_heading %}
-
-    {% embed 'surf_main:heading' with {
-      heading_attributes: create_attribute({'class': ['o-resource-list__heading']}),
-      heading_text: resource_list_heading,
-      heading_type: style_options['heading_type']|default('none'),
-      heading_level: '3',
-    } only %}
-    {% endembed %}
-
-  {% endif %}
-
-  {% if resource_list_items %}
-    {% block list_items %}
-      <ul class="o-resource-list__items">
-        {% for item in resource_list_items %}
-          <li class="o-resource-list__item">
-            {{ item }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endblock %}
-  {% endif %}
-
-</article>
+    {% if resource_list_items %}
+        <ul class="o-resource-list__items">
+            {% for item in resource_list_items %}
+                <li class="o-resource-list__item">
+                    {{ item }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>

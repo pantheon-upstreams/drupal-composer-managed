@@ -24,7 +24,8 @@ props:
       type: string
     curriculum_module_dashboard:
       title: Dashboard
-      type: string
+      type: boolean
+      default: false
     curriculum_module_grade_level:
       title: Grade Level
       type: array
