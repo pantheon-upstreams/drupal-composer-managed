@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Curriculum Module Node with Full view mode.
+ *
+ * Available variables:
+ *  - content.reservation_links: [array]
+ *
+ * @see modules/custom/surf_curriculum
+ * @see templates/nodes/node.html.twig
+ * @see components/05-pages/curriculum-module/curriculum-module.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'body',
+    'field_content_area',
+    'field_media',
+    'field_overview',
+    'field_ref_grade_level',
+    'field_ref_standards',
+    'field_resource_list',
+    'field_time_required',
+    'reservation_links',
+) %}
+
+{% include 'surf_main:curriculum-module' with {
+    attributes,
+    rendered_content,
+    curriculum_module_attributes: create_attribute(),
+    curriculum_module_body: content.body|render ? content.body|field_value,
+    curriculum_module_content_area: content.field_content_area|field_value|default([]),
+    curriculum_module_cta_url: content.reservation_links.webform['#url'] ? content.reservation_links.webform['#url'],
+    curriculum_module_cta_text: content.reservation_links.webform['#title'] ? content.reservation_links.webform['#title'],
+    curriculum_module_dashboard: 'false',
+    curriculum_module_grade_level: content.field_ref_grade_level|field_value|default([]),
+    curriculum_module_heading: label|field_value,
+    curriculum_module_media: content.field_media|field_value|default([]),
+    curriculum_module_resources: content.field_resource_list|field_value|default([]),
+    curriculum_module_standards: content.field_ref_standards|field_value|default([]),
+    curriculum_module_summary: content.field_overview|render ? content.field_overview|field_value,
+    curriculum_module_time_required: content.field_time_required|render ? content.field_time_required|field_value,
+} only %}

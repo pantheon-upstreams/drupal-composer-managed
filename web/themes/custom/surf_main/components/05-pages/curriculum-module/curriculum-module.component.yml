@@ -1,0 +1,51 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Curriculum Module
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    curriculum_module_attributes:
+      title: Attributes
+      type: string
+    curriculum_module_body:
+      title: Body
+      type: string
+    curriculum_module_content_area:
+      title: Content Area
+      type: array
+    curriculum_module_cta_url:
+      title: CTA URL
+      type: string
+    curriculum_module_cta_text:
+      title: CTA Text
+      type: string
+    curriculum_module_dashboard:
+      title: Dashboard
+      type: string
+    curriculum_module_grade_level:
+      title: Grade Level
+      type: array
+    curriculum_module_heading:
+      title: Heading
+      type: string
+    curriculum_module_media:
+      title: Media
+      type: array
+    curriculum_module_resources:
+      title: Resources
+      type: array
+    curriculum_module_standards:
+      title: Standards
+      type: array
+    curriculum_module_status:
+      title: Status
+      type: string
+    curriculum_module_summary:
+      title: Summary
+      type: string
+    curriculum_module_time_required:
+      title: Time Required
+      type: string

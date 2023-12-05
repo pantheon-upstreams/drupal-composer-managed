@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_content_area
-    - field.field.node.curriculum_module.field_link
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
     - field.field.node.curriculum_module.field_ref_audiences
@@ -20,7 +19,6 @@ dependencies:
     - node.type.curriculum_module
   module:
     - entity_reference_revisions
-    - link
     - text
     - user
 id: node.curriculum_module.default
@@ -42,18 +40,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 13
-    region: content
-  field_link:
-    type: link_separate
-    label: above
-    settings:
-      trim_length: null
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    weight: 12
     region: content
   field_media:
     type: entity_reference_entity_view

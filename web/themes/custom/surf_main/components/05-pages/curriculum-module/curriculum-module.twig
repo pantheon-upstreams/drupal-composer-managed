@@ -1,0 +1,217 @@
+{#
+/**
+ * @file
+ * Page component for a Curriculum Module.
+ *
+ * Available props:
+ * - attributes
+ * - curriculum_module_attributes: [string]
+ * - curriculum_module_body: [string]
+ * - curriculum_module_content_area: [array]
+ * - curriculum_module_cta_url: [string]
+ * - curriculum_module_cta_text: [string]
+ * - curriculum_module_dashboard: [boolean]
+ * - curriculum_module_grade_level: [array]
+ * - curriculum_module_heading: [string]
+ * - curriculum_module_media: [array]
+ * - curriculum_module_resources: [array]
+ * - curriculum_module_standards: [array]
+ * - curriculum_module_status: [string]
+ * - curriculum_module_summary: [string]
+ * - curriculum_module_time_required: [string]
+ */
+#}
+
+{% set classes = [
+  'p-curriculum-module',
+] %}
+
+<article {{ curriculum_module_attributes.addClass(classes).merge(attributes) }}>
+    <section class="p-curriculum-module__header">
+        {% embed 'surf_main:header' with {
+            header_heading: curriculum_module_heading,
+            header_heading_level: '1',
+            header_summary: curriculum_module_summary,
+            header_attributes: create_attribute({'class': ['o-header--ripple']}),
+            heading_attributes: create_attribute({'class': ['o-header__heading', 'p-page__heading']}),
+            curriculum_module_dashboard,
+        } only %}
+            {% block header_links_block %}
+                {% if curriculum_module_dashboard == 'true' %}
+                    {% include 'surf_main:button' with {
+                        attributes,
+                        button_attributes: create_attribute(),
+                        button_color: 'navy',
+                        button_external: true,
+                        button_html_tag: 'link',
+                        button_size: 'small',
+                        button_style: 'underline',
+                        button_title: 'Back to my dashboard'|t,
+                        button_url: '/user/dashboard',
+                        button_suffix: 'icon-arrow-left',
+                    } only %}
+                {% else %}
+                    {{ drupal_breadcrumb() }}
+                {% endif %}
+            {% endblock %}
+        {% endembed %}
+    </section>
+
+    {% if curriculum_module_dashboard == 'true' and curriculum_module_resources %}
+        <section class="p-curriculum-module__resources">
+            <div class="container container--large">
+                {{ curriculum_module_resources }}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if curriculum_module_dashboard == 'true' and curriculum_module_status %}
+        <section class="p-curriculum-module__status">
+            <div class="container container--large">
+                <h2 class="visually-hidden">{{ 'Curriculum module status'|t }}</h2>
+
+                <p><strong>{{ curriculum_module_status }}.</strong> {{ 'Review the checklist before returning, which can be found in your curriculum resources.'|t -}}</p>
+
+                {% include 'surf_main:button' with {
+                    attributes,
+                    button_attributes: create_attribute(),
+                    button_color: 'navy',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'small',
+                    button_style: 'underline',
+                    button_title: 'View physical & digital curriculum expiration information'|t,
+                    button_url: '/curriculum-module-expiration-information',
+                    button_suffix: 'icon-arrow-right',
+                } only %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if curriculum_module_grade_level or curriculum_module_content_area or curriculum_module_time_required %}
+        <section class="p-curriculum-module__tags-section">
+            <div class="container container--large">
+                <h2 class="visually-hidden">{{ 'Curriculum module tags'|t }}</h2>
+
+                <div class="p-curriculum-module__tags">
+                    {% if curriculum_module_grade_level %}
+                        <div class="p-curriculum-module__tags-wrapper p-curriculum-module__tags-wrapper--grade-level">
+                            <h3>{{ 'Grade level'|t }}</h3>
+
+                            <ul class="p-curriculum-module__tags-items">
+                                {% for grade_level in curriculum_module_grade_level %}
+                                    <li class="p-curriculum-module__tags-item">{{ grade_level }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    {% if curriculum_module_content_area %}
+                        <div class="p-curriculum-module__tags-wrapper p-curriculum-module__tags-wrapper--content-area">
+                            <h3>{{ 'Content area'|t }}</h3>
+
+                            <ul class="p-curriculum-module__tags-items">
+                                {% for content_area in curriculum_module_content_area %}
+                                    <li class="p-curriculum-module__tags-item">{{ content_area }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                    {% if curriculum_module_time_required %}
+                        <div class="p-curriculum-module__tags-wrapper p-curriculum-module__tags-wrapper--time-required">
+                            <h3>{{ 'Time required'|t }}</h3>
+                            <p>{{ curriculum_module_time_required }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if curriculum_module_dashboard == 'false' and curriculum_module_cta_url and curriculum_module_cta_text %}
+        <section class="p-curriculum-module__request">
+            <div class="container container--large">
+                <h2 class="visually-hidden">{{ 'Request this curriculum module'|t }}</h2>
+
+                {% include 'surf_main:button' with {
+                    attributes,
+                    button_attributes: create_attribute(),
+                    button_color: 'navy',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'large',
+                    button_style: 'primary',
+                    button_title: curriculum_module_cta_text,
+                    button_url: curriculum_module_cta_url,
+                    button_suffix: 'icon-arrow-right',
+                } only %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if curriculum_module_media %}
+        <section class="p-curriculum-module__media">
+            <div class="container container--small">
+                <h2 class="visually-hidden">{{ 'Curriculum module media'|t }}</h2>
+                {{ curriculum_module_media }}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if curriculum_module_body %}
+        <section class="p-curriculum-module__content">
+            <div class="container container--small">
+                {% include 'surf_main:editor' with {
+                    editor_attributes: create_attribute(),
+                    editor_content: curriculum_module_body,
+                } only %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if curriculum_module_standards %}
+        <section class="p-curriculum-module__standards">
+            <div class="container container--small">
+                <h2>{{ 'Curriculum Standards'|t }}</h2>
+
+                <ul class="p-curriculum-module__standards-items">
+                    {% for standard in curriculum_module_standards %}
+                        <li class="p-curriculum-module__standards-item">{{ standard }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if drupal_view_result('curriculum', 'grade_level') is not empty %}
+        <section class="p-curriculum-module__related">
+            <div class="container container--xlarge">
+                {% include 'surf_main:left-hook' with {
+                    left_hook_attributes: create_attribute(),
+                } %}
+
+                {% include 'surf_main:heading' with {
+                    heading_attributes: create_attribute({'class': ['a-heading--lg']}),
+                    heading_text: 'More curriculum modules'|t,
+                    heading_level: '2',
+                } %}
+
+                {{ drupal_view('curriculum', 'grade_level') }}
+
+                {% include 'surf_main:button' with {
+                    attributes,
+                    button_attributes: create_attribute(),
+                    button_color: 'navy',
+                    button_external: true,
+                    button_html_tag: 'link',
+                    button_size: 'large',
+                    button_style: 'primary',
+                    button_prefix: 'icon-arrow-left',
+                    button_title: 'All Curriculum Modules'|t,
+                    button_url: '/education/in-your-classroom/curriculum-modules',
+                } only %}
+            </div>
+        </section>
+    {% endif %}
+</article>

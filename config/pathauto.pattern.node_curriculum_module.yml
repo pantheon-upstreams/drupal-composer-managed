@@ -1,0 +1,22 @@
+uuid: e88ef073-9cb1-4c47-8e9c-9bf726ca2358
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_curriculum_module
+label: 'Node - Curriculum Module'
+type: 'canonical_entities:node'
+pattern: '/education/in-your-classroom/curriculum-modules/[node:title]'
+selection_criteria:
+  ae4b2783-227e-4f03-aaec-b0dde1055a9f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ae4b2783-227e-4f03-aaec-b0dde1055a9f
+    context_mapping:
+      node: node
+    bundles:
+      curriculum_module: curriculum_module
+selection_logic: and
+weight: -5
+relationships: {  }

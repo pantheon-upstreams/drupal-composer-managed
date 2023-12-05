@@ -146,15 +146,22 @@
 //  04 - Contextual
 //------------------------------------
 
-// Landing Pages
-.p-landing__hero .o-header__content {
+.p-landing__hero .o-header__content,
+.p-curriculum-module__header .o-header__content {
   inline-size: 100%;
   margin-inline: auto;
-  max-inline-size: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
   padding-block: 40px 56px;
   padding-inline: var(--surf-grid-gap);
 
   @include bp-min(large) {
     padding-block: 64px 0;
   }
+}
+
+.p-landing__hero .o-header__content {
+  max-inline-size: calc(var(--surf-width-xlarge) + (var(--surf-grid-gap) * 2));
+}
+
+.p-curriculum-module__header .o-header__content {
+  max-inline-size: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
 }

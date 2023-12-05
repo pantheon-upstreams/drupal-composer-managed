@@ -18,5 +18,5 @@ selection_criteria:
     bundles:
       research_area: research_area
 selection_logic: and
-weight: -5
+weight: -4
 relationships: {  }

@@ -42,14 +42,13 @@
 //------------------------------------
 
 :root {
-  --surf-width-xxlarge: 1920px;
-  --surf-width-full: 1620px;
-  --surf-width-default: 1440px;
-  --surf-width-xlarge: 1384px;
-  --surf-width-large: 1280px;
-  --surf-width-medium: 1020px;
-  --surf-width-small: 780px;
-  --surf-width-xsmall: 640px;
+  --surf-width-full:    1920px;
+  --surf-width-xxlarge: 1620px;
+  --surf-width-xlarge:  1380px;
+  --surf-width-large:   1136px;
+  --surf-width-medium:  1080px;
+  --surf-width-small:   780px;
+  --surf-width-xsmall:  640px;
   --surf-width-xxsmall: 480px;
 }
 
@@ -99,10 +98,14 @@
 .container {
   margin-inline: auto;
   padding-inline: var(--surf-grid-gap);
-  width: 100%;
+  inline-size: 100%;
 
-  &.container--default {
-    max-inline-size: calc(var(--surf-width-default) + (var(--surf-grid-gap) * 2));
+  &.container--full {
+    max-inline-size: calc(var(--surf-width-full) + (var(--surf-grid-gap) * 2));
+  }
+
+  &.container--xxlarge {
+    max-inline-size: calc(var(--surf-width-xxlarge) + (var(--surf-grid-gap) * 2));
   }
 
   &.container--xlarge {
@@ -110,7 +113,7 @@
   }
 
   &.container--large {
-    max-inline-size: calc(1143px + (var(--surf-grid-gap) * 2));
+    max-inline-size: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
   }
 
   &.container--medium {
@@ -119,6 +122,14 @@
 
   &.container--small {
     max-inline-size: calc(var(--surf-width-small) + (var(--surf-grid-gap) * 2));
+  }
+
+  &.container--xsmall {
+    max-inline-size: calc(var(--surf-width-xsmall) + (var(--surf-grid-gap) * 2));
+  }
+
+  &.container--xxsmall {
+    max-inline-size: calc(var(--surf-width-xxsmall) + (var(--surf-grid-gap) * 2));
   }
 }
 

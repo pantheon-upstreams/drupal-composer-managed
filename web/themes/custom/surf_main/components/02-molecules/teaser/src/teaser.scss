@@ -71,10 +71,6 @@
       margin-inline-end: 16px;
     }
 
-    //> li:first-of-type {
-    //  margin-inline-start: 0;
-    //}
-
     > li a {
       margin-inline: 0 !important;
     }
@@ -88,7 +84,6 @@
 //  03 - Super
 //------------------------------------
 
-//.l-onecol .paragraph--content-as-teaser > .m-teaser,
 .m-teaser.m-teaser--super {
   color: var(--surf-color-white);
   position: relative;
@@ -250,68 +245,66 @@
 //  05 - 3 Column
 //------------------------------------
 
-.l-threecol {
-  .l-threecol__region {
-    .m-teaser {
-      @include bp-min(small) {
-        align-items: center;
-        display: flex;
-        flex-flow: nowrap row;
-      }
-      @include bp-min(medium) {
-        flex-flow: nowrap column;
-      }
+.l-threecol .m-teaser {
+  @include bp-min(small) {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+  }
 
-      .m-teaser__media {
-        margin-block-end: 20px;
-        width: 100%;
-        @include bp-min(small) {
-          flex-shrink: 0;
-          margin-block-end: 0;
-          margin-inline-end: 24px;
-          width: 45%;
-        }
-        @include bp-min(medium) {
-          margin-block-end: 24px;
-          margin-inline-end: 0;
-          width: 100%;
-        }
-      }
+  @include bp-min(medium) {
+    flex-flow: nowrap column;
+  }
 
-      .m-teaser__title {
-        font-size: var(--surf-fs-18-24);
-      }
-
-      &:hover .m-teaser__title a,
-      &:focus-within .m-teaser__title a {
-        color: var(--surf-color-black);
-      }
-
-      p.m-teaser__content-text {
-        font-size: var(--surf-fs-16-18);
-        margin-block-start: 12px;
-        @include bp-min(medium) {
-          margin-block-start: 16px;
-        }
-      }
-
-      .m-teaser__content-suffix {
-        margin: 8px -8px 0;
-        @include bp-min(medium) {
-          margin: 16px -8px 0;
-        }
-      }
-
-      .m-teaser__content-suffix a,
-      .m-teaser__content-suffix span:not( .a-chip ) {
-        font-size: rem(14px);
-        font-weight: var(--surf-fw-book);
-        margin: 0 8px;
-        white-space: pre;
-      }
+  .m-teaser__media {
+    margin-block-end: 20px;
+    width: 100%;
+    @include bp-min(small) {
+      flex-shrink: 0;
+      margin-block-end: 0;
+      margin-inline-end: 24px;
+      width: 45%;
+    }
+    @include bp-min(medium) {
+      margin-block-end: 24px;
+      margin-inline-end: 0;
+      width: 100%;
     }
   }
+
+  .m-teaser__title {
+    font-size: var(--surf-fs-18-24);
+  }
+
+  &:hover .m-teaser__title a,
+  &:focus-within .m-teaser__title a {
+    color: var(--surf-color-black);
+  }
+
+  p.m-teaser__content-text {
+    font-size: var(--surf-fs-16-18);
+    margin-block-start: 12px;
+    @include bp-min(medium) {
+      margin-block-start: 16px;
+    }
+  }
+
+  .m-teaser__content-suffix {
+    margin: 8px -8px 0;
+    @include bp-min(medium) {
+      margin: 16px -8px 0;
+    }
+  }
+
+  .m-teaser__content-suffix a,
+  .m-teaser__content-suffix span:not( .a-chip ) {
+    font-size: rem(14px);
+    font-weight: var(--surf-fw-book);
+    margin: 0 8px;
+    white-space: pre;
+  }
 }
+
 
 
 
@@ -414,75 +407,6 @@
 
 
 //------------------------------------
-//  07 - 1 Column
-//------------------------------------
-
-//.l-onecol {
-//  .m-teaser {
-//    @include bp-min(small) {
-//      align-items: center;
-//      display: flex;
-//      flex-flow: nowrap row;
-//    }
-//
-//    .m-teaser__media {
-//      margin-block-end: 20px;
-//      width: 100%;
-//      @include bp-min(small) {
-//        flex-shrink: 0;
-//        margin-block-end: 0;
-//        margin-inline-end: 32px;
-//        width: 45%;
-//      }
-//      @include bp-min(xlarge) {
-//        margin-inline-end: 56px;
-//      }
-//    }
-//
-//    .m-teaser__title {
-//      font-size: var(--surf-fs-18-24-40);
-//    }
-//
-//    &:hover .m-teaser__title a,
-//    &:focus-within .m-teaser__title a {
-//      color: var(--surf-color-black);
-//    }
-//
-//    p.m-teaser__content-text {
-//      font-size: var(--surf-fs-16-18-24);
-//      margin-block-start: 12px;
-//      @include bp-min(medium) {
-//        margin-block-start: 16px;
-//      }
-//    }
-//
-//    .m-teaser__content-suffix {
-//      margin: 8px -8px 0;
-//      @include bp-min(medium) {
-//        margin: 16px -8px 0;
-//      }
-//    }
-//
-//    .m-teaser__content-suffix a,
-//    .m-teaser__content-suffix span:not( .a-chip ) {
-//      font-size: rem(14px);
-//      font-weight: var(--surf-fw-book);
-//      margin: 0 8px;
-//      white-space: pre;
-//    }
-//
-//    .m-teaser__content-suffix span:not( .a-chip ):not( :last-child ),
-//    .m-teaser__content-suffix a:not( :last-child ) {
-//      @include bp-min(medium) {
-//        border-left: solid 1px var(--surf-color-gray-800);
-//      }
-//    }
-//  }
-//}
-
-
-
-//------------------------------------
 //  08 - Experiment
 //------------------------------------
 
@@ -542,16 +466,22 @@
 
 .m-teaser.m-teaser--standard {
   .m-teaser__title {
-    font-size: rem(18px);
+    font-size: var(--surf-fs-16-18);
     line-height: var(--surf-lh-label);
     margin-block-end: rem(4px);
   }
 
   .m-teaser__link {
-    font-weight: var(--surf-fw-book);
-    text-decoration-line: underline;
-    margin-block-end: rem(4px);
     display: inline-block;
+    font-weight: var(--surf-fw-book);
+    margin-block-end: rem(4px);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 
   .m-teaser__content-text {

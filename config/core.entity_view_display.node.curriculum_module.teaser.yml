@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_content_area
-    - field.field.node.curriculum_module.field_link
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
     - field.field.node.curriculum_module.field_ref_audiences
@@ -72,7 +71,6 @@ content:
     region: content
 hidden:
   body: true
-  field_link: true
   field_ref_audiences: true
   field_ref_eo_opportunities: true
   field_ref_related_content: true

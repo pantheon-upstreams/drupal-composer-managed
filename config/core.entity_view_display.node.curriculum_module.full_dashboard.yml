@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.full_dashboard
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_content_area
-    - field.field.node.curriculum_module.field_link
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
     - field.field.node.curriculum_module.field_ref_audiences
@@ -139,7 +138,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_link: true
   field_resources: true
   langcode: true
   links: true

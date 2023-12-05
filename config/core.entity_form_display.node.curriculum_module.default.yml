@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_content_area
-    - field.field.node.curriculum_module.field_link
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
     - field.field.node.curriculum_module.field_ref_audiences
@@ -20,7 +19,6 @@ dependencies:
     - node.type.curriculum_module
   module:
     - field_group
-    - link
     - maxlength
     - media_library
     - paragraphs
@@ -145,14 +143,6 @@ content:
     weight: 9
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   field_media:
     type: media_library_widget

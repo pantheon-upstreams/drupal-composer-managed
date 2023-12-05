@@ -18,5 +18,5 @@ selection_criteria:
     bundles:
       feature: feature
 selection_logic: and
-weight: -5
+weight: -7
 relationships: {  }
