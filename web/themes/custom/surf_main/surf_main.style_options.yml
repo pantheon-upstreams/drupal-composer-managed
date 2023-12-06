@@ -33,6 +33,8 @@ options:
     label: Section Width
     default: large
     options:
+      xlarge:
+        label: X-Large
       large:
         label: Large
       medium:

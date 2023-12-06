@@ -59,10 +59,6 @@
     }
   }
 
-  &.p-article--video .media--remote-video {
-    @include media.responsive-iframe();
-  }
-
   .p-article__main > *:not(:last-child) {
     margin-block-end: 24px;
   }

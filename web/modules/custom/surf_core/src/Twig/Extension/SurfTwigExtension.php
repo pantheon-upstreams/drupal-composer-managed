@@ -43,13 +43,7 @@ class SurfTwigExtension extends AbstractExtension {
   public function getMercuryEditor($build) {
     $routeName = \Drupal::routeMatch()->getRouteName();
 
-    $mercuryEditorRoutes = [
-      'mercury_editor.preview',
-      'mercury_editor.builder.choose_component',
-      'mercury_editor.builder.insert',
-    ];
-
-    if (in_array($routeName, $mercuryEditorRoutes)) {
+    if (str_contains($routeName, 'mercury_editor')) {
       return $build;
     }
   }

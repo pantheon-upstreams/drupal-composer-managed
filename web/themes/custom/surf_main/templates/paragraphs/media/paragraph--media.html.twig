@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Media paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ */
+#}
+
+{% set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+    'field_media'
+) %}
+
+<div {{ attributes.addClass(classes) }}>
+    {{ content.field_media|field_value }}
+    {{ rendered_content }}
+</div>

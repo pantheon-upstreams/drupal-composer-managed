@@ -12,6 +12,7 @@
 //------------------------------------
 
 @use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/media';
 
 
 
@@ -22,6 +23,10 @@
 
 .a-media {
   position: relative;
+
+  &.media--remote-video {
+    @include media.responsive-iframe();
+  }
 
   .a-media__caption {
     align-items: flex-start;

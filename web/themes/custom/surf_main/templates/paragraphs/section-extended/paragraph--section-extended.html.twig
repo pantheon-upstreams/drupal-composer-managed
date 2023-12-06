@@ -19,13 +19,15 @@
 ] %}
 
 <section {{ attributes.addClass(classes) }}>
-    {% if style_options['section_width'] == 'large' %}
+    {% if style_options['section_width'] == 'xlarge' %}
         <div class="container container--xlarge">
+    {% elseif style_options['section_width'] == 'large' %}
+        <div class="container container--large">
     {% elseif style_options['section_width'] == 'medium' %}
         <div class="container container--medium">
     {% elseif style_options['section_width'] == 'small' %}
         <div class="container container--small">
     {% endif %}
-        {{ content }}
-    </div>
+            {{ content }}
+        </div>
 </section>
