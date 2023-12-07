@@ -27,6 +27,7 @@
 
   .m-contact__address p {
     display: flex;
+    flex-flow: wrap row;
     gap: 3px;
   }
 

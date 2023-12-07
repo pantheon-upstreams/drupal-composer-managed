@@ -19,7 +19,7 @@
 <footer {{ site_footer_attributes.addClass(classes).merge(attributes) }} id="site-footer" aria-label="Site Footer">
     {% if site_footer_top or site_footer_main %}
         <div class="o-site-footer__primary">
-            <div class="container container--xxlarge">
+            <div class="container container--xlarge">
                 {% if site_footer_top %}
                     <div class="o-site-footer__top">
                         {{ site_footer_top }}
@@ -37,7 +37,7 @@
 
     {% if site_footer_bottom %}
         <div class="o-site-footer__secondary">
-            <div class="container container--xxlarge">
+            <div class="container container--xlarge">
                 {{ site_footer_bottom }}
                 <a href="#top" id="back-to-top">{{ 'To Top'|t }}</a>
             </div>

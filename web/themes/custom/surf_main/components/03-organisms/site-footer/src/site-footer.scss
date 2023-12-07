@@ -44,10 +44,43 @@
   }
 
   .o-site-footer__main {
-    @include breakpoints.bp-min(large) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+
+    @include breakpoints.bp-min(small) {
       display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 60px;
+    }
+  }
+
+  .o-site-footer__main > *:first-child {
+    @include breakpoints.bp-min(small) {
+      grid-column: 1/3;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      grid-column: 1;
+    }
+  }
+
+  .o-site-footer__secondary {
+    padding-block: 24px;
+  }
+
+  .o-site-footer__secondary .container {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 32px;
+
+    @include breakpoints.bp-min(xlarge) {
+      align-items: center;
+      flex-flow: nowrap row;
+      justify-content: space-between;
     }
   }
 }
@@ -63,7 +96,12 @@
   color: var(--surf-color-white);
 
   .o-site-footer__primary {
-    background-color: var(--surf-color-black);
+    background: var(--surf-color-black);
+    
+    @include breakpoints.bp-min(small) {
+      background: url('img/background-particles-white.png') no-repeat bottom right var(--surf-color-black);
+      background-size: 324px;
+    }
   }
 
   .o-site-footer__secondary {
@@ -90,5 +128,42 @@
     font-size: var(--surf-fs-16-22);
     text-transform: uppercase;
     letter-spacing: 1px;
+  }
+
+  .site-branding .site-branding__logo {
+    display: block;
+    inline-size: 218px;
+  }
+
+  .site-branding svg path {
+    fill: var(--surf-color-white);
+  }
+
+  #back-to-top {
+    background-color: var(--surf-color-black);
+    block-size: 40px;
+    display: block;
+    font: 0/0 transparent;
+    inline-size: 100%;
+    position: relative;
+
+    @include breakpoints.bp-min(large) {
+      inline-size: 60px;
+    }
+
+    &:after {
+      --icon-chevron-up: svg-load('icon-angle-up.svg');
+      content: '';
+      mask: var(--icon-chevron-up) no-repeat center;
+      mask-size: contain;
+      inline-size: 24px;
+      block-size: 24px;
+      position: absolute;
+      inset-inline: 0;
+      inset-block: 0;
+      margin-block: auto;
+      margin-inline: auto;
+      background-color: var(--surf-color-white);
+    }
   }
 }
