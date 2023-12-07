@@ -97,7 +97,7 @@
 
   .o-site-footer__primary {
     background: var(--surf-color-black);
-    
+
     @include breakpoints.bp-min(small) {
       background: url('img/background-particles-white.png') no-repeat bottom right var(--surf-color-black);
       background-size: 324px;
@@ -113,7 +113,7 @@
     text-transform: uppercase;
   }
 
-  .o-site-footer__main h2 {
+  .o-site-footer__main h3 {
     color: var(--surf-color-white);
     font-family: var(--surf-font-condensed);
     font-size: calculations.rem(16px);
