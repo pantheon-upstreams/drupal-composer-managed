@@ -1,9 +1,9 @@
-uuid: aa8cadcd-0c58-466a-a1be-9c636b1f2cd4
+uuid: 57ecccc3-662b-4a26-8579-8e8667db125a
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:contact:7c3abd5f-a2cd-4e8a-bac4-5baa5f470bf3'
+    - 'block_content:contact:761c8866-f48d-499d-bcd0-d6c197e45e5b'
   module:
     - block_content
   theme:
@@ -11,11 +11,11 @@ dependencies:
 id: surf_main_footercontact
 theme: surf_main
 region: footer_main
-weight: -4
+weight: -5
 provider: null
-plugin: 'block_content:7c3abd5f-a2cd-4e8a-bac4-5baa5f470bf3'
+plugin: 'block_content:761c8866-f48d-499d-bcd0-d6c197e45e5b'
 settings:
-  id: 'block_content:7c3abd5f-a2cd-4e8a-bac4-5baa5f470bf3'
+  id: 'block_content:761c8866-f48d-499d-bcd0-d6c197e45e5b'
   label: 'Footer Contact'
   label_display: '0'
   provider: block_content

@@ -11,7 +11,7 @@ dependencies:
 id: surf_main_footer
 theme: surf_main
 region: footer_main
-weight: 0
+weight: -4
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
