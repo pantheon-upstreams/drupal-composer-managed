@@ -1,0 +1,86 @@
+uuid: 0349ccb9-8940-4cdd-a647-09c8a4642aa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social
+    - field.field.block_content.social.field_link_facebook
+    - field.field.block_content.social.field_link_instagram
+    - field.field.block_content.social.field_link_linkedin
+    - field.field.block_content.social.field_link_newsletter
+    - field.field.block_content.social.field_link_vimeo
+    - field.field.block_content.social.field_link_x
+    - field.field.block_content.social.field_link_youtube
+  module:
+    - link
+id: block_content.social.default
+targetEntityType: block_content
+bundle: social
+mode: default
+content:
+  field_link_facebook:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_instagram:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_linkedin:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_newsletter:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_vimeo:
+    type: link_default
+    weight: 7
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_x:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_link_youtube:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

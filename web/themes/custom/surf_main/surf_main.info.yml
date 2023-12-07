@@ -12,8 +12,9 @@ regions:
   highlighted: Highlighted
   help: Help
   content: Content
-  sidebar_right: Right Sidebar
-  footer: Footer
+  footer_top: Footer Top
+  footer_main: Footer Main
+  footer_bottom: Footer Bottom
 
 libraries:
   - surf_main/fonts
@@ -21,13 +22,3 @@ libraries:
 
 ckeditor5-stylesheets:
   - components/00-base/global/wysiwyg.css
-
-libraries-override:
-  layout_builder/twocol_section:
-    css:
-      theme:
-        /core/themes/stable9/layouts/layout_builder/twocol_section/twocol_section.css: false
-  layout_builder/threecol_section:
-    css:
-      theme:
-        /core/themes/stable9/layouts/layout_builder/threecol_section/threecol_section.css: false

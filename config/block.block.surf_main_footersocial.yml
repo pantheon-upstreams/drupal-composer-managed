@@ -1,0 +1,25 @@
+uuid: e814d1d2-384d-49f1-b997-304d6e9c6437
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social:72beee46-3faf-4905-93ff-693efefe41b5'
+  module:
+    - block_content
+  theme:
+    - surf_main
+id: surf_main_footersocial
+theme: surf_main
+region: footer_main
+weight: -5
+provider: null
+plugin: 'block_content:72beee46-3faf-4905-93ff-693efefe41b5'
+settings:
+  id: 'block_content:72beee46-3faf-4905-93ff-693efefe41b5'
+  label: 'Footer Social'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

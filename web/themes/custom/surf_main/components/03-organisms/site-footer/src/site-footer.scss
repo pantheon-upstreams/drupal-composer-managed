@@ -1,0 +1,94 @@
+//
+// Regions - Header Primary
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+// - 04 - Mobile Menu
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.o-site-footer {
+  .o-site-footer__primary {
+    padding-block: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      padding-block: 60px;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      padding-block: 88px;
+    }
+  }
+
+  .o-site-footer__top {
+    margin-block-end: 32px;
+
+    @include breakpoints.bp-min(large) {
+      margin-block-end: 40px;
+    }
+  }
+
+  .o-site-footer__main {
+    @include breakpoints.bp-min(large) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 60px;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.o-site-footer {
+  color: var(--surf-color-white);
+
+  .o-site-footer__primary {
+    background-color: var(--surf-color-black);
+  }
+
+  .o-site-footer__secondary {
+    background-color: #000;
+  }
+
+  .o-site-footer__top h2 {
+    color: var(--surf-color-white);
+    text-transform: uppercase;
+  }
+
+  .o-site-footer__main h2 {
+    color: var(--surf-color-white);
+    font-family: var(--surf-font-condensed);
+    font-size: calculations.rem(16px);
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-block-end: 32px;
+    text-transform: uppercase;
+  }
+
+  .a-button.a-button--white.a-button--underline {
+    font-family: var(--surf-font-condensed);
+    font-size: var(--surf-fs-16-22);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

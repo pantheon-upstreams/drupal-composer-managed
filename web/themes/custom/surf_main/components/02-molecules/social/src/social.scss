@@ -1,0 +1,109 @@
+//
+// Component - Molecule - Social
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/animations';
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.m-social {
+  > *:not(:first-child) {
+    margin-block-start: 32px;
+  }
+
+  ul.m-social__items {
+    display: flex;
+    flex-flow: wrap row;
+    gap: 32px;
+    list-style: none;
+    margin-block-end: 0;
+    padding-inline: 0;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - General
+//------------------------------------
+
+.m-social {
+  li.m-social__item {
+    block-size: 32px;
+    inline-size: 32px;
+    position: relative;
+  }
+
+  li.m-social__item > a {
+    block-size: 100%;
+    display: block;
+    font: 0/0 transparent;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    position: absolute;
+  }
+
+  li.m-social__item > a:before {
+    background-color: var(--surf-color-white);
+    block-size: 100%;
+    content: '';
+    display: block;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    mask-size: contain;
+    position: absolute;
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
+  }
+
+  li.m-social__item > a:hover:before,
+  li.m-social__item > a:focus:before {
+    background-color: var(--surf-color-gray-300);
+  }
+
+  li.m-social__item--facebook > a:before {
+    --icon-facebook: svg-load('icon-facebook.svg');
+    mask: var(--icon-facebook) no-repeat center;
+  }
+
+  li.m-social__item--x > a:before {
+    --icon-x: svg-load('icon-x.svg');
+    mask: var(--icon-x) no-repeat center;
+  }
+
+  li.m-social__item--instagram > a:before {
+    --icon-instagram: svg-load('icon-instagram.svg');
+    mask: var(--icon-instagram) no-repeat center;
+  }
+
+  li.m-social__item--linkedin > a:before {
+    --icon-linkedin: svg-load('icon-linkedin.svg');
+    mask: var(--icon-linkedin) no-repeat center;
+  }
+
+  li.m-social__item--youtube > a:before {
+    --icon-youtube: svg-load('icon-youtube.svg');
+    mask: var(--icon-youtube) no-repeat center;
+  }
+
+  li.m-social__item--vimeo > a:before {
+    --icon-vimeo: svg-load('icon-vimeo.svg');
+    mask: var(--icon-vimeo) no-repeat center;
+  }
+}

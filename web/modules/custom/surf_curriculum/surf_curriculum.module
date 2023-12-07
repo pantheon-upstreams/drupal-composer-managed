@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\surf_curriculum\Entity\DownloadRequest\CurriculumModule as CurriculumModuleDownloadRequest;
+use Drupal\surf_curriculum\Entity\Node\CurriculumModule as CurriculumModuleNode;
 /**
  * Implements hook_ENTITY_TYPE_presave().
  */
@@ -33,7 +35,11 @@ function surf_curriculum_download_request_presave(\Drupal\Core\Entity\EntityInte
  */
 function surf_curriculum_entity_bundle_info_alter(array &$bundles): void {
   if (isset($bundles['node']['curriculum_module'])) {
-    $bundles['node']['curriculum_module']['class'] = \Drupal\surf_curriculum\Entity\Node\CurriculumModule::class;
+    $bundles['node']['curriculum_module']['class'] = CurriculumModuleNode::class;
+  }
+
+  if (isset($bundles['download_request']['curriculum_module'])) {
+    $bundles['download_request']['curriculum_module']['class'] = CurriculumModuleDownloadRequest::class;
   }
 }
 
@@ -114,12 +120,9 @@ function surf_curriculum_node_view(array &$build, \Drupal\Core\Entity\EntityInte
     $build['reservation_links'] = $entity->getUserReservationLinks(\Drupal::currentUser());
   }
 
-//  if ($display->getComponent('reservation_status')) {
-//    $download_item_storage = \Drupal::entityTypeManager()->getStorage('download_item');
-//    $download_item_id = $entity->getActiveDownloadRequest(\Drupal::currentUser())->get('request_items')->first()->getEntity()->id();
-//    $download_item = $download_item_storage->load(intval($download_item_id));
-//    $download_item_state = $download_item->getParentEntity();
-//    $build['reservation_status'] = 'test';
-//    $var = 1;
-//  }
+  if ($display->getComponent('reservation_status')) {
+    /** @var \Drupal\surf_curriculum\Entity\DownloadRequest\CurriculumModule $download_request */
+    $download_request = $entity->getActiveDownloadRequest(\Drupal::currentUser());
+    $build['reservation_status'] = $download_request->getStatusDescription();
+  }
 }

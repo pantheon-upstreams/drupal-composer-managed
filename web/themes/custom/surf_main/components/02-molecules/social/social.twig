@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Molecule component for Social
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - social_attributes: [string] Any additional attributes needing to be specified.
+ * - social_title: [string] Reserved for this blocks title.
+ * - social_newsletter: [array] Reserved newsletter information or link.
+ * - social_facebook: [array] Reserved for a Facebook link.
+ * - social_x: [array] Reserved for an X link.
+ * - social_instagram: [array] Reserved an Instagram link.
+ * - social_linkedin: [array] Reserved a Linked In link.
+ * - social_youtube: [array] Reserved for a YouTube link.
+ * - social_vimeo: [array] Reserved for a Vimeo link.
+ */
+#}
+
+{% set classes = [
+    'm-social',
+] %}
+
+<section {{ social_attributes.addClass(classes).setAttribute('aria-label', social_title).merge(attributes) }}>
+    {% if social_title %}
+        <h2 class="m-social__title">{{ social_title }}</h2>
+    {% endif %}
+
+    {% if social_newsletter is not empty %}
+        <div class="m-social__newsletter">
+            {{ social_newsletter }}
+        </div>
+    {% endif %}
+
+    <ul class="m-social__items">
+        {% if social_facebook is not empty %}
+            <li class="m-social__item m-social__item--facebook">{{ social_facebook }}</li>
+        {% endif %}
+
+        {% if social_x is not empty %}
+            <li class="m-social__item m-social__item--x">{{ social_x }}</li>
+        {% endif %}
+
+        {% if social_instagram is not empty %}
+            <li class="m-social__item m-social__item--instagram">{{ social_instagram }}</li>
+        {% endif %}
+
+        {% if social_linkedin is not empty %}
+            <li class="m-social__item m-social__item--linkedin">{{ social_linkedin }}</li>
+        {% endif %}
+
+        {% if social_youtube is not empty %}
+            <li class="m-social__item m-social__item--youtube">{{ social_youtube }}</li>
+        {% endif %}
+
+        {% if social_vimeo is not empty %}
+            <li class="m-social__item m-social__item--vimeo">{{ social_vimeo }}</li>
+        {% endif %}
+    </ul>
+</section>

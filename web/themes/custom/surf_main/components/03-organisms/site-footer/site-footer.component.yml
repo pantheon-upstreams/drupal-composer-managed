@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Site Footer
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    site_footer_attributes:
+      title: Attributes
+      type: string
+    site_footer_top:
+      title: Top
+      type: array
+    site_footer_main:
+      title: Main
+      type: array
+    site_footer_bottom:
+      title: Bottom
+      type: array

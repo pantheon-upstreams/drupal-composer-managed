@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for the a Footer Menu navigation block.
+ *
+ * Available variables:
+ * - No additional variables are available for this block type.
+ *
+ * @see templates/blocks/system/block--system-menu-block.html.twig
+ * @see components/02-molecules/footer-menu
+ */
+#}
+
+{% include 'surf_main:footer-menu' with {
+    attributes,
+    footer_menu_attributes: create_attribute(),
+    footer_menu_title: configuration.label,
+    footer_menu_content: content,
+} only %}

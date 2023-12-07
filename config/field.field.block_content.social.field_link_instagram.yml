@@ -1,0 +1,23 @@
+uuid: dc827d6a-9c19-4555-aee0-73eff0d5dcde
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social
+    - field.storage.block_content.field_link_instagram
+  module:
+    - link
+id: block_content.social.field_link_instagram
+field_name: field_link_instagram
+entity_type: block_content
+bundle: social
+label: 'Instagram Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

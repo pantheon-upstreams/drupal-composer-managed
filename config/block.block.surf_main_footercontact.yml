@@ -1,0 +1,25 @@
+uuid: aa8cadcd-0c58-466a-a1be-9c636b1f2cd4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:contact:7c3abd5f-a2cd-4e8a-bac4-5baa5f470bf3'
+  module:
+    - block_content
+  theme:
+    - surf_main
+id: surf_main_footercontact
+theme: surf_main
+region: footer_main
+weight: -4
+provider: null
+plugin: 'block_content:7c3abd5f-a2cd-4e8a-bac4-5baa5f470bf3'
+settings:
+  id: 'block_content:7c3abd5f-a2cd-4e8a-bac4-5baa5f470bf3'
+  label: 'Footer Contact'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

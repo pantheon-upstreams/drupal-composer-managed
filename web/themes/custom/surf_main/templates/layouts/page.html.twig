@@ -49,5 +49,13 @@
         </main>
     {% endif %}
 
-    {{ page.footer }}
+    {% if page.footer_top or page.footer_main or page.footer_bottom %}
+        {% include 'surf_main:site-footer' with {
+            attributes,
+            site_footer_attributes: create_attribute(),
+            site_footer_top: page.footer_top,
+            site_footer_main: page.footer_main,
+            site_footer_bottom: page.footer_bottom,
+        } only %}
+    {% endif %}
 </div>

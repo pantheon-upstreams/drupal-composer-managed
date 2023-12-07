@@ -27,7 +27,7 @@
 ] %}
 
 <article {{ curriculum_module_attributes.addClass(classes).merge(attributes) }}>
-    <section class="p-curriculum-module__header">
+    <section class="p-curriculum-module__header" aria-label="Curriculum Module title">
         {% embed 'surf_main:header' with {
             header_heading: curriculum_module_heading,
             header_heading_level: '1',
@@ -58,7 +58,7 @@
     </section>
 
     {% if curriculum_module_dashboard == 'true' and curriculum_module_resources %}
-        <section class="p-curriculum-module__resources">
+        <section class="p-curriculum-module__resources" aria-label="Curriculum Module resources">
             <div class="container container--large">
                 {{ curriculum_module_resources }}
             </div>
@@ -69,8 +69,7 @@
         <section class="p-curriculum-module__status">
             <div class="container container--large">
                 <h2 class="visually-hidden">{{ 'Curriculum module status'|t }}</h2>
-
-                <p><strong>{{ curriculum_module_status }}.</strong> {{ 'Review the checklist before returning, which can be found in your curriculum resources.'|t -}}</p>
+                <p>{{ curriculum_module_status }} {{ 'Review the checklist before returning, which can be found in your curriculum resources.'|t -}}</p>
 
                 {% include 'surf_main:button' with {
                     attributes,
