@@ -128,7 +128,7 @@
         </section>
     {% endif %}
 
-    {% if curriculum_module_dashboard == 'false' and curriculum_module_cta_url and curriculum_module_cta_text %}
+    {% if not curriculum_module_dashboard and curriculum_module_cta_url and curriculum_module_cta_text %}
         <section class="p-curriculum-module__request">
             <div class="container container--large">
                 <h2 class="visually-hidden">{{ 'Request this curriculum module'|t }}</h2>
