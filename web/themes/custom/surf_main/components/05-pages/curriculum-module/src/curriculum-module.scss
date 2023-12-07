@@ -22,6 +22,12 @@
 //------------------------------------
 
 .p-curriculum-module {
+  padding-block-end: 40px;
+
+  @include breakpoints.bp-min(large) {
+    padding-block-end: 64px;
+  }
+
   > section:not(:first-child, .p-curriculum-module__related) {
     margin-block-start: 32px;
   }

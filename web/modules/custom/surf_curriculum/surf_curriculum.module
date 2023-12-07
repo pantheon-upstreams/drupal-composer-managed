@@ -122,7 +122,8 @@ function surf_curriculum_node_view(array &$build, \Drupal\Core\Entity\EntityInte
 
   if ($display->getComponent('reservation_status')) {
     /** @var \Drupal\surf_curriculum\Entity\DownloadRequest\CurriculumModule $download_request */
-    $download_request = $entity->getActiveDownloadRequest(\Drupal::currentUser());
-    $build['reservation_status'] = $download_request->getStatusDescription();
+    if ($download_request = $entity->getActiveDownloadRequest(\Drupal::currentUser())) {
+      $build['reservation_status'] = $download_request->getStatusDescription();
+    }
   }
 }
