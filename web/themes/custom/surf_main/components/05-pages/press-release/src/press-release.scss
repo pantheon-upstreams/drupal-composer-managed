@@ -22,10 +22,10 @@
 //------------------------------------
 
 .p-press-release {
-  padding-block-start: 40px;
+  padding-block: 40px;
 
   @include breakpoints.bp-min(large) {
-    padding-block-start: 64px;
+    padding-block: 64px;
   }
 
   .m-breadcrumbs {
