@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Component for Feature Banner
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - feature_banner_attributes: [array] Any parent tag attributes.
+ * - feature_banner_text: [string]
+ * - feature_banner_heading: [string] required
+ * - feature_banner_heading_level: [string] required
+ * - feature_banner_media: [array]
+ * - feature_banner_media_caption: [string]
+ * - feature_banner_button_text: [string]
+ * - feature_banner_button_url: [string]
+ *
+ */
+#}
+
+{% set classes = [
+  'm-feature-banner',
+] %}
+
+<div {{ feature_banner_attributes.addClass(classes).merge(attributes) }}>
+
+  {% if feature_banner_media %}
+    <div class="m-feature-banner__media">
+      {{ feature_banner_media }}
+    </div>
+  {% endif %}
+
+  <div class="m-feature-banner__inner-wrapper">
+    {% if feature_banner_heading %}
+      {% embed 'surf_main:heading' with {
+        heading_text: feature_banner_heading ? feature_banner_heading,
+        heading_level: '2',
+        heading_type: style_options['heading_type']|default('none'),
+        heading_attributes: create_attribute({'class': ['m-feature-banner__heading']}),
+      } only %}
+      {% endembed %}
+    {% endif %}
+
+    {% if feature_banner_text %}
+      <div class="m-feature-banner__text">{{ feature_banner_text }}</div>
+    {% endif %}
+
+    {% if feature_banner_button_url %}
+
+      {% include 'surf_main:button' with {
+        button_attributes: create_attribute(),
+        button_color: 'white',
+        button_external: true,
+        button_html_tag: 'link',
+        button_size: 'small',
+        button_style: 'primary',
+        button_title: feature_banner_button_text,
+        button_url: feature_banner_button_url,
+      } only %}
+
+    {% endif %}
+
+    {% block feature_banner_content %}
+
+    {% endblock %}
+  </div>
+</div>

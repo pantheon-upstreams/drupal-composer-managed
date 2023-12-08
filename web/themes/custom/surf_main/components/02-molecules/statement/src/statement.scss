@@ -22,7 +22,8 @@
 //------------------------------------
 
 .m-statement {
-  .m-statement__eyebrow {
+  .m-statement__eyebrow,
+  .m-statement__eyebrow-bottom {
     color: var(--surf-color-gray-600);
     font-family: var(--surf-font-condensed);
     font-weight: var(--surf-fw-bold);

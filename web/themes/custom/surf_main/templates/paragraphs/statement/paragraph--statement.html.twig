@@ -20,6 +20,7 @@
 
 {% set rendered_content = content|without(
     'field_eyebrow',
+    'field_eyebrow_bottom',
     'field_link',
     'field_text',
     'field_title'
@@ -29,7 +30,8 @@
     attributes,
     rendered_content,
     statement_attributes: create_attribute({'class': classes}),
-    statement_eyebrow: content.field_eyebrow|field_value,
+    statement_eyebrow: content.field_eyebrow|field_value|default([]),
+    statement_eyebrow_bottom: content.field_eyebrow_bottom|field_value|default([]),
     statement_link: content.field_link|field_value|default([]),
     statement_text: content.field_text|field_value,
     statement_title: content.field_title|field_value,

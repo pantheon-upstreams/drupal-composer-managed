@@ -91,7 +91,7 @@ options:
   add_rule:
     plugin: property
     label: 'Add Rule'
-    default: 1
+    default: 0
     options:
       1:
         label: Yes
@@ -123,6 +123,8 @@ options:
         label: Large
       gradient:
         label: Gradient
+      particles:
+        label: Particles
 
   hero_type:
     plugin: property

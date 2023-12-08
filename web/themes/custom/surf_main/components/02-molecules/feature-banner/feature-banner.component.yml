@@ -1,0 +1,33 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Feature Banner
+status: experimental
+group: Molecules
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    feature_banner_attributes:
+      title: Attributes
+      type: string
+    feature_banner_heading:
+      title: Callout Heading
+      type: string
+    feature_banner_heading_level:
+      title: Callout Heading Level
+      type: string
+    feature_banner_text:
+      title: Callout Text
+      type: string
+    feature_banner_button_text:
+      title: Callout Button Text
+      type: string
+    feature_banner_button_url:
+      title: Callout Button URL
+      type: string
+    feature_banner_button_prefix:
+      title: Callout Button Prefix
+      type: string
+    feature_banner_button_suffix:
+      title: Callout Button Suffix
+      type: string

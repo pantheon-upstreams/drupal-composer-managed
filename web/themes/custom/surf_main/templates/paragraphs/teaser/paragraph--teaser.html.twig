@@ -7,7 +7,7 @@
  * - No additional variables are available for this Paragraph type.
  *
  * @see templates/paragraphs/paragraph.html.twig
- * @see components/02-molecules/callout/callout.twig
+ * @see components/02-molecules/teaser/teaser.twig
  */
 #}
 
@@ -20,22 +20,22 @@
 
 {% set rendered_content = content|without(
   'field_title',
-  'field_text',
+  'field_summary',
   'field_link',
   'field_media'
 ) %}
 
-{% embed 'surf_main:feature-banner' with {
+{% embed 'surf_main:teaser' with {
   attributes,
   rendered_content,
-  feature_banner_attributes: create_attribute({'class': classes}),
-  feature_banner_heading: content.field_title|field_value|default([]),
-  feature_banner_text: content.field_text|field_value|default([]),
-  feature_banner_button_text: content.field_link.0['#title']|default([]),
-  feature_banner_button_url: content.field_link.0['#url']|default([]),
-  feature_banner_media: content.field_media|field_value|default([]),
+  teaser_attributes: create_attribute({'class': classes}),
+  teaser_title: content.field_title|field_value|default([]),
+  teaser_content: content.field_summary|field_value|default([]),
+  teaser_button_text: content.field_link.0['#title']|default([]),
+  teaser_url: content.field_link.0['#url']|default([]),
+  teaser_media: content.field_media|default([]),
 } only %}
   {% block media_block %}
-    {{ callout_media }}
+    {{ teaser_media }}
   {% endblock %}
 {% endembed %}

@@ -24,6 +24,10 @@
 
     <h2 class="m-statement__title">{{ statement_title }}</h2>
 
+    {% if statement_eyebrow_bottom %}
+        <p class="m-statement__eyebrow-bottom">{{ statement_eyebrow_bottom }}</p>
+    {% endif %}
+
     {% if statement_text %}
         <div class="m-statement__text">{{ statement_text }}</div>
     {% endif %}

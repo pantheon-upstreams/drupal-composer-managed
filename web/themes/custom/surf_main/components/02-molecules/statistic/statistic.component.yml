@@ -1,0 +1,20 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Statistic
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - statistic_text
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    statistic_attributes:
+      title: Attributes
+      type: string
+    statistic_text:
+      title: Text
+      type: string
+    statistic_media:
+      title: Media
+      type: array

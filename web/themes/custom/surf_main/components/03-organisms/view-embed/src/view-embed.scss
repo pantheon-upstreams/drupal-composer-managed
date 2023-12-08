@@ -43,3 +43,18 @@
   margin-block-end: rem(20px);
 }
 
+.o-view-embed__rows {
+  .p-homepage & {
+
+    > *:not( :last-child ) {
+      margin-block-end: rem(32px);
+      @include bp-min(medium) {
+        margin-block-end: rem(40px);
+      }
+      @include bp-min(xlarge) {
+        margin-block-end: rem(80px);
+      }
+    }
+  }
+}
+

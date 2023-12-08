@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Component for Statistic
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - statistic_attributes: [string] Component reserved space for attributes.
+ * - statement_eyebrow: [string] Text element representing the text above the title.
+ * - statement_media: [array] Rendered array of link object for this component.
+ * - statistic_text: [string] Text element representing supportive content of this component.
+ * - statement_title: [string] Text representing the primary title of this component.
+ */
+#}
+
+{% set classes = [
+  'm-statistic',
+] %}
+
+<div {{ statistic_attributes.addClass(classes).merge(attributes) }}>
+
+  {% if statistic_media %}
+    <div class="m-statistic__media">
+      {{ statistic_media }}
+    </div>
+  {% endif %}
+
+  {% if statistic_text %}
+    <p class="m-statistic__text">{{ statistic_text }}</p>
+  {% endif %}
+
+</div>
+

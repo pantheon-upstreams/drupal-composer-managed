@@ -47,3 +47,31 @@
   letter-spacing: 1.44px;
   line-height: var(--surf-lh-base);
 }
+
+.a-heading--particles {
+  font-family: var(--surf-font-sans-alt);
+  font-size: rem(48px);
+  font-weight: var(--surf-fw-book);
+  line-height: 0.85;
+  text-transform: uppercase;
+
+  @include bp-min(medium) {
+    font-size: rem(120px);
+  }
+
+  @include bp-min(large) {
+    font-size: rem(120px);
+  }
+
+  @include bp-min(xlarge) {
+    font-size: rem(144px);
+    background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
+    background-size: 320px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @include bp-min(xxlarge) {
+    font-size: rem(176px);
+  }
+}

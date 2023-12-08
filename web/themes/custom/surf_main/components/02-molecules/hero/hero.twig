@@ -19,17 +19,17 @@
 ] %}
 
 <section {{ hero_attributes.addClass(classes).merge(attributes) }}>
-    <div class="m-hero__media">
-        {{ hero_media }}
-    </div>
+  <div class="m-hero__media">
+    {{ hero_media }}
+  </div>
 
-    <div class="m-hero__content">
-        <h1 class="m-hero__title">{{ hero_title }}</h1>
+  <div class="m-hero__content">
+    <h1 class="m-hero__title">{{ hero_title }}</h1>
 
-        {% if hero_text %}
-            <div class="m-hero__text">
-                <p>{{- hero_text -}}</p>
-            </div>
-        {% endif %}
-    </div>
+    {% if hero_text %}
+      <div class="m-hero__text">
+        {{- hero_text -}}
+      </div>
+    {% endif %}
+  </div>
 </section>

@@ -1,29 +1,26 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Statement
+name: Statistics Banner
 status: experimental
 group: Molecules
 props:
   type: object
   required:
-    - statement_title
+    - statistics_banner_title
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    statement_attributes:
+    statistics_banner_attributes:
       title: Attributes
       type: string
-    statement_eyebrow:
+    statistics_banner_eyebrow:
       title: Eyebrow
       type: string
-    statement_eyebrow_bottom:
-      title: Eyebrow Bottom
-      type: string
-    statement_link:
+    statistics_banner_link:
       title: Link
       type: array
-    statement_text:
+    statistics_banner_text:
       title: Text
       type: string
-    statement_title:
+    statistics_banner_title:
       title: Title
       type: string

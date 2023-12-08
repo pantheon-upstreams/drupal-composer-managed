@@ -21,7 +21,7 @@ props:
       type: string
     heading_rule:
       title: Heading Rule
-      type: boolean
+      type: string
     heading_url:
       title: Heading Url
       type: string
@@ -32,3 +32,4 @@ props:
         - none
         - lg
         - gradient
+        - particles

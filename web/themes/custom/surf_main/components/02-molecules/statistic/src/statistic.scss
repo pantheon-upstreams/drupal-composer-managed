@@ -1,0 +1,37 @@
+//
+// Component - Molecule - Statistic
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/global/src/buttons';
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-statistic {
+  display: flex;
+  gap: calculations.rem(24px);
+  align-items: center;
+}
+
+.m-statistic__text {
+  color: var(--surf-color-white);
+  font-family: var(--surf-font-condensed);
+  font-size: var(--surf-fs-22-28-44);
+  font-weight: var(--surf-fw-bold);
+  letter-spacing: 0.88px;
+  line-height: var(--surf-lh-heading);
+  text-transform: uppercase;
+}

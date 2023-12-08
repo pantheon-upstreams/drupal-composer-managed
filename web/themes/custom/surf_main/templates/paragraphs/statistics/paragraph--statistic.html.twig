@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Statement Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ * @see components/02-molecules/statistic/statistic.twig
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+  'field_media',
+  'field_title',
+) %}
+
+{% include 'surf_main:statistic' with {
+  attributes,
+  rendered_content,
+  statistic_attributes: create_attribute({'class': classes}),
+  statistic_media: content.field_media|field_value|default([]),
+  statistic_text: content.field_title|field_value|default([]),
+} only %}

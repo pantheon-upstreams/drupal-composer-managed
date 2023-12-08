@@ -1,0 +1,162 @@
+//
+// Component - Molecule - Feature Banner
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Overrides
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-feature-banner {
+  background: linear-gradient(108deg, #007fbf 0%, #000080 100%), linear-gradient(108deg, #0050b8 0%, #2976d9 82.91%);
+  margin-block-start: rem(100px);
+  position: relative;
+  @include bp-min(medium) {
+    margin-block-start: rem(40px);
+
+    &::after {
+      background-image: url('img/bkg-circles.png');
+      background-repeat: no-repeat;
+      background-size: rem(342px) rem(405px);
+      block-size: rem(405px);
+      bottom: rem(-120px);
+      content: '';
+      inline-size: rem(342px);
+      position: absolute;
+      right: rem(-120.214px);
+    }
+  }
+  @include bp-min(large) {
+    &::after {
+      bottom: rem(-135px);
+      right: rem(-112.214px);
+    }
+  }
+  @include bp-min(xlarge) {
+    margin-block-start: rem(160px);
+
+    &::after {
+      bottom: rem(-52px);
+      right: rem(-111.107px);
+    }
+  }
+}
+
+.m-feature-banner__inner-wrapper {
+  padding-block-end: 32px;
+  padding-block-start: 140px;
+  padding-inline: 15px;
+  @include bp-min(medium) {
+    padding-block-end: 80px;
+    padding-block-start: 242px;
+    padding-inline: 40px;
+  }
+  @include bp-min(large) {
+    padding-block-start: 375px;
+  }
+  @include bp-min(xlarge) {
+    padding-block-end: 80px;
+    padding-block-start: 400px;
+    padding-inline: 80px;
+  }
+}
+
+.m-feature-banner__media {
+  max-height: rem(228px);
+  padding-inline: rem(15px);
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  @include bp-min(medium) {
+    display: flex;
+    gap: 32px;
+    max-height: rem(263px);
+    padding-inline: rem(30px);
+    top: -40px;
+  }
+  @include bp-min(large) {
+    max-height: rem(369px);
+    padding-inline: rem(50px);
+  }
+  @include bp-min(xlarge) {
+    gap: 37px;
+    max-height: rem(512px);
+    top: rem(-160px);
+  }
+
+  > figure:nth-child( 1 ) {
+    display: flex;
+    width: 100%;
+    @include bp-min(medium) {
+      width: 60%;
+    }
+  }
+
+  > figure:nth-child( 2 ) {
+    display: none;
+
+    @include bp-min(medium) {
+      display: flex;
+      width: 40%;
+    }
+  }
+
+  > figure {
+    picture {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.m-feature-banner__heading {
+  color: var(--surf-color-white);
+  font-family: var(--surf-font-sans-alt);
+  font-size: var(--surf-fs-48-132-176);
+  font-weight: var(--surf-fw-medium);
+  line-height: var(--surf-lh-base);
+  margin-block-end: rem(20px);
+  text-transform: uppercase;
+}
+
+.m-feature-banner__text {
+  color: var(--surf-color-white);
+  font-family: var(--surf-font-condensed);
+  font-size: var(--surf-fs-22-40);
+  font-weight: var(--surf-fw-bold);
+  letter-spacing: 2px;
+  line-height: var(--surf-lh-heading);
+  margin-block-end: rem(34px);
+  text-transform: uppercase;
+}
+
+
+
+//------------------------------------
+//  03 - Overrides
+//------------------------------------
+
+.m-feature-banner {
+  .a-button {
+    font-family: var(--surf-font-condensed);
+  }
+}
+

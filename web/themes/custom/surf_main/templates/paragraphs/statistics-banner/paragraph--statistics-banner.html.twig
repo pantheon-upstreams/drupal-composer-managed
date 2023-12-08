@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Statement Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ * @see components/02-molecules/statistics-banner/statistics-banner.twig
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+  'field_media',
+  'field_eyebrow',
+  'field_eyebrow_bottom',
+  'field_statistic',
+  'field_title',
+  'field_link',
+) %}
+
+{% include 'surf_main:statistics-banner' with {
+  attributes,
+  rendered_content,
+  statistics_banner_attributes: create_attribute({'class': classes}),
+  statistics_banner_media: content.field_media|field_value|default([]),
+  statistics_banner_eyebrow: content.field_eyebrow|field_value,
+  statistics_banner_eyebrow_bottom: content.field_eyebrow_bottom|field_value,
+  statistics_banner_link_url: content.field_link.0['#url'],
+  statistics_banner_link_text: content.field_link.0['#title'],
+  statistics_banner_title: content.field_title|field_value,
+  statistics_banner_statistics: content.field_statistic|field_value,
+} only %}

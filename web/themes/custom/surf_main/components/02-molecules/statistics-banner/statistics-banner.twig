@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Component for Statistics Banner
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - statistics_banner_attributes: [string] Component reserved space for attributes.
+ * - statistics_banner_eyebrow: [string] Text element representing the text above the title.
+ * - statistics_banner_eyebrow_bottom: [string] Text element representing the text below the title.
+ * - statistics_banner_link: [array] Rendered array of link object for this component.
+ * - statistics_banner_text: [string] Text element representing supportive content of this component.
+ * - statistics_banner_title: [string] Text representing the primary title of this component.
+ * - statistics_banner_statistics: [array] Rendered array of statistic object for this component.
+ */
+#}
+
+{% set classes = [
+    'm-statistics-banner',
+] %}
+
+<div {{ statistics_banner_attributes.addClass(classes).merge(attributes) }}>
+
+    {% if statistics_banner_media %}
+      <div class="m-statistics-banner__media">
+        {{ statistics_banner_media }}
+      </div>
+    {% endif %}
+
+    <div class="m-statistics-banner__content">
+
+      {% if statistics_banner_eyebrow %}
+        <p class="m-statistics-banner__eyebrow">{{ statistics_banner_eyebrow }}</p>
+      {% endif %}
+
+      <h2 class="m-statistics-banner__title">{{ statistics_banner_title }}</h2>
+
+      {% if statistics_banner_eyebrow_bottom %}
+        <p class="m-statistics-banner__eyebrow">{{ statistics_banner_eyebrow_bottom }}</p>
+      {% endif %}
+
+      {% if statistics_banner_text %}
+        <div class="m-statistics-banner__text">{{ statistics_banner_text }}</div>
+      {% endif %}
+
+      {% if statistics_banner_statistics %}
+        <ol class="m-statistics-banner__list">
+          {% for statistic in statistics_banner_statistics %}
+            <li>
+              {{ statistic }}
+            </li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+
+      {% if statistics_banner_link_url %}
+        <div class="m-statistics-banner__link">
+
+          {% include 'surf_main:button' with {
+            button_attributes: create_attribute(),
+            button_color: 'white',
+            button_html_tag: 'link',
+            button_size: 'small',
+            button_style: 'primary',
+            button_title: statistics_banner_link_text,
+            button_url: statistics_banner_link_url,
+          } only %}
+
+        </div>
+      {% endif %}
+
+    </div>
+</div>
