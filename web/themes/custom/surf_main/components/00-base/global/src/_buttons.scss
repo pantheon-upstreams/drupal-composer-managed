@@ -185,11 +185,19 @@
     &:before,
     &:after {
       background-color: var(--surf-color-white);
+      transition: animations.transition(background-color, 0.35s, easeInOutExpo);
     }
 
     &:hover,
     &:focus {
-      color: var(--surf-color-gray-600);
+      color: var(--surf-color-gray-300);
+    }
+
+    &:hover:before,
+    &:focus:before,
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--surf-color-gray-300);
     }
   }
 

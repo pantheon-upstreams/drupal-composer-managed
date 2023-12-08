@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Molecule component for Footer Menu
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - footer_menu_attributes: [string] Any additional attributes needing to be specified.
+ * - footer_menu_title: [string] Reserved for the main title of this block.
+ * - footer_menu_content: [array] Reserved for the primary list of menu links.
+ */
+#}
+
+{% set classes = [
+    'm-footer-menu',
+] %}
+
+<nav {{ footer_menu_attributes.addClass(classes).setAttribute('aria-label', footer_menu_title).merge(attributes) }}>
+    {% if footer_menu_title %}
+        <h3 class="m-footer-menu__title">{{ footer_menu_title }}</h3>
+    {% endif %}
+
+    {{ footer_menu_content }}
+</nav>

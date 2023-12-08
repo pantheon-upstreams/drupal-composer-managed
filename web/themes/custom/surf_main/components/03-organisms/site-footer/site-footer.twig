@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Organism component for Site Footer
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - site_footer_attributes: [string] Any additional attributes needing to be specified.
+ * - site_footer_top: [array] Reserved for any footer blocks displayed on top of everything else.
+ * - site_footer_main: [array] Reserved for any footer blocks representing footer navigation.
+ * - site_footer_bottom: [array] Reserved for any footer blocks that represent legal or less important information.
+ */
+#}
+
+{% set classes = [
+    'o-site-footer',
+] %}
+
+<footer {{ site_footer_attributes.addClass(classes).merge(attributes) }} id="site-footer" aria-label="Site Footer">
+    {% if site_footer_top or site_footer_main %}
+        <div class="o-site-footer__primary">
+            <div class="container container--xlarge">
+                {% if site_footer_top %}
+                    <div class="o-site-footer__top">
+                        {{ site_footer_top }}
+                    </div>
+                {% endif %}
+
+                {% if site_footer_main %}
+                    <div class="o-site-footer__main">
+                        {{ site_footer_main }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if site_footer_bottom %}
+        <div class="o-site-footer__secondary">
+            <div class="container container--xlarge">
+                {{ site_footer_bottom }}
+                <a href="#top" id="back-to-top">{{ 'To Top'|t }}</a>
+            </div>
+        </div>
+    {% endif %}
+</footer>

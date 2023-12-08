@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Contact Block.
+ *
+ * Available variables:
+ * - No additional variables are available for this Block type.
+ *
+ * @see templates/blocks/block.html.twig
+ * @see components/02-molecules/contact/contact.twig
+ */
+#}
+
+{% set classes = [
+    'block',
+    'block__' ~ configuration.provider|clean_class,
+    plugin_id ? 'block__' ~ plugin_id|clean_class,
+    block_type ? 'block__' ~ block_type|clean_class,
+] %}
+
+{% set rendered_content = content|without(
+    'field_address',
+    'field_phone',
+    'field_email',
+) %}
+
+{% include 'surf_main:contact' with {
+    rendered_content,
+    title_prefix,
+    title_suffix,
+    contact_attributes: create_attribute({'class': classes}),
+    contact_title: label|default('Contact'),
+    contact_address: content.field_address|field_value|default([]),
+    contact_phone: content.field_phone|field_value|default([]),
+    contact_email: content.field_email|field_value|default([]),
+} only %}

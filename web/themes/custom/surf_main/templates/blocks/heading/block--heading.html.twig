@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Heading Block.
+ *
+ * Available variables:
+ * - No additional variables are available for this Block type.
+ *
+ * @see templates/blocks/block.html.twig
+ * @see components/01-atoms/heading/heading.twig
+ */
+#}
+
+{% set classes = [
+    'block',
+    'block__' ~ configuration.provider|clean_class,
+    plugin_id ? 'block__' ~ plugin_id|clean_class,
+    block_type ? 'block__' ~ block_type|clean_class,
+] %}
+
+{% set rendered_content = content|without(
+    'field_title',
+) %}
+
+<div {{ attributes.addClass(classes) }}>
+    {% include 'surf_main:heading' with {
+        rendered_content,
+        title_prefix,
+        title_suffix,
+        heading_attributes: create_attribute(),
+        heading_level: '2',
+        heading_text: content.field_title|field_value,
+        heading_type: 'lg',
+    } only %}
+</div>

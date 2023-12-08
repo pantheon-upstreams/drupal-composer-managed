@@ -34,6 +34,7 @@
     curriculum_module_media: content.field_media|field_value|default([]),
     curriculum_module_resources: content.field_resource_list|field_value|default([]),
     curriculum_module_standards: content.field_ref_standards|field_value|default([]),
+    curriculum_module_status: content.reservation_status,
     curriculum_module_summary: content.field_overview|render ? content.field_overview|field_value,
     curriculum_module_time_required: content.field_time_required|render ? content.field_time_required|field_value,
 } only %}

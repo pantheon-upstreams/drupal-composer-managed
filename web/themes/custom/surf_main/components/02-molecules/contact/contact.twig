@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Molecule component for Contact
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - contact_attributes: [string] Any additional attributes needing to be specified.
+ * - contact_title: [string] Reserved for the main title of this block.
+ * - contact_address: [array] Reserved for an address contact.
+ * - contact_phone: [array] Reserved for a phone number contact.
+ * - contact_email: [array] Reserved for an email address.
+ */
+#}
+
+{% set classes = [
+    'm-contact',
+] %}
+
+<section {{ contact_attributes.addClass(classes).setAttribute('aria-label', contact_title).merge(attributes) }}>
+    {% if contact_title %}
+        <h3 class="m-contact__title">{{ contact_title }}</h3>
+    {% endif %}
+
+    {% if contact_address %}
+        <div class="m-contact__address">
+            {{ contact_address }}
+        </div>
+    {% endif %}
+
+    {% if contact_phone %}
+        <div class="m-contact__phone">
+            {{ contact_phone }}
+        </div>
+    {% endif %}
+
+    {% if contact_email %}
+        <div class="m-contact__email">
+            <a href="mailto://{{ contact_email }}">{{ 'Contact Us'|t }}</a>
+        </div>
+    {% endif %}
+</section>

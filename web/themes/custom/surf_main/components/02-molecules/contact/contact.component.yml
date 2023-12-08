@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Contact
+status: experimental
+group: Molecules
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    contact_attributes:
+      title: Attributes
+      type: string
+    contact_title:
+      title: Title
+      type: string
+    contact_address:
+      title: Address
+      type: array
+    contact_phone:
+      title: Phone
+      type: array
+    contact_email:
+      title: Email
+      type: array

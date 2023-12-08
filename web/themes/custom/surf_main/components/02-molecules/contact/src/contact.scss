@@ -1,0 +1,66 @@
+//
+// Component - Molecule - Contact
+//
+// - 01 - Imports
+// - 02 - Layout
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+// TBD
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.m-contact {
+  > *:not(:first-child) {
+    margin-block-start: 10px;
+  }
+
+  .m-contact__address p {
+    display: flex;
+    flex-flow: wrap row;
+    gap: 3px;
+  }
+
+  .m-contact__address .locality {
+    margin-inline-end: -2px;
+  }
+
+  .m-contact__address .country {
+    display: none;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - General
+//------------------------------------
+
+.m-contact {
+  p, a {
+    font-size: var(--surf-fs-16-22);
+  }
+
+  a {
+    color: var(--surf-color-white);
+    font-weight: var(--surf-fw-book);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-gray-300);
+      text-decoration: underline;
+    }
+  }
+}

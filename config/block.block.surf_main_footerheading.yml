@@ -1,0 +1,25 @@
+uuid: 90e295db-a924-4a4e-b536-36003e996a16
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:heading:dabdec85-3d73-4bca-83ed-69a585940733'
+  module:
+    - block_content
+  theme:
+    - surf_main
+id: surf_main_footerheading
+theme: surf_main
+region: footer_top
+weight: 0
+provider: null
+plugin: 'block_content:dabdec85-3d73-4bca-83ed-69a585940733'
+settings:
+  id: 'block_content:dabdec85-3d73-4bca-83ed-69a585940733'
+  label: 'Footer Heading'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

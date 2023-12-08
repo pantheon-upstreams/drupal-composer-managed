@@ -10,7 +10,7 @@ definitions:
   contact__site_page:
     menu_name: footer
     parent: ''
-    weight: -45
+    weight: -50
     expanded: false
     enabled: false
   surf_dashboard__curriculum_units:

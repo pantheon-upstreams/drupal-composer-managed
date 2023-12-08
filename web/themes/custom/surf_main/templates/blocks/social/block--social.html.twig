@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Heading Block.
+ *
+ * Available variables:
+ * - No additional variables are available for this Block type.
+ *
+ * @see templates/blocks/block.html.twig
+ * @see components/01-atoms/heading/heading.twig
+ */
+#}
+
+{% set classes = [
+    'block',
+    'block__' ~ configuration.provider|clean_class,
+    plugin_id ? 'block__' ~ plugin_id|clean_class,
+    block_type ? 'block__' ~ block_type|clean_class,
+] %}
+
+{% set rendered_content = content|without(
+    'field_link_newsletter',
+    'field_link_facebook',
+    'field_link_x',
+    'field_link_instagram',
+    'field_link_linkedin',
+    'field_link_youtube',
+    'field_link_vimeo',
+) %}
+
+{% include 'surf_main:social' with {
+    rendered_content,
+    title_prefix,
+    title_suffix,
+    social_attributes: create_attribute({'class': classes}),
+    social_title: label|default('Follow us'),
+    social_newsletter: content.field_link_newsletter|default([]),
+    social_facebook: content.field_link_facebook|field_value|default([]),
+    social_x: content.field_link_x|field_value|default([]),
+    social_instagram: content.field_link_instagram|field_value|default([]),
+    social_linkedin: content.field_link_linkedin|field_value|default([]),
+    social_youtube: content.field_link_youtube|field_value|default([]),
+    social_vimeo: content.field_link_vimeo|field_value|default([]),
+} only %}

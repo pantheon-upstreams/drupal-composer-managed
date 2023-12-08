@@ -1,0 +1,25 @@
+uuid: 77284a5f-e651-443a-8779-8a415dbf6247
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.legal
+  module:
+    - system
+  theme:
+    - surf_main
+id: surf_main_legal
+theme: surf_main
+region: footer_bottom
+weight: 0
+provider: null
+plugin: 'system_menu_block:legal'
+settings:
+  id: 'system_menu_block:legal'
+  label: Legal
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,36 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Social
+status: experimental
+group: Molecules
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    social_attributes:
+      title: Attributes
+      type: string
+    social_title:
+      title: Title
+      type: string
+    social_newsletter:
+      title: Newsletter
+      type: array
+    social_facebook:
+      title: Facebook
+      type: array
+    social_x:
+      title: X
+      type: array
+    social_instagram:
+      title: Instagram
+      type: array
+    social_linkedin:
+      title: Linked In
+      type: array
+    social_youtube:
+      title: YouTube
+      type: array
+    social_vimeo:
+      title: Vimeo
+      type: array

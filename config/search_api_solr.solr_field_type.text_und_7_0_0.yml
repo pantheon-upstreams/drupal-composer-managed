@@ -14,6 +14,7 @@ field_type:
   name: text_und
   class: solr.TextField
   positionIncrementGap: 100
+  storeOffsetsWithPositions: true
   analyzers:
     -
       type: index
@@ -84,12 +85,12 @@ field_type:
           class: solr.LowerCaseFilterFactory
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
-  storeOffsetsWithPositions: true
 unstemmed_field_type: null
 spellcheck_field_type:
   name: text_spell_und
   class: solr.TextField
   positionIncrementGap: 100
+  storeOffsetsWithPositions: true
   analyzer:
     charFilters:
       -
@@ -106,7 +107,6 @@ spellcheck_field_type:
         class: solr.LowerCaseFilterFactory
       -
         class: solr.RemoveDuplicatesTokenFilterFactory
-  storeOffsetsWithPositions: true
 collated_field_type:
   name: collated_und
   class: solr.ICUCollationField
@@ -193,10 +193,8 @@ solr_configs:
               name: buildOnStartup
               VALUE: 'false'
 text_files:
-  stopwords: |
-
-  protwords: |
-
+  stopwords: ''
+  protwords: ''
   accents: |
     # À => A
     "\u00C0" => "A"

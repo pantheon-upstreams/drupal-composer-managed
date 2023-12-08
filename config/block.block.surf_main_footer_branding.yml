@@ -1,0 +1,23 @@
+uuid: 32fd99b0-7541-48aa-a933-f4a299065a75
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - surf_main
+id: surf_main_footer_branding
+theme: surf_main
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: Branding
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }
