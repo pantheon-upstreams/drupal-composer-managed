@@ -1,0 +1,19 @@
+uuid: 2c730aef-e828-4d60-9cb6-67f74b7714ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eyebrow_bottom
+    - paragraphs.paragraphs_type.statistics_banner
+id: paragraph.statistics_banner.field_eyebrow_bottom
+field_name: field_eyebrow_bottom
+entity_type: paragraph
+bundle: statistics_banner
+label: 'Eyebrow Bottom'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.statement.field_eyebrow
+    - field.field.paragraph.statement.field_eyebrow_bottom
     - field.field.paragraph.statement.field_link
     - field.field.paragraph.statement.field_text
     - field.field.paragraph.statement.field_title
@@ -24,6 +25,7 @@ content:
     region: content
 hidden:
   field_eyebrow: true
+  field_eyebrow_bottom: true
   field_link: true
   field_text: true
   search_api_excerpt: true

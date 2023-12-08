@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.content_as_teaser
+    - paragraphs.paragraphs_type.feature_banner
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.header
     - paragraphs.paragraphs_type.heading
@@ -17,6 +18,8 @@ dependencies:
     - paragraphs.paragraphs_type.resources_list
     - paragraphs.paragraphs_type.section_extended
     - paragraphs.paragraphs_type.statement
+    - paragraphs.paragraphs_type.statistics_banner
+    - paragraphs.paragraphs_type.teaser
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.view
   module:
@@ -39,10 +42,13 @@ settings:
       heading: heading
       content_as_teaser: content_as_teaser
       header: header
+      feature_banner: feature_banner
       section_extended: section_extended
       accordion: accordion
       statement: statement
+      statistics_banner: statistics_banner
       gallery: gallery
+      teaser: teaser
       media: media
       person: person
       pullquote: pullquote
@@ -62,6 +68,9 @@ settings:
         enabled: true
       content_as_teaser:
         weight: 24
+        enabled: true
+      feature_banner:
+        weight: 30
         enabled: true
       gallery:
         weight: 45
@@ -107,6 +116,15 @@ settings:
         enabled: true
       statement:
         weight: 36
+        enabled: true
+      statistic:
+        weight: 43
+        enabled: false
+      statistics_banner:
+        weight: 44
+        enabled: true
+      teaser:
+        weight: 46
         enabled: true
       text:
         weight: 65

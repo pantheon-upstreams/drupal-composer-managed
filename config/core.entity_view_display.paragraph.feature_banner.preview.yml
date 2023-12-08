@@ -1,0 +1,29 @@
+uuid: 2fdd8d52-1af4-4b14-b381-f5cca29b77e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.feature_banner.field_link
+    - field.field.paragraph.feature_banner.field_media
+    - field.field.paragraph.feature_banner.field_text
+    - field.field.paragraph.feature_banner.field_title
+    - paragraphs.paragraphs_type.feature_banner
+id: paragraph.feature_banner.preview
+targetEntityType: paragraph
+bundle: feature_banner
+mode: preview
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_media: true
+  field_text: true
+  search_api_excerpt: true

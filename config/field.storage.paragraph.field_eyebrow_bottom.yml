@@ -1,19 +1,20 @@
-uuid: 3aea94d1-311b-4fe5-b7e0-bafd3dfd574d
+uuid: 870ed512-ffff-4d6a-aae7-5ac1b24f245e
 langcode: en
 status: true
 dependencies:
   module:
-    - media
     - paragraphs
-id: paragraph.field_media
-field_name: field_media
+id: paragraph.field_eyebrow_bottom
+field_name: field_eyebrow_bottom
 entity_type: paragraph
-type: entity_reference
+type: string
 settings:
-  target_type: media
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
-cardinality: 2
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

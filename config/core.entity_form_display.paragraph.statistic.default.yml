@@ -1,0 +1,38 @@
+uuid: 583ec278-a937-445d-be0b-6453da1fc6d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.statistic.field_media
+    - field.field.paragraph.statistic.field_title
+    - paragraphs.paragraphs_type.statistic
+  module:
+    - maxlength
+    - media_library
+id: paragraph.statistic.default
+targetEntityType: paragraph
+bundle: statistic
+mode: default
+content:
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+hidden:
+  created: true
+  status: true

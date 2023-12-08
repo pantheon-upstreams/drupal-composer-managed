@@ -1,50 +1,43 @@
-uuid: 7e332a08-7fb7-4463-b8a8-8f162f239c1e
+uuid: 8270ffe9-2872-4215-b645-aa37f9c7e71e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.statement.field_eyebrow
-    - field.field.paragraph.statement.field_eyebrow_bottom
-    - field.field.paragraph.statement.field_link
-    - field.field.paragraph.statement.field_text
-    - field.field.paragraph.statement.field_title
-    - paragraphs.paragraphs_type.statement
+    - field.field.paragraph.feature_banner.field_link
+    - field.field.paragraph.feature_banner.field_media
+    - field.field.paragraph.feature_banner.field_text
+    - field.field.paragraph.feature_banner.field_title
+    - paragraphs.paragraphs_type.feature_banner
   module:
-    - link
+    - linkit
     - maxlength
+    - media_library
     - text
-id: paragraph.statement.default
+id: paragraph.feature_banner.default
 targetEntityType: paragraph
-bundle: statement
+bundle: feature_banner
 mode: default
 content:
-  field_eyebrow:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_eyebrow_bottom:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_link:
-    type: link_default
-    weight: 4
+    type: linkit
+    weight: 3
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
+      linkit_profile: default
+      linkit_auto_link_text: false
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_text:
     type: text_textarea
-    weight: 3
+    weight: 1
     region: content
     settings:
       rows: 3
@@ -56,7 +49,7 @@ content:
         maxlength_js_enforce: false
   field_title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60

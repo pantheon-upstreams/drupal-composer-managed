@@ -1,0 +1,33 @@
+uuid: b730e0d2-863e-4be5-a28d-3c085068ad9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media
+    - media.type.icon
+    - media.type.image
+    - media.type.remote_video
+    - paragraphs.paragraphs_type.feature_banner
+id: paragraph.feature_banner.field_media
+field_name: field_media
+entity_type: paragraph
+bundle: feature_banner
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icon: icon
+      image: image
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

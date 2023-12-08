@@ -1,0 +1,57 @@
+uuid: 9555cfe3-6e8f-48da-b86c-1bee33932462
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser.field_link
+    - field.field.paragraph.teaser.field_media
+    - field.field.paragraph.teaser.field_summary
+    - field.field.paragraph.teaser.field_title
+    - paragraphs.paragraphs_type.teaser
+  module:
+    - linkit
+id: paragraph.teaser.default
+targetEntityType: paragraph
+bundle: teaser
+mode: default
+content:
+  field_link:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_summary:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

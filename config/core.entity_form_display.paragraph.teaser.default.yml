@@ -1,0 +1,57 @@
+uuid: ab97c819-12e5-4fbd-9228-b9958bcc6919
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.teaser.field_link
+    - field.field.paragraph.teaser.field_media
+    - field.field.paragraph.teaser.field_summary
+    - field.field.paragraph.teaser.field_title
+    - paragraphs.paragraphs_type.teaser
+  module:
+    - link
+    - maxlength
+    - media_library
+id: paragraph.teaser.default
+targetEntityType: paragraph
+bundle: teaser
+mode: default
+content:
+  field_link:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_summary:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+hidden:
+  created: true
+  status: true

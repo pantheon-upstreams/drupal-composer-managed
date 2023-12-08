@@ -1,0 +1,19 @@
+uuid: a887a716-1465-413a-81b4-fc65e411e006
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eyebrow
+    - paragraphs.paragraphs_type.statistics_banner
+id: paragraph.statistics_banner.field_eyebrow
+field_name: field_eyebrow
+entity_type: paragraph
+bundle: statistics_banner
+label: Eyebrow
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

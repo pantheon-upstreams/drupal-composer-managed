@@ -14,7 +14,6 @@ field_type:
   name: text_und
   class: solr.TextField
   positionIncrementGap: 100
-  storeOffsetsWithPositions: true
   analyzers:
     -
       type: index
@@ -58,9 +57,9 @@ field_type:
       filters:
         -
           class: solr.SynonymFilterFactory
+          ignoreCase: true
           synonyms: synonyms_und.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.StopFilterFactory
           ignoreCase: true
@@ -83,12 +82,12 @@ field_type:
           class: solr.LowerCaseFilterFactory
         -
           class: solr.RemoveDuplicatesTokenFilterFactory
+  storeOffsetsWithPositions: true
 unstemmed_field_type: null
 spellcheck_field_type:
   name: text_spell_und
   class: solr.TextField
   positionIncrementGap: 100
-  storeOffsetsWithPositions: true
   analyzer:
     charFilters:
       -
@@ -105,6 +104,7 @@ spellcheck_field_type:
         class: solr.LowerCaseFilterFactory
       -
         class: solr.RemoveDuplicatesTokenFilterFactory
+  storeOffsetsWithPositions: true
 collated_field_type:
   name: collated_und
   class: solr.ICUCollationField
@@ -193,8 +193,6 @@ solr_configs:
 text_files:
   stopwords: |
 
-  synonyms: |
-    drupal, durpal
   protwords: |
 
   accents: |
@@ -346,3 +344,5 @@ text_files:
     "\uFB05" => "st"
     # ﬆ => st
     "\uFB06" => "st"
+  synonyms: |
+    drupal, durpal

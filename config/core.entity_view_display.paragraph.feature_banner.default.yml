@@ -1,0 +1,57 @@
+uuid: 1ad8fb70-9ec3-4040-86dd-df2b0b9e8ad8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feature_banner.field_link
+    - field.field.paragraph.feature_banner.field_media
+    - field.field.paragraph.feature_banner.field_text
+    - field.field.paragraph.feature_banner.field_title
+    - paragraphs.paragraphs_type.feature_banner
+  module:
+    - linkit
+    - text
+id: paragraph.feature_banner.default
+targetEntityType: paragraph
+bundle: feature_banner
+mode: default
+content:
+  field_link:
+    type: linkit
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+      linkit_profile: default
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: feature_banner
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

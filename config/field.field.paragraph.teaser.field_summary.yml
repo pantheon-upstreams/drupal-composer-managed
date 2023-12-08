@@ -1,0 +1,19 @@
+uuid: 8907f13c-3d3d-40aa-b4d4-ed3e05d098f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_summary
+    - paragraphs.paragraphs_type.teaser
+id: paragraph.teaser.field_summary
+field_name: field_summary
+entity_type: paragraph
+bundle: teaser
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

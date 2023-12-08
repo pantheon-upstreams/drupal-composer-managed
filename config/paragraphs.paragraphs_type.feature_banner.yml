@@ -1,0 +1,10 @@
+uuid: c51ba5ca-6df1-4dcb-a633-ceb954752539
+langcode: en
+status: true
+dependencies: {  }
+id: feature_banner
+label: 'Feature Banner'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,10 @@
+uuid: 5d8f90f4-a9c1-4b35-b49b-a8ae8fdd7bdb
+langcode: en
+status: true
+dependencies: {  }
+id: statistics_banner
+label: 'Statistics Banner'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,21 @@
+uuid: 56dd6ebe-c6bd-4fb1-941b-3b01b77fba02
+langcode: en
+status: true
+dependencies: {  }
+name: medium_263h
+label: 'Medium (263H)'
+effects:
+  0a9ac0da-849f-4866-b04a-60880f97fbc8:
+    uuid: 0a9ac0da-849f-4866-b04a-60880f97fbc8
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 263
+      upscale: false
+  d5298e28-67a6-4cd1-a184-6eb26a950cc1:
+    uuid: d5298e28-67a6-4cd1-a184-6eb26a950cc1
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

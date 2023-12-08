@@ -1,0 +1,21 @@
+uuid: b3fc0180-0d0b-4a6d-86dd-2541648f0185
+langcode: en
+status: true
+dependencies: {  }
+name: large_369h
+label: 'Large (369H)'
+effects:
+  14e153ea-ad09-4925-8352-e6de87b6b69b:
+    uuid: 14e153ea-ad09-4925-8352-e6de87b6b69b
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 369
+      upscale: false
+  62e0922e-fd04-4646-b134-2f1fa86d904f:
+    uuid: 62e0922e-fd04-4646-b134-2f1fa86d904f
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

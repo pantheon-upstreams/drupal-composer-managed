@@ -1,0 +1,33 @@
+uuid: b9f1d8c4-d4f0-48dd-9ed6-dcd5c8848609
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.statistics_banner.field_eyebrow
+    - field.field.paragraph.statistics_banner.field_eyebrow_bottom
+    - field.field.paragraph.statistics_banner.field_link
+    - field.field.paragraph.statistics_banner.field_media
+    - field.field.paragraph.statistics_banner.field_statistic
+    - field.field.paragraph.statistics_banner.field_title
+    - paragraphs.paragraphs_type.statistics_banner
+id: paragraph.statistics_banner.preview
+targetEntityType: paragraph
+bundle: statistics_banner
+mode: preview
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_eyebrow: true
+  field_eyebrow_bottom: true
+  field_link: true
+  field_media: true
+  field_statistic: true
+  search_api_excerpt: true

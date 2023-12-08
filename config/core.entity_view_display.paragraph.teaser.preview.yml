@@ -1,0 +1,29 @@
+uuid: ae586c22-3f16-43c1-9321-87e822d45e06
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.teaser.field_link
+    - field.field.paragraph.teaser.field_media
+    - field.field.paragraph.teaser.field_summary
+    - field.field.paragraph.teaser.field_title
+    - paragraphs.paragraphs_type.teaser
+id: paragraph.teaser.preview
+targetEntityType: paragraph
+bundle: teaser
+mode: preview
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_media: true
+  field_summary: true
+  search_api_excerpt: true

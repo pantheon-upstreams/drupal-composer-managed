@@ -96,7 +96,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 9
+          items_per_page: 3
       exposed_form:
         type: bef
         options:
@@ -204,10 +204,10 @@ display:
       style:
         type: html_list
         options:
-          row_class: item-row
+          row_class: ''
           default_row_class: false
           uses_fields: false
-          type: ul
+          type: ol
           wrapper_class: ''
           class: ''
       row:
@@ -563,6 +563,22 @@ display:
       header: {  }
       display_extenders: {  }
       block_description: 'Research News'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  homepage_news:
+    id: homepage_news
+    display_title: 'Homepage News'
+    display_plugin: block
+    position: 6
+    display_options:
+      display_description: ''
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:

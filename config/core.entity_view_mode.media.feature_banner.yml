@@ -1,0 +1,10 @@
+uuid: bef4b58f-0ac0-45b9-9c37-a2250e3d5f24
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.feature_banner
+label: 'Feature Banner'
+targetEntityType: media
+cache: true
