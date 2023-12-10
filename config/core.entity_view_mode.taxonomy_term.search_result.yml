@@ -1,0 +1,10 @@
+uuid: c5d3fc87-37d6-4a39-809f-8e2f4cb321ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.search_result
+label: 'Search Result'
+targetEntityType: taxonomy_term
+cache: true

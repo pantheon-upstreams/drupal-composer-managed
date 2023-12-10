@@ -12,7 +12,6 @@ dependencies:
   module:
     - datetime
     - datetime_range
-    - inline_entity_form
 id: download_request.curriculum_module.default
 targetEntityType: download_request
 bundle: curriculum_module
@@ -44,21 +43,14 @@ content:
       include_locked: true
     third_party_settings: {  }
   request_items:
-    type: inline_entity_form_complex
-    weight: 0
+    type: entity_reference_autocomplete
+    weight: 26
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
       match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: false
-      collapsed: false
-      revision: false
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

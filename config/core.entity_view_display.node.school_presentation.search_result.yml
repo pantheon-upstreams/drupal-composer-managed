@@ -1,0 +1,59 @@
+uuid: 46536bf4-c723-4967-8818-02c5d42b5f73
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.school_presentation.field_link
+    - field.field.node.school_presentation.field_media_primary
+    - field.field.node.school_presentation.field_overview
+    - field.field.node.school_presentation.field_p_content
+    - field.field.node.school_presentation.field_ref_audiences
+    - field.field.node.school_presentation.field_ref_eo_opportunities
+    - field.field.node.school_presentation.field_ref_grade_levels
+    - field.field.node.school_presentation.field_ref_research_areas
+    - field.field.node.school_presentation.field_teaser_text
+    - node.type.school_presentation
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.school_presentation.search_result
+targetEntityType: node
+bundle: school_presentation
+mode: search_result
+content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_link: true
+  field_overview: true
+  field_p_content: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_grade_levels: true
+  field_ref_research_areas: true
+  langcode: true
+  links: true

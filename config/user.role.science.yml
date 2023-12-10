@@ -6,7 +6,6 @@ dependencies:
     - node.type.article
     - node.type.event
   module:
-    - contact
     - contextual
     - file
     - node
@@ -23,7 +22,6 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access toolbar'
-  - 'access user contact forms'
   - 'access user profiles'
   - 'administer nodes'
   - 'change own username'

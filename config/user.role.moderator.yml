@@ -8,7 +8,6 @@ dependencies:
   module:
     - block
     - block_content
-    - contact
     - contextual
     - file
     - node
@@ -29,12 +28,10 @@ permissions:
   - 'access contextual links'
   - 'access site in maintenance mode'
   - 'access toolbar'
-  - 'access user contact forms'
   - 'access user profiles'
   - 'administer block content'
   - 'administer block types'
   - 'administer blocks'
-  - 'administer contact forms'
   - 'administer menu'
   - 'administer nodes'
   - 'administer taxonomy'

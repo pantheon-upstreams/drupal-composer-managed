@@ -1,0 +1,57 @@
+uuid: dfed0c75-bbab-4cfa-9295-499c25febaa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.experiment.field_dates_only
+    - field.field.node.experiment.field_links
+    - field.field.node.experiment.field_media_primary
+    - field.field.node.experiment.field_overview
+    - field.field.node.experiment.field_p_content
+    - field.field.node.experiment.field_ref_articles
+    - field.field.node.experiment.field_ref_audiences
+    - field.field.node.experiment.field_ref_research_areas
+    - field.field.node.experiment.field_teaser_text
+    - node.type.experiment
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.experiment.search_index
+targetEntityType: node
+bundle: experiment
+mode: search_index
+content:
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_dates_only: true
+  field_links: true
+  field_media_primary: true
+  field_ref_articles: true
+  field_ref_audiences: true
+  field_ref_research_areas: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,5 +1,27 @@
-{{ include('surf_main:view-embed', {
-  view_embed_attributes: create_attribute(),
-  view_embed_view: content.field_view,
-  attributes,
-}, with_context = false) }}
+{#
+/**
+ * @file
+ * Default theme implementation to display a View Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ */
+#}
+
+{% set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set rendered_content = content|without(
+    'field_view'
+) %}
+
+<div {{ attributes.addClass(classes) }}>
+    {{ content.field_view|field_value }}
+    {{ rendered_content }}
+</div>

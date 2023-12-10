@@ -6,29 +6,21 @@ dependencies:
     - field.field.paragraph.person.field_person
     - paragraphs.paragraphs_type.person
   module:
-    - inline_entity_form
+    - entity_reference_revisions
 id: paragraph.person.default
 targetEntityType: paragraph
 bundle: person
 mode: default
 content:
   field_person:
-    type: inline_entity_form_complex
-    weight: 0
+    type: entity_reference_revisions_autocomplete
+    weight: 1
     region: content
     settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: false
-      allow_existing: true
       match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: false
-      collapsed: false
-      revision: false
-      removed_reference: keep
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true

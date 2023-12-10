@@ -15,10 +15,6 @@
         {
             "type": "vcs",
             "url": "https://git.drupalcode.org/sandbox/asherry-3335446.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://bitbucket.org/atendesigngroup/mercury_editor.git"
         }
     ],
     "require": {
@@ -76,6 +72,7 @@
         "drupal/scheduler": "~1.0",
         "drupal/search_api": "^1.28",
         "drupal/search_api_block": "^1.1",
+        "drupal/search_api_exclude": "^2.0",
         "drupal/search_api_pantheon": "^8.1",
         "drupal/search_api_solr": "^4.2",
         "drupal/similarterms": "^1.8",

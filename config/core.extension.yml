@@ -10,7 +10,6 @@ module:
   apitools: 0
   auto_entitylabel: 0
   automated_cron: 0
-  backup_migrate: 0
   ban: 0
   better_exposed_filters: 0
   big_pipe: 0
@@ -20,7 +19,6 @@ module:
   breakpoint: 0
   ckeditor5: 0
   config: 0
-  contact: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -37,7 +35,6 @@ module:
   entity: 0
   entity_reference_display: 0
   entity_reference_revisions: 0
-  entityqueue: 0
   field: 0
   field_group: 0
   field_tools: 0
@@ -49,7 +46,6 @@ module:
   honeypot: 0
   image: 0
   image_widget_crop: 0
-  inline_entity_form: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
@@ -99,14 +95,13 @@ module:
   sdc: 0
   search_api: 0
   search_api_block: 0
-  search_api_pantheon: 0
-  search_api_solr: 0
+  search_api_db: 0
+  search_api_exclude: 0
   serialization: 0
   shortcut: 0
   similarterms: 0
   smart_date: 0
   state_machine: 0
-  structure_sync: 0
   style_options: 0
   surf_admin: 0
   surf_core: 0

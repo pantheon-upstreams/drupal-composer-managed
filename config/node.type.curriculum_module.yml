@@ -5,6 +5,7 @@ dependencies:
   module:
     - menu_ui
     - scheduler
+    - search_api_exclude
     - surf_core
     - surf_dashboard
 third_party_settings:
@@ -31,6 +32,8 @@ third_party_settings:
     request_link:
       text_dashboard: 'View on my dashboard'
       text_webform: 'Request this Curriculum'
+  search_api_exclude:
+    enabled: 1
 name: 'Curriculum Module'
 type: curriculum_module
 description: 'Use <em>Curriculum Module</em> to add learning segments, often used within classroom settings.'

@@ -6,20 +6,18 @@ dependencies:
     - field.field.paragraph.view.field_view
     - paragraphs.paragraphs_type.view
   module:
-    - viewsreference
+    - block_field
 id: paragraph.view.default
 targetEntityType: paragraph
 bundle: view
 mode: default
 content:
   field_view:
-    type: viewsreference_formatter
-    label: hidden
-    settings:
-      plugin_types:
-        - block
+    type: block_field
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
   search_api_excerpt: true

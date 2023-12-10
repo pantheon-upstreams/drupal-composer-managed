@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
     - filter.format.simple_html
   module:
-    - contact
     - download_request
     - file
     - filter
@@ -21,8 +20,6 @@ weight: -9
 is_admin: false
 permissions:
   - 'access content'
-  - 'access site-wide contact form'
-  - 'access user contact forms'
   - 'change own username'
   - 'delete own files'
   - 'use text format basic_html'
