@@ -35,13 +35,13 @@
     position: relative;
   }
 
-  li.m-breadcrumbs__item:not(:first-child):before {
+  li.m-breadcrumbs__item:not(:last-child):after {
     background-color: var(--surf-color-black);
     bottom: 0;
     content: '';
     display: block;
     height: 14px;
-    left: 0;
+    right: 0;
     margin: auto;
     position: absolute;
     top: 2px;
