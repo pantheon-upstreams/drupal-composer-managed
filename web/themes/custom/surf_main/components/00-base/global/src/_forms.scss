@@ -57,7 +57,8 @@ legend {
   text-transform: uppercase;
 }
 
-label.form-required::after {
+label.form-required::after,
+legend span.form-required::after{
   background: none;
   color: var(--surf-color-red);
   content: '*';
