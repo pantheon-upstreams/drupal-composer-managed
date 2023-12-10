@@ -20,6 +20,7 @@ props:
     layout_listing:
       title: Listing
       type: boolean
+      default: false
   slots:
     layout_content:
       title: Content

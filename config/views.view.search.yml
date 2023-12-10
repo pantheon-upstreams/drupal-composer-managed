@@ -7,6 +7,7 @@ dependencies:
   module:
     - search_api
     - user
+    - views_filters_summary
 id: search
 label: Search
 module: views
@@ -129,15 +130,15 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          quantity: 5
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
-          reset_button: false
-          reset_button_label: Reset
+          submit_button: Search
+          reset_button: true
+          reset_button_label: Clear
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
@@ -227,7 +228,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: 'Search the Website'
+            label: 'Search the Site'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -304,7 +305,29 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        views_filters_summary:
+          id: views_filters_summary
+          table: views
+          field: views_filters_summary
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: views_filters_summary
+          empty: false
+          filters:
+            search_api_fulltext: search_api_fulltext
+          show_labels: false
+          group_values: false
+          content: 'Showing @total results @exposed_filter_summary'
+          filters_summary_separator: ', '
+          filters_summary_prefix: 'for '
+          filters_result_label:
+            plural: results
+            singular: result
+          show_remove_link: 0
+          show_reset_link: 0
+          filters_reset_link_title: Reset
       footer: {  }
       display_extenders: {  }
     cache_metadata:
