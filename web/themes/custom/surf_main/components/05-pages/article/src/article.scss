@@ -26,7 +26,6 @@
   &.p-article--text,
   &.p-article--video {
     padding-block-start: 40px;
-
     @include breakpoints.bp-min(large) {
       padding-block-start: 64px;
     }
@@ -35,8 +34,8 @@
   &.p-article--image .p-article__content-wrapper {
     @include breakpoints.bp-min(xlarge) {
       display: grid;
-      grid-template-columns: 1fr 424px;
       gap: 140px;
+      grid-template-columns: 1fr 424px;
     }
   }
 
@@ -53,17 +52,16 @@
 
   &.p-article--video .p-article__media {
     margin-block-end: 40px;
-
     @include breakpoints.bp-min(large) {
       margin-block-end: 64px;
     }
   }
 
-  .p-article__main > *:not(:last-child) {
+  .p-article__main > *:not( :last-child ) {
     margin-block-end: 24px;
   }
 
-  .p-article__meta > *:not(:last-child) {
+  .p-article__meta > *:not( :last-child ) {
     margin-block-end: 40px;
   }
 
@@ -73,7 +71,6 @@
 
   .m-breadcrumbs {
     display: none;
-
     @include breakpoints.bp-min(medium) {
       display: block;
       margin-block-end: 24px;
@@ -92,7 +89,6 @@
       flex-flow: nowrap row;
       gap: 60px;
     }
-
     @include breakpoints.bp-min(xlarge) {
       inline-size: var(--surf-width-large);
       margin-inline-start: calc(((var(--surf-width-large) - var(--surf-width-small)) / 2) * -1);
@@ -106,13 +102,12 @@
     }
   }
 
-  &.p-article--image .p-article__callouts > *:not(:last-child) {
+  &.p-article--image .p-article__callouts > *:not( :last-child ) {
     margin-block-end: 40px;
   }
 
   .p-article__related {
     margin-block-start: 64px;
-
     @include breakpoints.bp-min(large) {
       margin-block-start: 120px;
     }
@@ -136,6 +131,14 @@
 //------------------------------------
 
 .p-article {
+  margin-block-end: calculations.rem(24px);
+  @include breakpoints.bp-min(medium) {
+    margin-block-end: calculations.rem(90px);
+  }
+  @include breakpoints.bp-min(large) {
+    margin-block-end: calculations.rem(120px);
+  }
+
   .p-article__heading {
     font-family: var(--surf-font-sans);
     font-size: var(--surf-fs-24-40-52);
