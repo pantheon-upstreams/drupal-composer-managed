@@ -6,9 +6,6 @@
  * Available variables:
  * - No additional variables are available for this Paragraph type.
  *
- * @see template_preprocess_paragraph()
- *
- * @ingroup themeable
  * @see templates/paragraphs/paragraph.html.twig
  * @see components/01-atoms/editor/editor.twig
  */
@@ -18,7 +15,7 @@
     'paragraph',
     'paragraph--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
+    not paragraph.isPublished() ? 'paragraph--unpublished'
 ] %}
 
 {% set rendered_content = content|without(
@@ -30,5 +27,4 @@
     rendered_content,
     editor_attributes: create_attribute({'class': classes}),
     editor_content: content.field_text|field_value|default([]),
-    editor_content_align: style_options['text_align']|default('none'),
 } only %}
