@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Landing Node with Search Result view mode.
+ *
+ * Available variables:
+ *  - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_overview',
+    'search_api_excerpt',
+) %}
+
+{% include 'surf_main:teaser' with {
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute(),
+    teaser_content: content.search_api_excerpt|render ? content.search_api_excerpt : content.field_overview|field_value,
+    teaser_title: label|field_value,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
+} only %}

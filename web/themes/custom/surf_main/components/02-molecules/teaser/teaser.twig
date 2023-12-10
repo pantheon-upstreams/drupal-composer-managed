@@ -41,16 +41,6 @@
           {% endif %}
         </div>
       {% elseif teaser_type == 'standard' %}
-      {% else %}
-        <div class="m-teaser__media">
-              {% if teaser_url %}
-              <a href="{{ teaser_url }}" class="m-teaser__link">
-                  {% endif %}
-                  <img aria-hidden="true" loading="lazy" src="/themes/custom/surf_main/components/02-molecules/teaser/img/news-placeholder.png" width="840" height="560" alt="Sanford Underground Research Facility">
-                  {% if teaser_url %}
-              </a>
-              {% endif %}
-          </div>
       {% endif %}
     {% endif %}
 
