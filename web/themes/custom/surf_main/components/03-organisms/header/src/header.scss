@@ -69,7 +69,6 @@
   position: relative;
 
   &.o-header--color {
-
     @include bp-min(medium) {
       background-image: url('img/header-bkg-color.png');
       background-position: top right;
@@ -111,6 +110,7 @@
     @include bp-min(large) {
       @include full-width();
       background: url('img/header-bkg-grid.png') no-repeat center right;
+      background-size: 450px 300px;
       content: '';
       height: 300px;
       pointer-events: none;
@@ -152,7 +152,6 @@
   margin-inline: auto;
   padding-block: 40px 56px;
   padding-inline: var(--surf-grid-gap);
-
   @include bp-min(large) {
     padding-block: 64px 0;
   }
