@@ -1,0 +1,59 @@
+uuid: 53ccacc8-4a6a-4f51-a7af-28192719b33e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.press_release.field_author
+    - field.field.node.press_release.field_date_published
+    - field.field.node.press_release.field_media_primary
+    - field.field.node.press_release.field_overview
+    - field.field.node.press_release.field_p_content
+    - field.field.node.press_release.field_ref_contacts
+    - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_resource_list
+    - field.field.node.press_release.field_teaser_text
+    - node.type.press_release
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.press_release.search_result
+targetEntityType: node
+bundle: press_release
+mode: search_result
+content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_teaser_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_author: true
+  field_date_published: true
+  field_overview: true
+  field_p_content: true
+  field_ref_contacts: true
+  field_ref_news_categories: true
+  field_resource_list: true
+  langcode: true
+  links: true

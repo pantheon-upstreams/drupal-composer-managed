@@ -1,0 +1,31 @@
+uuid: c619cc5e-9e8d-44f4-aa0a-f475e3fb7734
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.landing.field_p_content
+    - field.field.node.landing.field_p_hero
+    - node.type.landing
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.landing.search_result
+targetEntityType: node
+bundle: landing
+mode: search_result
+content:
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_content: true
+  field_p_hero: true
+  langcode: true
+  links: true

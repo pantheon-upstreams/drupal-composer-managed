@@ -23,12 +23,6 @@ services:
         DRUSH_OPTIONS_URI: "https://surf.lndo.site"
         PHP_IDE_CONFIG: "serverName=appserver"
         XDEBUG_SESSION_START: PHPSTORM
-  solr:
-    type: solr:8
-    portforward: true
-    core: lando
-    config:
-      dir: .lando/solr_conf
 tooling:
   drush:
     service: appserver

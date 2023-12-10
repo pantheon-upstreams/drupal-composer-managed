@@ -6,7 +6,6 @@ dependencies:
     - node.type.article
     - node.type.job_posting
   module:
-    - contact
     - contextual
     - file
     - media
@@ -24,7 +23,6 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access toolbar'
-  - 'access user contact forms'
   - 'access user profiles'
   - 'administer nodes'
   - 'bypass node access'

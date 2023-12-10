@@ -1,0 +1,15 @@
+uuid: 54817559-4539-4399-b3bd-bd8102364913
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: drupal
+name: Drupal
+description: ''
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 1
+  matching: words
+  phrase: bigram

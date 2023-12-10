@@ -1,20 +1,18 @@
-uuid: bc96fb27-db11-45ef-991f-79f0be9900f9
+uuid: 51789582-e8e3-495b-9deb-a922b894b29b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_teaser_text
-    - search_api.index.content_index
+    - search_api.index.default
   module:
-    - better_exposed_filters
     - search_api
-    - views_filters_summary
+    - user
 id: search
 label: Search
 module: views
-description: 'Sitewide search using content index'
+description: ''
 tag: ''
-base_table: search_api_index_content_index
+base_table: search_api_index_default
 base_field: search_api_id
 display:
   default:
@@ -25,13 +23,15 @@ display:
     display_options:
       title: Search
       fields:
-        field_teaser_text:
-          id: field_teaser_text
-          table: search_api_index_content_index
-          field: field_teaser_text
+        created:
+          id: created
+          table: search_api_index_default
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: null
+          entity_field: null
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -66,7 +66,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -75,78 +75,20 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-        title:
-          id: title
-          table: search_api_index_content_index
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          type: timestamp
           settings:
-            link_to_entity: false
+            date_format: medium
+            custom_date_format: ''
+            timezone: ''
+            tooltip:
+              date_format: ''
+              custom_date_format: ''
+            time_diff:
+              enabled: false
+              future_format: '@interval hence'
+              past_format: '@interval ago'
+              granularity: 2
+              refresh: 60
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -158,8 +100,11 @@ display:
           separator: ', '
           field_api_classes: false
           field_rendering: true
-          fallback_handler: search_api
+          fallback_handler: search_api_date
           fallback_options:
+            date_format: small
+            custom_date_format: ''
+            timezone: ''
             link_to_item: false
             use_highlighting: false
             multi_type: separator
@@ -168,12 +113,12 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 12
+          items_per_page: 10
           total_pages: null
           id: 0
           tags:
-            next: Next
-            previous: Prev.
+            next: 'Next ›'
+            previous: '‹ Previous'
             first: '« First'
             last: 'Last »'
           expose:
@@ -184,132 +129,56 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 4
+          quantity: 9
       exposed_form:
-        type: bef
+        type: basic
         options:
-          submit_button: Search
-          reset_button: true
-          reset_button_label: Clear
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: false
+          expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-              reset_button_always_show: true
-            filter:
-              search_api_fulltext:
-                plugin_id: default
-                advanced:
-                  placeholder_text: ''
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: none
         options: {  }
       empty:
-        area:
-          id: area
+        area_text_custom:
+          id: area_text_custom
           table: views
-          field: area
+          field: area_text_custom
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: text
+          plugin_id: text_custom
           empty: true
-          content:
-            value: 'No results were found, please try searching again with different terms.'
-            format: basic_html
+          content: "<h3>No Results Found</h3>\r\n<p>Please try your search again for more results.</p>"
           tokenize: false
       sorts:
         search_api_relevance:
           id: search_api_relevance
-          table: search_api_index_content_index
+          table: search_api_index_default
           field: search_api_relevance
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: search_api
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
       arguments: {  }
       filters:
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_content_index
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_fulltext
-          operator: or
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: 'Search the site'
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: text
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              ehs_editor: '0'
-              anonymous: '0'
-              employee: '0'
-              administrator: '0'
-              moderator: '0'
-              educator: '0'
-              human_resources: '0'
-              business_editor: '0'
-              science: '0'
-            expose_fields: false
-            placeholder: ''
-            searched_fields_id: search_api_fulltext_searched_fields
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
-        status:
-          id: status
-          table: search_api_index_content_index
-          field: status
+        status_node:
+          id: status_node
+          table: search_api_index_default
+          field: status_node
           relationship: none
           group_type: group
           admin_label: ''
@@ -344,6 +213,61 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_default
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'Search the Website'
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: keyword
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            expose_fields: false
+            placeholder: ''
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: phrase
+          min_length: null
+          fields: {  }
       style:
         type: html_list
         options:
@@ -351,27 +275,27 @@ display:
           default_row_class: false
           uses_fields: false
           type: ul
-          wrapper_class: item-list
+          wrapper_class: ''
           class: ''
       row:
         type: search_api
         options:
           view_modes:
             'entity:node':
-              article: teaser
-              contract: teaser
-              curriculum_module: teaser
-              esh_standard: teaser
-              event: teaser
-              experiment_research: teaser
-              job_posting: teaser
-              landing: teaser
-              page: teaser
-              person: teaser
-              press_release: teaser
-              professional_development: teaser
-              report_publication: teaser
-              school_presentation: teaser
+              article: search_result
+              curriculum_module: search_result
+              event: search_result
+              experiment: search_result
+              feature: search_result
+              landing: search_result
+              page: search_result
+              press_release: search_result
+              professional_development: search_result
+              report_publication: search_result
+              school_presentation: search_result
+              standard: search_result
+            'entity:taxonomy_term':
+              research_area: search_result
       query:
         type: search_api_query
         options:
@@ -380,29 +304,7 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
-      use_ajax: true
-      header:
-        views_filters_summary:
-          id: views_filters_summary
-          table: views
-          field: views_filters_summary
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: views_filters_summary
-          empty: false
-          filters:
-            search_api_fulltext: search_api_fulltext
-          show_labels: false
-          content: 'Showing @total @result_label @exposed_filter_summary'
-          filters_summary_separator: ', '
-          filters_summary_prefix: 'for '
-          filters_result_label:
-            plural: results
-            singular: result
-          show_remove_link: 0
-          show_reset_link: 0
-          filters_reset_link_title: Reset
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -413,17 +315,19 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
+        - user.permissions
       tags:
-        - 'config:field.storage.node.field_teaser_text'
-        - 'config:search_api.index.content_index'
-  search:
-    id: search
-    display_title: Page
-    display_plugin: page
+        - 'config:search_api.index.default'
+        - 'search_api_list:default'
+  full:
+    id: full
+    display_title: Full
+    display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
-      path: search
+      block_description: 'Search - Full Listing'
     cache_metadata:
       max-age: -1
       contexts:
@@ -432,6 +336,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
+        - user.permissions
       tags:
-        - 'config:field.storage.node.field_teaser_text'
-        - 'config:search_api.index.content_index'
+        - 'config:search_api.index.default'
+        - 'search_api_list:default'

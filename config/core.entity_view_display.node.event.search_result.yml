@@ -1,0 +1,79 @@
+uuid: 048420d4-9910-4f46-bdc3-17e864f32284
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.event.body
+    - field.field.node.event.field_capacity
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_department
+    - field.field.node.event.field_link
+    - field.field.node.event.field_location_address
+    - field.field.node.event.field_location_title
+    - field.field.node.event.field_media_primary
+    - field.field.node.event.field_overview
+    - field.field.node.event.field_ref_attendees
+    - field.field.node.event.field_ref_audiences
+    - field.field.node.event.field_ref_eo_opportunities
+    - field.field.node.event.field_ref_event_types
+    - field.field.node.event.field_ref_key_impact_areas
+    - field.field.node.event.field_ref_related_content
+    - field.field.node.event.field_ref_research_areas
+    - field.field.node.event.field_registration_period
+    - field.field.node.event.field_registration_required
+    - node.type.event
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.event.search_result
+targetEntityType: node
+bundle: event
+mode: search_result
+content:
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_capacity: true
+  field_dates: true
+  field_department: true
+  field_link: true
+  field_location_address: true
+  field_location_title: true
+  field_ref_attendees: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_event_types: true
+  field_ref_key_impact_areas: true
+  field_ref_related_content: true
+  field_ref_research_areas: true
+  field_registration_period: true
+  field_registration_required: true
+  langcode: true
+  links: true
+  registration_links: true

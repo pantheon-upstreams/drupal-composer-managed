@@ -1,0 +1,59 @@
+uuid: adbbe59e-0bd2-46af-910d-158873b0ae17
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.field_link
+    - field.field.node.page.field_media_primary
+    - field.field.node.page.field_overview
+    - field.field.node.page.field_p_content
+    - field.field.node.page.field_ref_audiences
+    - field.field.node.page.field_ref_eo_opportunities
+    - field.field.node.page.field_ref_key_impact_areas
+    - field.field.node.page.field_ref_research_areas
+    - field.field.node.page.field_teaser_text
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content:
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_link: true
+  field_media_primary: true
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_research_areas: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

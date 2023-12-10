@@ -1,0 +1,82 @@
+uuid: 5a879d88-7a93-4ae3-9e5c-6e94530983ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.standard.field_ism_document_number
+    - field.field.node.standard.field_ism_rev_number
+    - field.field.node.standard.field_link
+    - field.field.node.standard.field_media_primary
+    - field.field.node.standard.field_overview
+    - field.field.node.standard.field_p_content
+    - field.field.node.standard.field_ref_audiences
+    - field.field.node.standard.field_ref_documents
+    - field.field.node.standard.field_ref_esh_categories
+    - field.field.node.standard.field_teaser_text
+    - node.type.standard
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.standard.search_index
+targetEntityType: node
+bundle: standard
+mode: search_index
+content:
+  field_ism_document_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ism_rev_number:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_ref_documents:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_link: true
+  field_media_primary: true
+  field_ref_audiences: true
+  field_ref_esh_categories: true
+  field_teaser_text: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -5,6 +5,7 @@ dependencies:
   module:
     - menu_ui
     - scheduler
+    - search_api_exclude
     - surf_core
     - surf_dashboard
 third_party_settings:
@@ -31,6 +32,8 @@ third_party_settings:
     request_link:
       text_dashboard: 'View on my dashboard'
       text_webform: 'Register for this event'
+  search_api_exclude:
+    enabled: 1
 name: Event
 type: event
 description: 'Use <em>Event</em> to add content based on events and additional information to calendars.'
