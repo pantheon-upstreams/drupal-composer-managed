@@ -23,14 +23,12 @@
 
 .p-press-release {
   padding-block: 40px;
-
   @include breakpoints.bp-min(large) {
     padding-block: 64px;
   }
 
   .m-breadcrumbs {
-    display: none;
-
+    margin-block-end: 32px;
     @include breakpoints.bp-min(medium) {
       display: block;
       margin-block-end: 24px;
@@ -59,13 +57,12 @@
     }
   }
 
-  .p-press-release__meta > .container > *:not(:first-child) {
+  .p-press-release__meta > .container > *:not( :first-child ) {
     margin-block-start: 28px;
   }
 
   .p-press-release__related {
     margin-block-start: 64px;
-
     @include breakpoints.bp-min(large) {
       margin-block-start: 120px;
     }
