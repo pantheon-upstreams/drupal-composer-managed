@@ -1,24 +1,24 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
-name: Editor
+name: Section
 status: experimental
-group: Atoms
+group: Organisms
 props:
   type: object
   required:
-    - editor_content
+    - section_content
   properties:
     attributes:
       type: Drupal\Core\Template\Attribute
-    editor_attributes:
+    section_attributes:
       title: Attributes
       type: string
-    editor_content:
-      title: Editor Content
-      type: string
-    editor_content_align:
+    section_content:
+      title: Attributes
+      type: array
+    section_style:
       title: Type
       type: string
       enum:
         - none
-        - align-left
-        - valign-center
+        - blue-gradient
+        - gray-gradient

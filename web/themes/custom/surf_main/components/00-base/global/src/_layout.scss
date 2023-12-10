@@ -173,6 +173,11 @@ ul.l-threecol {
   }
 }
 
+.l-twocol__region,
+.l-threecol__region {
+  display: flex;
+}
+
 // One Column
 .l-onecol {
   grid-template-columns: minmax(0, 1fr);

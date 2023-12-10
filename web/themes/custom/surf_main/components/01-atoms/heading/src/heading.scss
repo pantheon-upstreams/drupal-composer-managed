@@ -35,7 +35,9 @@
 .a-heading--gradient {
   background: linear-gradient(90deg, #000080 0%, #007ab8 100%);
   background-clip: text;
+  font-family: var(--surf-font-sans-alt);
   font-size: var(--surf-fs-80-140-200-260);
+  font-weight: var(--surf-fw-medium);
   line-height: 0.8;
   -webkit-text-fill-color: transparent;
 }
@@ -54,24 +56,32 @@
   font-weight: var(--surf-fw-book);
   line-height: 0.85;
   text-transform: uppercase;
-
   @include bp-min(medium) {
     font-size: rem(120px);
   }
-
-  @include bp-min(large) {
-    font-size: rem(120px);
-  }
-
   @include bp-min(xlarge) {
-    font-size: rem(144px);
     background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
+    background-clip: text;
     background-size: 320px;
-    -webkit-background-clip: text;
+    font-size: rem(144px);
     -webkit-text-fill-color: transparent;
   }
-
   @include bp-min(xxlarge) {
     font-size: rem(176px);
+  }
+}
+
+.a-heading--particles-sm {
+  font-family: var(--surf-font-sans-alt);
+  font-size: var(--surf-fs-48-100-132);
+  font-weight: var(--surf-fw-book);
+  line-height: 0.85;
+  text-transform: uppercase;
+
+  @include bp-min(xlarge) {
+    background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
+    background-clip: text;
+    background-size: 320px;
+    -webkit-text-fill-color: transparent;
   }
 }

@@ -36,7 +36,6 @@
     --surf-font-condensed: 'ballinger-condensed', sans-serif;
   }
 }
-
 @include families();
 
 
@@ -72,7 +71,6 @@
     --surf-fs-48-100-132: #{calculations.rem(48px)};
     --surf-fs-48-100-132-176: #{calculations.rem(48px)};
     --surf-fs-80-140-200-260: #{calculations.rem(80px)};
-
     @include breakpoints.bp-min(medium) {
       --surf-fs-16-18-24: #{calculations.rem(18px)};
       --surf-fs-16-22: #{calculations.rem(22px)};
@@ -94,8 +92,7 @@
       --surf-fs-48-100-132-176: #{calculations.rem(100px)};
       --surf-fs-48-132-176: #{calculations.rem(132px)};
       --surf-fs-80-140-200-260: #{calculations.rem(140px)};
-  }
-
+    }
     @include breakpoints.bp-min(large) {
       --surf-fs-16-18: #{calculations.rem(18px)};
       --surf-fs-16-24-40: #{calculations.rem(40px)};
@@ -113,8 +110,6 @@
       --surf-fs-48-100-132-176: #{calculations.rem(132px)};
       --surf-fs-80-140-200-260: #{calculations.rem(200px)};
     }
-
-
     @include breakpoints.bp-min(xlarge) {
       --surf-fs-16-18-24: #{calculations.rem(24px)};
       --surf-fs-18-24-32-40: #{calculations.rem(40px)};
@@ -128,7 +123,6 @@
     }
   }
 }
-
 @include sizes();
 
 
@@ -149,7 +143,6 @@
     --surf-fw-bold: 700;
   }
 }
-
 @include weights();
 
 
@@ -163,11 +156,10 @@
   :root, .ck {
     --surf-lh-default: 1.6;
     --surf-lh-heading: 1.2;
-    --surf-lh-label:   1.4;
-    --surf-lh-base:    1;
+    --surf-lh-label: 1.4;
+    --surf-lh-base: 1;
   }
 }
-
 @include line-heights();
 
 
@@ -195,12 +187,21 @@ body {
     line-height: var(--surf-lh-default);
   }
 
-  p:not(:first-child) {
+  p:not( :first-child ) {
     margin-block-start: 16px;
   }
 
   p.large {
     font-size: var(--surf-fs-18-24);
+  }
+
+  p.subhead {
+    font-family: var(--surf-font-condensed);
+    font-size: var(--surf-fs-22-40);
+    font-weight: var(--surf-fw-bold);
+    letter-spacing: 2px;
+    line-height: var(--surf-lh-heading);
+    text-transform: uppercase;
   }
 }
 
@@ -226,12 +227,11 @@ body {
     }
   }
 }
-
 @mixin headings-editor () {
-  h2:not(:first-child),
-  h3:not(:first-child),
-  h4:not(:first-child),
-  h5:not(:first-child) {
+  h2:not( :first-child ),
+  h3:not( :first-child ),
+  h4:not( :first-child ),
+  h5:not( :first-child ) {
     margin-block-start: 32px;
   }
 
@@ -263,7 +263,6 @@ body {
     font-size: var(--surf-fs-18-24);
   }
 }
-
 @include headings-general();
 
 
@@ -286,7 +285,6 @@ body {
     }
   }
 }
-
 @include links();
 
 

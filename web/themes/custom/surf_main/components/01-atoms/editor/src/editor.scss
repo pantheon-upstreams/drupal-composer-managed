@@ -8,6 +8,9 @@
 // - 05 - Lists
 // - 06 - Tables
 // - 07 - Media
+// - 08 - Layouts
+// - 09 - Buttons
+// - 10 - Modifiers
 //
 
 
@@ -102,7 +105,6 @@
     @include breakpoints.bp-min(large) {
       margin-inline-end: -8vw;
     }
-
     @include breakpoints.bp-min(xlarge) {
       margin-inline-end: -16vw;
     }
@@ -112,7 +114,6 @@
     @include breakpoints.bp-min(large) {
       margin-inline-start: -8vw;
     }
-
     @include breakpoints.bp-min(xlarge) {
       margin-inline-start: -16vw;
     }
@@ -130,4 +131,38 @@
   .l-onecol & {
     margin-inline: auto;
   }
+}
+
+// allows for vertical alignment style option
+.l-twocol .l-twocol__region > div.a-editor--valign-center,
+.l-threecol .l-threecol__region > div.a-editor--valign-center {
+  height: auto;
+}
+
+
+
+//------------------------------------
+//  09 - Buttons
+//------------------------------------
+
+.a-editor {
+  .a-button {
+    text-decoration: none;
+  }
+}
+
+
+
+//------------------------------------
+//  10 - Modifiers
+//------------------------------------
+
+.a-editor--align-left {
+  .l-onecol & {
+    margin-inline: 0;
+  }
+}
+
+.a-editor--valign-center {
+  align-self: center;
 }

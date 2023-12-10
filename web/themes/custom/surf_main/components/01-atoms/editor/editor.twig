@@ -19,7 +19,8 @@
 
 {% set classes = [
     'a-editor',
-    'clearfix'
+    'clearfix',
+    editor_content_align ? 'a-editor--' ~ editor_content_align,
 ] %}
 
 <div {{ editor_attributes.addClass(classes).merge(attributes) }}>

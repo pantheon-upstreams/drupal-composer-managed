@@ -11,23 +11,17 @@
 #}
 
 {% set classes = [
-    'l-section',
-    'paragraph',
-    'paragraph--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
+  'l-section',
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
 ] %}
 
-<section {{ attributes.addClass(classes) }}>
-    {% if style_options['section_width'] == 'xlarge' %}
-        <div class="container container--xlarge">
-    {% elseif style_options['section_width'] == 'large' %}
-        <div class="container container--large">
-    {% elseif style_options['section_width'] == 'medium' %}
-        <div class="container container--medium">
-    {% elseif style_options['section_width'] == 'small' %}
-        <div class="container container--small">
-    {% endif %}
-            {{ content }}
-        </div>
-</section>
+{% include 'surf_main:section' with {
+  attributes,
+  section_attributes: create_attribute({'class': classes}),
+  section_content: content,
+  section_style: style_options['section_style']|default('none'),
+  section_width: style_options['section_width']|default('large'),
+} only %}

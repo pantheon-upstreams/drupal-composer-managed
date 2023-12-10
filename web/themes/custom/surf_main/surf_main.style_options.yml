@@ -28,6 +28,19 @@
 #
 
 options:
+
+  section_style:
+    plugin: property
+    label: Section Style
+    default: none
+    options:
+      none:
+        label: None
+      blue-gradient:
+        label: Blue Gradient
+      gray-gradient:
+        label: Gray Gradient
+
   section_width:
     plugin: property
     label: Section Width
@@ -125,6 +138,8 @@ options:
         label: Gradient
       particles:
         label: Particles
+      particles-sm:
+        label: Particles Small
 
   hero_type:
     plugin: property
@@ -182,6 +197,18 @@ options:
       lg:
         label: Large
 
+  text_align:
+    plugin: property
+    label: 'Content Alignment'
+    default: none
+    options:
+      none:
+        label: None
+      align-left:
+        label: Left align
+      valign-center:
+        label: Vertically center
+
 contexts:
   layout:
     two_column:
@@ -217,7 +244,14 @@ contexts:
       options:
         section_width:
           layout: true
+        section_style:
+          layout: true
     section_extended:
       options:
         section_width:
           layout: true
+        section_style:
+          layout: true
+    text:
+      options:
+        text_align: true

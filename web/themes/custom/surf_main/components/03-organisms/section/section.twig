@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Component for Section
+ *
+ * Available props:
+ * - section_attributes: [array] Any parent tag attributes.
+ * - section_style: [array].
+ * - section_width: [array].
+ * - section_content: [array].
+ *
+ */
+#}
+
+{% set classes = [
+  'o-section',
+  section_style ? 'o-section--' ~ section_style,
+] %}
+
+<section {{ section_attributes.addClass(classes).merge(attributes) }}>
+  {% if section_width == 'xlarge' %}
+    <div class="container container--xlarge">
+  {% elseif section_width == 'large' %}
+      <div class="container container--large">
+  {% elseif section_width == 'medium' %}
+        <div class="container container--medium">
+  {% elseif section_width == 'small' %}
+          <div class="container container--small">
+  {% endif %}
+            {{ section_content }}
+          </div>
+</section>
+
