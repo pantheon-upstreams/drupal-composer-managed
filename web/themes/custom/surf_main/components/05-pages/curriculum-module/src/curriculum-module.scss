@@ -47,6 +47,16 @@
     margin-block-start: 16px;
   }
 
+  .p-curriculum-module__content {
+    margin-block-end: calculations.rem(32px);
+    @include breakpoints.bp-min(medium) {
+      margin-block-end: calculations.rem(60px);
+    }
+    @include breakpoints.bp-min(large) {
+      margin-block-end: calculations.rem(90px);
+    }
+  }
+
   .p-curriculum-module__related {
     @include breakpoints.bp-min(large) {
       margin-block-start: 90px;
