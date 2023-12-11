@@ -29,7 +29,6 @@
     max-inline-size: var(--surf-width-xlarge);
     padding-block-start: calculations.rem(32px);
     position: relative;
-
     @include breakpoints.bp-min(xlarge) {
       padding-block-start: calculations.rem(60px);
       padding-inline: calculations.rem(80px);
@@ -38,19 +37,24 @@
 
   .p-experiment__media {
     img {
-      max-block-size: 480px;
+      block-size: calculations.rem(210px);
+      inline-size: 100%;
       object-fit: cover;
-      width: 100%;
-
+      @include breakpoints.bp-min(medium) {
+        block-size: calculations.rem(420px);
+      }
+      @include breakpoints.bp-min(large) {
+        block-size: calculations.rem(480px);
+      }
       @include breakpoints.bp-min(xlarge) {
         max-block-size: 690px;
       }
     }
   }
 
+
   .m-breadcrumbs {
     display: none;
-
     @include breakpoints.bp-min(medium) {
       display: block;
     }
@@ -59,15 +63,14 @@
   .p-experiment__dates {
     color: var(--surf-color-gray-800);
     display: flex;
-    grid-gap: 2px;
     font-size: calculations.rem(16px);
     font-weight: var(--surf-fw-bold);
+    grid-gap: 2px;
     text-transform: uppercase;
   }
 
   .p-experiment__overview {
     margin-block-end: calculations.rem(32px);
-
     @include breakpoints.bp-min(medium) {
       margin-block-end: calculations.rem(60px);
     }
@@ -76,7 +79,6 @@
   .p-experiment__related h2 {
     margin-block: 32px;
     text-transform: uppercase;
-
     @include breakpoints.bp-min(large) {
       margin-block: 64px;
     }

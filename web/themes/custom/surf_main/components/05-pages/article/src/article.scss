@@ -155,7 +155,7 @@
     }
 
     img {
-      height: calculations.rem(210px);
+      block-size: calculations.rem(210px);
       left: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
@@ -165,13 +165,13 @@
       right: 50%;
       width: 100vw;
       @include breakpoints.bp-min(medium) {
-        height: calculations.rem(420px);
+        block-size: calculations.rem(420px);
       }
       @include breakpoints.bp-min(large) {
-        height: calculations.rem(480px);
+        block-size: calculations.rem(480px);
       }
       @include breakpoints.bp-min(xlarge) {
-        height: auto;
+        block-size: auto;
         left: revert;
         margin-inline: revert;
         max-inline-size: 100%;
