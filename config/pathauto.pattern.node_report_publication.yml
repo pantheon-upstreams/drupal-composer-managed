@@ -1,0 +1,22 @@
+uuid: f218def9-3607-486d-a8b5-4b73a1a51055
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_report_publication
+label: 'Node - Report / Publication'
+type: 'canonical_entities:node'
+pattern: '/publications-and-reports/[node:title]'
+selection_criteria:
+  1b8c7483-4d0b-4d95-9632-f6b61caa1802:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1b8c7483-4d0b-4d95-9632-f6b61caa1802
+    context_mapping:
+      node: node
+    bundles:
+      report_publication: report_publication
+selection_logic: and
+weight: -5
+relationships: {  }

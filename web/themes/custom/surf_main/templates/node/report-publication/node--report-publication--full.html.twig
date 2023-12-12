@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme implementation to display a Professional Development Node with Full view mode.
+ * Theme implementation to display a Report / Publication Node with Full view mode.
  *
  * Available variables:
  * - No additional variables are available for this Node type.
@@ -12,7 +12,7 @@
 #}
 
 {% set classes = [
-    content.field_media_primary|render ? 'p-page--with-img',
+  content.field_media_primary|render ? 'p-page--with-img',
 ] %}
 
 {% set rendered_content = content|without(
