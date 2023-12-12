@@ -1,0 +1,37 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Contract
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      title: Drupal Attributes
+      type: Drupal\Core\Template\Attribute
+    contract_attributes:
+      title: Attributes
+      type: string
+    contract_body:
+      title: Body
+      type: array
+    contract_breadcrumbs:
+      title: Breadcrumbs
+      type: array
+    contract_contacts:
+      title: Contacts
+      type: array
+    contract_post_date:
+      title: Post Date
+      type: array
+    contract_resources:
+      title: Resources
+      type: array
+    contract_schedule:
+      title: Schedule
+      type: array
+    contract_summary:
+      title: Summary
+      type: array
+    contract_title:
+      title: Title
+      type: string

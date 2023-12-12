@@ -1,0 +1,22 @@
+uuid: 28f46db5-cdc0-470d-83e6-e0a900061aa2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_contract
+label: 'Node - Contract'
+type: 'canonical_entities:node'
+pattern: '/contract-opportunities/[node:title]'
+selection_criteria:
+  85bb65b4-34a3-4886-bb5a-f80cbba4632f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 85bb65b4-34a3-4886-bb5a-f80cbba4632f
+    context_mapping:
+      node: node
+    bundles:
+      contract: contract
+selection_logic: and
+weight: -5
+relationships: {  }

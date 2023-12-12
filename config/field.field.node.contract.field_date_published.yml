@@ -1,0 +1,24 @@
+uuid: e894e81c-d945-4089-baec-b176cf0b4b41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_published
+    - node.type.contract
+  module:
+    - datetime
+id: node.contract.field_date_published
+field_name: field_date_published
+entity_type: node
+bundle: contract
+label: 'Posted Date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

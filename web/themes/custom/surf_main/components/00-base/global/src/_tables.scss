@@ -17,7 +17,14 @@
     text-align: left;
     inline-size: 100%;
   }
+
+  .a-editor__table {
+    max-inline-size: 100%;
+    overflow: auto;
+  }
 }
+
+@include general();
 
 
 
@@ -47,6 +54,9 @@
   }
 
   table td {
+    font-size: var(--surf-fs-16-18);
     min-inline-size: 240px;
   }
 }
+
+@include elements();

@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.contract.body
     - field.field.node.contract.field_contract_summary
+    - field.field.node.contract.field_date_published
     - field.field.node.contract.field_links
     - field.field.node.contract.field_overview
     - field.field.node.contract.field_p_contract_schedule
@@ -14,9 +15,9 @@ dependencies:
     - field.field.node.contract.field_ref_documents
     - node.type.contract
   module:
+    - datetime
     - entity_reference_revisions
     - layout_builder
-    - link
     - text
     - user
 third_party_settings:
@@ -42,24 +43,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_links:
-    type: link
+  field_date_published:
+    type: datetime_default
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      timezone_override: ''
+      format_type: teaser_date
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_overview:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
+    weight: 5
     region: content
   field_p_contract_schedule:
     type: entity_reference_revisions_entity_view
@@ -71,31 +62,27 @@ content:
     weight: 2
     region: content
   field_ref_contacts:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: teaser
+      link: false
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_ref_contract_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
     region: content
   field_ref_documents:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: download
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
 hidden:
+  field_links: true
+  field_overview: true
+  field_ref_contract_type: true
   langcode: true
   links: true
   search_api_excerpt: true
