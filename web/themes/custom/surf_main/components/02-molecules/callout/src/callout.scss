@@ -202,6 +202,13 @@
       font-size: var(--surf-fs-16-18-24);
       line-height: var(--surf-lh-label);
     }
+    
+    .a-button {
+      font-family: var(--surf-font-condensed);
+      letter-spacing: 1.5px;
+      line-height: var(--surf-lh-label);
+      text-transform: uppercase;
+    }
 
     .a-button.a-button--underline.a-button--icon-envelope-left,
     .a-button.a-button--underline.a-button--icon-play-left {
