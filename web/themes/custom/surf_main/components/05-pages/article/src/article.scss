@@ -86,8 +86,10 @@
 
   .m-breadcrumbs {
     margin-block-end: 32px;
+    display: none;
     @include breakpoints.bp-min(medium) {
       margin-block-end: 24px;
+      display: block;
     }
   }
 
