@@ -24,6 +24,7 @@ settings:
       'views_block:experiments-all_experiments': 'views_block:experiments-all_experiments'
       'views_block:news-all_news_block': 'views_block:news-all_news_block'
       'views_block:press_releases-all_press_releases': 'views_block:press_releases-all_press_releases'
+      'views_block:research_areas-full': 'views_block:research_areas-full'
       'views_block:events-upcoming': 'views_block:events-upcoming'
       'views_block:news-homepage_news': 'views_block:news-homepage_news'
       'views_block:news-news_feature_block': 'views_block:news-news_feature_block'

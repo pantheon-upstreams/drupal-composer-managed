@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override to display a Research Area Taxonomy Term with Teaser view mode.
+ *
+ * Available variables:
+ * - No additional variables are available for this Taxonomy type.
+ *
+ * @see templates/taxonomy/taxonomy-term.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_icon',
+    'field_overview',
+) %}
+
+{% include 'surf_main:teaser' with {
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute({'class': 'm-teaser--research-area'}),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_media: content.field_icon|field_value|default([]),
+    teaser_title: name|field_value,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
+} only %}
