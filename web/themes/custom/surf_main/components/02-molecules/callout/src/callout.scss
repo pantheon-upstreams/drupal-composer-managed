@@ -183,6 +183,11 @@
       padding: 0;
     }
 
+    .m-callout__media {
+      block-size: auto;
+      inline-size: rem(100px);
+    }
+
     .m-callout__heading,
     .m-callout__text {
       color: var(--surf-color-black);

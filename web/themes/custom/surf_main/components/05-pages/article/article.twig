@@ -58,6 +58,12 @@
         </section>
 
         <section class="p-article__meta">
+
+          {% embed 'surf_main:left-hook' with {
+            left_hook_attributes: create_attribute(),
+          } only %}
+          {% endembed %}
+
             {% if article_publish_date %}
                 <div class="p-article__publish-date">
                     {{ article_publish_date }}

@@ -25,10 +25,13 @@
   ul.m-menu__list {
     display: flex;
     flex-flow: nowrap column;
-    gap: 16px;
+    gap: 4px;
     list-style: none;
     margin-block: 0;
     padding-inline: 0;
+    @include breakpoints.bp-min(medium) {
+      gap: 16px;
+    }
 
     @include breakpoints.bp-min(large) {
       align-items: center;
