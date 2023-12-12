@@ -24,6 +24,7 @@
 .m-person-card {
   align-items: center;
   display: flex;
+  inline-size: 100%;
   max-inline-size: 536px;
 
   .m-person-card__avatar {
@@ -42,6 +43,7 @@
   }
 
   .m-person-card__content {
+    inline-size: 100%;
     padding: 24px;
   }
 
