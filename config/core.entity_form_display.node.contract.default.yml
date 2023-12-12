@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.contract.body
     - field.field.node.contract.field_contract_summary
+    - field.field.node.contract.field_date_published
     - field.field.node.contract.field_links
     - field.field.node.contract.field_overview
     - field.field.node.contract.field_p_contract_schedule
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.contract.field_ref_documents
     - node.type.contract
   module:
+    - datetime
     - field_group
     - link
     - maxlength
@@ -127,6 +129,12 @@ content:
         maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
+  field_date_published:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_links:
     type: link_default
     weight: 3

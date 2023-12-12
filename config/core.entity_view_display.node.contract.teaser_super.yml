@@ -1,9 +1,9 @@
-uuid: a6eb1a6d-3d59-46b7-bcf7-1ec5b7c7a521
+uuid: 56788963-f9ab-4335-8538-22ba0784f305
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_super
     - field.field.node.contract.body
     - field.field.node.contract.field_contract_summary
     - field.field.node.contract.field_date_published
@@ -16,12 +16,11 @@ dependencies:
     - node.type.contract
   module:
     - datetime
-    - text
     - user
-id: node.contract.teaser
+id: node.contract.teaser_super
 targetEntityType: node
 bundle: contract
-mode: teaser
+mode: teaser_super
 content:
   field_date_published:
     type: datetime_default
@@ -32,21 +31,19 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_overview:
-    type: text_default
-    label: hidden
+  links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 100
     region: content
 hidden:
   body: true
   field_contract_summary: true
   field_links: true
+  field_overview: true
   field_p_contract_schedule: true
   field_ref_contacts: true
   field_ref_contract_type: true
   field_ref_documents: true
   langcode: true
-  links: true
   search_api_excerpt: true

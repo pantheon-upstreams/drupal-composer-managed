@@ -60,9 +60,6 @@ settings:
           label: 'Black Button with Arrow Right'
           element: '<a class="a-button a-button--small a-button--black a-button--icon-arrow-right a-button--underline">'
         -
-          label: 'White Button with Arrow Right'
-          element: '<a class="a-button a-button--small a-button--white a-button--primary a-button--icon-arrow-right">'
-        -
           label: 'Heading 2 - Large'
           element: '<h2 class="large">'
         -
@@ -71,9 +68,6 @@ settings:
         -
           label: 'Paragraph - Large Text Size'
           element: '<p class="large">'
-        -
-          label: 'Paragraph - Subhead Text Size'
-          element: '<p class="subhead">'
         -
           label: 'Paragraph - Default Text Size'
           element: '<p class="default">'

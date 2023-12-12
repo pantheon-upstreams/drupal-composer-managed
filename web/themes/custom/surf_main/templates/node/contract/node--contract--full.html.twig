@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme implementation to display an Contract Node with Full view mode.
+ *
+ * Available variables:
+ *  - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/05-pages/contract/contract.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'body',
+    'field_contract_summary',
+    'field_date_published',
+    'field_p_contract_schedule',
+    'field_ref_contacts',
+) %}
+
+{% include 'surf_main:contract' with {
+    attributes,
+    rendered_content,
+    contract_attributes: create_attribute(),
+    contract_body: content.body|field_value|default([]),
+    contract_breadcrumbs: drupal_breadcrumb(),
+    contract_contacts: content.field_ref_contacts|field_value|default([]),
+    contract_post_date: content.field_date_published|field_value|default([]),
+    contract_resources: content.field_ref_documents|field_value|default([]),
+    contract_schedule: content.field_p_contract_schedule|field_value|default([]),
+    contract_summary: content.field_contract_summary|field_value|default([]),
+    contract_title: label|field_value,
+} only %}

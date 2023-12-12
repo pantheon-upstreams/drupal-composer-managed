@@ -82,11 +82,6 @@
 .a-editor {
   @include tables.general();
   @include tables.elements();
-
-  .a-editor__table {
-    max-inline-size: 100%;
-    overflow: auto;
-  }
 }
 
 

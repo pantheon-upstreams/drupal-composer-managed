@@ -1,0 +1,106 @@
+{#
+/**
+ * @file
+ * Page component for a Contract.
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - contract_attributes: [string] Reserved for any additional attributes for this page.
+ * - contract_body: [array] Reserved for the primary body copy of this page.
+ * - contract_breadcrumbs: [array] Reserved for the breadcrumb trail to this page.
+ * - contract_contacts: [array] Reserved for associated contacts to this page.
+ * - contract_post_date: [array] Reserved for the acknowledged published date of this page.
+ * - contract_resources: [array] Reserved for any downloadable content.
+ * - contract_schedule: [array] Reserved for a table of important scheduled dates.
+ * - contract_summary: [array] Reserved for a simple overview of content.
+ * - contract_title: [string] Reserved for the primary title of this page.
+ */
+#}
+
+{% set classes = [
+  'p-contract',
+] %}
+
+<article {{ contract_attributes.addClass(classes).merge(attributes) }}>
+    <section class="p-contract__header" aria-label="Contract title">
+        <div class="container container--xlarge">
+            {{ contract_breadcrumbs }}
+
+            <h1>{{ contract_title }}</h1>
+
+            {% if contract_post_date is not empty %}
+                <div class="p-contract__post-date">
+                    <p>{{ 'Posted'|t }}</p>
+                    {{ contract_post_date }}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    {% if contract_schedule is not empty %}
+        <section class="p-contract__schedule" aria-label="Contract schedule">
+            <div class="container container--small">
+                <div class="a-editor__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{ 'Contract Schedule'|t }}</th>
+                                <th>{{ 'Milestone Date'|t }}</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{ contract_schedule }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
+    {% if contract_body is not empty or contract_summary is not empty %}
+        <section class="p-contract__content">
+            <div class="container container--small">
+                {% if contract_summary is not empty %}
+                    <div class="p-contract__summary">
+                        <h2>{{ 'Summary'|t }}</h2>
+
+                        {% include 'surf_main:editor' with {
+                            editor_attributes: create_attribute(),
+                            editor_content: contract_summary,
+                        } only %}
+                    </div>
+                {% endif %}
+
+                {% if contract_body is not empty %}
+                    <div class="p-contract__body">
+                        {% include 'surf_main:editor' with {
+                            editor_attributes: create_attribute(),
+                            editor_content: contract_body,
+                        } only %}
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if contract_resources is not empty %}
+        <section class="p-contract__resources" aria-label="Contract resources">
+            <div class="container container--medium">
+                {% include 'surf_main:resource-list' with {
+                    resource_list_attributes: create_attribute(),
+                    resource_list_heading: 'Documents'|t,
+                    resource_list_items: contract_resources,
+                } only %}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if contract_contacts is not empty %}
+        <section class="p-contract__contacts" aria-label="Contract contacts">
+            <div class="container container--small">
+                {{ contract_contacts }}
+            </div>
+        </section>
+    {% endif %}
+</article>

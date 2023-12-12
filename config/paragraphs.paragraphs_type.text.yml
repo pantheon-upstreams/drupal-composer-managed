@@ -1,14 +1,10 @@
 uuid: f9430970-3c9f-4917-840a-94caafe85d90
 langcode: en
 status: true
-dependencies:
-  module:
-    - style_options
+dependencies: {  }
 id: text
 label: Text
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins:
-  style_options:
-    enabled: true
+behavior_plugins: {  }

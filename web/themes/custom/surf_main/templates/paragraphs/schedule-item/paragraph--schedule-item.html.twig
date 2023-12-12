@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Schedule Item Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_milestone',
+    'field_milestone_date',
+) %}
+
+<tr>
+    <td>{{ content.field_milestone|field_value }}</td>
+    <td>{{ content.field_milestone_date|field_value }}</td>
+</tr>
+
+{{ rendered_content }}
