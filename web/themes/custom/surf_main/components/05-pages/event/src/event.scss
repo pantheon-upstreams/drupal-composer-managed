@@ -24,14 +24,25 @@
 .p-event {
   padding-block: 32px 56px;
   position: relative;
-
+  @include breakpoints.bp-min(xxlarge) {
+    &::before {
+      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: calculations.rem(28px);
+      z-index: 2;
+    }
+  }
   @include breakpoints.bp-min(large) {
     padding-block: 64px 80px;
   }
 
   .m-breadcrumbs {
     display: none;
-
     @include breakpoints.bp-min(medium) {
       display: block;
     }
@@ -39,7 +50,6 @@
 
   .p-event__inner-wrapper {
     margin-block-start: 48px;
-
     @include breakpoints.bp-min(large) {
       margin-block-start: 64px;
     }
@@ -47,20 +57,17 @@
 
   .a-left-hook {
     margin-block-end: 48px;
-
     @include breakpoints.bp-min(xlarge) {
       inline-size: 65%;
       margin-block-start: 64px;
     }
   }
 
-  .p-event__body-wrapper > :not(:last-child) {
+  .p-event__body-wrapper > :not( :last-child ) {
     margin-block-end: 32px;
-
     @include breakpoints.bp-min(medium) {
       margin-block-end: 40px;
     }
-
     @include breakpoints.bp-min(large) {
       margin-block-end: 28px;
     }
@@ -70,15 +77,12 @@
     display: grid;
     gap: 32px;
     grid-template-columns: 1fr;
-
     @include breakpoints.bp-min(medium) {
       gap: 40px;
     }
-
     @include breakpoints.bp-min(large) {
       gap: 60px;
     }
-
     @include breakpoints.bp-min(xlarge) {
       grid-template-columns: 1fr 400px;
     }

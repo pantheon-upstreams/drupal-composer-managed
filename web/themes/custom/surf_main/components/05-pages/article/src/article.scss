@@ -137,19 +137,33 @@
 
 
 
-
 //------------------------------------
 //  03 - General
 //------------------------------------
 
 .p-article {
-  margin-block-end: calculations.rem(24px);
+  padding-block-end: calculations.rem(24px);
   @include breakpoints.bp-min(medium) {
-    margin-block-end: calculations.rem(90px);
+    padding-block-end: calculations.rem(90px);
   }
   @include breakpoints.bp-min(large) {
-    margin-block-end: calculations.rem(120px);
+    padding-block-end: calculations.rem(120px);
   }
+
+  @include breakpoints.bp-min(xxlarge) {
+    &::before {
+      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: calculations.rem(28px);
+      z-index: 2;
+    }
+  }
+
 
   .p-article__heading {
     font-family: var(--surf-font-sans);
