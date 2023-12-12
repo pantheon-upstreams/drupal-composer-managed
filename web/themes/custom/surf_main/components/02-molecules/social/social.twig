@@ -18,43 +18,44 @@
 #}
 
 {% set classes = [
-    'm-social',
+  'm-social',
 ] %}
 
 <section {{ social_attributes.addClass(classes).setAttribute('aria-label', social_title).merge(attributes) }}>
-    {% if social_title %}
-        <h3 class="m-social__title">{{ social_title }}</h3>
-    {% endif %}
+  {% if social_title %}
+    <h3 class="m-social__title">{{ social_title }}</h3>
+  {% endif %}
 
-    {% if social_newsletter is not empty %}
-        <div class="m-social__newsletter">
-            {{ social_newsletter }}
-        </div>
-    {% endif %}
-
+  {% if social_newsletter is not empty %}
+    <div class="m-social__newsletter">
+      {{ social_newsletter }}
+    </div>
+  {% endif %}
+  <nav aria-label="SURF social">
     <ul class="m-social__items">
-        {% if social_facebook is not empty %}
-            <li class="m-social__item m-social__item--facebook">{{ social_facebook }}</li>
-        {% endif %}
+      {% if social_facebook is not empty %}
+        <li class="m-social__item m-social__item--facebook">{{ social_facebook }}</li>
+      {% endif %}
 
-        {% if social_x is not empty %}
-            <li class="m-social__item m-social__item--x">{{ social_x }}</li>
-        {% endif %}
+      {% if social_x is not empty %}
+        <li class="m-social__item m-social__item--x">{{ social_x }}</li>
+      {% endif %}
 
-        {% if social_instagram is not empty %}
-            <li class="m-social__item m-social__item--instagram">{{ social_instagram }}</li>
-        {% endif %}
+      {% if social_instagram is not empty %}
+        <li class="m-social__item m-social__item--instagram">{{ social_instagram }}</li>
+      {% endif %}
 
-        {% if social_linkedin is not empty %}
-            <li class="m-social__item m-social__item--linkedin">{{ social_linkedin }}</li>
-        {% endif %}
+      {% if social_linkedin is not empty %}
+        <li class="m-social__item m-social__item--linkedin">{{ social_linkedin }}</li>
+      {% endif %}
 
-        {% if social_youtube is not empty %}
-            <li class="m-social__item m-social__item--youtube">{{ social_youtube }}</li>
-        {% endif %}
+      {% if social_youtube is not empty %}
+        <li class="m-social__item m-social__item--youtube">{{ social_youtube }}</li>
+      {% endif %}
 
-        {% if social_vimeo is not empty %}
-            <li class="m-social__item m-social__item--vimeo">{{ social_vimeo }}</li>
-        {% endif %}
+      {% if social_vimeo is not empty %}
+        <li class="m-social__item m-social__item--vimeo">{{ social_vimeo }}</li>
+      {% endif %}
     </ul>
+  </nav>
 </section>
