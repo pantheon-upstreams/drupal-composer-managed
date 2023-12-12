@@ -4,6 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.research_area.field_icon
+    - field.field.taxonomy_term.research_area.field_overview
+    - field.field.taxonomy_term.research_area.field_p_content
+    - field.field.taxonomy_term.research_area.field_ref_experiments
+    - field.field.taxonomy_term.research_area.field_ref_media_primary
+    - field.field.taxonomy_term.research_area.rabbit_hole__settings
     - taxonomy.vocabulary.research_area
   module:
     - layout_builder
@@ -17,15 +23,24 @@ targetEntityType: taxonomy_term
 bundle: research_area
 mode: teaser
 content:
-  description:
+  field_icon:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
-  field_overview: true
+  description: true
   field_p_content: true
   field_ref_experiments: true
   field_ref_media_primary: true

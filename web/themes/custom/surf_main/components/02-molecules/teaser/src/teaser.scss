@@ -405,71 +405,72 @@
 
 
 
+
 //------------------------------------
 //  07 - 1 Column
 //------------------------------------
 
-.l-onecol {
-  .l-onecol__region {
-    > .m-teaser {
-      @include bp-min(small) {
-        align-items: center;
-        display: flex;
-        flex-flow: nowrap row;
-      }
+.l-onecol .m-teaser {
+  @include bp-min(small) {
+    align-items: center;
+    display: flex;
+    flex-flow: nowrap row;
+  }
 
-      .m-teaser__media {
-        margin-block-end: 20px;
-        width: 100%;
-        @include bp-min(small) {
-          flex-shrink: 0;
-          margin-block-end: 0;
-          margin-inline-end: 32px;
-          width: 45%;
-        }
-        @include bp-min(xlarge) {
-          margin-inline-end: 56px;
-        }
-      }
+  .m-teaser__media {
+    margin-block-end: 20px;
+    inline-size: 100%;
 
-      .m-teaser__title {
-        font-size: var(--surf-fs-18-24-40);
-      }
+    @include bp-min(small) {
+      flex-shrink: 0;
+      margin-block-end: 0;
+      margin-inline-end: 32px;
+      inline-size: 45%;
+    }
 
-      &:hover .m-teaser__title a,
-      &:focus-within .m-teaser__title a {
-        color: var(--surf-color-black);
-      }
+    @include bp-min(xlarge) {
+      margin-inline-end: 56px;
+    }
+  }
 
-      p.m-teaser__content-text {
-        font-size: var(--surf-fs-16-18-24);
-        margin-block-start: 12px;
-        @include bp-min(medium) {
-          margin-block-start: 16px;
-        }
-      }
+  .m-teaser__title {
+    font-size: var(--surf-fs-18-24-40);
+  }
 
-      .m-teaser__content-suffix {
-        margin: 8px -8px 0;
-        @include bp-min(medium) {
-          margin: 16px -8px 0;
-        }
-      }
+  &:hover .m-teaser__title a,
+  &:focus-within .m-teaser__title a {
+    color: var(--surf-color-black);
+  }
 
-      .m-teaser__content-suffix a,
-      .m-teaser__content-suffix span:not( .a-chip ) {
-        font-size: rem(14px);
-        font-weight: var(--surf-fw-book);
-        margin: 0 8px;
-        white-space: pre;
-      }
+  p.m-teaser__content-text {
+    font-size: var(--surf-fs-16-18-24);
+    margin-block-start: 12px;
 
-      .m-teaser__content-suffix span:not( .a-chip ):not( :last-child ),
-      .m-teaser__content-suffix a:not( :last-child ) {
-        @include bp-min(medium) {
-          border-left: solid 1px var(--surf-color-gray-800);
-        }
-      }
+    @include bp-min(medium) {
+      margin-block-start: 16px;
+    }
+  }
+
+  .m-teaser__content-suffix {
+    margin: 8px -8px 0;
+
+    @include bp-min(medium) {
+      margin: 16px -8px 0;
+    }
+  }
+
+  .m-teaser__content-suffix a,
+  .m-teaser__content-suffix span:not(.a-chip) {
+    font-size: rem(14px);
+    font-weight: var(--surf-fw-book);
+    margin: 0 8px;
+    white-space: pre;
+  }
+
+  .m-teaser__content-suffix span:not(.a-chip ):not(:last-child),
+  .m-teaser__content-suffix a:not(:last-child) {
+    @include bp-min(medium) {
+      border-left: solid 1px var(--surf-color-gray-800);
     }
   }
 }
@@ -577,3 +578,65 @@
   }
 }
 
+
+
+
+//------------------------------------
+//  11 - Areas of Research
+//------------------------------------
+
+.l-onecol.l-onecol--listing .m-teaser.m-teaser--research-area {
+  .m-teaser__media {
+    @include bp-min(small) {
+      inline-size: 32%;
+    }
+  }
+
+  .m-teaser__title a {
+    display: inline-block;
+    padding-inline-end: 40px;
+    position: relative;
+
+    @include bp-min(medium) {
+      padding-inline-end: 56px;
+    }
+
+    &:after {
+      --icon-arrow-right: svg-load('icon-arrow-right.svg');
+      background-color: var(--surf-color-navy);
+      block-size: 32px;
+      content: '';
+      inline-size: 32px;
+      inset-block: 0;
+      inset-inline-end: 0;
+      margin-block: auto;
+      mask: var(--icon-arrow-right) no-repeat center;
+      mask-size: contain;
+      position: absolute;
+      transition: transition(all, 0.35s, easeInOutExpo);
+      transform: translateX(0);
+
+      @include bp-min(medium) {
+        block-size: 40px;
+        inline-size: 40px;
+        inset-block: 4px 0;
+      }
+    }
+
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--surf-color-black);
+      transform: translateX(4px);
+    }
+  }
+}
+
+.l-onecol.l-onecol--listing > .l-onecol__region:nth-child(even) .m-teaser.m-teaser--research-area {
+  .m-teaser__media {
+    order: 1;
+
+    @include bp-min(xlarge) {
+      margin-inline: 56px 0;
+    }
+  }
+}

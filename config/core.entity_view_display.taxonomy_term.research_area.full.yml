@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.research_area.field_icon
     - field.field.taxonomy_term.research_area.field_overview
     - field.field.taxonomy_term.research_area.field_p_content
     - field.field.taxonomy_term.research_area.field_ref_experiments
@@ -54,6 +55,7 @@ content:
     region: content
 hidden:
   description: true
+  field_icon: true
   langcode: true
   rabbit_hole__settings: true
   search_api_excerpt: true

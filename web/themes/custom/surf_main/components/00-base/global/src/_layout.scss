@@ -142,6 +142,7 @@
 
 .l-main > .l-section {
   margin-block: 64px;
+
   @include breakpoints.bp-min(large) {
     margin-block: 88px;
   }
@@ -154,20 +155,22 @@ ul.l-threecol {
   padding: 0;
 }
 
-.l-onecol__region > *:not( :first-child ),
-.l-twocol__region > *:not( :first-child ),
-.l-threecol__region > *:not( :first-child ) {
+.l-onecol__region > *:not(:first-child),
+.l-twocol__region > *:not(:first-child),
+.l-threecol__region > *:not(:first-child) {
   margin-block-start: 40px;
+
   @include breakpoints.bp-min(large) {
     margin-block-start: 64px;
   }
 }
 
-.l-onecol,
+.l-onecol:not(.l-onecol--listing),
 .l-twocol,
 .l-threecol {
   display: grid;
   gap: 32px;
+
   @include breakpoints.bp-min(medium) {
     gap: 60px;
   }
@@ -179,20 +182,24 @@ ul.l-threecol {
 }
 
 // One Column
-.l-onecol {
+.l-onecol:not(.l-onecol--listing) {
   grid-template-columns: minmax(0, 1fr);
+}
 
-  .l-onecol--listing {
-    > * {
-      border-bottom: solid 2px var(--surf-color-gray-800);
-      border-top: solid 2px var(--surf-color-gray-800);
+.l-onecol.l-onecol--listing {
+  > * {
+    border-bottom: solid 2px var(--surf-color-gray-800);
+    border-top: solid 2px var(--surf-color-gray-800);
+    padding-block-end: 40px;
+    padding-block-start: 40px;
+
+    @include breakpoints.bp-min(medium) {
       padding-block-end: 96px;
-      padding-block-start: 40px;
     }
+  }
 
-    > *:not( :first-child ) {
-      margin-block-start: -2px;
-    }
+  > *:not( :first-child ) {
+    margin-block-start: -2px;
   }
 }
 
@@ -202,6 +209,7 @@ ul.l-threecol {
 
   &.l-twocol--50-50 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -209,6 +217,7 @@ ul.l-threecol {
 
   &.l-twocol--55-45 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 55% 1fr;
     }
@@ -216,6 +225,7 @@ ul.l-threecol {
 
   &.l-twocol--45-55 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 1fr 55%;
     }
@@ -223,6 +233,7 @@ ul.l-threecol {
 
   &.l-twocol--25-75 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 1fr 3fr;
     }
@@ -230,6 +241,7 @@ ul.l-threecol {
 
   &.l-twocol--75-25 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 3fr 1fr;
     }
@@ -250,9 +262,11 @@ ul.l-threecol {
 .l-threecol {
   &.l-threecol--33-34-33 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
     @include breakpoints.bp-min(large) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

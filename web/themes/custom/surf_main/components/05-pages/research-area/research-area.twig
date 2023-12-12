@@ -49,7 +49,7 @@
 
     {% if drupal_view_result('related_articles', 'research_area') is not empty or research_area_related_experiments is not empty %}
         <section class="p-research-area__related">
-            <div class="container container--default">
+            <div class="container container--xlarge">
                 {% if research_area_related_experiments is not empty %}
                     {% include 'surf_main:left-hook' with {
                         left_hook_attributes: create_attribute(),

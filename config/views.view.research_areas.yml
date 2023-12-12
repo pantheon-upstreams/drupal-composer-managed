@@ -22,7 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Research Areas'
+      title: 'Areas of Research'
       fields:
         name:
           id: name
@@ -95,7 +95,22 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         status:
@@ -151,28 +166,15 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
+  full:
+    id: full
+    display_title: Full
     display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - user.permissions
-      tags: {  }
-  research_areas:
-    id: research_areas
-    display_title: 'Research Areas'
-    display_plugin: block
-    position: 2
-    display_options:
       display_description: ''
       display_extenders: {  }
+      block_description: 'Areas of Research'
     cache_metadata:
       max-age: -1
       contexts:
