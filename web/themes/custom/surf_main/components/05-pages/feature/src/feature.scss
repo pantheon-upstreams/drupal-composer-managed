@@ -22,10 +22,23 @@
 //------------------------------------
 
 .p-feature {
+  @include breakpoints.bp-min(xxlarge) {
+    &::before {
+      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: calculations.rem(28px);
+      z-index: 2;
+    }
+  }
+
   .o-header__content {
     background-color: var(--surf-color-white);
     padding-block: calculations.rem(32px);
-
     @include breakpoints.bp-min(xlarge) {
       padding-block: calculations.rem(60px);
       padding-inline: calculations.rem(120px);
@@ -37,7 +50,6 @@
       max-block-size: 480px;
       object-fit: cover;
       width: 100%;
-
       @include breakpoints.bp-min(xlarge) {
         max-block-size: 690px;
       }
@@ -46,7 +58,6 @@
 
   .m-breadcrumbs {
     display: none;
-
     @include breakpoints.bp-min(medium) {
       display: block;
     }
@@ -54,7 +65,6 @@
 
   .p-feature__overview {
     margin-block-end: calculations.rem(32px);
-
     @include breakpoints.bp-min(medium) {
       margin-block-end: calculations.rem(60px);
     }
@@ -65,7 +75,7 @@
       margin-inline: auto;
     }
 
-    > :not(:last-child) {
+    > :not( :last-child ) {
       margin-block-end: calculations.rem(60px);
     }
   }

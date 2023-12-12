@@ -15,7 +15,7 @@
 @use '../../../00-base/partials/calculations';
 
 .p-landing {
-  margin-block-end: calculations.rem(60px);
+  padding-block-end: calculations.rem(60px);
 
   @include breakpoints.bp-min(xxlarge) {
     &::before {
