@@ -43,8 +43,11 @@
   font-family: var(--surf-font-sans-alt);
   font-size: var(--surf-fs-52-64-96);
   font-weight: var(--surf-fw-medium);
-  letter-spacing: rem(1.44px);
+  letter-spacing: rem(0.6px);
   text-transform: none;
+  @include bp-min(medium) {
+    letter-spacing: rem(1.44px);
+  }
 }
 
 .o-header__summary {

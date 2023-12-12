@@ -60,8 +60,11 @@
     font-family: var(--surf-font-sans-alt);
     font-size: var(--surf-fs-40-52-64-96);
     font-weight: var(--surf-fw-medium);
-    letter-spacing: 1.44px;
+    letter-spacing: rem(0.6px);
     line-height: var(--surf-lh-base);
+    @include breakpoints.bp-min(medium) {
+      letter-spacing: rem(1.44px);
+    }
   }
 
   .p-contract__post-date {
@@ -79,8 +82,11 @@
     font-family: var(--surf-font-sans-alt);
     font-size: var(--surf-fs-40-52-64);
     font-weight: var(--surf-fw-book);
-    letter-spacing: 1.44px;
+    letter-spacing: rem(0.6px);
     line-height: var(--surf-lh-base);
     margin-block-end: 24px;
+    @include breakpoints.bp-min(medium) {
+      letter-spacing: rem(1.44px);
+    }
   }
 }

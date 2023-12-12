@@ -146,9 +146,12 @@
       font-family: var(--surf-font-sans-alt);
       font-size: var(--surf-fs-40-96);
       font-weight: var(--surf-fw-medium);
-      letter-spacing: rem(1.44px);
+      letter-spacing: rem(0.6px);
       line-height: 1;
       text-transform: uppercase;
+      @include bp-min(medium) {
+        letter-spacing: rem(1.44px);
+      }
     }
 
     .m-callout__text {
