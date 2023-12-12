@@ -52,8 +52,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: banner_default
+      link: false
     third_party_settings: {  }
     weight: 1
     region: content
@@ -74,9 +74,7 @@ content:
     weight: 1
     region: content
 hidden:
-  field_authors: true
   field_date_published: true
-  field_overview: true
   field_ref_publication_type: true
   field_teaser_text: true
   langcode: true

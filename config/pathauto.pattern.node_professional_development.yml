@@ -1,0 +1,22 @@
+uuid: d114e595-29b4-4814-b061-4fc3b2ff591a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_professional_development
+label: 'Node - Professional Development'
+type: 'canonical_entities:node'
+pattern: '/education/professional-development/[node:title]'
+selection_criteria:
+  5bc2f42f-bffc-4d40-b8de-ee4fac67874e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5bc2f42f-bffc-4d40-b8de-ee4fac67874e
+    context_mapping:
+      node: node
+    bundles:
+      professional_development: professional_development
+selection_logic: and
+weight: -5
+relationships: {  }
