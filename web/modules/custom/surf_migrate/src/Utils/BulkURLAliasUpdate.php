@@ -40,7 +40,6 @@ $content_types = [
   'event',
   'experiment',
   'feature',
-  'page',
   'person',
   'press_release',
   'professional_development',
