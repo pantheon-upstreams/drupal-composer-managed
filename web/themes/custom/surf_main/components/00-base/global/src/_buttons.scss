@@ -42,7 +42,6 @@
     }
   }
 }
-
 @include base();
 
 
@@ -63,7 +62,6 @@
     }
   }
 }
-
 @include sizes();
 
 
@@ -131,7 +129,6 @@
     }
   }
 }
-
 @include primary();
 
 
@@ -147,7 +144,6 @@
   position: relative;
   text-decoration: none;
   transition: animations.transition(all, 0.35s, easeInOutExpo);
-
   @if $color == 'navy' {
     border-bottom-color: var(--surf-color-navy);
     color: var(--surf-color-navy);
@@ -161,8 +157,12 @@
     &:focus {
       color: var(--surf-color-black);
     }
-  }
 
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--surf-color-black);
+    }
+  }
   @if $color == 'black' {
     border-bottom-color: var(--surf-color-black);
     color: var(--surf-color-black);
@@ -177,7 +177,6 @@
       color: var(--surf-color-navy);
     }
   }
-
   @if $color == 'white' {
     border-bottom-color: var(--surf-color-white);
     color: var(--surf-color-white);
@@ -206,7 +205,6 @@
     border-bottom-color: transparent;
   }
 }
-
 @mixin underline() {
   .a-button.a-button--underline.a-button--navy {
     @include underline-base('navy');
@@ -220,7 +218,6 @@
     @include underline-base('white');
   }
 }
-
 @include underline();
 
 
@@ -325,5 +322,4 @@
     left: 0;
   }
 }
-
 @include icons();
