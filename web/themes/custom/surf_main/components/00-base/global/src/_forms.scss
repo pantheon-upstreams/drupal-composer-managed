@@ -270,6 +270,18 @@ select::-ms-expand { display: none; }
   margin-block-start: rem(8px);
 }
 
+.description--required {
+  margin-block-end: rem(16px);
+  margin-block-start: rem(32px);
+
+  span {
+    color: var(--surf-color-red);
+    font-size: 1.375rem;
+    margin-inline: 0.25rem;
+    vertical-align: text-top;
+  }
+}
+
 
 
 

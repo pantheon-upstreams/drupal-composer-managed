@@ -21,9 +21,14 @@
 //------------------------------------
 
 .m-statistic {
+  align-items: center;
   display: flex;
   gap: calculations.rem(24px);
-  align-items: center;
+}
+
+.m-statistic__media {
+  height: auto;
+  width: calculations.rem(60px);
 }
 
 .m-statistic__text {

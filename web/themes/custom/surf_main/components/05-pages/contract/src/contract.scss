@@ -22,6 +22,19 @@
 
 .p-contract {
   padding-block: 40px;
+  @include breakpoints.bp-min(xxlarge) {
+    &::before {
+      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: calculations.rem(28px);
+      z-index: 2;
+    }
+  }
 
   @include breakpoints.bp-min(large) {
     padding-block: 64px;

@@ -69,3 +69,12 @@
     inline-size: 100%;
   }
 }
+
+.m-form--curriculum-reservation {
+  padding-block-end: 60px;
+
+  input:not( [type='submit'] ),
+  select {
+    inline-size: 100%;
+  }
+}
