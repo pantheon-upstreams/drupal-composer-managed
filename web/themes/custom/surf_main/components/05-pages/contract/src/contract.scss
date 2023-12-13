@@ -35,7 +35,8 @@
     }
   }
 
-  .p-contract__header .container {
+  .p-contract__header .container,
+  .p-contract__content .container {
     display: flex;
     flex-flow: nowrap column;
     gap: 24px;
@@ -44,8 +45,6 @@
       gap: 32px;
     }
   }
-
-
 }
 
 
@@ -60,10 +59,11 @@
     font-family: var(--surf-font-sans-alt);
     font-size: var(--surf-fs-40-52-64-96);
     font-weight: var(--surf-fw-medium);
-    letter-spacing: rem(0.6px);
+    letter-spacing: calculations.rem(0.6px);
     line-height: var(--surf-lh-base);
+
     @include breakpoints.bp-min(medium) {
-      letter-spacing: rem(1.44px);
+      letter-spacing: calculations.rem(1.44px);
     }
   }
 
@@ -82,11 +82,12 @@
     font-family: var(--surf-font-sans-alt);
     font-size: var(--surf-fs-40-52-64);
     font-weight: var(--surf-fw-book);
-    letter-spacing: rem(0.6px);
+    letter-spacing: calculations.rem(0.6px);
     line-height: var(--surf-lh-base);
     margin-block-end: 24px;
+
     @include breakpoints.bp-min(medium) {
-      letter-spacing: rem(1.44px);
+      letter-spacing: calculations.rem(1.44px);
     }
   }
 }

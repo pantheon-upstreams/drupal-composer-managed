@@ -88,10 +88,12 @@
   color: var(--surf-color-white);
   position: relative;
   width: 100%;
+
   @include bp-max(xlarge) {
     margin-inline-start: calc(var(--surf-grid-gap) * -1);
     width: 100vw;
   }
+
   @include bp-min(large) {
     min-block-size: 690px;
   }
@@ -111,8 +113,13 @@
     }
   }
 
+  .m-teaser__media figcaption {
+    display: none;
+  }
+
   .m-teaser__media img {
     width: 100%;
+
     @include bp-min(large) {
       @include background-image();
     }
@@ -410,7 +417,7 @@
 //  07 - 1 Column
 //------------------------------------
 
-.l-onecol .m-teaser {
+.l-onecol .m-teaser:not(.m-teaser--super) {
   @include bp-min(small) {
     align-items: center;
     display: flex;
@@ -561,6 +568,7 @@
     margin-block-start: 0 !important;
   }
 }
+
 
 
 
