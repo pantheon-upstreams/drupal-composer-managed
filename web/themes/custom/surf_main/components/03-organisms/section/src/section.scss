@@ -35,6 +35,8 @@
     background-image: url('img/particles.png'),linear-gradient(180deg, #007ab8 0%, #000080 50%, #000000 100%);
     background-position: center;
     background-repeat: no-repeat;
+    padding-block-end: 90px;
+    padding-block-start: 80px;
 
     .a-editor > * {
       color: var(--surf-color-white);
