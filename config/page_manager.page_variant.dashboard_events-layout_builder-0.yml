@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_events
+    - system.menu.dashboard
     - views.view.user_event_registrations
   module:
     - layout_discovery
+    - system
     - views
 id: dashboard_events-layout_builder-0
 label: List
@@ -49,6 +51,27 @@ variant_settings:
             views_label: 'My Attended Events'
             items_per_page: none
           weight: 2
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: layout_onecol
+      layout_settings:
+        label: 'Dashboard Menu'
+        context_mapping: {  }
+      components:
+        d8f8feda-66bf-47af-8333-0156f0bba9d5:
+          uuid: d8f8feda-66bf-47af-8333-0156f0bba9d5
+          region: content
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
+          weight: 0
           additional: {  }
       third_party_settings: {  }
 page: dashboard_events
