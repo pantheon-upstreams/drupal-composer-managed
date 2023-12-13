@@ -91,6 +91,13 @@
     }
   }
 
+  .p-experiment__related {
+    margin-block-start: calculations.rem(32px);
+    @include breakpoints.bp-min(medium) {
+      margin-block-start: calculations.rem(60px);
+    }
+  }
+
   .p-experiment__related h2 {
     margin-block: 32px;
     text-transform: uppercase;
