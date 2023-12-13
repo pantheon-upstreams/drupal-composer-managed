@@ -38,12 +38,10 @@
   }
 
   .m-statistics-banner__media img {
-    @include breakpoints.bp-min(xlarge) {
-      block-size: 100%;
-      inline-size: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .m-statistics-banner__content {
