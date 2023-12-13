@@ -127,7 +127,8 @@
     text-transform: uppercase;
   }
 
-  &.p-article--text .p-article__meta {
+  &.p-article--text .p-article__meta,
+  &.p-article--video .p-article__meta {
     padding-block-start: 32px;
 
     @include breakpoints.bp-min(medium) {
