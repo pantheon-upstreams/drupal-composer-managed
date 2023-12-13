@@ -122,11 +122,16 @@
     }
   }
 
-  &.o-header--ripple {
+  &.o-header--ripple:after {
     @include bp-min(large) {
-      background-image: url('img/header-bkg-ripple.png');
-      background-position: top right;
-      background-repeat: no-repeat;
+      @include full-width();
+      background: url('img/header-bkg-ripple.png') no-repeat center right;
+      background-size: 450px 300px;
+      content: '';
+      height: 300px;
+      pointer-events: none;
+      position: absolute;
+      top: -64px;
     }
   }
 
