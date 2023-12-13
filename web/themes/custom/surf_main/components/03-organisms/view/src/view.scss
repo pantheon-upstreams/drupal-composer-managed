@@ -1,0 +1,56 @@
+//
+// Component - Organism - View
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/calculations';
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.o-view {
+  .o-view__exposed-filters {
+
+  }
+}
+
+
+
+
+//------------------------------------
+//  02 - Specifics
+//------------------------------------
+
+.o-view.o-view--news.o-view--all-news-block {
+  margin-block-start: -40px;
+
+  .o-view__header {
+    font-size: calculations.rem(14px);
+    margin-block-start: 20px;
+  }
+
+  .views-filters-summary .value {
+    border: none;
+    border-radius: 0;
+    display: inline;
+    font-weight: var(--surf-fw-book);
+    margin-right: -4px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .o-view__rows {
+    margin-block-start: 68px;
+  }
+}

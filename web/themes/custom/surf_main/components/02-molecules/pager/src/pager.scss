@@ -1,8 +1,8 @@
 //
-// Component - Molecule - Pager
+// Component - Molecules - Pager
 //
 // - 01 - Imports
-// - 02 - General
+// - 02 - Layout
 //
 
 
@@ -10,7 +10,25 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.m-pager {
+  .m-pager__items {
+    align-items: center;
+    display: flex;
+    flex-flow: wrap row;
+    margin-block: 68px 0;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
+  }
+}
+
 
 
 
@@ -19,23 +37,9 @@
 //------------------------------------
 
 .m-pager {
-  margin-block: rem(68px);
-}
-
-.m-pager__items {
-  display: flex;
-  gap: rem(16px);
-  padding: 0;
-}
-
-.m-pager__item {
-  a {
-    text-decoration: none;
-  }
-
-  a[aria-current="Current page"] {
-    color: var(--surf-color-white);
-    padding-inline: 7px;
-    background-color: var(--surf-color-black);
+  .m-pager__link {
+    display: block;
+    padding-block: 8px;
+    padding-inline: 8px;
   }
 }

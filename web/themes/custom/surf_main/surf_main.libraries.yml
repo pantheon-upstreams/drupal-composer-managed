@@ -27,3 +27,15 @@ global:
       components/00-base/global/global.css: { minified: true }
   dependencies:
     - core/once
+
+
+
+
+#------------------------------------#
+# 03 - Views
+#------------------------------------#
+
+views:
+  css:
+    component:
+      components/03-organisms/view/view.css: { minified: true }

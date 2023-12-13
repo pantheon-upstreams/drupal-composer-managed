@@ -30,51 +30,67 @@
  * @see template_preprocess_views_view()
  */
 #}
-{%
-  set classes = [
-  dom_id ? 'js-view-dom-id-' ~ dom_id,
-]
-%}
+{% set classes = [
+    'o-view',
+    'o-view--' ~ id|clean_class,
+    'o-view--' ~ display_id|clean_class,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+] %}
 
-<div{{attributes.addClass(classes)}}>
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
+{{ attach_library('surf_main/views') }}
+{{ attach_library('surf_main/view--' ~ id|clean_class) }}
 
-  {{ exposed }}
-  {{ attachment_before }}
+<div {{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
 
-  <div id="views-aria" aria-live="polite">
-    <p class="visually-hidden"></p>
-  </div>
+    {% if exposed %}
+        <div class="o-view__exposed-filters">
+            {{ exposed }}
+        </div>
+    {% endif %}
 
-  {% if header %}
-    <header class='o-view-embed__header'>
-      {{ header }}
-    </header>
-  {% endif %}
+    {% if attachment_before %}
+        <div class="o-view__attachement--before">
+            {{ attachment_before }}
+        </div>
+    {% endif %}
 
-
-  {% if rows -%}
-    <div class="o-view-embed__rows">
-      {{ rows }}
+    <div id="views-aria" aria-live="polite">
+        <p class="visually-hidden"></p>
     </div>
-  {% elseif empty -%}
-    <div class="o-view-embed__rows">
-      {{ empty }}
-    </div>
-  {% endif %}
 
-  {{ pager }}
+    {% if header %}
+        <header class='o-view__header' aria-label="{{ 'Listing information'|t }}">
+            {{ header }}
+        </header>
+    {% endif %}
 
-  {{ attachment_after }}
-  {{ more }}
+    {% if rows -%}
+        <div class="o-view__rows">
+            {{ rows }}
+        </div>
+    {% elseif empty -%}
+        <div class="o-view__empty">
+            {{ empty }}
+        </div>
+    {% endif %}
 
-  {% if footer %}
-    <footer>
-      {{ footer }}
-    </footer>
-  {% endif %}
+    {% if pager %}
+        <div class="o-view__pager">
+            {{ pager }}
+        </div>
+    {% endif %}
 
-  {{ feed_icons }}
+    {% if attachment_after %}
+        <div class="o-view__attachement--after">
+            {{ attachment_after }}
+        </div>
+    {% endif %}
+
+    {% if footer %}
+        <footer class="o-view__footer" aria-label="Listing footer">
+            {{ footer }}
+        </footer>
+    {% endif %}
 </div>

@@ -13,6 +13,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_filters_summary
 id: news
 label: News
 module: views
@@ -246,11 +247,11 @@ display:
         options:
           offset: 0
           items_per_page: 9
-          total_pages: 6
+          total_pages: null
           id: 0
           tags:
-            next: Next
-            previous: Prev.
+            next: ''
+            previous: ''
             first: ''
             last: ''
           expose:
@@ -261,7 +262,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 6
+          quantity: 4
       empty:
         area:
           id: area
@@ -453,16 +454,29 @@ display:
       use_ajax: false
       display_description: ''
       header:
-        result:
-          id: result
+        views_filters_summary:
+          id: views_filters_summary
           table: views
-          field: result
+          field: views_filters_summary
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: result
+          plugin_id: views_filters_summary
           empty: false
-          content: 'Showing @end of @total posts'
+          filters:
+            title: title
+            tid: tid
+          show_labels: false
+          group_values: false
+          content: '<p>Displaying @total @result_label @exposed_filter_summary</p>'
+          filters_summary_separator: ', '
+          filters_summary_prefix: 'for '
+          filters_result_label:
+            plural: results
+            singular: result
+          show_remove_link: 0
+          show_reset_link: 0
+          filters_reset_link_title: Reset
       display_extenders: {  }
       block_description: 'All News'
     cache_metadata:

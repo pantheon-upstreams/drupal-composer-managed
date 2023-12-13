@@ -27,12 +27,13 @@
  *   - next: Present if the visible list of pages ends before the last page.
  *
  * @see template_preprocess_pager()
+ * @see components/02-molecules/pager/pager.twig
  */
 #}
 
-{% embed 'surf_main:pager' with {
-  attributes,
-  pager_attributes: create_attribute({'class': classes}),
-  items: items,
+{% include 'surf_main:pager' with {
+    attributes,
+    pager_attributes: create_attribute(),
+    pager_items: items,
+    pager_ellipses: ellipses|default([]),
 } only %}
-{% endembed %}

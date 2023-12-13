@@ -15,9 +15,7 @@
   'm-form',
   form_type ? 'm-form--' ~ form_type,
 ] %}
-<div class="container container--xlarge">
-  <p>Fields marked with * are required</p>
-<form action="" {{ form_attributes.addClass(classes).merge(attributes) }}>
+
+<form {{ form_attributes.addClass(classes).merge(attributes) }}>
   {{ form_children }}
 </form>
-</div>

@@ -1,1 +1,1 @@
-.m-pager{margin-block:4.25rem}.m-pager__items{display:flex;gap:1rem;padding:0}.m-pager__item a{text-decoration:none}.m-pager__item a[aria-current="Current page"]{background-color:var(--surf-color-black);color:var(--surf-color-white);padding-inline:7px}
+.m-pager .m-pager__items{align-items:center;display:flex;flex-flow:row wrap;margin-block:68px 0;margin-inline:0;padding-block:0;padding-inline:0}.m-pager .m-pager__link{display:block;padding-block:8px;padding-inline:8px}

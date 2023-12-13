@@ -1,0 +1,72 @@
+
+{#
+/**
+ * @file
+ * Default theme implementation to display views exposed filters summary.
+ *
+ * Available variables:
+ *  - show_label: Show the fitler label.
+ *  - show_remove_link: Show a remove link.
+ *  - show_reset_link: Show a reset link.
+ *  - reset_link:
+ *      - title: The reset link title.
+ *  - filters_summary:
+ *      - prefix: The exposed filter summmary prefix.
+ *      - separator: The exposed filter summary separator.
+ *  - summary: An array of selected filters. Available keys:
+ *      - label: The label of the filter.
+ *      - value: The value of the filter.
+ */
+#}
+
+
+{% set classes = [
+  'views-filters-summary',
+  options.use_ajax ? 'views-filters-summary--use-ajax'
+] %}
+
+{% apply spaceless %}
+  <span {{ attributes.addClass(classes) }}>
+    {% if summary and options.filters_summary.prefix %}
+      <span class="prefix">
+        {{ options.filters_summary.prefix }}
+      </span>
+    {% endif %}
+
+    <span class="items">
+      {%- for item in summary -%}
+        <span class="item">
+          {% if options.show_label %}
+            <span class="label">{{ item.label }}:</span>
+          {% endif %}
+
+          {% if options.has_group_values %}
+            <span class="values">
+              {%- for value in item.groups -%}
+                <strong class="value">{{ value.value }}</strong>
+                {% if value.link and options.show_remove_link %}
+                    {{ value.link }}
+                {% endif %}
+              {% endfor %}
+             </span>
+          {% else %}
+            <strong class="value">{{ item.value }}</strong>
+            {% if item.link and options.show_remove_link %}
+                {{ item.link }}
+            {% endif %}
+          {% endif %}
+
+          {% if loop.last == false %}
+              {{- options.filters_summary.separator -}}
+          {% endif %}
+        </span>
+      {%- endfor -%}
+    </span>
+
+    {% if summary and options.show_reset_link and options.reset_link.title %}
+      <a class="reset" href='/'>
+        {{ options.reset_link.title }}
+      </a>
+    {% endif %}
+  </span>
+{% endapply %}
