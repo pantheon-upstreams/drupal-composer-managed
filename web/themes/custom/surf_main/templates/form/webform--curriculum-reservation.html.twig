@@ -21,10 +21,21 @@
  * @ingroup themeable
  */
 #}
-<div class="container container--xlarge">
-  <form{{ attributes }}>
-    {{ title_prefix }}
-    {{ children }}
-    {{ title_suffix }}
-  </form>
+
+{% set classes = [
+  'm-form',
+  'm-form--curriculum-reservation',
+] %}
+
+<div class="container container--small">
+  <p class="description description--required">Fields marked with <span>*</span> are required.</p>
+
+  {% embed 'surf_main:form' with {
+    attributes,
+    form_attributes: create_attribute({'class': classes}),
+    form_children: children,
+    form_type: 'block',
+  } only %}
+  {% endembed %}
+
 </div>
