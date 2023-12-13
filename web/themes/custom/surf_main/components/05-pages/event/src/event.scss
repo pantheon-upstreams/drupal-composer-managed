@@ -4,6 +4,7 @@
 // - 01 - Imports
 // - 02 - Layout
 // - 03 - General
+// - 04 - Overrides
 //
 
 
@@ -133,5 +134,18 @@
     font-weight: var(--surf-fw-medium);
     line-height: var(--surf-lh-base);
     margin-block-end: 28px;
+  }
+}
+
+
+
+//------------------------------------
+//  04 - Overrides
+//------------------------------------
+
+.p-event {
+  .o-header__heading {
+    font-size: var(--surf-fs-48-100);
+    text-transform: none;
   }
 }
