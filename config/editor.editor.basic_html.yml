@@ -72,6 +72,9 @@ settings:
           label: 'Paragraph - Large Text Size'
           element: '<p class="large">'
         -
+          label: 'Paragraph - xLarge Text Size'
+          element: '<p class="xlarge">'
+        -
           label: 'Paragraph - Subhead Text Size'
           element: '<p class="subhead">'
         -
