@@ -10,3 +10,9 @@ props:
     pager_attributes:
       title: Attributes
       type: string
+    pager_items:
+      title: Items
+      type: array
+    pager_ellipses:
+      title: Ellipses
+      type: array
