@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.article.field_ref_content_blocks
     - field.field.node.article.field_ref_eo_opportunities
     - field.field.node.article.field_ref_key_impact_areas
+    - field.field.node.article.field_ref_news_categories
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
     - node.type.article
@@ -41,7 +42,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_date_published:
     type: datetime_default
@@ -50,7 +51,7 @@ content:
       timezone_override: ''
       format_type: teaser_date
     third_party_settings: {  }
-    weight: 7
+    weight: 4
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -59,14 +60,14 @@ content:
       view_mode: banner_default
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 3
     region: content
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 7
     region: content
   field_p_content:
     type: layout_paragraphs
@@ -75,45 +76,30 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_publisher:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 8
-    region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 0
+    weight: 5
     region: content
   field_ref_content_blocks:
     type: block_field
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
-  field_ref_eo_opportunities:
-    type: entity_reference_label
+  field_ref_news_categories:
+    type: entity_reference_entity_view
     label: hidden
     settings:
+      view_mode: link_with_termid
       link: false
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_ref_key_impact_areas:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_ref_related_content:
     type: entity_reference_entity_view
@@ -122,17 +108,13 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 9
-    region: content
-  field_ref_research_areas:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 10
+    weight: 6
     region: content
 hidden:
+  field_ref_audiences: true
+  field_ref_eo_opportunities: true
+  field_ref_key_impact_areas: true
+  field_ref_research_areas: true
   langcode: true
   links: true
   search_api_excerpt: true

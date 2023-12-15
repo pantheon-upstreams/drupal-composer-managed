@@ -99,7 +99,7 @@
         </section>
     </div>
 
-    {% if drupal_view_result('related_articles', 'article') is not empty %}
+    {% if drupal_view_result('news', 'related_article') is not empty %}
         <section class="p-article__related">
             <div class="container container--xlarge">
                 {% include 'surf_main:left-hook' with {
@@ -112,7 +112,7 @@
                     heading_level: '2',
                 } only %}
 
-                {{ drupal_view('related_articles', 'article') }}
+                {{ drupal_view('news', 'related_article') }}
             </div>
         </section>
     {% endif %}

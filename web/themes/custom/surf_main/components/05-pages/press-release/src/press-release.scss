@@ -23,26 +23,14 @@
 
 .p-press-release {
   padding-block: 40px;
+
   @include breakpoints.bp-min(large) {
     padding-block: 64px;
   }
 
-  @include breakpoints.bp-min(xxlarge) {
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      bottom: 0;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: calculations.rem(28px);
-      z-index: 2;
-    }
-  }
-
   .m-breadcrumbs {
     margin-block-end: 32px;
+
     @include breakpoints.bp-min(medium) {
       display: block;
       margin-block-end: 24px;
@@ -77,6 +65,7 @@
 
   .p-press-release__related {
     margin-block-start: 64px;
+
     @include breakpoints.bp-min(large) {
       margin-block-start: 120px;
     }

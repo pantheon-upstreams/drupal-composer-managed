@@ -1,13 +1,13 @@
-uuid: 32a2b665-a59c-49b8-a1a0-1580c0b5ec90
+uuid: 6aa5db83-398f-4ad5-9d31-36ee14001e40
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.feature_banner
+    - core.entity_view_mode.media.banner_tall
     - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - media.type.image
-    - responsive_image.styles.feature_banner
+    - responsive_image.styles.banner_tall
   module:
     - layout_builder
     - responsive_image
@@ -17,14 +17,14 @@ third_party_settings:
     allow_custom: false
 _core:
   default_config_hash: B1a2aBHmUulUZN6HrxITEH1tSResuVjXMBEv1lUBtOo
-id: media.image.feature_banner
+id: media.image.banner_tall
 targetEntityType: media
 bundle: image
-mode: feature_banner
+mode: banner_tall
 content:
   field_caption:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -34,7 +34,7 @@ content:
     type: responsive_image
     label: hidden
     settings:
-      responsive_image_style: feature_banner
+      responsive_image_style: banner_tall
       image_link: ''
       image_loading:
         attribute: lazy

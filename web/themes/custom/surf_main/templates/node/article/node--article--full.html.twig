@@ -19,35 +19,14 @@
     {% set article_layout = 'text' %}
 {% endif %}
 
-{% set article_tags = [] %}
-
-{% if content.field_ref_research_areas|render %}
-    {% set article_tags = article_tags|merge(content.field_ref_research_areas|field_value) %}
-{% endif %}
-
-{% if content.field_ref_key_impact_areas|render %}
-    {% set article_tags = article_tags|merge(content.field_ref_key_impact_areas|field_value) %}
-{% endif %}
-
-{% if content.field_ref_eo_opportunities|render %}
-    {% set article_tags = article_tags|merge(content.field_ref_eo_opportunities|field_value) %}
-{% endif %}
-
-{% if content.field_ref_audiences|render %}
-    {% set article_tags = article_tags|merge(content.field_ref_audiences|field_value) %}
-{% endif %}
-
 {% set rendered_content = content|without(
     'field_author',
     'field_date_published',
     'field_media_primary',
     'field_overview',
     'field_p_content',
-    'field_ref_audiences',
     'field_ref_content_blocks',
-    'field_ref_eo_opportunities',
-    'field_ref_key_impact_areas',
-    'field_ref_research_areas',
+    'field_ref_news_categories',
 ) %}
 
 {% include 'surf_main:article' with {
@@ -62,5 +41,5 @@
     article_media: content.field_media_primary|field_value|default([]),
     article_overview: content.field_overview|render ? content.field_overview|field_value,
     article_publish_date: content.field_date_published|render ? content.field_date_published|field_value,
-    article_tags: article_tags|default([]),
+    article_tags: content.field_ref_news_categories|field_value|default([]),
 } only %}

@@ -1,45 +1,46 @@
 {#
 /**
  * @file
- * Theme implementation to display a node as a teaser.
+ * Theme implementation to display a Curriculum Module Node with Teaser Dashboard view mode.
  *
  * Available variables:
- *  See embed below
+ *  - No additional variables are available for this Node type.
  *
- * @see template_preprocess_node()
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
  */
 #}
 
+{% set rendered_content = content|without(
+    'field_content_area',
+    'field_media',
+    'field_overview',
+    'field_ref_grade_level',
+    'field_ref_standards',
+) %}
+
 {% embed 'surf_main:teaser' with {
-  attributes,
-  teaser_attributes: create_attribute(),
-  teaser_content: content.field_overview|field_value|default([]),
-  teaser_media: content.field_media|field_value|default([]),
-  teaser_date: content.field_date_published|field_value|default([]),
-  teaser_title: label,
-  teaser_title_tag: 'h3',
-  teaser_type: 'curriculum',
-  teaser_url: content.reservation_links.dashboard['#url'],
-  curriculum_grade_level: content.field_ref_grade_level|field_value|default([]),
-  curriculum_standards: content.field_ref_standards|field_value|default([]),
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute({'class': 'm-teaser--curriculum'}),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_media: content.field_media|field_value|default([]),
+    teaser_date: content.field_date_published|field_value|default([]),
+    teaser_title: label,
+    teaser_title_tag: 'h3',
+    teaser_url: content.reservation_links.dashboard['#url'],
+    curriculum_grade_level: content.field_ref_grade_level|field_value|default([]),
+    curriculum_standards: content.field_ref_standards|field_value|default([]),
 } only %}
+    {% block teaser_content_suffix %}
+        <ul class="m-teaser__tags">
+            {% for grade_level in curriculum_grade_level %}
+                <li>{{ grade_level }}</li>
+            {% endfor %}
 
-  {% block teaser_content_suffix %}
-    <ul class="m-teaser__tags">
-      {% for grade_level in curriculum_grade_level %}
-        <li>{{ grade_level }}</li>
-      {% endfor %}
-      {% for standard in curriculum_standards %}
-        <li>{{ standard }}</li>
-      {% endfor %}
-    </ul>
-  {% endblock %}
+            {% for standard in curriculum_standards %}
+                <li>{{ standard }}</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
 {% endembed %}
-
-{{ content|without(
-  'field_media',
-  'field_overview',
-  'field_ref_grade_level',
-  'field_content_area',
-  'field_ref_standards',
-) }}

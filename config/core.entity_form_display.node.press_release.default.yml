@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.press_release.field_p_content
     - field.field.node.press_release.field_ref_contacts
     - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_ref_research_areas
     - field.field.node.press_release.field_resource_list
     - field.field.node.press_release.field_teaser_text
     - node.type.press_release
@@ -28,6 +29,7 @@ third_party_settings:
     group_tags:
       children:
         - field_ref_news_categories
+        - field_ref_research_areas
       label: Tags
       region: content
       parent_name: ''
@@ -95,7 +97,7 @@ third_party_settings:
       label: Publishing
       region: content
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -112,7 +114,7 @@ third_party_settings:
       label: Authoring
       region: content
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -129,7 +131,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -172,7 +174,7 @@ content:
         maxlength_js_enforce: false
   field_p_content:
     type: layout_paragraphs
-    weight: 8
+    weight: 9
     region: content
     settings:
       preview_view_mode: default
@@ -193,6 +195,12 @@ content:
   field_ref_news_categories:
     type: options_select
     weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_research_areas:
+    type: options_select
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -229,7 +237,7 @@ content:
         maxlength_js_enforce: false
   path:
     type: path
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -276,7 +284,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }

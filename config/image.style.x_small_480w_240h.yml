@@ -1,0 +1,32 @@
+uuid: 3740cbbe-0602-4363-aad9-f0574ac91592
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner_tall
+  module:
+    - crop
+name: x_small_480w_240h
+label: 'X Small (480W x 240H)'
+effects:
+  273ff51e-a51b-43e9-8c7f-c0107fd33bb1:
+    uuid: 273ff51e-a51b-43e9-8c7f-c0107fd33bb1
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_tall
+      automatic_crop_provider: null
+  76b675c0-d567-4995-beaf-b47d3bd37132:
+    uuid: 76b675c0-d567-4995-beaf-b47d3bd37132
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 480
+      height: 240
+      anchor: center-center
+  326de81c-8fbf-4221-b859-2a24a2907c8f:
+    uuid: 326de81c-8fbf-4221-b859-2a24a2907c8f
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

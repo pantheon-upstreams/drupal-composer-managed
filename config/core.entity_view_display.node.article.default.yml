@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.article.field_ref_content_blocks
     - field.field.node.article.field_ref_eo_opportunities
     - field.field.node.article.field_ref_key_impact_areas
+    - field.field.node.article.field_ref_news_categories
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
     - node.type.article
@@ -108,6 +109,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_ref_news_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_ref_related_content:
     type: entity_reference_entity_view

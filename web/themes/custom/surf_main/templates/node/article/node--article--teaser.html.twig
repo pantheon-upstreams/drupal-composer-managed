@@ -1,68 +1,66 @@
 {#
 /**
  * @file
- * Theme implementation to display a node as a teaser.
+ * Theme implementation to display an Article Node with Teaser view mode.
  *
  * Available variables:
- *  See embed below
+ * - No additional variables are available for this Node type.
  *
- * @see template_preprocess_node()
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
  */
 #}
 
-{% if content.field_media_primary.0['#media'].bundle.entity.id == 'remote_video' %}
-  {% set chip_text = 'Video'|t %}
-  {% set chip_icon_prefix = 'play-solid' %}
+{% if node.field_media_primary.entity.bundle() == 'remote_video' %}
+    {% set chip_text = 'Video'|t %}
+    {% set chip_icon_prefix = 'play-solid' %}
 {% else %}
-  {% set chip_text = 'Article'|t %}
+    {% set chip_text = 'Article'|t %}
 {% endif %}
 
+{% set rendered_content = content|without(
+    'field_media_primary',
+    'field_date_published',
+    'field_overview',
+) %}
+
 {% embed 'surf_main:teaser' with {
-  attributes,
-  teaser_attributes: create_attribute(),
-  teaser_content: content.field_overview|field_value|default([]),
-  teaser_media: content.field_media_primary|field_value|default([]),
-  teaser_date: content.field_date_published|field_value|default([]),
-  teaser_title: label,
-  teaser_title_tag: 'h3',
-  teaser_type: 'none',
-  teaser_url: path('entity.node.canonical', {'node': node.id}),
-  chip_text: chip_text|default([]),
-  chip_icon_prefix: chip_icon_prefix|default([]),
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute(),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_date: content.field_date_published|field_value|default([]),
+    teaser_title: label,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
+    chip_text: chip_text|default([]),
+    chip_icon_prefix: chip_icon_prefix|default([]),
 } only %}
+    {% block teaser_media_prefix %}
+        <div class="m-teaser__media-prefix">
+            <p>
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                    chip_text: chip_text|default([]),
+                    chip_icon_prefix: chip_icon_prefix|default([]),
+                    chip_size: 'small',
+                } only %}
+            </p>
+        </div>
+    {% endblock %}
 
-  {% block teaser_media_prefix %}
-
-    <div class="m-teaser__media-prefix">
-      <p>
-        {% include 'surf_main:chip' with {
-          attributes,
-          chip_attributes: create_attribute({'class': 'a-chip--white'}),
-          chip_text: chip_text|default([]),
-          chip_icon_prefix: chip_icon_prefix|default([]),
-          chip_size: 'small',
-        } only %}
-      </p>
-    </div>
-  {% endblock %}
-
-  {% block teaser_content_suffix %}
-    <div class="m-teaser__content-suffix">
-      <p>
-        {% include 'surf_main:chip' with {
-          attributes,
-          chip_attributes: create_attribute({'class': 'a-chip--white'}),
-          chip_text: teaser_date|default([]),
-          chip_size: 'small',
-        } only %}
-      </p>
-    </div>
-  {% endblock %}
+    {% block teaser_content_suffix %}
+        <div class="m-teaser__content-suffix">
+            <p>
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                    chip_text: teaser_date|default([]),
+                    chip_size: 'small',
+                } only %}
+            </p>
+        </div>
+    {% endblock %}
 {% endembed %}
-
-{{ content|without(
-  'field_media_primary',
-  '_layout_builder',
-  'field_date_published',
-  'field_overview',
-) }}

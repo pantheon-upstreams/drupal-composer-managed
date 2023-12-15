@@ -23,26 +23,22 @@
 
 {% set classes = [
     'm-teaser',
-    teaser_type ? 'm-teaser--' ~ teaser_type,
 ] %}
 
 <article {{ teaser_attributes.addClass(classes).merge(attributes) }}>
-    {% if teaser_type != 'experiment' %}
-      {% if teaser_media %}
-        <div class="m-teaser__media">
-          {% if teaser_url %}
-            <a href="{{ teaser_url }}" class="m-teaser__link" tabindex="-1" aria-hidden="true">
-              {% endif %}
-
-              {% block teaser_media_prefix %}{% endblock %}
-                {{ teaser_media }}
-              {% if teaser_url %}
-            </a>
+  {% if teaser_media %}
+    <div class="m-teaser__media">
+      {% if teaser_url %}
+        <a href="{{ teaser_url }}" class="m-teaser__link" tabindex="-1" aria-hidden="true">
           {% endif %}
-        </div>
-      {% elseif teaser_type == 'standard' %}
+
+          {% block teaser_media_prefix %}{% endblock %}
+            {{ teaser_media }}
+          {% if teaser_url %}
+        </a>
       {% endif %}
-    {% endif %}
+    </div>
+  {% endif %}
 
     <div class="m-teaser__content">
         {% block teaser_content_prefix %}{% endblock %}
@@ -60,13 +56,13 @@
                 {% endif %}
             </{{ teaser_title_tag|default('h3') }}>
 
-    {% if teaser_content %}
-        <p class="m-teaser__content-text">
-            {{- teaser_content -}}
-        </p>
-    {% endif %}
-    {% endblock %}
+            {% if teaser_content %}
+                <p class="m-teaser__content-text">
+                    {{- teaser_content -}}
+                </p>
+            {% endif %}
+        {% endblock %}
 
-    {% block teaser_content_suffix %}{% endblock %}
+        {% block teaser_content_suffix %}{% endblock %}
     </div>
 </article>

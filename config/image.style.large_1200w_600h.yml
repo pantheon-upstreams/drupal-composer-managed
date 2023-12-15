@@ -1,0 +1,32 @@
+uuid: 3e96d368-bf01-4255-bdfd-fd54c45d1d9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner_tall
+  module:
+    - crop
+name: large_1200w_600h
+label: 'Large (1200W x 600H)'
+effects:
+  f77e7eaf-ab65-44e7-87f7-f08d33aa388c:
+    uuid: f77e7eaf-ab65-44e7-87f7-f08d33aa388c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_tall
+      automatic_crop_provider: null
+  982b8eb2-8bac-478a-8c43-115ff194a224:
+    uuid: 982b8eb2-8bac-478a-8c43-115ff194a224
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1200
+      height: 600
+      anchor: center-center
+  5e78f7fb-53c8-4b4b-af31-2a836cc2bda9:
+    uuid: 5e78f7fb-53c8-4b4b-af31-2a836cc2bda9
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

@@ -26,6 +26,7 @@
   &.p-article--text,
   &.p-article--video {
     padding-block-start: 40px;
+
     @include breakpoints.bp-min(large) {
       padding-block-start: 64px;
     }
@@ -52,6 +53,7 @@
 
   &.p-article--video .p-article__media {
     margin-block-end: 40px;
+
     @include breakpoints.bp-min(large) {
       margin-block-end: 64px;
     }
@@ -74,10 +76,12 @@
     }
 
     .a-left-hook {
-      margin-block-end: calculations.rem(32px);
+      margin-block-end: 32px;
+
       @include breakpoints.bp-min(medium) {
-        margin-block-end: calculations.rem(28px);
+        margin-block-end: 28px;
       }
+
       @include breakpoints.bp-min(xlarge) {
         display: none;
       }
@@ -87,6 +91,7 @@
   .m-breadcrumbs {
     margin-block-end: 32px;
     display: none;
+
     @include breakpoints.bp-min(medium) {
       margin-block-end: 24px;
       display: block;
@@ -105,6 +110,7 @@
       flex-flow: nowrap row;
       gap: 60px;
     }
+
     @include breakpoints.bp-min(xlarge) {
       inline-size: var(--surf-width-large);
       margin-inline-start: calc(((var(--surf-width-large) - var(--surf-width-small)) / 2) * -1);
@@ -143,33 +149,21 @@
 
 
 
+
 //------------------------------------
 //  03 - General
 //------------------------------------
 
 .p-article {
-  padding-block-end: calculations.rem(24px);
+  padding-block-end: 24px;
+
   @include breakpoints.bp-min(medium) {
-    padding-block-end: calculations.rem(90px);
+    padding-block-end: 90px;
   }
+
   @include breakpoints.bp-min(large) {
-    padding-block-end: calculations.rem(120px);
+    padding-block-end: 120px;
   }
-
-  @include breakpoints.bp-min(xxlarge) {
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      bottom: 0;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: calculations.rem(28px);
-      z-index: 2;
-    }
-  }
-
 
   .p-article__heading {
     font-family: var(--surf-font-sans);
@@ -179,16 +173,18 @@
   }
 
   .p-article__media {
-    margin-block-end: calculations.rem(32px);
+    margin-block-end: 32px;
+
     @include breakpoints.bp-min(medium) {
-      margin-block-end: calculations.rem(40px);
+      margin-block-end: 40px;
     }
+
     @include breakpoints.bp-min(large) {
-      margin-block-end: calculations.rem(60px);
+      margin-block-end: 60px;
     }
 
     img {
-      block-size: calculations.rem(210px);
+      block-size: 210px;
       left: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
@@ -197,12 +193,15 @@
       position: relative;
       right: 50%;
       width: 100vw;
+
       @include breakpoints.bp-min(medium) {
-        block-size: calculations.rem(420px);
+        block-size: 420px;
       }
+
       @include breakpoints.bp-min(large) {
-        block-size: calculations.rem(480px);
+        block-size: 480px;
       }
+
       @include breakpoints.bp-min(xlarge) {
         block-size: auto;
         left: revert;
@@ -246,33 +245,13 @@
     padding: 0;
   }
 
-  //.p-article__meta {
-  //  padding-block-start: 32px;
-  //
-  //  @include breakpoints.bp-min(medium) {
-  //    padding-block-start: 28px;
-  //  }
-  //
-  //  @include breakpoints.bp-min(xlarge) {
-  //    padding-block-start: 80px;
-  //  }
-  //
-  //  .a-left-hook {
-  //    margin-block-end: calculations.rem(32px);
-  //    @include breakpoints.bp-min(medium) {
-  //      margin-block-end: calculations.rem(28px);
-  //    }
-  //    @include breakpoints.bp-min(xlarge) {
-  //      display: none;
-  //    }
-  //  }
-  //}
-
   .p-article__related {
     margin-block-start: 32px;
+
     @include breakpoints.bp-min(medium) {
       margin-block-start: 60px;
     }
+
     @include breakpoints.bp-min(large) {
       margin-block-start: 120px;
     }

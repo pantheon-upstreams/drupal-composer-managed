@@ -1,0 +1,12 @@
+uuid: f2cb926d-4292-4271-a00b-5cfa21027357
+langcode: en
+status: true
+dependencies: {  }
+label: 'Banner - Tall'
+id: banner_tall
+description: ''
+aspect_ratio: '2:1'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

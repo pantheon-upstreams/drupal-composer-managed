@@ -1,0 +1,32 @@
+uuid: a759d26b-0e9b-4dd8-ae51-b6782920881e
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner_tall
+  module:
+    - crop
+name: small_768w_384h
+label: 'Small (768W x 384H)'
+effects:
+  3d260aec-c1e9-49c3-86d1-0f128cc8bea5:
+    uuid: 3d260aec-c1e9-49c3-86d1-0f128cc8bea5
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_tall
+      automatic_crop_provider: null
+  9a4b55d3-25d0-4888-812b-02854682512b:
+    uuid: 9a4b55d3-25d0-4888-812b-02854682512b
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 384
+      anchor: center-center
+  2d5eec1c-eee6-4fde-87f0-cf2e83338a24:
+    uuid: 2d5eec1c-eee6-4fde-87f0-cf2e83338a24
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

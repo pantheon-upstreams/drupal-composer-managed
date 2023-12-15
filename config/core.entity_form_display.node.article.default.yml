@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.article.field_ref_content_blocks
     - field.field.node.article.field_ref_eo_opportunities
     - field.field.node.article.field_ref_key_impact_areas
+    - field.field.node.article.field_ref_news_categories
     - field.field.node.article.field_ref_related_content
     - field.field.node.article.field_ref_research_areas
     - node.type.article
@@ -30,6 +31,7 @@ third_party_settings:
     group_tags:
       children:
         - field_ref_audiences
+        - field_ref_news_categories
         - field_ref_eo_opportunities
         - field_ref_key_impact_areas
         - field_ref_research_areas
@@ -151,7 +153,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 16
+    weight: 34
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -223,13 +225,19 @@ content:
     third_party_settings: {  }
   field_ref_eo_opportunities:
     type: options_select
-    weight: 22
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_key_impact_areas:
     type: options_select
-    weight: 23
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_news_categories:
+    type: options_select
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -245,7 +253,7 @@ content:
     third_party_settings: {  }
   field_ref_research_areas:
     type: options_select
-    weight: 24
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -283,7 +291,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 15
+    weight: 33
     region: content
     settings:
       match_operator: CONTAINS

@@ -2,8 +2,7 @@
 // Component - Page - Basic Page
 //
 // - 01 - Imports
-// - 02 - General
-// - 03 - Modifiers
+// - 02 - Layout
 //
 
 
@@ -18,71 +17,54 @@
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
 
 .p-page {
-  padding-block-end: calculations.rem(24px);
+  padding-block-end: 24px;
+
   @include breakpoints.bp-min(medium) {
-    padding-block-end: calculations.rem(90px);
+    padding-block-end: 90px;
   }
+
   @include breakpoints.bp-min(large) {
-    padding-block-end: calculations.rem(120px);
+    padding-block-end: 120px;
   }
-  @include breakpoints.bp-min(xxlarge) {
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      bottom: 0;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: calculations.rem(28px);
-      z-index: 2;
+
+  &.p-page--with-img .p-page__header {
+    @include breakpoints.bp-min(xlarge) {
+      background-color: var(--surf-color-white);
+      margin-block-start: calculations.rem(-120px);
     }
   }
 
   .p-page__header {
     margin-inline: auto;
     max-inline-size: var(--surf-width-xlarge);
-    padding-block-start: calculations.rem(32px);
+    padding-block-start: 32px;
     position: relative;
+
     @include breakpoints.bp-min(xlarge) {
-      padding-block-start: calculations.rem(60px);
-      padding-inline: calculations.rem(80px);
+      padding-block-start: 60px;
+      padding-inline: 80px;
     }
   }
 
-  .p-page__media {
-    img {
-      max-block-size: 480px;
-      object-fit: cover;
-      width: 100%;
-      @include breakpoints.bp-min(xlarge) {
-        max-block-size: 690px;
-      }
+  .p-page__media img {
+    max-block-size: 480px;
+    object-fit: cover;
+    width: 100%;
+
+    @include breakpoints.bp-min(xlarge) {
+      max-block-size: 690px;
     }
   }
 
   .p-page__overview {
-    margin-block-end: calculations.rem(32px);
+    margin-block-end: 32px;
+
     @include breakpoints.bp-min(medium) {
-      margin-block-end: calculations.rem(60px);
+      margin-block-end: 60px;
     }
-  }
-}
-
-
-
-
-//------------------------------------
-//  03 - Modifiers
-//------------------------------------
-
-.p-page.p-page--with-img .p-page__header {
-  @include breakpoints.bp-min(xlarge) {
-    background-color: var(--surf-color-white);
-    margin-block-start: calculations.rem(-120px);
   }
 }

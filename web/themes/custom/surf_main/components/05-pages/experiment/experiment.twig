@@ -53,7 +53,7 @@
         {{ experiment_content }}
     </div>
 
-    {% if drupal_view_result('related_articles', 'experiment') is not empty %}
+    {% if drupal_view_result('news', 'related_experiment') is not empty %}
         <section class="p-experiment__related">
             <div class="container container--xlarge">
                 {% include 'surf_main:left-hook' with {
@@ -66,7 +66,7 @@
                     heading_level: '2',
                 } %}
 
-                {{ drupal_view('related_articles', 'experiment') }}
+                {{ drupal_view('news', 'related_experiment') }}
             </div>
         </section>
     {% endif %}

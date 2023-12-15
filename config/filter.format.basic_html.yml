@@ -21,7 +21,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class="large xlarge subhead default"> <h2 class="large default"> <h3> <h4> <h5> <h6> <a class="a-button a-button--small a-button--navy a-button--primary a-button--icon-arrow-right a-button--underline a-button--black a-button--white" href target="_blank" data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-align>'
+      allowed_html: '<br> <p class="large default"> <h2 class="large default"> <h3> <h4> <h5> <h6> <a class="a-button a-button--small a-button--navy a-button--primary a-button--icon-arrow-right a-button--underline a-button--black" href target="_blank" data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:

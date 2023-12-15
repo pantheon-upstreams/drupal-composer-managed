@@ -1,60 +1,50 @@
 {#
 /**
  * @file
- * Theme implementation to display a node as a teaser.
+ * Theme implementation to display a Article Node with Super view mode.
  *
  * Available variables:
- *  See embed below
+ *  - No additional variables are available for this Node type.
  *
- * @see template_preprocess_node()
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
  */
 #}
 
-{#{% if content.field_media_primary.0['#media'].bundle.entity.id == 'remote_video' %}#}
-{#  {% set chip_text = 'Video'|t %}#}
-{#  {% set chip_icon_prefix = 'play-solid' %}#}
-{#{% else %}#}
-{#  {% set chip_text = 'Article'|t %}#}
-{#{% endif %}#}
+{% set rendered_content = content|without(
+    'field_date_published',
+    'field_media_primary',
+    'field_overview',
+) %}
 
 {% embed 'surf_main:teaser' with {
-  attributes,
-  teaser_attributes: create_attribute(),
-  teaser_content: content.field_overview|field_value|default([]),
-  teaser_media: content.field_media_primary|field_value|default([]),
-  teaser_date: content.field_date_published|field_value|default([]),
-  teaser_title: label,
-  teaser_title_tag: 'h3',
-  teaser_type: 'super',
-  teaser_url: path('entity.node.canonical', {'node': node.id}),
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute({'class': 'm-teaser--super'}),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_date: content.field_date_published|field_value|default([]),
+    teaser_title: label,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
 } only %}
+    {% block teaser_content_prefix %}
+        <div class="m-teaser__content-prefix">
+            <p>
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                    chip_text: 'FEATURED'|t,
+                    chip_size: 'small',
+                } only %}
 
-  {% block teaser_content_prefix %}
-
-      <div class="m-teaser__content-prefix">
-        <p>
-          {% include 'surf_main:chip' with {
-            attributes,
-            chip_attributes: create_attribute({'class': 'a-chip--white'}),
-            chip_text: 'FEATURED'|t,
-            chip_size: 'small',
-          } only %}
-
-          {% include 'surf_main:chip' with {
-            attributes,
-            chip_attributes: create_attribute({'class': 'a-chip--transparent'}),
-            chip_text: teaser_date,
-            chip_size: 'small',
-          } only %}
-        </p>
-      </div>
-
-  {% endblock %}
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--transparent'}),
+                    chip_text: teaser_date,
+                    chip_size: 'small',
+                } only %}
+            </p>
+        </div>
+    {% endblock %}
 {% endembed %}
-
-{{ content|without(
-  'field_media_primary',
-  '_layout_builder',
-  'field_date_published',
-  'field_overview',
-) }}

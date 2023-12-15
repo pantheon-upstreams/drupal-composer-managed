@@ -1,0 +1,32 @@
+uuid: 0cabcd2a-c469-4a7d-988a-160c1c3fd429
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.banner_tall
+  module:
+    - crop
+name: x_large_1920w_960h
+label: 'X Large (1920W x 960H)'
+effects:
+  5df41e65-e5fa-4d8c-bb4b-27f7febd9257:
+    uuid: 5df41e65-e5fa-4d8c-bb4b-27f7febd9257
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: banner_tall
+      automatic_crop_provider: null
+  dc6ede37-d200-42f0-830e-aa17b013e8c4:
+    uuid: dc6ede37-d200-42f0-830e-aa17b013e8c4
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 960
+      anchor: center-center
+  de261d4e-3b69-4f58-bb46-3fcd0c741828:
+    uuid: de261d4e-3b69-4f58-bb46-3fcd0c741828
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

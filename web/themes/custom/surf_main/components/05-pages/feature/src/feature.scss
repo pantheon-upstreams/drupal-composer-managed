@@ -2,8 +2,8 @@
 // Component - Page - Feature
 //
 // - 01 - Imports
-// - 02 - General
-// - 03 - Modifiers
+// - 02 - Layout
+// - 03 - General
 //
 
 
@@ -18,55 +18,39 @@
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
 
 .p-feature {
-  @include breakpoints.bp-min(xxlarge) {
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      bottom: 0;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: calculations.rem(28px);
-      z-index: 2;
+  &.p-feature--with-img .o-header {
+    @include breakpoints.bp-min(xlarge) {
+      margin-block-start: -120px;
     }
   }
 
   .o-header__content {
     background-color: var(--surf-color-white);
-    padding-block: calculations.rem(32px);
-    @include breakpoints.bp-min(xlarge) {
-      padding-block: calculations.rem(60px);
-      padding-inline: calculations.rem(120px);
-    }
-  }
+    padding-block: 32px;
 
-  .p-feature__media {
-    img {
-      max-block-size: 480px;
-      object-fit: cover;
-      width: 100%;
-      @include breakpoints.bp-min(xlarge) {
-        max-block-size: 690px;
-      }
+    @include breakpoints.bp-min(xlarge) {
+      padding-block: 60px;
+      padding-inline: 120px;
     }
   }
 
   .m-breadcrumbs {
     display: none;
+
     @include breakpoints.bp-min(medium) {
       display: block;
     }
   }
 
   .p-feature__overview {
-    margin-block-end: calculations.rem(32px);
+    margin-block-end: 32px;
+
     @include breakpoints.bp-min(medium) {
-      margin-block-end: calculations.rem(60px);
+      margin-block-end: 60px;
     }
   }
 
@@ -76,7 +60,7 @@
     }
 
     > :not( :last-child ) {
-      margin-block-end: calculations.rem(60px);
+      margin-block-end: 60px;
     }
   }
 }
@@ -85,11 +69,17 @@
 
 
 //------------------------------------
-//  03 - Modifiers
+//  03 - General
 //------------------------------------
 
-.p-feature.p-feature--with-img .o-header {
-  @include breakpoints.bp-min(xlarge) {
-    margin-block-start: calculations.rem(-120px);
+.p-feature {
+  .p-feature__media img {
+    max-block-size: 480px;
+    object-fit: cover;
+    width: 100%;
+
+    @include breakpoints.bp-min(xlarge) {
+      max-block-size: 690px;
+    }
   }
 }

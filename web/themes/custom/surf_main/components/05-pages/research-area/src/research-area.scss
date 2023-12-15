@@ -3,7 +3,6 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Modifiers
 //
 
 
@@ -18,65 +17,59 @@
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
 
 .p-research-area {
   padding-block-end: calculations.rem(88px);
 
-  @include breakpoints.bp-min(xxlarge) {
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      bottom: 0;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: calculations.rem(28px);
-      z-index: 2;
+  &.p-research-area--with-img .p-research-area__header {
+    @include breakpoints.bp-min(xlarge) {
+      background-color: var(--surf-color-white);
+      margin-block-start: -120px;
     }
   }
 
   .p-research-area__header {
     margin-inline: auto;
     max-inline-size: var(--surf-width-xlarge);
-    padding-block-start: calculations.rem(32px);
+    padding-block-start: 32px;
     position: relative;
-    @include breakpoints.bp-min(xlarge) {
-      padding-block-start: calculations.rem(60px);
-      padding-inline: calculations.rem(80px);
-    }
-  }
 
-  .p-research-area__media {
-    img {
-      max-block-size: 480px;
-      object-fit: cover;
-      width: 100%;
-      @include breakpoints.bp-min(xlarge) {
-        max-block-size: 690px;
-      }
+    @include breakpoints.bp-min(xlarge) {
+      padding-block-start: 60px;
+      padding-inline: 80px;
     }
   }
 
   .m-breadcrumbs {
     display: none;
+
     @include breakpoints.bp-min(medium) {
       display: block;
     }
   }
 
   .p-research-area__overview {
-    margin-block-end: calculations.rem(32px);
+    margin-block-end: 32px;
+
     @include breakpoints.bp-min(medium) {
-      margin-block-end: calculations.rem(60px);
+      margin-block-end: 60px;
+    }
+  }
+
+  .p-research-area__related {
+    margin-block-start: 40px;
+
+    @include breakpoints.bp-min(large) {
+      margin-block-start: 64px;
     }
   }
 
   .p-research-area__related h2 {
     margin-block: 32px;
     text-transform: uppercase;
+
     @include breakpoints.bp-min(large) {
       margin-block: 64px;
     }
@@ -84,6 +77,7 @@
 
   .p-research-area__related hr:not( :first-child ) {
     margin-block-start: 64px;
+
     @include breakpoints.bp-min(large) {
       margin-block-start: 80px;
     }
@@ -94,12 +88,17 @@
 
 
 //------------------------------------
-//  03 - Modifiers
+//  03 - General
 //------------------------------------
 
-.p-research-area.p-research-area--with-img .p-research-area__header {
-  @include breakpoints.bp-min(xlarge) {
-    background-color: var(--surf-color-white);
-    margin-block-start: calculations.rem(-120px);
+.p-research-area {
+  .p-research-area__media img {
+    max-block-size: 480px;
+    object-fit: cover;
+    width: 100%;
+
+    @include breakpoints.bp-min(xlarge) {
+      max-block-size: 690px;
+    }
   }
 }

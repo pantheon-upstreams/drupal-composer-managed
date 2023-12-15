@@ -14,6 +14,7 @@ dependencies:
     - similarterms
     - taxonomy
     - user
+    - views_filters_summary
 id: curriculum
 label: Curriculum
 module: views
@@ -444,275 +445,34 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
-    position: 1
-    display_options:
-      filters:
-        status:
-          id: status
-          table: node_field_data
-          field: status
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            curriculum_module: curriculum_module
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: string
-          operator: '='
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: title_op
-            label: Search
-            description: ''
-            use_operator: false
-            operator: title_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: title
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        field_ref_grade_level_target_id:
-          id: field_ref_grade_level_target_id
-          table: node__field_ref_grade_level
-          field: field_ref_grade_level_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_ref_grade_level_target_id_op
-            label: 'Grade level'
-            description: ''
-            use_operator: false
-            operator: field_ref_grade_level_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_ref_grade_level_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: grade_level
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-        field_content_area_target_id:
-          id: field_content_area_target_id
-          table: node__field_content_area
-          field: field_content_area_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_content_area_target_id_op
-            label: 'Content Area'
-            description: ''
-            use_operator: false
-            operator: field_content_area_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_content_area_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: content_area
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-        field_ref_standards_target_id:
-          id: field_ref_standards_target_id
-          table: node__field_ref_standards
-          field: field_ref_standards_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_ref_standards_target_id_op
-            label: 'Curriculum Standard'
-            description: ''
-            use_operator: false
-            operator: field_ref_standards_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: standard
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: standard
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      defaults:
-        filters: false
-        filter_groups: false
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  browse_curriculum:
-    id: browse_curriculum
-    display_title: 'Browse Curriculum'
+  full:
+    id: full
+    display_title: Full
     display_plugin: block
     position: 2
     display_options:
       title: 'Browse Curriculum'
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 4
       filters:
         status:
           id: status
@@ -957,24 +717,40 @@ display:
       defaults:
         title: false
         use_ajax: false
+        pager: false
         filters: false
         filter_groups: false
         header: false
-      use_ajax: true
+      use_ajax: false
       display_description: ''
       header:
-        result:
-          id: result
+        views_filters_summary:
+          id: views_filters_summary
           table: views
-          field: result
+          field: views_filters_summary
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: result
+          plugin_id: views_filters_summary
           empty: false
-          content: 'Showing @end of @total curriculum'
+          filters:
+            title: title
+            field_ref_grade_level_target_id: field_ref_grade_level_target_id
+            field_content_area_target_id: field_content_area_target_id
+            field_ref_standards_target_id: field_ref_standards_target_id
+          show_labels: false
+          group_values: false
+          content: '<p>Displaying @total @result_label @exposed_filter_summary</p>'
+          filters_summary_separator: ', '
+          filters_summary_prefix: 'for '
+          filters_result_label:
+            plural: results
+            singular: result
+          show_remove_link: 0
+          show_reset_link: 0
+          filters_reset_link_title: Reset
       display_extenders: {  }
-      block_description: 'Browse Curriculum'
+      block_description: 'All Curriculum Modules'
     cache_metadata:
       max-age: -1
       contexts:
@@ -986,12 +762,13 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  grade_level:
-    id: grade_level
-    display_title: 'Grade Level'
+  related_curriculum_module:
+    id: related_curriculum_module
+    display_title: 'Related - Curriculum Module'
     display_plugin: block
     position: 3
     display_options:
+      title: 'More Curriculum Modules'
       pager:
         type: some
         options:
@@ -1082,6 +859,7 @@ display:
           query_tags: {  }
       defaults:
         query: false
+        title: false
         pager: false
         exposed_form: false
         arguments: false
@@ -1089,7 +867,7 @@ display:
         filter_groups: false
       display_description: ''
       display_extenders: {  }
-      block_description: 'Grade Level'
+      block_description: 'Related Curriculum Modules - Curriculum Module'
     cache_metadata:
       max-age: -1
       contexts:

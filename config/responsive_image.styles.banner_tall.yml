@@ -1,0 +1,52 @@
+uuid: 4c6e6b59-89e3-4edd-80fc-bd77f9290e2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_1200w_600h
+    - image.style.medium_992w_496h
+    - image.style.small_768w_384h
+    - image.style.x_large_1920w_960h
+    - image.style.x_small_480w_240h
+  theme:
+    - surf_main
+id: banner_tall
+label: 'Banner - Tall'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: x_large_1920w_960h
+    breakpoint_id: surf_main.x_large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_1200w_600h
+    breakpoint_id: surf_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: x_large_1920w_960h
+    breakpoint_id: surf_main.large
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_992w_496h
+    breakpoint_id: surf_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_1200w_600h
+    breakpoint_id: surf_main.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_768w_384h
+    breakpoint_id: surf_main.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_992w_496h
+    breakpoint_id: surf_main.small
+    multiplier: 2x
+breakpoint_group: surf_main
+fallback_image_style: x_small_480w_240h

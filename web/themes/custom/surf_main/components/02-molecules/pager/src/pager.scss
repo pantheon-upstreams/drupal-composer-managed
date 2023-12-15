@@ -10,6 +10,8 @@
 //  01 - Imports
 //------------------------------------
 
+@use '../../../00-base/partials/calculations';
+
 
 
 
@@ -39,7 +41,16 @@
 .m-pager {
   .m-pager__link {
     display: block;
+    font-size: calculations.rem(16px);
+    line-height: 1;
     padding-block: 8px;
     padding-inline: 8px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--surf-color-black);
+      color: var(--surf-color-white);
+    }
   }
 }

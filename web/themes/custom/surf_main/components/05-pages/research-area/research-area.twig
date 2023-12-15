@@ -74,7 +74,7 @@
                     {% endembed %}
                 {% endif %}
 
-                {% if drupal_view_result('related_articles', 'research_area') is not empty %}
+                {% if drupal_view_result('news', 'related_research_area') is not empty %}
                     {% include 'surf_main:left-hook' with {
                         left_hook_attributes: create_attribute(),
                     } %}
@@ -85,7 +85,7 @@
                         heading_level: '2',
                     } %}
 
-                    {{ drupal_view('related_articles', 'research_area') }}
+                    {{ drupal_view('news', 'related_research_area') }}
                 {% endif %}
             </div>
         </section>

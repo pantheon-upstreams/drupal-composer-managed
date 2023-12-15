@@ -18,61 +18,73 @@
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
 
 .p-experiment {
-  padding-block-end: calculations.rem(88px);
-  @include breakpoints.bp-min(xxlarge) {
-    &::before {
-      background: linear-gradient(180deg, #007fbf 0%, #00807e 33.33%, #000080 66.67%, #1a1a1a 100%);
-      bottom: 0;
-      content: '';
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: calculations.rem(28px);
-      z-index: 2;
+  padding-block-end: 88px;
+
+  &.p-experiment--with-img .p-experiment__header {
+    @include breakpoints.bp-min(xlarge) {
+      background-color: var(--surf-color-white);
+      margin-block-start: calculations.rem(-120px);
     }
   }
 
   .p-experiment__header {
     margin-inline: auto;
     max-inline-size: var(--surf-width-xlarge);
-    padding-block-start: calculations.rem(32px);
+    padding-block-start: 32px;
     position: relative;
+
     @include breakpoints.bp-min(xlarge) {
-      padding-block-start: calculations.rem(60px);
-      padding-inline: calculations.rem(80px);
+      padding-block-start: 60px;
+      padding-inline: 80px;
     }
   }
-
-  .p-experiment__media {
-    img {
-      block-size: calculations.rem(210px);
-      inline-size: 100%;
-      object-fit: cover;
-      @include breakpoints.bp-min(medium) {
-        block-size: calculations.rem(420px);
-      }
-      @include breakpoints.bp-min(large) {
-        block-size: calculations.rem(480px);
-      }
-      @include breakpoints.bp-min(xlarge) {
-        max-block-size: 690px;
-      }
-    }
-  }
-
 
   .m-breadcrumbs {
     display: none;
+
     @include breakpoints.bp-min(medium) {
       display: block;
     }
   }
 
+  .p-experiment__overview {
+    margin-block-end: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      margin-block-end: 60px;
+    }
+  }
+
+  .p-experiment__related {
+    margin-block-start: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      margin-block-start: 60px;
+    }
+  }
+
+  .p-experiment__related h2 {
+    margin-block: 32px;
+    text-transform: uppercase;
+
+    @include breakpoints.bp-min(large) {
+      margin-block: 64px;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - General
+//------------------------------------
+
+.p-experiment {
   .p-experiment__dates {
     color: var(--surf-color-gray-800);
     display: flex;
@@ -84,39 +96,21 @@
     text-transform: uppercase;
   }
 
-  .p-experiment__overview {
-    margin-block-end: calculations.rem(32px);
-    @include breakpoints.bp-min(medium) {
-      margin-block-end: calculations.rem(60px);
-    }
-  }
+  .p-experiment__media img {
+    block-size: 210px;
+    inline-size: 100%;
+    object-fit: cover;
 
-  .p-experiment__related {
-    margin-block-start: calculations.rem(32px);
     @include breakpoints.bp-min(medium) {
-      margin-block-start: calculations.rem(60px);
+      block-size: 420px;
     }
-  }
 
-  .p-experiment__related h2 {
-    margin-block: 32px;
-    text-transform: uppercase;
     @include breakpoints.bp-min(large) {
-      margin-block: 64px;
+      block-size: 480px;
     }
-  }
-}
 
-
-
-
-//------------------------------------
-//  03 - Modifiers
-//------------------------------------
-
-.p-experiment.p-experiment--with-img .p-experiment__header {
-  @include breakpoints.bp-min(xlarge) {
-    background-color: var(--surf-color-white);
-    margin-block-start: calculations.rem(-120px);
+    @include breakpoints.bp-min(xlarge) {
+      max-block-size: 690px;
+    }
   }
 }

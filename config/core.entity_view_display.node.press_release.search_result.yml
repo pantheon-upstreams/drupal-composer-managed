@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.press_release.field_p_content
     - field.field.node.press_release.field_ref_contacts
     - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_ref_research_areas
     - field.field.node.press_release.field_resource_list
     - field.field.node.press_release.field_teaser_text
     - node.type.press_release
@@ -54,6 +55,7 @@ hidden:
   field_p_content: true
   field_ref_contacts: true
   field_ref_news_categories: true
+  field_ref_research_areas: true
   field_resource_list: true
   langcode: true
   links: true

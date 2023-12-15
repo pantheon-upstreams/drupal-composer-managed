@@ -183,7 +183,7 @@
         </section>
     {% endif %}
 
-    {% if drupal_view_result('curriculum', 'grade_level') is not empty %}
+    {% if drupal_view_result('curriculum', 'related_curriculum_module') is not empty %}
         <section class="p-curriculum-module__related">
             <div class="container container--xlarge">
                 {% include 'surf_main:left-hook' with {
@@ -196,7 +196,7 @@
                     heading_level: '2',
                 } %}
 
-                {{ drupal_view('curriculum', 'grade_level') }}
+                {{ drupal_view('curriculum', 'related_curriculum_module') }}
 
                 {% include 'surf_main:button' with {
                     attributes,

@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.press_release.field_p_content
     - field.field.node.press_release.field_ref_contacts
     - field.field.node.press_release.field_ref_news_categories
+    - field.field.node.press_release.field_ref_research_areas
     - field.field.node.press_release.field_resource_list
     - field.field.node.press_release.field_teaser_text
     - node.type.press_release
@@ -81,6 +82,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_ref_research_areas:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
     region: content
   field_resource_list:
     type: entity_reference_revisions_entity_view

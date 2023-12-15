@@ -22,9 +22,6 @@
 ] %}
 
 <article {{ person_attributes.addClass(classes).merge(attributes) }}>
-    {{ title_prefix }}
-    {{ title_suffix }}
-
     <div class="container {% if person_media %}container--xlarge{% else %}container--small{% endif %}">
         <div class="p-person__grid">
             {% embed 'surf_main:header' with {
