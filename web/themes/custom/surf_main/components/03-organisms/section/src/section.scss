@@ -31,7 +31,6 @@
 
 .o-section {
   &.o-section--blue-gradient {
-    //background: linear-gradient(180deg, #007ab8 0%, #000080 50%, #000000 100%);
     background-image: url('img/particles.png'),linear-gradient(180deg, #007ab8 0%, #000080 50%, #000000 100%);
     background-position: center;
     background-repeat: no-repeat;

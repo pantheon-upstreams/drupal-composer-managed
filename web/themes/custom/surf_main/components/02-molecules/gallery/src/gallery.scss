@@ -142,7 +142,7 @@
   }
 
   .splide__arrow--prev:before {
-    background: svg-load('icon-arrow-left.svg');
+    --surf-icon-arrow-left: svg-load('icon-arrow-left.svg');
     mask-image: var(--surf-icon-arrow-left);
   }
 
