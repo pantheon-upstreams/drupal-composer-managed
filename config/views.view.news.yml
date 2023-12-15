@@ -250,6 +250,22 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+              field_ref_news_categories_target_id:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All Categories'
+                  collapsible: false
+                  is_secondary: false
+              type_1:
+                plugin_id: default
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: '- Any -|All Types'
+                  collapsible: false
+                  is_secondary: false
       empty:
         area:
           id: area

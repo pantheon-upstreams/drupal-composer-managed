@@ -117,7 +117,7 @@
         </div>
     </section>
 
-    {% if drupal_view_result('related_press_releases', 'press_release') is not empty %}
+    {% if drupal_view_result('press_releases', 'related_press_release') is not empty %}
         <section class="p-press-release__related">
             <div class="container container--xlarge">
                 {% include 'surf_main:left-hook' with {
@@ -130,7 +130,7 @@
                     heading_level: '2',
                 } only %}
 
-                {{ drupal_view('related_press_releases', 'press_release') }}
+                {{ drupal_view('press_releases', 'related_press_release') }}
             </div>
         </section>
     {% endif %}

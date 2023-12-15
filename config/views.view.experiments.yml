@@ -11,6 +11,7 @@ dependencies:
     - node
     - taxonomy
     - user
+    - views_filters_summary
 id: experiments
 label: Experiments
 module: views
@@ -78,12 +79,12 @@ display:
         type: full
         options:
           offset: 0
-          items_per_page: 9
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Prev.'
+            next: ''
+            previous: ''
             first: ''
             last: ''
           expose:
@@ -94,7 +95,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 6
+          quantity: 4
       exposed_form:
         type: bef
         options:
@@ -125,7 +126,7 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
-              tid:
+              field_ref_research_areas_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
@@ -193,6 +194,7 @@ display:
           plugin_id: bundle
           value:
             experiment: experiment
+          group: 1
         title:
           id: title
           table: node_field_data
@@ -244,10 +246,10 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
+        field_ref_research_areas_target_id:
+          id: field_ref_research_areas_target_id
+          table: node__field_ref_research_areas
+          field: field_ref_research_areas_target_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -257,14 +259,14 @@ display:
           group: 1
           exposed: true
           expose:
-            operator_id: tid_op
+            operator_id: field_ref_research_areas_target_id_op
             label: 'Area of Science'
             description: ''
             use_operator: false
-            operator: tid_op
+            operator: field_ref_research_areas_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: tid
+            identifier: research_areas
             required: false
             remember: false
             multiple: false
@@ -299,6 +301,10 @@ display:
           hierarchy: false
           limit: true
           error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: html_list
         options:
@@ -322,16 +328,28 @@ display:
           query_tags: {  }
       relationships: {  }
       header:
-        result:
-          id: result
+        views_filters_summary:
+          id: views_filters_summary
           table: views
-          field: result
+          field: views_filters_summary
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: result
+          plugin_id: views_filters_summary
           empty: false
-          content: 'Showing @end of @total experiments'
+          filters:
+            title: title
+          show_labels: false
+          group_values: false
+          content: '<p>Displaying @total @result_label @exposed_filter_summary</p>'
+          filters_summary_separator: ', '
+          filters_summary_prefix: 'for '
+          filters_result_label:
+            plural: results
+            singular: result
+          show_remove_link: 0
+          show_reset_link: 0
+          filters_reset_link_title: Reset
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -345,33 +363,15 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  all_experiments:
-    id: all_experiments
-    display_title: 'All Experiments'
+  full:
+    id: full
+    display_title: Full
     display_plugin: block
     position: 2
     display_options:
       display_description: ''
       display_extenders: {  }
       block_description: 'All Experiments'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
-    position: 1
-    display_options:
-      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
