@@ -129,10 +129,8 @@
     {% endif %}
 
     {% if not curriculum_module_dashboard and curriculum_module_cta_url and curriculum_module_cta_text %}
-        <section class="p-curriculum-module__request">
+        <section class="p-curriculum-module__request" aria-label="Request this Curriculum Module">
             <div class="container container--large">
-                <h2 class="visually-hidden">{{ 'Request this curriculum module'|t }}</h2>
-
                 {% include 'surf_main:button' with {
                     attributes,
                     button_attributes: create_attribute(),
