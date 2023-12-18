@@ -725,8 +725,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  related_articles:
-    id: related_articles
+  related_article:
+    id: related_article
     display_title: 'Related - Article'
     display_plugin: block
     position: 2
@@ -775,7 +775,7 @@ display:
           break_phrase: false
           not: false
           vocabularies:
-            research_area: research_area
+            news_category: news_category
           include_args: false
       filters:
         status:

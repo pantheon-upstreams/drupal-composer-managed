@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override to display a Grade Level Term with Link With Term ID view mode.
+ *
+ * Available variables:
+ * - No additional variables are available for this Term type.
+ *
+ * @see templates/taxonomy/taxonomy-term.html.twig
+ */
+#}
+
+{% set rendered_content = content|without() %}
+
+<a href="/press-releases?research_area={{ term.id }}">
+    {{ name|field_value }}
+    {{ rendered_content }}
+</a>

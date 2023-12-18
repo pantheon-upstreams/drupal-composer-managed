@@ -86,7 +86,7 @@
                 </div>
             {% endif %}
 
-            {% if press_release_categories %}
+            {% if press_release_categories is not empty%}
                 <div class="p-press-release__categories">
                     <ul>
                         {% for category in press_release_categories %}

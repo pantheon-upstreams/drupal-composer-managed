@@ -34,6 +34,6 @@
 {% include 'surf_main:pager' with {
     attributes,
     pager_attributes: create_attribute(),
-    pager_items: items,
+    pager_items: items|default([]),
     pager_ellipses: ellipses|default([]),
 } only %}

@@ -17,16 +17,27 @@
     'field_p_content',
     'field_media_primary',
     'field_ref_contacts',
+    'field_ref_research_areas',
     'field_date_published',
     'field_resource_list',
 ) %}
+
+{% set press_release_tags = [] %}
+
+{% if content.field_ref_news_categories|render %}
+    {% set press_release_tags = press_release_tags|merge(content.field_ref_news_categories|field_value) %}
+{% endif %}
+
+{% if content.field_ref_research_areas|render %}
+    {% set press_release_tags = press_release_tags|merge(content.field_ref_research_areas|field_value) %}
+{% endif %}
 
 {% include 'surf_main:press-release' with {
     attributes,
     rendered_content,
     press_release_attributes: create_attribute(),
     press_release_author: content.field_author|render ? content.field_author|field_value,
-    press_release_categories: content.field_ref_news_categories|field_value|default([]),
+    press_release_categories: press_release_tags|default([]),
     press_release_content: content.field_p_content,
     press_release_heading: label|field_value,
     press_release_media: content.field_media_primary|field_value|default([]),

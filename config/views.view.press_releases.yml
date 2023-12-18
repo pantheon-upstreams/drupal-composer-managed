@@ -506,7 +506,7 @@ display:
             operator: field_ref_research_areas_target_id_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_ref_research_areas_target_id
+            identifier: research_area
             required: false
             remember: false
             multiple: false
