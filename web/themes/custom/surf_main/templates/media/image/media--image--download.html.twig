@@ -32,7 +32,7 @@
 
     <p class="media__details">
         <span class="media__size">{{ file_size_mb|round(1, 'floor') }} MB</span>
-        <span class="media__type">{{ extension[1] }}</span>
+        <span class="media__type">{{ extension[extension|length - 1] }}</span>
     </p>
 </figure>
 

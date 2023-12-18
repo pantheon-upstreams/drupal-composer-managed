@@ -26,7 +26,7 @@
         } only %}
     {% endif %}
 
-    {% if resource_list_items %}
+    {% if resource_list_items is not empty %}
         <ul class="o-resource-list__items">
             {% for item in resource_list_items %}
                 <li class="o-resource-list__item">

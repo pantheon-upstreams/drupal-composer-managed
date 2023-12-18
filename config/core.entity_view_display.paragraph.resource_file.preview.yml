@@ -1,0 +1,29 @@
+uuid: aded48df-a2c5-4911-838c-94078e6ccaac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.resource_file.field_ref_media
+    - paragraphs.paragraphs_type.resource_file
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.resource_file.preview
+targetEntityType: paragraph
+bundle: resource_file
+mode: preview
+content:
+  field_ref_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

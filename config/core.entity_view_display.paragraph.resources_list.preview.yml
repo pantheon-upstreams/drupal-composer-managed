@@ -1,0 +1,40 @@
+uuid: b1a4a8da-69d0-4d6d-a670-29558cbc4a03
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.resources_list.field_resource
+    - field.field.paragraph.resources_list.field_title
+    - paragraphs.paragraphs_type.resources_list
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.resources_list.preview
+targetEntityType: paragraph
+bundle: resources_list
+mode: preview
+content:
+  field_resource:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: preview
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

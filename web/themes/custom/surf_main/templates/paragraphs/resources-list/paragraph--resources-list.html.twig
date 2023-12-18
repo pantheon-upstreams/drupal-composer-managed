@@ -28,5 +28,5 @@
     rendered_content,
     resource_list_attributes: create_attribute({'class': classes}),
     resource_list_heading: content.field_title|field_value,
-    resource_list_items: content.field_resource|field_value,
+    resource_list_items: content.field_resource|field_value|default([]),
 } only %}
