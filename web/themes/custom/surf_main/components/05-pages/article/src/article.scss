@@ -172,46 +172,45 @@
     line-height: 1.12;
   }
 
+  .p-experiment__media figcaption {
+    inset-block-start: 0;
+    inset-block-end: inherit;
+  }
+
   .p-article__media {
+    block-size: 210px;
     margin-block-end: 32px;
+    overflow: hidden;
+    position: relative;
 
     @include breakpoints.bp-min(medium) {
+      block-size: 420px;
       margin-block-end: 40px;
     }
 
     @include breakpoints.bp-min(large) {
+      block-size: 480px;
       margin-block-end: 60px;
     }
 
-    img {
-      block-size: 210px;
-      left: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      max-width: 100vw;
-      object-fit: cover;
-      position: relative;
-      right: 50%;
-      width: 100vw;
-
-      @include breakpoints.bp-min(medium) {
-        block-size: 420px;
-      }
-
-      @include breakpoints.bp-min(large) {
-        block-size: 480px;
-      }
-
-      @include breakpoints.bp-min(xlarge) {
-        block-size: auto;
-        left: revert;
-        margin-inline: revert;
-        max-inline-size: 100%;
-        object-fit: unset;
-        right: revert;
-      }
+    @include breakpoints.bp-min(xlarge) {
+      block-size: 690px;
     }
+  }
 
+  .p-article__media *:not(img) {
+    block-size: 100%;
+    display: block;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    position: absolute;
+  }
+
+  .p-article__media img {
+    block-size: 100%;
+    inline-size: 100%;
+    object-fit: cover;
   }
 
   .p-article__overview p {
