@@ -139,7 +139,6 @@
     opacity: 0;
     padding: 0;
     position: relative;
-    transition: animations.transition(all, 0.35s, easeInOutExpo);
     visibility: hidden;
 
     @include breakpoints.bp-min(xxlarge) {
@@ -157,20 +156,27 @@
   > li:not(:last-child) > .m-menu__dropdown {
     @include breakpoints.bp-min(xxlarge) {
       left: 50%;
-      transform: translate(-50%, -25%);
+      transform: translate(-50%, 24px);
     }
   }
 
   > li:last-child > .m-menu__dropdown {
     @include breakpoints.bp-min(xxlarge) {
       right: 0;
-      transform: translateY(-25%);
+      transform: translateY(24px);
+    }
+  }
+
+  > li:nth-last-child(2) > .m-menu__dropdown {
+    @include breakpoints.bp-min(xxlarge) {
+      left: calc(50% - 56px);
     }
   }
 
   > li.is-open > .m-menu__dropdown {
     max-block-size: 2000px;
     opacity: 1;
+    transition: all 0.25s ease-in;
     visibility: visible;
 
     @include breakpoints.bp-min(xxlarge) {
