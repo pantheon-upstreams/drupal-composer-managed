@@ -633,7 +633,7 @@ display:
       display_description: ''
       header: {  }
       display_extenders: {  }
-      block_description: 'Most Recent'
+      block_description: 'Most Recent News'
     cache_metadata:
       max-age: -1
       contexts:

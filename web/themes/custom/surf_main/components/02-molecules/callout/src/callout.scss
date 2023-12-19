@@ -16,6 +16,7 @@
 
 
 
+
 //------------------------------------
 //  02 - General
 //------------------------------------
@@ -31,6 +32,7 @@
   flex-direction: column;
   gap: rem(16px);
   padding: 20px;
+
   @include bp-min(medium) {
     padding: 28px;
   }
@@ -50,6 +52,7 @@
   line-height: var(--surf-lh-label);
   margin-block-start: 0 !important;
 }
+
 
 
 
@@ -82,7 +85,11 @@
       padding: 0;
     }
 
-    .m-callout__heading,
+    .m-callout__heading {
+      color: var(--surf-color-navy);
+      font-size: var(--surf-fs-24-32);
+    }
+
     .m-callout__text {
       color: var(--surf-color-black);
     }
