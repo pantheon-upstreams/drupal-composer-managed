@@ -19,7 +19,7 @@ settings:
   provider: search_api_block
   context_mapping: {  }
   action_url: /search
-  input_name: text
+  input_name: keyword
   input_placeholder: 'Search the site...'
   submit_value: Search
   pass_get_params: 0
