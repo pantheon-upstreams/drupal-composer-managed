@@ -25,6 +25,7 @@
 
 {% set rendered_content = content|without(
     'field_dates_only',
+    'field_media_primary',
     'field_overview',
     'field_ref_research_areas',
 ) %}
@@ -34,9 +35,10 @@
     rendered_content,
     teaser_attributes: create_attribute({'class': 'm-teaser--experiment'}),
     teaser_content: content.field_overview|field_value|default([]),
+    teaser_dates: experiment_dates,
+    teaser_media: content.field_media_primary|field_value|default([]),
     teaser_title: label,
     teaser_title_tag: 'h3',
-    teaser_dates: experiment_dates,
     teaser_tags: content.field_ref_research_areas|field_value|default([]),
     teaser_url: url,
 } only %}
