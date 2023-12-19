@@ -192,7 +192,6 @@ ul.l-threecol {
 
 .l-onecol.l-onecol--listing {
   > * {
-    border-bottom: solid 2px var(--surf-color-gray-800);
     border-top: solid 2px var(--surf-color-gray-800);
     padding-block-end: 40px;
     padding-block-start: 40px;
@@ -200,10 +199,6 @@ ul.l-threecol {
     @include breakpoints.bp-min(medium) {
       padding-block-end: 96px;
     }
-  }
-
-  > *:not( :first-child ) {
-    margin-block-start: -2px;
   }
 }
 
