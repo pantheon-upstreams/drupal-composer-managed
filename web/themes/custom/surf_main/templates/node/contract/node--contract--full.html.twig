@@ -15,6 +15,7 @@
     'body',
     'field_contract_summary',
     'field_date_published',
+    'field_links',
     'field_p_contract_schedule',
     'field_ref_contacts',
 ) %}
@@ -27,6 +28,7 @@
     contract_breadcrumbs: drupal_breadcrumb(),
     contract_contacts: content.field_ref_contacts|field_value|default([]),
     contract_post_date: content.field_date_published|field_value|default([]),
+    contract_related_links: content.field_links|field_value|default([]),
     contract_resources: content.field_ref_documents|field_value|default([]),
     contract_schedule: content.field_p_contract_schedule|field_value|default([]),
     contract_summary: content.field_contract_summary|field_value|default([]),

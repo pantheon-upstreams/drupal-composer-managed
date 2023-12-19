@@ -35,8 +35,9 @@
     }
   }
 
-  .p-contract__header .container,
-  .p-contract__content .container {
+  .p-contract__header > .container,
+  .p-contract__content > .container,
+  .p-contract__resources > .container {
     display: flex;
     flex-flow: nowrap column;
     gap: 24px;
@@ -44,6 +45,10 @@
     @include breakpoints.bp-min(large) {
       gap: 32px;
     }
+  }
+
+  .p-contract__resources > .container > div {
+    width: 100%;
   }
 }
 

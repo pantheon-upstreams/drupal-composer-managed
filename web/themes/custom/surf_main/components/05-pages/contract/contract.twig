@@ -84,14 +84,24 @@
         </section>
     {% endif %}
 
-    {% if contract_resources is not empty %}
+    {% if contract_resources is not empty or contract_related_links is not empty %}
         <section class="p-contract__resources" aria-label="Contract resources">
             <div class="container container--medium">
-                {% include 'surf_main:resource-list' with {
-                    resource_list_attributes: create_attribute(),
-                    resource_list_heading: 'Documents'|t,
-                    resource_list_items: contract_resources,
-                } only %}
+                {% if contract_related_links is not empty %}
+                    {% include 'surf_main:resource-list' with {
+                        resource_list_attributes: create_attribute(),
+                        resource_list_heading: 'Related Links'|t,
+                        resource_list_items: contract_related_links,
+                    } only %}
+                {% endif %}
+
+                {% if contract_resources is not empty %}
+                    {% include 'surf_main:resource-list' with {
+                        resource_list_attributes: create_attribute(),
+                        resource_list_heading: 'Documents'|t,
+                        resource_list_items: contract_resources,
+                    } only %}
+                {% endif %}
             </div>
         </section>
     {% endif %}

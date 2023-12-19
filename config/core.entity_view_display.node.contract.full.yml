@@ -18,6 +18,7 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - layout_builder
+    - link
     - text
     - user
 third_party_settings:
@@ -52,6 +53,18 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  field_links:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_p_contract_schedule:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -80,7 +93,6 @@ content:
     weight: 4
     region: content
 hidden:
-  field_links: true
   field_overview: true
   field_ref_contract_type: true
   langcode: true
