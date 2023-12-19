@@ -168,7 +168,7 @@
 
   .o-masthead__flyout .o-masthead__flyout-content {
     background: var(--surf-gradient-vt-blue);
-    height: 100vh;
+    padding-block-end: 100%;
     position: absolute;
     right: 0;
     top: 0;
