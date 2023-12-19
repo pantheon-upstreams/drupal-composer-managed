@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.experiment.field_dates_only
+    - field.field.node.experiment.field_links
     - field.field.node.experiment.field_media_primary
     - field.field.node.experiment.field_overview
     - field.field.node.experiment.field_p_content
@@ -27,7 +28,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: published_date
       separator: '-'
     third_party_settings: {  }
     weight: 1
