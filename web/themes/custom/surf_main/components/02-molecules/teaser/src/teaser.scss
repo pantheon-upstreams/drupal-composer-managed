@@ -604,6 +604,16 @@
   }
 }
 
+.l-onecol.l-onecol--listing > .l-onecol__region:nth-child(odd) .m-teaser.m-teaser--research-area {
+  .m-teaser__media {
+    order: -1;
+
+    @include breakpoints.bp-min(xlarge) {
+      margin-inline: 0 56px;
+    }
+  }
+}
+
 .l-onecol.l-onecol--listing > .l-onecol__region:nth-child(even) .m-teaser.m-teaser--research-area {
   .m-teaser__media {
     order: 1;
