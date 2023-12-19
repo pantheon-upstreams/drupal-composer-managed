@@ -27,11 +27,13 @@
 @mixin grid() {
   :root, .ck {
     --surf-grid-gap: 24px;
+
     @include breakpoints.bp-min(large) {
       --surf-grid-gap: 40px;
     }
   }
 }
+
 @include grid();
 
 
@@ -62,9 +64,11 @@
 :root {
   --surf-height-region-header-utility: 72px;
   --surf-height-region-header-primary: 55px;
+
   @include breakpoints.bp-min(medium) {
     --surf-height-region-header-primary: 68px;
   }
+
   @include breakpoints.bp-min(large) {
     --surf-height-region-header-primary: 120px;
   }
@@ -157,6 +161,7 @@ ul.l-threecol {
 .l-twocol__region > *:not( :first-child ),
 .l-threecol__region > *:not( :first-child ) {
   margin-block-start: 40px;
+
   @include breakpoints.bp-min(large) {
     margin-block-start: 64px;
   }
@@ -167,6 +172,7 @@ ul.l-threecol {
 .l-threecol {
   display: grid;
   gap: 32px;
+
   @include breakpoints.bp-min(medium) {
     gap: 60px;
   }
@@ -175,6 +181,8 @@ ul.l-threecol {
 .l-twocol__region,
 .l-threecol__region {
   display: flex;
+  flex-flow: nowrap column;
+  gap: 40px;
 }
 
 // One Column
@@ -188,6 +196,7 @@ ul.l-threecol {
     border-top: solid 2px var(--surf-color-gray-800);
     padding-block-end: 40px;
     padding-block-start: 40px;
+
     @include breakpoints.bp-min(medium) {
       padding-block-end: 96px;
     }
@@ -204,6 +213,7 @@ ul.l-threecol {
 
   &.l-twocol--50-50 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -211,6 +221,7 @@ ul.l-threecol {
 
   &.l-twocol--55-45 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 55% 1fr;
     }
@@ -218,6 +229,7 @@ ul.l-threecol {
 
   &.l-twocol--45-55 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 1fr 55%;
     }
@@ -225,6 +237,7 @@ ul.l-threecol {
 
   &.l-twocol--25-75 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 1fr 3fr;
     }
@@ -232,6 +245,7 @@ ul.l-threecol {
 
   &.l-twocol--75-25 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 3fr 1fr;
     }
@@ -252,9 +266,11 @@ ul.l-threecol {
 .l-threecol {
   &.l-threecol--33-34-33 {
     grid-template-columns: minmax(0, 1fr);
+
     @include breakpoints.bp-min(medium) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
     @include breakpoints.bp-min(large) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }

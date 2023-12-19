@@ -88,7 +88,7 @@ content:
       placeholder: ''
     third_party_settings:
       maxlength:
-        maxlength_js: 125
+        maxlength_js: null
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: false
   field_p_content:
