@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_ref_content
     - node.type.article
+    - node.type.experiment
     - node.type.page
     - node.type.press_release
     - paragraphs.paragraphs_type.content_as_teaser
@@ -24,6 +25,7 @@ settings:
     target_bundles:
       article: article
       page: page
+      experiment: experiment
       press_release: press_release
     sort:
       field: _none

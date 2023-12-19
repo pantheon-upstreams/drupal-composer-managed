@@ -33,6 +33,15 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_media_primary:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_overview:
     type: text_default
     label: hidden
@@ -46,11 +55,10 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   field_links: true
-  field_media_primary: true
   field_p_content: true
   field_ref_articles: true
   field_ref_audiences: true
