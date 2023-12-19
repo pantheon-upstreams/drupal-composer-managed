@@ -150,6 +150,7 @@
       padding: 32px;
       position: absolute;
       top: 100%;
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
     }
   }
 
@@ -176,7 +177,6 @@
   > li.is-open > .m-menu__dropdown {
     max-block-size: 2000px;
     opacity: 1;
-    transition: all 0.25s ease-in;
     visibility: visible;
 
     @include breakpoints.bp-min(xxlarge) {

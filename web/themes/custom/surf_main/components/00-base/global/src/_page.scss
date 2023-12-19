@@ -54,6 +54,23 @@ body {
   }
 }
 
+#site-content {
+  position: relative;
+
+  &:after {
+    @include bp-min(large) {
+      background: var(--surf-gradient-vt-multi);
+      block-size: 100%;
+      content: '';
+      display: block;
+      inline-size: 28px;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      position: absolute;
+    }
+  }
+}
+
 
 
 

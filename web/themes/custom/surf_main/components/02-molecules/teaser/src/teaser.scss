@@ -82,6 +82,10 @@
       margin-inline: 0 !important;
     }
   }
+
+  .m-teaser__content-suffix .a-chip--white {
+    padding-inline-start: 0;
+  }
 }
 
 
@@ -169,98 +173,6 @@
 
 
 //------------------------------------
-//  04 - List
-//------------------------------------
-
-//.m-teaser.m-teaser--list {
-//  @include breakpoints.bp-min(medium) {
-//    align-items: center;
-//    display: flex;
-//    flex-flow: nowrap row;
-//  }
-//
-//  &:hover a,
-//  &:focus-within a {
-//    color: var(--surf-color-black);
-//  }
-//
-//  .m-teaser__media {
-//    margin-block-end: 24px;
-//    width: 210px;
-//
-//    @include breakpoints.bp-min(medium) {
-//      flex-shrink: 0;
-//      margin-block-end: 0;
-//      margin-inline-start: 32px;
-//      order: 1;
-//    }
-//
-//    @include breakpoints.bp-min(large) {
-//      margin-inline-start: 56px;
-//      width: 300px;
-//    }
-//
-//    @include breakpoints.bp-min(xlarge) {
-//      margin-inline-start: 176px;
-//      width: 540px;
-//    }
-//  }
-//
-//  .m-teaser__title {
-//    font-size: var(--surf-fs-18-24-32);
-//  }
-//
-//  p.m-teaser__content-text {
-//    font-size: var(--surf-fs-16-18-24);
-//    margin-block-start: 12px;
-//  }
-//
-//  .m-teaser__content-suffix {
-//    margin-block-start: 24px;
-//    @include bp-min(large) {
-//      margin-block-start: 40px;
-//    }
-//  }
-//
-//  .m-teaser__content-suffix span.a-chip:first-child {
-//    display: block;
-//    margin-block-end: 16px;
-//    width: fit-content;
-//    @include bp-min(large) {
-//      display: inline-flex;
-//      margin-block-end: 0;
-//      width: initial;
-//    }
-//  }
-//
-//  .m-teaser__content-suffix span.a-chip:not( :last-child ) {
-//    margin-inline-end: 16px;
-//  }
-//
-//  .m-teaser__content-suffix span:not( .a-chip ) {
-//    display: block;
-//    font-size: var(--surf-fs-16-18);
-//    font-weight: var(--surf-fw-bold);
-//    width: fit-content;
-//    @include bp-min(medium) {
-//      display: initial;
-//      width: initial;
-//    }
-//  }
-//
-//  .m-teaser__content-suffix span:not( .a-chip ):not( :last-child ) {
-//    @include bp-min(medium) {
-//      border-right: solid 1px var(--surf-color-gray-800);
-//      margin-inline-end: 18px;
-//      padding-inline-end: 20px;
-//    }
-//  }
-//}
-
-
-
-
-//------------------------------------
 //  05 - 3 Column
 //------------------------------------
 
@@ -315,10 +227,11 @@
   }
 
   .m-teaser__content-suffix {
-    margin: 8px -8px 0;
+    gap: 8px;
+    margin: 8px 0 0;
 
     @include breakpoints.bp-min(medium) {
-      margin: 16px -8px 0;
+      margin: 16px 0 0;
     }
   }
 

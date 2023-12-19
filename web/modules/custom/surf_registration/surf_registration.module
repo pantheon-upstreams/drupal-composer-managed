@@ -1,5 +1,9 @@
 <?php
 
+use Drupal\surf_registration\Entity\Node\Event;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -91,9 +95,12 @@ function surf_registration_entity_extra_field_info() {
 /**
  * Implements hook_ENTITY_TYPE_view().
  */
-function surf_registration_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
-  if ($display->getComponent('registration_links') && $entity->bundle() === 'event') {
-    /** @var \Drupal\surf_registration\Entity\Node\Event $entity */
+function surf_registration_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('registration_links')) {
+    /** @var Event $entity */
     $build['registration_links'] = $entity->getUserRegistrationLinks(\Drupal::currentUser());
+
+    $varasdf = $entity->getUserRegistrationLinks(\Drupal::currentUser());
+    $var = 1;
   }
 }

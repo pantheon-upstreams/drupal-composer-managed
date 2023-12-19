@@ -43,7 +43,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_dates:
     type: smartdate_default
@@ -57,7 +57,7 @@ content:
       time_wrapper: true
       localize: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_link:
     type: link_separate
@@ -69,7 +69,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -85,12 +85,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   registration_links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 4
     region: content
 hidden:
   field_capacity: true

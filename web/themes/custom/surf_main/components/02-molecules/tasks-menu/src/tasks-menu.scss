@@ -47,7 +47,8 @@
 
 .m-menu.m-menu--tasks-menu {
   background-color: var(--surf-color-gray-100);
-  padding: 8px 0;
+  padding-block: 8px;
+  padding-inline: 40px;
 
   > ul.m-menu__items {
     display: flex;

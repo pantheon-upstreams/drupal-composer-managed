@@ -8,7 +8,6 @@ dependencies:
     - image.style.medium_992w_367h
     - image.style.small_768w_284h
     - image.style.x_large_1920w_711h
-    - image.style.x_small_480w_178h
   theme:
     - surf_main
 id: banner_default
@@ -60,4 +59,4 @@ image_style_mappings:
     breakpoint_id: surf_main.small
     multiplier: 2x
 breakpoint_group: surf_main
-fallback_image_style: x_small_480w_178h
+fallback_image_style: small_768w_284h

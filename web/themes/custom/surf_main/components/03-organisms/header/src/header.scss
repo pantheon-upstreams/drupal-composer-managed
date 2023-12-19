@@ -73,7 +73,7 @@
 
   &.o-header--color {
     @include bp-min(medium) {
-      background-image: url('img/header-bkg-color.png');
+      background-image: url('img/header-bkg-particles-color.png');
       background-position: top right;
       background-repeat: no-repeat;
       background-size: 50%;
@@ -90,7 +90,6 @@
       background-image: url('img/header-bkg-color.png');
       background-position: 100% 0;
       background-repeat: no-repeat;
-      //background-size: auto;
       background-size: 50%;
       min-block-size: rem(210px);
     }
@@ -102,9 +101,10 @@
       min-block-size: rem(270px);
     }
     @include bp-min(xxlarge) {
-      background-image: url('img/header-bkg-color.png');
+      background-image: url('img/header-bkg-particles-color.png');
       background-position: top right;
       background-repeat: no-repeat;
+      background-size: 930px;
       min-block-size: rem(330px);
     }
   }

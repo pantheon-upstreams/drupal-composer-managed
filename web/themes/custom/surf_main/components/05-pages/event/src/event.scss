@@ -55,7 +55,7 @@
     }
   }
 
-  .p-event__body-wrapper > :not( :last-child ) {
+  .p-event__body-wrapper > :not(:last-child) {
     margin-block-end: 32px;
 
     @include breakpoints.bp-min(medium) {
@@ -78,21 +78,24 @@
 
     @include breakpoints.bp-min(large) {
       gap: 60px;
+      grid-template-columns: 1fr 400px;
     }
 
     @include breakpoints.bp-min(xlarge) {
-      grid-template-columns: 1fr 400px;
+
     }
   }
 
   .p-event__body-wrapper {
-    @include breakpoints.bp-min(xlarge) {
+    @include breakpoints.bp-min(large) {
       order: 1;
     }
   }
 
   .p-event__media {
-    @include breakpoints.bp-min(xlarge) {
+    max-inline-size: 540px;
+
+    @include breakpoints.bp-min(large) {
       justify-self: end;
       order: 2;
     }
