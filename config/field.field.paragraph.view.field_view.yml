@@ -22,6 +22,7 @@ settings:
   selection_settings:
     plugin_ids:
       'views_block:curriculum-full': 'views_block:curriculum-full'
+      'views_block:events-full': 'views_block:events-full'
       'views_block:experiments-full': 'views_block:experiments-full'
       'views_block:news-full': 'views_block:news-full'
       'views_block:press_releases-full': 'views_block:press_releases-full'
@@ -30,4 +31,5 @@ settings:
       'views_block:news-most_recent': 'views_block:news-most_recent'
       'views_block:people-our_team': 'views_block:people-our_team'
       'views_block:search-full': 'views_block:search-full'
+      'views_block:events-upcoming_events_two': 'views_block:events-upcoming_events_two'
 field_type: block_field

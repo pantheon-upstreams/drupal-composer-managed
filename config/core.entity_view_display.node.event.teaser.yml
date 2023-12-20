@@ -32,19 +32,12 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 125
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_dates:
-    type: daterange_plain
+    type: daterange_default
     label: hidden
     settings:
       timezone_override: ''
+      format_type: teaser_date
       separator: '-'
     third_party_settings: {  }
     weight: 0
@@ -56,7 +49,7 @@ content:
       view_mode: teaser_default
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_overview:
     type: text_trimmed
@@ -64,23 +57,18 @@ content:
     settings:
       trim_length: 200
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_ref_event_types:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  registration_links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
 hidden:
+  body: true
   field_capacity: true
   field_department: true
   field_link: true
@@ -96,4 +84,5 @@ hidden:
   field_registration_required: true
   langcode: true
   links: true
+  registration_links: true
   search_api_excerpt: true

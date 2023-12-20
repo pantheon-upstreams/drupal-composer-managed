@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Theme implementation to display an Event Node with Teaser view mode.
+ *
+ * Available variables:
+ *  - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_media_primary',
+    'field_overview',
+) %}
+
+{% if content.field_ref_event_types %}
+    {% if node.field_ref_event_types.0.entity.getName() == 'Training' %}
+        {% set chip_color = 'gray'%}
+    {% endif %}
+
+    {% if node.field_ref_event_types.0.entity.getName() == 'Public' %}
+        {% set chip_color = 'navy'%}
+    {% endif %}
+
+    {% if node.field_ref_event_types.0.entity.getName() == 'Professional Development' %}
+        {% set chip_color = 'gold'%}
+    {% endif %}
+
+    {% if node.field_ref_event_types.0.entity.getName() == 'Board Meeting' %}
+        {% set chip_color = 'blue'%}
+    {% endif %}
+{% endif %}
+
+{% embed 'surf_main:teaser' with {
+    attributes,
+    chip_color,
+    rendered_content,
+    teaser_attributes: create_attribute({'class': 'm-teaser--event'}),
+    teaser_content: content.field_overview|render ? content.field_overview|field_value,
+    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_title: label|field_value,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
+    teaser_tag: content.field_ref_event_types|field_value|default([]),
+    teaser_dates: content.field_dates|field_value|default([]),
+} only %}
+    {% block teaser_content_suffix %}
+        <div class="m-teaser__content-suffix">
+            {% if teaser_tag %}
+                <p class="m-teaser__tags">
+                    {% include 'surf_main:chip' with {
+                        chip_attributes: create_attribute({'class': 'a-chip--' ~ chip_color }),
+                        chip_text: teaser_tag,
+                        chip_size: 'small',
+                    } only %}
+                </p>
+            {% endif %}
+
+            {% if teaser_dates %}
+                <p class="m-teaser__dates">
+                    {{ teaser_dates }}
+                </p>
+            {% endif %}
+        </div>
+    {% endblock %}
+{% endembed %}

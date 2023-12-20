@@ -99,7 +99,12 @@
 
   &.a-chip--white {
     background-color: var(--surf-color-white);
-    color: var(--surf-color-black);
+    color: var(--surf-color-navy);
+  }
+
+  &.a-chip--gray {
+    background-color: var(--surf-color-gray-100);
+    color: var(--surf-color-navy);
   }
 
   &.a-chip--transparent {

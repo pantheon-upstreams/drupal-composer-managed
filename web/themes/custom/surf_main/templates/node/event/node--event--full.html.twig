@@ -26,7 +26,7 @@
 {% if content.field_link|render and not content.registration_links.webform %}
     {% set registration_link_text = content.field_link[0]['#title'] %}
     {% set registration_link_url = content.field_link[0]['#url'] %}
-{% elseif content.registration_links.webform %}
+{% elseif logged_in and content.registration_links.webform %}
     {% set registration_link_text = content.registration_links.webform['#title'] %}
     {% set registration_link_url = content.registration_links.webform['#url'] %}
 {% endif %}
@@ -37,7 +37,7 @@
     event_attributes: create_attribute({'class': classes}),
     event_heading: label|field_value,
     event_media: content.field_media_primary|field_value|default([]),
-    event_summary: content.field_overview|field_value,
+    event_summary: content.field_overview|render ? content.field_overview|field_value,
     event_body: content.body|field_value|default([]),
     event_dates: content.field_dates|field_value|default([]),
     event_link_text: registration_link_text|default([]),
