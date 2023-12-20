@@ -7,12 +7,12 @@ dependencies:
 id: node_standard
 label: 'Node - Standard'
 type: 'canonical_entities:node'
-pattern: '/[node:title]'
+pattern: 'esh-standards/[node:title]'
 selection_criteria:
-  acbc42bd-d4f5-4a1a-8d21-2362c64a9585:
+  0688395d-ed8b-4659-a42c-1253f3643b51:
     id: 'entity_bundle:node'
     negate: false
-    uuid: acbc42bd-d4f5-4a1a-8d21-2362c64a9585
+    uuid: 0688395d-ed8b-4659-a42c-1253f3643b51
     context_mapping:
       node: node
     bundles:
