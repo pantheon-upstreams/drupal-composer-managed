@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme implementation for a Curriculum Reservation Webform element.
+ *
+ * Available variables
+ * - No additional variables are available for this Webform type.
+ *
+ * @see templates/form/webform.html.twig
+ * @see components/02-molecules/form/form.twig
+ */
+#}
+
+{% embed 'surf_main:form' with {
+    attributes,
+    title_prefix,
+    title_suffix,
+    children,
+    form_attributes: create_attribute(),
+    form_title: 'Curriculum Module Reservation'|t,
+    form_type: "page",
+} only %}
+    {% block form_items %}
+        <div class="container container--small">
+            {{ title_prefix }}
+            {{ title_suffix }}
+
+            <p class="description description--required">{{- 'Fields marked with'|t }} <span>*</span> {{ 'are required'|t }}.</p>
+            {{ children }}
+        </div>
+    {% endblock %}
+{% endembed %}

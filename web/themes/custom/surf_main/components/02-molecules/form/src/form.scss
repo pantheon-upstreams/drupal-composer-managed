@@ -18,16 +18,56 @@
 
 
 //------------------------------------
-//  02 - Layout
+//  02 - Page
 //------------------------------------
 
-.m-form {
-  &.m-form--page { // Modifier for page layouts
-    padding-block: 40px;
+.m-form.m-form--page { // Modifier for page layouts
+  padding-block: 40px;
 
-    @include breakpoints.bp-min(large) {
-      padding-block: 80px;
+  @include breakpoints.bp-min(large) {
+    padding-block: 80px;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Inline
+//------------------------------------
+
+.m-form.m-form--inline {
+  @include breakpoints.bp-min(medium) {
+    align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .form-item {
+    margin-block-end: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      margin-block-end: 0;
     }
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='date'],
+  input[type='email'],
+  input[type='number'],
+  select {
+    inline-size: 100%;
+
+    @include breakpoints.bp-min(small) {
+      inline-size: auto;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 20px;
   }
 }
 

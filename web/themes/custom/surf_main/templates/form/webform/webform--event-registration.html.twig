@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Theme implementation for a Event Registration Webform element.
+ *
+ * Available variables
+ * - No additional variables are available for this Webform type.
+ *
+ * @see templates/form/webform.html.twig
+ * @see components/02-molecules/form/form.twig
+ */
+#}
+
+{% embed 'surf_main:form' with {
+    attributes,
+    title_prefix,
+    title_suffix,
+    children,
+    form_attributes: create_attribute(),
+    form_title: 'Event Registration'|t,
+    form_type: "page",
+} only %}
+    {% block form_items %}
+        <div class="container container--small">
+            {{ title_prefix }}
+            {{ title_suffix }}
+            {{ children }}
+        </div>
+    {% endblock %}
+{% endembed %}

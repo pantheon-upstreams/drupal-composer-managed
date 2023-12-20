@@ -11,15 +11,18 @@
  */
 #}
 
-{% set classes = [
-    'm-form',
-] %}
-
 {% embed 'surf_main:form' with {
     attributes,
-    form_attributes: create_attribute({'class': classes}),
-    form_children: children,
+    title_prefix,
+    title_suffix,
+    children,
+    form_attributes: create_attribute(),
     form_type: 'inline',
 } only %}
+    {% block form_items %}
+        {{ title_prefix }}
+        {{ title_suffix }}
+        {{ children }}
+    {% endblock %}
 {% endembed %}
 

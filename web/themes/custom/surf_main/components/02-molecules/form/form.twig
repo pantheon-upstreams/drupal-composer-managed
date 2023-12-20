@@ -20,16 +20,26 @@
     form_type ? 'm-form--' ~ form_type
 ] %}
 
-<article {{ form_attributes.addClass(classes) }}>
-    {% if form_title %}
-        <header class="m-form__header" aria-label="Form header">
-            <div class="container container--small">
-                <h1 class="m-form__title">{{ form_title }}</h1>
-            </div>
-        </header>
-    {% endif %}
+{% if form_type == 'page' %}
+    <article {{ form_attributes.addClass(classes) }}>
+{% endif %}
 
-    <form {{ attributes.addClass('m-form__form') }}>
-        {% block form_items %}{% endblock %}
-    </form>
-</article>
+{% if form_title %}
+    <header class="m-form__header" aria-label="Form header">
+        <div class="container container--small">
+            <h1 class="m-form__title">{{ form_title }}</h1>
+        </div>
+    </header>
+{% endif %}
+
+{% if form_type == 'page' %}
+<form {{ attributes.addClass('m-form__form') }}>
+{% else%}
+<form {{ form_attributes.addClass(classes).merge(attributes) }}>
+{% endif %}
+    {% block form_items %}{% endblock %}
+</form>
+
+{% if form_type == 'page' %}
+    </article>
+{% endif %}
