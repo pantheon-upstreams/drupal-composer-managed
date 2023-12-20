@@ -41,6 +41,7 @@ content:
       crop_preview_image_style: crop_thumbnail
       crop_list:
         - banner_default
+        - banner_tall
         - hero_default
         - profile_default
         - teaser_default

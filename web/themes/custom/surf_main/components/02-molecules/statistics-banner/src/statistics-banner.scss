@@ -27,11 +27,12 @@
   @include layout.full-width();
 
   .m-statistics-banner__media,
-  .m-statistics-banner__media *:not( img, figcaption ) {
+  .m-statistics-banner__media *:not(img, figcaption) {
     block-size: 100%;
     inline-size: 100%;
     inset-block-start: 0;
     inset-inline-start: 0;
+
     @include breakpoints.bp-min(large) {
       position: absolute;
     }
@@ -52,16 +53,18 @@
     padding-inline: var(--surf-grid-gap);
     position: relative;
     z-index: var(--surf-zindex-top);
+
     @include breakpoints.bp-min(medium) {
       padding-block: calculations.rem(60px);
       padding-inline: calculations.rem(40px);
     }
+
     @include breakpoints.bp-min(large) {
       background-color: transparent;
     }
+
     @include breakpoints.bp-min(xlarge) {
-      padding-block-end: calculations.rem(199px);
-      padding-block-start: calculations.rem(156px);
+      padding-block: 160px;
       padding-inline: var(--surf-grid-gap);
     }
   }
