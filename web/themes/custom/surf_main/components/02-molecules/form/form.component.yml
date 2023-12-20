@@ -10,12 +10,12 @@ props:
     form_attributes:
       title: Attributes
       type: string
-    form_children:
-      title: Callout Heading
+    form_title:
+      title: Title
       type: string
     form_type:
       title: Type
       type: string
-      enum:
-        - block
-        - inline
+  slots:
+    form_items:
+      title: Items

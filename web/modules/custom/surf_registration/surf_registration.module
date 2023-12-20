@@ -99,8 +99,5 @@ function surf_registration_node_view(array &$build, EntityInterface $entity, Ent
   if ($display->getComponent('registration_links')) {
     /** @var Event $entity */
     $build['registration_links'] = $entity->getUserRegistrationLinks(\Drupal::currentUser());
-
-    $varasdf = $entity->getUserRegistrationLinks(\Drupal::currentUser());
-    $var = 1;
   }
 }

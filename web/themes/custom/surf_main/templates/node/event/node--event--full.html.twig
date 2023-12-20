@@ -20,10 +20,16 @@
     'field_link',
     'field_media_primary',
     'field_overview',
-    'reservation_links',
+    'registration_links',
 ) %}
 
-{{ dump(content.registration_links) }}
+{% if content.field_link|render and not content.registration_links.webform %}
+    {% set registration_link_text = content.field_link[0]['#title'] %}
+    {% set registration_link_url = content.field_link[0]['#url'] %}
+{% elseif content.registration_links.webform %}
+    {% set registration_link_text = content.registration_links.webform['#title'] %}
+    {% set registration_link_url = content.registration_links.webform['#url'] %}
+{% endif %}
 
 {% include 'surf_main:event' with {
     attributes,
@@ -34,6 +40,6 @@
     event_summary: content.field_overview|field_value,
     event_body: content.body|field_value|default([]),
     event_dates: content.field_dates|field_value|default([]),
-    event_link_text: content.field_link|render ? content.field_link[0]['#title'] : 'Register',
-    event_link_url: content.field_link|render ? content.field_link[0]['#url'] : 'https://example.com',
+    event_link_text: registration_link_text|default([]),
+    event_link_url: registration_link_url|default([]),
 } only %}

@@ -11,70 +11,44 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+
 
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
-//
 
 .m-form {
-  //empty
-}
+  &.m-form--page { // Modifier for page layouts
+    padding-block: 40px;
 
-.m-form--inline {
-  @include bp-min(medium) {
-    align-items: flex-end;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .form-item {
-    margin-block-end: rem(32px);
-    @include bp-min(medium) {
-      margin-block-end: 0;
+    @include breakpoints.bp-min(large) {
+      padding-block: 80px;
     }
   }
-
-  input[type='text'],
-  input[type='password'],
-  input[type='date'],
-  input[type='email'],
-  input[type='number'],
-  select {
-    inline-size: 100%;
-    @include bp-min(small) {
-      inline-size: auto;
-    }
-  }
-
-  .form-actions {
-    display: flex;
-    gap: 20px;
-  }
 }
+
 
 
 
 //------------------------------------
-//  03 - Modifiers
+//  03 - General
 //------------------------------------
-//
 
-.m-form.m-form--browse-curriculum {
-  .form-item__name--title {
-    inline-size: 100%;
-  }
-}
+.m-form {
+  .m-form__title {
+    font-family: var(--surf-font-sans-alt);
+    font-size: var(--surf-fs-40-52-64);
+    font-weight: var(--surf-fw-medium);
+    letter-spacing: calculations.rem(1.44px);
+    line-height: var(--surf-lh-base);
+    margin-block-end: 24px;
 
-.m-form--curriculum-reservation {
-  padding-block-end: 60px;
-
-  input:not( [type='submit'] ),
-  select {
-    inline-size: 100%;
+    @include breakpoints.bp-min(large) {
+      margin-block-end: 40px;
+    }
   }
 }

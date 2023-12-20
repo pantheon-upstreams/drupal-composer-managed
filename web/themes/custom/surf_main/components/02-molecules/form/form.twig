@@ -1,21 +1,35 @@
 {#
 /**
  * @file
- * Component for Form
+ * Molecule component for a Form.
  *
  * Available props:
  * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
- * - form_attributes: [array] Any parent tag attributes.
- * - form_children: [array]
+ * - form_attributes: [array]
+ * - form_title: [string]
+ * - form_type: [string]
+ *
+ * Available slots:
+ * - form_items
  *
  */
 #}
 
 {% set classes = [
-  'm-form',
-  form_type ? 'm-form--' ~ form_type,
+    'm-form',
+    form_type ? 'm-form--' ~ form_type
 ] %}
 
-<form {{ form_attributes.addClass(classes).merge(attributes) }}>
-  {{ form_children }}
-</form>
+<article {{ form_attributes.addClass(classes) }}>
+    {% if form_title %}
+        <header class="m-form__header" aria-label="Form header">
+            <div class="container container--small">
+                <h1 class="m-form__title">{{ form_title }}</h1>
+            </div>
+        </header>
+    {% endif %}
+
+    <form {{ attributes.addClass('m-form__form') }}>
+        {% block form_items %}{% endblock %}
+    </form>
+</article>
