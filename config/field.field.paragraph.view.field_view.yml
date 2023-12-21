@@ -28,6 +28,7 @@ settings:
       'views_block:press_releases-full': 'views_block:press_releases-full'
       'views_block:standards-full': 'views_block:standards-full'
       'views_block:research_areas-full': 'views_block:research_areas-full'
+      'views_block:news-most_recent_home': 'views_block:news-most_recent_home'
       'views_block:news-most_recent': 'views_block:news-most_recent'
       'views_block:people-our_team': 'views_block:people-our_team'
       'views_block:search-full': 'views_block:search-full'

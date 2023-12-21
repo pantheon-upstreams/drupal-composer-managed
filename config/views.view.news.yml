@@ -717,7 +717,7 @@ display:
         filter_groups: false
       display_description: ''
       display_extenders: {  }
-      block_description: 'Most Recent - Home Page'
+      block_description: 'Most Recent News - Home Page'
     cache_metadata:
       max-age: -1
       contexts:
