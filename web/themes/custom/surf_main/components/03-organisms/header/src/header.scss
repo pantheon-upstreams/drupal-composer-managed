@@ -125,7 +125,7 @@
   &.o-header--ripple:after {
     @include bp-min(large) {
       @include full-width();
-      background: url('img/header-bkg-ripple.png') no-repeat center right;
+      background: url('img/background-shapes-black.png') no-repeat center right;
       background-size: 450px 300px;
       content: '';
       height: 300px;
