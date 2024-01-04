@@ -143,7 +143,11 @@
 //------------------------------------
 
 .l-main > .l-section {
-  margin-block-start: 64px;
+  margin-block-start: 32px;
+
+  @include breakpoints.bp-min(medium) {
+    margin-block-start: 60px;
+  }
 
   @include breakpoints.bp-min(large) {
     margin-block-start: 80px;
@@ -164,7 +168,11 @@ ul.l-threecol {
   gap: 32px;
 
   @include breakpoints.bp-min(medium) {
-    gap: 60px;
+    gap: 40px;
+  }
+
+  @include breakpoints.bp-min(large) {
+    gap: 64px;
   }
 }
 

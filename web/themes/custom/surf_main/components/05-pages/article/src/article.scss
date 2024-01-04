@@ -92,7 +92,7 @@
     margin-block-end: 32px;
     display: none;
 
-    @include breakpoints.bp-min(medium) {
+    @include breakpoints.bp-min(large) {
       margin-block-end: 24px;
       display: block;
     }

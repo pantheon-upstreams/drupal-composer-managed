@@ -47,6 +47,7 @@
     padding-inline: 8px;
     text-decoration: none;
 
+    &.is-active,
     &:hover,
     &:focus {
       background-color: var(--surf-color-black);

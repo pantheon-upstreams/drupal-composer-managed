@@ -37,37 +37,35 @@
 //------------------------------------
 
 .m-form.m-form--inline {
-  @include breakpoints.bp-min(medium) {
+  display: flex;
+  flex-flow: nowrap column;
+  gap: 20px;
+
+  @include breakpoints.bp-min(xlarge) {
     align-items: flex-end;
+    flex-flow: nowrap row;
+  }
+
+  .m-form__fields {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: nowrap column;
     gap: 20px;
-  }
-
-  .form-item {
-    margin-block-end: 32px;
-
-    @include breakpoints.bp-min(medium) {
-      margin-block-end: 0;
-    }
-  }
-
-  input[type='text'],
-  input[type='password'],
-  input[type='date'],
-  input[type='email'],
-  input[type='number'],
-  select {
     inline-size: 100%;
 
-    @include breakpoints.bp-min(small) {
-      inline-size: auto;
+    @include breakpoints.bp-min(medium) {
+      align-items: flex-end;
+      flex-flow: nowrap row;
     }
   }
 
-  .form-actions {
-    display: flex;
-    gap: 20px;
+
+  .m-form__fields > .m-form__field {
+    flex: 0 1 100%;
+  }
+
+  .m-form__fields > .m-form__field input,
+  .m-form__fields > .m-form__field select {
+    inline-size: 100%;
   }
 }
 

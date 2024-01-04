@@ -21,7 +21,7 @@
 //------------------------------------
 
 .p-page {
-  padding-block-end: 24px;
+  padding-block-end: 32px;
 
   @include breakpoints.bp-min(medium) {
     padding-block-end: 90px;
@@ -29,6 +29,14 @@
 
   @include breakpoints.bp-min(large) {
     padding-block-end: 120px;
+  }
+
+  .m-breadcrumbs {
+    display: none;
+
+    @include breakpoints.bp-min(large) {
+      display: block;
+    }
   }
 
   &.p-page--with-img .p-page__header {
@@ -44,8 +52,11 @@
     padding-block-start: 32px;
     position: relative;
 
-    @include breakpoints.bp-min(xlarge) {
+    @include breakpoints.bp-min(medium) {
       padding-block-start: 60px;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
       padding-inline: 80px;
     }
   }
@@ -56,12 +67,12 @@
   }
 
   .p-page__media img {
-    max-block-size: 480px;
+    block-size: 380px;
     object-fit: cover;
     width: 100%;
 
     @include breakpoints.bp-min(xlarge) {
-      max-block-size: 690px;
+      block-size: 690px;
     }
   }
 

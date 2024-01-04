@@ -67,7 +67,7 @@
     --surf-fs-40-64:            #{calculations.rem(40px)};
     --surf-fs-40-96:            #{calculations.rem(40px)};
     --surf-fs-40-52-64:         #{calculations.rem(40px)};
-    --surf-fs-40-52-64-96:      #{calculations.rem(40px)};
+    --surf-fs-40-64-96:         #{calculations.rem(40px)};
     --surf-fs-52-64-96:         #{calculations.rem(52px)};
     --surf-fs-48-132-176:       #{calculations.rem(48px)};
     --surf-fs-48-100:           #{calculations.rem(48px)};
@@ -77,11 +77,11 @@
     --surf-fs-80-140-200-260:   #{calculations.rem(80px)};
 
     @include breakpoints.bp-min(medium) {
+      --surf-fs-16-18:          #{calculations.rem(18px)};
       --surf-fs-16-18-24:       #{calculations.rem(18px)};
       --surf-fs-16-22:          #{calculations.rem(22px)};
       --surf-fs-16-24:          #{calculations.rem(24px)};
       --surf-fs-16-24-40:       #{calculations.rem(24px)};
-      --surf-fs-18-24:          #{calculations.rem(24px)};
       --surf-fs-18-24-32:       #{calculations.rem(24px)};
       --surf-fs-18-24-32-40:    #{calculations.rem(24px)};
       --surf-fs-18-24-40:       #{calculations.rem(24px)};
@@ -89,7 +89,7 @@
       --surf-fs-22-28-44:       #{calculations.rem(28px)};
       --surf-fs-22-40:          #{calculations.rem(40px)};
       --surf-fs-24-40-52:       #{calculations.rem(40px)};
-      --surf-fs-40-52-64-96:    #{calculations.rem(52px)};
+      --surf-fs-40-64-96:       #{calculations.rem(64px)};
       --surf-fs-40-64:          #{calculations.rem(64px)};
       --surf-fs-40-96:          #{calculations.rem(96px)};
       --surf-fs-48-100:         #{calculations.rem(100px)};
@@ -101,18 +101,19 @@
     }
 
     @include breakpoints.bp-min(large) {
-      --surf-fs-16-18:          #{calculations.rem(18px)};
       --surf-fs-16-20:          #{calculations.rem(20px)};
+      --surf-fs-16-18-24:       #{calculations.rem(24px)};
       --surf-fs-16-24-40:       #{calculations.rem(40px)};
       --surf-fs-24-40:          #{calculations.rem(40px)};
       --surf-fs-24-40-52:       #{calculations.rem(52px)};
+      --surf-fs-18-24:          #{calculations.rem(24px)};
       --surf-fs-18-24-32:       #{calculations.rem(32px)};
       --surf-fs-18-24-32-40:    #{calculations.rem(32px)};
       --surf-fs-18-24-40:       #{calculations.rem(40px)};
       --surf-fs-20-24-32:       #{calculations.rem(32px)};
       --surf-fs-30-32:          #{calculations.rem(32px)};
       --surf-fs-40-52-64:       #{calculations.rem(52px)};
-      --surf-fs-40-52-64-96:    #{calculations.rem(52px)};
+      --surf-fs-40-64-96:       #{calculations.rem(96px)};
       --surf-fs-52-64-96:       #{calculations.rem(64px)};
       --surf-fs-48-100-132:     #{calculations.rem(132px)};
       --surf-fs-48-100-132-176: #{calculations.rem(132px)};
@@ -120,12 +121,10 @@
     }
 
     @include breakpoints.bp-min(xlarge) {
-      --surf-fs-16-18-24:       #{calculations.rem(24px)};
       --surf-fs-18-24-32-40:    #{calculations.rem(40px)};
       --surf-fs-22-28-44:       #{calculations.rem(44px)};
       --surf-fs-24-32:          #{calculations.rem(32px)};
       --surf-fs-40-52-64:       #{calculations.rem(64px)};
-      --surf-fs-40-52-64-96:    #{calculations.rem(96px)};
       --surf-fs-52-64-96:       #{calculations.rem(96px)};
       --surf-fs-48-100-132-176: #{calculations.rem(176px)};
       --surf-fs-48-120-144-176: #{calculations.rem(144px)};
@@ -272,7 +271,7 @@ body {
   }
 
   h2.large {
-    font-size: var(--surf-fs-40-52-64-96);
+    font-size: var(--surf-fs-40-64-96);
   }
 
   h3 {

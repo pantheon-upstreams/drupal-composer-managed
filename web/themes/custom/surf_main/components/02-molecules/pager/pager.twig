@@ -44,15 +44,15 @@
 
         {# Now generate the actual pager piece. #}
         {% for key, item in pager_items.pages %}
-            <li class="m-pager__item {{ current == key ? ' m-pager__item--active' : '' }} m-pager__item--number">
-                {% if current == key %}
+            <li class="m-pager__item {{ pager_current == key ? 'm-pager__item--active' }} m-pager__item--number">
+                {% if pager_current == key %}
                     {% set title = 'Current page'|t %}
                 {% else %}
                     {% set title = 'Go to page @key'|t({'@key': key}) %}
                 {% endif %}
 
-                <a href="{{ current != key ? item.href }}" class="m-pager__link {{ current == key ? ' is-active' }}" title="{{ title }}" {{ item.attributes|without('href', 'title', 'class') }} {% if current == key %} aria-current="page" {% endif %}>
-                    <span class="visually-hidden">{{- current == key ? 'Current page'|t : 'Page'|t -}}</span>
+                <a href="{{ pager_current != key ? item.href }}" class="m-pager__link {{ pager_current == key ? 'is-active' }}" title="{{ title }}" {{ item.attributes|without('href', 'title', 'class') }} {% if current == key %} aria-current="page" {% endif %}>
+                    <span class="visually-hidden">{{- pager_current == key ? 'Current page'|t : 'Page'|t -}}</span>
                     {{- key -}}
                 </a>
             </li>

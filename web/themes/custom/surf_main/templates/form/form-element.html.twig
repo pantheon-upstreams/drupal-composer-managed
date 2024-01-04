@@ -47,18 +47,18 @@
 
 {% set classes = [
     'js-form-item',
-    'form-item',
-    'form__item',
     'js-form-type-' ~ type|clean_class,
-    'form-item__name--' ~ name|clean_class,
     'js-form-item-' ~ name|clean_class,
-    title_display not in ['after', 'before'] ? 'form-item__no-label',
-    disabled == 'disabled' ? 'form-item__disabled',
-    errors ? 'form-item__errors',
+    'm-form__field',
+    'm-form__field--' ~ type|clean_class,
+    'm-form__field--' ~ name|clean_class,
+    title_display not in ['after', 'before'] ? 'm-form__field--no-label',
+    disabled == 'disabled' ? 'm-form__field--disabled',
+    errors ? 'm-form__field--errors',
 ] %}
 
 {% set description_classes = [
-    'form-item__description',
+    'm-form__field-description',
     description_display == 'invisible' ? 'visually-hidden',
 ] %}
 
@@ -68,7 +68,7 @@
   {% endif %}
 
   {% if prefix is not empty %}
-    <p class="form-item__prefix">{{ prefix }}</p>
+    <p class="m-form__field-prefix">{{ prefix }}</p>
   {% endif %}
 
   {% if description_display == 'before' and description.content %}
@@ -80,7 +80,7 @@
   {{ children }}
 
   {% if suffix is not empty %}
-    <p class="form-item__suffix">{{ suffix }}</p>
+    <p class="m-form__field-suffix">{{ suffix }}</p>
   {% endif %}
 
   {% if label_display == 'after' %}
@@ -88,7 +88,7 @@
   {% endif %}
 
   {% if errors %}
-    <div class="form-item__error-message">
+    <div class="m-form__field-error-message">
       {{ errors }}
     </div>
   {% endif %}

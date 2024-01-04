@@ -31,10 +31,6 @@
 
 .a-left-hook--with-heading {
   margin-block-end: 32px;
-
-  @include breakpoints.bp-min(small) {
-    margin-block-end: 40px;
-  }
 }
 
 

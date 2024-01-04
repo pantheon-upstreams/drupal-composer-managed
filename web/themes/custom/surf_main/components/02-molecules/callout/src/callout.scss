@@ -270,6 +270,7 @@
 
   .m-callout__inner-wrapper {
     gap: 4px;
+    padding-block: 0;
     padding-inline: 0;
 
     @include breakpoints.bp-min(small) {

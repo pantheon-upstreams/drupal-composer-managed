@@ -10,6 +10,9 @@ props:
     pager_attributes:
       title: Attributes
       type: string
+    pager_current:
+      title: Current
+      type: integer
     pager_items:
       title: Items
       type: array
