@@ -566,6 +566,8 @@
   }
 
   .m-teaser__media {
+    inline-size: 200px;
+    
     @include breakpoints.bp-min(small) {
       inline-size: 32%;
     }
