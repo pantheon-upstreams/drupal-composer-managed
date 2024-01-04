@@ -79,7 +79,7 @@
                     button_title: callout_button_text,
                     button_url: callout_button_url,
                 } only %}
-            {% elseif callout_type == 'blue-cta' or callout_type == 'embed' %}
+            {% elseif callout_type == 'featured' %}
                 {% if callout_button_prefix == 'play' %}
                     {% include 'surf_main:button' with {
                         button_attributes: create_attribute(),

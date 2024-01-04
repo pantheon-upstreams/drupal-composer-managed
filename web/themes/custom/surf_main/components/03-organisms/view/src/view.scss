@@ -36,8 +36,8 @@
     padding: 0;
   }
 
-  .o-view__rows {
-    margin-block-start: 68px;
+  &.o-view--full .o-view__rows {
+    margin-block-start: 32px;
   }
 }
 

@@ -25,11 +25,10 @@
 //------------------------------------
 
 @mixin full-width() {
+  inline-size: 100vw;
+  inset-inline: 50%;
   margin-inline: -50vw;
-  left: 50%;
   position: relative;
-  right: 50%;
-  width: 100vw;
 }
 
 

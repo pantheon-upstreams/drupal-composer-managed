@@ -58,7 +58,7 @@ body {
   position: relative;
 
   &:after {
-    @include bp-min(large) {
+    @include bp-min(xlarge) {
       background: var(--surf-gradient-vt-multi);
       block-size: 100%;
       content: '';

@@ -33,7 +33,7 @@
     callout_text: content.field_text|field_value|default([]),
     callout_button_text: content.field_link.0['#title']|default([]),
     callout_button_url: content.field_link.0['#url']|default([]),
-    callout_media: content.field_media|default([]),
+    callout_media: content.field_media|field_value|default([]),
     callout_type: style_options['callout_type'],
 } only %}
     {% block media_block %}

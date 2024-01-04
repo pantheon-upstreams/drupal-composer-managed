@@ -25,7 +25,7 @@
   .p-landing__hero {
     margin-block-end: 32px;
 
-    @include breakpoints.bp-min(medium) {
+    @include breakpoints.bp-min(xlarge) {
       margin-block-end: 60px;
     }
   }

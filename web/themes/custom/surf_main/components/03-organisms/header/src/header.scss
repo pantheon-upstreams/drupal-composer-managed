@@ -12,7 +12,31 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/layout';
+
+
+
+
+//------------------------------------
+//  02 - Layout
+//------------------------------------
+
+.o-header {
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  .o-header__content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    z-index: var(--surf-zindex-over);
+  }
+}
 
 
 
@@ -21,97 +45,91 @@
 //  02 - General
 //------------------------------------
 
-.o-header__content {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  gap: rem(32px);
-  position: relative;
-  z-index: var(--surf-zindex-over);
-}
-
-.o-header__heading {
-  color: var(--surf-color-black);
-  font-family: var(--surf-font-sans-alt);
-  font-size: var(--surf-fs-48-100-132-176);
-  font-weight: var(--surf-fw-medium);
-  line-height: var(--surf-lh-base);
-  text-transform: uppercase;
-}
-
-.o-header__heading--transform-none {
-  font-family: var(--surf-font-sans-alt);
-  font-size: var(--surf-fs-52-64-96);
-  font-weight: var(--surf-fw-medium);
-  letter-spacing: rem(0.6px);
-  text-transform: none;
-  @include bp-min(medium) {
-    letter-spacing: rem(1.44px);
-  }
-}
-
-.o-header__summary {
-  color: var(--surf-color-gray-600);
-  font-family: var(--surf-font-sans);
-  font-size: var(--surf-fs-18-24-32);
-  font-weight: var(--surf-fw-book);
-  line-height: var(--surf-lh-label);
-  margin-block-start: rem(32px);
-}
-
-
-
-
-//------------------------------------
-//  03 - Types
-//------------------------------------
-
 .o-header {
-  align-items: center;
-  display: flex;
-  position: relative;
+  .o-header__heading {
+    color: var(--surf-color-black);
+    font-family: var(--surf-font-sans-alt);
+    font-size: var(--surf-fs-48-100-132-176);
+    font-weight: var(--surf-fw-medium);
+    line-height: var(--surf-lh-base);
+    text-transform: uppercase;
+  }
 
-  &.o-header--color {
-    @include bp-min(medium) {
-      background-image: url('img/header-bkg-particles-color.png');
-      background-position: top right;
-      background-repeat: no-repeat;
-      background-size: 50%;
-      min-block-size: rem(175px);
+  .o-header__heading--transform-none {
+    font-family: var(--surf-font-sans-alt);
+    font-size: var(--surf-fs-52-64-96);
+    font-weight: var(--surf-fw-medium);
+    letter-spacing: calculations.rem(0.6px);
+    text-transform: none;
 
-      .o-header__heading {
-        background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
-        background-clip: text;
-        background-size: rem(320px);
-        -webkit-text-fill-color: transparent;
-      }
-    }
-    @include bp-min(large) {
-      background-image: url('img/header-bkg-color.png');
-      background-position: 100% 0;
-      background-repeat: no-repeat;
-      background-size: 50%;
-      min-block-size: rem(210px);
-    }
-    @include bp-min(xlarge) {
-      background-image: url('img/header-bkg-color.png');
-      background-position: 165% 0;
-      background-repeat: no-repeat;
-      background-size: auto;
-      min-block-size: rem(270px);
-    }
-    @include bp-min(xxlarge) {
-      background-image: url('img/header-bkg-particles-color.png');
-      background-position: top right;
-      background-repeat: no-repeat;
-      background-size: 930px;
-      min-block-size: rem(330px);
+    @include breakpoints.bp-min(medium) {
+      letter-spacing: calculations.rem(1.44px);
     }
   }
 
-  &.o-header--grid:after {
-    @include bp-min(large) {
-      @include full-width();
+  .o-header__summary {
+    color: var(--surf-color-gray-600);
+    font-family: var(--surf-font-sans);
+    font-size: var(--surf-fs-18-24-32);
+    font-weight: var(--surf-fw-book);
+    line-height: var(--surf-lh-label);
+    margin-block-start: 32px;
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Color
+//------------------------------------
+
+.o-header.o-header--color {
+  padding-block: 24px;
+
+  @include breakpoints.bp-min(large) {
+    padding-block: 48px;
+  }
+
+  &:after {
+    @include breakpoints.bp-min(medium) {
+      @include layout.full-width();
+      background: url('img/header-bkg-particles-color.png') no-repeat calc(100% + 300px) 0;
+      background-size: 930px;
+      content: '';
+      height: 324px;
+      inset-block-start: 0;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    @include breakpoints.bp-min(xlarge) {
+      background: url('img/header-bkg-particles-color.png') no-repeat right top;
+      background-size: 930px;
+    }
+  }
+
+  .o-header__heading {
+    @include breakpoints.bp-min(medium) {
+      -webkit-text-fill-color: transparent;
+      background: url('img/background-particles-white.png') no-repeat left bottom var(--surf-color-black);
+      background-clip: text;
+      background-size: 320px;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Grid
+//------------------------------------
+
+.o-header.o-header--grid {
+  &:after {
+    @include breakpoints.bp-min(large) {
+      @include layout.full-width();
       background: url('img/header-bkg-grid.png') no-repeat center right;
       background-size: 450px 300px;
       content: '';
@@ -121,10 +139,19 @@
       top: -64px;
     }
   }
+}
 
-  &.o-header--ripple:after {
-    @include bp-min(large) {
-      @include full-width();
+
+
+
+//------------------------------------
+//  04 - Ripple
+//------------------------------------
+
+.o-header.o-header--ripple {
+  &:after {
+    @include breakpoints.bp-min(large) {
+      @include layout.full-width();
       background: url('img/background-shapes-black.png') no-repeat center right;
       background-size: 450px 300px;
       content: '';
@@ -134,16 +161,23 @@
       top: -64px;
     }
   }
+}
 
-  &.o-header--img {
-    .o-header__content {
-      background-color: var(--surf-color-white);
-      margin-block-start: rem(-143px);
-      margin-inline: auto;
-      max-inline-size: rem(1320px);
-      padding-block: rem(60px);
-      padding-inline: rem(120px);
-    }
+
+
+
+//------------------------------------
+//  05 - Image
+//------------------------------------
+
+.o-header.o-header--img {
+  .o-header__content {
+    background-color: var(--surf-color-white);
+    margin-block-start: -143px;
+    margin-inline: auto;
+    max-inline-size: var(--surf-width-xlarge);
+    padding-block: 60px;
+    padding-inline: 120px;
   }
 }
 
@@ -158,11 +192,7 @@
 .p-curriculum-module__header .o-header__content {
   inline-size: 100%;
   margin-inline: auto;
-  padding-block: 40px 56px;
   padding-inline: var(--surf-grid-gap);
-  @include bp-min(large) {
-    padding-block: 64px 0;
-  }
 }
 
 .p-landing__hero .o-header__content {
@@ -175,6 +205,6 @@
 
 .p-event--full {
   .o-header__text-wrapper {
-    max-inline-size: rem(920px);
+    max-inline-size: 920px;
   }
 }

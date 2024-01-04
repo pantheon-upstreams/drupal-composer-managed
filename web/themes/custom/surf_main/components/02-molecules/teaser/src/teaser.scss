@@ -179,33 +179,31 @@
 
 .l-threecol > .l-threecol__region > .m-teaser,
 .l-threecol > .l-threecol__region > .paragraph--content-as-teaser > .m-teaser {
+  display: flex;
+  flex-flow: nowrap column;
+  gap: 20px 32px;
   max-inline-size: 100%;
 
   @include breakpoints.bp-min(small) {
-    align-items: center;
-    display: flex;
+    align-items: flex-start;
     flex-flow: nowrap row;
   }
 
-  @include breakpoints.bp-min(medium) {
+  @include breakpoints.bp-min(large) {
     flex-flow: nowrap column;
   }
 
   .m-teaser__media {
-    margin-block-end: 20px;
-    width: 100%;
+    block-size: auto;
+    flex-shrink: 0;
+    inline-size: 100%;
 
     @include breakpoints.bp-min(small) {
-      flex-shrink: 0;
-      margin-block-end: 0;
-      margin-inline-end: 24px;
-      width: 45%;
+      inline-size: 30.25%;
     }
 
-    @include breakpoints.bp-min(medium) {
-      margin-block-end: 24px;
-      margin-inline-end: 0;
-      width: 100%;
+    @include breakpoints.bp-min(large) {
+      inline-size: 100%;
     }
   }
 
@@ -563,6 +561,10 @@
 //------------------------------------
 
 .l-onecol.l-onecol--listing .m-teaser.m-teaser--research-area {
+  @include breakpoints.bp-min(small) {
+    align-items: center;
+  }
+
   .m-teaser__media {
     @include breakpoints.bp-min(small) {
       inline-size: 32%;

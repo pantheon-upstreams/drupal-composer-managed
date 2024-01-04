@@ -9,5 +9,5 @@ targetEntityType: media
 bundle: document_private
 action: page_not_found
 no_bypass: false
-bypass_message: true
+bypass_message: false
 configuration: {  }

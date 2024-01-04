@@ -36,13 +36,10 @@ props:
       type: string
       enum:
         - blue
+        - factoid
+        - featured
         - gray
-        - navy
-        - white
-        - gradient
-        - embed
-        - blue-cta
         - img-left
         - img-right
-        - factoid
-        - news
+        - navy
+        - white

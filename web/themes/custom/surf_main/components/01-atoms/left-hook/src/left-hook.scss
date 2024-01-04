@@ -12,7 +12,7 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
 
 
 
@@ -22,19 +22,22 @@
 //------------------------------------
 
 .a-left-hook {
+  block-size: 32px;
   border-block-start: 2px solid var(--surf-color-gray-800);
   border-inline-start: 2px solid var(--surf-color-gray-800);
-  height: rem(32px);
+  inline-size: 100%;
   margin: 0;
-  width: 100%;
 }
 
 .a-left-hook--with-heading {
-  margin-block-end: rem(32px);
-  @include bp-min(large) {
-    margin-block-end: rem(68px);
+  margin-block-end: 32px;
+
+  @include breakpoints.bp-min(small) {
+    margin-block-end: 40px;
   }
 }
+
+
 
 
 //------------------------------------

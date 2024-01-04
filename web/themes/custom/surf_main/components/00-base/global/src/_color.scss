@@ -56,10 +56,11 @@
 
 @mixin gradients() {
   :root {
-    --surf-gradient-hz-blue: linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
-    --surf-gradient-vt-blue:  linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-navy));
-    --surf-gradient-vt-multi: linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-teal), var(--surf-color-navy), var(--surf-color-black));
-    --surf-gradient-dg-white: linear-gradient(135deg, var(--surf-color-white), var(--surf-color-gray-200));
+    --surf-gradient-hz-blue:    linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 60%);
+    --surf-gradient-hz-blue-02: linear-gradient(90deg, var(--surf-color-blue), var(--surf-color-navy) 100%);
+    --surf-gradient-vt-blue:    linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-navy));
+    --surf-gradient-vt-multi:   linear-gradient(180deg, var(--surf-color-blue), var(--surf-color-teal), var(--surf-color-navy), var(--surf-color-black));
+    --surf-gradient-dg-white:   linear-gradient(135deg, var(--surf-color-white), var(--surf-color-gray-200));
   }
 }
 
