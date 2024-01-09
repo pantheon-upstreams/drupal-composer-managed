@@ -24,20 +24,8 @@
  */
 #}
 
-{% set classes = [
-  'term',
-  'term--' ~ term.bundle|clean_class,
-  view_mode ? 'term--' ~ view_mode|clean_class,
-  not term.isPublished() ? 'term--unpublished'
-] %}
+{% set rendered_content = content|without() %}
 
-{% if name and not page %}
-  <a href="/curriculum-modules?standard={{ term.id }}">{{ name|field_value }}</a>
-{% else %}
-  <h1>{{ name }}</h1>
-{% endif %}
+<a href="/curriculum-modules?standard={{ term.id }}">{{ name|field_value }}</a>
 
-{% block content %}
-  {{ content }}
-{% endblock %}
-
+{{ rendered_content }}

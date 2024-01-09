@@ -12,27 +12,11 @@
 #}
 
 {% set rendered_content = content|without(
+    'field_dates',
     'field_media_primary',
     'field_overview',
+    'field_ref_event_types',
 ) %}
-
-{% if content.field_ref_event_types %}
-    {% if node.field_ref_event_types.0.entity.getName() == 'Training' %}
-        {% set chip_color = 'gray'%}
-    {% endif %}
-
-    {% if node.field_ref_event_types.0.entity.getName() == 'Public' %}
-        {% set chip_color = 'navy'%}
-    {% endif %}
-
-    {% if node.field_ref_event_types.0.entity.getName() == 'Professional Development' %}
-        {% set chip_color = 'gold'%}
-    {% endif %}
-
-    {% if node.field_ref_event_types.0.entity.getName() == 'Board Meeting' %}
-        {% set chip_color = 'blue'%}
-    {% endif %}
-{% endif %}
 
 {% embed 'surf_main:teaser' with {
     attributes,
@@ -51,11 +35,7 @@
         <div class="m-teaser__content-suffix">
             {% if teaser_tag %}
                 <p class="m-teaser__tags">
-                    {% include 'surf_main:chip' with {
-                        chip_attributes: create_attribute({'class': 'a-chip--' ~ chip_color }),
-                        chip_text: teaser_tag,
-                        chip_size: 'small',
-                    } only %}
+                    {{ teaser_tag }}
                 </p>
             {% endif %}
 

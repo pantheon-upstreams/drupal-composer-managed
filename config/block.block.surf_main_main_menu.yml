@@ -22,4 +22,8 @@ settings:
   level: 1
   depth: 0
   expand_all_items: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/login\r\n/user/register\r\n/user/password"

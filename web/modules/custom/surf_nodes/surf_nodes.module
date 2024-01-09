@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * SURF Nodes - @file
+ * Contains update hooks and alterations to SURF, specific for nodes.
+ * - 01 - Imports
+ * - 02 - General
+ * - 03 - Preprocess
+ */
+
+
+/*------------------------------------*\
+  01 - Imports
+\*------------------------------------*/
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+
+
+/*------------------------------------*\
+  02 - General
+\*------------------------------------*/
+
+/**
+ * Help
+ * Simple default function to provide help text to editors and developers on the front end.
+ * - Implements hook_help().
+ * - @param $route_name
+ * - @param RouteMatchInterface $route_match
+ * - @return string|void
+ */
+function surf_nodes_improvements_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the surf_nodes module.
+    case 'help.page.surf_nodes':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('SURF Nodes') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  03 - Preprocess
+\*------------------------------------*/
+
+/**
+ * Person
+ * Implements template_preprocess_node()
+ * @param $variables
+ * @return void
+ */
+function surf_nodes_preprocess_node__person(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables['node'];
+
+  if ($node->hasField('field_name') && !$node->get('field_name')->isEmpty()) {
+    $person_name = $node->get('field_name')->getValue();
+    $person_name_first_initial = substr($person_name[0]['given'], 0, 1);
+    $person_name_last_initial = substr($person_name[0]['family'], 0, 1);
+    $variables['person_initials'] = $person_name_first_initial . $person_name_last_initial;
+  }
+}

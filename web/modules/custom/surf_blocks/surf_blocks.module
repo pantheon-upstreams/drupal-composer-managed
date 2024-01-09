@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * SURF Blocks - @file
+ * Contains update hooks and alterations to SURF, specific for Blocks.
+ * - 01 - Imports
+ * - 02 - General
+ * - 03 - Preprocess
+ */
+
+
+/*------------------------------------*\
+  01 - Imports
+\*------------------------------------*/
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+
+
+/*------------------------------------*\
+  02 - General
+\*------------------------------------*/
+
+/**
+ * Help
+ * Simple default function to provide help text to editors and developers on the front end.
+ * - Implements hook_help().
+ * - @param $route_name
+ * - @param RouteMatchInterface $route_match
+ * - @return string|void
+ */
+function surf_blocks_improvements_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the surf_blocks module.
+    case 'help.page.surf_blocks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('SURF Blocks') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  03 - Preprocess
+\*------------------------------------*/
+
+/**
+ * Block Preprocess
+ * Attempts to add or edit data on all Block entities.
+ * - Implements template_preprocess_block()
+ * - @param $variables
+ * - @return void
+ */
+function surf_blocks_preprocess_block(&$variables) {
+  if (!empty($variables['elements']['content']['#block_content'])) {
+    /** @var Block $block */
+    $block = $variables['elements']['content']['#block_content'];
+    $function = __FUNCTION__ . '_' . $block->bundle();
+
+    // Theme suggestions update
+    if (function_exists($function)) {
+      $function($variables);
+    }
+
+    // Block type
+    $variables['block_type'] = $block->bundle();
+  }
+}

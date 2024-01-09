@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * SURF Views - @file
+ * Contains update hooks and alterations to SURF, specific for Views.
+ * - 01 - Imports
+ * - 02 - General
+ * - 03 - Preprocess
+ */
+
+
+/*------------------------------------*\
+  01 - Imports
+\*------------------------------------*/
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+
+
+
+
+/*------------------------------------*\
+  02 - General
+\*------------------------------------*/
+
+/**
+ * Help
+ * Simple default function to provide help text to editors and developers on the front end.
+ * - Implements hook_help().
+ * - @param $route_name
+ * - @param RouteMatchInterface $route_match
+ * - @return string|void
+ */
+function surf_views_improvements_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the surf_views module.
+    case 'help.page.surf_views':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('SURF Views') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  03 - Preprocess
+\*------------------------------------*/
+
+/**
+ * Preprocess - Pre-View
+ * - Implements hook_views_pre_view().
+ * - @param \Drupal\views\ViewExecutable $view
+ * - @return void
+ */
+function surf_views_views_pre_view(ViewExecutable $view) {
+  // Lists out the Views IDs and related Display IDs needing functionality
+  $views_list = [
+    'events' => 'full',
+  ];
+
+  // Lists out the Filter Identifiers that are needing functionality
+  $filter_keys = [
+    'department',
+    'event_type',
+    'location',
+  ];
+
+  // When any filter from a list of View Displays is filled in, we no longer
+  // want to offset the results, which hides results. In these instances,
+  // we want to reset the offset to 0.
+  foreach ($views_list as $view_id => $display_id) {
+    if ($view->id() === $view_id && $view->current_display === $display_id) {
+      foreach ($filter_keys as $filter) {
+        $filter_result = \Drupal::request()->get($filter);
+
+        if (!empty($filter_result)) {
+          $view->setOffset(0);
+        }
+      }
+    }
+  }
+}

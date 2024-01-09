@@ -31,12 +31,15 @@ elements: |-
     '#middle__access': false
     '#suffix__access': false
     '#degree__access': false
+    '#required': true
   email:
     '#type': email
     '#title': Email
+    '#required': true
   number_requested:
     '#type': number
     '#title': 'Number requested'
+    '#required': true
 css: ''
 javascript: ''
 settings:
@@ -141,10 +144,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
+  confirmation_type: message
   confirmation_url: ''
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_title: 'Thank You For Your Event Registration!'
+  confirmation_message: '<p>Sanford Underground Research Facility would like to thank you for your Event registration! Feel free to go back to our list of <a href="/events">Events</a> or directly to our <a href="&lt;front&gt;">Home Page</a>.</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''

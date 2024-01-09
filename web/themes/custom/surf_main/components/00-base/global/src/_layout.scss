@@ -142,7 +142,8 @@
 //  07 - Layout
 //------------------------------------
 
-.l-main > .l-section {
+.l-main > .l-section,
+.l-main > .l-section .paragraph:not(:first-child) {
   margin-block-start: 32px;
 
   @include breakpoints.bp-min(medium) {

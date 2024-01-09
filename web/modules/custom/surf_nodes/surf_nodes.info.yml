@@ -1,0 +1,7 @@
+name: SURF - Nodes
+type: module
+description: 'Provides additional functionality and defaults for nodes.'
+package: SURF
+core_version_requirement: ^9.2 || ^10
+dependencies:
+  - drupal:node

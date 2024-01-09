@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Theme override to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: (optional) Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ */
+#}
+
+{% if content.field_ref_event_types %}
+    {% if term.getName() == 'Training' %}
+        {% set chip_color = 'gray'%}
+    {% endif %}
+
+    {% if term.getName() == 'Public' %}
+        {% set chip_color = 'navy'%}
+    {% endif %}
+
+    {% if term.getName() == 'Professional Development' %}
+        {% set chip_color = 'gold'%}
+    {% endif %}
+
+    {% if term.getName() == 'Board Meeting' %}
+        {% set chip_color = 'blue'%}
+    {% endif %}
+{% endif %}
+
+{% set rendered_content = content|without() %}
+
+<a href="/events?event_type={{ term.id }}">
+    {% include 'surf_main:chip' with {
+        chip_attributes: create_attribute({'class': 'a-chip--' ~ chip_color }),
+        chip_text: name|field_value,
+        chip_size: 'small',
+    } only %}
+</a>
+
+{{ rendered_content }}
+

@@ -2,10 +2,19 @@ uuid: d9551df2-099b-446a-8548-5b1909061cdb
 langcode: en
 status: true
 dependencies:
+  module:
+    - linkit
   enforced:
     module:
       - webform
 name: 'Webform (Default) - DO NOT EDIT'
 format: webform_default
 weight: 100
-filters: {  }
+filters:
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

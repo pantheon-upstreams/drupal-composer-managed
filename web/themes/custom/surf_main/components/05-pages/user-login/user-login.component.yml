@@ -1,0 +1,28 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: User Login
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    user_login_attributes:
+      title: Attributes
+      type: string
+    user_login_header:
+      title: Header
+      type: array
+    user_login_type:
+      title: Type
+      type: string
+      enum:
+        - login
+        - password
+        - register
+    user_login_links:
+      title: Links
+      type: array
+  slots:
+    user_login_content:
+      title: Content

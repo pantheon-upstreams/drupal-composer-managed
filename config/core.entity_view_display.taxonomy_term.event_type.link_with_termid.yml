@@ -1,0 +1,22 @@
+uuid: 84cb00a2-4d32-4cb5-8719-3ae70fbe6028
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.link_with_termid
+    - taxonomy.vocabulary.event_type
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.event_type.link_with_termid
+targetEntityType: taxonomy_term
+bundle: event_type
+mode: link_with_termid
+content: {  }
+hidden:
+  description: true
+  langcode: true
+  search_api_excerpt: true

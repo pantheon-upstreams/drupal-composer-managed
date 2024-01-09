@@ -89,7 +89,7 @@
 //------------------------------------
 
 .o-header.o-header--color {
-  padding-block: 24px;
+  padding-block: 32px 16px;
 
   @include breakpoints.bp-min(large) {
     padding-block: 48px;
@@ -153,16 +153,22 @@
 //------------------------------------
 
 .o-header.o-header--ripple {
+  padding-block: 32px 16px;
+
+  @include breakpoints.bp-min(xlarge) {
+    padding-block: 48px 0;
+  }
+
   &:after {
     @include breakpoints.bp-min(large) {
       @include layout.full-width();
       background: url('img/background-shapes-black.png') no-repeat center right;
       background-size: 450px 300px;
+      block-size: 300px;
       content: '';
-      height: 300px;
+      inset-block-start: 0;
       pointer-events: none;
       position: absolute;
-      top: -64px;
     }
   }
 }

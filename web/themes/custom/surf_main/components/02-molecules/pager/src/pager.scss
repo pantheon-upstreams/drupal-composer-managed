@@ -10,6 +10,7 @@
 //  01 - Imports
 //------------------------------------
 
+@use '../../../00-base/partials/breakpoints';
 @use '../../../00-base/partials/calculations';
 
 
@@ -24,10 +25,14 @@
     align-items: center;
     display: flex;
     flex-flow: wrap row;
-    margin-block: 68px 0;
+    margin-block: 32px 0;
     margin-inline: 0;
     padding-block: 0;
     padding-inline: 0;
+
+    @include breakpoints.bp-min(large) {
+      margin-block: 64px 0;
+    }
   }
 }
 

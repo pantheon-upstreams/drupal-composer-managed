@@ -39,3 +39,15 @@ views:
   css:
     component:
       components/03-organisms/view/view.css: { minified: true }
+
+
+
+
+#------------------------------------#
+# 04 - Misc
+#------------------------------------#
+
+status-messages:
+  css:
+    component:
+      components/02-molecules/messages/messages.css: { minified: true }

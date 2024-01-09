@@ -24,7 +24,7 @@ dependencies:
     - field.field.node.event.field_registration_required
     - node.type.event
   module:
-    - datetime_range
+    - smart_date
     - text
     - user
 id: node.event.teaser
@@ -33,12 +33,16 @@ bundle: event
 mode: teaser
 content:
   field_dates:
-    type: daterange_default
+    type: smartdate_default
     label: hidden
     settings:
       timezone_override: ''
-      format_type: teaser_date
-      separator: '-'
+      format_type: medium
+      format: compact
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      localize: false
     third_party_settings: {  }
     weight: 0
     region: content
@@ -60,9 +64,10 @@ content:
     weight: 3
     region: content
   field_ref_event_types:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
+      view_mode: link_with_termid
       link: false
     third_party_settings: {  }
     weight: 1

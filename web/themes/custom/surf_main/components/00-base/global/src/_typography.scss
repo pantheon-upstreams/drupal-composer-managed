@@ -109,7 +109,6 @@
       --surf-fs-18-24:          #{calculations.rem(24px)};
       --surf-fs-18-24-32:       #{calculations.rem(32px)};
       --surf-fs-18-24-32-40:    #{calculations.rem(32px)};
-      --surf-fs-18-24-40:       #{calculations.rem(40px)};
       --surf-fs-20-24-32:       #{calculations.rem(32px)};
       --surf-fs-30-32:          #{calculations.rem(32px)};
       --surf-fs-40-52-64:       #{calculations.rem(52px)};
@@ -121,6 +120,7 @@
     }
 
     @include breakpoints.bp-min(xlarge) {
+      --surf-fs-18-24-40:       #{calculations.rem(40px)};
       --surf-fs-18-24-32-40:    #{calculations.rem(40px)};
       --surf-fs-22-28-44:       #{calculations.rem(44px)};
       --surf-fs-24-32:          #{calculations.rem(32px)};

@@ -2,79 +2,12 @@
 /**
  * Theme Preprocess Functions
  *
- * - 01 - Imports
- * - 02 - Node
- * - 03 - Block
- * - 04 - Theme Suggestions
+ * - 01 - Theme Suggestions
  */
 
 
 /*------------------------------------*\
-  01 - Imports
-\*------------------------------------*/
-
-use Drupal\block\Entity\Block;
-
-
-
-
-/*------------------------------------*\
-  02 - Node
-\*------------------------------------*/
-
-/**
- * Person
- * Implements template_preprocess_node()
- * @param $variables
- * @return void
- */
-function surf_main_preprocess_node__person(&$variables) {
-  /** @var \Drupal\node\Entity\Node $node */
-  $node = $variables['node'];
-
-  if ($node->hasField('field_name') && !$node->get('field_name')->isEmpty()) {
-    $person_name = $node->get('field_name')->getValue();
-    $person_name_first_initial = substr($person_name[0]['given'], 0, 1);
-    $person_name_last_initial = substr($person_name[0]['family'], 0, 1);
-    $variables['person_initials'] = $person_name_first_initial . $person_name_last_initial;
-  }
-}
-
-
-
-
-/*------------------------------------*\
-  03 - Block
-\*------------------------------------*/
-
-/**
- * Block Preprocess
- * Attempts to add or edit data on all Block entities.
- * - Implements template_preprocess_block()
- * - @param $variables
- * - @return void
- */
-function surf_main_preprocess_block(&$variables) {
-  if (!empty($variables['elements']['content']['#block_content'])) {
-    /** @var Block $block */
-    $block = $variables['elements']['content']['#block_content'];
-    $function = __FUNCTION__ . '_' . $block->bundle();
-
-    // Theme suggestions update
-    if (function_exists($function)) {
-      $function($variables);
-    }
-
-    // Block type
-    $variables['block_type'] = $block->bundle();
-  }
-}
-
-
-
-
-/*------------------------------------*\
-  04 - Theme Suggestions
+  02 - Theme Suggestions
 \*------------------------------------*/
 
 /**

@@ -24,12 +24,14 @@
     'field_overview',
 ) %}
 
+{% set default_image = drupal_image('public://images/2024-01/default-thumbnail-image-surf.png', 'teaser_default', responsive=true) %}
+
 {% embed 'surf_main:teaser' with {
     attributes,
     rendered_content,
     teaser_attributes: create_attribute(),
     teaser_content: content.field_overview|field_value|default([]),
-    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_media: content.field_media_primary|field_value|default(default_image),
     teaser_date: content.field_date_published|field_value|default([]),
     teaser_title: label,
     teaser_title_tag: 'h3',

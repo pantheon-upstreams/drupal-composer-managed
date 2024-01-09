@@ -1,0 +1,5 @@
+name: SURF - Views
+type: module
+description: 'Provides additional functionality and defaults for views.'
+package: SURF
+core_version_requirement: ^9.2 || ^10

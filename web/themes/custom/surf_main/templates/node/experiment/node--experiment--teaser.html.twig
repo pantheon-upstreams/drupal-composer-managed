@@ -30,13 +30,15 @@
     'field_ref_research_areas',
 ) %}
 
+{% set default_image = drupal_image('public://images/2024-01/default-thumbnail-image-surf.png', 'teaser_default', responsive=true) %}
+
 {% embed 'surf_main:teaser' with {
     attributes,
     rendered_content,
     teaser_attributes: create_attribute({'class': 'm-teaser--experiment'}),
     teaser_content: content.field_overview|field_value|default([]),
     teaser_dates: experiment_dates,
-    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_media: content.field_media_primary|field_value|default(default_image),
     teaser_title: label,
     teaser_title_tag: 'h3',
     teaser_tags: content.field_ref_research_areas|field_value|default([]),

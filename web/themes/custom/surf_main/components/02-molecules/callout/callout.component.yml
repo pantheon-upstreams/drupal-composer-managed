@@ -39,6 +39,9 @@ props:
         - factoid
         - featured
         - gray
+        - gradient
+        - embed
+        - blue-cta
         - img-left
         - img-right
         - navy

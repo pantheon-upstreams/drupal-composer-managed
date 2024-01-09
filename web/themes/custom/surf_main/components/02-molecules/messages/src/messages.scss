@@ -23,11 +23,11 @@
     background-size: cover;
     content: '';
     display: block;
-    height: 28px;
-    left: var(--surf-grid-gap);
+    block-size: 28px;
+    inline-size: 28px;
+    inset-block-start: -2px;
+    inset-inline-start: var(--surf-grid-gap);
     position: absolute;
-    top: 0;
-    width: 28px;
   }
 
   .messages__type--status {

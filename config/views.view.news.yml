@@ -278,7 +278,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<p>There are no news articles that meet your search criteria. Please try again!</p>'
+            value: '<p>There are no News Articles that meet your search criteria. Please try again!</p>'
             format: basic_html
           tokenize: false
       filters:

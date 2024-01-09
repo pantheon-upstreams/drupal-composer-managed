@@ -8,8 +8,7 @@
 // - 05 - Body
 // - 06 - Links
 // - 07 - Images
-// - 08 - Forms
-// - 09 - Reduce Motion
+// - 08 - Reduce Motion
 //
 
 
@@ -108,21 +107,7 @@ picture {
 
 
 //------------------------------------
-//  08 - Forms
-//------------------------------------
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-
-
-
-//------------------------------------
-//  09 - Reduce Motion
+//  08 - Reduce Motion
 //------------------------------------
 
 @media (prefers-reduced-motion: reduce) {

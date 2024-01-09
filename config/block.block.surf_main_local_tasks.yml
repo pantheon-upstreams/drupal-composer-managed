@@ -2,6 +2,8 @@ uuid: 22d05b81-11f1-46c3-8c6d-41caeaba167f
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - surf_main
 _core:
@@ -19,4 +21,8 @@ settings:
   provider: core
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/user/login\r\n/user/register\r\n/user/password"

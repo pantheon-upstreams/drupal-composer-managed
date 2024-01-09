@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Page component for a User Login page.
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - user_login_attributes: [string]
+ * - user_login_header: [array]
+ * - user_login_type: [enum]
+ * - user_login_links: [array]
+ *
+ * Available slots:
+ * - user_login_content
+ */
+#}
+
+{% set classes = [
+    'p-user-login',
+    'p-user-login--' ~ user_login_type,
+] %}
+
+<article {{ user_login_attributes.addClass(classes).merge(attributes) }}>
+    <div class="p-user-login__container">
+        {% if user_login_header is not empty %}
+            <div class="p-user-login__header">
+                {{ user_login_header }}
+            </div>
+        {% endif %}
+
+        <div class="p-user-login__content">
+            {% block user_login_content %}{% endblock %}
+
+            <ul class="p-user-login__links">
+                {% for link in user_login_links %}
+                    <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</article>

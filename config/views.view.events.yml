@@ -456,7 +456,7 @@ display:
         type: full
         options:
           offset: 2
-          items_per_page: 0
+          items_per_page: 12
           total_pages: null
           id: 0
           tags:
@@ -759,15 +759,18 @@ display:
           admin_label: ''
           plugin_id: views_filters_summary
           empty: false
-          filters: {  }
+          filters:
+            field_department_target_id: field_department_target_id
+            field_location_title_target_id: field_location_title_target_id
+            field_ref_event_types_target_id: field_ref_event_types_target_id
           show_labels: false
           group_values: false
-          content: 'Showing @total @result_label @exposed_filter_summary'
+          content: '<p>Showing @start-@end of @total @result_label @exposed_filter_summary</p>'
           filters_summary_separator: ', '
           filters_summary_prefix: 'for '
           filters_result_label:
-            plural: results
-            singular: result
+            plural: events
+            singular: event
           show_remove_link: 0
           show_reset_link: 0
           filters_reset_link_title: Reset

@@ -104,11 +104,14 @@ module:
   state_machine: 0
   style_options: 0
   surf_admin: 0
+  surf_blocks: 0
   surf_core: 0
   surf_curriculum: 0
   surf_dashboard: 0
   surf_migrate: 0
+  surf_nodes: 0
   surf_registration: 0
+  surf_views: 0
   system: 0
   taxonomy: 0
   telephone: 0

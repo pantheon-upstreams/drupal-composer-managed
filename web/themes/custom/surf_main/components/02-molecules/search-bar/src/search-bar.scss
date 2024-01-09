@@ -122,18 +122,18 @@ $search-form-size: 300px;
 //------------------------------------
 
 .m-search-bar form {
-  .form__item,
-  .form__item input {
+  .m-form__field,
+  .m-form__field input {
     width: 100%;
   }
 
-  .form__item {
+  .m-form__field {
     flex-shrink: 0;
     margin: 0;
     position: relative;
   }
 
-  .form__item input {
+  .m-form__field input {
     background: none;
     border: solid 1px var(--surf-color-white);
     color: var(--surf-color-white);
@@ -151,7 +151,7 @@ $search-form-size: 300px;
     }
   }
 
-  .form-item input::placeholder {
+  .m-form__field input::placeholder {
     color: var(--surf-color-white);
     
     @include breakpoints.bp-min(large) {
@@ -161,12 +161,13 @@ $search-form-size: 300px;
 
   .button {
     background: svg-load('icon-search.svg', fill="#FFFFFF") no-repeat center;
+    background-color: transparent !important;
     bottom: 0;
     cursor: pointer;
     display: block;
     font: 0/0 transparent;
     height: 22px;
-    margin: auto;
+    margin: 0 auto;
     position: absolute;
     right: 16px;
     text-indent: -9999px;

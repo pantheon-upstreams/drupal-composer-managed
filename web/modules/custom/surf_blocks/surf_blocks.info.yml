@@ -1,0 +1,7 @@
+name: SURF - Blocks
+type: module
+description: 'Provides additional functionality and defaults for blocks.'
+package: SURF
+core_version_requirement: ^9.2 || ^10
+dependencies:
+  - drupal:block

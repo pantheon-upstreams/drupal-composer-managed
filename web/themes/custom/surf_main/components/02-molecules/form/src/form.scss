@@ -27,6 +27,18 @@
   @include breakpoints.bp-min(large) {
     padding-block: 80px;
   }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='date'],
+  input[type='email'],
+  input[type='number'] {
+    inline-size: 100%;
+  }
+
+  .m-form__field {
+    margin-block-end: 40px;
+  }
 }
 
 
@@ -36,7 +48,7 @@
 //  03 - Inline
 //------------------------------------
 
-.m-form.m-form--inline {
+.m-form.m-form--inline { // Modifier for exposed filter forms
   display: flex;
   flex-flow: nowrap column;
   gap: 20px;
@@ -84,6 +96,7 @@
     letter-spacing: calculations.rem(1.44px);
     line-height: var(--surf-lh-base);
     margin-block-end: 24px;
+    text-transform: uppercase;
 
     @include breakpoints.bp-min(large) {
       margin-block-end: 40px;
