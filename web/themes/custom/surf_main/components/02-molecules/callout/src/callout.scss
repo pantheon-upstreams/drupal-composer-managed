@@ -191,6 +191,7 @@
   }
 
   .m-callout__inner-wrapper {
+    gap: 32px;
     padding-block: 40px;
     padding-inline: var(--surf-grid-gap);
 
@@ -219,7 +220,7 @@
   }
 
   .m-callout__text {
-    font-size: var(--surf-fs-18-24);
+    font-size: var(--surf-fs-18-24-32);
     font-weight: var(--surf-fw-bold);
     z-index: 2;
   }

@@ -131,7 +131,9 @@ select {
   background: svg-load('icon-add.svg') no-repeat calc(100% - 10px) 10px;
   background-size: 28px;
   block-size: 48px;
+  border: solid 1px var(--surf-color-black);
   border-radius: 0;
+  box-shadow: none;
   color: var(--surf-color-gray-900);
   cursor: pointer;
   font-family: var(--surf-font-sans);

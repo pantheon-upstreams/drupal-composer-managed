@@ -199,16 +199,20 @@ ul.l-threecol {
 
 .l-onecol.l-onecol--listing {
   > *:not(:last-child) {
-    padding-block-end: 40px;
+    padding-block-end: 32px;
 
     @include breakpoints.bp-min(medium) {
-      padding-block-end: 96px;
+      padding-block-end: 40px;
     }
   }
 
   > *:not(:first-child) {
     border-top: solid 2px var(--surf-color-gray-800);
-    padding-block-start: 40px;
+    padding-block-start: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      padding-block-start: 40px;
+    }
   }
 }
 

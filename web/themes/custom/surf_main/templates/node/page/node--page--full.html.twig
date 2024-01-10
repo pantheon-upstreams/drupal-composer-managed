@@ -22,12 +22,16 @@
     'field_media_primary',
 ) %}
 
+{% set overview %}
+    <p>{{ content.field_overview|field_value|default([]) }}</p>
+{% endset %}
+
 {% include 'surf_main:page' with {
     attributes,
     rendered_content,
     page_attributes: create_attribute({'class': classes}),
     page_heading: label|field_value,
-    page_heading_summary: content.field_overview|field_value|default([]),
+    page_heading_summary: overview,
     page_cta_url: content.field_link|render ? content.field_link.0['#url'],
     page_cta_text: content.field_link|render ? content.field_link.0['#title'],
     page_media: content.field_media_primary|field_value|default([]),

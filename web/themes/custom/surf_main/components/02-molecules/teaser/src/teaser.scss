@@ -34,7 +34,7 @@
 .m-teaser {
   &:hover a,
   &:focus-within a {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 
   .m-teaser__media {
@@ -111,6 +111,7 @@
 //------------------------------------
 
 .m-teaser.m-teaser--super {
+  background-color: var(--surf-color-navy);
   color: var(--surf-color-white);
   overflow: hidden;
   position: relative;
@@ -192,7 +193,6 @@
   }
 
   .m-teaser__content {
-    background-color: var(--surf-color-navy);
     padding: 40px var(--surf-grid-gap);
     pointer-events: none;
     position: relative;
@@ -684,7 +684,7 @@
   .m-teaser__media {
     order: -1;
 
-    @include breakpoints.bp-min(xlarge) {
+    @include breakpoints.bp-min(small) {
       margin-inline: 0 56px;
     }
   }
@@ -694,7 +694,7 @@
   .m-teaser__media {
     order: 1;
 
-    @include breakpoints.bp-min(xlarge) {
+    @include breakpoints.bp-min(small) {
       margin-inline: 56px 0;
     }
   }
@@ -735,6 +735,28 @@
   .m-teaser__media {
     @include breakpoints.bp-min(small) {
       inline-size: 40%;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  10 - Search Result
+//------------------------------------
+
+.m-teaser.m-teaser--search-result {
+  .m-teaser__title {
+    font-size: var(--surf-fs-18-24-32) !important;
+  }
+}
+
+.l-onecol--listing > .l-onecol__region > .m-teaser.m-teaser--search-result:not(.m-teaser--super),
+.l-onecol--listing > .l-onecol__region > .paragraph--content-as-teaser > .m-teaser.m-teaser--search-result:not(.m-teaser--super) {
+  .m-teaser__media {
+    @include breakpoints.bp-min(small) {
+      inline-size: 50%;
     }
   }
 }

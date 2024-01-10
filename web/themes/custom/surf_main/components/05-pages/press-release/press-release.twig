@@ -22,24 +22,6 @@
     'p-press-release',
 ] %}
 
-{#{% set article_tags = [] %}#}
-
-{#{% if content.field_ref_research_areas|render %}#}
-{#    {% set article_tags = article_tags|merge(content.field_ref_research_areas|field_value) %}#}
-{#{% endif %}#}
-
-{#{% if content.field_ref_key_impact_areas|render %}#}
-{#    {% set article_tags = article_tags|merge(content.field_ref_key_impact_areas|field_value) %}#}
-{#{% endif %}#}
-
-{#{% if content.field_ref_eo_opportunities|render %}#}
-{#    {% set article_tags = article_tags|merge(content.field_ref_eo_opportunities|field_value) %}#}
-{#{% endif %}#}
-
-{#{% if content.field_ref_audiences|render %}#}
-{#    {% set article_tags = article_tags|merge(content.field_ref_audiences|field_value) %}#}
-{#{% endif %}#}
-
 <article {{ press_release_attributes.addClass(classes).merge(attributes) }}>
     <section class="p-press-release__header">
         <div class="container container--small">

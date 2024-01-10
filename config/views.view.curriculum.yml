@@ -170,7 +170,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: '<p>There are no Curriculum Modules at this time. Check back soon for more Curriculum Modules!</p>'
+          content: '<p>There are no Curriculum Modules matching your search. Please try again.</p>'
           tokenize: false
       sorts:
         created:

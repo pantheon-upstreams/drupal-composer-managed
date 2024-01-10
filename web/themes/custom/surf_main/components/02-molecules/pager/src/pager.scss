@@ -10,6 +10,7 @@
 //  01 - Imports
 //------------------------------------
 
+@use '../../../00-base/partials/animations';
 @use '../../../00-base/partials/breakpoints';
 @use '../../../00-base/partials/calculations';
 
@@ -51,6 +52,7 @@
     padding-block: 8px;
     padding-inline: 8px;
     text-decoration: none;
+    transition: animations.transition(all, 0.35s, easeInOutExpo);
 
     &.is-active,
     &:hover,

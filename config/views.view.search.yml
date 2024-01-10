@@ -158,7 +158,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: "<h3>No Results Found</h3>\r\n<p>Please try your search again for more results.</p>"
+          content: '<p>No Results Found. Please try your search again for more results.</p>'
           tokenize: false
       sorts:
         search_api_relevance:
@@ -319,7 +319,7 @@ display:
             search_api_fulltext: search_api_fulltext
           show_labels: false
           group_values: false
-          content: 'Showing @total results @exposed_filter_summary'
+          content: '<p>Showing @start-@end of @total @result_label @exposed_filter_summary</p>'
           filters_summary_separator: ', '
           filters_summary_prefix: 'for '
           filters_result_label:

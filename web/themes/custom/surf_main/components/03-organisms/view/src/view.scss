@@ -73,7 +73,8 @@
 
 // First post needing a border top
 .o-view--events.o-view--upcoming-events-two .l-onecol.l-onecol--listing,
-.o-view--events.o-view--full .l-onecol.l-onecol--listing {
+.o-view--events.o-view--full .l-onecol.l-onecol--listing,
+.o-view--search.o-view--full .l-onecol.l-onecol--listing {
   > *:first-child {
     border-top: solid 2px var(--surf-color-gray-800);
     padding-block-start: 40px;

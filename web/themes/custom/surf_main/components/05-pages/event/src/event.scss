@@ -38,8 +38,20 @@
     }
   }
 
+  .o-header .o-header__content {
+    gap: 12px;
+
+    @include breakpoints.bp-min(small) {
+      gap: 32px;
+    }
+  }
+
   .p-event__inner-wrapper {
-    margin-block-start: 48px;
+    margin-block-start: 32px;
+
+    @include breakpoints.bp-min(small) {
+      margin-block-start: 40px;
+    }
 
     @include breakpoints.bp-min(large) {
       margin-block-start: 64px;
@@ -47,9 +59,13 @@
   }
 
   .a-left-hook {
-    margin-block-end: 48px;
+    margin-block-end: 32px;
 
-    @include breakpoints.bp-min(xlarge) {
+    @include breakpoints.bp-min(small) {
+      margin-block-end: 40px;
+    }
+
+    @include breakpoints.bp-min(large) {
       inline-size: 65%;
       margin-block-start: 64px;
     }
