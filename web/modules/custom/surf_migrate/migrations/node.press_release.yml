@@ -12,12 +12,23 @@ source:
 process:
   nid: nid
   title: title
-  field_date_published/0/value:
+  _published_date:
     plugin: format_date
     from_format: 'Y-m-d\TH:i:s'
     to_format: 'Y-m-d'
     to_timezone: 'UTC'
     source: field_published_on/0/value
+  _created:
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'Y-m-d'
+    to_timezone: 'UTC'
+    source: created
+  field_date_published/0/value:
+    plugin: null_coalesce
+    source:
+      - '@_published_date'
+      - '@_created'
   field_p_content/target_id:
     - plugin: migration_lookup
       no_stub: true
