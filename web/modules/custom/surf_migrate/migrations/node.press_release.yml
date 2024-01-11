@@ -23,11 +23,13 @@ process:
     plugin: default_value
     default_value: 0
   _published_date:
-    plugin: format_date
-    from_format: 'Y-m-d\TH:i:s'
-    to_format: 'Y-m-d'
-    to_timezone: 'UTC'
-    source: field_published_on/0/value
+    - plugin: format_date
+      from_format: 'Y-m-d\TH:i:s'
+      to_format: 'Y-m-d'
+      to_timezone: 'UTC'
+      source: field_published_on/0/value
+    - plugin: skip_on_empty
+      method: process
   _created:
     plugin: format_date
     from_format: 'U'
