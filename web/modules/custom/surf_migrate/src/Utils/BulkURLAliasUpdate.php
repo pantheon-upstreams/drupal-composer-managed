@@ -10,8 +10,8 @@
  * API to continually count where the process is at.
  *
  * Commands
- * - Run Script: `drush scr web/modules/custom/surf_migrate/src/Utils/BulkURLAliasUpdate.php
- * - Reset State: `drush sset surf_migrate.last_nid 0
+ * - Run Script: `drush scr web/modules/custom/surf_migrate/src/Utils/BulkURLAliasUpdate.php`
+ * - Reset State: `drush sset surf_migrate.last_nid 0`
  *
  * Index
  * - 01 - Imports
