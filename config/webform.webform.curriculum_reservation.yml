@@ -17,7 +17,7 @@ categories: {  }
 elements: |-
   ref_curriculum_module:
     '#type': entity_autocomplete
-    '#title': 'Curriculum module'
+    '#title': 'Curriculum unit'
     '#disabled': true
     '#prepopulate': true
     '#default_value': '[current-page:url:unaliased:args:value:1]'

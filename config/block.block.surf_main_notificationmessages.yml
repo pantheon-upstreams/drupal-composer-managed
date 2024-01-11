@@ -1,0 +1,24 @@
+uuid: d72b745c-3f9c-47a8-98b9-d9382a3d0cfc
+langcode: en
+status: false
+dependencies:
+  module:
+    - notification_message
+  theme:
+    - surf_main
+id: surf_main_notificationmessages
+theme: surf_main
+region: site_alert
+weight: 0
+provider: null
+plugin: notification_message
+settings:
+  id: notification_message
+  label: 'Notification messages'
+  label_display: visible
+  provider: notification_message
+  notification_message:
+    type:
+      global: global
+    display_mode: default
+visibility: {  }

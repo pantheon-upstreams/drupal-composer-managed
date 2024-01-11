@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.contract
     - node.type.event
   module:
     - contextual
@@ -39,8 +40,10 @@ permissions:
   - 'edit own article content'
   - 'edit own event content'
   - 'notify of path changes'
+  - 'revert contract revisions'
   - 'schedule publishing of nodes'
   - 'view all revisions'
+  - 'view contract revisions'
   - 'view media'
   - 'view own unpublished content'
   - 'view scheduled content'

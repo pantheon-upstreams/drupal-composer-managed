@@ -145,6 +145,7 @@
       background: url('img/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
       background-size: 324px 324px;
       box-shadow: 4px 4px 24px 0 fade-out(black, 0.75);
+      margin-block-start: 20px;
       max-block-size: inherit;
       min-inline-size: 740px;
       padding: 32px;
