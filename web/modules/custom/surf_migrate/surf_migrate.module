@@ -4,3 +4,16 @@
  * @file
  * Primary module hooks for SURF Migrate module.
  */
+
+
+function surf_migrate_process_node_alias($nid, $bundle) {
+  $database = \Drupal\Core\Database\Database::getConnection('default', 'migrate');
+  $result = $database->select('path_alias', 'a')
+    ->fields('a', ['alias'])
+    ->condition('path', "/node/$nid")
+    ->orderBy('id', 'DESC')
+    ->range(0,1)
+    ->execute();
+  $alias_results = $result->fetchCol();
+  return !empty($alias_results) ? reset($alias_results) : NULL;
+}

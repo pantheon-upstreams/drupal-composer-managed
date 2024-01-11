@@ -12,6 +12,16 @@ source:
 process:
   nid: nid
   title: title
+  path/alias:
+    - plugin: callback
+      callable: surf_migrate_process_node_alias
+      unpack_source: true
+      source:
+        - nid
+        - type
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
   _published_date:
     plugin: format_date
     from_format: 'Y-m-d\TH:i:s'

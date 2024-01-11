@@ -12,6 +12,16 @@ source:
 process:
   nid: nid
   title: title
+  path/alias:
+    - plugin: callback
+      callable: surf_migrate_process_node_alias
+      unpack_source: true
+      source:
+        - nid
+        - type
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
   field_p_content/target_id:
     - plugin: migration_lookup
       no_stub: true
