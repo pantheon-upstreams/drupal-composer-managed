@@ -22,6 +22,12 @@ process:
   path/pathauto:
     plugin: default_value
     default_value: 0
+  field_date_published:
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'Y-m-d'
+    to_timezone: 'UTC'
+    source: created
   field_p_content/target_id:
     - plugin: migration_lookup
       no_stub: true
