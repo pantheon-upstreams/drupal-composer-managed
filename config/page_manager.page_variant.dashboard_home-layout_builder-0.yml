@@ -5,13 +5,14 @@ dependencies:
   config:
     - page_manager.page.dashboard_home
     - system.menu.dashboard
+    - views.view.events
     - views.view.news
-    - views.view.user_event_registrations
   module:
-    - layout_discovery
     - notification_message
     - system
     - views
+  theme:
+    - surf_main
 id: dashboard_home-layout_builder-0
 label: 'Layout builder'
 weight: 0
@@ -23,14 +24,14 @@ variant_settings:
   uuid: 09df4b40-380d-4b90-9250-17d86ce83dc5
   sections:
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
-        label: Navigation
+        label: 'Navigation Top'
         context_mapping: {  }
       components:
         fa5992c4-ef5b-47fb-b96c-d11c3753e113:
           uuid: fa5992c4-ef5b-47fb-b96c-d11c3753e113
-          region: content
+          region: first
           configuration:
             id: 'system_menu_block:dashboard'
             label: Dashboard
@@ -44,14 +45,14 @@ variant_settings:
           additional: {  }
       third_party_settings: {  }
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
         label: Announcements
         context_mapping: {  }
       components:
         6e8d1454-8e1e-4016-a706-26590da88e81:
           uuid: 6e8d1454-8e1e-4016-a706-26590da88e81
-          region: content
+          region: first
           configuration:
             id: notification_message
             label: Announcements
@@ -66,16 +67,16 @@ variant_settings:
           additional: {  }
       third_party_settings: {  }
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
-        label: Events
+        label: 'Upcoming Events'
         context_mapping: {  }
       components:
-        e890cd89-0e02-4ee0-a652-c68f8765ad60:
-          uuid: e890cd89-0e02-4ee0-a652-c68f8765ad60
-          region: content
+        0be01bd0-774c-480a-aff9-35045fd7f4ad:
+          uuid: 0be01bd0-774c-480a-aff9-35045fd7f4ad
+          region: first
           configuration:
-            id: 'views_block:user_event_registrations-dashboard_events_upcoming'
+            id: 'views_block:events-upcoming_events_dashboard'
             label: ''
             label_display: '0'
             provider: views
@@ -86,16 +87,16 @@ variant_settings:
           additional: {  }
       third_party_settings: {  }
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
         label: News
         context_mapping: {  }
       components:
-        23341480-3f3b-4f54-882b-4f5121663c91:
-          uuid: 23341480-3f3b-4f54-882b-4f5121663c91
-          region: content
+        c7485fa1-ad91-40b2-b55f-b5222cf18114:
+          uuid: c7485fa1-ad91-40b2-b55f-b5222cf18114
+          region: first
           configuration:
-            id: 'views_block:news-news_surf'
+            id: 'views_block:news-most_recent'
             label: ''
             label_display: '0'
             provider: views

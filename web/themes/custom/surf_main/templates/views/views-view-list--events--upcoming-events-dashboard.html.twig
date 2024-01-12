@@ -1,0 +1,14 @@
+{% embed 'surf_main:one-column' with {
+    layout_attributes: create_attribute(),
+    layout_items: rows,
+    layout_listing: layout_listing|default(true),
+    layout_html_wrapper: 'ul',
+} only %}
+    {% block layout_content %}
+        {% for item in layout_items %}
+            <li class="l-onecol__region">
+                {{ item.content }}
+            </li>
+        {% endfor %}
+    {% endblock %}
+{% endembed %}

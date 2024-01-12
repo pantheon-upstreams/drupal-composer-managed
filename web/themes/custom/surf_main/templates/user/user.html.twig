@@ -20,13 +20,22 @@
 #}
 
 {% set classes = [
-  'user-page',
-  'user-page__id--' ~ user.id,
+    'user-page',
+    'user-page__id--' ~ user.id,
 ] %}
 
 <article {{ attributes.addClass(classes) }}>
-  <div class="container container--xlarge">
-    <h1 class="user-page__name">{{ content.field_first_name|field_value }} {{ content.field_last_name|field_value }}</h1>
-    <p class="user-page__duration">{{- content.member_for['#markup']|striptags -}}</p>
-  </div>
+    <div class="container container--xlarge">
+        <h1 class="user-page__name">{{ content.field_first_name|field_value }} {{ content.field_last_name|field_value }}</h1>
+        <p class="user-page__duration">{{- content.member_for['#markup']|striptags -}}</p>
+        {% include 'surf_main:button' with {
+            button_attributes: create_attribute(),
+            button_color: 'navy',
+            button_html_tag: 'link',
+            button_size: 'large',
+            button_style: 'primary',
+            button_title: 'Visit Dashboard',
+            button_url: '/user/' ~ user.id ~ '/dashboard'
+        } only %}
+    </div>
 </article>

@@ -47,6 +47,7 @@ function surf_dashboard_theme($existing, $type, $theme, $path) {
         'page_id' => NULL,
         'page_title' => NULL,
         'user_display_name' => NULL,
+        'user_id' => NULL,
         'content' => [],
         'node_title' => NULL,
       ]

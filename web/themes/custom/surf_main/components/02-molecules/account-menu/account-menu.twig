@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Molecule component for Account Menu
+ *
+ * Available props:
+ * - attributes
+ * - menu_attributes
+ * - menu_content
+ * - menu_label_display
+ * - menu_title
+ *
+ * Available slots:
+ * - menu_prefix
+ *
+ */
+#}
+
+{% set classes = [
+    'm-menu',
+    'm-menu--account-menu',
+] %}
+
+{% set title_classes = [
+    'm-menu__title',
+    not menu_label_display ? 'visually-hidden',
+] %}
+
+<nav {{ menu_attributes.addClass(classes).merge(attributes) }} aria-label="Account Menu" role="navigation">
+    {% block menu_prefix %}{% endblock %}
+    {{ menu_content }}
+</nav>

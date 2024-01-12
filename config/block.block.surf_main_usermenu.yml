@@ -1,22 +1,22 @@
-uuid: 9d9e67cf-49c5-4e5b-8536-b6698748bfc6
+uuid: 8e32b9df-040b-456c-9afe-539ddcee8818
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.utility-nav
+    - system.menu.account
   module:
     - system
   theme:
     - surf_main
-id: surf_main_utility_nav
+id: surf_main_usermenu
 theme: surf_main
 region: header_utility
-weight: -7
+weight: -6
 provider: null
-plugin: 'system_menu_block:utility-nav'
+plugin: 'system_menu_block:account'
 settings:
-  id: 'system_menu_block:utility-nav'
-  label: 'Utility Nav'
+  id: 'system_menu_block:account'
+  label: 'User menu'
   label_display: '0'
   provider: system
   level: 1

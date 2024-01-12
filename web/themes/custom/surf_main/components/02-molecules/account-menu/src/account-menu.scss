@@ -1,0 +1,114 @@
+//
+// Navigation - Account Menu
+//
+// - 01 - Imports
+// - 02 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/links';
+@use '../../../00-base/partials/lists';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-menu.m-menu--account-menu {
+  display: none; // FUOC Fix
+
+  ul {
+    @include lists.list-reset();
+  }
+}
+
+// FUOC Fix
+.js .m-menu.m-menu--account-menu {
+  display: block;
+}
+
+
+
+
+//------------------------------------
+//  03 - Level One
+//------------------------------------
+
+.m-menu.m-menu--account-menu .m-menu__list.m-menu__level--1 {
+  display: flex;
+  flex-flow: nowrap column;
+  margin: 0;
+
+  @include breakpoints.bp-min(large) {
+    flex-flow: nowrap row;
+  }
+
+  > li {
+    @include breakpoints.bp-min(large) {
+      padding: 0 18px;
+    }
+  }
+
+  > li > a,
+  > li > button,
+  > li > span {
+    @include links.menu(22px, white, white);
+    display: block;
+    padding: 8px 16px;
+
+    @include breakpoints.bp-min(large) {
+      padding: 4px 0;
+    }
+  }
+
+  > li > a:after,
+  > li > button:after,
+  > li > span:after {
+    @include breakpoints.bp-max(xxlarge) {
+      display: none;
+    }
+  }
+
+  > li:last-child > a,
+  > li:last-child > button,
+  > li:last-child > span {
+    padding-inline-start: 48px;
+
+    @include breakpoints.bp-min(large) {
+      padding-inline-start: 0;
+      padding-inline-end: 25px;
+    }
+  }
+
+  > li:last-child > a:before,
+  > li:last-child > button:before,
+  > li:last-child > span:before {
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 22px;
+    margin: auto;
+    left: 16px;
+    position: absolute;
+    top: 0;
+    width: 22px;
+
+    @include breakpoints.bp-min(large) {
+      left: initial;
+      right: 0;
+    }
+  }
+
+  > li:last-child > a:before,
+  > li:last-child > button:before,
+  > li:last-child > span:before {
+    background: svg-load('icon-user.svg', fill="#FFFFFF") no-repeat center;
+  }
+}

@@ -99,6 +99,12 @@
 
   li.m-breadcrumbs__item:first-child a.m-breadcrumbs__link {
     padding-inline-start: 32px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
 
     &:before {
       background: svg-load('icon-arrow-left.svg', fill='#000080') no-repeat center;
@@ -120,5 +126,18 @@
       background: svg-load('icon-arrow-left.svg', fill='#000000') no-repeat center;
       transform: translateX(-4px);
     }
+  }
+}
+
+// Contexts
+.p-dashboard .m-breadcrumbs.m-breadcrumbs--single-back {
+  margin-bottom: -32px;
+  margin-top: 40px;
+  padding-bottom: 0;
+  position: relative;
+  z-index: var(--surf-zindex-top);
+
+  @include bp-min(large) {
+    margin-top: 64px;
   }
 }

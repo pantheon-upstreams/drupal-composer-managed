@@ -6,6 +6,7 @@
  * Available variables
  * - content: Main render variable with page manager regions
  * - user_display_name: The first and last name, (or username) of the current user
+ * - user_id: ID of user
  * - page_id: The ID for the current page manager page
  * - page_title: The label for the page manager page entity (only editable in config)
  * - node_title: The node title if viewing a details page for an event or curriculum module
@@ -17,27 +18,158 @@
  */
 #}
 
-{% if content.header %}
-  {{ content.header }}
-{% endif %}
-
 {% set page_title = (page_id == 'dashboard_home' ? user_display_name : page_title) %}
 
-{% if node_title is empty %}
-  <div class="container container--xlarge">
-    {% embed 'surf_main:header' with {
-      rendered_content,
-      header_attributes: create_attribute(),
-      heading_attributes: create_attribute({'class': 'o-header__heading a-heading'}),
-      header_heading: page_title,
-      header_heading_level: '1',
-      header_type: style_options['header_type']|default('ripple'),
-    } only %}
-      {% block header_links_block %}
-        {{ drupal_breadcrumb() }}
-      {% endblock %}
-    {% endembed %}
-  </div>
-{% endif %}
+{% set rendered_content = content|without(
+    'announcements',
+    'upcoming_events',
+    'my_attended_events',
+    'my_upcoming_events',
+    'my_curriculum',
+    'navigation_bottom',
+    'navigation_top',
+    'news',
+) %}
 
-{{ content|without('header') }}
+{% set classes = [
+    'p-dashboard'
+] %}
+
+{% set dashboard_breadbrumb = [
+    {
+        url: '/user/' ~ user_id ~ '/dashboard',
+        text: 'Back to Dashboard'|t,
+    }
+] %}
+
+<article {{ attributes.addClass(classes) }}>
+    <section class="p-dashboard__hero">
+        <div class="container container--xlarge">
+            {% if page_id != 'dashboard_home' %}
+                {% include 'surf_main:breadcrumbs' with {
+                    breadcrumbs_attributes: create_attribute(),
+                    breadcrumbs_label: 'Back to dashboard',
+                    breadcrumbs_navigation: dashboard_breadbrumb,
+                    breadcrumbs_type: 'single-back',
+                }%}
+            {% endif %}
+
+            {% include 'surf_main:header' with {
+                rendered_content,
+                header_attributes: create_attribute(),
+                heading_attributes: create_attribute({'class': 'o-header__heading a-heading'}),
+                header_heading: page_title,
+                header_heading_level: '1',
+                header_type: style_options['header_type']|default('ripple'),
+            } only %}
+        </div>
+    </section>
+
+    <div class="p-dashboard__content">
+        {% if content.navigation_top %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {{ content.navigation_top }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.announcements %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute(),
+                        heading_text: 'ANNOUNCEMENTS',
+                        heading_level: '2',
+                        heading_type: 'lg',
+                        heading_rule: 'true',
+                    } only %}
+
+                    {{ content.announcements }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.upcoming_events %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute(),
+                        heading_text: 'UPCOMING EVENTS',
+                        heading_level: '2',
+                        heading_type: 'lg',
+                        heading_rule: 'true',
+                    } only %}
+
+                    {{ content.upcoming_events }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.my_upcoming_events %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute(),
+                        heading_text: 'MY UPCOMING EVENTS',
+                        heading_level: '2',
+                        heading_type: 'lg',
+                        heading_rule: 'true',
+                    } only %}
+
+                    {{ content.my_upcoming_events }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.my_attended_events %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute(),
+                        heading_text: 'MY ATTENDED EVENTS',
+                        heading_level: '2',
+                        heading_type: 'lg',
+                        heading_rule: 'true',
+                    } only %}
+
+                    {{ content.my_attended_events }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.news %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {% include 'surf_main:heading' with {
+                        heading_attributes: create_attribute(),
+                        heading_text: 'NEWS',
+                        heading_level: '2',
+                        heading_type: 'lg',
+                        heading_rule: 'true',
+                    } only %}
+
+                    {{ content.news }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.my_curriculum %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {{ content.my_curriculum }}
+                </div>
+            </section>
+        {% endif %}
+
+        {% if content.navigation_bottom %}
+            <section class="l-section">
+                <div class="container container--xlarge">
+                    {{ content.navigation_bottom }}
+                </div>
+            </section>
+        {% endif %}
+
+        {{ rendered_content }}
+    </div>
+</article>

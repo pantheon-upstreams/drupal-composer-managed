@@ -9,6 +9,8 @@ dependencies:
     - ctools
     - layout_discovery
     - system
+  theme:
+    - surf_main
 id: dashboard_curriculum_units-layout_builder-1
 label: Details
 weight: 0
@@ -40,14 +42,14 @@ variant_settings:
           additional: {  }
       third_party_settings: {  }
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
-        label: 'Dashboard Menu'
+        label: 'Navigation Bottom'
         context_mapping: {  }
       components:
         1fa687ce-67b0-4078-ac58-17faa4b6da78:
           uuid: 1fa687ce-67b0-4078-ac58-17faa4b6da78
-          region: content
+          region: first
           configuration:
             id: 'system_menu_block:dashboard'
             label: Dashboard

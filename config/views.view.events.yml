@@ -8,6 +8,9 @@ dependencies:
     - taxonomy.vocabulary.department
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.location
+  content:
+    - 'taxonomy_term:event_type:1940ce8d-d348-4286-b56e-3e88b81ab08a'
+    - 'taxonomy_term:event_type:90207067-376c-4b72-9421-8fb19574622a'
   module:
     - better_exposed_filters
     - datetime
@@ -98,7 +101,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 2
+          items_per_page: 3
       exposed_form:
         type: bef
         options:
@@ -794,6 +797,21 @@ display:
     position: 2
     display_options:
       title: 'Upcoming Events at SURF'
+      sorts:
+        field_dates_value:
+          id: field_dates_value
+          table: node__field_dates
+          field: field_dates_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: datetime
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       filters:
         status:
           id: status
@@ -866,12 +884,60 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_ref_event_types_target_id:
+          id: field_ref_event_types_target_id
+          table: node__field_ref_event_types
+          field: field_ref_event_types_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            310: 310
+            151: 151
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_type
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
           1: AND
       defaults:
         title: false
+        sorts: false
         filters: false
         filter_groups: false
       display_description: ''
@@ -882,6 +948,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

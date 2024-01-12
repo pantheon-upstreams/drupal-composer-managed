@@ -627,6 +627,10 @@
   .m-teaser__content-text {
     margin-block-start: calculations.rem(12px);
   }
+
+  + .status-description {
+    margin-block-start: -40px;
+  }
 }
 
 

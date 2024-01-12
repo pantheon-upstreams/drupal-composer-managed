@@ -1,0 +1,19 @@
+uuid: 3c09d75a-02be-4b49-b0f2-38bf1abf5e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+id: menu_link_content.account.default
+targetEntityType: menu_link_content
+bundle: account
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

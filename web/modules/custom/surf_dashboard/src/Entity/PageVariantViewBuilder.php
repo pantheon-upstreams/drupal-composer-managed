@@ -25,6 +25,7 @@ class PageVariantViewBuilder extends PageManagerPageVariantViewBuilder {
       $user_context = $contexts['user'];
       $user = $user_context->getContextData()->getValue();
       $build['#user_display_name'] = $user->getDisplayName();
+      $build['#user_id'] = $user->get('uid')->value;
     }
   }
 

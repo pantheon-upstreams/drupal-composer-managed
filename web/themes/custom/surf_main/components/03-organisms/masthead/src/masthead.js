@@ -93,14 +93,19 @@ Drupal.behaviors.surfMasthead = {
     const mastheadFlyoutContent = once('surf-masthead-destination', context.querySelector('.o-masthead__flyout-content'));
     const mastheadMoveElements = [
       {
+        'id': 'surf-move-mobile-02',
+        'class': '.m-menu--primary-menu',
+        'breakpoint': 1400,
+      },
+      {
         'id': 'surf-move-mobile-01',
         'class': '.m-search-bar',
         'breakpoint': 992,
       },
       {
-        'id': 'surf-move-mobile-02',
-        'class': '.m-menu--primary-menu',
-        'breakpoint': 1400,
+        'id': 'surf-move-mobile-04',
+        'class': '.m-menu--account-menu',
+        'breakpoint': 992,
       },
       {
         'id': 'surf-move-mobile-03',

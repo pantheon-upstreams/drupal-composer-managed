@@ -108,7 +108,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: 'There are no events'
+            value: 'There are no events that you are currently registered for.'
             format: basic_html
           tokenize: false
       sorts:
@@ -292,42 +292,101 @@ display:
         - url
       tags:
         - 'config:core.entity_view_display.node.article.default'
+        - 'config:core.entity_view_display.node.article.full'
         - 'config:core.entity_view_display.node.article.rss'
+        - 'config:core.entity_view_display.node.article.search_index'
+        - 'config:core.entity_view_display.node.article.search_result'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.article.teaser_super'
         - 'config:core.entity_view_display.node.contract.default'
+        - 'config:core.entity_view_display.node.contract.full'
         - 'config:core.entity_view_display.node.contract.teaser'
+        - 'config:core.entity_view_display.node.contract.teaser_super'
         - 'config:core.entity_view_display.node.curriculum_module.default'
+        - 'config:core.entity_view_display.node.curriculum_module.full'
         - 'config:core.entity_view_display.node.curriculum_module.full_dashboard'
+        - 'config:core.entity_view_display.node.curriculum_module.search_index'
+        - 'config:core.entity_view_display.node.curriculum_module.search_result'
         - 'config:core.entity_view_display.node.curriculum_module.teaser'
         - 'config:core.entity_view_display.node.curriculum_module.teaser_dashboard'
-        - 'config:core.entity_view_display.node.esh_standard.default'
-        - 'config:core.entity_view_display.node.esh_standard.teaser'
         - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.full'
+        - 'config:core.entity_view_display.node.event.search_index'
+        - 'config:core.entity_view_display.node.event.search_result'
         - 'config:core.entity_view_display.node.event.teaser'
-        - 'config:core.entity_view_display.node.experiment_research.default'
-        - 'config:core.entity_view_display.node.experiment_research.teaser'
+        - 'config:core.entity_view_display.node.experiment.default'
+        - 'config:core.entity_view_display.node.experiment.full'
+        - 'config:core.entity_view_display.node.experiment.search_index'
+        - 'config:core.entity_view_display.node.experiment.search_result'
+        - 'config:core.entity_view_display.node.experiment.teaser'
+        - 'config:core.entity_view_display.node.experiment.teaser_two_column'
+        - 'config:core.entity_view_display.node.feature.default'
+        - 'config:core.entity_view_display.node.feature.full'
+        - 'config:core.entity_view_display.node.feature.search_index'
+        - 'config:core.entity_view_display.node.feature.search_result'
+        - 'config:core.entity_view_display.node.feature.teaser'
         - 'config:core.entity_view_display.node.job_posting.default'
+        - 'config:core.entity_view_display.node.job_posting.full'
         - 'config:core.entity_view_display.node.job_posting.teaser'
         - 'config:core.entity_view_display.node.landing.default'
+        - 'config:core.entity_view_display.node.landing.full'
+        - 'config:core.entity_view_display.node.landing.search_index'
+        - 'config:core.entity_view_display.node.landing.search_result'
         - 'config:core.entity_view_display.node.landing.teaser'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.full'
+        - 'config:core.entity_view_display.node.page.search_index'
+        - 'config:core.entity_view_display.node.page.search_result'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.teaser_super'
         - 'config:core.entity_view_display.node.person.default'
+        - 'config:core.entity_view_display.node.person.full'
         - 'config:core.entity_view_display.node.person.teaser'
         - 'config:core.entity_view_display.node.press_release.default'
+        - 'config:core.entity_view_display.node.press_release.full'
+        - 'config:core.entity_view_display.node.press_release.search_index'
+        - 'config:core.entity_view_display.node.press_release.search_result'
         - 'config:core.entity_view_display.node.press_release.teaser'
         - 'config:core.entity_view_display.node.professional_development.default'
+        - 'config:core.entity_view_display.node.professional_development.full'
+        - 'config:core.entity_view_display.node.professional_development.search_index'
+        - 'config:core.entity_view_display.node.professional_development.search_result'
         - 'config:core.entity_view_display.node.professional_development.teaser'
         - 'config:core.entity_view_display.node.report_publication.default'
+        - 'config:core.entity_view_display.node.report_publication.full'
+        - 'config:core.entity_view_display.node.report_publication.search_index'
+        - 'config:core.entity_view_display.node.report_publication.search_result'
         - 'config:core.entity_view_display.node.report_publication.teaser'
         - 'config:core.entity_view_display.node.school_presentation.default'
+        - 'config:core.entity_view_display.node.school_presentation.full'
+        - 'config:core.entity_view_display.node.school_presentation.search_index'
+        - 'config:core.entity_view_display.node.school_presentation.search_result'
         - 'config:core.entity_view_display.node.school_presentation.teaser'
+        - 'config:core.entity_view_display.node.standard.default'
+        - 'config:core.entity_view_display.node.standard.full'
+        - 'config:core.entity_view_display.node.standard.search_index'
+        - 'config:core.entity_view_display.node.standard.search_result'
+        - 'config:core.entity_view_display.node.standard.teaser'
   dashboard_events_attended:
     id: dashboard_events_attended
     display_title: 'Dashboard -> Attended'
     display_plugin: block
     position: 2
     display_options:
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'There are no events that you have attended.'
+            format: basic_html
+          tokenize: false
       sorts:
         field_dates_value:
           id: field_dates_value
@@ -429,6 +488,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         sorts: false
         filters: false
         filter_groups: false
@@ -441,42 +501,101 @@ display:
         - url
       tags:
         - 'config:core.entity_view_display.node.article.default'
+        - 'config:core.entity_view_display.node.article.full'
         - 'config:core.entity_view_display.node.article.rss'
+        - 'config:core.entity_view_display.node.article.search_index'
+        - 'config:core.entity_view_display.node.article.search_result'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.article.teaser_super'
         - 'config:core.entity_view_display.node.contract.default'
+        - 'config:core.entity_view_display.node.contract.full'
         - 'config:core.entity_view_display.node.contract.teaser'
+        - 'config:core.entity_view_display.node.contract.teaser_super'
         - 'config:core.entity_view_display.node.curriculum_module.default'
+        - 'config:core.entity_view_display.node.curriculum_module.full'
         - 'config:core.entity_view_display.node.curriculum_module.full_dashboard'
+        - 'config:core.entity_view_display.node.curriculum_module.search_index'
+        - 'config:core.entity_view_display.node.curriculum_module.search_result'
         - 'config:core.entity_view_display.node.curriculum_module.teaser'
         - 'config:core.entity_view_display.node.curriculum_module.teaser_dashboard'
-        - 'config:core.entity_view_display.node.esh_standard.default'
-        - 'config:core.entity_view_display.node.esh_standard.teaser'
         - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.full'
+        - 'config:core.entity_view_display.node.event.search_index'
+        - 'config:core.entity_view_display.node.event.search_result'
         - 'config:core.entity_view_display.node.event.teaser'
-        - 'config:core.entity_view_display.node.experiment_research.default'
-        - 'config:core.entity_view_display.node.experiment_research.teaser'
+        - 'config:core.entity_view_display.node.experiment.default'
+        - 'config:core.entity_view_display.node.experiment.full'
+        - 'config:core.entity_view_display.node.experiment.search_index'
+        - 'config:core.entity_view_display.node.experiment.search_result'
+        - 'config:core.entity_view_display.node.experiment.teaser'
+        - 'config:core.entity_view_display.node.experiment.teaser_two_column'
+        - 'config:core.entity_view_display.node.feature.default'
+        - 'config:core.entity_view_display.node.feature.full'
+        - 'config:core.entity_view_display.node.feature.search_index'
+        - 'config:core.entity_view_display.node.feature.search_result'
+        - 'config:core.entity_view_display.node.feature.teaser'
         - 'config:core.entity_view_display.node.job_posting.default'
+        - 'config:core.entity_view_display.node.job_posting.full'
         - 'config:core.entity_view_display.node.job_posting.teaser'
         - 'config:core.entity_view_display.node.landing.default'
+        - 'config:core.entity_view_display.node.landing.full'
+        - 'config:core.entity_view_display.node.landing.search_index'
+        - 'config:core.entity_view_display.node.landing.search_result'
         - 'config:core.entity_view_display.node.landing.teaser'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.full'
+        - 'config:core.entity_view_display.node.page.search_index'
+        - 'config:core.entity_view_display.node.page.search_result'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.teaser_super'
         - 'config:core.entity_view_display.node.person.default'
+        - 'config:core.entity_view_display.node.person.full'
         - 'config:core.entity_view_display.node.person.teaser'
         - 'config:core.entity_view_display.node.press_release.default'
+        - 'config:core.entity_view_display.node.press_release.full'
+        - 'config:core.entity_view_display.node.press_release.search_index'
+        - 'config:core.entity_view_display.node.press_release.search_result'
         - 'config:core.entity_view_display.node.press_release.teaser'
         - 'config:core.entity_view_display.node.professional_development.default'
+        - 'config:core.entity_view_display.node.professional_development.full'
+        - 'config:core.entity_view_display.node.professional_development.search_index'
+        - 'config:core.entity_view_display.node.professional_development.search_result'
         - 'config:core.entity_view_display.node.professional_development.teaser'
         - 'config:core.entity_view_display.node.report_publication.default'
+        - 'config:core.entity_view_display.node.report_publication.full'
+        - 'config:core.entity_view_display.node.report_publication.search_index'
+        - 'config:core.entity_view_display.node.report_publication.search_result'
         - 'config:core.entity_view_display.node.report_publication.teaser'
         - 'config:core.entity_view_display.node.school_presentation.default'
+        - 'config:core.entity_view_display.node.school_presentation.full'
+        - 'config:core.entity_view_display.node.school_presentation.search_index'
+        - 'config:core.entity_view_display.node.school_presentation.search_result'
         - 'config:core.entity_view_display.node.school_presentation.teaser'
+        - 'config:core.entity_view_display.node.standard.default'
+        - 'config:core.entity_view_display.node.standard.full'
+        - 'config:core.entity_view_display.node.standard.search_index'
+        - 'config:core.entity_view_display.node.standard.search_result'
+        - 'config:core.entity_view_display.node.standard.teaser'
   dashboard_events_upcoming:
     id: dashboard_events_upcoming
     display_title: 'Dashboard -> Upcoming'
     display_plugin: block
     position: 1
     display_options:
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'There are no events that you are currently registered for.'
+            format: basic_html
+          tokenize: false
       sorts:
         field_dates_value:
           id: field_dates_value
@@ -493,6 +612,7 @@ display:
           exposed: false
           granularity: second
       defaults:
+        empty: false
         sorts: false
       display_description: ''
       display_extenders: {  }
@@ -503,33 +623,78 @@ display:
         - url
       tags:
         - 'config:core.entity_view_display.node.article.default'
+        - 'config:core.entity_view_display.node.article.full'
         - 'config:core.entity_view_display.node.article.rss'
+        - 'config:core.entity_view_display.node.article.search_index'
+        - 'config:core.entity_view_display.node.article.search_result'
         - 'config:core.entity_view_display.node.article.teaser'
+        - 'config:core.entity_view_display.node.article.teaser_super'
         - 'config:core.entity_view_display.node.contract.default'
+        - 'config:core.entity_view_display.node.contract.full'
         - 'config:core.entity_view_display.node.contract.teaser'
+        - 'config:core.entity_view_display.node.contract.teaser_super'
         - 'config:core.entity_view_display.node.curriculum_module.default'
+        - 'config:core.entity_view_display.node.curriculum_module.full'
         - 'config:core.entity_view_display.node.curriculum_module.full_dashboard'
+        - 'config:core.entity_view_display.node.curriculum_module.search_index'
+        - 'config:core.entity_view_display.node.curriculum_module.search_result'
         - 'config:core.entity_view_display.node.curriculum_module.teaser'
         - 'config:core.entity_view_display.node.curriculum_module.teaser_dashboard'
-        - 'config:core.entity_view_display.node.esh_standard.default'
-        - 'config:core.entity_view_display.node.esh_standard.teaser'
         - 'config:core.entity_view_display.node.event.default'
+        - 'config:core.entity_view_display.node.event.full'
+        - 'config:core.entity_view_display.node.event.search_index'
+        - 'config:core.entity_view_display.node.event.search_result'
         - 'config:core.entity_view_display.node.event.teaser'
-        - 'config:core.entity_view_display.node.experiment_research.default'
-        - 'config:core.entity_view_display.node.experiment_research.teaser'
+        - 'config:core.entity_view_display.node.experiment.default'
+        - 'config:core.entity_view_display.node.experiment.full'
+        - 'config:core.entity_view_display.node.experiment.search_index'
+        - 'config:core.entity_view_display.node.experiment.search_result'
+        - 'config:core.entity_view_display.node.experiment.teaser'
+        - 'config:core.entity_view_display.node.experiment.teaser_two_column'
+        - 'config:core.entity_view_display.node.feature.default'
+        - 'config:core.entity_view_display.node.feature.full'
+        - 'config:core.entity_view_display.node.feature.search_index'
+        - 'config:core.entity_view_display.node.feature.search_result'
+        - 'config:core.entity_view_display.node.feature.teaser'
         - 'config:core.entity_view_display.node.job_posting.default'
+        - 'config:core.entity_view_display.node.job_posting.full'
         - 'config:core.entity_view_display.node.job_posting.teaser'
         - 'config:core.entity_view_display.node.landing.default'
+        - 'config:core.entity_view_display.node.landing.full'
+        - 'config:core.entity_view_display.node.landing.search_index'
+        - 'config:core.entity_view_display.node.landing.search_result'
         - 'config:core.entity_view_display.node.landing.teaser'
         - 'config:core.entity_view_display.node.page.default'
+        - 'config:core.entity_view_display.node.page.full'
+        - 'config:core.entity_view_display.node.page.search_index'
+        - 'config:core.entity_view_display.node.page.search_result'
         - 'config:core.entity_view_display.node.page.teaser'
+        - 'config:core.entity_view_display.node.page.teaser_super'
         - 'config:core.entity_view_display.node.person.default'
+        - 'config:core.entity_view_display.node.person.full'
         - 'config:core.entity_view_display.node.person.teaser'
         - 'config:core.entity_view_display.node.press_release.default'
+        - 'config:core.entity_view_display.node.press_release.full'
+        - 'config:core.entity_view_display.node.press_release.search_index'
+        - 'config:core.entity_view_display.node.press_release.search_result'
         - 'config:core.entity_view_display.node.press_release.teaser'
         - 'config:core.entity_view_display.node.professional_development.default'
+        - 'config:core.entity_view_display.node.professional_development.full'
+        - 'config:core.entity_view_display.node.professional_development.search_index'
+        - 'config:core.entity_view_display.node.professional_development.search_result'
         - 'config:core.entity_view_display.node.professional_development.teaser'
         - 'config:core.entity_view_display.node.report_publication.default'
+        - 'config:core.entity_view_display.node.report_publication.full'
+        - 'config:core.entity_view_display.node.report_publication.search_index'
+        - 'config:core.entity_view_display.node.report_publication.search_result'
         - 'config:core.entity_view_display.node.report_publication.teaser'
         - 'config:core.entity_view_display.node.school_presentation.default'
+        - 'config:core.entity_view_display.node.school_presentation.full'
+        - 'config:core.entity_view_display.node.school_presentation.search_index'
+        - 'config:core.entity_view_display.node.school_presentation.search_result'
         - 'config:core.entity_view_display.node.school_presentation.teaser'
+        - 'config:core.entity_view_display.node.standard.default'
+        - 'config:core.entity_view_display.node.standard.full'
+        - 'config:core.entity_view_display.node.standard.search_index'
+        - 'config:core.entity_view_display.node.standard.search_result'
+        - 'config:core.entity_view_display.node.standard.teaser'

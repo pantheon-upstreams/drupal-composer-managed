@@ -7,9 +7,10 @@ dependencies:
     - system.menu.dashboard
     - views.view.user_download_requests
   module:
-    - layout_discovery
     - system
     - views
+  theme:
+    - surf_main
 id: dashboard_curriculum_units-layout_builder-0
 label: List
 weight: -10
@@ -21,14 +22,14 @@ variant_settings:
   uuid: c1920e69-ce3e-447c-bb2b-0d2c76dbed7a
   sections:
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
-        label: 'Main content'
+        label: 'My Curriculum'
         context_mapping: {  }
       components:
         ffa0544a-7e22-4bcb-b3bd-2dced791f3d5:
           uuid: ffa0544a-7e22-4bcb-b3bd-2dced791f3d5
-          region: content
+          region: first
           configuration:
             id: 'views_block:user_download_requests-dashboard_curriculum_items'
             label: ''
@@ -41,14 +42,14 @@ variant_settings:
           additional: {  }
       third_party_settings: {  }
     -
-      layout_id: layout_onecol
+      layout_id: one_column
       layout_settings:
-        label: 'Dashboard Menu'
+        label: 'Navigation Bottom'
         context_mapping: {  }
       components:
         ebbfff20-ef89-4fc1-90d4-feaf191fb358:
           uuid: ebbfff20-ef89-4fc1-90d4-feaf191fb358
-          region: content
+          region: first
           configuration:
             id: 'system_menu_block:dashboard'
             label: Dashboard
