@@ -36,7 +36,8 @@
     inline-size: 100%;
   }
 
-  .m-form__field {
+  .m-form__field:not(.m-form__field--checkbox, .m-form__field--radio, :last-child),
+  form > .container > fieldset {
     margin-block-end: 40px;
   }
 }
@@ -101,5 +102,9 @@
     @include breakpoints.bp-min(large) {
       margin-block-end: 40px;
     }
+  }
+
+  .form-actions {
+    margin-block-start: 64px;
   }
 }

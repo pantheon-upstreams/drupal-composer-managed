@@ -69,8 +69,8 @@ elements: |-
   address:
     '#type': webform_address
     '#title': Address
-    '#description': 'Physical address required. Address must not be a post office box.'
     '#required': true
+    '#address__help': 'Physical address required. Address must not be a post office box.'
   ref_grade_levels:
     '#type': webform_entity_checkboxes
     '#title': 'Grade levels'
