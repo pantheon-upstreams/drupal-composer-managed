@@ -620,8 +620,20 @@
 //------------------------------------
 
 .m-teaser.m-teaser--curriculum {
+  position: relative;
+
   .m-teaser__tags {
     margin-block-start: calculations.rem(12px);
+  }
+
+  .m-teaser__content {
+    @include breakpoints.bp-min(small) {
+      margin-block-end: 24px;
+    }
+
+    @include breakpoints.bp-min(large) {
+      margin-block-end: 0;
+    }
   }
 
   .m-teaser__content-text {
@@ -630,6 +642,19 @@
 
   + .status-description {
     margin-block-start: -40px;
+
+    @include breakpoints.bp-min(small) {
+      inset-block-end: 0;
+      inset-inline-start: calc(30.25% + 32px);
+      margin-block-start: 0;
+      position: absolute;
+    }
+
+    @include breakpoints.bp-min(large) {
+      inset-inline-start: 0;
+      margin-block-start: -40px;
+      position: relative;
+    }
   }
 }
 
