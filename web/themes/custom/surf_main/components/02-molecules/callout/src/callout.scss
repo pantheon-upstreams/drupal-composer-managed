@@ -123,7 +123,7 @@
   }
 
   .m-callout__inner-wrapper {
-    gap: 4px;
+    gap: 12px;
     padding-block: 0;
     padding-inline: 0;
   }
@@ -138,13 +138,22 @@
     }
 
     @include breakpoints.bp-min(large) {
-      inline-size: 100%;
+      inline-size: auto;
+      max-inline-size: 420px;
     }
   }
 
   .m-callout__heading {
     color: var(--surf-color-navy);
-    font-size: var(--surf-fs-24-32);
+    font-size: var(--surf-fs-18-24-40);
+  }
+
+  .m-callout__text p {
+    font-size: var(--surf-fs-16-18-24);
+  }
+
+  .a-button {
+    margin-block-start: 20px;
   }
 }
 

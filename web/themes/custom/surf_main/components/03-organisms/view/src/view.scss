@@ -80,3 +80,19 @@
     padding-block-start: 40px;
   }
 }
+
+// Nested child layouts in a single View
+.o-view--news.o-view--most-recent-home {
+  .o-view__rows {
+    display: grid;
+    gap: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      gap: 60px;
+    }
+
+    @include breakpoints.bp-min(large) {
+      gap: 80px;
+    }
+  }
+}

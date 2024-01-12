@@ -30,7 +30,10 @@ content:
     weight: 0
     region: content
     settings:
-      media_types: {  }
+      media_types:
+        - image
+        - icon
+        - remote_video
     third_party_settings: {  }
   field_text:
     type: text_textarea

@@ -30,7 +30,9 @@ content:
     weight: 0
     region: content
     settings:
-      media_types: {  }
+      media_types:
+        - image
+        - icon
     third_party_settings: {  }
   field_summary:
     type: string_textfield

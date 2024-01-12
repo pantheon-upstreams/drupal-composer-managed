@@ -27,18 +27,20 @@ elements: |-
   name:
     '#type': webform_name
     '#title': Name
+    '#required': true
     '#title__access': false
+    '#first__title': 'First Name'
     '#middle__access': false
+    '#last__title': 'Last Name'
     '#suffix__access': false
     '#degree__access': false
-    '#required': true
   email:
     '#type': email
     '#title': Email
     '#required': true
   number_requested:
     '#type': number
-    '#title': 'Number requested'
+    '#title': 'How many people are attending?'
     '#required': true
 css: ''
 javascript: ''

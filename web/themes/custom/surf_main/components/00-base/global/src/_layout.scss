@@ -231,7 +231,7 @@ ul.l-threecol {
   &.l-twocol--55-45 {
     grid-template-columns: minmax(0, 1fr);
 
-    @include breakpoints.bp-min(medium) {
+    @include breakpoints.bp-min(large) {
       grid-template-columns: 55% 1fr;
     }
   }
@@ -239,7 +239,7 @@ ul.l-threecol {
   &.l-twocol--45-55 {
     grid-template-columns: minmax(0, 1fr);
 
-    @include breakpoints.bp-min(medium) {
+    @include breakpoints.bp-min(large) {
       grid-template-columns: 1fr 55%;
     }
   }

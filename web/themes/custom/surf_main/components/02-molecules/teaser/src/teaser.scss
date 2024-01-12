@@ -454,6 +454,18 @@
       margin-block-start: 16px;
     }
   }
+
+  .m-teaser__content-suffix {
+    margin-block-start: 4px;
+
+    @include breakpoints.bp-min(medium) {
+      margin-block-start: 12px;
+    }
+
+    @include breakpoints.bp-min(large) {
+      margin-block-start: 18px;
+    }
+  }
 }
 
 .l-onecol--listing > .l-onecol__region > .m-teaser:not(.m-teaser--super),
