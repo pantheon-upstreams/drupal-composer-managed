@@ -207,7 +207,7 @@ settings:
   confirmation_type: url_message
   confirmation_url: '/user/[current-user:uid]/dashboard/curriculum-units'
   confirmation_title: ''
-  confirmation_message: '<p>Your Curriculum Module Request has been sent. Please wait while an administrator looks over your request. Once approved, all resources for this Curriculum Module will become available.</p>'
+  confirmation_message: '<p>Your Curriculum Module Request has been sent. Please wait while an administrator looks over your request. Once approved, all resources for this Curriculum Module will become available. If you would like to see all of your requested Curriculum Modules, please visit your <a href="/user/[current-user:uid]/dashboard/curriculum-units">Dashboard Page</a>.</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
