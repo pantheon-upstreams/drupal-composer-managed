@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Simple Page
+status: experimental
+group: Organisms
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    simple_page_attributes:
+      title: Attributes
+      type: string
+    simple_page_content:
+      title: Content
+      type: array
+    simple_page_heading:
+      title: Heading
+      type: string
+    simple_page_media:
+      title: Media
+      type: array

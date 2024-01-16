@@ -11,7 +11,6 @@ dependencies:
     - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
-    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -35,7 +34,6 @@ settings:
       gallery: gallery
       media: media
       pullquote: pullquote
-      section: section
       text: text
     negate: 0
     target_bundles_drag_drop:
@@ -48,9 +46,18 @@ settings:
       callout:
         weight: 22
         enabled: true
+      content_as_teaser:
+        weight: 29
+        enabled: false
+      feature_banner:
+        weight: 30
+        enabled: false
       gallery:
         weight: 25
         enabled: true
+      header:
+        weight: 32
+        enabled: false
       heading:
         weight: 23
         enabled: true
@@ -83,9 +90,21 @@ settings:
         enabled: false
       section:
         weight: 35
-        enabled: true
+        enabled: false
       section_extended:
         weight: 34
+        enabled: false
+      statement:
+        weight: 45
+        enabled: false
+      statistic:
+        weight: 46
+        enabled: false
+      statistics_banner:
+        weight: 47
+        enabled: false
+      teaser:
+        weight: 48
         enabled: false
       text:
         weight: 37

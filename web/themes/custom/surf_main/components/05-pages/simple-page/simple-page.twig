@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Page component for a Simple Page.
+ *
+ * Available props:
+ * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
+ * - simple_page_attributes: [array] Any parent tag attributes.
+ * - simple_page_content: [array] Reserved for the builder's content.
+ * - simple_page_heading: [string] Reserved for the primary title.
+ * - simple_page_media: [array] Reserved for the primary media item.
+ *
+ */
+#}
+
+{% set classes = [
+    'p-simple-page',
+] %}
+
+<article {{ simple_page_attributes.addClass(classes).merge(attributes) }}>
+    <section class="p-simple-page__header">
+        <div class="container container--small">
+            {{ drupal_breadcrumb() }}
+
+            {% include 'surf_main:heading' with {
+                heading_attributes: create_attribute({'class': ['p-simple-page__heading']}),
+                heading_text: simple_page_heading,
+                heading_level: '1',
+            } only %}
+        </div>
+    </section>
+
+    {% if simple_page_media %}
+        <section class="p-simple-page__media" aria-label="Primary media">
+            <div class="container container--medium">
+                {{ simple_page_media }}
+            </div>
+        </section>
+    {% endif %}
+
+    {% if simple_page_content %}
+        <section class="p-simple-page__content">
+            <div class="container container--small">
+                {{ simple_page_content }}
+            </div>
+        </section>
+    {% endif %}
+</article>

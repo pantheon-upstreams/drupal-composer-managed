@@ -7,29 +7,20 @@
  * - No additional variables are available for this Node type.
  *
  * @see templates/nodes/node.html.twig
- * @see components/05-pages/page/page.twig
+ * @see components/05-pages/simple-page/simple-page.twig
  */
 #}
 
-{% set classes = [
-  content.field_media_primary|render ? 'p-page--with-img',
-] %}
-
 {% set rendered_content = content|without(
-    'field_link',
-    'field_overview',
     'field_p_content',
     'field_media_primary',
 ) %}
 
-{% include 'surf_main:page' with {
+{% include 'surf_main:simple-page' with {
     attributes,
     rendered_content,
-    page_attributes: create_attribute({'class': classes}),
-    page_heading: label|field_value,
-    page_heading_summary: content.field_overview|field_value|default([]),
-    page_cta_url: content.field_link|render ? content.field_link.0['#url'],
-    page_cta_text: content.field_link|render ? content.field_link.0['#title'],
-    page_media: content.field_media_primary|field_value|default([]),
-    page_content: content.field_p_content,
+    simple_page_attributes: create_attribute(),
+    simple_page_content: content.field_p_content,
+    simple_page_heading: label|field_value,
+    simple_page_media: content.field_media_primary|field_value|default([]),
 } only %}

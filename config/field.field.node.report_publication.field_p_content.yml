@@ -11,7 +11,6 @@ dependencies:
     - paragraphs.paragraphs_type.media
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
-    - paragraphs.paragraphs_type.section
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -33,7 +32,6 @@ settings:
       heading: heading
       pullquote: pullquote
       resources_list: resources_list
-      section: section
       text: text
       accordion: accordion
       media: media
@@ -48,8 +46,17 @@ settings:
       callout:
         weight: 22
         enabled: true
+      content_as_teaser:
+        weight: 29
+        enabled: false
+      feature_banner:
+        weight: 30
+        enabled: false
       gallery:
         weight: 58
+        enabled: false
+      header:
+        weight: 32
         enabled: false
       heading:
         weight: 23
@@ -83,9 +90,21 @@ settings:
         enabled: false
       section:
         weight: 42
-        enabled: true
+        enabled: false
       section_extended:
         weight: 34
+        enabled: false
+      statement:
+        weight: 45
+        enabled: false
+      statistic:
+        weight: 46
+        enabled: false
+      statistics_banner:
+        weight: 47
+        enabled: false
+      teaser:
+        weight: 48
         enabled: false
       text:
         weight: 44
