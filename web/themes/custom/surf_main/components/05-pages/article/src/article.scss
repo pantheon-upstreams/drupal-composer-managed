@@ -198,7 +198,7 @@
     }
   }
 
-  .p-article__media *:not(img) {
+  .p-article__media *:not(img, figcaption) {
     block-size: 100%;
     display: block;
     inline-size: 100%;

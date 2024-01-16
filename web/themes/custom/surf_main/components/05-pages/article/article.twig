@@ -49,10 +49,7 @@
 
             {% if article_body %}
                 <div class="p-article__content l-main">
-                    {% include 'surf_main:editor' with {
-                        editor_attributes: create_attribute(),
-                        editor_content: article_body,
-                    } only %}
+                    {{ article_body }}
                 </div>
             {% endif %}
         </section>

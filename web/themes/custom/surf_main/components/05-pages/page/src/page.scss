@@ -49,11 +49,11 @@
   .p-page__header {
     margin-inline: auto;
     max-inline-size: var(--surf-width-xlarge);
-    padding-block-start: 32px;
+    padding-block: 32px;
     position: relative;
 
     @include breakpoints.bp-min(medium) {
-      padding-block-start: 60px;
+      padding-block: 60px;
     }
 
     @include breakpoints.bp-min(xlarge) {
