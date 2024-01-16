@@ -75,7 +75,7 @@
 
   > .container {
     position: relative;
-    z-index: var(--surf-zindex-over);
+    z-index: var(--surf-zindex-top);
   }
 
   canvas {
@@ -83,5 +83,17 @@
     inset-inline-start: 0;
     position: absolute;
     z-index: var(--surf-zindex-default);
+  }
+
+  &:before {
+    background: linear-gradient(180deg, transparent 25%, var(--surf-color-black));
+    block-size: 100%;
+    content: '';
+    display: block;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    position: absolute;
+    z-index: var(--surf-zindex-over);
   }
 }

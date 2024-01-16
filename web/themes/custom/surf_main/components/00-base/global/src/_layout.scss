@@ -338,6 +338,12 @@ ul.l-threecol {
     }
   }
 
+  .p-landing__content > .l-section--gray:last-child,
+  .p-landing__dashboard > .l-section--gray:last-child,
+  .p-landing__content > .l-section--blue-gradient:last-child,
+  .p-landing__dashboard > .l-section--blue-gradient:last-child {
+    margin-block-end: -64px;
+  }
 
   .p-dashboard__content section > .container > h2 {
     margin-block-end: 32px;
