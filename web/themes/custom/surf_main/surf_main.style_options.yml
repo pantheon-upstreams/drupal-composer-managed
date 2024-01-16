@@ -28,6 +28,18 @@
 #
 
 options:
+  section_alignment:
+    plugin: property
+    label: Section Alignment
+    default: top
+    options:
+      top:
+        label: Top
+      middle:
+        label: Middle
+      bottom:
+        label: Bottom
+
   section_style:
     plugin: property
     label: Section Style
@@ -37,8 +49,8 @@ options:
         label: None
       blue-gradient:
         label: Blue Gradient
-      gray-gradient:
-        label: Gray Gradient
+      gray:
+        label: Gray
 
   section_width:
     plugin: property
@@ -245,11 +257,15 @@ contexts:
           layout: true
         section_style:
           layout: true
+        section_alignment:
+          layout: true
     section_extended:
       options:
         section_width:
           layout: true
         section_style:
+          layout: true
+        section_alignment:
           layout: true
     text:
       options:

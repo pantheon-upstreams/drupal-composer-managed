@@ -3,6 +3,7 @@
 //
 // - 01 - Imports
 // - 02 - General
+// - 03 - Contexts
 //
 
 
@@ -71,6 +72,7 @@
 
   .m-statement__text {
     margin-block-start: 12px;
+    max-inline-size: var(--surf-width-small);
 
     @include breakpoints.bp-min(medium) {
       margin-block-start: 32px;
@@ -97,5 +99,30 @@
     @include breakpoints.bp-min(medium) {
       font-size: calculations.rem(22px);
     }
+  }
+}
+
+
+
+
+//------------------------------------
+//  03 - Contexts
+//------------------------------------
+
+.l-section--blue-gradient .m-statement {
+  .m-statement__title {
+    background: none;
+    color: var(--surf-color-white);
+    -webkit-background-clip: inherit;
+    -webkit-text-fill-color: inherit;
+  }
+
+  .m-statement__eyebrow,
+  .m-statement__eyebrow-bottom {
+    color: var(--surf-color-white);
+  }
+
+  .m-statement__text p {
+    color: var(--surf-color-white);
   }
 }

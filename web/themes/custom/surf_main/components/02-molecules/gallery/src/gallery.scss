@@ -5,6 +5,7 @@
 // - 02 - General
 // - 03 - Slides
 // - 04 - Splide
+// - 05 - Contexts
 //
 
 
@@ -147,5 +148,25 @@
 
   .splide__arrow svg {
     display: none;
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Contexts
+//------------------------------------
+
+.l-section--blue-gradient .m-gallery {
+  .splide__arrow {
+    &:hover:before,
+    &:focus:before {
+      background-color: var(--surf-color-black);
+    }
+  }
+
+  .splide__arrow:before {
+    background-color: var(--surf-color-white);
   }
 }

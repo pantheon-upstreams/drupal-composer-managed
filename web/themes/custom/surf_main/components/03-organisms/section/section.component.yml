@@ -21,4 +21,11 @@ props:
       enum:
         - none
         - blue-gradient
-        - gray-gradient
+        - gray
+    section_alignment:
+      title: Alignment
+      type: string
+      enum:
+        - top
+        - middle
+        - bottom

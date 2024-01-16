@@ -34,6 +34,7 @@
     "@splidejs/splide": "^4.1.4",
     "cssnano": "^6.0.1",
     "dotenv": "^16.0.3",
+    "particles.js": "^2.0.0",
     "postcss-inline-svg": "^5.0.0"
   }
 }

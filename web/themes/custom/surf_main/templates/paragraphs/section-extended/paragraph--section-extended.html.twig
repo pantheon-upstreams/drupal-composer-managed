@@ -11,17 +11,18 @@
 #}
 
 {% set classes = [
-  'l-section',
-  'paragraph',
-  'paragraph--' ~ paragraph.bundle|clean_class,
-  view_mode ? 'paragraph--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished',
+    'l-section',
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
 ] %}
 
 {% include 'surf_main:section' with {
-  attributes,
-  section_attributes: create_attribute({'class': classes}),
-  section_content: content,
-  section_style: style_options['section_style']|default('none'),
-  section_width: style_options['section_width']|default('large'),
+    attributes,
+    section_attributes: create_attribute({'class': classes}),
+    section_content: content,
+    section_style: style_options['section_style']|default('none'),
+    section_width: style_options['section_width']|default('large'),
+    section_alignment: style_options['section_alignment']|default('top'),
 } only %}

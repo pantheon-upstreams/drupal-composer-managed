@@ -147,7 +147,7 @@
   margin-block-start: 32px;
 
   @include breakpoints.bp-min(medium) {
-    margin-block-start: 60px;
+    margin-block-start: 64px;
   }
 
   @include breakpoints.bp-min(large) {
@@ -177,11 +177,20 @@ ul.l-threecol {
   }
 }
 
+.l-onecol__region,
 .l-twocol__region,
 .l-threecol__region {
   display: flex;
   flex-flow: nowrap column;
-  gap: 40px;
+  gap: 32px;
+
+  @include breakpoints.bp-min(medium) {
+    gap: 40px;
+  }
+
+  @include breakpoints.bp-min(large) {
+    gap: 64px;
+  }
 }
 
 .l-onecol__region--heading,
@@ -298,23 +307,34 @@ ul.l-threecol {
 // Landing and Dashboard pages
 .p-landing,
 .p-dashboard {
-  padding-block-end: 60px;
+  padding-block-end: 64px;
 
   .p-landing__hero,
   .p-dashboard__hero {
     margin-block-end: 32px;
 
     @include breakpoints.bp-min(xlarge) {
-      margin-block-end: 60px;
+      margin-block-end: 64px;
     }
   }
 
-  .p-landing__content > *:not(:last-child),
-  .p-dashboard__content > *:not(:last-child) {
-    margin-block-end: 32px;
+  .p-landing__content > *:not(:last-child, .l-section--gray, .l-section--blue-gradient),
+  .p-dashboard__content > *:not(:last-child, .l-section--gray, .l-section--blue-gradient) {
+    margin-block: 32px;
 
     @include breakpoints.bp-min(large) {
-      margin-block-end: 68px;
+      margin-block: 64px;
+    }
+  }
+
+  .p-landing__content > .l-section--gray:first-child,
+  .p-landing__dashboard > .l-section--gray:first-child,
+  .p-landing__content > .l-section--blue-gradient:first-child,
+  .p-landing__dashboard > .l-section--blue-gradient:first-child {
+    margin-block-start: -32px;
+
+    @include breakpoints.bp-min(xlarge) {
+      margin-block-start: -64px;
     }
   }
 

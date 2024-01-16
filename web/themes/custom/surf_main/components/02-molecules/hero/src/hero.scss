@@ -20,11 +20,25 @@
 //  02 - General
 //------------------------------------
 
+.m-hero {
+  .m-hero__text p {
+    font-size: var(--surf-fs-16-24-40);
+    font-weight: var(--surf-fw-bold);
+    line-height: 1.3;
+
+    @include breakpoints.bp-min(large) {
+      font-weight: var(--surf-fw-medium);
+    }
+  }
+}
+
+
 .m-hero.m-hero--content-right,
 .m-hero.m-hero--content-left {
   overflow: hidden;
   position: relative;
   z-index: var(--surf-zindex-top);
+
   @include breakpoints.bp-min(xlarge) {
     max-block-size: 900px;
   }
@@ -34,7 +48,7 @@
   }
 
   .m-hero__media,
-  .m-hero__media *:not( img, figcaption ) {
+  .m-hero__media *:not(img, figcaption) {
     @include breakpoints.bp-min(xlarge) {
       block-size: 100%;
       inline-size: 100%;
@@ -131,16 +145,6 @@
       max-inline-size: 664px;
     }
   }
-
-  .m-hero__text p {
-    font-size: var(--surf-fs-16-24-40);
-    font-weight: var(--surf-fw-bold);
-    line-height: 1.3;
-
-    @include breakpoints.bp-min(large) {
-      font-weight: var(--surf-fw-medium);
-    }
-  }
 }
 
 
@@ -194,5 +198,42 @@
     @include breakpoints.bp-min(xlarge) {
       margin-inline-end: auto;
     }
+  }
+}
+
+
+
+
+//------------------------------------
+//  05 - Content Top
+//------------------------------------
+
+.m-hero.m-hero--content-top {
+  background-color: var(--surf-color-gray-100);
+
+  .m-hero__content {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 16px;
+    padding-block: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      padding-block: 64px;
+    }
+
+    @include breakpoints.bp-min(large) {
+      gap: 28px;
+      padding-block: 80px;
+    }
+  }
+
+  .m-hero__title {
+    -webkit-text-fill-color: transparent;
+    background: var(--surf-gradient-hz-blue-02);
+    background-clip: text;
+    font-family: var(--surf-font-sans-alt);
+    font-size: var(--surf-fs-80-140-200-260);
+    font-weight: var(--surf-fw-medium);
+    line-height: 0.8;
   }
 }

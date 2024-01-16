@@ -54,7 +54,7 @@ body {
   }
 }
 
-#site-content {
+body:not(.page-5711) #site-content {
   position: relative;
 
   &:after {

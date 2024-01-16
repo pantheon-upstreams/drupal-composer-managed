@@ -3,7 +3,6 @@
 //
 // - 01 - Imports
 // - 02 - General
-// - 03 - Modifiers
 //
 
 
@@ -11,49 +10,78 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
+
 
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
 
-.o-section {
-  //empty
+.l-section {
+  &.l-section--align-top > .container > * {
+    align-items: flex-start;
+  }
+
+  &.l-section--align-middle > .container > * {
+    align-items: center;
+  }
+
+  &.l-section--align-bottom > .container > * {
+    align-items: flex-end;
+  }
+
+  &.l-section--gray,
+  &.l-section--blue-gradient {
+    padding-block: 32px;
+
+    @include breakpoints.bp-min(medium) {
+      padding-block: 64px;
+    }
+
+    @include breakpoints.bp-min(large) {
+      padding-block: 80px;
+    }
+  }
+
+  &.l-section--gray + .l-section--gray {
+    padding-block-start: 0;
+  }
 }
 
 
 
+
 //------------------------------------
-//  03 - Modifiers
+//  03 - Gray
 //------------------------------------
 
-.o-section {
-  &.o-section--blue-gradient {
-    background-image: url('img/particles.png'),linear-gradient(180deg, #007ab8 0%, #000080 50%, #000000 100%);
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-block-end: 90px;
-    padding-block-start: 80px;
+.l-section--gray {
+  background-color: var(--surf-color-gray-100);
+}
 
-    .a-editor > * {
-      color: var(--surf-color-white);
-    }
 
-    .splide__arrow {
-      &:hover,
-      &:focus {
-        background: var(--surf-color-black);
-      }
-    }
 
-    .splide__arrow:before {
-      background-color: var(--surf-color-white);
-    }
+
+//------------------------------------
+//  04 - Blue Gradient
+//------------------------------------
+
+.l-section--blue-gradient {
+  background: var(--surf-gradient-vt-blue-02);
+  color: var(--surf-color-white);
+  position: relative;
+
+  > .container {
+    position: relative;
+    z-index: var(--surf-zindex-over);
   }
 
-  &.o-section--gray-gradient {
-    background-color: var(--surf-color-gray-100);
+  canvas {
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    position: absolute;
+    z-index: var(--surf-zindex-default);
   }
 }
