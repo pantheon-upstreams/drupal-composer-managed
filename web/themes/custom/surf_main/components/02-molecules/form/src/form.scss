@@ -40,6 +40,10 @@
   form > .container > fieldset {
     margin-block-end: 40px;
   }
+
+  .form-actions {
+    margin-block-start: 64px;
+  }
 }
 
 
@@ -102,9 +106,5 @@
     @include breakpoints.bp-min(large) {
       margin-block-end: 40px;
     }
-  }
-
-  .form-actions {
-    margin-block-start: 64px;
   }
 }

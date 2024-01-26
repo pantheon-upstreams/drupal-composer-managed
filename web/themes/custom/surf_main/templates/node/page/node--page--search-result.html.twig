@@ -21,7 +21,7 @@
     attributes,
     rendered_content,
     teaser_attributes: create_attribute({'class': 'm-teaser--search-result'}),
-    teaser_content: content.search_api_excerpt|render ? content.search_api_excerpt : content.field_overview|field_value,
+    teaser_content: content.search_api_excerpt|render ? content.search_api_excerpt : content.field_overview|field_value|default([]),
     teaser_media: content.field_media_primary|field_value|default([]),
     teaser_title: label|field_value,
     teaser_title_tag: 'h3',

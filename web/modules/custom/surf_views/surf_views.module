@@ -84,3 +84,9 @@ function surf_views_views_pre_view(ViewExecutable $view) {
     }
   }
 }
+
+function surf_views_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $form_state->get('view');
+  $form['#action'] .= '#view-' . $view->id() . '-' . $view->current_display;
+}
