@@ -94,6 +94,7 @@
   }
 
   .m-statement__link a {
+    @include buttons.base();
     @include buttons.underline-base('navy');
 
     @include breakpoints.bp-min(medium) {

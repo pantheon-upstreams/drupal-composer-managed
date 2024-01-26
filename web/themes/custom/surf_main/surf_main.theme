@@ -2,9 +2,25 @@
 /**
  * Theme Preprocess Functions
  *
- * - 01 - Theme Suggestions
+ * - 01 - Use Statements
+ * - 01 - HTML
+ * - 02 - Paragraphs
+ * - 03 - Theme Suggestions
  */
 
+
+/*------------------------------------*\
+  01 - Use Statements
+\*------------------------------------*/
+
+use Drupal\Component\Render\FormattableMarkup;
+
+
+
+
+/*------------------------------------*\
+  02 - HTML
+\*------------------------------------*/
 
 function surf_main_preprocess_html(&$variables) {
   if ($node = \Drupal::routeMatch()->getParameter('node')) {
@@ -13,8 +29,28 @@ function surf_main_preprocess_html(&$variables) {
   }
 }
 
+
+
+
 /*------------------------------------*\
-  02 - Theme Suggestions
+  03 - Paragraphs
+\*------------------------------------*/
+
+function surf_main_preprocess_paragraph__embed(&$variables) {
+  /** @var Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  if ($paragraph->hasField('field_embed_code') && !$paragraph->get('field_embed_code')->isEmpty()) {
+    $embed_value = $paragraph->get('field_embed_code')->value;
+    $variables['embed_code'] = new \Drupal\Component\Render\FormattableMarkup($embed_value, []);
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  04 - Theme Suggestions
 \*------------------------------------*/
 
 /**

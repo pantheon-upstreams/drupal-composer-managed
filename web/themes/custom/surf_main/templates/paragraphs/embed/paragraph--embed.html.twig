@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an Embed paragraph.
+ *
+ * Available variables:
+ * - embed_code: [object] HTML output of a plain text field for embed rendering.
+ *
+ */
+#}
+
+{% extends 'paragraph.html.twig' %}
+
+{% set classes = [
+  'embed',
+] %}
+
+{% set attributes = attributes.addClass(classes) %}
+
+{% block content %}
+  {{ embed_code }}
+{% endblock %}

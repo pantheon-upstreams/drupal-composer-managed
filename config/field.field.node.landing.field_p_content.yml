@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.callout
     - paragraphs.paragraphs_type.content_as_teaser
+    - paragraphs.paragraphs_type.embed
     - paragraphs.paragraphs_type.feature_banner
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.header
@@ -43,6 +44,7 @@ settings:
       content_as_teaser: content_as_teaser
       header: header
       feature_banner: feature_banner
+      embed: embed
       section_extended: section_extended
       accordion: accordion
       statement: statement
@@ -68,6 +70,9 @@ settings:
         enabled: true
       content_as_teaser:
         weight: 24
+        enabled: true
+      embed:
+        weight: 31
         enabled: true
       feature_banner:
         weight: 30

@@ -1,0 +1,19 @@
+uuid: 746d4587-d0fe-49f9-a2e5-9def50358c30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embed_code
+    - paragraphs.paragraphs_type.embed
+id: paragraph.embed.field_embed_code
+field_name: field_embed_code
+entity_type: paragraph
+bundle: embed
+label: 'Embed Code'
+description: 'Be careful when posting any Embed Code and always test for accuracy. Although any PHP or Database logic will not be successfully posted, some JavaScript, HTML and unfinished CSS can cause breaking changes to the site.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

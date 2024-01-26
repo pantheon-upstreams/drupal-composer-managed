@@ -1,0 +1,10 @@
+uuid: 55ce79c0-d84c-490d-b514-f2460d6adf5e
+langcode: en
+status: true
+dependencies: {  }
+id: embed
+label: Embed
+icon_uuid: null
+icon_default: null
+description: 'Use <em>Embed</em> to add external content in the form of an embed or iframe.'
+behavior_plugins: {  }
