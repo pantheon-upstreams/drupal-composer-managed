@@ -32,11 +32,14 @@ Drupal.behaviors.surfGallery = {
         // Instantiating Splide with options.
         const splide = new Splide(element, {
           autoWidth: true,
+          height: '660px',
           breakpoints: {
             768: {
+              height: '330px',
               gap: 24,
             },
             1200: {
+              height: '434px',
               gap: 32,
             },
           },

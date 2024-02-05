@@ -38,10 +38,10 @@
 //------------------------------------
 
 .m-gallery {
-  .m-gallery__slide > figure {
-    margin: auto;
-    width: fit-content;
-  }
+  //.m-gallery__slide > figure {
+  //  margin: auto;
+  //  width: fit-content;
+  //}
 
   .m-gallery__slide > figure > figcaption {
     font-size: calculations.rem(14px);
@@ -64,9 +64,9 @@
   }
 
   .m-gallery__slide > figure img {
-    margin: auto;
-    max-block-size: 210px;
-    object-fit: contain;
+    //margin: auto;
+    //max-block-size: 210px;
+    //object-fit: contain;
     width: auto;
 
     @include breakpoints.bp-min(medium) {
