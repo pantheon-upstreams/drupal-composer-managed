@@ -326,7 +326,19 @@ ui:
 libraries:
   excluded_libraries:
     - choices
+    - codemirror
     - jquery.chosen
+    - jquery.inputmask
+    - jquery.intl-tel-input
+    - jquery.rateit
+    - jquery.select2
+    - jquery.textcounter
+    - jquery.timepicker
+    - popperjs
+    - progress-tracker
+    - signature_pad
+    - tabby
+    - tippyjs
 requirements:
   cdn: true
   clientside_validation: true

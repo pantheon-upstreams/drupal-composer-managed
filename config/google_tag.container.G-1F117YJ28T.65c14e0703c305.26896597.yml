@@ -1,0 +1,23 @@
+uuid: ed596e67-33a8-4060-b86c-9365b6487216
+langcode: en
+status: true
+dependencies: {  }
+id: G-1F117YJ28T.65c14e0703c305.26896597
+label: G-1F117YJ28T
+weight: 0
+tag_container_ids:
+  - G-1F117YJ28T
+advanced_settings: {  }
+dimensions_metrics: {  }
+conditions: {  }
+events:
+  generate_lead:
+    value: ''
+    currency: ''
+  search: {  }
+  webform_purchase: {  }
+  custom: {  }
+  login:
+    method: CMS
+  sign_up:
+    method: CMS
