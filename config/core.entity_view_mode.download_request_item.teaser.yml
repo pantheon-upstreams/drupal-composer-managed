@@ -6,5 +6,6 @@ dependencies:
     - download_request
 id: download_request_item.teaser
 label: Teaser
+description: ''
 targetEntityType: download_request_item
 cache: true

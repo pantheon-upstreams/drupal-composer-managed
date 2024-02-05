@@ -18,6 +18,7 @@
         }
     ],
     "require": {
+        "chi-teck/drupal-code-generator": "^3.0",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/address": "~1.0",
@@ -27,12 +28,11 @@
         "drupal/backup_migrate": "~5.0",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/block_field": "^1.0@RC",
-        "drupal/cl_generator": "^1.0@RC",
         "drupal/cl_server": "^2.0",
         "drupal/components": "^3.0",
-        "drupal/core": "^10",
-        "drupal/core-composer-scaffold": "^10",
-        "drupal/core-recommended": "^10",
+        "drupal/core": "^10.2",
+        "drupal/core-composer-scaffold": "^10.2",
+        "drupal/core-recommended": "^10.2",
         "drupal/ctools": "~3.0",
         "drupal/date_range_formatter": "^4.0",
         "drupal/download_request": "1.0.x-dev",
@@ -49,6 +49,7 @@
         "drupal/gin": "^3.0@RC",
         "drupal/gin_toolbar": "^1.0@RC",
         "drupal/google_analytics": "^4.0",
+        "drupal/google_tag": "^2.0",
         "drupal/honeypot": "~2.0",
         "drupal/image_widget_crop": "^2.4",
         "drupal/imce": "^3.0",
@@ -90,7 +91,6 @@
         "drupal/webform": "^6.2",
         "drupal/webform_content_creator": "^4.0",
         "drupal/webform_user_registration": "^1.0@alpha",
-        "drush/drush": "^11 || ^12",
         "mglaman/composer-drupal-lenient": "^1.0",
         "pantheon-systems/drupal-integrations": "^10",
         "pantheon-upstreams/upstream-configuration": "dev-main",
@@ -101,10 +101,10 @@
     "require-dev": {
         "drupal/core-dev": "^10",
         "drupal/devel": "^5.1",
-        "drupal/devel_entity_updates": "^4.1",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_tools": "^6.0",
         "drupal/stage_file_proxy": "^2.0",
+        "drush/drush": "~12.0",
         "weitzman/drupal-test-traits": "^2.0"
     },
     "conflict": {
@@ -200,7 +200,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/console-extend-plugin": true,
             "mglaman/composer-drupal-lenient": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     }
 }

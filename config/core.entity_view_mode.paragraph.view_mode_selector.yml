@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.view_mode_selector
 label: 'View mode selector'
+description: ''
 targetEntityType: paragraph
 cache: true

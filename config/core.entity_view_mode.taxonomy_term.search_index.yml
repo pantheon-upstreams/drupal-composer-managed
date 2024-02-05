@@ -6,5 +6,6 @@ dependencies:
     - taxonomy
 id: taxonomy_term.search_index
 label: 'Search Index'
+description: ''
 targetEntityType: taxonomy_term
 cache: true

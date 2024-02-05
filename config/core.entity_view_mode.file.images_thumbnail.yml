@@ -6,5 +6,6 @@ dependencies:
     - file
 id: file.images_thumbnail
 label: images_thumbnail
+description: ''
 targetEntityType: file
 cache: true

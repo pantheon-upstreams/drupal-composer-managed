@@ -6,5 +6,6 @@ dependencies:
     - file
 id: file.content_slider
 label: content_slider
+description: ''
 targetEntityType: file
 cache: true

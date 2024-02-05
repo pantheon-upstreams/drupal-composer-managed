@@ -8,7 +8,7 @@ dependencies:
     - system.menu.admin
     - taxonomy.vocabulary.person_type
   content:
-    - 'taxonomy_term:person_type:fa8b82e7-931a-4bae-bfc1-4ae983389063'
+    - 'taxonomy_term:person_type:7bb16592-84f0-4f99-b423-e01b95fc9313'
   module:
     - draggableviews
     - node
@@ -197,7 +197,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -378,7 +377,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -431,7 +429,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

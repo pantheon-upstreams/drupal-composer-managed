@@ -6,5 +6,6 @@ dependencies:
     - block_content
 id: block_content.news
 label: News
+description: ''
 targetEntityType: block_content
 cache: true

@@ -15,11 +15,17 @@ name: 'Full HTML'
 format: full_html
 weight: -10
 filters:
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 0
+    settings: {  }
+  filter_align:
+    id: filter_align
     provider: filter
     status: true
-    weight: 10
+    weight: 0
     settings: {  }
   filter_autop:
     id: filter_autop
@@ -36,17 +42,11 @@ filters:
       allowed_html: '<br> <p class="large default"> <h2 class="large default"> <h3> <h4> <h5> <h6> <a class="a-button a-button--large a-button--navy a-button--icon-arrow-right a-button--black" href target="_blank" data-entity-type data-entity-uuid data-entity-substitution> <strong> <em> <u> <s> <sub> <sup> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-align>'
       filter_html_help: true
       filter_html_nofollow: false
-  filter_align:
-    id: filter_align
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 0
-    settings: {  }
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
-    status: true
-    weight: 0
+    weight: 10
     settings: {  }
   filter_image_lazy_load:
     id: filter_image_lazy_load
@@ -54,6 +54,13 @@ filters:
     status: true
     weight: 15
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
   media_embed:
     id: media_embed
     provider: media
@@ -66,10 +73,3 @@ filters:
         small: small
       allowed_media_types:
         image: image
-  linkit:
-    id: linkit
-    provider: linkit
-    status: true
-    weight: 0
-    settings:
-      title: true

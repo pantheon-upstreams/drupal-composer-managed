@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.full_dashboard
 label: 'Full - Dashboard'
+description: ''
 targetEntityType: node
 cache: true

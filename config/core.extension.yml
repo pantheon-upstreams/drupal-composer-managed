@@ -42,7 +42,7 @@ module:
   file: 0
   filter: 0
   gin_toolbar: 0
-  google_analytics: 0
+  google_tag: 0
   honeypot: 0
   image: 0
   image_widget_crop: 0

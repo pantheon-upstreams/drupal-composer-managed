@@ -6,5 +6,6 @@ dependencies:
     - file
 id: file.media_large
 label: media_large
+description: ''
 targetEntityType: file
 cache: true

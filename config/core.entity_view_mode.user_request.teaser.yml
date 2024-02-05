@@ -3,8 +3,9 @@ langcode: en
 status: true
 dependencies:
   module:
-    - surf_core
+    - surf_registration
 id: user_request.teaser
 label: Teaser
+description: ''
 targetEntityType: user_request
 cache: true

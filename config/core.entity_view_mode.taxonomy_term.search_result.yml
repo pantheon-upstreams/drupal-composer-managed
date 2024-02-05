@@ -6,5 +6,6 @@ dependencies:
     - taxonomy
 id: taxonomy_term.search_result
 label: 'Search Result'
+description: ''
 targetEntityType: taxonomy_term
 cache: true

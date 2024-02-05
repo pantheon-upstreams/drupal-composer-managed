@@ -15,5 +15,5 @@ features:
   slogan: true
 logo:
   path: ''
-  url: ''
+  url: null
   use_default: true

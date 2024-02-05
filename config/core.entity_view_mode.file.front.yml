@@ -6,5 +6,6 @@ dependencies:
     - file
 id: file.front
 label: front
+description: ''
 targetEntityType: file
 cache: true

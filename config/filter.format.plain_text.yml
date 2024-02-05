@@ -8,13 +8,6 @@ name: 'Plain text'
 format: plain_text
 weight: -4
 filters:
-  filter_url:
-    id: filter_url
-    provider: filter
-    status: false
-    weight: 1
-    settings:
-      filter_url_length: 72
   filter_autop:
     id: filter_autop
     provider: filter
@@ -30,3 +23,10 @@ filters:
       allowed_html: '<span>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: 1
+    settings:
+      filter_url_length: 72

@@ -8,5 +8,6 @@ _core:
   default_config_hash: d4pLCmjTG-dPg_O4NKLNcrwXxypvnJvxA-J15PW00c8
 id: node.me_selection_preview
 label: 'Mercury: Selection Preview'
+description: ''
 targetEntityType: node
 cache: true
