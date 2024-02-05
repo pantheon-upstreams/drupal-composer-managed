@@ -46,14 +46,14 @@ Drupal.behaviors.surfGallery = {
           type: 'loop',
         });
 
-        splide.on('mounted', () => {
+        splide.on('ready', () => {
           // Because we are using the Splide `autoWidth` feature, we need to set
           // the width of each slide to be the width of the image.
-          slides.forEach((slide) => {
-            const image = slide.querySelector('img');
-            const imageWidth = image.width;
-            slide.style.width = `${imageWidth}px`;
-          });
+          // slides.forEach((slide) => {
+          //   const image = slide.querySelector('img');
+          //   const imageWidth = image.width;
+          //   slide.style.width = `${imageWidth}px`;
+          // });
         });
 
         // Final mount of Splide gallery.
