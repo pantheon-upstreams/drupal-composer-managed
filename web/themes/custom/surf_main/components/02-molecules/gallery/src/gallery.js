@@ -29,17 +29,23 @@ Drupal.behaviors.surfGallery = {
       galleries.forEach((element) => {
         const slides = element.querySelectorAll('.m-gallery__slide');
 
+        // slides.forEach((slide) => {
+        //   const image = slide.querySelector('img');
+        //   const imageWidth = image.width;
+        //   slide.style.width = `${imageWidth}px`;
+        // });
+
         // Instantiating Splide with options.
         const splide = new Splide(element, {
           autoWidth: true,
-          height: '660px',
+          // height: '660px',
           breakpoints: {
             768: {
-              height: '330px',
+              // height: '330px',
               gap: 24,
             },
             1200: {
-              height: '434px',
+              // height: '434px',
               gap: 32,
             },
           },
@@ -49,15 +55,15 @@ Drupal.behaviors.surfGallery = {
           type: 'loop',
         });
 
-        splide.on('ready', () => {
-          // Because we are using the Splide `autoWidth` feature, we need to set
-          // the width of each slide to be the width of the image.
-          // slides.forEach((slide) => {
-          //   const image = slide.querySelector('img');
-          //   const imageWidth = image.width;
-          //   slide.style.width = `${imageWidth}px`;
-          // });
-        });
+        // splide.on('ready', () => {
+        //   // Because we are using the Splide `autoWidth` feature, we need to set
+        //   // the width of each slide to be the width of the image.
+        //   slides.forEach((slide) => {
+        //     const image = slide.querySelector('img');
+        //     const imageWidth = image.width;
+        //     slide.style.width = `${imageWidth}px`;
+        //   });
+        // });
 
         // Final mount of Splide gallery.
         splide.mount();

@@ -43,25 +43,25 @@
   //  width: fit-content;
   //}
 
-  .m-gallery__slide > figure > figcaption {
-    font-size: calculations.rem(14px);
-    line-height: var(--surf-lh-default);
-    max-inline-size: 100%;
-    padding: 16px 0;
-    position: relative;
-    text-align: center;
-
-    @include breakpoints.bp-min(medium) {
-      background: var(--surf-color-white);
-      bottom: -1px;
-      max-inline-size: 400px;
-      padding-block: 24px;
-      padding-inline: 24px 0;
-      position: absolute;
-      right: -1px;
-      text-align: left;
-    }
-  }
+  //.m-gallery__slide > figure > figcaption {
+  //  font-size: calculations.rem(14px);
+  //  line-height: var(--surf-lh-default);
+  //  max-inline-size: 100%;
+  //  padding: 16px 0;
+  //  position: relative;
+  //  text-align: center;
+  //
+  //  @include breakpoints.bp-min(medium) {
+  //    background: var(--surf-color-white);
+  //    bottom: -1px;
+  //    max-inline-size: 400px;
+  //    padding-block: 24px;
+  //    padding-inline: 24px 0;
+  //    position: absolute;
+  //    right: -1px;
+  //    text-align: left;
+  //  }
+  //}
 
   .m-gallery__slide > figure img {
     //margin: auto;
