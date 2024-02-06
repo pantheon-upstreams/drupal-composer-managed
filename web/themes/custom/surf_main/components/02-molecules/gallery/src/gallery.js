@@ -66,8 +66,9 @@ Drupal.behaviors.surfGallery = {
         // });
 
         // Final mount of Splide gallery.
-        splide.mount();
-
+        setTimeout(focus => {
+          splide.mount();
+        }, 100);
 
 
         // Because we are using the Splide `autoWidth` feature, we need to set
