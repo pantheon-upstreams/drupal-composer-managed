@@ -1,0 +1,91 @@
+uuid: 0846e7e5-b7cc-4123-b00b-d596618aa5cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_home
+    - system.menu.dashboard
+    - views.view.news
+  module:
+    - notification_message
+    - system
+    - views
+  theme:
+    - surf_main
+id: dashboard_home-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 7b6ae2b9-186e-4c39-8755-8a58ce20b2c5
+  sections:
+    -
+      layout_id: one_column
+      layout_settings:
+        label: 'Navigation Top'
+        context_mapping: {  }
+      components:
+        c2ac51ef-3705-435f-b52e-28f50cc2c7f6:
+          uuid: c2ac51ef-3705-435f-b52e-28f50cc2c7f6
+          region: first
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: one_column
+      layout_settings:
+        label: Announcements
+        context_mapping: {  }
+      components:
+        29286fb1-6dd7-4e4f-bc84-0d84e90d2e29:
+          uuid: 29286fb1-6dd7-4e4f-bc84-0d84e90d2e29
+          region: first
+          configuration:
+            id: notification_message
+            label: 'Notification messages'
+            label_display: '0'
+            provider: notification_message
+            context_mapping: {  }
+            notification_message:
+              type:
+                dashboard: dashboard
+              display_mode: default
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: one_column
+      layout_settings:
+        label: 'Upcoming Events'
+        context_mapping: {  }
+      components:
+        9bac8245-153b-4fd3-942c-d8a7991b0e66:
+          uuid: 9bac8245-153b-4fd3-942c-d8a7991b0e66
+          region: first
+          configuration:
+            id: 'views_block:news-most_recent'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+page: dashboard_home
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
