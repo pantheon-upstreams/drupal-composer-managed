@@ -38,48 +38,24 @@
 //------------------------------------
 
 .m-gallery {
-  //.m-gallery__slide > figure {
-  //  margin: auto;
-  //  width: fit-content;
-  //}
+  .m-gallery__slide > figure > figcaption {
+    font-size: calculations.rem(14px);
+    line-height: var(--surf-lh-default);
+    max-inline-size: 100%;
+    padding: 16px 0;
+    position: relative;
+    text-align: center;
 
-  //.m-gallery__slide > figure > figcaption {
-  //  font-size: calculations.rem(14px);
-  //  line-height: var(--surf-lh-default);
-  //  max-inline-size: 100%;
-  //  padding: 16px 0;
-  //  position: relative;
-  //  text-align: center;
-  //
-  //  @include breakpoints.bp-min(medium) {
-  //    background: var(--surf-color-white);
-  //    bottom: -1px;
-  //    max-inline-size: 400px;
-  //    padding-block: 24px;
-  //    padding-inline: 24px 0;
-  //    position: absolute;
-  //    right: -1px;
-  //    text-align: left;
-  //  }
-  //}
-
-  .m-gallery__slide > figure img {
-    //margin: auto;
-    //max-block-size: 210px;
-    //object-fit: contain;
-    //width: auto;
-    //
-    //@include breakpoints.bp-min(medium) {
-    //  max-block-size: 330px;
-    //}
-    //
-    //@include breakpoints.bp-min(large) {
-    //  max-block-size: 434px;
-    //}
-    //
-    //@include breakpoints.bp-min(xlarge) {
-    //  max-block-size: 660px;
-    //}
+    @include breakpoints.bp-min(medium) {
+      background: var(--surf-color-white);
+      bottom: -1px;
+      max-inline-size: 400px;
+      padding-block: 24px;
+      padding-inline: 24px 0;
+      position: absolute;
+      right: -1px;
+      text-align: left;
+    }
   }
 }
 
