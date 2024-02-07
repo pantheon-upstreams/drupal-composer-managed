@@ -150,7 +150,7 @@
     }
   }
 
-  .p-event__meta > *:last-child {
+  .p-event__meta > *:last-child:not(:only-of-type) {
     @include breakpoints.bp-min(large) {
       margin-left: 48px;
       position: relative;
