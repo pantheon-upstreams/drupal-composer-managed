@@ -11,7 +11,7 @@ field_name: field_ref_media
 entity_type: paragraph
 bundle: gallery
 label: Media
-description: ''
+description: "<p>Use <em>Media</em> to add as many images as you would like, that will then be formatted into a slideshow gallery. <strong>Recommended size: 1920x960 pixels</strong>.</p>\r\n<ul>\r\n<li><strong>Required: </strong> Be sure to fill in the Alternative Text for any images that are being uploaded. This short description of the image is required.</li>\r\n<li><strong>Caption / Credit: </strong> Although not required, Image media has valuable text options for captions and any image credit.</li>\r\n<li><strong>Cropping: </strong> There are several different cropping styles that can be applied to an image. It is recommended to customize all cropping styles for any single image in the Media Library.</li>\r\n<li>Edit any uploaded media in the <a href=\"/admin/content/media\">Media Library</a>.</li>\r\n</ul>"
 required: true
 translatable: false
 default_value: {  }
