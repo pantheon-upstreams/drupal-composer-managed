@@ -67,19 +67,19 @@
     //margin: auto;
     //max-block-size: 210px;
     //object-fit: contain;
-    width: auto;
-
-    @include breakpoints.bp-min(medium) {
-      max-block-size: 330px;
-    }
-
-    @include breakpoints.bp-min(large) {
-      max-block-size: 434px;
-    }
-
-    @include breakpoints.bp-min(xlarge) {
-      max-block-size: 660px;
-    }
+    //width: auto;
+    //
+    //@include breakpoints.bp-min(medium) {
+    //  max-block-size: 330px;
+    //}
+    //
+    //@include breakpoints.bp-min(large) {
+    //  max-block-size: 434px;
+    //}
+    //
+    //@include breakpoints.bp-min(xlarge) {
+    //  max-block-size: 660px;
+    //}
   }
 }
 

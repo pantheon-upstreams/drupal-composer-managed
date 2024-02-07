@@ -27,8 +27,6 @@
 
 {% set gallery_items %}
     {% for i in 0..content.field_ref_media|field_value|length - 1 %}
-        {% set item_height = content.field_ref_media[loop.index0]['#media'].field_media_image.0.width %}
-
         <li class="splide__slide m-gallery__slide">
             {{- content.field_ref_media[loop.index0] -}}
         </li>
