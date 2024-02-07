@@ -28,8 +28,6 @@ settings:
       override: hidden
     familyName:
       override: hidden
-    organization:
-      override: hidden
     sortingCode:
       override: hidden
   fields: {  }

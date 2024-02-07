@@ -7,11 +7,11 @@ _core:
 id: compact
 label: Compact
 date_format: 'F j, Y'
-time_format: 'g:i A'
-time_hour_format: 'g:i A'
+time_format: 'g:iA'
+time_hour_format: 'g:iA'
 allday_label: ''
-separator: ' - '
-join: ' | '
+separator: '-'
+join: ' '
 ampm_reduce: '1'
 date_first: '1'
 site_time_toggle: '1'

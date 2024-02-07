@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.event.field_department
     - field.field.node.event.field_link
     - field.field.node.event.field_location_address
-    - field.field.node.event.field_location_title
     - field.field.node.event.field_media_primary
     - field.field.node.event.field_overview
     - field.field.node.event.field_ref_attendees
@@ -90,14 +89,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 7
-    region: content
-  field_location_title:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_media_primary:
     type: entity_reference_entity_view

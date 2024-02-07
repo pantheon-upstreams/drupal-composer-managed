@@ -6,13 +6,14 @@
  * Available props:
  * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
  * - event_attributes: [string] Component reserved space for attributes.
+ * - event_body: [arary] Rendered array of all content placed on the page.
+ * - event_dates: [string] Rendered array of dates relating to this component.
  * - event_heading: [string] Value of the page title for this component.
- * - event_summary: [string] Value of sub-title text for this component.
- * - event_dates [string] Rendered array of dates relating to this component.
- * - event_link_text [string] Value that represents the text of the primary link.
- * - event_link_url [string] Value of the URL that represents the direction of the primary link.
+ * - event_link_text: [string] Value that represents the text of the primary link.
+ * - event_link_url: [string] Value of the URL that represents the direction of the primary link.
+ * - event_location: [array] Expecting an array object of the full address markup.
  * - event_media: [array] Rendered array of the media object that represents this component.
- * - event_body [arary] Rendered array of all content placed on the page.
+ * - event_summary: [string] Value of sub-title text for this component.
  *
  */
 #}
@@ -32,6 +33,7 @@
             event_dates,
             event_link_text,
             event_link_url,
+            event_location,
         } only %}
             {% block header_links_block %}
                 {{ drupal_breadcrumb() }}
@@ -39,10 +41,20 @@
 
             {% block header_metadata_block %}
                 <div class="p-event__meta-wrapper">
-                    {% if event_dates %}
-                        <div class="p-event__dates">
-                            <p>{{ event_dates }}</p>
-                        </div>
+                    {% if event_dates or event_location is not empty %}
+                        <p class="p-event__meta">
+                            {% if event_dates %}
+                                <span class="p-event__dates">
+                                    {{ event_dates }}
+                                </span>
+                            {% endif %}
+
+                            {% if event_location is not empty %}
+                                <span class="p-event__location">
+                                    {{ event_location }}
+                                </span>
+                            {% endif %}
+                        </p>
                     {% endif %}
 
                     {% if event_link_url %}

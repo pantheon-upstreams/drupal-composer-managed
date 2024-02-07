@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.event.field_department
     - field.field.node.event.field_link
     - field.field.node.event.field_location_address
-    - field.field.node.event.field_location_title
     - field.field.node.event.field_media_primary
     - field.field.node.event.field_overview
     - field.field.node.event.field_ref_attendees
@@ -78,7 +77,6 @@ hidden:
   field_department: true
   field_link: true
   field_location_address: true
-  field_location_title: true
   field_ref_attendees: true
   field_ref_audiences: true
   field_ref_eo_opportunities: true

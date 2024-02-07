@@ -16,6 +16,7 @@
 ] %}
 
 {% set rendered_content = content|without(
+    'field_location_address',
     'field_dates',
     'field_link',
     'field_media_primary',
@@ -35,11 +36,12 @@
     attributes,
     rendered_content,
     event_attributes: create_attribute({'class': classes}),
-    event_heading: label|field_value,
-    event_media: content.field_media_primary|field_value|default([]),
-    event_summary: content.field_overview|render ? content.field_overview|field_value,
     event_body: content.body|field_value|default([]),
     event_dates: content.field_dates|field_value|default([]),
+    event_heading: label|field_value,
+    event_location: content.field_location_address|field_value|default([]),
     event_link_text: registration_link_text|default([]),
     event_link_url: registration_link_url|default([]),
+    event_media: content.field_media_primary|field_value|default([]),
+    event_summary: content.field_overview|render ? content.field_overview|field_value,
 } only %}

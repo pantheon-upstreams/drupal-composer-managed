@@ -232,9 +232,3 @@
 .p-curriculum-module__header .o-header__content {
   max-inline-size: calc(var(--surf-width-large) + (var(--surf-grid-gap) * 2));
 }
-
-.p-event--full {
-  .o-header__text-wrapper {
-    max-inline-size: 920px;
-  }
-}
