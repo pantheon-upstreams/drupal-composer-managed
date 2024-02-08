@@ -68,10 +68,9 @@
 
     {% if rows -%}
         <div class="o-view__rows">
-            {% embed 'surf_main:two-column' with {
+            {% embed 'surf_main:one-column' with {
                 layout_attributes: create_attribute(),
                 layout_items: rows,
-                layout_column_widths: '50-50',
                 layout_html_wrapper: 'ul',
             } only %}
                 {% block layout_content %}
