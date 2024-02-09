@@ -18,15 +18,17 @@
 ] %}
 
 <div {{ statement_attributes.addClass(classes).merge(attributes) }}>
-    {% if statement_eyebrow %}
-        <p class="m-statement__eyebrow">{{ statement_eyebrow }}</p>
-    {% endif %}
+    <h2 class="m-statement__title">
+        {% if statement_eyebrow %}
+            <span class="m-statement__eyebrow">{{ statement_eyebrow }}</span>
+        {% endif %}
 
-    <h2 class="m-statement__title">{{ statement_title }}</h2>
+        {{ statement_title }}
 
-    {% if statement_eyebrow_bottom %}
-        <p class="m-statement__eyebrow-bottom">{{ statement_eyebrow_bottom }}</p>
-    {% endif %}
+        {% if statement_eyebrow_bottom %}
+            <span class="m-statement__eyebrow-bottom">{{ statement_eyebrow_bottom }}</span>
+        {% endif %}
+    </h2>
 
     {% if statement_text %}
         <div class="m-statement__text">{{ statement_text }}</div>

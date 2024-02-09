@@ -78,6 +78,7 @@
 @mixin primary() {
   .a-button.a-button--primary {
     padding: 8px 16px;
+    text-transform: uppercase;
 
     &:hover,
     &:focus {
@@ -143,6 +144,7 @@
   padding: 4px 0;
   position: relative;
   text-decoration: none;
+  text-transform: uppercase;
   transition: animations.transition(all, 0.35s, easeInOutExpo);
 
   @if $color == 'navy' {

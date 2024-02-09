@@ -69,15 +69,6 @@
     }
   }
 
-  .m-statistics-banner__eyebrow {
-    color: var(--surf-color-white);
-    font-family: var(--surf-font-condensed);
-    font-size: var(--surf-fs-22-40);
-    font-weight: var(--surf-fw-bold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
   .m-statistics-banner__title {
     color: var(--surf-color-white);
     font-family: var(--surf-font-sans-alt);
@@ -96,6 +87,24 @@
     }
     @include breakpoints.bp-min(xxlarge) {
       font-size: calculations.rem(176px);
+    }
+  }
+
+  .m-statistics-banner__eyebrow,
+  .m-statistics-banner__eyebrow-bottom {
+    color: var(--surf-color-white);
+    display: block;
+    font-family: var(--surf-font-condensed);
+    font-weight: var(--surf-fw-bold);
+    font-size: var(--surf-fs-22-40);
+    letter-spacing: 2px;
+    line-height: 1.3;
+
+    @include breakpoints.bp-min(medium) {
+      background: none;
+      background-size: inherit;
+      -webkit-background-clip: inherit;
+      -webkit-text-fill-color: initial;
     }
   }
 

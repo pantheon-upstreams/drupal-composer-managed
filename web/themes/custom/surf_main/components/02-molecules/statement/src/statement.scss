@@ -23,25 +23,6 @@
 //------------------------------------
 
 .m-statement {
-  .m-statement__eyebrow,
-  .m-statement__eyebrow-bottom {
-    color: var(--surf-color-gray-600);
-    font-family: var(--surf-font-condensed);
-    font-weight: var(--surf-fw-bold);
-    font-size: var(--surf-fs-22-40);
-    letter-spacing: 2px;
-    line-height: 1.3;
-    text-transform: uppercase;
-  }
-
-  .m-statement__eyebrow {
-    margin-block-end: 8px;
-
-    @include breakpoints.bp-min(medium) {
-      margin-block-end: 0;
-    }
-  }
-
   .m-statement__title {
     font-family: var(--surf-font-sans-alt);
     font-size: calculations.rem(48px);
@@ -67,6 +48,32 @@
 
     @include breakpoints.bp-min(xxlarge) {
       font-size: calculations.rem(176px);
+    }
+  }
+
+  .m-statement__eyebrow,
+  .m-statement__eyebrow-bottom {
+    color: var(--surf-color-gray-600);
+    display: block;
+    font-family: var(--surf-font-condensed);
+    font-weight: var(--surf-fw-bold);
+    font-size: var(--surf-fs-22-40);
+    letter-spacing: 2px;
+    line-height: 1.3;
+
+    @include breakpoints.bp-min(medium) {
+      background: none;
+      background-size: inherit;
+      -webkit-background-clip: inherit;
+      -webkit-text-fill-color: initial;
+    }
+  }
+
+  .m-statement__eyebrow {
+    margin-block-end: 8px;
+
+    @include breakpoints.bp-min(medium) {
+      margin-block-end: 0;
     }
   }
 

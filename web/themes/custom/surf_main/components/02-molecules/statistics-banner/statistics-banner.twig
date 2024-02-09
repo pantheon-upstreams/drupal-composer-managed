@@ -28,16 +28,17 @@
     {% endif %}
 
     <div class="m-statistics-banner__content">
+      <h2 class="m-statistics-banner__title">
+          {% if statistics_banner_eyebrow %}
+              <span class="m-statistics-banner__eyebrow">{{ statistics_banner_eyebrow }}</span>
+          {% endif %}
 
-      {% if statistics_banner_eyebrow %}
-        <p class="m-statistics-banner__eyebrow">{{ statistics_banner_eyebrow }}</p>
-      {% endif %}
+          {{ statistics_banner_title }}
 
-      <h2 class="m-statistics-banner__title">{{ statistics_banner_title }}</h2>
-
-      {% if statistics_banner_eyebrow_bottom %}
-        <p class="m-statistics-banner__eyebrow">{{ statistics_banner_eyebrow_bottom }}</p>
-      {% endif %}
+          {% if statistics_banner_eyebrow_bottom %}
+              <span class="m-statistics-banner__eyebrow">{{ statistics_banner_eyebrow_bottom }}</span>
+          {% endif %}
+      </h2>
 
       {% if statistics_banner_text %}
         <div class="m-statistics-banner__text">{{ statistics_banner_text }}</div>
