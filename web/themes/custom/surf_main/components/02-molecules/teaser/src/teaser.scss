@@ -797,8 +797,6 @@
 
 .l-onecol--listing > .l-onecol__region > .m-teaser.m-teaser--search-result:not(.m-teaser--super),
 .l-onecol--listing > .l-onecol__region > .paragraph--content-as-teaser > .m-teaser.m-teaser--search-result:not(.m-teaser--super) {
-  background: lime;
-
   .m-teaser__media {
     @include breakpoints.bp-min(small) {
       inline-size: 50%;
