@@ -24,7 +24,14 @@
   ol:not([class]) {
     @include lists.list-reset();
   }
+
+  ul:not([class], :first-child),
+  ol:not([class], :first-child) {
+    margin-block-start: 16px;
+  }
 }
+
+@include general();
 
 
 
@@ -64,6 +71,8 @@
   }
 }
 
+@include unordered();
+
 
 
 
@@ -99,3 +108,5 @@
     position: absolute;
   }
 }
+
+@include ordered();

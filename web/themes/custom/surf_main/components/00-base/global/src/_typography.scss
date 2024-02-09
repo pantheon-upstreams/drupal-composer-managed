@@ -196,12 +196,14 @@ body {
 //------------------------------------
 
 @mixin general() {
-  p, li, td {
+  p:not([class]),
+  li:not([class]),
+  td:not([class]) {
     font-size: var(--surf-fs-16-18);
     line-height: var(--surf-lh-default);
   }
 
-  p:not( :first-child ) {
+  p:not([class], :first-child) {
     margin-block-start: 16px;
   }
 
@@ -225,6 +227,9 @@ body {
     line-height: var(--surf-lh-label);
   }
 }
+
+@include general();
+
 
 
 
