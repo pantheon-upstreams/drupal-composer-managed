@@ -222,6 +222,7 @@
 
   p.m-teaser__content-text {
     font-size: var(--surf-fs-18-24);
+    line-height: 1.4;
     margin: 16px 0 0;
   }
 }
@@ -269,6 +270,7 @@
 
   .m-teaser__title {
     font-size: var(--surf-fs-18-24);
+    line-height: 1.4;
   }
 
   &:hover .m-teaser__title a,
@@ -504,7 +506,7 @@
   .m-teaser__title {
     font-size: var(--surf-fs-18-24);
     font-weight: var(--surf-fw-bold);
-    line-height: var(--surf-lh-label);
+    line-height: 1.4;
     margin-block-end: calculations.rem(12px);
   }
 
