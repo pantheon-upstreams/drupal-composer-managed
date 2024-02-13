@@ -33,3 +33,14 @@
 .me-node-form .accordion {
   border-top: none;
 }
+
+
+
+
+/*------------------------------------*\
+  02 - Misc
+\*------------------------------------*/
+
+.paragraphs-tabs-wrapper .field-multiple-table td:empty {
+  display: none;
+}

@@ -22,13 +22,14 @@
 
 {% set rendered_content = content|without(
     'announcements',
-    'upcoming_events',
+    'content',
     'my_attended_events',
-    'my_upcoming_events',
     'my_curriculum',
+    'my_upcoming_events',
     'navigation_bottom',
     'navigation_top',
     'news',
+    'upcoming_events',
 ) %}
 
 {% set classes = [
@@ -42,28 +43,35 @@
     }
 ] %}
 
-<article {{ attributes.addClass(classes) }}>
-    <section class="p-dashboard__hero">
-        <div class="container container--xlarge">
-            {% if page_id != 'dashboard_home' %}
-                {% include 'surf_main:breadcrumbs' with {
-                    breadcrumbs_attributes: create_attribute(),
-                    breadcrumbs_label: 'Back to dashboard',
-                    breadcrumbs_navigation: dashboard_breadbrumb,
-                    breadcrumbs_type: 'single-back',
-                }%}
-            {% endif %}
+{# Display node content #}
+{% if content.content %}
+    {{ content.content }}
+{% endif %}
 
-            {% include 'surf_main:header' with {
-                rendered_content,
-                header_attributes: create_attribute(),
-                heading_attributes: create_attribute({'class': 'o-header__heading a-heading'}),
-                header_heading: page_title,
-                header_heading_level: '1',
-                header_type: style_options['header_type']|default('ripple'),
-            } only %}
-        </div>
-    </section>
+<article {{ attributes.addClass(classes) }}>
+    {% if page_id != 'dashboard_curriculum_units' %}
+        <section class="p-dashboard__hero">
+            <div class="container container--xlarge">
+                {% if page_id != 'dashboard_home' %}
+                    {% include 'surf_main:breadcrumbs' with {
+                        breadcrumbs_attributes: create_attribute(),
+                        breadcrumbs_label: 'Back to dashboard',
+                        breadcrumbs_navigation: dashboard_breadbrumb,
+                        breadcrumbs_type: 'single-back',
+                    }%}
+                {% endif %}
+
+                {% include 'surf_main:header' with {
+                    rendered_content,
+                    header_attributes: create_attribute(),
+                    heading_attributes: create_attribute({'class': 'o-header__heading a-heading'}),
+                    header_heading: page_title,
+                    header_heading_level: '1',
+                    header_type: style_options['header_type']|default('ripple'),
+                } only %}
+            </div>
+        </section>
+    {% endif %}
 
     <div class="p-dashboard__content">
         {% if content.navigation_top %}
