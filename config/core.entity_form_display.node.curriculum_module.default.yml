@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.curriculum_module.body
-    - field.field.node.curriculum_module.field_content_area
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
     - field.field.node.curriculum_module.field_ref_audiences
+    - field.field.node.curriculum_module.field_ref_educator_resource_type
     - field.field.node.curriculum_module.field_ref_eo_opportunities
     - field.field.node.curriculum_module.field_ref_grade_level
     - field.field.node.curriculum_module.field_ref_related_content
@@ -51,7 +51,7 @@ third_party_settings:
       label: Content
       region: content
       parent_name: group_tabs
-      weight: 25
+      weight: 28
       format_type: tab
       format_settings:
         classes: ''
@@ -66,7 +66,7 @@ third_party_settings:
       label: Related
       region: content
       parent_name: group_tabs
-      weight: 27
+      weight: 30
       format_type: tab
       format_settings:
         classes: ''
@@ -78,7 +78,6 @@ third_party_settings:
     group_tags:
       children:
         - field_ref_audiences
-        - field_content_area
         - field_ref_eo_opportunities
         - field_ref_grade_level
         - field_ref_research_areas
@@ -86,7 +85,7 @@ third_party_settings:
       label: Tags
       region: content
       parent_name: group_tabs
-      weight: 28
+      weight: 31
       format_type: tab
       format_settings:
         classes: ''
@@ -102,7 +101,7 @@ third_party_settings:
       label: 'Media / Resources'
       region: content
       parent_name: group_tabs
-      weight: 26
+      weight: 29
       format_type: tab
       format_settings:
         classes: ''
@@ -138,12 +137,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content_area:
-    type: options_select
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_media:
     type: media_library_widget
     weight: 3
@@ -169,15 +162,21 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_ref_educator_resource_type:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_ref_eo_opportunities:
     type: options_select
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_grade_level:
     type: options_select
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -193,13 +192,13 @@ content:
     third_party_settings: {  }
   field_ref_research_areas:
     type: options_select
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_standards:
     type: options_select
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,0 +1,11 @@
+uuid: 9bad6179-a3a6-4ee3-8aab-56c2b309b261
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.educator_resource_type
+id: taxonomy_term.educator_resource_type
+target_entity_type_id: taxonomy_term
+target_bundle: educator_resource_type
+default_langcode: site_default
+language_alterable: false

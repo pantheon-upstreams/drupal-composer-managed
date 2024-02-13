@@ -1,19 +1,19 @@
-uuid: b967f429-798a-4b24-b793-42a20e574cc2
+uuid: aaaa51f9-5e72-49ff-b2e1-b728fa9d557c
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_content_area
-field_name: field_content_area
+id: node.field_ref_educator_resource_type
+field_name: field_ref_educator_resource_type
 entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

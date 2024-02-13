@@ -1,18 +1,18 @@
-uuid: 2d39e153-526d-49ef-b557-c66420d854a2
+uuid: 9d0e69ae-125c-43bb-9fc4-b9a3b31bab2b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content_area
+    - field.storage.node.field_ref_educator_resource_type
     - node.type.curriculum_module
-    - taxonomy.vocabulary.content_area
-id: node.curriculum_module.field_content_area
-field_name: field_content_area
+    - taxonomy.vocabulary.educator_resource_type
+id: node.curriculum_module.field_ref_educator_resource_type
+field_name: field_ref_educator_resource_type
 entity_type: node
 bundle: curriculum_module
-label: 'Content Area'
+label: Type
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      content_area: content_area
+      educator_resource_type: educator_resource_type
     sort:
       field: name
       direction: asc

@@ -34,9 +34,9 @@ third_party_settings:
       text_webform: 'Request this Curriculum'
   search_api_exclude:
     enabled: 1
-name: 'Curriculum Module'
+name: 'Educator Resource'
 type: curriculum_module
-description: 'Use <em>Curriculum Module</em> to add learning segments, often used within classroom settings.'
+description: 'Use <em>Educator Resource</em> to add learning segments, presentations or field trips, often used within classroom settings.'
 help: ''
 new_revision: false
 preview_mode: 0

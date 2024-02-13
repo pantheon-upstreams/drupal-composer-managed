@@ -1,0 +1,8 @@
+uuid: 1aecc9bf-a791-4c6d-85d2-5c3b59ad88c5
+langcode: en
+status: true
+dependencies: {  }
+name: 'Educator Resource Type'
+vid: educator_resource_type
+description: ''
+weight: 0
