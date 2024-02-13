@@ -67,9 +67,10 @@ filters:
     status: true
     weight: 100
     settings:
-      default_view_mode: small
+      default_view_mode: large
       allowed_view_modes:
         large: large
         small: small
       allowed_media_types:
         image: image
+        remote_video: remote_video
