@@ -5,11 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.event
-    - taxonomy.vocabulary.department
     - taxonomy.vocabulary.event_type
   content:
     - 'taxonomy_term:event_type:1940ce8d-d348-4286-b56e-3e88b81ab08a'
     - 'taxonomy_term:event_type:90207067-376c-4b72-9421-8fb19574622a'
+    - 'taxonomy_term:event_type:caced39c-19d8-4802-96bd-8c06e6750ef3'
   module:
     - better_exposed_filters
     - datetime
@@ -18,7 +18,7 @@ dependencies:
     - user
     - views_filters_summary
 id: events
-label: 'Events'
+label: Events
 module: views
 description: ''
 tag: ''
@@ -87,7 +87,7 @@ display:
           settings:
             link_to_entity: true
           group_column: value
-          group_columns: { }
+          group_columns: {  }
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -155,8 +155,8 @@ display:
           perm: 'access content'
       cache:
         type: tag
-        options: { }
-      empty: { }
+        options: {  }
+      empty: {  }
       sorts:
         created:
           id: created
@@ -174,7 +174,7 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
-      arguments: { }
+      arguments: {  }
       filters:
         status:
           id: status
@@ -188,7 +188,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         type:
           id: type
           table: node_field_data
@@ -198,164 +198,10 @@ display:
           plugin_id: bundle
           value:
             event: event
-          expose:
-            operator_limit_selection: false
-            operator_list: { }
-        field_dates_value:
-          id: field_dates_value
-          table: node__field_dates
-          field: field_dates_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: today
-            type: offset
           group: 1
-          exposed: false
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
             operator_limit_selection: false
-            operator_list: { }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: { }
-            group_items: { }
-        field_department_target_id:
-          id: field_department_target_id
-          table: node__field_department
-          field: field_department_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: { }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_department_target_id_op
-            label: Department
-            description: ''
-            use_operator: false
-            operator: field_department_target_id_op
-            operator_limit_selection: false
-            operator_list: { }
-            identifier: department
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: { }
-            group_items: { }
-          reduce_duplicates: false
-          vid: department
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-        field_location_title_target_id:
-          id: field_location_title_target_id
-          table: node__field_location_title
-          field: field_location_title_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: { }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_location_title_target_id_op
-            label: Location
-            description: ''
-            use_operator: false
-            operator: field_location_title_target_id_op
-            operator_limit_selection: false
-            operator_list: { }
-            identifier: location
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: { }
-            group_items: { }
-          reduce_duplicates: false
-          vid: location
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
+            operator_list: {  }
         field_ref_event_types_target_id:
           id: field_ref_event_types_target_id
           table: node__field_ref_event_types
@@ -365,7 +211,7 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -375,7 +221,7 @@ display:
             use_operator: false
             operator: field_ref_event_types_target_id_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: event_type
             required: false
             remember: false
@@ -403,14 +249,64 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           reduce_duplicates: false
           vid: event_type
           type: select
           hierarchy: false
           limit: true
           error_message: true
+        field_ref_event_types_target_id_1:
+          id: field_ref_event_types_target_id_1
+          table: node__field_ref_event_types
+          field: field_ref_event_types_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            - 311
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_type
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: html_list
         options:
@@ -432,11 +328,11 @@ display:
           disable_sql_rewrite: false
           distinct: false
           replica: false
-          query_tags: { }
-      relationships: { }
-      header: { }
-      footer: { }
-      display_extenders: { }
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer: {  }
+      display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -445,7 +341,7 @@ display:
         - url
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   full:
     id: full
     display_title: Full
@@ -457,7 +353,7 @@ display:
         type: full
         options:
           offset: 2
-          items_per_page: 12
+          items_per_page: 5
           total_pages: null
           id: 0
           tags:
@@ -469,7 +365,7 @@ display:
             items_per_page: false
             items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
+            items_per_page_options_all: true
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
@@ -495,7 +391,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          order: ASC
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -514,7 +410,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         type:
           id: type
           table: node_field_data
@@ -524,41 +420,48 @@ display:
           plugin_id: bundle
           value:
             event: event
+          group: 1
           expose:
             operator_limit_selection: false
-            operator_list: { }
-        field_dates_value:
-          id: field_dates_value
-          table: node__field_dates
-          field: field_dates_value
+            operator_list: {  }
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: today
-            type: offset
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: title_op
+            label: Title
             description: ''
             use_operator: false
-            operator: ''
+            operator: title_op
             operator_limit_selection: false
-            operator_list: { }
-            identifier: ''
+            operator_list: {  }
+            identifier: title
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
             placeholder: ''
           is_grouped: false
           group_info:
@@ -570,118 +473,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
-        field_department_target_id:
-          id: field_department_target_id
-          table: node__field_department
-          field: field_department_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: { }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_department_target_id_op
-            label: Department
-            description: ''
-            use_operator: false
-            operator: field_department_target_id_op
-            operator_limit_selection: false
-            operator_list: { }
-            identifier: department
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: { }
-            group_items: { }
-          reduce_duplicates: false
-          vid: department
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-        field_location_title_target_id:
-          id: field_location_title_target_id
-          table: node__field_location_title
-          field: field_location_title_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: { }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_location_title_target_id_op
-            label: Location
-            description: ''
-            use_operator: false
-            operator: field_location_title_target_id_op
-            operator_limit_selection: false
-            operator_list: { }
-            identifier: location
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              employee: '0'
-              educator: '0'
-              science: '0'
-              human_resources: '0'
-              moderator: '0'
-              business_editor: '0'
-              ehs_editor: '0'
-              administrator: '0'
-              visit_coordinator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: { }
-            group_items: { }
-          reduce_duplicates: false
-          vid: location
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
+            default_group_multiple: {  }
+            group_items: {  }
         field_ref_event_types_target_id:
           id: field_ref_event_types_target_id
           table: node__field_ref_event_types
@@ -691,7 +484,7 @@ display:
           admin_label: ''
           plugin_id: taxonomy_index_tid
           operator: or
-          value: { }
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -701,7 +494,7 @@ display:
             use_operator: false
             operator: field_ref_event_types_target_id_op
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: event_type
             required: false
             remember: false
@@ -729,11 +522,57 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           reduce_duplicates: false
           vid: event_type
           type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_ref_event_types_target_id_1:
+          id: field_ref_event_types_target_id_1
+          table: node__field_ref_event_types
+          field: field_ref_event_types_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            - 311
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_type
+          type: textfield
           hierarchy: false
           limit: true
           error_message: true
@@ -775,7 +614,7 @@ display:
           show_remove_link: 0
           show_reset_link: 0
           filters_reset_link_title: Reset
-      display_extenders: { }
+      display_extenders: {  }
       block_description: 'All Events'
     cache_metadata:
       max-age: -1
@@ -786,7 +625,7 @@ display:
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   upcoming_events_dashboard:
     id: upcoming_events_dashboard
     display_title: 'Upcoming Events - Dashboard'
@@ -822,7 +661,7 @@ display:
           expose:
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         type:
           id: type
           table: node_field_data
@@ -835,7 +674,7 @@ display:
           group: 1
           expose:
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         field_dates_value:
           id: field_dates_value
           table: node__field_dates
@@ -859,7 +698,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -879,8 +718,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         field_ref_event_types_target_id:
           id: field_ref_event_types_target_id
           table: node__field_ref_event_types
@@ -902,7 +741,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -920,8 +759,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
           reduce_duplicates: false
           vid: event_type
           type: select
@@ -938,7 +777,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      display_extenders: { }
+      display_extenders: {  }
       block_description: 'Upcoming Events - Dashboard'
     cache_metadata:
       max-age: -1
@@ -947,7 +786,7 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
+      tags: {  }
   upcoming_events_two:
     id: upcoming_events_two
     display_title: 'Upcoming Events - Two'
@@ -1001,7 +840,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -1018,8 +857,8 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
         type:
           id: type
           table: node_field_data
@@ -1032,7 +871,7 @@ display:
           group: 1
           expose:
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
         field_dates_value:
           id: field_dates_value
           table: node__field_dates
@@ -1056,7 +895,7 @@ display:
             use_operator: false
             operator: ''
             operator_limit_selection: false
-            operator_list: { }
+            operator_list: {  }
             identifier: ''
             required: false
             remember: false
@@ -1076,8 +915,54 @@ display:
             multiple: false
             remember: false
             default_group: All
-            default_group_multiple: { }
-            group_items: { }
+            default_group_multiple: {  }
+            group_items: {  }
+        field_ref_event_types_target_id:
+          id: field_ref_event_types_target_id
+          table: node__field_ref_event_types
+          field: field_ref_event_types_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: not
+          value:
+            - 311
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: event_type
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -1088,7 +973,7 @@ display:
         filters: false
         filter_groups: false
       display_description: ''
-      display_extenders: { }
+      display_extenders: {  }
       block_description: 'Upcoming Events - Two'
     cache_metadata:
       max-age: -1
@@ -1097,5 +982,4 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: { }
-
+      tags: {  }
