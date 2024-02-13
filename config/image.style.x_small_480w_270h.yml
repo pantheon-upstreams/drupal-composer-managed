@@ -1,0 +1,32 @@
+uuid: 283e7034-3c71-4edc-a39d-c024ff175e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.standard_widescreen
+  module:
+    - crop
+name: x_small_480w_270h
+label: 'X Small (480W x 270H)'
+effects:
+  905bdf2c-4a34-4192-9cac-b077cd98a43e:
+    uuid: 905bdf2c-4a34-4192-9cac-b077cd98a43e
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: standard_widescreen
+      automatic_crop_provider: null
+  23a1de36-dade-4627-a07c-61150c88afab:
+    uuid: 23a1de36-dade-4627-a07c-61150c88afab
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 480
+      height: 270
+      anchor: center-center
+  0fa942ed-c08d-493d-8467-9b127084ecc5:
+    uuid: 0fa942ed-c08d-493d-8467-9b127084ecc5
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

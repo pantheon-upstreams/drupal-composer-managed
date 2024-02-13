@@ -1,0 +1,32 @@
+uuid: 14548a43-e3fc-4ad1-b716-b668f98a631b
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.standard_widescreen
+  module:
+    - crop
+name: x_large_1920w_1080h
+label: 'X Large (1920W x 1080H)'
+effects:
+  fccb6a34-9c53-4a46-b11c-0f041e454866:
+    uuid: fccb6a34-9c53-4a46-b11c-0f041e454866
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: standard_widescreen
+      automatic_crop_provider: null
+  4ed84c87-20b6-4d5e-83c7-b56f9ca0a757:
+    uuid: 4ed84c87-20b6-4d5e-83c7-b56f9ca0a757
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 1080
+      anchor: center-center
+  15c78bd1-6674-47b7-b5ac-3c2682990005:
+    uuid: 15c78bd1-6674-47b7-b5ac-3c2682990005
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

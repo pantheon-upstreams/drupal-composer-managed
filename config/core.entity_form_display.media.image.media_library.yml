@@ -38,6 +38,7 @@ content:
         - banner_tall
         - hero_default
         - profile_default
+        - standard_widescreen
         - teaser_default
       crop_types_required: {  }
       warn_multiple_usages: true

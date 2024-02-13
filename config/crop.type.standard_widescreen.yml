@@ -1,0 +1,12 @@
+uuid: 87134d04-bfe4-48ac-b0a5-f3e004f7e014
+langcode: en
+status: true
+dependencies: {  }
+label: 'Standard - Widescreen'
+id: standard_widescreen
+description: ''
+aspect_ratio: '16:9'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

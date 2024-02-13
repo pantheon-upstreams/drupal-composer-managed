@@ -1,0 +1,32 @@
+uuid: 6e7cbe57-f95f-4a3e-8746-9b4ef2d841ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.standard_widescreen
+  module:
+    - crop
+name: large_1200w_675h
+label: 'Large (1200W x 675H)'
+effects:
+  1e005647-d187-4160-a124-b9cfc1ab4192:
+    uuid: 1e005647-d187-4160-a124-b9cfc1ab4192
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: standard_widescreen
+      automatic_crop_provider: null
+  66eb22de-9dd2-4948-ba10-2c2d6257854f:
+    uuid: 66eb22de-9dd2-4948-ba10-2c2d6257854f
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1200
+      height: 675
+      anchor: center-center
+  3e1481a0-81d0-46ac-99f8-e87ab54fa7eb:
+    uuid: 3e1481a0-81d0-46ac-99f8-e87ab54fa7eb
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

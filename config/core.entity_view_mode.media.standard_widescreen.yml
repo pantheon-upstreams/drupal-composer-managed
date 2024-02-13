@@ -1,0 +1,11 @@
+uuid: 797f6323-05b4-42f5-aead-4f876293bd16
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.standard_widescreen
+label: 'Standard - Widescreen'
+description: ''
+targetEntityType: media
+cache: true

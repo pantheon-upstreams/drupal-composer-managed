@@ -1,0 +1,52 @@
+uuid: 41e0f42c-3d77-49cf-91c6-09a26234d240
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_1200w_675h
+    - image.style.medium_992w_558h
+    - image.style.small_768w_432h
+    - image.style.x_large_1920w_1080h
+    - image.style.x_small_480w_270h
+  theme:
+    - surf_main
+id: standard_widescreen
+label: 'Standard - Widescreen'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: x_large_1920w_1080h
+    breakpoint_id: surf_main.x_large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_1200w_675h
+    breakpoint_id: surf_main.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: x_large_1920w_1080h
+    breakpoint_id: surf_main.large
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_992w_558h
+    breakpoint_id: surf_main.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: large_1200w_675h
+    breakpoint_id: surf_main.medium
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: small_768w_432h
+    breakpoint_id: surf_main.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: medium_992w_558h
+    breakpoint_id: surf_main.small
+    multiplier: 2x
+breakpoint_group: surf_main
+fallback_image_style: x_small_480w_270h
