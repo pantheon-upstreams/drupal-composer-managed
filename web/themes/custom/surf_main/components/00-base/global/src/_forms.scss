@@ -22,20 +22,28 @@
 //  02 - General
 //------------------------------------
 
-.m-form {
+.m-form,
+#mc_embed_signup form > div {
   > * + *,
   .m-form__field + .m-form__field {
-    margin-block-start: var(--surf-gap-small);
-
-    @include breakpoints.bp-min(large) {
-      margin-block-start: var(--surf-gap-large);
-    }
+    margin-block-start: var(--surf-grid-gap);
   }
 
   .m-form__field--title input {
     background: svg-load('icon-search.svg') no-repeat 10px 10px;
     background-size: 28px;
     padding-inline-start: 48px;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li:before {
+    display: none;
   }
 }
 
@@ -204,8 +212,13 @@ input[type='submit']:not(:only-child):last-child {
 //------------------------------------
 
 .m-form__field--checkbox,
-.m-form__field--radio {
+.m-form__field--radio,
+.input-group {
   position: relative;
+
+  > ul {
+    margin-block-start: 8px !important;
+  }
 
   input {
     appearance: none;
