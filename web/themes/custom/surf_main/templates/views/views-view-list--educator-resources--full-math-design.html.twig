@@ -1,0 +1,14 @@
+{% embed 'surf_main:three-column' with {
+    layout_attributes: create_attribute(),
+    layout_items: rows,
+    layout_column_widths: '33-34-33',
+    layout_html_wrapper: 'ul',
+} only %}
+    {% block layout_content %}
+        {% for item in layout_items %}
+            <li class="l-threecol__region">
+                {{ item.content }}
+            </li>
+        {% endfor %}
+    {% endblock %}
+{% endembed %}

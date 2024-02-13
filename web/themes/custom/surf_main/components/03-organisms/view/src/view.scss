@@ -43,7 +43,13 @@
   }
 
   &.o-view--full .o-view__rows,
-  &.o-view--full .o-view__empty {
+  &.o-view--full .o-view__empty,
+  &.o-view--full-curriculum-units .o-view__rows,
+  &.o-view--full-curriculum-units .o-view__empty,
+  &.o-view--full-math-design .o-view__rows,
+  &.o-view--full-math-design .o-view__empty,
+  &.o-view--full-trips-presentations .o-view__rows,
+  &.o-view--full-trips-presentations .o-view__empty {
     margin-block-start: 32px;
 
     @include breakpoints.bp-min(large) {

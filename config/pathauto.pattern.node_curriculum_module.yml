@@ -5,14 +5,14 @@ dependencies:
   module:
     - node
 id: node_curriculum_module
-label: 'Node - Curriculum Module'
+label: 'Node - Educator Resource'
 type: 'canonical_entities:node'
-pattern: '/education/in-your-classroom/curriculum-modules/[node:title]'
+pattern: '/education/in-your-classroom/[node:title]'
 selection_criteria:
-  ae4b2783-227e-4f03-aaec-b0dde1055a9f:
+  ec61a7a4-1d1f-45ef-85da-a7e66653aeef:
     id: 'entity_bundle:node'
     negate: false
-    uuid: ae4b2783-227e-4f03-aaec-b0dde1055a9f
+    uuid: ec61a7a4-1d1f-45ef-85da-a7e66653aeef
     context_mapping:
       node: node
     bundles:
