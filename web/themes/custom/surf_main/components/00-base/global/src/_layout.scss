@@ -183,6 +183,7 @@ ul.l-threecol {
   display: flex;
   flex-flow: nowrap column;
   gap: 32px;
+  position: relative;
 
   @include breakpoints.bp-min(medium) {
     gap: 40px;
