@@ -18,14 +18,35 @@ use Drupal\surf_dashboard\Entity\EntityUserDashboardTrait;
 class CurriculumModule extends Node implements EntityUserDashboardInterface {
 
   use EntityUserDashboardTrait;
-  use EntityWebformLinkTrait;
+  use EntityWebformLinkTrait {
+    getWebformUrlParams as traitGetWebformUrlParams;
+  }
 
   protected function getUserDashboardPageId() {
     return 'dashboard_curriculum_units';
   }
 
+  protected function getWebformUrlParams() {
+    $params = $this->traitGetWebformUrlParams();
+    if ($type = $this->getResourceType()) {
+      $params['ref_educator_resource_type'] = $type->id();
+    }
+    return $params;
+  }
+
+  private function getResourceType() {
+    return $this->field_ref_educator_resource_type->entity;
+  }
+
   protected function getWebformId() {
-    return 'curriculum_reservation';
+    $webform_id = 'curriculum_reservation';
+    if (!$type = $this->getResourceType()) {
+      return $webform_id;
+    }
+    if (!$webform = $type->field_webform->entity) {
+      return $webform_id;
+    }
+    return $webform->id();
   }
 
   protected function getReferenceFieldName() {

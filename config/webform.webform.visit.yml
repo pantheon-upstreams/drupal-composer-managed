@@ -13,6 +13,33 @@ title: 'Field trip / Presentation'
 description: ''
 categories: {  }
 elements: |-
+  ref_curriculum_module:
+    '#type': entity_autocomplete
+    '#title': 'Curriculum module'
+    '#prepopulate': true
+    '#access_create_roles':
+      - administrator
+    '#target_type': node
+    '#selection_handler': 'default:node'
+    '#selection_settings':
+      target_bundles:
+        curriculum_module: curriculum_module
+  ref_educator_resource_type:
+    '#type': entity_autocomplete
+    '#title': 'Educator Resource Type.'
+    '#prepopulate': true
+    '#access_create_roles':
+      - administrator
+    '#target_type': taxonomy_term
+    '#selection_handler': 'default:taxonomy_term'
+    '#selection_settings':
+      target_bundles:
+        educator_resource_type: educator_resource_type
+      sort:
+        field: name
+        direction: asc
+      auto_create: false
+      auto_create_bundle: ''
   change_request:
     '#type': checkbox
     '#title': 'Request to change or cancel my current reservation'
