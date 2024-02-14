@@ -57,7 +57,7 @@ function surf_registration_user_cancel($edit, UserInterface $account, $method) {
 /**
  * Implements hook_ENTITY_TYPE_predelete() for user entities.
  */
-function surf_registration_user_predelete(UserInterface $account) {
+function surf_registration_user_predelete(\Drupal\user\UserInterface $account) {
   // Delete user requests.
   $storage = \Drupal::entityTypeManager()->getStorage('user_request');
   $user_request_ids = $storage->getQuery()
