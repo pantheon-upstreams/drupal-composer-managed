@@ -1,0 +1,20 @@
+uuid: b51a231c-4400-4862-81a7-b6155209b0fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - webform
+id: taxonomy_term.field_webform
+field_name: field_webform
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: webform
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,32 @@
+uuid: 36e36263-4aca-4e1f-8678-17d108bbc33a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.educator_resource_type.field_webform
+    - taxonomy.vocabulary.educator_resource_type
+  module:
+    - text
+id: taxonomy_term.educator_resource_type.default
+targetEntityType: taxonomy_term
+bundle: educator_resource_type
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_webform:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

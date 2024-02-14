@@ -1,0 +1,23 @@
+uuid: d04a4ded-3af7-4d7c-855a-d3b6eeee4815
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_webform
+    - taxonomy.vocabulary.educator_resource_type
+id: taxonomy_term.educator_resource_type.field_webform
+field_name: field_webform
+entity_type: taxonomy_term
+bundle: educator_resource_type
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
