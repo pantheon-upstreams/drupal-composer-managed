@@ -5,10 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_ref_content
     - node.type.article
-    - node.type.event
-    - node.type.experiment
-    - node.type.page
-    - node.type.press_release
     - paragraphs.paragraphs_type.content_as_teaser
 id: paragraph.content_as_teaser.field_ref_content
 field_name: field_ref_content
@@ -25,10 +21,6 @@ settings:
   handler_settings:
     target_bundles:
       article: article
-      page: page
-      event: event
-      experiment: experiment
-      press_release: press_release
     sort:
       field: _none
       direction: ASC
