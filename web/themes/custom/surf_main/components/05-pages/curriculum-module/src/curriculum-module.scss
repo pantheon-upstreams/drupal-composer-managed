@@ -85,6 +85,14 @@
 //------------------------------------
 
 .p-curriculum-module {
+  .m-breadcrumbs {
+    display: none;
+
+    @include breakpoints.bp-min(large) {
+      display: block;
+    }
+  }
+
   .p-curriculum-module__standards h2 {
     font-family: var(--surf-font-sans-alt);
     font-size: var(--surf-fs-40-64);
