@@ -25,17 +25,26 @@
  */
 #}
 
-<div class="user-form user-form__type--register">
-  <div class="user-form__header">
-    {{ page.header_primary }}
-  </div>
+{% set links = [
+    {
+        url: path('user.login'),
+        text: 'Already have an account? Log in'|t,
+    },
+    {
+        url: url('<front>'),
+        text: 'Return to the homepage'|t
+    }
+] %}
 
-  <div class="user-form__content">
-    {{ page.content }}
-
-    <ul class="user-form__links">
-      <li><a href="{{ path('user.login') }}">{{ 'Already have an account? Log in'|t }}</a></li>
-      <li><a href="{{ url('<front>') }}">{{ 'Return to the homepage'|t }}</a></li>
-    </ul>
-  </div>
-</div>
+{% embed 'surf_main:user-login' with {
+    attributes,
+    page,
+    user_login_attributes: create_attribute(),
+    user_login_header: page.header_primary,
+    user_login_links: links,
+    user_login_type: 'login',
+} only %}
+    {% block user_login_content %}
+        {{ page.content }}
+    {% endblock %}
+{% endembed %}

@@ -44,6 +44,10 @@
   .form-actions {
     margin-block-start: 64px;
   }
+
+  .m-form__form > div:not(:first-child) {
+    margin-block-start: var(--surf-grid-gap);
+  }
 }
 
 

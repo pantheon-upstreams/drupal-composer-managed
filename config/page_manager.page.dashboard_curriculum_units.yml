@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: dashboard_curriculum_units
-label: 'My Curriculum Units'
+label: 'Curriculum Units'
 description: ''
 use_admin_theme: false
 path: '/user/{user}/dashboard/curriculum-units/{download_request}'

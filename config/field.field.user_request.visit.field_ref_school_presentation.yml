@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.user_request.field_ref_school_presentation
-    - node.type.school_presentation
     - surf_registration.user_request_type.visit
 id: user_request.visit.field_ref_school_presentation
 field_name: field_ref_school_presentation
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles:
-      school_presentation: school_presentation
+    target_bundles: {  }
     sort:
       field: _none
       direction: ASC

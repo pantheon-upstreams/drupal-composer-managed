@@ -3,7 +3,7 @@ surf_dashboard.curriculum_units:
   menu_name: dashboard
   class: Drupal\surf_dashboard\Menu\DashboardMenuLink
   options:
-    page_manager_page_id: dashboard_curriculum_units
+    page_manager_page_id: dashboard_my_curriculum_units
     variant_id: 'layout_builder-0'
     attributes:
       class:

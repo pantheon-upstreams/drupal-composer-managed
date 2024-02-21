@@ -42,7 +42,8 @@
     padding: 0;
   }
 
-  li:before {
+  li:before,
+  .js-filter-wrapper {
     display: none;
   }
 }

@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: o1wWkhSOJotsHFgvzESaUOiTWhLak62cKBDyEtewAIM
+role_to_select:
+  educator: educator
+registration_mode: user

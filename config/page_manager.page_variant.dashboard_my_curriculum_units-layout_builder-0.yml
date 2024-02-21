@@ -1,0 +1,28 @@
+uuid: 2afb9655-6b2d-47b4-9b97-b9f2145089cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard_my_curriculum_units
+  module:
+    - layout_builder
+id: dashboard_my_curriculum_units-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: 11a09612-f085-4cbe-8ff6-7c1af30a3028
+  sections:
+    -
+      layout_id: layout_builder_blank
+      layout_settings:
+        label: ''
+      components: {  }
+      third_party_settings: {  }
+page: dashboard_my_curriculum_units
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

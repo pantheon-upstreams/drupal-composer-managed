@@ -8,7 +8,6 @@ dependencies:
     - node.type.curriculum_module
     - node.type.page
     - node.type.professional_development
-    - node.type.school_presentation
 id: node.professional_development.field_ref_related_content
 field_name: field_ref_related_content
 entity_type: node
@@ -27,7 +26,6 @@ settings:
       page: page
       curriculum_module: curriculum_module
       professional_development: professional_development
-      school_presentation: school_presentation
     sort:
       field: _none
       direction: ASC

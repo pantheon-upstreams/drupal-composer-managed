@@ -7,7 +7,6 @@ dependencies:
     - field.field.user.user.field_last_name
     - field.field.user.user.user_picture
   module:
-    - image
     - text
     - user
 _core:
@@ -34,19 +33,9 @@ content:
   member_for:
     settings: {  }
     third_party_settings: {  }
-    weight: 5
-    region: content
-  user_picture:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
 hidden:
   langcode: true
   search_api_excerpt: true
+  user_picture: true
