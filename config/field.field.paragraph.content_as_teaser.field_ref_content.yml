@@ -5,13 +5,14 @@ dependencies:
   config:
     - field.storage.paragraph.field_ref_content
     - node.type.article
+    - node.type.experiment
     - paragraphs.paragraphs_type.content_as_teaser
 id: paragraph.content_as_teaser.field_ref_content
 field_name: field_ref_content
 entity_type: paragraph
 bundle: content_as_teaser
 label: Content
-description: ''
+description: "<ul>\r\n<li>Use the autocomplete field to find content to be displayed as a teaser. Current content types that are able to be inserted here are <em>Articles</em> and <em>Experiments</em>.</li>\r\n<li>Along with selecting content to be a teaser, you may also to display the teaser in a basic format, or as a <em>Super Teaser</em>, which will display like a banner across the page.</li>\r\n</ul>"
 required: false
 translatable: false
 default_value: {  }
@@ -21,6 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       article: article
+      experiment: experiment
     sort:
       field: _none
       direction: ASC

@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Experiment Node with Teaser Super view mode.
+ *
+ * Available variables:
+ *  - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
+ */
+#}
+
+{% if content.field_dates_only|render %}
+    {% set experiment_dates %}
+        {% if content.field_dates_only|render and not node.field_dates_only.0.get('end_value').value %}
+            {{- content.field_dates_only|field_value }} - {{ 'Present'|t -}}
+        {% endif %}
+
+        {% if content.field_dates_only|render and node.field_dates_only.0.get('end_value').value %}
+            {{ content.field_dates_only|field_value }}
+        {% endif %}
+    {% endset %}
+{% endif %}
+
+{% set rendered_content = content|without(
+    'field_date_published',
+    'field_media_primary',
+    'field_overview',
+) %}
+
+{% embed 'surf_main:teaser' with {
+    attributes,
+    rendered_content,
+    teaser_attributes: create_attribute({'class': 'm-teaser--super'}),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_media: content.field_media_primary|field_value|default([]),
+    teaser_date: experiment_dates|default([]),
+    teaser_title: label,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
+} only %}
+    {% block teaser_content_prefix %}
+        <div class="m-teaser__content-prefix">
+            <p>
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                    chip_text: 'FEATURED'|t,
+                    chip_size: 'small',
+                } only %}
+
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--transparent'}),
+                    chip_text: teaser_date,
+                    chip_size: 'small',
+                } only %}
+            </p>
+        </div>
+    {% endblock %}
+{% endembed %}
