@@ -4,6 +4,10 @@
 // - 01 - Imports
 // - 02 - Base
 // - 03 - Primary
+// - 04 - Secondary
+// - 05 - Underline Primary
+// - 06 - Underline Secondary
+// - 07 - Icons
 //
 
 
@@ -26,9 +30,7 @@
   @include buttons.button-reset;
   cursor: pointer;
   display: inline-block;
-  font-family: var(--surf-font-condensed);
   font-weight: var(--surf-fw-bold);
-  letter-spacing: 1.8px;
   position: relative;
   text-decoration: none;
   transition: animations.transition(all, 0.35s, easeInOutExpo);
@@ -51,101 +53,223 @@
 
 
 //------------------------------------
-//  03 - Sizes
+//  03 - Primary
 //------------------------------------
 
-@mixin sizes() {
-  .a-button {
-    &.a-button--small {
-      font-size: calculations.rem(16px);
-    }
+@mixin primary($size: 'small', $color: 'navy') {
+  @include base();
+  font-family: var(--surf-font-condensed);
+  letter-spacing: 1.8px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  text-transform: uppercase;
 
-    &.a-button--large {
-      font-size: var(--surf-fs-16-22);
-    }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
-}
 
-@include sizes();
+  @if $size == 'small' {
+    font-size: calculations.rem(16px);
+  }
 
+  @if $size == 'large' {
+    font-size: var(--surf-fs-16-22);
+  }
 
+  @if $color == 'navy' {
+    background-color: var(--surf-color-navy);
+    color: var(--surf-color-white);
 
-
-//------------------------------------
-//  04 - Primary
-//------------------------------------
-
-@mixin primary() {
-  .a-button.a-button--primary {
-    padding: 8px 16px;
-    text-transform: uppercase;
+    &:after,
+    &:before {
+      background-color: var(--surf-color-white);
+    }
 
     &:hover,
     &:focus {
-      text-decoration: underline;
-    }
-
-    // Navy Primary Button
-    &.a-button--navy {
-      background-color: var(--surf-color-navy);
-      color: var(--surf-color-white);
-
-      &:after,
-      &:before {
-        background-color: var(--surf-color-white);
-      }
-
-      &:hover,
-      &:focus {
-        background-color: var(--surf-color-black);
-      }
-    }
-
-    // Black Primary Button
-    &.a-button--black {
       background-color: var(--surf-color-black);
-      color: var(--surf-color-white);
+    }
+  }
 
-      &:after,
-      &:before {
-        background-color: var(--surf-color-white);
-      }
+  @if $color == 'black' {
+    background-color: var(--surf-color-black);
+    color: var(--surf-color-white);
 
-      &:hover,
-      &:focus {
-        background-color: var(--surf-color-gray-800);
-      }
+    &:after,
+    &:before {
+      background-color: var(--surf-color-white);
     }
 
-    // White Primary Button
-    &.a-button--white {
-      background-color: var(--surf-color-white);
-      color: var(--surf-color-black);
+    &:hover,
+    &:focus {
+      background-color: var(--surf-color-gray-800);
+    }
+  }
 
-      &:after,
-      &:before {
-        background-color: var(--surf-color-black);
-      }
+  @if $color == 'white' {
+    background-color: var(--surf-color-white);
+    color: var(--surf-color-black);
+
+    &:after,
+    &:before {
+      background-color: var(--surf-color-black);
     }
   }
 }
 
-@include primary();
+@mixin primary-utility() {
+  .a-button.a-button--primary.a-button--small.a-button--navy {
+    @include primary('small', 'navy');
+  }
+
+  .a-button.a-button--primary.a-button--small.a-button--black {
+    @include primary('small', 'black');
+  }
+
+  .a-button.a-button--primary.a-button--small.a-button--white {
+    @include primary('small', 'white');
+  }
+
+  .a-button.a-button--primary.a-button--large.a-button--navy {
+    @include primary('large', 'navy');
+  }
+
+  .a-button.a-button--primary.a-button--large.a-button--black {
+    @include primary('large', 'black');
+  }
+
+  .a-button.a-button--primary.a-button--large.a-button--white {
+    @include primary('large', 'white');
+  }
+}
+
+@include primary-utility();
 
 
 
 
 //------------------------------------
-//  05 - Underline
+//  04 - Secondary
 //------------------------------------
 
-@mixin underline-base($color) {
+@mixin secondary($size: 'small', $color: 'navy') {
+  @include base();
+  font-family: var(--surf-font-sans);
+  padding-block: 8px;
+  padding-inline: 16px;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  @if $size == 'small' {
+    font-size: calculations.rem(16px);
+  }
+
+  @if $size == 'large' {
+    font-size: var(--surf-fs-16-22);
+  }
+
+  @if $color == 'navy' {
+    background-color: var(--surf-color-navy);
+    color: var(--surf-color-white);
+
+    &:after,
+    &:before {
+      background-color: var(--surf-color-white);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--surf-color-black);
+    }
+  }
+
+  @if $color == 'black' {
+    background-color: var(--surf-color-black);
+    color: var(--surf-color-white);
+
+    &:after,
+    &:before {
+      background-color: var(--surf-color-white);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--surf-color-gray-800);
+    }
+  }
+
+  @if $color == 'white' {
+    background-color: var(--surf-color-white);
+    color: var(--surf-color-black);
+
+    &:after,
+    &:before {
+      background-color: var(--surf-color-black);
+    }
+  }
+}
+
+@mixin secondary-utility() {
+  .a-button.a-button--secondary.a-button--small.a-button--navy {
+    @include secondary('small', 'navy');
+  }
+
+  .a-button.a-button--secondary.a-button--small.a-button--black {
+    @include secondary('small', 'black');
+  }
+
+  .a-button.a-button--secondary.a-button--small.a-button--white {
+    @include secondary('small', 'white');
+  }
+
+  .a-button.a-button--secondary.a-button--large.a-button--navy {
+    @include secondary('large', 'navy');
+  }
+
+  .a-button.a-button--secondary.a-button--large.a-button--black {
+    @include secondary('large', 'black');
+  }
+
+  .a-button.a-button--secondary.a-button--large.a-button--white {
+    @include secondary('large', 'white');
+  }
+}
+
+@include secondary-utility();
+
+
+
+
+//------------------------------------
+//  05 - Underline Primary
+//------------------------------------
+
+@mixin underline-primary($size: 'small', $color: 'navy') {
+  @include base();
   border-bottom: solid 2px;
-  padding: 4px 0;
+  font-family: var(--surf-font-condensed);
+  letter-spacing: 1.8px;
+  padding-block: 4px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  transition: animations.transition(all, 0.35s, easeInOutExpo);
+
+  &:hover,
+  &:focus {
+    border-bottom-color: transparent;
+  }
+
+  @if $size == 'small' {
+    font-size: calculations.rem(16px);
+  }
+
+  @if $size == 'large' {
+    font-size: var(--surf-fs-16-22);
+  }
 
   @if $color == 'navy' {
     border-bottom-color: var(--surf-color-navy);
@@ -180,6 +304,11 @@
     &:focus {
       color: var(--surf-color-navy);
     }
+
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--surf-color-navy);
+    }
   }
 
   @if $color == 'white' {
@@ -189,58 +318,179 @@
     &:before,
     &:after {
       background-color: var(--surf-color-white);
-      transition: animations.transition(background-color, 0.35s, easeInOutExpo);
     }
   }
+}
+
+@mixin underline-primary-utility() {
+  .a-button.a-button--underline-primary.a-button--small.a-button--navy {
+    @include underline-primary('small', 'navy');
+  }
+
+  .a-button.a-button--underline-primary.a-button--small.a-button--black {
+    @include underline-primary('small', 'black');
+  }
+
+  .a-button.a-button--underline-primary.a-button--small.a-button--white {
+    @include underline-primary('small', 'white');
+  }
+
+  .a-button.a-button--underline-primary.a-button--large.a-button--navy {
+    @include underline-primary('large', 'navy');
+  }
+
+  .a-button.a-button--underline-primary.a-button--large.a-button--black {
+    @include underline-primary('large', 'black');
+  }
+
+  .a-button.a-button--underline-primary.a-button--large.a-button--white {
+    @include underline-primary('large', 'white');
+  }
+}
+
+@include underline-primary-utility();
+
+
+
+
+//------------------------------------
+//  06 - Underline Secondary
+//------------------------------------
+
+@mixin underline-secondary($size: 'small', $color: 'navy') {
+  @include base();
+  border-bottom: solid 2px;
+  font-family: var(--surf-font-sans);
+  padding-block: 4px;
+  position: relative;
+  text-decoration: none;
 
   &:hover,
   &:focus {
     border-bottom-color: transparent;
   }
+
+  @if $size == 'small' {
+    font-size: calculations.rem(16px);
+  }
+
+  @if $size == 'large' {
+    font-size: var(--surf-fs-16-22);
+  }
+
+  @if $color == 'navy' {
+    border-bottom-color: var(--surf-color-navy);
+    color: var(--surf-color-navy);
+
+    &:before,
+    &:after {
+      background-color: var(--surf-color-navy);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-black);
+    }
+
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--surf-color-black);
+    }
+  }
+
+  @if $color == 'black' {
+    border-bottom-color: var(--surf-color-black);
+    color: var(--surf-color-black);
+
+    &:before,
+    &:after {
+      background-color: var(--surf-color-black);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--surf-color-navy);
+    }
+
+    &:hover:after,
+    &:focus:after {
+      background-color: var(--surf-color-navy);
+    }
+  }
+
+  @if $color == 'white' {
+    border-bottom-color: var(--surf-color-white);
+    color: var(--surf-color-white);
+
+    &:before,
+    &:after {
+      background-color: var(--surf-color-white);
+    }
+  }
 }
 
-@mixin underline() {
-  .a-button.a-button--underline.a-button--navy {
-    @include underline-base('navy');
+@mixin underline-secondary-utility() {
+  .a-button.a-button--underline-secondary.a-button--small.a-button--navy {
+    @include underline-secondary('small', 'navy');
   }
 
-  .a-button.a-button--underline.a-button--black {
-    @include underline-base('black');
+  .a-button.a-button--underline-secondary.a-button--small.a-button--black {
+    @include underline-secondary('small', 'black');
   }
 
-  .a-button.a-button--underline.a-button--white {
-    @include underline-base('white');
+  .a-button.a-button--underline-secondary.a-button--small.a-button--white {
+    @include underline-secondary('small', 'white');
+  }
+
+  .a-button.a-button--underline-secondary.a-button--large.a-button--navy {
+    @include underline-secondary('large', 'navy');
+  }
+
+  .a-button.a-button--underline-secondary.a-button--large.a-button--black {
+    @include underline-secondary('large', 'black');
+  }
+
+  .a-button.a-button--underline-secondary.a-button--large.a-button--white {
+    @include underline-secondary('large', 'white');
   }
 }
 
-@include underline();
+@include underline-secondary-utility();
 
 
 
 
 //------------------------------------
-//  04 - Icons
+//  07 - Icons
 //------------------------------------
 
 @mixin icons() {
-  .a-button.a-button--primary.a-button--icon-arrow-right {
-    padding-inline-end: 56px;
+  .a-button.a-button--primary.a-button--icon-arrow-right,
+  .a-button.a-button--secondary.a-button--icon-arrow-right {
+    padding-inline-end: 56px !important;
   }
 
   .a-button.a-button--primary.a-button--icon-arrow-left,
   .a-button.a-button--primary.a-button--icon-play-left,
-  .a-button.a-button--primary.a-button--icon-envelope-left {
-    padding-inline-start: 56px;
+  .a-button.a-button--primary.a-button--icon-envelope-left,
+  .a-button.a-button--secondary.a-button--icon-arrow-left,
+  .a-button.a-button--secondary.a-button--icon-play-left,
+  .a-button.a-button--secondary.a-button--icon-envelope-left {
+    padding-inline-start: 56px !important;
   }
 
-  .a-button.a-button--underline.a-button--icon-arrow-right {
-    padding-inline-end: 40px;
+  .a-button.a-button--underline-primary.a-button--icon-arrow-right,
+  .a-button.a-button--underline-secondary.a-button--icon-arrow-right {
+    padding-inline-end: 40px !important;
   }
 
-  .a-button.a-button--underline.a-button--icon-arrow-left,
-  .a-button.a-button--underline.a-button--icon-play-left,
-  .a-button.a-button--underline.a-button--icon-envelope-left {
-    padding-inline-start: 40px;
+  .a-button.a-button--underline-primary.a-button--icon-arrow-left,
+  .a-button.a-button--underline-primary.a-button--icon-play-left,
+  .a-button.a-button--underline-primary.a-button--icon-envelope-left,
+  .a-button.a-button--underline-secondary.a-button--icon-arrow-left,
+  .a-button.a-button--underline-secondary.a-button--icon-play-left,
+  .a-button.a-button--underline-secondary.a-button--icon-envelope-left {
+    padding-inline-start: 40px !important;
   }
 
   .a-button.a-button--icon-arrow-right:after,
@@ -262,11 +512,13 @@
     top: 2px;
   }
 
-  .a-button.a-button--primary.a-button--icon-arrow-right:after {
+  .a-button.a-button--primary.a-button--icon-arrow-right:after,
+  .a-button.a-button--secondary.a-button--icon-arrow-right:after {
     right: 16px;
   }
 
-  .a-button.a-button--underline.a-button--icon-arrow-right:after {
+  .a-button.a-button--underline-primary.a-button--icon-arrow-right:after,
+  .a-button.a-button--underline-secondary.a-button--icon-arrow-right:after{
     right: 0;
   }
 
@@ -277,11 +529,13 @@
     top: 2px;
   }
 
-  .a-button.a-button--primary.a-button--icon-arrow-left:before {
+  .a-button.a-button--primary.a-button--icon-arrow-left:before,
+  .a-button.a-button--secondary.a-button--icon-arrow-left:before {
     left: 16px;
   }
 
-  .a-button.a-button--underline.a-button--icon-arrow-left:before {
+  .a-button.a-button--underline-primary.a-button--icon-arrow-left:before,
+  .a-button.a-button--underline-secondary.a-button--icon-arrow-left:before{
     left: 0;
   }
 
@@ -293,11 +547,13 @@
     top: 2px;
   }
 
-  .a-button.a-button--primary.a-button--icon-play-left:before {
+  .a-button.a-button--primary.a-button--icon-play-left:before,
+  .a-button.a-button--secondary.a-button--icon-play-left:before {
     left: 16px;
   }
 
-  .a-button.a-button--underline.a-button--icon-play-left:before {
+  .a-button.a-button--underline-primary.a-button--icon-play-left:before,
+  .a-button.a-button--underline-secondary.a-button--icon-play-left:before{
     left: 0;
   }
 
@@ -309,12 +565,15 @@
     top: 2px;
   }
 
-  .a-button.a-button--primary.a-button--icon-envelope-left:before {
+  .a-button.a-button--primary.a-button--icon-envelope-left:before,
+  .a-button.a-button--secondary.a-button--icon-envelope-left:before {
     left: 16px;
   }
 
-  .a-button.a-button--underline.a-button--icon-envelope-left:before {
+  .a-button.a-button--underline-primary.a-button--icon-envelope-left:before,
+  .a-button.a-button--underline-secondary.a-button--icon-envelope-left:before {
     left: 0;
   }
 }
+
 @include icons();

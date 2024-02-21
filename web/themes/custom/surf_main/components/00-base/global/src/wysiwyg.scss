@@ -10,6 +10,7 @@
 //  01 - Imports
 //------------------------------------
 
+@use 'buttons';
 @use 'color';
 @use 'layout';
 @use 'lists';
@@ -25,6 +26,10 @@
 //------------------------------------
 
 .ck-content {
+  @include buttons.primary-utility();
+  @include buttons.secondary-utility();
+  @include buttons.underline-primary-utility();
+  @include buttons.underline-secondary-utility();
   @include color.gradients();
   @include color.grayscale();
   @include color.theme();

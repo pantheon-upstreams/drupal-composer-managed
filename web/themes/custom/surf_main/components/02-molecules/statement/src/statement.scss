@@ -101,8 +101,7 @@
   }
 
   .m-statement__link a {
-    @include buttons.base();
-    @include buttons.underline-base('navy');
+    @include buttons.underline-primary('small', 'navy');
 
     @include breakpoints.bp-min(medium) {
       font-size: calculations.rem(22px);
