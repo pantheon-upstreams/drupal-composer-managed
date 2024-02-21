@@ -451,22 +451,10 @@
   p.m-teaser__content-text {
     font-size: var(--surf-fs-16-18-24);
     margin-block-start: 12px;
-
-    @include breakpoints.bp-min(medium) {
-      margin-block-start: 16px;
-    }
   }
 
   .m-teaser__content-suffix {
-    margin-block-start: 4px;
-
-    @include breakpoints.bp-min(medium) {
-      margin-block-start: 12px;
-    }
-
-    @include breakpoints.bp-min(large) {
-      margin-block-start: 18px;
-    }
+    margin-block-start: 12px;
   }
 }
 
