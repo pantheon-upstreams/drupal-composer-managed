@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.standard.field_ism_document_number
     - field.field.node.standard.field_ism_rev_number
     - field.field.node.standard.field_link
-    - field.field.node.standard.field_media_primary
     - field.field.node.standard.field_overview
     - field.field.node.standard.field_p_content
     - field.field.node.standard.field_ref_audiences
@@ -30,6 +29,23 @@ targetEntityType: node
 bundle: standard
 mode: full
 content:
+  field_ism_document_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_ism_rev_number:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_link:
     type: link
     label: hidden
@@ -42,21 +58,12 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_media_primary:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: banner_default
-      link: false
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 6
     region: content
   field_p_content:
     type: layout_paragraphs
@@ -71,14 +78,12 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: download
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 2
     region: content
 hidden:
-  field_ism_document_number: true
-  field_ism_rev_number: true
   field_ref_audiences: true
   field_ref_esh_categories: true
   field_teaser_text: true

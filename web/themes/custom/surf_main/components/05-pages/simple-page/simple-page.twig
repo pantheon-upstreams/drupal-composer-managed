@@ -10,6 +10,9 @@
  * - simple_page_heading: [string] Reserved for the primary title.
  * - simple_page_media: [array] Reserved for the primary media item.
  *
+ * Available slots:
+ * - simple_page_meta
+ *
  */
 #}
 
@@ -41,7 +44,9 @@
     {% if simple_page_content %}
         <section class="p-simple-page__content">
             <div class="container container--small">
+                {% block simple_page_meta %}{% endblock %}
                 {{ simple_page_content }}
+                {% block simple_page_resources %}{% endblock %}
             </div>
         </section>
     {% endif %}

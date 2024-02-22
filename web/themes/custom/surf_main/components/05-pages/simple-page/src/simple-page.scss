@@ -42,6 +42,14 @@
   .p-simple-page__media {
     margin-block-end: 28px;
   }
+
+  .o-resource-list {
+    margin-block-start: 48px;
+
+    @include breakpoints.bp-min(large) {
+      margin-block-start: 64px;
+    }
+  }
 }
 
 

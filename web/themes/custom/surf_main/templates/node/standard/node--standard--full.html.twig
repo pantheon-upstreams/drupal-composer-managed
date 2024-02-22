@@ -12,15 +12,49 @@
 #}
 
 {% set rendered_content = content|without(
-    'field_p_content',
+    'field_ism_document_number',
+    'field_ism_rev_number',
     'field_media_primary',
+    'field_ref_documents',
+    'field_p_content',
 ) %}
 
-{% include 'surf_main:simple-page' with {
+{% embed 'surf_main:simple-page' with {
     attributes,
     rendered_content,
     simple_page_attributes: create_attribute(),
     simple_page_content: content.field_p_content,
     simple_page_heading: label|field_value,
     simple_page_media: content.field_media_primary|field_value|default([]),
+    standard_ism_document_number: content.field_ism_document_number|render ? content.field_ism_document_number|field_value,
+    standard_ism_rev_number: content.field_ism_rev_number|render ? content.field_ism_rev_number|field_value,
+    standard_documents: content.field_ref_documents|render ? content.field_ref_documents|field_value,
 } only %}
+    {% block simple_page_meta %}
+        {% if standard_ism_document_number or standard_ism_rev_number %}
+            <div class="p-simple-page__meta">
+                {% if standard_ism_document_number %}
+                    <div class="p-simple-page__ism-document-number">
+                        <p><strong>{{ 'ISM Document Number'|t }}:</strong> {{ standard_ism_document_number }}</p>
+                    </div>
+                {% endif %}
+
+                {% if standard_ism_rev_number %}
+                    <div class="p-simple-page__ism-rev-number">
+                        <p><strong>{{ 'ISM Revision Number'|t }}:</strong> {{ standard_ism_rev_number }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endblock %}
+
+    {% block simple_page_resources %}
+        {% if standard_documents %}
+            {% include 'surf_main:resource-list' with {
+                resource_list_attributes: create_attribute(),
+                resource_list_heading: 'Documents'|t,
+                resource_list_items: standard_documents,
+            } only %}
+        {% endif %}
+    {% endblock %}
+{% endembed %}

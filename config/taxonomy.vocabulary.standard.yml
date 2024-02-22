@@ -2,7 +2,7 @@ uuid: 655ddd0d-4a84-47e8-beb4-70e0b2429716
 langcode: en
 status: true
 dependencies: {  }
-name: Standard
+name: 'SD Education Standards'
 vid: standard
 description: ''
 weight: -2

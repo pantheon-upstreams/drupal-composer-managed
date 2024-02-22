@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - node.type.curriculum_module
     - taxonomy.vocabulary.educator_resource_type
+    - taxonomy.vocabulary.grade_level
     - taxonomy.vocabulary.standard
   content:
     - 'taxonomy_term:educator_resource_type:6319187b-3be6-4cd6-a2e4-7d0b518a605b'
@@ -150,6 +151,21 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data
@@ -426,6 +442,7 @@ display:
           plugin_id: bundle
           value:
             curriculum_module: curriculum_module
+          group: 1
         field_ref_educator_resource_type_target_id:
           id: field_ref_educator_resource_type_target_id
           table: node__field_ref_educator_resource_type
@@ -523,6 +540,61 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_ref_grade_level_target_id:
+          id: field_ref_grade_level_target_id
+          table: node__field_ref_grade_level
+          field: field_ref_grade_level_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_ref_grade_level_target_id_op
+            label: 'Grade level'
+            description: ''
+            use_operator: false
+            operator: field_ref_grade_level_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_ref_grade_level_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              employee: '0'
+              educator: '0'
+              science: '0'
+              human_resources: '0'
+              moderator: '0'
+              business_editor: '0'
+              ehs_editor: '0'
+              administrator: '0'
+              visit_coordinator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: grade_level
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
         field_ref_esh_categories_target_id:
           id: field_ref_esh_categories_target_id
           table: node__field_ref_esh_categories
@@ -537,7 +609,7 @@ display:
           exposed: true
           expose:
             operator_id: field_ref_esh_categories_target_id_op
-            label: Standard
+            label: 'SD Education Standard'
             description: ''
             use_operator: false
             operator: field_ref_esh_categories_target_id_op

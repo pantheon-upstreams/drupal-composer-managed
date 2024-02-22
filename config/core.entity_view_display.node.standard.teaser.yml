@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.standard.field_ism_document_number
     - field.field.node.standard.field_ism_rev_number
     - field.field.node.standard.field_link
-    - field.field.node.standard.field_media_primary
     - field.field.node.standard.field_overview
     - field.field.node.standard.field_p_content
     - field.field.node.standard.field_ref_audiences
@@ -23,15 +22,6 @@ targetEntityType: node
 bundle: standard
 mode: teaser
 content:
-  field_media_primary:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: teaser_default
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_overview:
     type: text_default
     label: hidden

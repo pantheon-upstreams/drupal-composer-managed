@@ -70,7 +70,7 @@
 
             {% if press_release_categories is not empty%}
                 <div class="p-press-release__categories">
-                    <ul>
+                    <ul class="p-press-release__categories-list">
                         {% for category in press_release_categories %}
                             <li>
                                 {% include 'surf_main:chip' with {

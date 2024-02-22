@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.standard.field_ism_document_number
     - field.field.node.standard.field_ism_rev_number
     - field.field.node.standard.field_link
-    - field.field.node.standard.field_media_primary
     - field.field.node.standard.field_overview
     - field.field.node.standard.field_p_content
     - field.field.node.standard.field_ref_audiences
@@ -52,15 +51,6 @@ content:
       target: '0'
     third_party_settings: {  }
     weight: 12
-    region: content
-  field_media_primary:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: true
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_overview:
     type: text_default
