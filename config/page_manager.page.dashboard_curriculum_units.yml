@@ -19,4 +19,4 @@ parameters:
     machine_name: download_request
     label: 'Download request'
     type: 'entity:download_request'
-    optional: true
+    optional: false

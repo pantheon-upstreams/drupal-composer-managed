@@ -173,6 +173,9 @@
         {% if content.navigation_bottom %}
             <section class="l-section">
                 <div class="container container--xlarge">
+                    {% include 'surf_main:left-hook' with {
+                        left_hook_attributes: create_attribute({'class': 'a-left-hook--with-heading'}),
+                    } only %}
                     {{ content.navigation_bottom }}
                 </div>
             </section>

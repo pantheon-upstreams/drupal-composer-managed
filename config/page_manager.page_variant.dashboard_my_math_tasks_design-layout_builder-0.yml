@@ -1,9 +1,9 @@
-uuid: 8a402331-ebd4-467a-ac70-76f3844ba459
+uuid: dfceec07-f595-4df4-ac58-c33d857d2447
 langcode: en
 status: true
 dependencies:
   config:
-    - page_manager.page.dashboard_visits
+    - page_manager.page.dashboard_my_math_tasks_design
     - system.menu.dashboard
     - views.view.user_download_requests
   module:
@@ -11,15 +11,15 @@ dependencies:
     - views
   theme:
     - surf_main
-id: dashboard_visits-layout_builder-0
-label: 'Layout builder'
+id: dashboard_my_math_tasks_design-layout_builder-0
+label: 'Layout Builder'
 weight: 0
 variant: layout_builder
 variant_settings:
   id: layout_builder
   label: null
   weight: 0
-  uuid: 9b8b9a3e-cccd-4a09-a9eb-9a18f36c2568
+  uuid: 1748190e-9951-4382-913c-32550b4348a7
   sections:
     -
       layout_id: one_column
@@ -27,11 +27,11 @@ variant_settings:
         label: 'My Curriculum'
         context_mapping: {  }
       components:
-        87390edd-9506-4160-8bd7-e12840141c34:
-          uuid: 87390edd-9506-4160-8bd7-e12840141c34
+        6630ffc4-4149-4bd6-97d0-e53dfdecb123:
+          uuid: 6630ffc4-4149-4bd6-97d0-e53dfdecb123
           region: first
           configuration:
-            id: 'views_block:user_download_requests-trips_presentations'
+            id: 'views_block:user_download_requests-tasks_challenges'
             label: ''
             label_display: '0'
             provider: views
@@ -47,8 +47,8 @@ variant_settings:
         label: 'Navigation Bottom'
         context_mapping: {  }
       components:
-        a9b27143-d79d-4468-a62a-93c93b79593e:
-          uuid: a9b27143-d79d-4468-a62a-93c93b79593e
+        ee5f03c5-bcfc-4c13-ac5b-3d3eee228710:
+          uuid: ee5f03c5-bcfc-4c13-ac5b-3d3eee228710
           region: first
           configuration:
             id: 'system_menu_block:dashboard'
@@ -62,10 +62,7 @@ variant_settings:
           weight: 0
           additional: {  }
       third_party_settings: {  }
-  title_type: manual
-  manual_title: 'Field Trips & Presentations'
-  title_from_block: ''
-page: dashboard_visits
+page: dashboard_my_math_tasks_design
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }

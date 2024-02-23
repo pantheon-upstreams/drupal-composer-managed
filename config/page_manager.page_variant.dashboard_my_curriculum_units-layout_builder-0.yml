@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - page_manager.page.dashboard_my_curriculum_units
+    - system.menu.dashboard
+    - views.view.user_download_requests
   module:
-    - layout_builder
+    - system
+    - views
+  theme:
+    - surf_main
 id: dashboard_my_curriculum_units-layout_builder-0
 label: 'Layout Builder'
 weight: 0
@@ -17,10 +22,45 @@ variant_settings:
   uuid: 11a09612-f085-4cbe-8ff6-7c1af30a3028
   sections:
     -
-      layout_id: layout_builder_blank
+      layout_id: one_column
       layout_settings:
-        label: ''
-      components: {  }
+        label: 'My Curriculum'
+        context_mapping: {  }
+      components:
+        f8443ec1-1cfc-4e22-abad-c11611e7d863:
+          uuid: f8443ec1-1cfc-4e22-abad-c11611e7d863
+          region: first
+          configuration:
+            id: 'views_block:user_download_requests-dashboard_curriculum_items'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+      third_party_settings: {  }
+    -
+      layout_id: one_column
+      layout_settings:
+        label: 'Navigation Bottom'
+        context_mapping: {  }
+      components:
+        cf05b936-3a86-4208-9376-a1ded1179149:
+          uuid: cf05b936-3a86-4208-9376-a1ded1179149
+          region: first
+          configuration:
+            id: 'system_menu_block:dashboard'
+            label: Dashboard
+            label_display: '0'
+            provider: system
+            context_mapping: {  }
+            level: 1
+            depth: 0
+            expand_all_items: false
+          weight: 0
+          additional: {  }
       third_party_settings: {  }
 page: dashboard_my_curriculum_units
 selection_criteria: {  }

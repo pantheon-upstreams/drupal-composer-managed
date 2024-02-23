@@ -145,7 +145,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<p>No curriculum units have been reserved</p>'
+            value: '<p>No Math Tasks or Design Challenges have been requested.</p>'
             format: basic_html
           tokenize: false
       sorts: {  }
@@ -284,6 +284,20 @@ display:
     position: 1
     display_options:
       title: 'Curriculum Units'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>No Curriculum Units have been requested.</p>'
+            format: basic_html
+          tokenize: false
       filters:
         field_ref_educator_resource_type_target_id:
           id: field_ref_educator_resource_type_target_id
@@ -336,6 +350,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         filters: false
         filter_groups: false
@@ -358,6 +373,20 @@ display:
     position: 1
     display_options:
       title: 'Tasks and Challenges'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>No Math Tasks or Design Challenges have been requested.</p>'
+            format: basic_html
+          tokenize: false
       filters:
         field_ref_educator_resource_type_target_id:
           id: field_ref_educator_resource_type_target_id
@@ -411,6 +440,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         filters: false
         filter_groups: false
@@ -433,6 +463,20 @@ display:
     position: 1
     display_options:
       title: 'Trips and Presentations'
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: '<p>No Field Trips or Classroom Presentations have been requested.</p>'
+            format: basic_html
+          tokenize: false
       filters:
         field_ref_educator_resource_type_target_id:
           id: field_ref_educator_resource_type_target_id
@@ -486,6 +530,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         title: false
         filters: false
         filter_groups: false

@@ -47,8 +47,10 @@ surf_dashboard.events:
 surf_dashboard.tasks_challenges:
   title: Math tasks & design challenges
   menu_name: dashboard
-  url: internal:/math-tasks-design-challenges
+  class: Drupal\surf_dashboard\Menu\DashboardMenuLink
   options:
+    page_manager_page_id: dashboard_my_math_tasks_design
+    variant_id: 'layout_builder-0'
     attributes:
       class:
         - icon

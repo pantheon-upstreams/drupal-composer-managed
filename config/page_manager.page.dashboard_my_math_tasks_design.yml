@@ -1,12 +1,12 @@
-uuid: ada37d68-5d87-49aa-8657-ec3da99f9e94
+uuid: e1ed62dd-ef30-4511-a0aa-41dc033e6a43
 langcode: en
 status: true
 dependencies: {  }
-id: dashboard_my_curriculum_units
-label: 'My Curriculum Units'
+id: dashboard_my_math_tasks_design
+label: 'My Math Tasks and Design Challenges'
 description: ''
 use_admin_theme: false
-path: '/user/{user}/dashboard/curriculum-units'
+path: '/user/{user}/dashboard/math-tasks-design-challenges'
 access_logic: and
 access_conditions: {  }
 parameters:
