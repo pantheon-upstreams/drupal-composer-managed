@@ -1,0 +1,29 @@
+uuid: d87651a2-0722-4323-95f8-09732fbc0b53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_science_field
+    - node.type.person
+    - taxonomy.vocabulary.science_field
+id: node.person.field_science_field
+field_name: field_science_field
+entity_type: node
+bundle: person
+label: 'Science field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      science_field: science_field
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

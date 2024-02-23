@@ -1,0 +1,8 @@
+uuid: f8b42ef0-5f03-4dd0-a5ef-bd65850d59e6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Science Field'
+vid: science_field
+description: ''
+weight: 0

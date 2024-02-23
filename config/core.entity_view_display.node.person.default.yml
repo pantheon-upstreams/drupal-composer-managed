@@ -15,7 +15,10 @@ dependencies:
     - field.field.node.person.field_phone_mobile
     - field.field.node.person.field_phone_office
     - field.field.node.person.field_ref_department
+    - field.field.node.person.field_ref_experiments
     - field.field.node.person.field_ref_person_type
+    - field.field.node.person.field_science_field
+    - field.field.node.person.field_term_expiration
     - node.type.person
   module:
     - datetime
@@ -131,6 +134,14 @@ content:
     third_party_settings: {  }
     weight: 11
     region: content
+  field_ref_experiments:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
   field_ref_person_type:
     type: entity_reference_label
     label: above
@@ -138,6 +149,23 @@ content:
       link: true
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_science_field:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_term_expiration:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 14
     region: content
   links:
     settings: {  }

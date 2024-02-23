@@ -15,7 +15,10 @@ dependencies:
     - field.field.node.person.field_phone_mobile
     - field.field.node.person.field_phone_office
     - field.field.node.person.field_ref_department
+    - field.field.node.person.field_ref_experiments
     - field.field.node.person.field_ref_person_type
+    - field.field.node.person.field_science_field
+    - field.field.node.person.field_term_expiration
     - node.type.person
   module:
     - datetime
@@ -68,7 +71,9 @@ third_party_settings:
       children:
         - field_appointed_by
         - field_date_appointed
+        - field_term_expiration
         - field_job_title
+        - field_ref_experiments
       label: Details
       region: content
       parent_name: group_tabs
@@ -84,8 +89,9 @@ third_party_settings:
     group_tags:
       children:
         - field_board_type
-        - field_ref_department
         - field_ref_person_type
+        - field_ref_department
+        - field_science_field
       label: Tags
       region: content
       parent_name: group_tabs
@@ -164,7 +170,7 @@ content:
     third_party_settings: {  }
   field_job_title:
     type: string_textfield
-    weight: 25
+    weight: 23
     region: content
     settings:
       size: 60
@@ -232,13 +238,35 @@ content:
     third_party_settings: {  }
   field_ref_department:
     type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_experiments:
+    type: entity_reference_autocomplete
+    weight: 24
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_ref_person_type:
+    type: options_select
     weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_ref_person_type:
+  field_science_field:
     type: options_select
-    weight: 23
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_term_expiration:
+    type: datetime_default
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,0 +1,29 @@
+uuid: 644955f4-0b8a-41bb-a1b2-c76d0c4cb3a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_experiments
+    - node.type.experiment
+    - node.type.person
+id: node.person.field_ref_experiments
+field_name: field_ref_experiments
+entity_type: node
+bundle: person
+label: 'Related Experiments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      experiment: experiment
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

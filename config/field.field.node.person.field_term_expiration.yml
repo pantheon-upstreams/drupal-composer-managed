@@ -1,0 +1,21 @@
+uuid: 2b6d0504-b3a7-44d3-8ea8-076f40e37514
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_term_expiration
+    - node.type.person
+  module:
+    - datetime
+id: node.person.field_term_expiration
+field_name: field_term_expiration
+entity_type: node
+bundle: person
+label: 'Term expiration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

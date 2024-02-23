@@ -20,6 +20,9 @@ settings:
     -
       value: cultural_advisory_committee
       label: 'Cultural Advisory Committee'
+    -
+      value: surf_user_association
+      label: 'SURF User Association'
   allowed_values_function: ''
 module: options
 locked: false

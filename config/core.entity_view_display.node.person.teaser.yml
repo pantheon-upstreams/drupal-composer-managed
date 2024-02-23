@@ -16,7 +16,10 @@ dependencies:
     - field.field.node.person.field_phone_mobile
     - field.field.node.person.field_phone_office
     - field.field.node.person.field_ref_department
+    - field.field.node.person.field_ref_experiments
     - field.field.node.person.field_ref_person_type
+    - field.field.node.person.field_science_field
+    - field.field.node.person.field_term_expiration
     - node.type.person
   module:
     - name
@@ -82,7 +85,10 @@ hidden:
   field_location: true
   field_phone_mobile: true
   field_ref_department: true
+  field_ref_experiments: true
   field_ref_person_type: true
+  field_science_field: true
+  field_term_expiration: true
   langcode: true
   links: true
   search_api_excerpt: true

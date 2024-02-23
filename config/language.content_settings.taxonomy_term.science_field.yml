@@ -1,0 +1,11 @@
+uuid: a3584f54-d3bf-4916-ae29-45bcaaaaa25e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.science_field
+id: taxonomy_term.science_field
+target_entity_type_id: taxonomy_term
+target_bundle: science_field
+default_langcode: site_default
+language_alterable: false
