@@ -19,8 +19,8 @@ elements: |-
     '#disabled': true
     '#prepopulate': true
     '#access_create_roles':
-      - educator
       - administrator
+      - teacher
     '#target_type': node
     '#selection_handler': 'default:node'
     '#selection_settings':

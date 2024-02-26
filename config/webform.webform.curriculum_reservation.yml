@@ -22,8 +22,8 @@ elements: |-
     '#prepopulate': true
     '#default_value': '[current-page:url:unaliased:args:value:1]'
     '#access_create_roles':
-      - educator
       - administrator
+      - teacher
     '#target_type': node
     '#selection_handler': 'default:node'
     '#selection_settings':
