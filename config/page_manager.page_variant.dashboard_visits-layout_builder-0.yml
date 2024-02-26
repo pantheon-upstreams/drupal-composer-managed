@@ -5,7 +5,7 @@ dependencies:
   config:
     - page_manager.page.dashboard_visits
     - system.menu.dashboard
-    - views.view.user_download_requests
+    - views.view.user_visits
   module:
     - system
     - views
@@ -27,18 +27,18 @@ variant_settings:
         label: 'My Curriculum'
         context_mapping: {  }
       components:
-        87390edd-9506-4160-8bd7-e12840141c34:
-          uuid: 87390edd-9506-4160-8bd7-e12840141c34
+        fa617033-c943-43a6-89e7-d5becb4ac49c:
+          uuid: fa617033-c943-43a6-89e7-d5becb4ac49c
           region: first
           configuration:
-            id: 'views_block:user_download_requests-trips_presentations'
+            id: 'views_block:user_visits-dashboard_visits'
             label: ''
             label_display: '0'
             provider: views
             context_mapping: {  }
             views_label: ''
             items_per_page: none
-          weight: 0
+          weight: 1
           additional: {  }
       third_party_settings: {  }
     -

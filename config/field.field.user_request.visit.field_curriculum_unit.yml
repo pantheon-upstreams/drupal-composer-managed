@@ -1,15 +1,16 @@
-uuid: 94272960-7086-42d4-bf6e-7ce02103ef96
+uuid: e4482b5d-51e2-44b0-bba4-d5dfe82b82db
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user_request.field_ref_school_presentation
+    - field.storage.user_request.field_curriculum_unit
+    - node.type.curriculum_module
     - surf_registration.user_request_type.visit
-id: user_request.visit.field_ref_school_presentation
-field_name: field_ref_school_presentation
+id: user_request.visit.field_curriculum_unit
+field_name: field_curriculum_unit
 entity_type: user_request
 bundle: visit
-label: 'School presentation'
+label: 'Educator Resource'
 description: ''
 required: false
 translatable: false
@@ -18,7 +19,8 @@ default_value_callback: ''
 settings:
   handler: 'default:node'
   handler_settings:
-    target_bundles: {  }
+    target_bundles:
+      curriculum_module: curriculum_module
     sort:
       field: _none
       direction: ASC

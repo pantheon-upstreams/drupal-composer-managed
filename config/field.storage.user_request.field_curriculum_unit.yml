@@ -1,12 +1,12 @@
-uuid: 12dc0a24-26f9-40ee-8464-009359c68bf5
+uuid: 931776c2-4085-4f36-afbe-b7baca30aa0a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - surf_core
-id: user_request.field_ref_school_presentation
-field_name: field_ref_school_presentation
+    - surf_registration
+id: user_request.field_curriculum_unit
+field_name: field_curriculum_unit
 entity_type: user_request
 type: entity_reference
 settings:

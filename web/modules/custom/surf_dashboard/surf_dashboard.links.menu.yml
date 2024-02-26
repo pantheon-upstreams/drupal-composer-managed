@@ -23,9 +23,9 @@ surf_dashboard.visits:
         - icon--illustration-comment
 
 surf_dashboard.request:
-  title: Request Curriculum
+  title: Request a resource
   menu_name: dashboard
-  url: internal:/request-curriculum
+  url: internal:/education/in-your-classroom
   options:
     attributes:
       class:

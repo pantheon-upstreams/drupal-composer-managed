@@ -17,11 +17,12 @@ categories: {  }
 elements: |-
   ref_curriculum_module:
     '#type': entity_autocomplete
-    '#title': 'Curriculum unit'
+    '#title': 'Unit, Task or Challenge'
     '#disabled': true
     '#prepopulate': true
     '#default_value': '[current-page:url:unaliased:args:value:1]'
     '#access_create_roles':
+      - educator
       - administrator
     '#target_type': node
     '#selection_handler': 'default:node'
@@ -87,6 +88,7 @@ elements: |-
     '#title': Address
     '#required': true
     '#address__help': 'Physical address required. Address must not be a post office box.'
+    '#country__access': false
   ref_grade_levels:
     '#type': webform_entity_checkboxes
     '#title': 'Grade levels'

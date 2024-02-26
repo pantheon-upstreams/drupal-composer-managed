@@ -6,9 +6,9 @@ dependencies:
     - core.entity_view_mode.download_request.teaser
     - taxonomy.vocabulary.educator_resource_type
   content:
-    - 'taxonomy_term:educator_resource_type:6319187b-3be6-4cd6-a2e4-7d0b518a605b'
-    - 'taxonomy_term:educator_resource_type:c11879cc-bb4a-4d4b-b5df-830924aa2eeb'
+    - 'taxonomy_term:educator_resource_type:8c1ec4ca-5daf-4cb0-ac8c-41d2c8eadaa7'
     - 'taxonomy_term:educator_resource_type:ce31c445-1394-4c08-b86a-edb97c10f7f4'
+    - 'taxonomy_term:educator_resource_type:fde30ec2-9fe3-48cb-9d3d-e031595ca488'
   module:
     - download_request
     - node
@@ -29,73 +29,7 @@ display:
     position: 0
     display_options:
       title: 'Curriculum Units'
-      fields:
-        id:
-          id: id
-          table: download_request_field_data
-          field: id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: null
-          entity_field: id
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
+      fields: {  }
       pager:
         type: full
         options:
@@ -236,12 +170,12 @@ display:
       style:
         type: html_list
         options:
-          row_class: view__item
+          grouping: {  }
+          row_class: ''
           default_row_class: false
-          uses_fields: false
-          type: ol
-          wrapper_class: view__items-wrapper
-          class: view__items
+          type: ul
+          wrapper_class: ''
+          class: ''
       row:
         type: 'entity:download_request'
         options:
@@ -271,7 +205,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -360,7 +293,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
@@ -398,8 +330,8 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            328: 328
-            326: 326
+            330: 330
+            329: 329
           group: 1
           exposed: false
           expose:
@@ -437,8 +369,7 @@ display:
           error_message: true
       filter_groups:
         operator: AND
-        groups:
-          1: AND
+        groups: {  }
       defaults:
         empty: false
         title: false
@@ -450,97 +381,6 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - user.permissions
-      tags: {  }
-  trips_presentations:
-    id: trips_presentations
-    display_title: 'Trips and Presentations'
-    display_plugin: block
-    position: 1
-    display_options:
-      title: 'Trips and Presentations'
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: '<p>No Field Trips or Classroom Presentations have been requested.</p>'
-            format: basic_html
-          tokenize: false
-      filters:
-        field_ref_educator_resource_type_target_id:
-          id: field_ref_educator_resource_type_target_id
-          table: node__field_ref_educator_resource_type
-          field: field_ref_educator_resource_type_target_id
-          relationship: field_ref_curriculum_module
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value:
-            328: 328
-            326: 326
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: educator_resource_type
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      defaults:
-        empty: false
-        title: false
-        filters: false
-        filter_groups: false
-      display_description: ''
-      display_extenders: {  }
-      block_description: 'User Requested Trips and Presentations'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args

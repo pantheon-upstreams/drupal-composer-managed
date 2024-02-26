@@ -45,14 +45,22 @@ content:
       view_mode: hero_default
       link: false
     third_party_settings: {  }
-    weight: 5
+    weight: 4
     region: content
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 8
+    region: content
+  field_ref_educator_resource_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 10
     region: content
   field_ref_eo_opportunities:
     type: entity_reference_label
@@ -60,7 +68,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_ref_grade_level:
     type: entity_reference_entity_view
@@ -69,7 +77,7 @@ content:
       view_mode: link_with_termid
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_ref_related_content:
     type: entity_reference_entity_view
@@ -78,7 +86,7 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_ref_research_areas:
     type: entity_reference_label
@@ -86,7 +94,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 6
     region: content
   field_ref_standards:
     type: entity_reference_entity_view
@@ -95,7 +103,7 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_time_required:
     type: string
@@ -103,7 +111,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   reservation_links:
     settings: {  }
@@ -112,7 +120,6 @@ content:
     region: content
 hidden:
   field_ref_audiences: true
-  field_ref_educator_resource_type: true
   field_resource_list: true
   field_resources: true
   langcode: true

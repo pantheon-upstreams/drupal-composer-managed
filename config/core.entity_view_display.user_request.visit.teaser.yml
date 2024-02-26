@@ -5,19 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.user_request.teaser
     - field.field.user_request.visit.field_change_request
+    - field.field.user_request.visit.field_curriculum_unit
     - field.field.user_request.visit.field_date
     - field.field.user_request.visit.field_email
     - field.field.user_request.visit.field_name
     - field.field.user_request.visit.field_notes
     - field.field.user_request.visit.field_number_students
     - field.field.user_request.visit.field_ref_grade_level
-    - field.field.user_request.visit.field_ref_school_presentation
     - field.field.user_request.visit.field_school_district
     - field.field.user_request.visit.field_visit_type
     - field.field.user_request.visit.field_webform_submission_id
     - surf_registration.user_request_type.visit
   module:
-    - datetime
     - layout_builder
     - options
 third_party_settings:
@@ -29,44 +28,21 @@ targetEntityType: user_request
 bundle: visit
 mode: teaser
 content:
-  field_date:
-    type: datetime_custom
+  field_curriculum_unit:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      timezone_override: ''
-      date_format: 'F n, Y \a\t g:s A'
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_ref_grade_level:
-    type: entity_reference_label
-    label: hidden
-    settings:
+      view_mode: teaser_dashboard
       link: false
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_school_district:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_visit_type:
-    type: list_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
   state:
     type: list_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
   uid:
     type: author
@@ -78,10 +54,13 @@ content:
 hidden:
   created: true
   field_change_request: true
+  field_date: true
   field_email: true
   field_name: true
   field_notes: true
   field_number_students: true
-  field_ref_school_presentation: true
+  field_ref_grade_level: true
+  field_school_district: true
+  field_visit_type: true
   field_webform_submission_id: true
   search_api_excerpt: true

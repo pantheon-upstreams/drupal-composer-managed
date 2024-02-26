@@ -1,10 +1,28 @@
-{{ 'My Reservation'|t }}
-<h5>{{ content.field_school_district|field_value }} {{ content.field_ref_grade_level|field_value }} {{ content.field_visit_type|field_value }}</h5>
-<h6>{{ content.field_date|field_value }}</h6>
-  
+{#
+/**
+ * @file user-request.html.twig
+ * Default theme implementation to present User request data.
+ *
+ * This template is used when viewing User request pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_user_request()
+ *
+ * @ingroup themeable
+ */
+#}
 
-<div class="user-request-field-state">
-  <label>{{ 'Status'|t }}</label>
-  {{ content.state }}
-</div>
-{{ content|without('field_school_district', 'field_ref_grade_level', 'field_visit_type', 'state', 'field_date') }}
+{% set rendered_content = content|without(
+    'field_curriculum_unit',
+    'state',
+) %}
+
+{% if content %}
+    {{ content.field_curriculum_unit|field_value }}
+    <p class="status-description">{{ content.state|field_value }}</p>
+    {{ rendered_content }}
+{% endif %}

@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.user_request.visit.field_change_request
+    - field.field.user_request.visit.field_curriculum_unit
     - field.field.user_request.visit.field_date
     - field.field.user_request.visit.field_email
     - field.field.user_request.visit.field_name
     - field.field.user_request.visit.field_notes
     - field.field.user_request.visit.field_number_students
     - field.field.user_request.visit.field_ref_grade_level
-    - field.field.user_request.visit.field_ref_school_presentation
     - field.field.user_request.visit.field_school_district
     - field.field.user_request.visit.field_visit_type
     - field.field.user_request.visit.field_webform_submission_id
@@ -35,6 +35,16 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  field_curriculum_unit:
+    type: entity_reference_autocomplete
+    weight: 29
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_date:
     type: datetime_default
@@ -99,16 +109,6 @@ content:
   field_ref_grade_level:
     type: entity_reference_autocomplete
     weight: 23
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_ref_school_presentation:
-    type: entity_reference_autocomplete
-    weight: 25
     region: content
     settings:
       match_operator: CONTAINS

@@ -17,6 +17,7 @@
     'field_content_area',
     'field_media',
     'field_overview',
+    'field_ref_educator_resource_type',
     'field_ref_grade_level',
     'field_ref_standards',
     'field_resource_list',
@@ -24,9 +25,9 @@
     'reservation_links',
 ) %}
 
-{% if logged_in and content.reservation_links.webform['#url'] and content.reservation_links.webform['#title'] %}
+{% if logged_in and content.reservation_links.webform['#url'] and content.field_ref_educator_resource_type|render %}
     {% set curriculum_module_cta_url = content.reservation_links.webform['#url'] %}
-    {% set curriculum_module_cta_text = content.reservation_links.webform['#title'] %}
+    {% set curriculum_module_cta_text = 'Request this ' ~ node.field_ref_educator_resource_type.entity.name.value %}
 {% else %}
     {% set curriculum_module_cta_url = '/user/register?destination=node/' ~ node.id %}
     {% set curriculum_module_cta_text = 'Register or Login to Request'|t %}

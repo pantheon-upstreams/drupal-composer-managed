@@ -31,6 +31,12 @@ elements:
     webform_field: change_request
     custom_check: 0
     custom_value: ''
+  field_curriculum_unit:
+    type: false
+    mapping: default_mapping
+    webform_field: ref_curriculum_module
+    custom_check: 0
+    custom_value: ''
   field_date:
     type: false
     mapping: datetime_mapping

@@ -15,9 +15,11 @@ categories: {  }
 elements: |-
   ref_curriculum_module:
     '#type': entity_autocomplete
-    '#title': 'Curriculum module'
+    '#title': 'Field Trip or Classroom Presentation'
+    '#disabled': true
     '#prepopulate': true
     '#access_create_roles':
+      - educator
       - administrator
     '#target_type': node
     '#selection_handler': 'default:node'
@@ -53,6 +55,15 @@ elements: |-
   email:
     '#type': email
     '#title': Email
+  preferred_dates:
+    '#type': fieldset
+    '#title': 'Preferred Dates'
+    date_start:
+      '#type': date
+      '#title': Start
+    date_end:
+      '#type': date
+      '#title': End
   school_district:
     '#type': textfield
     '#title': 'School district'
@@ -70,25 +81,6 @@ elements: |-
       sort:
         field: name
         direction: ASC
-  request_type:
-    '#type': select
-    '#title': 'Request type'
-    '#options':
-      field_trip: 'Field trip'
-      school_presentation: 'School presentation'
-  date:
-    '#type': datetime
-    '#title': 'Preferred Dates & Times'
-    '#date_date_format': ''
-    '#date_time_format': ''
-  ref_school_presentation:
-    '#type': entity_autocomplete
-    '#title': 'School presentation'
-    '#target_type': node
-    '#selection_handler': 'default:node'
-    '#selection_settings':
-      target_bundles:
-        school_presentation: school_presentation
   notes:
     '#type': textarea
     '#title': Notes
