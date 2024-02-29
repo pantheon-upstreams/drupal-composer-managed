@@ -5,4 +5,5 @@ dependencies: {  }
 id: curriculum_module
 label: 'Curriculum module'
 workflow_id: curriculum_module_default
-access_field_workflow_state: new
+access_field_workflow_state: accepted
+workflow_state_default_value: requested

@@ -28,4 +28,5 @@ permissions:
   - 'view download_item'
   - 'view media'
   - 'view own curriculum_module download_request'
+  - 'view own download_request'
   - 'view own user_request'

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser_dashboard
+    - core.entity_view_mode.node.teaser
     - surf_registration.user_request_type.event_registration
   module:
     - datetime
@@ -70,12 +70,12 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          view_mode: teaser_dashboard
+          view_mode: teaser
       pager:
         type: some
         options:
@@ -256,13 +256,17 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: true
-          uses_fields: false
+          default_row_class: false
           type: ul
-          wrapper_class: item-list
+          wrapper_class: ''
           class: ''
       row:
         type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -356,11 +360,6 @@ display:
         - 'config:core.entity_view_display.node.report_publication.search_index'
         - 'config:core.entity_view_display.node.report_publication.search_result'
         - 'config:core.entity_view_display.node.report_publication.teaser'
-        - 'config:core.entity_view_display.node.school_presentation.default'
-        - 'config:core.entity_view_display.node.school_presentation.full'
-        - 'config:core.entity_view_display.node.school_presentation.search_index'
-        - 'config:core.entity_view_display.node.school_presentation.search_result'
-        - 'config:core.entity_view_display.node.school_presentation.teaser'
         - 'config:core.entity_view_display.node.standard.default'
         - 'config:core.entity_view_display.node.standard.full'
         - 'config:core.entity_view_display.node.standard.search_index'
@@ -565,11 +564,6 @@ display:
         - 'config:core.entity_view_display.node.report_publication.search_index'
         - 'config:core.entity_view_display.node.report_publication.search_result'
         - 'config:core.entity_view_display.node.report_publication.teaser'
-        - 'config:core.entity_view_display.node.school_presentation.default'
-        - 'config:core.entity_view_display.node.school_presentation.full'
-        - 'config:core.entity_view_display.node.school_presentation.search_index'
-        - 'config:core.entity_view_display.node.school_presentation.search_result'
-        - 'config:core.entity_view_display.node.school_presentation.teaser'
         - 'config:core.entity_view_display.node.standard.default'
         - 'config:core.entity_view_display.node.standard.full'
         - 'config:core.entity_view_display.node.standard.search_index'
@@ -687,11 +681,6 @@ display:
         - 'config:core.entity_view_display.node.report_publication.search_index'
         - 'config:core.entity_view_display.node.report_publication.search_result'
         - 'config:core.entity_view_display.node.report_publication.teaser'
-        - 'config:core.entity_view_display.node.school_presentation.default'
-        - 'config:core.entity_view_display.node.school_presentation.full'
-        - 'config:core.entity_view_display.node.school_presentation.search_index'
-        - 'config:core.entity_view_display.node.school_presentation.search_result'
-        - 'config:core.entity_view_display.node.school_presentation.teaser'
         - 'config:core.entity_view_display.node.standard.default'
         - 'config:core.entity_view_display.node.standard.full'
         - 'config:core.entity_view_display.node.standard.search_index'

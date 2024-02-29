@@ -71,6 +71,7 @@ class CurriculumModule extends Node implements EntityUserDashboardInterface {
     $current_date = \Drupal::service('date.formatter')->format(\Drupal::time()->getCurrentTime(), 'custom', 'Y-m-d');
     $query->condition('field_dates.end_value', $current_date, '>=')
       ->condition('request_items.entity.download_item.entity.type', 'curriculum_module_resources')
+      ->condition('user', $user->id(), '=')
       ->condition('request_items.entity.download_item.entity.field_curriculum_module.target_id', $this->id());
 
     $result = $query->accessCheck(FALSE)->execute();
