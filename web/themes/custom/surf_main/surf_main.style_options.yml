@@ -145,8 +145,6 @@ options:
         label: None
       lg:
         label: Large
-      gradient:
-        label: Gradient
       particles:
         label: Particles
       particles-sm:

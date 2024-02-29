@@ -17,7 +17,7 @@
 
 {% set experiment_dates %}
     {% if content.field_dates_only|render and not node.field_dates_only.0.get('end_value').value %}
-        {{ content.field_dates_only|field_value }} - <p>{{- 'Present'|t -}}</p>
+        {{ content.field_dates_only|field_value }} - <p class="p-experiment__dates--present">{{- 'Present'|t -}}</p>
     {% else %}
         {{ content.field_dates_only|field_value|default([]) }}
     {% endif %}
