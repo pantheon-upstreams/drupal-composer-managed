@@ -188,10 +188,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: message
-  confirmation_url: ''
+  confirmation_type: url_message
+  confirmation_url: '/user/[current-user:uid]/dashboard/visits'
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: '<p>Your Field Trip or Classroom Presentation Request has been sent. Please wait while an administrator looks over your request. If you would like to see all of your requested Field Trips or Classroom Presentations, please visit your <a href="/user/[current-user:uid]/dashboard/visits">Dashboard Page</a>.</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''

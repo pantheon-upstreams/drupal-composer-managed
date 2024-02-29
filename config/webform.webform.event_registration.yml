@@ -146,10 +146,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: message
-  confirmation_url: ''
+  confirmation_type: url_message
+  confirmation_url: '/user/[current-user:uid]/dashboard/events'
   confirmation_title: 'Thank You For Your Event Registration!'
-  confirmation_message: '<p>Sanford Underground Research Facility would like to thank you for your Event registration! Feel free to go back to our list of <a href="/events">Events</a> or directly to our <a href="&lt;front&gt;">Home Page</a>.</p>'
+  confirmation_message: '<p>Sanford Underground Research Facility would like to thank you for your Event registration! Feel free to go back to our list of <a href="/events">Events</a> or directly to our <a href="/">Home Page</a>.</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
