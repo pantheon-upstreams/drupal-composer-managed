@@ -21,7 +21,7 @@
     'reservation_links'
 ) %}
 
-{% set default_image = drupal_image('public://images/2024-01/default-thumbnail-image-surf.png', 'teaser_default', responsive=true) %}
+{% set default_image = drupal_image('public://images/2024-01/illustration - curriculum placeholder.png', 'teaser_default', responsive=true) %}
 
 {% embed 'surf_main:teaser' with {
     attributes,
@@ -49,7 +49,7 @@
             </p>
         </div>
     {% endblock %}
-    
+
     {% block teaser_content_suffix %}
         <ul class="m-teaser__tags">
             {% for grade_level in curriculum_grade_level %}
