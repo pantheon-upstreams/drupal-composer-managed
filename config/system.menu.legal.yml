@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: legal
 label: Legal
-description: ''
+description: 'Lowest footer menu'
 locked: false
