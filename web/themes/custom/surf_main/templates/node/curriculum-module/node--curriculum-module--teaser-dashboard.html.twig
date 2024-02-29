@@ -17,6 +17,7 @@
     'field_overview',
     'field_ref_grade_level',
     'field_ref_standards',
+    'field_ref_educator_resource_type',
     'reservation_links'
 ) %}
 
@@ -34,7 +35,21 @@
     teaser_url: dashboard_url,
     curriculum_grade_level: content.field_ref_grade_level|field_value|default([]),
     curriculum_standards: content.field_ref_standards|field_value|default([]),
+    chip_text: content.field_ref_educator_resource_type|field_value|default([]),
 } only %}
+    {% block teaser_media_prefix %}
+        <div class="m-teaser__media-prefix">
+            <p>
+                {% include 'surf_main:chip' with {
+                    attributes,
+                    chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                    chip_text: chip_text|default([]),
+                    chip_size: 'small',
+                } only %}
+            </p>
+        </div>
+    {% endblock %}
+    
     {% block teaser_content_suffix %}
         <ul class="m-teaser__tags">
             {% for grade_level in curriculum_grade_level %}

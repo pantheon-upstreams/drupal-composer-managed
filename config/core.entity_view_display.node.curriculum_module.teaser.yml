@@ -42,6 +42,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_ref_educator_resource_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
   field_ref_grade_level:
     type: entity_reference_entity_view
     label: hidden
@@ -58,17 +66,16 @@ content:
       view_mode: link_with_termid
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   reservation_status:
     settings: {  }
     third_party_settings: {  }
-    weight: 26
+    weight: 5
     region: content
 hidden:
   body: true
   field_ref_audiences: true
-  field_ref_educator_resource_type: true
   field_ref_eo_opportunities: true
   field_ref_related_content: true
   field_ref_research_areas: true
