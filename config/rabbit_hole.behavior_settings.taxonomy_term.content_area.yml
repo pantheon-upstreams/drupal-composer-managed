@@ -1,0 +1,13 @@
+uuid: e73fb2e9-94d6-49d8-ad53-c394d8ebdb41
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.content_area
+id: taxonomy_term.content_area
+targetEntityType: taxonomy_term
+bundle: content_area
+action: page_not_found
+no_bypass: false
+bypass_message: false
+configuration: {  }

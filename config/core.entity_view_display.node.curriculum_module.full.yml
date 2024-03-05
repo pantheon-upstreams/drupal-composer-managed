@@ -7,12 +7,11 @@ dependencies:
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
-    - field.field.node.curriculum_module.field_ref_audiences
+    - field.field.node.curriculum_module.field_ref_content_area
     - field.field.node.curriculum_module.field_ref_educator_resource_type
     - field.field.node.curriculum_module.field_ref_eo_opportunities
     - field.field.node.curriculum_module.field_ref_grade_level
     - field.field.node.curriculum_module.field_ref_related_content
-    - field.field.node.curriculum_module.field_ref_research_areas
     - field.field.node.curriculum_module.field_ref_standards
     - field.field.node.curriculum_module.field_resource_list
     - field.field.node.curriculum_module.field_resources
@@ -45,7 +44,7 @@ content:
       view_mode: hero_default
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_overview:
     type: text_default
@@ -53,6 +52,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_ref_content_area:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: link_with_termid
+      link: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_ref_educator_resource_type:
     type: entity_reference_label
@@ -68,7 +76,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_ref_grade_level:
     type: entity_reference_entity_view
@@ -77,21 +85,13 @@ content:
       view_mode: link_with_termid
       link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_ref_related_content:
     type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: teaser
-      link: false
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_ref_research_areas:
-    type: entity_reference_label
-    label: hidden
-    settings:
       link: false
     third_party_settings: {  }
     weight: 6
@@ -119,7 +119,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_ref_audiences: true
   field_resource_list: true
   field_resources: true
   langcode: true

@@ -1,0 +1,13 @@
+uuid: 647ae199-8e26-4000-ab47-e71cbf66edd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.educator_resource_type
+id: taxonomy_term.educator_resource_type
+targetEntityType: taxonomy_term
+bundle: educator_resource_type
+action: display_page
+no_bypass: false
+bypass_message: false
+configuration: {  }

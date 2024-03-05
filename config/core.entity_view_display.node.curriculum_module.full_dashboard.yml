@@ -7,12 +7,11 @@ dependencies:
     - field.field.node.curriculum_module.body
     - field.field.node.curriculum_module.field_media
     - field.field.node.curriculum_module.field_overview
-    - field.field.node.curriculum_module.field_ref_audiences
+    - field.field.node.curriculum_module.field_ref_content_area
     - field.field.node.curriculum_module.field_ref_educator_resource_type
     - field.field.node.curriculum_module.field_ref_eo_opportunities
     - field.field.node.curriculum_module.field_ref_grade_level
     - field.field.node.curriculum_module.field_ref_related_content
-    - field.field.node.curriculum_module.field_ref_research_areas
     - field.field.node.curriculum_module.field_ref_standards
     - field.field.node.curriculum_module.field_resource_list
     - field.field.node.curriculum_module.field_resources
@@ -55,14 +54,6 @@ content:
     third_party_settings: {  }
     weight: 11
     region: content
-  field_ref_audiences:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_ref_eo_opportunities:
     type: entity_reference_label
     label: hidden
@@ -88,14 +79,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 7
-    region: content
-  field_ref_research_areas:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 8
     region: content
   field_ref_standards:
     type: entity_reference_entity_view
@@ -134,6 +117,7 @@ content:
     weight: 26
     region: content
 hidden:
+  field_ref_content_area: true
   field_ref_educator_resource_type: true
   field_resources: true
   langcode: true

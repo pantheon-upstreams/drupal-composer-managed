@@ -29,7 +29,7 @@ content:
     label: above
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: html_year
       separator: '-'
     third_party_settings: {  }
     weight: 1

@@ -1,0 +1,13 @@
+uuid: c52e8d53-e27f-44a1-aa9f-f067bc6984a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.person_type
+id: taxonomy_term.person_type
+targetEntityType: taxonomy_term
+bundle: person_type
+action: display_page
+no_bypass: false
+bypass_message: false
+configuration: {  }
