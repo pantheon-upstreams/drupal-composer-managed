@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_caption
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_image_credit
     - field.field.media.image.field_media_image
     - image.style.media_library
     - media.type.image
   module:
     - image_widget_crop
     - path
+    - text
 _core:
   default_config_hash: WeM0d1VqhuyGELo4SRiDJfhDQSLqfKavISEbrnlcTaE
 id: media.image.default
@@ -29,6 +32,22 @@ content:
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_caption:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_credit:
+    type: text_textarea
+    weight: 27
+    region: content
+    settings:
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
   field_media_image:

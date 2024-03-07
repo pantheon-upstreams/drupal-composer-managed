@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_form_mode.media.media_library
     - field.field.media.image.field_caption
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_image_credit
     - field.field.media.image.field_media_image
     - image.style.media_library
     - media.type.image
@@ -55,6 +57,8 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_image_caption: true
+  field_image_credit: true
   langcode: true
   path: true
   status: true

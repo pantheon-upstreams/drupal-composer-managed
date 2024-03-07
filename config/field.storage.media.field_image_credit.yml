@@ -1,0 +1,19 @@
+uuid: 1a94bc96-9062-4bf6-b770-0a2d5f588ba4
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - text
+id: media.field_image_credit
+field_name: field_image_credit
+entity_type: media
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

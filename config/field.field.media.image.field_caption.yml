@@ -9,7 +9,7 @@ id: media.image.field_caption
 field_name: field_caption
 entity_type: media
 bundle: image
-label: Caption
+label: 'Caption (remove)'
 description: ''
 required: false
 translatable: false
