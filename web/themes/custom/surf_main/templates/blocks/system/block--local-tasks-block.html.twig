@@ -7,16 +7,16 @@
  * - No additional variables are available for this block type.
  *
  * @see templates/blocks/block.html.twig
- * @see components/02-molecules/tasks-menu
+ * @see components/02-molecules/menu/menu.twig
  */
 #}
 
-{% embed 'surf_main:tasks-menu' with {
-    attributes,
-    menu_attributes: create_attribute(),
+{% embed 'surf_main:menu' with {
+    title_prefix,
+    title_suffix,
+    menu_attributes: create_attribute({'class': 'm-menu--tasks'}).merge(attributes),
+    menu_title: 'Tasks menu'|t,
     menu_content: content,
-    menu_label_display: false,
-    menu_title: configuration.label,
 } only %}
     {% block menu_prefix %}
         {{ title_prefix }}

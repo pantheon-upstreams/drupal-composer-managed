@@ -39,7 +39,7 @@ const mobileMove = (wrapper, destination, breakpoint) => {
     if (mediaQuery.matches) {
       state = 'desktop';
 
-      if (wrapper.classList.contains('m-menu--primary-menu')) {
+      if (wrapper.classList.contains('m-menu--primary')) {
         const branding = parent.querySelector('.site-branding');
         branding.after(wrapper);
       } else {
@@ -94,7 +94,7 @@ Drupal.behaviors.surfMasthead = {
     const mastheadMoveElements = [
       {
         'id': 'surf-move-mobile-02',
-        'class': '.m-menu--primary-menu',
+        'class': '.m-menu--primary',
         'breakpoint': 1400,
       },
       {
@@ -104,12 +104,12 @@ Drupal.behaviors.surfMasthead = {
       },
       {
         'id': 'surf-move-mobile-04',
-        'class': '.m-menu--account-menu',
+        'class': '.m-menu--account',
         'breakpoint': 992,
       },
       {
         'id': 'surf-move-mobile-03',
-        'class': '.m-menu--utility-menu',
+        'class': '.m-menu--utility',
         'breakpoint': 992,
       },
     ];

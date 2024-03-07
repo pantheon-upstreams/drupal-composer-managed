@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Molecule component for a Menu
+ *
+ * Available props:
+ * - menu_attributes: [array] Any custom attributes needed for this callout.
+ * - menu_content: [array] Expecting a render array object of menu links.
+ * - menu_title: [string] Expecting a title that will server as this menu's id.
+ *
+ * Available slots:
+ * - menu_prefix
+ *
+ */
+#}
+
+{% set classes = [
+    'm-menu',
+] %}
+
+<nav {{ menu_attributes.addClass(classes) }} aria-label="{{ menu_title }}" role="navigation">
+    {% block menu_prefix %}{% endblock %}
+    {{ menu_content }}
+</nav>

@@ -1,0 +1,112 @@
+//
+// Component - Molecule - Menu - Dashboard
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Level One
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/animations';
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/buttons';
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/links';
+@use '../../../00-base/partials/lists';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.m-menu.m-menu--dashboard {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  > .m-menu__list {
+    column-count: 1;
+    column-gap: 24px;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoints.bp-min(large) {
+      column-count: 2;
+    }
+  }
+
+  > .m-menu__list > li {
+    block-size: 80px;
+    display: inline-block;
+    inline-size: 100%;
+
+    @include breakpoints.bp-min(large) {
+      block-size: 132px;
+    }
+  }
+
+  > .m-menu__list > li > a {
+    align-items: center;
+    block-size: 100%;
+    color: var(--surf-color-black);
+    display: flex;
+    font-size: var(--surf-fs-24-32);
+    font-weight: var(--surf-fw-bold);
+    inline-size: 100%;
+    padding-block: 16px;
+    padding-inline: 96px 16px;
+    line-height: var(--surf-lh-heading);
+    text-decoration: none;
+
+    @include breakpoints.bp-min(large) {
+      padding-inline-start: 128px;
+    }
+
+    &.is-active,
+    &:hover {
+      background-color: var(--surf-color-gray-100);
+      text-decoration: underline;
+    }
+  }
+
+  .icon {
+    background-position: 16px center;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+
+    @include breakpoints.bp-min(large) {
+      background-size: 100px 100px;
+    }
+  }
+
+  .icon--illustration-calendar {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-calendar.png');
+  }
+
+  .icon--illustration-comment {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-comment.png');
+  }
+
+  .icon--illustration-document {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-document.png');
+  }
+
+  .icon--illustration-lightbulb {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-lightbulb.png');
+  }
+
+  .icon--illustration-person {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-person.png');
+  }
+
+  .icon--illustration-teacher {
+    background-image: url('/themes/custom/surf_main/images/illustrations/illustration-teacher.png');
+  }
+}

@@ -1,16 +1,11 @@
-{#
-/**
- * @file
- * Theme override for the a Footer Menu navigation block.
- *
- * Available variables:
- * - No additional variables are available for this block type.
- *
- * @see templates/blocks/system/block--system-menu-block.html.twig
- * @see components/02-molecules/menu/menu.twig
- */
-#}
+# Component - Menu
 
+- **Atomic Classification:** Molecule
+- **Status:** Experimental
+
+## Examples
+
+```
 {% embed 'surf_main:menu' with {
     title_prefix,
     title_suffix,
@@ -23,3 +18,4 @@
         {{ title_suffix }}
     {% endblock %}
 {% endembed %}
+```

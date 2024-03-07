@@ -150,7 +150,8 @@
             "Workflow state action fixes": "https://git.drupalcode.org/project/apitools/-/merge_requests/3.diff"
           },
           "drupal/core": {
-            "Issue #3129179: Provide some way to rebuild the persistent bundle field map": "https://www.drupal.org/files/issues/2023-08-30/rebuild_field_map-3129179-39.patch"
+            "Issue #3129179: Provide some way to rebuild the persistent bundle field map": "https://www.drupal.org/files/issues/2023-08-30/rebuild_field_map-3129179-39.patch",
+            "Issue #3392572: Deprecated function: strnatcasecmp(): Passing null to parameter #1 ($string1) of type string is deprecated in LayoutPluginManager": "https://git.drupalcode.org/project/drupal/-/merge_requests/6533.diff"
           },
           "drupal/ctools": {
             "Cannot use Entity View block in Layout Builder when there is no context": "https://www.drupal.org/files/issues/2021-05-24/ctools-layout_builder_context-3029323-12.patch"

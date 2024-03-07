@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.heading
     - paragraphs.paragraphs_type.link_highlight
     - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.menu
     - paragraphs.paragraphs_type.person
     - paragraphs.paragraphs_type.pullquote
     - paragraphs.paragraphs_type.resources_list
@@ -39,6 +40,7 @@ settings:
       heading: heading
       gallery: gallery
       link_highlight: link_highlight
+      menu: menu
       accordion: accordion
       embed: embed
       pullquote: pullquote
@@ -86,6 +88,9 @@ settings:
         enabled: true
       media:
         weight: 39
+        enabled: true
+      menu:
+        weight: 28
         enabled: true
       person:
         weight: 37

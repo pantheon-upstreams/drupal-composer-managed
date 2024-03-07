@@ -1,0 +1,40 @@
+uuid: be64fc1a-d2bb-4194-bd9f-1fb482c7ed01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.menu.field_ref_menu
+    - field.field.paragraph.menu.field_title
+    - paragraphs.paragraphs_type.menu
+  module:
+    - block_field
+    - maxlength
+id: paragraph.menu.default
+targetEntityType: paragraph
+bundle: menu
+mode: default
+content:
+  field_ref_menu:
+    type: block_field_default
+    weight: 0
+    region: content
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      maxlength:
+        maxlength_js: null
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: false
+hidden:
+  created: true
+  status: true

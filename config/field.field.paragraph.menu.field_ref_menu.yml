@@ -1,0 +1,54 @@
+uuid: 5272d9cd-b50d-4840-9e5a-d250534badba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ref_menu
+    - paragraphs.paragraphs_type.menu
+  module:
+    - block_field
+id: paragraph.menu.field_ref_menu
+field_name: field_ref_menu
+entity_type: paragraph
+bundle: menu
+label: Menu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: categories
+  selection_settings:
+    categories:
+      Menus: Menus
+      Block: '0'
+      'Chaos Tools': '0'
+      'Content block': '0'
+      'Content block fields': '0'
+      'Content fields': '0'
+      core: '0'
+      'Crop fields': '0'
+      'Custom menu link fields': '0'
+      'Download item fields': '0'
+      'Download request fields': '0'
+      'Download request item fields': '0'
+      'File fields': '0'
+      Forms: '0'
+      'Inline blocks': '0'
+      'Lists (Views)': '0'
+      'Media fields': '0'
+      'Notification Message': '0'
+      'Notification Message fields': '0'
+      'Paragraph fields': '0'
+      'Redirect fields': '0'
+      'Search task fields': '0'
+      'Shortcut link fields': '0'
+      System: '0'
+      'Taxonomy term fields': '0'
+      'URL alias fields': '0'
+      'User fields': '0'
+      'User Request fields': '0'
+      Webform: '0'
+      'Webform submission fields': '0'
+field_type: block_field

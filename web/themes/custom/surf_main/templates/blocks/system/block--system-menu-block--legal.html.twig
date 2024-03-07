@@ -7,13 +7,19 @@
  * - No additional variables are available for this block type.
  *
  * @see templates/blocks/system/block--system-menu-block.html.twig
- * @see components/02-molecules/legal-menu
+ * @see components/02-molecules/menu/menu.twig
  */
 #}
 
-{% include 'surf_main:legal-menu' with {
-    attributes,
-    legal_menu_attributes: create_attribute(),
-    legal_menu_title: configuration.label,
-    legal_menu_content: content,
+{% embed 'surf_main:menu' with {
+    title_prefix,
+    title_suffix,
+    menu_attributes: create_attribute({'class': 'm-menu--legal'}).merge(attributes),
+    menu_title: 'Legal menu'|t,
+    menu_content: content,
 } only %}
+    {% block menu_prefix %}
+        {{ title_prefix }}
+        {{ title_suffix }}
+    {% endblock %}
+{% endembed %}

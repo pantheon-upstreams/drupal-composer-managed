@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: Menu
+status: experimental
+group: Molecules
+props:
+  type: object
+  required:
+    - menu_title
+  properties:
+    menu_attributes:
+      title: Attributes
+      type: string
+    menu_content:
+      title: Content
+      type: string
+    menu_title:
+      title: Title
+      type: string
+  slots:
+    menu_prefix:
+      title: Prefix

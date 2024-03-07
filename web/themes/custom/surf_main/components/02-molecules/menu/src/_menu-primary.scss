@@ -1,0 +1,360 @@
+//
+// Components - Molecules - Menu - Primary
+//
+// - 01 - Imports
+// - 02 - General
+// - 03 - Level One
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/animations';
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/buttons';
+@use '../../../00-base/partials/calculations';
+@use '../../../00-base/partials/links';
+@use '../../../00-base/partials/lists';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.o-masthead .m-menu.m-menu--primary {
+  display: none;
+
+  ul {
+    @include lists.list-reset();
+  }
+
+  button {
+    @include buttons.button-reset();
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .m-menu__list.m-menu__level--4,
+  .m-menu__list.m-menu__level--5,
+  .m-menu__list.m-menu__level--6 {
+    display: none;
+  }
+}
+
+// FUOC Fix
+.js .m-menu.m-menu--primary {
+  display: block;
+}
+
+
+
+
+//------------------------------------
+//  03 - Level One
+//------------------------------------
+
+.o-masthead .m-menu.m-menu--primary .m-menu__list.m-menu__level--1 {
+  display: flex;
+  flex-flow: nowrap column;
+  margin: 0;
+
+  @include breakpoints.bp-min(xxlarge) {
+    flex-flow: nowrap row;
+    margin: 0 -24px 0 -28px;
+  }
+
+  > li {
+    background-color: transparent;
+    position: relative;
+    transition: animations.transition(background-color, 0.35s, easeInOutExpo);
+
+    @include breakpoints.bp-min(xxlarge) {
+      padding: 0 16px;
+    }
+  }
+
+  > li.is-open {
+    @include breakpoints.bp-max(xxlarge) {
+      background-color: fade-out(#000, 0.75);
+    }
+  }
+
+  > li > a,
+  > li > button,
+  > li > span {
+    @include links.menu(22px, white, white);
+    padding: 8px 16px;
+    text-align: left;
+    width: 100%;
+
+    @include breakpoints.bp-min(xxlarge) {
+      @include links.menu(28px, navy, black);
+      padding: 4px 0;
+      width: auto;
+    }
+  }
+
+  > li > a:after,
+  > li > button:after,
+  > li > span:after {
+    @include breakpoints.bp-max(xxlarge) {
+      display: none;
+    }
+  }
+
+  > li > a.a-icon--chevron-down,
+  > li > button.a-icon--chevron-down,
+  > li > span.a-icon--chevron-down {
+    padding-inline-end: 28px;
+
+    &:before {
+      background: svg-load('icon-angle-down.svg', fill="#FFFFFF") no-repeat center;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 26px;
+      margin: auto;
+      position: absolute;
+      right: 32px;
+      top: 0;
+      transform: scale(1);
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
+      width: 26px;
+
+      @include breakpoints.bp-min(xxlarge) {
+        background: svg-load('icon-angle-down.svg', fill="#000080") no-repeat center;
+        right: 0;
+      }
+    }
+  }
+
+  > li.is-open > a.a-icon--chevron-down:before,
+  > li.is-open > button.a-icon--chevron-down:before,
+  > li.is-open > span.a-icon--chevron-down:before {
+    transform: scale(-1)
+  }
+
+  > li > .m-menu__dropdown {
+    max-block-size: 0;
+    opacity: 0;
+    padding: 0;
+    position: relative;
+    visibility: hidden;
+
+    @include breakpoints.bp-min(xxlarge) {
+      background: url('img/background-particles-light-gray.png') no-repeat left top var(--surf-color-white);
+      background-size: 324px 324px;
+      box-shadow: 4px 4px 24px 0 fade-out(black, 0.75);
+      margin-block-start: 20px;
+      max-block-size: inherit;
+      min-inline-size: 740px;
+      padding: 32px;
+      position: absolute;
+      top: 100%;
+      transition: animations.transition(all, 0.35s, easeInOutExpo);
+    }
+  }
+
+  > li:not(:last-child) > .m-menu__dropdown {
+    @include breakpoints.bp-min(xxlarge) {
+      left: 50%;
+      transform: translate(-50%, 24px);
+    }
+  }
+
+  > li:last-child > .m-menu__dropdown {
+    @include breakpoints.bp-min(xxlarge) {
+      right: 0;
+      transform: translateY(24px);
+    }
+  }
+
+  > li:nth-last-child(2) > .m-menu__dropdown {
+    @include breakpoints.bp-min(xxlarge) {
+      left: calc(50% - 56px);
+    }
+  }
+
+  > li.is-open > .m-menu__dropdown {
+    max-block-size: 2000px;
+    opacity: 1;
+    visibility: visible;
+
+    @include breakpoints.bp-min(xxlarge) {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  > li.is-open:not(:last-child) > .m-menu__dropdown {
+    @include breakpoints.bp-min(xxlarge) {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  > li.is-open:last-child > .m-menu__dropdown {
+    @include breakpoints.bp-min(xxlarge) {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Level Two
+//------------------------------------
+
+.o-masthead .m-menu.m-menu--primary .m-menu__list.m-menu__level--2 {
+  display: flex;
+  flex-flow: nowrap column;
+  margin-block-end: 8px;
+
+  @include breakpoints.bp-min(xxlarge) {
+    flex-flow: nowrap row;
+    margin-block-end: 0;
+  }
+
+  > li {
+    @include breakpoints.bp-min(xxlarge) {
+      display: flex;
+      flex-flow: nowrap row;
+      min-block-size: 240px;
+      margin: 0 12px;
+    }
+  }
+
+  > li > .m-menu__card {
+    @include breakpoints.bp-min(xxlarge) {
+      background-color: var(--surf-color-white);
+      min-inline-size: 360px;
+      padding: 24px 32px;
+    }
+
+    &:after {
+      @include breakpoints.bp-min(xxlarge) {
+        background: svg-load('icon-arrow-right.svg', fill="#000080") no-repeat center;
+        background-size: cover;
+        content: '';
+        display: block;
+        height: 40px;
+        margin-block-start: 8px;
+        width: 40px;
+      }
+    }
+  }
+
+  > li > .m-menu__card > a,
+  > li > .m-menu__card > button,
+  > li > .m-menu__card > span {
+    color: var(--surf-color-white);
+    display: block;
+    font-size: calculations.rem(18px);
+    font-weight: var(--surf-fw-bold);
+    padding: 5px 16px;
+    text-decoration: none;
+
+    @include breakpoints.bp-min(xxlarge) {
+      @include links.menu(28px, navy);
+      padding: 4px 0;
+    }
+  }
+
+  > li > .m-menu__card > a:before,
+  > li > .m-menu__card > button:before,
+  > li > .m-menu__card > span:before {
+    @include breakpoints.bp-max(xxlarge) {
+      display: none;
+    }
+  }
+
+  > li > .m-menu__card > p {
+    display: none;
+    font-size: calculations.rem(16px);
+
+    @include breakpoints.bp-min(xxlarge) {
+      display: inherit;
+    }
+  }
+}
+
+
+
+
+//------------------------------------
+//  04 - Level Three
+//------------------------------------
+
+.o-masthead .m-menu.m-menu--primary .m-menu__list.m-menu__level--3 {
+  @include breakpoints.bp-min(xxlarge) {
+    background-color: var(--surf-color-white);
+  }
+
+  > li:not(:first-child) {
+    @include breakpoints.bp-min(xxlarge) {
+      margin-block-start: 24px;
+    }
+  }
+
+  > li > a,
+  > li > span {
+    color: var(--surf-color-white);
+    display: block;
+    font-size: calculations.rem(18px);
+    font-weight: var(--surf-fw-bold);
+    padding: 5px 16px;
+    position: relative;
+    text-decoration: none;
+
+    @include breakpoints.bp-min(xxlarge) {
+      color: var(--surf-color-navy);
+      display: inline-block;
+      padding: 4px 0;
+    }
+
+    &:after {
+      @include breakpoints.bp-min(xxlarge) {
+        background-color: var(--surf-color-black);
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: calc(100% - 6px);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: animations.transition(all, 0.35s, easeInOutExpo);
+        width: 100%;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      @include breakpoints.bp-min(xxlarge) {
+        color: var(--surf-color-gray-900);
+      }
+    }
+
+    &:hover:after,
+    &:focus:after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  > li > p {
+    display: none;
+    font-size: calculations.rem(14px);
+
+    @include breakpoints.bp-min(xxlarge) {
+      display: inherit;
+    }
+  }
+}

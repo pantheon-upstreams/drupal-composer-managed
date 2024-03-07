@@ -1,0 +1,32 @@
+uuid: 82fc0963-e1cd-4b56-a424-c91eb4b9fa0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.menu.field_ref_menu
+    - field.field.paragraph.menu.field_title
+    - paragraphs.paragraphs_type.menu
+  module:
+    - block_field
+id: paragraph.menu.default
+targetEntityType: paragraph
+bundle: menu
+mode: default
+content:
+  field_ref_menu:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

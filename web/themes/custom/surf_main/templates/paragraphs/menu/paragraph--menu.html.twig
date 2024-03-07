@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Menu Paragraph.
+ *
+ * Available variables:
+ * - No additional variables are available for this Paragraph type.
+ *
+ * @see templates/paragraphs/paragraph.html.twig
+ */
+#}
+
+{% set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'o-menu-block',
+] %}
+
+{% set rendered_content = content|without(
+    'field_ref_menu',
+    'field_title',
+) %}
+
+<div {{ attributes.addClass(classes) }}>
+    {% if content.field_title|render %}
+        <h3 class="o-menu-block__title">
+            {{ content.field_title|field_value }}
+        </h3>
+    {% endif %}
+
+    {{ content.field_ref_menu|field_value }}
+    {{ rendered_content }}
+</div>
