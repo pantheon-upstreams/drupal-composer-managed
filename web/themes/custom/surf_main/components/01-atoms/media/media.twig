@@ -4,37 +4,28 @@
  * Component for Media
  *
  * Available props:
- * - attributes: [Drupal\Core\Template\Attribute] Drupal space specific attributes.
  * - media_attributes: [array] Any custom attributes needed for this component.
  * - media_caption: [string] Related text attribution for the media.
  *
- * Example usage:
-{% embed 'surf_main:media' with {
-  media_attributes: create_attribute(),
-  media_caption: 'Photo caption.',
-} only %}
-
-  {% block media_block %}
-    {{ media }}
-  {% endblock %}
-
-{% endembed %}
+ * Available slots:
+ * - media_caption
+ * - media_content
  */
 #}
 
 
 {% set classes = [
-  'a-media',
+    'a-media',
 ] %}
 
-<figure {{ media_attributes.addClass(classes).merge(attributes) }}>
-  {% block media_content %}
-    {{ media }}
-  {% endblock %}
+<figure {{ media_attributes.addClass(classes) }}>
+    {% block media_content %}{% endblock %}
 
-  {% if media_caption %}
-    <figcaption class="a-media__caption">
-      {{- media_caption -}}
-    </figcaption>
-  {% endif %}
+    {% block media_caption %}
+        {% if media_caption %}
+            <figcaption class="a-media__caption">
+                {{ media_caption }}
+            </figcaption>
+        {% endif %}
+    {% endblock %}
 </figure>

@@ -97,25 +97,16 @@
   }
 
   .p-experiment__media figcaption {
-    inset-block-start: 0;
-    inset-block-end: inherit;
+    display: none;
   }
 
   .p-experiment__media img {
-    block-size: 210px;
-    inline-size: 100%;
+    block-size: 380px;
     object-fit: cover;
-
-    @include breakpoints.bp-min(medium) {
-      block-size: 420px;
-    }
-
-    @include breakpoints.bp-min(large) {
-      block-size: 480px;
-    }
+    width: 100%;
 
     @include breakpoints.bp-min(xlarge) {
-      max-block-size: 690px;
+      block-size: 690px;
     }
   }
 }

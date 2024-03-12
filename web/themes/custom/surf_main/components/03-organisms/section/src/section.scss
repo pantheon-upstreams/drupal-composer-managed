@@ -70,8 +70,16 @@
 
 .l-section--blue-gradient {
   background: var(--surf-gradient-vt-blue-02);
-  color: var(--surf-color-white);
   position: relative;
+
+  p, a, h2, h3, h4, h5 {
+    color: var(--surf-color-white);
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--surf-color-white);
+  }
 
   > .container {
     position: relative;

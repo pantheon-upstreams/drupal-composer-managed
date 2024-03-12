@@ -5,17 +5,14 @@ status: experimental
 props:
   type: object
   properties:
-    attributes:
-      type: Drupal\Core\Template\Attribute
     media_attributes:
       title: Attributes
-      type: string
-    media:
-      title: Media
       type: string
     media_caption:
       title: Caption
       type: string
   slots:
+    media_caption:
+      title: Caption
     media_content:
       title: Content

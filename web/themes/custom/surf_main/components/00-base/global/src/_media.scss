@@ -11,6 +11,7 @@
 
 @use '../../partials/breakpoints';
 @use '../../partials/calculations';
+@use '../../partials/media';
 
 
 
@@ -20,16 +21,32 @@
 //------------------------------------
 
 @mixin general() {
-  img {
-    height: auto;
+  .a-media {
+    position: relative;
+
+    &.media--remote-video {
+      @include media.responsive-iframe();
+      width: 100%;
+    }
   }
 
-  figcaption {
+  .a-media .a-media__caption,
+  .a-media .a-media__caption > * {
+    color: var(--surf-color-gray-600);
     font-size: calculations.rem(14px);
-    font-style: italic;
-    margin-block-start: 8px;
+    line-height: 1.48;
+  }
+
+  .a-media .a-media__caption {
+    margin-block-start: 12px;
+  }
+
+  .a-media .a-media__caption > * {
+    display: inline;
   }
 }
+
+@include general();
 
 
 
@@ -44,7 +61,6 @@
   figure[data-view-mode='large'].drupal-media-style-align-right,
   figure[data-view-mode='large'].drupal-media-style-align-left {
     float: none;
-    margin-block-end: var(--surf-grid-gap);
     margin-inline: 0;
   }
 
@@ -71,6 +87,8 @@
   }
 }
 
+@include alignment();
+
 .l-onecol .media img {
   inline-size: 100%;
   margin-inline: auto;
@@ -84,6 +102,16 @@
 //------------------------------------
 
 @mixin sizes() {
+  .media--large:not(:first-child),
+  figure[data-view-mode='large']:not(:first-child) {
+    margin-block-start: var(--surf-grid-gap);
+  }
+
+  .media--large,
+  figure[data-view-mode='large'] {
+    margin-block-end: var(--surf-grid-gap);
+  }
+
   figure[data-view-mode='large'] {
     max-inline-size: inherit;
   }
@@ -99,3 +127,5 @@
     }
   }
 }
+
+@include sizes();

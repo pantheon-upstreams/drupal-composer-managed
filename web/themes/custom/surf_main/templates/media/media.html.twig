@@ -23,13 +23,20 @@
 ] %}
 
 {% set rendered_content = content|without(
-    'field_caption'
+    'field_image_caption',
+    'field_image_credit',
 )%}
 
+{% if content.field_image_caption|render or content.field_image_credit|render %}
+    {% set media_caption %}
+        {{ content.field_image_caption|field_value }}
+        {{ content.field_image_credit|field_value }}
+    {% endset %}
+{% endif %}
+
 {% embed 'surf_main:media' with {
-    attributes,
-    media_attributes: create_attribute({'class': classes}),
-    media_caption: content.field_caption|render ? content.field_caption,
+    media_attributes: create_attribute({'class': classes}).merge(attributes),
+    media_caption: media_caption is not empty ? media_caption,
     media_content: rendered_content,
 } only %}
     {% block media_content %}

@@ -32,6 +32,12 @@
     }
   }
 
+  &.p-article--image {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 48px;
+  }
+
   &.p-article--image .p-article__content-wrapper {
     @include breakpoints.bp-min(xlarge) {
       display: grid;
@@ -43,48 +49,26 @@
   &.p-article--image .p-article__main {
     @include breakpoints.bp-min(xlarge) {
       background-color: var(--surf-color-white);
-      margin-block-start: -176px;
-      padding-block-start: 40px;
       padding-inline-end: 40px;
       position: relative;
       z-index: var(--surf-zindex-over);
     }
   }
 
-  &.p-article--video .p-article__media {
-    margin-block-end: 40px;
-
-    @include breakpoints.bp-min(large) {
-      margin-block-end: 64px;
-    }
-  }
-
-  .p-article__main > *:not( :last-child ) {
+  .p-article__main > *:not(:last-child) {
     margin-block-end: 24px;
   }
 
 
-  &.p-article--image .p-article__meta {
-    padding-block-start: 32px;
+  &.p-article--image .p-article__meta .a-left-hook {
+    margin-block: 32px;
 
     @include breakpoints.bp-min(medium) {
-      padding-block-start: 28px;
+      margin-block: 28px;
     }
 
     @include breakpoints.bp-min(xlarge) {
-      padding-block-start: 80px;
-    }
-
-    .a-left-hook {
-      margin-block-end: 32px;
-
-      @include breakpoints.bp-min(medium) {
-        margin-block-end: 28px;
-      }
-
-      @include breakpoints.bp-min(xlarge) {
-        display: none;
-      }
+      display: none;
     }
   }
 
@@ -172,45 +156,21 @@
     line-height: 1.12;
   }
 
-  .p-experiment__media figcaption {
-    inset-block-start: 0;
-    inset-block-end: inherit;
-  }
-
-  .p-article__media {
+  .p-article__media img {
     block-size: 210px;
-    margin-block-end: 32px;
-    overflow: hidden;
-    position: relative;
+    object-fit: cover;
 
     @include breakpoints.bp-min(medium) {
       block-size: 420px;
-      margin-block-end: 40px;
     }
 
     @include breakpoints.bp-min(large) {
       block-size: 480px;
-      margin-block-end: 60px;
     }
 
     @include breakpoints.bp-min(xlarge) {
       block-size: 690px;
     }
-  }
-
-  .p-article__media *:not(img, figcaption) {
-    block-size: 100%;
-    display: block;
-    inline-size: 100%;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    position: absolute;
-  }
-
-  .p-article__media img {
-    block-size: 100%;
-    inline-size: 100%;
-    object-fit: cover;
   }
 
   .p-article__overview p {

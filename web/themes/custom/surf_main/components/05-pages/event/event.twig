@@ -81,15 +81,10 @@
             {% endembed %}
 
             <div class="p-event__content-grid">
-                {% if event_media %}
-                    {% embed 'surf_main:media' with {
-                        media_attributes: create_attribute({'class': ['p-event__media']}),
-                        media: event_media,
-                    } only %}
-                        {% block media_block %}
-                            {{ media }}
-                        {% endblock %}
-                    {% endembed %}
+                {% if event_media is not empty %}
+                    <div class="p-event__media">
+                        {{ event_media }}
+                    </div>
                 {% endif %}
 
                 <div class="p-event__body-wrapper">

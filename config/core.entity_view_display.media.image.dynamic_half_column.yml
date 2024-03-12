@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.dynamic_half_column
-    - field.field.media.image.field_caption
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_image_credit
     - field.field.media.image.field_media_image
@@ -24,14 +23,6 @@ targetEntityType: media
 bundle: image
 mode: dynamic_half_column
 content:
-  field_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_media_image:
     type: responsive_image
     label: hidden

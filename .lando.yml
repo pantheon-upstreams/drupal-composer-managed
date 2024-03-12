@@ -42,5 +42,3 @@ tooling:
     options:
       code:
         default: none
-      files:
-        default: none

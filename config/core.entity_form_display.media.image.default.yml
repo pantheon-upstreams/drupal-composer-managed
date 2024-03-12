@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_caption
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_image_credit
     - field.field.media.image.field_media_image
@@ -25,14 +24,6 @@ content:
     weight: 5
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_caption:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_image_caption:
     type: text_textarea
