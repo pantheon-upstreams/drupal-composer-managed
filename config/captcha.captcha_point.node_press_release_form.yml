@@ -1,0 +1,7 @@
+uuid: 860b5f8d-0acc-4f90-9fa2-6e2193ec57f7
+langcode: en
+status: false
+dependencies: {  }
+formId: node_press_release_form
+captchaType: default
+label: node_press_release_form

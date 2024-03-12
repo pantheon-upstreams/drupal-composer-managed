@@ -118,6 +118,9 @@ elements: |-
     '#title': Agreement
     '#description': 'I will be responsible for returning the kit and all materials. If shipping, I will use UPS. I will be responsible for the replacement of any materials destroyed by inappropriate use or lack of supervision.'
     '#required': true
+  captcha:
+    '#type': captcha
+    '#captcha_type': turnstile/Turnstile
 css: ''
 javascript: ''
 settings:

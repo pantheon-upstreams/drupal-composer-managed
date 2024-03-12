@@ -17,6 +17,7 @@ module:
   block_content: 0
   block_field: 0
   breakpoint: 0
+  captcha: 0
   ckeditor5: 0
   config: 0
   contextual: 0
@@ -118,6 +119,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  turnstile: 0
   twig_field_value: 0
   twig_tweak: 0
   update: 0

@@ -84,6 +84,9 @@ elements: |-
   notes:
     '#type': textarea
     '#title': Notes
+  captcha:
+    '#type': captcha
+    '#captcha_type': turnstile/Turnstile
 css: ''
 javascript: ''
 settings:

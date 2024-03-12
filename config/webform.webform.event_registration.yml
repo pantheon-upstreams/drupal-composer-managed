@@ -42,6 +42,9 @@ elements: |-
     '#type': number
     '#title': 'How many people are attending?'
     '#required': true
+  captcha:
+    '#type': captcha
+    '#captcha_type': turnstile/Turnstile
 css: ''
 javascript: ''
 settings:

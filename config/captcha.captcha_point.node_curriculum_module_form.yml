@@ -1,0 +1,7 @@
+uuid: 8fdfe428-ef03-4c8c-a13e-a7dd4ac3831a
+langcode: en
+status: false
+dependencies: {  }
+formId: node_curriculum_module_form
+captchaType: default
+label: node_curriculum_module_form

@@ -17,7 +17,7 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 categories: {  }
-elements: |
+elements: |-
   name:
     '#title': 'Your Name'
     '#type': textfield
@@ -38,6 +38,9 @@ elements: |
     '#type': textarea
     '#required': true
     '#test': 'Please ignore this email.'
+  captcha:
+    '#type': captcha
+    '#captcha_type': turnstile/Turnstile
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
