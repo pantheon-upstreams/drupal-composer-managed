@@ -12,7 +12,8 @@
 #}
 
 {% set classes = [
-  content.field_media_primary|render ? 'p-page--with-img',
+    content.field_media_primary|render ? 'p-page--with-img',
+    node.field_respect_case.value == '1' ? 'p-page--respect-case',
 ] %}
 
 {% set rendered_content = content|without(

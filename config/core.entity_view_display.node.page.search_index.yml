@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.page.field_ref_eo_opportunities
     - field.field.node.page.field_ref_key_impact_areas
     - field.field.node.page.field_ref_research_areas
+    - field.field.node.page.field_respect_case
     - field.field.node.page.field_teaser_text
     - node.type.page
   module:
@@ -53,6 +54,7 @@ hidden:
   field_ref_eo_opportunities: true
   field_ref_key_impact_areas: true
   field_ref_research_areas: true
+  field_respect_case: true
   field_teaser_text: true
   langcode: true
   links: true

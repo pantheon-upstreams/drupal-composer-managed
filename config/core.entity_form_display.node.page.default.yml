@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.page.field_ref_eo_opportunities
     - field.field.node.page.field_ref_key_impact_areas
     - field.field.node.page.field_ref_research_areas
+    - field.field.node.page.field_respect_case
     - field.field.node.page.field_teaser_text
     - node.type.page
   module:
@@ -33,7 +34,7 @@ third_party_settings:
       label: Tags
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: details
       format_settings:
         classes: ''
@@ -48,7 +49,7 @@ third_party_settings:
       label: Teaser
       region: content
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: details
       format_settings:
         classes: ''
@@ -63,7 +64,7 @@ third_party_settings:
       label: Media
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -80,7 +81,7 @@ third_party_settings:
       label: Publishing
       region: content
       parent_name: ''
-      weight: 9
+      weight: 10
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -97,7 +98,7 @@ third_party_settings:
       label: Authoring
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -116,13 +117,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_link:
     type: link_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder_url: ''
@@ -137,7 +138,7 @@ content:
     third_party_settings: {  }
   field_overview:
     type: text_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
@@ -149,7 +150,7 @@ content:
         maxlength_js_enforce: false
   field_p_content:
     type: layout_paragraphs
-    weight: 10
+    weight: 11
     region: content
     settings:
       preview_view_mode: default
@@ -171,15 +172,22 @@ content:
     third_party_settings: {  }
   field_ref_key_impact_areas:
     type: options_select
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ref_research_areas:
     type: options_select
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_respect_case:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_teaser_text:
     type: string_textarea
@@ -195,7 +203,7 @@ content:
         maxlength_js_enforce: false
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -237,7 +245,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

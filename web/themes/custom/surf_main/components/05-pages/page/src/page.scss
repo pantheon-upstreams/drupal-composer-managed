@@ -84,3 +84,20 @@
     }
   }
 }
+
+
+
+
+//------------------------------------
+//  03 - Modifiers
+//------------------------------------
+
+.p-page {
+  &.p-page--respect-case .o-header__heading {
+    text-transform: none;
+  }
+
+  &.p-page--respect-case .a-button.a-button--primary.a-button--large.a-button--navy {
+    text-transform: none;
+  }
+}
