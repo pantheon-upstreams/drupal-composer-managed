@@ -32,7 +32,11 @@ settings:
       'views_block:research_areas-full': 'views_block:research_areas-full'
       'views_block:news-most_recent': 'views_block:news-most_recent'
       'views_block:news-most_recent_home': 'views_block:news-most_recent_home'
-      'views_block:people-our_team': 'views_block:people-our_team'
+      'views_block:people-board_cultural_advisory_committee': 'views_block:people-board_cultural_advisory_committee'
+      'views_block:people-board_sdsta': 'views_block:people-board_sdsta'
+      'views_block:people-staff': 'views_block:people-staff'
+      'views_block:people-board_surf_foundation': 'views_block:people-board_surf_foundation'
+      'views_block:people-board_surf_user_association': 'views_block:people-board_surf_user_association'
       'views_block:search-full': 'views_block:search-full'
       'views_block:events-upcoming_events_two': 'views_block:events-upcoming_events_two'
 field_type: block_field

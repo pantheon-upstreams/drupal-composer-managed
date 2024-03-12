@@ -29,3 +29,5 @@ props:
   slots:
     layout_content:
       title: Content
+    layout_title:
+      title: Title

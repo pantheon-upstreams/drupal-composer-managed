@@ -19,6 +19,8 @@
     'l-twocol--' ~ layout_column_widths,
 ] %}
 
+{% block layout_title %}{% endblock %}
+
 <{{ layout_html_wrapper }} {{ layout_attributes.addClass(classes).merge(attributes) }}>
     {% block layout_content %}{% endblock %}
 </{{ layout_html_wrapper }}>

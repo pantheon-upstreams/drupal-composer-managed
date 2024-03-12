@@ -56,6 +56,18 @@
       margin-block-start: 64px;
     }
   }
+
+  .o-view__rows > h2 {
+    margin-block-end: 24px;
+  }
+
+  .o-view__rows > h2:not(:first-child) {
+    margin-block-start: 48px;
+
+    @include breakpoints.bp-min(large) {
+      margin-block-start: 64px;
+    }
+  }
 }
 
 

@@ -13,6 +13,8 @@
   01 - Imports
 \*------------------------------------*/
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 

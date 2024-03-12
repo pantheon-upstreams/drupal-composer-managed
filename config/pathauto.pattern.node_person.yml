@@ -1,4 +1,4 @@
-uuid: 42d71951-86ba-440e-9d53-96eadbccbc2e
+uuid: f3110548-db53-4475-b90b-a36b325b7ea1
 langcode: en
 status: true
 dependencies:
@@ -7,16 +7,16 @@ dependencies:
 id: node_person
 label: 'Node - Person'
 type: 'canonical_entities:node'
-pattern: '/education/our-team/[node:title]'
+pattern: '/people/[node:title]'
 selection_criteria:
-  e7ece422-f6b3-4c7a-9a34-82586f3e0a17:
+  b1622dd7-7b37-4944-a056-ad7a1b4043b9:
     id: 'entity_bundle:node'
     negate: false
-    uuid: e7ece422-f6b3-4c7a-9a34-82586f3e0a17
+    uuid: b1622dd7-7b37-4944-a056-ad7a1b4043b9
     context_mapping:
       node: node
     bundles:
       person: person
 selection_logic: and
-weight: -6
+weight: -5
 relationships: {  }
