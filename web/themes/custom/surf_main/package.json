@@ -11,8 +11,8 @@
     "babel-loader": "^8.2.4",
     "browser-sync": "^2.27.9",
     "exports-loader": "^3.1.0",
-    "glob": "^8.0.3",
     "gulp": "^4.0.2",
+    "gulp-dependents": "^1.2.5",
     "gulp-ignore": "^3.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
@@ -22,6 +22,7 @@
     "gulp-uglify": "^3.0.2",
     "postcss-preset-env": "^7.8.3",
     "sass": "^1.50.0",
+    "vinyl-named": "^1.1.0",
     "webpack": "^5.75.0",
     "webpack-stream": "^7.0.0"
   },

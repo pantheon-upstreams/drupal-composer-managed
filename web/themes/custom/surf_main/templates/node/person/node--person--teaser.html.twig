@@ -13,17 +13,23 @@
 #}
 
 {% set rendered_content = content|without(
-    'field_name',
-    'field_job_title',
-    'field_phone_office',
+    'field_board_type',
     'field_email',
-    'field_media_primary'
+    'field_job_title',
+    'field_location',
+    'field_media_primary',
+    'field_name',
+    'field_phone_office',
+    'field_ref_department',
+    'field_ref_experiments',
+    'field_ref_person_type',
+    'field_science_field',
+    'field_term_expiration',
 ) %}
 
-{% include 'surf_main:person-card' with {
-    attributes,
+{% embed 'surf_main:person-card' with {
     rendered_content,
-    person_card_attributes: create_attribute(),
+    person_card_attributes: create_attribute().merge(attributes),
     person_card_email: content.field_email|render ? content.field_email|field_value,
     person_card_initials: person_initials,
     person_card_media: content.field_media_primary|field_value|default([]),
@@ -31,4 +37,59 @@
     person_card_phone: content.field_phone_office|render ? content.field_phone_office|field_value,
     person_card_role: content.field_job_title|render ? content.field_job_title|field_value,
     person_card_url: url,
+    person_type: content.field_ref_person_type|render ? content.field_ref_person_type|field_value,
+    person_department: content.field_ref_department|render ? content.field_ref_department|field_value,
+    person_board_type: content.field_board_type|render ? content.field_board_type|field_value,
+    person_term_exp: content.field_term_expiration|render ? content.field_term_expiration|field_value,
+    person_location: content.field_location|render ? content.field_location|field_value,
+    person_science: content.field_science_field|render ? content.field_science_field|field_value,
+    person_experiments: content.field_ref_experiments|render ? content.field_ref_experiments|field_value,
 } only %}
+    {% block person_additional %}
+        {% if person_type %}
+            {% for index in 0..person_type|length - 1 %}
+                <div class="m-person-card__person-type">
+                    <p>{{ person_type[loop.index0] }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if person_department %}
+            <div class="m-person-card__department">
+                <p>{{ person_department }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_board_type %}
+            <div class="m-person-card__board-type">
+                <p>{{ person_board_type }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_term_exp %}
+            <div class="m-person-card__term-exp">
+                <p>{{ person_term_exp }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_location %}
+            <div class="m-person-card__location">
+                <p>{{ person_location }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_science %}
+            <div class="m-person-card__science">
+                <p>{{ person_science }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_experiments %}
+            {% for index in 0..person_experiments|length - 1 %}
+                <div class="m-person-card__person-type">
+                    <p>{{ person_experiments[loop.index0] }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
+{% endembed %}

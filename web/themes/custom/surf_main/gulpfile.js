@@ -16,18 +16,21 @@
   automatically view in a browser and to minify distributed files.
 \*------------------------------------*/
 
-const browserSync = require("browser-sync").create();
-const dotenv = require("dotenv").config();
-const gulp = require("gulp");
-const ignore = require("gulp-ignore");
-const plumber = require("gulp-plumber");
-const postcss = require("gulp-postcss");
-const rename = require("gulp-rename");
-const sass = require("gulp-sass")(require("sass"));
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify");
-const webpack = require("webpack-stream");
-const glob = require("glob");
+const browserSync = require('browser-sync').create();
+const dependents = require('gulp-dependents');
+const dotenv = require('dotenv').config();
+const gulp = require('gulp');
+const ignore = require('gulp-ignore');
+const named = require('vinyl-named');
+const path = require('path');
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const webpack = require('webpack-stream');
+const webpackCompiler = require('webpack');
+const webpackConfig = require('./webpack.config.js');
 
 
 
@@ -55,17 +58,27 @@ const paths = {
 
 
 /*------------------------------------*\
-  03 - Entry Points
-  In order for Webpack to compile multiple entry points, we will need to glob
-  together an array of paths. This needs to be done for both components and
-  any base JavaScript.
+  03 - Filename Conversion
+  In order for Webpack to compile multiple entry points, we will need to dynamically update the
+  file names of the scripts passed in. Rather than passing an array of entry points (a.k.a. source files)
+  to a single webpack instance, we pipe each files to their own instance. This allows for incremental builds
+  that only recompile files that have changed. This is a huge performance boost when working with many files.
 \*------------------------------------*/
 
-const componentEntryPoints = glob.sync(paths.component.scripts.src).reduce((entries, entry) => {
-  const name = entry.replace('/src', '');
-  entries[name] = entry;
-  return entries;
-}, {});
+/**
+ * Rename a component script file with an absolute source path to base destination path
+ * relative to the theme's directory.
+ *
+ * @param {object} file
+ *  Vinyl file object
+ * @returns {string}
+ *  Relative path to the destination file with the .js extension removed
+ */
+const renameComponentScripts = (file) => {
+  return path.relative(process.cwd(), file.path.replace('/src', '')
+    // Remove the .js extension
+    .slice(0, -3));
+};
 
 
 
@@ -76,30 +89,38 @@ const componentEntryPoints = glob.sync(paths.component.scripts.src).reduce((entr
   build / minification. Autoprefixer is included in PostCSS Preset Env, thus is not defined here.
 \*------------------------------------*/
 
-gulp.task("componentStylesWatch", function () {
-  return gulp.src(paths.component.styles.src)
+const componentStylesWatchTask = function(done) {
+  gulp.src(paths.component.styles.src, {
+    sourcemaps: true,
+    since: gulp.lastRun(componentStylesWatchTask),
+  })
     .pipe(sourcemaps.init())
+    .pipe(dependents())
     .pipe(sass())
-    .on("error", sass.logError)
+    .on('error', sass.logError)
     .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
-    .pipe(sourcemaps.write())
-    .pipe(rename(function (file) {
+    .pipe(rename(function(file) {
       file.dirname = file.dirname.replace('/src', '');
     }))
-    .pipe(gulp.dest(paths.component.styles.dest))
+    .pipe(gulp.dest(paths.component.styles.dest, { sourcemaps: true }))
     .pipe(browserSync.stream());
-});
+  done();
+};
 
-gulp.task("componentStylesBuild", function () {
-  return gulp.src(paths.component.styles.src)
+const componentStylesBuildTask = function(done) {
+  gulp.src(paths.component.styles.src)
     .pipe(sass())
-    .on("error", sass.logError)
-    .pipe(postcss())
-    .pipe(rename(function (file) {
-      file.dirname = file.dirname.replace('/src', '');
+    .on('error', sass.logError)
+    .pipe(postcss()) // PostCSS will automatically grab any additional plugins and settings from postcss.config.js
+    .pipe(rename(function(file) {
+      file.dirname = file.dirname.replace('/src', '')
     }))
-    .pipe(gulp.dest(paths.component.styles.dest))
-});
+    .pipe(gulp.dest(paths.component.styles.dest));
+  done();
+}
+
+exports.componentStylesWatchTask = componentStylesWatchTask;
+exports.componentStylesBuildTask = componentStylesBuildTask;
 
 
 
@@ -115,36 +136,31 @@ gulp.task("componentStylesBuild", function () {
   This greatly increases performance when running gulp watch with many files.
 \*------------------------------------*/
 
-gulp.task('componentScriptsWatch', function() {
-  return gulp.src(paths.component.scripts.src)
-    .pipe(plumber())
-    .pipe(webpack({
-      ...require('./webpack.config.js'),
-      entry: componentEntryPoints,
-      output: {
-        path: `${__dirname}/components/[name]`,
-        filename: '[name]'
-      },
-    }))
-    .pipe(gulp.dest(paths.component.scripts.dest))
-});
+const componentScriptsWatchTask = function(done) {
+  gulp.src(paths.component.scripts.src, {
+    since: gulp.lastRun(componentScriptsWatchTask),
+  })
+    .pipe(named(renameComponentScripts))
+    .pipe(webpack(webpackConfig, webpackCompiler))
+    .on('error', function(err) {
+      this.emit('end'); // Don't stop the rest of the task
+    })
+    .pipe(gulp.dest(paths.component.scripts.dest));
+  done();
+};
 
-gulp.task('componentScriptsBuild', function() {
+const componentScriptsBuildTask = function(done) {
   return gulp.src(paths.component.scripts.src)
-    .pipe(plumber())
-    .pipe(webpack({
-      ...require('./webpack.config.js'),
-      entry: componentEntryPoints,
-      output: {
-        path: `${__dirname}/components/[name]`,
-        filename: '[name]'
-      },
-    }))
-    .pipe(ignore.exclude([ "**/*.map" ]))
+    .pipe(named(renameComponentScripts))
+    .pipe(webpack(webpackConfig, webpackCompiler))
+    .pipe(ignore.exclude(['**/*.map']))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.component.scripts.dest))
-});
+    .pipe(gulp.dest(paths.component.scripts.dest));
+  done();
+};
 
+exports.componentScriptsWatchTask = componentScriptsWatchTask;
+exports.componentScriptsBuildTask = componentScriptsBuildTask;
 
 
 
@@ -160,20 +176,23 @@ gulp.task('componentScriptsBuild', function() {
 
 exports.watch = () => {
   console.log("You are currently in development watch mode.");
+  const watchOptions = {
+    ignoreInitial: false, // Ensure all files are built when the task starts.
+  }
   browserSync.init({
     proxy: process.env.BS_PROXY || "http://prototype.lndo.site",
     browser: process.env.BS_BROWSER || "google chrome",
     open: false,
     logConnections: true,
   });
-  gulp.watch(paths.component.styles.src, gulp.series("componentStylesWatch"));
-  gulp.watch(paths.component.scripts.src, gulp.series("componentScriptsWatch"));
+  gulp.watch(paths.component.styles.src, watchOptions, gulp.series("componentStylesWatchTask"));
+  gulp.watch(paths.component.scripts.src, watchOptions, gulp.series("componentScriptsWatchTask"));
 };
 
 exports.build = (done) => {
   console.log("You are building for production.");
-  gulp.parallel(
-    "componentStylesBuild",
-    "componentScriptsBuild"
+  gulp.series(
+    "componentStylesBuildTask",
+    "componentScriptsBuildTask"
   )(done);
 };

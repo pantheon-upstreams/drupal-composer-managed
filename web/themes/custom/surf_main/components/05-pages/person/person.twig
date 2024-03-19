@@ -4,10 +4,9 @@
  * Page component for a Person.
  *
  * Available props:
- * - attributes: [Drupal\Core\Template\Attribute] Drupal reserved space for attributes.
  * - person_attributes: [string] Component reserved space for attributes.
  * - person_heading: [string] Reserved for the name of the person.
- * - person_job_title: [string] Reserved for the job title of any person.
+ * - person_titles: [string] Reserved for the job title of any person.
  * - person_phone: [string] Reserved for the phone number of any person.
  * - person_email: [string] Reserved for the email address of any person.
  * - person_body: [string] Reserved for the biography of any person.
@@ -21,62 +20,53 @@
     person_media ? 'p-person--with-img'
 ] %}
 
-<article {{ person_attributes.addClass(classes).merge(attributes) }}>
+<article {{ person_attributes.addClass(classes) }}>
     <div class="container {% if person_media %}container--xlarge{% else %}container--small{% endif %}">
-        <div class="p-person__grid">
-            {% embed 'surf_main:header' with {
-                header_heading: person_heading,
-                header_label: 'Person',
-                header_heading_level: '1',
-                header_attributes: create_attribute(),
-                heading_attributes: create_attribute({'class': ['o-header__heading', 'p-person__heading']}),
-            } only %}
-                {% block header_links_block %}
-                    {{ drupal_breadcrumb() }}
-                {% endblock %}
-            {% endembed %}
+        {% include 'surf_main:header' with {
+            header_heading: person_heading,
+            header_label: 'Person',
+            header_heading_level: '1',
+            header_attributes: create_attribute(),
+            heading_attributes: create_attribute({'class': ['o-header__heading', 'p-person__heading']}),
+        } only %}
 
-            <div class="p-person__content">
-                <div class="p-person__content-wrapper">
-                    {% if person_job_title %}
-                        <h2 class="p-person__job-title">
-                            {{ person_job_title }}
-                        </h2>
-                    {% endif %}
+        <div class="p-person__content">
+            {% if person_titles %}
+                <h2 class="p-person__titles">
+                    {{ person_titles }}
+                </h2>
+            {% endif %}
 
-                    {% if person_phone or person_email %}
-                        <div class="p-person__contact-wrapper">
-                            {% if person_phone %}
-                                <p class="p-person__phone">
-                                    {{ person_phone }}
-                                </p>
-                            {% endif %}
-
-                            {% if person_email %}
-                                <p class="p-person__email">
-                                    <a href="mailto:{{ person_email }}">{{ 'Contact'|t }}</a>
-                                </p>
-                            {% endif %}
+            {% if person_phone or person_email %}
+                <div class="p-person__contact">
+                    {% if person_phone %}
+                        <div class="p-person__phone">
+                            <p>{{ person_phone }}</p>
                         </div>
                     {% endif %}
 
-                    {% if person_body %}
-                        <div class="p-person-content__wrapper">
-                            {% embed 'surf_main:editor' with {
-                                editor_attributes: create_attribute(),
-                                editor_content: person_body,
-                            } only %}
-                            {% endembed %}
+                    {% if person_email %}
+                        <div class="p-person__email">
+                            <a href="mailto:{{ person_email }}">{{ 'Contact'|t }}</a>
                         </div>
                     {% endif %}
                 </div>
-            </div>
+            {% endif %}
 
-            {% if person_media %}
-                <div class="p-person__media">
-                    {{ person_media }}
+            {% if person_body %}
+                <div class="p-person__bio">
+                    {% include 'surf_main:editor' with {
+                        editor_attributes: create_attribute(),
+                        editor_content: person_body,
+                    } only %}
                 </div>
             {% endif %}
         </div>
+
+        {% if person_media %}
+            <div class="p-person__media">
+                {{ person_media }}
+            </div>
+        {% endif %}
     </div>
 </article>

@@ -11,23 +11,67 @@
  */
 #}
 
-{% embed 'surf_main:person' with {
-  attributes,
-  person_attributes: create_attribute(),
-  person_heading: content.field_name|field_value|default([]),
-  person_job_title: content.field_job_title|render ? content.field_job_title|field_value,
-  person_body: content.body|render ? content.body|field_value,
-  person_phone: content.field_phone_office|render ? content.field_phone_office|field_value,
-  person_email: content.field_email|render ? content.field_email|field_value,
-  person_media: content.field_media_primary|render ? content.field_media_primary|field_value,
-} only %}
-{% endembed %}
+{% set rendered_content = content|without(
+    'body',
+    'field_board_type',
+    'field_email',
+    'field_job_title',
+    'field_location',
+    'field_media_primary',
+    'field_name',
+    'field_phone_office',
+    'field_ref_department',
+    'field_ref_experiments',
+    'field_ref_person_type',
+    'field_science_field',
+    'field_term_expiration',
+) %}
 
-{{ content|without(
-  'field_name',
-  'field_job_title',
-  'body',
-  'field_phone_office',
-  'field_email',
-  'field_media_primary',
-) }}
+{% set person_titles %}
+    {% if content.field_job_title|render %}
+        <span class="p-person__job-title">{{ content.field_job_title|field_value }}</span>
+    {% endif %}
+
+    {% if content.field_ref_department|render %}
+        <span class="p-person__department">{{ content.field_ref_department|field_value }}</span>
+    {% endif %}
+
+    {% if content.field_board_type|render %}
+        <span class="p-person__board-type">{{ content.field_board_type|field_value }}</span>
+    {% endif %}
+
+    {% if content.field_ref_person_type|render %}
+        {% for index in 0..content.field_ref_person_type|field_value|length - 1 %}
+            <span class="p-person__person-type">{{ content.field_ref_person_type[loop.index0] }}</span>
+        {% endfor %}
+    {% endif %}
+
+    {% if content.field_term_expiration|render %}
+        <span class="p-person__term-expiration">{{ content.field_term_expiration|field_value }}</span>
+    {% endif %}
+
+    {% if content.field_science_field|render %}
+        <span class="p-person__science-field">{{ content.field_science_field|field_value }}</span>
+    {% endif %}
+
+    {% if content.field_location|render %}
+        <span class="p-person__location">{{ content.field_location|field_value }}</span>
+    {% endif %}
+
+    {% if content.field_ref_experiments|render %}
+        {% for index in 0..content.field_ref_experiments|field_value|length - 1 %}
+            <span class="p-person__experiment">{{ content.field_ref_experiments[loop.index0] }}</span>
+        {% endfor %}
+    {% endif %}
+{% endset %}
+
+{% include 'surf_main:person' with {
+    rendered_content,
+    person_attributes: create_attribute().merge(attributes),
+    person_heading: content.field_name|field_value|default([]),
+    person_titles: person_titles,
+    person_body: content.body|render ? content.body|field_value,
+    person_phone: content.field_phone_office|render ? content.field_phone_office|field_value,
+    person_email: content.field_email|render ? content.field_email|field_value,
+    person_media: content.field_media_primary|render ? content.field_media_primary|field_value,
+} only %}

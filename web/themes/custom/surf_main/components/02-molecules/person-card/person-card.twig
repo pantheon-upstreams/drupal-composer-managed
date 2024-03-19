@@ -47,6 +47,8 @@
             </div>
         {% endif %}
 
+        {% block person_additional %}{% endblock %}
+
         {% if person_card_phone %}
             <div class="m-person-card__phone">
                 <p>{{ person_card_phone }}</p>

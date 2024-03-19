@@ -22,7 +22,9 @@ dependencies:
     - field.field.node.person.field_term_expiration
     - node.type.person
   module:
+    - datetime
     - name
+    - options
     - telephone
     - user
 id: node.person.teaser
@@ -30,12 +32,19 @@ targetEntityType: node
 bundle: person
 mode: teaser
 content:
+  field_board_type:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_email:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_job_title:
     type: string
@@ -43,7 +52,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 3
+    region: content
+  field_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_media_primary:
     type: entity_reference_entity_view
@@ -52,7 +69,7 @@ content:
       view_mode: profile_default
       link: false
     third_party_settings: {  }
-    weight: 4
+    weight: 8
     region: content
   field_name:
     type: name_default
@@ -67,7 +84,7 @@ content:
       alternative_field_reference: ''
       alternative_field_reference_separator: ', '
     third_party_settings: {  }
-    weight: 2
+    weight: 5
     region: content
   field_phone_office:
     type: telephone_link
@@ -75,20 +92,54 @@ content:
     settings:
       title: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 7
+    region: content
+  field_ref_department:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ref_experiments:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_ref_person_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_science_field:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_term_expiration:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short_date_only
+    third_party_settings: {  }
+    weight: 11
     region: content
 hidden:
   body: true
   field_appointed_by: true
-  field_board_type: true
   field_date_appointed: true
-  field_location: true
   field_phone_mobile: true
-  field_ref_department: true
-  field_ref_experiments: true
-  field_ref_person_type: true
-  field_science_field: true
-  field_term_expiration: true
   langcode: true
   links: true
   search_api_excerpt: true

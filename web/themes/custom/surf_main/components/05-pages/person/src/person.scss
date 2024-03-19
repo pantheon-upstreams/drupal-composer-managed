@@ -2,8 +2,8 @@
 // Component - Page - Person
 //
 // - 01 - Imports
-// - 02 - General
-// - 03 - Grids
+// - 02 - Layout
+// - 03 - General
 //
 
 
@@ -11,82 +11,46 @@
 //  01 - Imports
 //------------------------------------
 
-@use '../../../00-base/partials/partials' as *;
+@use '../../../00-base/partials/breakpoints';
 
 
 
 
 //------------------------------------
-//  02 - General
+//  02 - Layout
 //------------------------------------
 
 .p-person {
   padding-block: 32px 56px;
-  position: relative;
 
-  @include bp-min(large) {
+  @include breakpoints.bp-min(large) {
     padding-block: 64px 80px;
   }
 
-  .m-breadcrumbs {
-    display: none;
+  > .container {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 0 32px;
 
-    @include bp-min(medium) {
-      display: block;
+    @include breakpoints.bp-min(large) {
+      flex-flow: wrap row;
+      gap: 0 120px;
     }
   }
-}
 
-.p-person__heading {
-  line-height: var(--surf-lh-base);
-}
+  > .container > .o-header {
+    margin-block-end: 24px;
+    width: 100%;
 
-.p-person__job-title {
-  color: var(--surf-color-gray-600);
-  font-family: var(--surf-font-sans);
-  font-size: rem(18px);
-  font-weight: var(--surf-fw-regular);
-  line-height: 1.44;
-  max-inline-size: rem(900px);
-
-  @include bp-min(medium) {
-    font-size: var(--surf-fs-30-32);
-    line-height: 1.32;
-  }
-}
-
-.p-person__contact-wrapper {
-  align-items: center;
-  display: flex;
-  gap: rem(32px);
-
-  .p-person__phone,
-  .p-person__email {
-    margin: 0;
-
-    a {
-      font-size: rem(18px);
-      font-weight: var(--surf-fw-book);
-      line-height: 1.44;
-
-      @include bp-min(medium) {
-        font-size: var(--surf-fs-18-24);
-        line-height: 1.4;
-      }
+    @include breakpoints.bp-min(large) {
+      margin-block-end: 32px;
     }
   }
-}
 
-.p-person__content {
-  max-inline-size: var(--surf-width-small);
-}
-
-.p-person__media {
-  max-inline-size: 150px;
-
-  @include bp-min(medium) {
-    margin-inline: auto;
-    max-inline-size: 320px;
+  .p-person__content {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 32px;
   }
 }
 
@@ -94,119 +58,46 @@
 
 
 //------------------------------------
-//  03 - Grids
+//  03 - General
 //------------------------------------
-
-.p-person__grid {
-  display: grid;
-  gap: rem(32px);
-  margin-inline-end: auto;
-  margin-inline-start: auto;
-  max-inline-size: rem(619px);
-}
-
-.p-person__content-wrapper {
-  display: flex;
-  flex-direction: column;
-
-  > :not( :last-child ) {
-    margin-block-end: rem(32px);
-  }
-
-  .o-header {
-    order: 1;
-  }
-
-  .p-person__job-title {
-    order: 3;
-
-    @include bp-min(medium) {
-      order: 2;
-    }
-  }
-
-  .p-person__contact-wrapper {
-    order: 2;
-
-    @include bp-min(medium) {
-      order: 3;
-    }
-  }
-
-  .p-person-content__wrapper {
-    order: 4;
-  }
-}
 
 .p-person {
-  &.p-person--with-img {
-    padding-block-end: rem(43px);
+  .p-person__heading {
+    line-height: 0.94;
+  }
 
-    @include bp-min(medium) {
-      padding-block-end: rem(50px);
+  .p-person__titles {
+    color: var(--surf-color-gray-600);
+    font-family: var(--surf-font-sans);
+    font-size: var(--surf-fs-18-24-32);
+    font-weight: var(--surf-fw-regular);
+    line-height: 1.44;
+
+    @include breakpoints.bp-min(medium) {
+      line-height: 1.32;
+    }
+  }
+
+  .p-person__titles span:not(:first-child) {
+    margin-inline-start: -4px;
+
+    @include breakpoints.bp-min(medium) {
+      margin-inline-start: -7px;
     }
 
-    @include bp-min(large) {
-      padding-block-end: rem(54px);
+    &:before {
+      content: ', ';
     }
+  }
 
-    @include bp-min(xxlarge) {
-      padding-block-end: rem(90px);
-    }
+  .p-person__contact {
+    display: flex;
+    flex-flow: wrap row;
+    gap: 32px;
+  }
 
-    .p-person__grid {
-      align-items: start;
-      display: grid;
-      gap: rem(32px);
-      max-inline-size: none;
-
-      @include bp-min(medium) {
-        grid-template-areas: 'header header'
-          'content sidebar';
-        grid-template-columns: 8fr 4fr;
-      }
-
-      @include bp-min(xlarge) {
-        grid-template-columns: 7fr 5fr;
-      }
-
-      @include bp-min(xxlarge) {
-        gap: rem(60px);
-        grid-template-areas: 'header sidebar'
-          'content sidebar';
-        grid-template-columns: 8fr 4fr;
-      }
-
-      .o-header {
-        order: 2;
-
-        @include bp-min(medium) {
-          grid-area: header;
-        }
-
-      }
-
-      .p-person__media {
-        display: flex;
-        justify-content: center;
-        order: 1;
-
-        @include bp-min(medium) {
-          grid-area: sidebar;
-        }
-
-        > figure {
-          max-inline-size: 302px;
-        }
-      }
-
-      .p-person__content {
-        order: 3;
-
-        @include bp-min(medium) {
-          grid-area: content;
-        }
-      }
-    }
+  .p-person__contact a {
+    font-size: var(--surf-fs-18-24);
+    font-weight: var(--surf-fw-book);
   }
 }

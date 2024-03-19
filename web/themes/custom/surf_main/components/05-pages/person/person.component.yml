@@ -5,8 +5,6 @@ group: Organisms
 props:
   type: object
   properties:
-    attributes:
-      type: Drupal\Core\Template\Attribute
     person_attributes:
       title: Attributes
       type: string
@@ -16,18 +14,18 @@ props:
     person_heading:
       title: Person Heading
       type: string
-    person_job_title:
-      title: Person Job Title
+    person_titles:
+      title: Titles
       type: string
     person_phone:
-      title: Person Phone
+      title: Phone
       type: string
     person_email:
-      title: Person Email
+      title: Email
       type: string
     person_body:
-      title: Person Body
+      title: Body
       type: string
     person_media:
-      title: Person Media
+      title: Media
       type: string

@@ -325,7 +325,7 @@ input[type='submit']:not(:only-child):last-child {
 .password-confirm,
 .password-strength__title {
   font-family: var(--surf-font-sans);
-  font-size: rem(14px);
+  font-size: calculations.rem(14px);
 }
 
 .password-strength__text {
@@ -346,7 +346,7 @@ input[type='submit']:not(:only-child):last-child {
 
 .password-suggestions {
   font-family: var(--surf-font-sans);
-  font-size: rem(14px);
+  font-size: calculations.rem(14px);
   font-weight: var(--surf-fw-bold);
 
   > ul {

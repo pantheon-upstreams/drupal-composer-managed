@@ -56,7 +56,7 @@
     font-weight: var(--surf-fw-bold);
     letter-spacing: 1px;
     line-height: var(--surf-lh-label);
-    margin-block-end: rem(15px);
+    margin-block-end: calculations.rem(15px);
     text-transform: uppercase;
   }
 
