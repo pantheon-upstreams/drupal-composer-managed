@@ -33,6 +33,12 @@
     {% set curriculum_module_cta_text = 'Register or Login to Request'|t %}
 {% endif %}
 
+{% if content.field_overview|render %}
+    {% set curriculum_module_summary %}
+        <p>{{ content.field_overview|field_value }}</p>
+    {% endset %}
+{% endif %}
+
 {% include 'surf_main:curriculum-module' with {
     attributes,
     rendered_content,
@@ -46,6 +52,6 @@
     curriculum_module_media: content.field_media|field_value|default([]),
     curriculum_module_resources: content.field_resource_list|field_value|default([]),
     curriculum_module_standards: content.field_ref_standards|field_value|default([]),
-    curriculum_module_summary: content.field_overview|render ? content.field_overview|field_value,
+    curriculum_module_summary: curriculum_module_summary,
     curriculum_module_time_required: content.field_time_required|render ? content.field_time_required|field_value,
 } only %}
