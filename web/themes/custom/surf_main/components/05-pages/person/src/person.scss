@@ -27,30 +27,45 @@
     padding-block: 64px 80px;
   }
 
-  > .container {
+  .Heading { grid-area: Heading; }
+  .Content { grid-area: Content; }
+  .Media { grid-area: Media; }
+
+  .container {
     display: flex;
     flex-flow: nowrap column;
-    gap: 0 32px;
+    gap: 32px 0;
+  }
 
+  &.p-person--with-img > .container {
     @include breakpoints.bp-min(large) {
-      flex-flow: wrap row;
-      gap: 0 120px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 32px 120px;
     }
   }
 
   > .container > .o-header {
-    margin-block-end: 24px;
-    width: 100%;
-
-    @include breakpoints.bp-min(large) {
-      margin-block-end: 32px;
-    }
+    grid-column: 1 / 3;
+    order: -1;
   }
 
   .p-person__content {
     display: flex;
     flex-flow: nowrap column;
-    gap: 32px;
+    gap: 24px;
+
+    @include breakpoints.bp-min(large) {
+      gap: 32px;
+    }
+  }
+
+  .p-person__media {
+    order: -1;
+
+    @include breakpoints.bp-min(large) {
+      order: 1;
+    }
   }
 }
 
