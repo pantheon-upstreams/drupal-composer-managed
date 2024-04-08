@@ -13,10 +13,10 @@ settings:
   allowed_values:
     -
       value: sdsta
-      label: SDSTA
+      label: 'SDSTA Board of Directors'
     -
       value: surf_foundation
-      label: 'SURF Foundation'
+      label: 'SURF Foundation Board'
     -
       value: cultural_advisory_committee
       label: 'Cultural Advisory Committee'

@@ -30,12 +30,20 @@ content:
       timezone_override: ''
       format_type: teaser_date
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_overview:
     type: text_default
     label: hidden
     settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_ref_contract_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
@@ -45,7 +53,6 @@ hidden:
   field_links: true
   field_p_contract_schedule: true
   field_ref_contacts: true
-  field_ref_contract_type: true
   field_ref_documents: true
   langcode: true
   links: true

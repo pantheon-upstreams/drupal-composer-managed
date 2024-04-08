@@ -128,7 +128,7 @@ content:
     region: content
   field_term_expiration:
     type: datetime_default
-    label: hidden
+    label: inline
     settings:
       timezone_override: ''
       format_type: short_date_only

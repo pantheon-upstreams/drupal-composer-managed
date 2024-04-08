@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Theme implementation to display an Contract Node with Teaser view mode.
+ *
+ * Available variables:
+ * - No additional variables are available for this Node type.
+ *
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/teaser/teaser.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_ref_contract_type',
+    'field_date_published',
+    'field_overview',
+) %}
+
+{% embed 'surf_main:teaser' with {
+    rendered_content,
+    teaser_attributes: create_attribute().merge(attributes),
+    teaser_content: content.field_overview|field_value|default([]),
+    teaser_date: content.field_date_published|render ? content.field_date_published|field_value,
+    teaser_eyebrow: content.field_ref_contract_type|render ? content.field_ref_contract_type|field_value,
+    teaser_title: label,
+    teaser_title_tag: 'h3',
+    teaser_url: url,
+} only %}
+    {% block teaser_content_prefix %}
+        {% if teaser_eyebrow %}
+            <div class="m-teaser__eyebrow">
+                <p>{{ teaser_eyebrow }}</p>
+            </div>
+        {% endif %}
+    {% endblock %}
+
+    {% block teaser_content_suffix %}
+        {% if teaser_date %}
+            {% set post_date %}
+                {{ 'Posted'|t }}: {{ teaser_date }}
+            {% endset %}
+
+            <div class="m-teaser__content-suffix">
+                <p>
+                    {% include 'surf_main:chip' with {
+                        chip_attributes: create_attribute({'class': 'a-chip--white'}),
+                        chip_text: post_date,
+                        chip_size: 'small',
+                    } only %}
+                </p>
+            </div>
+        {% endif %}
+    {% endblock %}
+{% endembed %}

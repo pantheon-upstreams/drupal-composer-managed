@@ -30,6 +30,7 @@ settings:
       'views_block:press_releases-full': 'views_block:press_releases-full'
       'views_block:standards-full': 'views_block:standards-full'
       'views_block:research_areas-full': 'views_block:research_areas-full'
+      'views_block:contracts-current': 'views_block:contracts-current'
       'views_block:news-most_recent': 'views_block:news-most_recent'
       'views_block:news-most_recent_home': 'views_block:news-most_recent_home'
       'views_block:people-board_cultural_advisory_committee': 'views_block:people-board_cultural_advisory_committee'

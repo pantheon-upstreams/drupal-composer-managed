@@ -16,6 +16,7 @@
 
 
 
+
 //------------------------------------
 //  02 - General
 //------------------------------------
@@ -25,6 +26,7 @@
   background-color: var(--surf-color-gray-100);
   color: var(--surf-color-navy);
   display: inline-flex;
+  gap: 4px;
   line-height: var(--surf-lh-label);
   padding: 2px 8px;
   text-transform: uppercase;
