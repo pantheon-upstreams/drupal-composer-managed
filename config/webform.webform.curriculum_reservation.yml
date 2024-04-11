@@ -11,7 +11,7 @@ uid: 1
 template: false
 archive: false
 id: curriculum_reservation
-title: 'Curriculum reservation'
+title: 'Curriculum request'
 description: ''
 categories: {  }
 elements: |-
