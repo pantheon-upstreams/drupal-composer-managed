@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_board
+    - core.entity_view_mode.node.teaser_staff
     - field.storage.node.field_ref_department
     - node.type.person
     - system.menu.admin
@@ -324,7 +326,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_board
       defaults:
         title: false
         style: false
@@ -445,7 +447,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_board
       defaults:
         style: false
         row: false
@@ -565,7 +567,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_board
       defaults:
         style: false
         row: false
@@ -686,7 +688,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_board
       defaults:
         title: false
         style: false
@@ -1886,7 +1888,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_staff
       defaults:
         title: false
         style: false

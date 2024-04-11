@@ -1,0 +1,11 @@
+uuid: a1b68ed7-bf9d-49be-a5b4-d054dcc64d0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_staff
+label: 'Teaser - Staff'
+description: ''
+targetEntityType: node
+cache: true
