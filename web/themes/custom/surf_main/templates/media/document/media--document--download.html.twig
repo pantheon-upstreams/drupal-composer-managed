@@ -22,8 +22,17 @@
     view_mode ? 'media--' ~ view_mode|clean_class,
 ] %}
 
-{% set file_size_mb = media.field_media_document.entity.getSize() / 1000 %}
 {% set extension = media.field_media_document.entity.filename.value|split('.') %}
+
+{% set file_size %}
+    {% if media.field_media_document.entity.getSize() > 1000000 %}
+        {% set file_size_mb = media.field_media_document.entity.getSize() / 1000000 %}
+        {{ file_size_mb|round(1, 'floor') }} MB
+    {% else %}
+        {% set file_size_kb = media.field_media_document.entity.getSize() / 1000 %}
+        {{ file_size_kb|round(1, 'floor') }} KB
+    {% endif %}
+{% endset %}
 
 <figure {{ attributes.addClass(classes) }}>
     <a class="media__download-link" href="{{ content.field_media_document|field_value }}" download>
@@ -31,7 +40,10 @@
     </a>
 
     <p class="media__details">
-        <span class="media__size">{{ file_size_mb|round(1, 'floor') }} MB</span>
+        <span class="media__size">
+            {{ file_size }}
+        </span>
+
         <span class="media__type">{{ extension[extension|length - 1] }}</span>
     </p>
 </figure>
