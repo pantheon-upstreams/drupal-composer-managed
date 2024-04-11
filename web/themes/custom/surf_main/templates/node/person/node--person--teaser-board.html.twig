@@ -1,0 +1,83 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a Person Node with Teaser view mode.
+ *
+ * Available variables:
+ *  person_initials: [string] The first letter of the first and last name.
+ *
+ * @see surf_main_preprocess_node__person()
+ * @see templates/nodes/node.html.twig
+ * @see components/02-molecules/person-card/person-card.twig
+ */
+#}
+
+{% set rendered_content = content|without(
+    'field_date_appointed',
+    'field_job_title',
+    'field_location',
+    'field_media_primary',
+    'field_name',
+    'field_ref_experiments',
+    'field_ref_person_type',
+    'field_science_field',
+    'field_term_expiration',
+) %}
+
+{% embed 'surf_main:person-card' with {
+    rendered_content,
+    person_card_attributes: create_attribute().merge(attributes),
+    person_card_initials: person_initials,
+    person_card_media: content.field_media_primary|field_value|default([]),
+    person_card_name: content.field_name|render ? content.field_name|field_value,
+    person_card_role: content.field_job_title|render ? content.field_job_title|field_value,
+    person_card_url: url,
+    person_type: content.field_ref_person_type|render ? content.field_ref_person_type|field_value,
+    person_term_exp: content.field_term_expiration|render ? content.field_term_expiration|field_value,
+    person_appt_date: content.field_date_appointed|render ? content.field_date_appointed|field_value,
+    person_location: content.field_location|render ? content.field_location|field_value,
+    person_science: content.field_science_field|render ? content.field_science_field|field_value,
+    person_experiments: content.field_ref_experiments|render ? content.field_ref_experiments|field_value,
+} only %}
+    {% block person_additional %}
+        {% if person_location %}
+            <div class="m-person-card__location">
+                <p>{{ person_location }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_appt_date %}
+            <div class="m-person-card__term-exp">
+                <p>{{ 'Appointed Date'|t }}: {{ person_appt_date }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_term_exp %}
+            <div class="m-person-card__term-exp">
+                <p>{{ 'Term Expiry'|t }}: {{ person_term_exp }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_type %}
+            {% for index in 0..person_type|length - 1 %}
+                <div class="m-person-card__person-type">
+                    <p>{{ person_type[loop.index0] }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% if person_science %}
+            <div class="m-person-card__science">
+                <p>{{ person_science }}</p>
+            </div>
+        {% endif %}
+
+        {% if person_experiments %}
+            {% for index in 0..person_experiments|length - 1 %}
+                <div class="m-person-card__person-type">
+                    <p>{{ person_experiments[loop.index0] }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
+{% endembed %}
