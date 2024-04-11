@@ -65,7 +65,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: short_date_only
     third_party_settings: {  }
     weight: 1
     region: content
