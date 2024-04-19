@@ -48,19 +48,28 @@ elements: |-
   name:
     '#type': webform_name
     '#title': Name
+    '#required': true
+    '#default_value':
+      first: '[current-user:field_first_name]'
+      last: '[current-user:field_last_name]'
+      title: ''
+      middle: ''
+      suffix: ''
+      degree: ''
     '#title__access': false
     '#middle__access': false
     '#suffix__access': false
     '#degree__access': false
-    '#required': true
   email:
     '#type': email
     '#title': Email
     '#required': true
+    '#default_value': '[current-user:mail]'
   phone:
     '#type': tel
     '#title': Phone
     '#required': true
+    '#default_value': '[current-user:field_phone]'
   preferred_dates:
     '#type': fieldset
     '#title': 'Preferred dates'

@@ -48,6 +48,13 @@ elements: |-
   name:
     '#type': webform_name
     '#title': Name
+    '#default_value':
+      first: '[current-user:field_first_name]'
+      last: '[current-user:field_last_name]'
+      title: ''
+      middle: ''
+      suffix: ''
+      degree: ''
     '#title__access': false
     '#middle__access': false
     '#suffix__access': false
@@ -55,6 +62,7 @@ elements: |-
   email:
     '#type': email
     '#title': Email
+    '#default_value': '[current-user:mail]'
   preferred_dates:
     '#type': fieldset
     '#title': 'Preferred Dates'

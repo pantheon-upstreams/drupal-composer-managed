@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_phone
     - field.field.user.user.user_picture
   module:
+    - telephone
     - text
     - user
 _core:
@@ -30,10 +32,18 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_phone:
+    type: telephone_link
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
   member_for:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   langcode: true

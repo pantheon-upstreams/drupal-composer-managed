@@ -5,9 +5,10 @@ dependencies:
   config:
     - field.field.user.user.field_first_name
     - field.field.user.user.field_last_name
+    - field.field.user.user.field_phone
     - field.field.user.user.user_picture
   module:
-    - path
+    - telephone
     - text
     - user
 _core:
@@ -29,7 +30,7 @@ content:
     third_party_settings: {  }
   field_first_name:
     type: text_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
@@ -37,25 +38,21 @@ content:
     third_party_settings: {  }
   field_last_name:
     type: text_textfield
-    weight: 3
+    weight: 2
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  google_analytics:
+  field_phone:
+    type: telephone_default
     weight: 3
     region: content
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
-  language:
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  path:
-    type: path
-    weight: 4
+  google_analytics:
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -64,4 +61,6 @@ content:
     region: content
 hidden:
   langcode: true
+  language: true
+  path: true
   user_picture: true
