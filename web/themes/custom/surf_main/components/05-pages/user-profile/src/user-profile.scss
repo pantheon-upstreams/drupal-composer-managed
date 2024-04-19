@@ -1,0 +1,41 @@
+//
+// Component - Page - User Profile
+//
+// - 01 - Imports
+// - 03 - General
+//
+
+
+//------------------------------------
+//  01 - Imports
+//------------------------------------
+
+@use '../../../00-base/partials/breakpoints';
+@use '../../../00-base/partials/calculations';
+
+
+
+
+//------------------------------------
+//  02 - General
+//------------------------------------
+
+.p-user-profile {
+  padding-block: 40px;
+
+  @include breakpoints.bp-min(large) {
+    padding-block: 80px;
+  }
+
+  > .container {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 64px;
+  }
+
+  .p-user-profile__content {
+    display: flex;
+    flex-flow: nowrap column;
+    gap: 32px;
+  }
+}

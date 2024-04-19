@@ -20,22 +20,83 @@
 #}
 
 {% set classes = [
-    'user-page',
-    'user-page__id--' ~ user.id,
+    'p-user-profile--' ~ user.id,
 ] %}
 
-<article {{ attributes.addClass(classes) }}>
-    <div class="container container--xlarge">
-        <h1 class="user-page__name">{{ content.field_first_name|field_value }} {{ content.field_last_name|field_value }}</h1>
-        <p class="user-page__duration">{{- content.member_for['#markup']|striptags -}}</p>
-        {% include 'surf_main:button' with {
-            button_attributes: create_attribute(),
-            button_color: 'navy',
-            button_html_tag: 'link',
-            button_size: 'large',
-            button_style: 'primary',
-            button_title: 'Visit Dashboard',
-            button_url: '/user/' ~ user.id ~ '/dashboard'
-        } only %}
-    </div>
-</article>
+{% set rendered_content = content|without(
+    'field_first_name',
+    'field_last_name',
+    'field_phone',
+    'member_for',
+)%}
+
+{% if content.field_first_name|render or content.field_last_name|render %}
+    {% set user_name %}
+        {% if content.field_first_name|render %}
+            <span class="user-profile__name--first">{{ content.field_first_name|field_value }}</span>
+        {% endif %}
+
+        {% if content.field_last_name|render %}
+            <span class="user-profile__name--last">{{ content.field_last_name|field_value }}</span>
+        {% endif %}
+    {% endset %}
+{% endif %}
+
+{% embed 'surf_main:user-profile' with {
+    rendered_content,
+    user_profile_attributes: create_attribute({'class': classes}).merge(attributes),
+    user_profile_name: user_name,
+    user_email: user.mail.value,
+    user_phone: content.field_phone|render ? content.field_phone|field_value,
+    user_member_for: content.member_for|render ? content.member_for['#markup']|striptags,
+    user_id: user.id,
+} only %}
+    {% block user_profile_content %}
+        <div class="p-user-profile__content">
+            {% if user_email is not empty %}
+                <div class="p-user-profile__detail p-user-profile__detail--email">
+                    <h2>{{ 'Email'|t }}</h2>
+                    <p>{{ user_email }}</p>
+                </div>
+            {% endif %}
+
+            {% if user_phone is not empty %}
+                <div class="p-user-profile__detail p-user-profile__detail--phone">
+                    <h2>{{ 'Phone'|t }}</h2>
+                    <p>{{ user_phone }}</p>
+                </div>
+            {% endif %}
+
+            {% if user_member_for is not empty %}
+                <div class="p-user-profile__detail p-user-profile__detail--member-for">
+                    <h2>{{ 'History'|t }}</h2>
+                    <p>{{ user_member_for }}</p>
+                </div>
+            {% endif %}
+        </div>
+    {% endblock %}
+
+    {% block user_profile_actions %}
+        <div class="p-user-profile__actions">
+            {% include 'surf_main:button' with {
+                button_attributes: create_attribute(),
+                button_color: 'navy',
+                button_html_tag: 'link',
+                button_size: 'large',
+                button_style: 'primary',
+                button_title: 'Visit Dashboard',
+                button_url: '/user/' ~ user_id ~ '/dashboard'
+            } only %}
+
+            {% include 'surf_main:button' with {
+                button_attributes: create_attribute(),
+                button_color: 'white',
+                button_html_tag: 'link',
+                button_size: 'large',
+                button_style: 'primary',
+                button_title: 'Edit Profile',
+                button_url: '/user/' ~ user_id ~ '/edit'
+            } only %}
+        </div>
+    {% endblock %}
+{% endembed %}

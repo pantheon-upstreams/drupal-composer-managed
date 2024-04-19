@@ -8,7 +8,6 @@ dependencies:
     - field.field.user.user.field_phone
     - field.field.user.user.user_picture
   module:
-    - telephone
     - text
     - user
 _core:
@@ -33,10 +32,10 @@ content:
     weight: 1
     region: content
   field_phone:
-    type: telephone_link
+    type: string
     label: hidden
     settings:
-      title: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 2
     region: content

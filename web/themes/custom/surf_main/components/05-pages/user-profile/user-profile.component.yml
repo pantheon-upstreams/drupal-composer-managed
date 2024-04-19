@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+name: User Profile
+status: experimental
+group: Pages
+props:
+  type: object
+  properties:
+    user_profile_attributes:
+      title: Attributes
+      type: string
+    user_profile_name:
+      title: Name
+      type: string
+    user_profile_email:
+      title: Email
+      type: string
+    user_profile_phone:
+      title: Phone
+      type: string
+  slots:
+    user_profile_content:
+      title: Content
+    user_profile_actions:
+      title: Actions

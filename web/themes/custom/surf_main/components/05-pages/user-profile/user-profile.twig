@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Page component for a User Profile page.
+ *
+ * Available props:
+ * - user_profile_attributes: [string]
+ * - user_profile_name: [string]
+ * - user_profile_email: [string]
+ * - user_profile_phone: [string]
+ *
+ * Available slots:
+ * - user_profile_content
+ * - user_profile_actions
+ */
+#}
+
+{% set classes = [
+    'p-user-profile',
+] %}
+
+<article {{ user_profile_attributes.addClass(classes) }}>
+    <div class="container container--small">
+        {% if user_profile_name is not empty %}
+            {% include 'surf_main:heading' with {
+                heading_attributes: create_attribute(),
+                heading_text: user_profile_name,
+                heading_level: '1',
+                heading_type: 'lg',
+            } only %}
+        {% endif %}
+
+        {% block user_profile_content %}
+            <div class="p-user-profile__content">
+                {% if user_profile_email is not empty %}
+                    <div class="p-user-profile__detail p-user-profile__detail--email">
+                        <h2>{{ 'Email'|t }}</h2>
+                        <p>{{ user_profile_email }}</p>
+                    </div>
+                {% endif %}
+
+                {% if user_profile_phone is not empty %}
+                    <div class="p-user-profile__detail p-user-profile__detail--phone">
+                        <h2>{{ 'Phone'|t }}</h2>
+                        <p>{{ user_profile_phone }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %}
+
+        {% block user_profile_actions %}{% endblock %}
+    </div>
+</article>
