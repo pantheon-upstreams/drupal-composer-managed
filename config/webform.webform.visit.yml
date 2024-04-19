@@ -281,7 +281,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: _default
+      to_mail: education@sanfordlab.org
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
