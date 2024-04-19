@@ -471,6 +471,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      title: 'SURF Foundation Board Members'
       sorts:
         weight:
           id: weight
@@ -569,6 +570,7 @@ display:
           relationship: none
           view_mode: teaser_board
       defaults:
+        title: false
         style: false
         row: false
         sorts: false
