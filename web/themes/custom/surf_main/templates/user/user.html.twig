@@ -45,7 +45,7 @@
 {% embed 'surf_main:user-profile' with {
     rendered_content,
     user_profile_attributes: create_attribute({'class': classes}).merge(attributes),
-    user_profile_name: user_name,
+    user_profile_name: user_name|default([]),
     user_email: user.mail.value,
     user_phone: content.field_phone|render ? content.field_phone|field_value,
     user_member_for: content.member_for|render ? content.member_for['#markup']|striptags,
