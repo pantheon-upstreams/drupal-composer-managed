@@ -238,11 +238,23 @@ ul.l-threecol {
     }
   }
 
+  &.l-twocol--50-50 > .l-twocol__region {
+    @include breakpoints.bp-min(medium) {
+      height: 100%;
+    }
+  }
+
   &.l-twocol--55-45 {
     grid-template-columns: minmax(0, 1fr);
 
     @include breakpoints.bp-min(large) {
       grid-template-columns: 55% 1fr;
+    }
+  }
+
+  &.l-twocol--55-45 > .l-twocol__region {
+    @include breakpoints.bp-min(large) {
+      height: 100%;
     }
   }
 
@@ -254,6 +266,12 @@ ul.l-threecol {
     }
   }
 
+  &.l-twocol--45-55 > .l-twocol__region {
+    @include breakpoints.bp-min(large) {
+      height: 100%;
+    }
+  }
+
   &.l-twocol--25-75 {
     grid-template-columns: minmax(0, 1fr);
 
@@ -262,11 +280,23 @@ ul.l-threecol {
     }
   }
 
+  &.l-twocol--25-75 > .l-twocol__region {
+    @include breakpoints.bp-min(medium) {
+      height: 100%;
+    }
+  }
+
   &.l-twocol--75-25 {
     grid-template-columns: minmax(0, 1fr);
 
     @include breakpoints.bp-min(medium) {
       grid-template-columns: 3fr 1fr;
+    }
+  }
+
+  &.l-twocol--75-25 > .l-twocol__region {
+    @include breakpoints.bp-min(medium) {
+      height: 100%;
     }
   }
 
@@ -291,8 +321,8 @@ ul.l-threecol {
     }
   }
 
-  .l-threecol__region {
-    > div {
+  &.l-threecol--33-34-33 > .l-threecol__region {
+    @include breakpoints.bp-min(large) {
       height: 100%;
     }
   }

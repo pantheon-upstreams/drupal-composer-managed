@@ -83,7 +83,7 @@
     p {
       font-family: var(--surf-font-sans-alt);
       font-size: var(--surf-fs-40-52-64);
-      font-weight: var(--surf-fw-medium);
+      font-weight: var(--surf-fw-book);
       letter-spacing: rem(0.6px);
       line-height: var(--surf-lh-base);
       @include bp-min(medium) {
@@ -104,7 +104,7 @@
       background-clip: text;
       font-family: var(--surf-font-sans-alt);
       font-size: var(--surf-fs-40-64-96);
-      font-weight: var(--surf-fw-medium);
+      font-weight: var(--surf-fw-book);
       letter-spacing: 0.015em;
       line-height: var(--surf-lh-base);
       margin: 0;

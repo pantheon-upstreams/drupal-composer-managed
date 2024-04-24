@@ -26,6 +26,7 @@
 
 .a-heading {
   font-family: var(--surf-font-sans-alt);
+  font-weight: var(--surf-fw-book);
 }
 
 
@@ -40,7 +41,6 @@
   background: var(--surf-gradient-hz-blue-02);
   background-clip: text;
   font-size: var(--surf-fs-80-140-200-260);
-  font-weight: var(--surf-fw-medium);
   line-height: 0.8;
 }
 
@@ -54,7 +54,6 @@
 .a-heading.a-heading--none,
 .a-heading.a-heading--lg {
   font-size: var(--surf-fs-40-64-96);
-  font-weight: var(--surf-fw-medium);
   letter-spacing: calculations.rem(1px);
   line-height: var(--surf-lh-base);
 }
@@ -68,7 +67,6 @@
 
 .a-heading.a-heading--particles {
   font-size: var(--surf-fs-48-120-144-176);
-  font-weight: var(--surf-fw-book);
   line-height: 0.85;
   text-transform: uppercase;
 
@@ -82,7 +80,6 @@
 
 .a-heading--particles-sm {
   font-size: var(--surf-fs-48-100-132);
-  font-weight: var(--surf-fw-book);
   line-height: 0.85;
   text-transform: uppercase;
 

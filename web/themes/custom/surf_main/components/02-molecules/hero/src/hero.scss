@@ -122,10 +122,9 @@
     text-transform: uppercase;
 
     @include breakpoints.bp-min(xlarge) {
-      background: url('img/background-particles-black.png') no-repeat right bottom, var(--surf-gradient-dg-white);
+      background: url('img/background-particles-black.png') no-repeat left bottom, var(--surf-gradient-dg-white);
       background-clip: text;
       font-size: calculations.rem(272px);
-      max-inline-size: 800px;
       -webkit-text-fill-color: transparent;
     }
   }
@@ -164,6 +163,7 @@
   .m-hero__title {
     @include breakpoints.bp-min(xlarge) {
       margin-inline-start: auto;
+      max-inline-size: 800px;
     }
   }
 
@@ -233,7 +233,7 @@
     background-clip: text;
     font-family: var(--surf-font-sans-alt);
     font-size: var(--surf-fs-80-140-200-260);
-    font-weight: var(--surf-fw-medium);
+    font-weight: var(--surf-fw-book);
     line-height: 0.8;
   }
 }

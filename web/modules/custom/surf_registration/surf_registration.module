@@ -3,6 +3,7 @@
 use Drupal\surf_registration\Entity\Node\Event;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\user\UserInterface;
 
 /**
  * Implements hook_theme().
