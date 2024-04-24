@@ -4,9 +4,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_address
+    - field.field.user.user.field_class_amount
+    - field.field.user.user.field_county
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_grade_levels
+    - field.field.user.user.field_largest_class_size
     - field.field.user.user.field_last_name
     - field.field.user.user.field_phone
+    - field.field.user.user.field_school
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -31,9 +37,15 @@ content:
     weight: 0
     region: content
 hidden:
+  field_address: true
+  field_class_amount: true
+  field_county: true
   field_first_name: true
+  field_grade_levels: true
+  field_largest_class_size: true
   field_last_name: true
   field_phone: true
+  field_school: true
   langcode: true
   member_for: true
   search_api_excerpt: true

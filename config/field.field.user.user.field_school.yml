@@ -1,0 +1,20 @@
+uuid: 615bd752-0cee-4c34-aedb-466c406b0390
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_school
+  module:
+    - user
+id: user.user.field_school
+field_name: field_school
+entity_type: user
+bundle: user
+label: School
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

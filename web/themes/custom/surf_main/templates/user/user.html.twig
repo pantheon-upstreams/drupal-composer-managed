@@ -48,6 +48,9 @@
     user_profile_name: user_name|default([]),
     user_email: user.mail.value,
     user_phone: content.field_phone|render ? content.field_phone|field_value,
+    user_school: content.field_school|render ? content.field_school|field_value,
+    user_address: content.field_address|render ? content.field_address|field_value,
+    user_county: content.field_county|render ? content.field_county|field_value,
     user_member_for: content.member_for|render ? content.member_for['#markup']|striptags,
     user_id: user.id,
 } only %}
@@ -64,6 +67,27 @@
                 <div class="p-user-profile__detail p-user-profile__detail--phone">
                     <h2>{{ 'Phone'|t }}</h2>
                     <p>{{ user_phone }}</p>
+                </div>
+            {% endif %}
+
+            {% if user_school is not empty %}
+                <div class="p-user-profile__detail p-user-profile__detail--school">
+                    <h2>{{ 'School'|t }}</h2>
+                    <p>{{ user_school }}</p>
+                </div>
+            {% endif %}
+
+            {% if user_address is not empty %}
+                <div class="p-user-profile__detail p-user-profile__detail--address">
+                    <h2>{{ 'Address'|t }}</h2>
+                    {{ user_address }}
+                </div>
+            {% endif %}
+
+            {% if user_county is not empty %}
+                <div class="p-user-profile__detail p-user-profile__detail--county">
+                    <h2>{{ 'Country'|t }}</h2>
+                    <p>{{ user_county }}</p>
                 </div>
             {% endif %}
 

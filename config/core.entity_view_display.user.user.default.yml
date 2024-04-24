@@ -3,11 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_address
+    - field.field.user.user.field_class_amount
+    - field.field.user.user.field_county
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_grade_levels
+    - field.field.user.user.field_largest_class_size
     - field.field.user.user.field_last_name
     - field.field.user.user.field_phone
+    - field.field.user.user.field_school
     - field.field.user.user.user_picture
   module:
+    - address
     - text
     - user
 _core:
@@ -17,12 +24,53 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_class_amount:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_county:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
   field_first_name:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_grade_levels:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_largest_class_size:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_last_name:
     type: text_default
@@ -38,6 +86,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_school:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   member_for:
     settings: {  }

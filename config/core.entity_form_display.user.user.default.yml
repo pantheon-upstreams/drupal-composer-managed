@@ -3,11 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_address
+    - field.field.user.user.field_class_amount
+    - field.field.user.user.field_county
     - field.field.user.user.field_first_name
+    - field.field.user.user.field_grade_levels
+    - field.field.user.user.field_largest_class_size
     - field.field.user.user.field_last_name
     - field.field.user.user.field_phone
+    - field.field.user.user.field_school
     - field.field.user.user.user_picture
   module:
+    - address
     - telephone
     - text
     - user
@@ -28,12 +35,50 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_address:
+    type: address_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_class_amount:
+    type: number
+    weight: 10
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_county:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_first_name:
     type: text_textfield
     weight: 1
     region: content
     settings:
       size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_grade_levels:
+    type: entity_reference_autocomplete
+    weight: 12
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_largest_class_size:
+    type: number
+    weight: 11
+    region: content
+    settings:
       placeholder: ''
     third_party_settings: {  }
   field_last_name:
@@ -49,6 +94,14 @@ content:
     weight: 3
     region: content
     settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_school:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   google_analytics:

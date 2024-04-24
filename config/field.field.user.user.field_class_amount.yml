@@ -1,0 +1,24 @@
+uuid: 3615c858-02fb-4a72-8154-a1f4abc903ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_class_amount
+  module:
+    - user
+id: user.user.field_class_amount
+field_name: field_class_amount
+entity_type: user
+bundle: user
+label: 'Number of Classes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

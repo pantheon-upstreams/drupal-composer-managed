@@ -1,0 +1,20 @@
+uuid: b93ee1b1-bf7f-43c9-a38c-33d0463f6278
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_county
+  module:
+    - user
+id: user.user.field_county
+field_name: field_county
+entity_type: user
+bundle: user
+label: County
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: eeb1610e-eec8-4f26-9054-8db7389d97b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_county
+field_name: field_county
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

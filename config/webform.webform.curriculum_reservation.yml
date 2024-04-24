@@ -88,37 +88,53 @@ elements: |-
     '#type': textfield
     '#title': School
     '#required': true
+    '#default_value': '[current-user:field_school]'
   county:
     '#type': textfield
     '#title': County
     '#required': true
+    '#default_value': '[current-user:field_county]'
   address:
     '#type': webform_address
     '#title': Address
     '#required': true
+    '#default_value':
+      address: '[current-user:field_address:address_line1]'
+      address_2: '[current-user:field_address:address_line2]'
+      city: '[current-user:field_address:locality]'
+      state_province: 'North Dakota'
+      postal_code: '[current-user:field_address:postal_code]'
+      country: ''
     '#address__help': 'Physical address required. Address must not be a post office box.'
     '#country__access': false
   ref_grade_levels:
     '#type': webform_entity_checkboxes
     '#title': 'Grade levels'
+    '#required': true
+    '#default_value':
+      - '[current-user:field_grade_levels]'
     '#target_type': taxonomy_term
     '#selection_handler': 'default:taxonomy_term'
     '#selection_settings':
       target_bundles:
         grade_level: grade_level
-    '#required': true
+      sort:
+        field: name
+        direction: asc
   number_classes:
     '#type': number
     '#title': 'Number of classes'
-    '#description': 'In how many classes will you be teaching this unit?'
+    '#description': '<p>In how many classes will you be teaching this unit?</p>'
+    '#required': true
+    '#default_value': '[current-user:field_class_amount]'
     '#min': 1
     '#max': 8
-    '#required': true
   largest_class:
     '#type': number
     '#title': 'Largest class'
-    '#description': 'In how many classes will you be teaching this unit?'
+    '#description': '<p>In how many classes will you be teaching this unit?</p>'
     '#required': true
+    '#default_value': '[current-user:field_largest_class_size]'
   message:
     '#type': textarea
     '#title': Message
