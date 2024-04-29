@@ -98,6 +98,7 @@ module:
   search_api_block: 0
   search_api_db: 0
   search_api_exclude: 0
+  sendgrid_integration: 0
   serialization: 0
   shortcut: 0
   similarterms: 0
