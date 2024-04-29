@@ -327,6 +327,10 @@ ul.l-threecol {
     }
   }
 
+  .l-threecol__region > div {
+    height: 100%;
+  }
+
   .l-threecol__region--heading {
     @include breakpoints.bp-min(medium) {
       grid-column: 1/-1;
