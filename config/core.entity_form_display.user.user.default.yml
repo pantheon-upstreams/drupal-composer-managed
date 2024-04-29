@@ -37,20 +37,20 @@ content:
     third_party_settings: {  }
   field_address:
     type: address_default
-    weight: 9
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_class_amount:
     type: number
-    weight: 10
+    weight: 8
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_county:
     type: string_textfield
-    weight: 8
+    weight: 5
     region: content
     settings:
       size: 60
@@ -65,18 +65,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_grade_levels:
-    type: entity_reference_autocomplete
-    weight: 12
+    type: string_textfield
+    weight: 7
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_largest_class_size:
     type: number
-    weight: 11
+    weight: 9
     region: content
     settings:
       placeholder: ''
@@ -98,7 +96,7 @@ content:
     third_party_settings: {  }
   field_school:
     type: string_textfield
-    weight: 7
+    weight: 4
     region: content
     settings:
       size: 60

@@ -107,20 +107,11 @@ elements: |-
       country: ''
     '#address__help': 'Physical address required. Address must not be a post office box.'
     '#country__access': false
-  ref_grade_levels:
-    '#type': webform_entity_checkboxes
-    '#title': 'Grade levels'
+  grade_levels:
+    '#type': textfield
+    '#title': 'Grade Levels'
+    '#default_value': '[current-user:field_grade_levels]'
     '#required': true
-    '#default_value':
-      - '[current-user:field_grade_levels]'
-    '#target_type': taxonomy_term
-    '#selection_handler': 'default:taxonomy_term'
-    '#selection_settings':
-      target_bundles:
-        grade_level: grade_level
-      sort:
-        field: name
-        direction: asc
   number_classes:
     '#type': number
     '#title': 'Number of classes'

@@ -76,22 +76,14 @@ elements: |-
     '#type': textfield
     '#title': 'School district'
     '#default_value': '[current-user:field_school]'
+  grade_levels:
+    '#type': textfield
+    '#title': 'Grade Levels'
+    '#default_value': '[current-user:field_grade_levels]'
   number_students:
     '#type': number
     '#title': 'Number of students'
     '#default_value': '[current-user:field_largest_class_size]'
-  ref_grade_level:
-    '#type': webform_entity_select
-    '#title': 'Grade level'
-    '#default_value': '[current-user:field_grade_levels]'
-    '#target_type': taxonomy_term
-    '#selection_handler': 'default:taxonomy_term'
-    '#selection_settings':
-      target_bundles:
-        grade_level: grade_level
-      sort:
-        field: name
-        direction: ASC
   notes:
     '#type': textarea
     '#title': Notes

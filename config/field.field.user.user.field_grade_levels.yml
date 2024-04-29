@@ -1,10 +1,9 @@
-uuid: bf3e89e6-692c-4c7d-b20a-2ee5a296960a
+uuid: bfdbac4b-291c-49b5-9cfe-5de9ee491063
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.user.field_grade_levels
-    - taxonomy.vocabulary.grade_level
   module:
     - user
 id: user.user.field_grade_levels
@@ -17,14 +16,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  handler: 'default:taxonomy_term'
-  handler_settings:
-    target_bundles:
-      grade_level: grade_level
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+settings: {  }
+field_type: string

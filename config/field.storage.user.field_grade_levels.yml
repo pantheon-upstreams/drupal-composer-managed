@@ -1,19 +1,20 @@
-uuid: 77749cb4-e33b-4cc5-87d1-af45f921e9e8
+uuid: 8a6eb7ba-7b95-4c47-83b0-064a45dbb97e
 langcode: en
 status: true
 dependencies:
   module:
-    - taxonomy
     - user
 id: user.field_grade_levels
 field_name: field_grade_levels
 entity_type: user
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
