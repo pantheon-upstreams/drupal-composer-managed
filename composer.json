@@ -82,6 +82,7 @@
         "drupal/search_api_solr": "^4.2",
         "drupal/sendgrid_integration": "^2.2",
         "drupal/similarterms": "^1.8",
+        "drupal/simple_sitemap": "^4.1",
         "drupal/smart_date": "^3.7",
         "drupal/state_machine": "^1.6",
         "drupal/structure_sync": "^2.0",

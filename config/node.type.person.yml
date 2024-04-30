@@ -5,6 +5,7 @@ dependencies:
   module:
     - menu_ui
     - scheduler
+    - search_api_exclude
 third_party_settings:
   menu_ui:
     available_menus: {  }
@@ -22,6 +23,8 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
+  search_api_exclude:
+    enabled: 0
 name: Person
 type: person
 description: 'Use <em>Person</em> to add content pertaining to any single person, including a biography.'

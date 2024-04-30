@@ -102,6 +102,7 @@ module:
   serialization: 0
   shortcut: 0
   similarterms: 0
+  simple_sitemap: 0
   smart_date: 0
   state_machine: 0
   style_options: 0
@@ -134,7 +135,6 @@ module:
   webform_ui: 0
   webform_user_registration: 0
   menu_link_content: 1
-  xmlsitemap: 1
   views: 10
   paragraphs: 11
   standard: 1000
