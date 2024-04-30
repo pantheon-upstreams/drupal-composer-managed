@@ -108,8 +108,6 @@
     "require-dev": {
         "drupal/core-dev": "^10",
         "drupal/devel": "^5.1",
-        "drupal/migrate_plus": "^6.0",
-        "drupal/migrate_tools": "^6.0",
         "drupal/stage_file_proxy": "^2.0",
         "drush/drush": "~12.0",
         "weitzman/drupal-test-traits": "^2.0"
