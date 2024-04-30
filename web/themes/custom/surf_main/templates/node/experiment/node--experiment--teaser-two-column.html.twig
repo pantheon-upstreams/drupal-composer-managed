@@ -26,8 +26,6 @@
     'field_ref_research_areas',
 ) %}
 
-{% set default_image = drupal_image('public://images/2024-01/default-thumbnail-image-surf.png', 'teaser_default', responsive=true) %}
-
 {% embed 'surf_main:teaser' with {
     attributes,
     rendered_content,
@@ -37,9 +35,38 @@
     teaser_title_tag: 'h3',
     teaser_dates: experiment_dates,
     teaser_tags: content.field_ref_research_areas|field_value|default([]),
-    teaser_media: content.field_media_primary|field_value|default(default_image),
     teaser_url: url,
+    media: content.field_media_primary|render ? content.field_media_primary|field_value,
+    default_image: drupal_image('public://images/2024-01/default-thumbnail-image-surf.png', 'teaser_default', responsive=true),
 } only %}
+    {% block teaser_media %}
+        {% if media is not empty %}
+            <div class="m-teaser__media">
+                {% if teaser_url %}
+                    <a href="{{ teaser_url }}" class="m-teaser__link" tabindex="-1" aria-hidden="true">
+                {% endif %}
+
+                {{ media }}
+
+                {% if teaser_url %}
+                    </a>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="m-teaser__media">
+                {% if teaser_url %}
+                    <a href="{{ teaser_url }}" class="m-teaser__link" tabindex="-1" aria-hidden="true" aria-label="{{ teaser_title }}">
+                {% endif %}
+
+                {{ default_image }}
+
+                {% if teaser_url %}
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endblock %}
+
     {% block teaser_content_suffix %}
         {% if teaser_dates or teaser_tags %}
             <div class="m-teaser__content-suffix">
