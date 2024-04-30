@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_cache_flush().
  */
@@ -39,6 +41,18 @@ function surf_main_preprocess_paragraph(&$variables) {
   if (!empty($behaviorSettings['style_options'])) {
     foreach ($behaviorSettings['style_options'] as $key => $style) {
       $variables['style_options'][$key] = $style['property'];
+    }
+  }
+}
+
+/**
+ * Implement hook_form_alter().
+ */
+function surf_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'search_api_form') {
+    if (isset($form['keyword'])) {
+      $custom_id = 'search-api-keyword';
+      $form['keyword']['#id'] = $custom_id;
     }
   }
 }

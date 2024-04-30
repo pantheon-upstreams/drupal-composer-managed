@@ -50,3 +50,5 @@ props:
       title: Content Suffix
     teaser_media_prefix:
       title: Media Prefix
+    teaser_media:
+      title: Media
