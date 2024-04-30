@@ -31,9 +31,9 @@
         "drupal/captcha": "^2.0",
         "drupal/cl_server": "^2.0",
         "drupal/components": "^3.0",
-        "drupal/core": "^10.2",
-        "drupal/core-composer-scaffold": "^10.2",
-        "drupal/core-recommended": "^10.2",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-project-message": "^10",
+        "drupal/core-recommended": "^10",
         "drupal/ctools": "~3.0",
         "drupal/date_range_formatter": "^4.0",
         "drupal/download_request": "1.0.x-dev",
@@ -210,7 +210,8 @@
             "drupal/console-extend-plugin": true,
             "mglaman/composer-drupal-lenient": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "drupal/core-project-message": true
         }
     }
 }
