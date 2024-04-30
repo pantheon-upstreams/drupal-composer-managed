@@ -20,7 +20,7 @@ This project provides an updated theme & additional functionality into the SURF 
 ## Communication
 
 - Slack: #client-surf
-- JIRA: https://atendesign.atlassian.net/jira/software/projects/SRRM/boards/425
+- JIRA: https://atendesign.atlassian.net/jira/software/projects/SRL/boards/502
 
 ## Code Repository
 
@@ -40,7 +40,7 @@ This project provides an updated theme & additional functionality into the SURF 
 
 ## Development Workflow
 
-When adding new features to the project you'll need to create a feature branch, commonly this is the Jira ticket number (e.g. SRRM-XXX). You'll commit all your code changes to this feature branch and push the branch to the code repository. Once the ticket is ready for QA, it should be merged into the `master` branch. Which will then be deployed to the development instance on the Pantheon platform.
+When adding new features to the project you'll need to create a feature branch, commonly this is the Jira ticket number (e.g. SRL-XXX). You'll commit all your code changes to this feature branch and push the branch to the code repository. Once the ticket is ready for QA, it should be merged into the `master` branch. Which will then be deployed to the development instance on the Pantheon platform.
 
 Assign the Jira ticket to the QA team member, provide the link to the develop environment, and include instructions on what should be tested. Also, please make sure to set up the environment with dummy data to make sure it's working for you prior to getting the QA team involved.
 
@@ -90,8 +90,7 @@ Assign the Jira ticket to the QA team member, provide the link to the develop en
 - Location to READ.ME: `web/themes/custom/surf_main/README.md`
 
 ## Deployment
-
-More to come...
+This project follows the standard Pantheon deployment workflow https://docs.pantheon.io/pantheon-workflow
 
 ## Local Development
 
@@ -120,7 +119,7 @@ lando db-import localdatabasename.sql
 Following the development workflow, updates should be done exclusively with Composer (see https://www.drupal.org/docs/develop/using-composer/manage-dependencies)
 
 1. Updating Drupal core - See https://www.drupal.org/docs/updating-drupal/updating-drupal-core-via-composer
-   1. `composer update drupal/core --with-dependencies`
+   1. `composer update drupal/core-recommended drupal/core-project-message drupal/core-composer-scaffold --with-dependencies`
    2. `drush updatedb`
    3. `drush cache:rebuild`
 2. Updating Drupal modules
