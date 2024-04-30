@@ -83,6 +83,7 @@ module:
   page_cache: 0
   page_manager: 0
   page_manager_ui: 0
+  pantheon_advanced_page_cache: 0
   path: 0
   path_alias: 0
   pathauto: 0
