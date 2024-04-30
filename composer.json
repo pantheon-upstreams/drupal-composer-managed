@@ -97,6 +97,7 @@
         "drupal/webform": "^6.2",
         "drupal/webform_content_creator": "^4.0",
         "drupal/webform_user_registration": "^1.0@alpha",
+        "drupal/xmlsitemap": "^1.5",
         "mglaman/composer-drupal-lenient": "^1.0",
         "pantheon-systems/drupal-integrations": "^10",
         "pantheon-upstreams/upstream-configuration": "dev-main",

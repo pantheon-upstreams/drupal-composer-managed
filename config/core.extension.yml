@@ -136,6 +136,7 @@ module:
   webform_ui: 0
   webform_user_registration: 0
   menu_link_content: 1
+  xmlsitemap: 1
   views: 10
   paragraphs: 11
   standard: 1000
