@@ -1,1 +1,0 @@
-Drupal.behaviors.surfEditor={attach(e){e=once("surf-table",e.querySelectorAll(".a-editor table"));0!==e.length&&e.forEach(t=>{{let e;t=t,(e=document.createElement("div")).classList.add("a-editor__table"),t.before(e),e.appendChild(t)}})}};

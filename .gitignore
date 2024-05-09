@@ -96,5 +96,5 @@ node_modules
 #------------------------------------#
 
 web/themes/custom/*/dist
-web/themes/custom/*/components/*/*.css
-web/themes/custom/*/components/*/*.js
+web/themes/custom/*/components/*/*/*.css
+web/themes/custom/*/components/*/*/*.js
