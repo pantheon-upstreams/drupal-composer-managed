@@ -1,7 +1,7 @@
 # Sanford Underground Research Facility (SURF Main) - Drupal 9
 
 - Production URL: https://sanfordlab.org/
-- Aten Shortname: SRRM
+- Aten Shortname: SURF
 
 ## Overview
 
@@ -11,11 +11,8 @@ This project provides an updated theme & additional functionality into the SURF 
 
 **Aten**
 
-- Janice Camacho (Project Manager)
-- Justin Toupin (Tech Lead)
-- Jennifer Dust (Full Stack Developer)
+- Philip Stier (Tech Lead / Front End Developer)
 - Alan Sherry (Back End Developer)
-- Brent Robbins (Front End Developer)
 
 ## Communication
 
