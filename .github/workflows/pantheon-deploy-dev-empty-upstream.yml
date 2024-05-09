@@ -1,18 +1,19 @@
 name: Pantheon Deploy Development
-# Respects the upstream being using on Pantheon and will check for changes to the Pantheon repo and pull them back into your Github repo if they exist.
-# Assumes the build_step: true is building composer on Pantheon.
-# Does not do a force push to Pantheon.
+
+# Pantheon Setup
+# Using Empty Upstream
+# Building Theme
+# Building Composer
+
 on:
   push:
     branches:
-      - main
+      - main #typically main
 env:
   GIT_COMMIT_MESSAGE: 'Github Actions Build'
   PANTHEON_MULTIDEV: 'dev'
 
 jobs:
-  setup-environment:
-    runs-on: ubuntu-latest
   build-theme:
     uses: AtenDesignGroup/aten-actions/.github/workflows/build-theme.yml@main
     with:
@@ -31,15 +32,8 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Pre-Deploy - Git Sync to Remote
-        uses: AtenDesignGroup/aten-actions/.github/actions/pre-deploy-git-sync@main
-        with:
-          git-commit-message: ${{ env.GIT_COMMIT_MESSAGE }}
-          git-fetch: 'true'
-          git-pull: 'true'
-          git-pull-branch: 'master'
-          git-push-github: 'true'
-          git-revert-commit: 'true'
+      - name: Pre Deploy - Composer Install
+        uses: AtenDesignGroup/aten-actions/.github/actions/pre-deploy-composer-install@main
 
       - name: Pre Deploy - Download Theme Artifact
         uses: actions/download-artifact@v4
@@ -51,7 +45,7 @@ jobs:
         uses: AtenDesignGroup/aten-actions/.github/actions/deploy-git-push@main
         with:
           git-commit-message: ${{ env.GIT_COMMIT_MESSAGE }}
-          git-push-flags: ''
+          git-push-flags: '--force'
 
       - name: Post Deploy - Notify Slack
         if: always()
