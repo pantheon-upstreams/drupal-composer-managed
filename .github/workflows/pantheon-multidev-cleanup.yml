@@ -1,0 +1,35 @@
+name: Pantheon PR Merge Cleanup
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [ closed ]
+
+env:
+  GITHUB_REF_HEAD: ${{ github.head_ref }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Remote SSH
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-remote-ssh@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Pantheon Terminus and PHP
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-pantheon-terminus@main
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+
+      - name: Setup Pantheon Multidev Env Name
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-pantheon-multidev@main
+        with:
+          strategy: branch
+          name: ${GITHUB_REF_HEAD#refs/heads/feature/}
+
+      - name: Cleanup Pantheon Multidev
+        run: terminus multidev:delete --yes -- ${{ vars.PANTHEON_SITE }}.${{ env.PANTHEON_MULTIDEV }}
+        continue-on-error: true

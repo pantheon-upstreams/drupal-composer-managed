@@ -1,0 +1,95 @@
+name: Pantheon Deploy Multi-Dev
+
+# Example builds storybook, theme, and composer and does a force push.
+# If build_step: true is set on Pantheon, you'd want to remove the composer
+# install step here in the action file.
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  GIT_COMMIT_MESSAGE: 'Github Actions Build'
+  GITHUB_REF_HEAD: ${{ github.head_ref }}
+
+jobs:
+  setup-environment:
+    if: startsWith(github.head_ref, 'feature/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Pantheon Multidev Env Name
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-pantheon-multidev@main
+        with:
+          strategy: branch
+          name: ${GITHUB_REF_HEAD#refs/heads/feature/}
+  build-theme:
+    if: startsWith(github.head_ref, 'feature/')
+    uses: AtenDesignGroup/aten-actions/.github/workflows/build-theme.yml@main
+    with:
+      theme-path: ${{ vars.THEME_PATH }}
+  deploy:
+    if: startsWith(github.head_ref, 'feature/')
+    needs: [build-theme]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Git and Checkout Repo
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-git@main
+        with:
+          git-remote-url: ${{ vars.PANTHEON_GIT_REMOTE }}
+
+      - name: Setup Remote SSH
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-remote-ssh@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Pantheon Terminus and PHP
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-pantheon-terminus@main
+        with:
+          pantheon-machine-token: ${{ secrets.PANTHEON_MACHINE_TOKEN }}
+
+      - name: Setup Pantheon Multidev Env Name
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-pantheon-multidev@main
+        with:
+          strategy: branch
+          name: ${GITHUB_REF_HEAD#refs/heads/feature/}
+
+      - name: Pre Deploy - Composer Install
+        uses: AtenDesignGroup/aten-actions/.github/actions/pre-deploy-composer-install@main
+
+      - name: Pre Deploy - Download Theme Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: theme-artifact
+          path: ${{ vars.THEME_PATH }}
+
+      - name: Deploy - Git Push to Remote
+        uses: AtenDesignGroup/aten-actions/.github/actions/deploy-git-push@main
+        with:
+          git-commit-message: ${{ env.GIT_COMMIT_MESSAGE }}
+          git-push-flags: '--force'
+          git-push-branch: ${{ env.PANTHEON_MULTIDEV }}
+
+      - name: Post Deploy - Create Pantheon Multidev Env
+        uses: AtenDesignGroup/aten-actions/.github/actions/post-deploy-pantheon-multidev@main
+        with:
+          pantheon-site: ${{ vars.PANTHEON_SITE }}
+          pantheon-multidev: ${{ env.PANTHEON_MULTIDEV }}
+          pantheon-env-clone-env: ${{ vars.PANTHEON_MULTIDEV_CLONE_ENV }}
+          pantheon-env-create-flags: ''
+
+      - name: Post Deploy - Notify Github Pull Request
+        if: always()
+        uses: AtenDesignGroup/aten-actions/.github/actions/post-deploy-notify-pr@main
+        with:
+          status: ${{ job.status }}
+          url: "https://${{ env.PANTHEON_MULTIDEV }}-${{ vars.PANTHEON_SITE }}.pantheonsite.io"
+
+      - name: Post Deploy - Notify Slack
+        if: always()
+        uses: AtenDesignGroup/aten-actions/.github/actions/post-deploy-notify-slack@main
+        with:
+          slack-channel-id: ${{ vars.SLACK_CHANNEL }}
+          slack-message: "@${{ github.actor }} is pushing code today and it was a ${{ job.status }}!\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}\nUsing Workflow: ${{ github.workflow }}\nPantheon: https://${{ env.PANTHEON_MULTIDEV }}-${{ vars.PANTHEON_SITE }}.pantheonsite.io"
+          slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}

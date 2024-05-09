@@ -1,0 +1,62 @@
+name: Pantheon Deploy Development
+# Respects the upstream being using on Pantheon and will check for changes to the Pantheon repo and pull them back into your Github repo if they exist.
+# Assumes the build_step: true is building composer on Pantheon.
+# Does not do a force push to Pantheon.
+on:
+  push:
+    branches:
+      - main
+env:
+  GIT_COMMIT_MESSAGE: 'Github Actions Build'
+  PANTHEON_MULTIDEV: 'dev'
+
+jobs:
+  setup-environment:
+    runs-on: ubuntu-latest
+  build-theme:
+    uses: AtenDesignGroup/aten-actions/.github/workflows/build-theme.yml@main
+    with:
+      theme-path: ${{ vars.THEME_PATH }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-theme]
+    steps:
+      - name: Setup Git and Checkout Repo
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-git@main
+        with:
+          git-remote-url: ${{ vars.PANTHEON_GIT_REMOTE }}
+
+      - name: Setup Remote SSH
+        uses: AtenDesignGroup/aten-actions/.github/actions/setup-remote-ssh@main
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Pre-Deploy - Git Sync to Remote
+        uses: AtenDesignGroup/aten-actions/.github/actions/pre-deploy-git-sync@main
+        with:
+          git-commit-message: ${{ env.GIT_COMMIT_MESSAGE }}
+          git-fetch: 'true'
+          git-pull: 'true'
+          git-pull-branch: 'master'
+          git-push-github: 'true'
+          git-revert-commit: 'true'
+
+      - name: Pre Deploy - Download Theme Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: theme-artifact
+          path: ${{ vars.THEME_PATH }}
+
+      - name: Deploy - Git Push to Remote
+        uses: AtenDesignGroup/aten-actions/.github/actions/deploy-git-push@main
+        with:
+          git-commit-message: ${{ env.GIT_COMMIT_MESSAGE }}
+          git-push-flags: ''
+
+      - name: Post Deploy - Notify Slack
+        if: always()
+        uses: AtenDesignGroup/aten-actions/.github/actions/post-deploy-notify-slack@main
+        with:
+          slack-channel-id: ${{ vars.SLACK_CHANNEL }}
+          slack-message: "@${{ github.actor }} is pushing code today and it was a ${{ job.status }}!\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}\nUsing Workflow: ${{ github.workflow }}\nPantheon: https://${{ env.PANTHEON_MULTIDEV }}-${{ vars.PANTHEON_SITE }}.pantheonsite.io"
+          slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}

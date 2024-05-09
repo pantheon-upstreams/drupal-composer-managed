@@ -10,6 +10,7 @@
 # - 04 - Development Tools
 # - 05 - Backups
 # - 06 - Misc
+# - 07 - Build Artifacts
 #
 
 
@@ -86,3 +87,14 @@ node_modules
 /web/sites/simpletest
 /.drush-lock-update
 .DS_Store
+
+
+
+
+#------------------------------------#
+# 07 - Build Artifacts
+#------------------------------------#
+
+web/themes/custom/*/dist
+web/themes/custom/*/components/*/*.css
+web/themes/custom/*/components/*/*.js
