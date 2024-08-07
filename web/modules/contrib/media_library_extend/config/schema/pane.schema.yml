@@ -1,0 +1,45 @@
+media_library_extend.pane.*:
+  type: config_entity
+  label: 'Media library pane config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    bundle:
+      type: string
+      label: 'Media Bundle'
+    source_plugin:
+      type: string
+      label: 'Source Plugin'
+    source_plugin_configuration:
+      type: media_library_extend.source_plugin.[%parent.source_plugin]
+      label: 'Source Plugin Configuration'
+
+media_library_extend.source_plugin.*:
+  type: mapping
+  label: 'Source Plugin Configuration'
+  mapping: {}
+
+media_library_extend.source_plugin.lorem_picsum:
+  type: mapping
+  label: 'Lorem Picsum Configuration'
+  mapping:
+    items_per_page:
+      type: integer
+      label: Items per page
+
+media_library_extend.source_plugin.configurable_lorem_picsum:
+  type: mapping
+  label: 'Lorem Picsum Configuration'
+  mapping:
+    items_per_page:
+      type: integer
+      label: Items per page
+    grayscale:
+      type: boolean
+      label: Grayscale

@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains module install functionality.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function minifyhtml_test_install($is_syncing) {
+  \Drupal::configFactory()->getEditable('minifyhtml.config')
+    ->set('strip_comments', TRUE)
+    ->set('minify', TRUE)
+    ->save();
+}

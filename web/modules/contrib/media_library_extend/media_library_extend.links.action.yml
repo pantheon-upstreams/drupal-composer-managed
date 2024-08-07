@@ -1,0 +1,5 @@
+entity.media_library_pane.add_form:
+  route_name: entity.media_library_pane.add_form
+  title: 'Add a pane'
+  appears_on:
+    - entity.media_library_pane.collection

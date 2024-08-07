@@ -1,0 +1,65 @@
+/* Profile list */
+.imce-profile-list {
+  margin-bottom: 2.5em;
+}
+
+/* Settings form */
+.imce-settings-form th > a {
+  display: inline;
+}
+
+.imce-settings-form th > a:after {
+  display: none;
+}
+
+/* Folder counter */
+.imce-profile-form {
+  counter-reset: folder;
+}
+
+.folder-container > .form-type-textfield:before {
+  counter-increment: folder;
+  content: counter(folder) ". ";
+}
+
+/* Number fields */
+.imce-profile-form .form-number {
+  width: 8em;
+}
+
+/* Indent permissions */
+.folder-container > .folder-permissions {
+  margin-left: 1.5em;
+}
+
+/* Align permission checkboxes */
+.folder-permissions .form-type-checkbox {
+  float: left;
+  min-width: 13em;
+}
+
+.folder-permissions .form-type-checkbox:first-child {
+  float: none;
+}
+
+/* Dimensions */
+.dimensions-wrapper > .form-item {
+  margin: 0;
+  display: inline-block;
+}
+
+iframe.imce-browser {
+  height: 600px;
+  width: 100%;
+  border: 0;
+}
+
+.ckeditor5-toolbar-button.ckeditor5-toolbar-button-imce_image {
+  background-image: url(images/image.png);
+  background-size: 16px;
+}
+
+.ckeditor5-toolbar-button.ckeditor5-toolbar-button-imce_link {
+  background-image: url(images/link.png);
+  background-size: 16px;
+}

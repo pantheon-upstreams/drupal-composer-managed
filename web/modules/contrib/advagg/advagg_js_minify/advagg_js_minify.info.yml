@@ -1,0 +1,13 @@
+name: 'AdvAgg Minify JavaScript'
+description: 'Minify JavaScript with a 3rd party minifier; JSMin+, JSMin c ext, JShrink, and JSqueeze currently.'
+package: 'Advanced CSS/JS Aggregation'
+core_version_requirement: ^9
+dependencies:
+  - advagg:advagg
+type: module
+configure: advagg_js_minify.settings
+
+# Information added by Drupal.org packaging script on 2022-07-18
+version: '5.0.0'
+project: 'advagg'
+datestamp: 1658178952

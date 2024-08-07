@@ -1,0 +1,5 @@
+layout_builder_browser.admin_blocklisting:
+  title: Layout Builder Browser
+  parent: system.admin_config_content
+  route_name: layout_builder_browser.admin_blocklisting
+  description: 'Manage layout builder browser configuration.'

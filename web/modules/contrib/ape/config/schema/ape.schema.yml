@@ -1,0 +1,28 @@
+# Schema for the configuration files of the ape module.
+
+ape.settings:
+  type: config_object
+  label: 'Advanced Page Expiration cache settings'
+  mapping:
+    alternatives:
+      type: string
+      label: 'Alternative Pages'
+    exclusions:
+      type: string
+      label: 'Excluded Pages'
+    lifetime:
+      type: mapping
+      label: 'Lifetime'
+      mapping:
+        alternatives:
+          type: integer
+          label: 'Alternative pages cache lifetime'
+        301:
+          type: integer
+          label: '301 pages cache lifetime'
+        302:
+          type: integer
+          label: '302 pages cache lifetime'
+        404:
+          type: integer
+          label: '404 pages cache lifetime'

@@ -1,0 +1,6 @@
+test:
+  js:
+    test.js: {preprocess: false}
+  css:
+    theme:
+      test.css: {preprocess: false}

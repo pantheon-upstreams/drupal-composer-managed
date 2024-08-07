@@ -1,0 +1,26 @@
+uuid: f5d4434b-9f05-402c-8a8a-a7eb0f10b4d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.simple_gmap_stress_test.field_map1
+    - field.field.node.simple_gmap_stress_test.field_map2
+    - field.field.node.simple_gmap_stress_test.field_xss
+    - field.field.node.simple_gmap_stress_test.field_blank
+    - node.type.simple_gmap_stress_test
+  module:
+    - user
+id: node.simple_gmap_stress_test.teaser
+targetEntityType: node
+bundle: simple_gmap_stress_test
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_map1: true
+  field_map2: true
+  field_xss: true
+  field_blank: true

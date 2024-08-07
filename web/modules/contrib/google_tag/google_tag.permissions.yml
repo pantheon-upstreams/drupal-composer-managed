@@ -1,0 +1,3 @@
+administer google_tag_container:
+  title: 'Administer Google Tag containers'
+  description: 'Configure the website integration with Google Tag'

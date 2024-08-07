@@ -1,0 +1,5 @@
+# Ignore PHPStorm project files.
+.idea/
+
+# Ignore VSCode project files.
+.vscode/

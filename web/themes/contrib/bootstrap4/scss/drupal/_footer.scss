@@ -1,0 +1,12 @@
+footer {
+  padding: $footer-padding;
+
+  &.footer-dark {
+    @include b4-make-link($light, none, $light, none);
+  }
+
+  .region-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,16 @@
+advagg.settings:
+  title: 'Advanced CSS/JS Aggregation'
+  route_name: advagg.settings
+  base_route: system.performance_settings
+advagg.settings_tab:
+  title: 'Configuration'
+  route_name: advagg.settings
+  parent_id: advagg.settings
+advagg.info:
+  title: 'Information'
+  route_name: advagg.info
+  parent_id: advagg.settings
+advagg.operations:
+  title: 'Operations'
+  route_name: advagg.operations
+  parent_id: advagg.settings

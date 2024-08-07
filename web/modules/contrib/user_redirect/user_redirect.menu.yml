@@ -1,0 +1,5 @@
+user_redirect.menu_settings:
+  title: 'User Redirect Settings'
+  description: 'User Redirect settings form.'
+  parent: user.admin_index
+  route_name: user_redirect.settings

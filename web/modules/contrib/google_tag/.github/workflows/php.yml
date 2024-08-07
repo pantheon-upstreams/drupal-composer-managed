@@ -1,0 +1,117 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+env:
+  # PHPUnit
+  SYMFONY_DEPRECATIONS_HELPER: weak
+  SIMPLETEST_DB: sqlite://localhost/sites/default/files/.ht.sqlite
+  SIMPLETEST_BASE_URL: http://127.0.0.1:8080
+  # BROWSERTEST_OUTPUT_DIRECTORY: ~/drupal/private/browsertest_output
+  MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless", "--no-sandbox"]}}, "http://127.0.0.1:9515"]'
+
+  # Nightwatch
+  DRUPAL_TEST_BASE_URL: http://127.0.0.1:8080
+  DRUPAL_TEST_DB_URL: sqlite://localhost/sites/default/files/.ht.sqlite
+  DRUPAL_TEST_WEBDRIVER_HOSTNAME: 127.0.0.1
+  DRUPAL_TEST_WEBDRIVER_PORT: 9515
+  DRUPAL_TEST_CHROMEDRIVER_AUTOSTART: 'false'
+  DRUPAL_TEST_WEBDRIVER_CHROME_ARGS: "--disable-gpu --headless --no-sandbox"
+  DRUPAL_NIGHTWATCH_OUTPUT: reports/nightwatch
+  DRUPAL_NIGHTWATCH_IGNORE_DIRECTORIES: node_modules,vendor,.*,sites/*/files,sites/*/private,sites/simpletest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - php-version: "8.0"
+            drupal: "^9.5"
+          - php-version: "8.1"
+            drupal: "^10.0"
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: "Install PHP"
+      uses: "shivammathur/setup-php@v2"
+      with:
+        coverage: "none"
+        php-version: "${{ matrix.php-version }}"
+        tools: composer:v2
+        extensions: dom, curl, libxml, mbstring, zip, pdo, mysql, pdo_mysql, gd
+    - name: Set Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "::set-output name=dir::$(composer config cache-files-dir)"
+    - uses: actions/cache@v2
+      with:
+        path: ${{steps.composer-cache.outputs.dir}}
+        key: composer-${{hashFiles('**/composer.lock')}}
+        restore-keys: composer-
+
+    - name: Setup problem matchers for PHP
+      run: echo "::add-matcher::${{runner.tool_cache}}/php.json"
+    - name: Setup problem matchers for PHPUnit
+      run: echo "::add-matcher::${{runner.tool_cache}}/phpunit.json"
+
+    - name: Setup Drupal
+      run: |
+        composer create-project drupal/recommended-project:${{ matrix.drupal }} ~/drupal --no-interaction
+        cd ~/drupal
+        composer config minimum-stability dev
+        composer config prefer-stable true
+        composer config preferred-install dist
+
+        composer config repositories.0 composer https://packages.drupal.org/8
+        composer config repositories.1 path $GITHUB_WORKSPACE
+
+        composer config allow-plugins.composer/installers true
+        composer config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+
+        composer require drupal/core-dev:${{ matrix.drupal }} --no-suggest
+        composer require --dev phpspec/prophecy-phpunit:^2
+
+        composer config --no-plugins allow-plugins.phpstan/extension-installer true
+        composer require --dev mglaman/phpstan-drupal phpstan/extension-installer phpstan/phpstan-deprecation-rules
+    - name: Install self
+      run: |
+        cd ~/drupal
+        composer require drupal/google_tag *@dev
+        composer require drupal/csp:^1.0 drupal/google_analytics:^4.0 drupal/ga:^1.9 drupal/commerce drupal/commerce_wishlist drupal/webform drupal/search_api
+
+    - run: "yarn install --non-interactive --cwd ~/drupal/web/core"
+    - run: "cd ~/drupal/web && php -S 127.0.0.1:8080 .ht.router.php &"
+    - run: "chromedriver --disable-gpu --headless --no-sandbox &"
+
+    - name: phpstan
+      run: |
+        cd ~/drupal
+        php vendor/bin/phpstan analyze --level 4 web/modules/contrib/google_tag
+
+    - name: phpcs
+      run: |
+        cd ~/drupal
+        php vendor/bin/phpcs -ns --extensions=php,install,module,inc --standard=Drupal,DrupalPractice web/modules/contrib/google_tag
+
+    - name: phpunit
+      run: |
+        cd ~/drupal/web
+        php ../vendor/bin/phpunit -c core/phpunit.xml.dist modules/contrib/google_tag --debug
+    - name: nightwatch
+      run: |
+        cd ~/drupal/web/core
+        yarn test:nightwatch --tag google_tag
+    - uses: actions/upload-artifact@v3
+      if: ${{ failure() || success() }}
+      with:
+        name: nightwatch_reports
+        path: '/home/runner/drupal/web/core/reports/nightwatch/screenshots'
+        retention-days: 7

@@ -1,0 +1,55 @@
+section_library.add_section_to_library:
+  path: '/section_library/add/section/{section_storage_type}/{section_storage}/{delta}'
+  defaults:
+    _title: 'Add section to library'
+    _form: '\Drupal\section_library\Form\AddSectionToLibraryForm'
+  requirements:
+    _layout_builder_access: 'view'
+    _entity_create_access: 'section_library_template'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+section_library.add_template_to_library:
+  path: '/section_library/add/template/{section_storage_type}/{section_storage}/{delta}'
+  defaults:
+    _title: 'Add template to library'
+    _form: '\Drupal\section_library\Form\AddTemplateToLibraryForm'
+  requirements:
+    _layout_builder_access: 'view'
+    _entity_create_access: 'section_library_template'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+section_library.choose_template_from_library:
+  path: '/section_library/choose/template/{section_storage_type}/{section_storage}/{delta}'
+  defaults:
+    _controller: '\Drupal\section_library\Controller\ChooseSectionFromLibraryController::build'
+    _title: 'Templates library'
+  requirements:
+    _layout_builder_access: 'view'
+    _permission: 'import template from section library'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE
+
+section_library.import_section_from_library:
+  path: '/section_library/import/section/{section_library_id}/{section_storage_type}/{section_storage}/{delta}'
+  defaults:
+    _controller: '\Drupal\section_library\Controller\ImportSectionFromLibraryController::build'
+    _title: 'Import a section'
+  requirements:
+    _layout_builder_access: 'view'
+    _permission: 'import template from section library'
+  options:
+    _admin_route: TRUE
+    parameters:
+      section_storage:
+        layout_builder_tempstore: TRUE

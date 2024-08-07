@@ -1,0 +1,4 @@
+advagg_bundler.settings:
+  title: 'Bundler'
+  route_name: advagg_bundler.settings
+  parent_id: advagg.settings

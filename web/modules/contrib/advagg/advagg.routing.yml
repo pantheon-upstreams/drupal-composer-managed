@@ -1,0 +1,21 @@
+advagg.settings:
+  path: '/admin/config/development/performance/advagg'
+  defaults:
+    _form: '\Drupal\advagg\Form\SettingsForm'
+    _title: 'AdvAgg: Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+advagg.info:
+  path: '/admin/config/development/performance/advagg/info'
+  defaults:
+    _form: '\Drupal\advagg\Form\InfoForm'
+    _title: 'AdvAgg: Information'
+  requirements:
+    _permission: 'administer site configuration'
+advagg.operations:
+  path: '/admin/config/development/performance/advagg/operations'
+  defaults:
+    _form: '\Drupal\advagg\Form\OperationsForm'
+    _title: 'AdvAgg: Operations'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,235 @@
+<?php
+
+/**
+ * @file
+ * Advanced CSS/JS aggregation module.
+ */
+
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Crypt;
+use Drupal\advagg\Asset\AssetOptimizer;
+
+/**
+ * Implements hook_module_implements_alter().
+ *
+ * Move advagg and various submodule's implementations to last.
+ */
+function advagg_module_implements_alter(&$implementations, $hook) {
+  if ($hook === 'js_alter') {
+    // Move advagg and advagg_mod to the bottom.
+    if (isset($implementations['advagg_mod'])) {
+      $item = $implementations['advagg_mod'];
+      unset($implementations['advagg_mod']);
+      $implementations['advagg_mod'] = $item;
+    }
+    $item = $implementations['advagg'];
+    unset($implementations['advagg']);
+    $implementations['advagg'] = $item;
+  }
+  elseif ($hook === 'css_alter') {
+    if (isset($implementations['advagg_mod'])) {
+      $item = $implementations['advagg_mod'];
+      unset($implementations['advagg_mod']);
+      $implementations['advagg_mod'] = $item;
+    }
+    $item = $implementations['advagg'];
+    unset($implementations['advagg']);
+    $implementations['advagg'] = $item;
+  }
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Deletes outdated file/aggregate data.
+ */
+function advagg_cron($bypass = FALSE) {
+  $time = \Drupal::time()->getRequestTime();
+  $state = \Drupal::state();
+  $file_system = \Drupal::service('file_system');
+
+  // Ensure the htaccess files exist.
+  AssetOptimizer::generateHtaccess('css');
+  AssetOptimizer::generateHtaccess('js');
+
+  // Execute only if been longer than advagg cron setting since last run.
+  if (!$bypass && $state->get('advagg.cron_timestamp', $time) > ($time - \Drupal::config('advagg.settings')->get('cron_frequency'))) {
+    return [];
+  }
+  $state->set('advagg.cron_timestamp', $time);
+
+  $outdated = ['css' => [], 'js' => []];
+  $file_system = \Drupal::service('file_system');
+  $cache = \Drupal::cache('advagg');
+  $stale_file_threshold = \Drupal::config('system.performance')->get('stale_file_threshold');
+  
+  foreach (['css', 'js'] as $type) {
+    $path = $file_system->realpath("public://{$type}/optimized");
+    if ($files = glob("{$path}/*.{$type}")) {
+      foreach ($files as $file) {
+        // Only delete files older than stale file threshold defined under Cron Options.
+        if (filemtime($file) > ($time - $stale_file_threshold)) {
+          continue;
+        }
+        $filename = str_replace(['css_', 'js_'], '', pathinfo($file, PATHINFO_FILENAME));
+        $cid = substr($filename, 0, strpos($filename, '.'));
+        if (!$cache->get($cid)) {
+          @$file_system->delete($file);
+          @$file_system->delete("{$file}.gz");
+          $outdated[$type][] = "{$filename}.{$type}";
+        }
+      }
+    }
+  }
+  return $outdated;
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Pass the JavaScript array to the optimizer service.
+ */
+function advagg_js_alter(&$js) {
+  // Skip if advagg is disabled.
+  if (!advagg_enabled()) {
+    return;
+  }
+
+  $js_optimizer = \Drupal::service('advagg.optimizer.js');
+  $js_optimizer->processAssetArray($js);
+}
+
+/**
+ * Implements hook_css_alter().
+ *
+ * Pass the CSS array to the optimizer service.
+ */
+function advagg_css_alter(&$css) {
+  // Skip if advagg is disabled.
+  if (!advagg_enabled()) {
+    return;
+  }
+
+  $css_optimizer = \Drupal::service('advagg.optimizer.css');
+  $css_optimizer->processAssetArray($css);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Give advice on how to temporarily disable css/js aggregation.
+ */
+function advagg_form_system_performance_settings_alter(&$form) {
+  $msg = t('NOTE: If you wish to bypass AdvAgg optimizations for a set amount of time, you can go to the <a href="@operations">AdvAgg operations</a> page and press the <em>"optimization bypass cookie"</em> button.', [
+    '@operations' => Url::fromRoute('advagg.operations')->toString(),
+  ]);
+
+  if (\Drupal::currentUser()->hasPermission('bypass advanced aggregation')) {
+    $msg .= ' ' . t('You can also selectively bypass AdvAgg optimization by adding <code>@code</code> to the URL of any page.', [
+      '@code' => '?advagg=0',
+    ]);
+  }
+  else {
+    $msg .= ' ' . t('You do not have the <a href="@permission">bypass advanced aggregation permission</a> so adding <code>@code</code> to the URL will not work at this time for you; either grant this permission to your user role or use the bypass cookie if you wish to selectively bypass AdvAgg optimizations.', [
+      '@permission' => Url::fromRoute('user.admin_permissions')->toString(),
+      '@code' => '?advagg=0',
+    ]);
+  }
+
+  $form['bandwidth_optimization']['advagg_note'] = [
+    '#markup' => $msg,
+  ];
+}
+
+/**
+ * Function used to check if AdvAgg is enabled.
+ *
+ * Most often will be the value of advagg.settings.enabled, but may also be
+ * affected by maintenance mode, debug cookies and or $_GET variables.
+ *
+ * @return bool
+ *   Whether AdvAgg functionality should be used.
+ */
+function advagg_enabled() {
+  $init = &drupal_static(__FUNCTION__);
+  $messenger = \Drupal::messenger();
+
+  if (!empty($init)) {
+    return $init['advagg'];
+  }
+
+  $advagg_config = \Drupal::config('advagg.settings');
+  $user = \Drupal::currentUser();
+  $init['advagg'] = $advagg_config->get('enabled');
+
+  // Disable AdvAgg if maintenance mode is defined.
+  if (defined('MAINTENANCE_MODE')) {
+    $init['advagg'] = FALSE;
+    return FALSE;
+  }
+
+  // Allow for AdvAgg to be enabled/disabled per request.
+  if (isset($_GET['advagg']) && $user->hasPermission('bypass advanced aggregation')) {
+    if ($_GET['advagg'] == 1) {
+      $init['advagg'] = TRUE;
+    }
+    else {
+      $init['advagg'] = FALSE;
+    }
+  }
+
+  // Do not use AdvAgg if the disable cookie is set.
+  $cookie_name = 'AdvAggDisabled';
+  $key = Crypt::hashBase64(\Drupal::service('private_key')->get());
+  if (!empty($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] == $key) {
+    $init['advagg'] = FALSE;
+
+    // Let the user know that the AdvAgg bypass cookie is currently set.
+    static $msg_set;
+    if (!isset($msg_set) && $advagg_config->get('show_bypass_cookie_message')) {
+      $msg_set = TRUE;
+      if (\Drupal::currentUser()->hasPermission('administer site configuration')) {
+
+        $messenger->addMessage(t('The AdvAgg bypass cookie is currently enabled. Turn it off by going to the <a href="@advagg_operations">AdvAgg Operations</a> page and clicking the <em>Toggle the "aggregation bypass cookie" for this browser</em> button.', [
+          '@advagg_operations' => Url::fromRoute('advagg.operations', [], ['fragment' => 'edit-bypass'])->toString(),
+        ]));
+      }
+      else {
+        $messenger->addMessage(t('The AdvAgg bypass cookie is currently enabled. Turn it off by <a href="@login">logging in</a> with a user with the "administer site configuration" permissions and going to the <a herf="@advagg_operations">AdvAgg Operations page</a> and clicking the <em>Toggle the "aggregation bypass cookie" for this browser</em> button.', [
+          '@login' => '/user/login',
+          '@advagg_operations' => Url::fromRoute('advagg.operations')->toString(),
+        ]));
+      }
+    }
+  }
+
+  return $init['advagg'];
+}
+
+/**
+ * Get back what core asset hooks are implemented.
+ *
+ * @return array
+ *   List of hooks and what modules have implemented them.
+ */
+function advagg_hooks_implemented() {
+  $module_handler = \Drupal::moduleHandler();
+
+  $hooks = [
+    'js_alter' => [],
+    'css_alter' => [],
+    'page_attachments_alter' => [],
+  ];
+
+  // Cache module_implements as this will load up .inc files.
+  $cid = 'advagg_hooks_implemented';
+  $cache = \Drupal::cache('advagg')->get($cid);
+  if (!empty($cache->data)) {
+    return $cache->data;
+  }
+  foreach ($hooks as $hook => $values) {
+    $hooks[$hook] = $module_handler->getImplementations($hook);
+  }
+  \Drupal::cache('advagg')->set($cid, $hooks, \Drupal::time()->getRequestTime() + 600);
+  return $hooks;
+}

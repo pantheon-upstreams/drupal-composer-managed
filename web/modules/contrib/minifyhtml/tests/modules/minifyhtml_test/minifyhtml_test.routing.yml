@@ -1,0 +1,6 @@
+minifyhtml_test.case:
+  path: /minifyhtml_test/{case}
+  defaults:
+    _controller: '\Drupal\minifyhtml_test\Controller\Cases::item'
+  requirements:
+    _access: 'TRUE'

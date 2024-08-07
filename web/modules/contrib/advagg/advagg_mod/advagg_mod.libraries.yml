@@ -1,0 +1,4 @@
+css_defer:
+  js:
+    js/loadCSS.js: {scope_lock: true, weight: -50}
+    js/cssrelpreload.js: {scope_lock: true, weight: -50}

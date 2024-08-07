@@ -1,0 +1,7 @@
+ape.admin:
+  path: '/admin/config/development/performance/ape'
+  defaults:
+    _form: '\Drupal\ape\Form\SettingsForm'
+    _title: 'Advanced page expiration'
+  requirements:
+    _permission: 'administer ape'

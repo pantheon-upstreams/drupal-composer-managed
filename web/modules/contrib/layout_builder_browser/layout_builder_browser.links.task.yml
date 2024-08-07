@@ -1,0 +1,14 @@
+layout_builder_browser.admin_blocklisting:
+  title: Blocks
+  route_name: layout_builder_browser.admin_blocklisting
+  base_route: layout_builder_browser.admin_blocklisting
+
+layout_builder_browser.categories:
+  route_name: entity.layout_builder_browser_blockcat.collection
+  title: Block categories
+  base_route: layout_builder_browser.admin_blocklisting
+
+layout_builder_browser.settings:
+  route_name: layout_builder_browser.admin_settings
+  title: Settings
+  base_route: layout_builder_browser.admin_blocklisting

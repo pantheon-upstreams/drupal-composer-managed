@@ -1,0 +1,55 @@
+block.settings.hierarchical_taxonomy_menu:
+  type: block_settings
+  label: 'Hierarchical Taxonomy Menu settings'
+  mapping:
+    vocabulary:
+      type: string
+      label: 'Use taxonomy terms from this vocabulary to create a menu'
+    max_depth:
+      type: integer
+      label: 'Number of sublevels to display'
+    dynamic_block_title:
+      type: boolean
+      label: 'Make the block title match the current taxonomy term name'
+    collapsible:
+      type: boolean
+      label: 'Make the menu collapsed by default'
+    stay_open:
+      type: boolean
+      label: 'Stay open at the current taxonomy term'
+    interactive_parent:
+      type: boolean
+      label: 'Allow parent items to be collapsible and selectable'
+    hide_block:
+      type: boolean
+      label: 'Hide block if the output is empty'
+    use_image_style:
+      type: boolean
+      label: 'Use image style'
+    image_height:
+      type: integer
+      label: 'Image height (px)'
+    image_width:
+      type: integer
+      label: 'Image width (px)'
+    image_style:
+      type: string
+      label: 'Image style'
+    max_age:
+      type: string
+      label: 'Cache'
+    base_term:
+      type: string
+      label: 'Base term'
+    dynamic_base_term:
+      type: boolean
+      label: 'Dynamic Base term'
+    show_count:
+      type: integer
+      label: 'Show count of referencing entities'
+    referencing_field:
+      type: string
+      label: 'Referencing field'
+    calculate_count_recursively:
+      type: boolean
+      label: 'Calculate count recursively'

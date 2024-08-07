@@ -1,0 +1,40 @@
+{
+  "name": "drupal/advagg",
+  "description": "Improved aggregation of CSS/JS files to speed up page load times.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://drupal.org/project/advagg",
+  "authors": [
+    {
+      "name": "Mike Carper (mikeytown2)",
+      "homepage": "https://www.drupal.org/u/mikeytown2",
+      "role": "Creator, Maintainer"
+    },
+    {
+      "name": "Nick Wilde (nickwilde)",
+      "email": "design@briarmoon.ca",
+      "homepage": "https://www.drupal.org/u/nickwilde",
+      "role": "Drupal 8 Port/maintainer"
+    },
+    {
+        "name": "Other Contributors",
+        "homepage": "https://www.drupal.org/node/1066416/committers",
+        "role": "Contributors"
+    }
+  ],
+  "support": {
+    "issues": "https://drupal.org/project/issues/advagg",
+    "irc": "irc://irc.freenode.org/drupal-contribute",
+    "source": "https://git.drupalcode.org/project/advagg"
+  },
+  "extra": {
+    "drush": {
+      "services": {
+        "drush.services.yml": "^9"
+      }
+    }
+  },
+  "require": {
+    "tubalmartin/cssmin": "^4.1"
+  }
+}

@@ -1,0 +1,13 @@
+name: 'AdvAgg Minify CSS'
+description: 'Minify CSS.'
+package: 'Advanced CSS/JS Aggregation'
+core_version_requirement: ^9
+dependencies:
+  - advagg:advagg
+type: module
+configure: advagg_css_minify.settings
+
+# Information added by Drupal.org packaging script on 2022-07-18
+version: '5.0.0'
+project: 'advagg'
+datestamp: 1658178952
