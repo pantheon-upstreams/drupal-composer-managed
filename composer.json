@@ -1,6 +1,6 @@
 {
-    "name": "pantheon-upstreams/drupal-composer-managed",
-    "description": "Install Drupal 9 with Composer on Pantheon.",
+    "name": "du/drupal-composer-managed",
+    "description": "Install Drupal 10 with Composer on Pantheon using DU configuration.",
     "type": "project",
     "license": "MIT",
     "repositories": [
@@ -14,16 +14,19 @@
         }
     ],
     "require": {
-        "pantheon-upstreams/upstream-configuration": "^1.0",
-        "composer/installers": "^1.9",
-        "drupal/core-composer-scaffold": "^9.2",
-        "drupal/core-recommended": "^9.2",
+        "composer/installers": "^2.1",
+        "cweagans/composer-patches": "~2.0",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-project-message": "10.3.2",
+        "drupal/core-recommended": "^10",
+        "drush/drush": "^12",
         "pantheon-systems/drupal-integrations": "^9",
-        "cweagans/composer-patches": "^1.7",
-        "drush/drush": "^11 || ^12"
+        "pantheon-systems/upstream-management": "^1.0",
+        "pantheon-upstreams/upstream-configuration": "^1.0",
+        "drupal/webform": "^6.2"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.2"
+        "drupal/core-dev": "^10.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -71,7 +74,7 @@
         "preferred-install": "dist",
         "sort-packages": false,
         "platform": {
-            "php": "7.4"
+            "php": "8.2.0"
         },
         "allow-plugins": {
             "composer/installers": true,
@@ -79,7 +82,9 @@
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "pantheon-systems/upstream-management": true,
+            "drupal/core-project-message": true
         }
     }
 }
