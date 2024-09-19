@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "pantheon-upstreams/upstream-configuration": "dev-main",
+        "pantheon-upstreams/upstream-configuration": "^1.0",
         "composer/installers": "^1.9",
         "drupal/core-composer-scaffold": "^9.2",
         "drupal/core-recommended": "^9.2",
@@ -26,18 +26,16 @@
         "drupal/core-dev": "^9.2"
     },
     "conflict": {
-            "drupal/drupal": "*"
+        "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "./web"
             },
-            "allowed-packages": [
-                "pantheon-systems/drupal-integrations"
-            ],
+            "allowed-packages": ["pantheon-systems/drupal-integrations"],
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
                 "[project-root]/pantheon.upstream.yml": false,
@@ -59,23 +57,15 @@
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
-        }
+        },
+        "enable-patching": true
     },
     "autoload": {
-        "classmap": [
-            "upstream-configuration/scripts/ComposerScripts.php"
-        ]
+        "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
     },
     "scripts": {
-        "pre-update-cmd": [
-            "DrupalComposerManaged\\ComposerScripts::preUpdate"
-        ],
-        "upstream-require": [
-            "DrupalComposerManaged\\ComposerScripts::upstreamRequire"
-        ]
-    },
-    "scripts-descriptions": {
-        "upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."
+        "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
+        "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
     },
     "config": {
         "preferred-install": "dist",
@@ -87,7 +77,9 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     }
 }
