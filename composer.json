@@ -84,7 +84,9 @@
             "phpstan/extension-installer": true,
             "php-http/discovery": true,
             "pantheon-systems/upstream-management": true,
-            "drupal/core-project-message": true
+            "drupal/core-project-message": true,
+            "simplesamlphp/composer-xmlprovider-installer": true,
+            "simplesamlphp/composer-module-installer": true
         }
     }
 }
