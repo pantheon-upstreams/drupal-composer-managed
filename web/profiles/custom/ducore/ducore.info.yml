@@ -1,0 +1,63 @@
+name: 'University of Denver Core'
+type: profile
+description: 'DU Core Profile for Drupal 10'
+core_version_requirement: ^10
+install:
+  # Contributed modules
+  - admin_toolbar
+  - adminimal_admin_toolbar
+  - asset_injector
+  - cms_content_sync
+  - components
+  - config_filter
+  - config_ignore
+  - config_split
+  - config_update
+  - content_lock
+  - ctools
+  - diff
+  - entity
+  - entity_block
+  - entity_browser
+  - entity_browser_block
+  - entity_clone
+  - entity_embed
+  - entity_reference_revisions
+  - field_group
+  - honeypot
+  - libraries
+  - link_attributes
+  - linkit
+  - metatag
+  - pantheon_advanced_page_cache
+  - paragraphs
+  - pathauto
+  - rabbit_hole
+  - redirect
+  - redis
+  - simple_sitemap
+  - svg_image
+  - twig_field_value
+  - ultimate_cron
+  - url_redirect
+  - webform
+  - simplesamlphp_auth
+  # Core modules
+  - block
+  - block_content
+  - datetime
+  - field
+  - file
+  - filter
+  - image
+  - menu_link_content
+  - node
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+themes:
+  - claro
+  - olivero
