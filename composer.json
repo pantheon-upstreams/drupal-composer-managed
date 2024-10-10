@@ -86,7 +86,8 @@
             "pantheon-systems/upstream-management": true,
             "drupal/core-project-message": true,
             "simplesamlphp/composer-xmlprovider-installer": true,
-            "simplesamlphp/composer-module-installer": true
+            "simplesamlphp/composer-module-installer": true,
+            "tbachert/spi": false
         }
     }
 }
