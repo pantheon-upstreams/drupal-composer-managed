@@ -2,8 +2,9 @@ name: 'University of Denver Core'
 type: profile
 description: 'DU Core Profile for Drupal 10'
 core_version_requirement: ^10
+
+# Modules to be installed on profile installation.
 install:
-  # Contributed modules
   - admin_toolbar
   - adminimal_admin_toolbar
   - asset_injector
@@ -42,7 +43,10 @@ install:
   - url_redirect
   - webform
   - simplesamlphp_auth
-  # Core modules
+
+# Required modules. These cannot be uninstalled.
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
   - block
   - block_content
   - datetime
@@ -58,6 +62,7 @@ install:
   - text
   - user
   - views
+
 themes:
   - claro
   - olivero
