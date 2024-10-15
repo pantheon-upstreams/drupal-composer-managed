@@ -67,8 +67,14 @@
         "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
     },
     "scripts": {
-        "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
-        "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
+        "pre-update-cmd": [
+            "DrupalComposerManaged\\ComposerScripts::preUpdate",
+            "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config"
+        ],
+        "post-update-cmd": [
+            "DrupalComposerManaged\\ComposerScripts::postUpdate",
+            "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config"
+        ]
     },
     "config": {
         "preferred-install": "dist",
