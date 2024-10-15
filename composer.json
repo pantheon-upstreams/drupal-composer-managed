@@ -68,12 +68,13 @@
     },
     "scripts": {
         "pre-update-cmd": [
-            "DrupalComposerManaged\\ComposerScripts::preUpdate",
-            "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config"
+            "DrupalComposerManaged\\ComposerScripts::preUpdate"
         ],
         "post-update-cmd": [
             "DrupalComposerManaged\\ComposerScripts::postUpdate",
-            "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config"
+            "rm -rf vendor/simplesamlphp/simplesamlphp/config && ln -sf ../../../private/simplesamlphp/config vendor/simplesamlphp/simplesamlphp/config",
+            "rm -rf vendor/simplesamlphp/simplesamlphp/metadata && ln -sf ../../../private/simplesamlphp/metadata vendor/simplesamlphp/simplesamlphp/metadata",
+            "rm -rf vendor/simplesamlphp/simplesamlphp/cert && ln -sf ../../../private/simplesamlphp/cert vendor/simplesamlphp/simplesamlphp/cert"
         ]
     },
     "config": {
