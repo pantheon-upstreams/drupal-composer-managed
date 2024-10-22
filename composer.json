@@ -23,7 +23,9 @@
         "pantheon-systems/drupal-integrations": "^9",
         "pantheon-systems/upstream-management": "^1.0",
         "pantheon-upstreams/upstream-configuration": "^1.0",
-        "drupal/webform": "^6.2"
+        "drupal/webform": "^6.2",
+        "drupal/views_data_export": "^1.4",
+        "drupal/config_profile": "^1.1"
     },
     "require-dev": {
         "drupal/core-dev": "^10.1"
