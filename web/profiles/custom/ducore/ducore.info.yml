@@ -62,6 +62,27 @@ dependencies:
   - text
   - user
   - views
+  - dblog
+  - admin_toolbar
+  - adminimal_admin_toolbar
+  - components
+  - ctools
+  - entity
+  - field_group
+  - honeypot
+  - libraries
+  - link_attributes
+  - linkit
+  - pantheon_advanced_page_cache
+  - paragraphs
+  - pathauto
+  - redirect
+  - simple_sitemap
+  - svg_image
+  - twig_field_value
+  - url_redirect
+  - simplesamlphp_auth
+  - simplesamlphp_custom_attributes
 
 themes:
   - claro
