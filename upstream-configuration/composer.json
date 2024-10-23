@@ -49,7 +49,8 @@
         "drupal/simplesamlphp_auth": "^4.0",
         "drupal/qa_accounts": "^1.0",
         "drupal/config_profile": "^1.1",
-        "drupal/views_data_export": "^1.4"
+        "drupal/views_data_export": "^1.4",
+        "drupal/simplesamlphp_custom_attributes": "^2.0"
     },
     "extra": {
         "_README": "To make a custom upstream, clone this repository and add any dependencies to be provided by this upstream to this composer.json file. Leave the root-level composer.json file for the exclusive use of each individual site; do not modify it after your custom upstream has been published. See https://pantheon.io/docs/create-custom-upstream for more information."
