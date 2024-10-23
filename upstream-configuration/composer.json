@@ -48,6 +48,8 @@
         "drupal/webform": "^6.2",
         "drupal/simplesamlphp_auth": "^4.0",
         "drupal/qa_accounts": "^1.0",
+        "drupal/config_profile": "^1.1",
+        "drupal/views_data_export": "^1.4",
         "drupal/simplesamlphp_custom_attributes": "^2.0"
     },
     "extra": {
