@@ -75,6 +75,7 @@ dependencies:
   - paragraphs
   - pathauto
   - redirect
+  - responsive_image
   - simple_sitemap
   - svg_image
   - twig_field_value

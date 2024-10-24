@@ -2,9 +2,6 @@
 
   Drupal.behaviors.widen_entity_browser = {
     attach: function (context, settings) {
-      // Hide all checkboxes from view.
-      $('.view-widen .views-field-entity-browser-select').hide();
-
       // The user selects an image.
       $('.views-field-thumbnail img').click(function() {
         // Remove highlights from images.
