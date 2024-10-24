@@ -15,6 +15,7 @@ install:
   - content_lock
   - ctools
   - diff
+  - du_widen
   - entity
   - entity_block
   - entity_browser
@@ -74,6 +75,7 @@ dependencies:
   - paragraphs
   - pathauto
   - redirect
+  - responsive_image
   - simple_sitemap
   - svg_image
   - twig_field_value

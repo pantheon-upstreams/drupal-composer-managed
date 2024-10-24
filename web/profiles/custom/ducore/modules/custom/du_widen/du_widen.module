@@ -1,0 +1,372 @@
+<?php
+
+/**
+ * @file
+ * DU Widen functionality.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Logger\RfcLogLevel;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\breakpoint\BreakpointInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\responsive_image\Entity\ResponsiveImageStyle;
+use Drupal\responsive_image\ResponsiveImageStyleInterface;
+
+/**
+ * Implements hook_theme().
+ *
+ * Overrides the core html theme to use a custom template for iframes.
+ */
+function du_widen_theme() {
+  return [
+    'html__entity_browser__du_modal' => [
+      'path' => \Drupal::service('extension.list.module')->getPath('entity_browser') . '/templates',
+      'template' => 'html--entity-browser--iframe',
+      'render element' => 'html',
+      'preprocess functions' => ['template_preprocess_html'],
+    ],
+    'page__entity_browser__du_modal' => [
+      'path' => \Drupal::service('extension.list.module')->getPath('entity_browser') . '/templates',
+      'template' => 'page--entity-browser--iframe',
+      'render element' => 'html',
+      'preprocess functions' => ['template_preprocess_page'],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function du_widen_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+  if (strpos($form_id, 'edit_form') !== FALSE || strpos($form_id, 'node_') === 0) {
+    $form['#attached']['library'][] = 'du_widen/common';
+    $form['#attached']['library'][] = 'du_widen/alt_text';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_widen_form_views_exposed_form_alter(&$form, FormStateInterface &$form_state) {
+  if ($form['#id'] == 'views-exposed-form-widen-entity-browser') {
+    $form['#attached']['library'][] = 'du_widen/widen_entity_browser';
+  }
+}
+
+/**
+ * Implements template_preprocess_image_style().
+ *
+ * @param array $variables
+ *   Template variables.
+ */
+function du_widen_preprocess_image_style(array &$variables) {
+  // This preprocess function is just for widen images.
+  if (strpos($variables['uri'], 'https://embed.widencdn.net') !== 0) {
+    return;
+  }
+
+  // If the image is a thumbnail on the admin theme, then it's a preview of the
+  // image. The standard 100x100px preview won't give an accurate representation
+  // as to how the Widen image will actually display on the front end, so change
+  // the style to original_image so the ratios are correct.
+  if ($variables['style_name'] == 'thumbnail' && $variables['directory'] == 'themes/contrib/adminimal_theme') {
+    $variables['style_name'] = 'original_image';
+  }
+
+  // Ensure the image style comes from Widen.
+  // If it's the original_image style, just use the URL that we already have.
+  if ($variables['style_name'] == 'original_image') {
+    $variables['image']['#uri'] = $variables['uri'];
+  }
+  else {
+    $variables['image']['#uri'] = _du_widen_image_style_url($variables['style_name'], $variables['uri']);
+  }
+}
+
+/**
+ * Get an image style URL.
+ *
+ * If the image is from Widen, get the image style from the Widen source,
+ * otherwise locally generate it with ImageStyle.
+ *
+ * @param string $uri
+ *   The image URI.
+ * @param string $style
+ *   The image style to use.
+ *
+ * @return string
+ *   Return the URL for the image style.
+ */
+function du_widen_get_image_style_url($uri, $style) {
+  $url = '';
+
+  // If the image is from widen, apply the style with the custom widen style
+  // function.
+  if (strpos($uri, 'https://embed.widencdn.net') === 0) {
+    $url = _du_widen_image_style_url($style, $uri);
+  }
+  else {
+    $url = ImageStyle::load($style)->buildUrl($uri);
+  }
+
+  return $url;
+}
+
+/**
+ * Prepares variables for a responsive image.
+ *
+ * Default template: responsive-image.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - uri: The URI of the image.
+ *   - width: The width of the image (if known).
+ *   - height: The height of the image (if known).
+ *   - attributes: Associative array of attributes to be placed in the img tag.
+ *   - responsive_image_style_id: The ID of the responsive image style.
+ */
+function du_widen_preprocess_responsive_image(array &$variables) {
+  // This preprocess function is just for widen images.
+  if (strpos($variables['uri'], 'https://embed.widencdn.net') !== 0) {
+    return;
+  }
+
+  // This puts the alt and title tags back to the position there were before the
+  // responsive image preprocess moved them.
+  if (isset($variables['img_element']['#alt'])) {
+    $variables['attributes']['alt'] = $variables['img_element']['#alt'];
+  }
+
+  if (isset($variables['img_element']['#title'])) {
+    $variables['attributes']['title'] = $variables['img_element']['#title'];
+  }
+
+  $responsive_image_style = ResponsiveImageStyle::load($variables['responsive_image_style_id']);
+  // If a responsive image style is not selected, log the error and stop
+  // execution.
+  if (!$responsive_image_style) {
+    $variables['img_element'] = [];
+    \Drupal::logger('du_widen')->log(RfcLogLevel::ERROR, 'Failed to load responsive image style: “@style“ while displaying responsive image.', ['@style' => $variables['responsive_image_style_id']]);
+    return;
+  }
+  // Retrieve all breakpoints and multipliers and reverse order of breakpoints.
+  // By default, breakpoints are ordered from smallest weight to largest:
+  // the smallest weight is expected to have the smallest breakpoint width,
+  // while the largest weight is expected to have the largest breakpoint
+  // width. For responsive images, we need largest breakpoint widths first, so
+  // we need to reverse the order of these breakpoints.
+  $variables['sources'] = [];
+  $breakpoints = array_reverse(\Drupal::service('breakpoint.manager')->getBreakpointsByGroup($responsive_image_style->getBreakpointGroup()));
+  foreach ($responsive_image_style->getKeyedImageStyleMappings() as $breakpoint_id => $multipliers) {
+    if (isset($breakpoints[$breakpoint_id])) {
+      $variables['sources'][] = _du_widen_build_source_attributes($variables, $breakpoints[$breakpoint_id], $multipliers);
+    }
+  }
+
+  if (isset($variables['sources']) && count($variables['sources']) === 1 && !isset($variables['sources'][0]['media'])) {
+    // There is only one source tag with an empty media attribute. This means
+    // we can output an image tag with the srcset attribute instead of a
+    // picture tag.
+    $variables['output_image_tag'] = TRUE;
+    foreach ($variables['sources'][0] as $attribute => $value) {
+      if ($attribute != 'type') {
+        $variables['attributes'][$attribute] = $value;
+      }
+    }
+    $variables['img_element'] = [
+      '#theme' => 'image',
+      '#uri' => _du_widen_image_style_url($responsive_image_style->getFallbackImageStyle(), $variables['uri']),
+    ];
+  }
+  else {
+    $variables['output_image_tag'] = FALSE;
+    // Prepare the fallback image. We use the src attribute, which might cause
+    // double downloads in browsers that don't support the picture tag (might,
+    // because when picturefill kicks in, it cancels the download and triggers
+    // the download for the correct image).
+    $variables['img_element'] = [
+      '#theme' => 'image',
+      '#uri' => _du_widen_image_style_url($responsive_image_style->getFallbackImageStyle(), $variables['uri']),
+    ];
+  }
+
+  if (isset($variables['attributes'])) {
+    if (isset($variables['attributes']['alt'])) {
+      $variables['img_element']['#alt'] = $variables['attributes']['alt'];
+      unset($variables['attributes']['alt']);
+    }
+    if (isset($variables['attributes']['title'])) {
+      $variables['img_element']['#title'] = $variables['attributes']['title'];
+      unset($variables['attributes']['title']);
+    }
+    $variables['img_element']['#attributes'] = $variables['attributes'];
+  }
+}
+
+/**
+ * Helper function for template_preprocess_responsive_image().
+ *
+ * @see _responsive_image_build_source_attributes()
+ */
+function _du_widen_build_source_attributes(array $variables, BreakpointInterface $breakpoint, array $multipliers) {
+  if ((empty($variables['width']) || empty($variables['height']))) {
+    $image = \Drupal::service('image.factory')->get($variables['uri']);
+    $width = $image->getWidth();
+    $height = $image->getHeight();
+  }
+  else {
+    $width = $variables['width'];
+    $height = $variables['height'];
+  }
+  $extension = pathinfo($variables['uri'], PATHINFO_EXTENSION);
+  $sizes = [];
+  $srcset = [];
+  $derivative_mime_types = [];
+  foreach ($multipliers as $multiplier => $image_style_mapping) {
+    switch ($image_style_mapping['image_mapping_type']) {
+      // Create a <source> tag with the 'sizes' attribute.
+      case 'sizes':
+        // Loop through the image styles for this breakpoint and multiplier.
+        foreach ($image_style_mapping['image_mapping']['sizes_image_styles'] as $image_style_name) {
+          // Get the dimensions.
+          $dimensions = responsive_image_get_image_dimensions($image_style_name, ['width' => $width, 'height' => $height], $variables['uri']);
+          // Get MIME type.
+          $derivative_mime_type = responsive_image_get_mime_type($image_style_name, $extension);
+          $derivative_mime_types[] = $derivative_mime_type;
+
+          // Add the image source with its width descriptor. When a width
+          // descriptor is used in a srcset, we can't add a multiplier to
+          // it. Because of this, the image styles for all multipliers of
+          // this breakpoint should be merged into one srcset and the sizes
+          // attribute should be merged as well.
+          if (is_null($dimensions['width'])) {
+            throw new \LogicException("Could not determine image width for '{$variables['uri']}' using image style with ID: $image_style_name. This image style can not be used for a responsive image style mapping using the 'sizes' attribute.");
+          }
+          // Use the image width as key so we can sort the array later on.
+          // Images within a srcset should be sorted from small to large, since
+          // the first matching source will be used.
+          $srcset[intval($dimensions['width'])] = _du_widen_image_style_url($image_style_name, $variables['uri']) . ' ' . $dimensions['width'] . 'w';
+          $sizes = array_merge(explode(',', $image_style_mapping['image_mapping']['sizes']), $sizes);
+        }
+        break;
+
+      case 'image_style':
+        // Get MIME type.
+        $derivative_mime_type = responsive_image_get_mime_type($image_style_mapping['image_mapping'], $extension);
+        $derivative_mime_types[] = $derivative_mime_type;
+        // Add the image source with its multiplier. Use the multiplier as key
+        // so we can sort the array later on. Multipliers within a srcset should
+        // be sorted from small to large, since the first matching source will
+        // be used. We multiply it by 100 so multipliers with up to two decimals
+        // can be used.
+        $srcset[intval(mb_substr($multiplier, 0, -1) * 100)] = _du_widen_image_style_url($image_style_mapping['image_mapping'], $variables['uri']) . ' ' . $multiplier;
+        break;
+    }
+  }
+  // Sort the srcset from small to large image width or multiplier.
+  ksort($srcset);
+  $source_attributes = new Attribute([
+    'srcset' => implode(', ', array_unique($srcset)),
+  ]);
+  $media_query = trim($breakpoint->getMediaQuery());
+  if (!empty($media_query)) {
+    $source_attributes->setAttribute('media', $media_query);
+  }
+  if (count(array_unique($derivative_mime_types)) == 1) {
+    $source_attributes->setAttribute('type', $derivative_mime_types[0]);
+  }
+  if (!empty($sizes)) {
+    $source_attributes->setAttribute('sizes', implode(',', array_unique($sizes)));
+  }
+  return $source_attributes;
+}
+
+/**
+ * Wrapper around image_style_url().
+ *
+ * @see _responsive_image_image_style_url()
+ */
+function _du_widen_image_style_url($style_name, $path) {
+  // Ensure that spaces are converted to %20 otherwise we get errors relalted to
+  // img srcsets when pulling in widen images that have spaces in the path.
+  $path = str_replace(' ', '%20', $path);
+
+  if ($style_name == ResponsiveImageStyleInterface::EMPTY_IMAGE) {
+    // The smallest data URI for a 1px square transparent GIF image.
+    // http://probablyprogramming.com/2009/03/15/the-tiniest-gif-ever
+    return 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+  }
+  $entity = ImageStyle::load($style_name);
+  if ($entity instanceof ImageStyle) {
+    foreach ($entity->getEffects() as $effect) {
+      // If there is an image style effect that changes the width and height,
+      // use that to get the correct external image from Widen.
+      $configuration = $effect->getConfiguration();
+
+      // If there is only a width OR only a height, calculate the other based on
+      // the image ratio.
+      if (
+        (empty($configuration['data']['width']) && !empty($configuration['data']['height']))
+        || (!empty($configuration['data']['width']) && empty($configuration['data']['height']))
+      ) {
+        $matches = [];
+        preg_match('/(\d+)x(\d+)px/', $path, $matches);
+
+        if (!empty($matches[1]) && !empty($matches[2])) {
+          // If the image is not supposed to be upscaled and the provided height
+          // or width would upscale it, we need to set the width and height to
+          // what is provided in the original image.
+          if (
+            isset($configuration['data']['upscale'])
+            && $configuration['data']['upscale'] === FALSE
+            && (
+              $configuration['data']['height'] > $matches[2]
+              || $configuration['data']['width'] > $matches[1]
+            )
+          ) {
+            $configuration['data']['height'] = $matches[2];
+            $configuration['data']['width'] = $matches[1];
+          }
+
+          // Calculate the width or height, whichever is missing.
+          if (empty($configuration['data']['width'])) {
+            $percentage = $configuration['data']['height'] / $matches[2];
+            $configuration['data']['width'] = (int) ($matches[1] * $percentage);
+          }
+          elseif (empty($configuration['data']['height'])) {
+            $percentage = $configuration['data']['width'] / $matches[1];
+            $configuration['data']['height'] = (int) ($matches[2] * $percentage);
+          }
+        }
+      }
+
+      // If we now have a width and height, we can generate a URL to the image.
+      if (!empty($configuration['data']['width']) && !empty($configuration['data']['height'])) {
+        $size = $configuration['data']['width'] . 'x' . $configuration['data']['height'] . 'px';
+        $params = ['crop' => 'yes'];
+        if (!empty($configuration['data']['anchor']) && $configuration['data']['anchor'] == 'center-center') {
+          $params['position'] = 'c';
+        }
+        return preg_replace(['/[\d]+x[\d]+px/', '/exact/'], $size, $path) . '?' . http_build_query($params);
+      }
+    }
+    return \Drupal::service('file_url_generator')->transformRelative($entity->buildUrl($path));
+  }
+  return \Drupal::service('file_url_generator')->generateString($path);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function du_widen_file_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  // Only widen files.
+  if (empty($entity->uri) || strpos($entity->uri->value, 'https://embed.widencdn.net') !== 0) {
+    return AccessResult::neutral();
+  }
+
+  return AccessResult::allowedIfHasPermission($account, 'access content');
+}
