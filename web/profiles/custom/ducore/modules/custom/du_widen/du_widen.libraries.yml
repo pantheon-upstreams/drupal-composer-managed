@@ -1,0 +1,25 @@
+widen_entity_browser:
+  js:
+    js/widen-entity-browser.js: {}
+  dependencies:
+    - core/jquery
+alt_text:
+  js:
+    js/alt-text.js: {}
+  dependencies:
+    - core/jquery
+common:
+  js:
+    js/common.js: {}
+  dependencies:
+    - core/underscore
+    - core/drupal.dialog.ajax
+modal_selection:
+  version: VERSION
+  css:
+    component:
+      /modules/contrib/entity_browser/css/entity_browser.modal_selection.css: {}
+  js:
+    js/modal-selection.js: {}
+  dependencies:
+    - core/drupalSettings

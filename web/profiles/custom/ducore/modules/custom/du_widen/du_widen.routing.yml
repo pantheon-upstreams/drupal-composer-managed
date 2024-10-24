@@ -1,0 +1,7 @@
+du_widen.config:
+  path: '/admin/config/services/widen'
+  defaults:
+    _form: '\Drupal\du_widen\Form\WidenConfigForm'
+    _title: 'Widen Configuration'
+  requirements:
+    _permission: 'administer site configuration'

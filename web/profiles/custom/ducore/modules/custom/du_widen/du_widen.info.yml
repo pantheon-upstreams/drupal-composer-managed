@@ -1,0 +1,4 @@
+name: Entity browser Widen Collective Widget
+description: Implements the Widen api as an entity browser widget
+type: module
+core_version_requirement: ^8 || ^9 || ^10

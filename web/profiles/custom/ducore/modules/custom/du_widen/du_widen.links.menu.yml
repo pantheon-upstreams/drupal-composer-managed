@@ -1,0 +1,6 @@
+du_widen.admin:
+  title: 'Widen Configuration'
+  description: 'Add Widen Configuration'
+  parent: system.admin_config_services
+  route_name: du_widen.config
+  weight: 100
