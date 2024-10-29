@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.preview
+label: Preview
+description: ''
+targetEntityType: paragraph
+cache: true

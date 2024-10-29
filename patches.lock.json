@@ -1,4 +1,17 @@
 {
-    "_hash": "6142bfcb78f54dfbf5247ae5e463f25bdb8fff1890806e2e45aa81a59c211653",
-    "patches": []
+    "_hash": "434e522de76ee21730f35f44acbfb1cd43aeb5316eafdadec70de21a7269a73b",
+    "patches": {
+        "drupal/webform": [
+            {
+                "package": "drupal/webform",
+                "description": "Error: Attempt to assign property on array in WebformLibrariesCommands->setComposerLibraries()",
+                "url": "https://www.drupal.org/files/issues/2024-10-24/fix-webform-libraries-composer-update-3470339-3.patch",
+                "sha256": "9891fde45e0ee98ec1b8e8c902f76aaacca58f6116ff360e809561c12b6ad788",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:upstream-configuration/patches.json"
+                }
+            }
+        ]
+    }
 }
