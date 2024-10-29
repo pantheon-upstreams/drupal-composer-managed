@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: edit_own
+label: 'Edit Own'
+weight: -8
+is_admin: null
+permissions: {  }
