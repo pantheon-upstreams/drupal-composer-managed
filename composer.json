@@ -11,18 +11,234 @@
         {
             "type": "path",
             "url": "upstream-configuration"
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "codemirror/codemirror",
+                "version": "5.65.12",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "codemirror"
+                },
+                "dist": {
+                    "url": "https://github.com/components/codemirror/archive/refs/tags/5.65.12.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/inputmask",
+                "version": "5.0.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.inputmask"
+                },
+                "dist": {
+                    "url": "https://github.com/RobinHerbots/jquery.inputmask/archive/refs/tags/5.0.8.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/intl-tel-input",
+                "version": "17.0.19",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.intl-tel-input"
+                },
+                "dist": {
+                    "url": "https://github.com/jackocnr/intl-tel-input/archive/refs/tags/v17.0.19.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/rateit",
+                "version": "1.1.5",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.rateit"
+                },
+                "dist": {
+                    "url": "https://github.com/gjunge/rateit.js/archive/refs/tags/1.1.5.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/select2",
+                "version": "4.0.13",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.select2"
+                },
+                "dist": {
+                    "url": "https://github.com/select2/select2/archive/refs/tags/4.0.13.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/textcounter",
+                "version": "0.9.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.textcounter"
+                },
+                "dist": {
+                    "url": "https://github.com/ractoon/jQuery-Text-Counter/archive/refs/tags/0.9.1.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "jquery/timepicker",
+                "version": "1.14.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.timepicker"
+                },
+                "dist": {
+                    "url": "https://github.com/jonthornton/jquery-timepicker/archive/refs/tags/1.14.0.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "popperjs/popperjs",
+                "version": "2.11.6",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "popperjs"
+                },
+                "dist": {
+                    "url": "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz",
+                    "type": "tar"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "progress-tracker/progress-tracker",
+                "version": "2.0.7",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "progress-tracker"
+                },
+                "dist": {
+                    "url": "https://github.com/NigelOToole/progress-tracker/archive/refs/tags/2.0.7.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "signature_pad/signature_pad",
+                "version": "2.3.0",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "signature_pad"
+                },
+                "dist": {
+                    "url": "https://github.com/szimek/signature_pad/archive/refs/tags/v2.3.0.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "tabby/tabby",
+                "version": "12.0.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "tabby"
+                },
+                "dist": {
+                    "url": "https://github.com/cferdinandi/tabby/archive/refs/tags/v12.0.3.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "_webform": true,
+            "type": "package",
+            "package": {
+                "name": "tippyjs/tippyjs",
+                "version": "6.3.7",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "tippyjs"
+                },
+                "dist": {
+                    "url": "https://registry.npmjs.org/tippy.js/-/tippy.js-6.3.7.tgz",
+                    "type": "tar"
+                },
+                "license": "MIT"
+            }
         }
     ],
     "require": {
+        "codemirror/codemirror": "*",
         "composer/installers": "^2.1",
         "cweagans/composer-patches": "~2.0",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "10.3.2",
         "drupal/core-recommended": "^10",
         "drush/drush": "^12",
+        "jquery/inputmask": "*",
+        "jquery/intl-tel-input": "*",
+        "jquery/rateit": "*",
+        "jquery/select2": "*",
+        "jquery/textcounter": "*",
+        "jquery/timepicker": "*",
         "pantheon-systems/drupal-integrations": "^9",
         "pantheon-systems/upstream-management": "^1.0",
-        "pantheon-upstreams/upstream-configuration": "^1.0"
+        "pantheon-upstreams/upstream-configuration": "^1.0",
+        "popperjs/popperjs": "*",
+        "progress-tracker/progress-tracker": "*",
+        "signature_pad/signature_pad": "*",
+        "tabby/tabby": "*",
+        "tippyjs/tippyjs": "*"
     },
     "require-dev": {
         "drupal/core-dev": "^10.1"
@@ -37,7 +253,9 @@
             "locations": {
                 "web-root": "./web"
             },
-            "allowed-packages": ["pantheon-systems/drupal-integrations"],
+            "allowed-packages": [
+                "pantheon-systems/drupal-integrations"
+            ],
             "file-mapping": {
                 "[project-root]/.editorconfig": false,
                 "[project-root]/pantheon.upstream.yml": false,
@@ -45,16 +263,36 @@
             }
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "web/private/scripts/quicksilver/{$name}/": [
+                "type:quicksilver-script"
+            ]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
@@ -64,10 +302,12 @@
         "composer-patches": {
             "patches-file": "upstream-configuration/patches.json"
         },
-        "patches": { }
+        "patches": {}
     },
     "autoload": {
-        "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
+        "classmap": [
+            "upstream-configuration/scripts/ComposerScripts.php"
+        ]
     },
     "scripts": {
         "pre-update-cmd": [

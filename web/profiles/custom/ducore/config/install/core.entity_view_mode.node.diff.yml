@@ -1,0 +1,14 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - node
+      - diff
+id: node.diff
+label: 'Revision comparison'
+description: ''
+targetEntityType: node
+cache: true
