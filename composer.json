@@ -60,6 +60,7 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "patches-file": "upstream-configuration/patches.json",
         "enable-patching": true
     },
     "autoload": {
