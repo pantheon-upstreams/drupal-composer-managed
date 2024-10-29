@@ -60,8 +60,11 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "patches-file": "upstream-configuration/patches.json",
-        "enable-patching": true
+        "enable-patching": true,
+        "composer-patches": {
+            "patches-file": "upstream-configuration/patches.json"
+        },
+        "patches": { }
     },
     "autoload": {
         "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
