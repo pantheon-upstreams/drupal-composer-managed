@@ -1,0 +1,7 @@
+{
+    "patches": {
+        "drupal/webform": {
+            "Error: Attempt to assign property on array in WebformLibrariesCommands->setComposerLibraries()": "https://www.drupal.org/files/issues/2024-10-24/fix-webform-libraries-composer-update-3470339-3.patch"
+        }
+    }
+}
