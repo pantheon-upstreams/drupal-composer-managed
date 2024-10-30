@@ -1,0 +1,89 @@
+name: 'University of Denver Core'
+type: profile
+description: 'DU Core Profile for Drupal 10'
+core_version_requirement: ^10
+
+# Modules to be installed on profile installation.
+install:
+  - admin_toolbar
+  - adminimal_admin_toolbar
+  - components
+  - config_filter
+  - config_ignore
+  - config_profile
+  - config_split
+  - config_update
+  - content_lock
+  - ctools
+  - diff
+  - du_widen
+  - entity
+  - entity_block
+  - entity_browser
+  - entity_browser_block
+  - entity_clone
+  - entity_embed
+  - entity_reference_revisions
+  - field_group
+  - honeypot
+  - libraries
+  - link_attributes
+  - linkit
+  - metatag
+  - pantheon_advanced_page_cache
+  - paragraphs
+  - pathauto
+  - rabbit_hole
+  - redirect
+  - simple_sitemap
+  - svg_image
+  - twig_field_value
+  - url_redirect
+  - webform
+  - webform_ui
+  - simplesamlphp_auth
+
+# Required modules. These cannot be uninstalled.
+# Note that any dependencies of the modules listed here will be installed automatically.
+dependencies:
+  - block
+  - block_content
+  - datetime
+  - field
+  - file
+  - filter
+  - image
+  - menu_link_content
+  - node
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+  - dblog
+  - admin_toolbar
+  - adminimal_admin_toolbar
+  - components
+  - ctools
+  - entity
+  - field_group
+  - honeypot
+  - libraries
+  - link_attributes
+  - linkit
+  - pantheon_advanced_page_cache
+  - paragraphs
+  - pathauto
+  - redirect
+  - responsive_image
+  - simple_sitemap
+  - svg_image
+  - twig_field_value
+  - url_redirect
+  - simplesamlphp_auth
+  - simplesamlphp_custom_attributes
+
+themes:
+  - claro
+  - olivero

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: edit_own
+label: 'Edit Own'
+weight: -8
+is_admin: null
+permissions:
+  - 'delete own files'

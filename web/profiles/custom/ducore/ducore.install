@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the DU Core install profile.
+ */
+
+use Drupal\user\Entity\User;
+use Drupal\user\RoleInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function ducore_install() {
+  // Set the default and admin themes.
+  \Drupal::configFactory()
+    ->getEditable('system.theme')
+    ->set('default', 'olivero')
+    ->set('admin', 'claro')
+    ->save(TRUE);
+
+  // Set the front page to "/node".
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/node')
+    ->save(TRUE);
+
+  // Allow visitor account creation with administrative approval.
+  \Drupal::configFactory()
+    ->getEditable('user.settings')
+    ->set('register', UserInterface::REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)
+    ->save(TRUE);
+
+  // Enable default permissions for system roles.
+  user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['access content']);
+  user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, ['access content']);
+
+  // Assign user 1 the "administrator" role.
+  $user = User::load(1);
+  $user->addRole('administrator');
+  $user->save();
+
+  // We install some menu links, so we have to rebuild the router, to ensure the
+  // menu links are valid.
+  \Drupal::service('router.builder')->rebuildIfNeeded();
+
+  // Enable the admin theme.
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
+}

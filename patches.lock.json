@@ -1,0 +1,29 @@
+{
+    "_hash": "2ab0e8c95b9d5d862c7fa8d28a7cf029221ac4c20009edc3226a77c5eb277c76",
+    "patches": {
+        "drupal/webform": [
+            {
+                "package": "drupal/webform",
+                "description": "Error: Attempt to assign property on array in WebformLibrariesCommands->setComposerLibraries()",
+                "url": "https://www.drupal.org/files/issues/2024-10-24/fix-webform-libraries-composer-update-3470339-3.patch",
+                "sha256": "9891fde45e0ee98ec1b8e8c902f76aaacca58f6116ff360e809561c12b6ad788",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:upstream-configuration/patches.json"
+                }
+            }
+        ],
+        "drupal/url_redirect": [
+            {
+                "package": "drupal/url_redirect",
+                "description": "Deprecated function getException() in RedirectSubscriber",
+                "url": "https://www.drupal.org/files/issues/2023-04-04/url_redirect-deprecated-function.patch",
+                "sha256": "fd3925d6457e06b30b2d98ab1d11c9e94d8f581fb95d59853cdda3c5a84adf31",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:upstream-configuration/patches.json"
+                }
+            }
+        ]
+    }
+}

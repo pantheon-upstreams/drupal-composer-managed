@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block
+    - block_content
+    - content_lock
+    - entity_clone
+    - entity_reference_revisions
+    - file
+    - node
+    - path
+    - redirect
+    - simple_sitemap
+    - system
+id: site_admin
+label: 'Site Admin'
+weight: -6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access block library'
+  - 'access content overview'
+  - 'access files overview'
+  - 'administer block content'
+  - 'administer blocks'
+  - 'administer entity clone'
+  - 'administer menu'
+  - 'administer redirect settings'
+  - 'administer site configuration'
+  - 'administer sitemap settings'
+  - 'administer url aliases'
+  - 'break content lock'
+  - 'clone node entity'
+  - 'delete any file'
+  - 'delete orphan revisions'
