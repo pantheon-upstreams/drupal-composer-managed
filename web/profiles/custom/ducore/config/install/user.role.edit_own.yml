@@ -1,8 +1,11 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: edit_own
 label: 'Edit Own'
 weight: -8
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

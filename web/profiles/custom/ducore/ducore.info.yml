@@ -10,6 +10,7 @@ install:
   - components
   - config_filter
   - config_ignore
+  - config_profile
   - config_split
   - config_update
   - content_lock
