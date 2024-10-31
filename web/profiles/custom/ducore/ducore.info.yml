@@ -14,9 +14,11 @@ install:
   - config_split
   - config_update
   - content_lock
+  - content_moderation
   - ctools
   - diff
   - du_widen
+  - du_site
   - entity
   - entity_block
   - entity_browser
@@ -42,6 +44,12 @@ install:
   - webform
   - webform_ui
   - simplesamlphp_auth
+  - dropzonejs
+  - ebrsww
+  - file_browser
+  - ds
+  - node_revision_delete
+  - allowed_formats
 
 # Required modules. These cannot be uninstalled.
 # Note that any dependencies of the modules listed here will be installed automatically.
@@ -83,6 +91,13 @@ dependencies:
   - url_redirect
   - simplesamlphp_auth
   - simplesamlphp_custom_attributes
+  - dropzonejs
+  - ebrsww
+  - file_browser
+  - options
+  - ds
+  - node_revision_delete
+  - allowed_formats
 
 themes:
   - claro
