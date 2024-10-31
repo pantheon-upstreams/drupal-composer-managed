@@ -1,0 +1,12 @@
+uuid: 786e07c7-789d-47e0-830c-a66ef132a48e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2eo7oIOZzE5T4qOpp687uYQI7D0HpxZIcZ3vh_H9wdY
+id: expanding_list
+label: 'Expanding List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

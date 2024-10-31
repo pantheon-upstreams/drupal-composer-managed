@@ -1,0 +1,12 @@
+uuid: a9ce0e4e-d2e0-415b-bc7a-9d3a284e18fc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ESk0my3qXf5BUWylrrTYC6NBMd_NBxnKQ9uRvgU3pLM
+id: body_copy
+label: Copy
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

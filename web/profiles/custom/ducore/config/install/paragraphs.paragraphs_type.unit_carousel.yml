@@ -1,0 +1,12 @@
+uuid: 1b86402d-aab8-4f82-bb8d-fdfb38211fc1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: d_-qqv4lXhp4_ylPTzzDFr-8lH5aTkD8_AU81ze_OU4
+id: unit_carousel
+label: 'Unit Carousel'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,49 @@
+uuid: 523c3f3a-dadd-48cf-b7d7-ad8d6b8d7797
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contacts.field_contact_information_cards
+    - field.field.paragraph.contacts.field_contact_title
+    - paragraphs.paragraphs_type.contacts
+_core:
+  default_config_hash: NDElW6KOyES--Y2xkrgd5e6ahhNSd-rmv1l0ex-qjJ0
+id: paragraph.contacts.default
+targetEntityType: paragraph
+bundle: contacts
+mode: default
+content:
+  field_contact_information_cards:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

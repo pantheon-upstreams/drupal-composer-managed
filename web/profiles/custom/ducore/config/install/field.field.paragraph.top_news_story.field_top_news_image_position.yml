@@ -1,0 +1,21 @@
+uuid: edf77083-ea30-484a-9204-8e5059d65ce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_top_news_image_position
+    - paragraphs.paragraphs_type.top_news_story
+  module:
+    - options
+id: paragraph.top_news_story.field_top_news_image_position
+field_name: field_top_news_image_position
+entity_type: paragraph
+bundle: top_news_story
+label: 'Image or Video Position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

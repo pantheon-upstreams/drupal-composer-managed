@@ -1,0 +1,12 @@
+onClick:
+  title: onClick
+  type: textfield
+title:
+  title: Title
+  type: textfield
+data-toggle:
+  title: data-toggle
+  type: textfield
+fragment:
+  title: Anchor
+  type: textfield

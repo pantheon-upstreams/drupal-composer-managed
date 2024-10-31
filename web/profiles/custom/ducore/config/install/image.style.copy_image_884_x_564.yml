@@ -1,0 +1,15 @@
+uuid: ec77d095-af1b-4ec5-adc4-f0709767beef
+langcode: en
+status: true
+dependencies: {  }
+name: copy_image_884_x_564
+label: 'Copy image 884 x 564'
+effects:
+  b19dd2c4-f784-4a39-9801-46e4b8948e4a:
+    uuid: b19dd2c4-f784-4a39-9801-46e4b8948e4a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 884
+      height: 564
+      anchor: center-center

@@ -1,0 +1,30 @@
+uuid: 2b37bb09-b5cb-40f0-8e78-438f12afa3e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_single_contact_ref
+    - node.type.contact_single
+    - paragraphs.paragraphs_type.contact_single
+_core:
+  default_config_hash: BcJo_1csESUak5Hsy8fHz6VIFHe-MZXLTM0w3ZvBNa8
+id: paragraph.contact_single.field_single_contact_ref
+field_name: field_single_contact_ref
+entity_type: paragraph
+bundle: contact_single
+label: 'Select Single Contact Card'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact_single: contact_single
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

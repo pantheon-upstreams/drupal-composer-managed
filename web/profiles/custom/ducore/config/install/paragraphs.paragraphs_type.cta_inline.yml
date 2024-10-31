@@ -1,0 +1,12 @@
+uuid: 53034fc2-037a-4fb3-b824-1f777e3be25c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MT9FlgT5Z-n_-kCLQsF4EBPxbtDciUkXMSRuAsStm4o
+id: cta_inline
+label: 'CTA Inline'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

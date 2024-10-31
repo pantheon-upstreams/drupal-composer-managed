@@ -1,0 +1,23 @@
+uuid: 528c8910-a991-4067-b0f5-19fb4a596eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_color
+    - paragraphs.paragraphs_type.cta
+  module:
+    - options
+_core:
+  default_config_hash: 1WVfZKek2RpNpTCqVWGM1xbOtMiXtCiasDmxyl-Pvck
+id: paragraph.cta.field_cta_color
+field_name: field_cta_color
+entity_type: paragraph
+bundle: cta
+label: 'CTA Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

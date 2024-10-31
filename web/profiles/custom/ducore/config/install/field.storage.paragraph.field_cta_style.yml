@@ -1,0 +1,29 @@
+uuid: a4c27bbd-41eb-49f1-805d-07fb3d7774b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: RJBr15RUzgx-VCpgzk-_6oTTh8h9bYGD7VMCJEFG4Vw
+id: paragraph.field_cta_style
+field_name: field_cta_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: small
+      label: Small
+    -
+      value: large
+      label: Large
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

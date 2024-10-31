@@ -1,0 +1,21 @@
+uuid: a884e3a1-25a6-4c84-82c4-efc43c50eaed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.category_menu
+_core:
+  default_config_hash: J1jfoAI0oGauwVMdNG-yxUjD0qJ2mpQbhGrv4b6aPu0
+id: paragraph.category_menu.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: category_menu
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

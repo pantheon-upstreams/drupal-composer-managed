@@ -1,0 +1,3 @@
+theme: pl_drupal
+region: footer
+copyright_block_body: '<p class="copyright">Copyright ©[current-date:html_year] | All Rights Reserved | Equal Opportunity Affirmative action institution</p>'

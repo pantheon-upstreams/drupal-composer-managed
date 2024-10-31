@@ -1,0 +1,12 @@
+uuid: 62b710da-f198-496c-b134-04a9c28c4eb1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4kw_AKJhnwowRY5xlfMy403YbVxRLfqs7Lbwql860I8
+id: cta
+label: 'CTA / In-page Banner '
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

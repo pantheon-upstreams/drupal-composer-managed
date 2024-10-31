@@ -1,0 +1,25 @@
+uuid: 2269e77a-d957-4562-b788-655673948f22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_list_cal_links
+    - paragraphs.paragraphs_type.event_list
+  module:
+    - link
+_core:
+  default_config_hash: jB5VaOkPVRfOb7IJey1IyeN_3B-9iri7k6ZDH3-P0XU
+id: paragraph.event_list.field_event_list_cal_links
+field_name: field_event_list_cal_links
+entity_type: paragraph
+bundle: event_list
+label: 'Additional Calendars'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

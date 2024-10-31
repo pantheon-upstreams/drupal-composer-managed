@@ -1,0 +1,35 @@
+uuid: 43aaf2d1-5b32-4bbf-a9f2-07d92a6a5d8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: _3OO8fxYDZL4aRPf_PkprP6tW5WvJvfZzgtHqkjuCNo
+id: paragraph.field_color
+field_name: field_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '#514878'
+      label: 'Purple Darkest'
+    -
+      value: '#785489'
+      label: 'Purple Light'
+    -
+      value: '#47478E'
+      label: 'Purple Dark'
+    -
+      value: '#6B6391'
+      label: 'Purple Lightest'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

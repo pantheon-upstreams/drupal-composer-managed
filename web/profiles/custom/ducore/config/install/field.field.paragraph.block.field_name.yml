@@ -1,0 +1,25 @@
+uuid: 167ccfb9-78e2-4ca8-b77a-d13e426dce62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.block
+_core:
+  default_config_hash: pLMBrxQVvJlg04diYGxbCt9VOdD4qf5nK1ZHtcAw3n8
+id: paragraph.block.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: block
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: blocks
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+field_type: entity_reference

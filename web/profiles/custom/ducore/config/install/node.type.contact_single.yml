@@ -1,0 +1,24 @@
+uuid: 5d7fd531-d9e4-492d-83e1-7b178be7190a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_revision_delete
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  node_revision_delete:
+    minimum_revisions_to_keep: 4
+    minimum_age_to_delete: 12
+    when_to_delete: 0
+_core:
+  default_config_hash: tCnNTKlGFJsq7d2W7a2ogkMDvO4Zc7WcI62SlyEca3w
+name: 'Contact Single'
+type: contact_single
+description: 'For a Unit.  Provides  one row, including an image, Unit title, and contact information.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

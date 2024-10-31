@@ -1,0 +1,25 @@
+uuid: 53ffada5-1309-4e5b-9475-66d2b8f805fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.block.field_name
+    - paragraphs.paragraphs_type.block
+_core:
+  default_config_hash: AJF0B46GZXR7xJAB_PYri81IzT0jSG92jxyxCHU0lVU
+id: paragraph.block.default
+targetEntityType: paragraph
+bundle: block
+mode: default
+content:
+  field_name:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  scheduled_publication: true

@@ -1,0 +1,27 @@
+uuid: f25f856e-cb0c-4dac-b663-c19d29fbe74a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_webform_reference
+    - paragraphs.paragraphs_type.webform
+  module:
+    - webform
+_core:
+  default_config_hash: KilYw29Kle9a_KXagZGO78kEf46OfhxjoeyazdnasnE
+id: paragraph.webform.field_webform_reference
+field_name: field_webform_reference
+entity_type: paragraph
+bundle: webform
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

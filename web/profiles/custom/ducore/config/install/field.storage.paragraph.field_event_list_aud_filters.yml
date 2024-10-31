@@ -1,0 +1,22 @@
+uuid: a2fff831-cb94-40f2-8d60-ec36dfc85973
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+_core:
+  default_config_hash: v0SKsb1v90VGQbbc5hkFFw-_h15qiwYVMrvFSIRBINI
+id: paragraph.field_event_list_aud_filters
+field_name: field_event_list_aud_filters
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,1211 @@
+<?php
+
+/**
+ * @file
+ * Description.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
+use Drupal\node\Entity\Node;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Entity\Element\EntityAutocomplete;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Entity\EntityFormInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FormatterInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_mail_alter().
+ */
+function du_site_mail_alter(&$message) {
+  // Since upgrading the smtp module from 1.0.0-beta7 to 1.0.0-rc4 the module
+  // doesn't set webforms to send from noreply-web@du.edu. This causes the SMTP
+  // server to reject sending the email. This is a workaround to ensure the from
+  // address is set correctly, and the reply-to address gets set to whatever was
+  // in the from address before.
+  if ($message['module'] == 'webform' && $message['params']['from_mail'] != 'noreply-web@du.edu') {
+    $message['headers']['Reply-to'] = $message['params']['from_mail'];
+    $message['headers']['From'] = 'noreply-web@du.edu';
+    $message['params']['from_mail'] = 'noreply-web@du.edu';
+  }
+}
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function du_site_editor_js_settings_alter(array &$settings) {
+  if (isset($settings['editor']['formats']['rich_text'])) {
+    $settings['editor']['formats']['rich_text']['editorSettings']['format_tags'] = "h2;h3;h4;h5;h6";
+  }
+  if (isset($settings['editor']['formats']['inline_formatting'])) {
+    // TODO: Find a method to prevent user inserting extra lines manually, or an alternate editing method for simple single-line formatting (markdown?)
+    // Prevents CKE automatically adding paragraphs for a single line of text.
+    $settings['editor']['formats']['inline_formatting']['editorSettings']['autoParagraph'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_field_formatter_third_party_settings_form().
+ *
+ * Adds an option to render links in a list template based on the list atom in the pl_drupal patternlab theme.
+ * More info: https://www.drupal.org/node/2130757.
+ */
+function du_site_field_formatter_third_party_settings_form(FormatterInterface $plugin, FieldDefinitionInterface $field_definition, $view_mode, $form, FormStateInterface $form_state) {
+  $element = [];
+
+  if ($plugin->getPluginId() == 'link') {
+    $element['list_of_links'] = [
+      '#type' => 'select',
+      '#title' => t('DU Links Style'),
+      '#options' => [
+        '' => t('Default'),
+        'du' => t('DU Standard'),
+        'du_alt' => t('DU Alternate'),
+      ],
+      '#default_value' => $plugin->getThirdPartySetting('du_site', 'list_of_links'),
+    ];
+  }
+
+  return $element;
+}
+
+/**
+ * Look up DU third-party setting style for Link field formatter.
+ *
+ * Helper function to determine from within a preprocess hook whether the field has been configured
+ * to render as a list of links from the DU pattern library, and in which variation.
+ *
+ * @param mixed $variables
+ *   mixed The variables parameter from the calling preprocess hook.
+ *
+ * @return string
+ *   Id of the list_of_links variation. If none, this will be an empty string.
+ */
+function _du_site_field_list_of_links_style($variables) {
+
+  if (empty($variables['element'])) {
+    return '';
+  }
+  if (!$variables['element']['#formatter'] == 'link') {
+    return '';
+  }
+
+  $entity = $variables['element']['#object'];
+  $view_mode = $variables['element']['#view_mode'];
+  $field_name = $variables['element']['#field_name'];
+
+  // Get the field formatter settings...
+  $entity_display = EntityViewDisplay::collectRenderDisplay($entity, $view_mode);
+  $field_display = $entity_display->getComponent($field_name);
+
+  if (!empty($field_display['third_party_settings']['du_site'])) {
+    return $field_display['third_party_settings']['du_site']['list_of_links'];
+  }
+  else {
+    return '';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function du_site_theme($existing, $type, $theme, $path) {
+  return [
+    'field__link__list_of_links' => [
+      'variables' => ['du_content' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * More info: https://www.drupal.org/node/2130757.
+ */
+function du_site_preprocess_field__link__list_of_links(&$variables) {
+  $element = $variables['element'];
+  if ($element['#formatter'] == 'link') {
+
+    $du_style = _du_site_field_list_of_links_style($variables);
+
+    if (!empty($du_style)) {
+
+      $attributes = [];
+      if ($du_style == 'du_alt') {
+        $attributes['class'] = ['list-of-links--alt'];
+      }
+
+      $content = [
+        '#theme' => 'item_list',
+        '#items' => [],
+        '#list_type' => 'ul',
+        '#attributes' => $attributes,
+      ];
+
+      $children = Element::children($element);
+
+      foreach ($children as $delta => $item) {
+        $content['#items'][$delta] = $element[$delta];
+      }
+
+      $variables['du_content'] = $content;
+    }
+
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function du_site_theme_suggestions_field_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'field') {
+    $du_style = _du_site_field_list_of_links_style($variables);
+    if (!empty($du_style)) {
+      $suggestions[] = 'field__link__list_of_links';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Add body classes according to content type.
+ */
+function du_site_preprocess_html(&$variables) {
+  $nid = Drupal::routeMatch()->getRawParameter('node');
+  if (!empty($nid)) {
+    $node = Node::load((int) $nid);
+    $type = $node->bundle();
+
+    switch ($type) {
+      case 'home_page':
+        $variables['attributes']['class'][] = 'du-home';
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Extract homepage_facts fields into a format that is more friendly
+ * to our patternlab templates, and to strip out the extra div tag
+ * that the #type=field is including. Also, provide image src with
+ * image style.
+ */
+function du_site_preprocess_paragraph__homepage_facts(&$variables) {
+  $facts = [];
+
+  if (!empty($variables['content']['field_hpf_background_image'][0])) {
+    $field_item = $variables['content']['field_hpf_background_image'][0];
+    $style = $field_item['#image_style'];
+    $uri = $field_item['#item']->entity->getFileUri();
+    $variables['styled_src'] = du_widen_get_image_style_url($uri, $style);
+    $variables['facts'] = $facts;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function du_site_preprocess_paragraph__hvc_slide(&$variables) {
+  $parent = $variables['paragraph']->getParentEntity();
+  if (isset($parent->field_hvc_style->value)) {
+    $variables['style'] = $parent->field_hvc_style->value;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Provide image URLs with image style applied.
+ */
+function du_site_preprocess_paragraph__homepage_swapping_image_feature(&$variables) {
+  $variables['image_urls'] = [];
+  if (!empty($variables['content']['field_hsf_images'][0])) {
+    $children = Element::children($variables['content']['field_hsf_images']);
+    foreach ($children as $index) {
+      $field_item = $variables['content']['field_hsf_images'][$index];
+      $style = $field_item['#image_style'];
+      $uri = $field_item['#item']->entity->getFileUri();
+      $variables['image_urls'][] = du_widen_get_image_style_url($uri, $style);
+    }
+    $variables['image_alt'] = $variables['content']['field_hsf_images'][0]['#item']->alt;
+  }
+}
+
+/**
+ * Hook_entity_base_field_info_alter().
+ *
+ * Add attributes to system menu items.
+ */
+function du_site_entity_base_field_info_alter(&$fields, $entity_type) {
+  if ($entity_type->id() === 'menu_link_content') {
+    $fields['link']->setDisplayOptions('form', [
+      'type' => 'link_attributes',
+      'weight' => -2,
+      'settings' => [
+        'enabled_attributes' => [
+          'id' => FALSE,
+          'name' => FALSE,
+          'target' => TRUE,
+          'rel' => TRUE,
+          'class' => TRUE,
+          'accesskey' => FALSE,
+          // Add your own custom attributes as required.
+          'onclick' => TRUE,
+          'title' => TRUE,
+          'data-toggle' => TRUE,
+          'fragment' => TRUE,
+        ],
+      ],
+    ]);
+  }
+}
+
+/**
+ * Hook__module_implements_alter().
+ *
+ * Move the module to the end.
+ */
+function du_site_module_implements_alter(&$implementations, $hook) {
+  // (e.g. form_alter, node_save, etc)
+  if ($hook == 'entity_base_field_info_alter') {
+    // 'example' is the name of your module.
+    $group = $implementations['du_site'];
+    unset($implementations['du_site']);
+    $implementations['du_site'] = $group;
+  }
+
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function du_site_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_name = $context['items']->getName();
+  if ($field_name == 'field_cta_color') {
+    // Remove green and purple as valid options, unless one of those is already
+    // selected.
+    $value = $element['#default_value'][0];
+    if ($value != 'green') {
+      unset($element['#options']['green']);
+    }
+    if ($value != 'purple') {
+      unset($element['#options']['purple']);
+    }
+  }
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function du_site_field_widget_link_attributes_form_alter(&$element, FormStateInterface $form_state, $context) {
+  _du_site_generate_link_field($element, $form_state, $context);
+}
+
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function du_site_field_widget_link_default_form_alter(&$element, FormStateInterface $form_state, $context) {
+  _du_site_generate_link_field($element, $form_state, $context);
+}
+
+/**
+ * Helper function that sets up switch between File and Node autocomplete.
+ *
+ * @param mixed $element
+ *   Form element.
+ * @param Drupal\Core\Form\FormStateInterface $form_state
+ *   Form State object.
+ * @param mixed $context
+ *   Current context.
+ */
+function _du_site_generate_link_field(&$element, FormStateInterface $form_state, $context) {
+  $field_name = $context['items']->getName();
+  $field = $form_state->getValue($field_name);
+  $field = !empty($field[0]) ? $field[0]['link']['type_select'] : '';
+  $default_value = $element['uri']['#default_value'];
+  $id_part = rand(100, 100000);
+  $id = 'type_select_' . $id_part;
+
+  // Set the default link type based on whether we have...
+  if (!empty($default_value)) {
+    // ... file - search for /file/ in the default value
+    if (strpos($default_value, '/file/') !== FALSE) {
+      $field = empty($field) ? 'file' : 'node';
+      $file_id = substr($default_value, 6);
+      if (!empty($file_id) && is_numeric($file_id)) {
+        $file = File::load($file_id);
+        if (!empty($file)) {
+          $default_value = $file->getFilename() . ' (' . $file_id . ')';
+        }
+      }
+    }
+    // ... content - with parenthesis ( ) because almost all urls will not contain them but nodes will always have (212) as an example
+    elseif (strpos($default_value, '(') !== FALSE && strpos($default_value, ')') !== FALSE) {
+      $field = empty($field) ? 'node' : $field;
+    }
+    // ... url - anything else
+    else {
+      $field = empty($field) ? 'url' : $field;
+    }
+  }
+
+  // Our default for when no value is set.
+  if (empty($default_value)) {
+    $field = 'node';
+  }
+
+  $element['link'] = [
+    '#type' => 'fieldset',
+    '#title' => $element['#title'],
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#weight' => 0,
+    '#prefix' => '<div id="admin_area_wrapper' . $id_part . '">',
+    '#suffix' => '</div>',
+  ];
+
+  $element['link']['type_select'] = [
+    '#type' => 'select',
+    '#title' => t('Type'),
+    '#options' => [
+      'node' => t('Content'),
+      'file' => t('File'),
+      'url' => t('URL'),
+    ],
+    '#attributes' => [
+      'id' => $id,
+    ],
+    '#weight' => -1,
+    '#default_value' => $field,
+  ];
+
+  $element['link']['add_node'] = [
+    '#type' => "entity_autocomplete",
+    '#title' => $element['#title'],
+    '#placeholder' => '',
+    '#default_value' => $default_value,
+    '#maxlength' => 2048,
+    '#required' => FALSE,
+    '#link_type' => 1,
+    '#target_type' => 'node',
+    '#element_validate' => [
+      '_link_field_autocomplete_filter_validate_widget',
+    ],
+    '#attributes' => [
+      'data-autocomplete-first-character-blacklist' => "/#?",
+    ],
+    '#process_default_value' => FALSE,
+    '#description' => '',
+    '#states' => [
+      'visible' => [
+        ':input[id="' . $id . '"]' => [
+          'value' => 'node',
+        ],
+      ],
+    ],
+  ];
+
+  $element['link']['add_file'] = [
+    '#type' => "entity_autocomplete",
+    '#title' => $element['#title'],
+    '#placeholder' => '',
+    '#default_value' => $default_value,
+    '#maxlength' => 2048,
+    '#required' => FALSE,
+    '#link_type' => 1,
+    '#target_type' => 'file',
+    '#element_validate' => [],
+    '#attributes' => [
+      'data-autocomplete-first-character-blacklist' => "/#?",
+    ],
+    '#process_default_value' => FALSE,
+    '#description' => '',
+    '#states' => [
+      'visible' => [
+        ':input[id="' . $id . '"]' => [
+          'value' => 'file',
+        ],
+      ],
+    ],
+  ];
+
+  $element['link']['add_url'] = [
+    '#type' => "textfield",
+    '#title' => $element['#title'],
+    '#placeholder' => '',
+    '#default_value' => $default_value,
+    '#maxlength' => 2048,
+    '#required' => FALSE,
+    '#link_type' => 1,
+    '#description' => '',
+    '#states' => [
+      'visible' => [
+        ':input[id="' . $id . '"]' => [
+          'value' => 'url',
+        ],
+      ],
+    ],
+  ];
+
+  $element['uri']['#access'] = FALSE;
+
+  // Remove validation for title field as it depends on URI.
+  if (isset($element['#element_validate']) && !empty($element['#element_validate'])) {
+    foreach ($element['#element_validate'] as $val_key => $val_function) {
+      if ((
+        $val_function[0] == 'Drupal\link\Plugin\Field\FieldWidget\LinkWidget' ||
+        $val_function[0] == 'Drupal\\link_attributes\\Plugin\\Field\\FieldWidget\\LinkWithAttributesWidget'
+        ) && $val_function[1] == 'validateTitleNoLink'
+      ) {
+        unset($element['#element_validate'][$val_key]);
+      }
+    }
+  }
+}
+
+/**
+ * Constructs array that will be stored as field value for Link fields.
+ */
+function _du_site_link_parse_data(&$item, $field_name, &$form_state) {
+  $field_node_value = $item['link']['add_node'];
+  $field_file_value = $item['link']['add_file'];
+  $field_url_value = $item['link']['add_url'];
+  $field_type = $item['link']['type_select'];
+  $attributes = $item['attributes'];
+  $title = $item['title'];
+  $options = !empty($item['options']) ? $item['options'] : NULL;
+  $weight = !empty($item['_weight']) ? $item['_weight'] : NULL;
+
+  // We need to store default value entered in the field, for safe keeping. We'll use it later when saving field value.
+  switch ($field_type) {
+    case 'node':
+      $field_val = $field_node_value;
+      break;
+
+    case 'file':
+      $field_val = $field_file_value;
+      break;
+
+    case 'url':
+      $field_val = $field_url_value;
+      break;
+
+  }
+
+  // Use the helper function to get value that we need to use for "Uri" parameter.
+  $link = _du_site_generate_link_form_data($field_type, $field_url_value, $field_file_value, $field_node_value, $field_val, $form_state, $field_name);
+
+  // Make sure to store fragment information for URL object.
+  if (!empty($options['attributes']['fragment'])) {
+    $options['fragment'] = $options['attributes']['fragment'];
+  }
+
+  $data = [
+    'uri' => $link,
+    'title' => $title,
+    'attributes' => $attributes,
+    'options' => !empty($options) ? $options : [],
+    'link' => [
+      'add_link' => $field_val,
+      'add_node' => $field_val,
+      'add_file' => $field_val,
+      'add_url' => $field_val,
+      'type_select' => $field_type,
+    ],
+  ];
+
+  // For some reason, weight is optional property, so if it's not set, we shouldn't include it in the array.
+  if (!empty($weight)) {
+    $data['_weight'] = $weight;
+  }
+
+  return $data;
+}
+
+/**
+ * Validate for allowed node types (in case the user changes the field settings).
+ */
+function _link_field_autocomplete_filter_validate_widget($element, FormStateInterface $form_state, $form) {
+  $values = $form_state->getValues();
+  $field_name = $element['#parents'][0];
+  $field_value = '';
+
+  // This is a special case where we have a multi-value field inside a content type.
+  // The other two types are inside the Paragraph type both as single and multi-value fields.
+  // They are handled in the logic below.
+  if (!empty($element['#parents'][0])) {
+    $field_value = &$values[$element['#parents'][0]];
+
+    for ($i = 1; $i < count($element['#parents']); $i++) {
+      $n = $element['#parents'][$i];
+      if (!in_array($n, ['link', 'add_node'])) {
+        $field_value = &$field_value[$n];
+      }
+    }
+
+    if (!empty($field_value) && is_array($field_value)) {
+      // This looks like it's a multi-value Link field in a content type.
+      if (!empty($field_value['link']['type_select'])) {
+        $data = _du_site_link_parse_data($field_value, $field_name, $form_state);
+
+        $field_value = $data;
+      }
+
+      foreach ($field_value as $index => $item) {
+        if (is_numeric($index) && !empty($item['link']['type_select'])) {
+          $data = _du_site_link_parse_data($item, $field_name, $form_state);
+
+          $field_value[$index] = $data;
+        }
+      }
+
+      // Store the data back to the $form_state object.
+      $form_state->setValue($field_name, $values[$field_name]);
+
+      // If we stored the updated links, then we don't need to do other two conditionals.
+      return TRUE;
+    }
+  }
+
+  // If the field value is nested inside other fields, this is the conditional to check it and extract data.
+  if (empty($values[$field_name][0]['link']['type_select'])) {
+    $name = $element['#name'];
+    $name = str_replace('[link][add_node]', '', $name);
+
+    $name_array = explode('[', $name);
+    $field_value = &$values[$name_array[0]];
+
+    // Extract the value of the field.
+    for ($i = 1; $i < count($name_array); $i++) {
+      $item = trim($name_array[$i], '[]');
+
+      $field_value = &$field_value[$item];
+    }
+
+    $field_node_value = $field_value['link']['add_node'];
+    $field_file_value = $field_value['link']['add_file'];
+    $field_url_value = $field_value['link']['add_url'];
+    $field_type = $field_value['link']['type_select'];
+    $attributes = $field_value['attributes'];
+    $title = $field_value['title'];
+    $options = $field_value['options'];
+    $weight = !empty($field_value['_weight']) ? $field_value['_weight'] : NULL;
+  }
+  else {
+    // Otherwise, this is a single value field, so we can easily extract this.
+    $field_node_value = $values[$field_name][0]['link']['add_node'];
+    $field_file_value = $values[$field_name][0]['link']['add_file'];
+    $field_url_value = $values[$field_name][0]['link']['add_url'];
+    $field_type = $values[$field_name][0]['link']['type_select'];
+    $attributes = $values[$field_name][0]['attributes'];
+    $title = $values[$field_name][0]['title'];
+    $options = !empty($values[$field_name][0]['options']) ?
+      $values[$field_name][0]['options'] : [];
+    $weight = !empty($values[$field_name][0]['_weight']) ? $values[$field_name][0]['_weight'] : NULL;
+  }
+
+  // Get the value that can be safely stored in the URL object.
+  $link = _du_site_generate_link_form_data($field_type, $field_url_value, $field_file_value, $field_node_value, $field_value, $form_state, $field_name);
+
+  // This manual step is necessary because by default, the 'fragment' param gets saved in
+  // "attributes" array, while for Drupal\Core\Url object this parameter needs to be in
+  // "options" array.
+  if (!empty($options['attributes']['fragment'])) {
+    $options['fragment'] = $options['attributes']['fragment'];
+  }
+
+  $data = [
+    'uri' => $link,
+    'title' => $title,
+    'attributes' => $attributes,
+    'options' => !empty($options) ? $options : [],
+    'link' => [
+      'add_link' => $field_value,
+      'type_select' => $field_type,
+    ],
+  ];
+
+  if (!empty($weight)) {
+    $data['_weight'] = $weight;
+  }
+
+  if (empty($values[$field_name][0]['link']['type_select'])) {
+    $field_value = $data;
+    $form_state->setValue($field_name, $values[$field_name]);
+  }
+  else {
+    // Reformat the array so we are storing correct values.
+    $value[0] = $data;
+    // Store the updated array to field value.
+    $form_state->setValue($field_name, $value);
+  }
+}
+
+/**
+ * Returns Drupal-formatted URL that can be stored as "uri" property in Link fields.
+ */
+function _du_site_generate_link_form_data($field_type, $field_url_value, $field_file_value, $field_node_value, &$field_value, &$form_state, $field_name) {
+  $link = '';
+  if ($field_type == 'url' && !empty($field_url_value)) {
+    if (UrlHelper::isExternal($field_url_value)) {
+      $field_value = $field_url_value;
+      $link = $field_url_value;
+    }
+    else {
+      try {
+        $result_alias = \Drupal::service('path_alias.manager')->getAliasByPath($field_url_value);
+
+        if (!empty($result_alias)) {
+          $result_path = \Drupal::service('path_alias.manager')->getPathByAlias($field_url_value);
+          $nid = _du_site_extract_node_id_from_path($result_path);
+          if (!empty($nid)) {
+            $field_value = $result_path;
+            $field_type = 'node';
+            $link = 'entity:node/' . $nid;
+
+            return $link;
+          }
+          else {
+            throw new Exception('Cannot find alias by path.');
+          }
+        }
+        else {
+          throw new Exception('Cannot find alias by path.');
+        }
+      }
+      catch (Exception $e) {
+        try {
+          $result_path = \Drupal::service('path_alias.manager')->getPathByAlias($field_url_value);
+          $nid = _du_site_extract_node_id_from_path($result_path);
+          if (!empty($nid)) {
+            $field_value = $result_path;
+            $field_type = 'node';
+            $link = 'entity:node/' . $nid;
+
+            return $link;
+          }
+          else {
+            throw new Exception('Cannot find path by alias.');
+          }
+        }
+        catch (Exception $e) {
+          $field_value = $field_url_value;
+          // Perhaps we have an anchor link, so let's use it.
+          if ($field_value[0] == '#') {
+            $fragment_name = substr($field_value, 1);
+            $path = !empty($values['path'][0]['source']) ?
+              $values['path'][0]['source'] : '';
+            $nid = _du_site_extract_node_id_from_path($path);
+            if (!empty($nid)) {
+              $link = 'entity:node/' . $nid;
+              // Store the fragment information inside the options array for Drupal\Core\Url object.
+              $options['fragment'] = $fragment_name;
+              $field_value = $fragment_name;
+            }
+            else {
+              $link = 'internal:' . $field_value;
+            }
+          }
+          else {
+            $link = 'internal:' . $field_value;
+          }
+
+          return $link;
+        }
+      }
+    }
+  }
+  if ($field_type == 'file' && !empty($field_file_value)) {
+    $entity_id = EntityAutocomplete::extractEntityIdFromAutocompleteInput($field_file_value);
+    if (empty($entity_id) || !is_numeric($entity_id)) {
+      // We need to be sure that File ID is returned, otherwise error-out.
+      $form_state->setErrorByName($field_name, "File reference is not specified correctly.");
+    }
+    // For files we need to use "internal:/" notation.
+    $link = 'internal:/' . $field_type . '/' . $entity_id;
+  }
+  elseif ($field_type == 'node' && !empty($field_node_value)) {
+    $entity_id = EntityAutocomplete::extractEntityIdFromAutocompleteInput($field_node_value);
+
+    // For nodes, we can use "entity:node/NID" notation.
+    $link = 'entity:' . $field_type . '/' . $entity_id;
+  }
+
+  return $link;
+}
+
+/**
+ * Extracts node id from path.
+ */
+function _du_site_extract_node_id_from_path($path) {
+  if (preg_match('/node\/(\d+)/', $path, $matches)) {
+    $nid = $matches[1];
+
+    return $nid;
+  }
+
+  return NULL;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function du_site_form_editor_link_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user_input = $form_state->getUserInput();
+  $input = isset($user_input['editor_object']) ? $user_input['editor_object'] : [];
+
+  // Allows adding custom onClick event as attribute inside the <a> tag.
+  $form['attributes']['data-onclick'] = [
+    '#type' => 'textfield',
+    '#title' => t('On Click'),
+    '#default_value' => !empty($input['data-onclick']) ? $input['data-onclick'] : '',
+    '#description' => t('Define Javascript code that would execute as result of a click event on the element.'),
+    '#size' => 60,
+  ];
+
+  // Allows setting name attribute inside the <a> tag.
+  $form['attributes']['name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Name'),
+    '#default_value' => !empty($input['name']) ? $input['name'] : '',
+    '#description' => t('Define name attribute.'),
+    '#size' => 60,
+  ];
+}
+
+/**
+ * Implements hook_preprocess_block()
+ */
+function du_site_preprocess_block(&$variables) {
+  // Invalidates block caching for user-created blocks.
+  if ($variables['base_plugin_id'] == 'block_content') {
+    $variables['#cache']['max-age'] = 0;
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function du_site_form_menu_link_content_menu_link_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Allow menu items to include line breaks for certain navigation templates with white-space:pre-wrap.
+  $form['title']['widget'][0]['value']['#type'] = 'textarea';
+}
+
+/**
+ * Get an array of terms that are linked to nodes.
+ *
+ * @param string $vid
+ *   The vocabulary ID.
+ * @param string $node
+ *   The node that contains the term reference.
+ * @param string $field
+ *   The field that is the term reference.
+ *
+ * @return array
+ *   Array of taxonomy terms.
+ */
+function _du_site_get_terms($vid, $node, $field) {
+  // Query should return alphabetically ascending terms.
+  $terms = \Drupal::entityQuery('taxonomy_term')
+    ->accessCheck(TRUE)
+    ->condition('vid', $vid)
+    ->execute();
+
+  // Get a list of terms that are linked to the node/field.
+  $query = \Drupal::database()
+    ->select('node__' . $field, 'n')
+    ->fields('n', [$field . '_target_id']);
+  $query->join('node_field_data', 'nfd', 'nfd.nid = n.entity_id AND nfd.vid = n.revision_id');
+  $linked_terms = $query->condition('n.bundle', $node)
+    ->condition('n.deleted', 0)
+    ->condition('nfd.status', 1)
+    ->distinct()
+    ->execute()
+    ->fetchCol();
+
+  // Only show terms linked to the node.
+  $tids = array_intersect($terms, $linked_terms);
+
+  return _du_site_get_term_names($tids);
+}
+
+/**
+ * Get term names indexed by the term ID.
+ *
+ * @param array $tids
+ *   Array of term IDs.
+ * @param bool $ksort
+ *   Bool true or false to do ksort.
+ *
+ * @return array
+ *   Array of taxonomy terms.
+ */
+function _du_site_get_term_names(array $tids, $ksort = FALSE) {
+  $terms = ['All' => 'View all'];
+  $unique_tid_array = [];
+  if ($ksort) {
+    $sorting_array = [];
+  }
+
+  if (!empty($tids)) {
+    foreach ($tids as $tid => $term) {
+      $term = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->load($tid);
+
+      if (!empty($term)) {
+        if (!in_array($tid, $unique_tid_array)) {
+          $term_name = $term->getName();
+          $unique_tid_array[] = $tid;
+
+          if ($ksort) {
+            $sorting_array[$term_name]['value'] = $term_name;
+            $sorting_array[$term_name]['tid'] = $tid;
+          }
+          else {
+            $terms[$tid] = $term_name;
+          }
+        }
+      }
+    }
+    if ($ksort) {
+      if (!empty($sorting_array)) {
+        // Sort array by key (term_name).
+        ksort($sorting_array);
+
+        // Create sorted return array option.
+        foreach ($sorting_array as $item) {
+          $terms[$item['tid']] = $item['value'];
+        }
+      }
+    }
+  }
+
+  return $terms;
+}
+
+/**
+ * Delete bibcite entities and uninstall the module.
+ *
+ * This is just a one time function to handle upgrading bibcite from 1.0-alpha10
+ * to 1.x-dev for D9 readiness. The update hooks to get there wouldn't work, so
+ * this is an easier way to get the module upgraded.
+ */
+function _du_site_remove_bibcite() {
+  if (\Drupal::moduleHandler()->moduleExists('bibcite')) {
+    // Delete all bibcite entities.
+    $entities = [
+      'bibcite_contributor',
+      'bibcite_keyword',
+      'bibcite_reference',
+    ];
+    foreach ($entities as $entity) {
+      $continue = TRUE;
+
+      // Delete 500 at a time.
+      while ($continue) {
+        $ids = \Drupal::entityQuery($entity)->range(0, 500)->execute();
+        if (empty($ids)) {
+          $continue = FALSE;
+        }
+        else {
+          entity_delete_multiple($entity, $ids);
+        }
+      }
+    }
+
+    // Uninstall bibcite.
+    \Drupal::service('module_installer')->uninstall(['bibcite']);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_site_form_media_image_delete_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  _du_site_media_alter_delete_form($form, $form_state);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_site_form_media_document_delete_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  _du_site_media_alter_delete_form($form, $form_state);
+}
+
+/**
+ * Submit process for media deletion.
+ *
+ * @param array $form
+ *   Form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form state object.
+ */
+function _du_site_media_alter_delete_form(array &$form, FormStateInterface $form_state) {
+  $media = $form_state->getformObject()->getEntity();
+  if ($media->bundle() == 'image') {
+    $file = $media->image->entity;
+  }
+  elseif ($media->bundle() == 'document') {
+    $file = $media->field_document->entity;
+  }
+  if (!empty($file)) {
+    $places = \Drupal::service('file.usage')->listUsage($file);
+    $uses = '';
+    foreach ($places['file'] as $type => $entities) {
+      if (!empty($uses)) {
+        $uses .= '; ';
+      }
+      $uses .= $type . ': ' . count($entities);
+    }
+
+    $form['du_delete_file'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Delete attached file'),
+      '#description' => t(
+        'The file will be deleted. It is recommended to check the file usage before deleting.
+        <a href="/admin/content/files/usage/@fid" target="_blank">Usage: @uses.</a>',
+        ['@fid' => $file->id(), '@uses' => $uses]
+      ),
+      '#default_value' => 0,
+    ];
+
+    // Add custom process to submission.
+    array_unshift($form['actions']['submit']['#submit'], '_du_site_media_delete_file');
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_site_form_media_delete_multiple_confirm_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $fids = [];
+  foreach ($form['entities']['#items'] as $key => $title) {
+    $id = explode(':', $key)[0];
+    $media = Media::load($id);
+
+    if ($media->bundle() == 'image') {
+      $file = $media->image->entity;
+    }
+    elseif ($media->bundle() == 'document') {
+      $file = $media->field_document->entity;
+    }
+    if (!empty($file)) {
+      $places = \Drupal::service('file.usage')->listUsage($file);
+      $uses = '';
+      foreach ($places['file'] as $type => $entities) {
+        if (!empty($uses)) {
+          $uses .= '; ';
+        }
+        $uses .= $type . ': ' . count($entities);
+      }
+      $form['entities']['#items'][$key] = [
+        '#markup' => $form['entities']['#items'][$key] .
+          ' <a href="/admin/content/files/usage/' . $file->id() .
+          '" target="_blank">Usage: ' . $uses . '.</a>'
+      ];
+      $fids[] = $file->id();
+    }
+  }
+  $form['#du_site_fids'] = $fids;
+  $form['du_delete_file'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Delete attached files'),
+    '#description' => t('The files will be deleted. It is recommended to check each file usage before deleting.'),
+    '#default_value' => 0,
+  ];
+
+  array_unshift($form['#submit'], '_du_site_media_delete_multiple_file');
+}
+
+/**
+ * Submit process for media deletion.
+ *
+ * @param array $form
+ *   Form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form state object.
+ */
+function _du_site_media_delete_file(array &$form, FormStateInterface $form_state) {
+  if (!empty($form_state->getValue('du_delete_file'))) {
+    $media = $form_state->getformObject()->getEntity();
+    if ($media->bundle() == 'image') {
+      $file = $media->image->entity;
+    }
+    elseif ($media->bundle() == 'document') {
+      $file = $media->field_document->entity;
+    }
+    if (!empty($file)) {
+      $file->delete();
+    }
+  }
+}
+
+/**
+ * Submit process for bulk media deletion.
+ *
+ * @param array $form
+ *   Form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form state object.
+ */
+function _du_site_media_delete_multiple_file(array &$form, FormStateInterface $form_state) {
+  $delete = $form_state->getValue('du_delete_file');
+  if (!empty($delete) && !empty($form['#du_site_fids'])) {
+    foreach ($form['#du_site_fids'] as $fid) {
+      $file = File::load($fid);
+      if (!empty($file)) {
+        $file->delete();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_site_form_entity_clone_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  foreach ($form['recursive'] as &$recursive) {
+    if (!empty($recursive['#access'])) {
+      $recursive['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function du_site_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!$form_state->getFormObject() instanceof EntityFormInterface) {
+    return;
+  }
+  if (!\Drupal::moduleHandler()->moduleExists('content_lock')) {
+    return;
+  }
+  /** @var \Drupal\core\Entity\ContentEntityInterface $entity */
+  $entity = $form_state->getFormObject()->getEntity();
+  $entity_type = $entity->getEntityTypeId();
+  $user = Drupal::currentUser();
+
+  // Check if we must lock this entity.
+  /** @var \Drupal\content_lock\ContentLock\ContentLock $lock_service */
+  $lock_service = \Drupal::service('content_lock');
+  $form_op = $form_state->getFormObject()->getOperation();
+  if (!$lock_service->isLockable($entity, $form_op)) {
+    return;
+  }
+
+  // We act only on edit form, not for a creation of a new entity.
+  if (!is_null($entity->id())) {
+    foreach (['submit', 'publish'] as $key) {
+      if (isset($form['actions'][$key])) {
+        $form['actions'][$key]['#submit'][] = 'content_lock_form_submit';
+      }
+    }
+
+    // This hook function is called twice, first when the form loads
+    // and second when the form is submitted.
+    // Only perform set and check for form when returning from preview.
+    $userInput = $form_state->getUserInput();
+    $trigger = $form_state->getTriggeringElement();
+    $is_preview = FALSE;
+    if (isset($trigger['#name']) && $trigger['#name'] == 'Preview') {
+      $is_preview = TRUE;
+    }
+    if (empty($userInput) && !$is_preview) {
+      return;
+    }
+
+    if ($lock_service->isJsLock($entity_type)) {
+      $form['#attached']['library'][] = 'content_lock/drupal.content_lock.lock_form';
+      $form['#attached']['drupalSettings']['content_lock'] = [
+        Html::cleanCssIdentifier($form_id) => [
+          'lockUrl' => Url::fromRoute('content_lock.create_lock.' . $entity_type,
+            [
+              'entity' => $entity->id(),
+              'langcode' => $entity->language()->getId(),
+              'form_op' => $form_op,
+            ],
+            ['query' => ['destination' => Drupal::request()->getRequestUri()]]
+          )->toString(),
+        ],
+      ];
+
+      $form['actions']['#attributes']['class'][] = 'content-lock-actions';
+
+      // If moderation state is in use also disable corresponding buttons.
+      if (isset($form['moderation_state'])) {
+        $form['moderation_state']['#attributes']['class'][] = 'content-lock-actions';
+      }
+      return;
+    }
+
+    // We lock the content if it is currently edited by another user.
+    if (!$lock_service->locking($entity->id(), $entity->language()->getId(), $form_op, $user->id(), $entity_type)) {
+      $form['#disabled'] = TRUE;
+
+      // Do not allow deletion, publishing, or unpublishing if locked.
+      foreach (['delete', 'publish', 'unpublish'] as $key) {
+        if (isset($form['actions'][$key])) {
+          unset($form['actions'][$key]);
+        }
+      }
+
+      // If moderation state is in use also disable corresponding buttons.
+      if (isset($form['moderation_state'])) {
+        unset($form['moderation_state']);
+      }
+    }
+    else {
+      // ContentLock::locking() returns TRUE if the content is locked by the
+      // current user. Add an unlock button only for this user.
+      $form['actions']['unlock'] = $lock_service->unlockButton($entity_type, $entity->id(), $entity->language()->getId(), $form_op, \Drupal::request()->query->get('destination'));
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function du_site_form_menu_edit_form_alter(&$form, $form_state, $form_id) {
+  $key = '';
+  $menu_id = $form_state->getformObject()->getEntity()->id();
+  $module_handler = \Drupal::moduleHandler();
+  if ($module_handler->moduleExists('du_inline_unit') && !empty($menu_id)) {
+    $plugin_id = 'system_menu_block:' . $menu_id;
+    if (du_inline_unit_is_inline_unit_utility_block($plugin_id)) {
+      $block_manager = \Drupal::service('plugin.manager.block');
+      $plugin_block = $block_manager->createInstance($plugin_id);
+      if ($plugin_block->getPluginId() == $plugin_id) {
+        $key = $menu_id;
+      }
+    }
+  }
+  if ($menu_id === "utility-menu" || $menu_id === $key) {
+    $config = \Drupal::service('config.factory')->getEditable('du_site.settings');
+    $form['flyout_menu_title'] = [
+      '#type' => 'textfield',
+      '#title' => t('Flyout Menu Title'),
+      '#default_value' => $config->get($menu_id),
+      '#weight' => '0',
+      '#required' => FALSE,
+    ];
+
+    $form['actions']['submit']['#submit'][] = 'du_site_utility_menu_submit';
+  }
+}
+
+/**
+ * Utility menu submit callback.
+ */
+function du_site_utility_menu_submit($form, $form_state) {
+  $menu_id = $form_state->getformObject()->getEntity()->id();
+  $config = \Drupal::service('config.factory')->getEditable('du_site.settings');
+  $config->set($menu_id, $form_state->getValue('flyout_menu_title'))->save();
+}

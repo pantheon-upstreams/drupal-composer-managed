@@ -1,0 +1,41 @@
+uuid: c3f81025-44db-418c-bd49-2e0bb43b2511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.subhead.field_title
+    - paragraphs.paragraphs_type.subhead
+  module:
+    - content_moderation
+    - datetime
+_core:
+  default_config_hash: 61RAloYVvRpRGU_Jh0DClBMb7-vyN3b3I0JTo_1r4Fg
+id: paragraph.subhead.default
+targetEntityType: paragraph
+bundle: subhead
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 101
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

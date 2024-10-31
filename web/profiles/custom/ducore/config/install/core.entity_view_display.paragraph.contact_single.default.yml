@@ -1,0 +1,29 @@
+uuid: 32db9326-4cd0-4d12-ba06-971de87d6145
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_single.field_single_contact_ref
+    - paragraphs.paragraphs_type.contact_single
+  module:
+    - ds
+_core:
+  default_config_hash: RRXayRL9If2fGvPFYIORFqOmwnTMqy0XNtWeHlZIi18
+id: paragraph.contact_single.default
+targetEntityType: paragraph
+bundle: contact_single
+mode: default
+content:
+  field_single_contact_ref:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 0
+    region: content
+hidden:
+  scheduled_publication: true

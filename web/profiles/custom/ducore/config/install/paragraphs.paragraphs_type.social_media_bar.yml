@@ -1,0 +1,12 @@
+uuid: 4298650f-69b4-4088-a02b-cbc3bbfe7314
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DBZ775FJNyCGTexoyIWUT4VImqdT8iEUqkklaYHB99Y
+id: social_media_bar
+label: 'Social Media Bar'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

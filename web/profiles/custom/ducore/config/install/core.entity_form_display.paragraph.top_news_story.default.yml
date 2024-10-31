@@ -1,0 +1,32 @@
+uuid: 383aefac-e077-4670-9c30-efb79e112bc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.top_news_story.field_top_news_image_position
+    - field.field.paragraph.top_news_story.field_top_news_story_ref
+    - paragraphs.paragraphs_type.top_news_story
+id: paragraph.top_news_story.default
+targetEntityType: paragraph
+bundle: top_news_story
+mode: default
+content:
+  field_top_news_image_position:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_top_news_story_ref:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

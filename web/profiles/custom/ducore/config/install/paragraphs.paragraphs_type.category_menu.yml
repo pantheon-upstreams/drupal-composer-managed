@@ -1,0 +1,12 @@
+uuid: 210451a0-825e-405b-a223-7fba7b566b5f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aslSO3MclSh1NiV5Q8I-OMArC88WzTSgdSkQLV7JK7A
+id: category_menu
+label: 'Category Menu'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

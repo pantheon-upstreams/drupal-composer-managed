@@ -1,0 +1,12 @@
+uuid: 62bc3423-3cc4-4678-bb2e-60e52bc49674
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 4ObbkodESyBaL7KXSwKMG7qDlkE7t7mF9xgktUcG2Po
+id: named_anchor
+label: 'Named Anchor'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

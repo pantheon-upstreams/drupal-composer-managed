@@ -1,0 +1,12 @@
+uuid: 2bcfee02-c1fd-480b-8561-841a6c3b49cf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LqpnM4G_FYRAlBLLsm-maPuuXnVZD2UHyurxXUkjud0
+id: subhead
+label: 'Subhead (H2)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
