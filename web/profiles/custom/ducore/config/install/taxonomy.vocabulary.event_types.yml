@@ -1,9 +1,6 @@
-uuid: 4272f993-a611-4a11-96a1-cecef9a40949
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: m--JCRW25i0uixjxDQqFCkacEcjAvw8wyHPmiXl3hoM
 name: 'Event Types'
 vid: event_types
 description: ''

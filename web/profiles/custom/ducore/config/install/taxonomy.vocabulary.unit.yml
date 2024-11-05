@@ -1,9 +1,6 @@
-uuid: b9849d52-c597-4991-9fe2-d71ddaac5c8f
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: _BxwgbPN_i0-OUhRA_7wLZw7ybaxCIv9dMqjSIFB9nw
 name: Unit
 vid: unit
 description: 'DU Marketing Unit Structure'
