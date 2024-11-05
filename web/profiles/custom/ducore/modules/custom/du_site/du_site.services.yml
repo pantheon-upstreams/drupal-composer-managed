@@ -1,5 +1,0 @@
-services:
-  du_site.twig.UrlFromUri:
-    class: Drupal\du_site\Extension\UrlFromUri
-    tags:
-      - { name: twig.extension }

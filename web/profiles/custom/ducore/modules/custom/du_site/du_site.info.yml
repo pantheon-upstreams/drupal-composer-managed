@@ -1,7 +1,0 @@
-name: DU Site
-description: Basic utilities used on any DU site
-type: module
-package: "DU Custom"
-core_version_requirement: ^8 || ^9 || ^10
-dependencies:
-  - du_widen
