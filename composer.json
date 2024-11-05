@@ -217,7 +217,6 @@
             }
         },
         {
-            "_webform": true,
             "type": "package",
             "package": {
                 "name": "enyo/dropzone",
@@ -231,7 +230,6 @@
             "license": "MIT"
         },
         {
-            "_webform": true,
             "type": "package",
             "package": {
                 "name": "desandro/imagesloaded",
@@ -245,7 +243,6 @@
             }
         },
         {
-            "_webform": true,
             "type": "package",
             "package": {
                 "name": "desandro/masonry",

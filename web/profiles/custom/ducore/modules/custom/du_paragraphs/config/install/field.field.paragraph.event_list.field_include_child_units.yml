@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_include_child_units
+    - paragraphs.paragraphs_type.event_list
+id: paragraph.event_list.field_include_child_units
+field_name: field_include_child_units
+entity_type: paragraph
+bundle: event_list
+label: 'Include Child Units'
+description: 'If checked, the selected unit and all its children units will be included.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

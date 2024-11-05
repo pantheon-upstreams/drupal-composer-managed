@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: named_anchor
+label: 'Named Anchor'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

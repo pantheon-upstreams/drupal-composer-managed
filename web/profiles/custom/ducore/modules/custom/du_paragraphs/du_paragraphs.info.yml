@@ -1,0 +1,19 @@
+name: 'DU Paragraphs'
+type: module
+description: 'Custom module for managing cross-site Paragraphs.'
+core_version_requirement: ^10
+package: 'Custom'
+dependencies:
+  - drupal:paragraphs
+  - drupal:ebrsww
+  - drupal:file_browser
+  - drupal:entity_browser
+  - drupal:dropzonejs_eb_widget
+  - drupal:svg_image
+  - drupal:node_revision_delete
+  - drupal:link_attributes
+  - drupal:webform
+  - drupal:ds
+  - drupal:du_widen
+  - drupal:field_group
+  - drupal:allowed_formats

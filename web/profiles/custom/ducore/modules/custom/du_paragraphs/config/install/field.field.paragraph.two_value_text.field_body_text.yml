@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body_text
+    - paragraphs.paragraphs_type.two_value_text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    rich_text: rich_text
+    embed_code: '0'
+    plain_text: '0'
+    inline_formatting: '0'
+id: paragraph.two_value_text.field_body_text
+field_name: field_body_text
+entity_type: paragraph
+bundle: two_value_text
+label: 'Body Text'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

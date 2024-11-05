@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.button.field_link
+    - paragraphs.paragraphs_type.button
+  module:
+    - link_attributes
+id: paragraph.button.default
+targetEntityType: paragraph
+bundle: button
+mode: default
+content:
+  field_link:
+    type: link_attributes
+    weight: 101
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        onClick: true
+        data-toggle: true
+        fragment: true
+        target: true
+        rel: true
+        class: true
+        aria-label: true
+        title: false
+        id: false
+        name: false
+        accesskey: false
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,6 @@
+du_paragraphs.default:
+  path: '/admin/config/services/du-paragraphs'
+  defaults:
+    _title: 'DU Paragraphs'
+  requirements:
+    _permission: 'administer site configuration'

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: enhanced_expanding_list
+label: 'Enhanced Expanding List'
+icon_uuid: null
+icon_default: null
+description: 'A large expanding accordion list with titles on left side and excerpt on right side then expanding body info'
+behavior_plugins: {  }

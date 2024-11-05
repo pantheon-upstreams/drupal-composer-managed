@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_image_placement
+    - paragraphs.paragraphs_type.body_copy
+  module:
+    - options
+id: paragraph.body_copy.field_copy_image_placement
+field_name: field_copy_image_placement
+entity_type: paragraph
+bundle: body_copy
+label: 'Image Placement (image will display only in Medium and Narrow widths)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

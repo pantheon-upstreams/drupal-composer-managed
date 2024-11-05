@@ -1,0 +1,5 @@
+# Define default permissions for the du_paragraphs module.
+access du_paragraphs:
+  title: 'Access DU Paragraphs'
+  description: 'Allows users to access the DU Paragraphs functionality.'
+  restrict access: false

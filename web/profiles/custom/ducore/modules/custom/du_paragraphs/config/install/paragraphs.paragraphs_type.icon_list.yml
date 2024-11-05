@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: icon_list
+label: 'Icon List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

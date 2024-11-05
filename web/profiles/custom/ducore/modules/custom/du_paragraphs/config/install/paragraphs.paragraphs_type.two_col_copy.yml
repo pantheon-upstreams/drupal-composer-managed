@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: two_col_copy
+label: 'Copy (Two Col)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

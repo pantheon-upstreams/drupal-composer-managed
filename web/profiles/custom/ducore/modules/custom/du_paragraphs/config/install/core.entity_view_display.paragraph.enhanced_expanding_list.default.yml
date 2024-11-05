@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.enhanced_expanding_list.field_enhanced_exp_list_item
+    - field.field.paragraph.enhanced_expanding_list.field_heading
+    - paragraphs.paragraphs_type.enhanced_expanding_list
+  module:
+    - entity_reference_revisions
+id: paragraph.enhanced_expanding_list.default
+targetEntityType: paragraph
+bundle: enhanced_expanding_list
+mode: default
+content:
+  field_enhanced_exp_list_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

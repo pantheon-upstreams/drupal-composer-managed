@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_event_audience_filter
+    - paragraphs.paragraphs_type.event_list
+id: paragraph.event_list.field_hide_event_audience_filter
+field_name: field_hide_event_audience_filter
+entity_type: paragraph
+bundle: event_list
+label: 'Hide Audience Filter'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

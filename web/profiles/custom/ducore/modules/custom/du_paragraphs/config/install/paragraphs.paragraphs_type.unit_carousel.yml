@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: unit_carousel
+label: 'Unit Carousel'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

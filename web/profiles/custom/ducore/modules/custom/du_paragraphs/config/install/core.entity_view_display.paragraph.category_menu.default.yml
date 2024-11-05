@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.category_menu.field_category_link
+    - field.field.paragraph.category_menu.field_heading
+    - field.field.paragraph.category_menu.field_toggler_text
+    - paragraphs.paragraphs_type.category_menu
+  module:
+    - entity_reference_revisions
+id: paragraph.category_menu.default
+targetEntityType: paragraph
+bundle: category_menu
+mode: default
+content:
+  field_category_link:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_toggler_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  scheduled_publication: true
