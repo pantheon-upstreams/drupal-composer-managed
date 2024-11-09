@@ -53,6 +53,13 @@
         "drupal/views_data_export": "^1.4",
         "drupal/simplesamlphp_custom_attributes": "^2.0",
         "drupal/entity_usage": "^2.0@beta",
+        "drupal/dropzonejs": "^2.11",
+        "drupal/file_browser": "^1.1",
+        "drupal/ebrsww": "^2.3",
+        "drupal/ds": "^3.16",
+        "drupal/node_revision_delete": "^1.0@RC",
+        "drupal/allowed_formats": "^2.0",
+        "drupal/twig_tweak": "^3.4",
         "university-of-denver/pl_drupal": "dev-main"
     },
     "extra": {

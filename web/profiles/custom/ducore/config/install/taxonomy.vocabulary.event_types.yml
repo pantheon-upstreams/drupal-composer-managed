@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Types'
+vid: event_types
+description: ''
+weight: 0

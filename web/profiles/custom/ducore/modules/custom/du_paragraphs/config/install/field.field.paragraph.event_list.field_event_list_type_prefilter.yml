@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_list_type_prefilter
+    - paragraphs.paragraphs_type.event_list
+    - taxonomy.vocabulary.event_types
+id: paragraph.event_list.field_event_list_type_prefilter
+field_name: field_event_list_type_prefilter
+entity_type: paragraph
+bundle: event_list
+label: 'Event Type Prefilter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_types: event_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_media_bar.field_heading
+    - field.field.paragraph.social_media_bar.field_social_media_link
+    - field.field.paragraph.social_media_bar.field_social_page_link
+    - paragraphs.paragraphs_type.social_media_bar
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.social_media_bar.default
+targetEntityType: paragraph
+bundle: social_media_bar
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_social_media_link:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_social_page_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  scheduled_publication: true

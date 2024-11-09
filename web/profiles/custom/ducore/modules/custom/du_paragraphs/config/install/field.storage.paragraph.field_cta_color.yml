@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_cta_color
+field_name: field_cta_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: black
+      label: Black
+    -
+      value: teal
+      label: Teal
+    -
+      value: purple
+      label: Purple
+    -
+      value: green
+      label: Green
+    -
+      value: gold
+      label: Gold
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_help().
+ */
+function du_paragraphs_help_text($route_name, $route_parameters) {
+  switch ($route_name) {
+    case 'help.page.du_paragraphs':
+      drupal_set_message(t('Custom Paragraphs for Drupal 10, packaged up in a module similar to https://www.drupal.org/project/varbase_bootstrap_paragraphs'));
+      break;
+  }
+}

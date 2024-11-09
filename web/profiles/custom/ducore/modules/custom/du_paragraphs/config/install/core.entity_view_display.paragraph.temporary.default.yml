@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.temporary.field_temporary
+    - paragraphs.paragraphs_type.temporary
+id: paragraph.temporary.default
+targetEntityType: paragraph
+bundle: temporary
+mode: default
+content:
+  field_temporary:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

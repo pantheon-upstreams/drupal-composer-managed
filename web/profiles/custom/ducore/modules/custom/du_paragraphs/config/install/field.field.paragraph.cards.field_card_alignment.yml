@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_alignment
+    - paragraphs.paragraphs_type.cards
+  module:
+    - options
+id: paragraph.cards.field_card_alignment
+field_name: field_card_alignment
+entity_type: paragraph
+bundle: cards
+label: 'Card Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

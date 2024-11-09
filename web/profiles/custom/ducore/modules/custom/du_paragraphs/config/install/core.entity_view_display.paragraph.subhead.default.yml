@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.subhead.field_title
+    - paragraphs.paragraphs_type.subhead
+id: paragraph.subhead.default
+targetEntityType: paragraph
+bundle: subhead
+mode: default
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  scheduled_publication: true

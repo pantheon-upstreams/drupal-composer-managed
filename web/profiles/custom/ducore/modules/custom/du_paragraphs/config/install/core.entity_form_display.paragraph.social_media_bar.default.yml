@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_media_bar.field_heading
+    - field.field.paragraph.social_media_bar.field_social_media_link
+    - field.field.paragraph.social_media_bar.field_social_page_link
+    - paragraphs.paragraphs_type.social_media_bar
+  module:
+    - field_group
+    - link_attributes
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_links:
+      children: {  }
+      label: Links
+      parent_name: ''
+      weight: 5
+      format_type: accordion_item
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: paragraph.social_media_bar.default
+targetEntityType: paragraph
+bundle: social_media_bar
+mode: default
+content:
+  field_heading:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_social_media_link:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: icon_link
+    third_party_settings: {  }
+  field_social_page_link:
+    type: link_attributes
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        rel: true
+        class: true
+        onClick: true
+        fragment: true
+        title: true
+        id: false
+        name: false
+        accesskey: false
+        icon: false
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

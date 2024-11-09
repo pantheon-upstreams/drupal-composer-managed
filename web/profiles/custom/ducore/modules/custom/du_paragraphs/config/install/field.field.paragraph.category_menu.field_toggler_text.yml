@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_toggler_text
+    - paragraphs.paragraphs_type.category_menu
+id: paragraph.category_menu.field_toggler_text
+field_name: field_toggler_text
+entity_type: paragraph
+bundle: category_menu
+label: 'Toggler Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

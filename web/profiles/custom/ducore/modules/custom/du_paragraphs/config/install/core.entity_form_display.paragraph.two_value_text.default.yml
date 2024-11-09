@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.two_value_text.field_body_text
+    - field.field.paragraph.two_value_text.field_title
+    - paragraphs.paragraphs_type.two_value_text
+  module:
+    - text
+id: paragraph.two_value_text.default
+targetEntityType: paragraph
+bundle: two_value_text
+mode: default
+content:
+  field_body_text:
+    type: text_textarea
+    weight: 102
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 101
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,90 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.paragraph.body_copy.field_copy_image
+    - field.field.paragraph.body_copy.field_copy_image_placement
+    - field.field.paragraph.body_copy.field_copy_style
+    - field.field.paragraph.body_copy.field_heading
+    - field.field.paragraph.body_copy.field_paragraph_ref
+    - field.field.paragraph.body_copy.field_subhead
+    - paragraphs.paragraphs_type.body_copy
+  module:
+    - entity_browser
+    - paragraphs
+id: paragraph.body_copy.default
+targetEntityType: paragraph
+bundle: body_copy
+mode: default
+content:
+  field_copy_image:
+    type: entity_browser_file
+    weight: 4
+    region: content
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: false
+      selection_mode: selection_append
+      view_mode: default
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_copy_image_placement:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_copy_style:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraph_ref:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_subhead:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

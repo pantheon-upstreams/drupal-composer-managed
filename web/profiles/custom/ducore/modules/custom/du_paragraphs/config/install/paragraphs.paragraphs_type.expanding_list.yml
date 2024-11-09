@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: expanding_list
+label: 'Expanding List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

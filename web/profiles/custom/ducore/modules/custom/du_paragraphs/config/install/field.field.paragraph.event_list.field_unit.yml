@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_unit
+    - paragraphs.paragraphs_type.event_list
+    - taxonomy.vocabulary.unit
+id: paragraph.event_list.field_unit
+field_name: field_unit
+entity_type: paragraph
+bundle: event_list
+label: Unit
+description: 'Optionally, choose a unit taxonomy term to filter results on.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      unit: unit
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

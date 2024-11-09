@@ -215,6 +215,48 @@
                 },
                 "license": "MIT"
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone",
+                "version": "5.9.3",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/dropzone/dropzone/releases/download/v5.9.3/dist.zip",
+                    "type": "zip"
+                }
+            },
+            "license": "MIT"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "desandro/imagesloaded",
+                "version": "3.1.8",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/desandro/imagesloaded/archive/v3.1.8.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "desandro/masonry",
+                "version": "3.3.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "masonry"
+                },
+                "dist": {
+                    "url": "https://github.com/desandro/masonry/archive/refs/tags/v3.3.1.zip",
+                    "type": "zip"
+                },
+                "license": "MIT"
+            }
         }
     ],
     "require": {
@@ -238,7 +280,10 @@
         "progress-tracker/progress-tracker": "^2.0.7",
         "signature_pad/signature_pad": "^2.3.0",
         "tabby/tabby": "^12.0.3",
-        "tippyjs/tippyjs": "^6.3.7"
+        "tippyjs/tippyjs": "^6.3.7",
+        "enyo/dropzone": "^5.9.3",
+        "desandro/imagesloaded": "^3.1.8",
+        "desandro/masonry": "^3.3.1"
     },
     "require-dev": {
         "drupal/core-dev": "^10.1"

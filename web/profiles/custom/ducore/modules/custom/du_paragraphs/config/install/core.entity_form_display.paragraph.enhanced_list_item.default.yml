@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.enhanced_list_item.field_body_text
+    - field.field.paragraph.enhanced_list_item.field_link
+    - field.field.paragraph.enhanced_list_item.field_subtitle
+    - field.field.paragraph.enhanced_list_item.field_summary
+    - field.field.paragraph.enhanced_list_item.field_title
+    - field.field.paragraph.enhanced_list_item.field_title_headline
+    - paragraphs.paragraphs_type.enhanced_list_item
+  module:
+    - link_attributes
+    - text
+id: paragraph.enhanced_list_item.default
+targetEntityType: paragraph
+bundle: enhanced_list_item
+mode: default
+content:
+  field_body_text:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_attributes
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        onClick: true
+        title: false
+        target: true
+        rel: true
+        class: true
+        data-toggle: false
+        fragment: false
+        id: false
+        name: false
+        accesskey: false
+        aria-label: true
+    third_party_settings: {  }
+  field_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_summary:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_title_headline: true
+  status: true

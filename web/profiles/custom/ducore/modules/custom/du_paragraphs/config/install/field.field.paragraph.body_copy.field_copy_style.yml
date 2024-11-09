@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_copy_style
+    - paragraphs.paragraphs_type.body_copy
+  module:
+    - options
+id: paragraph.body_copy.field_copy_style
+field_name: field_copy_style
+entity_type: paragraph
+bundle: body_copy
+label: 'Column Width'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

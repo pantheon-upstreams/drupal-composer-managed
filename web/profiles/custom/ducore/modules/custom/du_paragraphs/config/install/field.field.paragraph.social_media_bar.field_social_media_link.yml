@@ -1,0 +1,171 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_media_link
+    - paragraphs.paragraphs_type.icon_link
+    - paragraphs.paragraphs_type.social_media_bar
+  module:
+    - entity_reference_revisions
+id: paragraph.social_media_bar.field_social_media_link
+field_name: field_social_media_link
+entity_type: paragraph
+bundle: social_media_bar
+label: 'Social Media Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      icon_link: icon_link
+    negate: 0
+    target_bundles_drag_drop:
+      admission_steps:
+        weight: 49
+        enabled: false
+      admission_steps_in_content:
+        weight: 50
+        enabled: false
+      body_copy:
+        weight: 51
+        enabled: false
+      body_text:
+        weight: 52
+        enabled: false
+      button:
+        weight: 53
+        enabled: false
+      card:
+        weight: 54
+        enabled: false
+      cards:
+        weight: 55
+        enabled: false
+      carousel:
+        weight: 56
+        enabled: false
+      category_link:
+        weight: 57
+        enabled: false
+      category_menu:
+        weight: 58
+        enabled: false
+      contact:
+        weight: 59
+        enabled: false
+      contact_single:
+        weight: 60
+        enabled: false
+      contacts:
+        weight: 61
+        enabled: false
+      cta:
+        weight: 62
+        enabled: false
+      embed_code:
+        weight: 63
+        enabled: false
+      event_list:
+        weight: 64
+        enabled: false
+      event_time_place:
+        weight: 65
+        enabled: false
+      expanding_list:
+        weight: 66
+        enabled: false
+      featured_event:
+        weight: 67
+        enabled: false
+      featured_event_slide:
+        weight: 68
+        enabled: false
+      featured_video_component:
+        weight: 69
+        enabled: false
+      hero_media:
+        weight: 70
+        enabled: false
+      homepage_facts:
+        weight: 71
+        enabled: false
+      homepage_programs_search:
+        weight: 72
+        enabled: false
+      homepage_quote:
+        weight: 73
+        enabled: false
+      homepage_quotes:
+        weight: 74
+        enabled: false
+      homepage_section_copy:
+        weight: 75
+        enabled: false
+      homepage_swapping_image_feature:
+        weight: 76
+        enabled: false
+      homepage_video_carousel:
+        weight: 77
+        enabled: false
+      hvc_slide:
+        weight: 78
+        enabled: false
+      icon_link:
+        weight: 79
+        enabled: true
+      icon_list:
+        weight: 80
+        enabled: false
+      icon_list_item:
+        weight: 81
+        enabled: false
+      inset_video:
+        weight: 82
+        enabled: false
+      list_of_links:
+        weight: 83
+        enabled: false
+      quick_facts:
+        weight: 84
+        enabled: false
+      quick_facts_feature_fact:
+        weight: 85
+        enabled: false
+      quick_facts_list_item_simple:
+        weight: 86
+        enabled: false
+      quick_facts_list_of_facts:
+        weight: 87
+        enabled: false
+      related_stories:
+        weight: 88
+        enabled: false
+      show_hide_toggle:
+        weight: 89
+        enabled: false
+      slide:
+        weight: 90
+        enabled: false
+      social_media_bar:
+        weight: 91
+        enabled: false
+      stories:
+        weight: 92
+        enabled: false
+      subhead:
+        weight: 93
+        enabled: false
+      two_col_copy:
+        weight: 94
+        enabled: false
+      two_value_text:
+        weight: 95
+        enabled: false
+      webform:
+        weight: 96
+        enabled: false
+field_type: entity_reference_revisions

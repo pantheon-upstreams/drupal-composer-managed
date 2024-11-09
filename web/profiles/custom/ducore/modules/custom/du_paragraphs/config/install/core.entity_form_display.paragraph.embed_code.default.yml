@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.embed_code.field_embed_code
+    - paragraphs.paragraphs_type.embed_code
+  module:
+    - text
+id: paragraph.embed_code.default
+targetEntityType: paragraph
+bundle: embed_code
+mode: default
+content:
+  field_embed_code:
+    type: text_textarea
+    weight: 101
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

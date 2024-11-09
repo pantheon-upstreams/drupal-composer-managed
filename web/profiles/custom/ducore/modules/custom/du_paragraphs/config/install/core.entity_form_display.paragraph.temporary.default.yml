@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.temporary.field_temporary
+    - paragraphs.paragraphs_type.temporary
+id: paragraph.temporary.default
+targetEntityType: paragraph
+bundle: temporary
+mode: default
+content:
+  field_temporary:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

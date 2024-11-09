@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_exp_list_item
+    - paragraphs.paragraphs_type.expanding_list
+    - paragraphs.paragraphs_type.two_value_text
+  module:
+    - entity_reference_revisions
+id: paragraph.expanding_list.field_exp_list_item
+field_name: field_exp_list_item
+entity_type: paragraph
+bundle: expanding_list
+label: Item
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      two_value_text: two_value_text
+    negate: 0
+    target_bundles_drag_drop:
+      body_copy:
+        weight: 9
+        enabled: false
+      body_text:
+        weight: 10
+        enabled: false
+      cta:
+        weight: 11
+        enabled: false
+      expanding_list:
+        weight: 12
+        enabled: false
+      show_hide_toggle:
+        weight: 13
+        enabled: false
+      stories:
+        weight: 14
+        enabled: false
+      subhead:
+        weight: 15
+        enabled: false
+      two_value_text:
+        weight: 16
+        enabled: true
+field_type: entity_reference_revisions

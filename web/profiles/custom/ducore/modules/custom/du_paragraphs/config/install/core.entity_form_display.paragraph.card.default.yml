@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.paragraph.card.field_card_image
+    - field.field.paragraph.card.field_card_type
+    - field.field.paragraph.card.field_paragraph_ref
+    - field.field.paragraph.card.field_title
+    - paragraphs.paragraphs_type.card
+  module:
+    - entity_browser
+    - paragraphs
+id: paragraph.card.default
+targetEntityType: paragraph
+bundle: card
+mode: default
+content:
+  field_card_image:
+    type: entity_browser_file
+    weight: 3
+    region: content
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_edit: true
+      field_widget_remove: true
+      open: false
+      selection_mode: selection_append
+      view_mode: default
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_card_type:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraph_ref:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduled_publication:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

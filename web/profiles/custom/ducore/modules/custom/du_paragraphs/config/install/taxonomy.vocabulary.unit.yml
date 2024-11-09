@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Unit
+vid: unit
+description: 'DU Marketing Unit Structure'
+weight: 0
+new_revision: false

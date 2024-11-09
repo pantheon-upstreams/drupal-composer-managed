@@ -1,0 +1,120 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_category_link
+    - paragraphs.paragraphs_type.category_link
+    - paragraphs.paragraphs_type.category_menu
+  module:
+    - entity_reference_revisions
+id: paragraph.category_menu.field_category_link
+field_name: field_category_link
+entity_type: paragraph
+bundle: category_menu
+label: 'Category Link'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      category_link: category_link
+    negate: 0
+    target_bundles_drag_drop:
+      admission_steps:
+        weight: 32
+        enabled: false
+      admission_steps_in_content:
+        weight: 33
+        enabled: false
+      body_copy:
+        weight: 34
+        enabled: false
+      body_text:
+        weight: 35
+        enabled: false
+      card:
+        weight: 36
+        enabled: false
+      cards:
+        weight: 37
+        enabled: false
+      category_link:
+        weight: 38
+        enabled: true
+      category_menu:
+        weight: 39
+        enabled: false
+      cta:
+        weight: 40
+        enabled: false
+      embed_code:
+        weight: 41
+        enabled: false
+      event_time_place:
+        weight: 42
+        enabled: false
+      expanding_list:
+        weight: 43
+        enabled: false
+      hero_media:
+        weight: 44
+        enabled: false
+      homepage_facts:
+        weight: 45
+        enabled: false
+      homepage_programs_search:
+        weight: 46
+        enabled: false
+      homepage_quote:
+        weight: 47
+        enabled: false
+      homepage_quotes:
+        weight: 48
+        enabled: false
+      homepage_section_copy:
+        weight: 49
+        enabled: false
+      homepage_swapping_image_feature:
+        weight: 50
+        enabled: false
+      homepage_video_carousel:
+        weight: 51
+        enabled: false
+      hvc_slide:
+        weight: 52
+        enabled: false
+      quick_facts:
+        weight: 53
+        enabled: false
+      quick_facts_feature_fact:
+        weight: 54
+        enabled: false
+      quick_facts_list_item_simple:
+        weight: 55
+        enabled: false
+      quick_facts_list_of_facts:
+        weight: 56
+        enabled: false
+      related_stories:
+        weight: 57
+        enabled: false
+      show_hide_toggle:
+        weight: 58
+        enabled: false
+      stories:
+        weight: 59
+        enabled: false
+      subhead:
+        weight: 60
+        enabled: false
+      two_col_copy:
+        weight: 61
+        enabled: false
+      two_value_text:
+        weight: 62
+        enabled: false
+field_type: entity_reference_revisions

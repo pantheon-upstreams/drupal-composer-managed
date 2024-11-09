@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.expanding_list.field_exp_list_item
+    - paragraphs.paragraphs_type.expanding_list
+  module:
+    - entity_reference_revisions
+id: paragraph.expanding_list.default
+targetEntityType: paragraph
+bundle: expanding_list
+mode: default
+content:
+  field_exp_list_item:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  scheduled_publication: true
