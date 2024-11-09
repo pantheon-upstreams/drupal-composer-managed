@@ -50,6 +50,7 @@ blacklist:
   - system.theme
   - 'taxonomy.settings*'
   - text.settings
+  - update.settings
   - user.flood
   - user.mail
   - user.settings
