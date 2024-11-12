@@ -42,7 +42,7 @@ function ducore_install_tasks_alter(&$tasks, $install_state) {
 function ducore_user_presave(UserInterface $user) {
   // IMPRORTANT! Because of change to using CammelCase in usernames at DU wasn't 
   // retoactively applied, we are evaluating the match in lowercase.
-  $support_eas = array('kevin.reynen', 'kent.houge', 'charles.r.jones','joshua.mcgehee','alex.martinez');
+  $support_eas = array('kevin.reynen', 'kent.houge', 'charles.r.jones','joshua.mcgehee','alex.martinez', 'chris.hewitt');
   $support_ur =  array('mac.whitney', 'nathan.boorom', 'staci.striegnitz', 'sherry.liang', 'anastasia.vylegzhanina', 'james.e.thomas');
   // @TODO - These arrays should be YML files or API endpoint that can be 
   // easily editted outside the PHP
