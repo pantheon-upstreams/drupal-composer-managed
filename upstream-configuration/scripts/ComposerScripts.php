@@ -1,18 +1,8 @@
 <?php
 
-/**
- * @file
- * Contains \DrupalComposerManaged\ComposerScripts.
- *
- * Custom Composer scripts and implementations of Composer hooks.
- */
-
 namespace DrupalComposerManaged;
 
-use Composer\IO\IOInterface;
 use Composer\Script\Event;
-use Composer\Util\Filesystem;
-use Composer\Util\ProcessExecutor;
 
 /**
  * Implementation for Composer scripts and Composer hooks.
@@ -28,7 +18,7 @@ class ComposerScripts {
   }
 
   /**
-   * postUpdate
+   * postUpdate.
    *
    * After "composer update" runs, we have the opportunity to do additional
    * fixups to the project files.
@@ -41,7 +31,7 @@ class ComposerScripts {
   }
 
   /**
-   * Apply composer.json Updates
+   * Apply composer.json Updates.
    *
    * During the Composer pre-update hook, check to see if there are any
    * updates that need to be made to the composer.json file. We cannot simply
@@ -52,7 +42,7 @@ class ComposerScripts {
     $io = $event->getIO();
 
     $composerJsonContents = file_get_contents("composer.json");
-    $composerJson = json_decode($composerJsonContents, true);
+    $composerJson = json_decode($composerJsonContents, TRUE);
     $originalComposerJson = $composerJson;
 
     // Check to see if the platform PHP version (which should be major.minor.patch)
@@ -62,7 +52,7 @@ class ComposerScripts {
     $platformPhpVersion = static::getCurrentPlatformPhp($event);
     $pantheonPhpVersion = static::getPantheonPhpVersion($event);
     $updatedPlatformPhpVersion = static::bestPhpPatchVersion($pantheonPhpVersion);
-    if ((substr($platformPhpVersion, 0, strlen($pantheonPhpVersion)) != $pantheonPhpVersion) && !empty($updatedPlatformPhpVersion)) {
+    if (!empty($updatedPlatformPhpVersion) && (empty($platformPhpVersion) || (substr($platformPhpVersion, 0, strlen($pantheonPhpVersion)) != $pantheonPhpVersion))) {
       $io->write("<info>Setting platform.php from '$platformPhpVersion' to '$updatedPlatformPhpVersion' to conform to pantheon php version.</info>");
       $composerJson['config']['platform']['php'] = $updatedPlatformPhpVersion;
     }
@@ -70,17 +60,17 @@ class ComposerScripts {
     // add our post-update-cmd hook if it's not already present
     $our_hook = 'DrupalComposerManaged\\ComposerScripts::postUpdate';
     // if does not exist, add as an empty arry
-    if(! isset($composerJson['scripts']['post-update-cmd'])) {
+    if (!isset($composerJson['scripts']['post-update-cmd'])) {
       $composerJson['scripts']['post-update-cmd'] = [];
     }
 
     // if exists and is a string, convert to a single-item array (n.b. do not actually need the if exists check because we just assured that it does)
-    if(is_string($composerJson['scripts']['post-update-cmd'])) {
+    if (is_string($composerJson['scripts']['post-update-cmd'])) {
       $composerJson['scripts']['post-update-cmd'] = [$composerJson['scripts']['post-update-cmd']];
     }
 
     // if exists and is an array and does not contain our hook, add our hook (again, only the last check is needed)
-    if(! in_array($our_hook, $composerJson['scripts']['post-update-cmd'])) {
+    if (!in_array($our_hook, $composerJson['scripts']['post-update-cmd'])) {
       $io->write("<info>Adding post-update-cmd hook to composer.json</info>");
       $composerJson['scripts']['post-update-cmd'][] = $our_hook;
 
@@ -104,25 +94,38 @@ class ComposerScripts {
       }
 
       // enable patching if it isn't already enabled
-      if(! isset($composerJson['extra']['enable-patching'])) {
+      if (!isset($composerJson['extra']['enable-patching'])) {
         $io->write("<info>Setting enable-patching to true</info>");
-        $composerJson['extra']['enable-patching'] = true;
+        $composerJson['extra']['enable-patching'] = TRUE;
       }
 
       // allow phpstan/extension-installer in preparation for Drupal 10
-      if(! isset($composerJson['config']['allow-plugins']['phpstan/extension-installer'])) {
+      if (!isset($composerJson['config']['allow-plugins']['phpstan/extension-installer'])) {
         $io->write("<info>Allow phpstan/extension-installer in preparation for Drupal 10</info>");
-        $composerJson['config']['allow-plugins']['phpstan/extension-installer'] = true;
+        $composerJson['config']['allow-plugins']['phpstan/extension-installer'] = TRUE;
       }
 
       // allow php-http/discovery
-      if(! isset($composerJson['config']['allow-plugins']['php-http/discovery'])) {
+      if (!isset($composerJson['config']['allow-plugins']['php-http/discovery'])) {
         $io->write("<info>Allow php-http/discovery</info>");
-        $composerJson['config']['allow-plugins']['php-http/discovery'] = true;
+        $composerJson['config']['allow-plugins']['php-http/discovery'] = TRUE;
+      }
+
+      // allow tbachert/spi
+      if (!isset($composerJson['config']['allow-plugins']['tbachert/spi'])) {
+        $io->write("<info>Allow tbachert/spi</info>");
+        $composerJson['config']['allow-plugins']['tbachert/spi'] = TRUE;
       }
     }
 
-    if(serialize($composerJson) == serialize($originalComposerJson)) {
+    // Ignore everything in the 'recipes' directory, if it isn't already ignored.
+    if (!file_exists('recipes/.gitignore')) {
+      $io->write("<info>Adding .gitignore to recipes directory</info>");
+      mkdir('recipes');
+      file_put_contents('recipes/.gitignore', '*' . PHP_EOL . '!/.gitignore' . PHP_EOL);
+    }
+
+    if (serialize($composerJson) == serialize($originalComposerJson)) {
       return;
     }
 
@@ -132,12 +135,13 @@ class ComposerScripts {
   }
 
   /**
-   * jsonEncodePretty
+   * jsonEncodePretty.
    *
    * Convert a nested array into a pretty-printed json-encoded string.
    *
    * @param array $data
    *   The data array to encode
+   *
    * @return string
    *   The pretty-printed encoded string version of the supplied data.
    */
@@ -158,7 +162,7 @@ class ComposerScripts {
     if (isset($platform['php'])) {
       return $platform['php'];
     }
-    return null;
+    return NULL;
   }
 
   /**
@@ -166,7 +170,7 @@ class ComposerScripts {
    */
   private static function getPantheonConfigPhpVersion($path) {
     if (!file_exists($path)) {
-      return null;
+      return NULL;
     }
     if (preg_match('/^php_version:\s?(\d+\.\d+)$/m', file_get_contents($path), $matches)) {
       return $matches[1];
@@ -184,23 +188,27 @@ class ComposerScripts {
 
     if ($pantheonYmlVersion = static::getPantheonConfigPhpVersion($pantheonYmlPath)) {
       return $pantheonYmlVersion;
-    } elseif ($pantheonUpstreamYmlVersion = static::getPantheonConfigPhpVersion($pantheonUpstreamYmlPath)) {
-      return $pantheonUpstreamYmlVersion;
     }
-    return null;
+    elseif ($upstreamYmlVersion = static::getPantheonConfigPhpVersion($pantheonUpstreamYmlPath)) {
+      return $upstreamYmlVersion;
+    }
+    return NULL;
   }
 
   /**
    * Determine which patch version to use when the user changes their platform php version.
    */
   private static function bestPhpPatchVersion($pantheonPhpVersion) {
+    // Drupal 11 requires PHP 8.3 at a minimum.
     // Drupal 10 requires PHP 8.1 at a minimum.
     // Drupal 9 requires PHP 7.3 at a minimum.
     // Integrated Composer requires PHP 7.1 at a minimum.
     $patchVersions = [
-      '8.2' => '8.2.0',
-      '8.1' => '8.1.13',
-      '8.0' => '8.0.26',
+      '8.3' => '8.3.14',
+      '8.2' => '8.2.26',
+      '8.1' => '8.1.31',
+    // EOL final patch version below this line.
+      '8.0' => '8.0.30',
       '7.4' => '7.4.33',
       '7.3' => '7.3.33',
       '7.2' => '7.2.34',
@@ -212,4 +220,5 @@ class ComposerScripts {
     // This feature is disabled if the user selects an unsupported php version.
     return '';
   }
+
 }

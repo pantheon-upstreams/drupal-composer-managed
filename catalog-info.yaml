@@ -1,0 +1,12 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: drupal-composer-managed
+  description: Auto-generated catalog info for pantheon-systems/drupal-composer-managed
+  annotations:
+    backstage.io/techdocs-ref: dir:docs/
+spec:
+  type: library
+  lifecycle: mature
+  owner: site
