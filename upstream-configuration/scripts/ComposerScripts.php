@@ -199,11 +199,14 @@ class ComposerScripts {
    * Determine which patch version to use when the user changes their platform php version.
    */
   private static function bestPhpPatchVersion($pantheonPhpVersion) {
+    // Drupal 12 requires PHP 8.5 at a minimum.
     // Drupal 11 requires PHP 8.3 at a minimum.
     // Drupal 10 requires PHP 8.1 at a minimum.
     // Drupal 9 requires PHP 7.3 at a minimum.
     // Integrated Composer requires PHP 7.1 at a minimum.
     $patchVersions = [
+      '8.5' => '8.5.9',
+      '8.4' => '8.4.24',
       '8.3' => '8.3.14',
       '8.2' => '8.2.26',
       '8.1' => '8.1.31',

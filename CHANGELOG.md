@@ -2,6 +2,16 @@
 
 All notable changes specific to pantheon-upstreams/drupal-composer-managed are noted here.
 
+## Pantheon Update #7 - 2026-10-05
+
+### Changed
+- Upgraded PHP to 8.3
+
+## Pantheon Update #6 - 2026-03-05
+
+### Changed
+- Upgraded Drupal CMS start state to version 2.0 ([#96](https://github.com/pantheon-systems/drupal-composer-managed/pull/96))
+
 ## Pantheon Update #5 - 2024-07-18
 
 ### Changed
